@@ -1,0 +1,6 @@
+.github
+test/
+*.ts
+!*.d.ts
+!*.js
+dist
