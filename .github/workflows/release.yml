@@ -1,0 +1,19 @@
+name: Release
+
+on:
+  push:
+    branches: 
+    - master
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 10.x
+    - run: ./release.sh
+      env:
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
