@@ -1,4 +1,4 @@
-import { renderDocs } from '../lib';
+import { renderFiles } from '../lib';
 import yargs = require('yargs');
 
 export async function main() {
@@ -8,7 +8,7 @@ export async function main() {
     .example(`$0 node_modules/**/.jsii`, 'Generate documentation for all jsii modules in your project')
     .argv;
 
-  await renderDocs(args._, args.outdir);
+  await renderFiles(args._, args.outdir);
 }
 
 main().catch(e => {

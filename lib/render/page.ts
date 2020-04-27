@@ -6,21 +6,10 @@ export type JsiiEntity = jsiiReflect.Type | jsiiReflect.Assembly;
 
 export interface ILinkRenderer {
   renderLink(type: JsiiEntity): string;
-  renderFileName(type: JsiiEntity): string;
 }
 
 export interface PageOptions {
   linkRenderer?: ILinkRenderer;
-}
-
-export class MarkdownLinkRenderer implements ILinkRenderer {
-  public renderLink(type: JsiiEntity): string {
-    return `./${this.renderFileName(type)}`;
-  }
-
-  public renderFileName(type: JsiiEntity): string {
-    return type.fqn.replace('/', '_') + '.md';
-  }
 }
 
 export interface RenderContext {
@@ -32,11 +21,14 @@ export abstract class Page {
 
   }
 
-  public get fileName() {
-    return this.ctx.links.renderFileName(this.type);
+  /**
+   * Returns the page markdown.
+   */
+  public get markdown() {
+    return this.render().join('\n');
   }
 
-  public abstract render(): string[];
+  protected abstract render(): string[];
 
   protected renderDefault(x: string = '') {
     x = x.trim();

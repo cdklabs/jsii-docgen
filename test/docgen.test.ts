@@ -1,4 +1,4 @@
-import { renderDocs } from "../lib";
+import { renderFiles } from "../lib";
 import * as glob from 'glob-promise';
 import * as path from 'path';
 import * as os from 'os';
@@ -15,7 +15,7 @@ test('snapshot test', async () => {
   child_process.execSync(`npm install @aws-cdk/core@1.33.1`, { cwd: inputdir });
 
   const files = await glob(`${inputdir}/**/.jsii`);
-  await renderDocs(files, outdir);
+  await renderFiles(files, outdir);
   await createDirectorySnapshot(outdir);
 
   expect(await createDirectorySnapshot(outdir)).toMatchSnapshot();
