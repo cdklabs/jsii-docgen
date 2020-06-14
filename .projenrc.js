@@ -21,6 +21,7 @@ const project = new TypeScriptLibraryProject({
     'jsii-reflect': Semver.caret('1.6.0'),
     'jsii-spec': Semver.caret('0.20.11')
   },
+  releaseToNpm: true
 });
 
 new Jest(project);
