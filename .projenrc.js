@@ -19,7 +19,7 @@ const project = new TypeScriptLibraryProject({
     'yargs': Semver.caret('15.3.1'),
     'fs-extra': Semver.caret('9.0.0'),
     'jsii-reflect': Semver.caret('1.6.0'),
-    'jsii-spec': Semver.caret('0.20.11')
+    '@jsii/spec': Semver.caret('1.6.0')
   },
   releaseToNpm: true
 });
