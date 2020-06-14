@@ -3,15 +3,11 @@ import { Page, RenderContext } from './page';
 
 export class EnumPage extends Page {
   constructor(ctx: RenderContext, private readonly enumType: jsiiReflect.EnumType) {
-    super(ctx, enumType);
+    super(ctx, enumType, `enum ${enumType.name}`);
   }
 
   public render() {
-    const title = `enum ${this.enumType.name}`;
-
     return [
-      `# ${title} ${this.renderStability(this.enumType)}`,
-      '',
       this.enumType.docs.toString(),
       '',
       'Name | Description',

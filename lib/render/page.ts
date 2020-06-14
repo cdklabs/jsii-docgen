@@ -1,6 +1,7 @@
 import jsiiReflect = require('jsii-reflect');
 import { Stability } from 'jsii-spec';
 import { isStatic } from './util';
+import { elementAnchorLink, elementAnchor } from './links';
 
 export type JsiiEntity = jsiiReflect.Type | jsiiReflect.Assembly;
 
@@ -8,16 +9,27 @@ export interface ILinkRenderer {
   renderLink(type: JsiiEntity): string;
 }
 
-export interface PageOptions {
-  linkRenderer?: ILinkRenderer;
-}
-
 export interface RenderContext {
+  /**
+   * Links rennderer
+   */
   readonly links: ILinkRenderer;
+
+  /**
+   * Include the contents of the module's README in the module home page
+   * @default true
+   */
+  readonly readme?: boolean;
+
+  /**
+   * Heading level for page titles.
+   * @default 1
+   */
+  readonly heading?: number;
 }
 
 export abstract class Page {
-  constructor(protected readonly ctx: RenderContext, public readonly type: JsiiEntity) {
+  constructor(protected readonly ctx: RenderContext, public readonly type: JsiiEntity, public readonly title?: string) {
 
   }
 
@@ -25,7 +37,15 @@ export abstract class Page {
    * Returns the page markdown.
    */
   public get markdown() {
-    return this.render().join('\n');
+    const h = this.ctx.heading ?? 1;
+
+    const lines = new Array<string>();
+    if (this.title) {
+      lines.push(this.headingA(`${this.title} ${this.renderStability(this.type)} ${elementAnchor(this.type)}`));
+    }
+
+    lines.push(...this.render());
+    return lines.join('\n');
   }
 
   protected abstract render(): string[];
@@ -34,7 +54,7 @@ export abstract class Page {
     x = x.trim();
     if (x.startsWith('- ')) { x = x.substr(2); }
     x = x.trim();
-  
+
     if (x) {
       return `*Default*: ` + x;
     } else {
@@ -42,28 +62,33 @@ export abstract class Page {
     }
   }
 
-  protected renderStability(x: jsiiReflect.Documentable): string {
-    switch (x.docs.stability) {
+  protected renderStability(x: jsiiReflect.Documentable | jsiiReflect.Assembly): string {
+    const stability = 'docs' in x ? x.docs.stability : Stability.Stable;
+    switch (stability) {
       case Stability.Stable: return '';
-      case Stability.Experimental: return mkIcon('🔹', `This API element is experimental. It may change without notice.`, 'experimental');
-      case Stability.Deprecated: return mkIcon('⚠️', `This API element is deprecated. Its use is not recommended.`, 'deprecated');
+      case Stability.Experimental: return mkIcon('🔹', `This API element is experimental. It may change without notice.`);
+      case Stability.Deprecated: return mkIcon('⚠️', `This API element is deprecated. Its use is not recommended.`);
     }
     return '';
   }
+
+  protected headingA(caption?: string) {
+    return this.heading(caption, 1);
+  }
   
-  protected elementAnchor(type: jsiiReflect.Callable | jsiiReflect.Property) {
-    return `#${this.elementAnchorId(type)}`;
+  protected headingB(caption?: string) {
+    return this.heading(caption, 2);
   }
 
-  protected elementAnchorId(type: jsiiReflect.Callable | jsiiReflect.Property) {
-    let sig;
-    if (type instanceof jsiiReflect.Callable) {
-      sig = this.methodSignature(type);
-    } else {
-      sig = type.name;
-    }
+  protected headingC(caption?: string) {
+    return this.heading(caption, 3);
+  }
 
-    return `${sig.replace(/\ /g, '-').replace(/[^A-Za-z-]/g, '')}`;
+  private heading(caption: string | undefined, level: number) {
+    if (!caption) { return ''; }
+    const number = this.ctx.heading ?? 1;
+    const heading = '#'.repeat(number + level - 1);
+    return `${heading} ${caption}\n`;
   }
   
   protected renderElementName(name: string) {
@@ -83,7 +108,7 @@ export abstract class Page {
   protected methodSignature(method: jsiiReflect.Callable, options: SignatureOptions = {}) {
     const self = this;
     const name = method.name;
-  
+
     const visibility = method.protected ? 'protected ' : 'public ';
     const paramRenderer = options.long ? fullParam : shortParam;
     const parameters = method.parameters.map(paramRenderer).join(', ');
@@ -97,17 +122,17 @@ export abstract class Page {
       }
     }
     const showVisibility = options.long || method.protected;
-  
+
     if (method instanceof jsiiReflect.Initializer) {
       return `new ${method.parentType.name}(${parameters})`;
     } else {
       return `${showVisibility ? visibility : ''}${staticDecl}${name}(${parameters})${returnDecl}`;
     }
-  
+
     function fullParam(p: jsiiReflect.Parameter) {
       return `${p.variadic ? '...' : ''}${p.name}${p.optional ? '?' : ''}: ${self.formatTypeSimple(p.type)}${p.variadic ? '[]' : ''}`;
     }
-  
+
     function shortParam(p: jsiiReflect.Parameter) {
       return `${p.variadic ? '...' : ''}${p.name}${p.optional ? '?' : ''}`;
     }
@@ -116,7 +141,7 @@ export abstract class Page {
   protected methodLink(method: jsiiReflect.Method) {
     const type = method.parentType;
     const typeLink = this.ctx.links.renderLink(type);
-    const methodLink = typeLink + this.elementAnchor(method);
+    const methodLink = typeLink + elementAnchorLink(method);
     return `[${type.name}](${typeLink}).[${method.name}](${methodLink})()`;
   }
 
@@ -170,8 +195,8 @@ export abstract class Page {
 
 }
 
-function mkIcon(icon: string, tooltip: string, badgeType: string) {
-  return `<span class="api-icon api-icon-${badgeType}" title="${htmlEncode(tooltip)}">${icon}</span>`;
+function mkIcon(icon: string, tooltip: string) {
+  return `<span title="${htmlEncode(tooltip)}">${icon}</span>`;
 }
 
 function htmlEncode(x: string) {

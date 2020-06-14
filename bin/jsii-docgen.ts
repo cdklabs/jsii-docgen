@@ -1,14 +1,22 @@
-import { renderFiles } from '../lib';
+import { renderFiles, renderSinglePageModule } from '../lib';
 import yargs = require('yargs');
 
 export async function main() {
   const args = yargs
-    .usage('Usage: $0 JSII-FILE,...')
-    .option('outdir', { type: 'string', alias: 'o', required: true, desc: 'Output directory', default: 'dist' })
+    .usage('Usage: $0 [JSII-FILE,...]')
+    .option('output', { type: 'string', alias: 'o', required: false, desc: 'Output directory or file (default directory is "dist", default file is "APP.md")' })
+    .example('$0', 'Generate documentation for the current module as a single file (auto-resolves node depedencies)')
     .example(`$0 node_modules/**/.jsii`, 'Generate documentation for all jsii modules in your project')
     .argv;
 
-  await renderFiles(args._, args.outdir);
+
+  if (args._.length === 0) {
+    const output = args.output ?? 'API.md';
+    await renderSinglePageModule(process.cwd(), output);
+  } else {
+    const output = args.output ?? 'dist';
+    await renderFiles(args._, output);
+  }
 }
 
 main().catch(e => {

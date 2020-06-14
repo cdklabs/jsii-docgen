@@ -1,33 +1,34 @@
 import jsiiReflect = require('jsii-reflect');
 import { flatMap, compareByKeys, isStatic } from './util';
 import { Page, RenderContext } from './page';
+import { elementAnchorLink, elementAnchor } from './links';
 
 abstract class Base extends Page {
   protected renderProperties(properties: jsiiReflect.Property[], caption: string) {
     const self = this;
 
     if (properties.length === 0) { return []; }
-  
+
     properties.sort(compareByKeys(propertyOrder));
-  
+
     return [
       '',
-      caption ? `## ${caption}` : '',
+      this.headingB(caption),
       '',
       'Name | Type | Description ',
       '-----|------|-------------',
       ...properties.map(_propertiesTableLine),
       ''
     ];
-  
+
     function _propertiesTableLine(property: jsiiReflect.Property) {
       const name = self.renderElementName(property.name);
       let summary = property.docs.summary;
-  
+
       if (property.optional) {
         summary += '<br/><br/>' + self.renderDefault(property.docs.docs.default);
       }
-  
+
       return self.tableRow(
         `${property.static ? '*static* ' : ''}${name}${property.optional ? '?' : ''}${self.renderStability(property)}`,
         self.typeReferenceLink(property.type),
@@ -38,34 +39,35 @@ abstract class Base extends Page {
 
   protected renderExtends(c: jsiiReflect.ClassType) {
     if (!c.base) { return []; }
-  
+
     return [
       `**Extends**: ${this.typeLink(c.base)}`,
     ];
   }
-  
+
   protected renderImplementors(i: jsiiReflect.Type) {
     const hasImplementors = i.isInterfaceType() || (i.isClassType() && i.abstract);
     if (!hasImplementors) { return []; }
-  
+
     const implementors = i.allImplementations
       .filter(isClassType)
       .filter(x => !x.abstract);
-  
+
     if (implementors.length === 0) { return []; }
-  
+
     return [
       `**Implemented by**: ${implementors.map(x => this.typeLink(x)).join(', ')}`,
     ];
-  }  
+  }
 
   protected renderMethods(methods: jsiiReflect.Callable[], caption = 'Methods') {
     if (methods.length === 0) { return []; }
   
     methods.sort(compareByKeys(methodOrder));
-  
+
     return [
-      `## ${caption}`,
+      this.headingB(caption),
+      '',
       'Name | Description',
       '-----|-----',
       ...methods.map(m => this.methodTableLine(m)),
@@ -75,7 +77,7 @@ abstract class Base extends Page {
   }
 
   private methodTableLine(method: jsiiReflect.Callable) {
-    const text = `[${this.renderElementName(method.name + '()')}](${this.elementAnchor(method)})`;
+    const text = `[${this.renderElementName(method.name + '()')}](${elementAnchorLink(method)})`;
     return this.tableRow(
       `${text}${this.renderStability(method)}`,
       method.docs.summary,
@@ -103,14 +105,12 @@ abstract class Base extends Page {
   
     return [
       includeHeader ? '\n---' : '',
-      includeHeader ? `### ${this.methodSignature(method)}${this.renderStability(method)}` : '',
-      `<a id="${this.elementAnchorId(method)}"></a>`,
+      includeHeader ? this.headingC(`${this.methodSignature(method)}${this.renderStability(method)} ${elementAnchor(method)}`) : '',
       method.docs.toString(),
       '```',
       `${this.methodSignature(method, { long: true, verbatim: true })}`,
       '```',
       '',
-      method.parameters.length > 0 ? `*Parameters*` : '',
       ...method.parameters.map(p => [
         '*',
         this.renderElementName(p.name),
@@ -126,7 +126,7 @@ abstract class Base extends Page {
       '',
     ].join('\n');
   }
-    
+
 
   /**
    * Find all public static methods that can produce a type like this
@@ -152,16 +152,13 @@ abstract class Base extends Page {
 
 export class ClassPage extends Base {
   constructor(ctx: RenderContext, private readonly klass: jsiiReflect.ClassType) {
-    super(ctx, klass);
+    super(ctx, klass, `class ${klass.name}`);
   }
 
   public render() {
     const klass = this.klass;
-    const title = `class ${klass.name}`;
 
     return [
-      `# ${title} ${this.renderStability(klass)}`,
-      '',
       klass.docs.toString(),
       '',
       ...this.renderImplements(klass),
@@ -178,38 +175,37 @@ export class ClassPage extends Base {
   private renderConstructor(obj: jsiiReflect.ClassType): string[] {
     const initializer = obj.initializer;
     if (!initializer) { return []; }
-  
+
     return [
-      '',
+      this.headingB('Initializer'),
       this.methodDetail(initializer, false),
-      `## Initializer`,
     ];
   }
 
   private renderImplements(c: jsiiReflect.ClassType) {
     const ifaces = c.getInterfaces(true);
     if (ifaces.length === 0) { return []; }
-  
+
     return [
       `**Implements**: ${ifaces.map(x => this.typeLink(x)).join(', ')}`,
     ];
   }
-  
+
 }
 
 export class InterfacePage extends Base {
-  constructor(ctx: RenderContext, private readonly iface: jsiiReflect.InterfaceType) {
-    super(ctx, iface);
+  private readonly iface: jsiiReflect.InterfaceType;
+
+  constructor(ctx: RenderContext, iface: jsiiReflect.InterfaceType) {
+    const kind = iface.datatype ? 'struct' : 'interface';
+    super(ctx, iface, `${kind} ${iface.name}`);
+    this.iface = iface;
   }
 
   public render() {
     const iface = this.iface;
-    const kind = iface.datatype ? 'struct' : 'interface';
-    const title = `${kind} ${iface.name}`;
-  
+
     return [
-      `# ${title} ${this.renderStability(iface)}`,
-      '',
       ...this.renderImplementors(iface),
       ...this.renderFactories(iface),
       '',

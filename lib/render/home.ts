@@ -10,18 +10,23 @@ export class Home extends Page {
     const self = this;
     const assembly = this.assembly;
     const lines = new Array<string>();
-    const readme = assembly.readme?.markdown;
-    if (readme) {
-      lines.push(readme);
-    }
 
-    lines.push(`## API Reference`);
+    if (this.ctx.readme ?? true) {
+      const readme = assembly.readme?.markdown;
+      if (readme) {
+        lines.push(readme);
+      }
+
+      lines.push(`## API Reference`);
+    } else {
+      lines.push(`# API Reference`);
+    }
 
     addSection('Classes', assembly.classes);
     addSection('Structs', assembly.interfaces.filter(i => i.isDataType()));
     addSection('Interfaces', assembly.interfaces.filter(i => !i.isDataType()));
-    addSection('Enums', assembly.enums);  
-    
+    addSection('Enums', assembly.enums);
+
     return lines;
 
     function addSection(title: string, collection: readonly jsiiReflect.Type[]) {
@@ -30,7 +35,7 @@ export class Home extends Page {
       }
 
       lines.push();
-      lines.push(`### ${title}`);
+      lines.push(`**${title}**`);
       lines.push(`Name|Description`);
       lines.push(`----|-----------`);
   

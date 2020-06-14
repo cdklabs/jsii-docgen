@@ -6,6 +6,7 @@ import { ClassPage, InterfacePage } from './render/klass';
 import { EnumPage } from './render/enum';
 import { Page, RenderContext, JsiiEntity } from './render/page';
 import { Home } from './render/home';
+import { elementAnchorLink } from './render/links';
 
 /**
  * Renders markdown files into an output directory for a jsii typesystem.
@@ -13,6 +14,8 @@ import { Home } from './render/home';
  * @param outdir output directory
  */
 export async function renderFiles(jsiiFiles: string[], outdir: string) {
+  const renderFileName = (type: JsiiEntity) => type.fqn.replace('/', '_') + '.md';
+
   const ctx: RenderContext = {
     links: {
       renderLink: type => `./${renderFileName(type)}`
@@ -31,6 +34,39 @@ export async function renderFiles(jsiiFiles: string[], outdir: string) {
     await fs.mkdirp(path.dirname(filePath));
     await fs.writeFile(filePath, page.markdown, { encoding: 'utf-8' });
   }
+}
+
+export async function renderSinglePageModule(moduleDir: string, outFile: string) {
+  const ts = new jsiiReflect.TypeSystem();
+  const asm = await ts.loadModule(moduleDir);
+
+  const ctx: RenderContext = {
+    readme: false,
+    heading: 2,
+    links: {
+      renderLink: type => {
+        if (type instanceof jsiiReflect.Assembly) {
+          return '';
+        } else {
+          return elementAnchorLink(type);
+        }
+      }
+    }
+  };
+
+  const file = fs.createWriteStream(outFile);
+
+  const pages = await renderPages(ts, ctx);
+  for (const page of pages) {
+    if (page.type.fqn.split('.')[0] !== asm.fqn) {
+      continue; // skip other modules
+    }
+
+    file.write(page.markdown);
+    file.write('\n\n\n');
+  }
+
+  file.close();
 }
 
 /**
@@ -58,6 +94,3 @@ function documentAssembly(ctx: RenderContext, assembly: jsiiReflect.Assembly): P
   ];
 }
 
-function renderFileName(type: JsiiEntity): string {
-  return type.fqn.replace('/', '_') + '.md';
-}
