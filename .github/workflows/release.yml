@@ -9,9 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npx projen@0.1.19
+      - run: npx projen@0.1.21
       - run: yarn install --frozen-lockfile
       - run: yarn build
+      - name: Anti-tamper check
+        run: git diff --exit-code
       - name: Upload artifact
         uses: actions/upload-artifact@v1
         with:

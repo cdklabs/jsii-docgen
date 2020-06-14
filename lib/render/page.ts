@@ -1,5 +1,5 @@
 import * as jsiiReflect from 'jsii-reflect';
-import { Stability } from 'jsii-spec';
+import { Stability } from '@jsii/spec';
 import { isStatic } from './util';
 import { elementAnchorLink, elementAnchor } from './links';
 
@@ -43,20 +43,22 @@ export abstract class Page {
     }
 
     lines.push(...this.render());
-    return lines.join('\n');
+
+    return lines.map(x => x ?? '').join('\n');
   }
 
   protected abstract render(): string[];
 
   protected renderDefault(x: string = '') {
+    x = x.replace(/\n/g, ' ');
     x = x.trim();
     if (x.startsWith('- ')) { x = x.substr(2); }
     x = x.trim();
 
     if (x) {
-      return '*Default*: ' + x;
+      return this.underline(this.italic('Default')) + ': ' + x;
     } else {
-      return '*Optional*'
+      return this.underline(this.italic('Optional'));
     }
   }
 
@@ -88,6 +90,14 @@ export abstract class Page {
     const heading = '#'.repeat(number + level - 1);
     return `${heading} ${caption}\n`;
   }
+
+  protected underline(text: string) {
+    return `<span style="text-decoration: underline">${text}</span>`;
+  }
+
+  protected italic(text: string) {
+    return `*${text}*`;
+  }
   
   protected renderElementName(name: string) {
     return `**${name}**`;
@@ -107,7 +117,7 @@ export abstract class Page {
     const self = this;
     const name = method.name;
 
-    const visibility = method.protected ? 'protected ' : 'public ';
+    const visibility = method.protected ? 'protected ' : '';
     const paramRenderer = options.long ? fullParam : shortParam;
     const parameters = method.parameters.map(paramRenderer).join(', ');
     const returnDecl = options.long && method instanceof jsiiReflect.Method ? ': ' + this.formatTypeSimple(method.returns.type) : '';
@@ -193,13 +203,14 @@ export abstract class Page {
 
 }
 
-function mkIcon(icon: string, tooltip: string) {
-  return `<span title="${htmlEncode(tooltip)}">${icon}</span>`;
+function mkIcon(icon: string, _tooltip: string) {
+  // return `<span title="${htmlEncode(tooltip)}">${icon}</span>`;
+  return icon;
 }
 
-function htmlEncode(x: string) {
-  return x.replace(/[\u00A0-\u9999<>\&]/gim, i => '&#' + i.charCodeAt(0) + ';');
-}
+// function htmlEncode(x: string) {
+//   return x.replace(/[\u00A0-\u9999<>\&]/gim, i => '&#' + i.charCodeAt(0) + ';');
+// }
 
 export interface SignatureOptions {
   /**

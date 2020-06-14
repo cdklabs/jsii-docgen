@@ -1,7 +1,7 @@
 import * as jsiiReflect from 'jsii-reflect';
 import { flatMap, compareByKeys, isStatic } from './util';
 import { Page, RenderContext } from './page';
-import { elementAnchorLink, elementAnchor } from './links';
+import { elementAnchor } from './links';
 
 abstract class Base extends Page {
   protected renderProperties(properties: jsiiReflect.Property[], caption: string) {
@@ -23,10 +23,11 @@ abstract class Base extends Page {
 
     function _propertiesTableLine(property: jsiiReflect.Property) {
       const name = self.renderElementName(property.name);
-      let summary = property.docs.summary;
+      let summary = property.docs.summary.trim();
 
       if (property.optional) {
-        summary += '<br/><br/>' + self.renderDefault(property.docs.docs.default);
+        summary += (summary.length > 0 ? '<br/>' : '')
+          + self.renderDefault(property.docs.docs.default);
       }
 
       return self.tableRow(
@@ -41,7 +42,7 @@ abstract class Base extends Page {
     if (!c.base) { return []; }
 
     return [
-      `**Extends**: ${this.typeLink(c.base)}`,
+      `${this.underline('Extends')}: ${this.typeLink(c.base)}`,
     ];
   }
 
@@ -56,7 +57,7 @@ abstract class Base extends Page {
     if (implementors.length === 0) { return []; }
 
     return [
-      `**Implemented by**: ${implementors.map(x => this.typeLink(x)).join(', ')}`,
+      `${this.underline('Implemented by')}: ${implementors.map(x => this.typeLink(x)).join(', ')}`,
     ];
   }
 
@@ -67,22 +68,22 @@ abstract class Base extends Page {
 
     return [
       this.headingB(caption),
-      '',
-      'Name | Description',
-      '-----|-----',
-      ...methods.map(m => this.methodTableLine(m)),
+      // '',
+      // 'Name | Description',
+      // '-----|-----',
+      // ...methods.map(m => this.methodTableLine(m)),
       '',
       ...methods.map(m => this.methodDetail(m)),
     ];
   }
 
-  private methodTableLine(method: jsiiReflect.Callable) {
-    const text = `[${this.renderElementName(method.name + '()')}](${elementAnchorLink(method)})`;
-    return this.tableRow(
-      `${text}${this.renderStability(method)}`,
-      method.docs.summary,
-    );
-  }
+  // private methodTableLine(method: jsiiReflect.Callable) {
+  //   const text = `[${this.renderElementName(method.name + '()')}](${elementAnchorLink(method)})`;
+  //   return this.tableRow(
+  //     `${text}${this.renderStability(method)}`,
+  //     method.docs.summary,
+  //   );
+  // }
 
   protected methodDetail(method: jsiiReflect.Callable, includeHeader = true) {
     const keywordArgsType = method.parameters.length > 0 && method.parameters[method.parameters.length -1].type.type;
@@ -104,13 +105,16 @@ abstract class Base extends Page {
     }
   
     return [
-      includeHeader ? '\n---' : '',
       includeHeader ? this.headingC(`${this.methodSignature(method)}${this.renderStability(method)} ${elementAnchor(method)}`) : '',
       method.docs.toString(),
-      '```',
+      '',
+      this.underline('Usage:'),
+      '',
+      '```ts',
       `${this.methodSignature(method, { long: true, verbatim: true })}`,
       '```',
       '',
+      this.underline('Parameters:'),
       ...method.parameters.map(p => [
         '*',
         this.renderElementName(p.name),
@@ -120,13 +124,12 @@ abstract class Base extends Page {
       ...keywordArguments,
       '',
       ...method instanceof jsiiReflect.Method ? [
-        !method.returns.type.void ? '*Returns*' : '',
+        !method.returns.type.void ? this.underline('Returns') + ':' : '',
         !method.returns.type.void ? '* ' + this.typeReferenceLink(method.returns.type) : '',
       ] : [],
       '',
     ].join('\n');
   }
-
 
   /**
    * Find all public static methods that can produce a type like this
@@ -145,7 +148,7 @@ abstract class Base extends Page {
     if (factories.length === 0) { return []; }
 
     return [
-      `**Obtainable from**: ${factories.map(x => this.methodLink(x)).join(', ')}`,
+      `${this.underline('Obtainable from')}: ${factories.map(x => this.methodLink(x)).join(', ')}`,
     ];
   }
 }
@@ -167,8 +170,8 @@ export class ClassPage extends Base {
       ...this.renderFactories(klass),
       '',
       ...this.renderConstructor(klass),
-      ...this.renderProperties(klass.allProperties.filter(documentableProperty), 'Properties'),
-      ...this.renderMethods(classMethods(klass).filter(documentableMethod)),
+      ...this.renderProperties(klass.ownProperties.filter(documentableProperty), 'Properties'),
+      ...this.renderMethods(klass.ownMethods.filter(documentableMethod)),
     ];
   }
 
@@ -187,7 +190,7 @@ export class ClassPage extends Base {
     if (ifaces.length === 0) { return []; }
 
     return [
-      `**Implements**: ${ifaces.map(x => this.typeLink(x)).join(', ')}`,
+      `${this.underline('Implements')}: ${ifaces.map(x => this.typeLink(x)).join(', ')}`,
     ];
   }
 
@@ -241,10 +244,6 @@ function publicOrDefinedHere(p: jsiiReflect.Callable | jsiiReflect.Property) {
   }
 
   throw new Error(`Unknown callable: ${p}`);
-}
-
-function classMethods(c: jsiiReflect.ClassType) {
-  return c.allMethods;
 }
 
 function isClassType(x: jsiiReflect.Type): x is jsiiReflect.ClassType {

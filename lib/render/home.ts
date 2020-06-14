@@ -34,14 +34,17 @@ export class Home extends Page {
         return;
       }
 
-      lines.push();
+      lines.push('');
       lines.push(`**${title}**`);
+      lines.push('');
       lines.push('Name|Description');
       lines.push('----|-----------');
   
       for (const type of collection) {
-        lines.push(`${self.typeLink(type)}|${type.docs.summary}`);
+        lines.push(`${self.typeLink(type)}|${type.docs.summary.trim() || '*No description*'}`);
       }
+
+      lines.push('');
     }
   }
 }
