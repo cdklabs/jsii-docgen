@@ -1,4 +1,4 @@
-import { renderFiles } from "../lib";
+import { renderFiles } from '../lib';
 import * as glob from 'glob-promise';
 import * as path from 'path';
 import * as os from 'os';
@@ -12,7 +12,7 @@ import * as child_process from 'child_process';
 test('snapshot test', async () => {
   const inputdir = fs.mkdtempSync(path.join(os.tmpdir(), 'docgen-input-'));
   const outdir = fs.mkdtempSync(path.join(os.tmpdir(), 'docgen-output-'));
-  child_process.execSync(`npm install @aws-cdk/core@1.33.1`, { cwd: inputdir });
+  child_process.execSync('npm install @aws-cdk/core@1.33.1', { cwd: inputdir });
 
   const files = await glob(`${inputdir}/**/.jsii`);
   await renderFiles(files, outdir);
@@ -22,7 +22,7 @@ test('snapshot test', async () => {
 });
 
 async function createDirectorySnapshot(dir: string) {
-  const files = await glob(`**`, { cwd: dir });
+  const files = await glob('**', { cwd: dir });
   const output: { [filePath: string]: string } = {};
 
   for (const file of files) {

@@ -1,4 +1,4 @@
-import jsiiReflect = require('jsii-reflect');
+import * as jsiiReflect from 'jsii-reflect';
 import { Stability } from 'jsii-spec';
 import { isStatic } from './util';
 import { elementAnchorLink, elementAnchor } from './links';
@@ -37,8 +37,6 @@ export abstract class Page {
    * Returns the page markdown.
    */
   public get markdown() {
-    const h = this.ctx.heading ?? 1;
-
     const lines = new Array<string>();
     if (this.title) {
       lines.push(this.headingA(`${this.title} ${this.renderStability(this.type)} ${elementAnchor(this.type)}`));
@@ -56,9 +54,9 @@ export abstract class Page {
     x = x.trim();
 
     if (x) {
-      return `*Default*: ` + x;
+      return '*Default*: ' + x;
     } else {
-      return `*Optional*`
+      return '*Optional*'
     }
   }
 
@@ -66,8 +64,8 @@ export abstract class Page {
     const stability = 'docs' in x ? x.docs.stability : Stability.Stable;
     switch (stability) {
       case Stability.Stable: return '';
-      case Stability.Experimental: return mkIcon('🔹', `This API element is experimental. It may change without notice.`);
-      case Stability.Deprecated: return mkIcon('⚠️', `This API element is deprecated. Its use is not recommended.`);
+      case Stability.Experimental: return mkIcon('🔹', 'This API element is experimental. It may change without notice.');
+      case Stability.Deprecated: return mkIcon('⚠️', 'This API element is deprecated. Its use is not recommended.');
     }
     return '';
   }

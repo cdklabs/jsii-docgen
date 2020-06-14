@@ -1,5 +1,5 @@
-import jsiiReflect = require('jsii-reflect');
-import { Page, RenderContext } from "./page";
+import * as jsiiReflect from 'jsii-reflect';
+import { Page, RenderContext } from './page';
 
 export class Home extends Page {
   constructor(ctx: RenderContext, private readonly assembly: jsiiReflect.Assembly) {
@@ -17,9 +17,9 @@ export class Home extends Page {
         lines.push(readme);
       }
 
-      lines.push(`## API Reference`);
+      lines.push('## API Reference');
     } else {
-      lines.push(`# API Reference`);
+      lines.push('# API Reference');
     }
 
     addSection('Classes', assembly.classes);
@@ -36,8 +36,8 @@ export class Home extends Page {
 
       lines.push();
       lines.push(`**${title}**`);
-      lines.push(`Name|Description`);
-      lines.push(`----|-----------`);
+      lines.push('Name|Description');
+      lines.push('----|-----------');
   
       for (const type of collection) {
         lines.push(`${self.typeLink(type)}|${type.docs.summary}`);

@@ -1,6 +1,6 @@
 // tslint:disable:no-console
-import jsiiReflect = require('jsii-reflect');
-import fs = require('fs-extra');
+import * as jsiiReflect from 'jsii-reflect';
+import * as fs from 'fs-extra';
 import * as path from 'path';
 import { ClassPage, InterfacePage } from './render/klass';
 import { EnumPage } from './render/enum';
@@ -18,8 +18,8 @@ export async function renderFiles(jsiiFiles: string[], outdir: string) {
 
   const ctx: RenderContext = {
     links: {
-      renderLink: type => `./${renderFileName(type)}`
-    }
+      renderLink: type => `./${renderFileName(type)}`,
+    },
   };
 
   const ts = new jsiiReflect.TypeSystem();
@@ -50,8 +50,8 @@ export async function renderSinglePageModule(moduleDir: string, outFile: string)
         } else {
           return elementAnchorLink(type);
         }
-      }
-    }
+      },
+    },
   };
 
   const file = fs.createWriteStream(outFile);
@@ -90,7 +90,7 @@ function documentAssembly(ctx: RenderContext, assembly: jsiiReflect.Assembly): P
     new Home(ctx, assembly),
     ...assembly.classes.map(c => new ClassPage(ctx, c)),
     ...assembly.interfaces.map(i => new InterfacePage(ctx, i)),
-    ...assembly.enums.map(e => new EnumPage(ctx, e))
+    ...assembly.enums.map(e => new EnumPage(ctx, e)),
   ];
 }
 

@@ -1,4 +1,4 @@
-import jsiiReflect = require('jsii-reflect');
+import * as jsiiReflect from 'jsii-reflect';
 import { Page, RenderContext } from './page';
 
 export class EnumPage extends Page {

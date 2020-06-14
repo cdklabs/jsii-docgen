@@ -1,4 +1,4 @@
-import jsiiReflect = require('jsii-reflect');
+import * as jsiiReflect from 'jsii-reflect';
 import { flatMap, compareByKeys, isStatic } from './util';
 import { Page, RenderContext } from './page';
 import { elementAnchorLink, elementAnchor } from './links';
@@ -18,7 +18,7 @@ abstract class Base extends Page {
       'Name | Type | Description ',
       '-----|------|-------------',
       ...properties.map(_propertiesTableLine),
-      ''
+      '',
     ];
 
     function _propertiesTableLine(property: jsiiReflect.Property) {
@@ -71,7 +71,7 @@ abstract class Base extends Page {
       'Name | Description',
       '-----|-----',
       ...methods.map(m => this.methodTableLine(m)),
-      ``,
+      '',
       ...methods.map(m => this.methodDetail(m)),
     ];
   }
@@ -90,13 +90,13 @@ abstract class Base extends Page {
     if (keywordArgsType && keywordArgsType instanceof jsiiReflect.InterfaceType && keywordArgsType.datatype) {
       for (const prop of keywordArgsType.allProperties) {
         const kwarg = [
-          `  *`,
+          '  *',
           this.renderElementName(prop.name),
           `(${this.typeReferenceLink(prop.type)})`,
           prop.docs.summary ? ` ${prop.docs.summary}` : ' *No description*',
           prop.optional
             ? this.renderDefault(prop.docs.docs.default)
-            : ''
+            : '',
         ]
   
         keywordArguments.push(kwarg.join(' '));
@@ -115,7 +115,7 @@ abstract class Base extends Page {
         '*',
         this.renderElementName(p.name),
         `(${this.typeReferenceLink(p.type)})`,
-        p.docs.summary ? ` ${p.docs.summary}` : ` *No description*`,
+        p.docs.summary ? ` ${p.docs.summary}` : ' *No description*',
       ].join(' ')),
       ...keywordArguments,
       '',
@@ -257,7 +257,7 @@ function propertyOrder(x: jsiiReflect.Property): any[] {
   return [
     x.static ? 1 : 0,
     x.optional ? 1 : 0,
-    x.name
+    x.name,
   ];
 }
 
@@ -266,6 +266,6 @@ function methodOrder(x: jsiiReflect.Callable): any[] {
     x instanceof jsiiReflect.Initializer ? 0 : 1,
     isStatic(x) ? 1 : 0,
     x.protected ? 1 : 0,
-    x.name
+    x.name,
   ];
 }

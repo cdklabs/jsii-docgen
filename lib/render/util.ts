@@ -1,4 +1,4 @@
-import jsiiReflect = require('jsii-reflect');
+import * as jsiiReflect from 'jsii-reflect';
 
 export function compareByKeys<T>(keyExtractor: (x: T) => any[]): ((a: T, b: T) => number) {
   return (A, B) => {

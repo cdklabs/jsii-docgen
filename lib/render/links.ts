@@ -1,4 +1,4 @@
-import jsiiReflect = require('jsii-reflect');
+import * as jsiiReflect from 'jsii-reflect';
 import { JsiiEntity } from './page';
 
 export function elementAnchorLink(type: JsiiEntity | jsiiReflect.Callable) {
