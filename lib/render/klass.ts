@@ -42,7 +42,7 @@ abstract class Base extends Page {
     if (!c.base) { return []; }
 
     return [
-      `${this.underline('Extends')}: ${this.typeLink(c.base)}`,
+      `${this.strong('Extends')}: ${this.typeLink(c.base)}`,
     ];
   }
 
@@ -57,13 +57,13 @@ abstract class Base extends Page {
     if (implementors.length === 0) { return []; }
 
     return [
-      `${this.underline('Implemented by')}: ${implementors.map(x => this.typeLink(x)).join(', ')}`,
+      `${this.strong('Implemented by')}: ${implementors.map(x => this.typeLink(x)).join(', ')}`,
     ];
   }
 
   protected renderMethods(methods: jsiiReflect.Callable[], caption = 'Methods') {
     if (methods.length === 0) { return []; }
-  
+
     methods.sort(compareByKeys(methodOrder));
 
     return [
@@ -99,22 +99,19 @@ abstract class Base extends Page {
             ? this.renderDefault(prop.docs.docs.default)
             : '',
         ]
-  
+
         keywordArguments.push(kwarg.join(' '));
       }
     }
-  
+
     return [
       includeHeader ? this.headingC(`${this.methodSignature(method)}${this.renderStability(method)} ${elementAnchor(method)}`) : '',
       method.docs.toString(),
-      '',
-      this.underline('Usage:'),
       '',
       '```ts',
       `${this.methodSignature(method, { long: true, verbatim: true })}`,
       '```',
       '',
-      this.underline('Parameters:'),
       ...method.parameters.map(p => [
         '*',
         this.renderElementName(p.name),
@@ -124,7 +121,7 @@ abstract class Base extends Page {
       ...keywordArguments,
       '',
       ...method instanceof jsiiReflect.Method ? [
-        !method.returns.type.void ? this.underline('Returns') + ':' : '',
+        !method.returns.type.void ? this.strong('Returns') + ':' : '',
         !method.returns.type.void ? '* ' + this.typeReferenceLink(method.returns.type) : '',
       ] : [],
       '',
@@ -148,7 +145,7 @@ abstract class Base extends Page {
     if (factories.length === 0) { return []; }
 
     return [
-      `${this.underline('Obtainable from')}: ${factories.map(x => this.methodLink(x)).join(', ')}`,
+      `${this.strong('Obtainable from')}: ${factories.map(x => this.methodLink(x)).join(', ')}`,
     ];
   }
 }
@@ -190,7 +187,7 @@ export class ClassPage extends Base {
     if (ifaces.length === 0) { return []; }
 
     return [
-      `${this.underline('Implements')}: ${ifaces.map(x => this.typeLink(x)).join(', ')}`,
+      `${this.strong('Implements')}: ${ifaces.map(x => this.typeLink(x)).join(', ')}`,
     ];
   }
 

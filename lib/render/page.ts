@@ -56,9 +56,9 @@ export abstract class Page {
     x = x.trim();
 
     if (x) {
-      return this.underline(this.italic('Default')) + ': ' + x;
+      return this.strong(this.italic('Default')) + ': ' + x;
     } else {
-      return this.underline(this.italic('Optional'));
+      return this.strong(this.italic('Optional'));
     }
   }
 
@@ -91,8 +91,8 @@ export abstract class Page {
     return `${heading} ${caption}\n`;
   }
 
-  protected underline(text: string) {
-    return `<span style="text-decoration: underline">${text}</span>`;
+  protected strong(text: string) {
+    return `__${text}__`;
   }
 
   protected italic(text: string) {
