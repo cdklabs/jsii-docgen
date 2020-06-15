@@ -6,13 +6,21 @@ Generates markdown reference documentation for jsii modules.
 
 You can use this as a command line tool or as a library if you need more control.
 
-From the CLI:
+Single module usage (from module root dir):
+
+```shell
+$ jsii-docgen
+```
+
+Will produce a file called `API.md` with the api reference for this module (without any dependencies). 
+
+To generate docs for an entire typesystem:
 
 ```shell
 $ jsii-docgen [-o OUTDIR] JSII_FILE ...
 ```
 
-This command will generate API reference for all the types in the JSII files specified in the command line. Default `OUTDIR` is `dist`.
+Will generate API reference for all the types in the JSII files specified in the command line. Default `OUTDIR` is `dist`.
 
 For example, the following command will generate markdown reference documentation for all jsii modules in your project:
 
