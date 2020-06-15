@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/eladb/jsii-docgen/compare/v1.3.2...v1.4.0) (2020-06-15)
+
+
+### Features
+
+* remove underlines ([0f0e36f](https://github.com/eladb/jsii-docgen/commit/0f0e36f0ec21dc7391ddffb568ddbb54c5e9f2b2))
+
 ### [1.3.2](https://github.com/eladb/jsii-docgen/compare/v1.3.1...v1.3.2) (2020-06-14)
 
 
