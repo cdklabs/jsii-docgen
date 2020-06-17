@@ -24,7 +24,4 @@ const project = new TypeScriptLibraryProject({
   releaseToNpm: true
 });
 
-new Jest(project);
-new Eslint(project);
-
 project.synth();
