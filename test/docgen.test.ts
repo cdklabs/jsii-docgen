@@ -1,4 +1,4 @@
-import { renderFiles } from '../lib';
+import { renderFiles } from '../src';
 import * as glob from 'glob-promise';
 import * as path from 'path';
 import * as os from 'os';
