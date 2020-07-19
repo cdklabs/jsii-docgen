@@ -1,4 +1,4 @@
-import { renderFiles, renderSinglePageModule } from '..';
+import { renderFiles, renderSinglePageModule } from './index';
 import * as yargs from 'yargs';
 
 export async function main() {
