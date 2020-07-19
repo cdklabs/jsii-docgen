@@ -1,5 +1,7 @@
 const { TypeScriptLibraryProject, Semver, Jest, Eslint } = require('projen');
 
+const jsii = '1.9.0';
+
 const project = new TypeScriptLibraryProject({
   name: 'jsii-docgen',
   description: 'generates api docs for jsii modules',
@@ -16,10 +18,10 @@ const project = new TypeScriptLibraryProject({
     'glob': Semver.caret('7.1.6'),
   },
   dependencies: {
-    'yargs': Semver.caret('15.3.1'),
+    'yargs': Semver.caret('15.4.1'),
     'fs-extra': Semver.caret('9.0.0'),
-    'jsii-reflect': Semver.caret('1.6.0'),
-    '@jsii/spec': Semver.caret('1.6.0')
+    'jsii-reflect': Semver.caret(jsii),
+    '@jsii/spec': Semver.caret(jsii)
   },
   releaseToNpm: true
 });

@@ -50,10 +50,10 @@
   },
   "peerDependencies": {},
   "dependencies": {
-    "yargs": "^15.3.1",
+    "yargs": "^15.4.1",
     "fs-extra": "^9.0.0",
-    "jsii-reflect": "^1.6.0",
-    "@jsii/spec": "^1.6.0"
+    "jsii-reflect": "^1.9.0",
+    "@jsii/spec": "^1.9.0"
   },
   "bundledDependencies": [],
   "license": "Apache-2.0",
