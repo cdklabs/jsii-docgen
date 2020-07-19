@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.2](https://github.com/eladb/jsii-docgen/compare/v1.4.1...v1.4.2) (2020-07-19)
+
+
+### Bug Fixes
+
+* jsii-docgen.js is not bundled into the package ([f90c442](https://github.com/eladb/jsii-docgen/commit/f90c4421b3fc9f5cb9486e783e5e62512108b7b3))
+
 ### [1.4.1](https://github.com/eladb/jsii-docgen/compare/v1.4.0...v1.4.1) (2020-07-15)
 
 ## [1.4.0](https://github.com/eladb/jsii-docgen/compare/v1.3.2...v1.4.0) (2020-06-15)
