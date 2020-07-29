@@ -10,15 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npx projen@0.3.11
+      - run: npx projen@0.3.14
       - run: yarn install --frozen-lockfile
+      - name: Anti-tamper check after bootstrapping
+        run: git diff --exit-code
       - name: Set git identity
         run: |-
           git config user.name "Auto-bump"
           git config user.email "github-actions@github.com"
       - run: yarn bump
       - run: yarn build
-      - name: Anti-tamper check
+      - name: Anti-tamper check after build
         run: git diff --exit-code
       - run: git push --follow-tags origin $GITHUB_REF
       - name: Upload artifact
