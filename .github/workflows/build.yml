@@ -9,14 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npx projen@0.3.14
+      - run: npx projen@0.3.23
       - run: yarn install --frozen-lockfile
-      - name: Anti-tamper check after bootstrapping
+      - name: Anti-tamper check
         run: git diff --exit-code
       - name: Set git identity
         run: |-
           git config user.name "Auto-bump"
           git config user.email "github-actions@github.com"
       - run: yarn build
-      - name: Anti-tamper check after build
+      - name: Anti-tamper check
         run: git diff --exit-code
