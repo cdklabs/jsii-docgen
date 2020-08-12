@@ -23,7 +23,8 @@ const project = new TypeScriptLibraryProject({
     'jsii-reflect': Semver.caret(jsii),
     '@jsii/spec': Semver.caret(jsii)
   },
-  releaseToNpm: true
+  releaseToNpm: true,
+  projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN'
 });
 
 project.synth();
