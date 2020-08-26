@@ -58,7 +58,7 @@
   },
   "bundledDependencies": [],
   "license": "Apache-2.0",
-  "version": "1.4.23",
+  "version": "1.4.24",
   "types": "lib/index.d.ts",
   "jest": {
     "clearMocks": true,
