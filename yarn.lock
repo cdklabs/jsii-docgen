@@ -518,9 +518,9 @@
     chalk "^4.0.0"
 
 "@jsii/spec@^1.11.0", "@jsii/spec@^1.9.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@jsii/spec/-/spec-1.11.0.tgz#ab3c33cc06b935d438dca69571f54d9977eee871"
-  integrity sha512-rRPbq3QGJ0OldafFPfU0vUyjubCe2Scm0xpWEt7EzmY2d8eauCEO9xBJwHSFdnkUFvMFZEgYjF2F856DepAl2Q==
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@jsii/spec/-/spec-1.12.0.tgz#4b13acc5fe591a4c70137f38275ac3d8a977a958"
+  integrity sha512-xqiROAZjOLNhvGzVCdyNu1sJ4CLU+jxcQcRvXz3qkQobHeHRk4MMiqRVOk6LWaBNVtDjil4HlP1sRm5j/ZqYeQ==
   dependencies:
     jsonschema "^1.2.6"
 
