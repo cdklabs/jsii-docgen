@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npx projen@0.3.55
+      - run: npx projen@0.3.56
       - name: Anti-tamper check
         run: git diff --exit-code
       - run: yarn projen:upgrade
