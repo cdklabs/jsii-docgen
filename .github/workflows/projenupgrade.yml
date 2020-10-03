@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npx projen@0.3.78
+      - run: npx projen@0.3.84
       - name: Anti-tamper check
         run: git diff --exit-code
       - run: yarn projen:upgrade
@@ -21,3 +21,4 @@ jobs:
           branch: auto/projen-upgrade
           title: "chore: upgrade projen"
           body: This PR upgrades projen to the latest version
+          labels: auto-merge

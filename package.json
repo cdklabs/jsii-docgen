@@ -20,10 +20,10 @@
     "watch": "tsc -w",
     "build": "yarn test && yarn compile && yarn run package",
     "package": "rm -fr dist && mkdir -p dist/js && yarn pack && mv *.tgz dist/js/",
-    "eslint": "eslint . --ext .ts",
-    "test": "yarn eslint && rm -fr lib/ && jest --passWithNoTests --updateSnapshot",
+    "test": "rm -fr lib/ && jest --passWithNoTests --updateSnapshot && yarn eslint",
     "test:watch": "jest --watch",
-    "test:update": "jest --updateSnapshot"
+    "test:update": "jest --updateSnapshot",
+    "eslint": "eslint --ext .ts --fix src test"
   },
   "author": {
     "name": "Elad Ben-Israel",
@@ -34,8 +34,8 @@
     "@types/fs-extra": "^8.1.0",
     "@types/jest": "^26.0.7",
     "@types/node": "^10.17.0",
-    "@typescript-eslint/eslint-plugin": "^2.31.0",
-    "@typescript-eslint/parser": "^2.19.2",
+    "@typescript-eslint/eslint-plugin": "^4.3.0",
+    "@typescript-eslint/parser": "^4.3.0",
     "eslint": "^6.8.0",
     "eslint-import-resolver-node": "^0.3.3",
     "eslint-import-resolver-typescript": "^2.0.0",
@@ -44,7 +44,7 @@
     "glob-promise": "^3.4.0",
     "jest": "^26.4.2",
     "json-schema": "^0.2.5",
-    "projen": "^0.3.78",
+    "projen": "^0.3.84",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
@@ -96,16 +96,16 @@
       "desc": "Create an npm tarball",
       "category": 2
     },
-    "eslint": {
-      "desc": "Runs eslint against the codebase",
-      "category": 1
-    },
     "test": {
       "desc": "Run tests",
       "category": 1
     },
     "test:watch": {
       "desc": "Run jest in watch mode",
+      "category": 1
+    },
+    "eslint": {
+      "desc": "Runs eslint against the codebase",
       "category": 1
     }
   },
