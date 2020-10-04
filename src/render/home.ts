@@ -39,7 +39,7 @@ export class Home extends Page {
       lines.push('');
       lines.push('Name|Description');
       lines.push('----|-----------');
-  
+
       for (const type of collection) {
         lines.push(`${self.typeLink(type)}|${type.docs.summary.trim() || '*No description*'}`);
       }

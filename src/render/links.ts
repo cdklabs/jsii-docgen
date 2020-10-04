@@ -23,5 +23,5 @@ export function elementAnchorId(type: JsiiEntity | jsiiReflect.Callable) {
 }
 
 export function elementAnchor(type: JsiiEntity | jsiiReflect.Callable) {
-  return `<a id="${elementAnchorId(type)}"></a>`
+  return `<a id="${elementAnchorId(type)}"></a>`;
 }

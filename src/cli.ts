@@ -1,5 +1,5 @@
-import { renderFiles, renderSinglePageModule } from './index';
 import * as yargs from 'yargs';
+import { renderFiles, renderSinglePageModule } from './index';
 
 export async function main() {
   const args = yargs
