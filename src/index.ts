@@ -1,12 +1,12 @@
 // tslint:disable:no-console
-import * as jsiiReflect from 'jsii-reflect';
-import * as fs from 'fs-extra';
 import * as path from 'path';
-import { ClassPage, InterfacePage } from './render/klass';
+import * as fs from 'fs-extra';
+import * as jsiiReflect from 'jsii-reflect';
 import { EnumPage } from './render/enum';
-import { Page, RenderContext, JsiiEntity } from './render/page';
 import { Home } from './render/home';
+import { ClassPage, InterfacePage } from './render/klass';
 import { elementAnchorLink } from './render/links';
+import { Page, RenderContext, JsiiEntity } from './render/page';
 
 /**
  * Renders markdown files into an output directory for a jsii typesystem.

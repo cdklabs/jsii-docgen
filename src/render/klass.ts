@@ -1,7 +1,7 @@
 import * as jsiiReflect from 'jsii-reflect';
-import { flatMap, compareByKeys, isStatic } from './util';
-import { Page, RenderContext } from './page';
 import { elementAnchor } from './links';
+import { Page, RenderContext } from './page';
+import { flatMap, compareByKeys, isStatic } from './util';
 
 abstract class Base extends Page {
   protected renderProperties(properties: jsiiReflect.Property[], caption: string) {
@@ -98,7 +98,7 @@ abstract class Base extends Page {
           prop.optional
             ? this.renderDefault(prop.docs.docs.default)
             : '',
-        ]
+        ];
 
         keywordArguments.push(kwarg.join(' '));
       }
@@ -215,7 +215,6 @@ export class InterfacePage extends Base {
     ];
   }
 }
-
 
 
 function documentableProperty(p: jsiiReflect.Property) {

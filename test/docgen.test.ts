@@ -1,9 +1,9 @@
-import { renderFiles } from '../src';
-import * as glob from 'glob-promise';
-import * as path from 'path';
-import * as os from 'os';
-import * as fs from 'fs-extra';
 import * as child_process from 'child_process';
+import * as os from 'os';
+import * as path from 'path';
+import * as fs from 'fs-extra';
+import * as glob from 'glob-promise';
+import { renderFiles } from '../src';
 
 /**
  * This test renders the docs for @aws-cdk/core at 1.33.1 and compares the

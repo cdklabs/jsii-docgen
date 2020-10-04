@@ -51,6 +51,6 @@ jspm_packages/
 !/.github/workflows/projenupgrade.yml
 !/tsconfig.json
 !/src
-!/.eslintrc.json
 !/tsconfig.jest.json
 !/test
+!/.eslintrc.json

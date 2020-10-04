@@ -1,7 +1,7 @@
-import * as jsiiReflect from 'jsii-reflect';
 import { Stability } from '@jsii/spec';
-import { isStatic } from './util';
+import * as jsiiReflect from 'jsii-reflect';
 import { elementAnchorLink, elementAnchor } from './links';
+import { isStatic } from './util';
 
 export type JsiiEntity = jsiiReflect.Type | jsiiReflect.Assembly;
 
@@ -75,7 +75,7 @@ export abstract class Page {
   protected headingA(caption?: string) {
     return this.heading(caption, 1);
   }
-  
+
   protected headingB(caption?: string) {
     return this.heading(caption, 2);
   }
@@ -98,7 +98,7 @@ export abstract class Page {
   protected italic(text: string) {
     return `*${text}*`;
   }
-  
+
   protected renderElementName(name: string) {
     return `**${name}**`;
   }
