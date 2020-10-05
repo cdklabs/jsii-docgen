@@ -10,7 +10,8 @@ jobs:
       CI: "true"
     steps:
       - uses: actions/checkout@v2
-      - run: npx projen@0.3.89
+      - run: yarn install --frozen-lockfile
+      - run: yarn projen
       - name: Anti-tamper check
         run: git diff --exit-code
       - name: Set git identity
