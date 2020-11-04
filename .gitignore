@@ -49,6 +49,7 @@ jspm_packages/
 !/.mergify.yml
 !/.github/dependabot.yml
 !/.github/workflows/projenupgrade.yml
+!/.github/pull_request_template.md
 !/tsconfig.json
 !/src
 !/tsconfig.jest.json

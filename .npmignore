@@ -8,6 +8,7 @@ dist
 /tsconfig.json
 /.github
 /.vscode
+/.idea
 /.projenrc.js
 /tsconfig.jest.json
 /coverage
