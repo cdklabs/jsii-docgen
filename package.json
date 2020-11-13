@@ -121,7 +121,7 @@
       "category": 1
     }
   },
-  "version": "1.4.86",
+  "version": "1.4.87",
   "jest": {
     "clearMocks": true,
     "collectCoverage": true,
