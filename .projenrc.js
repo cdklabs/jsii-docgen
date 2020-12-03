@@ -9,7 +9,7 @@ const project = new TypeScriptLibraryProject({
   authorName: 'Elad Ben-Israel',
   authorEmail: 'benisrae@amazon.com',
   bin: {
-    'jsii-docgen': 'bin/jsii-docgen'
+    'jsii-docgen': 'bin/jsii-docgen',
   },
   devDependencies: {
     '@types/node': Semver.caret('13.9.8'),
@@ -21,10 +21,10 @@ const project = new TypeScriptLibraryProject({
     'yargs': Semver.caret('15.4.1'),
     'fs-extra': Semver.caret('9.0.0'),
     'jsii-reflect': Semver.caret(jsii),
-    '@jsii/spec': Semver.caret(jsii)
+    '@jsii/spec': Semver.caret(jsii),
   },
   releaseToNpm: true,
-  projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN'
+  projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
 });
 
 project.synth();
