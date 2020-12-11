@@ -85,12 +85,16 @@ export async function renderPages(typesystem: jsiiReflect.TypeSystem, ctx: Rende
   return result;
 }
 
-function documentAssembly(ctx: RenderContext, assembly: jsiiReflect.Assembly): Page[] {
+function documentAssembly(ctx: RenderContext, asm: jsiiReflect.Assembly): Page[] {
+  const classes = [...asm.classes, ...asm.submodules.flatMap(submod => submod.classes)];
+  const interfaces = [...asm.interfaces, ...asm.submodules.flatMap(submod => submod.interfaces)];
+  const enums = [...asm.enums, ...asm.submodules.flatMap(submod => submod.enums)];
+
   return [
-    new Home(ctx, assembly),
-    ...assembly.classes.map(c => new ClassPage(ctx, c)),
-    ...assembly.interfaces.map(i => new InterfacePage(ctx, i)),
-    ...assembly.enums.map(e => new EnumPage(ctx, e)),
+    new Home(ctx, asm),
+    ...classes.map(c => new ClassPage(ctx, c)),
+    ...interfaces.map(i => new InterfacePage(ctx, i)),
+    ...enums.map(e => new EnumPage(ctx, e)),
   ];
 }
 

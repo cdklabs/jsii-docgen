@@ -27,4 +27,6 @@ const project = new TypeScriptLibraryProject({
   projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
 });
 
+project.tsconfig.compilerOptions.lib = ['es2018', 'es2019.array'];
+
 project.synth();

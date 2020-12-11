@@ -22,10 +22,14 @@ export class Home extends Page {
       lines.push('# API Reference');
     }
 
-    addSection('Classes', assembly.classes);
-    addSection('Structs', assembly.interfaces.filter(i => i.isDataType()));
-    addSection('Interfaces', assembly.interfaces.filter(i => !i.isDataType()));
-    addSection('Enums', assembly.enums);
+    const classes = [...assembly.classes, ...assembly.submodules.flatMap(submod => submod.classes)];
+    const interfaces = [...assembly.interfaces, ...assembly.submodules.flatMap(submod => submod.interfaces)];
+    const enums = [...assembly.enums, ...assembly.submodules.flatMap(submod => submod.enums)];
+
+    addSection('Classes', classes);
+    addSection('Structs', interfaces.filter(i => i.isDataType()));
+    addSection('Interfaces', interfaces.filter(i => !i.isDataType()));
+    addSection('Enums', enums);
 
     return lines;
 
