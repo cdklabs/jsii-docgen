@@ -25,8 +25,18 @@ const project = new TypeScriptLibraryProject({
   },
   releaseToNpm: true,
   projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
+  tsconfig: {
+    compilerOptions: {
+      lib: ['es2018', 'es2019.array'],
+    },
+  },
+  jestOptions: {
+    typescriptConfig: {
+      compilerOptions: {
+        lib: ['es2018', 'es2019.array'],
+      },
+    },
+  },
 });
-
-project.tsconfig.compilerOptions.lib = ['es2018', 'es2019.array'];
 
 project.synth();
