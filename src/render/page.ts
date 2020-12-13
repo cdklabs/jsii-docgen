@@ -160,7 +160,7 @@ export abstract class Page {
    * Turn the given type into a link
    */
   protected typeLink(type: jsiiReflect.Type): string {
-    const display = type.name;
+    const display = type.namespace ? `${type.namespace}.${type.name}` : type.name;
     const url = this.ctx.links.renderLink(type);
 
     if (!url) {
