@@ -1,4 +1,4 @@
-const { TypeScriptLibraryProject, Semver, Jest, Eslint } = require('projen');
+const { TypeScriptLibraryProject, Semver } = require('projen');
 
 const jsii = '1.9.0';
 
@@ -25,18 +25,6 @@ const project = new TypeScriptLibraryProject({
   },
   releaseToNpm: true,
   projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
-  tsconfig: {
-    compilerOptions: {
-      lib: ['es2018', 'es2019.array'],
-    },
-  },
-  jestOptions: {
-    typescriptConfig: {
-      compilerOptions: {
-        lib: ['es2018', 'es2019.array'],
-      },
-    },
-  },
 });
 
 project.synth();
