@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.5.0 (2020-12-14)
+
+
+### Features
+
+* generate docs for jsii submodules ([#172](https://github.com/eladb/jsii-docgen/issues/172)) ([692c07f](https://github.com/eladb/jsii-docgen/commit/692c07f272a89a569a81f95269c7cbc04ff2a974)), closes [#1](https://github.com/eladb/jsii-docgen/issues/1)
+
 ### 1.4.118 (2020-12-14)
 
 ### 1.4.117 (2020-12-12)
