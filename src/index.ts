@@ -7,6 +7,7 @@ import { Home } from './render/home';
 import { ClassPage, InterfacePage } from './render/klass';
 import { elementAnchorLink } from './render/links';
 import { Page, RenderContext, JsiiEntity } from './render/page';
+import { flatMap } from './render/util';
 
 /**
  * Renders markdown files into an output directory for a jsii typesystem.
@@ -85,12 +86,16 @@ export async function renderPages(typesystem: jsiiReflect.TypeSystem, ctx: Rende
   return result;
 }
 
-function documentAssembly(ctx: RenderContext, assembly: jsiiReflect.Assembly): Page[] {
+function documentAssembly(ctx: RenderContext, asm: jsiiReflect.Assembly): Page[] {
+  const classes = [...asm.classes, ...flatMap(asm.submodules, submod => [...submod.classes])];
+  const interfaces = [...asm.interfaces, ...flatMap(asm.submodules, submod => [...submod.interfaces])];
+  const enums = [...asm.enums, ...flatMap(asm.submodules, submod => [...submod.enums])];
+
   return [
-    new Home(ctx, assembly),
-    ...assembly.classes.map(c => new ClassPage(ctx, c)),
-    ...assembly.interfaces.map(i => new InterfacePage(ctx, i)),
-    ...assembly.enums.map(e => new EnumPage(ctx, e)),
+    new Home(ctx, asm),
+    ...classes.map(c => new ClassPage(ctx, c)),
+    ...interfaces.map(i => new InterfacePage(ctx, i)),
+    ...enums.map(e => new EnumPage(ctx, e)),
   ];
 }
 

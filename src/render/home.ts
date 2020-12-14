@@ -1,5 +1,6 @@
 import * as jsiiReflect from 'jsii-reflect';
 import { Page, RenderContext } from './page';
+import { flatMap } from './util';
 
 export class Home extends Page {
   constructor(ctx: RenderContext, private readonly assembly: jsiiReflect.Assembly) {
@@ -22,10 +23,14 @@ export class Home extends Page {
       lines.push('# API Reference');
     }
 
-    addSection('Classes', assembly.classes);
-    addSection('Structs', assembly.interfaces.filter(i => i.isDataType()));
-    addSection('Interfaces', assembly.interfaces.filter(i => !i.isDataType()));
-    addSection('Enums', assembly.enums);
+    const classes = [...assembly.classes, ...flatMap(assembly.submodules, submod => [...submod.classes])];
+    const interfaces = [...assembly.interfaces, ...flatMap(assembly.submodules, submod => [...submod.interfaces])];
+    const enums = [...assembly.enums, ...flatMap(assembly.submodules, submod => [...submod.enums])];
+
+    addSection('Classes', classes);
+    addSection('Structs', interfaces.filter(i => i.isDataType()));
+    addSection('Interfaces', interfaces.filter(i => !i.isDataType()));
+    addSection('Enums', enums);
 
     return lines;
 

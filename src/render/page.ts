@@ -132,7 +132,10 @@ export abstract class Page {
     const showVisibility = options.long || method.protected;
 
     if (method instanceof jsiiReflect.Initializer) {
-      return `new ${method.parentType.name}(${parameters})`;
+      const qualifiedName = method.parentType.namespace
+        ? `${method.parentType.namespace}.${method.parentType.name}`
+        : method.parentType.name;
+      return `new ${qualifiedName}(${parameters})`;
     } else {
       return `${showVisibility ? visibility : ''}${staticDecl}${name}(${parameters})${returnDecl}`;
     }
@@ -157,7 +160,7 @@ export abstract class Page {
    * Turn the given type into a link
    */
   protected typeLink(type: jsiiReflect.Type): string {
-    const display = type.name;
+    const display = type.namespace ? `${type.namespace}.${type.name}` : type.name;
     const url = this.ctx.links.renderLink(type);
 
     if (!url) {

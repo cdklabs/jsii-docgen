@@ -162,6 +162,7 @@ export class ClassPage extends Base {
       klass.docs.toString(),
       '',
       ...this.renderImplements(klass),
+      ...this.renderNamespace(klass),
       ...this.renderExtends(klass),
       ...this.renderImplementors(klass),
       ...this.renderFactories(klass),
@@ -180,6 +181,12 @@ export class ClassPage extends Base {
       this.headingB('Initializer'),
       this.methodDetail(initializer, false),
     ];
+  }
+
+  private renderNamespace(obj: jsiiReflect.ClassType): string[] {
+    return obj.namespace ? [
+      `${this.strong('Submodule')}: ${obj.namespace}\n`,
+    ] : [];
   }
 
   private renderImplements(c: jsiiReflect.ClassType) {

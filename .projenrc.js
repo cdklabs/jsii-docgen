@@ -1,4 +1,4 @@
-const { TypeScriptLibraryProject, Semver, Jest, Eslint } = require('projen');
+const { TypeScriptLibraryProject, Semver } = require('projen');
 
 const jsii = '1.9.0';
 
