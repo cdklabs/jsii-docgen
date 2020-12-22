@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.6.0 (2020-12-22)
+
+
+### Features
+
+* generate docs for jsii submodules ([#172](https://github.com/eladb/jsii-docgen/issues/172)) ([692c07f](https://github.com/eladb/jsii-docgen/commit/692c07f272a89a569a81f95269c7cbc04ff2a974)), closes [#1](https://github.com/eladb/jsii-docgen/issues/1)
+* remove underlines ([0f0e36f](https://github.com/eladb/jsii-docgen/commit/0f0e36f0ec21dc7391ddffb568ddbb54c5e9f2b2))
+
+
+### Bug Fixes
+
+* jsii-docgen.js is not bundled into the package ([f90c442](https://github.com/eladb/jsii-docgen/commit/f90c4421b3fc9f5cb9486e783e5e62512108b7b3))
+* rendering issues ([239fe1d](https://github.com/eladb/jsii-docgen/commit/239fe1d12f1378afc1fc298741a433d3fbc9651e))
+
 ### 1.5.7 (2020-12-22)
 
 ### 1.5.6 (2020-12-22)
