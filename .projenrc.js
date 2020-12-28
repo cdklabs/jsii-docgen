@@ -2,7 +2,7 @@ const { TypeScriptProject } = require('projen');
 
 const jsii = '1.9.0';
 
-const project = new TypeScripProject({
+const project = new TypeScriptProject({
   name: 'jsii-docgen',
   description: 'generates api docs for jsii modules',
   repository: 'https://github.com/eladb/jsii-docgen',
