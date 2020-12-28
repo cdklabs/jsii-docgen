@@ -13,7 +13,7 @@ const project = new TypeScriptProject({
   },
   devDeps: [
     '@types/node@^13.9.8',
-    '@types/fs-extra@68.1.0',
+    '@types/fs-extra@8.1.0',
     'glob-promise@^3.4.0',
     'glob@^7.1.6',
   ],
