@@ -12,7 +12,7 @@ const project = new TypeScriptLibraryProject({
     'jsii-docgen': 'bin/jsii-docgen',
   },
   devDeps: [
-    '@types/fs-extra',
+    '@types/fs-extra@^8', // >8 needs a newer node version
     'glob-promise',
     'glob',
   ],
