@@ -42,9 +42,10 @@ junit.xml
 /lib
 /dist
 !/.projen/tasks.json
+!/.projen/deps.json
 !/package.json
-!/.npmignore
 !/LICENSE
+!/.npmignore
 !/.projenrc.js
 !version.json
 !/.versionrc.json
