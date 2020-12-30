@@ -59,7 +59,7 @@
   "bundledDependencies": [],
   "main": "lib/index.js",
   "license": "Apache-2.0",
-  "version": "1.8.4",
+  "version": "1.8.5",
   "jest": {
     "clearMocks": true,
     "collectCoverage": true,
