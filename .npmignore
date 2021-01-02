@@ -9,13 +9,13 @@ junit.xml
 /test
 /.mergify.yml
 /tsconfig.json
+!/lib
 /src
+!/lib/**/*.js
+!/lib/**/*.d.ts
 dist
 /.github
 /.vscode
 /.idea
 /tsconfig.jest.json
 /.eslintrc.json
-!/lib
-!/lib/**/*.js
-!/lib/**/*.d.ts
