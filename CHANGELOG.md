@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.15](https://github.com/eladb/jsii-docgen/compare/v1.8.14...v1.8.15) (2021-01-08)
+
 ### [1.8.14](https://github.com/eladb/jsii-docgen/compare/v1.8.13...v1.8.14) (2021-01-08)
 
 ### [1.8.13](https://github.com/eladb/jsii-docgen/compare/v1.8.12...v1.8.13) (2021-01-07)
