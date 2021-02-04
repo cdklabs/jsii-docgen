@@ -8,6 +8,8 @@ const project = new TypeScriptLibraryProject({
   repository: 'https://github.com/eladb/jsii-docgen',
   authorName: 'Elad Ben-Israel',
   authorEmail: 'benisrae@amazon.com',
+  defaultReleaseBranch: 'master',
+
   bin: {
     'jsii-docgen': 'bin/jsii-docgen',
   },
