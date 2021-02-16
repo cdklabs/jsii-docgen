@@ -59,7 +59,7 @@
   "bundledDependencies": [],
   "main": "lib/index.js",
   "license": "Apache-2.0",
-  "version": "1.8.43",
+  "version": "1.8.44",
   "jest": {
     "testMatch": [
       "**/__tests__/**/*.ts?(x)",
