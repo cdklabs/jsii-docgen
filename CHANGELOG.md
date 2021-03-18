@@ -2,6 +2,68 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.67](https://github.com/eladb/jsii-docgen/compare/v1.8.66...v1.8.67) (2021-03-08)
+
+### [1.8.66](https://github.com/eladb/jsii-docgen/compare/v1.8.65...v1.8.66) (2021-03-06)
+
+### [1.8.65](https://github.com/eladb/jsii-docgen/compare/v1.8.64...v1.8.65) (2021-03-05)
+
+### [1.8.64](https://github.com/eladb/jsii-docgen/compare/v1.8.63...v1.8.64) (2021-03-05)
+
+### [1.8.63](https://github.com/eladb/jsii-docgen/compare/v1.8.62...v1.8.63) (2021-03-04)
+
+### [1.8.62](https://github.com/eladb/jsii-docgen/compare/v1.8.61...v1.8.62) (2021-03-04)
+
+### [1.8.61](https://github.com/eladb/jsii-docgen/compare/v1.8.60...v1.8.61) (2021-03-03)
+
+### [1.8.60](https://github.com/eladb/jsii-docgen/compare/v1.8.59...v1.8.60) (2021-03-02)
+
+### [1.8.59](https://github.com/eladb/jsii-docgen/compare/v1.8.58...v1.8.59) (2021-03-02)
+
+### [1.8.58](https://github.com/eladb/jsii-docgen/compare/v1.8.57...v1.8.58) (2021-03-02)
+
+### [1.8.57](https://github.com/eladb/jsii-docgen/compare/v1.8.56...v1.8.57) (2021-02-27)
+
+### [1.8.56](https://github.com/eladb/jsii-docgen/compare/v1.8.55...v1.8.56) (2021-02-26)
+
+### [1.8.55](https://github.com/eladb/jsii-docgen/compare/v1.8.54...v1.8.55) (2021-02-25)
+
+### [1.8.54](https://github.com/eladb/jsii-docgen/compare/v1.8.53...v1.8.54) (2021-02-24)
+
+### [1.8.53](https://github.com/eladb/jsii-docgen/compare/v1.8.52...v1.8.53) (2021-02-24)
+
+### [1.8.52](https://github.com/eladb/jsii-docgen/compare/v1.8.51...v1.8.52) (2021-02-24)
+
+### [1.8.51](https://github.com/eladb/jsii-docgen/compare/v1.8.50...v1.8.51) (2021-02-23)
+
+### [1.8.50](https://github.com/eladb/jsii-docgen/compare/v1.8.49...v1.8.50) (2021-02-23)
+
+### [1.8.49](https://github.com/eladb/jsii-docgen/compare/v1.8.48...v1.8.49) (2021-02-22)
+
+### [1.8.48](https://github.com/eladb/jsii-docgen/compare/v1.8.47...v1.8.48) (2021-02-22)
+
+### [1.8.47](https://github.com/eladb/jsii-docgen/compare/v1.8.46...v1.8.47) (2021-02-19)
+
+### [1.8.46](https://github.com/eladb/jsii-docgen/compare/v1.8.45...v1.8.46) (2021-02-18)
+
+### [1.8.45](https://github.com/eladb/jsii-docgen/compare/v1.8.44...v1.8.45) (2021-02-17)
+
+### [1.8.44](https://github.com/eladb/jsii-docgen/compare/v1.8.42...v1.8.44) (2021-02-16)
+
+### [1.8.43](https://github.com/eladb/jsii-docgen/compare/v1.8.42...v1.8.43) (2021-02-16)
+
+### [1.8.42](https://github.com/eladb/jsii-docgen/compare/v1.8.41...v1.8.42) (2021-02-15)
+
+### [1.8.41](https://github.com/eladb/jsii-docgen/compare/v1.8.40...v1.8.41) (2021-02-12)
+
+### [1.8.40](https://github.com/eladb/jsii-docgen/compare/v1.8.39...v1.8.40) (2021-02-11)
+
+### [1.8.39](https://github.com/eladb/jsii-docgen/compare/v1.8.38...v1.8.39) (2021-02-11)
+
+### [1.8.38](https://github.com/eladb/jsii-docgen/compare/v1.8.37...v1.8.38) (2021-02-10)
+
+### [1.8.37](https://github.com/eladb/jsii-docgen/compare/v1.8.36...v1.8.37) (2021-02-09)
+
 ### [1.8.36](https://github.com/eladb/jsii-docgen/compare/v1.8.35...v1.8.36) (2021-02-04)
 
 ### [1.8.35](https://github.com/eladb/jsii-docgen/compare/v1.8.34...v1.8.35) (2021-02-04)
