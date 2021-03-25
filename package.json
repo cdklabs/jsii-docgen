@@ -9,8 +9,6 @@
     "jsii-docgen": "bin/jsii-docgen"
   },
   "scripts": {
-    "projen": "npx projen",
-    "start": "npx projen start",
     "clobber": "npx projen clobber",
     "compile": "npx projen compile",
     "test:compile": "npx projen test:compile",
@@ -23,7 +21,9 @@
     "projen:upgrade": "npx projen projen:upgrade",
     "watch": "npx projen watch",
     "package": "npx projen package",
-    "eslint": "npx projen eslint"
+    "eslint": "npx projen eslint",
+    "projen": "npx projen",
+    "start": "npx projen start"
   },
   "author": {
     "name": "Elad Ben-Israel",
@@ -45,7 +45,7 @@
     "jest": "^26.4.2",
     "jest-junit": "^12",
     "json-schema": "^0.2.5",
-    "projen": "^0.17.16",
+    "projen": "^0.17.17",
     "standard-version": "^9",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
