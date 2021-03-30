@@ -45,7 +45,7 @@
     "jest": "^26.4.2",
     "jest-junit": "^12",
     "json-schema": "^0.2.5",
-    "projen": "^0.17.17",
+    "projen": "^0.17.18",
     "standard-version": "^9",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
