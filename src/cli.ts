@@ -15,7 +15,7 @@ export async function main() {
     await renderSinglePageModule(process.cwd(), output);
   } else {
     const output = args.output ?? 'dist';
-    await renderFiles(args._, output);
+    await renderFiles(args._ as string[], output);
   }
 }
 
