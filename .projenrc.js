@@ -26,6 +26,11 @@ const project = new TypeScriptLibraryProject({
   ],
   releaseToNpm: true,
   projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
+  autoApproveOptions: {
+    allowedUsernames: ['aws-cdk-automation'],
+    secret: 'GITHUB_TOKEN',
+  },
+  autoApproveUpgrades: true,  
 });
 
 project.synth();
