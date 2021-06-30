@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`python snapshot 1`] = `
+" \`repository_catalog_data\`<sup>Optional</sup> <span data-heading-title=\\"\`repository_catalog_data\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecrcfnpublicrepositorypropsrepositorycatalogdata\\"></span>
+
+- *Type:* \`typing.Any\`
+
+\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
+
+---
+"
+`;
+
+exports[`typescript snapshot 1`] = `
+" \`repositoryCatalogData\`<sup>Optional</sup> <span data-heading-title=\\"\`repositoryCatalogData\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecrcfnpublicrepositorypropsrepositorycatalogdata\\"></span>
+
+- *Type:* \`any\`
+
+\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
+
+---
+"
+`;

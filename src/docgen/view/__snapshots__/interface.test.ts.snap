@@ -1,0 +1,654 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`python snapshot 1`] = `
+" IRepository <span data-heading-title=\\"IRepository\\" data-heading-id=\\"awscdkawsecrirepository\\"></span>
+
+- *Extends:* [\`aws_cdk.core.IResource\`](#aws_cdk.core.IResource)
+
+- *Implemented By:* [\`aws_cdk.aws_ecr.Repository\`](#aws_cdk.aws_ecr.Repository), [\`aws_cdk.aws_ecr.RepositoryBase\`](#aws_cdk.aws_ecr.RepositoryBase), [\`aws_cdk.aws_ecr.IRepository\`](#aws_cdk.aws_ecr.IRepository)
+
+Represents an ECR repository.
+
+# Methods <span data-heading-title=\\"Methods\\" data-heading-id=\\"methods\\"></span>
+
+## \`add_to_resource_policy\` <span data-heading-title=\\"\`add_to_resource_policy\`\\" data-heading-id=\\"awscdkawsecrirepositoryaddtoresourcepolicy\\"></span>
+
+\`\`\`python
+def add_to_resource_policy(statement: PolicyStatement)
+\`\`\`
+
+### \`statement\`<sup>Required</sup> <span data-heading-title=\\"\`statement\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositorystatement\\"></span>
+
+- *Type:* [\`aws_cdk.aws_iam.PolicyStatement\`](#aws_cdk.aws_iam.PolicyStatement)
+
+---
+
+## \`grant\` <span data-heading-title=\\"\`grant\`\\" data-heading-id=\\"awscdkawsecrirepositorygrant\\"></span>
+
+\`\`\`python
+def grant(grantee: IGrantable, 
+          actions: str)
+\`\`\`
+
+### \`grantee\`<sup>Required</sup> <span data-heading-title=\\"\`grantee\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositorygrantee\\"></span>
+
+- *Type:* [\`aws_cdk.aws_iam.IGrantable\`](#aws_cdk.aws_iam.IGrantable)
+
+---
+
+### \`actions\`<sup>Required</sup> <span data-heading-title=\\"\`actions\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryactions\\"></span>
+
+- *Type:* \`str\`
+
+---
+
+## \`grant_pull\` <span data-heading-title=\\"\`grant_pull\`\\" data-heading-id=\\"awscdkawsecrirepositorygrantpull\\"></span>
+
+\`\`\`python
+def grant_pull(grantee: IGrantable)
+\`\`\`
+
+### \`grantee\`<sup>Required</sup> <span data-heading-title=\\"\`grantee\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositorygrantee\\"></span>
+
+- *Type:* [\`aws_cdk.aws_iam.IGrantable\`](#aws_cdk.aws_iam.IGrantable)
+
+---
+
+## \`grant_pull_push\` <span data-heading-title=\\"\`grant_pull_push\`\\" data-heading-id=\\"awscdkawsecrirepositorygrantpullpush\\"></span>
+
+\`\`\`python
+def grant_pull_push(grantee: IGrantable)
+\`\`\`
+
+### \`grantee\`<sup>Required</sup> <span data-heading-title=\\"\`grantee\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositorygrantee\\"></span>
+
+- *Type:* [\`aws_cdk.aws_iam.IGrantable\`](#aws_cdk.aws_iam.IGrantable)
+
+---
+
+## \`on_cloud_trail_event\` <span data-heading-title=\\"\`on_cloud_trail_event\`\\" data-heading-id=\\"awscdkawsecrirepositoryoncloudtrailevent\\"></span>
+
+\`\`\`python
+def on_cloud_trail_event(id: str, 
+                         description: str = None, 
+                         event_pattern: EventPattern = None, 
+                         rule_name: str = None, 
+                         target: IRuleTarget = None)
+\`\`\`
+
+### \`id\`<sup>Required</sup> <span data-heading-title=\\"\`id\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryid\\"></span>
+
+- *Type:* \`str\`
+
+The id of the rule.
+
+---
+
+### \`description\`<sup>Optional</sup> <span data-heading-title=\\"\`description\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawseventsoneventoptionsdescription\\"></span>
+
+- *Type:* \`str\`
+- *Default:* No description
+
+A description of the rule's purpose.
+
+---
+
+### \`event_pattern\`<sup>Optional</sup> <span data-heading-title=\\"\`event_pattern\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawseventsoneventoptionseventpattern\\"></span>
+
+- *Type:* [\`aws_cdk.aws_events.EventPattern\`](#aws_cdk.aws_events.EventPattern)
+- *Default:* No additional filtering based on an event pattern.
+
+Additional restrictions for the event to route to the specified target.
+
+The method that generates the rule probably imposes some type of event
+filtering. The filtering implied by what you pass here is added
+on top of that filtering.
+
+> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
+
+---
+
+### \`rule_name\`<sup>Optional</sup> <span data-heading-title=\\"\`rule_name\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawseventsoneventoptionsrulename\\"></span>
+
+- *Type:* \`str\`
+- *Default:* AWS CloudFormation generates a unique physical ID.
+
+A name for the rule.
+
+---
+
+### \`target\`<sup>Optional</sup> <span data-heading-title=\\"\`target\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawseventsoneventoptionstarget\\"></span>
+
+- *Type:* [\`aws_cdk.aws_events.IRuleTarget\`](#aws_cdk.aws_events.IRuleTarget)
+- *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
+
+The target to register for the event.
+
+---
+
+## \`on_cloud_trail_image_pushed\` <span data-heading-title=\\"\`on_cloud_trail_image_pushed\`\\" data-heading-id=\\"awscdkawsecrirepositoryoncloudtrailimagepushed\\"></span>
+
+\`\`\`python
+def on_cloud_trail_image_pushed(id: str, 
+                                description: str = None, 
+                                event_pattern: EventPattern = None, 
+                                rule_name: str = None, 
+                                target: IRuleTarget = None, 
+                                image_tag: str = None)
+\`\`\`
+
+### \`id\`<sup>Required</sup> <span data-heading-title=\\"\`id\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryid\\"></span>
+
+- *Type:* \`str\`
+
+The id of the rule.
+
+---
+
+### \`description\`<sup>Optional</sup> <span data-heading-title=\\"\`description\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecroncloudtrailimagepushedoptionsdescription\\"></span>
+
+- *Type:* \`str\`
+- *Default:* No description
+
+A description of the rule's purpose.
+
+---
+
+### \`event_pattern\`<sup>Optional</sup> <span data-heading-title=\\"\`event_pattern\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecroncloudtrailimagepushedoptionseventpattern\\"></span>
+
+- *Type:* [\`aws_cdk.aws_events.EventPattern\`](#aws_cdk.aws_events.EventPattern)
+- *Default:* No additional filtering based on an event pattern.
+
+Additional restrictions for the event to route to the specified target.
+
+The method that generates the rule probably imposes some type of event
+filtering. The filtering implied by what you pass here is added
+on top of that filtering.
+
+> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
+
+---
+
+### \`rule_name\`<sup>Optional</sup> <span data-heading-title=\\"\`rule_name\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecroncloudtrailimagepushedoptionsrulename\\"></span>
+
+- *Type:* \`str\`
+- *Default:* AWS CloudFormation generates a unique physical ID.
+
+A name for the rule.
+
+---
+
+### \`target\`<sup>Optional</sup> <span data-heading-title=\\"\`target\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecroncloudtrailimagepushedoptionstarget\\"></span>
+
+- *Type:* [\`aws_cdk.aws_events.IRuleTarget\`](#aws_cdk.aws_events.IRuleTarget)
+- *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
+
+The target to register for the event.
+
+---
+
+### \`image_tag\`<sup>Optional</sup> <span data-heading-title=\\"\`image_tag\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecroncloudtrailimagepushedoptionsimagetag\\"></span>
+
+- *Type:* \`str\`
+- *Default:* Watch changes to all tags
+
+Only watch changes to this image tag.
+
+---
+
+## \`on_event\` <span data-heading-title=\\"\`on_event\`\\" data-heading-id=\\"awscdkawsecrirepositoryonevent\\"></span>
+
+\`\`\`python
+def on_event(id: str, 
+             description: str = None, 
+             event_pattern: EventPattern = None, 
+             rule_name: str = None, 
+             target: IRuleTarget = None)
+\`\`\`
+
+### \`id\`<sup>Required</sup> <span data-heading-title=\\"\`id\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryid\\"></span>
+
+- *Type:* \`str\`
+
+---
+
+### \`description\`<sup>Optional</sup> <span data-heading-title=\\"\`description\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawseventsoneventoptionsdescription\\"></span>
+
+- *Type:* \`str\`
+- *Default:* No description
+
+A description of the rule's purpose.
+
+---
+
+### \`event_pattern\`<sup>Optional</sup> <span data-heading-title=\\"\`event_pattern\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawseventsoneventoptionseventpattern\\"></span>
+
+- *Type:* [\`aws_cdk.aws_events.EventPattern\`](#aws_cdk.aws_events.EventPattern)
+- *Default:* No additional filtering based on an event pattern.
+
+Additional restrictions for the event to route to the specified target.
+
+The method that generates the rule probably imposes some type of event
+filtering. The filtering implied by what you pass here is added
+on top of that filtering.
+
+> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
+
+---
+
+### \`rule_name\`<sup>Optional</sup> <span data-heading-title=\\"\`rule_name\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawseventsoneventoptionsrulename\\"></span>
+
+- *Type:* \`str\`
+- *Default:* AWS CloudFormation generates a unique physical ID.
+
+A name for the rule.
+
+---
+
+### \`target\`<sup>Optional</sup> <span data-heading-title=\\"\`target\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawseventsoneventoptionstarget\\"></span>
+
+- *Type:* [\`aws_cdk.aws_events.IRuleTarget\`](#aws_cdk.aws_events.IRuleTarget)
+- *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
+
+The target to register for the event.
+
+---
+
+## \`on_image_scan_completed\` <span data-heading-title=\\"\`on_image_scan_completed\`\\" data-heading-id=\\"awscdkawsecrirepositoryonimagescancompleted\\"></span>
+
+\`\`\`python
+def on_image_scan_completed(id: str, 
+                            description: str = None, 
+                            event_pattern: EventPattern = None, 
+                            rule_name: str = None, 
+                            target: IRuleTarget = None, 
+                            image_tags: typing.List[str] = None)
+\`\`\`
+
+### \`id\`<sup>Required</sup> <span data-heading-title=\\"\`id\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryid\\"></span>
+
+- *Type:* \`str\`
+
+The id of the rule.
+
+---
+
+### \`description\`<sup>Optional</sup> <span data-heading-title=\\"\`description\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecronimagescancompletedoptionsdescription\\"></span>
+
+- *Type:* \`str\`
+- *Default:* No description
+
+A description of the rule's purpose.
+
+---
+
+### \`event_pattern\`<sup>Optional</sup> <span data-heading-title=\\"\`event_pattern\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecronimagescancompletedoptionseventpattern\\"></span>
+
+- *Type:* [\`aws_cdk.aws_events.EventPattern\`](#aws_cdk.aws_events.EventPattern)
+- *Default:* No additional filtering based on an event pattern.
+
+Additional restrictions for the event to route to the specified target.
+
+The method that generates the rule probably imposes some type of event
+filtering. The filtering implied by what you pass here is added
+on top of that filtering.
+
+> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
+
+---
+
+### \`rule_name\`<sup>Optional</sup> <span data-heading-title=\\"\`rule_name\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecronimagescancompletedoptionsrulename\\"></span>
+
+- *Type:* \`str\`
+- *Default:* AWS CloudFormation generates a unique physical ID.
+
+A name for the rule.
+
+---
+
+### \`target\`<sup>Optional</sup> <span data-heading-title=\\"\`target\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecronimagescancompletedoptionstarget\\"></span>
+
+- *Type:* [\`aws_cdk.aws_events.IRuleTarget\`](#aws_cdk.aws_events.IRuleTarget)
+- *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
+
+The target to register for the event.
+
+---
+
+### \`image_tags\`<sup>Optional</sup> <span data-heading-title=\\"\`image_tags\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecronimagescancompletedoptionsimagetags\\"></span>
+
+- *Type:* typing.List[\`str\`]
+- *Default:* Watch the changes to the repository with all image tags
+
+Only watch changes to the image tags spedified.
+
+Leave it undefined to watch the full repository.
+
+---
+
+## \`repository_uri_for_digest\` <span data-heading-title=\\"\`repository_uri_for_digest\`\\" data-heading-id=\\"awscdkawsecrirepositoryrepositoryurifordigest\\"></span>
+
+\`\`\`python
+def repository_uri_for_digest(digest: str = None)
+\`\`\`
+
+### \`digest\`<sup>Optional</sup> <span data-heading-title=\\"\`digest\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecrirepositorydigest\\"></span>
+
+- *Type:* \`str\`
+
+Image digest to use (tools usually default to the image with the \\"latest\\" tag if omitted).
+
+---
+
+## \`repository_uri_for_tag\` <span data-heading-title=\\"\`repository_uri_for_tag\`\\" data-heading-id=\\"awscdkawsecrirepositoryrepositoryurifortag\\"></span>
+
+\`\`\`python
+def repository_uri_for_tag(tag: str = None)
+\`\`\`
+
+### \`tag\`<sup>Optional</sup> <span data-heading-title=\\"\`tag\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecrirepositorytag\\"></span>
+
+- *Type:* \`str\`
+
+Image tag to use (tools usually default to \\"latest\\" if omitted).
+
+---
+
+# Properties <span data-heading-title=\\"Properties\\" data-heading-id=\\"properties\\"></span>
+
+## \`node\`<sup>Required</sup> <span data-heading-title=\\"\`node\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositorynode\\"></span>
+
+- *Type:* [\`aws_cdk.core.ConstructNode\`](#aws_cdk.core.ConstructNode)
+
+The construct tree node for this construct.
+
+---
+
+## \`env\`<sup>Required</sup> <span data-heading-title=\\"\`env\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryenv\\"></span>
+
+- *Type:* [\`aws_cdk.core.ResourceEnvironment\`](#aws_cdk.core.ResourceEnvironment)
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
+
+---
+
+## \`stack\`<sup>Required</sup> <span data-heading-title=\\"\`stack\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositorystack\\"></span>
+
+- *Type:* [\`aws_cdk.core.Stack\`](#aws_cdk.core.Stack)
+
+The stack in which this resource is defined.
+
+---
+
+## \`repository_arn\`<sup>Required</sup> <span data-heading-title=\\"\`repository_arn\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryrepositoryarn\\"></span>
+
+- *Type:* \`str\`
+
+The ARN of the repository.
+
+---
+
+## \`repository_name\`<sup>Required</sup> <span data-heading-title=\\"\`repository_name\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryrepositoryname\\"></span>
+
+- *Type:* \`str\`
+
+The name of the repository.
+
+---
+
+## \`repository_uri\`<sup>Required</sup> <span data-heading-title=\\"\`repository_uri\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryrepositoryuri\\"></span>
+
+- *Type:* \`str\`
+
+The URI of this repository (represents the latest image):.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
+
+---
+"
+`;
+
+exports[`typescript snapshot 1`] = `
+" IRepository <span data-heading-title=\\"IRepository\\" data-heading-id=\\"awscdkawsecrirepository\\"></span>
+
+- *Extends:* [\`@aws-cdk/core.IResource\`](#@aws-cdk/core.IResource)
+
+- *Implemented By:* [\`@aws-cdk/aws-ecr.Repository\`](#@aws-cdk/aws-ecr.Repository), [\`@aws-cdk/aws-ecr.RepositoryBase\`](#@aws-cdk/aws-ecr.RepositoryBase), [\`@aws-cdk/aws-ecr.IRepository\`](#@aws-cdk/aws-ecr.IRepository)
+
+Represents an ECR repository.
+
+# Methods <span data-heading-title=\\"Methods\\" data-heading-id=\\"methods\\"></span>
+
+## \`addToResourcePolicy\` <span data-heading-title=\\"\`addToResourcePolicy\`\\" data-heading-id=\\"awscdkawsecrirepositoryaddtoresourcepolicy\\"></span>
+
+\`\`\`typescript
+public addToResourcePolicy(statement: PolicyStatement)
+\`\`\`
+
+### \`statement\`<sup>Required</sup> <span data-heading-title=\\"\`statement\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositorystatement\\"></span>
+
+- *Type:* [\`@aws-cdk/aws-iam.PolicyStatement\`](#@aws-cdk/aws-iam.PolicyStatement)
+
+---
+
+## \`grant\` <span data-heading-title=\\"\`grant\`\\" data-heading-id=\\"awscdkawsecrirepositorygrant\\"></span>
+
+\`\`\`typescript
+public grant(grantee: IGrantable, actions: string)
+\`\`\`
+
+### \`grantee\`<sup>Required</sup> <span data-heading-title=\\"\`grantee\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositorygrantee\\"></span>
+
+- *Type:* [\`@aws-cdk/aws-iam.IGrantable\`](#@aws-cdk/aws-iam.IGrantable)
+
+---
+
+### \`actions\`<sup>Required</sup> <span data-heading-title=\\"\`actions\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryactions\\"></span>
+
+- *Type:* \`string\`
+
+---
+
+## \`grantPull\` <span data-heading-title=\\"\`grantPull\`\\" data-heading-id=\\"awscdkawsecrirepositorygrantpull\\"></span>
+
+\`\`\`typescript
+public grantPull(grantee: IGrantable)
+\`\`\`
+
+### \`grantee\`<sup>Required</sup> <span data-heading-title=\\"\`grantee\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositorygrantee\\"></span>
+
+- *Type:* [\`@aws-cdk/aws-iam.IGrantable\`](#@aws-cdk/aws-iam.IGrantable)
+
+---
+
+## \`grantPullPush\` <span data-heading-title=\\"\`grantPullPush\`\\" data-heading-id=\\"awscdkawsecrirepositorygrantpullpush\\"></span>
+
+\`\`\`typescript
+public grantPullPush(grantee: IGrantable)
+\`\`\`
+
+### \`grantee\`<sup>Required</sup> <span data-heading-title=\\"\`grantee\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositorygrantee\\"></span>
+
+- *Type:* [\`@aws-cdk/aws-iam.IGrantable\`](#@aws-cdk/aws-iam.IGrantable)
+
+---
+
+## \`onCloudTrailEvent\` <span data-heading-title=\\"\`onCloudTrailEvent\`\\" data-heading-id=\\"awscdkawsecrirepositoryoncloudtrailevent\\"></span>
+
+\`\`\`typescript
+public onCloudTrailEvent(id: string, options?: OnEventOptions)
+\`\`\`
+
+### \`id\`<sup>Required</sup> <span data-heading-title=\\"\`id\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryid\\"></span>
+
+- *Type:* \`string\`
+
+The id of the rule.
+
+---
+
+### \`options\`<sup>Optional</sup> <span data-heading-title=\\"\`options\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryoptions\\"></span>
+
+- *Type:* [\`@aws-cdk/aws-events.OnEventOptions\`](#@aws-cdk/aws-events.OnEventOptions)
+
+Options for adding the rule.
+
+---
+
+## \`onCloudTrailImagePushed\` <span data-heading-title=\\"\`onCloudTrailImagePushed\`\\" data-heading-id=\\"awscdkawsecrirepositoryoncloudtrailimagepushed\\"></span>
+
+\`\`\`typescript
+public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
+\`\`\`
+
+### \`id\`<sup>Required</sup> <span data-heading-title=\\"\`id\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryid\\"></span>
+
+- *Type:* \`string\`
+
+The id of the rule.
+
+---
+
+### \`options\`<sup>Optional</sup> <span data-heading-title=\\"\`options\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryoptions\\"></span>
+
+- *Type:* [\`@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions\`](#@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions)
+
+Options for adding the rule.
+
+---
+
+## \`onEvent\` <span data-heading-title=\\"\`onEvent\`\\" data-heading-id=\\"awscdkawsecrirepositoryonevent\\"></span>
+
+\`\`\`typescript
+public onEvent(id: string, options?: OnEventOptions)
+\`\`\`
+
+### \`id\`<sup>Required</sup> <span data-heading-title=\\"\`id\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryid\\"></span>
+
+- *Type:* \`string\`
+
+---
+
+### \`options\`<sup>Optional</sup> <span data-heading-title=\\"\`options\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryoptions\\"></span>
+
+- *Type:* [\`@aws-cdk/aws-events.OnEventOptions\`](#@aws-cdk/aws-events.OnEventOptions)
+
+---
+
+## \`onImageScanCompleted\` <span data-heading-title=\\"\`onImageScanCompleted\`\\" data-heading-id=\\"awscdkawsecrirepositoryonimagescancompleted\\"></span>
+
+\`\`\`typescript
+public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
+\`\`\`
+
+### \`id\`<sup>Required</sup> <span data-heading-title=\\"\`id\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryid\\"></span>
+
+- *Type:* \`string\`
+
+The id of the rule.
+
+---
+
+### \`options\`<sup>Optional</sup> <span data-heading-title=\\"\`options\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryoptions\\"></span>
+
+- *Type:* [\`@aws-cdk/aws-ecr.OnImageScanCompletedOptions\`](#@aws-cdk/aws-ecr.OnImageScanCompletedOptions)
+
+Options for adding the rule.
+
+---
+
+## \`repositoryUriForDigest\` <span data-heading-title=\\"\`repositoryUriForDigest\`\\" data-heading-id=\\"awscdkawsecrirepositoryrepositoryurifordigest\\"></span>
+
+\`\`\`typescript
+public repositoryUriForDigest(digest?: string)
+\`\`\`
+
+### \`digest\`<sup>Optional</sup> <span data-heading-title=\\"\`digest\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecrirepositorydigest\\"></span>
+
+- *Type:* \`string\`
+
+Image digest to use (tools usually default to the image with the \\"latest\\" tag if omitted).
+
+---
+
+## \`repositoryUriForTag\` <span data-heading-title=\\"\`repositoryUriForTag\`\\" data-heading-id=\\"awscdkawsecrirepositoryrepositoryurifortag\\"></span>
+
+\`\`\`typescript
+public repositoryUriForTag(tag?: string)
+\`\`\`
+
+### \`tag\`<sup>Optional</sup> <span data-heading-title=\\"\`tag\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecrirepositorytag\\"></span>
+
+- *Type:* \`string\`
+
+Image tag to use (tools usually default to \\"latest\\" if omitted).
+
+---
+
+# Properties <span data-heading-title=\\"Properties\\" data-heading-id=\\"properties\\"></span>
+
+## \`node\`<sup>Required</sup> <span data-heading-title=\\"\`node\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositorynode\\"></span>
+
+- *Type:* [\`@aws-cdk/core.ConstructNode\`](#@aws-cdk/core.ConstructNode)
+
+The construct tree node for this construct.
+
+---
+
+## \`env\`<sup>Required</sup> <span data-heading-title=\\"\`env\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryenv\\"></span>
+
+- *Type:* [\`@aws-cdk/core.ResourceEnvironment\`](#@aws-cdk/core.ResourceEnvironment)
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
+
+---
+
+## \`stack\`<sup>Required</sup> <span data-heading-title=\\"\`stack\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositorystack\\"></span>
+
+- *Type:* [\`@aws-cdk/core.Stack\`](#@aws-cdk/core.Stack)
+
+The stack in which this resource is defined.
+
+---
+
+## \`repositoryArn\`<sup>Required</sup> <span data-heading-title=\\"\`repositoryArn\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryrepositoryarn\\"></span>
+
+- *Type:* \`string\`
+
+The ARN of the repository.
+
+---
+
+## \`repositoryName\`<sup>Required</sup> <span data-heading-title=\\"\`repositoryName\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryrepositoryname\\"></span>
+
+- *Type:* \`string\`
+
+The name of the repository.
+
+---
+
+## \`repositoryUri\`<sup>Required</sup> <span data-heading-title=\\"\`repositoryUri\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrirepositoryrepositoryuri\\"></span>
+
+- *Type:* \`string\`
+
+The URI of this repository (represents the latest image):.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
+
+---
+"
+`;

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`python snapshot 1`] = `
+" TagMutability <span data-heading-title=\\"TagMutability\\" data-heading-id=\\"tagmutability\\"></span>
+
+The tag mutability setting for your repository.
+
+# \`MUTABLE\` <span data-heading-title=\\"\`MUTABLE\`\\" data-heading-id=\\"awscdkawsecrtagmutabilitymutable\\"></span>
+
+allow image tags to be overwritten.
+
+---
+
+
+# \`IMMUTABLE\` <span data-heading-title=\\"\`IMMUTABLE\`\\" data-heading-id=\\"awscdkawsecrtagmutabilityimmutable\\"></span>
+
+all image tags within the repository will be immutable which will prevent them from being overwritten.
+
+---
+
+"
+`;
+
+exports[`typescript snapshot 1`] = `
+" TagMutability <span data-heading-title=\\"TagMutability\\" data-heading-id=\\"tagmutability\\"></span>
+
+The tag mutability setting for your repository.
+
+# \`MUTABLE\` <span data-heading-title=\\"\`MUTABLE\`\\" data-heading-id=\\"awscdkawsecrtagmutabilitymutable\\"></span>
+
+allow image tags to be overwritten.
+
+---
+
+
+# \`IMMUTABLE\` <span data-heading-title=\\"\`IMMUTABLE\`\\" data-heading-id=\\"awscdkawsecrtagmutabilityimmutable\\"></span>
+
+all image tags within the repository will be immutable which will prevent them from being overwritten.
+
+---
+
+"
+`;
