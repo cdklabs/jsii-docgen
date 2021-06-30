@@ -37,6 +37,10 @@ async function createAssembly(): Promise<reflect.Assembly> {
   }
 
   await ts.loadFile('.jsii', { isRoot: true });
+
+  // using 'glob' here is arguably a little wasteful, but better
+  // then maintaining code trying to accurately deduce where each
+  // required assembly is located.
   for (let dependency of glob.sync('./node_modules/**/.jsii')) {
     await ts.load(dependency);
   }
