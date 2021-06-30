@@ -94,6 +94,10 @@
       "type": "runtime"
     },
     {
+      "name": "glob",
+      "type": "runtime"
+    },
+    {
       "name": "jsii-reflect",
       "type": "runtime"
     },

@@ -22,6 +22,7 @@ const project = new TypeScriptLibraryProject({
     'yargs',
     'fs-extra',
     'case',
+    'glob',
     'jsii-reflect',
     '@jsii/spec',
   ],
