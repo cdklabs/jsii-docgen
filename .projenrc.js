@@ -1,8 +1,6 @@
-const { TypeScriptLibraryProject, Semver } = require('projen');
+const { TypeScriptProject } = require('projen');
 
-const jsii = '1.9.0';
-
-const project = new TypeScriptLibraryProject({
+const project = new TypeScriptProject({
   name: 'jsii-docgen',
   description: 'generates api docs for jsii modules',
   repository: 'https://github.com/eladb/jsii-docgen',
