@@ -86,7 +86,15 @@
       "type": "runtime"
     },
     {
+      "name": "case",
+      "type": "runtime"
+    },
+    {
       "name": "fs-extra",
+      "type": "runtime"
+    },
+    {
+      "name": "glob",
       "type": "runtime"
     },
     {

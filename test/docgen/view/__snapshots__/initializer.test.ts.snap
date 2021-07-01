@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`python snapshot 1`] = `
+" Initializer <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.Initializer\\"></a>
+
+\`\`\`python
+import aws_cdk.aws_ecr
+
+aws_cdk.aws_ecr.CfnPublicRepository(scope: Construct, 
+                                    id: str, 
+                                    repository_catalog_data: typing.Any = None, 
+                                    repository_name: str = None, 
+                                    repository_policy_text: typing.Any = None, 
+                                    tags: typing.List[CfnTag] = None)
+\`\`\`
+
+# \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.scope\\"></a>
+
+- *Type:* [\`aws_cdk.core.Construct\`](#aws_cdk.core.Construct)
+
+scope in which this resource is defined.
+
+---
+
+# \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.id\\"></a>
+
+- *Type:* \`str\`
+
+scoped id of the resource.
+
+---
+
+# \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.repository_catalog_data\\"></a>
+
+- *Type:* \`typing.Any\`
+
+\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
+
+---
+
+# \`repository_name\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.repository_name\\"></a>
+
+- *Type:* \`str\`
+
+\`AWS::ECR::PublicRepository.RepositoryName\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname)
+
+---
+
+# \`repository_policy_text\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.repository_policy_text\\"></a>
+
+- *Type:* \`typing.Any\`
+
+\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext)
+
+---
+
+# \`tags\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.tags\\"></a>
+
+- *Type:* typing.List[[\`aws_cdk.core.CfnTag\`](#aws_cdk.core.CfnTag)]
+
+\`AWS::ECR::PublicRepository.Tags\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags)
+
+---
+"
+`;
+
+exports[`typescript snapshot 1`] = `
+" Initializer <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer\\"></a>
+
+\`\`\`typescript
+import { CfnPublicRepository } from '@aws-cdk/aws-ecr'
+
+new CfnPublicRepository(scope: Construct, id: string, props?: CfnPublicRepositoryProps)
+\`\`\`
+
+# \`scope\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepository.scope\\"></a>
+
+- *Type:* [\`@aws-cdk/core.Construct\`](#@aws-cdk/core.Construct)
+
+scope in which this resource is defined.
+
+---
+
+# \`id\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepository.id\\"></a>
+
+- *Type:* \`string\`
+
+scoped id of the resource.
+
+---
+
+# \`props\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepository.props\\"></a>
+
+- *Type:* [\`@aws-cdk/aws-ecr.CfnPublicRepositoryProps\`](#@aws-cdk/aws-ecr.CfnPublicRepositoryProps)
+
+resource properties.
+
+---
+"
+`;

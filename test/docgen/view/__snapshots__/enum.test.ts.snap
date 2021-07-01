@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`python snapshot 1`] = `
+" TagMutability <a name=\\"TagMutability\\"></a>
+
+The tag mutability setting for your repository.
+
+# \`MUTABLE\` <a name=\\"aws_cdk.aws_ecr.TagMutability.MUTABLE\\"></a>
+
+allow image tags to be overwritten.
+
+---
+
+
+# \`IMMUTABLE\` <a name=\\"aws_cdk.aws_ecr.TagMutability.IMMUTABLE\\"></a>
+
+all image tags within the repository will be immutable which will prevent them from being overwritten.
+
+---
+
+"
+`;
+
+exports[`typescript snapshot 1`] = `
+" TagMutability <a name=\\"TagMutability\\"></a>
+
+The tag mutability setting for your repository.
+
+# \`MUTABLE\` <a name=\\"@aws-cdk/aws-ecr.TagMutability.MUTABLE\\"></a>
+
+allow image tags to be overwritten.
+
+---
+
+
+# \`IMMUTABLE\` <a name=\\"@aws-cdk/aws-ecr.TagMutability.IMMUTABLE\\"></a>
+
+all image tags within the repository will be immutable which will prevent them from being overwritten.
+
+---
+
+"
+`;
