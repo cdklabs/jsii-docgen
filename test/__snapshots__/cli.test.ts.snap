@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`construct-library 1`] = `
-"# API Reference <span data-heading-title=\\"API Reference\\" data-heading-id=\\"api-reference\\"></span>
+"# API Reference <a name=\\"API Reference\\"></a>
 
-## Constructs <span data-heading-title=\\"Constructs\\" data-heading-id=\\"constructs\\"></span>
+## Constructs <a name=\\"Constructs\\"></a>
 
-### GreeterBucket <span data-heading-title=\\"GreeterBucket\\" data-heading-id=\\"constructlibrarygreeterbucket\\"></span>
+### GreeterBucket <a name=\\"construct-library.GreeterBucket\\"></a>
 
-#### Initializer <span data-heading-title=\\"Initializer\\" data-heading-id=\\"constructlibrarygreeterbucketinitializer\\"></span>
+#### Initializer <a name=\\"construct-library.GreeterBucket.Initializer\\"></a>
 
 \`\`\`typescript
 import { GreeterBucket } from 'construct-library'
@@ -15,27 +15,27 @@ import { GreeterBucket } from 'construct-library'
 new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 \`\`\`
 
-##### \`scope\`<sup>Required</sup> <span data-heading-title=\\"\`scope\`<sup>Required</sup>\\" data-heading-id=\\"constructlibrarygreeterbucketscope\\"></span>
+##### \`scope\`<sup>Required</sup> <a name=\\"construct-library.GreeterBucket.scope\\"></a>
 
 - *Type:* [\`constructs.Construct\`](#constructs.Construct)
 
 ---
 
-##### \`id\`<sup>Required</sup> <span data-heading-title=\\"\`id\`<sup>Required</sup>\\" data-heading-id=\\"constructlibrarygreeterbucketid\\"></span>
+##### \`id\`<sup>Required</sup> <a name=\\"construct-library.GreeterBucket.id\\"></a>
 
 - *Type:* \`string\`
 
 ---
 
-##### \`props\`<sup>Optional</sup> <span data-heading-title=\\"\`props\`<sup>Optional</sup>\\" data-heading-id=\\"constructlibrarygreeterbucketprops\\"></span>
+##### \`props\`<sup>Optional</sup> <a name=\\"construct-library.GreeterBucket.props\\"></a>
 
 - *Type:* [\`@aws-cdk/aws-s3.BucketProps\`](#@aws-cdk/aws-s3.BucketProps)
 
 ---
 
-#### Methods <span data-heading-title=\\"Methods\\" data-heading-id=\\"methods\\"></span>
+#### Methods <a name=\\"Methods\\"></a>
 
-##### \`greet\` <span data-heading-title=\\"\`greet\`\\" data-heading-id=\\"constructlibrarygreeterbucketgreet\\"></span>
+##### \`greet\` <a name=\\"construct-library.GreeterBucket.greet\\"></a>
 
 \`\`\`typescript
 public greet()

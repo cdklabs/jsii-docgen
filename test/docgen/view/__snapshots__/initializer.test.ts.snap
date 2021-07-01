@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`python snapshot 1`] = `
-" Initializer <span data-heading-title=\\"Initializer\\" data-heading-id=\\"awscdkawsecrcfnpublicrepositoryinitializer\\"></span>
+" Initializer <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.Initializer\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -14,7 +14,7 @@ aws_cdk.aws_ecr.CfnPublicRepository(scope: Construct,
                                     tags: typing.List[CfnTag] = None)
 \`\`\`
 
-# \`scope\`<sup>Required</sup> <span data-heading-title=\\"\`scope\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrcfnpublicrepositoryscope\\"></span>
+# \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.scope\\"></a>
 
 - *Type:* [\`aws_cdk.core.Construct\`](#aws_cdk.core.Construct)
 
@@ -22,7 +22,7 @@ scope in which this resource is defined.
 
 ---
 
-# \`id\`<sup>Required</sup> <span data-heading-title=\\"\`id\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrcfnpublicrepositoryid\\"></span>
+# \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.id\\"></a>
 
 - *Type:* \`str\`
 
@@ -30,7 +30,7 @@ scoped id of the resource.
 
 ---
 
-# \`repository_catalog_data\`<sup>Optional</sup> <span data-heading-title=\\"\`repository_catalog_data\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecrcfnpublicrepositorypropsrepositorycatalogdata\\"></span>
+# \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.repository_catalog_data\\"></a>
 
 - *Type:* \`typing.Any\`
 
@@ -40,7 +40,7 @@ scoped id of the resource.
 
 ---
 
-# \`repository_name\`<sup>Optional</sup> <span data-heading-title=\\"\`repository_name\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecrcfnpublicrepositorypropsrepositoryname\\"></span>
+# \`repository_name\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.repository_name\\"></a>
 
 - *Type:* \`str\`
 
@@ -50,7 +50,7 @@ scoped id of the resource.
 
 ---
 
-# \`repository_policy_text\`<sup>Optional</sup> <span data-heading-title=\\"\`repository_policy_text\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecrcfnpublicrepositorypropsrepositorypolicytext\\"></span>
+# \`repository_policy_text\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.repository_policy_text\\"></a>
 
 - *Type:* \`typing.Any\`
 
@@ -60,7 +60,7 @@ scoped id of the resource.
 
 ---
 
-# \`tags\`<sup>Optional</sup> <span data-heading-title=\\"\`tags\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecrcfnpublicrepositorypropstags\\"></span>
+# \`tags\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.tags\\"></a>
 
 - *Type:* typing.List[[\`aws_cdk.core.CfnTag\`](#aws_cdk.core.CfnTag)]
 
@@ -73,7 +73,7 @@ scoped id of the resource.
 `;
 
 exports[`typescript snapshot 1`] = `
-" Initializer <span data-heading-title=\\"Initializer\\" data-heading-id=\\"awscdkawsecrcfnpublicrepositoryinitializer\\"></span>
+" Initializer <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer\\"></a>
 
 \`\`\`typescript
 import { CfnPublicRepository } from '@aws-cdk/aws-ecr'
@@ -81,7 +81,7 @@ import { CfnPublicRepository } from '@aws-cdk/aws-ecr'
 new CfnPublicRepository(scope: Construct, id: string, props?: CfnPublicRepositoryProps)
 \`\`\`
 
-# \`scope\`<sup>Required</sup> <span data-heading-title=\\"\`scope\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrcfnpublicrepositoryscope\\"></span>
+# \`scope\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepository.scope\\"></a>
 
 - *Type:* [\`@aws-cdk/core.Construct\`](#@aws-cdk/core.Construct)
 
@@ -89,7 +89,7 @@ scope in which this resource is defined.
 
 ---
 
-# \`id\`<sup>Required</sup> <span data-heading-title=\\"\`id\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrcfnpublicrepositoryid\\"></span>
+# \`id\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepository.id\\"></a>
 
 - *Type:* \`string\`
 
@@ -97,7 +97,7 @@ scoped id of the resource.
 
 ---
 
-# \`props\`<sup>Optional</sup> <span data-heading-title=\\"\`props\`<sup>Optional</sup>\\" data-heading-id=\\"awscdkawsecrcfnpublicrepositoryprops\\"></span>
+# \`props\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepository.props\\"></a>
 
 - *Type:* [\`@aws-cdk/aws-ecr.CfnPublicRepositoryProps\`](#@aws-cdk/aws-ecr.CfnPublicRepositoryProps)
 

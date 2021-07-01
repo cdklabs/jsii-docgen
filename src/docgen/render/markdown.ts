@@ -164,9 +164,15 @@ export class Markdown {
     if (this.header) {
       const anchor = sanitize(this.id ?? '');
       const heading = `${'#'.repeat(headerSize)} ${this.header}`;
-      content.push(
-        `${heading} <span data-heading-title="${this.header}" data-heading-id="${anchor}"></span>`,
-      );
+      const headerSpan = !!process.env.HEADER_SPAN;
+      console.log(`Header span: ${headerSpan}`);
+      if (headerSpan) {
+        content.push(
+          `${heading} <span data-heading-title="${this.header}" data-heading-id="${anchor}"></span>`,
+        );
+      } else {
+        content.push(`${heading} <a name="${this.id}"></a>`);
+      }
       content.push('');
     }
 

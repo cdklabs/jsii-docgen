@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`python snapshot 1`] = `
-" \`inspect\` <span data-heading-title=\\"\`inspect\`\\" data-heading-id=\\"awscdkawsecrcfnpublicrepositoryinspect\\"></span>
+" \`inspect\` <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`python
 def inspect(inspector: TreeInspector)
 \`\`\`
 
-# \`inspector\`<sup>Required</sup> <span data-heading-title=\\"\`inspector\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrcfnpublicrepositoryinspector\\"></span>
+# \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.inspector\\"></a>
 
 - *Type:* [\`aws_cdk.core.TreeInspector\`](#aws_cdk.core.TreeInspector)
 
@@ -18,13 +18,13 @@ tree inspector to collect and process attributes.
 `;
 
 exports[`typescript snapshot 1`] = `
-" \`inspect\` <span data-heading-title=\\"\`inspect\`\\" data-heading-id=\\"awscdkawsecrcfnpublicrepositoryinspect\\"></span>
+" \`inspect\` <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`typescript
 public inspect(inspector: TreeInspector)
 \`\`\`
 
-# \`inspector\`<sup>Required</sup> <span data-heading-title=\\"\`inspector\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrcfnpublicrepositoryinspector\\"></span>
+# \`inspector\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspector\\"></a>
 
 - *Type:* [\`@aws-cdk/core.TreeInspector\`](#@aws-cdk/core.TreeInspector)
 

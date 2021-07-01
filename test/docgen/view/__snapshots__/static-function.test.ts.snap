@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`python snapshot 1`] = `
-" \`grant_read\` <span data-heading-title=\\"\`grant_read\`\\" data-heading-id=\\"awscdkawsecrauthorizationtokengrantread\\"></span>
+" \`grant_read\` <a name=\\"aws_cdk.aws_ecr.AuthorizationToken.grant_read\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -9,7 +9,7 @@ import aws_cdk.aws_ecr
 aws_cdk.aws_ecr.AuthorizationToken.grant_read(grantee: IGrantable)
 \`\`\`
 
-# \`grantee\`<sup>Required</sup> <span data-heading-title=\\"\`grantee\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrauthorizationtokengrantee\\"></span>
+# \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.AuthorizationToken.grantee\\"></a>
 
 - *Type:* [\`aws_cdk.aws_iam.IGrantable\`](#aws_cdk.aws_iam.IGrantable)
 
@@ -18,7 +18,7 @@ aws_cdk.aws_ecr.AuthorizationToken.grant_read(grantee: IGrantable)
 `;
 
 exports[`typescript snapshot 1`] = `
-" \`grantRead\` <span data-heading-title=\\"\`grantRead\`\\" data-heading-id=\\"awscdkawsecrauthorizationtokengrantread\\"></span>
+" \`grantRead\` <a name=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead\\"></a>
 
 \`\`\`typescript
 import { AuthorizationToken } from '@aws-cdk/aws-ecr'
@@ -26,7 +26,7 @@ import { AuthorizationToken } from '@aws-cdk/aws-ecr'
 AuthorizationToken.grantRead(grantee: IGrantable)
 \`\`\`
 
-# \`grantee\`<sup>Required</sup> <span data-heading-title=\\"\`grantee\`<sup>Required</sup>\\" data-heading-id=\\"awscdkawsecrauthorizationtokengrantee\\"></span>
+# \`grantee\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantee\\"></a>
 
 - *Type:* [\`@aws-cdk/aws-iam.IGrantable\`](#@aws-cdk/aws-iam.IGrantable)
 
