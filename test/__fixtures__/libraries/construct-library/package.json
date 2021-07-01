@@ -24,10 +24,12 @@
     "organization": false
   },
   "dependencies": {
-    "@aws-cdk/aws-s3": "^1.110.1"
+    "@aws-cdk/aws-s3": "^1.110.1",
+    "@aws-cdk/core": "^1.110.1"
   },
   "peerDependencies": {
-    "@aws-cdk/aws-s3": "^1.110.1"
+    "@aws-cdk/aws-s3": "^1.110.1",
+    "@aws-cdk/core": "^1.110.1"
   },
   "devDependencies": {
     "jsii": "^1.30.0",

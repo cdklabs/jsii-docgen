@@ -24,6 +24,7 @@ const project = new TypeScriptProject({
     'jsii-reflect',
     '@jsii/spec',
   ],
+  compileBeforeTest: true, // we need this for the CLI test
   releaseToNpm: true,
   projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
   autoApproveOptions: {
@@ -33,14 +34,12 @@ const project = new TypeScriptProject({
   autoApproveUpgrades: true,
 });
 
-project.tsconfig.addExclude('test/__fixtures__');
+const libraryFixtures = ['construct-library'];
 
-// the cli test is an integration test that will run on the
-// distribution tarball post build
-// project.jest.addIgnorePattern('test/cli.test.ts');
+// compile the test fixtures with jsii
+for (const library of libraryFixtures) {
+  project.compileTask.exec('npm ci', { cwd: `./test/__fixtures__/libraries/${library}` });
+  project.compileTask.exec('npm run compile', { cwd: `./test/__fixtures__/libraries/${library}` });
+}
 
-const integ = project.addTask('test:integ');
-integ.exec('npx jest test/cli.test.ts');
-
-project.buildTask.spawn(integ);
 project.synth();

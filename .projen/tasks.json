@@ -40,6 +40,14 @@
       "steps": [
         {
           "exec": "tsc"
+        },
+        {
+          "exec": "npm ci",
+          "cwd": "./test/__fixtures__/libraries/construct-library"
+        },
+        {
+          "exec": "npm run compile",
+          "cwd": "./test/__fixtures__/libraries/construct-library"
         }
       ]
     },
@@ -58,9 +66,6 @@
       "category": "10.test",
       "description": "Run tests",
       "steps": [
-        {
-          "exec": "rm -fr lib/"
-        },
         {
           "spawn": "test:compile"
         },
@@ -81,16 +86,13 @@
           "exec": "npx projen"
         },
         {
-          "spawn": "test"
-        },
-        {
           "spawn": "compile"
         },
         {
-          "spawn": "package"
+          "spawn": "test"
         },
         {
-          "spawn": "test:integ"
+          "spawn": "package"
         }
       ]
     },
@@ -208,14 +210,6 @@
       "steps": [
         {
           "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern src test build-tools .projenrc.js"
-        }
-      ]
-    },
-    "test:integ": {
-      "name": "test:integ",
-      "steps": [
-        {
-          "exec": "npx jest test/cli.test.ts"
         }
       ]
     }
