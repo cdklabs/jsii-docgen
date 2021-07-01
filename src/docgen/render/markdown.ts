@@ -165,6 +165,12 @@ export class Markdown {
       const anchor = sanitize(this.id ?? '');
       const heading = `${'#'.repeat(headerSize)} ${this.header}`;
       const headerSpan = !!process.env.HEADER_SPAN;
+
+      // This is nasty, i'm aware.
+      // Its just an escape hatch so that produce working links by default, but also support producing the links that construct-hub currently relies on.
+      // This will be gone soon.
+      // Note though that cross links (i.e links dependencies will not work yet regardless)
+
       console.log(`Header span: ${headerSpan}`);
       if (headerSpan) {
         content.push(
