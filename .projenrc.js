@@ -33,4 +33,14 @@ const project = new TypeScriptProject({
   autoApproveUpgrades: true,
 });
 
+project.tsconfig.addExclude('test/__fixtures__');
+
+// the cli test is an integration test that will run on the
+// distribution tarball post build
+// project.jest.addIgnorePattern('test/cli.test.ts');
+
+const integ = project.addTask('test:integ');
+integ.exec('npx jest test/cli.test.ts');
+
+project.buildTask.spawn(integ);
 project.synth();

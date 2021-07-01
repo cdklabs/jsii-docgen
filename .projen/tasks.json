@@ -88,6 +88,9 @@
         },
         {
           "spawn": "package"
+        },
+        {
+          "spawn": "test:integ"
         }
       ]
     },
@@ -205,6 +208,14 @@
       "steps": [
         {
           "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern src test build-tools .projenrc.js"
+        }
+      ]
+    },
+    "test:integ": {
+      "name": "test:integ",
+      "steps": [
+        {
+          "exec": "npx jest test/cli.test.ts"
         }
       ]
     }

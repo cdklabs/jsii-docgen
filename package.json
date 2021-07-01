@@ -23,6 +23,7 @@
     "watch": "npx projen watch",
     "package": "npx projen package",
     "eslint": "npx projen eslint",
+    "test:integ": "npx projen test:integ",
     "projen": "npx projen",
     "start": "npx projen start"
   },
