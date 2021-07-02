@@ -40,7 +40,7 @@ export class Assemblies {
     if (stat.isDirectory()) {
       fs.readdirSync(p).forEach((f) => this.addAssemblies(path.join(p, f)));
     } else {
-      if (p.endsWith('jsii.json')) {
+      if (p.endsWith('.jsii')) {
         const assembly = JSON.parse(fs.readFileSync(p, { encoding: 'utf8' })) as spec.Assembly;
         this.ts.addAssembly(new reflect.Assembly(this.ts, assembly));
       }

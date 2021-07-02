@@ -1,47 +1,35 @@
-import * as reflect from 'jsii-reflect';
 import { Documentation } from '../../../src';
-import { Assemblies } from '../assemblies';
 
-const assembly: reflect.Assembly = Assemblies.instance.withoutSubmodules;
-const assemblyWithSubmodules: reflect.Assembly = Assemblies.instance.withSubmodules;
+const ASSEMBLIES = `${__dirname}/../../__fixtures__/assemblies`;
+
+jest.setTimeout(30 * 1000);
 
 describe('python', () => {
-  test('snapshot - root module', () => {
-    const docs = new Documentation({
+  test('snapshot - root module', async () => {
+    const docs = await Documentation.forAssembly(ASSEMBLIES, '@aws-cdk/aws-ecr', {
       language: 'python',
-      assembly: assembly,
-      readme: true,
     });
     expect(docs.render().render()).toMatchSnapshot();
   });
 
-  test('snapshot - submodules', () => {
-    const docs = new Documentation({
+  test('snapshot - submodules', async () => {
+    const docs = await Documentation.forAssembly(ASSEMBLIES, 'aws-cdk-lib', {
       language: 'python',
-      assembly: assemblyWithSubmodules,
-      submoduleName: 'aws_eks',
-      readme: true,
+      submodule: 'aws_eks',
     });
     expect(docs.render().render()).toMatchSnapshot();
   });
 });
 
 describe('typescript', () => {
-  test('snapshot - single module', () => {
-    const docs = new Documentation({
-      language: 'ts',
-      assembly: assembly,
-      readme: true,
-    });
+  test('snapshot - single module', async () => {
+    const docs = await Documentation.forAssembly(ASSEMBLIES, '@aws-cdk/aws-ecr');
     expect(docs.render().render()).toMatchSnapshot();
   });
 
-  test('snapshot - submodules', () => {
-    const docs = new Documentation({
-      language: 'ts',
-      assembly: assemblyWithSubmodules,
-      submoduleName: 'aws_eks',
-      readme: true,
+  test('snapshot - submodules', async () => {
+    const docs = await Documentation.forAssembly(ASSEMBLIES, 'aws-cdk-lib', {
+      submodule: 'aws_eks',
     });
     expect(docs.render().render()).toMatchSnapshot();
   });

@@ -2,16 +2,15 @@
 
 exports[`python snapshot - root module 1`] = `
 "# Amazon ECR Construct Library
-<!--BEGIN STABILITY BANNER-->
 
----
+<!--BEGIN STABILITY BANNER-->---
+
 
 ![cfn-resources: Stable](https://img.shields.io/badge/cfn--resources-stable-success.svg?style=for-the-badge)
 
 ![cdk-constructs: Stable](https://img.shields.io/badge/cdk--constructs-stable-success.svg?style=for-the-badge)
 
 ---
-
 <!--END STABILITY BANNER-->
 
 This package contains constructs for working with Amazon Elastic Container Registry.
@@ -21,25 +20,27 @@ This package contains constructs for working with Amazon Elastic Container Regis
 Define a repository by creating a new instance of \`Repository\`. A repository
 holds multiple verions of a single container image.
 
-\`\`\`ts
-const repository = new ecr.Repository(this, 'Repository');
+\`\`\`python
+# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+repository = ecr.Repository(self, \\"Repository\\")
 \`\`\`
 
 ## Image scanning
 
 Amazon ECR image scanning helps in identifying software vulnerabilities in your container images. You can manually scan container images stored in Amazon ECR, or you can configure your repositories to scan images when you push them to a repository. To create a new repository to scan on push, simply enable \`imageScanOnPush\` in the properties
 
-\`\`\`ts
-const repository = new ecr.Repository(stack, 'Repo', {
-  imageScanOnPush: true
-});
+\`\`\`python
+# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+repository = ecr.Repository(stack, \\"Repo\\",
+    image_scan_on_push=True
+)
 \`\`\`
 
 To create an \`onImageScanCompleted\` event rule and trigger the event target
 
-\`\`\`ts
-repository.onImageScanCompleted('ImageScanComplete')
-  .addTarget(...)
+\`\`\`python
+# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+repository.on_image_scan_completed(\\"ImageScanComplete\\").add_target(...)
 \`\`\`
 
 ### Authorization Token
@@ -52,12 +53,13 @@ More information can be found at at [Registry Authentication](https://docs.aws.a
 A Docker authorization token can be obtained using the \`GetAuthorizationToken\` ECR API. The following code snippets
 grants an IAM user access to call this API.
 
-\`\`\`ts
-import * as iam from '@aws-cdk/aws-iam';
-import * as ecr from '@aws-cdk/aws-ecr';
+\`\`\`python
+# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+import aws_cdk.aws_iam as iam
+import aws_cdk.aws_ecr as ecr
 
-const user = new iam.User(this, 'User', { ... });
-ecr.AuthorizationToken.grantRead(user);
+user = iam.User(self, \\"User\\", ...)
+ecr.AuthorizationToken.grant_read(user)
 \`\`\`
 
 If you access images in the [Public ECR Gallery](https://gallery.ecr.aws/) as well, it is recommended you authenticate to the registry to benefit from
@@ -67,12 +69,13 @@ higher rate and bandwidth limits.
 
 The following code snippet grants an IAM user access to retrieve an authorization token for the public gallery.
 
-\`\`\`ts
-import * as iam from '@aws-cdk/aws-iam';
-import * as ecr from '@aws-cdk/aws-ecr';
+\`\`\`python
+# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+import aws_cdk.aws_iam as iam
+import aws_cdk.aws_ecr as ecr
 
-const user = new iam.User(this, 'User', { ... });
-ecr.PublicGalleryAuthorizationToken.grantRead(user);
+user = iam.User(self, \\"User\\", ...)
+ecr.PublicGalleryAuthorizationToken.grant_read(user)
 \`\`\`
 
 This user can then proceed to login to the registry using one of the [authentication methods](https://docs.aws.amazon.com/AmazonECR/latest/public/public-registries.html#public-registry-auth).
@@ -81,8 +84,9 @@ This user can then proceed to login to the registry using one of the [authentica
 
 You can set tag immutability on images in our repository using the \`imageTagMutability\` construct prop.
 
-\`\`\`ts
-new ecr.Repository(stack, 'Repo', { imageTagMutability: ecr.TagMutability.IMMUTABLE });
+\`\`\`python
+# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+ecr.Repository(stack, \\"Repo\\", image_tag_mutability=ecr.TagMutability.IMMUTABLE)
 \`\`\`
 
 ## Automatically clean up repositories
@@ -93,11 +97,11 @@ against that image. For example, the following deletes images older than
 30 days, while keeping all images tagged with prod (note that the order
 is important here):
 
-\`\`\`ts
-repository.addLifecycleRule({ tagPrefixList: ['prod'], maxImageCount: 9999 });
-repository.addLifecycleRule({ maxImageAge: cdk.Duration.days(30) });
+\`\`\`python
+# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+repository.add_lifecycle_rule(tag_prefix_list=[\\"prod\\"], max_image_count=9999)
+repository.add_lifecycle_rule(max_image_age=cdk.Duration.days(30))
 \`\`\`
-
 # API Reference <a name=\\"API Reference\\"></a>
 
 ## Constructs <a name=\\"Constructs\\"></a>

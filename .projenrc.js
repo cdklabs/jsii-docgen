@@ -23,6 +23,12 @@ const project = new TypeScriptProject({
     'glob',
     'jsii-reflect',
     '@jsii/spec',
+    'jsii-rosetta@./vendor/jsii-rosetta.tgz',
+    '@jsii/spec@./vendor/jsii-spec.tgz',
+  ],
+  bundledDeps: [
+    'jsii-rosetta',
+    '@jsii/spec',
   ],
   compileBeforeTest: true, // we need this for the CLI test
   releaseToNpm: true,
@@ -34,6 +40,8 @@ const project = new TypeScriptProject({
   autoApproveUpgrades: true,
 });
 
+project.addFields({ resolutions: { '@jsii/spec': './vendor/jsii-spec.tgz' } });
+
 const libraryFixtures = ['construct-library'];
 
 // compile the test fixtures with jsii
@@ -42,4 +50,8 @@ for (const library of libraryFixtures) {
   project.compileTask.exec('npm run compile', { cwd: `./test/__fixtures__/libraries/${library}` });
 }
 
+// artifacts created by transpilation in tests
+project.gitignore.exclude('test/**/.jsii.*');
+project.gitignore.include('vendor/jsii-spec.tgz');
+project.gitignore.include('vendor/jsii-rosetta.tgz');
 project.synth();

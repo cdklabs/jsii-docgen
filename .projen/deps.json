@@ -83,6 +83,15 @@
     },
     {
       "name": "@jsii/spec",
+      "type": "bundled"
+    },
+    {
+      "name": "jsii-rosetta",
+      "type": "bundled"
+    },
+    {
+      "name": "@jsii/spec",
+      "version": "./vendor/jsii-spec.tgz",
       "type": "runtime"
     },
     {
@@ -99,6 +108,11 @@
     },
     {
       "name": "jsii-reflect",
+      "type": "runtime"
+    },
+    {
+      "name": "jsii-rosetta",
+      "version": "./vendor/jsii-rosetta.tgz",
       "type": "runtime"
     },
     {

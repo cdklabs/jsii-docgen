@@ -170,7 +170,6 @@ export class Markdown {
       // This will be gone soon.
       // Note though that cross links (i.e links dependencies will not work yet regardless)
       const headerSpan = !!process.env.HEADER_SPAN;
-      console.log(`Header span: ${headerSpan}`);
       if (headerSpan) {
         content.push(
           `${heading} <span data-heading-title="${this.header}" data-heading-id="${anchor}"></span>`,
