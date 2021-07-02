@@ -107,6 +107,10 @@
       "type": "runtime"
     },
     {
+      "name": "glob-promise",
+      "type": "runtime"
+    },
+    {
       "name": "jsii-reflect",
       "type": "runtime"
     },

@@ -57,6 +57,7 @@
     "case": "^1.6.3",
     "fs-extra": "^9.1.0",
     "glob": "^7.1.7",
+    "glob-promise": "^3.4.0",
     "jsii-reflect": "^1.30.0",
     "jsii-rosetta": "./vendor/jsii-rosetta.tgz",
     "yargs": "^16.2.0"

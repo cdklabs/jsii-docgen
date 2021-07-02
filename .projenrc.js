@@ -20,6 +20,7 @@ const project = new TypeScriptProject({
     'yargs',
     'fs-extra',
     'case',
+    'glob-promise',
     'glob',
     'jsii-reflect',
     '@jsii/spec',

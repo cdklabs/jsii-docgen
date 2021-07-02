@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as os from 'os';
 import * as path from 'path';
 import * as util from 'util';
-import * as glob from 'glob';
+import * as glob from 'glob-promise';
 import * as reflect from 'jsii-reflect';
 import { TargetLanguage } from 'jsii-rosetta';
 import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
@@ -15,6 +15,7 @@ import { ApiReference } from './api-reference';
 import { Readme } from './readme';
 
 const exec = util.promisify(child.exec);
+const mkdtemp = util.promisify(fs.mkdtemp);
 
 /**
  * Options for rendering a `Documentation` object.
@@ -63,21 +64,19 @@ export interface DocumentationOptions {
 export class Documentation {
 
   public static async forRemotePackage(name: string, version: string, options?: DocumentationOptions): Promise<Documentation> {
-    const workdir = fs.mkdtempSync(path.join(os.tmpdir(), path.sep));
+    const workdir = await mkdtemp(path.join(os.tmpdir(), path.sep));
+    const env = {
+      ...process.env,
+      HOME: os.tmpdir(), // npm fails with EROFS if $HOME is read-only, event if it won't write there
+    };
+
     await exec('npm install npm@7', {
       cwd: workdir,
-      env: {
-        ...process.env,
-        HOME: os.tmpdir(), // npm fails with EROFS if $HOME is read-only, event if it won't write there
-      },
+      env,
     });
-
     await exec(`${workdir}/node_modules/.bin/npm install --ignore-scripts --no-bin-links --no-save ${name}@${version}`, {
       cwd: workdir,
-      env: {
-        ...process.env,
-        HOME: os.tmpdir(), // npm fails with EROFS if $HOME is read-only, event if it won't write there
-      },
+      env,
     });
     return Documentation.forLocalPackage(workdir, options);
   }
@@ -159,7 +158,7 @@ function createLanguageInfo(language: string): [TargetLanguage | undefined, Tran
 
 async function createAssembly(name: string, tsDir: string, language?: TargetLanguage): Promise<reflect.Assembly> {
   const ts = new reflect.TypeSystem();
-  for (let dotJsii of glob.sync(`${tsDir}/**/.jsii`)) {
+  for (let dotJsii of await glob.promise(`${tsDir}/**/.jsii`)) {
     if (language) {
       const packageDir = path.dirname(dotJsii);
       try {
