@@ -9,12 +9,10 @@ export async function main() {
     .example('$0', 'Generate documentation for the current module as a single file (auto-resolves node depedencies)')
     .argv;
 
-  const docs = await Documentation.forLocalPackage(process.cwd(), { readme: false });
-
+  const docs = Documentation.forLocalPackage(process.cwd(), { readme: false });
   const output = args.output ?? 'API.md';
-
-  const markdown = docs.render();
-  fs.writeFileSync(output, markdown);
+  const markdown = await docs.render();
+  fs.writeFileSync(output, markdown.render());
 }
 
 main().catch(e => {

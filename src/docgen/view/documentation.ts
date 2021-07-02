@@ -2,6 +2,7 @@ import * as child from 'child_process';
 import * as fs from 'fs';
 import * as os from 'os';
 import * as path from 'path';
+import * as util from 'util';
 import * as glob from 'glob';
 import * as reflect from 'jsii-reflect';
 import { TargetLanguage } from 'jsii-rosetta';
@@ -13,17 +14,12 @@ import { TypeScriptTranspile } from '../transpile/typescript';
 import { ApiReference } from './api-reference';
 import { Readme } from './readme';
 
-/**
- * Options for rendering documentation pages.
- */
-export interface DocumentationOptions {
+const exec = util.promisify(child.exec);
 
-  /**
-   * Which language to generate docs for.
-   *
-   * @default 'ts'
-   */
-  readonly language?: 'ts' | 'python';
+/**
+ * Options for rendering a `Documentation` object.
+ */
+export interface RenderOptions {
 
   /**
    * Include a generated api reference in the documentation.
@@ -33,18 +29,32 @@ export interface DocumentationOptions {
   readonly apiReference?: boolean;
 
   /**
-   * Include the user defined README.md in the documentation.
-   *
-   * @default true
-   */
+    * Include the user defined README.md in the documentation.
+    *
+    * @default true
+    */
   readonly readme?: boolean;
 
   /**
-   * Generate documentation only for a specific submodule.
-   *
-   * @default - Documentation is generated for the root module only.
-   */
+    * Generate documentation only for a specific submodule.
+    *
+    * @default - Documentation is generated for the root module only.
+    */
   readonly submodule?: string;
+
+}
+
+/**
+ * Options for creating a `Documentation` object.
+ */
+export interface DocumentationOptions {
+
+  /**
+   * Which language to generate docs for.
+   *
+   * @default 'ts'
+   */
+  readonly language?: 'ts' | 'python';
 }
 
 /**
@@ -53,11 +63,8 @@ export interface DocumentationOptions {
 export class Documentation {
 
   public static async forRemotePackage(name: string, version: string, options?: DocumentationOptions): Promise<Documentation> {
-
     const workdir = fs.mkdtempSync(path.join(os.tmpdir(), path.sep));
-
-    // we need npm7 so that it brings peer dependencies on install
-    child.execSync('npm install npm@7', {
+    await exec('npm install npm@7', {
       cwd: workdir,
       env: {
         ...process.env,
@@ -65,8 +72,7 @@ export class Documentation {
       },
     });
 
-    // now install the package
-    child.execSync(`${workdir}/node_modules/.bin/npm install --ignore-scripts --no-bin-links --no-save ${name}@${version}`, {
+    await exec(`${workdir}/node_modules/.bin/npm install --ignore-scripts --no-bin-links --no-save ${name}@${version}`, {
       cwd: workdir,
       env: {
         ...process.env,
@@ -86,104 +92,84 @@ export class Documentation {
     return Documentation.forAssembly(manifest.name, root, options);
   }
 
-  public static async forAssembly(assemblyName: string, tsDir: string, options?: DocumentationOptions) {
-
-    const ts = new reflect.TypeSystem();
-
-    let language;
-
-    if (options?.language) {
-      switch (options?.language) {
-        case 'python':
-          language = TargetLanguage.PYTHON;
-          break;
-        default:
-          throw new Error(`Unsupported language: ${language}. Choose one of ${Object.values(TargetLanguage)}`);
-      }
-    }
-
-    for (let dotJsii of glob.sync(`${tsDir}/**/.jsii`)) {
-      if (language) {
-        const packageDir = path.dirname(dotJsii);
-        try {
-          await transliterateAssembly([packageDir], [language]);
-          dotJsii = path.join(packageDir, `.jsii.${language}`);
-        } catch (e) {
-          console.log(`Failed transliterating ${dotJsii}: ${e}`);
-        }
-      }
-      await ts.load(dotJsii);
-    }
-    return new Documentation(ts.findAssembly(assemblyName), options);
-
+  public static async forAssembly(assemblyName: string, tsDir: string, options?: DocumentationOptions): Promise<Documentation> {
+    const [language, transpile] = createLanguageInfo(options?.language ?? 'ts');
+    const assembly = await createAssembly(assemblyName, tsDir, language);
+    return new Documentation(assembly, transpile);
   }
 
-  private readonly includeReadme: boolean;
-  private readonly includeApiReference: boolean;
-
-  private readonly transpile: Transpile;
   private readonly assembly: reflect.Assembly;
-  private readonly submodule?: reflect.Submodule;
+  private readonly transpile: Transpile;
 
-  private constructor(assembly: reflect.Assembly, options?: DocumentationOptions) {
-    this.includeApiReference = options?.apiReference ?? true;
-    this.includeReadme = options?.readme ?? true;
+  private constructor(assembly: reflect.Assembly, transpile: Transpile) {
     this.assembly = assembly;
-    this.submodule = options?.submodule ? this.findSubmodule(options.submodule) : undefined;
-
-    const language = options?.language;
-
-    if (language) {
-      switch (language) {
-        case TargetLanguage.PYTHON:
-          this.transpile = new PythonTranspile();
-          break;
-        default:
-          throw new Error(`Generating an API Refernce for ${language} is not supported yet.`
-              + 'Either choose from [python] or disable api reference generation.');
-      }
-    } else {
-      this.transpile = new TypeScriptTranspile();;
-    }
+    this.transpile = transpile;
   }
 
   /**
    * Generate markdown.
    */
-  public render(): Markdown {
+  public async render(options?: RenderOptions): Promise<Markdown> {
+    const submodule = options?.submodule ? this.findSubmodule(this.assembly, options.submodule) : undefined;
     const documentation = new Markdown();
-    if (this.includeReadme) {
-      const readme = new Readme(this.transpile, this.assembly, this.submodule);
+
+    if (options?.readme ?? true) {
+      const readme = new Readme(this.transpile, this.assembly, submodule);
       documentation.section(readme.render());
     }
-    if (this.includeApiReference) {
-      const apiReference = new ApiReference(this.transpile, this.assembly, this.submodule);
+
+    if (options?.apiReference ?? true) {
+      const apiReference = new ApiReference(this.transpile, this.assembly, submodule);
       documentation.section(apiReference.render());
     }
+
     return documentation;
   }
 
   /**
    * Lookup a submodule by a submodule name.
    */
-  private findSubmodule(submoduleName: string): reflect.Submodule {
-    const submodules = this.assembly.submodules.filter(
-      (s) => s.name === submoduleName,
+  private findSubmodule(assembly: reflect.Assembly, submodule?: string): reflect.Submodule {
+    const submodules = assembly.submodules.filter(
+      (s) => s.name === submodule,
     );
 
     if (submodules.length === 0) {
-      throw new Error(`Submodule ${submoduleName} not found`);
+      throw new Error(`Submodule ${submodule} not found`);
     }
 
     if (submodules.length > 1) {
-      throw new Error(`Found multiple submodules with name: ${submoduleName}`);
+      throw new Error(`Found multiple submodules with name: ${submodule}`);
     }
 
     return submodules[0];
   }
-
 }
 
-function toTargetLanguage(language: string) {
+function createLanguageInfo(language: string): [TargetLanguage | undefined, Transpile] {
+  switch (language) {
+    case 'python':
+      return [TargetLanguage.PYTHON, new PythonTranspile()];
+    case 'ts':
+      return [undefined, new TypeScriptTranspile()];
+    default:
+      throw new Error(`Unsupported language: ${language}. Choose one of ${Object.values(TargetLanguage)}`);
+  }
+}
 
+async function createAssembly(name: string, tsDir: string, language?: TargetLanguage): Promise<reflect.Assembly> {
+  const ts = new reflect.TypeSystem();
+  for (let dotJsii of glob.sync(`${tsDir}/**/.jsii`)) {
+    if (language) {
+      const packageDir = path.dirname(dotJsii);
+      try {
+        await transliterateAssembly([packageDir], [language]);
+        dotJsii = path.join(packageDir, `.jsii.${language}`);
+      } catch (e) {
+        console.log(`Failed transliterating ${dotJsii}: ${e}`);
+      }
+    }
+    await ts.load(dotJsii);
+  }
+  return ts.findAssembly(name);
 }

@@ -374,7 +374,7 @@ export interface TranspiledModuleLike {
  */
 export interface Transpile {
   /**
-   * The language of the tranpiler.
+   * The language of the transpiler.
    */
   language: string;
 

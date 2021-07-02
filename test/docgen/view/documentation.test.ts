@@ -6,9 +6,10 @@ jest.setTimeout(30 * 1000);
 
 describe('python', () => {
   test('snapshot - root module', async () => {
-    const docs = await Documentation.forAssembly(ASSEMBLIES, '@aws-cdk/aws-ecr', {
+    const docs = Documentation.forAssembly(ASSEMBLIES, '@aws-cdk/aws-ecr', {
       language: 'python',
     });
+    const markdown = await docs.render();
     expect(docs.render().render()).toMatchSnapshot();
   });
 
