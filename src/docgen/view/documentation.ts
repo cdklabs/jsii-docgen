@@ -16,6 +16,8 @@ import { Readme } from './readme';
 
 const exec = util.promisify(child.exec);
 const mkdtemp = util.promisify(fs.mkdtemp);
+const exists = util.promisify(fs.exists);
+const readFile = util.promisify(fs.readFile);
 
 /**
  * Options for rendering a `Documentation` object.
@@ -83,26 +85,38 @@ export class Documentation {
 
   public static async forLocalPackage(root: string, options?: DocumentationOptions): Promise<Documentation> {
     const manifestPath = path.join(root, 'package.json');
-    if (!fs.existsSync(manifestPath)) {
-      throw new Error(`Unable to locate package.json at: ${manifestPath}. Make sure to run this command `
-        + 'from the root directory of your package after the jsii assembly has been created.');
-    }
-    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
-    return Documentation.forAssembly(manifest.name, root, options);
-  }
+    const assemblyPath = path.join(root, '.jsii');
 
-  public static async forAssembly(assemblyName: string, tsDir: string, options?: DocumentationOptions): Promise<Documentation> {
-    const [language, transpile] = createLanguageInfo(options?.language ?? 'ts');
-    const assembly = await createAssembly(assemblyName, tsDir, language);
+    if (!(await exists(manifestPath))) {
+      throw new Error(`Unable to locate ${manifestPath}`);
+    }
+
+    if (!(await exists(assemblyPath))) {
+      throw new Error(`Unable to locate ${assemblyPath}`);
+    }
+
+    const manifest = JSON.parse(await readFile(manifestPath, 'utf-8'));
+
+    let transpile, language;
+
+    switch (options?.language ?? 'ts') {
+      case 'python':
+        language = TargetLanguage.PYTHON;
+        transpile = new PythonTranspile();
+        break;
+      case 'ts':
+      default:
+        transpile = new TypeScriptTranspile();
+        break;
+    }
+
+    const assembly = await createAssembly(manifest.name, root, language);
     return new Documentation(assembly, transpile);
   }
 
-  private readonly assembly: reflect.Assembly;
-  private readonly transpile: Transpile;
-
-  private constructor(assembly: reflect.Assembly, transpile: Transpile) {
-    this.assembly = assembly;
-    this.transpile = transpile;
+  private constructor(
+    public readonly assembly: reflect.Assembly,
+    private readonly transpile: Transpile) {
   }
 
   /**
@@ -142,17 +156,6 @@ export class Documentation {
     }
 
     return submodules[0];
-  }
-}
-
-function createLanguageInfo(language: string): [TargetLanguage | undefined, Transpile] {
-  switch (language) {
-    case 'python':
-      return [TargetLanguage.PYTHON, new PythonTranspile()];
-    case 'ts':
-      return [undefined, new TypeScriptTranspile()];
-    default:
-      throw new Error(`Unsupported language: ${language}. Choose one of ${Object.values(TargetLanguage)}`);
   }
 }
 
