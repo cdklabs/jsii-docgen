@@ -97,6 +97,11 @@ export class Documentation {
 
     const manifest = JSON.parse(await readFile(manifestPath, 'utf-8'));
 
+    return Documentation.forAssembly(manifest.name, root, options);
+  }
+
+  public static async forAssembly(assemblyName: string, assembliesDir: string, options?: DocumentationOptions): Promise<Documentation> {
+
     let transpile, language;
 
     switch (options?.language ?? 'ts') {
@@ -110,19 +115,20 @@ export class Documentation {
         break;
     }
 
-    const assembly = await createAssembly(manifest.name, root, language);
+    const assembly = await createAssembly(assemblyName, assembliesDir, language);
+
     return new Documentation(assembly, transpile);
   }
 
   private constructor(
-    public readonly assembly: reflect.Assembly,
+    private readonly assembly: reflect.Assembly,
     private readonly transpile: Transpile) {
   }
 
   /**
    * Generate markdown.
    */
-  public async render(options?: RenderOptions): Promise<Markdown> {
+  public render(options?: RenderOptions): Markdown {
     const submodule = options?.submodule ? this.findSubmodule(this.assembly, options.submodule) : undefined;
     const documentation = new Markdown();
 
@@ -143,6 +149,7 @@ export class Documentation {
    * Lookup a submodule by a submodule name.
    */
   private findSubmodule(assembly: reflect.Assembly, submodule?: string): reflect.Submodule {
+    console.log(assembly.submodules.map(s => s.name));
     const submodules = assembly.submodules.filter(
       (s) => s.name === submodule,
     );
