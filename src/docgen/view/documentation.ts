@@ -1,8 +1,9 @@
 import * as child from 'child_process';
-import * as fs from 'fs';
+// import * as fsOrig from 'fs';
 import * as os from 'os';
 import * as path from 'path';
 import * as util from 'util';
+import * as fs from 'fs-extra';
 import * as glob from 'glob-promise';
 import * as reflect from 'jsii-reflect';
 import { TargetLanguage } from 'jsii-rosetta';
@@ -15,9 +16,6 @@ import { ApiReference } from './api-reference';
 import { Readme } from './readme';
 
 const exec = util.promisify(child.exec);
-const mkdtemp = util.promisify(fs.mkdtemp);
-const exists = util.promisify(fs.exists);
-const readFile = util.promisify(fs.readFile);
 
 /**
  * Options for rendering a `Documentation` object.
@@ -57,7 +55,7 @@ export interface DocumentationOptions {
    *
    * @default 'ts'
    */
-  readonly language?: 'ts' | 'python';
+  readonly language?: string;
 }
 
 /**
@@ -66,38 +64,51 @@ export interface DocumentationOptions {
 export class Documentation {
 
   public static async forRemotePackage(name: string, version: string, options?: DocumentationOptions): Promise<Documentation> {
-    const workdir = await mkdtemp(path.join(os.tmpdir(), path.sep));
+    const workdir = await fs.mkdtemp(path.join(os.tmpdir(), path.sep));
     const env = {
       ...process.env,
       HOME: os.tmpdir(), // npm fails with EROFS if $HOME is read-only, event if it won't write there
     };
+    try {
 
-    await exec('npm install npm@7', {
-      cwd: workdir,
-      env,
-    });
-    await exec(`${workdir}/node_modules/.bin/npm install --ignore-scripts --no-bin-links --no-save ${name}@${version}`, {
-      cwd: workdir,
-      env,
-    });
-    return Documentation.forLocalPackage(workdir, options);
+      await exec('npm install npm@7', {
+        cwd: workdir,
+        env,
+      });
+      await exec(`${workdir}/node_modules/.bin/npm install --ignore-scripts --no-bin-links --no-save ${name}@${version}`, {
+        cwd: workdir,
+        env,
+      });
+
+      const docs = await Documentation.forLocalPackage(path.join(workdir, 'node_modules', name), workdir, options);
+      return await Promise.resolve(docs);
+
+    } finally {
+      await fs.remove(workdir);
+    }
   }
 
-  public static async forLocalPackage(root: string, options?: DocumentationOptions): Promise<Documentation> {
-    const manifestPath = path.join(root, 'package.json');
-    const assemblyPath = path.join(root, '.jsii');
+  public static async forLocalPackage(root: string, assembliesDir: string, options?: DocumentationOptions): Promise<Documentation> {
+    const workdir = await fs.mkdtemp(path.join(os.tmpdir(), path.sep));
 
-    if (!(await exists(manifestPath))) {
-      throw new Error(`Unable to locate ${manifestPath}`);
+    // always better not to operate on an externally provided directory
+    await fs.copy(assembliesDir, workdir);
+
+    try {
+
+      const manifestPath = path.join(root, 'package.json');
+
+      if (!(await fs.pathExists(manifestPath))) {
+        throw new Error(`Unable to locate ${manifestPath}`);
+      }
+
+      const manifest = JSON.parse(await fs.readFile(manifestPath, 'utf-8'));
+      const docs = await Documentation.forAssembly(manifest.name, workdir, options);
+      return await Promise.resolve(docs);
+
+    } finally {
+      await fs.remove(workdir);
     }
-
-    if (!(await exists(assemblyPath))) {
-      throw new Error(`Unable to locate ${assemblyPath}`);
-    }
-
-    const manifest = JSON.parse(await readFile(manifestPath, 'utf-8'));
-
-    return Documentation.forAssembly(manifest.name, root, options);
   }
 
   public static async forAssembly(assemblyName: string, assembliesDir: string, options?: DocumentationOptions): Promise<Documentation> {
@@ -110,9 +121,10 @@ export class Documentation {
         transpile = new PythonTranspile();
         break;
       case 'ts':
-      default:
         transpile = new TypeScriptTranspile();
         break;
+      default:
+        throw new Error(`Unsupported language: ${options?.language}`);
     }
 
     const assembly = await createAssembly(assemblyName, assembliesDir, language);
@@ -149,7 +161,6 @@ export class Documentation {
    * Lookup a submodule by a submodule name.
    */
   private findSubmodule(assembly: reflect.Assembly, submodule?: string): reflect.Submodule {
-    console.log(assembly.submodules.map(s => s.name));
     const submodules = assembly.submodules.filter(
       (s) => s.name === submodule,
     );

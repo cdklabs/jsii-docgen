@@ -32,6 +32,7 @@
     "organization": false
   },
   "devDependencies": {
+    "@jsii/spec": "./vendor/jsii-spec.tgz",
     "@types/fs-extra": "^8",
     "@types/jest": "^26.0.23",
     "@types/node": "^10.17.0",
@@ -45,6 +46,7 @@
     "glob-promise": "^3.4.0",
     "jest": "^26.6.3",
     "jest-junit": "^12",
+    "jsii-rosetta": "./vendor/jsii-rosetta.tgz",
     "json-schema": "^0.3.0",
     "npm-check-updates": "^11",
     "projen": "^0.24.17",
@@ -52,20 +54,19 @@
     "ts-jest": "^26.5.6",
     "typescript": "^3.9.10"
   },
+  "peerDependencies": {
+    "@jsii/spec": "^1.30.0",
+    "jsii-rosetta": "^1.30.0"
+  },
   "dependencies": {
-    "@jsii/spec": "./vendor/jsii-spec.tgz",
     "case": "^1.6.3",
     "fs-extra": "^9.1.0",
     "glob": "^7.1.7",
     "glob-promise": "^3.4.0",
     "jsii-reflect": "^1.30.0",
-    "jsii-rosetta": "./vendor/jsii-rosetta.tgz",
     "yargs": "^16.2.0"
   },
-  "bundledDependencies": [
-    "@jsii/spec",
-    "jsii-rosetta"
-  ],
+  "bundledDependencies": [],
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "version": "0.0.0",

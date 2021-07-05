@@ -15,6 +15,8 @@ const project = new TypeScriptProject({
     '@types/fs-extra@^8', // >8 needs a newer node version
     'glob-promise',
     'glob',
+    'jsii-rosetta',
+    '@jsii/spec',
   ],
   deps: [
     'yargs',
@@ -23,11 +25,8 @@ const project = new TypeScriptProject({
     'glob-promise',
     'glob',
     'jsii-reflect',
-    '@jsii/spec',
-    'jsii-rosetta@./vendor/jsii-rosetta.tgz',
-    '@jsii/spec@./vendor/jsii-spec.tgz',
   ],
-  bundledDeps: [
+  peerDeps: [
     'jsii-rosetta',
     '@jsii/spec',
   ],
