@@ -67,10 +67,27 @@ export interface DocumentationOptions {
 }
 
 /**
+ * Options for creating a `Documentation` object using the `fromLocalPackage` function.
+ */
+export interface FromLocalPackageDocumentationOptions extends DocumentationOptions {
+
+  /**
+   * A local directory containing jsii assembly files that will
+   * comprise the type-system.
+   *
+   * @default - the root package directory will be used.
+   */
+  readonly assembliesDir?: string;
+}
+
+/**
  * Render documentation pages for a jsii library.
  */
 export class Documentation {
 
+  /**
+   * Create a `Documentation` object for a remote package available in the npm registry.
+   */
   public static async forRemotePackage(name: string, version: string, options?: DocumentationOptions): Promise<Documentation> {
     return withTempDir(async (workdir: string) => {
       const env = {
@@ -87,18 +104,25 @@ export class Documentation {
         env,
       });
 
-      const docs = await Documentation.forLocalPackage(path.join(workdir, 'node_modules', name), workdir, options);
+      const docs = await Documentation.forLocalPackage(path.join(workdir, 'node_modules', name), { ...options, assembliesDir: workdir } );
       return Promise.resolve(docs);
     });
   }
 
-  public static async forLocalPackage(root: string, assembliesDir: string, options?: DocumentationOptions): Promise<Documentation> {
+  /**
+   * Create a `Documentation` object for a package available in the local file system.
+   */
+  public static async forLocalPackage(root: string, options?: FromLocalPackageDocumentationOptions): Promise<Documentation> {
     return withTempDir(async (workdir: string) => {
 
       const manifestPath = path.join(root, 'package.json');
       if (!(await fs.pathExists(manifestPath))) {
         throw new Error(`Unable to locate ${manifestPath}`);
       }
+
+      // normally the assemblies are located in subdirectories
+      // of the root package dir (i.e ./node_modules)
+      const assembliesDir = options?.assembliesDir ?? root;
 
       // always better not to operate on an externally provided directory
       await fs.copy(assembliesDir, workdir);
@@ -109,6 +133,10 @@ export class Documentation {
     });
   }
 
+  /**
+   * Create a `Documentation` object for a specific assembly that resides in a directory of assemblies.
+   * The directory will comprise the entire type-system available to the generartion process.
+   */
   public static async forAssembly(assemblyName: string, assembliesDir: string, options?: DocumentationOptions): Promise<Documentation> {
 
     let transpile, language;
