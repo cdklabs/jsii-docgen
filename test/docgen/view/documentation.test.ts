@@ -2,7 +2,7 @@ import { Documentation } from '../../../src';
 
 const ASSEMBLIES = `${__dirname}/../../__fixtures__/assemblies`;
 
-jest.setTimeout(60 * 1000);
+jest.setTimeout(2 * 60 * 1000);
 
 test('remote package', async () => {
   const docs = await Documentation.forRemotePackage('@aws-cdk/aws-ecr', '1.106.0');

@@ -56,6 +56,14 @@ export interface DocumentationOptions {
    * @default 'ts'
    */
   readonly language?: string;
+
+  /**
+   * Whether to ignore missing fixture files that will prevent transliterating
+   * some code snippet examples.
+   *
+   * @default true
+   */
+  readonly loose?: boolean;
 }
 
 /**
@@ -64,12 +72,11 @@ export interface DocumentationOptions {
 export class Documentation {
 
   public static async forRemotePackage(name: string, version: string, options?: DocumentationOptions): Promise<Documentation> {
-    const workdir = await fs.mkdtemp(path.join(os.tmpdir(), path.sep));
-    const env = {
-      ...process.env,
-      HOME: os.tmpdir(), // npm fails with EROFS if $HOME is read-only, event if it won't write there
-    };
-    try {
+    return withTempDir(async (workdir: string) => {
+      const env = {
+        ...process.env,
+        HOME: os.tmpdir(), // npm fails with EROFS if $HOME is read-only, event if it won't write there
+      };
 
       await exec('npm install npm@7', {
         cwd: workdir,
@@ -81,34 +88,25 @@ export class Documentation {
       });
 
       const docs = await Documentation.forLocalPackage(path.join(workdir, 'node_modules', name), workdir, options);
-      return await Promise.resolve(docs);
-
-    } finally {
-      await fs.remove(workdir);
-    }
+      return Promise.resolve(docs);
+    });
   }
 
   public static async forLocalPackage(root: string, assembliesDir: string, options?: DocumentationOptions): Promise<Documentation> {
-    const workdir = await fs.mkdtemp(path.join(os.tmpdir(), path.sep));
-
-    // always better not to operate on an externally provided directory
-    await fs.copy(assembliesDir, workdir);
-
-    try {
+    return withTempDir(async (workdir: string) => {
 
       const manifestPath = path.join(root, 'package.json');
-
       if (!(await fs.pathExists(manifestPath))) {
         throw new Error(`Unable to locate ${manifestPath}`);
       }
 
+      // always better not to operate on an externally provided directory
+      await fs.copy(assembliesDir, workdir);
+
       const manifest = JSON.parse(await fs.readFile(manifestPath, 'utf-8'));
       const docs = await Documentation.forAssembly(manifest.name, workdir, options);
-      return await Promise.resolve(docs);
-
-    } finally {
-      await fs.remove(workdir);
-    }
+      return Promise.resolve(docs);
+    });
   }
 
   public static async forAssembly(assemblyName: string, assembliesDir: string, options?: DocumentationOptions): Promise<Documentation> {
@@ -127,7 +125,7 @@ export class Documentation {
         throw new Error(`Unsupported language: ${options?.language}`);
     }
 
-    const assembly = await createAssembly(assemblyName, assembliesDir, language);
+    const assembly = await createAssembly(assemblyName, assembliesDir, options?.loose ?? true, language);
 
     return new Documentation(assembly, transpile);
   }
@@ -177,17 +175,25 @@ export class Documentation {
   }
 }
 
-async function createAssembly(name: string, tsDir: string, language?: TargetLanguage): Promise<reflect.Assembly> {
+async function withTempDir<T>(work: (workdir: string) => Promise<T>): Promise<T> {
+  const workdir = await fs.mkdtemp(path.join(os.tmpdir(), path.sep));
+  const cwd = process.cwd();
+  try {
+    process.chdir(workdir);
+    return await work(workdir);
+  } finally {
+    process.chdir(cwd);
+    await fs.remove(workdir);
+  }
+}
+
+async function createAssembly(name: string, tsDir: string, loose: boolean, language?: TargetLanguage): Promise<reflect.Assembly> {
   const ts = new reflect.TypeSystem();
   for (let dotJsii of await glob.promise(`${tsDir}/**/.jsii`)) {
     if (language) {
       const packageDir = path.dirname(dotJsii);
-      try {
-        await transliterateAssembly([packageDir], [language]);
-        dotJsii = path.join(packageDir, `.jsii.${language}`);
-      } catch (e) {
-        console.log(`Failed transliterating ${dotJsii}: ${e}`);
-      }
+      await transliterateAssembly([packageDir], [language], { loose });
+      dotJsii = path.join(packageDir, `.jsii.${language}`);
     }
     await ts.load(dotJsii);
   }
