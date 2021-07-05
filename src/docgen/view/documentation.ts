@@ -91,7 +91,8 @@ export class Documentation {
     return withTempDir(async (workdir: string) => {
       const env = {
         ...process.env,
-        HOME: os.tmpdir(), // npm fails with EROFS if $HOME is read-only, event if it won't write there
+        // npm fails with EROFS if $HOME is read-only, even if it won't write there
+        HOME: os.tmpdir(),
       };
 
       await exec('npm install npm@7', {
@@ -103,8 +104,7 @@ export class Documentation {
         env,
       });
 
-      const docs = await Documentation.forLocalPackage(path.join(workdir, 'node_modules', name), { ...options, assembliesDir: workdir } );
-      return Promise.resolve(docs);
+      return Documentation.forLocalPackage(path.join(workdir, 'node_modules', name), { ...options, assembliesDir: workdir } );
     });
   }
 
@@ -112,24 +112,17 @@ export class Documentation {
    * Create a `Documentation` object for a package available in the local file system.
    */
   public static async forLocalPackage(root: string, options?: FromLocalPackageDocumentationOptions): Promise<Documentation> {
-    return withTempDir(async (workdir: string) => {
+    const manifestPath = path.join(root, 'package.json');
+    if (!(await fs.pathExists(manifestPath))) {
+      throw new Error(`Unable to locate ${manifestPath}`);
+    }
 
-      const manifestPath = path.join(root, 'package.json');
-      if (!(await fs.pathExists(manifestPath))) {
-        throw new Error(`Unable to locate ${manifestPath}`);
-      }
+    // normally the assemblies are located in subdirectories
+    // of the root package dir (i.e ./node_modules)
+    const assembliesDir = options?.assembliesDir ?? root;
 
-      // normally the assemblies are located in subdirectories
-      // of the root package dir (i.e ./node_modules)
-      const assembliesDir = options?.assembliesDir ?? root;
-
-      // always better not to operate on an externally provided directory
-      await fs.copy(assembliesDir, workdir);
-
-      const manifest = JSON.parse(await fs.readFile(manifestPath, 'utf-8'));
-      const docs = await Documentation.forAssembly(manifest.name, workdir, options);
-      return Promise.resolve(docs);
-    });
+    const manifest = JSON.parse(await fs.readFile(manifestPath, 'utf-8'));
+    return Documentation.forAssembly(manifest.name, assembliesDir);
   }
 
   /**
@@ -137,24 +130,28 @@ export class Documentation {
    * The directory will comprise the entire type-system available to the generartion process.
    */
   public static async forAssembly(assemblyName: string, assembliesDir: string, options?: DocumentationOptions): Promise<Documentation> {
+    return withTempDir(async (workdir: string) => {
 
-    let transpile, language;
+      // always better not to operate on an externally provided directory
+      await fs.copy(assembliesDir, workdir);
 
-    switch (options?.language ?? 'ts') {
-      case 'python':
-        language = TargetLanguage.PYTHON;
-        transpile = new PythonTranspile();
-        break;
-      case 'ts':
-        transpile = new TypeScriptTranspile();
-        break;
-      default:
-        throw new Error(`Unsupported language: ${options?.language}`);
-    }
+      let transpile, language;
 
-    const assembly = await createAssembly(assemblyName, assembliesDir, options?.loose ?? true, language);
+      switch (options?.language ?? 'ts') {
+        case 'python':
+          language = TargetLanguage.PYTHON;
+          transpile = new PythonTranspile();
+          break;
+        case 'ts':
+          transpile = new TypeScriptTranspile();
+          break;
+        default:
+          throw new Error(`Unsupported language: ${options?.language}`);
+      }
+      const assembly = await createAssembly(assemblyName, workdir, options?.loose ?? true, language);
+      return new Documentation(assembly, transpile);
+    });
 
-    return new Documentation(assembly, transpile);
   }
 
   private constructor(
@@ -207,6 +204,8 @@ async function withTempDir<T>(work: (workdir: string) => Promise<T>): Promise<T>
   const cwd = process.cwd();
   try {
     process.chdir(workdir);
+    // wait for the work to be completed before
+    // we cleanup the work environment.
     return await work(workdir);
   } finally {
     process.chdir(cwd);

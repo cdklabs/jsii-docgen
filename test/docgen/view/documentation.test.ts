@@ -2,6 +2,8 @@ import { Documentation } from '../../../src';
 
 const ASSEMBLIES = `${__dirname}/../../__fixtures__/assemblies`;
 
+// this is a little concerning...we should be mindful
+// if need to keep increasing this.
 jest.setTimeout(2 * 60 * 1000);
 
 test('remote package', async () => {
