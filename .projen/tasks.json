@@ -138,6 +138,22 @@
         }
       ]
     },
+    "publish:npm": {
+      "name": "publish:npm",
+      "description": "Publish this package to the npm Registry",
+      "env": {
+        "NPM_DIST_TAG": "latest",
+        "NPM_REGISTRY": "registry.npmjs.org"
+      },
+      "requiredEnv": [
+        "NPM_TOKEN"
+      ],
+      "steps": [
+        {
+          "exec": "npx -p jsii-release@latest jsii-release-npm"
+        }
+      ]
+    },
     "upgrade-dependencies": {
       "name": "upgrade-dependencies",
       "description": "upgrade dependencies",
@@ -181,9 +197,6 @@
       "description": "Create an npm tarball",
       "steps": [
         {
-          "exec": "rm -fr dist"
-        },
-        {
           "exec": "mkdir -p dist/js"
         },
         {
@@ -210,6 +223,9 @@
         "RELEASE": "true"
       },
       "steps": [
+        {
+          "exec": "rm -fr dist"
+        },
         {
           "spawn": "bump"
         },

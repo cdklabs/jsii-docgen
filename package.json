@@ -18,6 +18,7 @@
     "test:update": "npx projen test:update",
     "bump": "npx projen bump",
     "unbump": "npx projen unbump",
+    "publish:npm": "npx projen publish:npm",
     "upgrade-dependencies": "npx projen upgrade-dependencies",
     "default": "npx projen default",
     "watch": "npx projen watch",
@@ -34,7 +35,7 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^8",
-    "@types/jest": "^26.0.23",
+    "@types/jest": "^26.0.24",
     "@types/node": "^10.17.0",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
@@ -48,7 +49,7 @@
     "jest-junit": "^12",
     "json-schema": "^0.3.0",
     "npm-check-updates": "^11",
-    "projen": "^0.25.1",
+    "projen": "^0.26.3",
     "standard-version": "^9",
     "ts-jest": "^26.5.6",
     "typescript": "^3.9.10"
