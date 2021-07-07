@@ -97,6 +97,7 @@ export class Documentation {
       await spawn('npm', ['install', 'npm@7'], {
         cwd: workdir,
         env,
+        shell: true,
       });
 
       await spawn(path.join(workdir, 'node_modules', '.bin', 'npm'), [
@@ -111,6 +112,7 @@ export class Documentation {
       ], {
         cwd: workdir,
         env,
+        shell: true,
       });
 
       return Documentation.forLocalPackage(path.join(workdir, 'node_modules', name), { ...options, assembliesDir: workdir } );

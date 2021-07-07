@@ -1,7 +1,7 @@
 import { Documentation } from '../../../src';
 
 const ASSEMBLIES = `${__dirname}/../../__fixtures__/assemblies`;
-const LIBRARIES = `${__dirname}/../../__fixtures__/libraries`;
+// const LIBRARIES = `${__dirname}/../../__fixtures__/libraries`;
 
 // this is a little concerning...we should be mindful
 // if need to keep increasing this.
