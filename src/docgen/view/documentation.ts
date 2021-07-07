@@ -1,7 +1,6 @@
 import * as child from 'child_process';
 import * as os from 'os';
 import * as path from 'path';
-import * as util from 'util';
 import * as fs from 'fs-extra';
 import * as glob from 'glob-promise';
 import * as reflect from 'jsii-reflect';
@@ -13,8 +12,6 @@ import { Transpile } from '../transpile/transpile';
 import { TypeScriptTranspile } from '../transpile/typescript';
 import { ApiReference } from './api-reference';
 import { Readme } from './readme';
-
-const exec = util.promisify(child.exec);
 
 /**
  * Options for rendering a `Documentation` object.
@@ -87,7 +84,7 @@ export class Documentation {
   /**
    * Create a `Documentation` object for a remote package available in the npm registry.
    */
-  public static async forRemotePackage(name: string, version: string, options?: DocumentationOptions): Promise<Documentation> {
+  public static async forRegistryPackage(name: string, version: string, options?: DocumentationOptions): Promise<Documentation> {
     return withTempDir(async (workdir: string) => {
       const env = {
         ...process.env,
@@ -95,11 +92,23 @@ export class Documentation {
         HOME: os.tmpdir(),
       };
 
-      await exec('npm install npm@7', {
+      // npm7 is needed so that we also install peerDependencies - they are needed to construct
+      // the full type system.
+      await spawn('npm', ['install', 'npm@7'], {
         cwd: workdir,
         env,
       });
-      await exec(`${workdir}/node_modules/.bin/npm install --ignore-scripts --no-bin-links --no-save ${name}@${version}`, {
+
+      await spawn(`${workdir}/node_modules/.bin/npm`, [
+        'install',
+        // this is critical from a security perspective to prevent
+        // code execution as part of the install command using npm hooks. (e.g postInstall)
+        '--ignore-scripts',
+        // ensures npm does not insert anything in $PATH
+        '--no-bin-links',
+        '--no-save',
+        `${name}@${version}`,
+      ], {
         cwd: workdir,
         env,
       });
@@ -122,7 +131,10 @@ export class Documentation {
     const assembliesDir = options?.assembliesDir ?? root;
 
     const manifest = JSON.parse(await fs.readFile(manifestPath, 'utf-8'));
-    return Documentation.forAssembly(manifest.name, assembliesDir);
+    return Documentation.forAssembly(manifest.name, assembliesDir, {
+      language: options?.language,
+      loose: options?.loose,
+    });
   }
 
   /**
@@ -214,6 +226,7 @@ async function withTempDir<T>(work: (workdir: string) => Promise<T>): Promise<T>
 }
 
 async function createAssembly(name: string, tsDir: string, loose: boolean, language?: TargetLanguage): Promise<reflect.Assembly> {
+  console.log(`Creating assembly in ${language ?? 'ts'} for ${name} from ${tsDir} (loose: ${loose})`);
   const ts = new reflect.TypeSystem();
   for (let dotJsii of await glob.promise(`${tsDir}/**/.jsii`)) {
     if (language) {
@@ -224,4 +237,18 @@ async function createAssembly(name: string, tsDir: string, loose: boolean, langu
     await ts.load(dotJsii);
   }
   return ts.findAssembly(name);
+}
+
+async function spawn(command: string, args?: ReadonlyArray<string>, options?: child.SpawnOptions) {
+  return new Promise<void>((ok, ko) => {
+    const p = child.spawn(command, args, options);
+    p.once('error', ko);
+    p.once('close', (code, signal) => {
+      if (code === 0) {
+        ok();
+      } else {
+        ko(`'${command}' command ${code != null ? `exited with code ${code}` : `was terminated by signal ${signal}`}`);
+      }
+    });
+  });
 }
