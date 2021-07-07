@@ -65,7 +65,7 @@ export interface DocumentationOptions {
 /**
  * Options for creating a `Documentation` object using the `fromLocalPackage` function.
  */
-export interface FromLocalPackageDocumentationOptions extends DocumentationOptions {
+export interface ForLocalPackageDocumentationOptions extends DocumentationOptions {
 
   /**
    * A local directory containing jsii assembly files that will
@@ -99,7 +99,7 @@ export class Documentation {
         env,
       });
 
-      await spawn(`${workdir}/node_modules/.bin/npm`, [
+      await spawn(path.join(workdir, 'node_modules', '.bin', 'npm'), [
         'install',
         // this is critical from a security perspective to prevent
         // code execution as part of the install command using npm hooks. (e.g postInstall)
@@ -120,7 +120,7 @@ export class Documentation {
   /**
    * Create a `Documentation` object for a package available in the local file system.
    */
-  public static async forLocalPackage(root: string, options?: FromLocalPackageDocumentationOptions): Promise<Documentation> {
+  public static async forLocalPackage(root: string, options?: ForLocalPackageDocumentationOptions): Promise<Documentation> {
     const manifestPath = path.join(root, 'package.json');
     if (!(await fs.pathExists(manifestPath))) {
       throw new Error(`Unable to locate ${manifestPath}`);
