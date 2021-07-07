@@ -14,6 +14,21 @@ import { ApiReference } from './api-reference';
 import { Readme } from './readme';
 
 /**
+ * Supported languages to generate documentation in.
+ */
+export enum DocumentationLanguage {
+  /**
+   * TypeScript.
+   */
+  TYPESCRIPT = 'ts',
+
+  /**
+   * Python.
+   */
+  PYTHON = 'python'
+}
+
+/**
  * Options for rendering a `Documentation` object.
  */
 export interface RenderOptions {
@@ -49,9 +64,9 @@ export interface DocumentationOptions {
   /**
    * Which language to generate docs for.
    *
-   * @default 'ts'
+   * @default DocumentationLanguage.TYPESCRIPT
    */
-  readonly language?: string;
+  readonly language?: DocumentationLanguage;
 
   /**
    * Whether to ignore missing fixture files that will prevent transliterating
@@ -151,16 +166,16 @@ export class Documentation {
 
       let transpile, language;
 
-      switch (options?.language ?? 'ts') {
-        case 'python':
+      switch (options?.language ?? DocumentationLanguage.TYPESCRIPT) {
+        case DocumentationLanguage.PYTHON:
           language = TargetLanguage.PYTHON;
           transpile = new PythonTranspile();
           break;
-        case 'ts':
+        case DocumentationLanguage.TYPESCRIPT:
           transpile = new TypeScriptTranspile();
           break;
         default:
-          throw new Error(`Unsupported language: ${options?.language}. Supported languages are ['python', 'ts']`);
+          throw new Error(`Unsupported language: ${options?.language}. Supported languages are ${Object.values(DocumentationLanguage)}`);
       }
       const assembly = await createAssembly(assemblyName, workdir, options?.loose ?? true, language);
       return new Documentation(assembly, transpile);
