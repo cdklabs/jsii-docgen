@@ -26,7 +26,7 @@ export class InstanceMethod {
       },
     });
 
-    md.code(this.transpile.language, this.transpiled.signature);
+    md.code(this.transpile.language.toString(), this.transpiled.signature);
 
     for (const parameter of this.parameters) {
       md.section(parameter.render());

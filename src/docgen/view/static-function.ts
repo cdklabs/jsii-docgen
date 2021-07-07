@@ -27,7 +27,7 @@ export class StaticFunction {
     });
 
     md.code(
-      this.transpile.language,
+      this.transpile.language.toString(),
       `${this.transpiled.import}`,
       '',
       `${this.transpiled.invocation}`,

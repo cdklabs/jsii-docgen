@@ -1,5 +1,5 @@
 import { Documentation } from '../../../src';
-import { DocumentationLanguage } from '../../../src/docgen/view/documentation';
+import { Language } from '../../../src/docgen/transpile/transpile';
 
 const ASSEMBLIES = `${__dirname}/../../__fixtures__/assemblies`;
 // const LIBRARIES = `${__dirname}/../../__fixtures__/libraries`;
@@ -11,7 +11,7 @@ jest.setTimeout(2 * 60 * 1000);
 describe('python', () => {
   test('regsitry package', async () => {
     const docs = await Documentation.forRegistryPackage('@aws-cdk/aws-ecr', '1.106.0', {
-      language: DocumentationLanguage.PYTHON,
+      language: Language.PYTHON,
     });
     const markdown = docs.render();
     expect(markdown.render()).toMatchSnapshot();
@@ -19,7 +19,7 @@ describe('python', () => {
 
   test('snapshot - root module', async () => {
     const docs = await Documentation.forAssembly('@aws-cdk/aws-ecr', ASSEMBLIES, {
-      language: DocumentationLanguage.PYTHON,
+      language: Language.PYTHON,
     });
     const markdown = docs.render();
     expect(markdown.render()).toMatchSnapshot();
@@ -27,7 +27,7 @@ describe('python', () => {
 
   test('snapshot - submodules', async () => {
     const docs = await Documentation.forAssembly('aws-cdk-lib', ASSEMBLIES, {
-      language: DocumentationLanguage.PYTHON,
+      language: Language.PYTHON,
     });
     const markdown = docs.render({ submodule: 'aws_eks' });
     expect(markdown.render()).toMatchSnapshot();

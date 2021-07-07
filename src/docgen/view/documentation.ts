@@ -8,25 +8,10 @@ import { TargetLanguage } from 'jsii-rosetta';
 import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
 import { Markdown } from '../render/markdown';
 import { PythonTranspile } from '../transpile/python';
-import { Transpile } from '../transpile/transpile';
+import { Transpile, Language } from '../transpile/transpile';
 import { TypeScriptTranspile } from '../transpile/typescript';
 import { ApiReference } from './api-reference';
 import { Readme } from './readme';
-
-/**
- * Supported languages to generate documentation in.
- */
-export enum DocumentationLanguage {
-  /**
-   * TypeScript.
-   */
-  TYPESCRIPT = 'ts',
-
-  /**
-   * Python.
-   */
-  PYTHON = 'python'
-}
 
 /**
  * Options for rendering a `Documentation` object.
@@ -64,9 +49,9 @@ export interface DocumentationOptions {
   /**
    * Which language to generate docs for.
    *
-   * @default DocumentationLanguage.TYPESCRIPT
+   * @default Language.TYPESCRIPT
    */
-  readonly language?: DocumentationLanguage;
+  readonly language?: Language;
 
   /**
    * Whether to ignore missing fixture files that will prevent transliterating
@@ -166,16 +151,16 @@ export class Documentation {
 
       let transpile, language;
 
-      switch (options?.language ?? DocumentationLanguage.TYPESCRIPT) {
-        case DocumentationLanguage.PYTHON:
+      switch (options?.language ?? Language.TYPESCRIPT) {
+        case Language.PYTHON:
           language = TargetLanguage.PYTHON;
           transpile = new PythonTranspile();
           break;
-        case DocumentationLanguage.TYPESCRIPT:
+        case Language.TYPESCRIPT:
           transpile = new TypeScriptTranspile();
           break;
         default:
-          throw new Error(`Unsupported language: ${options?.language}. Supported languages are ${Object.values(DocumentationLanguage)}`);
+          throw new Error(`Unsupported language: ${options?.language}. Supported languages are ${Object.values(Language)}`);
       }
       const assembly = await createAssembly(assemblyName, workdir, options?.loose ?? true, language);
       return new Documentation(assembly, transpile);

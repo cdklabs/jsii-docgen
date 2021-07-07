@@ -81,7 +81,7 @@ const propertyToParameter = (
  */
 export class PythonTranspile extends transpile.TranspileBase {
   constructor() {
-    super('python');
+    super(transpile.Language.PYTHON);
   }
 
   public readme(readme: string): string {
