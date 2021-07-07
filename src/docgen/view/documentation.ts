@@ -170,7 +170,8 @@ export class Documentation {
 
   private constructor(
     private readonly assembly: reflect.Assembly,
-    private readonly transpile: Transpile) {
+    private readonly transpile: Transpile,
+  ) {
   }
 
   /**
