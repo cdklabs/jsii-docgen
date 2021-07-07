@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`python regsitry package 1`] = `
+exports[`lifecycle hooks are not invoked when installing packages 1`] = `
 "# Amazon ECR Construct Library
 
 <!--BEGIN STABILITY BANNER-->---
@@ -2573,7 +2573,7 @@ Rule applies to untagged images.
 "
 `;
 
-exports[`python remote package 1`] = `
+exports[`python regsitry package 1`] = `
 "# Amazon ECR Construct Library
 
 <!--BEGIN STABILITY BANNER-->---
@@ -17767,7 +17767,7 @@ Strategic merge patch.
 "
 `;
 
-exports[`typescript remote package 1`] = `
+exports[`typescript regsitry package 1`] = `
 "# Amazon ECR Construct Library
 <!--BEGIN STABILITY BANNER-->
 
