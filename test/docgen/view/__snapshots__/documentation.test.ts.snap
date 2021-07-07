@@ -1,36 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`package installation does not run lifecycle hooks 1`] = `
-"# with-lifecycle-hook
+"# construct-library
 
-This is a test project to make sure the \`jsii-docgen\` cli property installas npm packages with lifecycle hooks.
+This is a test project to make sure the \`jsii-docgen\` cli property renders API documentation
+for construct libraries.
 # API Reference <a name=\\"API Reference\\"></a>
 
 ## Constructs <a name=\\"Constructs\\"></a>
 
-### GreeterBucket <a name=\\"with-lifecycle-hook.GreeterBucket\\"></a>
+### GreeterBucket <a name=\\"construct-library.GreeterBucket\\"></a>
 
-#### Initializer <a name=\\"with-lifecycle-hook.GreeterBucket.Initializer\\"></a>
+#### Initializer <a name=\\"construct-library.GreeterBucket.Initializer\\"></a>
 
 \`\`\`typescript
-import { GreeterBucket } from 'with-lifecycle-hook'
+import { GreeterBucket } from 'construct-library'
 
 new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 \`\`\`
 
-##### \`scope\`<sup>Required</sup> <a name=\\"with-lifecycle-hook.GreeterBucket.scope\\"></a>
+##### \`scope\`<sup>Required</sup> <a name=\\"construct-library.GreeterBucket.scope\\"></a>
 
 - *Type:* [\`constructs.Construct\`](#constructs.Construct)
 
 ---
 
-##### \`id\`<sup>Required</sup> <a name=\\"with-lifecycle-hook.GreeterBucket.id\\"></a>
+##### \`id\`<sup>Required</sup> <a name=\\"construct-library.GreeterBucket.id\\"></a>
 
 - *Type:* \`string\`
 
 ---
 
-##### \`props\`<sup>Optional</sup> <a name=\\"with-lifecycle-hook.GreeterBucket.props\\"></a>
+##### \`props\`<sup>Optional</sup> <a name=\\"construct-library.GreeterBucket.props\\"></a>
 
 - *Type:* [\`@aws-cdk/aws-s3.BucketProps\`](#@aws-cdk/aws-s3.BucketProps)
 
@@ -38,7 +39,7 @@ new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 
 #### Methods <a name=\\"Methods\\"></a>
 
-##### \`greet\` <a name=\\"with-lifecycle-hook.GreeterBucket.greet\\"></a>
+##### \`greet\` <a name=\\"construct-library.GreeterBucket.greet\\"></a>
 
 \`\`\`typescript
 public greet()
@@ -53,7 +54,7 @@ public greet()
 "
 `;
 
-exports[`python regsitry package 1`] = `
+exports[`python from package 1`] = `
 "# Amazon ECR Construct Library
 
 <!--BEGIN STABILITY BANNER-->---
@@ -15247,7 +15248,7 @@ Strategic merge patch.
 "
 `;
 
-exports[`typescript regsitry package 1`] = `
+exports[`typescript from package 1`] = `
 "# Amazon ECR Construct Library
 <!--BEGIN STABILITY BANNER-->
 

@@ -1,5 +1,7 @@
 import * as child from 'child_process';
+import * as os from 'os';
 import * as path from 'path';
+import * as fs from 'fs-extra';
 import { Documentation } from '../../../src';
 import { Language } from '../../../src/docgen/transpile/transpile';
 import { extractPackageName } from '../../../src/docgen/view/documentation';
@@ -33,9 +35,25 @@ describe('extractPackageName', () => {
 });
 
 test('package installation does not run lifecycle hooks', async () => {
-  const libraryDir = path.join(LIBRARIES, 'with-lifecycle-hook');
-  child.execSync('yarn package', { cwd: libraryDir });
-  const docs = await Documentation.fromPackage(path.join(libraryDir, 'dist', 'js', 'with-lifecycle-hook@0.0.0.jsii.tgz'), { name: 'with-lifecycle-hook' });
+
+  const workdir = await fs.mkdtemp(path.join(os.tmpdir(), path.sep));
+  const libraryName = 'construct-library';
+  const libraryDir = path.join(LIBRARIES, libraryName);
+
+  await fs.copy(libraryDir, workdir);
+
+  const manifestPath = path.join(workdir, 'package.json');
+  const manifest = JSON.parse(await fs.readFile(manifestPath, 'utf-8'));
+
+  // inject a postinstall hook
+  manifest.scripts.postinstall = 'exit 1';
+  await fs.writeFile(manifestPath, JSON.stringify(manifest));
+
+  // create the package
+  child.execSync('yarn package', { cwd: workdir });
+
+  // this should succeed because the failure script should be ignored
+  const docs = await Documentation.fromPackage(path.join(workdir, 'dist', 'js', `${libraryName}@0.0.0.jsii.tgz`), { name: libraryName });
   const markdown = docs.render();
   expect(markdown.render()).toMatchSnapshot();
 });
