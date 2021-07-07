@@ -376,7 +376,7 @@ export interface Transpile {
   /**
    * The language of the transpiler.
    */
-  language: string;
+  readonly language: string;
 
   /**
    * Transpile a module like object (Assembly | Submodule)

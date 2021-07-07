@@ -120,7 +120,7 @@ export class Documentation {
   /**
    * Create a `Documentation` object for a package available in the local file system.
    */
-  public static async forLocalPackage(root: string, options?: ForLocalPackageDocumentationOptions): Promise<Documentation> {
+  public static async forLocalPackage(root: string, options: ForLocalPackageDocumentationOptions = {}): Promise<Documentation> {
     const manifestPath = path.join(root, 'package.json');
     if (!(await fs.pathExists(manifestPath))) {
       throw new Error(`Unable to locate ${manifestPath}`);
