@@ -5,8 +5,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "compile": "jsii --silence-warnings=reserved-word --no-fix-peer-dependencies",
-    "package": "jsii-pacmak",
-    "jsii-pacmak": "^1.30.0"
+    "package": "jsii-pacmak"
   },
   "jsii": {
     "outdir": "dist",
