@@ -132,8 +132,8 @@ export class Documentation {
     // of the root package dir (i.e ./node_modules)
     const assembliesDir = options?.assembliesDir ?? root;
 
-    const manifest = JSON.parse(await fs.readFile(manifestPath, 'utf-8'));
-    return Documentation.forAssembly(manifest.name, assembliesDir, {
+    const { name } = JSON.parse(await fs.readFile(manifestPath, 'utf-8'));
+    return Documentation.forAssembly(name, assembliesDir, {
       language: options?.language,
       loose: options?.loose,
     });
@@ -160,7 +160,7 @@ export class Documentation {
           transpile = new TypeScriptTranspile();
           break;
         default:
-          throw new Error(`Unsupported language: ${options?.language}`);
+          throw new Error(`Unsupported language: ${options?.language}. Supported languages are ['python', 'ts']`);
       }
       const assembly = await createAssembly(assemblyName, workdir, options?.loose ?? true, language);
       return new Documentation(assembly, transpile);
@@ -197,17 +197,17 @@ export class Documentation {
   /**
    * Lookup a submodule by a submodule name.
    */
-  private findSubmodule(assembly: reflect.Assembly, submodule?: string): reflect.Submodule {
+  private findSubmodule(assembly: reflect.Assembly, submodule: string): reflect.Submodule {
     const submodules = assembly.submodules.filter(
       (s) => s.name === submodule,
     );
 
     if (submodules.length === 0) {
-      throw new Error(`Submodule ${submodule} not found`);
+      throw new Error(`Submodule ${submodule} not found in assembly ${assembly.name}@${assembly.version}`);
     }
 
     if (submodules.length > 1) {
-      throw new Error(`Found multiple submodules with name: ${submodule}`);
+      throw new Error(`Found multiple submodules with name: ${submodule} in assembly ${assembly.name}@${assembly.version}`);
     }
 
     return submodules[0];
