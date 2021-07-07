@@ -53,14 +53,14 @@ test('package installation does not run lifecycle hooks', async () => {
   child.execSync('yarn package', { cwd: workdir });
 
   // this should succeed because the failure script should be ignored
-  const docs = await Documentation.fromPackage(path.join(workdir, 'dist', 'js', `${libraryName}@0.0.0.jsii.tgz`), { name: libraryName });
+  const docs = await Documentation.forPackage(path.join(workdir, 'dist', 'js', `${libraryName}@0.0.0.jsii.tgz`), { name: libraryName });
   const markdown = docs.render();
   expect(markdown.render()).toMatchSnapshot();
 });
 
 describe('python', () => {
   test('from package', async () => {
-    const docs = await Documentation.fromPackage('@aws-cdk/aws-ecr@1.106.0', {
+    const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0', {
       language: Language.PYTHON,
     });
     const markdown = docs.render();
@@ -68,7 +68,7 @@ describe('python', () => {
   });
 
   test('snapshot - root module', async () => {
-    const docs = await Documentation.fromAssembly('@aws-cdk/aws-ecr', ASSEMBLIES, {
+    const docs = await Documentation.forAssembly('@aws-cdk/aws-ecr', ASSEMBLIES, {
       language: Language.PYTHON,
     });
     const markdown = docs.render();
@@ -76,7 +76,7 @@ describe('python', () => {
   });
 
   test('snapshot - submodules', async () => {
-    const docs = await Documentation.fromAssembly('aws-cdk-lib', ASSEMBLIES, {
+    const docs = await Documentation.forAssembly('aws-cdk-lib', ASSEMBLIES, {
       language: Language.PYTHON,
     });
     const markdown = docs.render({ submodule: 'aws_eks' });
@@ -87,19 +87,19 @@ describe('python', () => {
 describe('typescript', () => {
 
   test('from package', async () => {
-    const docs = await Documentation.fromPackage('@aws-cdk/aws-ecr@1.106.0');
+    const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0');
     const markdown = docs.render();
     expect(markdown.render()).toMatchSnapshot();
   });
 
   test('snapshot - single module', async () => {
-    const docs = await Documentation.fromAssembly('@aws-cdk/aws-ecr', ASSEMBLIES);
+    const docs = await Documentation.forAssembly('@aws-cdk/aws-ecr', ASSEMBLIES);
     const markdown = docs.render();
     expect(markdown.render()).toMatchSnapshot();
   });
 
   test('snapshot - submodules', async () => {
-    const docs = await Documentation.fromAssembly('aws-cdk-lib', ASSEMBLIES);
+    const docs = await Documentation.forAssembly('aws-cdk-lib', ASSEMBLIES);
     const markdown = docs.render({ submodule: 'aws_eks' });
     expect(markdown.render()).toMatchSnapshot();
   });

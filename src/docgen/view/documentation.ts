@@ -98,7 +98,7 @@ export class Documentation {
    * @param target - The target to install. This can either be a local path or a registry identifier (e.g <name>@<version>)
    * @param options - Additional options.
    */
-  public static async fromPackage(target: string, options: ForPackageDocumentationOptions = {}): Promise<Documentation> {
+  public static async forPackage(target: string, options: ForPackageDocumentationOptions = {}): Promise<Documentation> {
     return withTempDir(async (workdir: string) => {
 
       if (await fs.pathExists(target) && !options.name) {
@@ -136,7 +136,7 @@ export class Documentation {
         shell: true,
       });
 
-      return Documentation.fromProject(path.join(workdir, 'node_modules', name), { ...options, assembliesDir: workdir } );
+      return Documentation.forProject(path.join(workdir, 'node_modules', name), { ...options, assembliesDir: workdir } );
     });
   }
 
@@ -146,7 +146,7 @@ export class Documentation {
    * @param root - The local directory path. Must contain a package.json file.
    * @param options - Additional options.
    */
-  public static async fromProject(root: string, options: ForLocalPackageDocumentationOptions = {}): Promise<Documentation> {
+  public static async forProject(root: string, options: ForLocalPackageDocumentationOptions = {}): Promise<Documentation> {
     const manifestPath = path.join(root, 'package.json');
     if (!(await fs.pathExists(manifestPath))) {
       throw new Error(`Unable to locate ${manifestPath}`);
@@ -157,7 +157,7 @@ export class Documentation {
     const assembliesDir = options?.assembliesDir ?? root;
 
     const { name } = JSON.parse(await fs.readFile(manifestPath, 'utf-8'));
-    return Documentation.fromAssembly(name, assembliesDir, {
+    return Documentation.forAssembly(name, assembliesDir, {
       language: options?.language,
       loose: options?.loose,
     });
@@ -170,7 +170,7 @@ export class Documentation {
    * @param assembliesDir - The directory containing the assemblies that comprise the type-system.
    * @param options - Additional options.
    */
-  public static async fromAssembly(assemblyName: string, assembliesDir: string, options?: DocumentationOptions): Promise<Documentation> {
+  public static async forAssembly(assemblyName: string, assembliesDir: string, options?: DocumentationOptions): Promise<Documentation> {
     return withTempDir(async (workdir: string) => {
 
       // always better not to operate on an externally provided directory
