@@ -76,16 +76,37 @@ export interface ForLocalPackageDocumentationOptions extends DocumentationOption
   readonly assembliesDir?: string;
 }
 
+export interface ForPackageDocumentationOptions extends DocumentationOptions {
+
+  /**
+   * The name of the package to be installed.
+   *
+   * If the target you supply points to a local file, this is required.
+   * Otherwise, it will be derived from the target.
+   */
+  readonly name?: string;
+}
+
 /**
  * Render documentation pages for a jsii library.
  */
 export class Documentation {
 
   /**
-   * Create a `Documentation` object for a remote package available in the npm registry.
+   * Create a `Documentation` object from a package installable by npm.
+   *
+   * @param target - The target to install. This can either be a local path or a registry identifier (e.g <name>@<version>)
+   * @param options - Additional options.
    */
-  public static async forRegistryPackage(name: string, version: string, options?: DocumentationOptions): Promise<Documentation> {
+  public static async fromPackage(target: string, options: ForPackageDocumentationOptions = {}): Promise<Documentation> {
     return withTempDir(async (workdir: string) => {
+
+      if (await fs.pathExists(target) && !options.name) {
+        throw new Error('\'options.name\' must be provided when installing local packages.');
+      }
+
+      const name = options?.name ?? extractPackageName(target);
+
       const env = {
         ...process.env,
         // npm fails with EROFS if $HOME is read-only, even if it won't write there
@@ -108,21 +129,24 @@ export class Documentation {
         // ensures npm does not insert anything in $PATH
         '--no-bin-links',
         '--no-save',
-        `${name}@${version}`,
+        target,
       ], {
         cwd: workdir,
         env,
         shell: true,
       });
 
-      return Documentation.forLocalPackage(path.join(workdir, 'node_modules', name), { ...options, assembliesDir: workdir } );
+      return Documentation.fromProject(path.join(workdir, 'node_modules', name), { ...options, assembliesDir: workdir } );
     });
   }
 
   /**
-   * Create a `Documentation` object for a package available in the local file system.
+   * Create a `Documentation` object from a local directory containing a node project.
+   *
+   * @param root - The local directory path. Must contain a package.json file.
+   * @param options - Additional options.
    */
-  public static async forLocalPackage(root: string, options: ForLocalPackageDocumentationOptions = {}): Promise<Documentation> {
+  public static async fromProject(root: string, options: ForLocalPackageDocumentationOptions = {}): Promise<Documentation> {
     const manifestPath = path.join(root, 'package.json');
     if (!(await fs.pathExists(manifestPath))) {
       throw new Error(`Unable to locate ${manifestPath}`);
@@ -133,17 +157,20 @@ export class Documentation {
     const assembliesDir = options?.assembliesDir ?? root;
 
     const { name } = JSON.parse(await fs.readFile(manifestPath, 'utf-8'));
-    return Documentation.forAssembly(name, assembliesDir, {
+    return Documentation.fromAssembly(name, assembliesDir, {
       language: options?.language,
       loose: options?.loose,
     });
   }
 
   /**
-   * Create a `Documentation` object for a specific assembly that resides in a directory of assemblies.
-   * The directory will comprise the entire type-system available to the generartion process.
+   * Create a `Documentation` object for a specific assembly from a directory of assemblies.
+   *
+   * @param assemblyName - The assembly name.
+   * @param assembliesDir - The directory containing the assemblies that comprise the type-system.
+   * @param options - Additional options.
    */
-  public static async forAssembly(assemblyName: string, assembliesDir: string, options?: DocumentationOptions): Promise<Documentation> {
+  public static async fromAssembly(assemblyName: string, assembliesDir: string, options?: DocumentationOptions): Promise<Documentation> {
     return withTempDir(async (workdir: string) => {
 
       // always better not to operate on an externally provided directory
@@ -254,4 +281,27 @@ async function spawn(command: string, args?: ReadonlyArray<string>, options?: ch
       }
     });
   });
+}
+
+export function extractPackageName(spec: string) {
+  const firstAt = spec.indexOf('@');
+
+  if (firstAt === 0) {
+    const lastAt = spec.indexOf('@', firstAt + 1);
+    if (lastAt === -1) {
+      // @aws-cdk/aws-ecr
+      return spec;
+    } else {
+      // @aws-cdk/aws-ecr@2.0.0
+      return spec.substring(0, lastAt);
+    }
+  }
+
+  if (firstAt > 0) {
+    // aws-cdk-lib@2.0.0
+    return spec.substring(0, firstAt);
+  }
+
+  // aws-cdk-lib
+  return spec;
 }

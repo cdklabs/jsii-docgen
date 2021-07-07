@@ -42,7 +42,7 @@ const project = new TypeScriptProject({
 
 project.addFields({ resolutions: { '@jsii/spec': './vendor/jsii-spec.tgz' } });
 
-const libraryFixtures = ['construct-library'];
+const libraryFixtures = ['construct-library', 'with-lifecycle-hook'];
 
 // compile the test fixtures with jsii
 for (const library of libraryFixtures) {

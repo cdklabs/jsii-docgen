@@ -1,5 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`package installation does not run lifecycle hooks 1`] = `
+"# with-lifecycle-hook
+
+This is a test project to make sure the \`jsii-docgen\` cli property installas npm packages with lifecycle hooks.
+# API Reference <a name=\\"API Reference\\"></a>
+
+## Constructs <a name=\\"Constructs\\"></a>
+
+### GreeterBucket <a name=\\"with-lifecycle-hook.GreeterBucket\\"></a>
+
+#### Initializer <a name=\\"with-lifecycle-hook.GreeterBucket.Initializer\\"></a>
+
+\`\`\`typescript
+import { GreeterBucket } from 'with-lifecycle-hook'
+
+new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
+\`\`\`
+
+##### \`scope\`<sup>Required</sup> <a name=\\"with-lifecycle-hook.GreeterBucket.scope\\"></a>
+
+- *Type:* [\`constructs.Construct\`](#constructs.Construct)
+
+---
+
+##### \`id\`<sup>Required</sup> <a name=\\"with-lifecycle-hook.GreeterBucket.id\\"></a>
+
+- *Type:* \`string\`
+
+---
+
+##### \`props\`<sup>Optional</sup> <a name=\\"with-lifecycle-hook.GreeterBucket.props\\"></a>
+
+- *Type:* [\`@aws-cdk/aws-s3.BucketProps\`](#@aws-cdk/aws-s3.BucketProps)
+
+---
+
+#### Methods <a name=\\"Methods\\"></a>
+
+##### \`greet\` <a name=\\"with-lifecycle-hook.GreeterBucket.greet\\"></a>
+
+\`\`\`typescript
+public greet()
+\`\`\`
+
+
+
+
+
+
+
+"
+`;
+
 exports[`python regsitry package 1`] = `
 "# Amazon ECR Construct Library
 
