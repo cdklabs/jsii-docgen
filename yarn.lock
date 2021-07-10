@@ -500,9 +500,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@jsii/spec@./vendor/jsii-spec.tgz", "@jsii/spec@^1.30.0", "@jsii/spec@^1.30.1-dev.20210630.0":
-  version "1.30.1-dev.20210630.0"
-  resolved "./vendor/jsii-spec.tgz#03a72a0317760956c0480d440f8fe5a5965ec879"
+"@jsii/spec@^1.30.0", "@jsii/spec@^1.31.0":
+  version "1.31.0"
+  resolved "https://registry.yarnpkg.com/@jsii/spec/-/spec-1.31.0.tgz#9298dc163fdae0bab4006b817592235a29922871"
+  integrity sha512-qpJqZ+xj4lnKfk/HJYdYURDmHzh9aBIVOTgwd314AxKmwubDAajlAup+D2F9z9kylAB7GsQiva/SXgUlFjBeQw==
   dependencies:
     jsonschema "^1.4.0"
 
@@ -3982,11 +3983,12 @@ jsii-reflect@^1.30.0:
     oo-ascii-tree "^1.30.0"
     yargs "^16.2.0"
 
-jsii-rosetta@./vendor/jsii-rosetta.tgz:
-  version "1.30.1-dev.20210630.0"
-  resolved "./vendor/jsii-rosetta.tgz#84ad0a148ec6869bb0147a64552ea32ba663fe70"
+jsii-rosetta@^1.31.0:
+  version "1.31.0"
+  resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-1.31.0.tgz#f5174b532b4c3a79eadd9ed059aa33bee21e3225"
+  integrity sha512-Heu6D+yI5mmUklLQdX3PdDvHUQm14618Fj4PQM9seKa4cohxzJ7EHopfRObKYHMko9awopx4Qr7Gtu6u/QPqfw==
   dependencies:
-    "@jsii/spec" "^1.30.1-dev.20210630.0"
+    "@jsii/spec" "^1.31.0"
     commonmark "^0.29.3"
     fs-extra "^9.1.0"
     typescript "~3.9.9"

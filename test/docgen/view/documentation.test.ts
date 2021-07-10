@@ -59,7 +59,7 @@ test('package installation does not run lifecycle hooks', async () => {
 });
 
 describe('python', () => {
-  test('from package', async () => {
+  test('for package', async () => {
     const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0', {
       language: Language.PYTHON,
     });

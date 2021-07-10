@@ -13,10 +13,6 @@ const project = new TypeScriptProject({
   },
   devDeps: [
     '@types/fs-extra@^8', // >8 needs a newer node version
-    'glob-promise',
-    'glob',
-    'jsii-rosetta',
-    '@jsii/spec',
   ],
   deps: [
     'yargs',
@@ -25,8 +21,6 @@ const project = new TypeScriptProject({
     'glob-promise',
     'glob',
     'jsii-reflect',
-  ],
-  peerDeps: [
     'jsii-rosetta',
     '@jsii/spec',
   ],
@@ -40,8 +34,6 @@ const project = new TypeScriptProject({
   autoApproveUpgrades: true,
 });
 
-project.addFields({ resolutions: { '@jsii/spec': './vendor/jsii-spec.tgz' } });
-
 const libraryFixtures = ['construct-library'];
 
 // compile the test fixtures with jsii
@@ -52,6 +44,4 @@ for (const library of libraryFixtures) {
 
 // artifacts created by transpilation in tests
 project.gitignore.exclude('test/**/.jsii.*');
-project.gitignore.include('vendor/jsii-spec.tgz');
-project.gitignore.include('vendor/jsii-rosetta.tgz');
 project.synth();

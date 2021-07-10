@@ -49,5 +49,3 @@ yarn-error.log*
 !/tsconfig.eslint.json
 !/tsconfig.jest.json
 !/tsconfig.json
-!vendor/jsii-rosetta.tgz
-!vendor/jsii-spec.tgz

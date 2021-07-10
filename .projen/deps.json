@@ -1,10 +1,6 @@
 {
   "dependencies": [
     {
-      "name": "@jsii/spec",
-      "type": "build"
-    },
-    {
       "name": "@types/fs-extra",
       "version": "^8",
       "type": "build"
@@ -43,24 +39,12 @@
       "type": "build"
     },
     {
-      "name": "glob",
-      "type": "build"
-    },
-    {
-      "name": "glob-promise",
-      "type": "build"
-    },
-    {
       "name": "jest",
       "type": "build"
     },
     {
       "name": "jest-junit",
       "version": "^12",
-      "type": "build"
-    },
-    {
-      "name": "jsii-rosetta",
       "type": "build"
     },
     {
@@ -91,11 +75,7 @@
     },
     {
       "name": "@jsii/spec",
-      "type": "peer"
-    },
-    {
-      "name": "jsii-rosetta",
-      "type": "peer"
+      "type": "runtime"
     },
     {
       "name": "case",
@@ -115,6 +95,10 @@
     },
     {
       "name": "jsii-reflect",
+      "type": "runtime"
+    },
+    {
+      "name": "jsii-rosetta",
       "type": "runtime"
     },
     {

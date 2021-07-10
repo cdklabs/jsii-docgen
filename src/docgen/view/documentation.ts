@@ -119,8 +119,10 @@ export class Documentation {
         cwd: workdir,
         env,
         shell: true,
+        stdio: ['ignore', 'inherit', 'inherit'],
       });
 
+      console.log('Installing package');
       await spawn(path.join(workdir, 'node_modules', '.bin', 'npm'), [
         'install',
         // this is critical from a security perspective to prevent
@@ -134,6 +136,7 @@ export class Documentation {
         cwd: workdir,
         env,
         shell: true,
+        stdio: ['ignore', 'inherit', 'inherit'],
       });
 
       return Documentation.forProject(path.join(workdir, 'node_modules', name), { ...options, assembliesDir: workdir } );
