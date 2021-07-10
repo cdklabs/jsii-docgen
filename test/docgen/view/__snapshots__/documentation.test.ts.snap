@@ -54,7 +54,7 @@ public greet()
 "
 `;
 
-exports[`python from package 1`] = `
+exports[`python for package 1`] = `
 "# Amazon ECR Construct Library
 
 <!--BEGIN STABILITY BANNER-->---
@@ -15248,7 +15248,7 @@ Strategic merge patch.
 "
 `;
 
-exports[`typescript from package 1`] = `
+exports[`typescript for package 1`] = `
 "# Amazon ECR Construct Library
 <!--BEGIN STABILITY BANNER-->
 
