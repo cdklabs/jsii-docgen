@@ -3,15 +3,15 @@ import { Language } from '../../../src/docgen/transpile/transpile';
 describe('language', () => {
 
   test('typescript is supported', () => {
-    expect(Language.fromLiteral('typescript')).toEqual(Language.TYPESCRIPT);
+    expect(Language.fromString('typescript')).toEqual(Language.TYPESCRIPT);
   });
 
   test('python is supported', () => {
-    expect(Language.fromLiteral('python')).toEqual(Language.PYTHON);
+    expect(Language.fromString('python')).toEqual(Language.PYTHON);
   });
 
   test('throw error on unsupported language', () => {
-    expect(() => Language.fromLiteral('unsupported')).toThrowError('Unsupported language: unsupported. Supported languages are: [typescript,python]');
+    expect(() => Language.fromString('unsupported')).toThrowError('Unsupported language: unsupported. Supported languages are: [typescript,python]');
   });
 
   test('toString()', () => {
