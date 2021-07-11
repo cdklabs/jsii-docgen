@@ -19,7 +19,7 @@ export class Language {
    *
    * Throws an `UnsupportedLanguageError` if the language is not supported.
    */
-  public static of(lang: string) {
+  public static fromString(lang: string) {
     switch (lang) {
       case Language.TYPESCRIPT.toString():
         return Language.TYPESCRIPT;
