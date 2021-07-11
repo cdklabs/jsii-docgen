@@ -15,7 +15,7 @@ export class Language {
   public static readonly PYTHON = new Language('python');
 
   /**
-   * Transform a literal string to the `DocumentationLanguage` object.
+   * Transform a literal string to the `Language` object.
    *
    * Throws an `UnsupportedLanguageError` if the language is not supported.
    */
