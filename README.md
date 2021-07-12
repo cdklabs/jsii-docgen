@@ -16,17 +16,8 @@ As a library:
 
 ```ts
 import { Documentation } from 'jsii-docgen';
-import * as reflect from 'jsii-reflect';
 
-const ts = new reflect.TypeSystem();
-await ts.loadFile('my/project/.jsii');
-
-const docs = new Documentation({
-  assembly: ts.findAssembly('my-project-name'),
-  language: 'ts',
-  readme: false,
-});
-
+const docs = await Documentation.forLocalPackage('.', { language: 'ts' });
 const markdown = docs.render().render(); // returns a markdown string
 ```
 

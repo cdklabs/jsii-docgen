@@ -1,6 +1,49 @@
 import * as reflect from 'jsii-reflect';
 
 /**
+ * Supported languages to generate documentation in.
+ */
+export class Language {
+  /**
+   * TypeScript.
+   */
+  public static readonly TYPESCRIPT = new Language('typescript');
+
+  /**
+   * Python.
+   */
+  public static readonly PYTHON = new Language('python');
+
+  /**
+   * Transform a literal string to the `Language` object.
+   *
+   * Throws an `UnsupportedLanguageError` if the language is not supported.
+   */
+  public static fromString(lang: string) {
+    switch (lang) {
+      case Language.TYPESCRIPT.toString():
+        return Language.TYPESCRIPT;
+      case Language.PYTHON.toString():
+        return Language.PYTHON;
+      default:
+        throw new UnsupportedLanguageError(lang, [Language.TYPESCRIPT, Language.PYTHON]);
+    }
+  }
+
+  private constructor(private readonly lang: string) {}
+
+  public toString() {
+    return this.lang;
+  }
+}
+
+export class UnsupportedLanguageError extends Error {
+  constructor(lang: string, supported: Language[]) {
+    super(`Unsupported language: ${lang}. Supported languages are: [${supported}]`);
+  }
+}
+
+/**
  * Outcome of transpiling a jsii struct.
  */
 export interface TranspiledStruct {
@@ -374,9 +417,9 @@ export interface TranspiledModuleLike {
  */
 export interface Transpile {
   /**
-   * The language of the tranpiler.
+   * The language of the transpiler.
    */
-  language: string;
+  readonly language: Language;
 
   /**
    * Transpile a module like object (Assembly | Submodule)
@@ -492,7 +535,7 @@ export interface TranspileBase extends Transpile {}
  * Common functionality between different transpilers.
  */
 export abstract class TranspileBase implements Transpile {
-  constructor(public readonly language: string) {}
+  constructor(public readonly language: Language) {}
 
   public type(type: reflect.Type): TranspiledType {
     const submodule = this.findSubmodule(type);

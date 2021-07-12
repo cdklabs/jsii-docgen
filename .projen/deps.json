@@ -39,14 +39,6 @@
       "type": "build"
     },
     {
-      "name": "glob",
-      "type": "build"
-    },
-    {
-      "name": "glob-promise",
-      "type": "build"
-    },
-    {
       "name": "jest",
       "type": "build"
     },
@@ -98,7 +90,15 @@
       "type": "runtime"
     },
     {
+      "name": "glob-promise",
+      "type": "runtime"
+    },
+    {
       "name": "jsii-reflect",
+      "type": "runtime"
+    },
+    {
+      "name": "jsii-rosetta",
       "type": "runtime"
     },
     {

@@ -32,7 +32,7 @@ export class Struct {
     });
 
     initializer.code(
-      this.transpile.language,
+      this.transpile.language.toString(),
       `${this.transpiled.import}`,
       '',
       `${this.transpiled.initialization}`,

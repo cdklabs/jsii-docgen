@@ -13,15 +13,15 @@ const project = new TypeScriptProject({
   },
   devDeps: [
     '@types/fs-extra@^8', // >8 needs a newer node version
-    'glob-promise',
-    'glob',
   ],
   deps: [
     'yargs',
     'fs-extra',
     'case',
+    'glob-promise',
     'glob',
     'jsii-reflect',
+    'jsii-rosetta',
     '@jsii/spec',
   ],
   compileBeforeTest: true, // we need this for the CLI test
@@ -42,4 +42,6 @@ for (const library of libraryFixtures) {
   project.compileTask.exec('npm run compile', { cwd: `./test/__fixtures__/libraries/${library}` });
 }
 
+// artifacts created by transpilation in tests
+project.gitignore.exclude('test/**/.jsii.*');
 project.synth();

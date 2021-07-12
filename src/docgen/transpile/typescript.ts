@@ -54,7 +54,7 @@ const formatSignature = (name: string, inputs: string[]) => {
  */
 export class TypeScriptTranspile extends transpile.TranspileBase {
   constructor() {
-    super('typescript');
+    super(transpile.Language.TYPESCRIPT);
   }
 
   public readme(readme: string): string {

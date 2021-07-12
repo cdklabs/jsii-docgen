@@ -4,9 +4,11 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "compile": "jsii --silence-warnings=reserved-word --no-fix-peer-dependencies"
+    "compile": "jsii --silence-warnings=reserved-word --no-fix-peer-dependencies",
+    "package": "jsii-pacmak"
   },
   "jsii": {
+    "outdir": "dist",
     "targets": {
       "python": {
         "distName": "construct-library",
@@ -33,6 +35,7 @@
   },
   "devDependencies": {
     "jsii": "^1.30.0",
+    "jsii-pacmak": "^1.30.0",
     "typescript": "^4.3.4",
     "@types/node": "^12.0.0"
   },
