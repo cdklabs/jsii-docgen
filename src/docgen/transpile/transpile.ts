@@ -178,11 +178,11 @@ export interface TranspiledTypeReferenceToStringOptions {
   /**
    * Type formatter.
    */
-  typeFormatter?: (t: TranspiledType) => string;
+  typeFormatter?: (type: TranspiledType) => string;
   /**
    * String formatter.
    */
-  stringFormatter?: (formatter: string) => string;
+  stringFormatter?: (typeName: string) => string;
 }
 
 /**
@@ -420,6 +420,13 @@ export interface Transpile {
    * The language of the transpiler.
    */
   readonly language: Language;
+
+  /**
+   * How links to types should be formatted.
+   *
+   * @default '#{fqn}'
+   */
+  readonly linkFormatter?: (type: TranspiledType) => string;
 
   /**
    * Transpile a module like object (Assembly | Submodule)

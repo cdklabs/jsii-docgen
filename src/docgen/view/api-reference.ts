@@ -1,6 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { Transpile } from '../transpile/transpile';
+import { Transpile, TranspiledType } from '../transpile/transpile';
 import { Classes } from './classes';
 import { Constructs } from './constructs';
 import { Enums } from './enums';
@@ -19,6 +19,7 @@ export class ApiReference {
   constructor(
     transpile: Transpile,
     assembly: reflect.Assembly,
+    linkFormatter: (type: TranspiledType) => string,
     submodule?: reflect.Submodule,
   ) {
     const classes = this.sortByName(
@@ -29,10 +30,10 @@ export class ApiReference {
     );
     const enums = this.sortByName(submodule ? submodule.enums : assembly.enums);
 
-    this.constructs = new Constructs(transpile, classes);
-    this.classes = new Classes(transpile, classes);
-    this.structs = new Structs(transpile, interfaces);
-    this.interfaces = new Interfaces(transpile, interfaces);
+    this.constructs = new Constructs(transpile, classes, linkFormatter);
+    this.classes = new Classes(transpile, classes, linkFormatter);
+    this.structs = new Structs(transpile, interfaces, linkFormatter);
+    this.interfaces = new Interfaces(transpile, interfaces, linkFormatter);
     this.enums = new Enums(transpile, enums);
   }
 

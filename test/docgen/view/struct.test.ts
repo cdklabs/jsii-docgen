@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { PythonTranspile } from '../../../src/docgen/transpile/python';
+import { TranspiledType } from '../../../src/docgen/transpile/transpile';
 import { TypeScriptTranspile } from '../../../src/docgen/transpile/typescript';
 import { Struct } from '../../../src/docgen/view/struct';
 import { Assemblies } from '../assemblies';
@@ -12,6 +13,7 @@ describe('python', () => {
     const struct = new Struct(
       transpile,
       assembly.system.interfaces.filter((i) => i.datatype)[0],
+      (t: TranspiledType) => `#${t.fqn}`,
     );
     expect(struct.render().render()).toMatchSnapshot();
   });
@@ -23,6 +25,7 @@ describe('typescript', () => {
     const struct = new Struct(
       transpile,
       assembly.system.interfaces.filter((i) => i.datatype)[0],
+      (t: TranspiledType) => `#${t.fqn}`,
     );
     expect(struct.render().render()).toMatchSnapshot();
   });

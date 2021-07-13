@@ -1,6 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { Transpile, TranspiledStruct } from '../transpile/transpile';
+import { Transpile, TranspiledStruct, TranspiledType } from '../transpile/transpile';
 import { Property } from './property';
 
 export class Struct {
@@ -9,10 +9,11 @@ export class Struct {
   constructor(
     private readonly transpile: Transpile,
     private readonly iface: reflect.InterfaceType,
+    linkFormatter: (type: TranspiledType) => string,
   ) {
     this.transpiled = transpile.struct(iface);
     for (const property of this.iface.allProperties) {
-      this.properties.push(new Property(this.transpile, property));
+      this.properties.push(new Property(this.transpile, property, linkFormatter));
     }
   }
 

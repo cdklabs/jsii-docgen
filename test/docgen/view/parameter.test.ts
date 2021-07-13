@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { PythonTranspile } from '../../../src/docgen/transpile/python';
+import { TranspiledType } from '../../../src/docgen/transpile/transpile';
 import { TypeScriptTranspile } from '../../../src/docgen/transpile/typescript';
 import { Parameter } from '../../../src/docgen/view/parameter';
 import { Assemblies } from '../assemblies';
@@ -20,7 +21,7 @@ const findParameter = (): reflect.Parameter => {
 describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
-    const parameter = new Parameter(transpile, findParameter());
+    const parameter = new Parameter(transpile, findParameter(), (t: TranspiledType) => `#${t.fqn}`);
     expect(parameter.render().render()).toMatchSnapshot();
   });
 });
@@ -28,7 +29,7 @@ describe('python', () => {
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
-    const parameter = new Parameter(transpile, findParameter());
+    const parameter = new Parameter(transpile, findParameter(), (t: TranspiledType) => `#${t.fqn}`);
     expect(parameter.render().render()).toMatchSnapshot();
   });
 });

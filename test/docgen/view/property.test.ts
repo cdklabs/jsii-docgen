@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { PythonTranspile } from '../../../src/docgen/transpile/python';
+import { TranspiledType } from '../../../src/docgen/transpile/transpile';
 import { TypeScriptTranspile } from '../../../src/docgen/transpile/typescript';
 import { Property } from '../../../src/docgen/view/property';
 import { Assemblies } from '../assemblies';
@@ -12,6 +13,7 @@ describe('python', () => {
     const parameter = new Property(
       transpile,
       assembly.system.interfaces[0].allProperties[0],
+      (t: TranspiledType) => `#${t.fqn}`,
     );
     expect(parameter.render().render()).toMatchSnapshot();
   });
@@ -23,6 +25,7 @@ describe('typescript', () => {
     const parameter = new Property(
       transpile,
       assembly.system.interfaces[0].allProperties[0],
+      (t: TranspiledType) => `#${t.fqn}`,
     );
     expect(parameter.render().render()).toMatchSnapshot();
   });

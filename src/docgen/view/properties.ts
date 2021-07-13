@@ -1,14 +1,14 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { Transpile } from '../transpile/transpile';
+import { Transpile, TranspiledType } from '../transpile/transpile';
 import { Property } from './property';
 
 export class Properties {
   private readonly properties: Property[];
-  constructor(transpile: Transpile, properties: reflect.Property[]) {
+  constructor(transpile: Transpile, properties: reflect.Property[], linkFormatter: (type: TranspiledType) => string) {
     this.properties = properties
       .filter((p) => !p.protected && !p.const)
-      .map((p) => new Property(transpile, p));
+      .map((p) => new Property(transpile, p, linkFormatter));
   }
 
   public render(): Markdown {

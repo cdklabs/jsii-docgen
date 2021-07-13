@@ -8,7 +8,7 @@ import { TargetLanguage } from 'jsii-rosetta';
 import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
 import { Markdown } from '../render/markdown';
 import { PythonTranspile } from '../transpile/python';
-import { Transpile, Language } from '../transpile/transpile';
+import { Transpile, Language, TranspiledType } from '../transpile/transpile';
 import { TypeScriptTranspile } from '../transpile/typescript';
 import { ApiReference } from './api-reference';
 import { Readme } from './readme';
@@ -38,6 +38,13 @@ export interface RenderOptions {
     * @default - Documentation is generated for the root module only.
     */
   readonly submodule?: string;
+
+  /**
+   * How should links to types be rendered.
+   *
+   * @default '#{fqn}'
+   */
+  readonly linkFormatter?: (type: TranspiledType) => string;
 
 }
 
@@ -217,7 +224,7 @@ export class Documentation {
     }
 
     if (options?.apiReference ?? true) {
-      const apiReference = new ApiReference(this.transpile, this.assembly, submodule);
+      const apiReference = new ApiReference(this.transpile, this.assembly, options?.linkFormatter ?? ((t: TranspiledType) => `#${t.fqn}`), submodule);
       documentation.section(apiReference.render());
     }
 

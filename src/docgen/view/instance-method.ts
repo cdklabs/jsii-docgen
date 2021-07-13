@@ -1,6 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { Transpile, TranspiledCallable } from '../transpile/transpile';
+import { Transpile, TranspiledCallable, TranspiledType } from '../transpile/transpile';
 import { Parameter } from './parameter';
 
 export class InstanceMethod {
@@ -9,10 +9,11 @@ export class InstanceMethod {
   constructor(
     private readonly transpile: Transpile,
     private readonly method: reflect.Method,
+    linkFormatter: (type: TranspiledType) => string,
   ) {
     this.transpiled = transpile.callable(method);
     this.parameters = this.transpiled.parameters.map(
-      (p) => new Parameter(this.transpile, p),
+      (p) => new Parameter(this.transpile, p, linkFormatter),
     );
   }
 

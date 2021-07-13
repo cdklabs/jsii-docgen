@@ -1,14 +1,14 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { Transpile } from '../transpile/transpile';
+import { Transpile, TranspiledType } from '../transpile/transpile';
 import { Constant } from './constant';
 
 export class Constants {
   private readonly constants: Constant[];
-  constructor(transpile: Transpile, properties: reflect.Property[]) {
+  constructor(transpile: Transpile, properties: reflect.Property[], linkFormatter: (type: TranspiledType) => string) {
     this.constants = properties
       .filter((p) => !p.protected && p.const)
-      .map((p) => new Constant(transpile, p));
+      .map((p) => new Constant(transpile, p, linkFormatter));
   }
 
   public render(): Markdown {

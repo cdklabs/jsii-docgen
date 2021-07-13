@@ -1,6 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { Transpile, TranspiledClass } from '../transpile/transpile';
+import { Transpile, TranspiledClass, TranspiledType } from '../transpile/transpile';
 import { Constants } from './constants';
 import { Initializer } from './initializer';
 import { InstanceMethods } from './instance-methods';
@@ -31,14 +31,15 @@ export class Class {
   constructor(
     private readonly transpile: Transpile,
     private readonly klass: reflect.ClassType,
+    private readonly linkFormatter: (type: TranspiledType) => string,
   ) {
     if (klass.initializer) {
-      this.initializer = new Initializer(transpile, klass.initializer);
+      this.initializer = new Initializer(transpile, klass.initializer, linkFormatter);
     }
-    this.instanceMethods = new InstanceMethods(transpile, klass.ownMethods);
-    this.staticFunctions = new StaticFunctions(transpile, klass.ownMethods);
-    this.constants = new Constants(transpile, klass.ownProperties);
-    this.properties = new Properties(transpile, klass.ownProperties);
+    this.instanceMethods = new InstanceMethods(transpile, klass.ownMethods, linkFormatter);
+    this.staticFunctions = new StaticFunctions(transpile, klass.ownMethods, linkFormatter);
+    this.constants = new Constants(transpile, klass.ownProperties, linkFormatter);
+    this.properties = new Properties(transpile, klass.ownProperties, linkFormatter);
     this.transpiled = transpile.class(klass);
   }
 
@@ -52,7 +53,7 @@ export class Class {
       const ifaces = [];
       for (const iface of this.klass.interfaces) {
         const transpiled = this.transpile.type(iface);
-        ifaces.push(`[${Markdown.pre(transpiled.fqn)}](#${transpiled.fqn})`);
+        ifaces.push(`[${Markdown.pre(transpiled.fqn)}](${this.linkFormatter(transpiled)})`);
       }
       md.bullet(`${Markdown.italic('Implements:')} ${ifaces.join(', ')}`);
       md.lines('');
