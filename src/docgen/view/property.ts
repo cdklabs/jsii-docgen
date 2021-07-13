@@ -1,12 +1,13 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { Transpile, TranspiledProperty } from '../transpile/transpile';
+import { Transpile, TranspiledProperty, TranspiledType } from '../transpile/transpile';
 
 export class Property {
   private readonly transpiled: TranspiledProperty;
   constructor(
     transpile: Transpile,
     private readonly property: reflect.Property,
+    private readonly linkFormatter: (type: TranspiledType) => string,
   ) {
     this.transpiled = transpile.property(property);
   }
@@ -39,7 +40,7 @@ export class Property {
 
     const metadata: any = {
       Type: this.transpiled.typeReference.toString({
-        typeFormatter: (t) => `[${Markdown.pre(t.fqn)}](#${t.fqn})`,
+        typeFormatter: (t) => `[${Markdown.pre(t.fqn)}](${this.linkFormatter(t)})`,
         stringFormatter: Markdown.pre,
       }),
     };

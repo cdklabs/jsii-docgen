@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { PythonTranspile } from '../../../src/docgen/transpile/python';
+import { TranspiledType } from '../../../src/docgen/transpile/transpile';
 import { TypeScriptTranspile } from '../../../src/docgen/transpile/typescript';
 import { StaticFunction } from '../../../src/docgen/view/static-function';
 import { Assemblies } from '../assemblies';
@@ -20,7 +21,7 @@ const findStaticFunction = (): reflect.Method => {
 describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
-    const staticFunction = new StaticFunction(transpile, findStaticFunction());
+    const staticFunction = new StaticFunction(transpile, findStaticFunction(), (t: TranspiledType) => `#${t.fqn}`);
     expect(staticFunction.render().render()).toMatchSnapshot();
   });
 });
@@ -28,7 +29,7 @@ describe('python', () => {
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
-    const staticFunction = new StaticFunction(transpile, findStaticFunction());
+    const staticFunction = new StaticFunction(transpile, findStaticFunction(), (t: TranspiledType) => `#${t.fqn}`);
     expect(staticFunction.render().render()).toMatchSnapshot();
   });
 });

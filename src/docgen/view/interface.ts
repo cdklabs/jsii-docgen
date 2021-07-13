@@ -1,6 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { Transpile, TranspiledInterface } from '../transpile/transpile';
+import { Transpile, TranspiledInterface, TranspiledType } from '../transpile/transpile';
 import { InstanceMethods } from './instance-methods';
 import { Properties } from './properties';
 
@@ -17,10 +17,11 @@ export class Interface {
   constructor(
     private readonly transpile: Transpile,
     private readonly iface: reflect.InterfaceType,
+    private readonly linkFormatter: (type: TranspiledType) => string,
   ) {
     this.transpiled = transpile.interface(iface);
-    this.instanceMethods = new InstanceMethods(transpile, iface.ownMethods);
-    this.properties = new Properties(transpile, iface.allProperties);
+    this.instanceMethods = new InstanceMethods(transpile, iface.ownMethods, linkFormatter);
+    this.properties = new Properties(transpile, iface.allProperties, linkFormatter);
   }
 
   public render(): Markdown {
@@ -33,7 +34,7 @@ export class Interface {
       const ifaces = [];
       for (const iface of this.iface.interfaces) {
         const transpiled = this.transpile.type(iface);
-        ifaces.push(`[${Markdown.pre(transpiled.fqn)}](#${transpiled.fqn})`);
+        ifaces.push(`[${Markdown.pre(transpiled.fqn)}](${this.linkFormatter(transpiled)})`);
       }
       md.bullet(`${Markdown.italic('Extends:')} ${ifaces.join(', ')}`);
       md.lines('');
@@ -43,7 +44,7 @@ export class Interface {
       const impls = [];
       for (const impl of this.iface.allImplementations) {
         const transpiled = this.transpile.type(impl);
-        impls.push(`[${Markdown.pre(transpiled.fqn)}](#${transpiled.fqn})`);
+        impls.push(`[${Markdown.pre(transpiled.fqn)}](${this.linkFormatter(transpiled)})`);
       }
       md.bullet(`${Markdown.italic('Implemented By:')} ${impls.join(', ')}`);
       md.lines('');

@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { PythonTranspile } from '../../../src/docgen/transpile/python';
+import { TranspiledType } from '../../../src/docgen/transpile/transpile';
 import { TypeScriptTranspile } from '../../../src/docgen/transpile/typescript';
 import { Interface } from '../../../src/docgen/view/interface';
 import { Assemblies } from '../assemblies';
@@ -18,7 +19,7 @@ const findInterface = () => {
 describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
-    const klass = new Interface(transpile, findInterface());
+    const klass = new Interface(transpile, findInterface(), (t: TranspiledType) => `#${t.fqn}`);
     expect(klass.render().render()).toMatchSnapshot();
   });
 });
@@ -26,7 +27,7 @@ describe('python', () => {
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
-    const klass = new Interface(transpile, findInterface());
+    const klass = new Interface(transpile, findInterface(), (t: TranspiledType) => `#${t.fqn}`);
     expect(klass.render().render()).toMatchSnapshot();
   });
 });

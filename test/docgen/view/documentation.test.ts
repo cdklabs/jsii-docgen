@@ -2,8 +2,7 @@ import * as child from 'child_process';
 import * as os from 'os';
 import * as path from 'path';
 import * as fs from 'fs-extra';
-import { Documentation } from '../../../src';
-import { Language } from '../../../src/docgen/transpile/transpile';
+import { Language, Documentation, TranspiledType } from '../../../src';
 import { extractPackageName } from '../../../src/docgen/view/documentation';
 
 const ASSEMBLIES = `${__dirname}/../../__fixtures__/assemblies`;
@@ -32,6 +31,14 @@ describe('extractPackageName', () => {
     expect(extractPackageName('aws-cdk-lib@1.100.1')).toEqual('aws-cdk-lib');
   });
 
+});
+
+test('custom link formatter', async () => {
+  const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0', {
+    language: Language.PYTHON,
+  });
+  const markdown = docs.render({ linkFormatter: (t: TranspiledType) => `#custom-${t.fqn}` });
+  expect(markdown.render()).toMatchSnapshot();
 });
 
 test('package installation does not run lifecycle hooks', async () => {

@@ -1,15 +1,15 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { Transpile } from '../transpile/transpile';
+import { Transpile, TranspiledType } from '../transpile/transpile';
 import { Interface } from './interface';
 
 export class Interfaces {
   private readonly interfaces: Interface[];
 
-  constructor(transpile: Transpile, interfaces: reflect.InterfaceType[]) {
+  constructor(transpile: Transpile, interfaces: reflect.InterfaceType[], linkFormatter: (type: TranspiledType) => string) {
     this.interfaces = interfaces
       .filter((i) => !Interface.isStruct(i))
-      .map((i) => new Interface(transpile, i));
+      .map((i) => new Interface(transpile, i, linkFormatter));
   }
   public render(): Markdown {
     if (this.interfaces.length === 0) {

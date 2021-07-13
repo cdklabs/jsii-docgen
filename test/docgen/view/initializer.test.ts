@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { PythonTranspile } from '../../../src/docgen/transpile/python';
+import { TranspiledType } from '../../../src/docgen/transpile/transpile';
 import { TypeScriptTranspile } from '../../../src/docgen/transpile/typescript';
 import { Initializer } from '../../../src/docgen/view/initializer';
 import { Assemblies } from '../assemblies';
@@ -18,7 +19,7 @@ const findInitializer = (): reflect.Initializer => {
 describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
-    const initializer = new Initializer(transpile, findInitializer());
+    const initializer = new Initializer(transpile, findInitializer(), (t: TranspiledType) => `#${t.fqn}`);
     expect(initializer.render().render()).toMatchSnapshot();
   });
 });
@@ -26,7 +27,7 @@ describe('python', () => {
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
-    const initializer = new Initializer(transpile, findInitializer());
+    const initializer = new Initializer(transpile, findInitializer(), (t: TranspiledType) => `#${t.fqn}`);
     expect(initializer.render().render()).toMatchSnapshot();
   });
 });

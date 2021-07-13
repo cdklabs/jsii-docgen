@@ -1,14 +1,14 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { Transpile } from '../transpile/transpile';
+import { Transpile, TranspiledType } from '../transpile/transpile';
 import { StaticFunction } from './static-function';
 
 export class StaticFunctions {
   private readonly staticFunctions: StaticFunction[];
-  constructor(transpile: Transpile, methods: reflect.Method[]) {
+  constructor(transpile: Transpile, methods: reflect.Method[], linkFormatter: (type: TranspiledType) => string) {
     this.staticFunctions = methods
       .filter((m) => !m.protected && m.static)
-      .map((m) => new StaticFunction(transpile, m));
+      .map((m) => new StaticFunction(transpile, m, linkFormatter));
   }
 
   public render(): Markdown {

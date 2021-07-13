@@ -1,15 +1,15 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { Transpile } from '../transpile/transpile';
+import { Transpile, TranspiledType } from '../transpile/transpile';
 import { Class } from './class';
 import { Construct } from './construct';
 
 export class Constructs {
   private readonly constructs: Construct[];
-  constructor(transpile: Transpile, classes: reflect.ClassType[]) {
+  constructor(transpile: Transpile, classes: reflect.ClassType[], linkFormatter: (type: TranspiledType) => string) {
     this.constructs = classes
       .filter((c) => Class.isConstruct(c))
-      .map((c) => new Construct(transpile, c));
+      .map((c) => new Construct(transpile, c, linkFormatter));
   }
 
   public render(): Markdown {
