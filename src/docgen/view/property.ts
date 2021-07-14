@@ -20,7 +20,7 @@ export class Property {
         : 'Required';
 
     const md = new Markdown({
-      id: `${this.transpiled.parentType.fqn}.${this.transpiled.name}`,
+      id: `${this.transpiled.parentType.fqn}.property.${this.transpiled.name}`,
       header: {
         title: this.transpiled.name,
         sup: optionality,

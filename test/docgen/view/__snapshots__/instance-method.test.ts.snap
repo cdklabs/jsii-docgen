@@ -7,7 +7,7 @@ exports[`python snapshot 1`] = `
 def inspect(inspector: TreeInspector)
 \`\`\`
 
-# \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.inspector\\"></a>
+# \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.parameter.inspector\\"></a>
 
 - *Type:* [\`aws_cdk.core.TreeInspector\`](#aws_cdk.core.TreeInspector)
 
@@ -24,7 +24,7 @@ exports[`typescript snapshot 1`] = `
 public inspect(inspector: TreeInspector)
 \`\`\`
 
-# \`inspector\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspector\\"></a>
+# \`inspector\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\"></a>
 
 - *Type:* [\`@aws-cdk/core.TreeInspector\`](#@aws-cdk/core.TreeInspector)
 
