@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
+import { StructJson } from '../schema';
 import { Transpile, TranspiledStruct, TranspiledType } from '../transpile/transpile';
 import { Property } from './property';
 
@@ -45,5 +46,23 @@ export class Struct {
 
     md.section(initializer);
     return md;
+  }
+
+  public renderToJson(): StructJson {
+    const initializer = new Markdown();
+    initializer.code(
+      this.transpile.language.toString(),
+      `${this.transpiled.import}`,
+      '',
+      `${this.transpiled.initialization}`,
+    );
+
+    return {
+      id: this.transpiled.type.fqn,
+      name: this.transpiled.name,
+      docs: this.iface.docs.toString(),
+      initializer: initializer.render(),
+      properties: this.properties.map((property) => property.renderToJson()),
+    };
   }
 }

@@ -7,6 +7,7 @@ import * as reflect from 'jsii-reflect';
 import { TargetLanguage } from 'jsii-rosetta';
 import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
 import { Markdown } from '../render/markdown';
+import { PackagePageContent } from '../schema';
 import { PythonTranspile } from '../transpile/python';
 import { Transpile, Language, TranspiledType } from '../transpile/transpile';
 import { TypeScriptTranspile } from '../transpile/typescript';
@@ -229,6 +230,30 @@ export class Documentation {
     }
 
     return documentation;
+  }
+
+  /**
+   * Generate JSON schema for trasliterated package
+   */
+  public renderToJson(options: RenderOptions): PackagePageContent {
+    const submodule = options?.submodule ? this.findSubmodule(this.assembly, options.submodule) : undefined;
+    const readme = options?.readme
+      ? new Readme(this.transpile, this.assembly, submodule)
+        .render()
+        .render()
+      : undefined;
+
+    const apiReference = options?.apiReference ? new ApiReference(
+      this.transpile,
+      this.assembly,
+      options?.linkFormatter ?? ((t: TranspiledType) => `#${t.fqn}`),
+      submodule,
+    ).renderToJson() : undefined;
+
+    return {
+      readme,
+      apiReference,
+    };
   }
 
   /**

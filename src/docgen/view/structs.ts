@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
+import { StructJson } from '../schema';
 import { Transpile, TranspiledType } from '../transpile/transpile';
 import { Interface } from './interface';
 import { Struct } from './struct';
@@ -22,5 +23,9 @@ export class Structs {
       md.section(struct.render());
     }
     return md;
+  }
+
+  public renderToJson(): StructJson[] {
+    return this.structs.map((struct) => struct.renderToJson());
   }
 }

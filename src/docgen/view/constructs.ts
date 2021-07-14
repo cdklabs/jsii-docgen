@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
+import { ConstructJson } from '../schema';
 import { Transpile, TranspiledType } from '../transpile/transpile';
 import { Class } from './class';
 import { Construct } from './construct';
@@ -22,5 +23,9 @@ export class Constructs {
       md.section(construct.render());
     }
     return md;
+  }
+
+  public renderToJson(): ConstructJson[] {
+    return this.constructs.map((construct) => construct.renderToJson());
   }
 }

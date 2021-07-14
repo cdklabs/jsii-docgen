@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
+import { MethodJson } from '../schema';
 import { Transpile, TranspiledType } from '../transpile/transpile';
 import { InstanceMethod } from './instance-method';
 
@@ -21,5 +22,9 @@ export class InstanceMethods {
       md.section(method.render());
     }
     return md;
+  }
+
+  public renderToJson(): MethodJson[] {
+    return this.instanceMethods.map((method) => method.renderToJson());
   }
 }

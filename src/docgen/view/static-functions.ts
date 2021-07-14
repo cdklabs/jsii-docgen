@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
+import { MethodJson } from '../schema';
 import { Transpile, TranspiledType } from '../transpile/transpile';
 import { StaticFunction } from './static-function';
 
@@ -21,5 +22,9 @@ export class StaticFunctions {
       md.section(func.render());
     }
     return md;
+  }
+
+  public renderToJson(): MethodJson[] {
+    return this.staticFunctions.map((func) => func.renderToJson());
   }
 }

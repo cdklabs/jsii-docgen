@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
+import { PropertyJson } from '../schema';
 import { Transpile, TranspiledType } from '../transpile/transpile';
 import { Constant } from './constant';
 
@@ -21,5 +22,9 @@ export class Constants {
       md.section(c.render());
     }
     return md;
+  }
+
+  public renderToJson(): PropertyJson[] {
+    return this.constants.map((constant) => constant.renderToJson());
   }
 }

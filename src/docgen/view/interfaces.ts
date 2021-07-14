@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
+import { InterfaceJson } from '../schema';
 import { Transpile, TranspiledType } from '../transpile/transpile';
 import { Interface } from './interface';
 
@@ -23,5 +24,9 @@ export class Interfaces {
     }
 
     return md;
+  }
+
+  public renderToJson(): InterfaceJson[] {
+    return this.interfaces.map((iface) => iface.renderToJson());
   }
 }

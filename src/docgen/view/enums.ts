@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
+import { EnumJson } from '../schema';
 import { Transpile } from '../transpile/transpile';
 import { Enum } from './enum';
 
@@ -19,5 +20,9 @@ export class Enums {
       md.section(e.render());
     }
     return md;
+  }
+
+  public renderToJson(): EnumJson[] {
+    return this.enums.map((e) => e.renderToJson());
   }
 }

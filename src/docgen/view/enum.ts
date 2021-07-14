@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
+import { EnumJson } from '../schema';
 import { Transpile } from '../transpile/transpile';
 import { EnumMember } from './enum-member';
 
@@ -25,5 +26,14 @@ export class Enum {
     }
 
     return md;
+  }
+
+  public renderToJson(): EnumJson {
+    const transpiled = this.transpile.enum(this.enu);
+    return {
+      name: transpiled.name,
+      docs: this.enu.docs.toString(),
+      members: this.members.map((member) => member.renderToJson()),
+    };
   }
 }

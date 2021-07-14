@@ -1,4 +1,5 @@
 import * as reflect from 'jsii-reflect';
+import { TypeJson } from '../schema';
 
 /**
  * Supported languages to generate documentation in.
@@ -338,6 +339,49 @@ export class TranspiledTypeReference {
       const refs = this.unionOfTypes.map((t) => t.toString(options));
       return this.transpile.unionOf(refs);
     }
+    throw new Error(`Invalid type reference: ${this.ref.toString()}`);
+  }
+
+  public toJson(): TypeJson {
+    if (this.primitive) {
+      return {
+        name: this.primitive,
+      };
+    }
+
+    if (this.type) {
+      return {
+        fqn: this.ref.fqn,
+        name: this.type.fqn,
+      };
+    }
+
+    if (this.isAny) {
+      return {
+        name: this.transpile.any(),
+      };
+    }
+
+    if (this.arrayOfType) {
+      return {
+        name: this.transpile.listOf('%'),
+        types: [this.arrayOfType.toJson()],
+      };
+    }
+    if (this.mapOfType) {
+      return {
+        name: this.transpile.mapOf('%'),
+        types: [this.mapOfType.toJson()],
+      };
+    }
+    if (this.unionOfTypes) {
+      const inner = [...Array(this.unionOfTypes.length)].map(() => '%');
+      return {
+        name: this.transpile.unionOf(inner),
+        types: this.unionOfTypes.map((t) => t.toJson()),
+      };
+    }
+
     throw new Error(`Invalid type reference: ${this.ref.toString()}`);
   }
 }

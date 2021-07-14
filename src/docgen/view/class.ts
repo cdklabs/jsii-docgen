@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
+import { ClassJson } from '../schema';
 import { Transpile, TranspiledClass, TranspiledType } from '../transpile/transpile';
 import { Constants } from './constants';
 import { Initializer } from './initializer';
@@ -71,5 +72,25 @@ export class Class {
     md.section(this.properties.render());
     md.section(this.constants.render());
     return md;
+  }
+
+  public renderToJson(): ClassJson {
+    return {
+      id: this.transpiled.type.fqn,
+      name: this.transpiled.name,
+      interfaces: this.klass.interfaces.map((iface) => {
+        const transpiled = this.transpile.type(iface);
+        return {
+          fqn: iface.fqn,
+          name: transpiled.fqn,
+        };
+      }),
+      docs: this.klass.docs.toString(),
+      initializer: this.initializer?.renderToJson(),
+      instanceMethods: this.instanceMethods.renderToJson(),
+      staticMethods: this.staticFunctions.renderToJson(),
+      properties: this.properties.renderToJson(),
+      constants: this.constants.renderToJson(),
+    };
   }
 }

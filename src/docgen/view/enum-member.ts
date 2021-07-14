@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
+import { EnumMemberJson } from '../schema';
 import { Transpile, TranspiledEnumMember } from '../transpile/transpile';
 
 export class EnumMember {
@@ -32,5 +33,15 @@ export class EnumMember {
     md.lines('');
 
     return md;
+  }
+
+  public renderToJson(): EnumMemberJson {
+    return {
+      id: this.transpiled.fqn,
+      name: this.transpiled.name,
+      deprecated: this.em.docs.deprecated,
+      deprecationReason: this.em.docs.deprecationReason,
+      docs: this.em.docs.toString(),
+    };
   }
 }
