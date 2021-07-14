@@ -9,7 +9,7 @@ import aws_cdk.aws_ecr
 aws_cdk.aws_ecr.AuthorizationToken.grant_read(grantee: IGrantable)
 \`\`\`
 
-# \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.AuthorizationToken.grantee\\"></a>
+# \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.AuthorizationToken.parameter.grantee\\"></a>
 
 - *Type:* [\`aws_cdk.aws_iam.IGrantable\`](#aws_cdk.aws_iam.IGrantable)
 
@@ -26,7 +26,7 @@ import { AuthorizationToken } from '@aws-cdk/aws-ecr'
 AuthorizationToken.grantRead(grantee: IGrantable)
 \`\`\`
 
-# \`grantee\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantee\\"></a>
+# \`grantee\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
 
 - *Type:* [\`@aws-cdk/aws-iam.IGrantable\`](#@aws-cdk/aws-iam.IGrantable)
 

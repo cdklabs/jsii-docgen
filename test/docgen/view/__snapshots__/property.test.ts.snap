@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`python snapshot 1`] = `
-" \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.repository_catalog_data\\"></a>
+" \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.property.repository_catalog_data\\"></a>
 
 - *Type:* \`typing.Any\`
 
@@ -14,7 +14,7 @@ exports[`python snapshot 1`] = `
 `;
 
 exports[`typescript snapshot 1`] = `
-" \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.repositoryCatalogData\\"></a>
+" \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
 - *Type:* \`any\`
 
