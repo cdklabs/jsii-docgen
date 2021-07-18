@@ -17,7 +17,7 @@ export class Parameter {
     const optionality = this.parameter.optional ? 'Optional' : 'Required';
 
     const md = new Markdown({
-      id: `${this.transpiled.parentType.fqn}.${this.transpiled.name}`,
+      id: `${this.transpiled.parentType.fqn}.parameter.${this.transpiled.name}`,
       header: {
         title: this.transpiled.name,
         sup: optionality,

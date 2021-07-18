@@ -15,19 +15,19 @@ import { GreeterBucket } from 'construct-library'
 new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 \`\`\`
 
-##### \`scope\`<sup>Required</sup> <a name=\\"construct-library.GreeterBucket.scope\\"></a>
+##### \`scope\`<sup>Required</sup> <a name=\\"construct-library.GreeterBucket.parameter.scope\\"></a>
 
 - *Type:* [\`constructs.Construct\`](#constructs.Construct)
 
 ---
 
-##### \`id\`<sup>Required</sup> <a name=\\"construct-library.GreeterBucket.id\\"></a>
+##### \`id\`<sup>Required</sup> <a name=\\"construct-library.GreeterBucket.parameter.id\\"></a>
 
 - *Type:* \`string\`
 
 ---
 
-##### \`props\`<sup>Optional</sup> <a name=\\"construct-library.GreeterBucket.props\\"></a>
+##### \`props\`<sup>Optional</sup> <a name=\\"construct-library.GreeterBucket.parameter.props\\"></a>
 
 - *Type:* [\`@aws-cdk/aws-s3.BucketProps\`](#@aws-cdk/aws-s3.BucketProps)
 

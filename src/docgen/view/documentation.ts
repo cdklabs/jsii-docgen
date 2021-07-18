@@ -115,22 +115,16 @@ export class Documentation {
 
       const name = options?.name ?? extractPackageName(target);
 
-      const env = {
-        ...process.env,
-        // npm fails with EROFS if $HOME is read-only, even if it won't write there
-        HOME: os.tmpdir(),
-      };
-
       // npm7 is needed so that we also install peerDependencies - they are needed to construct
       // the full type system.
+      console.log('Installing npm7...');
       await spawn('npm', ['install', 'npm@7'], {
         cwd: workdir,
-        env,
         shell: true,
         stdio: ['ignore', 'inherit', 'inherit'],
       });
 
-      console.log('Installing package');
+      console.log(`Installing package ${target}`);
       await spawn(path.join(workdir, 'node_modules', '.bin', 'npm'), [
         'install',
         // this is critical from a security perspective to prevent
@@ -142,7 +136,6 @@ export class Documentation {
         target,
       ], {
         cwd: workdir,
-        env,
         shell: true,
         stdio: ['ignore', 'inherit', 'inherit'],
       });

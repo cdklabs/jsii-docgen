@@ -150,6 +150,17 @@ export interface TranspiledInterface {
  * Outcome of transpiling a generic jsii type.
  */
 export interface TranspiledType {
+
+  /**
+   * The source type this was transliterated from.
+   */
+  readonly source: reflect.Type;
+
+  /**
+   * The transliteration language.
+   */
+  readonly language: Language;
+
   /**
    * The language specific fqn.
    */
@@ -607,6 +618,8 @@ export abstract class TranspileBase implements Transpile {
       namespace: type.namespace,
       module: moduleLike.name,
       submodule: moduleLike.submodule,
+      source: type,
+      language: this.language,
     };
   }
 
