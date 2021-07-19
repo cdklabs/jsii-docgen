@@ -15,7 +15,7 @@ describe('python', () => {
       assembly.system.interfaces.filter((i) => i.datatype)[0],
       (t: TranspiledType) => `#${t.fqn}`,
     );
-    expect(struct.render().render()).toMatchSnapshot();
+    expect(struct.toMarkdown().render()).toMatchSnapshot();
   });
 });
 
@@ -27,6 +27,6 @@ describe('typescript', () => {
       assembly.system.interfaces.filter((i) => i.datatype)[0],
       (t: TranspiledType) => `#${t.fqn}`,
     );
-    expect(struct.render().render()).toMatchSnapshot();
+    expect(struct.toMarkdown().render()).toMatchSnapshot();
   });
 });

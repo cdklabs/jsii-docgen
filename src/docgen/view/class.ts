@@ -1,6 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { ClassJson } from '../schema';
+import { ClassSchema } from '../schema';
 import { Transpile, TranspiledClass, TranspiledType } from '../transpile/transpile';
 import { Constants } from './constants';
 import { Initializer } from './initializer';
@@ -44,7 +44,7 @@ export class Class {
     this.transpiled = transpile.class(klass);
   }
 
-  public render(): Markdown {
+  public toMarkdown(): Markdown {
     const md = new Markdown({
       id: this.transpiled.type.fqn,
       header: { title: this.transpiled.name },
@@ -65,16 +65,16 @@ export class Class {
     }
 
     if (this.initializer) {
-      md.section(this.initializer.render());
+      md.section(this.initializer.toMarkdown());
     }
-    md.section(this.instanceMethods.render());
-    md.section(this.staticFunctions.render());
-    md.section(this.properties.render());
-    md.section(this.constants.render());
+    md.section(this.instanceMethods.toMarkdown());
+    md.section(this.staticFunctions.toMarkdown());
+    md.section(this.properties.toMarkdown());
+    md.section(this.constants.toMarkdown());
     return md;
   }
 
-  public renderToJson(): ClassJson {
+  public toJson(): ClassSchema {
     return {
       id: this.transpiled.type.fqn,
       name: this.transpiled.name,
@@ -86,11 +86,11 @@ export class Class {
         };
       }),
       docs: this.klass.docs.toString(),
-      initializer: this.initializer?.renderToJson(),
-      instanceMethods: this.instanceMethods.renderToJson(),
-      staticMethods: this.staticFunctions.renderToJson(),
-      properties: this.properties.renderToJson(),
-      constants: this.constants.renderToJson(),
+      initializer: this.initializer?.toJson(),
+      instanceMethods: this.instanceMethods.toJson(),
+      staticFunctions: this.staticFunctions.toJson(),
+      properties: this.properties.toJson(),
+      constants: this.constants.toJson(),
     };
   }
 }

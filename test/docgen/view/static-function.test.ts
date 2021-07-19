@@ -22,7 +22,7 @@ describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
     const staticFunction = new StaticFunction(transpile, findStaticFunction(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(staticFunction.render().render()).toMatchSnapshot();
+    expect(staticFunction.toMarkdown().render()).toMatchSnapshot();
   });
 });
 
@@ -30,6 +30,6 @@ describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
     const staticFunction = new StaticFunction(transpile, findStaticFunction(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(staticFunction.render().render()).toMatchSnapshot();
+    expect(staticFunction.toMarkdown().render()).toMatchSnapshot();
   });
 });

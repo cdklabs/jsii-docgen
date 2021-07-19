@@ -20,7 +20,7 @@ describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
     const initializer = new Initializer(transpile, findInitializer(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(initializer.render().render()).toMatchSnapshot();
+    expect(initializer.toMarkdown().render()).toMatchSnapshot();
   });
 });
 
@@ -28,6 +28,6 @@ describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
     const initializer = new Initializer(transpile, findInitializer(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(initializer.render().render()).toMatchSnapshot();
+    expect(initializer.toMarkdown().render()).toMatchSnapshot();
   });
 });

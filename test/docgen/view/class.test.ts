@@ -11,14 +11,15 @@ describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
     const klass = new Class(transpile, assembly.classes[0], (t: TranspiledType) => `#${t.fqn}`);
-    expect(klass.render().render()).toMatchSnapshot();
+    expect(klass.toMarkdown().render()).toMatchSnapshot();
   });
+
 });
 
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
     const klass = new Class(transpile, assembly.classes[0], (t: TranspiledType) => `#${t.fqn}`);
-    expect(klass.render().render()).toMatchSnapshot();
+    expect(klass.toMarkdown().render()).toMatchSnapshot();
   });
 });

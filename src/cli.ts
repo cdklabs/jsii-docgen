@@ -11,7 +11,7 @@ export async function main() {
 
   const docs = await Documentation.forProject(process.cwd());
   const output = args.output ?? 'API.md';
-  const markdown = docs.render({ readme: false });
+  const markdown = docs.toMarkdown({ readme: false });
   fs.writeFileSync(output, markdown.render());
 }
 

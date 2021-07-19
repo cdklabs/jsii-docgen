@@ -1,6 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { ConstructJson } from '../schema';
+import { ConstructSchema } from '../schema';
 import { Transpile, TranspiledType } from '../transpile/transpile';
 import { Class } from './class';
 
@@ -9,11 +9,11 @@ export class Construct {
   constructor(transpile: Transpile, klass: reflect.ClassType, linkFormatter: (type: TranspiledType) => string) {
     this.construct = new Class(transpile, klass, linkFormatter);
   }
-  public render(): Markdown {
-    return this.construct.render();
+  public toMarkdown(): Markdown {
+    return this.construct.toMarkdown();
   }
 
-  public renderToJson(): ConstructJson {
-    return this.construct.renderToJson();
+  public toJson(): ConstructSchema {
+    return this.construct.toJson();
   }
 }

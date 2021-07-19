@@ -22,7 +22,7 @@ describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
     const parameter = new Parameter(transpile, findParameter(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(parameter.render().render()).toMatchSnapshot();
+    expect(parameter.toMarkdown().render()).toMatchSnapshot();
   });
 });
 
@@ -30,6 +30,6 @@ describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
     const parameter = new Parameter(transpile, findParameter(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(parameter.render().render()).toMatchSnapshot();
+    expect(parameter.toMarkdown().render()).toMatchSnapshot();
   });
 });

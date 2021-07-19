@@ -1,6 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { MethodJson } from '../schema';
+import { MethodSchema } from '../schema';
 import { Transpile, TranspiledCallable, TranspiledType } from '../transpile/transpile';
 import { Parameter } from './parameter';
 
@@ -18,7 +18,7 @@ export class StaticFunction {
     );
   }
 
-  public render(): Markdown {
+  public toMarkdown(): Markdown {
     const md = new Markdown({
       id: `${this.transpiled.parentType.fqn}.${this.transpiled.name}`,
       header: {
@@ -36,13 +36,13 @@ export class StaticFunction {
     );
 
     for (const parameter of this.parameters) {
-      md.section(parameter.render());
+      md.section(parameter.toMarkdown());
     }
 
     return md;
   }
 
-  public renderToJson(): MethodJson {
+  public toJson(): MethodSchema {
     const md = new Markdown();
     md.code(
       this.transpile.language.toString(),
@@ -55,7 +55,7 @@ export class StaticFunction {
       id: `${this.transpiled.parentType.fqn}.Initializer`,
       name: this.transpiled.name,
       snippet: md.render(),
-      parameters: this.parameters.map((parameter) => parameter.renderToJson()),
+      parameters: this.parameters.map((parameter) => parameter.toJson()),
     };
   }
 }

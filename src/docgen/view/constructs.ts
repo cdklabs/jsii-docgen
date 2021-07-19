@@ -1,6 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { ConstructJson } from '../schema';
+import { ConstructSchema } from '../schema';
 import { Transpile, TranspiledType } from '../transpile/transpile';
 import { Class } from './class';
 import { Construct } from './construct';
@@ -13,19 +13,19 @@ export class Constructs {
       .map((c) => new Construct(transpile, c, linkFormatter));
   }
 
-  public render(): Markdown {
+  public toMarkdown(): Markdown {
     if (this.constructs.length === 0) {
       return Markdown.EMPTY;
     }
 
     const md = new Markdown({ header: { title: 'Constructs' } });
     for (const construct of this.constructs) {
-      md.section(construct.render());
+      md.section(construct.toMarkdown());
     }
     return md;
   }
 
-  public renderToJson(): ConstructJson[] {
-    return this.constructs.map((construct) => construct.renderToJson());
+  public toJson(): ConstructSchema[] {
+    return this.constructs.map((construct) => construct.toJson());
   }
 }

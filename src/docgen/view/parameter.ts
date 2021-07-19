@@ -1,6 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { ParameterJson } from '../schema';
+import { ParameterSchema } from '../schema';
 import { Transpile, TranspiledParameter, TranspiledType } from '../transpile/transpile';
 
 export class Parameter {
@@ -13,7 +13,7 @@ export class Parameter {
     this.transpiled = transpile.parameter(parameter);
   }
 
-  public render(): Markdown {
+  public toMarkdown(): Markdown {
     const optionality = this.parameter.optional ? 'Optional' : 'Required';
 
     const md = new Markdown({
@@ -60,7 +60,7 @@ export class Parameter {
     return md;
   }
 
-  public renderToJson(): ParameterJson {
+  public toJson(): ParameterSchema {
     return {
       id: `${this.transpiled.parentType.fqn}.${this.transpiled.name}`,
       name: this.transpiled.name,

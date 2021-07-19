@@ -1,6 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { EnumMemberJson } from '../schema';
+import { EnumMemberSchema } from '../schema';
 import { Transpile, TranspiledEnumMember } from '../transpile/transpile';
 
 export class EnumMember {
@@ -8,7 +8,7 @@ export class EnumMember {
   constructor(transpile: Transpile, private readonly em: reflect.EnumMember) {
     this.transpiled = transpile.enumMember(em);
   }
-  public render(): Markdown {
+  public toMarkdown(): Markdown {
     const md = new Markdown({
       id: `${this.transpiled.fqn}`,
       header: {
@@ -35,7 +35,7 @@ export class EnumMember {
     return md;
   }
 
-  public renderToJson(): EnumMemberJson {
+  public toJson(): EnumMemberSchema {
     return {
       id: this.transpiled.fqn,
       name: this.transpiled.name,

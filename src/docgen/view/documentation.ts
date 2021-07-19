@@ -6,8 +6,9 @@ import * as glob from 'glob-promise';
 import * as reflect from 'jsii-reflect';
 import { TargetLanguage } from 'jsii-rosetta';
 import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
+import { Json } from '../render/json';
 import { Markdown } from '../render/markdown';
-import { PackagePageContent } from '../schema';
+import { Schema } from '../schema';
 import { PythonTranspile } from '../transpile/python';
 import { Transpile, Language, TranspiledType } from '../transpile/transpile';
 import { TypeScriptTranspile } from '../transpile/typescript';
@@ -208,45 +209,45 @@ export class Documentation {
   /**
    * Generate markdown.
    */
-  public render(options?: RenderOptions): Markdown {
-    const submodule = options?.submodule ? this.findSubmodule(this.assembly, options.submodule) : undefined;
+  public toMarkdown(options?: RenderOptions): Markdown {
     const documentation = new Markdown();
 
-    if (options?.readme ?? true) {
-      const readme = new Readme(this.transpile, this.assembly, submodule);
-      documentation.section(readme.render());
+    const readme = this.createReadme(options);
+    const apiReference = this.createApiReference(options);
+    if (readme) {
+      documentation.section(readme.toMarkdown());
     }
-
-    if (options?.apiReference ?? true) {
-      const apiReference = new ApiReference(this.transpile, this.assembly, options?.linkFormatter ?? ((t: TranspiledType) => `#${t.fqn}`), submodule);
-      documentation.section(apiReference.render());
+    if (apiReference) {
+      documentation.section(apiReference.toMarkdown());
     }
 
     return documentation;
   }
 
   /**
-   * Generate JSON schema for trasliterated package
+   * Generate JSON.
    */
-  public renderToJson(options: RenderOptions): PackagePageContent {
+  public toJson(options?: RenderOptions): Json<Schema> {
+    const readme = this.createReadme(options);
+    const apiReference = this.createApiReference(options);
+    return new Json({
+      readme: readme ? readme.toMarkdown().render() : undefined,
+      apiReference: apiReference ? apiReference.toJson() : undefined,
+    });
+  }
+
+  private createReadme(options?: RenderOptions): Readme | undefined {
     const submodule = options?.submodule ? this.findSubmodule(this.assembly, options.submodule) : undefined;
-    const readme = options?.readme
+    return (options?.readme ?? true)
       ? new Readme(this.transpile, this.assembly, submodule)
-        .render()
-        .render()
       : undefined;
+  }
 
-    const apiReference = options?.apiReference ? new ApiReference(
-      this.transpile,
-      this.assembly,
-      options?.linkFormatter ?? ((t: TranspiledType) => `#${t.fqn}`),
-      submodule,
-    ).renderToJson() : undefined;
-
-    return {
-      readme,
-      apiReference,
-    };
+  private createApiReference(options?: RenderOptions): ApiReference | undefined {
+    const submodule = options?.submodule ? this.findSubmodule(this.assembly, options.submodule) : undefined;
+    return (options?.apiReference ?? true)
+      ? new ApiReference(this.transpile, this.assembly, options?.linkFormatter ?? ((t: TranspiledType) => `#${t.fqn}`), submodule)
+      : undefined;
   }
 
   /**

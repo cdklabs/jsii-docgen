@@ -1,95 +1,335 @@
-export interface TypeJson {
-  fqn?: string;
-  name: string;
-  types?: TypeJson[];
+/**
+ * Describes a type.
+ */
+export interface TypeSchema {
+
+  /**
+   * The type FQN. If missing, the type is a reference (array, map..)
+   */
+  readonly fqn?: string;
+
+  /**
+   * The name of the type (Map, List...)
+   */
+  readonly name: string;
+
+  /**
+   * The various types of the reference.
+   */
+  readonly types?: TypeSchema[];
 }
 
-export interface PropertyJson {
-  id: string;
-  name: string;
-  optional: boolean;
-  deprecated: boolean;
-  deprecationReason?: string;
-  docs: string;
-  type: TypeJson;
-  default?: string;
+/**
+ * Describes a property.
+ */
+export interface PropertySchema {
+
+  /**
+   * Unique id of the property.
+   */
+  readonly id: string;
+
+  /**
+   * Name.
+   */
+  readonly name: string;
+
+  /**
+   * Whether or not the property is optional.
+   */
+  readonly optional: boolean;
+
+  /**
+   * Whether or not the property is deprecated.
+   */
+  readonly deprecated: boolean;
+
+  /**
+   * Deprecation reason (if applicable)
+   */
+  readonly deprecationReason?: string;
+
+  /**
+   * Doc strings of the property.
+   */
+  readonly docs: string;
+
+  /**
+   * The type of the property.
+   */
+  readonly type: TypeSchema;
+
+  /**
+   * The default value of the property
+   */
+  readonly default?: string;
 }
 
-export interface ParameterJson extends PropertyJson {}
+/**
+ * Describes a parameter.
+ */
+export interface ParameterSchema extends PropertySchema {}
 
-export interface MethodBase {
-  id: string;
-  snippet: string;
-  parameters: ParameterJson[];
+/**
+ * Common properties of a method.
+ */
+export interface MethodSchemaBase {
+
+  /**
+   * Unique id of the method.
+   */
+  readonly id: string;
+
+  /**
+   * Code snippet to display.
+   */
+  readonly snippet: string;
+
+  /**
+   * Method parameters.
+   */
+  readonly parameters: ParameterSchema[];
 }
 
-export interface InitializerJson extends MethodBase {}
+/**
+ * Describes a constructor.
+ */
+export interface InitializerSchema extends MethodSchemaBase {}
 
-export interface MethodJson extends MethodBase {
-  name: string;
+/**
+ * Describes a method.
+ */
+export interface MethodSchema extends MethodSchemaBase {
+
+  /**
+   * Method name.
+   */
+  readonly name: string;
 }
 
-export interface ClassJson {
-  id: string;
-  name: string;
-  interfaces: TypeJson[];
-  docs: string;
-  initializer?: InitializerJson;
-  instanceMethods: MethodJson[];
-  staticMethods: MethodJson[];
-  properties: PropertyJson[];
-  constants: PropertyJson[];
+/**
+ * Describes a class.
+ */
+export interface ClassSchema {
+
+  /**
+   * Unique class id.
+   */
+  readonly id: string;
+
+  /**
+   * Class name.
+   */
+  readonly name: string;
+
+  /**
+   * Interfaces this class implements.
+   */
+  readonly interfaces: TypeSchema[];
+
+  /**
+   * Doc string for the class.
+   */
+  readonly docs: string;
+
+  /**
+   * Class initializer.
+   */
+  readonly initializer?: InitializerSchema;
+
+  /**
+   * Instance methods.
+   */
+  readonly instanceMethods: MethodSchema[];
+
+  /**
+   * Static functions.
+   */
+  readonly staticFunctions: MethodSchema[];
+
+  /**
+   * Properties.
+   */
+  readonly properties: PropertySchema[];
+
+  /**
+   * Constants.
+   */
+  readonly constants: PropertySchema[];
 }
 
-export interface ConstructJson extends ClassJson {}
+/**
+ * Describes a construct.
+ */
+export interface ConstructSchema extends ClassSchema {}
 
-export interface StructJson {
-  id: string;
-  name: string;
-  docs?: string;
-  initializer: string;
-  properties: PropertyJson[];
+/**
+ * Describes a struct.
+ */
+export interface StructSchema {
+
+  /**
+   * Unique struct id.
+   */
+  readonly id: string;
+
+  /**
+   * Struct name.
+   */
+  readonly name: string;
+
+  /**
+   * Doc string of the struct.
+   */
+  readonly docs?: string;
+
+  /**
+   * How to initialize the struct.
+   */
+  readonly initializer: string;
+
+  /**
+   * Properties.
+   */
+  readonly properties: PropertySchema[];
 }
 
-export interface InterfaceJson {
-  id: string;
-  name: string;
-  interfaces: TypeJson[];
-  implementations: TypeJson[];
-  docs: string;
-  instanceMethods: MethodJson[];
-  properties: PropertyJson[];
+/**
+ * Describes an interface.
+ */
+export interface InterfaceSchema {
+
+  /**
+   * Unique interface id.
+   */
+  readonly id: string;
+
+  /**
+   * Interface name.
+   */
+  readonly name: string;
+
+  /**
+   * Interfaces that this interface extends.
+   */
+  readonly interfaces: TypeSchema[];
+
+  /**
+   * Types implementing this interface.
+   */
+  readonly implementations: TypeSchema[];
+
+  /**
+   * Doc string for this interface.
+   */
+  readonly docs: string;
+
+  /**
+   * Methods.
+   */
+  readonly instanceMethods: MethodSchema[];
+
+  /**
+   * Properties.
+   */
+  readonly properties: PropertySchema[];
 }
 
-export interface EnumMemberJson {
-  id: string;
-  name: string;
-  deprecated: boolean;
-  deprecationReason?: string;
-  docs: string;
+/**
+ * Describes an enum member.
+ */
+export interface EnumMemberSchema {
+
+  /**
+   * Unique enum member id.
+   */
+  readonly id: string;
+
+  /**
+   * Member name.
+   */
+  readonly name: string;
+
+  /**
+   * Whether or not the member is deprecated.
+   */
+  readonly deprecated: boolean;
+
+  /**
+   * Deprecation reason (if applicable).
+   */
+  readonly deprecationReason?: string;
+
+  /**
+   * Doc string of the member.
+   */
+  readonly docs: string;
 }
 
-export interface EnumJson {
-  name: string;
-  docs: string;
-  members: EnumMemberJson[];
+/**
+ * Describes an enum.
+ */
+export interface EnumSchema {
+
+  /**
+   * Enum name.
+   */
+  readonly name: string;
+
+  /**
+   * Doc string for the enum.
+   */
+  readonly docs: string;
+
+  /**
+   * Enum members.
+   */
+  readonly members: EnumMemberSchema[];
 }
 
-export interface ApiReferenceJson {
-  constructs: ConstructJson[];
-  classes: ClassJson[];
-  structs: StructJson[];
-  interfaces: InterfaceJson[];
-  enums: EnumJson[];
+/**
+ * Describes the Api Reference.
+ */
+export interface ApiReferenceSchema {
+
+  /**
+   * Constructs.
+   */
+  readonly constructs: ConstructSchema[];
+
+  /**
+   * Classes.
+   */
+  readonly classes: ClassSchema[];
+
+  /**
+   * Structs.
+   */
+  readonly structs: StructSchema[];
+
+  /**
+   * Interfaces.
+   */
+  readonly interfaces: InterfaceSchema[];
+
+  /**
+   * Enums.
+   */
+  readonly enums: EnumSchema[];
 }
 
-export interface NavItem {
-  display: string;
-  url: string;
-  children: NavItem[];
-}
+/**
+ * Describes the schema.
+ */
+export interface Schema {
 
-export interface PackagePageContent {
-  readme?: string;
-  apiReference?: ApiReferenceJson;
+  /**
+   * Readme.
+   */
+  readonly readme?: string;
+
+  /**
+   * Api Reference.
+   */
+  readonly apiReference?: ApiReferenceSchema;
 }

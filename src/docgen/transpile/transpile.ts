@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { TypeJson } from '../schema';
+import { TypeSchema } from '../schema';
 
 /**
  * Supported languages to generate documentation in.
@@ -353,7 +353,7 @@ export class TranspiledTypeReference {
     throw new Error(`Invalid type reference: ${this.ref.toString()}`);
   }
 
-  public toJson(): TypeJson {
+  public toJson(): TypeSchema {
     if (this.primitive) {
       return {
         name: this.primitive,

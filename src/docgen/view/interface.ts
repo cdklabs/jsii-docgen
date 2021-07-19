@@ -1,6 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { InterfaceJson } from '../schema';
+import { InterfaceSchema } from '../schema';
 import { Transpile, TranspiledInterface, TranspiledType } from '../transpile/transpile';
 import { InstanceMethods } from './instance-methods';
 import { Properties } from './properties';
@@ -25,7 +25,7 @@ export class Interface {
     this.properties = new Properties(transpile, iface.allProperties, linkFormatter);
   }
 
-  public render(): Markdown {
+  public toMarkdown(): Markdown {
     const md = new Markdown({
       id: this.transpiled.type.fqn,
       header: { title: this.transpiled.name },
@@ -55,12 +55,12 @@ export class Interface {
       md.docs(this.iface.docs);
     }
 
-    md.section(this.instanceMethods.render());
-    md.section(this.properties.render());
+    md.section(this.instanceMethods.toMarkdown());
+    md.section(this.properties.toMarkdown());
     return md;
   }
 
-  public renderToJson(): InterfaceJson {
+  public toJson(): InterfaceSchema {
     return {
       id: this.transpiled.type.fqn,
       name: this.transpiled.name,
@@ -79,8 +79,8 @@ export class Interface {
         };
       }),
       docs: this.iface.docs.toString(),
-      instanceMethods: this.instanceMethods.renderToJson(),
-      properties: this.properties.renderToJson(),
+      instanceMethods: this.instanceMethods.toJson(),
+      properties: this.properties.toJson(),
     };
   }
 }
