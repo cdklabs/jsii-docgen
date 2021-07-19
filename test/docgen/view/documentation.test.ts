@@ -111,3 +111,14 @@ describe('typescript', () => {
     expect(markdown.render()).toMatchSnapshot();
   });
 });
+
+test('loose mode grossly ignores assembly transliteration failures', async () => {
+
+  const docs = await Documentation.forPackage('@aws-cdk/aws-route53-patterns@1.106.0', {
+    language: Language.PYTHON,
+    loose: true,
+  });
+
+  const markdown = docs.render();
+  expect(markdown.render()).toMatchSnapshot();
+});
