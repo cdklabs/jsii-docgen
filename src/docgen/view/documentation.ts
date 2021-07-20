@@ -271,9 +271,9 @@ async function createAssembly(name: string, tsDir: string, loose: boolean, langu
         if (!loose) {
           throw e;
         }
+        console.log(`Caught transliteration error: ${e}. Ignoring...`);
       }
     }
-    console.log(`Loading ${dotJsii}`);
     await ts.load(dotJsii);
   }
   return ts.findAssembly(name);
