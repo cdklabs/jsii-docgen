@@ -264,8 +264,15 @@ async function createAssembly(name: string, tsDir: string, loose: boolean, langu
   for (let dotJsii of await glob.promise(`${tsDir}/**/.jsii`)) {
     if (language) {
       const packageDir = path.dirname(dotJsii);
-      await transliterateAssembly([packageDir], [language], { loose });
-      dotJsii = path.join(packageDir, `.jsii.${language}`);
+      try {
+        await transliterateAssembly([packageDir], [language], { loose });
+        dotJsii = path.join(packageDir, `.jsii.${language}`);
+      } catch (e) {
+        if (!loose) {
+          throw e;
+        }
+        console.log(`Caught transliteration error: ${e}. Ignoring...`);
+      }
     }
     await ts.load(dotJsii);
   }
