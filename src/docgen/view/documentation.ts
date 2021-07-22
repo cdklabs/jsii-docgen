@@ -265,7 +265,10 @@ async function createAssembly(name: string, tsDir: string, loose: boolean, langu
     // we only transliterate the top level assembly and not the entire type-system.
     // note that the only reason to translate dependant assemblies is to show code examples
     // for expanded python arguments - which we don't to right now anyway.
-    if (language && dotJsii.endsWith(`${name}/.jsii`)) {
+    // we don't want to make any assumption of the directory structure, so this is the most
+    // robuse way to detect the root assembly.
+    const spec = JSON.parse(await fs.readFile(dotJsii, 'utf-8'));
+    if (language && spec.name === name) {
       const packageDir = path.dirname(dotJsii);
       await transliterateAssembly([packageDir], [language], { loose });
       dotJsii = path.join(packageDir, `.jsii.${language}`);
