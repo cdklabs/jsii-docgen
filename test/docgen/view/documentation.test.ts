@@ -10,7 +10,7 @@ const LIBRARIES = `${__dirname}/../../__fixtures__/libraries`;
 
 // this is a little concerning...we should be mindful
 // if need to keep increasing this.
-jest.setTimeout(3 * 60 * 1000);
+jest.setTimeout(60 * 1000);
 
 
 describe('extractPackageName', () => {
@@ -110,18 +110,4 @@ describe('typescript', () => {
     const markdown = docs.render({ submodule: 'aws_eks' });
     expect(markdown.render()).toMatchSnapshot();
   });
-});
-
-test('loose mode grossly ignores assembly transliteration failures', async () => {
-
-  // for some yet unknown reason, this package crashes the typescript compiler
-  // in a way that isn't recoverable by rosetta at the moment.
-  // so we use it to check that jsii-docgen ignores even those errors when requested to.
-  const docs = await Documentation.forPackage('@aws-cdk/aws-route53-patterns@1.106.0', {
-    language: Language.PYTHON,
-    loose: true,
-  });
-
-  const markdown = docs.render();
-  expect(markdown.render()).toMatchSnapshot();
 });
