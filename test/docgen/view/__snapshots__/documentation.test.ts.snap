@@ -21,7 +21,9 @@ Define a repository by creating a new instance of \`Repository\`. A repository
 holds multiple verions of a single container image.
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 repository = ecr.Repository(self, \\"Repository\\")
 \`\`\`
 
@@ -30,7 +32,9 @@ repository = ecr.Repository(self, \\"Repository\\")
 Amazon ECR image scanning helps in identifying software vulnerabilities in your container images. You can manually scan container images stored in Amazon ECR, or you can configure your repositories to scan images when you push them to a repository. To create a new repository to scan on push, simply enable \`imageScanOnPush\` in the properties
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 repository = ecr.Repository(stack, \\"Repo\\",
     image_scan_on_push=True
 )
@@ -39,7 +43,9 @@ repository = ecr.Repository(stack, \\"Repo\\",
 To create an \`onImageScanCompleted\` event rule and trigger the event target
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 repository.on_image_scan_completed(\\"ImageScanComplete\\").add_target(...)
 \`\`\`
 
@@ -54,7 +60,9 @@ A Docker authorization token can be obtained using the \`GetAuthorizationToken\`
 grants an IAM user access to call this API.
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 import aws_cdk.aws_iam as iam
 import aws_cdk.aws_ecr as ecr
 
@@ -70,7 +78,9 @@ higher rate and bandwidth limits.
 The following code snippet grants an IAM user access to retrieve an authorization token for the public gallery.
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 import aws_cdk.aws_iam as iam
 import aws_cdk.aws_ecr as ecr
 
@@ -85,7 +95,9 @@ This user can then proceed to login to the registry using one of the [authentica
 You can set tag immutability on images in our repository using the \`imageTagMutability\` construct prop.
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 ecr.Repository(stack, \\"Repo\\", image_tag_mutability=ecr.TagMutability.IMMUTABLE)
 \`\`\`
 
@@ -98,7 +110,9 @@ against that image. For example, the following deletes images older than
 is important here):
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 repository.add_lifecycle_rule(tag_prefix_list=[\\"prod\\"], max_image_count=9999)
 repository.add_lifecycle_rule(max_image_age=cdk.Duration.days(30))
 \`\`\`
@@ -2573,217 +2587,6 @@ Rule applies to untagged images.
 "
 `;
 
-exports[`loose mode grossly ignores assembly transliteration failures 1`] = `
-"# CDK Construct library for higher-level Route 53 Constructs
-
-<!--BEGIN STABILITY BANNER-->---
-
-
-![cdk-constructs: Stable](https://img.shields.io/badge/cdk--constructs-stable-success.svg?style=for-the-badge)
-
----
-<!--END STABILITY BANNER-->
-
-This library provides higher-level Amazon Route 53 constructs which follow common
-architectural patterns.
-
-## HTTPS Redirect
-
-If you want to speed up delivery of your web content, you can use Amazon CloudFront,
-the AWS content delivery network (CDN). CloudFront can deliver your entire website
-—including dynamic, static, streaming, and interactive content—by using a global
-network of edge locations. Requests for your content are automatically routed to the
-edge location that gives your users the lowest latency.
-
-This construct allows creating a redirect from domainA to domainB using Amazon
-CloudFront and Amazon S3. You can specify multiple domains to be redirected.
-[Learn more](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html) about routing traffic to a CloudFront web distribution.
-
-The \`HttpsRedirect\` constructs creates:
-
-* Amazon CloudFront distribution - makes website available from data centres
-  around the world
-* Amazon S3 bucket - empty bucket used for website hosting redirect (\`websiteRedirect\`) capabilities.
-* Amazon Route 53 A/AAAA Alias records - routes traffic to the CloudFront distribution
-* AWS Certificate Manager certificate - SSL/TLS certificate used by
-  CloudFront for your domain
-
-⚠️ The stack/construct can be used in any region for configuring an HTTPS redirect.
-The certificate created in Amazon Certificate Manager (ACM) will be in US East (N. Virginia)
-region. If you use an existing certificate, the AWS region of the certificate
-must be in US East (N. Virginia).
-
-The following example creates an HTTPS redirect from \`foo.example.com\` to \`bar.example.com\`
-As an existing certificate is not provided, one will be created in \`us-east-1\` by the CDK.
-
-\`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
-HttpsRedirect(stack, \\"Redirect\\",
-    record_names=[\\"foo.example.com\\"],
-    target_domain=\\"bar.example.com\\",
-    zone=HostedZone.from_hosted_zone_attributes(stack, \\"HostedZone\\",
-        hosted_zone_id=\\"ID\\",
-        zone_name=\\"example.com\\"
-    )
-)
-\`\`\`
-# API Reference <a name=\\"API Reference\\"></a>
-
-## Constructs <a name=\\"Constructs\\"></a>
-
-### HttpsRedirect <a name=\\"aws_cdk.aws_route53_patterns.HttpsRedirect\\"></a>
-
-Allows creating a domainA -> domainB redirect using CloudFront and S3.
-
-You can specify multiple domains to be redirected.
-
-#### Initializer <a name=\\"aws_cdk.aws_route53_patterns.HttpsRedirect.Initializer\\"></a>
-
-\`\`\`python
-import aws_cdk.aws_route53_patterns
-
-aws_cdk.aws_route53_patterns.HttpsRedirect(scope: Construct, 
-                                           id: str, 
-                                           target_domain: str, 
-                                           zone: IHostedZone, 
-                                           certificate: ICertificate = None, 
-                                           record_names: typing.List[str] = None)
-\`\`\`
-
-##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_route53_patterns.HttpsRedirect.parameter.scope\\"></a>
-
-- *Type:* [\`constructs.Construct\`](#constructs.Construct)
-
----
-
-##### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_route53_patterns.HttpsRedirect.parameter.id\\"></a>
-
-- *Type:* \`str\`
-
----
-
-##### \`target_domain\`<sup>Required</sup> <a name=\\"aws_cdk.aws_route53_patterns.HttpsRedirectProps.parameter.target_domain\\"></a>
-
-- *Type:* \`str\`
-
-The redirect target fully qualified domain name (FQDN).
-
-An alias record
-will be created that points to your CloudFront distribution. Root domain
-or sub-domain can be supplied.
-
----
-
-##### \`zone\`<sup>Required</sup> <a name=\\"aws_cdk.aws_route53_patterns.HttpsRedirectProps.parameter.zone\\"></a>
-
-- *Type:* [\`aws_cdk.aws_route53.IHostedZone\`](#aws_cdk.aws_route53.IHostedZone)
-
-Hosted zone of the domain which will be used to create alias record(s) from domain names in the hosted zone to the target domain.
-
-The hosted zone must
-contain entries for the domain name(s) supplied through \`recordNames\` that
-will redirect to the target domain.
-
-Domain names in the hosted zone can include a specific domain (example.com)
-and its subdomains (acme.example.com, zenith.example.com).
-
----
-
-##### \`certificate\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_route53_patterns.HttpsRedirectProps.parameter.certificate\\"></a>
-
-- *Type:* [\`aws_cdk.aws_certificatemanager.ICertificate\`](#aws_cdk.aws_certificatemanager.ICertificate)
-- *Default:* A new certificate is created in us-east-1 (N. Virginia)
-
-The AWS Certificate Manager (ACM) certificate that will be associated with the CloudFront distribution that will be created.
-
-If provided, the certificate must be
-stored in us-east-1 (N. Virginia)
-
----
-
-##### \`record_names\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_route53_patterns.HttpsRedirectProps.parameter.record_names\\"></a>
-
-- *Type:* typing.List[\`str\`]
-- *Default:* the domain name of the hosted zone
-
-The domain names that will redirect to \`targetDomain\`.
-
----
-
-
-
-
-
-## Structs <a name=\\"Structs\\"></a>
-
-### HttpsRedirectProps <a name=\\"aws_cdk.aws_route53_patterns.HttpsRedirectProps\\"></a>
-
-Properties to configure an HTTPS Redirect.
-
-#### Initializer <a name=\\"[object Object].Initializer\\"></a>
-
-\`\`\`python
-import aws_cdk.aws_route53_patterns
-
-aws_cdk.aws_route53_patterns.HttpsRedirectProps(target_domain: str, 
-                                                zone: IHostedZone, 
-                                                certificate: ICertificate = None, 
-                                                record_names: typing.List[str] = None)
-\`\`\`
-
-##### \`target_domain\`<sup>Required</sup> <a name=\\"aws_cdk.aws_route53_patterns.HttpsRedirectProps.property.target_domain\\"></a>
-
-- *Type:* \`str\`
-
-The redirect target fully qualified domain name (FQDN).
-
-An alias record
-will be created that points to your CloudFront distribution. Root domain
-or sub-domain can be supplied.
-
----
-
-##### \`zone\`<sup>Required</sup> <a name=\\"aws_cdk.aws_route53_patterns.HttpsRedirectProps.property.zone\\"></a>
-
-- *Type:* [\`aws_cdk.aws_route53.IHostedZone\`](#aws_cdk.aws_route53.IHostedZone)
-
-Hosted zone of the domain which will be used to create alias record(s) from domain names in the hosted zone to the target domain.
-
-The hosted zone must
-contain entries for the domain name(s) supplied through \`recordNames\` that
-will redirect to the target domain.
-
-Domain names in the hosted zone can include a specific domain (example.com)
-and its subdomains (acme.example.com, zenith.example.com).
-
----
-
-##### \`certificate\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_route53_patterns.HttpsRedirectProps.property.certificate\\"></a>
-
-- *Type:* [\`aws_cdk.aws_certificatemanager.ICertificate\`](#aws_cdk.aws_certificatemanager.ICertificate)
-- *Default:* A new certificate is created in us-east-1 (N. Virginia)
-
-The AWS Certificate Manager (ACM) certificate that will be associated with the CloudFront distribution that will be created.
-
-If provided, the certificate must be
-stored in us-east-1 (N. Virginia)
-
----
-
-##### \`record_names\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_route53_patterns.HttpsRedirectProps.property.record_names\\"></a>
-
-- *Type:* typing.List[\`str\`]
-- *Default:* the domain name of the hosted zone
-
-The domain names that will redirect to \`targetDomain\`.
-
----
-
-
-
-"
-`;
-
 exports[`package installation does not run lifecycle hooks 1`] = `
 "# construct-library
 
@@ -2859,7 +2662,9 @@ Define a repository by creating a new instance of \`Repository\`. A repository
 holds multiple verions of a single container image.
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 repository = ecr.Repository(self, \\"Repository\\")
 \`\`\`
 
@@ -2868,7 +2673,9 @@ repository = ecr.Repository(self, \\"Repository\\")
 Amazon ECR image scanning helps in identifying software vulnerabilities in your container images. You can manually scan container images stored in Amazon ECR, or you can configure your repositories to scan images when you push them to a repository. To create a new repository to scan on push, simply enable \`imageScanOnPush\` in the properties
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 repository = ecr.Repository(stack, \\"Repo\\",
     image_scan_on_push=True
 )
@@ -2877,7 +2684,9 @@ repository = ecr.Repository(stack, \\"Repo\\",
 To create an \`onImageScanCompleted\` event rule and trigger the event target
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 repository.on_image_scan_completed(\\"ImageScanComplete\\").add_target(...)
 \`\`\`
 
@@ -2892,7 +2701,9 @@ A Docker authorization token can be obtained using the \`GetAuthorizationToken\`
 grants an IAM user access to call this API.
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 import aws_cdk.aws_iam as iam
 import aws_cdk.aws_ecr as ecr
 
@@ -2908,7 +2719,9 @@ higher rate and bandwidth limits.
 The following code snippet grants an IAM user access to retrieve an authorization token for the public gallery.
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 import aws_cdk.aws_iam as iam
 import aws_cdk.aws_ecr as ecr
 
@@ -2923,7 +2736,9 @@ This user can then proceed to login to the registry using one of the [authentica
 You can set tag immutability on images in our repository using the \`imageTagMutability\` construct prop.
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 ecr.Repository(stack, \\"Repo\\", image_tag_mutability=ecr.TagMutability.IMMUTABLE)
 \`\`\`
 
@@ -2936,7 +2751,9 @@ against that image. For example, the following deletes images older than
 is important here):
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 repository.add_lifecycle_rule(tag_prefix_list=[\\"prod\\"], max_image_count=9999)
 repository.add_lifecycle_rule(max_image_age=cdk.Duration.days(30))
 \`\`\`
@@ -5432,7 +5249,9 @@ Define a repository by creating a new instance of \`Repository\`. A repository
 holds multiple verions of a single container image.
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 repository = ecr.Repository(self, \\"Repository\\")
 \`\`\`
 
@@ -5441,7 +5260,9 @@ repository = ecr.Repository(self, \\"Repository\\")
 Amazon ECR image scanning helps in identifying software vulnerabilities in your container images. You can manually scan container images stored in Amazon ECR, or you can configure your repositories to scan images when you push them to a repository. To create a new repository to scan on push, simply enable \`imageScanOnPush\` in the properties
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 repository = ecr.Repository(stack, \\"Repo\\",
     image_scan_on_push=True
 )
@@ -5450,7 +5271,9 @@ repository = ecr.Repository(stack, \\"Repo\\",
 To create an \`onImageScanCompleted\` event rule and trigger the event target
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 repository.on_image_scan_completed(\\"ImageScanComplete\\").add_target(...)
 \`\`\`
 
@@ -5465,7 +5288,9 @@ A Docker authorization token can be obtained using the \`GetAuthorizationToken\`
 grants an IAM user access to call this API.
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 import aws_cdk.aws_iam as iam
 import aws_cdk.aws_ecr as ecr
 
@@ -5481,7 +5306,9 @@ higher rate and bandwidth limits.
 The following code snippet grants an IAM user access to retrieve an authorization token for the public gallery.
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 import aws_cdk.aws_iam as iam
 import aws_cdk.aws_ecr as ecr
 
@@ -5496,7 +5323,9 @@ This user can then proceed to login to the registry using one of the [authentica
 You can set tag immutability on images in our repository using the \`imageTagMutability\` construct prop.
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 ecr.Repository(stack, \\"Repo\\", image_tag_mutability=ecr.TagMutability.IMMUTABLE)
 \`\`\`
 
@@ -5509,7 +5338,9 @@ against that image. For example, the following deletes images older than
 is important here):
 
 \`\`\`python
-# Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 repository.add_lifecycle_rule(tag_prefix_list=[\\"prod\\"], max_image_count=9999)
 repository.add_lifecycle_rule(max_image_age=cdk.Duration.days(30))
 \`\`\`

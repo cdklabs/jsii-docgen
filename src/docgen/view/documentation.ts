@@ -262,17 +262,16 @@ async function createAssembly(name: string, tsDir: string, loose: boolean, langu
   console.log(`Creating assembly in ${language ?? 'ts'} for ${name} from ${tsDir} (loose: ${loose})`);
   const ts = new reflect.TypeSystem();
   for (let dotJsii of await glob.promise(`${tsDir}/**/.jsii`)) {
-    if (language) {
+    // we only transliterate the top level assembly and not the entire type-system.
+    // note that the only reason to translate dependant assemblies is to show code examples
+    // for expanded python arguments - which we don't to right now anyway.
+    // we don't want to make any assumption of the directory structure, so this is the most
+    // robuse way to detect the root assembly.
+    const spec = JSON.parse(await fs.readFile(dotJsii, 'utf-8'));
+    if (language && spec.name === name) {
       const packageDir = path.dirname(dotJsii);
-      try {
-        await transliterateAssembly([packageDir], [language], { loose });
-        dotJsii = path.join(packageDir, `.jsii.${language}`);
-      } catch (e) {
-        if (!loose) {
-          throw e;
-        }
-        console.log(`Caught transliteration error: ${e}. Ignoring...`);
-      }
+      await transliterateAssembly([packageDir], [language], { loose });
+      dotJsii = path.join(packageDir, `.jsii.${language}`);
     }
     await ts.load(dotJsii);
   }
