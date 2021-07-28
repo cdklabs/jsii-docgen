@@ -133,12 +133,14 @@ A CloudFormation \`AWS::ECR::PublicRepository\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnPublicRepository(scope: Construct, 
-                                    id: str, 
-                                    repository_catalog_data: typing.Any = None, 
-                                    repository_name: str = None, 
-                                    repository_policy_text: typing.Any = None, 
-                                    tags: typing.List[CfnTag] = None)
+aws_cdk.aws_ecr.CfnPublicRepository(
+  scope: Construct,
+  id: str,
+  repository_catalog_data: typing.Any = None,
+  repository_name: str = None,
+  repository_policy_text: typing.Any = None,
+  tags: typing.List[CfnTag] = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.parameter.scope\\"></a>
@@ -202,7 +204,9 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`python
-def inspect(inspector: TreeInspector)
+def inspect(
+  inspector: TreeInspector
+)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.parameter.inspector\\"></a>
@@ -285,9 +289,11 @@ A CloudFormation \`AWS::ECR::RegistryPolicy\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnRegistryPolicy(scope: Construct, 
-                                  id: str, 
-                                  policy_text: typing.Any)
+aws_cdk.aws_ecr.CfnRegistryPolicy(
+  scope: Construct,
+  id: str,
+  policy_text: typing.Any
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnRegistryPolicy.parameter.scope\\"></a>
@@ -321,7 +327,9 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"aws_cdk.aws_ecr.CfnRegistryPolicy.inspect\\"></a>
 
 \`\`\`python
-def inspect(inspector: TreeInspector)
+def inspect(
+  inspector: TreeInspector
+)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnRegistryPolicy.parameter.inspector\\"></a>
@@ -374,9 +382,11 @@ A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnReplicationConfiguration(scope: Construct, 
-                                            id: str, 
-                                            replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty])
+aws_cdk.aws_ecr.CfnReplicationConfiguration(
+  scope: Construct,
+  id: str,
+  replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfiguration.parameter.scope\\"></a>
@@ -410,7 +420,9 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfiguration.inspect\\"></a>
 
 \`\`\`python
-def inspect(inspector: TreeInspector)
+def inspect(
+  inspector: TreeInspector
+)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfiguration.parameter.inspector\\"></a>
@@ -463,15 +475,17 @@ A CloudFormation \`AWS::ECR::Repository\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnRepository(scope: Construct, 
-                              id: str, 
-                              encryption_configuration: typing.Any = None, 
-                              image_scanning_configuration: typing.Any = None, 
-                              image_tag_mutability: str = None, 
-                              lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty] = None, 
-                              repository_name: str = None, 
-                              repository_policy_text: typing.Any = None, 
-                              tags: typing.List[CfnTag] = None)
+aws_cdk.aws_ecr.CfnRepository(
+  scope: Construct,
+  id: str,
+  encryption_configuration: typing.Any = None,
+  image_scanning_configuration: typing.Any = None,
+  image_tag_mutability: str = None,
+  lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty] = None,
+  repository_name: str = None,
+  repository_policy_text: typing.Any = None,
+  tags: typing.List[CfnTag] = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnRepository.parameter.scope\\"></a>
@@ -565,7 +579,9 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"aws_cdk.aws_ecr.CfnRepository.inspect\\"></a>
 
 \`\`\`python
-def inspect(inspector: TreeInspector)
+def inspect(
+  inspector: TreeInspector
+)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnRepository.parameter.inspector\\"></a>
@@ -680,14 +696,16 @@ Define an ECR repository.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.Repository(scope: Construct, 
-                           id: str, 
-                           image_scan_on_push: bool = None, 
-                           image_tag_mutability: TagMutability = None, 
-                           lifecycle_registry_id: str = None, 
-                           lifecycle_rules: typing.List[LifecycleRule] = None, 
-                           removal_policy: RemovalPolicy = None, 
-                           repository_name: str = None)
+aws_cdk.aws_ecr.Repository(
+  scope: Construct,
+  id: str,
+  image_scan_on_push: bool = None,
+  image_tag_mutability: TagMutability = None,
+  lifecycle_registry_id: str = None,
+  lifecycle_rules: typing.List[LifecycleRule] = None,
+  removal_policy: RemovalPolicy = None,
+  repository_name: str = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.Repository.parameter.scope\\"></a>
@@ -765,12 +783,14 @@ Name for this repository.
 ##### \`add_lifecycle_rule\` <a name=\\"aws_cdk.aws_ecr.Repository.add_lifecycle_rule\\"></a>
 
 \`\`\`python
-def add_lifecycle_rule(description: str = None, 
-                       max_image_age: Duration = None, 
-                       max_image_count: typing.Union[int, float] = None, 
-                       rule_priority: typing.Union[int, float] = None, 
-                       tag_prefix_list: typing.List[str] = None, 
-                       tag_status: TagStatus = None)
+def add_lifecycle_rule(
+  description: str = None,
+  max_image_age: Duration = None,
+  max_image_count: typing.Union[int, float] = None,
+  rule_priority: typing.Union[int, float] = None,
+  tag_prefix_list: typing.List[str] = None,
+  tag_status: TagStatus = None
+)
 \`\`\`
 
 ###### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.LifecycleRule.parameter.description\\"></a>
@@ -845,7 +865,9 @@ have the highest rulePriority.
 ##### \`add_to_resource_policy\` <a name=\\"aws_cdk.aws_ecr.Repository.add_to_resource_policy\\"></a>
 
 \`\`\`python
-def add_to_resource_policy(statement: PolicyStatement)
+def add_to_resource_policy(
+  statement: PolicyStatement
+)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.Repository.parameter.statement\\"></a>
@@ -861,9 +883,11 @@ def add_to_resource_policy(statement: PolicyStatement)
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.Repository.arn_for_local_repository(repository_name: str, 
-                                                    scope: IConstruct, 
-                                                    account: str = None)
+aws_cdk.aws_ecr.Repository.arn_for_local_repository(
+  repository_name: str,
+  scope: IConstruct,
+  account: str = None
+)
 \`\`\`
 
 ###### \`repository_name\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.Repository.parameter.repository_name\\"></a>
@@ -889,9 +913,11 @@ aws_cdk.aws_ecr.Repository.arn_for_local_repository(repository_name: str,
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.Repository.from_repository_arn(scope: Construct, 
-                                               id: str, 
-                                               repository_arn: str)
+aws_cdk.aws_ecr.Repository.from_repository_arn(
+  scope: Construct,
+  id: str,
+  repository_arn: str
+)
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.Repository.parameter.scope\\"></a>
@@ -917,10 +943,12 @@ aws_cdk.aws_ecr.Repository.from_repository_arn(scope: Construct,
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.Repository.from_repository_attributes(scope: Construct, 
-                                                      id: str, 
-                                                      repository_arn: str, 
-                                                      repository_name: str)
+aws_cdk.aws_ecr.Repository.from_repository_attributes(
+  scope: Construct,
+  id: str,
+  repository_arn: str,
+  repository_name: str
+)
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.Repository.parameter.scope\\"></a>
@@ -952,9 +980,11 @@ aws_cdk.aws_ecr.Repository.from_repository_attributes(scope: Construct,
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.Repository.from_repository_name(scope: Construct, 
-                                                id: str, 
-                                                repository_name: str)
+aws_cdk.aws_ecr.Repository.from_repository_name(
+  scope: Construct,
+  id: str,
+  repository_name: str
+)
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.Repository.parameter.scope\\"></a>
@@ -1007,12 +1037,14 @@ Reused between imported repositories and owned repositories.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.RepositoryBase(scope: Construct, 
-                               id: str, 
-                               account: str = None, 
-                               environment_from_arn: str = None, 
-                               physical_name: str = None, 
-                               region: str = None)
+aws_cdk.aws_ecr.RepositoryBase(
+  scope: Construct,
+  id: str,
+  account: str = None,
+  environment_from_arn: str = None,
+  physical_name: str = None,
+  region: str = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.scope\\"></a>
@@ -1079,7 +1111,9 @@ The AWS region this resource belongs to.
 ##### \`add_to_resource_policy\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.add_to_resource_policy\\"></a>
 
 \`\`\`python
-def add_to_resource_policy(statement: PolicyStatement)
+def add_to_resource_policy(
+  statement: PolicyStatement
+)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.statement\\"></a>
@@ -1091,8 +1125,10 @@ def add_to_resource_policy(statement: PolicyStatement)
 ##### \`grant\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.grant\\"></a>
 
 \`\`\`python
-def grant(grantee: IGrantable, 
-          actions: str)
+def grant(
+  grantee: IGrantable,
+  actions: str
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.grantee\\"></a>
@@ -1110,7 +1146,9 @@ def grant(grantee: IGrantable,
 ##### \`grant_pull\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.grant_pull\\"></a>
 
 \`\`\`python
-def grant_pull(grantee: IGrantable)
+def grant_pull(
+  grantee: IGrantable
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.grantee\\"></a>
@@ -1122,7 +1160,9 @@ def grant_pull(grantee: IGrantable)
 ##### \`grant_pull_push\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.grant_pull_push\\"></a>
 
 \`\`\`python
-def grant_pull_push(grantee: IGrantable)
+def grant_pull_push(
+  grantee: IGrantable
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.grantee\\"></a>
@@ -1134,11 +1174,13 @@ def grant_pull_push(grantee: IGrantable)
 ##### \`on_cloud_trail_event\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.on_cloud_trail_event\\"></a>
 
 \`\`\`python
-def on_cloud_trail_event(id: str, 
-                         description: str = None, 
-                         event_pattern: EventPattern = None, 
-                         rule_name: str = None, 
-                         target: IRuleTarget = None)
+def on_cloud_trail_event(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.id\\"></a>
@@ -1194,12 +1236,14 @@ The target to register for the event.
 ##### \`on_cloud_trail_image_pushed\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.on_cloud_trail_image_pushed\\"></a>
 
 \`\`\`python
-def on_cloud_trail_image_pushed(id: str, 
-                                description: str = None, 
-                                event_pattern: EventPattern = None, 
-                                rule_name: str = None, 
-                                target: IRuleTarget = None, 
-                                image_tag: str = None)
+def on_cloud_trail_image_pushed(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tag: str = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.id\\"></a>
@@ -1264,11 +1308,13 @@ Only watch changes to this image tag.
 ##### \`on_event\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.on_event\\"></a>
 
 \`\`\`python
-def on_event(id: str, 
-             description: str = None, 
-             event_pattern: EventPattern = None, 
-             rule_name: str = None, 
-             target: IRuleTarget = None)
+def on_event(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.id\\"></a>
@@ -1322,12 +1368,14 @@ The target to register for the event.
 ##### \`on_image_scan_completed\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.on_image_scan_completed\\"></a>
 
 \`\`\`python
-def on_image_scan_completed(id: str, 
-                            description: str = None, 
-                            event_pattern: EventPattern = None, 
-                            rule_name: str = None, 
-                            target: IRuleTarget = None, 
-                            image_tags: typing.List[str] = None)
+def on_image_scan_completed(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tags: typing.List[str] = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.id\\"></a>
@@ -1394,7 +1442,9 @@ Leave it undefined to watch the full repository.
 ##### \`repository_uri_for_digest\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.repository_uri_for_digest\\"></a>
 
 \`\`\`python
-def repository_uri_for_digest(digest: str = None)
+def repository_uri_for_digest(
+  digest: str = None
+)
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.digest\\"></a>
@@ -1408,7 +1458,9 @@ Optional image digest.
 ##### \`repository_uri_for_tag\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.repository_uri_for_tag\\"></a>
 
 \`\`\`python
-def repository_uri_for_tag(tag: str = None)
+def repository_uri_for_tag(
+  tag: str = None
+)
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.tag\\"></a>
@@ -1462,10 +1514,12 @@ Properties for defining a \`AWS::ECR::PublicRepository\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnPublicRepositoryProps(repository_catalog_data: typing.Any = None, 
-                                         repository_name: str = None, 
-                                         repository_policy_text: typing.Any = None, 
-                                         tags: typing.List[CfnTag] = None)
+aws_cdk.aws_ecr.CfnPublicRepositoryProps(
+  repository_catalog_data: typing.Any = None,
+  repository_name: str = None,
+  repository_policy_text: typing.Any = None,
+  tags: typing.List[CfnTag] = None
+)
 \`\`\`
 
 ##### \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.property.repository_catalog_data\\"></a>
@@ -1519,7 +1573,9 @@ Properties for defining a \`AWS::ECR::RegistryPolicy\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnRegistryPolicyProps(policy_text: typing.Any)
+aws_cdk.aws_ecr.CfnRegistryPolicyProps(
+  policy_text: typing.Any
+)
 \`\`\`
 
 ##### \`policy_text\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnRegistryPolicyProps.property.policy_text\\"></a>
@@ -1543,7 +1599,9 @@ Properties for defining a \`AWS::ECR::ReplicationConfiguration\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnReplicationConfigurationProps(replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty])
+aws_cdk.aws_ecr.CfnReplicationConfigurationProps(
+  replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
+)
 \`\`\`
 
 ##### \`replication_configuration\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfigurationProps.property.replication_configuration\\"></a>
@@ -1567,13 +1625,15 @@ Properties for defining a \`AWS::ECR::Repository\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnRepositoryProps(encryption_configuration: typing.Any = None, 
-                                   image_scanning_configuration: typing.Any = None, 
-                                   image_tag_mutability: str = None, 
-                                   lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty] = None, 
-                                   repository_name: str = None, 
-                                   repository_policy_text: typing.Any = None, 
-                                   tags: typing.List[CfnTag] = None)
+aws_cdk.aws_ecr.CfnRepositoryProps(
+  encryption_configuration: typing.Any = None,
+  image_scanning_configuration: typing.Any = None,
+  image_tag_mutability: str = None,
+  lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty] = None,
+  repository_name: str = None,
+  repository_policy_text: typing.Any = None,
+  tags: typing.List[CfnTag] = None
+)
 \`\`\`
 
 ##### \`encryption_configuration\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnRepositoryProps.property.encryption_configuration\\"></a>
@@ -1655,8 +1715,10 @@ aws_cdk.aws_ecr.CfnRepositoryProps(encryption_configuration: typing.Any = None,
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnRepository.LifecyclePolicyProperty(lifecycle_policy_text: str = None, 
-                                                      registry_id: str = None)
+aws_cdk.aws_ecr.CfnRepository.LifecyclePolicyProperty(
+  lifecycle_policy_text: str = None,
+  registry_id: str = None
+)
 \`\`\`
 
 ##### \`lifecycle_policy_text\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnRepository.LifecyclePolicyProperty.property.lifecycle_policy_text\\"></a>
@@ -1688,12 +1750,14 @@ An ECR life cycle rule.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.LifecycleRule(description: str = None, 
-                              max_image_age: Duration = None, 
-                              max_image_count: typing.Union[int, float] = None, 
-                              rule_priority: typing.Union[int, float] = None, 
-                              tag_prefix_list: typing.List[str] = None, 
-                              tag_status: TagStatus = None)
+aws_cdk.aws_ecr.LifecycleRule(
+  description: str = None,
+  max_image_age: Duration = None,
+  max_image_count: typing.Union[int, float] = None,
+  rule_priority: typing.Union[int, float] = None,
+  tag_prefix_list: typing.List[str] = None,
+  tag_status: TagStatus = None
+)
 \`\`\`
 
 ##### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.LifecycleRule.property.description\\"></a>
@@ -1774,11 +1838,13 @@ Options for the onCloudTrailImagePushed method.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions(description: str = None, 
-                                               event_pattern: EventPattern = None, 
-                                               rule_name: str = None, 
-                                               target: IRuleTarget = None, 
-                                               image_tag: str = None)
+aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions(
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tag: str = None
+)
 \`\`\`
 
 ##### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions.property.description\\"></a>
@@ -1841,11 +1907,13 @@ Options for the OnImageScanCompleted method.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.OnImageScanCompletedOptions(description: str = None, 
-                                            event_pattern: EventPattern = None, 
-                                            rule_name: str = None, 
-                                            target: IRuleTarget = None, 
-                                            image_tags: typing.List[str] = None)
+aws_cdk.aws_ecr.OnImageScanCompletedOptions(
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tags: typing.List[str] = None
+)
 \`\`\`
 
 ##### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnImageScanCompletedOptions.property.description\\"></a>
@@ -1910,7 +1978,9 @@ Leave it undefined to watch the full repository.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty(rules: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationRuleProperty]]])
+aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty(
+  rules: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationRuleProperty]]]
+)
 \`\`\`
 
 ##### \`rules\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules\\"></a>
@@ -1932,8 +2002,10 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty(rul
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationDestinationProperty(region: str, 
-                                                                           registry_id: str)
+aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationDestinationProperty(
+  region: str,
+  registry_id: str
+)
 \`\`\`
 
 ##### \`region\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationDestinationProperty.property.region\\"></a>
@@ -1965,7 +2037,9 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationDestinationProperty(regio
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty(destinations: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationDestinationProperty]]])
+aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty(
+  destinations: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationDestinationProperty]]]
+)
 \`\`\`
 
 ##### \`destinations\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations\\"></a>
@@ -1985,8 +2059,10 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty(destinations
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.RepositoryAttributes(repository_arn: str, 
-                                     repository_name: str)
+aws_cdk.aws_ecr.RepositoryAttributes(
+  repository_arn: str,
+  repository_name: str
+)
 \`\`\`
 
 ##### \`repository_arn\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryAttributes.property.repository_arn\\"></a>
@@ -2008,12 +2084,14 @@ aws_cdk.aws_ecr.RepositoryAttributes(repository_arn: str,
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.RepositoryProps(image_scan_on_push: bool = None, 
-                                image_tag_mutability: TagMutability = None, 
-                                lifecycle_registry_id: str = None, 
-                                lifecycle_rules: typing.List[LifecycleRule] = None, 
-                                removal_policy: RemovalPolicy = None, 
-                                repository_name: str = None)
+aws_cdk.aws_ecr.RepositoryProps(
+  image_scan_on_push: bool = None,
+  image_tag_mutability: TagMutability = None,
+  lifecycle_registry_id: str = None,
+  lifecycle_rules: typing.List[LifecycleRule] = None,
+  removal_policy: RemovalPolicy = None,
+  repository_name: str = None
+)
 \`\`\`
 
 ##### \`image_scan_on_push\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryProps.property.image_scan_on_push\\"></a>
@@ -2090,7 +2168,9 @@ Authorization token to access private ECR repositories in the current environmen
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.AuthorizationToken.grant_read(grantee: IGrantable)
+aws_cdk.aws_ecr.AuthorizationToken.grant_read(
+  grantee: IGrantable
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.AuthorizationToken.parameter.grantee\\"></a>
@@ -2115,7 +2195,9 @@ Authorization token to access the global public ECR Gallery via Docker CLI.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.PublicGalleryAuthorizationToken.grant_read(grantee: IGrantable)
+aws_cdk.aws_ecr.PublicGalleryAuthorizationToken.grant_read(
+  grantee: IGrantable
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.PublicGalleryAuthorizationToken.parameter.grantee\\"></a>
@@ -2141,7 +2223,9 @@ Represents an ECR repository.
 ##### \`add_to_resource_policy\` <a name=\\"aws_cdk.aws_ecr.IRepository.add_to_resource_policy\\"></a>
 
 \`\`\`python
-def add_to_resource_policy(statement: PolicyStatement)
+def add_to_resource_policy(
+  statement: PolicyStatement
+)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.statement\\"></a>
@@ -2153,8 +2237,10 @@ def add_to_resource_policy(statement: PolicyStatement)
 ##### \`grant\` <a name=\\"aws_cdk.aws_ecr.IRepository.grant\\"></a>
 
 \`\`\`python
-def grant(grantee: IGrantable, 
-          actions: str)
+def grant(
+  grantee: IGrantable,
+  actions: str
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.grantee\\"></a>
@@ -2172,7 +2258,9 @@ def grant(grantee: IGrantable,
 ##### \`grant_pull\` <a name=\\"aws_cdk.aws_ecr.IRepository.grant_pull\\"></a>
 
 \`\`\`python
-def grant_pull(grantee: IGrantable)
+def grant_pull(
+  grantee: IGrantable
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.grantee\\"></a>
@@ -2184,7 +2272,9 @@ def grant_pull(grantee: IGrantable)
 ##### \`grant_pull_push\` <a name=\\"aws_cdk.aws_ecr.IRepository.grant_pull_push\\"></a>
 
 \`\`\`python
-def grant_pull_push(grantee: IGrantable)
+def grant_pull_push(
+  grantee: IGrantable
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.grantee\\"></a>
@@ -2196,11 +2286,13 @@ def grant_pull_push(grantee: IGrantable)
 ##### \`on_cloud_trail_event\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_cloud_trail_event\\"></a>
 
 \`\`\`python
-def on_cloud_trail_event(id: str, 
-                         description: str = None, 
-                         event_pattern: EventPattern = None, 
-                         rule_name: str = None, 
-                         target: IRuleTarget = None)
+def on_cloud_trail_event(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
@@ -2256,12 +2348,14 @@ The target to register for the event.
 ##### \`on_cloud_trail_image_pushed\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_cloud_trail_image_pushed\\"></a>
 
 \`\`\`python
-def on_cloud_trail_image_pushed(id: str, 
-                                description: str = None, 
-                                event_pattern: EventPattern = None, 
-                                rule_name: str = None, 
-                                target: IRuleTarget = None, 
-                                image_tag: str = None)
+def on_cloud_trail_image_pushed(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tag: str = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
@@ -2326,11 +2420,13 @@ Only watch changes to this image tag.
 ##### \`on_event\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_event\\"></a>
 
 \`\`\`python
-def on_event(id: str, 
-             description: str = None, 
-             event_pattern: EventPattern = None, 
-             rule_name: str = None, 
-             target: IRuleTarget = None)
+def on_event(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
@@ -2384,12 +2480,14 @@ The target to register for the event.
 ##### \`on_image_scan_completed\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_image_scan_completed\\"></a>
 
 \`\`\`python
-def on_image_scan_completed(id: str, 
-                            description: str = None, 
-                            event_pattern: EventPattern = None, 
-                            rule_name: str = None, 
-                            target: IRuleTarget = None, 
-                            image_tags: typing.List[str] = None)
+def on_image_scan_completed(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tags: typing.List[str] = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
@@ -2456,7 +2554,9 @@ Leave it undefined to watch the full repository.
 ##### \`repository_uri_for_digest\` <a name=\\"aws_cdk.aws_ecr.IRepository.repository_uri_for_digest\\"></a>
 
 \`\`\`python
-def repository_uri_for_digest(digest: str = None)
+def repository_uri_for_digest(
+  digest: str = None
+)
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.digest\\"></a>
@@ -2470,7 +2570,9 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ##### \`repository_uri_for_tag\` <a name=\\"aws_cdk.aws_ecr.IRepository.repository_uri_for_tag\\"></a>
 
 \`\`\`python
-def repository_uri_for_tag(tag: str = None)
+def repository_uri_for_tag(
+  tag: str = None
+)
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.tag\\"></a>
@@ -2774,12 +2876,14 @@ A CloudFormation \`AWS::ECR::PublicRepository\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnPublicRepository(scope: Construct, 
-                                    id: str, 
-                                    repository_catalog_data: typing.Any = None, 
-                                    repository_name: str = None, 
-                                    repository_policy_text: typing.Any = None, 
-                                    tags: typing.List[CfnTag] = None)
+aws_cdk.aws_ecr.CfnPublicRepository(
+  scope: Construct,
+  id: str,
+  repository_catalog_data: typing.Any = None,
+  repository_name: str = None,
+  repository_policy_text: typing.Any = None,
+  tags: typing.List[CfnTag] = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.parameter.scope\\"></a>
@@ -2843,7 +2947,9 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`python
-def inspect(inspector: TreeInspector)
+def inspect(
+  inspector: TreeInspector
+)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.parameter.inspector\\"></a>
@@ -2926,9 +3032,11 @@ A CloudFormation \`AWS::ECR::RegistryPolicy\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnRegistryPolicy(scope: Construct, 
-                                  id: str, 
-                                  policy_text: typing.Any)
+aws_cdk.aws_ecr.CfnRegistryPolicy(
+  scope: Construct,
+  id: str,
+  policy_text: typing.Any
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnRegistryPolicy.parameter.scope\\"></a>
@@ -2962,7 +3070,9 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"aws_cdk.aws_ecr.CfnRegistryPolicy.inspect\\"></a>
 
 \`\`\`python
-def inspect(inspector: TreeInspector)
+def inspect(
+  inspector: TreeInspector
+)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnRegistryPolicy.parameter.inspector\\"></a>
@@ -3015,9 +3125,11 @@ A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnReplicationConfiguration(scope: Construct, 
-                                            id: str, 
-                                            replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty])
+aws_cdk.aws_ecr.CfnReplicationConfiguration(
+  scope: Construct,
+  id: str,
+  replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfiguration.parameter.scope\\"></a>
@@ -3051,7 +3163,9 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfiguration.inspect\\"></a>
 
 \`\`\`python
-def inspect(inspector: TreeInspector)
+def inspect(
+  inspector: TreeInspector
+)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfiguration.parameter.inspector\\"></a>
@@ -3104,15 +3218,17 @@ A CloudFormation \`AWS::ECR::Repository\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnRepository(scope: Construct, 
-                              id: str, 
-                              encryption_configuration: typing.Any = None, 
-                              image_scanning_configuration: typing.Any = None, 
-                              image_tag_mutability: str = None, 
-                              lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty] = None, 
-                              repository_name: str = None, 
-                              repository_policy_text: typing.Any = None, 
-                              tags: typing.List[CfnTag] = None)
+aws_cdk.aws_ecr.CfnRepository(
+  scope: Construct,
+  id: str,
+  encryption_configuration: typing.Any = None,
+  image_scanning_configuration: typing.Any = None,
+  image_tag_mutability: str = None,
+  lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty] = None,
+  repository_name: str = None,
+  repository_policy_text: typing.Any = None,
+  tags: typing.List[CfnTag] = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnRepository.parameter.scope\\"></a>
@@ -3206,7 +3322,9 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"aws_cdk.aws_ecr.CfnRepository.inspect\\"></a>
 
 \`\`\`python
-def inspect(inspector: TreeInspector)
+def inspect(
+  inspector: TreeInspector
+)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnRepository.parameter.inspector\\"></a>
@@ -3321,14 +3439,16 @@ Define an ECR repository.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.Repository(scope: Construct, 
-                           id: str, 
-                           image_scan_on_push: bool = None, 
-                           image_tag_mutability: TagMutability = None, 
-                           lifecycle_registry_id: str = None, 
-                           lifecycle_rules: typing.List[LifecycleRule] = None, 
-                           removal_policy: RemovalPolicy = None, 
-                           repository_name: str = None)
+aws_cdk.aws_ecr.Repository(
+  scope: Construct,
+  id: str,
+  image_scan_on_push: bool = None,
+  image_tag_mutability: TagMutability = None,
+  lifecycle_registry_id: str = None,
+  lifecycle_rules: typing.List[LifecycleRule] = None,
+  removal_policy: RemovalPolicy = None,
+  repository_name: str = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.Repository.parameter.scope\\"></a>
@@ -3406,12 +3526,14 @@ Name for this repository.
 ##### \`add_lifecycle_rule\` <a name=\\"aws_cdk.aws_ecr.Repository.add_lifecycle_rule\\"></a>
 
 \`\`\`python
-def add_lifecycle_rule(description: str = None, 
-                       max_image_age: Duration = None, 
-                       max_image_count: typing.Union[int, float] = None, 
-                       rule_priority: typing.Union[int, float] = None, 
-                       tag_prefix_list: typing.List[str] = None, 
-                       tag_status: TagStatus = None)
+def add_lifecycle_rule(
+  description: str = None,
+  max_image_age: Duration = None,
+  max_image_count: typing.Union[int, float] = None,
+  rule_priority: typing.Union[int, float] = None,
+  tag_prefix_list: typing.List[str] = None,
+  tag_status: TagStatus = None
+)
 \`\`\`
 
 ###### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.LifecycleRule.parameter.description\\"></a>
@@ -3486,7 +3608,9 @@ have the highest rulePriority.
 ##### \`add_to_resource_policy\` <a name=\\"aws_cdk.aws_ecr.Repository.add_to_resource_policy\\"></a>
 
 \`\`\`python
-def add_to_resource_policy(statement: PolicyStatement)
+def add_to_resource_policy(
+  statement: PolicyStatement
+)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.Repository.parameter.statement\\"></a>
@@ -3502,9 +3626,11 @@ def add_to_resource_policy(statement: PolicyStatement)
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.Repository.arn_for_local_repository(repository_name: str, 
-                                                    scope: IConstruct, 
-                                                    account: str = None)
+aws_cdk.aws_ecr.Repository.arn_for_local_repository(
+  repository_name: str,
+  scope: IConstruct,
+  account: str = None
+)
 \`\`\`
 
 ###### \`repository_name\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.Repository.parameter.repository_name\\"></a>
@@ -3530,9 +3656,11 @@ aws_cdk.aws_ecr.Repository.arn_for_local_repository(repository_name: str,
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.Repository.from_repository_arn(scope: Construct, 
-                                               id: str, 
-                                               repository_arn: str)
+aws_cdk.aws_ecr.Repository.from_repository_arn(
+  scope: Construct,
+  id: str,
+  repository_arn: str
+)
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.Repository.parameter.scope\\"></a>
@@ -3558,10 +3686,12 @@ aws_cdk.aws_ecr.Repository.from_repository_arn(scope: Construct,
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.Repository.from_repository_attributes(scope: Construct, 
-                                                      id: str, 
-                                                      repository_arn: str, 
-                                                      repository_name: str)
+aws_cdk.aws_ecr.Repository.from_repository_attributes(
+  scope: Construct,
+  id: str,
+  repository_arn: str,
+  repository_name: str
+)
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.Repository.parameter.scope\\"></a>
@@ -3593,9 +3723,11 @@ aws_cdk.aws_ecr.Repository.from_repository_attributes(scope: Construct,
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.Repository.from_repository_name(scope: Construct, 
-                                                id: str, 
-                                                repository_name: str)
+aws_cdk.aws_ecr.Repository.from_repository_name(
+  scope: Construct,
+  id: str,
+  repository_name: str
+)
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.Repository.parameter.scope\\"></a>
@@ -3648,12 +3780,14 @@ Reused between imported repositories and owned repositories.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.RepositoryBase(scope: Construct, 
-                               id: str, 
-                               account: str = None, 
-                               environment_from_arn: str = None, 
-                               physical_name: str = None, 
-                               region: str = None)
+aws_cdk.aws_ecr.RepositoryBase(
+  scope: Construct,
+  id: str,
+  account: str = None,
+  environment_from_arn: str = None,
+  physical_name: str = None,
+  region: str = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.scope\\"></a>
@@ -3720,7 +3854,9 @@ The AWS region this resource belongs to.
 ##### \`add_to_resource_policy\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.add_to_resource_policy\\"></a>
 
 \`\`\`python
-def add_to_resource_policy(statement: PolicyStatement)
+def add_to_resource_policy(
+  statement: PolicyStatement
+)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.statement\\"></a>
@@ -3732,8 +3868,10 @@ def add_to_resource_policy(statement: PolicyStatement)
 ##### \`grant\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.grant\\"></a>
 
 \`\`\`python
-def grant(grantee: IGrantable, 
-          actions: str)
+def grant(
+  grantee: IGrantable,
+  actions: str
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.grantee\\"></a>
@@ -3751,7 +3889,9 @@ def grant(grantee: IGrantable,
 ##### \`grant_pull\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.grant_pull\\"></a>
 
 \`\`\`python
-def grant_pull(grantee: IGrantable)
+def grant_pull(
+  grantee: IGrantable
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.grantee\\"></a>
@@ -3763,7 +3903,9 @@ def grant_pull(grantee: IGrantable)
 ##### \`grant_pull_push\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.grant_pull_push\\"></a>
 
 \`\`\`python
-def grant_pull_push(grantee: IGrantable)
+def grant_pull_push(
+  grantee: IGrantable
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.grantee\\"></a>
@@ -3775,11 +3917,13 @@ def grant_pull_push(grantee: IGrantable)
 ##### \`on_cloud_trail_event\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.on_cloud_trail_event\\"></a>
 
 \`\`\`python
-def on_cloud_trail_event(id: str, 
-                         description: str = None, 
-                         event_pattern: EventPattern = None, 
-                         rule_name: str = None, 
-                         target: IRuleTarget = None)
+def on_cloud_trail_event(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.id\\"></a>
@@ -3835,12 +3979,14 @@ The target to register for the event.
 ##### \`on_cloud_trail_image_pushed\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.on_cloud_trail_image_pushed\\"></a>
 
 \`\`\`python
-def on_cloud_trail_image_pushed(id: str, 
-                                description: str = None, 
-                                event_pattern: EventPattern = None, 
-                                rule_name: str = None, 
-                                target: IRuleTarget = None, 
-                                image_tag: str = None)
+def on_cloud_trail_image_pushed(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tag: str = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.id\\"></a>
@@ -3905,11 +4051,13 @@ Only watch changes to this image tag.
 ##### \`on_event\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.on_event\\"></a>
 
 \`\`\`python
-def on_event(id: str, 
-             description: str = None, 
-             event_pattern: EventPattern = None, 
-             rule_name: str = None, 
-             target: IRuleTarget = None)
+def on_event(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.id\\"></a>
@@ -3963,12 +4111,14 @@ The target to register for the event.
 ##### \`on_image_scan_completed\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.on_image_scan_completed\\"></a>
 
 \`\`\`python
-def on_image_scan_completed(id: str, 
-                            description: str = None, 
-                            event_pattern: EventPattern = None, 
-                            rule_name: str = None, 
-                            target: IRuleTarget = None, 
-                            image_tags: typing.List[str] = None)
+def on_image_scan_completed(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tags: typing.List[str] = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.id\\"></a>
@@ -4035,7 +4185,9 @@ Leave it undefined to watch the full repository.
 ##### \`repository_uri_for_digest\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.repository_uri_for_digest\\"></a>
 
 \`\`\`python
-def repository_uri_for_digest(digest: str = None)
+def repository_uri_for_digest(
+  digest: str = None
+)
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.digest\\"></a>
@@ -4049,7 +4201,9 @@ Optional image digest.
 ##### \`repository_uri_for_tag\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.repository_uri_for_tag\\"></a>
 
 \`\`\`python
-def repository_uri_for_tag(tag: str = None)
+def repository_uri_for_tag(
+  tag: str = None
+)
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.tag\\"></a>
@@ -4103,10 +4257,12 @@ Properties for defining a \`AWS::ECR::PublicRepository\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnPublicRepositoryProps(repository_catalog_data: typing.Any = None, 
-                                         repository_name: str = None, 
-                                         repository_policy_text: typing.Any = None, 
-                                         tags: typing.List[CfnTag] = None)
+aws_cdk.aws_ecr.CfnPublicRepositoryProps(
+  repository_catalog_data: typing.Any = None,
+  repository_name: str = None,
+  repository_policy_text: typing.Any = None,
+  tags: typing.List[CfnTag] = None
+)
 \`\`\`
 
 ##### \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.property.repository_catalog_data\\"></a>
@@ -4160,7 +4316,9 @@ Properties for defining a \`AWS::ECR::RegistryPolicy\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnRegistryPolicyProps(policy_text: typing.Any)
+aws_cdk.aws_ecr.CfnRegistryPolicyProps(
+  policy_text: typing.Any
+)
 \`\`\`
 
 ##### \`policy_text\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnRegistryPolicyProps.property.policy_text\\"></a>
@@ -4184,7 +4342,9 @@ Properties for defining a \`AWS::ECR::ReplicationConfiguration\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnReplicationConfigurationProps(replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty])
+aws_cdk.aws_ecr.CfnReplicationConfigurationProps(
+  replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
+)
 \`\`\`
 
 ##### \`replication_configuration\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfigurationProps.property.replication_configuration\\"></a>
@@ -4208,13 +4368,15 @@ Properties for defining a \`AWS::ECR::Repository\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnRepositoryProps(encryption_configuration: typing.Any = None, 
-                                   image_scanning_configuration: typing.Any = None, 
-                                   image_tag_mutability: str = None, 
-                                   lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty] = None, 
-                                   repository_name: str = None, 
-                                   repository_policy_text: typing.Any = None, 
-                                   tags: typing.List[CfnTag] = None)
+aws_cdk.aws_ecr.CfnRepositoryProps(
+  encryption_configuration: typing.Any = None,
+  image_scanning_configuration: typing.Any = None,
+  image_tag_mutability: str = None,
+  lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty] = None,
+  repository_name: str = None,
+  repository_policy_text: typing.Any = None,
+  tags: typing.List[CfnTag] = None
+)
 \`\`\`
 
 ##### \`encryption_configuration\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnRepositoryProps.property.encryption_configuration\\"></a>
@@ -4296,8 +4458,10 @@ aws_cdk.aws_ecr.CfnRepositoryProps(encryption_configuration: typing.Any = None,
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnRepository.LifecyclePolicyProperty(lifecycle_policy_text: str = None, 
-                                                      registry_id: str = None)
+aws_cdk.aws_ecr.CfnRepository.LifecyclePolicyProperty(
+  lifecycle_policy_text: str = None,
+  registry_id: str = None
+)
 \`\`\`
 
 ##### \`lifecycle_policy_text\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnRepository.LifecyclePolicyProperty.property.lifecycle_policy_text\\"></a>
@@ -4329,12 +4493,14 @@ An ECR life cycle rule.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.LifecycleRule(description: str = None, 
-                              max_image_age: Duration = None, 
-                              max_image_count: typing.Union[int, float] = None, 
-                              rule_priority: typing.Union[int, float] = None, 
-                              tag_prefix_list: typing.List[str] = None, 
-                              tag_status: TagStatus = None)
+aws_cdk.aws_ecr.LifecycleRule(
+  description: str = None,
+  max_image_age: Duration = None,
+  max_image_count: typing.Union[int, float] = None,
+  rule_priority: typing.Union[int, float] = None,
+  tag_prefix_list: typing.List[str] = None,
+  tag_status: TagStatus = None
+)
 \`\`\`
 
 ##### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.LifecycleRule.property.description\\"></a>
@@ -4415,11 +4581,13 @@ Options for the onCloudTrailImagePushed method.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions(description: str = None, 
-                                               event_pattern: EventPattern = None, 
-                                               rule_name: str = None, 
-                                               target: IRuleTarget = None, 
-                                               image_tag: str = None)
+aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions(
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tag: str = None
+)
 \`\`\`
 
 ##### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions.property.description\\"></a>
@@ -4482,11 +4650,13 @@ Options for the OnImageScanCompleted method.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.OnImageScanCompletedOptions(description: str = None, 
-                                            event_pattern: EventPattern = None, 
-                                            rule_name: str = None, 
-                                            target: IRuleTarget = None, 
-                                            image_tags: typing.List[str] = None)
+aws_cdk.aws_ecr.OnImageScanCompletedOptions(
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tags: typing.List[str] = None
+)
 \`\`\`
 
 ##### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnImageScanCompletedOptions.property.description\\"></a>
@@ -4551,7 +4721,9 @@ Leave it undefined to watch the full repository.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty(rules: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationRuleProperty]]])
+aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty(
+  rules: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationRuleProperty]]]
+)
 \`\`\`
 
 ##### \`rules\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules\\"></a>
@@ -4573,8 +4745,10 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty(rul
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationDestinationProperty(region: str, 
-                                                                           registry_id: str)
+aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationDestinationProperty(
+  region: str,
+  registry_id: str
+)
 \`\`\`
 
 ##### \`region\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationDestinationProperty.property.region\\"></a>
@@ -4606,7 +4780,9 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationDestinationProperty(regio
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty(destinations: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationDestinationProperty]]])
+aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty(
+  destinations: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationDestinationProperty]]]
+)
 \`\`\`
 
 ##### \`destinations\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations\\"></a>
@@ -4626,8 +4802,10 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty(destinations
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.RepositoryAttributes(repository_arn: str, 
-                                     repository_name: str)
+aws_cdk.aws_ecr.RepositoryAttributes(
+  repository_arn: str,
+  repository_name: str
+)
 \`\`\`
 
 ##### \`repository_arn\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryAttributes.property.repository_arn\\"></a>
@@ -4649,12 +4827,14 @@ aws_cdk.aws_ecr.RepositoryAttributes(repository_arn: str,
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.RepositoryProps(image_scan_on_push: bool = None, 
-                                image_tag_mutability: TagMutability = None, 
-                                lifecycle_registry_id: str = None, 
-                                lifecycle_rules: typing.List[LifecycleRule] = None, 
-                                removal_policy: RemovalPolicy = None, 
-                                repository_name: str = None)
+aws_cdk.aws_ecr.RepositoryProps(
+  image_scan_on_push: bool = None,
+  image_tag_mutability: TagMutability = None,
+  lifecycle_registry_id: str = None,
+  lifecycle_rules: typing.List[LifecycleRule] = None,
+  removal_policy: RemovalPolicy = None,
+  repository_name: str = None
+)
 \`\`\`
 
 ##### \`image_scan_on_push\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryProps.property.image_scan_on_push\\"></a>
@@ -4731,7 +4911,9 @@ Authorization token to access private ECR repositories in the current environmen
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.AuthorizationToken.grant_read(grantee: IGrantable)
+aws_cdk.aws_ecr.AuthorizationToken.grant_read(
+  grantee: IGrantable
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.AuthorizationToken.parameter.grantee\\"></a>
@@ -4756,7 +4938,9 @@ Authorization token to access the global public ECR Gallery via Docker CLI.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.PublicGalleryAuthorizationToken.grant_read(grantee: IGrantable)
+aws_cdk.aws_ecr.PublicGalleryAuthorizationToken.grant_read(
+  grantee: IGrantable
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.PublicGalleryAuthorizationToken.parameter.grantee\\"></a>
@@ -4782,7 +4966,9 @@ Represents an ECR repository.
 ##### \`add_to_resource_policy\` <a name=\\"aws_cdk.aws_ecr.IRepository.add_to_resource_policy\\"></a>
 
 \`\`\`python
-def add_to_resource_policy(statement: PolicyStatement)
+def add_to_resource_policy(
+  statement: PolicyStatement
+)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.statement\\"></a>
@@ -4794,8 +4980,10 @@ def add_to_resource_policy(statement: PolicyStatement)
 ##### \`grant\` <a name=\\"aws_cdk.aws_ecr.IRepository.grant\\"></a>
 
 \`\`\`python
-def grant(grantee: IGrantable, 
-          actions: str)
+def grant(
+  grantee: IGrantable,
+  actions: str
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.grantee\\"></a>
@@ -4813,7 +5001,9 @@ def grant(grantee: IGrantable,
 ##### \`grant_pull\` <a name=\\"aws_cdk.aws_ecr.IRepository.grant_pull\\"></a>
 
 \`\`\`python
-def grant_pull(grantee: IGrantable)
+def grant_pull(
+  grantee: IGrantable
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.grantee\\"></a>
@@ -4825,7 +5015,9 @@ def grant_pull(grantee: IGrantable)
 ##### \`grant_pull_push\` <a name=\\"aws_cdk.aws_ecr.IRepository.grant_pull_push\\"></a>
 
 \`\`\`python
-def grant_pull_push(grantee: IGrantable)
+def grant_pull_push(
+  grantee: IGrantable
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.grantee\\"></a>
@@ -4837,11 +5029,13 @@ def grant_pull_push(grantee: IGrantable)
 ##### \`on_cloud_trail_event\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_cloud_trail_event\\"></a>
 
 \`\`\`python
-def on_cloud_trail_event(id: str, 
-                         description: str = None, 
-                         event_pattern: EventPattern = None, 
-                         rule_name: str = None, 
-                         target: IRuleTarget = None)
+def on_cloud_trail_event(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
@@ -4897,12 +5091,14 @@ The target to register for the event.
 ##### \`on_cloud_trail_image_pushed\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_cloud_trail_image_pushed\\"></a>
 
 \`\`\`python
-def on_cloud_trail_image_pushed(id: str, 
-                                description: str = None, 
-                                event_pattern: EventPattern = None, 
-                                rule_name: str = None, 
-                                target: IRuleTarget = None, 
-                                image_tag: str = None)
+def on_cloud_trail_image_pushed(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tag: str = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
@@ -4967,11 +5163,13 @@ Only watch changes to this image tag.
 ##### \`on_event\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_event\\"></a>
 
 \`\`\`python
-def on_event(id: str, 
-             description: str = None, 
-             event_pattern: EventPattern = None, 
-             rule_name: str = None, 
-             target: IRuleTarget = None)
+def on_event(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
@@ -5025,12 +5223,14 @@ The target to register for the event.
 ##### \`on_image_scan_completed\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_image_scan_completed\\"></a>
 
 \`\`\`python
-def on_image_scan_completed(id: str, 
-                            description: str = None, 
-                            event_pattern: EventPattern = None, 
-                            rule_name: str = None, 
-                            target: IRuleTarget = None, 
-                            image_tags: typing.List[str] = None)
+def on_image_scan_completed(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tags: typing.List[str] = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
@@ -5097,7 +5297,9 @@ Leave it undefined to watch the full repository.
 ##### \`repository_uri_for_digest\` <a name=\\"aws_cdk.aws_ecr.IRepository.repository_uri_for_digest\\"></a>
 
 \`\`\`python
-def repository_uri_for_digest(digest: str = None)
+def repository_uri_for_digest(
+  digest: str = None
+)
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.digest\\"></a>
@@ -5111,7 +5313,9 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ##### \`repository_uri_for_tag\` <a name=\\"aws_cdk.aws_ecr.IRepository.repository_uri_for_tag\\"></a>
 
 \`\`\`python
-def repository_uri_for_tag(tag: str = None)
+def repository_uri_for_tag(
+  tag: str = None
+)
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.tag\\"></a>
@@ -5361,12 +5565,14 @@ A CloudFormation \`AWS::ECR::PublicRepository\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnPublicRepository(scope: Construct, 
-                                    id: str, 
-                                    repository_catalog_data: typing.Any = None, 
-                                    repository_name: str = None, 
-                                    repository_policy_text: typing.Any = None, 
-                                    tags: typing.List[CfnTag] = None)
+aws_cdk.aws_ecr.CfnPublicRepository(
+  scope: Construct,
+  id: str,
+  repository_catalog_data: typing.Any = None,
+  repository_name: str = None,
+  repository_policy_text: typing.Any = None,
+  tags: typing.List[CfnTag] = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.parameter.scope\\"></a>
@@ -5430,7 +5636,9 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`python
-def inspect(inspector: TreeInspector)
+def inspect(
+  inspector: TreeInspector
+)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.parameter.inspector\\"></a>
@@ -5513,9 +5721,11 @@ A CloudFormation \`AWS::ECR::RegistryPolicy\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnRegistryPolicy(scope: Construct, 
-                                  id: str, 
-                                  policy_text: typing.Any)
+aws_cdk.aws_ecr.CfnRegistryPolicy(
+  scope: Construct,
+  id: str,
+  policy_text: typing.Any
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnRegistryPolicy.parameter.scope\\"></a>
@@ -5549,7 +5759,9 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"aws_cdk.aws_ecr.CfnRegistryPolicy.inspect\\"></a>
 
 \`\`\`python
-def inspect(inspector: TreeInspector)
+def inspect(
+  inspector: TreeInspector
+)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnRegistryPolicy.parameter.inspector\\"></a>
@@ -5602,9 +5814,11 @@ A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnReplicationConfiguration(scope: Construct, 
-                                            id: str, 
-                                            replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty])
+aws_cdk.aws_ecr.CfnReplicationConfiguration(
+  scope: Construct,
+  id: str,
+  replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfiguration.parameter.scope\\"></a>
@@ -5638,7 +5852,9 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfiguration.inspect\\"></a>
 
 \`\`\`python
-def inspect(inspector: TreeInspector)
+def inspect(
+  inspector: TreeInspector
+)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfiguration.parameter.inspector\\"></a>
@@ -5691,15 +5907,17 @@ A CloudFormation \`AWS::ECR::Repository\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnRepository(scope: Construct, 
-                              id: str, 
-                              encryption_configuration: typing.Any = None, 
-                              image_scanning_configuration: typing.Any = None, 
-                              image_tag_mutability: str = None, 
-                              lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty] = None, 
-                              repository_name: str = None, 
-                              repository_policy_text: typing.Any = None, 
-                              tags: typing.List[CfnTag] = None)
+aws_cdk.aws_ecr.CfnRepository(
+  scope: Construct,
+  id: str,
+  encryption_configuration: typing.Any = None,
+  image_scanning_configuration: typing.Any = None,
+  image_tag_mutability: str = None,
+  lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty] = None,
+  repository_name: str = None,
+  repository_policy_text: typing.Any = None,
+  tags: typing.List[CfnTag] = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnRepository.parameter.scope\\"></a>
@@ -5793,7 +6011,9 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"aws_cdk.aws_ecr.CfnRepository.inspect\\"></a>
 
 \`\`\`python
-def inspect(inspector: TreeInspector)
+def inspect(
+  inspector: TreeInspector
+)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnRepository.parameter.inspector\\"></a>
@@ -5908,14 +6128,16 @@ Define an ECR repository.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.Repository(scope: Construct, 
-                           id: str, 
-                           image_scan_on_push: bool = None, 
-                           image_tag_mutability: TagMutability = None, 
-                           lifecycle_registry_id: str = None, 
-                           lifecycle_rules: typing.List[LifecycleRule] = None, 
-                           removal_policy: RemovalPolicy = None, 
-                           repository_name: str = None)
+aws_cdk.aws_ecr.Repository(
+  scope: Construct,
+  id: str,
+  image_scan_on_push: bool = None,
+  image_tag_mutability: TagMutability = None,
+  lifecycle_registry_id: str = None,
+  lifecycle_rules: typing.List[LifecycleRule] = None,
+  removal_policy: RemovalPolicy = None,
+  repository_name: str = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.Repository.parameter.scope\\"></a>
@@ -5993,12 +6215,14 @@ Name for this repository.
 ##### \`add_lifecycle_rule\` <a name=\\"aws_cdk.aws_ecr.Repository.add_lifecycle_rule\\"></a>
 
 \`\`\`python
-def add_lifecycle_rule(description: str = None, 
-                       max_image_age: Duration = None, 
-                       max_image_count: typing.Union[int, float] = None, 
-                       rule_priority: typing.Union[int, float] = None, 
-                       tag_prefix_list: typing.List[str] = None, 
-                       tag_status: TagStatus = None)
+def add_lifecycle_rule(
+  description: str = None,
+  max_image_age: Duration = None,
+  max_image_count: typing.Union[int, float] = None,
+  rule_priority: typing.Union[int, float] = None,
+  tag_prefix_list: typing.List[str] = None,
+  tag_status: TagStatus = None
+)
 \`\`\`
 
 ###### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.LifecycleRule.parameter.description\\"></a>
@@ -6073,7 +6297,9 @@ have the highest rulePriority.
 ##### \`add_to_resource_policy\` <a name=\\"aws_cdk.aws_ecr.Repository.add_to_resource_policy\\"></a>
 
 \`\`\`python
-def add_to_resource_policy(statement: PolicyStatement)
+def add_to_resource_policy(
+  statement: PolicyStatement
+)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.Repository.parameter.statement\\"></a>
@@ -6089,9 +6315,11 @@ def add_to_resource_policy(statement: PolicyStatement)
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.Repository.arn_for_local_repository(repository_name: str, 
-                                                    scope: IConstruct, 
-                                                    account: str = None)
+aws_cdk.aws_ecr.Repository.arn_for_local_repository(
+  repository_name: str,
+  scope: IConstruct,
+  account: str = None
+)
 \`\`\`
 
 ###### \`repository_name\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.Repository.parameter.repository_name\\"></a>
@@ -6117,9 +6345,11 @@ aws_cdk.aws_ecr.Repository.arn_for_local_repository(repository_name: str,
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.Repository.from_repository_arn(scope: Construct, 
-                                               id: str, 
-                                               repository_arn: str)
+aws_cdk.aws_ecr.Repository.from_repository_arn(
+  scope: Construct,
+  id: str,
+  repository_arn: str
+)
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.Repository.parameter.scope\\"></a>
@@ -6145,10 +6375,12 @@ aws_cdk.aws_ecr.Repository.from_repository_arn(scope: Construct,
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.Repository.from_repository_attributes(scope: Construct, 
-                                                      id: str, 
-                                                      repository_arn: str, 
-                                                      repository_name: str)
+aws_cdk.aws_ecr.Repository.from_repository_attributes(
+  scope: Construct,
+  id: str,
+  repository_arn: str,
+  repository_name: str
+)
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.Repository.parameter.scope\\"></a>
@@ -6180,9 +6412,11 @@ aws_cdk.aws_ecr.Repository.from_repository_attributes(scope: Construct,
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.Repository.from_repository_name(scope: Construct, 
-                                                id: str, 
-                                                repository_name: str)
+aws_cdk.aws_ecr.Repository.from_repository_name(
+  scope: Construct,
+  id: str,
+  repository_name: str
+)
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.Repository.parameter.scope\\"></a>
@@ -6235,12 +6469,14 @@ Reused between imported repositories and owned repositories.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.RepositoryBase(scope: Construct, 
-                               id: str, 
-                               account: str = None, 
-                               environment_from_arn: str = None, 
-                               physical_name: str = None, 
-                               region: str = None)
+aws_cdk.aws_ecr.RepositoryBase(
+  scope: Construct,
+  id: str,
+  account: str = None,
+  environment_from_arn: str = None,
+  physical_name: str = None,
+  region: str = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.scope\\"></a>
@@ -6307,7 +6543,9 @@ The AWS region this resource belongs to.
 ##### \`add_to_resource_policy\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.add_to_resource_policy\\"></a>
 
 \`\`\`python
-def add_to_resource_policy(statement: PolicyStatement)
+def add_to_resource_policy(
+  statement: PolicyStatement
+)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.statement\\"></a>
@@ -6319,8 +6557,10 @@ def add_to_resource_policy(statement: PolicyStatement)
 ##### \`grant\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.grant\\"></a>
 
 \`\`\`python
-def grant(grantee: IGrantable, 
-          actions: str)
+def grant(
+  grantee: IGrantable,
+  actions: str
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.grantee\\"></a>
@@ -6338,7 +6578,9 @@ def grant(grantee: IGrantable,
 ##### \`grant_pull\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.grant_pull\\"></a>
 
 \`\`\`python
-def grant_pull(grantee: IGrantable)
+def grant_pull(
+  grantee: IGrantable
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.grantee\\"></a>
@@ -6350,7 +6592,9 @@ def grant_pull(grantee: IGrantable)
 ##### \`grant_pull_push\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.grant_pull_push\\"></a>
 
 \`\`\`python
-def grant_pull_push(grantee: IGrantable)
+def grant_pull_push(
+  grantee: IGrantable
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.grantee\\"></a>
@@ -6362,11 +6606,13 @@ def grant_pull_push(grantee: IGrantable)
 ##### \`on_cloud_trail_event\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.on_cloud_trail_event\\"></a>
 
 \`\`\`python
-def on_cloud_trail_event(id: str, 
-                         description: str = None, 
-                         event_pattern: EventPattern = None, 
-                         rule_name: str = None, 
-                         target: IRuleTarget = None)
+def on_cloud_trail_event(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.id\\"></a>
@@ -6422,12 +6668,14 @@ The target to register for the event.
 ##### \`on_cloud_trail_image_pushed\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.on_cloud_trail_image_pushed\\"></a>
 
 \`\`\`python
-def on_cloud_trail_image_pushed(id: str, 
-                                description: str = None, 
-                                event_pattern: EventPattern = None, 
-                                rule_name: str = None, 
-                                target: IRuleTarget = None, 
-                                image_tag: str = None)
+def on_cloud_trail_image_pushed(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tag: str = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.id\\"></a>
@@ -6492,11 +6740,13 @@ Only watch changes to this image tag.
 ##### \`on_event\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.on_event\\"></a>
 
 \`\`\`python
-def on_event(id: str, 
-             description: str = None, 
-             event_pattern: EventPattern = None, 
-             rule_name: str = None, 
-             target: IRuleTarget = None)
+def on_event(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.id\\"></a>
@@ -6550,12 +6800,14 @@ The target to register for the event.
 ##### \`on_image_scan_completed\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.on_image_scan_completed\\"></a>
 
 \`\`\`python
-def on_image_scan_completed(id: str, 
-                            description: str = None, 
-                            event_pattern: EventPattern = None, 
-                            rule_name: str = None, 
-                            target: IRuleTarget = None, 
-                            image_tags: typing.List[str] = None)
+def on_image_scan_completed(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tags: typing.List[str] = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.id\\"></a>
@@ -6622,7 +6874,9 @@ Leave it undefined to watch the full repository.
 ##### \`repository_uri_for_digest\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.repository_uri_for_digest\\"></a>
 
 \`\`\`python
-def repository_uri_for_digest(digest: str = None)
+def repository_uri_for_digest(
+  digest: str = None
+)
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.digest\\"></a>
@@ -6636,7 +6890,9 @@ Optional image digest.
 ##### \`repository_uri_for_tag\` <a name=\\"aws_cdk.aws_ecr.RepositoryBase.repository_uri_for_tag\\"></a>
 
 \`\`\`python
-def repository_uri_for_tag(tag: str = None)
+def repository_uri_for_tag(
+  tag: str = None
+)
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryBase.parameter.tag\\"></a>
@@ -6690,10 +6946,12 @@ Properties for defining a \`AWS::ECR::PublicRepository\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnPublicRepositoryProps(repository_catalog_data: typing.Any = None, 
-                                         repository_name: str = None, 
-                                         repository_policy_text: typing.Any = None, 
-                                         tags: typing.List[CfnTag] = None)
+aws_cdk.aws_ecr.CfnPublicRepositoryProps(
+  repository_catalog_data: typing.Any = None,
+  repository_name: str = None,
+  repository_policy_text: typing.Any = None,
+  tags: typing.List[CfnTag] = None
+)
 \`\`\`
 
 ##### \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.property.repository_catalog_data\\"></a>
@@ -6747,7 +7005,9 @@ Properties for defining a \`AWS::ECR::RegistryPolicy\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnRegistryPolicyProps(policy_text: typing.Any)
+aws_cdk.aws_ecr.CfnRegistryPolicyProps(
+  policy_text: typing.Any
+)
 \`\`\`
 
 ##### \`policy_text\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnRegistryPolicyProps.property.policy_text\\"></a>
@@ -6771,7 +7031,9 @@ Properties for defining a \`AWS::ECR::ReplicationConfiguration\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnReplicationConfigurationProps(replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty])
+aws_cdk.aws_ecr.CfnReplicationConfigurationProps(
+  replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
+)
 \`\`\`
 
 ##### \`replication_configuration\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfigurationProps.property.replication_configuration\\"></a>
@@ -6795,13 +7057,15 @@ Properties for defining a \`AWS::ECR::Repository\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnRepositoryProps(encryption_configuration: typing.Any = None, 
-                                   image_scanning_configuration: typing.Any = None, 
-                                   image_tag_mutability: str = None, 
-                                   lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty] = None, 
-                                   repository_name: str = None, 
-                                   repository_policy_text: typing.Any = None, 
-                                   tags: typing.List[CfnTag] = None)
+aws_cdk.aws_ecr.CfnRepositoryProps(
+  encryption_configuration: typing.Any = None,
+  image_scanning_configuration: typing.Any = None,
+  image_tag_mutability: str = None,
+  lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty] = None,
+  repository_name: str = None,
+  repository_policy_text: typing.Any = None,
+  tags: typing.List[CfnTag] = None
+)
 \`\`\`
 
 ##### \`encryption_configuration\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnRepositoryProps.property.encryption_configuration\\"></a>
@@ -6883,8 +7147,10 @@ aws_cdk.aws_ecr.CfnRepositoryProps(encryption_configuration: typing.Any = None,
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnRepository.LifecyclePolicyProperty(lifecycle_policy_text: str = None, 
-                                                      registry_id: str = None)
+aws_cdk.aws_ecr.CfnRepository.LifecyclePolicyProperty(
+  lifecycle_policy_text: str = None,
+  registry_id: str = None
+)
 \`\`\`
 
 ##### \`lifecycle_policy_text\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnRepository.LifecyclePolicyProperty.property.lifecycle_policy_text\\"></a>
@@ -6916,12 +7182,14 @@ An ECR life cycle rule.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.LifecycleRule(description: str = None, 
-                              max_image_age: Duration = None, 
-                              max_image_count: typing.Union[int, float] = None, 
-                              rule_priority: typing.Union[int, float] = None, 
-                              tag_prefix_list: typing.List[str] = None, 
-                              tag_status: TagStatus = None)
+aws_cdk.aws_ecr.LifecycleRule(
+  description: str = None,
+  max_image_age: Duration = None,
+  max_image_count: typing.Union[int, float] = None,
+  rule_priority: typing.Union[int, float] = None,
+  tag_prefix_list: typing.List[str] = None,
+  tag_status: TagStatus = None
+)
 \`\`\`
 
 ##### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.LifecycleRule.property.description\\"></a>
@@ -7002,11 +7270,13 @@ Options for the onCloudTrailImagePushed method.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions(description: str = None, 
-                                               event_pattern: EventPattern = None, 
-                                               rule_name: str = None, 
-                                               target: IRuleTarget = None, 
-                                               image_tag: str = None)
+aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions(
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tag: str = None
+)
 \`\`\`
 
 ##### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions.property.description\\"></a>
@@ -7069,11 +7339,13 @@ Options for the OnImageScanCompleted method.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.OnImageScanCompletedOptions(description: str = None, 
-                                            event_pattern: EventPattern = None, 
-                                            rule_name: str = None, 
-                                            target: IRuleTarget = None, 
-                                            image_tags: typing.List[str] = None)
+aws_cdk.aws_ecr.OnImageScanCompletedOptions(
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tags: typing.List[str] = None
+)
 \`\`\`
 
 ##### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnImageScanCompletedOptions.property.description\\"></a>
@@ -7138,7 +7410,9 @@ Leave it undefined to watch the full repository.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty(rules: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationRuleProperty]]])
+aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty(
+  rules: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationRuleProperty]]]
+)
 \`\`\`
 
 ##### \`rules\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules\\"></a>
@@ -7160,8 +7434,10 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty(rul
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationDestinationProperty(region: str, 
-                                                                           registry_id: str)
+aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationDestinationProperty(
+  region: str,
+  registry_id: str
+)
 \`\`\`
 
 ##### \`region\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationDestinationProperty.property.region\\"></a>
@@ -7193,7 +7469,9 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationDestinationProperty(regio
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty(destinations: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationDestinationProperty]]])
+aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty(
+  destinations: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationDestinationProperty]]]
+)
 \`\`\`
 
 ##### \`destinations\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations\\"></a>
@@ -7213,8 +7491,10 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty(destinations
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.RepositoryAttributes(repository_arn: str, 
-                                     repository_name: str)
+aws_cdk.aws_ecr.RepositoryAttributes(
+  repository_arn: str,
+  repository_name: str
+)
 \`\`\`
 
 ##### \`repository_arn\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryAttributes.property.repository_arn\\"></a>
@@ -7236,12 +7516,14 @@ aws_cdk.aws_ecr.RepositoryAttributes(repository_arn: str,
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.RepositoryProps(image_scan_on_push: bool = None, 
-                                image_tag_mutability: TagMutability = None, 
-                                lifecycle_registry_id: str = None, 
-                                lifecycle_rules: typing.List[LifecycleRule] = None, 
-                                removal_policy: RemovalPolicy = None, 
-                                repository_name: str = None)
+aws_cdk.aws_ecr.RepositoryProps(
+  image_scan_on_push: bool = None,
+  image_tag_mutability: TagMutability = None,
+  lifecycle_registry_id: str = None,
+  lifecycle_rules: typing.List[LifecycleRule] = None,
+  removal_policy: RemovalPolicy = None,
+  repository_name: str = None
+)
 \`\`\`
 
 ##### \`image_scan_on_push\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.RepositoryProps.property.image_scan_on_push\\"></a>
@@ -7318,7 +7600,9 @@ Authorization token to access private ECR repositories in the current environmen
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.AuthorizationToken.grant_read(grantee: IGrantable)
+aws_cdk.aws_ecr.AuthorizationToken.grant_read(
+  grantee: IGrantable
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.AuthorizationToken.parameter.grantee\\"></a>
@@ -7343,7 +7627,9 @@ Authorization token to access the global public ECR Gallery via Docker CLI.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.PublicGalleryAuthorizationToken.grant_read(grantee: IGrantable)
+aws_cdk.aws_ecr.PublicGalleryAuthorizationToken.grant_read(
+  grantee: IGrantable
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.PublicGalleryAuthorizationToken.parameter.grantee\\"></a>
@@ -7369,7 +7655,9 @@ Represents an ECR repository.
 ##### \`add_to_resource_policy\` <a name=\\"aws_cdk.aws_ecr.IRepository.add_to_resource_policy\\"></a>
 
 \`\`\`python
-def add_to_resource_policy(statement: PolicyStatement)
+def add_to_resource_policy(
+  statement: PolicyStatement
+)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.statement\\"></a>
@@ -7381,8 +7669,10 @@ def add_to_resource_policy(statement: PolicyStatement)
 ##### \`grant\` <a name=\\"aws_cdk.aws_ecr.IRepository.grant\\"></a>
 
 \`\`\`python
-def grant(grantee: IGrantable, 
-          actions: str)
+def grant(
+  grantee: IGrantable,
+  actions: str
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.grantee\\"></a>
@@ -7400,7 +7690,9 @@ def grant(grantee: IGrantable,
 ##### \`grant_pull\` <a name=\\"aws_cdk.aws_ecr.IRepository.grant_pull\\"></a>
 
 \`\`\`python
-def grant_pull(grantee: IGrantable)
+def grant_pull(
+  grantee: IGrantable
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.grantee\\"></a>
@@ -7412,7 +7704,9 @@ def grant_pull(grantee: IGrantable)
 ##### \`grant_pull_push\` <a name=\\"aws_cdk.aws_ecr.IRepository.grant_pull_push\\"></a>
 
 \`\`\`python
-def grant_pull_push(grantee: IGrantable)
+def grant_pull_push(
+  grantee: IGrantable
+)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.grantee\\"></a>
@@ -7424,11 +7718,13 @@ def grant_pull_push(grantee: IGrantable)
 ##### \`on_cloud_trail_event\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_cloud_trail_event\\"></a>
 
 \`\`\`python
-def on_cloud_trail_event(id: str, 
-                         description: str = None, 
-                         event_pattern: EventPattern = None, 
-                         rule_name: str = None, 
-                         target: IRuleTarget = None)
+def on_cloud_trail_event(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
@@ -7484,12 +7780,14 @@ The target to register for the event.
 ##### \`on_cloud_trail_image_pushed\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_cloud_trail_image_pushed\\"></a>
 
 \`\`\`python
-def on_cloud_trail_image_pushed(id: str, 
-                                description: str = None, 
-                                event_pattern: EventPattern = None, 
-                                rule_name: str = None, 
-                                target: IRuleTarget = None, 
-                                image_tag: str = None)
+def on_cloud_trail_image_pushed(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tag: str = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
@@ -7554,11 +7852,13 @@ Only watch changes to this image tag.
 ##### \`on_event\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_event\\"></a>
 
 \`\`\`python
-def on_event(id: str, 
-             description: str = None, 
-             event_pattern: EventPattern = None, 
-             rule_name: str = None, 
-             target: IRuleTarget = None)
+def on_event(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
@@ -7612,12 +7912,14 @@ The target to register for the event.
 ##### \`on_image_scan_completed\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_image_scan_completed\\"></a>
 
 \`\`\`python
-def on_image_scan_completed(id: str, 
-                            description: str = None, 
-                            event_pattern: EventPattern = None, 
-                            rule_name: str = None, 
-                            target: IRuleTarget = None, 
-                            image_tags: typing.List[str] = None)
+def on_image_scan_completed(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tags: typing.List[str] = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
@@ -7684,7 +7986,9 @@ Leave it undefined to watch the full repository.
 ##### \`repository_uri_for_digest\` <a name=\\"aws_cdk.aws_ecr.IRepository.repository_uri_for_digest\\"></a>
 
 \`\`\`python
-def repository_uri_for_digest(digest: str = None)
+def repository_uri_for_digest(
+  digest: str = None
+)
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.digest\\"></a>
@@ -7698,7 +8002,9 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ##### \`repository_uri_for_tag\` <a name=\\"aws_cdk.aws_ecr.IRepository.repository_uri_for_tag\\"></a>
 
 \`\`\`python
-def repository_uri_for_tag(tag: str = None)
+def repository_uri_for_tag(
+  tag: str = None
+)
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.tag\\"></a>
@@ -9042,9 +9348,11 @@ Manages mapping between IAM users and roles to Kubernetes RBAC configuration.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.AwsAuth(scope: Construct, 
-                id: str, 
-                cluster: Cluster)
+aws_eks.AwsAuth(
+  scope: Construct,
+  id: str,
+  cluster: Cluster
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.AwsAuth.parameter.scope\\"></a>
@@ -9074,7 +9382,9 @@ The EKS cluster to apply this configuration to.
 ##### \`add_account\` <a name=\\"aws_cdk.aws_eks.AwsAuth.add_account\\"></a>
 
 \`\`\`python
-def add_account(account_id: str)
+def add_account(
+  account_id: str
+)
 \`\`\`
 
 ###### \`account_id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.AwsAuth.parameter.account_id\\"></a>
@@ -9088,8 +9398,10 @@ account number.
 ##### \`add_masters_role\` <a name=\\"aws_cdk.aws_eks.AwsAuth.add_masters_role\\"></a>
 
 \`\`\`python
-def add_masters_role(role: IRole, 
-                     username: str = None)
+def add_masters_role(
+  role: IRole,
+  username: str = None
+)
 \`\`\`
 
 ###### \`role\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.AwsAuth.parameter.role\\"></a>
@@ -9111,9 +9423,11 @@ Optional user (defaults to the role ARN).
 ##### \`add_role_mapping\` <a name=\\"aws_cdk.aws_eks.AwsAuth.add_role_mapping\\"></a>
 
 \`\`\`python
-def add_role_mapping(role: IRole, 
-                     groups: typing.List[str], 
-                     username: str = None)
+def add_role_mapping(
+  role: IRole,
+  groups: typing.List[str],
+  username: str = None
+)
 \`\`\`
 
 ###### \`role\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.AwsAuth.parameter.role\\"></a>
@@ -9146,9 +9460,11 @@ The user name within Kubernetes to map to the IAM role.
 ##### \`add_user_mapping\` <a name=\\"aws_cdk.aws_eks.AwsAuth.add_user_mapping\\"></a>
 
 \`\`\`python
-def add_user_mapping(user: IUser, 
-                     groups: typing.List[str], 
-                     username: str = None)
+def add_user_mapping(
+  user: IUser,
+  groups: typing.List[str],
+  username: str = None
+)
 \`\`\`
 
 ###### \`user\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.AwsAuth.parameter.user\\"></a>
@@ -9194,14 +9510,16 @@ A CloudFormation \`AWS::EKS::Addon\`.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.CfnAddon(scope: Construct, 
-                 id: str, 
-                 addon_name: str, 
-                 cluster_name: str, 
-                 addon_version: str = None, 
-                 resolve_conflicts: str = None, 
-                 service_account_role_arn: str = None, 
-                 tags: typing.List[CfnTag] = None)
+aws_eks.CfnAddon(
+  scope: Construct,
+  id: str,
+  addon_name: str,
+  cluster_name: str,
+  addon_version: str = None,
+  resolve_conflicts: str = None,
+  service_account_role_arn: str = None,
+  tags: typing.List[CfnTag] = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.CfnAddon.parameter.scope\\"></a>
@@ -9285,7 +9603,9 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"aws_cdk.aws_eks.CfnAddon.inspect\\"></a>
 
 \`\`\`python
-def inspect(inspector: TreeInspector)
+def inspect(
+  inspector: TreeInspector
+)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.CfnAddon.parameter.inspector\\"></a>
@@ -9388,14 +9708,16 @@ A CloudFormation \`AWS::EKS::Cluster\`.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.CfnCluster(scope: Construct, 
-                   id: str, 
-                   resources_vpc_config: typing.Union[ResourcesVpcConfigProperty, IResolvable], 
-                   role_arn: str, 
-                   encryption_config: typing.Union[IResolvable, typing.List[typing.Union[EncryptionConfigProperty, IResolvable]]] = None, 
-                   kubernetes_network_config: typing.Union[KubernetesNetworkConfigProperty, IResolvable] = None, 
-                   name: str = None, 
-                   version: str = None)
+aws_eks.CfnCluster(
+  scope: Construct,
+  id: str,
+  resources_vpc_config: typing.Union[ResourcesVpcConfigProperty, IResolvable],
+  role_arn: str,
+  encryption_config: typing.Union[IResolvable, typing.List[typing.Union[EncryptionConfigProperty, IResolvable]]] = None,
+  kubernetes_network_config: typing.Union[KubernetesNetworkConfigProperty, IResolvable] = None,
+  name: str = None,
+  version: str = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.CfnCluster.parameter.scope\\"></a>
@@ -9479,7 +9801,9 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"aws_cdk.aws_eks.CfnCluster.inspect\\"></a>
 
 \`\`\`python
-def inspect(inspector: TreeInspector)
+def inspect(
+  inspector: TreeInspector
+)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.CfnCluster.parameter.inspector\\"></a>
@@ -9612,14 +9936,16 @@ A CloudFormation \`AWS::EKS::FargateProfile\`.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.CfnFargateProfile(scope: Construct, 
-                          id: str, 
-                          cluster_name: str, 
-                          pod_execution_role_arn: str, 
-                          selectors: typing.Union[IResolvable, typing.List[typing.Union[SelectorProperty, IResolvable]]], 
-                          fargate_profile_name: str = None, 
-                          subnets: typing.List[str] = None, 
-                          tags: typing.List[CfnTag] = None)
+aws_eks.CfnFargateProfile(
+  scope: Construct,
+  id: str,
+  cluster_name: str,
+  pod_execution_role_arn: str,
+  selectors: typing.Union[IResolvable, typing.List[typing.Union[SelectorProperty, IResolvable]]],
+  fargate_profile_name: str = None,
+  subnets: typing.List[str] = None,
+  tags: typing.List[CfnTag] = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.CfnFargateProfile.parameter.scope\\"></a>
@@ -9703,7 +10029,9 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"aws_cdk.aws_eks.CfnFargateProfile.inspect\\"></a>
 
 \`\`\`python
-def inspect(inspector: TreeInspector)
+def inspect(
+  inspector: TreeInspector
+)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.CfnFargateProfile.parameter.inspector\\"></a>
@@ -9806,25 +10134,27 @@ A CloudFormation \`AWS::EKS::Nodegroup\`.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.CfnNodegroup(scope: Construct, 
-                     id: str, 
-                     cluster_name: str, 
-                     node_role: str, 
-                     subnets: typing.List[str], 
-                     ami_type: str = None, 
-                     capacity_type: str = None, 
-                     disk_size: typing.Union[int, float] = None, 
-                     force_update_enabled: typing.Union[bool, IResolvable] = None, 
-                     instance_types: typing.List[str] = None, 
-                     labels: typing.Any = None, 
-                     launch_template: typing.Union[LaunchTemplateSpecificationProperty, IResolvable] = None, 
-                     nodegroup_name: str = None, 
-                     release_version: str = None, 
-                     remote_access: typing.Union[RemoteAccessProperty, IResolvable] = None, 
-                     scaling_config: typing.Union[ScalingConfigProperty, IResolvable] = None, 
-                     tags: typing.Any = None, 
-                     taints: typing.Union[IResolvable, typing.List[typing.Union[TaintProperty, IResolvable]]] = None, 
-                     version: str = None)
+aws_eks.CfnNodegroup(
+  scope: Construct,
+  id: str,
+  cluster_name: str,
+  node_role: str,
+  subnets: typing.List[str],
+  ami_type: str = None,
+  capacity_type: str = None,
+  disk_size: typing.Union[int, float] = None,
+  force_update_enabled: typing.Union[bool, IResolvable] = None,
+  instance_types: typing.List[str] = None,
+  labels: typing.Any = None,
+  launch_template: typing.Union[LaunchTemplateSpecificationProperty, IResolvable] = None,
+  nodegroup_name: str = None,
+  release_version: str = None,
+  remote_access: typing.Union[RemoteAccessProperty, IResolvable] = None,
+  scaling_config: typing.Union[ScalingConfigProperty, IResolvable] = None,
+  tags: typing.Any = None,
+  taints: typing.Union[IResolvable, typing.List[typing.Union[TaintProperty, IResolvable]]] = None,
+  version: str = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.CfnNodegroup.parameter.scope\\"></a>
@@ -10018,7 +10348,9 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"aws_cdk.aws_eks.CfnNodegroup.inspect\\"></a>
 
 \`\`\`python
-def inspect(inspector: TreeInspector)
+def inspect(
+  inspector: TreeInspector
+)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.CfnNodegroup.parameter.inspector\\"></a>
@@ -10244,30 +10576,32 @@ The user is still required to create the worker nodes.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.Cluster(scope: Construct, 
-                id: str, 
-                version: KubernetesVersion, 
-                cluster_name: str = None, 
-                output_cluster_name: bool = None, 
-                output_config_command: bool = None, 
-                role: IRole = None, 
-                security_group: ISecurityGroup = None, 
-                vpc: IVpc = None, 
-                vpc_subnets: typing.List[SubnetSelection] = None, 
-                cluster_handler_environment: typing.Mapping[str] = None, 
-                core_dns_compute_type: CoreDnsComputeType = None, 
-                endpoint_access: EndpointAccess = None, 
-                kubectl_environment: typing.Mapping[str] = None, 
-                kubectl_layer: ILayerVersion = None, 
-                kubectl_memory: Size = None, 
-                masters_role: IRole = None, 
-                output_masters_role_arn: bool = None, 
-                place_cluster_handler_in_vpc: bool = None, 
-                prune: bool = None, 
-                secrets_encryption_key: IKey = None, 
-                default_capacity: typing.Union[int, float] = None, 
-                default_capacity_instance: InstanceType = None, 
-                default_capacity_type: DefaultCapacityType = None)
+aws_eks.Cluster(
+  scope: Construct,
+  id: str,
+  version: KubernetesVersion,
+  cluster_name: str = None,
+  output_cluster_name: bool = None,
+  output_config_command: bool = None,
+  role: IRole = None,
+  security_group: ISecurityGroup = None,
+  vpc: IVpc = None,
+  vpc_subnets: typing.List[SubnetSelection] = None,
+  cluster_handler_environment: typing.Mapping[str] = None,
+  core_dns_compute_type: CoreDnsComputeType = None,
+  endpoint_access: EndpointAccess = None,
+  kubectl_environment: typing.Mapping[str] = None,
+  kubectl_layer: ILayerVersion = None,
+  kubectl_memory: Size = None,
+  masters_role: IRole = None,
+  output_masters_role_arn: bool = None,
+  place_cluster_handler_in_vpc: bool = None,
+  prune: bool = None,
+  secrets_encryption_key: IKey = None,
+  default_capacity: typing.Union[int, float] = None,
+  default_capacity_instance: InstanceType = None,
+  default_capacity_type: DefaultCapacityType = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.Cluster.parameter.scope\\"></a>
@@ -10541,33 +10875,35 @@ The default capacity type for the cluster.
 ##### \`add_auto_scaling_group_capacity\` <a name=\\"aws_cdk.aws_eks.Cluster.add_auto_scaling_group_capacity\\"></a>
 
 \`\`\`python
-def add_auto_scaling_group_capacity(id: str, 
-                                    allow_all_outbound: bool = None, 
-                                    associate_public_ip_address: bool = None, 
-                                    auto_scaling_group_name: str = None, 
-                                    block_devices: typing.List[BlockDevice] = None, 
-                                    cooldown: Duration = None, 
-                                    desired_capacity: typing.Union[int, float] = None, 
-                                    group_metrics: typing.List[GroupMetrics] = None, 
-                                    health_check: HealthCheck = None, 
-                                    ignore_unmodified_size_properties: bool = None, 
-                                    instance_monitoring: Monitoring = None, 
-                                    key_name: str = None, 
-                                    max_capacity: typing.Union[int, float] = None, 
-                                    max_instance_lifetime: Duration = None, 
-                                    min_capacity: typing.Union[int, float] = None, 
-                                    new_instances_protected_from_scale_in: bool = None, 
-                                    notifications: typing.List[NotificationConfiguration] = None, 
-                                    signals: Signals = None, 
-                                    spot_price: str = None, 
-                                    update_policy: UpdatePolicy = None, 
-                                    vpc_subnets: SubnetSelection = None, 
-                                    instance_type: InstanceType, 
-                                    bootstrap_enabled: bool = None, 
-                                    bootstrap_options: BootstrapOptions = None, 
-                                    machine_image_type: MachineImageType = None, 
-                                    map_role: bool = None, 
-                                    spot_interrupt_handler: bool = None)
+def add_auto_scaling_group_capacity(
+  id: str,
+  allow_all_outbound: bool = None,
+  associate_public_ip_address: bool = None,
+  auto_scaling_group_name: str = None,
+  block_devices: typing.List[BlockDevice] = None,
+  cooldown: Duration = None,
+  desired_capacity: typing.Union[int, float] = None,
+  group_metrics: typing.List[GroupMetrics] = None,
+  health_check: HealthCheck = None,
+  ignore_unmodified_size_properties: bool = None,
+  instance_monitoring: Monitoring = None,
+  key_name: str = None,
+  max_capacity: typing.Union[int, float] = None,
+  max_instance_lifetime: Duration = None,
+  min_capacity: typing.Union[int, float] = None,
+  new_instances_protected_from_scale_in: bool = None,
+  notifications: typing.List[NotificationConfiguration] = None,
+  signals: Signals = None,
+  spot_price: str = None,
+  update_policy: UpdatePolicy = None,
+  vpc_subnets: SubnetSelection = None,
+  instance_type: InstanceType,
+  bootstrap_enabled: bool = None,
+  bootstrap_options: BootstrapOptions = None,
+  machine_image_type: MachineImageType = None,
+  map_role: bool = None,
+  spot_interrupt_handler: bool = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.Cluster.parameter.id\\"></a>
@@ -10892,8 +11228,10 @@ Only relevant if \`spotPrice\` is used.
 ##### \`add_cdk8s_chart\` <a name=\\"aws_cdk.aws_eks.Cluster.add_cdk8s_chart\\"></a>
 
 \`\`\`python
-def add_cdk8s_chart(id: str, 
-                    chart: Construct)
+def add_cdk8s_chart(
+  id: str,
+  chart: Construct
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.Cluster.parameter.id\\"></a>
@@ -10915,12 +11253,14 @@ the cdk8s chart.
 ##### \`add_fargate_profile\` <a name=\\"aws_cdk.aws_eks.Cluster.add_fargate_profile\\"></a>
 
 \`\`\`python
-def add_fargate_profile(id: str, 
-                        selectors: typing.List[Selector], 
-                        fargate_profile_name: str = None, 
-                        pod_execution_role: IRole = None, 
-                        subnet_selection: SubnetSelection = None, 
-                        vpc: IVpc = None)
+def add_fargate_profile(
+  id: str,
+  selectors: typing.List[Selector],
+  fargate_profile_name: str = None,
+  pod_execution_role: IRole = None,
+  subnet_selection: SubnetSelection = None,
+  vpc: IVpc = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.Cluster.parameter.id\\"></a>
@@ -10997,16 +11337,18 @@ By default, all private subnets are selected. You can customize this using
 ##### \`add_helm_chart\` <a name=\\"aws_cdk.aws_eks.Cluster.add_helm_chart\\"></a>
 
 \`\`\`python
-def add_helm_chart(id: str, 
-                   chart: str, 
-                   create_namespace: bool = None, 
-                   namespace: str = None, 
-                   release: str = None, 
-                   repository: str = None, 
-                   timeout: Duration = None, 
-                   values: typing.Mapping[typing.Any] = None, 
-                   version: str = None, 
-                   wait: bool = None)
+def add_helm_chart(
+  id: str,
+  chart: str,
+  create_namespace: bool = None,
+  namespace: str = None,
+  release: str = None,
+  repository: str = None,
+  timeout: Duration = None,
+  values: typing.Mapping[typing.Any] = None,
+  version: str = None,
+  wait: bool = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.Cluster.parameter.id\\"></a>
@@ -11104,8 +11446,10 @@ Whether or not Helm should wait until all Pods, PVCs, Services, and minimum numb
 ##### \`add_manifest\` <a name=\\"aws_cdk.aws_eks.Cluster.add_manifest\\"></a>
 
 \`\`\`python
-def add_manifest(id: str, 
-                 manifest: typing.Mapping[typing.Any])
+def add_manifest(
+  id: str,
+  manifest: typing.Mapping[typing.Any]
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.Cluster.parameter.id\\"></a>
@@ -11127,23 +11471,25 @@ a list of Kubernetes resource specifications.
 ##### \`add_nodegroup_capacity\` <a name=\\"aws_cdk.aws_eks.Cluster.add_nodegroup_capacity\\"></a>
 
 \`\`\`python
-def add_nodegroup_capacity(id: str, 
-                           ami_type: NodegroupAmiType = None, 
-                           capacity_type: CapacityType = None, 
-                           desired_size: typing.Union[int, float] = None, 
-                           disk_size: typing.Union[int, float] = None, 
-                           force_update: bool = None, 
-                           instance_types: typing.List[InstanceType] = None, 
-                           labels: typing.Mapping[str] = None, 
-                           launch_template_spec: LaunchTemplateSpec = None, 
-                           max_size: typing.Union[int, float] = None, 
-                           min_size: typing.Union[int, float] = None, 
-                           nodegroup_name: str = None, 
-                           node_role: IRole = None, 
-                           release_version: str = None, 
-                           remote_access: NodegroupRemoteAccess = None, 
-                           subnets: SubnetSelection = None, 
-                           tags: typing.Mapping[str] = None)
+def add_nodegroup_capacity(
+  id: str,
+  ami_type: NodegroupAmiType = None,
+  capacity_type: CapacityType = None,
+  desired_size: typing.Union[int, float] = None,
+  disk_size: typing.Union[int, float] = None,
+  force_update: bool = None,
+  instance_types: typing.List[InstanceType] = None,
+  labels: typing.Mapping[str] = None,
+  launch_template_spec: LaunchTemplateSpec = None,
+  max_size: typing.Union[int, float] = None,
+  min_size: typing.Union[int, float] = None,
+  nodegroup_name: str = None,
+  node_role: IRole = None,
+  release_version: str = None,
+  remote_access: NodegroupRemoteAccess = None,
+  subnets: SubnetSelection = None,
+  tags: typing.Mapping[str] = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.Cluster.parameter.id\\"></a>
@@ -11334,9 +11680,11 @@ associated with the node group, such as the Amazon EC2 instances or subnets.
 ##### \`add_service_account\` <a name=\\"aws_cdk.aws_eks.Cluster.add_service_account\\"></a>
 
 \`\`\`python
-def add_service_account(id: str, 
-                        name: str = None, 
-                        namespace: str = None)
+def add_service_account(
+  id: str,
+  name: str = None,
+  namespace: str = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.Cluster.parameter.id\\"></a>
@@ -11366,12 +11714,14 @@ The namespace of the service account.
 ##### \`connect_auto_scaling_group_capacity\` <a name=\\"aws_cdk.aws_eks.Cluster.connect_auto_scaling_group_capacity\\"></a>
 
 \`\`\`python
-def connect_auto_scaling_group_capacity(auto_scaling_group: AutoScalingGroup, 
-                                        bootstrap_enabled: bool = None, 
-                                        bootstrap_options: BootstrapOptions = None, 
-                                        machine_image_type: MachineImageType = None, 
-                                        map_role: bool = None, 
-                                        spot_interrupt_handler: bool = None)
+def connect_auto_scaling_group_capacity(
+  auto_scaling_group: AutoScalingGroup,
+  bootstrap_enabled: bool = None,
+  bootstrap_options: BootstrapOptions = None,
+  machine_image_type: MachineImageType = None,
+  map_role: bool = None,
+  spot_interrupt_handler: bool = None
+)
 \`\`\`
 
 ###### \`auto_scaling_group\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.Cluster.parameter.auto_scaling_group\\"></a>
@@ -11437,9 +11787,11 @@ Only relevant if \`spotPrice\` is configured on the auto-scaling group.
 ##### \`get_service_load_balancer_address\` <a name=\\"aws_cdk.aws_eks.Cluster.get_service_load_balancer_address\\"></a>
 
 \`\`\`python
-def get_service_load_balancer_address(service_name: str, 
-                                      namespace: str = None, 
-                                      timeout: Duration = None)
+def get_service_load_balancer_address(
+  service_name: str,
+  namespace: str = None,
+  timeout: Duration = None
+)
 \`\`\`
 
 ###### \`service_name\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.Cluster.parameter.service_name\\"></a>
@@ -11475,23 +11827,25 @@ Timeout for waiting on the load balancer address.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.Cluster.from_cluster_attributes(scope: Construct, 
-                                        id: str, 
-                                        cluster_name: str, 
-                                        cluster_certificate_authority_data: str = None, 
-                                        cluster_encryption_config_key_arn: str = None, 
-                                        cluster_endpoint: str = None, 
-                                        cluster_security_group_id: str = None, 
-                                        kubectl_environment: typing.Mapping[str] = None, 
-                                        kubectl_layer: ILayerVersion = None, 
-                                        kubectl_memory: Size = None, 
-                                        kubectl_private_subnet_ids: typing.List[str] = None, 
-                                        kubectl_role_arn: str = None, 
-                                        kubectl_security_group_id: str = None, 
-                                        open_id_connect_provider: IOpenIdConnectProvider = None, 
-                                        prune: bool = None, 
-                                        security_group_ids: typing.List[str] = None, 
-                                        vpc: IVpc = None)
+aws_eks.Cluster.from_cluster_attributes(
+  scope: Construct,
+  id: str,
+  cluster_name: str,
+  cluster_certificate_authority_data: str = None,
+  cluster_encryption_config_key_arn: str = None,
+  cluster_endpoint: str = None,
+  cluster_security_group_id: str = None,
+  kubectl_environment: typing.Mapping[str] = None,
+  kubectl_layer: ILayerVersion = None,
+  kubectl_memory: Size = None,
+  kubectl_private_subnet_ids: typing.List[str] = None,
+  kubectl_role_arn: str = None,
+  kubectl_security_group_id: str = None,
+  open_id_connect_provider: IOpenIdConnectProvider = None,
+  prune: bool = None,
+  security_group_ids: typing.List[str] = None,
+  vpc: IVpc = None
+)
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.Cluster.parameter.scope\\"></a>
@@ -11908,28 +12262,30 @@ The cluster is created with a default Fargate Profile that matches the
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.FargateCluster(scope: Construct, 
-                       id: str, 
-                       version: KubernetesVersion, 
-                       cluster_name: str = None, 
-                       output_cluster_name: bool = None, 
-                       output_config_command: bool = None, 
-                       role: IRole = None, 
-                       security_group: ISecurityGroup = None, 
-                       vpc: IVpc = None, 
-                       vpc_subnets: typing.List[SubnetSelection] = None, 
-                       cluster_handler_environment: typing.Mapping[str] = None, 
-                       core_dns_compute_type: CoreDnsComputeType = None, 
-                       endpoint_access: EndpointAccess = None, 
-                       kubectl_environment: typing.Mapping[str] = None, 
-                       kubectl_layer: ILayerVersion = None, 
-                       kubectl_memory: Size = None, 
-                       masters_role: IRole = None, 
-                       output_masters_role_arn: bool = None, 
-                       place_cluster_handler_in_vpc: bool = None, 
-                       prune: bool = None, 
-                       secrets_encryption_key: IKey = None, 
-                       default_profile: FargateProfileOptions = None)
+aws_eks.FargateCluster(
+  scope: Construct,
+  id: str,
+  version: KubernetesVersion,
+  cluster_name: str = None,
+  output_cluster_name: bool = None,
+  output_config_command: bool = None,
+  role: IRole = None,
+  security_group: ISecurityGroup = None,
+  vpc: IVpc = None,
+  vpc_subnets: typing.List[SubnetSelection] = None,
+  cluster_handler_environment: typing.Mapping[str] = None,
+  core_dns_compute_type: CoreDnsComputeType = None,
+  endpoint_access: EndpointAccess = None,
+  kubectl_environment: typing.Mapping[str] = None,
+  kubectl_layer: ILayerVersion = None,
+  kubectl_memory: Size = None,
+  masters_role: IRole = None,
+  output_masters_role_arn: bool = None,
+  place_cluster_handler_in_vpc: bool = None,
+  prune: bool = None,
+  secrets_encryption_key: IKey = None,
+  default_profile: FargateProfileOptions = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.FargateCluster.parameter.scope\\"></a>
@@ -12200,14 +12556,16 @@ match a selector in that profile in order to be scheduled onto Fargate.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.FargateProfile(scope: Construct, 
-                       id: str, 
-                       selectors: typing.List[Selector], 
-                       fargate_profile_name: str = None, 
-                       pod_execution_role: IRole = None, 
-                       subnet_selection: SubnetSelection = None, 
-                       vpc: IVpc = None, 
-                       cluster: Cluster)
+aws_eks.FargateProfile(
+  scope: Construct,
+  id: str,
+  selectors: typing.List[Selector],
+  fargate_profile_name: str = None,
+  pod_execution_role: IRole = None,
+  subnet_selection: SubnetSelection = None,
+  vpc: IVpc = None,
+  cluster: Cluster
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.FargateProfile.parameter.scope\\"></a>
@@ -12347,18 +12705,20 @@ Applies/deletes the resources using \`kubectl\` in sync with the resource.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.HelmChart(scope: Construct, 
-                  id: str, 
-                  chart: str, 
-                  create_namespace: bool = None, 
-                  namespace: str = None, 
-                  release: str = None, 
-                  repository: str = None, 
-                  timeout: Duration = None, 
-                  values: typing.Mapping[typing.Any] = None, 
-                  version: str = None, 
-                  wait: bool = None, 
-                  cluster: ICluster)
+aws_eks.HelmChart(
+  scope: Construct,
+  id: str,
+  chart: str,
+  create_namespace: bool = None,
+  namespace: str = None,
+  release: str = None,
+  repository: str = None,
+  timeout: Duration = None,
+  values: typing.Mapping[typing.Any] = None,
+  version: str = None,
+  wait: bool = None,
+  cluster: ICluster
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.HelmChart.parameter.scope\\"></a>
@@ -12494,13 +12854,15 @@ Applies/deletes the manifest using \`kubectl\`.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.KubernetesManifest(scope: Construct, 
-                           id: str, 
-                           prune: bool = None, 
-                           skip_validation: bool = None, 
-                           cluster: ICluster, 
-                           manifest: typing.List[typing.Mapping[typing.Any]], 
-                           overwrite: bool = None)
+aws_eks.KubernetesManifest(
+  scope: Construct,
+  id: str,
+  prune: bool = None,
+  skip_validation: bool = None,
+  cluster: ICluster,
+  manifest: typing.List[typing.Mapping[typing.Any]],
+  overwrite: bool = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.KubernetesManifest.parameter.scope\\"></a>
@@ -12611,14 +12973,16 @@ Use this to fetch any information available by the \`kubectl get\` command.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.KubernetesObjectValue(scope: Construct, 
-                              id: str, 
-                              cluster: ICluster, 
-                              json_path: str, 
-                              object_name: str, 
-                              object_type: str, 
-                              object_namespace: str = None, 
-                              timeout: Duration = None)
+aws_eks.KubernetesObjectValue(
+  scope: Construct,
+  id: str,
+  cluster: ICluster,
+  json_path: str,
+  object_name: str,
+  object_type: str,
+  object_namespace: str = None,
+  timeout: Duration = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.KubernetesObjectValue.parameter.scope\\"></a>
@@ -12722,14 +13086,16 @@ A CloudFormation resource which applies/restores a JSON patch into a Kubernetes 
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.KubernetesPatch(scope: Construct, 
-                        id: str, 
-                        apply_patch: typing.Mapping[typing.Any], 
-                        cluster: ICluster, 
-                        resource_name: str, 
-                        restore_patch: typing.Mapping[typing.Any], 
-                        patch_type: PatchType = None, 
-                        resource_namespace: str = None)
+aws_eks.KubernetesPatch(
+  scope: Construct,
+  id: str,
+  apply_patch: typing.Mapping[typing.Any],
+  cluster: ICluster,
+  resource_name: str,
+  restore_patch: typing.Mapping[typing.Any],
+  patch_type: PatchType = None,
+  resource_namespace: str = None
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.KubernetesPatch.parameter.scope\\"></a>
@@ -12813,25 +13179,27 @@ The Nodegroup resource class.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.Nodegroup(scope: Construct, 
-                  id: str, 
-                  ami_type: NodegroupAmiType = None, 
-                  capacity_type: CapacityType = None, 
-                  desired_size: typing.Union[int, float] = None, 
-                  disk_size: typing.Union[int, float] = None, 
-                  force_update: bool = None, 
-                  instance_types: typing.List[InstanceType] = None, 
-                  labels: typing.Mapping[str] = None, 
-                  launch_template_spec: LaunchTemplateSpec = None, 
-                  max_size: typing.Union[int, float] = None, 
-                  min_size: typing.Union[int, float] = None, 
-                  nodegroup_name: str = None, 
-                  node_role: IRole = None, 
-                  release_version: str = None, 
-                  remote_access: NodegroupRemoteAccess = None, 
-                  subnets: SubnetSelection = None, 
-                  tags: typing.Mapping[str] = None, 
-                  cluster: ICluster)
+aws_eks.Nodegroup(
+  scope: Construct,
+  id: str,
+  ami_type: NodegroupAmiType = None,
+  capacity_type: CapacityType = None,
+  desired_size: typing.Union[int, float] = None,
+  disk_size: typing.Union[int, float] = None,
+  force_update: bool = None,
+  instance_types: typing.List[InstanceType] = None,
+  labels: typing.Mapping[str] = None,
+  launch_template_spec: LaunchTemplateSpec = None,
+  max_size: typing.Union[int, float] = None,
+  min_size: typing.Union[int, float] = None,
+  nodegroup_name: str = None,
+  node_role: IRole = None,
+  release_version: str = None,
+  remote_access: NodegroupRemoteAccess = None,
+  subnets: SubnetSelection = None,
+  tags: typing.Mapping[str] = None,
+  cluster: ICluster
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.Nodegroup.parameter.scope\\"></a>
@@ -13039,9 +13407,11 @@ Cluster resource.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.Nodegroup.from_nodegroup_name(scope: Construct, 
-                                      id: str, 
-                                      nodegroup_name: str)
+aws_eks.Nodegroup.from_nodegroup_name(
+  scope: Construct,
+  id: str,
+  nodegroup_name: str
+)
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.Nodegroup.parameter.scope\\"></a>
@@ -13115,9 +13485,11 @@ that will be compatible with the eks cluster
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.OpenIdConnectProvider(scope: Construct, 
-                              id: str, 
-                              url: str)
+aws_eks.OpenIdConnectProvider(
+  scope: Construct,
+  id: str,
+  url: str
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.OpenIdConnectProvider.parameter.scope\\"></a>
@@ -13168,11 +13540,13 @@ Service Account.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.ServiceAccount(scope: Construct, 
-                       id: str, 
-                       name: str = None, 
-                       namespace: str = None, 
-                       cluster: ICluster)
+aws_eks.ServiceAccount(
+  scope: Construct,
+  id: str,
+  name: str = None,
+  namespace: str = None,
+  cluster: ICluster
+)
 \`\`\`
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.ServiceAccount.parameter.scope\\"></a>
@@ -13218,7 +13592,9 @@ The cluster to apply the patch to.
 ##### \`add_to_principal_policy\` <a name=\\"aws_cdk.aws_eks.ServiceAccount.add_to_principal_policy\\"></a>
 
 \`\`\`python
-def add_to_principal_policy(statement: PolicyStatement)
+def add_to_principal_policy(
+  statement: PolicyStatement
+)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.ServiceAccount.parameter.statement\\"></a>
@@ -13290,32 +13666,34 @@ Options for adding worker nodes.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.AutoScalingGroupCapacityOptions(allow_all_outbound: bool = None, 
-                                        associate_public_ip_address: bool = None, 
-                                        auto_scaling_group_name: str = None, 
-                                        block_devices: typing.List[BlockDevice] = None, 
-                                        cooldown: Duration = None, 
-                                        desired_capacity: typing.Union[int, float] = None, 
-                                        group_metrics: typing.List[GroupMetrics] = None, 
-                                        health_check: HealthCheck = None, 
-                                        ignore_unmodified_size_properties: bool = None, 
-                                        instance_monitoring: Monitoring = None, 
-                                        key_name: str = None, 
-                                        max_capacity: typing.Union[int, float] = None, 
-                                        max_instance_lifetime: Duration = None, 
-                                        min_capacity: typing.Union[int, float] = None, 
-                                        new_instances_protected_from_scale_in: bool = None, 
-                                        notifications: typing.List[NotificationConfiguration] = None, 
-                                        signals: Signals = None, 
-                                        spot_price: str = None, 
-                                        update_policy: UpdatePolicy = None, 
-                                        vpc_subnets: SubnetSelection = None, 
-                                        instance_type: InstanceType, 
-                                        bootstrap_enabled: bool = None, 
-                                        bootstrap_options: BootstrapOptions = None, 
-                                        machine_image_type: MachineImageType = None, 
-                                        map_role: bool = None, 
-                                        spot_interrupt_handler: bool = None)
+aws_eks.AutoScalingGroupCapacityOptions(
+  allow_all_outbound: bool = None,
+  associate_public_ip_address: bool = None,
+  auto_scaling_group_name: str = None,
+  block_devices: typing.List[BlockDevice] = None,
+  cooldown: Duration = None,
+  desired_capacity: typing.Union[int, float] = None,
+  group_metrics: typing.List[GroupMetrics] = None,
+  health_check: HealthCheck = None,
+  ignore_unmodified_size_properties: bool = None,
+  instance_monitoring: Monitoring = None,
+  key_name: str = None,
+  max_capacity: typing.Union[int, float] = None,
+  max_instance_lifetime: Duration = None,
+  min_capacity: typing.Union[int, float] = None,
+  new_instances_protected_from_scale_in: bool = None,
+  notifications: typing.List[NotificationConfiguration] = None,
+  signals: Signals = None,
+  spot_price: str = None,
+  update_policy: UpdatePolicy = None,
+  vpc_subnets: SubnetSelection = None,
+  instance_type: InstanceType,
+  bootstrap_enabled: bool = None,
+  bootstrap_options: BootstrapOptions = None,
+  machine_image_type: MachineImageType = None,
+  map_role: bool = None,
+  spot_interrupt_handler: bool = None
+)
 \`\`\`
 
 ##### \`allow_all_outbound\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_eks.AutoScalingGroupCapacityOptions.property.allow_all_outbound\\"></a>
@@ -13640,11 +14018,13 @@ Options for adding an AutoScalingGroup as capacity.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.AutoScalingGroupOptions(bootstrap_enabled: bool = None, 
-                                bootstrap_options: BootstrapOptions = None, 
-                                machine_image_type: MachineImageType = None, 
-                                map_role: bool = None, 
-                                spot_interrupt_handler: bool = None)
+aws_eks.AutoScalingGroupOptions(
+  bootstrap_enabled: bool = None,
+  bootstrap_options: BootstrapOptions = None,
+  machine_image_type: MachineImageType = None,
+  map_role: bool = None,
+  spot_interrupt_handler: bool = None
+)
 \`\`\`
 
 ##### \`bootstrap_enabled\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_eks.AutoScalingGroupOptions.property.bootstrap_enabled\\"></a>
@@ -13708,8 +14088,10 @@ AwsAuth mapping.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.AwsAuthMapping(groups: typing.List[str], 
-                       username: str = None)
+aws_eks.AwsAuthMapping(
+  groups: typing.List[str],
+  username: str = None
+)
 \`\`\`
 
 ##### \`groups\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.AwsAuthMapping.property.groups\\"></a>
@@ -13740,7 +14122,9 @@ Configuration props for the AwsAuth construct.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.AwsAuthProps(cluster: Cluster)
+aws_eks.AwsAuthProps(
+  cluster: Cluster
+)
 \`\`\`
 
 ##### \`cluster\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.AwsAuthProps.property.cluster\\"></a>
@@ -13762,13 +14146,15 @@ EKS node bootstrapping options.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.BootstrapOptions(additional_args: str = None, 
-                         aws_api_retry_attempts: typing.Union[int, float] = None, 
-                         dns_cluster_ip: str = None, 
-                         docker_config_json: str = None, 
-                         enable_docker_bridge: bool = None, 
-                         kubelet_extra_args: str = None, 
-                         use_max_pods: bool = None)
+aws_eks.BootstrapOptions(
+  additional_args: str = None,
+  aws_api_retry_attempts: typing.Union[int, float] = None,
+  dns_cluster_ip: str = None,
+  docker_config_json: str = None,
+  enable_docker_bridge: bool = None,
+  kubelet_extra_args: str = None,
+  use_max_pods: bool = None
+)
 \`\`\`
 
 ##### \`additional_args\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_eks.BootstrapOptions.property.additional_args\\"></a>
@@ -13850,12 +14236,14 @@ Properties for defining a \`AWS::EKS::Addon\`.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.CfnAddonProps(addon_name: str, 
-                      cluster_name: str, 
-                      addon_version: str = None, 
-                      resolve_conflicts: str = None, 
-                      service_account_role_arn: str = None, 
-                      tags: typing.List[CfnTag] = None)
+aws_eks.CfnAddonProps(
+  addon_name: str,
+  cluster_name: str,
+  addon_version: str = None,
+  resolve_conflicts: str = None,
+  service_account_role_arn: str = None,
+  tags: typing.List[CfnTag] = None
+)
 \`\`\`
 
 ##### \`addon_name\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.CfnAddonProps.property.addon_name\\"></a>
@@ -13929,12 +14317,14 @@ Properties for defining a \`AWS::EKS::Cluster\`.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.CfnClusterProps(resources_vpc_config: typing.Union[ResourcesVpcConfigProperty, IResolvable], 
-                        role_arn: str, 
-                        encryption_config: typing.Union[IResolvable, typing.List[typing.Union[EncryptionConfigProperty, IResolvable]]] = None, 
-                        kubernetes_network_config: typing.Union[KubernetesNetworkConfigProperty, IResolvable] = None, 
-                        name: str = None, 
-                        version: str = None)
+aws_eks.CfnClusterProps(
+  resources_vpc_config: typing.Union[ResourcesVpcConfigProperty, IResolvable],
+  role_arn: str,
+  encryption_config: typing.Union[IResolvable, typing.List[typing.Union[EncryptionConfigProperty, IResolvable]]] = None,
+  kubernetes_network_config: typing.Union[KubernetesNetworkConfigProperty, IResolvable] = None,
+  name: str = None,
+  version: str = None
+)
 \`\`\`
 
 ##### \`resources_vpc_config\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.CfnClusterProps.property.resources_vpc_config\\"></a>
@@ -14008,12 +14398,14 @@ Properties for defining a \`AWS::EKS::FargateProfile\`.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.CfnFargateProfileProps(cluster_name: str, 
-                               pod_execution_role_arn: str, 
-                               selectors: typing.Union[IResolvable, typing.List[typing.Union[SelectorProperty, IResolvable]]], 
-                               fargate_profile_name: str = None, 
-                               subnets: typing.List[str] = None, 
-                               tags: typing.List[CfnTag] = None)
+aws_eks.CfnFargateProfileProps(
+  cluster_name: str,
+  pod_execution_role_arn: str,
+  selectors: typing.Union[IResolvable, typing.List[typing.Union[SelectorProperty, IResolvable]]],
+  fargate_profile_name: str = None,
+  subnets: typing.List[str] = None,
+  tags: typing.List[CfnTag] = None
+)
 \`\`\`
 
 ##### \`cluster_name\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.CfnFargateProfileProps.property.cluster_name\\"></a>
@@ -14087,23 +14479,25 @@ Properties for defining a \`AWS::EKS::Nodegroup\`.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.CfnNodegroupProps(cluster_name: str, 
-                          node_role: str, 
-                          subnets: typing.List[str], 
-                          ami_type: str = None, 
-                          capacity_type: str = None, 
-                          disk_size: typing.Union[int, float] = None, 
-                          force_update_enabled: typing.Union[bool, IResolvable] = None, 
-                          instance_types: typing.List[str] = None, 
-                          labels: typing.Any = None, 
-                          launch_template: typing.Union[LaunchTemplateSpecificationProperty, IResolvable] = None, 
-                          nodegroup_name: str = None, 
-                          release_version: str = None, 
-                          remote_access: typing.Union[RemoteAccessProperty, IResolvable] = None, 
-                          scaling_config: typing.Union[ScalingConfigProperty, IResolvable] = None, 
-                          tags: typing.Any = None, 
-                          taints: typing.Union[IResolvable, typing.List[typing.Union[TaintProperty, IResolvable]]] = None, 
-                          version: str = None)
+aws_eks.CfnNodegroupProps(
+  cluster_name: str,
+  node_role: str,
+  subnets: typing.List[str],
+  ami_type: str = None,
+  capacity_type: str = None,
+  disk_size: typing.Union[int, float] = None,
+  force_update_enabled: typing.Union[bool, IResolvable] = None,
+  instance_types: typing.List[str] = None,
+  labels: typing.Any = None,
+  launch_template: typing.Union[LaunchTemplateSpecificationProperty, IResolvable] = None,
+  nodegroup_name: str = None,
+  release_version: str = None,
+  remote_access: typing.Union[RemoteAccessProperty, IResolvable] = None,
+  scaling_config: typing.Union[ScalingConfigProperty, IResolvable] = None,
+  tags: typing.Any = None,
+  taints: typing.Union[IResolvable, typing.List[typing.Union[TaintProperty, IResolvable]]] = None,
+  version: str = None
+)
 \`\`\`
 
 ##### \`cluster_name\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.CfnNodegroupProps.property.cluster_name\\"></a>
@@ -14285,21 +14679,23 @@ Attributes for EKS clusters.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.ClusterAttributes(cluster_name: str, 
-                          cluster_certificate_authority_data: str = None, 
-                          cluster_encryption_config_key_arn: str = None, 
-                          cluster_endpoint: str = None, 
-                          cluster_security_group_id: str = None, 
-                          kubectl_environment: typing.Mapping[str] = None, 
-                          kubectl_layer: ILayerVersion = None, 
-                          kubectl_memory: Size = None, 
-                          kubectl_private_subnet_ids: typing.List[str] = None, 
-                          kubectl_role_arn: str = None, 
-                          kubectl_security_group_id: str = None, 
-                          open_id_connect_provider: IOpenIdConnectProvider = None, 
-                          prune: bool = None, 
-                          security_group_ids: typing.List[str] = None, 
-                          vpc: IVpc = None)
+aws_eks.ClusterAttributes(
+  cluster_name: str,
+  cluster_certificate_authority_data: str = None,
+  cluster_encryption_config_key_arn: str = None,
+  cluster_endpoint: str = None,
+  cluster_security_group_id: str = None,
+  kubectl_environment: typing.Mapping[str] = None,
+  kubectl_layer: ILayerVersion = None,
+  kubectl_memory: Size = None,
+  kubectl_private_subnet_ids: typing.List[str] = None,
+  kubectl_role_arn: str = None,
+  kubectl_security_group_id: str = None,
+  open_id_connect_provider: IOpenIdConnectProvider = None,
+  prune: bool = None,
+  security_group_ids: typing.List[str] = None,
+  vpc: IVpc = None
+)
 \`\`\`
 
 ##### \`cluster_name\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.ClusterAttributes.property.cluster_name\\"></a>
@@ -14472,25 +14868,27 @@ Options for EKS clusters.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.ClusterOptions(version: KubernetesVersion, 
-                       cluster_name: str = None, 
-                       output_cluster_name: bool = None, 
-                       output_config_command: bool = None, 
-                       role: IRole = None, 
-                       security_group: ISecurityGroup = None, 
-                       vpc: IVpc = None, 
-                       vpc_subnets: typing.List[SubnetSelection] = None, 
-                       cluster_handler_environment: typing.Mapping[str] = None, 
-                       core_dns_compute_type: CoreDnsComputeType = None, 
-                       endpoint_access: EndpointAccess = None, 
-                       kubectl_environment: typing.Mapping[str] = None, 
-                       kubectl_layer: ILayerVersion = None, 
-                       kubectl_memory: Size = None, 
-                       masters_role: IRole = None, 
-                       output_masters_role_arn: bool = None, 
-                       place_cluster_handler_in_vpc: bool = None, 
-                       prune: bool = None, 
-                       secrets_encryption_key: IKey = None)
+aws_eks.ClusterOptions(
+  version: KubernetesVersion,
+  cluster_name: str = None,
+  output_cluster_name: bool = None,
+  output_config_command: bool = None,
+  role: IRole = None,
+  security_group: ISecurityGroup = None,
+  vpc: IVpc = None,
+  vpc_subnets: typing.List[SubnetSelection] = None,
+  cluster_handler_environment: typing.Mapping[str] = None,
+  core_dns_compute_type: CoreDnsComputeType = None,
+  endpoint_access: EndpointAccess = None,
+  kubectl_environment: typing.Mapping[str] = None,
+  kubectl_layer: ILayerVersion = None,
+  kubectl_memory: Size = None,
+  masters_role: IRole = None,
+  output_masters_role_arn: bool = None,
+  place_cluster_handler_in_vpc: bool = None,
+  prune: bool = None,
+  secrets_encryption_key: IKey = None
+)
 \`\`\`
 
 ##### \`version\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.ClusterOptions.property.version\\"></a>
@@ -14716,28 +15114,30 @@ Common configuration props for EKS clusters.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.ClusterProps(version: KubernetesVersion, 
-                     cluster_name: str = None, 
-                     output_cluster_name: bool = None, 
-                     output_config_command: bool = None, 
-                     role: IRole = None, 
-                     security_group: ISecurityGroup = None, 
-                     vpc: IVpc = None, 
-                     vpc_subnets: typing.List[SubnetSelection] = None, 
-                     cluster_handler_environment: typing.Mapping[str] = None, 
-                     core_dns_compute_type: CoreDnsComputeType = None, 
-                     endpoint_access: EndpointAccess = None, 
-                     kubectl_environment: typing.Mapping[str] = None, 
-                     kubectl_layer: ILayerVersion = None, 
-                     kubectl_memory: Size = None, 
-                     masters_role: IRole = None, 
-                     output_masters_role_arn: bool = None, 
-                     place_cluster_handler_in_vpc: bool = None, 
-                     prune: bool = None, 
-                     secrets_encryption_key: IKey = None, 
-                     default_capacity: typing.Union[int, float] = None, 
-                     default_capacity_instance: InstanceType = None, 
-                     default_capacity_type: DefaultCapacityType = None)
+aws_eks.ClusterProps(
+  version: KubernetesVersion,
+  cluster_name: str = None,
+  output_cluster_name: bool = None,
+  output_config_command: bool = None,
+  role: IRole = None,
+  security_group: ISecurityGroup = None,
+  vpc: IVpc = None,
+  vpc_subnets: typing.List[SubnetSelection] = None,
+  cluster_handler_environment: typing.Mapping[str] = None,
+  core_dns_compute_type: CoreDnsComputeType = None,
+  endpoint_access: EndpointAccess = None,
+  kubectl_environment: typing.Mapping[str] = None,
+  kubectl_layer: ILayerVersion = None,
+  kubectl_memory: Size = None,
+  masters_role: IRole = None,
+  output_masters_role_arn: bool = None,
+  place_cluster_handler_in_vpc: bool = None,
+  prune: bool = None,
+  secrets_encryption_key: IKey = None,
+  default_capacity: typing.Union[int, float] = None,
+  default_capacity_instance: InstanceType = None,
+  default_capacity_type: DefaultCapacityType = None
+)
 \`\`\`
 
 ##### \`version\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.ClusterProps.property.version\\"></a>
@@ -14999,14 +15399,16 @@ Options for configuring an EKS cluster.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.CommonClusterOptions(version: KubernetesVersion, 
-                             cluster_name: str = None, 
-                             output_cluster_name: bool = None, 
-                             output_config_command: bool = None, 
-                             role: IRole = None, 
-                             security_group: ISecurityGroup = None, 
-                             vpc: IVpc = None, 
-                             vpc_subnets: typing.List[SubnetSelection] = None)
+aws_eks.CommonClusterOptions(
+  version: KubernetesVersion,
+  cluster_name: str = None,
+  output_cluster_name: bool = None,
+  output_config_command: bool = None,
+  role: IRole = None,
+  security_group: ISecurityGroup = None,
+  vpc: IVpc = None,
+  vpc_subnets: typing.List[SubnetSelection] = None
+)
 \`\`\`
 
 ##### \`version\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.CommonClusterOptions.property.version\\"></a>
@@ -15102,9 +15504,11 @@ Properties for EksOptimizedImage.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.EksOptimizedImageProps(cpu_arch: CpuArch = None, 
-                               kubernetes_version: str = None, 
-                               node_type: NodeType = None)
+aws_eks.EksOptimizedImageProps(
+  cpu_arch: CpuArch = None,
+  kubernetes_version: str = None,
+  node_type: NodeType = None
+)
 \`\`\`
 
 ##### \`cpu_arch\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_eks.EksOptimizedImageProps.property.cpu_arch\\"></a>
@@ -15143,8 +15547,10 @@ What instance type to retrieve the image for (standard or GPU-optimized).
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.CfnCluster.EncryptionConfigProperty(provider: typing.Union[ProviderProperty, IResolvable] = None, 
-                                            resources: typing.List[str] = None)
+aws_eks.CfnCluster.EncryptionConfigProperty(
+  provider: typing.Union[ProviderProperty, IResolvable] = None,
+  resources: typing.List[str] = None
+)
 \`\`\`
 
 ##### \`provider\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_eks.CfnCluster.EncryptionConfigProperty.property.provider\\"></a>
@@ -15176,26 +15582,28 @@ Configuration props for EKS Fargate.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.FargateClusterProps(version: KubernetesVersion, 
-                            cluster_name: str = None, 
-                            output_cluster_name: bool = None, 
-                            output_config_command: bool = None, 
-                            role: IRole = None, 
-                            security_group: ISecurityGroup = None, 
-                            vpc: IVpc = None, 
-                            vpc_subnets: typing.List[SubnetSelection] = None, 
-                            cluster_handler_environment: typing.Mapping[str] = None, 
-                            core_dns_compute_type: CoreDnsComputeType = None, 
-                            endpoint_access: EndpointAccess = None, 
-                            kubectl_environment: typing.Mapping[str] = None, 
-                            kubectl_layer: ILayerVersion = None, 
-                            kubectl_memory: Size = None, 
-                            masters_role: IRole = None, 
-                            output_masters_role_arn: bool = None, 
-                            place_cluster_handler_in_vpc: bool = None, 
-                            prune: bool = None, 
-                            secrets_encryption_key: IKey = None, 
-                            default_profile: FargateProfileOptions = None)
+aws_eks.FargateClusterProps(
+  version: KubernetesVersion,
+  cluster_name: str = None,
+  output_cluster_name: bool = None,
+  output_config_command: bool = None,
+  role: IRole = None,
+  security_group: ISecurityGroup = None,
+  vpc: IVpc = None,
+  vpc_subnets: typing.List[SubnetSelection] = None,
+  cluster_handler_environment: typing.Mapping[str] = None,
+  core_dns_compute_type: CoreDnsComputeType = None,
+  endpoint_access: EndpointAccess = None,
+  kubectl_environment: typing.Mapping[str] = None,
+  kubectl_layer: ILayerVersion = None,
+  kubectl_memory: Size = None,
+  masters_role: IRole = None,
+  output_masters_role_arn: bool = None,
+  place_cluster_handler_in_vpc: bool = None,
+  prune: bool = None,
+  secrets_encryption_key: IKey = None,
+  default_profile: FargateProfileOptions = None
+)
 \`\`\`
 
 ##### \`version\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.FargateClusterProps.property.version\\"></a>
@@ -15431,11 +15839,13 @@ Options for defining EKS Fargate Profiles.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.FargateProfileOptions(selectors: typing.List[Selector], 
-                              fargate_profile_name: str = None, 
-                              pod_execution_role: IRole = None, 
-                              subnet_selection: SubnetSelection = None, 
-                              vpc: IVpc = None)
+aws_eks.FargateProfileOptions(
+  selectors: typing.List[Selector],
+  fargate_profile_name: str = None,
+  pod_execution_role: IRole = None,
+  subnet_selection: SubnetSelection = None,
+  vpc: IVpc = None
+)
 \`\`\`
 
 ##### \`selectors\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.FargateProfileOptions.property.selectors\\"></a>
@@ -15510,12 +15920,14 @@ Configuration props for EKS Fargate Profiles.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.FargateProfileProps(selectors: typing.List[Selector], 
-                            fargate_profile_name: str = None, 
-                            pod_execution_role: IRole = None, 
-                            subnet_selection: SubnetSelection = None, 
-                            vpc: IVpc = None, 
-                            cluster: Cluster)
+aws_eks.FargateProfileProps(
+  selectors: typing.List[Selector],
+  fargate_profile_name: str = None,
+  pod_execution_role: IRole = None,
+  subnet_selection: SubnetSelection = None,
+  vpc: IVpc = None,
+  cluster: Cluster
+)
 \`\`\`
 
 ##### \`selectors\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.FargateProfileProps.property.selectors\\"></a>
@@ -15600,15 +16012,17 @@ Helm Chart options.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.HelmChartOptions(chart: str, 
-                         create_namespace: bool = None, 
-                         namespace: str = None, 
-                         release: str = None, 
-                         repository: str = None, 
-                         timeout: Duration = None, 
-                         values: typing.Mapping[typing.Any] = None, 
-                         version: str = None, 
-                         wait: bool = None)
+aws_eks.HelmChartOptions(
+  chart: str,
+  create_namespace: bool = None,
+  namespace: str = None,
+  release: str = None,
+  repository: str = None,
+  timeout: Duration = None,
+  values: typing.Mapping[typing.Any] = None,
+  version: str = None,
+  wait: bool = None
+)
 \`\`\`
 
 ##### \`chart\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.HelmChartOptions.property.chart\\"></a>
@@ -15704,16 +16118,18 @@ Helm Chart properties.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.HelmChartProps(chart: str, 
-                       create_namespace: bool = None, 
-                       namespace: str = None, 
-                       release: str = None, 
-                       repository: str = None, 
-                       timeout: Duration = None, 
-                       values: typing.Mapping[typing.Any] = None, 
-                       version: str = None, 
-                       wait: bool = None, 
-                       cluster: ICluster)
+aws_eks.HelmChartProps(
+  chart: str,
+  create_namespace: bool = None,
+  namespace: str = None,
+  release: str = None,
+  repository: str = None,
+  timeout: Duration = None,
+  values: typing.Mapping[typing.Any] = None,
+  version: str = None,
+  wait: bool = None,
+  cluster: ICluster
+)
 \`\`\`
 
 ##### \`chart\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.HelmChartProps.property.chart\\"></a>
@@ -15819,8 +16235,10 @@ Options for \`KubernetesManifest\`.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.KubernetesManifestOptions(prune: bool = None, 
-                                  skip_validation: bool = None)
+aws_eks.KubernetesManifestOptions(
+  prune: bool = None,
+  skip_validation: bool = None
+)
 \`\`\`
 
 ##### \`prune\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_eks.KubernetesManifestOptions.property.prune\\"></a>
@@ -15867,11 +16285,13 @@ Properties for KubernetesManifest.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.KubernetesManifestProps(prune: bool = None, 
-                                skip_validation: bool = None, 
-                                cluster: ICluster, 
-                                manifest: typing.List[typing.Mapping[typing.Any]], 
-                                overwrite: bool = None)
+aws_eks.KubernetesManifestProps(
+  prune: bool = None,
+  skip_validation: bool = None,
+  cluster: ICluster,
+  manifest: typing.List[typing.Mapping[typing.Any]],
+  overwrite: bool = None
+)
 \`\`\`
 
 ##### \`prune\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_eks.KubernetesManifestProps.property.prune\\"></a>
@@ -15955,7 +16375,9 @@ in the cluster with the same name, the operation will fail.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.CfnCluster.KubernetesNetworkConfigProperty(service_ipv4_cidr: str = None)
+aws_eks.CfnCluster.KubernetesNetworkConfigProperty(
+  service_ipv4_cidr: str = None
+)
 \`\`\`
 
 ##### \`service_ipv4_cidr\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_eks.CfnCluster.KubernetesNetworkConfigProperty.property.service_ipv4_cidr\\"></a>
@@ -15977,12 +16399,14 @@ Properties for KubernetesObjectValue.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.KubernetesObjectValueProps(cluster: ICluster, 
-                                   json_path: str, 
-                                   object_name: str, 
-                                   object_type: str, 
-                                   object_namespace: str = None, 
-                                   timeout: Duration = None)
+aws_eks.KubernetesObjectValueProps(
+  cluster: ICluster,
+  json_path: str,
+  object_name: str,
+  object_type: str,
+  object_namespace: str = None,
+  timeout: Duration = None
+)
 \`\`\`
 
 ##### \`cluster\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.KubernetesObjectValueProps.property.cluster\\"></a>
@@ -16050,12 +16474,14 @@ Properties for KubernetesPatch.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.KubernetesPatchProps(apply_patch: typing.Mapping[typing.Any], 
-                             cluster: ICluster, 
-                             resource_name: str, 
-                             restore_patch: typing.Mapping[typing.Any], 
-                             patch_type: PatchType = None, 
-                             resource_namespace: str = None)
+aws_eks.KubernetesPatchProps(
+  apply_patch: typing.Mapping[typing.Any],
+  cluster: ICluster,
+  resource_name: str,
+  restore_patch: typing.Mapping[typing.Any],
+  patch_type: PatchType = None,
+  resource_namespace: str = None
+)
 \`\`\`
 
 ##### \`apply_patch\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.KubernetesPatchProps.property.apply_patch\\"></a>
@@ -16121,8 +16547,10 @@ The kubernetes API namespace.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.CfnFargateProfile.LabelProperty(key: str, 
-                                        value: str)
+aws_eks.CfnFargateProfile.LabelProperty(
+  key: str,
+  value: str
+)
 \`\`\`
 
 ##### \`key\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.CfnFargateProfile.LabelProperty.property.key\\"></a>
@@ -16154,8 +16582,10 @@ Launch template property specification.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.LaunchTemplateSpec(id: str, 
-                           version: str = None)
+aws_eks.LaunchTemplateSpec(
+  id: str,
+  version: str = None
+)
 \`\`\`
 
 ##### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.LaunchTemplateSpec.property.id\\"></a>
@@ -16184,9 +16614,11 @@ The launch template version to be used (optional).
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.CfnNodegroup.LaunchTemplateSpecificationProperty(id: str = None, 
-                                                         name: str = None, 
-                                                         version: str = None)
+aws_eks.CfnNodegroup.LaunchTemplateSpecificationProperty(
+  id: str = None,
+  name: str = None,
+  version: str = None
+)
 \`\`\`
 
 ##### \`id\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_eks.CfnNodegroup.LaunchTemplateSpecificationProperty.property.id\\"></a>
@@ -16228,22 +16660,24 @@ The Nodegroup Options for addNodeGroup() method.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.NodegroupOptions(ami_type: NodegroupAmiType = None, 
-                         capacity_type: CapacityType = None, 
-                         desired_size: typing.Union[int, float] = None, 
-                         disk_size: typing.Union[int, float] = None, 
-                         force_update: bool = None, 
-                         instance_types: typing.List[InstanceType] = None, 
-                         labels: typing.Mapping[str] = None, 
-                         launch_template_spec: LaunchTemplateSpec = None, 
-                         max_size: typing.Union[int, float] = None, 
-                         min_size: typing.Union[int, float] = None, 
-                         nodegroup_name: str = None, 
-                         node_role: IRole = None, 
-                         release_version: str = None, 
-                         remote_access: NodegroupRemoteAccess = None, 
-                         subnets: SubnetSelection = None, 
-                         tags: typing.Mapping[str] = None)
+aws_eks.NodegroupOptions(
+  ami_type: NodegroupAmiType = None,
+  capacity_type: CapacityType = None,
+  desired_size: typing.Union[int, float] = None,
+  disk_size: typing.Union[int, float] = None,
+  force_update: bool = None,
+  instance_types: typing.List[InstanceType] = None,
+  labels: typing.Mapping[str] = None,
+  launch_template_spec: LaunchTemplateSpec = None,
+  max_size: typing.Union[int, float] = None,
+  min_size: typing.Union[int, float] = None,
+  nodegroup_name: str = None,
+  node_role: IRole = None,
+  release_version: str = None,
+  remote_access: NodegroupRemoteAccess = None,
+  subnets: SubnetSelection = None,
+  tags: typing.Mapping[str] = None
+)
 \`\`\`
 
 ##### \`ami_type\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_eks.NodegroupOptions.property.ami_type\\"></a>
@@ -16432,23 +16866,25 @@ NodeGroup properties interface.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.NodegroupProps(ami_type: NodegroupAmiType = None, 
-                       capacity_type: CapacityType = None, 
-                       desired_size: typing.Union[int, float] = None, 
-                       disk_size: typing.Union[int, float] = None, 
-                       force_update: bool = None, 
-                       instance_types: typing.List[InstanceType] = None, 
-                       labels: typing.Mapping[str] = None, 
-                       launch_template_spec: LaunchTemplateSpec = None, 
-                       max_size: typing.Union[int, float] = None, 
-                       min_size: typing.Union[int, float] = None, 
-                       nodegroup_name: str = None, 
-                       node_role: IRole = None, 
-                       release_version: str = None, 
-                       remote_access: NodegroupRemoteAccess = None, 
-                       subnets: SubnetSelection = None, 
-                       tags: typing.Mapping[str] = None, 
-                       cluster: ICluster)
+aws_eks.NodegroupProps(
+  ami_type: NodegroupAmiType = None,
+  capacity_type: CapacityType = None,
+  desired_size: typing.Union[int, float] = None,
+  disk_size: typing.Union[int, float] = None,
+  force_update: bool = None,
+  instance_types: typing.List[InstanceType] = None,
+  labels: typing.Mapping[str] = None,
+  launch_template_spec: LaunchTemplateSpec = None,
+  max_size: typing.Union[int, float] = None,
+  min_size: typing.Union[int, float] = None,
+  nodegroup_name: str = None,
+  node_role: IRole = None,
+  release_version: str = None,
+  remote_access: NodegroupRemoteAccess = None,
+  subnets: SubnetSelection = None,
+  tags: typing.Mapping[str] = None,
+  cluster: ICluster
+)
 \`\`\`
 
 ##### \`ami_type\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_eks.NodegroupProps.property.ami_type\\"></a>
@@ -16647,8 +17083,10 @@ The remote access (SSH) configuration to use with your node group.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.NodegroupRemoteAccess(ssh_key_name: str, 
-                              source_security_groups: typing.List[ISecurityGroup] = None)
+aws_eks.NodegroupRemoteAccess(
+  ssh_key_name: str,
+  source_security_groups: typing.List[ISecurityGroup] = None
+)
 \`\`\`
 
 ##### \`ssh_key_name\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.NodegroupRemoteAccess.property.ssh_key_name\\"></a>
@@ -16681,7 +17119,9 @@ Initialization properties for \`OpenIdConnectProvider\`.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.OpenIdConnectProviderProps(url: str)
+aws_eks.OpenIdConnectProviderProps(
+  url: str
+)
 \`\`\`
 
 ##### \`url\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.OpenIdConnectProviderProps.property.url\\"></a>
@@ -16710,7 +17150,9 @@ aws eks describe-cluster --name %cluster_name% --query \\"cluster.identity.oidc.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.CfnCluster.ProviderProperty(key_arn: str = None)
+aws_eks.CfnCluster.ProviderProperty(
+  key_arn: str = None
+)
 \`\`\`
 
 ##### \`key_arn\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_eks.CfnCluster.ProviderProperty.property.key_arn\\"></a>
@@ -16732,8 +17174,10 @@ aws_eks.CfnCluster.ProviderProperty(key_arn: str = None)
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.CfnNodegroup.RemoteAccessProperty(ec2_ssh_key: str, 
-                                          source_security_groups: typing.List[str] = None)
+aws_eks.CfnNodegroup.RemoteAccessProperty(
+  ec2_ssh_key: str,
+  source_security_groups: typing.List[str] = None
+)
 \`\`\`
 
 ##### \`ec2_ssh_key\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.CfnNodegroup.RemoteAccessProperty.property.ec2_ssh_key\\"></a>
@@ -16765,8 +17209,10 @@ aws_eks.CfnNodegroup.RemoteAccessProperty(ec2_ssh_key: str,
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.CfnCluster.ResourcesVpcConfigProperty(subnet_ids: typing.List[str], 
-                                              security_group_ids: typing.List[str] = None)
+aws_eks.CfnCluster.ResourcesVpcConfigProperty(
+  subnet_ids: typing.List[str],
+  security_group_ids: typing.List[str] = None
+)
 \`\`\`
 
 ##### \`subnet_ids\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.CfnCluster.ResourcesVpcConfigProperty.property.subnet_ids\\"></a>
@@ -16798,9 +17244,11 @@ aws_eks.CfnCluster.ResourcesVpcConfigProperty(subnet_ids: typing.List[str],
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.CfnNodegroup.ScalingConfigProperty(desired_size: typing.Union[int, float] = None, 
-                                           max_size: typing.Union[int, float] = None, 
-                                           min_size: typing.Union[int, float] = None)
+aws_eks.CfnNodegroup.ScalingConfigProperty(
+  desired_size: typing.Union[int, float] = None,
+  max_size: typing.Union[int, float] = None,
+  min_size: typing.Union[int, float] = None
+)
 \`\`\`
 
 ##### \`desired_size\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_eks.CfnNodegroup.ScalingConfigProperty.property.desired_size\\"></a>
@@ -16842,8 +17290,10 @@ Fargate profile selector.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.Selector(namespace: str, 
-                 labels: typing.Mapping[str] = None)
+aws_eks.Selector(
+  namespace: str,
+  labels: typing.Mapping[str] = None
+)
 \`\`\`
 
 ##### \`namespace\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.Selector.property.namespace\\"></a>
@@ -16880,8 +17330,10 @@ considered a match.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.CfnFargateProfile.SelectorProperty(namespace: str, 
-                                           labels: typing.Union[IResolvable, typing.List[typing.Union[LabelProperty, IResolvable]]] = None)
+aws_eks.CfnFargateProfile.SelectorProperty(
+  namespace: str,
+  labels: typing.Union[IResolvable, typing.List[typing.Union[LabelProperty, IResolvable]]] = None
+)
 \`\`\`
 
 ##### \`namespace\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.CfnFargateProfile.SelectorProperty.property.namespace\\"></a>
@@ -16913,8 +17365,10 @@ Options for \`ServiceAccount\`.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.ServiceAccountOptions(name: str = None, 
-                              namespace: str = None)
+aws_eks.ServiceAccountOptions(
+  name: str = None,
+  namespace: str = None
+)
 \`\`\`
 
 ##### \`name\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_eks.ServiceAccountOptions.property.name\\"></a>
@@ -16944,9 +17398,11 @@ Properties for defining service accounts.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.ServiceAccountProps(name: str = None, 
-                            namespace: str = None, 
-                            cluster: ICluster)
+aws_eks.ServiceAccountProps(
+  name: str = None,
+  namespace: str = None,
+  cluster: ICluster
+)
 \`\`\`
 
 ##### \`name\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_eks.ServiceAccountProps.property.name\\"></a>
@@ -16984,8 +17440,10 @@ Options for fetching a ServiceLoadBalancerAddress.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.ServiceLoadBalancerAddressOptions(namespace: str = None, 
-                                          timeout: Duration = None)
+aws_eks.ServiceLoadBalancerAddressOptions(
+  namespace: str = None,
+  timeout: Duration = None
+)
 \`\`\`
 
 ##### \`namespace\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_eks.ServiceLoadBalancerAddressOptions.property.namespace\\"></a>
@@ -17015,9 +17473,11 @@ Timeout for waiting on the load balancer address.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.CfnNodegroup.TaintProperty(effect: str = None, 
-                                   key: str = None, 
-                                   value: str = None)
+aws_eks.CfnNodegroup.TaintProperty(
+  effect: str = None,
+  key: str = None,
+  value: str = None
+)
 \`\`\`
 
 ##### \`effect\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_eks.CfnNodegroup.TaintProperty.property.effect\\"></a>
@@ -17063,9 +17523,11 @@ Construct an Amazon Linux 2 image from the latest EKS Optimized AMI published in
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.EksOptimizedImage(cpu_arch: CpuArch = None, 
-                          kubernetes_version: str = None, 
-                          node_type: NodeType = None)
+aws_eks.EksOptimizedImage(
+  cpu_arch: CpuArch = None,
+  kubernetes_version: str = None,
+  node_type: NodeType = None
+)
 \`\`\`
 
 ##### \`cpu_arch\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_eks.EksOptimizedImageProps.parameter.cpu_arch\\"></a>
@@ -17100,7 +17562,9 @@ What instance type to retrieve the image for (standard or GPU-optimized).
 ##### \`get_image\` <a name=\\"aws_cdk.aws_eks.EksOptimizedImage.get_image\\"></a>
 
 \`\`\`python
-def get_image(scope: Construct)
+def get_image(
+  scope: Construct
+)
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.EksOptimizedImage.parameter.scope\\"></a>
@@ -17121,7 +17585,9 @@ Endpoint access characteristics.
 ##### \`only_from\` <a name=\\"aws_cdk.aws_eks.EndpointAccess.only_from\\"></a>
 
 \`\`\`python
-def only_from(cidr: str)
+def only_from(
+  cidr: str
+)
 \`\`\`
 
 ###### \`cidr\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.EndpointAccess.parameter.cidr\\"></a>
@@ -17188,7 +17654,9 @@ Kubernetes cluster version.
 \`\`\`python
 from aws_cdk import aws_eks
 
-aws_eks.KubernetesVersion.of(version: str)
+aws_eks.KubernetesVersion.of(
+  version: str
+)
 \`\`\`
 
 ###### \`version\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.KubernetesVersion.parameter.version\\"></a>
@@ -17274,8 +17742,10 @@ An EKS cluster.
 ##### \`add_cdk8s_chart\` <a name=\\"aws_cdk.aws_eks.ICluster.add_cdk8s_chart\\"></a>
 
 \`\`\`python
-def add_cdk8s_chart(id: str, 
-                    chart: Construct)
+def add_cdk8s_chart(
+  id: str,
+  chart: Construct
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.ICluster.parameter.id\\"></a>
@@ -17297,16 +17767,18 @@ the cdk8s chart.
 ##### \`add_helm_chart\` <a name=\\"aws_cdk.aws_eks.ICluster.add_helm_chart\\"></a>
 
 \`\`\`python
-def add_helm_chart(id: str, 
-                   chart: str, 
-                   create_namespace: bool = None, 
-                   namespace: str = None, 
-                   release: str = None, 
-                   repository: str = None, 
-                   timeout: Duration = None, 
-                   values: typing.Mapping[typing.Any] = None, 
-                   version: str = None, 
-                   wait: bool = None)
+def add_helm_chart(
+  id: str,
+  chart: str,
+  create_namespace: bool = None,
+  namespace: str = None,
+  release: str = None,
+  repository: str = None,
+  timeout: Duration = None,
+  values: typing.Mapping[typing.Any] = None,
+  version: str = None,
+  wait: bool = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.ICluster.parameter.id\\"></a>
@@ -17404,8 +17876,10 @@ Whether or not Helm should wait until all Pods, PVCs, Services, and minimum numb
 ##### \`add_manifest\` <a name=\\"aws_cdk.aws_eks.ICluster.add_manifest\\"></a>
 
 \`\`\`python
-def add_manifest(id: str, 
-                 manifest: typing.Mapping[typing.Any])
+def add_manifest(
+  id: str,
+  manifest: typing.Mapping[typing.Any]
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.ICluster.parameter.id\\"></a>
@@ -17427,9 +17901,11 @@ a list of Kubernetes resource specifications.
 ##### \`add_service_account\` <a name=\\"aws_cdk.aws_eks.ICluster.add_service_account\\"></a>
 
 \`\`\`python
-def add_service_account(id: str, 
-                        name: str = None, 
-                        namespace: str = None)
+def add_service_account(
+  id: str,
+  name: str = None,
+  namespace: str = None
+)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_eks.ICluster.parameter.id\\"></a>

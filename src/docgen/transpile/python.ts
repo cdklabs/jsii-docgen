@@ -15,8 +15,12 @@ const formatImport = (type: transpile.TranspiledType) => {
   return `import ${type.module}`;
 };
 
-const formatInputs = (inputs: string[], indent: number) => {
-  return inputs.join(`, \n${' '.repeat(indent)}`);
+const formatInputs = (inputs: string[]) => {
+  return [
+    '(',
+    inputs.map(i => `  ${i}`).join(',\n'),
+    ')',
+  ].join('\n');
 };
 
 const formatInvocation = (
@@ -43,16 +47,12 @@ const formatInvocation = (
   if (method) {
     target = `${target}.${method}`;
   }
-  return `${target}(${formatInputs(inputs, 1 + target.length)})`;
+  return `${target}${formatInputs(inputs)}`;
 };
 
 const formatSignature = (name: string, inputs: string[]) => {
   const def = 'def ';
-  // length of the word 'def' +
-  // length of the method name +
-  // 1 opening paranthesis
-  const indent = def.length + name.length + 1;
-  return `${def}${name}(${formatInputs(inputs, indent)})`;
+  return `${def}${name}${formatInputs(inputs)}`;
 };
 
 /**
