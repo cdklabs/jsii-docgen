@@ -14,7 +14,9 @@ Represents an ECR repository.
 ## \`add_to_resource_policy\` <a name=\\"aws_cdk.aws_ecr.IRepository.add_to_resource_policy\\"></a>
 
 \`\`\`python
-def add_to_resource_policy(statement: PolicyStatement)
+def add_to_resource_policy(
+  statement: PolicyStatement
+)
 \`\`\`
 
 ### \`statement\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.statement\\"></a>
@@ -26,8 +28,10 @@ def add_to_resource_policy(statement: PolicyStatement)
 ## \`grant\` <a name=\\"aws_cdk.aws_ecr.IRepository.grant\\"></a>
 
 \`\`\`python
-def grant(grantee: IGrantable, 
-          actions: str)
+def grant(
+  grantee: IGrantable,
+  actions: str
+)
 \`\`\`
 
 ### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.grantee\\"></a>
@@ -45,7 +49,9 @@ def grant(grantee: IGrantable,
 ## \`grant_pull\` <a name=\\"aws_cdk.aws_ecr.IRepository.grant_pull\\"></a>
 
 \`\`\`python
-def grant_pull(grantee: IGrantable)
+def grant_pull(
+  grantee: IGrantable
+)
 \`\`\`
 
 ### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.grantee\\"></a>
@@ -57,7 +63,9 @@ def grant_pull(grantee: IGrantable)
 ## \`grant_pull_push\` <a name=\\"aws_cdk.aws_ecr.IRepository.grant_pull_push\\"></a>
 
 \`\`\`python
-def grant_pull_push(grantee: IGrantable)
+def grant_pull_push(
+  grantee: IGrantable
+)
 \`\`\`
 
 ### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.grantee\\"></a>
@@ -69,11 +77,13 @@ def grant_pull_push(grantee: IGrantable)
 ## \`on_cloud_trail_event\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_cloud_trail_event\\"></a>
 
 \`\`\`python
-def on_cloud_trail_event(id: str, 
-                         description: str = None, 
-                         event_pattern: EventPattern = None, 
-                         rule_name: str = None, 
-                         target: IRuleTarget = None)
+def on_cloud_trail_event(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None
+)
 \`\`\`
 
 ### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
@@ -129,12 +139,14 @@ The target to register for the event.
 ## \`on_cloud_trail_image_pushed\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_cloud_trail_image_pushed\\"></a>
 
 \`\`\`python
-def on_cloud_trail_image_pushed(id: str, 
-                                description: str = None, 
-                                event_pattern: EventPattern = None, 
-                                rule_name: str = None, 
-                                target: IRuleTarget = None, 
-                                image_tag: str = None)
+def on_cloud_trail_image_pushed(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tag: str = None
+)
 \`\`\`
 
 ### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
@@ -199,11 +211,13 @@ Only watch changes to this image tag.
 ## \`on_event\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_event\\"></a>
 
 \`\`\`python
-def on_event(id: str, 
-             description: str = None, 
-             event_pattern: EventPattern = None, 
-             rule_name: str = None, 
-             target: IRuleTarget = None)
+def on_event(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None
+)
 \`\`\`
 
 ### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
@@ -257,12 +271,14 @@ The target to register for the event.
 ## \`on_image_scan_completed\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_image_scan_completed\\"></a>
 
 \`\`\`python
-def on_image_scan_completed(id: str, 
-                            description: str = None, 
-                            event_pattern: EventPattern = None, 
-                            rule_name: str = None, 
-                            target: IRuleTarget = None, 
-                            image_tags: typing.List[str] = None)
+def on_image_scan_completed(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tags: typing.List[str] = None
+)
 \`\`\`
 
 ### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
@@ -329,7 +345,9 @@ Leave it undefined to watch the full repository.
 ## \`repository_uri_for_digest\` <a name=\\"aws_cdk.aws_ecr.IRepository.repository_uri_for_digest\\"></a>
 
 \`\`\`python
-def repository_uri_for_digest(digest: str = None)
+def repository_uri_for_digest(
+  digest: str = None
+)
 \`\`\`
 
 ### \`digest\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.digest\\"></a>
@@ -343,7 +361,9 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ## \`repository_uri_for_tag\` <a name=\\"aws_cdk.aws_ecr.IRepository.repository_uri_for_tag\\"></a>
 
 \`\`\`python
-def repository_uri_for_tag(tag: str = None)
+def repository_uri_for_tag(
+  tag: str = None
+)
 \`\`\`
 
 ### \`tag\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.tag\\"></a>

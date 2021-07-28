@@ -4,7 +4,9 @@ exports[`python snapshot 1`] = `
 " \`inspect\` <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`python
-def inspect(inspector: TreeInspector)
+def inspect(
+  inspector: TreeInspector
+)
 \`\`\`
 
 # \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.parameter.inspector\\"></a>
