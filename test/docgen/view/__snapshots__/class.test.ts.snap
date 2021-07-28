@@ -15,7 +15,9 @@ Authorization token to access private ECR repositories in the current environmen
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.AuthorizationToken.grant_read(grantee: IGrantable)
+aws_cdk.aws_ecr.AuthorizationToken.grant_read(
+  grantee: IGrantable
+)
 \`\`\`
 
 ### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.AuthorizationToken.parameter.grantee\\"></a>

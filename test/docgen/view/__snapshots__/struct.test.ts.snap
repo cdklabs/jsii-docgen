@@ -12,10 +12,12 @@ Properties for defining a \`AWS::ECR::PublicRepository\`.
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnPublicRepositoryProps(repository_catalog_data: typing.Any = None, 
-                                         repository_name: str = None, 
-                                         repository_policy_text: typing.Any = None, 
-                                         tags: typing.List[CfnTag] = None)
+aws_cdk.aws_ecr.CfnPublicRepositoryProps(
+  repository_catalog_data: typing.Any = None,
+  repository_name: str = None,
+  repository_policy_text: typing.Any = None,
+  tags: typing.List[CfnTag] = None
+)
 \`\`\`
 
 ## \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.property.repository_catalog_data\\"></a>

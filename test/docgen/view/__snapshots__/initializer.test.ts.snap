@@ -6,12 +6,14 @@ exports[`python snapshot 1`] = `
 \`\`\`python
 import aws_cdk.aws_ecr
 
-aws_cdk.aws_ecr.CfnPublicRepository(scope: Construct, 
-                                    id: str, 
-                                    repository_catalog_data: typing.Any = None, 
-                                    repository_name: str = None, 
-                                    repository_policy_text: typing.Any = None, 
-                                    tags: typing.List[CfnTag] = None)
+aws_cdk.aws_ecr.CfnPublicRepository(
+  scope: Construct,
+  id: str,
+  repository_catalog_data: typing.Any = None,
+  repository_name: str = None,
+  repository_policy_text: typing.Any = None,
+  tags: typing.List[CfnTag] = None
+)
 \`\`\`
 
 # \`scope\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.parameter.scope\\"></a>
