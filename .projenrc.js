@@ -15,6 +15,7 @@ const project = new TypeScriptProject({
     '@types/fs-extra@^8', // >8 needs a newer node version
   ],
   deps: [
+    'npm@^7',
     'yargs',
     'fs-extra',
     'case',

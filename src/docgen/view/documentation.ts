@@ -6,6 +6,7 @@ import * as glob from 'glob-promise';
 import * as reflect from 'jsii-reflect';
 import { TargetLanguage } from 'jsii-rosetta';
 import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
+import { bin as npmBin } from 'npm/package.json';
 import { Markdown } from '../render/markdown';
 import { PythonTranspile } from '../transpile/python';
 import { Transpile, Language, TranspiledType } from '../transpile/transpile';
@@ -114,29 +115,28 @@ export class Documentation {
 
       const name = options?.name ?? extractPackageName(target);
 
-      // npm7 is needed so that we also install peerDependencies - they are needed to construct
-      // the full type system.
-      console.log('Installing npm7...');
-      await spawn('npm', ['install', 'npm@7'], {
-        cwd: workdir,
-        shell: true,
-        stdio: ['ignore', 'inherit', 'inherit'],
-      });
-
       console.log(`Installing package ${target}`);
-      await spawn(path.join(workdir, 'node_modules', '.bin', 'npm'), [
+      await forkNode(require.resolve(`npm/${npmBin.npm}`), [
         'install',
         // this is critical from a security perspective to prevent
         // code execution as part of the install command using npm hooks. (e.g postInstall)
         '--ignore-scripts',
         // ensures npm does not insert anything in $PATH
         '--no-bin-links',
+        // Ignore a class of dependency conflicts
+        '--force',
+        // Include dev & peer dependencies,
+        '--include', 'dev',
+        '--include', 'peer',
+        // make eventhing fast and smooth
+        '--no-audit',
+        '--no-fund',
         '--no-save',
         target,
       ], {
         cwd: workdir,
-        shell: true,
-        stdio: ['ignore', 'inherit', 'inherit'],
+        // 4 STDIO FDs because forked processes must have an IPC channel
+        stdio: ['ignore', 'inherit', 'inherit', 'ipc'],
       });
 
       return Documentation.forProject(path.join(workdir, 'node_modules', name), { ...options, assembliesDir: workdir } );
@@ -278,9 +278,9 @@ async function createAssembly(name: string, tsDir: string, loose: boolean, langu
   return ts.findAssembly(name);
 }
 
-async function spawn(command: string, args?: ReadonlyArray<string>, options?: child.SpawnOptions) {
+async function forkNode(command: string, args?: ReadonlyArray<string>, options?: child.ForkOptions) {
   return new Promise<void>((ok, ko) => {
-    const p = child.spawn(command, args, options);
+    const p = child.fork(command, args, options);
     p.once('error', ko);
     p.once('close', (code, signal) => {
       if (code === 0) {

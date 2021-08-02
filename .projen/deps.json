@@ -102,6 +102,11 @@
       "type": "runtime"
     },
     {
+      "name": "npm",
+      "version": "^7",
+      "type": "runtime"
+    },
+    {
       "name": "yargs",
       "type": "runtime"
     }
