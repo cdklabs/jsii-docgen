@@ -37,8 +37,8 @@
     "@types/fs-extra": "^8",
     "@types/jest": "^26.0.24",
     "@types/node": "^10.17.0",
-    "@typescript-eslint/eslint-plugin": "^4.29.1",
-    "@typescript-eslint/parser": "^4.29.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
     "eslint": "^6.8.0",
     "eslint-import-resolver-node": "^0.3.6",
     "eslint-import-resolver-typescript": "^2.4.0",
@@ -53,13 +53,13 @@
     "typescript": "^3.9.10"
   },
   "dependencies": {
-    "@jsii/spec": "^1.32.0",
+    "@jsii/spec": "^1.33.0",
     "case": "^1.6.3",
     "fs-extra": "^9.1.0",
     "glob": "^7.1.7",
     "glob-promise": "^3.4.0",
-    "jsii-reflect": "^1.32.0",
-    "jsii-rosetta": "^1.32.0",
+    "jsii-reflect": "^1.33.0",
+    "jsii-rosetta": "^1.33.0",
     "yargs": "^16.2.0"
   },
   "bundledDependencies": [],
