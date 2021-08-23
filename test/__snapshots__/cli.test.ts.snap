@@ -337,9 +337,7 @@ Rules that define when a redirect is applied and the redirect behavior.
 ##### \`greet\` <a name=\\"construct_library.GreeterBucket.greet\\"></a>
 
 \`\`\`python
-def greet(
-
-)
+def greet()
 \`\`\`
 
 
