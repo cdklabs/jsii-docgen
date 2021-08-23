@@ -26,8 +26,12 @@ export class Language {
       case Language.PYTHON.toString():
         return Language.PYTHON;
       default:
-        throw new UnsupportedLanguageError(lang, [Language.TYPESCRIPT, Language.PYTHON]);
+        throw new UnsupportedLanguageError(lang, Language.values());
     }
+  }
+
+  public static values() {
+    return [Language.TYPESCRIPT, Language.PYTHON];
   }
 
   private constructor(private readonly lang: string) {}

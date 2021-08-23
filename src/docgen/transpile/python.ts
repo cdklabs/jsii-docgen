@@ -16,7 +16,7 @@ const formatImport = (type: transpile.TranspiledType) => {
 };
 
 const formatInputs = (inputs: string[]) => {
-  return [
+  return inputs.length === 0 ? '()' : [
     '(',
     inputs.map(i => `  ${i}`).join(',\n'),
     ')',
