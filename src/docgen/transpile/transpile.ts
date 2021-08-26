@@ -41,7 +41,7 @@ export class Language {
     return [Language.TYPESCRIPT, Language.PYTHON, Language.JAVA];
   }
 
-  private constructor(private readonly lang: string) { }
+  private constructor(private readonly lang: string) {}
 
   public toString() {
     return this.lang;
@@ -338,7 +338,7 @@ export class TranspiledTypeReference {
      * Union of ref.
      */
     private readonly unionOfTypes?: TranspiledTypeReference[],
-  ) { }
+  ) {}
 
   public toString(options?: TranspiledTypeReferenceToStringOptions): string {
     const tFormatter = options?.typeFormatter ?? ((t) => t.fqn);
@@ -564,13 +564,13 @@ export interface Transpile {
 
 // interface merging so we don't have to implement these methods
 // in the abstract class.
-export interface TranspileBase extends Transpile { }
+export interface TranspileBase extends Transpile {}
 
 /**
  * Common functionality between different transpilers.
  */
 export abstract class TranspileBase implements Transpile {
-  constructor(public readonly language: Language) { }
+  constructor(public readonly language: Language) {}
 
   public type(type: reflect.Type): TranspiledType {
     const submodule = this.findSubmodule(type);
