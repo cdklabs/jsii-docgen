@@ -15,7 +15,7 @@ describe('language', () => {
   });
 
   test('throw error on unsupported language', () => {
-    expect(() => Language.fromString('unsupported')).toThrowError('Unsupported language: unsupported. Supported languages are: [typescript,python]');
+    expect(() => Language.fromString('unsupported')).toThrowError(/Unsupported language: unsupported. Supported languages are/);
   });
 
   test('toString()', () => {
