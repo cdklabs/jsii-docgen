@@ -1,7 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`java snapshot 1`] = `
+" Initializers <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepository.Initializer\\"></a>
+
+\`\`\`java
+import software.amazon.awscdk.services.ecr.CfnPublicRepository;
+
+new CfnPublicRepository(scope: Construct, id: java.lang.String)
+new CfnPublicRepository(scope: Construct, id: java.lang.String, props: CfnPublicRepositoryProps)
+\`\`\`
+
+# \`scope\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.scope\\"></a>
+
+- *Type:* [\`software.amazon.awscdk.core.Construct\`](#software.amazon.awscdk.core.Construct)
+
+scope in which this resource is defined.
+
+---
+
+# \`id\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.id\\"></a>
+
+- *Type:* \`java.lang.String\`
+
+scoped id of the resource.
+
+---
+
+# \`props\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.props\\"></a>
+
+- *Type:* [\`software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps\`](#software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps)
+
+resource properties.
+
+---
+"
+`;
+
 exports[`python snapshot 1`] = `
-" Initializer <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.Initializer\\"></a>
+" Initializers <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.Initializer\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -75,7 +111,7 @@ scoped id of the resource.
 `;
 
 exports[`typescript snapshot 1`] = `
-" Initializer <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer\\"></a>
+" Initializers <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer\\"></a>
 
 \`\`\`typescript
 import { CfnPublicRepository } from '@aws-cdk/aws-ecr'

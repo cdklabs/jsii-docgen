@@ -1,5 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`java snapshot 1`] = `
+" CfnPublicRepositoryProps <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps\\"></a>
+
+Properties for defining a \`AWS::ECR::PublicRepository\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html)
+
+# Initializer <a name=\\"[object Object].Initializer\\"></a>
+
+\`\`\`java
+import software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps;
+
+CfnPublicRepositoryProps cfnPublicRepositoryProps = new CfnPublicRepositoryProps.Builder()
+  .repositoryCatalogData()
+  .repositoryName()
+  .repositoryPolicyText()
+  .tags()
+  .build();
+\`\`\`
+
+## \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+
+- *Type:* \`java.lang.Object\`
+
+\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
+
+---
+
+## \`repositoryName\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
+
+- *Type:* \`java.lang.String\`
+
+\`AWS::ECR::PublicRepository.RepositoryName\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname)
+
+---
+
+## \`repositoryPolicyText\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
+
+- *Type:* \`java.lang.Object\`
+
+\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext)
+
+---
+
+## \`tags\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.tags\\"></a>
+
+- *Type:* java.util.List<[\`software.amazon.awscdk.core.CfnTag\`](#software.amazon.awscdk.core.CfnTag)>
+
+\`AWS::ECR::PublicRepository.Tags\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags)
+
+---
+"
+`;
+
 exports[`python snapshot 1`] = `
 " CfnPublicRepositoryProps <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps\\"></a>
 

@@ -8,7 +8,7 @@ const toCamelCase = (text?: string) => {
   return Case.camel(text ?? '');
 };
 
-const formatInputs = (inputs: string[]) => {
+const formatArguments = (inputs: string[]) => {
   return inputs.join(', ');
 };
 
@@ -22,7 +22,7 @@ const formatClassInitialization = (
   inputs: string[],
 ) => {
   const target = type.submodule ? `${type.namespace}.${type.name}` : type.name;
-  return `new ${target}(${formatInputs(inputs)})`;
+  return `new ${target}(${formatArguments(inputs)})`;
 };
 
 const formatInvocation = (
@@ -34,7 +34,7 @@ const formatInvocation = (
   if (method) {
     target = `${target}.${method}`;
   }
-  return `${target}(${formatInputs(inputs)})`;
+  return `${target}(${formatArguments(inputs)})`;
 };
 
 const formatImport = (type: transpile.TranspiledType) => {
@@ -46,7 +46,7 @@ const formatImport = (type: transpile.TranspiledType) => {
 };
 
 const formatSignature = (name: string, inputs: string[]) => {
-  return `public ${name}(${formatInputs(inputs)})`;
+  return `public ${name}(${formatArguments(inputs)})`;
 };
 
 /**
@@ -152,7 +152,7 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
     const type = this.type(callable.parentType);
     const parameters = callable.parameters.sort(this.optionalityCompare);
     const name = callable.name;
-    const inputs = parameters.map((p) => this.formatInput(this.parameter(p)));
+    const inputs = parameters.map((p) => this.formatParameters(this.parameter(p)));
 
     const invocation =
       callable.kind === reflect.MemberKind.Initializer
@@ -164,8 +164,8 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
       parentType: type,
       import: formatImport(type),
       parameters,
-      signature: formatSignature(name, inputs),
-      invocation,
+      signatures: [formatSignature(name, inputs)],
+      invocations: [invocation],
     };
   }
 
@@ -192,7 +192,7 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
     p1: reflect.Parameter,
     p2: reflect.Parameter,
   ): number {
-    if (!p1.optional && p1.optional) {
+    if (!p1.optional && p2.optional) {
       return -1;
     }
     if (!p2.optional && p1.optional) {
@@ -201,7 +201,7 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
     return 0;
   }
 
-  private formatInput(
+  private formatParameters(
     transpiled: transpile.TranspiledParameter | transpile.TranspiledProperty,
   ): string {
     const tf = transpiled.typeReference.toString({

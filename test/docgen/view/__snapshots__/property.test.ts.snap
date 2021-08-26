@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`java snapshot 1`] = `
+" \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+
+- *Type:* \`java.lang.Object\`
+
+\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
+
+---
+"
+`;
+
 exports[`python snapshot 1`] = `
 " \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.property.repository_catalog_data\\"></a>
 

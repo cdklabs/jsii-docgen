@@ -7,6 +7,7 @@ import * as reflect from 'jsii-reflect';
 import { TargetLanguage } from 'jsii-rosetta';
 import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
 import { Markdown } from '../render/markdown';
+import { JavaTranspile } from '../transpile/java';
 import { PythonTranspile } from '../transpile/python';
 import { Transpile, Language, TranspiledType } from '../transpile/transpile';
 import { TypeScriptTranspile } from '../transpile/typescript';
@@ -139,7 +140,7 @@ export class Documentation {
         stdio: ['ignore', 'inherit', 'inherit'],
       });
 
-      return Documentation.forProject(path.join(workdir, 'node_modules', name), { ...options, assembliesDir: workdir } );
+      return Documentation.forProject(path.join(workdir, 'node_modules', name), { ...options, assembliesDir: workdir });
     });
   }
 
@@ -188,6 +189,10 @@ export class Documentation {
           break;
         case Language.TYPESCRIPT:
           transpile = new TypeScriptTranspile();
+          break;
+        case Language.JAVA:
+          language = TargetLanguage.JAVA;
+          transpile = new JavaTranspile();
           break;
         default:
           throw new Error(`Unsupported language: ${options?.language}. Supported languages are ${Object.values(Language)}`);
