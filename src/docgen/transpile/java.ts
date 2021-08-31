@@ -45,43 +45,6 @@ export class JavaTranspile extends transpile.TranspileBase {
     super(transpile.Language.JAVA);
   }
 
-  // public type(type: reflect.Type): transpile.TranspiledType {
-  //   const submodule = this.findSubmodule(type);
-  //   const moduleLike = this.moduleLike(submodule ? submodule : type.assembly);
-
-  //   const fqn = [moduleLike.name];
-  //   if (moduleLike.submodule) {
-  //     fqn.push(moduleLike.submodule);
-  //   }
-
-  //   let namespace = type.namespace;
-  //   if (namespace && submodule && namespace.startsWith(submodule.name)) {
-  //     namespace = namespace.substring(submodule.name.length + 1);
-  //     if (namespace === '') {
-  //       namespace = undefined;
-  //     }
-  //   }
-  //   if (namespace) {
-  //     fqn.push(namespace);
-  //   }
-  //   fqn.push(type.name);
-
-  //   console.log(`name: ${type.name}`);
-  //   console.log(`namespace: ${type.namespace}`);
-  //   console.log(`module: ${moduleLike.name}`);
-  //   console.log(`submodule: ${moduleLike.submodule}`);
-
-  //   return {
-  //     fqn: fqn.join('.'),
-  //     name: type.name,
-  //     namespace: namespace,
-  //     module: moduleLike.name,
-  //     submodule: moduleLike.submodule,
-  //     source: type,
-  //     language: this.language,
-  //   };
-  // }
-
   public moduleLike(
     moduleLike: reflect.ModuleLike,
   ): transpile.TranspiledModuleLike {
@@ -274,12 +237,7 @@ export class JavaTranspile extends transpile.TranspileBase {
   }
 
   private formatImport(type: transpile.TranspiledType): string {
-    // console.log('formatImport');
-    // console.log(JSON.stringify(type.module, null, 2));
-    // console.log(JSON.stringify(type.submodule, null, 2));
-    // const pkg = type.submodule ? `${type.module}.${type.namespace}` : type.module;
     const namespace = type.namespace ? `.${type.namespace}` : '';
-    // console.log(`import ${pkg}`);
     return `import ${type.module}${namespace}.${type.name};`;
   };
 
@@ -315,13 +273,13 @@ export class JavaTranspile extends transpile.TranspileBase {
   private formatClassBuilder(type: transpile.TranspiledType, parameters: reflect.Parameter[]): string {
     const firstStruct: reflect.Parameter = parameters.find((param) => this.isStruct(param))!;
     const struct: reflect.InterfaceType = firstStruct.parentType.system.findInterface(firstStruct.type.fqn!);
-    const positionalParams = parameters.filter((param) => param.name !== firstStruct.name);
-    const createInputs = this.formatInputs(positionalParams.map((p) => this.formatParameter(this.parameter(p))));
-    const methods = struct.allProperties.map((p) =>
+    const positionalParams: reflect.Parameter[] = parameters.filter((param) => param.name !== firstStruct.name);
+    const createArgs: string = this.formatInputs(positionalParams.map((p) => this.formatParameter(this.parameter(p))));
+    const methods: string[] = struct.allProperties.map((p) =>
       this.formatBuilderMethod(this.property(p)),
     ).flat();
     return [
-      `${type.name}.Builder.create(${createInputs})`,
+      `${type.name}.Builder.create(${createArgs})`,
       ...methods,
       '    .build();',
     ].join('\n');
@@ -385,7 +343,7 @@ export class JavaTranspile extends transpile.TranspileBase {
       return false;
     }
 
-    const parameters = callable.parameters.sort(this.optionalityCompare);
+    const parameters: reflect.Parameter[] = callable.parameters.sort(this.optionalityCompare);
     const firstStruct = parameters.find((param) => this.isStruct(param));
 
     // no builder is generated if there is no struct parameter
