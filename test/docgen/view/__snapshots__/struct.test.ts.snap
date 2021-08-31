@@ -12,12 +12,12 @@ Properties for defining a \`AWS::ECR::PublicRepository\`.
 \`\`\`java
 import software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps;
 
-CfnPublicRepositoryProps cfnPublicRepositoryProps = new CfnPublicRepositoryProps.Builder()
-  .repositoryCatalogData()
-  .repositoryName()
-  .repositoryPolicyText()
-  .tags()
-  .build();
+CfnPublicRepositoryProps.builder()
+//  .repositoryCatalogData(java.lang.Object)
+//  .repositoryName(java.lang.String)
+//  .repositoryPolicyText(java.lang.Object)
+//  .tags(java.util.List<CfnTag>)
+    .build();
 \`\`\`
 
 ## \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>

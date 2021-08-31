@@ -15,7 +15,7 @@ Authorization token to access private ECR repositories in the current environmen
 \`\`\`java
 import software.amazon.awscdk.services.ecr.AuthorizationToken;
 
-AuthorizationToken.grantRead(grantee: IGrantable)
+AuthorizationToken.grantRead(IGrantable grantee)
 \`\`\`
 
 ### \`grantee\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.AuthorizationToken.parameter.grantee\\"></a>

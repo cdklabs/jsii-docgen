@@ -14,7 +14,7 @@ Represents an ECR repository.
 ## \`addToResourcePolicy\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.addToResourcePolicy\\"></a>
 
 \`\`\`java
-public addToResourcePolicy(statement: PolicyStatement)
+public addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
 ### \`statement\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.statement\\"></a>
@@ -26,7 +26,7 @@ public addToResourcePolicy(statement: PolicyStatement)
 ## \`grant\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.grant\\"></a>
 
 \`\`\`java
-public grant(grantee: IGrantable, actions: java.lang.String)
+public grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
 
 ### \`grantee\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.grantee\\"></a>
@@ -44,7 +44,7 @@ public grant(grantee: IGrantable, actions: java.lang.String)
 ## \`grantPull\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.grantPull\\"></a>
 
 \`\`\`java
-public grantPull(grantee: IGrantable)
+public grantPull(IGrantable grantee)
 \`\`\`
 
 ### \`grantee\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.grantee\\"></a>
@@ -56,7 +56,7 @@ public grantPull(grantee: IGrantable)
 ## \`grantPullPush\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.grantPullPush\\"></a>
 
 \`\`\`java
-public grantPullPush(grantee: IGrantable)
+public grantPullPush(IGrantable grantee)
 \`\`\`
 
 ### \`grantee\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.grantee\\"></a>
@@ -68,8 +68,8 @@ public grantPullPush(grantee: IGrantable)
 ## \`onCloudTrailEvent\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.onCloudTrailEvent\\"></a>
 
 \`\`\`java
-public onCloudTrailEvent(id: java.lang.String)
-public onCloudTrailEvent(id: java.lang.String, options: OnEventOptions)
+public onCloudTrailEvent(java.lang.String id)
+public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 ### \`id\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.id\\"></a>
@@ -91,8 +91,8 @@ Options for adding the rule.
 ## \`onCloudTrailImagePushed\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.onCloudTrailImagePushed\\"></a>
 
 \`\`\`java
-public onCloudTrailImagePushed(id: java.lang.String)
-public onCloudTrailImagePushed(id: java.lang.String, options: OnCloudTrailImagePushedOptions)
+public onCloudTrailImagePushed(java.lang.String id)
+public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
 ### \`id\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.id\\"></a>
@@ -114,8 +114,8 @@ Options for adding the rule.
 ## \`onEvent\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.onEvent\\"></a>
 
 \`\`\`java
-public onEvent(id: java.lang.String)
-public onEvent(id: java.lang.String, options: OnEventOptions)
+public onEvent(java.lang.String id)
+public onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 ### \`id\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.id\\"></a>
@@ -133,8 +133,8 @@ public onEvent(id: java.lang.String, options: OnEventOptions)
 ## \`onImageScanCompleted\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.onImageScanCompleted\\"></a>
 
 \`\`\`java
-public onImageScanCompleted(id: java.lang.String)
-public onImageScanCompleted(id: java.lang.String, options: OnImageScanCompletedOptions)
+public onImageScanCompleted(java.lang.String id)
+public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
 
 ### \`id\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.id\\"></a>
@@ -157,7 +157,7 @@ Options for adding the rule.
 
 \`\`\`java
 public repositoryUriForDigest()
-public repositoryUriForDigest(digest: java.lang.String)
+public repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
 ### \`digest\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.digest\\"></a>
@@ -172,7 +172,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 
 \`\`\`java
 public repositoryUriForTag()
-public repositoryUriForTag(tag: java.lang.String)
+public repositoryUriForTag(java.lang.String tag)
 \`\`\`
 
 ### \`tag\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.tag\\"></a>

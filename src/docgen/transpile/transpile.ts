@@ -578,17 +578,22 @@ export abstract class TranspileBase implements Transpile {
 
     const fqn = [moduleLike.name];
 
-    // TODO - these should also probably be transliterated.
-    // for python it just happens to work
-    if (type.namespace) {
-      fqn.push(type.namespace);
+
+    let namespace = type.namespace;
+    if (namespace && submodule && moduleLike.submodule) {
+      // if the type is in a submodule, submodule.name is a part of the namespace
+      // so we update that part with the language-specific submodule string
+      namespace = namespace.replace(submodule.name, moduleLike.submodule);
+    }
+    if (namespace) {
+      fqn.push(namespace);
     }
     fqn.push(type.name);
 
     return {
       fqn: fqn.join('.'),
       name: type.name,
-      namespace: type.namespace,
+      namespace: namespace,
       module: moduleLike.name,
       submodule: moduleLike.submodule,
       source: type,

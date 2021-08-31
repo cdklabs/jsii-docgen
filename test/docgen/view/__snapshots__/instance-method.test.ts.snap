@@ -4,7 +4,7 @@ exports[`java snapshot 1`] = `
 " \`inspect\` <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`java
-public inspect(inspector: TreeInspector)
+public inspect(TreeInspector inspector)
 \`\`\`
 
 # \`inspector\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.inspector\\"></a>

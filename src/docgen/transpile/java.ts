@@ -8,11 +8,6 @@ const toCamelCase = (text?: string) => {
   return Case.camel(text ?? '');
 };
 
-// convenience method to work around https://github.com/microsoft/TypeScript/issues/16069
-const isNotNull = <T>(value: T): value is NonNullable<T> => {
-  return value != null;
-};
-
 // [1, 2, 3] -> [[], [1], [1, 2], [1, 2, 3]]
 const prefixArrays = <T>(arr: T[]): T[][] => {
   const out: T[][] = [[]];
@@ -24,10 +19,68 @@ const prefixArrays = <T>(arr: T[]): T[][] => {
   return out;
 };
 
+/**
+ * Hack to convert a jsii property to a parameter for
+ * parameter expansion.
+ */
+const propertyToParameter = (
+  callable: reflect.Callable,
+  property: reflect.Property,
+): reflect.Parameter => {
+  return {
+    docs: property.docs,
+    method: callable,
+    name: property.name,
+    optional: property.optional,
+    parentType: property.parentType,
+    spec: property.spec,
+    system: property.system,
+    type: property.type,
+    variadic: false,
+  };
+};
+
 export class JavaTranspile extends transpile.TranspileBase {
   constructor() {
     super(transpile.Language.JAVA);
   }
+
+  // public type(type: reflect.Type): transpile.TranspiledType {
+  //   const submodule = this.findSubmodule(type);
+  //   const moduleLike = this.moduleLike(submodule ? submodule : type.assembly);
+
+  //   const fqn = [moduleLike.name];
+  //   if (moduleLike.submodule) {
+  //     fqn.push(moduleLike.submodule);
+  //   }
+
+  //   let namespace = type.namespace;
+  //   if (namespace && submodule && namespace.startsWith(submodule.name)) {
+  //     namespace = namespace.substring(submodule.name.length + 1);
+  //     if (namespace === '') {
+  //       namespace = undefined;
+  //     }
+  //   }
+  //   if (namespace) {
+  //     fqn.push(namespace);
+  //   }
+  //   fqn.push(type.name);
+
+  //   console.log(`name: ${type.name}`);
+  //   console.log(`namespace: ${type.namespace}`);
+  //   console.log(`module: ${moduleLike.name}`);
+  //   console.log(`submodule: ${moduleLike.submodule}`);
+
+  //   return {
+  //     fqn: fqn.join('.'),
+  //     name: type.name,
+  //     namespace: namespace,
+  //     module: moduleLike.name,
+  //     submodule: moduleLike.submodule,
+  //     source: type,
+  //     language: this.language,
+  //   };
+  // }
 
   public moduleLike(
     moduleLike: reflect.ModuleLike,
@@ -40,35 +93,72 @@ export class JavaTranspile extends transpile.TranspileBase {
     }
 
     if (moduleLike instanceof reflect.Submodule) {
-      const fqnParts = fqn.split('.');
-      fqnParts.pop();
-      return { name: fqnParts.join('.'), submodule: fqn };
+      const parent = this.getParentModule(moduleLike);
+      if (!parent) {
+        throw new Error(`Could not find parent module of ${moduleLike.fqn}`);
+      }
+      const parentFqn = parent.targets?.java?.package;
+      if (!fqn.startsWith(parentFqn)) {
+        throw new Error(`Expected parent module of ${moduleLike.fqn} to be a prefix. Bug?`);
+      }
+      // { name: "software.amazon.awscdk", submodule: "services.ecr" }
+      return { name: parentFqn, submodule: fqn.substring(parentFqn.length + 1) };
     }
 
     return { name: fqn };
+  }
+
+  private getParentModule(moduleLike: reflect.ModuleLike): reflect.Assembly | undefined {
+    const ts = moduleLike.system;
+    for (const assembly of ts.assemblies) {
+      const child = assembly.submodules.find((mod) => mod.fqn === moduleLike.fqn);
+      if (child) {
+        return assembly;
+      }
+    }
+    return undefined;
   }
 
   public callable(callable: reflect.Callable): transpile.TranspiledCallable {
     const type = this.type(callable.parentType);
 
     const parameters = callable.parameters.sort(this.optionalityCompare);
+
     const requiredParams = parameters.filter((p) => !p.optional);
     const optionalParams = parameters.filter((p) => p.optional);
 
     const name = callable.name;
+
+    // simulate Java method overloading
     const inputLists = prefixArrays(optionalParams).map((optionals) => {
-      return [...requiredParams, ...optionals].map((p) => this.formatParameters(this.parameter(p)));
+      return [...requiredParams, ...optionals].map((p) => this.formatParameter(this.parameter(p)));
     });
 
     const signatures = inputLists.map((inputs) => {
       return this.formatSignature(name, inputs);
     });
 
-    const invocations = inputLists.map((inputs) => {
-      return callable.kind === reflect.MemberKind.Initializer
-        ? this.formatClassInitialization(type, inputs)
-        : this.formatInvocation(type, inputs, name);
-    });
+    const invocations = callable.kind !== reflect.MemberKind.Initializer
+      // render invocation as method calls (showing all method overloads)
+      ? inputLists.map((inputs) => this.formatInvocation(type, inputs, name))
+      : this.isClassBuilderGenerated(callable)
+        // render with Java builder syntax (show no overloads)
+        ? [this.formatClassBuilder(type, parameters)]
+        // render with `new Class` syntax (showing all constructor overloads)
+        : inputLists.map((inputs) => this.formatClassInitialization(type, inputs));
+
+    // if we are rendering the class builder, flatten out the first struct's
+    // parameters so the user doesn't have to jump between docs of Foo and FooProps
+    if (this.isClassBuilderGenerated(callable)) {
+      const firstStruct = parameters.find((param) => this.isStruct(param))!;
+      const struct = firstStruct.parentType.system.findInterface(firstStruct.type.fqn!);
+
+      parameters.splice(parameters.indexOf(firstStruct), 1);
+      for (const property of struct.allProperties) {
+        const parameter = propertyToParameter(callable, property);
+        parameters.push(parameter);
+      }
+    }
 
     return {
       name,
@@ -91,12 +181,12 @@ export class JavaTranspile extends transpile.TranspileBase {
     const type = this.type(struct);
     const inputs = struct.allProperties.map((p) =>
       this.formatBuilderMethod(this.property(p)),
-    ).filter(isNotNull);
+    ).flat();
     return {
       type: type,
       name: struct.name,
       import: this.formatImport(type),
-      initialization: this.formatStructInitialization(type, inputs),
+      initialization: this.formatStructBuilder(type, inputs),
     };
   }
 
@@ -143,8 +233,8 @@ export class JavaTranspile extends transpile.TranspileBase {
     };
   }
 
-  public unionOf(_types: string[]): string {
-    return 'java.lang.Object';
+  public unionOf(types: string[]): string {
+    return types.join(' OR ');
   }
 
   public listOf(type: string): string {
@@ -184,28 +274,34 @@ export class JavaTranspile extends transpile.TranspileBase {
   }
 
   private formatImport(type: transpile.TranspiledType): string {
-    return `import ${type.fqn};`;
+    // console.log('formatImport');
+    // console.log(JSON.stringify(type.module, null, 2));
+    // console.log(JSON.stringify(type.submodule, null, 2));
+    // const pkg = type.submodule ? `${type.module}.${type.namespace}` : type.module;
+    const namespace = type.namespace ? `.${type.namespace}` : '';
+    // console.log(`import ${pkg}`);
+    return `import ${type.module}${namespace}.${type.name};`;
   };
 
-  private formatParameters(
+  private formatParameter(
     transpiled: transpile.TranspiledParameter | transpile.TranspiledProperty,
   ): string {
     const tf = transpiled.typeReference.toString({
       typeFormatter: (t) => t.name,
     });
-    return `${transpiled.name}: ${tf}`;
+    return `${tf} ${transpiled.name}`;
   }
 
-  private formatArguments(inputs: string[]): string {
+  private formatInputs(inputs: string[]): string {
     return inputs.join(', ');
   };
 
-  private formatStructInitialization(type: transpile.TranspiledType, inputs: string[]): string {
-    const builder = `${type.name} ${toCamelCase(type.name)} = new ${type.name}.Builder()`;
+  private formatStructBuilder(type: transpile.TranspiledType, methods: string[]): string {
+    const builder = `${type.name}.builder()`;
     return [
       builder,
-      ...inputs,
-      '  .build();',
+      ...methods,
+      '    .build();',
     ].join('\n');
   };
 
@@ -213,21 +309,44 @@ export class JavaTranspile extends transpile.TranspileBase {
     type: transpile.TranspiledType,
     inputs: string[],
   ): string {
-    return `new ${type.name}(${this.formatArguments(inputs)})`;
+    return `new ${type.name}(${this.formatInputs(inputs)});`;
   };
 
+  private formatClassBuilder(type: transpile.TranspiledType, parameters: reflect.Parameter[]): string {
+    const firstStruct: reflect.Parameter = parameters.find((param) => this.isStruct(param))!;
+    const struct: reflect.InterfaceType = firstStruct.parentType.system.findInterface(firstStruct.type.fqn!);
+    const positionalParams = parameters.filter((param) => param.name !== firstStruct.name);
+    const createInputs = this.formatInputs(positionalParams.map((p) => this.formatParameter(this.parameter(p))));
+    const methods = struct.allProperties.map((p) =>
+      this.formatBuilderMethod(this.property(p)),
+    ).flat();
+    return [
+      `${type.name}.Builder.create(${createInputs})`,
+      ...methods,
+      '    .build();',
+    ].join('\n');
+  };
+
+
   private formatSignature(name: string, inputs: string[]) {
-    return `public ${name}(${this.formatArguments(inputs)})`;
+    return `public ${name}(${this.formatInputs(inputs)})`;
   };
 
   private formatBuilderMethod(
     transpiled: transpile.TranspiledParameter,
-  ): string | undefined {
+  ): string[] {
+    const lowerCamel = toCamelCase(transpiled.name);
+    const base = `${transpiled.optional ? '//' : '  '}  .${lowerCamel}`;
     const tf = transpiled.typeReference.toString({
       typeFormatter: (t) => t.name,
     });
-    const lowerCamel = toCamelCase(transpiled.name);
-    return `  .${lowerCamel}(${lowerCamel}: ${tf})${transpiled.optional ? ' // optional' : ''}`;
+    // allow rendering union types as multiple overrided builder methods
+    if (tf.includes(' OR ')) {
+      const choices = tf.split(' OR ');
+      return choices.map((typ) => `${base}(${typ})`);
+    } else {
+      return [`${base}(${tf})`];
+    }
   }
 
   private formatInvocation(
@@ -239,7 +358,7 @@ export class JavaTranspile extends transpile.TranspileBase {
     if (method) {
       target = `${target}.${method}`;
     }
-    return `${target}(${this.formatArguments(inputs)})`;
+    return `${target}(${this.formatInputs(inputs)})`;
   };
 
   private optionalityCompare(
@@ -254,4 +373,26 @@ export class JavaTranspile extends transpile.TranspileBase {
     }
     return 0;
   }
+
+  private isStruct(p: reflect.Parameter): boolean {
+    return p.type.fqn ? p.system.findFqn(p.type.fqn).isDataType() : false;
+  }
+
+  private isClassBuilderGenerated(
+    callable: reflect.Callable,
+  ): boolean {
+    if (callable.kind !== reflect.MemberKind.Initializer) {
+      return false;
+    }
+
+    const parameters = callable.parameters.sort(this.optionalityCompare);
+    const firstStruct = parameters.find((param) => this.isStruct(param));
+
+    // no builder is generated if there is no struct parameter
+    if (!firstStruct) {
+      return false;
+    }
+
+    return true;
+  };
 }
