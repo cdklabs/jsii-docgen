@@ -62,7 +62,7 @@ export class JavaTranspile extends transpile.TranspileBase {
       }
       const parentFqn = parent.targets?.java?.package;
       if (!fqn.startsWith(parentFqn)) {
-        throw new Error(`Expected parent module of ${moduleLike.fqn} to be a prefix. Bug?`);
+        throw new Error(`Expected submodule ${fqn} to start with ${parentFqn} since it is its parent module.`);
       }
       // { name: "software.amazon.awscdk", submodule: "services.ecr" }
       return { name: parentFqn, submodule: fqn.substring(parentFqn.length + 1) };
@@ -101,26 +101,26 @@ export class JavaTranspile extends transpile.TranspileBase {
       return this.formatSignature(name, inputs);
     });
 
-    const invocations = callable.kind !== reflect.MemberKind.Initializer
-      // render invocation as method calls (showing all method overloads)
-      ? inputLists.map((inputs) => this.formatInvocation(type, inputs, name))
-      : this.isClassBuilderGenerated(callable)
-        // render with Java builder syntax (show no overloads)
-        ? [this.formatClassBuilder(type, parameters)]
-        // render with `new Class` syntax (showing all constructor overloads)
-        : inputLists.map((inputs) => this.formatClassInitialization(type, inputs));
+    let invocations;
 
-    // if we are rendering the class builder, flatten out the first struct's
-    // parameters so the user doesn't have to jump between docs of Foo and FooProps
     if (this.isClassBuilderGenerated(callable)) {
-      const firstStruct = parameters.find((param) => this.isStruct(param))!;
-      const struct = firstStruct.parentType.system.findInterface(firstStruct.type.fqn!);
+      const struct = this.extractFirstStruct(parameters);
 
-      parameters.splice(parameters.indexOf(firstStruct), 1);
+      // render using Java builder syntax (show no overloads)
+      invocations = [this.formatClassBuilder(type, parameters, struct)];
+
+      // flatten out the parameters so the user doesn't have to jump between
+      // docs of Foo and FooProps
       for (const property of struct.allProperties) {
         const parameter = propertyToParameter(callable, property);
         parameters.push(parameter);
       }
+    } else {
+      invocations = callable.kind === reflect.MemberKind.Initializer
+        // render with `new Class` syntax (showing all constructor overloads)
+        ? inputLists.map((inputs) => this.formatClassInitialization(type, inputs))
+        // render invocation as method calls (showing all method overloads)
+        : inputLists.map((inputs) => this.formatInvocation(type, inputs, name));
     }
 
     return {
@@ -142,8 +142,9 @@ export class JavaTranspile extends transpile.TranspileBase {
 
   public struct(struct: reflect.InterfaceType): transpile.TranspiledStruct {
     const type = this.type(struct);
+    const indent = ' '.repeat(4);
     const inputs = struct.allProperties.map((p) =>
-      this.formatBuilderMethod(this.property(p)),
+      this.formatBuilderMethod(this.property(p), indent),
     ).flat();
     return {
       type: type,
@@ -237,8 +238,7 @@ export class JavaTranspile extends transpile.TranspileBase {
   }
 
   private formatImport(type: transpile.TranspiledType): string {
-    const namespace = type.namespace ? `.${type.namespace}` : '';
-    return `import ${type.module}${namespace}.${type.name};`;
+    return `import ${type.fqn};`;
   };
 
   private formatParameter(
@@ -270,18 +270,20 @@ export class JavaTranspile extends transpile.TranspileBase {
     return `new ${type.name}(${this.formatInputs(inputs)});`;
   };
 
-  private formatClassBuilder(type: transpile.TranspiledType, parameters: reflect.Parameter[]): string {
-    const firstStruct: reflect.Parameter = parameters.find((param) => this.isStruct(param))!;
-    const struct: reflect.InterfaceType = firstStruct.parentType.system.findInterface(firstStruct.type.fqn!);
-    const positionalParams: reflect.Parameter[] = parameters.filter((param) => param.name !== firstStruct.name);
-    const createArgs: string = this.formatInputs(positionalParams.map((p) => this.formatParameter(this.parameter(p))));
+  private formatClassBuilder(
+    type: transpile.TranspiledType,
+    parameters: reflect.Parameter[],
+    struct: reflect.InterfaceType,
+  ): string {
+    const createArgs = this.formatInputs(parameters.map((p) => this.formatParameter(this.parameter(p))));
+    const indent = ' '.repeat(4);
     const methods: string[] = struct.allProperties.map((p) =>
-      this.formatBuilderMethod(this.property(p)),
+      this.formatBuilderMethod(this.property(p), indent),
     ).flat();
     return [
       `${type.name}.Builder.create(${createArgs})`,
       ...methods,
-      '    .build();',
+      `${indent}.build();`,
     ].join('\n');
   };
 
@@ -292,9 +294,11 @@ export class JavaTranspile extends transpile.TranspileBase {
 
   private formatBuilderMethod(
     transpiled: transpile.TranspiledParameter,
+    indent: string,
   ): string[] {
+    if (transpiled.optional) indent = '//' + indent.slice(2);
     const lowerCamel = toCamelCase(transpiled.name);
-    const base = `${transpiled.optional ? '//' : '  '}  .${lowerCamel}`;
+    const base = `${indent}.${lowerCamel}`;
     const tf = transpiled.typeReference.toString({
       typeFormatter: (t) => t.name,
     });
@@ -353,4 +357,20 @@ export class JavaTranspile extends transpile.TranspileBase {
 
     return true;
   };
+
+  /**
+   * Extracts the first struct out of a list of parameters (and throws
+   * if there is none), removing it from the array.
+   */
+  private extractFirstStruct(
+    parameters: reflect.Parameter[],
+  ): reflect.InterfaceType {
+    const firstStruct = parameters.find((param) => this.isStruct(param));
+    if (!firstStruct) {
+      throw new Error('No struct found in parameter list.');
+    }
+    const struct = firstStruct.parentType.system.findInterface(firstStruct.type.fqn!);
+    parameters.splice(parameters.indexOf(firstStruct), 1);
+    return struct;
+  }
 }
