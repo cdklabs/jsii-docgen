@@ -15,6 +15,11 @@ export class Language {
   public static readonly PYTHON = new Language('python');
 
   /**
+   * Java.
+   */
+  public static readonly JAVA = new Language('java');
+
+  /**
    * Transform a literal string to the `Language` object.
    *
    * Throws an `UnsupportedLanguageError` if the language is not supported.
@@ -25,13 +30,15 @@ export class Language {
         return Language.TYPESCRIPT;
       case Language.PYTHON.toString():
         return Language.PYTHON;
+      case Language.JAVA.toString():
+        return Language.JAVA;
       default:
         throw new UnsupportedLanguageError(lang, Language.values());
     }
   }
 
   public static values() {
-    return [Language.TYPESCRIPT, Language.PYTHON];
+    return [Language.TYPESCRIPT, Language.PYTHON, Language.JAVA];
   }
 
   private constructor(private readonly lang: string) {}
@@ -92,9 +99,11 @@ export interface TranspiledCallable {
    */
   readonly parentType: TranspiledType;
   /**
-   * How a signature of the callable looks like.
+   * How a signature of the callable looks like. In some languages
+   * (like Java), a callable may be transliterated to multiple overloaded
+   * methods, so there may be multiple signatures
    */
-  readonly signature: string;
+  readonly signatures: string[];
   /**
    * The name.
    */
@@ -104,9 +113,11 @@ export interface TranspiledCallable {
    */
   readonly import: string;
   /**
-   * How an invocation of this callable looks like.
+   * How a invocations of this callable look like. In some languages
+   * (like Java), a callable may be transliterated to multiple overloaded
+   * methods, so there may be multiple invocations.
    */
-  readonly invocation: string;
+  readonly invocations: string[];
   /**
    * The jsii parameters this callable accepts.
    */
@@ -449,7 +460,9 @@ export interface Transpile {
   moduleLike(moduleLike: reflect.ModuleLike): TranspiledModuleLike;
 
   /**
-   * Transpile a callable (method, static function, initializer)
+   * Transpile a callable (method, static function, initializer).
+   * In some languages such as Java, a single callable may generate multiple
+   * overloaded methods to support optional parameters.
    */
   callable(callable: reflect.Callable): TranspiledCallable;
 
@@ -565,17 +578,22 @@ export abstract class TranspileBase implements Transpile {
 
     const fqn = [moduleLike.name];
 
-    // TODO - these should also probably be transliterated.
-    // for python it just happens to work
-    if (type.namespace) {
-      fqn.push(type.namespace);
+
+    let namespace = type.namespace;
+    if (namespace && submodule && moduleLike.submodule) {
+      // if the type is in a submodule, submodule.name is a part of the namespace
+      // so we update that part with the language-specific submodule string
+      namespace = namespace.replace(submodule.name, moduleLike.submodule);
+    }
+    if (namespace) {
+      fqn.push(namespace);
     }
     fqn.push(type.name);
 
     return {
       fqn: fqn.join('.'),
       name: type.name,
-      namespace: type.namespace,
+      namespace: namespace,
       module: moduleLike.name,
       submodule: moduleLike.submodule,
       source: type,
@@ -642,9 +660,7 @@ export abstract class TranspileBase implements Transpile {
 
     // if the type is in a submodule, the submodule name is the first
     // part of the namespace. we construct the full submodule fqn and search for it.
-    const submoduleFqn = `${type.assembly.name}.${
-      type.namespace.split('.')[0]
-    }`;
+    const submoduleFqn = `${type.assembly.name}.${type.namespace.split('.')[0]}`;
     const submodules = type.assembly.submodules.filter(
       (s) => s.fqn === submoduleFqn,
     );

@@ -1,4 +1,5 @@
 import * as reflect from 'jsii-reflect';
+import { JavaTranspile } from '../../../src/docgen/transpile/java';
 import { PythonTranspile } from '../../../src/docgen/transpile/python';
 import { TranspiledType } from '../../../src/docgen/transpile/transpile';
 import { TypeScriptTranspile } from '../../../src/docgen/transpile/typescript';
@@ -28,6 +29,14 @@ describe('python', () => {
 
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
+  test('snapshot', () => {
+    const parameter = new Parameter(transpile, findParameter(), (t: TranspiledType) => `#${t.fqn}`);
+    expect(parameter.render().render()).toMatchSnapshot();
+  });
+});
+
+describe('java', () => {
+  const transpile = new JavaTranspile();
   test('snapshot', () => {
     const parameter = new Parameter(transpile, findParameter(), (t: TranspiledType) => `#${t.fqn}`);
     expect(parameter.render().render()).toMatchSnapshot();

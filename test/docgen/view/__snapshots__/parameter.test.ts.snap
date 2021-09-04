@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`java snapshot 1`] = `
+" \`grantee\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.AuthorizationToken.parameter.grantee\\"></a>
+
+- *Type:* [\`software.amazon.awscdk.services.iam.IGrantable\`](#software.amazon.awscdk.services.iam.IGrantable)
+
+---
+"
+`;
+
 exports[`python snapshot 1`] = `
 " \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.AuthorizationToken.parameter.grantee\\"></a>
 

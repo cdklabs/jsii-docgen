@@ -31,7 +31,7 @@ export class StaticFunction {
       this.transpile.language.toString(),
       `${this.transpiled.import}`,
       '',
-      `${this.transpiled.invocation}`,
+      ...this.transpiled.invocations,
     );
 
     for (const parameter of this.parameters) {

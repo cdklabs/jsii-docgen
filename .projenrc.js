@@ -32,6 +32,12 @@ const project = new TypeScriptProject({
     secret: 'GITHUB_TOKEN',
   },
   autoApproveUpgrades: true,
+
+  tsconfig: {
+    compilerOptions: {
+      lib: ['es2019'], // allow Array.prototype.flat etc.
+    },
+  },
 });
 
 const libraryFixtures = ['construct-library'];
