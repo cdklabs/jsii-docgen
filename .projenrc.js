@@ -3,9 +3,9 @@ const { TypeScriptProject } = require('projen');
 const project = new TypeScriptProject({
   name: 'jsii-docgen',
   description: 'generates api docs for jsii modules',
-  repository: 'https://github.com/eladb/jsii-docgen',
-  authorName: 'Elad Ben-Israel',
-  authorEmail: 'benisrae@amazon.com',
+  repository: 'https://github.com/cdklabs/jsii-docgen',
+  authorName: 'Amazon Web Services',
+  authorUrl: 'https://aws.amazon.com',
   defaultReleaseBranch: 'master',
 
   bin: {
