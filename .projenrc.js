@@ -6,6 +6,7 @@ const project = new TypeScriptProject({
   repository: 'https://github.com/cdklabs/jsii-docgen',
   authorName: 'Amazon Web Services',
   authorUrl: 'https://aws.amazon.com',
+  authorOrganization: true,
   defaultReleaseBranch: 'master',
 
   bin: {

@@ -31,7 +31,7 @@
   "author": {
     "name": "Amazon Web Services",
     "url": "https://aws.amazon.com",
-    "organization": false
+    "organization": true
   },
   "devDependencies": {
     "@types/fs-extra": "^8",
