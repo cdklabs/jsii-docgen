@@ -29,10 +29,16 @@ const project = new TypeScriptProject({
   releaseToNpm: true,
   projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
   autoApproveOptions: {
-    allowedUsernames: ['aws-cdk-automation'],
+    allowedUsernames: ['cdklabs-automation'],
     secret: 'GITHUB_TOKEN',
   },
   autoApproveUpgrades: true,
+
+  tsconfig: {
+    compilerOptions: {
+      lib: ['es2019'], // allow Array.prototype.flat etc.
+    },
+  },
 });
 
 const libraryFixtures = ['construct-library'];

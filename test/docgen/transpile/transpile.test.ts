@@ -10,8 +10,12 @@ describe('language', () => {
     expect(Language.fromString('python')).toEqual(Language.PYTHON);
   });
 
+  test('java is supported', () => {
+    expect(Language.fromString('java')).toEqual(Language.JAVA);
+  });
+
   test('throw error on unsupported language', () => {
-    expect(() => Language.fromString('unsupported')).toThrowError('Unsupported language: unsupported. Supported languages are: [typescript,python]');
+    expect(() => Language.fromString('unsupported')).toThrowError(/Unsupported language: unsupported. Supported languages are/);
   });
 
   test('toString()', () => {

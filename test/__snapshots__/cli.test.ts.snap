@@ -7,7 +7,7 @@ exports[`construct-library 1`] = `
 
 ### GreeterBucket <a name=\\"construct-library.GreeterBucket\\"></a>
 
-#### Initializer <a name=\\"construct-library.GreeterBucket.Initializer\\"></a>
+#### Initializers <a name=\\"construct-library.GreeterBucket.Initializer\\"></a>
 
 \`\`\`typescript
 import { GreeterBucket } from 'construct-library'
@@ -57,7 +57,7 @@ exports[`specify language 1`] = `
 
 ### GreeterBucket <a name=\\"construct_library.GreeterBucket\\"></a>
 
-#### Initializer <a name=\\"construct_library.GreeterBucket.Initializer\\"></a>
+#### Initializers <a name=\\"construct_library.GreeterBucket.Initializer\\"></a>
 
 \`\`\`python
 import construct_library

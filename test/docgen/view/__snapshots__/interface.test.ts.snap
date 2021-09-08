@@ -1,5 +1,249 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`java snapshot 1`] = `
+" IRepository <a name=\\"software.amazon.awscdk.services.ecr.IRepository\\"></a>
+
+- *Extends:* [\`software.amazon.awscdk.core.IResource\`](#software.amazon.awscdk.core.IResource)
+
+- *Implemented By:* [\`software.amazon.awscdk.services.ecr.Repository\`](#software.amazon.awscdk.services.ecr.Repository), [\`software.amazon.awscdk.services.ecr.RepositoryBase\`](#software.amazon.awscdk.services.ecr.RepositoryBase), [\`software.amazon.awscdk.services.ecr.IRepository\`](#software.amazon.awscdk.services.ecr.IRepository)
+
+Represents an ECR repository.
+
+# Methods <a name=\\"Methods\\"></a>
+
+## \`addToResourcePolicy\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.addToResourcePolicy\\"></a>
+
+\`\`\`java
+public addToResourcePolicy(PolicyStatement statement)
+\`\`\`
+
+### \`statement\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.statement\\"></a>
+
+- *Type:* [\`software.amazon.awscdk.services.iam.PolicyStatement\`](#software.amazon.awscdk.services.iam.PolicyStatement)
+
+---
+
+## \`grant\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.grant\\"></a>
+
+\`\`\`java
+public grant(IGrantable grantee, java.lang.String actions)
+\`\`\`
+
+### \`grantee\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.grantee\\"></a>
+
+- *Type:* [\`software.amazon.awscdk.services.iam.IGrantable\`](#software.amazon.awscdk.services.iam.IGrantable)
+
+---
+
+### \`actions\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.actions\\"></a>
+
+- *Type:* \`java.lang.String\`
+
+---
+
+## \`grantPull\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.grantPull\\"></a>
+
+\`\`\`java
+public grantPull(IGrantable grantee)
+\`\`\`
+
+### \`grantee\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.grantee\\"></a>
+
+- *Type:* [\`software.amazon.awscdk.services.iam.IGrantable\`](#software.amazon.awscdk.services.iam.IGrantable)
+
+---
+
+## \`grantPullPush\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.grantPullPush\\"></a>
+
+\`\`\`java
+public grantPullPush(IGrantable grantee)
+\`\`\`
+
+### \`grantee\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.grantee\\"></a>
+
+- *Type:* [\`software.amazon.awscdk.services.iam.IGrantable\`](#software.amazon.awscdk.services.iam.IGrantable)
+
+---
+
+## \`onCloudTrailEvent\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.onCloudTrailEvent\\"></a>
+
+\`\`\`java
+public onCloudTrailEvent(java.lang.String id)
+public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
+\`\`\`
+
+### \`id\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.id\\"></a>
+
+- *Type:* \`java.lang.String\`
+
+The id of the rule.
+
+---
+
+### \`options\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.options\\"></a>
+
+- *Type:* [\`software.amazon.awscdk.services.events.OnEventOptions\`](#software.amazon.awscdk.services.events.OnEventOptions)
+
+Options for adding the rule.
+
+---
+
+## \`onCloudTrailImagePushed\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.onCloudTrailImagePushed\\"></a>
+
+\`\`\`java
+public onCloudTrailImagePushed(java.lang.String id)
+public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
+\`\`\`
+
+### \`id\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.id\\"></a>
+
+- *Type:* \`java.lang.String\`
+
+The id of the rule.
+
+---
+
+### \`options\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.options\\"></a>
+
+- *Type:* [\`software.amazon.awscdk.services.ecr.OnCloudTrailImagePushedOptions\`](#software.amazon.awscdk.services.ecr.OnCloudTrailImagePushedOptions)
+
+Options for adding the rule.
+
+---
+
+## \`onEvent\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.onEvent\\"></a>
+
+\`\`\`java
+public onEvent(java.lang.String id)
+public onEvent(java.lang.String id, OnEventOptions options)
+\`\`\`
+
+### \`id\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.id\\"></a>
+
+- *Type:* \`java.lang.String\`
+
+---
+
+### \`options\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.options\\"></a>
+
+- *Type:* [\`software.amazon.awscdk.services.events.OnEventOptions\`](#software.amazon.awscdk.services.events.OnEventOptions)
+
+---
+
+## \`onImageScanCompleted\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.onImageScanCompleted\\"></a>
+
+\`\`\`java
+public onImageScanCompleted(java.lang.String id)
+public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
+\`\`\`
+
+### \`id\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.id\\"></a>
+
+- *Type:* \`java.lang.String\`
+
+The id of the rule.
+
+---
+
+### \`options\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.options\\"></a>
+
+- *Type:* [\`software.amazon.awscdk.services.ecr.OnImageScanCompletedOptions\`](#software.amazon.awscdk.services.ecr.OnImageScanCompletedOptions)
+
+Options for adding the rule.
+
+---
+
+## \`repositoryUriForDigest\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.repositoryUriForDigest\\"></a>
+
+\`\`\`java
+public repositoryUriForDigest()
+public repositoryUriForDigest(java.lang.String digest)
+\`\`\`
+
+### \`digest\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.digest\\"></a>
+
+- *Type:* \`java.lang.String\`
+
+Image digest to use (tools usually default to the image with the \\"latest\\" tag if omitted).
+
+---
+
+## \`repositoryUriForTag\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.repositoryUriForTag\\"></a>
+
+\`\`\`java
+public repositoryUriForTag()
+public repositoryUriForTag(java.lang.String tag)
+\`\`\`
+
+### \`tag\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.tag\\"></a>
+
+- *Type:* \`java.lang.String\`
+
+Image tag to use (tools usually default to \\"latest\\" if omitted).
+
+---
+
+# Properties <a name=\\"Properties\\"></a>
+
+## \`node\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.node\\"></a>
+
+- *Type:* [\`software.amazon.awscdk.core.ConstructNode\`](#software.amazon.awscdk.core.ConstructNode)
+
+The construct tree node for this construct.
+
+---
+
+## \`env\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.env\\"></a>
+
+- *Type:* [\`software.amazon.awscdk.core.ResourceEnvironment\`](#software.amazon.awscdk.core.ResourceEnvironment)
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
+
+---
+
+## \`stack\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.stack\\"></a>
+
+- *Type:* [\`software.amazon.awscdk.core.Stack\`](#software.amazon.awscdk.core.Stack)
+
+The stack in which this resource is defined.
+
+---
+
+## \`repositoryArn\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.repositoryArn\\"></a>
+
+- *Type:* \`java.lang.String\`
+
+The ARN of the repository.
+
+---
+
+## \`repositoryName\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.repositoryName\\"></a>
+
+- *Type:* \`java.lang.String\`
+
+The name of the repository.
+
+---
+
+## \`repositoryUri\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.repositoryUri\\"></a>
+
+- *Type:* \`java.lang.String\`
+
+The URI of this repository (represents the latest image):.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
+
+---
+"
+`;
+
 exports[`python snapshot 1`] = `
 " IRepository <a name=\\"aws_cdk.aws_ecr.IRepository\\"></a>
 

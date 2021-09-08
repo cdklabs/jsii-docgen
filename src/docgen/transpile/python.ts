@@ -15,7 +15,7 @@ const formatImport = (type: transpile.TranspiledType) => {
   return `import ${type.module}`;
 };
 
-const formatInputs = (inputs: string[]) => {
+const formatArguments = (inputs: string[]) => {
   return inputs.length === 0 ? '()' : [
     '(',
     inputs.map(i => `  ${i}`).join(',\n'),
@@ -47,12 +47,12 @@ const formatInvocation = (
   if (method) {
     target = `${target}.${method}`;
   }
-  return `${target}${formatInputs(inputs)}`;
+  return `${target}${formatArguments(inputs)}`;
 };
 
 const formatSignature = (name: string, inputs: string[]) => {
   const def = 'def ';
-  return `${def}${name}${formatInputs(inputs)}`;
+  return `${def}${name}${formatArguments(inputs)}`;
 };
 
 /**
@@ -167,7 +167,7 @@ export class PythonTranspile extends transpile.TranspileBase {
   public struct(struct: reflect.InterfaceType): transpile.TranspiledStruct {
     const type = this.type(struct);
     const inputs = struct.allProperties.map((p) =>
-      this.formatInput(this.property(p)),
+      this.formatParameters(this.property(p)),
     );
     return {
       type: type,
@@ -196,19 +196,19 @@ export class PythonTranspile extends transpile.TranspileBase {
     }
 
     const name = toSnakeCase(callable.name);
-    const inputs = parameters.map((p) => this.formatInput(this.parameter(p)));
+    const inputs = parameters.map((p) => this.formatParameters(this.parameter(p)));
 
     return {
       name,
       parentType: type,
       import: formatImport(type),
       parameters,
-      signature: formatSignature(name, inputs),
-      invocation: formatInvocation(
+      signatures: [formatSignature(name, inputs)],
+      invocations: [formatInvocation(
         type,
         inputs,
         callable.kind === reflect.MemberKind.Initializer ? undefined : name,
-      ),
+      )],
     };
   }
 
@@ -242,7 +242,7 @@ export class PythonTranspile extends transpile.TranspileBase {
     p1: reflect.Parameter,
     p2: reflect.Parameter,
   ): number {
-    if (!p1.optional && p1.optional) {
+    if (!p1.optional && p2.optional) {
       return -1;
     }
     if (!p2.optional && p1.optional) {
@@ -259,7 +259,7 @@ export class PythonTranspile extends transpile.TranspileBase {
     return `typing.${type}`;
   }
 
-  private formatInput(
+  private formatParameters(
     transpiled: transpile.TranspiledParameter | transpile.TranspiledProperty,
   ): string {
     const tf = transpiled.typeReference.toString({

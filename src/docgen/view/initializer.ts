@@ -21,7 +21,7 @@ export class Initializer {
     const md = new Markdown({
       id: `${this.transpiled.parentType.fqn}.Initializer`,
       header: {
-        title: 'Initializer',
+        title: 'Initializers',
       },
     });
 
@@ -29,7 +29,7 @@ export class Initializer {
       this.transpile.language.toString(),
       `${this.transpiled.import}`,
       '',
-      `${this.transpiled.invocation}`,
+      ...this.transpiled.invocations,
     );
 
     for (const parameter of this.parameters) {
