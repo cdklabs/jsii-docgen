@@ -3,7 +3,7 @@
   "description": "generates api docs for jsii modules",
   "repository": {
     "type": "git",
-    "url": "https://github.com/eladb/jsii-docgen"
+    "url": "https://github.com/cdklabs/jsii-docgen"
   },
   "bin": {
     "jsii-docgen": "bin/jsii-docgen"
@@ -29,9 +29,9 @@
     "projen": "npx projen"
   },
   "author": {
-    "name": "Elad Ben-Israel",
-    "email": "benisrae@amazon.com",
-    "organization": false
+    "name": "Amazon Web Services",
+    "url": "https://aws.amazon.com",
+    "organization": true
   },
   "devDependencies": {
     "@types/fs-extra": "^8",
