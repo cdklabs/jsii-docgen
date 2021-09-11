@@ -112,11 +112,13 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
   }
 
   public property(property: reflect.Property): transpile.TranspiledProperty {
+    const typeRef = this.typeReference(property.type);
     return {
       name: property.name,
       parentType: this.type(property.parentType),
-      typeReference: this.typeReference(property.type),
+      typeReference: typeRef,
       optional: property.optional,
+      signatureOrGetter: this.formatProperty(property.name, typeRef),
     };
   }
 
@@ -130,11 +132,13 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
   public parameter(
     parameter: reflect.Parameter,
   ): transpile.TranspiledParameter {
+    const typeRef = this.typeReference(parameter.type);
     return {
       name: parameter.name,
       parentType: this.type(parameter.parentType),
-      typeReference: this.typeReference(parameter.type),
+      typeReference: typeRef,
       optional: parameter.optional,
+      signatureOrGetter: this.formatProperty(parameter.name, typeRef),
     };
   }
 
@@ -208,5 +212,15 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
       typeFormatter: (t) => t.name,
     });
     return `${transpiled.name}${transpiled.optional ? '?' : ''}: ${tf}`;
+  }
+
+  private formatProperty(
+    name: string,
+    typeReference: transpile.TranspiledTypeReference,
+  ): string {
+    const tf = typeReference.toString({
+      typeFormatter: (t) => t.name,
+    });
+    return `public readonly ${name}: ${tf}`;
   }
 }

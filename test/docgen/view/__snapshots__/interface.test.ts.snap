@@ -187,6 +187,10 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 
 ## \`node\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.node\\"></a>
 
+\`\`\`java
+public ConstructNode getNode()
+\`\`\`
+
 - *Type:* [\`software.amazon.awscdk.core.ConstructNode\`](#software.amazon.awscdk.core.ConstructNode)
 
 The construct tree node for this construct.
@@ -194,6 +198,10 @@ The construct tree node for this construct.
 ---
 
 ## \`env\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.env\\"></a>
+
+\`\`\`java
+public ResourceEnvironment getEnv()
+\`\`\`
 
 - *Type:* [\`software.amazon.awscdk.core.ResourceEnvironment\`](#software.amazon.awscdk.core.ResourceEnvironment)
 
@@ -210,6 +218,10 @@ that might be different than the stack they were imported into.
 
 ## \`stack\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.stack\\"></a>
 
+\`\`\`java
+public Stack getStack()
+\`\`\`
+
 - *Type:* [\`software.amazon.awscdk.core.Stack\`](#software.amazon.awscdk.core.Stack)
 
 The stack in which this resource is defined.
@@ -217,6 +229,10 @@ The stack in which this resource is defined.
 ---
 
 ## \`repositoryArn\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.repositoryArn\\"></a>
+
+\`\`\`java
+public java.lang.String getRepositoryArn()
+\`\`\`
 
 - *Type:* \`java.lang.String\`
 
@@ -226,6 +242,10 @@ The ARN of the repository.
 
 ## \`repositoryName\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.repositoryName\\"></a>
 
+\`\`\`java
+public java.lang.String getRepositoryName()
+\`\`\`
+
 - *Type:* \`java.lang.String\`
 
 The name of the repository.
@@ -233,6 +253,10 @@ The name of the repository.
 ---
 
 ## \`repositoryUri\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.repositoryUri\\"></a>
+
+\`\`\`java
+public java.lang.String getRepositoryUri()
+\`\`\`
 
 - *Type:* \`java.lang.String\`
 
@@ -622,6 +646,10 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 
 ## \`node\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.property.node\\"></a>
 
+\`\`\`python
+node: ConstructNode
+\`\`\`
+
 - *Type:* [\`aws_cdk.core.ConstructNode\`](#aws_cdk.core.ConstructNode)
 
 The construct tree node for this construct.
@@ -629,6 +657,10 @@ The construct tree node for this construct.
 ---
 
 ## \`env\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.property.env\\"></a>
+
+\`\`\`python
+env: ResourceEnvironment
+\`\`\`
 
 - *Type:* [\`aws_cdk.core.ResourceEnvironment\`](#aws_cdk.core.ResourceEnvironment)
 
@@ -645,6 +677,10 @@ that might be different than the stack they were imported into.
 
 ## \`stack\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.property.stack\\"></a>
 
+\`\`\`python
+stack: Stack
+\`\`\`
+
 - *Type:* [\`aws_cdk.core.Stack\`](#aws_cdk.core.Stack)
 
 The stack in which this resource is defined.
@@ -652,6 +688,10 @@ The stack in which this resource is defined.
 ---
 
 ## \`repository_arn\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.property.repository_arn\\"></a>
+
+\`\`\`python
+repository_arn: str
+\`\`\`
 
 - *Type:* \`str\`
 
@@ -661,6 +701,10 @@ The ARN of the repository.
 
 ## \`repository_name\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.property.repository_name\\"></a>
 
+\`\`\`python
+repository_name: str
+\`\`\`
+
 - *Type:* \`str\`
 
 The name of the repository.
@@ -668,6 +712,10 @@ The name of the repository.
 ---
 
 ## \`repository_uri\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.property.repository_uri\\"></a>
+
+\`\`\`python
+repository_uri: str
+\`\`\`
 
 - *Type:* \`str\`
 
@@ -860,6 +908,10 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 
 ## \`node\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.property.node\\"></a>
 
+\`\`\`typescript
+public readonly node: ConstructNode
+\`\`\`
+
 - *Type:* [\`@aws-cdk/core.ConstructNode\`](#@aws-cdk/core.ConstructNode)
 
 The construct tree node for this construct.
@@ -867,6 +919,10 @@ The construct tree node for this construct.
 ---
 
 ## \`env\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.property.env\\"></a>
+
+\`\`\`typescript
+public readonly env: ResourceEnvironment
+\`\`\`
 
 - *Type:* [\`@aws-cdk/core.ResourceEnvironment\`](#@aws-cdk/core.ResourceEnvironment)
 
@@ -883,6 +939,10 @@ that might be different than the stack they were imported into.
 
 ## \`stack\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.property.stack\\"></a>
 
+\`\`\`typescript
+public readonly stack: Stack
+\`\`\`
+
 - *Type:* [\`@aws-cdk/core.Stack\`](#@aws-cdk/core.Stack)
 
 The stack in which this resource is defined.
@@ -890,6 +950,10 @@ The stack in which this resource is defined.
 ---
 
 ## \`repositoryArn\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.property.repositoryArn\\"></a>
+
+\`\`\`typescript
+public readonly repositoryArn: string
+\`\`\`
 
 - *Type:* \`string\`
 
@@ -899,6 +963,10 @@ The ARN of the repository.
 
 ## \`repositoryName\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.property.repositoryName\\"></a>
 
+\`\`\`typescript
+public readonly repositoryName: string
+\`\`\`
+
 - *Type:* \`string\`
 
 The name of the repository.
@@ -906,6 +974,10 @@ The name of the repository.
 ---
 
 ## \`repositoryUri\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.property.repositoryUri\\"></a>
+
+\`\`\`typescript
+public readonly repositoryUri: string
+\`\`\`
 
 - *Type:* \`string\`
 

@@ -138,11 +138,14 @@ export class PythonTranspile extends transpile.TranspileBase {
   }
 
   public property(property: reflect.Property): transpile.TranspiledProperty {
+    const name = property.const ? property.name : toSnakeCase(property.name);
+    const typeRef = this.typeReference(property.type);
     return {
-      name: property.const ? property.name : toSnakeCase(property.name),
+      name,
       parentType: this.type(property.parentType),
-      typeReference: this.typeReference(property.type),
+      typeReference: typeRef,
       optional: property.optional,
+      signatureOrGetter: this.formatProperty(name, typeRef),
     };
   }
 
@@ -156,11 +159,14 @@ export class PythonTranspile extends transpile.TranspileBase {
   public parameter(
     parameter: reflect.Parameter,
   ): transpile.TranspiledParameter {
+    const name = toSnakeCase(parameter.name);
+    const typeRef = this.typeReference(parameter.type);
     return {
-      name: toSnakeCase(parameter.name),
+      name,
       parentType: this.type(parameter.parentType),
-      typeReference: this.typeReference(parameter.type),
+      typeReference: typeRef,
       optional: parameter.optional,
+      signatureOrGetter: this.formatProperty(name, typeRef),
     };
   }
 
@@ -266,5 +272,15 @@ export class PythonTranspile extends transpile.TranspileBase {
       typeFormatter: (t) => t.name,
     });
     return `${transpiled.name}: ${tf}${transpiled.optional ? ' = None' : ''}`;
+  }
+
+  private formatProperty(
+    name: string,
+    typeReference: transpile.TranspiledTypeReference,
+  ): string {
+    const tf = typeReference.toString({
+      typeFormatter: (t) => t.name,
+    });
+    return `${name}: ${tf}`;
   }
 }

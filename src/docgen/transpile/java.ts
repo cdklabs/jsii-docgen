@@ -8,6 +8,11 @@ const toCamelCase = (text?: string) => {
   return Case.camel(text ?? '');
 };
 
+const toUpperCamelCase = (test?: string) => {
+  const camelCase = toCamelCase(test);
+  return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
+};
+
 // [1, 2, 3] -> [[], [1], [1, 2], [1, 2, 3]]
 const prefixArrays = <T>(arr: T[]): T[][] => {
   const out: T[][] = [[]];
@@ -166,20 +171,24 @@ export class JavaTranspile extends transpile.TranspileBase {
   public parameter(
     parameter: reflect.Parameter,
   ): transpile.TranspiledParameter {
+    const typeRef = this.typeReference(parameter.type);
     return {
       name: parameter.name,
       parentType: this.type(parameter.parentType),
-      typeReference: this.typeReference(parameter.type),
+      typeReference: typeRef,
       optional: parameter.optional,
+      signatureOrGetter: this.formatProperty(parameter.name, typeRef),
     };
   }
 
   public property(property: reflect.Property): transpile.TranspiledProperty {
+    const typeRef = this.typeReference(property.type);
     return {
       name: property.name,
       parentType: this.type(property.parentType),
-      typeReference: this.typeReference(property.type),
+      typeReference: typeRef,
       optional: property.optional,
+      signatureOrGetter: this.formatProperty(property.name, typeRef),
     };
   }
 
@@ -372,5 +381,19 @@ export class JavaTranspile extends transpile.TranspileBase {
     const struct = firstStruct.parentType.system.findInterface(firstStruct.type.fqn!);
     parameters.splice(parameters.indexOf(firstStruct), 1);
     return struct;
+  }
+
+  private formatProperty(
+    name: string,
+    typeReference: transpile.TranspiledTypeReference,
+  ): string {
+    const tf = typeReference.toString({
+      typeFormatter: (t) => t.name,
+    });
+    if (tf.includes(' OR ')) {
+      return `public java.lang.Object get${toUpperCamelCase(name)}()`;
+    } else {
+      return `public ${tf} get${toUpperCamelCase(name)}()`;
+    }
   }
 }

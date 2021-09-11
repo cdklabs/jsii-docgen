@@ -144,6 +144,11 @@ export interface TranspiledParameter {
    * Whether or not the parameter is optional.
    */
   readonly optional: boolean;
+  /**
+   * The signature of the property, or its getter if the language
+   * supports that.
+   */
+  readonly signatureOrGetter: string;
 }
 
 /**
