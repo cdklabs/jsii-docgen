@@ -118,7 +118,7 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
       parentType: this.type(property.parentType),
       typeReference: typeRef,
       optional: property.optional,
-      signatureOrGetter: this.formatProperty(property.name, typeRef),
+      declaration: this.formatProperty(property.name, typeRef),
     };
   }
 
@@ -138,7 +138,7 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
       parentType: this.type(parameter.parentType),
       typeReference: typeRef,
       optional: parameter.optional,
-      signatureOrGetter: this.formatProperty(parameter.name, typeRef),
+      declaration: this.formatProperty(parameter.name, typeRef),
     };
   }
 
@@ -221,6 +221,6 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
     const tf = typeReference.toString({
       typeFormatter: (t) => t.name,
     });
-    return `public readonly ${name}: ${tf}`;
+    return `public readonly ${name}: ${tf};`;
   }
 }

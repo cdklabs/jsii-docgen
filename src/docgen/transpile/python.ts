@@ -145,7 +145,7 @@ export class PythonTranspile extends transpile.TranspileBase {
       parentType: this.type(property.parentType),
       typeReference: typeRef,
       optional: property.optional,
-      signatureOrGetter: this.formatProperty(name, typeRef),
+      declaration: this.formatProperty(name, typeRef),
     };
   }
 
@@ -166,7 +166,7 @@ export class PythonTranspile extends transpile.TranspileBase {
       parentType: this.type(parameter.parentType),
       typeReference: typeRef,
       optional: parameter.optional,
-      signatureOrGetter: this.formatProperty(name, typeRef),
+      declaration: this.formatProperty(name, typeRef),
     };
   }
 

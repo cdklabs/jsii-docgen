@@ -23,7 +23,7 @@ CfnPublicRepositoryProps.builder()
 ## \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
 \`\`\`java
-public java.lang.Object getRepositoryCatalogData()
+public java.lang.Object getRepositoryCatalogData();
 \`\`\`
 
 - *Type:* \`java.lang.Object\`
@@ -37,7 +37,7 @@ public java.lang.Object getRepositoryCatalogData()
 ## \`repositoryName\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
 
 \`\`\`java
-public java.lang.String getRepositoryName()
+public java.lang.String getRepositoryName();
 \`\`\`
 
 - *Type:* \`java.lang.String\`
@@ -51,7 +51,7 @@ public java.lang.String getRepositoryName()
 ## \`repositoryPolicyText\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
 
 \`\`\`java
-public java.lang.Object getRepositoryPolicyText()
+public java.lang.Object getRepositoryPolicyText();
 \`\`\`
 
 - *Type:* \`java.lang.Object\`
@@ -65,7 +65,7 @@ public java.lang.Object getRepositoryPolicyText()
 ## \`tags\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.tags\\"></a>
 
 \`\`\`java
-public java.util.List<CfnTag> getTags()
+public java.util.List<CfnTag> getTags();
 \`\`\`
 
 - *Type:* java.util.List<[\`software.amazon.awscdk.core.CfnTag\`](#software.amazon.awscdk.core.CfnTag)>
@@ -174,7 +174,7 @@ const cfnPublicRepositoryProps: CfnPublicRepositoryProps = { ... }
 ## \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
 \`\`\`typescript
-public readonly repositoryCatalogData: any
+public readonly repositoryCatalogData: any;
 \`\`\`
 
 - *Type:* \`any\`
@@ -188,7 +188,7 @@ public readonly repositoryCatalogData: any
 ## \`repositoryName\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
 
 \`\`\`typescript
-public readonly repositoryName: string
+public readonly repositoryName: string;
 \`\`\`
 
 - *Type:* \`string\`
@@ -202,7 +202,7 @@ public readonly repositoryName: string
 ## \`repositoryPolicyText\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
 
 \`\`\`typescript
-public readonly repositoryPolicyText: any
+public readonly repositoryPolicyText: any;
 \`\`\`
 
 - *Type:* \`any\`
@@ -216,7 +216,7 @@ public readonly repositoryPolicyText: any
 ## \`tags\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\"></a>
 
 \`\`\`typescript
-public readonly tags: CfnTag[]
+public readonly tags: CfnTag[];
 \`\`\`
 
 - *Type:* [\`@aws-cdk/core.CfnTag\`](#@aws-cdk/core.CfnTag)[]

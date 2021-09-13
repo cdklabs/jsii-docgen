@@ -177,7 +177,7 @@ export class JavaTranspile extends transpile.TranspileBase {
       parentType: this.type(parameter.parentType),
       typeReference: typeRef,
       optional: parameter.optional,
-      signatureOrGetter: this.formatProperty(parameter.name, typeRef),
+      declaration: this.formatProperty(parameter.name, typeRef),
     };
   }
 
@@ -188,7 +188,7 @@ export class JavaTranspile extends transpile.TranspileBase {
       parentType: this.type(property.parentType),
       typeReference: typeRef,
       optional: property.optional,
-      signatureOrGetter: this.formatProperty(property.name, typeRef),
+      declaration: this.formatProperty(property.name, typeRef),
     };
   }
 
@@ -391,9 +391,9 @@ export class JavaTranspile extends transpile.TranspileBase {
       typeFormatter: (t) => t.name,
     });
     if (tf.includes(' OR ')) {
-      return `public java.lang.Object get${toUpperCamelCase(name)}()`;
+      return `public java.lang.Object get${toUpperCamelCase(name)}();`;
     } else {
-      return `public ${tf} get${toUpperCamelCase(name)}()`;
+      return `public ${tf} get${toUpperCamelCase(name)}();`;
     }
   }
 }

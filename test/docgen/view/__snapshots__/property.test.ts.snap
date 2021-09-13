@@ -4,7 +4,7 @@ exports[`java snapshot 1`] = `
 " \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
 \`\`\`java
-public java.lang.Object getRepositoryCatalogData()
+public java.lang.Object getRepositoryCatalogData();
 \`\`\`
 
 - *Type:* \`java.lang.Object\`
@@ -38,7 +38,7 @@ exports[`typescript snapshot 1`] = `
 " \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
 \`\`\`typescript
-public readonly repositoryCatalogData: any
+public readonly repositoryCatalogData: any;
 \`\`\`
 
 - *Type:* \`any\`

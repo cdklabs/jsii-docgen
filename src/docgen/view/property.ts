@@ -8,6 +8,7 @@ export class Property {
     private readonly transpile: Transpile,
     private readonly property: reflect.Property,
     private readonly linkFormatter: (type: TranspiledType) => string,
+    private readonly isConstant: boolean = false,
   ) {
     this.transpiled = transpile.property(property);
   }
@@ -38,7 +39,9 @@ export class Property {
       md.lines('');
     }
 
-    md.code(this.transpile.language.toString(), this.transpiled.signatureOrGetter);
+    if (!this.isConstant) {
+      md.code(this.transpile.language.toString(), this.transpiled.declaration);
+    }
 
     const metadata: any = {
       Type: this.transpiled.typeReference.toString({

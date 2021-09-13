@@ -148,7 +148,7 @@ export interface TranspiledParameter {
    * The signature of the property, or its getter if the language
    * supports that.
    */
-  readonly signatureOrGetter: string;
+  readonly declaration: string;
 }
 
 /**
