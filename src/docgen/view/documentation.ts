@@ -327,7 +327,7 @@ async function spawn(command: string, args: ReadonlyArray<string> = [], options:
 }
 
 class SpawnFailure extends Error {
-  public constructor(message: string, public readonly code: number | undefined, public readonly signal: string | undefined) {
+  public constructor(message: string, public readonly code: number | null, public readonly signal: NodeJS.Signals | null) {
     super(message);
     Error.captureStackTrace(this, this.constructor);
   }
