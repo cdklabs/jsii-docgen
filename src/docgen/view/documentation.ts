@@ -6,7 +6,7 @@ import * as glob from 'glob-promise';
 import * as reflect from 'jsii-reflect';
 import { TargetLanguage } from 'jsii-rosetta';
 import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
-import { NoSpaceLeftOnDevice } from '../..';
+import { NoSpaceLeftOnDevice } from '../../errors';
 import { Markdown } from '../render/markdown';
 import { JavaTranspile } from '../transpile/java';
 import { PythonTranspile } from '../transpile/python';
