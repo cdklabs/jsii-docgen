@@ -13,6 +13,7 @@ import { Transpile, Language, TranspiledType } from '../transpile/transpile';
 import { TypeScriptTranspile } from '../transpile/typescript';
 import { ApiReference } from './api-reference';
 import { Readme } from './readme';
+import { NoSpaceLeftOnDevice } from '../..';
 
 /**
  * Options for rendering a `Documentation` object.
@@ -105,6 +106,8 @@ export class Documentation {
    *
    * @param target - The target to install. This can either be a local path or a registry identifier (e.g <name>@<version>)
    * @param options - Additional options.
+   *
+   * @throws NoSpaceLeftOnDevice if the installation fails due to running out of disk space
    */
   public static async forPackage(target: string, options: ForPackageDocumentationOptions = {}): Promise<Documentation> {
     return withTempDir(async (workdir: string) => {
@@ -125,20 +128,42 @@ export class Documentation {
       });
 
       console.log(`Installing package ${target}`);
-      await spawn(path.join(workdir, 'node_modules', '.bin', 'npm'), [
-        'install',
-        // this is critical from a security perspective to prevent
-        // code execution as part of the install command using npm hooks. (e.g postInstall)
-        '--ignore-scripts',
-        // ensures npm does not insert anything in $PATH
-        '--no-bin-links',
-        '--no-save',
-        target,
-      ], {
-        cwd: workdir,
-        shell: true,
-        stdio: ['ignore', 'inherit', 'inherit'],
-      });
+      try {
+        await spawn(path.join(workdir, 'node_modules', '.bin', 'npm'), [
+          'install',
+          // this is critical from a security perspective to prevent
+          // code execution as part of the install command using npm hooks. (e.g postInstall)
+          '--ignore-scripts',
+          // ensures npm does not insert anything in $PATH
+          '--no-bin-links',
+          '--no-save',
+          target,
+        ], {
+          cwd: workdir,
+          shell: true,
+          stdio: ['ignore', 'inherit', 'inherit'],
+        });
+      } catch (e) {
+        if (e instanceof SpawnFailure) {
+          if (e.code === 228) {
+            // npm install exits with code 228 when it encounters the ENOSPC
+            // errno while doing it's business. This is effectively 256 - ENOSPC
+            // (which is 28). In this case, we'll throw a
+            // NoSpaceLeftOnDeviceError so that consumers can perform special
+            // handling if they so desire.
+            throw new NoSpaceLeftOnDevice(e.message, e.stack);
+          } else if (e.code) {
+            const maybeerrno = 256 - e.code;
+            for (const [name, errno] of Object.entries(os.constants.errno)) {
+              if (maybeerrno === errno) {
+                console.error(`Exit code ${e.code} may correspond to ${name} (-${errno})`);
+                break;
+              }
+            }
+          }
+        }
+        throw e;
+      }
 
       return Documentation.forProject(path.join(workdir, 'node_modules', name), { ...options, assembliesDir: workdir });
     });
@@ -291,10 +316,21 @@ async function spawn(command: string, args: ReadonlyArray<string> = [], options:
       if (code === 0) {
         ok();
       } else {
-        ko(`'${command}' command ${code != null ? `exited with code ${code}` : `was terminated by signal ${signal}`}`);
+        ko(new SpawnFailure(
+          `'${command}' command ${code != null ? `exited with code ${code}` : `was terminated by signal ${signal}`}`,
+          code,
+          signal,
+        ));
       }
     });
   });
+}
+
+class SpawnFailure extends Error {
+  public constructor(message: string, public readonly code: number | undefined, public readonly signal: string | undefined) {
+    super(message);
+    Error.captureStackTrace(this, this.constructor);
+  }
 }
 
 export function extractPackageName(spec: string) {
