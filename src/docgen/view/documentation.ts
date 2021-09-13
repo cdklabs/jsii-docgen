@@ -283,7 +283,7 @@ async function createAssembly(name: string, tsDir: string, loose: boolean, langu
   return ts.findAssembly(name);
 }
 
-async function spawn(command: string, args?: ReadonlyArray<string>, options?: child.SpawnOptions) {
+async function spawn(command: string, args: ReadonlyArray<string> = [], options: child.SpawnOptions = {}) {
   return new Promise<void>((ok, ko) => {
     const p = child.spawn(command, args, options);
     p.once('error', ko);
