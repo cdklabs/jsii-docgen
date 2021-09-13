@@ -154,9 +154,9 @@ export class Documentation {
             throw new NoSpaceLeftOnDevice(e.message, e.stack);
           } else if (e.code) {
             const maybeerrno = 256 - e.code;
-            for (const [name, errno] of Object.entries(os.constants.errno)) {
+            for (const [errname, errno] of Object.entries(os.constants.errno)) {
               if (maybeerrno === errno) {
-                console.error(`Exit code ${e.code} may correspond to ${name} (-${errno})`);
+                console.error(`Exit code ${e.code} may correspond to ${errname} (-${errno})`);
                 break;
               }
             }
