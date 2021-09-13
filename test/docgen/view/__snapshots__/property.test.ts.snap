@@ -3,6 +3,10 @@
 exports[`java snapshot 1`] = `
 " \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
+\`\`\`java
+public java.lang.Object getRepositoryCatalogData();
+\`\`\`
+
 - *Type:* \`java.lang.Object\`
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
@@ -16,6 +20,10 @@ exports[`java snapshot 1`] = `
 exports[`python snapshot 1`] = `
 " \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.property.repository_catalog_data\\"></a>
 
+\`\`\`python
+repository_catalog_data: typing.Any
+\`\`\`
+
 - *Type:* \`typing.Any\`
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
@@ -28,6 +36,10 @@ exports[`python snapshot 1`] = `
 
 exports[`typescript snapshot 1`] = `
 " \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+
+\`\`\`typescript
+public readonly repositoryCatalogData: any;
+\`\`\`
 
 - *Type:* \`any\`
 

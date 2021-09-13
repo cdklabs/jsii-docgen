@@ -5,7 +5,7 @@ import { Transpile, TranspiledProperty, TranspiledType } from '../transpile/tran
 export class Property {
   private readonly transpiled: TranspiledProperty;
   constructor(
-    transpile: Transpile,
+    private readonly transpile: Transpile,
     private readonly property: reflect.Property,
     private readonly linkFormatter: (type: TranspiledType) => string,
   ) {
@@ -36,6 +36,10 @@ export class Property {
         }`,
       );
       md.lines('');
+    }
+
+    if (!this.property.const) {
+      md.code(this.transpile.language.toString(), this.transpiled.declaration);
     }
 
     const metadata: any = {
