@@ -6,6 +6,7 @@ import * as glob from 'glob-promise';
 import * as reflect from 'jsii-reflect';
 import { TargetLanguage } from 'jsii-rosetta';
 import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
+import { NoSpaceLeftOnDevice } from '../..';
 import { Markdown } from '../render/markdown';
 import { JavaTranspile } from '../transpile/java';
 import { PythonTranspile } from '../transpile/python';
@@ -13,7 +14,6 @@ import { Transpile, Language, TranspiledType } from '../transpile/transpile';
 import { TypeScriptTranspile } from '../transpile/typescript';
 import { ApiReference } from './api-reference';
 import { Readme } from './readme';
-import { NoSpaceLeftOnDevice } from '../..';
 
 /**
  * Options for rendering a `Documentation` object.
