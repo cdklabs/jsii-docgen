@@ -135,4 +135,12 @@ describe('java', () => {
     const markdown = docs.render({ submodule: 'aws_eks' });
     expect(markdown.render()).toMatchSnapshot();
   });
+
+  test('snapshot - submodules 2', async () => {
+    const docs = await Documentation.forAssembly('monocdk', ASSEMBLIES, {
+      language: Language.JAVA,
+    });
+    const markdown = docs.render({ submodule: 'aws_eks' });
+    expect(markdown.render()).toMatchSnapshot();
+  });
 });
