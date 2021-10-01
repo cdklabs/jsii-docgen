@@ -10,7 +10,7 @@ const LIBRARIES = `${__dirname}/../../__fixtures__/libraries`;
 
 // this is a little concerning...we should be mindful
 // if need to keep increasing this.
-jest.setTimeout(60 * 1000);
+jest.setTimeout(120 * 1000);
 
 
 describe('extractPackageName', () => {
