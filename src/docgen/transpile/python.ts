@@ -218,6 +218,28 @@ export class PythonTranspile extends transpile.TranspileBase {
     };
   }
 
+  public type(type: reflect.Type): transpile.TranspiledType {
+    const submodule = this.findSubmodule(type);
+    const moduleLike = this.moduleLike(submodule ? submodule : type.assembly);
+
+    const fqn = [moduleLike.name];
+
+    if (type.namespace) {
+      fqn.push(type.namespace);
+    }
+    fqn.push(type.name);
+
+    return {
+      fqn: fqn.join('.'),
+      name: type.name,
+      namespace: type.namespace,
+      module: moduleLike.name,
+      submodule: moduleLike.submodule,
+      source: type,
+      language: this.language,
+    };
+  }
+
   public moduleLike(
     moduleLike: reflect.ModuleLike,
   ): transpile.TranspiledModuleLike {

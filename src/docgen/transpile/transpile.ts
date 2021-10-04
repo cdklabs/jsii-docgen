@@ -577,35 +577,6 @@ export interface TranspileBase extends Transpile {}
 export abstract class TranspileBase implements Transpile {
   constructor(public readonly language: Language) {}
 
-  public type(type: reflect.Type): TranspiledType {
-    const submodule = this.findSubmodule(type);
-    const moduleLike = this.moduleLike(submodule ? submodule : type.assembly);
-
-    const fqn = [moduleLike.name];
-
-
-    let namespace = type.namespace;
-    if (namespace && submodule && moduleLike.submodule) {
-      // if the type is in a submodule, submodule.name is a part of the namespace
-      // so we update that part with the language-specific submodule string
-      namespace = namespace.replace(submodule.name, moduleLike.submodule);
-    }
-    if (namespace) {
-      fqn.push(namespace);
-    }
-    fqn.push(type.name);
-
-    return {
-      fqn: fqn.join('.'),
-      name: type.name,
-      namespace: namespace,
-      module: moduleLike.name,
-      submodule: moduleLike.submodule,
-      source: type,
-      language: this.language,
-    };
-  }
-
   public typeReference(ref: reflect.TypeReference): TranspiledTypeReference {
     if (ref.type) {
       const transpiled = this.type(ref.type);

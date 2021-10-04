@@ -10,7 +10,7 @@ const LIBRARIES = `${__dirname}/../../__fixtures__/libraries`;
 
 // this is a little concerning...we should be mindful
 // if need to keep increasing this.
-jest.setTimeout(60 * 1000);
+jest.setTimeout(120 * 1000);
 
 
 describe('extractPackageName', () => {
@@ -130,6 +130,14 @@ describe('java', () => {
 
   test('snapshot - submodules', async () => {
     const docs = await Documentation.forAssembly('aws-cdk-lib', ASSEMBLIES, {
+      language: Language.JAVA,
+    });
+    const markdown = docs.render({ submodule: 'aws_eks' });
+    expect(markdown.render()).toMatchSnapshot();
+  });
+
+  test('snapshot - submodules 2', async () => {
+    const docs = await Documentation.forAssembly('monocdk', ASSEMBLIES, {
       language: Language.JAVA,
     });
     const markdown = docs.render({ submodule: 'aws_eks' });

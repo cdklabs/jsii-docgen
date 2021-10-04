@@ -66,14 +66,49 @@ export class JavaTranspile extends transpile.TranspileBase {
         throw new Error(`Could not find parent module of ${moduleLike.fqn}`);
       }
       const parentFqn = parent.targets?.java?.package;
-      if (!fqn.startsWith(parentFqn)) {
-        throw new Error(`Expected submodule ${fqn} to start with ${parentFqn} since it is its parent module.`);
-      }
-      // { name: "software.amazon.awscdk", submodule: "services.ecr" }
-      return { name: parentFqn, submodule: fqn.substring(parentFqn.length + 1) };
+
+      // for some modules, the parent module's Java package is a prefix of
+      // the submodule's Java package, e.g.
+      // { name: "software.amazon.awscdk", submodule: "software.amazon.awscdk.services.ecr" }
+      //
+      // but it's possible the names differ, for example in aws-cdk-lib:
+      // { name: "software.amazon.awscdk.core", submodule: "software.amazon.awscdk.services.ecr" }
+      return { name: parentFqn, submodule: fqn };
     }
 
     return { name: fqn };
+  }
+
+  public type(type: reflect.Type): transpile.TranspiledType {
+    const submodule = this.findSubmodule(type);
+    const moduleLike = this.moduleLike(submodule ? submodule : type.assembly);
+
+    const fqn = [];
+
+    let namespace = type.namespace;
+    if (namespace) {
+      if (submodule && moduleLike.submodule) {
+        // if the type is in a submodule, submodule.name is a substring of the namespace
+        // so we update that part with the language-specific submodule string
+        fqn.push(namespace.replace(submodule.name, moduleLike.submodule));
+      } else {
+        fqn.push(moduleLike.name);
+        fqn.push(namespace);
+      }
+    } else {
+      fqn.push(moduleLike.name);
+    }
+    fqn.push(type.name);
+
+    return {
+      fqn: fqn.join('.'),
+      name: type.name,
+      namespace: namespace,
+      module: moduleLike.name,
+      submodule: moduleLike.submodule,
+      source: type,
+      language: this.language,
+    };
   }
 
   private getParentModule(moduleLike: reflect.ModuleLike): reflect.Assembly | undefined {
@@ -325,7 +360,7 @@ export class JavaTranspile extends transpile.TranspileBase {
     inputs: string[],
     method: string,
   ): string {
-    let target = type.submodule ? `${type.namespace}.${type.name}` : type.name;
+    let target = type.name;
     if (method) {
       target = `${target}.${method}`;
     }
