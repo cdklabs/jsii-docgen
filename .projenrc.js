@@ -7,7 +7,7 @@ const project = new TypeScriptProject({
   authorName: 'Amazon Web Services',
   authorUrl: 'https://aws.amazon.com',
   authorOrganization: true,
-  defaultReleaseBranch: 'master',
+  defaultReleaseBranch: 'main',
 
   bin: {
     'jsii-docgen': 'bin/jsii-docgen',
