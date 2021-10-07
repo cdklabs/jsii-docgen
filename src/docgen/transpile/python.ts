@@ -137,11 +137,14 @@ export class PythonTranspile extends transpile.TranspileBase {
   }
 
   public property(property: reflect.Property): transpile.TranspiledProperty {
+    const name = property.const ? property.name : toSnakeCase(property.name);
+    const typeRef = this.typeReference(property.type);
     return {
-      name: property.const ? property.name : toSnakeCase(property.name),
+      name,
       parentType: this.type(property.parentType),
-      typeReference: this.typeReference(property.type),
+      typeReference: typeRef,
       optional: property.optional,
+      declaration: this.formatProperty(name, typeRef),
     };
   }
 
@@ -155,11 +158,14 @@ export class PythonTranspile extends transpile.TranspileBase {
   public parameter(
     parameter: reflect.Parameter,
   ): transpile.TranspiledParameter {
+    const name = toSnakeCase(parameter.name);
+    const typeRef = this.typeReference(parameter.type);
     return {
-      name: toSnakeCase(parameter.name),
+      name,
       parentType: this.type(parameter.parentType),
-      typeReference: this.typeReference(parameter.type),
+      typeReference: typeRef,
       optional: parameter.optional,
+      declaration: this.formatProperty(name, typeRef),
     };
   }
 
@@ -208,6 +214,28 @@ export class PythonTranspile extends transpile.TranspileBase {
         inputs,
         callable.kind === reflect.MemberKind.Initializer ? undefined : name,
       )],
+    };
+  }
+
+  public type(type: reflect.Type): transpile.TranspiledType {
+    const submodule = this.findSubmodule(type);
+    const moduleLike = this.moduleLike(submodule ? submodule : type.assembly);
+
+    const fqn = [moduleLike.name];
+
+    if (type.namespace) {
+      fqn.push(type.namespace);
+    }
+    fqn.push(type.name);
+
+    return {
+      fqn: fqn.join('.'),
+      name: type.name,
+      namespace: type.namespace,
+      module: moduleLike.name,
+      submodule: moduleLike.submodule,
+      source: type,
+      language: this.language,
     };
   }
 
@@ -275,5 +303,15 @@ export class PythonTranspile extends transpile.TranspileBase {
       typeFormatter: (t) => t.name,
     });
     return `${transpiled.name}: ${tf}${transpiled.optional ? ' = None' : ''}`;
+  }
+
+  private formatProperty(
+    name: string,
+    typeReference: transpile.TranspiledTypeReference,
+  ): string {
+    const tf = typeReference.toString({
+      typeFormatter: (t) => t.name,
+    });
+    return `${name}: ${tf}`;
   }
 }

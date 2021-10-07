@@ -7,6 +7,11 @@ const toCamelCase = (text?: string) => {
   return Case.camel(text ?? '');
 };
 
+const toUpperCamelCase = (test?: string) => {
+  const camelCase = toCamelCase(test);
+  return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
+};
+
 // [1, 2, 3] -> [[], [1], [1, 2], [1, 2, 3]]
 const prefixArrays = <T>(arr: T[]): T[][] => {
   const out: T[][] = [[]];
@@ -54,35 +59,56 @@ export class JavaTranspile extends transpile.TranspileBase {
     // explicit target names, in which case we need to append the snake-cased
     // submodule name to the parent package name.
     if (moduleLike instanceof reflect.Submodule) {
-      const assembly = this.getParentModule(moduleLike);
-      const parentJavaPackage = assembly.targets?.java?.package;
+      const parent = this.getParentModule(moduleLike);
+      const parentFqn = parent.targets?.java?.package;
 
       // if the submodule does not explicitly define a java package name, we need to deduce it from the parent
       // based on jsii-pacmak package naming conventions.
       // see https://github.com/aws/jsii/blob/b329670bf9ec222fad5fc0d614dcddd5daca7af5/packages/jsii-pacmak/lib/targets/java.ts#L3150
-      const submoduleJavaPackage = javaPackage ?? `${parentJavaPackage}.${Case.snake(moduleLike.name)}`;
+      const submoduleJavaPackage = javaPackage ?? `${parentFqn}.${Case.snake(moduleLike.name)}`;
 
-      // ensure that the submodule package name is a sub-package of the root package name
-      if (!submoduleJavaPackage.startsWith(parentJavaPackage)) {
-        throw new Error(`Expected submodule ${submoduleJavaPackage} to start with ${parentJavaPackage} since it is its parent module.`);
-      }
-
-      // { name: "software.amazon.awscdk", submodule: "services.ecr" }
-      return {
-        name: parentJavaPackage,
-        submodule: submoduleJavaPackage.substring(parentJavaPackage.length + 1),
-      };
-    }
-
-    // if a java package name is not defined (and this is not a submodule), it
-    // means this assembly is not published to java.
-    if (!javaPackage) {
-      throw new Error(
-        `Java is not a supported target for module: ${moduleLike.fqn}`,
-      );
+      // for some modules, the parent module's Java package is a prefix of
+      // the submodule's Java package, e.g.
+      // { name: "software.amazon.awscdk", submodule: "software.amazon.awscdk.services.ecr" }
+      //
+      // but it's possible the names differ, for example in aws-cdk-lib:
+      // { name: "software.amazon.awscdk.core", submodule: "software.amazon.awscdk.services.ecr" }
+      return { name: parentFqn, submodule: submoduleJavaPackage };
     }
 
     return { name: javaPackage };
+  }
+
+  public type(type: reflect.Type): transpile.TranspiledType {
+    const submodule = this.findSubmodule(type);
+    const moduleLike = this.moduleLike(submodule ? submodule : type.assembly);
+
+    const fqn = [];
+
+    let namespace = type.namespace;
+    if (namespace) {
+      if (submodule && moduleLike.submodule) {
+        // if the type is in a submodule, submodule.name is a substring of the namespace
+        // so we update that part with the language-specific submodule string
+        fqn.push(namespace.replace(submodule.name, moduleLike.submodule));
+      } else {
+        fqn.push(moduleLike.name);
+        fqn.push(namespace);
+      }
+    } else {
+      fqn.push(moduleLike.name);
+    }
+    fqn.push(type.name);
+
+    return {
+      fqn: fqn.join('.'),
+      name: type.name,
+      namespace: namespace,
+      module: moduleLike.name,
+      submodule: moduleLike.submodule,
+      source: type,
+      language: this.language,
+    };
   }
 
   public callable(callable: reflect.Callable): transpile.TranspiledCallable {
@@ -169,20 +195,24 @@ export class JavaTranspile extends transpile.TranspileBase {
   public parameter(
     parameter: reflect.Parameter,
   ): transpile.TranspiledParameter {
+    const typeRef = this.typeReference(parameter.type);
     return {
       name: parameter.name,
       parentType: this.type(parameter.parentType),
-      typeReference: this.typeReference(parameter.type),
+      typeReference: typeRef,
       optional: parameter.optional,
+      declaration: this.formatProperty(parameter.name, typeRef),
     };
   }
 
   public property(property: reflect.Property): transpile.TranspiledProperty {
+    const typeRef = this.typeReference(property.type);
     return {
       name: property.name,
       parentType: this.type(property.parentType),
-      typeReference: this.typeReference(property.type),
+      typeReference: typeRef,
       optional: property.optional,
+      declaration: this.formatProperty(property.name, typeRef),
     };
   }
 
@@ -319,7 +349,7 @@ export class JavaTranspile extends transpile.TranspileBase {
     inputs: string[],
     method: string,
   ): string {
-    let target = type.submodule ? `${type.namespace}.${type.name}` : type.name;
+    let target = type.name;
     if (method) {
       target = `${target}.${method}`;
     }
@@ -375,5 +405,19 @@ export class JavaTranspile extends transpile.TranspileBase {
     const struct = firstStruct.parentType.system.findInterface(firstStruct.type.fqn!);
     parameters.splice(parameters.indexOf(firstStruct), 1);
     return struct;
+  }
+
+  private formatProperty(
+    name: string,
+    typeReference: transpile.TranspiledTypeReference,
+  ): string {
+    const tf = typeReference.toString({
+      typeFormatter: (t) => t.name,
+    });
+    if (tf.includes(' OR ')) {
+      return `public java.lang.Object get${toUpperCamelCase(name)}();`;
+    } else {
+      return `public ${tf} get${toUpperCamelCase(name)}();`;
+    }
   }
 }

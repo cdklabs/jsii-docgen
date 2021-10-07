@@ -31,7 +31,7 @@ describe('language', () => {
 describe('submodules without an explicit name', () => {
 
   test('java', async () => {
-    const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.DIR_1_126_0, {
+    const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.AWSCDK_1_126_0, {
       language: Language.JAVA,
     });
     const markdown = docs.render({ submodule: 'experimental' });
@@ -39,7 +39,7 @@ describe('submodules without an explicit name', () => {
   });
 
   test('python', async () => {
-    const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.DIR_1_126_0, {
+    const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.AWSCDK_1_126_0, {
       language: Language.PYTHON,
     });
     const markdown = docs.render({ submodule: 'experimental' });

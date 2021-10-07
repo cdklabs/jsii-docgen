@@ -10,7 +10,7 @@ const LIBRARIES = `${__dirname}/../../__fixtures__/libraries`;
 
 // this is a little concerning...we should be mindful
 // if need to keep increasing this.
-jest.setTimeout(60 * 1000);
+jest.setTimeout(120 * 1000);
 
 
 describe('extractPackageName', () => {
@@ -75,7 +75,7 @@ describe('python', () => {
   });
 
   test('snapshot - root module', async () => {
-    const docs = await Documentation.forAssembly('@aws-cdk/aws-ecr', Assemblies.DIR_1_106_0, {
+    const docs = await Documentation.forAssembly('@aws-cdk/aws-ecr', Assemblies.AWSCDK_1_106_0, {
       language: Language.PYTHON,
     });
     const markdown = docs.render();
@@ -83,7 +83,7 @@ describe('python', () => {
   });
 
   test('snapshot - submodules', async () => {
-    const docs = await Documentation.forAssembly('aws-cdk-lib', Assemblies.DIR_1_106_0, {
+    const docs = await Documentation.forAssembly('aws-cdk-lib', Assemblies.AWSCDK_1_106_0, {
       language: Language.PYTHON,
     });
     const markdown = docs.render({ submodule: 'aws_eks' });
@@ -99,13 +99,13 @@ describe('typescript', () => {
   });
 
   test('snapshot - single module', async () => {
-    const docs = await Documentation.forAssembly('@aws-cdk/aws-ecr', Assemblies.DIR_1_106_0);
+    const docs = await Documentation.forAssembly('@aws-cdk/aws-ecr', Assemblies.AWSCDK_1_106_0);
     const markdown = docs.render();
     expect(markdown.render()).toMatchSnapshot();
   });
 
   test('snapshot - submodules', async () => {
-    const docs = await Documentation.forAssembly('aws-cdk-lib', Assemblies.DIR_1_106_0);
+    const docs = await Documentation.forAssembly('aws-cdk-lib', Assemblies.AWSCDK_1_106_0);
     const markdown = docs.render({ submodule: 'aws_eks' });
     expect(markdown.render()).toMatchSnapshot();
   });
@@ -121,7 +121,7 @@ describe('java', () => {
   });
 
   test('snapshot - root module', async () => {
-    const docs = await Documentation.forAssembly('@aws-cdk/aws-ecr', Assemblies.DIR_1_106_0, {
+    const docs = await Documentation.forAssembly('@aws-cdk/aws-ecr', Assemblies.AWSCDK_1_106_0, {
       language: Language.JAVA,
     });
     const markdown = docs.render();
@@ -129,7 +129,15 @@ describe('java', () => {
   });
 
   test('snapshot - submodules', async () => {
-    const docs = await Documentation.forAssembly('aws-cdk-lib', Assemblies.DIR_1_106_0, {
+    const docs = await Documentation.forAssembly('aws-cdk-lib', Assemblies.AWSCDK_1_106_0, {
+      language: Language.JAVA,
+    });
+    const markdown = docs.render({ submodule: 'aws_eks' });
+    expect(markdown.render()).toMatchSnapshot();
+  });
+
+  test('snapshot - submodules 2', async () => {
+    const docs = await Documentation.forAssembly('monocdk', Assemblies.AWSCDK_1_106_0, {
       language: Language.JAVA,
     });
     const markdown = docs.render({ submodule: 'aws_eks' });
