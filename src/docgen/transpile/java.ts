@@ -1,7 +1,6 @@
+import * as Case from 'case';
 import * as reflect from 'jsii-reflect';
 import * as transpile from './transpile';
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const Case = require('case');
 
 // Helper methods
 const toCamelCase = (text?: string) => {
@@ -48,38 +47,42 @@ export class JavaTranspile extends transpile.TranspileBase {
   public moduleLike(
     moduleLike: reflect.ModuleLike,
   ): transpile.TranspiledModuleLike {
-    const fqn: string = moduleLike.targets?.java?.package;
-    if (!fqn) {
+    const javaPackage: string = moduleLike.targets?.java?.package;
+
+    // if this is a submodule, we need to break the package name down into the
+    // parent name and the submodule. we also allow submodules not to have
+    // explicit target names, in which case we need to append the snake-cased
+    // submodule name to the parent package name.
+    if (moduleLike instanceof reflect.Submodule) {
+      const assembly = this.getParentModule(moduleLike);
+      const parentJavaPackage = assembly.targets?.java?.package;
+
+      // if the submodule does not explicitly define a java package name, we need to deduce it from the parent
+      // based on jsii-pacmak package naming conventions.
+      // see https://github.com/aws/jsii/blob/b329670bf9ec222fad5fc0d614dcddd5daca7af5/packages/jsii-pacmak/lib/targets/java.ts#L3150
+      const submoduleJavaPackage = javaPackage ?? `${parentJavaPackage}.${Case.snake(moduleLike.name)}`;
+
+      // ensure that the submodule package name is a sub-package of the root package name
+      if (!submoduleJavaPackage.startsWith(parentJavaPackage)) {
+        throw new Error(`Expected submodule ${submoduleJavaPackage} to start with ${parentJavaPackage} since it is its parent module.`);
+      }
+
+      // { name: "software.amazon.awscdk", submodule: "services.ecr" }
+      return {
+        name: parentJavaPackage,
+        submodule: submoduleJavaPackage.substring(parentJavaPackage.length + 1),
+      };
+    }
+
+    // if a java package name is not defined (and this is not a submodule), it
+    // means this assembly is not published to java.
+    if (!javaPackage) {
       throw new Error(
         `Java is not a supported target for module: ${moduleLike.fqn}`,
       );
     }
 
-    if (moduleLike instanceof reflect.Submodule) {
-      const parent = this.getParentModule(moduleLike);
-      if (!parent) {
-        throw new Error(`Could not find parent module of ${moduleLike.fqn}`);
-      }
-      const parentFqn = parent.targets?.java?.package;
-      if (!fqn.startsWith(parentFqn)) {
-        throw new Error(`Expected submodule ${fqn} to start with ${parentFqn} since it is its parent module.`);
-      }
-      // { name: "software.amazon.awscdk", submodule: "services.ecr" }
-      return { name: parentFqn, submodule: fqn.substring(parentFqn.length + 1) };
-    }
-
-    return { name: fqn };
-  }
-
-  private getParentModule(moduleLike: reflect.ModuleLike): reflect.Assembly | undefined {
-    const ts = moduleLike.system;
-    for (const assembly of ts.assemblies) {
-      const child = assembly.submodules.find((mod) => mod.fqn === moduleLike.fqn);
-      if (child) {
-        return assembly;
-      }
-    }
-    return undefined;
+    return { name: javaPackage };
   }
 
   public callable(callable: reflect.Callable): transpile.TranspiledCallable {

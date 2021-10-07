@@ -9,6 +9,8 @@ import * as reflect from 'jsii-reflect';
  * Use `Assemblies.instance` to obtain it.
  */
 export class Assemblies {
+  public static readonly DIR_1_106_0 = `${__dirname}/../__fixtures__/assemblies`;
+  public static readonly DIR_1_126_0 = `${__dirname}/../__fixtures__/assemblies-1.126.0`;
 
   private static _instance: Assemblies;
 
@@ -24,7 +26,7 @@ export class Assemblies {
 
   private constructor() {
     this.ts = new reflect.TypeSystem();
-    this.addAssemblies(`${__dirname}/../__fixtures__/assemblies`);
+    this.addAssemblies(Assemblies.DIR_1_106_0);
   }
 
   public get withoutSubmodules(): reflect.Assembly {
