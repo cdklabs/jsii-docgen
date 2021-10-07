@@ -653,4 +653,12 @@ export abstract class TranspileBase implements Transpile {
     // type is inside this submodule.
     return submodules[0];
   }
+
+  protected getParentModule(moduleLike: reflect.ModuleLike): reflect.Assembly {
+    if (moduleLike.types.length === 0) {
+      throw new Error(`unable to determine assembly since module does not have any types: ${moduleLike.fqn}`);
+    }
+
+    return moduleLike.types[0].assembly;
+  }
 }

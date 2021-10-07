@@ -1,7 +1,6 @@
+import * as Case from 'case';
 import * as reflect from 'jsii-reflect';
 import * as transpile from './transpile';
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const Case = require('case');
 
 // Helper methods
 const toCamelCase = (text?: string) => {
@@ -53,19 +52,20 @@ export class JavaTranspile extends transpile.TranspileBase {
   public moduleLike(
     moduleLike: reflect.ModuleLike,
   ): transpile.TranspiledModuleLike {
-    const fqn: string = moduleLike.targets?.java?.package;
-    if (!fqn) {
-      throw new Error(
-        `Java is not a supported target for module: ${moduleLike.fqn}`,
-      );
-    }
+    const javaPackage: string = moduleLike.targets?.java?.package;
 
+    // if this is a submodule, we need to break the package name down into the
+    // parent name and the submodule. we also allow submodules not to have
+    // explicit target names, in which case we need to append the snake-cased
+    // submodule name to the parent package name.
     if (moduleLike instanceof reflect.Submodule) {
       const parent = this.getParentModule(moduleLike);
-      if (!parent) {
-        throw new Error(`Could not find parent module of ${moduleLike.fqn}`);
-      }
       const parentFqn = parent.targets?.java?.package;
+
+      // if the submodule does not explicitly define a java package name, we need to deduce it from the parent
+      // based on jsii-pacmak package naming conventions.
+      // see https://github.com/aws/jsii/blob/b329670bf9ec222fad5fc0d614dcddd5daca7af5/packages/jsii-pacmak/lib/targets/java.ts#L3150
+      const submoduleJavaPackage = javaPackage ?? `${parentFqn}.${Case.snake(moduleLike.name)}`;
 
       // for some modules, the parent module's Java package is a prefix of
       // the submodule's Java package, e.g.
@@ -73,10 +73,10 @@ export class JavaTranspile extends transpile.TranspileBase {
       //
       // but it's possible the names differ, for example in aws-cdk-lib:
       // { name: "software.amazon.awscdk.core", submodule: "software.amazon.awscdk.services.ecr" }
-      return { name: parentFqn, submodule: fqn };
+      return { name: parentFqn, submodule: submoduleJavaPackage };
     }
 
-    return { name: fqn };
+    return { name: javaPackage };
   }
 
   public type(type: reflect.Type): transpile.TranspiledType {
@@ -109,17 +109,6 @@ export class JavaTranspile extends transpile.TranspileBase {
       source: type,
       language: this.language,
     };
-  }
-
-  private getParentModule(moduleLike: reflect.ModuleLike): reflect.Assembly | undefined {
-    const ts = moduleLike.system;
-    for (const assembly of ts.assemblies) {
-      const child = assembly.submodules.find((mod) => mod.fqn === moduleLike.fqn);
-      if (child) {
-        return assembly;
-      }
-    }
-    return undefined;
   }
 
   public callable(callable: reflect.Callable): transpile.TranspiledCallable {

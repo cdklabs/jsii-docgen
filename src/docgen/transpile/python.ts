@@ -1,7 +1,6 @@
+import * as Case from 'case';
 import * as reflect from 'jsii-reflect';
 import * as transpile from './transpile';
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const Case = require('case');
 
 // Helpers
 const toSnakeCase = (text?: string) => {
@@ -243,18 +242,28 @@ export class PythonTranspile extends transpile.TranspileBase {
   public moduleLike(
     moduleLike: reflect.ModuleLike,
   ): transpile.TranspiledModuleLike {
-    const fqn = moduleLike.targets?.python?.module;
-    if (!fqn) {
+    const pythonModule = moduleLike.targets?.python?.module;
+
+    if (moduleLike instanceof reflect.Submodule) {
+      const assembly = this.getParentModule(moduleLike);
+      const parentPythonModule = assembly.targets?.python?.module;
+
+      // if the submodule does not explicitly defines the python module name, then
+      // append a snake case version of the submodule name to the parent module name
+      // see https://github.com/aws/jsii/blob/b329670bf9ec222fad5fc0d614dcddd5daca7af5/packages/jsii-pacmak/lib/targets/python/type-name.ts#L455
+      const submodulePythonModule = pythonModule ?? `${parentPythonModule}.${Case.snake(moduleLike.name)}`;
+
+      const moduleParts = submodulePythonModule.split('.');
+      return { name: moduleParts[0], submodule: moduleParts[1] };
+    }
+
+    if (!pythonModule) {
       throw new Error(
         `Python is not a supported target for module: ${moduleLike.fqn}`,
       );
     }
 
-    if (moduleLike instanceof reflect.Submodule) {
-      const fqnParts = fqn.split('.');
-      return { name: fqnParts[0], submodule: fqnParts[1] };
-    }
-    return { name: fqn };
+    return { name: pythonModule };
   }
 
   public interface(

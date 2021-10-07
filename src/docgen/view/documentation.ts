@@ -319,7 +319,7 @@ async function spawn(command: string, args: ReadonlyArray<string> = [], options:
         ko(new SpawnFailure(
           `'${command}' command ${code != null ? `exited with code ${code}` : `was terminated by signal ${signal}`}`,
           code,
-          signal,
+          signal as any,
         ));
       }
     });
