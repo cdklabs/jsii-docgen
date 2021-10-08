@@ -77,13 +77,22 @@ test('NpmError error (from STDOUT)', async () => {
   expect((err as NpmError).npmErrorCode).toBe('E429');
 });
 
+// Most platforms have a bunch of ERRNO synonyms (the same value corresponds to
+// several symbolic codes). For example, `EAGAIN` is typically the same value as
+// `EWOULDBLOCK` (each symnbolic name is relevant in different contexts). What
+// synonyms exist may differ on each platform, and we will always match the
+// first encountered constant in `constants.errno`. This map is here so we skip
+// the redundant entries properly.
+const checkedErrnos = new Set<number>();
 for (const [errname, errno] of Object.entries(constants.errno)) {
   if (errname === 'ENOSPC') {
     // This is NoSpaceLeftOnDevice
     continue;
-  } else if (errname === 'EWOULDBLOCK') {
-    // This is a synonym of EAGAIN
+  } else if (checkedErrnos.has(errno)) {
+    // This is a synonym of a previous code, so skipping it
     continue;
+  } else {
+    checkedErrnos.add(errno);
   }
 
   test(`NpmError error (possibly ${errname})`, async () => {
