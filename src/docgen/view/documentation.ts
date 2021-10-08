@@ -1,4 +1,3 @@
-import * as child from 'child_process';
 import * as os from 'os';
 import * as path from 'path';
 import * as fs from 'fs-extra';
@@ -6,12 +5,12 @@ import * as glob from 'glob-promise';
 import * as reflect from 'jsii-reflect';
 import { TargetLanguage } from 'jsii-rosetta';
 import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
-import { NoSpaceLeftOnDevice } from '../../errors';
 import { Markdown } from '../render/markdown';
 import { JavaTranspile } from '../transpile/java';
 import { PythonTranspile } from '../transpile/python';
 import { Transpile, Language, TranspiledType } from '../transpile/transpile';
 import { TypeScriptTranspile } from '../transpile/typescript';
+import { Npm } from './_npm';
 import { ApiReference } from './api-reference';
 import { Readme } from './readme';
 
@@ -108,6 +107,7 @@ export class Documentation {
    * @param options - Additional options.
    *
    * @throws NoSpaceLeftOnDevice if the installation fails due to running out of disk space
+   * @throws NpmError if some `npm` command fails when preparing the working set
    */
   public static async forPackage(target: string, options: ForPackageDocumentationOptions = {}): Promise<Documentation> {
     return withTempDir(async (workdir: string) => {
@@ -118,52 +118,10 @@ export class Documentation {
 
       const name = options?.name ?? extractPackageName(target);
 
-      // npm7 is needed so that we also install peerDependencies - they are needed to construct
-      // the full type system.
-      console.log('Installing npm7...');
-      await spawn('npm', ['install', 'npm@7'], {
-        cwd: workdir,
-        shell: true,
-        stdio: ['ignore', 'inherit', 'inherit'],
-      });
+      const npm = new Npm(workdir);
 
       console.log(`Installing package ${target}`);
-      try {
-        await spawn(path.join(workdir, 'node_modules', '.bin', 'npm'), [
-          'install',
-          // this is critical from a security perspective to prevent
-          // code execution as part of the install command using npm hooks. (e.g postInstall)
-          '--ignore-scripts',
-          // ensures npm does not insert anything in $PATH
-          '--no-bin-links',
-          '--no-save',
-          target,
-        ], {
-          cwd: workdir,
-          shell: true,
-          stdio: ['ignore', 'inherit', 'inherit'],
-        });
-      } catch (e) {
-        if (e instanceof SpawnFailure) {
-          if (e.code === 228) {
-            // npm install exits with code 228 when it encounters the ENOSPC
-            // errno while doing it's business. This is effectively 256 - ENOSPC
-            // (which is 28). In this case, we'll throw a
-            // NoSpaceLeftOnDeviceError so that consumers can perform special
-            // handling if they so desire.
-            throw new NoSpaceLeftOnDevice(e.message, e.stack);
-          } else if (e.code) {
-            const maybeerrno = 256 - e.code;
-            for (const [errname, errno] of Object.entries(os.constants.errno)) {
-              if (maybeerrno === errno) {
-                console.error(`Exit code ${e.code} may correspond to ${errname} (-${errno})`);
-                break;
-              }
-            }
-          }
-        }
-        throw e;
-      }
+      await npm.install(target);
 
       return Documentation.forProject(path.join(workdir, 'node_modules', name), { ...options, assembliesDir: workdir });
     });
@@ -306,31 +264,6 @@ async function createAssembly(name: string, tsDir: string, loose: boolean, langu
     await ts.load(dotJsii);
   }
   return ts.findAssembly(name);
-}
-
-async function spawn(command: string, args: ReadonlyArray<string> = [], options: child.SpawnOptions = {}) {
-  return new Promise<void>((ok, ko) => {
-    const p = child.spawn(command, args, options);
-    p.once('error', ko);
-    p.once('close', (code, signal) => {
-      if (code === 0) {
-        ok();
-      } else {
-        ko(new SpawnFailure(
-          `'${command}' command ${code != null ? `exited with code ${code}` : `was terminated by signal ${signal}`}`,
-          code,
-          signal as any,
-        ));
-      }
-    });
-  });
-}
-
-class SpawnFailure extends Error {
-  public constructor(message: string, public readonly code: number | null, public readonly signal: NodeJS.Signals | null) {
-    super(message);
-    Error.captureStackTrace(this, this.constructor);
-  }
 }
 
 export function extractPackageName(spec: string) {
