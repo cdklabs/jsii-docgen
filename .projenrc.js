@@ -13,7 +13,7 @@ const project = new TypeScriptProject({
     'jsii-docgen': 'bin/jsii-docgen',
   },
   devDeps: [
-    '@types/fs-extra@^8', // >8 needs a newer node version
+    '@types/fs-extra',
   ],
   deps: [
     'yargs',
@@ -34,8 +34,10 @@ const project = new TypeScriptProject({
   },
   autoApproveUpgrades: true,
 
+  minNodeVersion: '12.4.0',
   tsconfig: {
     compilerOptions: {
+      target: 'ES2019',
       lib: ['es2019'], // allow Array.prototype.flat etc.
     },
   },

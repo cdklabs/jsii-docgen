@@ -23,3 +23,68 @@ export class NoSpaceLeftOnDevice extends Error {
     }
   }
 }
+
+/**
+ * The error raised when `npm` commands fail with an "opaque" exit code,
+ * attempting to obtain more information from the commands output.
+ */
+export class NpmError extends Error {
+  public readonly name: string = `${name}.${this.constructor.name}`;
+
+  /**
+   * The error code npm printed out to stderr or stdout before exiting. This can
+   * provide more information about the error in a machine-friendlier way.
+   *
+   * This is extracted from log-parsing, and is hence not guaranteed to be
+   * accurate.
+   *
+   * @example 'EPROTO'
+   * @example 'E429'
+   */
+  public readonly npmErrorCode: string | undefined;
+
+  /**
+   * Data the command produced to `STDOUT`. This field is not included in the
+   * `JSON.stringify()` output for this type.
+   */
+  public readonly stdout: string;
+
+  /**
+   * Data the command produced to `STDERR`. This field is not included in the
+   * `JSON.stringify()` output for this type.
+   */
+  public readonly stderr: string;
+
+  /** @internal */
+  public constructor(message: string, stdio: { stdout: readonly Buffer[]; stderr: readonly Buffer[] }) {
+    super(message);
+    Error.captureStackTrace(this, this.constructor);
+
+    this.stdout = Buffer.concat(stdio.stdout).toString('utf-8');
+    this.stderr = Buffer.concat(stdio.stderr).toString('utf-8');
+
+    const ERROR_CODE_REGEX = /^npm\s+ERR!\s+(?:code|errno)\s+(E[^\s]+)$/gm;
+    for (const output of [this.stderr, this.stdout]) {
+      const [, match] = ERROR_CODE_REGEX.exec(output) ?? [];
+      if (match) {
+        this.npmErrorCode = match;
+        break;
+      }
+    }
+  }
+
+  /**
+   * Customized form for JSON.stringify() to avoid serializing possibly LARGE
+   * contents of the `stdout` and `stderr` buffers.
+   *
+   * @internal
+   */
+  public toJSON() {
+    return {
+      name: this.name,
+      message: this.message,
+      stack: this.stack,
+      npmErrorCode: this.npmErrorCode,
+    };
+  }
+}
