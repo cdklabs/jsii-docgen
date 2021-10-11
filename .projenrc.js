@@ -34,7 +34,7 @@ const project = new TypeScriptProject({
   },
   autoApproveUpgrades: true,
 
-  minNodeVersion: '12.4.0',
+  minNodeVersion: '12.7.0',
   tsconfig: {
     compilerOptions: {
       target: 'ES2019',
