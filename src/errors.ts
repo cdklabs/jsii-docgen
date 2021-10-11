@@ -29,8 +29,6 @@ export class NoSpaceLeftOnDevice extends Error {
  * attempting to obtain more information from the commands output.
  */
 export class NpmError extends Error {
-  public readonly name: string = `${name}.${this.constructor.name}`;
-
   /**
    * The error code npm printed out to stderr or stdout before exiting. This can
    * provide more information about the error in a machine-friendlier way.
@@ -63,11 +61,14 @@ export class NpmError extends Error {
     this.stdout = Buffer.concat(stdio.stdout).toString('utf-8');
     this.stderr = Buffer.concat(stdio.stderr).toString('utf-8');
 
+    this.name = `${name}.${this.constructor.name}`;
+
     const ERROR_CODE_REGEX = /^npm\s+ERR!\s+(?:code|errno)\s+(E[^\s]+)$/gm;
     for (const output of [this.stderr, this.stdout]) {
       const [, match] = ERROR_CODE_REGEX.exec(output) ?? [];
       if (match) {
         this.npmErrorCode = match;
+        this.name += `.${this.npmErrorCode}`;
         break;
       }
     }
