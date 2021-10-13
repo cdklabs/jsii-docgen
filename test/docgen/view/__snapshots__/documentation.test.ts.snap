@@ -3090,7 +3090,7 @@ is important here):
 // This example was automatically transliterated with incomplete type information. It may not work as-is.
 // See https://github.com/aws/jsii/issues/826 for more information.
 
-repository.addLifecycleRule(Map.of(\\"tagPrefixList\\", asList(\\"prod\\"), \\"maxImageCount\\", 9999));
+repository.addLifecycleRule(Map.of(\\"tagPrefixList\\", List.of(\\"prod\\"), \\"maxImageCount\\", 9999));
 repository.addLifecycleRule(Map.of(\\"maxImageAge\\", cdk.Duration.days(30)));
 \`\`\`
 # API Reference <a name=\\"API Reference\\"></a>
@@ -5575,7 +5575,7 @@ is important here):
 // This example was automatically transliterated with incomplete type information. It may not work as-is.
 // See https://github.com/aws/jsii/issues/826 for more information.
 
-repository.addLifecycleRule(Map.of(\\"tagPrefixList\\", asList(\\"prod\\"), \\"maxImageCount\\", 9999));
+repository.addLifecycleRule(Map.of(\\"tagPrefixList\\", List.of(\\"prod\\"), \\"maxImageCount\\", 9999));
 repository.addLifecycleRule(Map.of(\\"maxImageAge\\", cdk.Duration.days(30)));
 \`\`\`
 # API Reference <a name=\\"API Reference\\"></a>
