@@ -63,7 +63,7 @@ export class NpmError extends Error {
 
     this.name = `${name}.${this.constructor.name}`;
 
-    const ERROR_CODE_REGEX = /^npm\s+ERR!\s+(?:code|errno)\s+(E[^\s]+)$/gm;
+    const ERROR_CODE_REGEX = /^npm\s+ERR!\s+(?:code|errno)\s+(E[^\s]+|\d+)$/gm;
     for (const output of [this.stderr, this.stdout]) {
       const [, match] = ERROR_CODE_REGEX.exec(output) ?? [];
       if (match) {
