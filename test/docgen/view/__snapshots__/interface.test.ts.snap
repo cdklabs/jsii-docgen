@@ -1,5 +1,267 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`csharp snapshot 1`] = `
+" IRepository <a name=\\"Amazon.CDK.AWS.ECR.IRepository\\"></a>
+
+- *Extends:* [\`Amazon.CDK.IResource\`](#Amazon.CDK.IResource)
+
+- *Implemented By:* [\`Amazon.CDK.AWS.ECR.Repository\`](#Amazon.CDK.AWS.ECR.Repository), [\`Amazon.CDK.AWS.ECR.RepositoryBase\`](#Amazon.CDK.AWS.ECR.RepositoryBase), [\`Amazon.CDK.AWS.ECR.IRepository\`](#Amazon.CDK.AWS.ECR.IRepository)
+
+Represents an ECR repository.
+
+# Methods <a name=\\"Methods\\"></a>
+
+## \`AddToResourcePolicy\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.AddToResourcePolicy\\"></a>
+
+\`\`\`csharp
+public AddToResourcePolicy(PolicyStatement statement)
+\`\`\`
+
+### \`statement\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.statement\\"></a>
+
+- *Type:* [\`Amazon.CDK.AWS.IAM.PolicyStatement\`](#Amazon.CDK.AWS.IAM.PolicyStatement)
+
+---
+
+## \`Grant\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.Grant\\"></a>
+
+\`\`\`csharp
+public Grant(IGrantable grantee, string actions)
+\`\`\`
+
+### \`grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.grantee\\"></a>
+
+- *Type:* [\`Amazon.CDK.AWS.IAM.IGrantable\`](#Amazon.CDK.AWS.IAM.IGrantable)
+
+---
+
+### \`actions\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.actions\\"></a>
+
+- *Type:* \`string\`
+
+---
+
+## \`GrantPull\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.GrantPull\\"></a>
+
+\`\`\`csharp
+public GrantPull(IGrantable grantee)
+\`\`\`
+
+### \`grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.grantee\\"></a>
+
+- *Type:* [\`Amazon.CDK.AWS.IAM.IGrantable\`](#Amazon.CDK.AWS.IAM.IGrantable)
+
+---
+
+## \`GrantPullPush\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.GrantPullPush\\"></a>
+
+\`\`\`csharp
+public GrantPullPush(IGrantable grantee)
+\`\`\`
+
+### \`grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.grantee\\"></a>
+
+- *Type:* [\`Amazon.CDK.AWS.IAM.IGrantable\`](#Amazon.CDK.AWS.IAM.IGrantable)
+
+---
+
+## \`OnCloudTrailEvent\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.OnCloudTrailEvent\\"></a>
+
+\`\`\`csharp
+public OnCloudTrailEvent(string id, OnEventOptions options)
+\`\`\`
+
+### \`id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.id\\"></a>
+
+- *Type:* \`string\`
+
+The id of the rule.
+
+---
+
+### \`options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.options\\"></a>
+
+- *Type:* [\`Amazon.CDK.AWS.Events.OnEventOptions\`](#Amazon.CDK.AWS.Events.OnEventOptions)
+
+Options for adding the rule.
+
+---
+
+## \`OnCloudTrailImagePushed\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.OnCloudTrailImagePushed\\"></a>
+
+\`\`\`csharp
+public OnCloudTrailImagePushed(string id, OnCloudTrailImagePushedOptions options)
+\`\`\`
+
+### \`id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.id\\"></a>
+
+- *Type:* \`string\`
+
+The id of the rule.
+
+---
+
+### \`options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.options\\"></a>
+
+- *Type:* [\`Amazon.CDK.AWS.ECR.OnCloudTrailImagePushedOptions\`](#Amazon.CDK.AWS.ECR.OnCloudTrailImagePushedOptions)
+
+Options for adding the rule.
+
+---
+
+## \`OnEvent\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.OnEvent\\"></a>
+
+\`\`\`csharp
+public OnEvent(string id, OnEventOptions options)
+\`\`\`
+
+### \`id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.id\\"></a>
+
+- *Type:* \`string\`
+
+---
+
+### \`options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.options\\"></a>
+
+- *Type:* [\`Amazon.CDK.AWS.Events.OnEventOptions\`](#Amazon.CDK.AWS.Events.OnEventOptions)
+
+---
+
+## \`OnImageScanCompleted\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.OnImageScanCompleted\\"></a>
+
+\`\`\`csharp
+public OnImageScanCompleted(string id, OnImageScanCompletedOptions options)
+\`\`\`
+
+### \`id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.id\\"></a>
+
+- *Type:* \`string\`
+
+The id of the rule.
+
+---
+
+### \`options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.options\\"></a>
+
+- *Type:* [\`Amazon.CDK.AWS.ECR.OnImageScanCompletedOptions\`](#Amazon.CDK.AWS.ECR.OnImageScanCompletedOptions)
+
+Options for adding the rule.
+
+---
+
+## \`RepositoryUriForDigest\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.RepositoryUriForDigest\\"></a>
+
+\`\`\`csharp
+public RepositoryUriForDigest(string digest)
+\`\`\`
+
+### \`digest\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.digest\\"></a>
+
+- *Type:* \`string\`
+
+Image digest to use (tools usually default to the image with the \\"latest\\" tag if omitted).
+
+---
+
+## \`RepositoryUriForTag\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.RepositoryUriForTag\\"></a>
+
+\`\`\`csharp
+public RepositoryUriForTag(string tag)
+\`\`\`
+
+### \`tag\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.tag\\"></a>
+
+- *Type:* \`string\`
+
+Image tag to use (tools usually default to \\"latest\\" if omitted).
+
+---
+
+# Properties <a name=\\"Properties\\"></a>
+
+## \`node\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.node\\"></a>
+
+\`\`\`csharp
+ConstructNode node
+\`\`\`
+
+- *Type:* [\`Amazon.CDK.ConstructNode\`](#Amazon.CDK.ConstructNode)
+
+The construct tree node for this construct.
+
+---
+
+## \`env\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.env\\"></a>
+
+\`\`\`csharp
+ResourceEnvironment env
+\`\`\`
+
+- *Type:* [\`Amazon.CDK.ResourceEnvironment\`](#Amazon.CDK.ResourceEnvironment)
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
+
+---
+
+## \`stack\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.stack\\"></a>
+
+\`\`\`csharp
+Stack stack
+\`\`\`
+
+- *Type:* [\`Amazon.CDK.Stack\`](#Amazon.CDK.Stack)
+
+The stack in which this resource is defined.
+
+---
+
+## \`repositoryArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.repositoryArn\\"></a>
+
+\`\`\`csharp
+string repositoryArn
+\`\`\`
+
+- *Type:* \`string\`
+
+The ARN of the repository.
+
+---
+
+## \`repositoryName\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.repositoryName\\"></a>
+
+\`\`\`csharp
+string repositoryName
+\`\`\`
+
+- *Type:* \`string\`
+
+The name of the repository.
+
+---
+
+## \`repositoryUri\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.repositoryUri\\"></a>
+
+\`\`\`csharp
+string repositoryUri
+\`\`\`
+
+- *Type:* \`string\`
+
+The URI of this repository (represents the latest image):.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
+
+---
+"
+`;
+
 exports[`java snapshot 1`] = `
 " IRepository <a name=\\"software.amazon.awscdk.services.ecr.IRepository\\"></a>
 

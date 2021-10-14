@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`csharp snapshot 1`] = `
+" \`Inspect\` <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.Inspect\\"></a>
+
+\`\`\`csharp
+public Inspect(TreeInspector inspector)
+\`\`\`
+
+# \`inspector\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.parameter.inspector\\"></a>
+
+- *Type:* [\`Amazon.CDK.TreeInspector\`](#Amazon.CDK.TreeInspector)
+
+tree inspector to collect and process attributes.
+
+---
+"
+`;
+
 exports[`java snapshot 1`] = `
 " \`inspect\` <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepository.inspect\\"></a>
 
