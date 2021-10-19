@@ -275,19 +275,6 @@ export class PythonTranspile extends transpile.TranspileBase {
     };
   }
 
-  private optionalityCompare(
-    p1: reflect.Parameter,
-    p2: reflect.Parameter,
-  ): number {
-    if (!p1.optional && p2.optional) {
-      return -1;
-    }
-    if (!p2.optional && p1.optional) {
-      return 1;
-    }
-    return 0;
-  }
-
   private isStruct(p: reflect.Parameter): boolean {
     return p.type.fqn ? p.system.findFqn(p.type.fqn).isDataType() : false;
   }

@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`csharp snapshot 1`] = `
-" \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+" \`RepositoryCatalogData\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps.property.RepositoryCatalogData\\"></a>
 
 \`\`\`csharp
-object repositoryCatalogData
+public object RepositoryCatalogData { get; set; }
 \`\`\`
 
 - *Type:* \`object\`

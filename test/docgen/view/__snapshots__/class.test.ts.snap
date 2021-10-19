@@ -15,10 +15,10 @@ Authorization token to access private ECR repositories in the current environmen
 \`\`\`csharp
 using Amazon.CDK.AWS.ECR;
 
-AuthorizationToken.GrantRead(IGrantable grantee);
+AuthorizationToken.GrantRead(IGrantable Grantee);
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.AuthorizationToken.parameter.grantee\\"></a>
+### \`Grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.AuthorizationToken.parameter.Grantee\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.IAM.IGrantable\`](#Amazon.CDK.AWS.IAM.IGrantable)
 

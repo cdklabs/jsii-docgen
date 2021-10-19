@@ -14,10 +14,10 @@ Represents an ECR repository.
 ## \`AddToResourcePolicy\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.AddToResourcePolicy\\"></a>
 
 \`\`\`csharp
-public AddToResourcePolicy(PolicyStatement statement)
+private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
-### \`statement\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.statement\\"></a>
+### \`Statement\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Statement\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.IAM.PolicyStatement\`](#Amazon.CDK.AWS.IAM.PolicyStatement)
 
@@ -26,16 +26,16 @@ public AddToResourcePolicy(PolicyStatement statement)
 ## \`Grant\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.Grant\\"></a>
 
 \`\`\`csharp
-public Grant(IGrantable grantee, string actions)
+private Grant(IGrantable Grantee, string Actions)
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.grantee\\"></a>
+### \`Grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Grantee\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.IAM.IGrantable\`](#Amazon.CDK.AWS.IAM.IGrantable)
 
 ---
 
-### \`actions\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.actions\\"></a>
+### \`Actions\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Actions\\"></a>
 
 - *Type:* \`string\`
 
@@ -44,10 +44,10 @@ public Grant(IGrantable grantee, string actions)
 ## \`GrantPull\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.GrantPull\\"></a>
 
 \`\`\`csharp
-public GrantPull(IGrantable grantee)
+private GrantPull(IGrantable Grantee)
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.grantee\\"></a>
+### \`Grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Grantee\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.IAM.IGrantable\`](#Amazon.CDK.AWS.IAM.IGrantable)
 
@@ -56,10 +56,10 @@ public GrantPull(IGrantable grantee)
 ## \`GrantPullPush\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.GrantPullPush\\"></a>
 
 \`\`\`csharp
-public GrantPullPush(IGrantable grantee)
+private GrantPullPush(IGrantable Grantee)
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.grantee\\"></a>
+### \`Grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Grantee\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.IAM.IGrantable\`](#Amazon.CDK.AWS.IAM.IGrantable)
 
@@ -68,10 +68,10 @@ public GrantPullPush(IGrantable grantee)
 ## \`OnCloudTrailEvent\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.OnCloudTrailEvent\\"></a>
 
 \`\`\`csharp
-public OnCloudTrailEvent(string id, OnEventOptions options)
+private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.id\\"></a>
+### \`Id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Id\\"></a>
 
 - *Type:* \`string\`
 
@@ -79,7 +79,7 @@ The id of the rule.
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.options\\"></a>
+### \`Options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Options\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.Events.OnEventOptions\`](#Amazon.CDK.AWS.Events.OnEventOptions)
 
@@ -90,10 +90,10 @@ Options for adding the rule.
 ## \`OnCloudTrailImagePushed\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.OnCloudTrailImagePushed\\"></a>
 
 \`\`\`csharp
-public OnCloudTrailImagePushed(string id, OnCloudTrailImagePushedOptions options)
+private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.id\\"></a>
+### \`Id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Id\\"></a>
 
 - *Type:* \`string\`
 
@@ -101,7 +101,7 @@ The id of the rule.
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.options\\"></a>
+### \`Options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Options\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.ECR.OnCloudTrailImagePushedOptions\`](#Amazon.CDK.AWS.ECR.OnCloudTrailImagePushedOptions)
 
@@ -112,16 +112,16 @@ Options for adding the rule.
 ## \`OnEvent\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.OnEvent\\"></a>
 
 \`\`\`csharp
-public OnEvent(string id, OnEventOptions options)
+private OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.id\\"></a>
+### \`Id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Id\\"></a>
 
 - *Type:* \`string\`
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.options\\"></a>
+### \`Options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Options\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.Events.OnEventOptions\`](#Amazon.CDK.AWS.Events.OnEventOptions)
 
@@ -130,10 +130,10 @@ public OnEvent(string id, OnEventOptions options)
 ## \`OnImageScanCompleted\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.OnImageScanCompleted\\"></a>
 
 \`\`\`csharp
-public OnImageScanCompleted(string id, OnImageScanCompletedOptions options)
+private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.id\\"></a>
+### \`Id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Id\\"></a>
 
 - *Type:* \`string\`
 
@@ -141,7 +141,7 @@ The id of the rule.
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.options\\"></a>
+### \`Options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Options\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.ECR.OnImageScanCompletedOptions\`](#Amazon.CDK.AWS.ECR.OnImageScanCompletedOptions)
 
@@ -152,10 +152,10 @@ Options for adding the rule.
 ## \`RepositoryUriForDigest\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.RepositoryUriForDigest\\"></a>
 
 \`\`\`csharp
-public RepositoryUriForDigest(string digest)
+private RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
-### \`digest\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.digest\\"></a>
+### \`Digest\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Digest\\"></a>
 
 - *Type:* \`string\`
 
@@ -166,10 +166,10 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ## \`RepositoryUriForTag\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.RepositoryUriForTag\\"></a>
 
 \`\`\`csharp
-public RepositoryUriForTag(string tag)
+private RepositoryUriForTag(string Tag = null)
 \`\`\`
 
-### \`tag\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.tag\\"></a>
+### \`Tag\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Tag\\"></a>
 
 - *Type:* \`string\`
 
@@ -179,10 +179,10 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 
 # Properties <a name=\\"Properties\\"></a>
 
-## \`node\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.node\\"></a>
+## \`Node\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.Node\\"></a>
 
 \`\`\`csharp
-ConstructNode node
+public ConstructNode Node { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.ConstructNode\`](#Amazon.CDK.ConstructNode)
@@ -191,10 +191,10 @@ The construct tree node for this construct.
 
 ---
 
-## \`env\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.env\\"></a>
+## \`Env\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.Env\\"></a>
 
 \`\`\`csharp
-ResourceEnvironment env
+public ResourceEnvironment Env { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.ResourceEnvironment\`](#Amazon.CDK.ResourceEnvironment)
@@ -210,10 +210,10 @@ that might be different than the stack they were imported into.
 
 ---
 
-## \`stack\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.stack\\"></a>
+## \`Stack\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.Stack\\"></a>
 
 \`\`\`csharp
-Stack stack
+public Stack Stack { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.Stack\`](#Amazon.CDK.Stack)
@@ -222,10 +222,10 @@ The stack in which this resource is defined.
 
 ---
 
-## \`repositoryArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.repositoryArn\\"></a>
+## \`RepositoryArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.RepositoryArn\\"></a>
 
 \`\`\`csharp
-string repositoryArn
+public string RepositoryArn { get; set; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -234,10 +234,10 @@ The ARN of the repository.
 
 ---
 
-## \`repositoryName\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.repositoryName\\"></a>
+## \`RepositoryName\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.RepositoryName\\"></a>
 
 \`\`\`csharp
-string repositoryName
+public string RepositoryName { get; set; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -246,10 +246,10 @@ The name of the repository.
 
 ---
 
-## \`repositoryUri\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.repositoryUri\\"></a>
+## \`RepositoryUri\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.RepositoryUri\\"></a>
 
 \`\`\`csharp
-string repositoryUri
+public string RepositoryUri { get; set; }
 \`\`\`
 
 - *Type:* \`string\`

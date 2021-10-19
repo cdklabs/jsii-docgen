@@ -61,17 +61,19 @@ export class CSharpTranspile extends transpile.TranspileBase {
       ? type.name
       : Case.pascal(callable.name);
 
-    const params = callable.parameters.map(p => this.formatParameter(this.parameter(p))).join(', ');
-    const signatures = [`public ${name}(${params})`];
+    const parameters = callable.parameters.sort(this.optionalityCompare);
+    const paramsFormatted = parameters.map(p => this.formatParameter(this.parameter(p))).join(', ');
+    const prefix = isInitializer || callable.protected ? 'protected' : 'private';
+    const signatures = [`${prefix} ${name}(${paramsFormatted})`];
     const invocations = [isInitializer
-      ? `new ${name}(${params});`
-      : `${type.name}.${name}(${params});`];
+      ? `new ${name}(${paramsFormatted});`
+      : `${type.name}.${name}(${paramsFormatted});`];
 
     return {
       name,
       parentType: type,
       import: this.formatImport(type),
-      parameters: callable.parameters,
+      parameters,
       signatures,
       invocations,
     };
@@ -87,9 +89,9 @@ export class CSharpTranspile extends transpile.TranspileBase {
   public struct(struct: reflect.InterfaceType): transpile.TranspiledStruct {
     const type = this.type(struct);
     const indent = ' '.repeat(4);
-    const inputs = struct.allProperties.map((p) =>
-      this.formatBuilderMethod(this.property(p), indent),
-    ).flat();
+    const inputs = struct.allProperties.map((p) => {
+      return `${indent}${this.formatParameter(this.property(p))}`;
+    }).flat();
     return {
       type: type,
       name: struct.name,
@@ -111,23 +113,25 @@ export class CSharpTranspile extends transpile.TranspileBase {
     parameter: reflect.Parameter,
   ): transpile.TranspiledParameter {
     const typeRef = this.typeReference(parameter.type);
+    const name = Case.pascal(parameter.name);
     return {
-      name: parameter.name,
+      name,
       parentType: this.type(parameter.parentType),
       typeReference: typeRef,
       optional: parameter.optional,
-      declaration: this.formatProperty(parameter.name, typeRef),
+      declaration: this.formatProperty(name, typeRef),
     };
   }
 
   public property(property: reflect.Property): transpile.TranspiledProperty {
     const typeRef = this.typeReference(property.type);
+    const name = Case.pascal(property.name);
     return {
-      name: property.name,
+      name,
       parentType: this.type(property.parentType),
       typeReference: typeRef,
       optional: property.optional,
-      declaration: this.formatProperty(property.name, typeRef),
+      declaration: this.formatProperty(name, typeRef, property.protected),
     };
   }
 
@@ -195,32 +199,29 @@ export class CSharpTranspile extends transpile.TranspileBase {
     const tf = transpiled.typeReference.toString({
       typeFormatter: (t) => t.name,
     });
-    return `${tf} ${transpiled.name}`;
+    const suffix = transpiled.optional ? ' = null' : '';
+    return `${tf} ${transpiled.name}${suffix}`;
   }
 
   private formatStructBuilder(type: transpile.TranspiledType, properties: string[]): string {
     const builder = `new ${type.name} {`;
     return [
       builder,
-      ...properties,
+      properties.join(',\n'),
       '};',
     ].join('\n');
   };
 
-  private formatBuilderMethod(
-    transpiled: transpile.TranspiledParameter,
-    indent: string,
-  ): string[] {
-    return [`${indent}${transpiled.name}`];
-  }
-
   private formatProperty(
     name: string,
     typeReference: transpile.TranspiledTypeReference,
+    isProtected: boolean = false,
   ): string {
     const tf = typeReference.toString({
       typeFormatter: (t) => t.name,
     });
-    return `${tf} ${name}`;
+
+    const prefix = isProtected ? 'protected' : 'public';
+    return `${prefix} ${tf} ${name} { get; set; }`;
   }
 }

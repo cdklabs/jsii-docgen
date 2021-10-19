@@ -23,22 +23,22 @@ See https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html or 'cdk boot
 \`\`\`csharp
 using Amazon.CDK.AWS.CloudFront;
 
-new EdgeFunction(Construct scope, string id, EdgeFunctionProps props);
+new EdgeFunction(Construct Scope, string Id, EdgeFunctionProps Props);
 \`\`\`
 
-##### \`scope\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.scope\\"></a>
+##### \`Scope\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.Scope\\"></a>
 
 - *Type:* [\`Constructs.Construct\`](#Constructs.Construct)
 
 ---
 
-##### \`id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.id\\"></a>
+##### \`Id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.Id\\"></a>
 
 - *Type:* \`string\`
 
 ---
 
-##### \`props\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.props\\"></a>
+##### \`Props\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.Props\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps\`](#Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps)
 
@@ -49,16 +49,16 @@ new EdgeFunction(Construct scope, string id, EdgeFunctionProps props);
 ##### \`AddAlias\` <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.AddAlias\\"></a>
 
 \`\`\`csharp
-public AddAlias(string aliasName, AliasOptions options)
+private AddAlias(string AliasName, AliasOptions Options = null)
 \`\`\`
 
-###### \`aliasName\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.aliasName\\"></a>
+###### \`AliasName\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.AliasName\\"></a>
 
 - *Type:* \`string\`
 
 ---
 
-###### \`options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.options\\"></a>
+###### \`Options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.Options\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.AliasOptions\`](#Amazon.CDK.AWS.Lambda.AliasOptions)
 
@@ -67,10 +67,10 @@ public AddAlias(string aliasName, AliasOptions options)
 ##### \`AddEventSource\` <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.AddEventSource\\"></a>
 
 \`\`\`csharp
-public AddEventSource(IEventSource source)
+private AddEventSource(IEventSource Source)
 \`\`\`
 
-###### \`source\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.source\\"></a>
+###### \`Source\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.Source\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.IEventSource\`](#Amazon.CDK.AWS.Lambda.IEventSource)
 
@@ -79,16 +79,16 @@ public AddEventSource(IEventSource source)
 ##### \`AddEventSourceMapping\` <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.AddEventSourceMapping\\"></a>
 
 \`\`\`csharp
-public AddEventSourceMapping(string id, EventSourceMappingOptions options)
+private AddEventSourceMapping(string Id, EventSourceMappingOptions Options)
 \`\`\`
 
-###### \`id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.id\\"></a>
+###### \`Id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.Id\\"></a>
 
 - *Type:* \`string\`
 
 ---
 
-###### \`options\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.options\\"></a>
+###### \`Options\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.Options\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.EventSourceMappingOptions\`](#Amazon.CDK.AWS.Lambda.EventSourceMappingOptions)
 
@@ -97,16 +97,16 @@ public AddEventSourceMapping(string id, EventSourceMappingOptions options)
 ##### \`AddPermission\` <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.AddPermission\\"></a>
 
 \`\`\`csharp
-public AddPermission(string id, Permission permission)
+private AddPermission(string Id, Permission Permission)
 \`\`\`
 
-###### \`id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.id\\"></a>
+###### \`Id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.Id\\"></a>
 
 - *Type:* \`string\`
 
 ---
 
-###### \`permission\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.permission\\"></a>
+###### \`Permission\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.Permission\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.Permission\`](#Amazon.CDK.AWS.Lambda.Permission)
 
@@ -115,10 +115,10 @@ public AddPermission(string id, Permission permission)
 ##### \`AddToRolePolicy\` <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.AddToRolePolicy\\"></a>
 
 \`\`\`csharp
-public AddToRolePolicy(PolicyStatement statement)
+private AddToRolePolicy(PolicyStatement Statement)
 \`\`\`
 
-###### \`statement\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.statement\\"></a>
+###### \`Statement\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.Statement\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.IAM.PolicyStatement\`](#Amazon.CDK.AWS.IAM.PolicyStatement)
 
@@ -127,10 +127,10 @@ public AddToRolePolicy(PolicyStatement statement)
 ##### \`ConfigureAsyncInvoke\` <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.ConfigureAsyncInvoke\\"></a>
 
 \`\`\`csharp
-public ConfigureAsyncInvoke(EventInvokeConfigOptions options)
+private ConfigureAsyncInvoke(EventInvokeConfigOptions Options)
 \`\`\`
 
-###### \`options\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.options\\"></a>
+###### \`Options\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.Options\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.EventInvokeConfigOptions\`](#Amazon.CDK.AWS.Lambda.EventInvokeConfigOptions)
 
@@ -139,10 +139,10 @@ public ConfigureAsyncInvoke(EventInvokeConfigOptions options)
 ##### \`GrantInvoke\` <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.GrantInvoke\\"></a>
 
 \`\`\`csharp
-public GrantInvoke(IGrantable identity)
+private GrantInvoke(IGrantable Identity)
 \`\`\`
 
-###### \`identity\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.identity\\"></a>
+###### \`Identity\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.Identity\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.IAM.IGrantable\`](#Amazon.CDK.AWS.IAM.IGrantable)
 
@@ -151,16 +151,16 @@ public GrantInvoke(IGrantable identity)
 ##### \`Metric\` <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.Metric\\"></a>
 
 \`\`\`csharp
-public Metric(string metricName, MetricOptions props)
+private Metric(string MetricName, MetricOptions Props = null)
 \`\`\`
 
-###### \`metricName\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.metricName\\"></a>
+###### \`MetricName\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.MetricName\\"></a>
 
 - *Type:* \`string\`
 
 ---
 
-###### \`props\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.props\\"></a>
+###### \`Props\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.Props\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.CloudWatch.MetricOptions\`](#Amazon.CDK.AWS.CloudWatch.MetricOptions)
 
@@ -169,10 +169,10 @@ public Metric(string metricName, MetricOptions props)
 ##### \`MetricDuration\` <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.MetricDuration\\"></a>
 
 \`\`\`csharp
-public MetricDuration(MetricOptions props)
+private MetricDuration(MetricOptions Props = null)
 \`\`\`
 
-###### \`props\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.props\\"></a>
+###### \`Props\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.Props\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.CloudWatch.MetricOptions\`](#Amazon.CDK.AWS.CloudWatch.MetricOptions)
 
@@ -181,10 +181,10 @@ public MetricDuration(MetricOptions props)
 ##### \`MetricErrors\` <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.MetricErrors\\"></a>
 
 \`\`\`csharp
-public MetricErrors(MetricOptions props)
+private MetricErrors(MetricOptions Props = null)
 \`\`\`
 
-###### \`props\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.props\\"></a>
+###### \`Props\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.Props\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.CloudWatch.MetricOptions\`](#Amazon.CDK.AWS.CloudWatch.MetricOptions)
 
@@ -193,10 +193,10 @@ public MetricErrors(MetricOptions props)
 ##### \`MetricInvocations\` <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.MetricInvocations\\"></a>
 
 \`\`\`csharp
-public MetricInvocations(MetricOptions props)
+private MetricInvocations(MetricOptions Props = null)
 \`\`\`
 
-###### \`props\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.props\\"></a>
+###### \`Props\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.Props\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.CloudWatch.MetricOptions\`](#Amazon.CDK.AWS.CloudWatch.MetricOptions)
 
@@ -205,10 +205,10 @@ public MetricInvocations(MetricOptions props)
 ##### \`MetricThrottles\` <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.MetricThrottles\\"></a>
 
 \`\`\`csharp
-public MetricThrottles(MetricOptions props)
+private MetricThrottles(MetricOptions Props = null)
 \`\`\`
 
-###### \`props\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.props\\"></a>
+###### \`Props\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.parameter.Props\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.CloudWatch.MetricOptions\`](#Amazon.CDK.AWS.CloudWatch.MetricOptions)
 
@@ -217,10 +217,10 @@ public MetricThrottles(MetricOptions props)
 
 #### Properties <a name=\\"Properties\\"></a>
 
-##### \`connections\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.connections\\"></a>
+##### \`Connections\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.Connections\\"></a>
 
 \`\`\`csharp
-Connections connections
+public Connections Connections { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.EC2.Connections\`](#Amazon.CDK.AWS.EC2.Connections)
@@ -231,10 +231,10 @@ Connections are only applicable to VPC-enabled functions.
 
 ---
 
-##### \`currentVersion\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.currentVersion\\"></a>
+##### \`CurrentVersion\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.CurrentVersion\\"></a>
 
 \`\`\`csharp
-IVersion currentVersion
+public IVersion CurrentVersion { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.IVersion\`](#Amazon.CDK.AWS.Lambda.IVersion)
@@ -243,10 +243,10 @@ Convenience method to make \`EdgeFunction\` conform to the same interface as \`F
 
 ---
 
-##### \`edgeArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.edgeArn\\"></a>
+##### \`EdgeArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.EdgeArn\\"></a>
 
 \`\`\`csharp
-string edgeArn
+public string EdgeArn { get; set; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -255,10 +255,10 @@ The ARN of the version for Lambda@Edge.
 
 ---
 
-##### \`functionArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.functionArn\\"></a>
+##### \`FunctionArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.FunctionArn\\"></a>
 
 \`\`\`csharp
-string functionArn
+public string FunctionArn { get; set; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -267,10 +267,10 @@ The ARN of the function.
 
 ---
 
-##### \`functionName\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.functionName\\"></a>
+##### \`FunctionName\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.FunctionName\\"></a>
 
 \`\`\`csharp
-string functionName
+public string FunctionName { get; set; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -279,10 +279,10 @@ The name of the function.
 
 ---
 
-##### \`grantPrincipal\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.grantPrincipal\\"></a>
+##### \`GrantPrincipal\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.GrantPrincipal\\"></a>
 
 \`\`\`csharp
-IPrincipal grantPrincipal
+public IPrincipal GrantPrincipal { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.IAM.IPrincipal\`](#Amazon.CDK.AWS.IAM.IPrincipal)
@@ -291,10 +291,10 @@ The principal to grant permissions to.
 
 ---
 
-##### \`isBoundToVpc\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.isBoundToVpc\\"></a>
+##### \`IsBoundToVpc\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.IsBoundToVpc\\"></a>
 
 \`\`\`csharp
-bool isBoundToVpc
+public bool IsBoundToVpc { get; set; }
 \`\`\`
 
 - *Type:* \`bool\`
@@ -305,10 +305,10 @@ If this is is \`false\`, trying to access the \`connections\` object will fail.
 
 ---
 
-##### \`lambda\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.lambda\\"></a>
+##### \`Lambda\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.Lambda\\"></a>
 
 \`\`\`csharp
-IFunction lambda
+public IFunction Lambda { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.IFunction\`](#Amazon.CDK.AWS.Lambda.IFunction)
@@ -317,10 +317,10 @@ The underlying AWS Lambda function.
 
 ---
 
-##### \`latestVersion\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.latestVersion\\"></a>
+##### \`LatestVersion\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.LatestVersion\\"></a>
 
 \`\`\`csharp
-IVersion latestVersion
+public IVersion LatestVersion { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.IVersion\`](#Amazon.CDK.AWS.Lambda.IVersion)
@@ -336,10 +336,10 @@ function configuration, use \`lambdaFunction.currentVersion\` instead.
 
 ---
 
-##### \`permissionsNode\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.permissionsNode\\"></a>
+##### \`PermissionsNode\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.PermissionsNode\\"></a>
 
 \`\`\`csharp
-ConstructNode permissionsNode
+public ConstructNode PermissionsNode { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.ConstructNode\`](#Amazon.CDK.ConstructNode)
@@ -348,10 +348,10 @@ The construct node where permissions are attached.
 
 ---
 
-##### \`version\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.version\\"></a>
+##### \`Version\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.Version\\"></a>
 
 \`\`\`csharp
-string version
+public string Version { get; set; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -360,10 +360,10 @@ The most recently deployed version of this function.
 
 ---
 
-##### \`role\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.role\\"></a>
+##### \`Role\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.Role\\"></a>
 
 \`\`\`csharp
-IRole role
+public IRole Role { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.IAM.IRole\`](#Amazon.CDK.AWS.IAM.IRole)
@@ -385,51 +385,51 @@ Properties for creating a Lambda@Edge function.
 using Amazon.CDK.AWS.CloudFront;
 
 new EdgeFunctionProps {
-    maxEventAge
-    onFailure
-    onSuccess
-    retryAttempts
-    allowAllOutbound
-    allowPublicSubnet
-    architectures
-    codeSigningConfig
-    currentVersionOptions
-    deadLetterQueue
-    deadLetterQueueEnabled
-    description
-    environment
-    environmentEncryption
-    events
-    filesystem
-    functionName
-    initialPolicy
-    insightsVersion
-    layers
-    logRetention
-    logRetentionRetryOptions
-    logRetentionRole
-    memorySize
-    profiling
-    profilingGroup
-    reservedConcurrentExecutions
-    role
-    securityGroup
-    securityGroups
-    timeout
-    tracing
-    vpc
-    vpcSubnets
-    code
-    handler
-    runtime
-    stackId
+    Duration MaxEventAge = null,
+    IDestination OnFailure = null,
+    IDestination OnSuccess = null,
+    double RetryAttempts = null,
+    bool AllowAllOutbound = null,
+    bool AllowPublicSubnet = null,
+    Architecture[] Architectures = null,
+    ICodeSigningConfig CodeSigningConfig = null,
+    VersionOptions CurrentVersionOptions = null,
+    IQueue DeadLetterQueue = null,
+    bool DeadLetterQueueEnabled = null,
+    string Description = null,
+    System.Collections.Generic.IDictionary<string, string> Environment = null,
+    IKey EnvironmentEncryption = null,
+    IEventSource[] Events = null,
+    FileSystem Filesystem = null,
+    string FunctionName = null,
+    PolicyStatement[] InitialPolicy = null,
+    LambdaInsightsVersion InsightsVersion = null,
+    ILayerVersion[] Layers = null,
+    RetentionDays LogRetention = null,
+    LogRetentionRetryOptions LogRetentionRetryOptions = null,
+    IRole LogRetentionRole = null,
+    double MemorySize = null,
+    bool Profiling = null,
+    IProfilingGroup ProfilingGroup = null,
+    double ReservedConcurrentExecutions = null,
+    IRole Role = null,
+    ISecurityGroup SecurityGroup = null,
+    ISecurityGroup[] SecurityGroups = null,
+    Duration Timeout = null,
+    Tracing Tracing = null,
+    IVpc Vpc = null,
+    SubnetSelection VpcSubnets = null,
+    Code Code,
+    string Handler,
+    Runtime Runtime,
+    string StackId = null
 };
 \`\`\`
 
-##### \`maxEventAge\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.maxEventAge\\"></a>
+##### \`MaxEventAge\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.MaxEventAge\\"></a>
 
 \`\`\`csharp
-Duration maxEventAge
+public Duration MaxEventAge { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.Duration\`](#Amazon.CDK.Duration)
@@ -442,10 +442,10 @@ Maximum: 6 hours
 
 ---
 
-##### \`onFailure\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.onFailure\\"></a>
+##### \`OnFailure\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.OnFailure\\"></a>
 
 \`\`\`csharp
-IDestination onFailure
+public IDestination OnFailure { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.IDestination\`](#Amazon.CDK.AWS.Lambda.IDestination)
@@ -455,10 +455,10 @@ The destination for failed invocations.
 
 ---
 
-##### \`onSuccess\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.onSuccess\\"></a>
+##### \`OnSuccess\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.OnSuccess\\"></a>
 
 \`\`\`csharp
-IDestination onSuccess
+public IDestination OnSuccess { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.IDestination\`](#Amazon.CDK.AWS.Lambda.IDestination)
@@ -468,10 +468,10 @@ The destination for successful invocations.
 
 ---
 
-##### \`retryAttempts\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.retryAttempts\\"></a>
+##### \`RetryAttempts\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.RetryAttempts\\"></a>
 
 \`\`\`csharp
-double retryAttempts
+public double RetryAttempts { get; set; }
 \`\`\`
 
 - *Type:* \`double\`
@@ -484,10 +484,10 @@ Maximum: 2
 
 ---
 
-##### \`allowAllOutbound\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.allowAllOutbound\\"></a>
+##### \`AllowAllOutbound\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.AllowAllOutbound\\"></a>
 
 \`\`\`csharp
-bool allowAllOutbound
+public bool AllowAllOutbound { get; set; }
 \`\`\`
 
 - *Type:* \`bool\`
@@ -500,10 +500,10 @@ Lambda to connect to network targets.
 
 ---
 
-##### \`allowPublicSubnet\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.allowPublicSubnet\\"></a>
+##### \`AllowPublicSubnet\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.AllowPublicSubnet\\"></a>
 
 \`\`\`csharp
-bool allowPublicSubnet
+public bool AllowPublicSubnet { get; set; }
 \`\`\`
 
 - *Type:* \`bool\`
@@ -517,10 +517,10 @@ Use this property to acknowledge this limitation and still place the function in
 
 ---
 
-##### \`architectures\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.architectures\\"></a>
+##### \`Architectures\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.Architectures\\"></a>
 
 \`\`\`csharp
-Architecture[] architectures
+public Architecture[] Architectures { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.Architecture\`](#Amazon.CDK.AWS.Lambda.Architecture)[]
@@ -530,10 +530,10 @@ The system architectures compatible with this lambda function.
 
 ---
 
-##### \`codeSigningConfig\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.codeSigningConfig\\"></a>
+##### \`CodeSigningConfig\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.CodeSigningConfig\\"></a>
 
 \`\`\`csharp
-ICodeSigningConfig codeSigningConfig
+public ICodeSigningConfig CodeSigningConfig { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.ICodeSigningConfig\`](#Amazon.CDK.AWS.Lambda.ICodeSigningConfig)
@@ -543,10 +543,10 @@ Code signing config associated with this function.
 
 ---
 
-##### \`currentVersionOptions\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.currentVersionOptions\\"></a>
+##### \`CurrentVersionOptions\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.CurrentVersionOptions\\"></a>
 
 \`\`\`csharp
-VersionOptions currentVersionOptions
+public VersionOptions CurrentVersionOptions { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.VersionOptions\`](#Amazon.CDK.AWS.Lambda.VersionOptions)
@@ -556,10 +556,10 @@ Options for the \`lambda.Version\` resource automatically created by the \`fn.cu
 
 ---
 
-##### \`deadLetterQueue\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.deadLetterQueue\\"></a>
+##### \`DeadLetterQueue\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.DeadLetterQueue\\"></a>
 
 \`\`\`csharp
-IQueue deadLetterQueue
+public IQueue DeadLetterQueue { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.SQS.IQueue\`](#Amazon.CDK.AWS.SQS.IQueue)
@@ -569,10 +569,10 @@ The SQS queue to use if DLQ is enabled.
 
 ---
 
-##### \`deadLetterQueueEnabled\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.deadLetterQueueEnabled\\"></a>
+##### \`DeadLetterQueueEnabled\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.DeadLetterQueueEnabled\\"></a>
 
 \`\`\`csharp
-bool deadLetterQueueEnabled
+public bool DeadLetterQueueEnabled { get; set; }
 \`\`\`
 
 - *Type:* \`bool\`
@@ -585,10 +585,10 @@ an SQS queue with default options will be defined for your Function.
 
 ---
 
-##### \`description\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.description\\"></a>
+##### \`Description\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.Description\\"></a>
 
 \`\`\`csharp
-string description
+public string Description { get; set; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -598,10 +598,10 @@ A description of the function.
 
 ---
 
-##### \`environment\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.environment\\"></a>
+##### \`Environment\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.Environment\\"></a>
 
 \`\`\`csharp
-System.Collections.Generic.IDictionary<string, string> environment
+public System.Collections.Generic.IDictionary<string, string> Environment { get; set; }
 \`\`\`
 
 - *Type:* System.Collections.Generic.IDictionary<string, \`string\`>
@@ -615,10 +615,10 @@ Lambda function source code.
 
 ---
 
-##### \`environmentEncryption\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.environmentEncryption\\"></a>
+##### \`EnvironmentEncryption\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.EnvironmentEncryption\\"></a>
 
 \`\`\`csharp
-IKey environmentEncryption
+public IKey EnvironmentEncryption { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.KMS.IKey\`](#Amazon.CDK.AWS.KMS.IKey)
@@ -628,10 +628,10 @@ The AWS KMS key that's used to encrypt your function's environment variables.
 
 ---
 
-##### \`events\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.events\\"></a>
+##### \`Events\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.Events\\"></a>
 
 \`\`\`csharp
-IEventSource[] events
+public IEventSource[] Events { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.IEventSource\`](#Amazon.CDK.AWS.Lambda.IEventSource)[]
@@ -643,10 +643,10 @@ You can also add event sources using \`addEventSource\`.
 
 ---
 
-##### \`filesystem\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.filesystem\\"></a>
+##### \`Filesystem\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.Filesystem\\"></a>
 
 \`\`\`csharp
-FileSystem filesystem
+public FileSystem Filesystem { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.FileSystem\`](#Amazon.CDK.AWS.Lambda.FileSystem)
@@ -656,10 +656,10 @@ The filesystem configuration for the lambda function.
 
 ---
 
-##### \`functionName\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.functionName\\"></a>
+##### \`FunctionName\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.FunctionName\\"></a>
 
 \`\`\`csharp
-string functionName
+public string FunctionName { get; set; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -670,10 +670,10 @@ A name for the function.
 
 ---
 
-##### \`initialPolicy\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.initialPolicy\\"></a>
+##### \`InitialPolicy\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.InitialPolicy\\"></a>
 
 \`\`\`csharp
-PolicyStatement[] initialPolicy
+public PolicyStatement[] InitialPolicy { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.IAM.PolicyStatement\`](#Amazon.CDK.AWS.IAM.PolicyStatement)[]
@@ -685,10 +685,10 @@ You can call \`addToRolePolicy\` to the created lambda to add statements post cr
 
 ---
 
-##### \`insightsVersion\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.insightsVersion\\"></a>
+##### \`InsightsVersion\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.InsightsVersion\\"></a>
 
 \`\`\`csharp
-LambdaInsightsVersion insightsVersion
+public LambdaInsightsVersion InsightsVersion { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.LambdaInsightsVersion\`](#Amazon.CDK.AWS.Lambda.LambdaInsightsVersion)
@@ -700,10 +700,10 @@ Specify the version of CloudWatch Lambda insights to use for monitoring.
 
 ---
 
-##### \`layers\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.layers\\"></a>
+##### \`Layers\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.Layers\\"></a>
 
 \`\`\`csharp
-ILayerVersion[] layers
+public ILayerVersion[] Layers { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.ILayerVersion\`](#Amazon.CDK.AWS.Lambda.ILayerVersion)[]
@@ -717,10 +717,10 @@ that can be used by multiple functions.
 
 ---
 
-##### \`logRetention\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.logRetention\\"></a>
+##### \`LogRetention\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.LogRetention\\"></a>
 
 \`\`\`csharp
-RetentionDays logRetention
+public RetentionDays LogRetention { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Logs.RetentionDays\`](#Amazon.CDK.AWS.Logs.RetentionDays)
@@ -734,10 +734,10 @@ remove the retention policy, set the value to \`INFINITE\`.
 
 ---
 
-##### \`logRetentionRetryOptions\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.logRetentionRetryOptions\\"></a>
+##### \`LogRetentionRetryOptions\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.LogRetentionRetryOptions\\"></a>
 
 \`\`\`csharp
-LogRetentionRetryOptions logRetentionRetryOptions
+public LogRetentionRetryOptions LogRetentionRetryOptions { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.LogRetentionRetryOptions\`](#Amazon.CDK.AWS.Lambda.LogRetentionRetryOptions)
@@ -749,10 +749,10 @@ These options control the retry policy when interacting with CloudWatch APIs.
 
 ---
 
-##### \`logRetentionRole\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.logRetentionRole\\"></a>
+##### \`LogRetentionRole\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.LogRetentionRole\\"></a>
 
 \`\`\`csharp
-IRole logRetentionRole
+public IRole LogRetentionRole { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.IAM.IRole\`](#Amazon.CDK.AWS.IAM.IRole)
@@ -762,10 +762,10 @@ The IAM role for the Lambda function associated with the custom resource that se
 
 ---
 
-##### \`memorySize\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.memorySize\\"></a>
+##### \`MemorySize\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.MemorySize\\"></a>
 
 \`\`\`csharp
-double memorySize
+public double MemorySize { get; set; }
 \`\`\`
 
 - *Type:* \`double\`
@@ -779,10 +779,10 @@ Developer Guide.
 
 ---
 
-##### \`profiling\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.profiling\\"></a>
+##### \`Profiling\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.Profiling\\"></a>
 
 \`\`\`csharp
-bool profiling
+public bool Profiling { get; set; }
 \`\`\`
 
 - *Type:* \`bool\`
@@ -794,10 +794,10 @@ Enable profiling.
 
 ---
 
-##### \`profilingGroup\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.profilingGroup\\"></a>
+##### \`ProfilingGroup\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.ProfilingGroup\\"></a>
 
 \`\`\`csharp
-IProfilingGroup profilingGroup
+public IProfilingGroup ProfilingGroup { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.CodeGuruProfiler.IProfilingGroup\`](#Amazon.CDK.AWS.CodeGuruProfiler.IProfilingGroup)
@@ -809,10 +809,10 @@ Profiling Group.
 
 ---
 
-##### \`reservedConcurrentExecutions\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.reservedConcurrentExecutions\\"></a>
+##### \`ReservedConcurrentExecutions\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.ReservedConcurrentExecutions\\"></a>
 
 \`\`\`csharp
-double reservedConcurrentExecutions
+public double ReservedConcurrentExecutions { get; set; }
 \`\`\`
 
 - *Type:* \`double\`
@@ -824,10 +824,10 @@ The maximum of concurrent executions you want to reserve for the function.
 
 ---
 
-##### \`role\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.role\\"></a>
+##### \`Role\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.Role\\"></a>
 
 \`\`\`csharp
-IRole role
+public IRole Role { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.IAM.IRole\`](#Amazon.CDK.AWS.IAM.IRole)
@@ -848,12 +848,12 @@ The relevant managed policies are \\"service-role/AWSLambdaBasicExecutionRole\\"
 
 ---
 
-##### ~~\`securityGroup\`~~<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.securityGroup\\"></a>
+##### ~~\`SecurityGroup\`~~<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.SecurityGroup\\"></a>
 
 - *Deprecated:* - This property is deprecated, use securityGroups instead
 
 \`\`\`csharp
-ISecurityGroup securityGroup
+public ISecurityGroup SecurityGroup { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.EC2.ISecurityGroup\`](#Amazon.CDK.AWS.EC2.ISecurityGroup)
@@ -870,10 +870,10 @@ Function constructor will throw an error if both are specified.
 
 ---
 
-##### \`securityGroups\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.securityGroups\\"></a>
+##### \`SecurityGroups\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.SecurityGroups\\"></a>
 
 \`\`\`csharp
-ISecurityGroup[] securityGroups
+public ISecurityGroup[] SecurityGroups { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.EC2.ISecurityGroup\`](#Amazon.CDK.AWS.EC2.ISecurityGroup)[]
@@ -887,10 +887,10 @@ Only used if 'vpc' is supplied.
 
 ---
 
-##### \`timeout\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.timeout\\"></a>
+##### \`Timeout\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.Timeout\\"></a>
 
 \`\`\`csharp
-Duration timeout
+public Duration Timeout { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.Duration\`](#Amazon.CDK.Duration)
@@ -903,10 +903,10 @@ based on the function's expected execution time.
 
 ---
 
-##### \`tracing\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.tracing\\"></a>
+##### \`Tracing\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.Tracing\\"></a>
 
 \`\`\`csharp
-Tracing tracing
+public Tracing Tracing { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.Tracing\`](#Amazon.CDK.AWS.Lambda.Tracing)
@@ -916,10 +916,10 @@ Enable AWS X-Ray Tracing for Lambda Function.
 
 ---
 
-##### \`vpc\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.vpc\\"></a>
+##### \`Vpc\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.Vpc\\"></a>
 
 \`\`\`csharp
-IVpc vpc
+public IVpc Vpc { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.EC2.IVpc\`](#Amazon.CDK.AWS.EC2.IVpc)
@@ -931,10 +931,10 @@ Specify this if the Lambda function needs to access resources in a VPC.
 
 ---
 
-##### \`vpcSubnets\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.vpcSubnets\\"></a>
+##### \`VpcSubnets\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.VpcSubnets\\"></a>
 
 \`\`\`csharp
-SubnetSelection vpcSubnets
+public SubnetSelection VpcSubnets { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.EC2.SubnetSelection\`](#Amazon.CDK.AWS.EC2.SubnetSelection)
@@ -947,10 +947,10 @@ requires a NAT gateway, so picking Public subnets is not allowed.
 
 ---
 
-##### \`code\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.code\\"></a>
+##### \`Code\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.Code\\"></a>
 
 \`\`\`csharp
-Code code
+public Code Code { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.Code\`](#Amazon.CDK.AWS.Lambda.Code)
@@ -963,10 +963,10 @@ code as inline text.
 
 ---
 
-##### \`handler\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.handler\\"></a>
+##### \`Handler\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.Handler\\"></a>
 
 \`\`\`csharp
-string handler
+public string Handler { get; set; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -985,10 +985,10 @@ the handler.
 
 ---
 
-##### \`runtime\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.runtime\\"></a>
+##### \`Runtime\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.Runtime\\"></a>
 
 \`\`\`csharp
-Runtime runtime
+public Runtime Runtime { get; set; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.Runtime\`](#Amazon.CDK.AWS.Lambda.Runtime)
@@ -1002,10 +1002,10 @@ Use \`Runtime.FROM_IMAGE\` when when defining a function from a Docker image.
 
 ---
 
-##### \`stackId\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.stackId\\"></a>
+##### \`StackId\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.StackId\\"></a>
 
 \`\`\`csharp
-string stackId
+public string StackId { get; set; }
 \`\`\`
 
 - *Type:* \`string\`

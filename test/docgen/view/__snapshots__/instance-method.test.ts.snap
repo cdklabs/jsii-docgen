@@ -4,10 +4,10 @@ exports[`csharp snapshot 1`] = `
 " \`Inspect\` <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.Inspect\\"></a>
 
 \`\`\`csharp
-public Inspect(TreeInspector inspector)
+private Inspect(TreeInspector Inspector)
 \`\`\`
 
-# \`inspector\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.parameter.inspector\\"></a>
+# \`Inspector\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.parameter.Inspector\\"></a>
 
 - *Type:* [\`Amazon.CDK.TreeInspector\`](#Amazon.CDK.TreeInspector)
 
