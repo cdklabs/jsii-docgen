@@ -182,7 +182,7 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 ## \`Node\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.Node\\"></a>
 
 \`\`\`csharp
-public ConstructNode Node { get; set; }
+public ConstructNode Node { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.ConstructNode\`](#Amazon.CDK.ConstructNode)
@@ -194,7 +194,7 @@ The construct tree node for this construct.
 ## \`Env\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.Env\\"></a>
 
 \`\`\`csharp
-public ResourceEnvironment Env { get; set; }
+public ResourceEnvironment Env { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.ResourceEnvironment\`](#Amazon.CDK.ResourceEnvironment)
@@ -213,7 +213,7 @@ that might be different than the stack they were imported into.
 ## \`Stack\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.Stack\\"></a>
 
 \`\`\`csharp
-public Stack Stack { get; set; }
+public Stack Stack { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.Stack\`](#Amazon.CDK.Stack)
@@ -225,7 +225,7 @@ The stack in which this resource is defined.
 ## \`RepositoryArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.RepositoryArn\\"></a>
 
 \`\`\`csharp
-public string RepositoryArn { get; set; }
+public string RepositoryArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -237,7 +237,7 @@ The ARN of the repository.
 ## \`RepositoryName\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.RepositoryName\\"></a>
 
 \`\`\`csharp
-public string RepositoryName { get; set; }
+public string RepositoryName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -249,7 +249,7 @@ The name of the repository.
 ## \`RepositoryUri\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.RepositoryUri\\"></a>
 
 \`\`\`csharp
-public string RepositoryUri { get; set; }
+public string RepositoryUri { get; }
 \`\`\`
 
 - *Type:* \`string\`

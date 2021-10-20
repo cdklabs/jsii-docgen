@@ -182,7 +182,7 @@ tree inspector to collect and process attributes.
 ##### \`AttrArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.property.AttrArn\\"></a>
 
 \`\`\`csharp
-public string AttrArn { get; set; }
+public string AttrArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -192,7 +192,7 @@ public string AttrArn { get; set; }
 ##### \`Tags\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.property.Tags\\"></a>
 
 \`\`\`csharp
-public TagManager Tags { get; set; }
+public TagManager Tags { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.TagManager\`](#Amazon.CDK.TagManager)
@@ -206,7 +206,7 @@ public TagManager Tags { get; set; }
 ##### \`RepositoryCatalogData\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.property.RepositoryCatalogData\\"></a>
 
 \`\`\`csharp
-public object RepositoryCatalogData { get; set; }
+public object RepositoryCatalogData { get; }
 \`\`\`
 
 - *Type:* \`object\`
@@ -220,7 +220,7 @@ public object RepositoryCatalogData { get; set; }
 ##### \`RepositoryPolicyText\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.property.RepositoryPolicyText\\"></a>
 
 \`\`\`csharp
-public object RepositoryPolicyText { get; set; }
+public object RepositoryPolicyText { get; }
 \`\`\`
 
 - *Type:* \`object\`
@@ -234,7 +234,7 @@ public object RepositoryPolicyText { get; set; }
 ##### \`RepositoryName\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.property.RepositoryName\\"></a>
 
 \`\`\`csharp
-public string RepositoryName { get; set; }
+public string RepositoryName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -317,7 +317,7 @@ tree inspector to collect and process attributes.
 ##### \`AttrRegistryId\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRegistryPolicy.property.AttrRegistryId\\"></a>
 
 \`\`\`csharp
-public string AttrRegistryId { get; set; }
+public string AttrRegistryId { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -327,7 +327,7 @@ public string AttrRegistryId { get; set; }
 ##### \`PolicyText\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRegistryPolicy.property.PolicyText\\"></a>
 
 \`\`\`csharp
-public object PolicyText { get; set; }
+public object PolicyText { get; }
 \`\`\`
 
 - *Type:* \`object\`
@@ -410,7 +410,7 @@ tree inspector to collect and process attributes.
 ##### \`AttrRegistryId\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnReplicationConfiguration.property.AttrRegistryId\\"></a>
 
 \`\`\`csharp
-public string AttrRegistryId { get; set; }
+public string AttrRegistryId { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -420,7 +420,7 @@ public string AttrRegistryId { get; set; }
 ##### \`ReplicationConfiguration\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnReplicationConfiguration.property.ReplicationConfiguration\\"></a>
 
 \`\`\`csharp
-public object ReplicationConfiguration { get; set; }
+public object ReplicationConfiguration { get; }
 \`\`\`
 
 - *Type:* object
@@ -503,7 +503,7 @@ tree inspector to collect and process attributes.
 ##### \`AttrArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRepository.property.AttrArn\\"></a>
 
 \`\`\`csharp
-public string AttrArn { get; set; }
+public string AttrArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -513,7 +513,7 @@ public string AttrArn { get; set; }
 ##### \`AttrRepositoryUri\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRepository.property.AttrRepositoryUri\\"></a>
 
 \`\`\`csharp
-public string AttrRepositoryUri { get; set; }
+public string AttrRepositoryUri { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -523,7 +523,7 @@ public string AttrRepositoryUri { get; set; }
 ##### \`Tags\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRepository.property.Tags\\"></a>
 
 \`\`\`csharp
-public TagManager Tags { get; set; }
+public TagManager Tags { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.TagManager\`](#Amazon.CDK.TagManager)
@@ -537,7 +537,7 @@ public TagManager Tags { get; set; }
 ##### \`EncryptionConfiguration\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRepository.property.EncryptionConfiguration\\"></a>
 
 \`\`\`csharp
-public object EncryptionConfiguration { get; set; }
+public object EncryptionConfiguration { get; }
 \`\`\`
 
 - *Type:* \`object\`
@@ -551,7 +551,7 @@ public object EncryptionConfiguration { get; set; }
 ##### \`ImageScanningConfiguration\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRepository.property.ImageScanningConfiguration\\"></a>
 
 \`\`\`csharp
-public object ImageScanningConfiguration { get; set; }
+public object ImageScanningConfiguration { get; }
 \`\`\`
 
 - *Type:* \`object\`
@@ -565,7 +565,7 @@ public object ImageScanningConfiguration { get; set; }
 ##### \`RepositoryPolicyText\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRepository.property.RepositoryPolicyText\\"></a>
 
 \`\`\`csharp
-public object RepositoryPolicyText { get; set; }
+public object RepositoryPolicyText { get; }
 \`\`\`
 
 - *Type:* \`object\`
@@ -579,7 +579,7 @@ public object RepositoryPolicyText { get; set; }
 ##### \`ImageTagMutability\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRepository.property.ImageTagMutability\\"></a>
 
 \`\`\`csharp
-public string ImageTagMutability { get; set; }
+public string ImageTagMutability { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -593,7 +593,7 @@ public string ImageTagMutability { get; set; }
 ##### \`LifecyclePolicy\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRepository.property.LifecyclePolicy\\"></a>
 
 \`\`\`csharp
-public object LifecyclePolicy { get; set; }
+public object LifecyclePolicy { get; }
 \`\`\`
 
 - *Type:* object
@@ -607,7 +607,7 @@ public object LifecyclePolicy { get; set; }
 ##### \`RepositoryName\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRepository.property.RepositoryName\\"></a>
 
 \`\`\`csharp
-public string RepositoryName { get; set; }
+public string RepositoryName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -795,7 +795,7 @@ Repository.FromRepositoryName(Construct Scope, string Id, string RepositoryName)
 ##### \`RepositoryArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.Repository.property.RepositoryArn\\"></a>
 
 \`\`\`csharp
-public string RepositoryArn { get; set; }
+public string RepositoryArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -807,7 +807,7 @@ The ARN of the repository.
 ##### \`RepositoryName\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.Repository.property.RepositoryName\\"></a>
 
 \`\`\`csharp
-public string RepositoryName { get; set; }
+public string RepositoryName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -1025,7 +1025,7 @@ Optional image tag.
 ##### \`RepositoryArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.RepositoryBase.property.RepositoryArn\\"></a>
 
 \`\`\`csharp
-public string RepositoryArn { get; set; }
+public string RepositoryArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -1037,7 +1037,7 @@ The ARN of the repository.
 ##### \`RepositoryName\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.RepositoryBase.property.RepositoryName\\"></a>
 
 \`\`\`csharp
-public string RepositoryName { get; set; }
+public string RepositoryName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -1049,7 +1049,7 @@ The name of the repository.
 ##### \`RepositoryUri\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.RepositoryBase.property.RepositoryUri\\"></a>
 
 \`\`\`csharp
-public string RepositoryUri { get; set; }
+public string RepositoryUri { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -2119,7 +2119,7 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 ##### \`Node\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.Node\\"></a>
 
 \`\`\`csharp
-public ConstructNode Node { get; set; }
+public ConstructNode Node { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.ConstructNode\`](#Amazon.CDK.ConstructNode)
@@ -2131,7 +2131,7 @@ The construct tree node for this construct.
 ##### \`Env\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.Env\\"></a>
 
 \`\`\`csharp
-public ResourceEnvironment Env { get; set; }
+public ResourceEnvironment Env { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.ResourceEnvironment\`](#Amazon.CDK.ResourceEnvironment)
@@ -2150,7 +2150,7 @@ that might be different than the stack they were imported into.
 ##### \`Stack\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.Stack\\"></a>
 
 \`\`\`csharp
-public Stack Stack { get; set; }
+public Stack Stack { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.Stack\`](#Amazon.CDK.Stack)
@@ -2162,7 +2162,7 @@ The stack in which this resource is defined.
 ##### \`RepositoryArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.RepositoryArn\\"></a>
 
 \`\`\`csharp
-public string RepositoryArn { get; set; }
+public string RepositoryArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -2174,7 +2174,7 @@ The ARN of the repository.
 ##### \`RepositoryName\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.RepositoryName\\"></a>
 
 \`\`\`csharp
-public string RepositoryName { get; set; }
+public string RepositoryName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -2186,7 +2186,7 @@ The name of the repository.
 ##### \`RepositoryUri\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.RepositoryUri\\"></a>
 
 \`\`\`csharp
-public string RepositoryUri { get; set; }
+public string RepositoryUri { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -2426,7 +2426,7 @@ tree inspector to collect and process attributes.
 ##### \`AttrArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.property.AttrArn\\"></a>
 
 \`\`\`csharp
-public string AttrArn { get; set; }
+public string AttrArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -2436,7 +2436,7 @@ public string AttrArn { get; set; }
 ##### \`Tags\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.property.Tags\\"></a>
 
 \`\`\`csharp
-public TagManager Tags { get; set; }
+public TagManager Tags { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.TagManager\`](#Amazon.CDK.TagManager)
@@ -2450,7 +2450,7 @@ public TagManager Tags { get; set; }
 ##### \`RepositoryCatalogData\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.property.RepositoryCatalogData\\"></a>
 
 \`\`\`csharp
-public object RepositoryCatalogData { get; set; }
+public object RepositoryCatalogData { get; }
 \`\`\`
 
 - *Type:* \`object\`
@@ -2464,7 +2464,7 @@ public object RepositoryCatalogData { get; set; }
 ##### \`RepositoryPolicyText\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.property.RepositoryPolicyText\\"></a>
 
 \`\`\`csharp
-public object RepositoryPolicyText { get; set; }
+public object RepositoryPolicyText { get; }
 \`\`\`
 
 - *Type:* \`object\`
@@ -2478,7 +2478,7 @@ public object RepositoryPolicyText { get; set; }
 ##### \`RepositoryName\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.property.RepositoryName\\"></a>
 
 \`\`\`csharp
-public string RepositoryName { get; set; }
+public string RepositoryName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -2561,7 +2561,7 @@ tree inspector to collect and process attributes.
 ##### \`AttrRegistryId\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRegistryPolicy.property.AttrRegistryId\\"></a>
 
 \`\`\`csharp
-public string AttrRegistryId { get; set; }
+public string AttrRegistryId { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -2571,7 +2571,7 @@ public string AttrRegistryId { get; set; }
 ##### \`PolicyText\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRegistryPolicy.property.PolicyText\\"></a>
 
 \`\`\`csharp
-public object PolicyText { get; set; }
+public object PolicyText { get; }
 \`\`\`
 
 - *Type:* \`object\`
@@ -2654,7 +2654,7 @@ tree inspector to collect and process attributes.
 ##### \`AttrRegistryId\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnReplicationConfiguration.property.AttrRegistryId\\"></a>
 
 \`\`\`csharp
-public string AttrRegistryId { get; set; }
+public string AttrRegistryId { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -2664,7 +2664,7 @@ public string AttrRegistryId { get; set; }
 ##### \`ReplicationConfiguration\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnReplicationConfiguration.property.ReplicationConfiguration\\"></a>
 
 \`\`\`csharp
-public object ReplicationConfiguration { get; set; }
+public object ReplicationConfiguration { get; }
 \`\`\`
 
 - *Type:* object
@@ -2747,7 +2747,7 @@ tree inspector to collect and process attributes.
 ##### \`AttrArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRepository.property.AttrArn\\"></a>
 
 \`\`\`csharp
-public string AttrArn { get; set; }
+public string AttrArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -2757,7 +2757,7 @@ public string AttrArn { get; set; }
 ##### \`AttrRepositoryUri\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRepository.property.AttrRepositoryUri\\"></a>
 
 \`\`\`csharp
-public string AttrRepositoryUri { get; set; }
+public string AttrRepositoryUri { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -2767,7 +2767,7 @@ public string AttrRepositoryUri { get; set; }
 ##### \`Tags\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRepository.property.Tags\\"></a>
 
 \`\`\`csharp
-public TagManager Tags { get; set; }
+public TagManager Tags { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.TagManager\`](#Amazon.CDK.TagManager)
@@ -2781,7 +2781,7 @@ public TagManager Tags { get; set; }
 ##### \`EncryptionConfiguration\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRepository.property.EncryptionConfiguration\\"></a>
 
 \`\`\`csharp
-public object EncryptionConfiguration { get; set; }
+public object EncryptionConfiguration { get; }
 \`\`\`
 
 - *Type:* \`object\`
@@ -2795,7 +2795,7 @@ public object EncryptionConfiguration { get; set; }
 ##### \`ImageScanningConfiguration\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRepository.property.ImageScanningConfiguration\\"></a>
 
 \`\`\`csharp
-public object ImageScanningConfiguration { get; set; }
+public object ImageScanningConfiguration { get; }
 \`\`\`
 
 - *Type:* \`object\`
@@ -2809,7 +2809,7 @@ public object ImageScanningConfiguration { get; set; }
 ##### \`RepositoryPolicyText\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRepository.property.RepositoryPolicyText\\"></a>
 
 \`\`\`csharp
-public object RepositoryPolicyText { get; set; }
+public object RepositoryPolicyText { get; }
 \`\`\`
 
 - *Type:* \`object\`
@@ -2823,7 +2823,7 @@ public object RepositoryPolicyText { get; set; }
 ##### \`ImageTagMutability\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRepository.property.ImageTagMutability\\"></a>
 
 \`\`\`csharp
-public string ImageTagMutability { get; set; }
+public string ImageTagMutability { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -2837,7 +2837,7 @@ public string ImageTagMutability { get; set; }
 ##### \`LifecyclePolicy\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRepository.property.LifecyclePolicy\\"></a>
 
 \`\`\`csharp
-public object LifecyclePolicy { get; set; }
+public object LifecyclePolicy { get; }
 \`\`\`
 
 - *Type:* object
@@ -2851,7 +2851,7 @@ public object LifecyclePolicy { get; set; }
 ##### \`RepositoryName\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnRepository.property.RepositoryName\\"></a>
 
 \`\`\`csharp
-public string RepositoryName { get; set; }
+public string RepositoryName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -3039,7 +3039,7 @@ Repository.FromRepositoryName(Construct Scope, string Id, string RepositoryName)
 ##### \`RepositoryArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.Repository.property.RepositoryArn\\"></a>
 
 \`\`\`csharp
-public string RepositoryArn { get; set; }
+public string RepositoryArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -3051,7 +3051,7 @@ The ARN of the repository.
 ##### \`RepositoryName\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.Repository.property.RepositoryName\\"></a>
 
 \`\`\`csharp
-public string RepositoryName { get; set; }
+public string RepositoryName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -3269,7 +3269,7 @@ Optional image tag.
 ##### \`RepositoryArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.RepositoryBase.property.RepositoryArn\\"></a>
 
 \`\`\`csharp
-public string RepositoryArn { get; set; }
+public string RepositoryArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -3281,7 +3281,7 @@ The ARN of the repository.
 ##### \`RepositoryName\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.RepositoryBase.property.RepositoryName\\"></a>
 
 \`\`\`csharp
-public string RepositoryName { get; set; }
+public string RepositoryName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -3293,7 +3293,7 @@ The name of the repository.
 ##### \`RepositoryUri\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.RepositoryBase.property.RepositoryUri\\"></a>
 
 \`\`\`csharp
-public string RepositoryUri { get; set; }
+public string RepositoryUri { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -4363,7 +4363,7 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 ##### \`Node\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.Node\\"></a>
 
 \`\`\`csharp
-public ConstructNode Node { get; set; }
+public ConstructNode Node { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.ConstructNode\`](#Amazon.CDK.ConstructNode)
@@ -4375,7 +4375,7 @@ The construct tree node for this construct.
 ##### \`Env\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.Env\\"></a>
 
 \`\`\`csharp
-public ResourceEnvironment Env { get; set; }
+public ResourceEnvironment Env { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.ResourceEnvironment\`](#Amazon.CDK.ResourceEnvironment)
@@ -4394,7 +4394,7 @@ that might be different than the stack they were imported into.
 ##### \`Stack\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.Stack\\"></a>
 
 \`\`\`csharp
-public Stack Stack { get; set; }
+public Stack Stack { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.Stack\`](#Amazon.CDK.Stack)
@@ -4406,7 +4406,7 @@ The stack in which this resource is defined.
 ##### \`RepositoryArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.RepositoryArn\\"></a>
 
 \`\`\`csharp
-public string RepositoryArn { get; set; }
+public string RepositoryArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -4418,7 +4418,7 @@ The ARN of the repository.
 ##### \`RepositoryName\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.RepositoryName\\"></a>
 
 \`\`\`csharp
-public string RepositoryName { get; set; }
+public string RepositoryName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -4430,7 +4430,7 @@ The name of the repository.
 ##### \`RepositoryUri\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.RepositoryUri\\"></a>
 
 \`\`\`csharp
-public string RepositoryUri { get; set; }
+public string RepositoryUri { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -5883,7 +5883,7 @@ tree inspector to collect and process attributes.
 ##### \`AttrArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnAddon.property.AttrArn\\"></a>
 
 \`\`\`csharp
-public string AttrArn { get; set; }
+public string AttrArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -5893,7 +5893,7 @@ public string AttrArn { get; set; }
 ##### \`Tags\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnAddon.property.Tags\\"></a>
 
 \`\`\`csharp
-public TagManager Tags { get; set; }
+public TagManager Tags { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.TagManager\`](#Amazon.CDK.TagManager)
@@ -5907,7 +5907,7 @@ public TagManager Tags { get; set; }
 ##### \`AddonName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnAddon.property.AddonName\\"></a>
 
 \`\`\`csharp
-public string AddonName { get; set; }
+public string AddonName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -5921,7 +5921,7 @@ public string AddonName { get; set; }
 ##### \`ClusterName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnAddon.property.ClusterName\\"></a>
 
 \`\`\`csharp
-public string ClusterName { get; set; }
+public string ClusterName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -5935,7 +5935,7 @@ public string ClusterName { get; set; }
 ##### \`AddonVersion\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnAddon.property.AddonVersion\\"></a>
 
 \`\`\`csharp
-public string AddonVersion { get; set; }
+public string AddonVersion { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -5949,7 +5949,7 @@ public string AddonVersion { get; set; }
 ##### \`ResolveConflicts\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnAddon.property.ResolveConflicts\\"></a>
 
 \`\`\`csharp
-public string ResolveConflicts { get; set; }
+public string ResolveConflicts { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -5963,7 +5963,7 @@ public string ResolveConflicts { get; set; }
 ##### \`ServiceAccountRoleArn\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnAddon.property.ServiceAccountRoleArn\\"></a>
 
 \`\`\`csharp
-public string ServiceAccountRoleArn { get; set; }
+public string ServiceAccountRoleArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6046,7 +6046,7 @@ tree inspector to collect and process attributes.
 ##### \`AttrArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.AttrArn\\"></a>
 
 \`\`\`csharp
-public string AttrArn { get; set; }
+public string AttrArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6056,7 +6056,7 @@ public string AttrArn { get; set; }
 ##### \`AttrCertificateAuthorityData\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.AttrCertificateAuthorityData\\"></a>
 
 \`\`\`csharp
-public string AttrCertificateAuthorityData { get; set; }
+public string AttrCertificateAuthorityData { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6066,7 +6066,7 @@ public string AttrCertificateAuthorityData { get; set; }
 ##### \`AttrClusterSecurityGroupId\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.AttrClusterSecurityGroupId\\"></a>
 
 \`\`\`csharp
-public string AttrClusterSecurityGroupId { get; set; }
+public string AttrClusterSecurityGroupId { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6076,7 +6076,7 @@ public string AttrClusterSecurityGroupId { get; set; }
 ##### \`AttrEncryptionConfigKeyArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.AttrEncryptionConfigKeyArn\\"></a>
 
 \`\`\`csharp
-public string AttrEncryptionConfigKeyArn { get; set; }
+public string AttrEncryptionConfigKeyArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6086,7 +6086,7 @@ public string AttrEncryptionConfigKeyArn { get; set; }
 ##### \`AttrEndpoint\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.AttrEndpoint\\"></a>
 
 \`\`\`csharp
-public string AttrEndpoint { get; set; }
+public string AttrEndpoint { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6096,7 +6096,7 @@ public string AttrEndpoint { get; set; }
 ##### \`AttrOpenIdConnectIssuerUrl\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.AttrOpenIdConnectIssuerUrl\\"></a>
 
 \`\`\`csharp
-public string AttrOpenIdConnectIssuerUrl { get; set; }
+public string AttrOpenIdConnectIssuerUrl { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6106,7 +6106,7 @@ public string AttrOpenIdConnectIssuerUrl { get; set; }
 ##### \`ResourcesVpcConfig\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.ResourcesVpcConfig\\"></a>
 
 \`\`\`csharp
-public object ResourcesVpcConfig { get; set; }
+public object ResourcesVpcConfig { get; }
 \`\`\`
 
 - *Type:* object
@@ -6120,7 +6120,7 @@ public object ResourcesVpcConfig { get; set; }
 ##### \`RoleArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.RoleArn\\"></a>
 
 \`\`\`csharp
-public string RoleArn { get; set; }
+public string RoleArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6134,7 +6134,7 @@ public string RoleArn { get; set; }
 ##### \`EncryptionConfig\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.EncryptionConfig\\"></a>
 
 \`\`\`csharp
-public object EncryptionConfig { get; set; }
+public object EncryptionConfig { get; }
 \`\`\`
 
 - *Type:* object
@@ -6148,7 +6148,7 @@ public object EncryptionConfig { get; set; }
 ##### \`KubernetesNetworkConfig\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.KubernetesNetworkConfig\\"></a>
 
 \`\`\`csharp
-public object KubernetesNetworkConfig { get; set; }
+public object KubernetesNetworkConfig { get; }
 \`\`\`
 
 - *Type:* object
@@ -6162,7 +6162,7 @@ public object KubernetesNetworkConfig { get; set; }
 ##### \`Name\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.Name\\"></a>
 
 \`\`\`csharp
-public string Name { get; set; }
+public string Name { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6176,7 +6176,7 @@ public string Name { get; set; }
 ##### \`Version\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.Version\\"></a>
 
 \`\`\`csharp
-public string Version { get; set; }
+public string Version { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6259,7 +6259,7 @@ tree inspector to collect and process attributes.
 ##### \`AttrArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnFargateProfile.property.AttrArn\\"></a>
 
 \`\`\`csharp
-public string AttrArn { get; set; }
+public string AttrArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6269,7 +6269,7 @@ public string AttrArn { get; set; }
 ##### \`Tags\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnFargateProfile.property.Tags\\"></a>
 
 \`\`\`csharp
-public TagManager Tags { get; set; }
+public TagManager Tags { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.TagManager\`](#Amazon.CDK.TagManager)
@@ -6283,7 +6283,7 @@ public TagManager Tags { get; set; }
 ##### \`ClusterName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnFargateProfile.property.ClusterName\\"></a>
 
 \`\`\`csharp
-public string ClusterName { get; set; }
+public string ClusterName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6297,7 +6297,7 @@ public string ClusterName { get; set; }
 ##### \`PodExecutionRoleArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnFargateProfile.property.PodExecutionRoleArn\\"></a>
 
 \`\`\`csharp
-public string PodExecutionRoleArn { get; set; }
+public string PodExecutionRoleArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6311,7 +6311,7 @@ public string PodExecutionRoleArn { get; set; }
 ##### \`Selectors\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnFargateProfile.property.Selectors\\"></a>
 
 \`\`\`csharp
-public object Selectors { get; set; }
+public object Selectors { get; }
 \`\`\`
 
 - *Type:* object
@@ -6325,7 +6325,7 @@ public object Selectors { get; set; }
 ##### \`FargateProfileName\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnFargateProfile.property.FargateProfileName\\"></a>
 
 \`\`\`csharp
-public string FargateProfileName { get; set; }
+public string FargateProfileName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6339,7 +6339,7 @@ public string FargateProfileName { get; set; }
 ##### \`Subnets\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnFargateProfile.property.Subnets\\"></a>
 
 \`\`\`csharp
-public string[] Subnets { get; set; }
+public string[] Subnets { get; }
 \`\`\`
 
 - *Type:* \`string\`[]
@@ -6422,7 +6422,7 @@ tree inspector to collect and process attributes.
 ##### \`AttrArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.AttrArn\\"></a>
 
 \`\`\`csharp
-public string AttrArn { get; set; }
+public string AttrArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6432,7 +6432,7 @@ public string AttrArn { get; set; }
 ##### \`AttrClusterName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.AttrClusterName\\"></a>
 
 \`\`\`csharp
-public string AttrClusterName { get; set; }
+public string AttrClusterName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6442,7 +6442,7 @@ public string AttrClusterName { get; set; }
 ##### \`AttrNodegroupName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.AttrNodegroupName\\"></a>
 
 \`\`\`csharp
-public string AttrNodegroupName { get; set; }
+public string AttrNodegroupName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6452,7 +6452,7 @@ public string AttrNodegroupName { get; set; }
 ##### \`Tags\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.Tags\\"></a>
 
 \`\`\`csharp
-public TagManager Tags { get; set; }
+public TagManager Tags { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.TagManager\`](#Amazon.CDK.TagManager)
@@ -6466,7 +6466,7 @@ public TagManager Tags { get; set; }
 ##### \`ClusterName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.ClusterName\\"></a>
 
 \`\`\`csharp
-public string ClusterName { get; set; }
+public string ClusterName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6480,7 +6480,7 @@ public string ClusterName { get; set; }
 ##### \`Labels\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.Labels\\"></a>
 
 \`\`\`csharp
-public object Labels { get; set; }
+public object Labels { get; }
 \`\`\`
 
 - *Type:* \`object\`
@@ -6494,7 +6494,7 @@ public object Labels { get; set; }
 ##### \`NodeRole\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.NodeRole\\"></a>
 
 \`\`\`csharp
-public string NodeRole { get; set; }
+public string NodeRole { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6508,7 +6508,7 @@ public string NodeRole { get; set; }
 ##### \`Subnets\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.Subnets\\"></a>
 
 \`\`\`csharp
-public string[] Subnets { get; set; }
+public string[] Subnets { get; }
 \`\`\`
 
 - *Type:* \`string\`[]
@@ -6522,7 +6522,7 @@ public string[] Subnets { get; set; }
 ##### \`AmiType\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.AmiType\\"></a>
 
 \`\`\`csharp
-public string AmiType { get; set; }
+public string AmiType { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6536,7 +6536,7 @@ public string AmiType { get; set; }
 ##### \`CapacityType\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.CapacityType\\"></a>
 
 \`\`\`csharp
-public string CapacityType { get; set; }
+public string CapacityType { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6550,7 +6550,7 @@ public string CapacityType { get; set; }
 ##### \`DiskSize\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.DiskSize\\"></a>
 
 \`\`\`csharp
-public double DiskSize { get; set; }
+public double DiskSize { get; }
 \`\`\`
 
 - *Type:* \`double\`
@@ -6564,7 +6564,7 @@ public double DiskSize { get; set; }
 ##### \`ForceUpdateEnabled\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.ForceUpdateEnabled\\"></a>
 
 \`\`\`csharp
-public object ForceUpdateEnabled { get; set; }
+public object ForceUpdateEnabled { get; }
 \`\`\`
 
 - *Type:* object
@@ -6578,7 +6578,7 @@ public object ForceUpdateEnabled { get; set; }
 ##### \`InstanceTypes\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.InstanceTypes\\"></a>
 
 \`\`\`csharp
-public string[] InstanceTypes { get; set; }
+public string[] InstanceTypes { get; }
 \`\`\`
 
 - *Type:* \`string\`[]
@@ -6592,7 +6592,7 @@ public string[] InstanceTypes { get; set; }
 ##### \`LaunchTemplate\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.LaunchTemplate\\"></a>
 
 \`\`\`csharp
-public object LaunchTemplate { get; set; }
+public object LaunchTemplate { get; }
 \`\`\`
 
 - *Type:* object
@@ -6606,7 +6606,7 @@ public object LaunchTemplate { get; set; }
 ##### \`NodegroupName\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.NodegroupName\\"></a>
 
 \`\`\`csharp
-public string NodegroupName { get; set; }
+public string NodegroupName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6620,7 +6620,7 @@ public string NodegroupName { get; set; }
 ##### \`ReleaseVersion\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.ReleaseVersion\\"></a>
 
 \`\`\`csharp
-public string ReleaseVersion { get; set; }
+public string ReleaseVersion { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6634,7 +6634,7 @@ public string ReleaseVersion { get; set; }
 ##### \`RemoteAccess\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.RemoteAccess\\"></a>
 
 \`\`\`csharp
-public object RemoteAccess { get; set; }
+public object RemoteAccess { get; }
 \`\`\`
 
 - *Type:* object
@@ -6648,7 +6648,7 @@ public object RemoteAccess { get; set; }
 ##### \`ScalingConfig\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.ScalingConfig\\"></a>
 
 \`\`\`csharp
-public object ScalingConfig { get; set; }
+public object ScalingConfig { get; }
 \`\`\`
 
 - *Type:* object
@@ -6662,7 +6662,7 @@ public object ScalingConfig { get; set; }
 ##### \`Taints\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.Taints\\"></a>
 
 \`\`\`csharp
-public object Taints { get; set; }
+public object Taints { get; }
 \`\`\`
 
 - *Type:* object
@@ -6676,7 +6676,7 @@ public object Taints { get; set; }
 ##### \`Version\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.Version\\"></a>
 
 \`\`\`csharp
-public string Version { get; set; }
+public string Version { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -6969,7 +6969,7 @@ the cluster properties to use for importing information.
 ##### \`AdminRole\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.AdminRole\\"></a>
 
 \`\`\`csharp
-public Role AdminRole { get; set; }
+public Role AdminRole { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.Role\`](#Amazon.CDK.aws_iam.Role)
@@ -6983,7 +6983,7 @@ This role also has \`systems:master\` permissions.
 ##### \`AwsAuth\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.AwsAuth\\"></a>
 
 \`\`\`csharp
-public AwsAuth AwsAuth { get; set; }
+public AwsAuth AwsAuth { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_eks.AwsAuth\`](#Amazon.CDK.aws_eks.AwsAuth)
@@ -6995,7 +6995,7 @@ Lazily creates the AwsAuth resource, which manages AWS authentication mapping.
 ##### \`ClusterArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.ClusterArn\\"></a>
 
 \`\`\`csharp
-public string ClusterArn { get; set; }
+public string ClusterArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -7007,7 +7007,7 @@ The AWS generated ARN for the Cluster resource.
 ##### \`ClusterCertificateAuthorityData\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.ClusterCertificateAuthorityData\\"></a>
 
 \`\`\`csharp
-public string ClusterCertificateAuthorityData { get; set; }
+public string ClusterCertificateAuthorityData { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -7019,7 +7019,7 @@ The certificate-authority-data for your cluster.
 ##### \`ClusterEncryptionConfigKeyArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.ClusterEncryptionConfigKeyArn\\"></a>
 
 \`\`\`csharp
-public string ClusterEncryptionConfigKeyArn { get; set; }
+public string ClusterEncryptionConfigKeyArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -7031,7 +7031,7 @@ Amazon Resource Name (ARN) or alias of the customer master key (CMK).
 ##### \`ClusterEndpoint\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.ClusterEndpoint\\"></a>
 
 \`\`\`csharp
-public string ClusterEndpoint { get; set; }
+public string ClusterEndpoint { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -7045,7 +7045,7 @@ This is the URL inside the kubeconfig file to use with kubectl
 ##### \`ClusterName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.ClusterName\\"></a>
 
 \`\`\`csharp
-public string ClusterName { get; set; }
+public string ClusterName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -7057,7 +7057,7 @@ The Name of the created EKS Cluster.
 ##### \`ClusterOpenIdConnectIssuer\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.ClusterOpenIdConnectIssuer\\"></a>
 
 \`\`\`csharp
-public string ClusterOpenIdConnectIssuer { get; set; }
+public string ClusterOpenIdConnectIssuer { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -7073,7 +7073,7 @@ stock \`CfnCluster\`), this is \`undefined\`.
 ##### \`ClusterOpenIdConnectIssuerUrl\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.ClusterOpenIdConnectIssuerUrl\\"></a>
 
 \`\`\`csharp
-public string ClusterOpenIdConnectIssuerUrl { get; set; }
+public string ClusterOpenIdConnectIssuerUrl { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -7089,7 +7089,7 @@ stock \`CfnCluster\`), this is \`undefined\`.
 ##### \`ClusterSecurityGroup\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.ClusterSecurityGroup\\"></a>
 
 \`\`\`csharp
-public ISecurityGroup ClusterSecurityGroup { get; set; }
+public ISecurityGroup ClusterSecurityGroup { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.ISecurityGroup\`](#Amazon.CDK.aws_ec2.ISecurityGroup)
@@ -7101,7 +7101,7 @@ The cluster security group that was created by Amazon EKS for the cluster.
 ##### \`ClusterSecurityGroupId\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.ClusterSecurityGroupId\\"></a>
 
 \`\`\`csharp
-public string ClusterSecurityGroupId { get; set; }
+public string ClusterSecurityGroupId { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -7113,7 +7113,7 @@ The id of the cluster security group that was created by Amazon EKS for the clus
 ##### \`Connections\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.Connections\\"></a>
 
 \`\`\`csharp
-public Connections Connections { get; set; }
+public Connections Connections { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.Connections\`](#Amazon.CDK.aws_ec2.Connections)
@@ -7125,7 +7125,7 @@ Manages connection rules (Security Group Rules) for the cluster.
 ##### \`OpenIdConnectProvider\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.OpenIdConnectProvider\\"></a>
 
 \`\`\`csharp
-public IOpenIdConnectProvider OpenIdConnectProvider { get; set; }
+public IOpenIdConnectProvider OpenIdConnectProvider { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.IOpenIdConnectProvider\`](#Amazon.CDK.aws_iam.IOpenIdConnectProvider)
@@ -7139,7 +7139,7 @@ A provider will only be defined if this property is accessed (lazy initializatio
 ##### \`Prune\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.Prune\\"></a>
 
 \`\`\`csharp
-public bool Prune { get; set; }
+public bool Prune { get; }
 \`\`\`
 
 - *Type:* \`bool\`
@@ -7151,7 +7151,7 @@ Determines if Kubernetes resources can be pruned automatically.
 ##### \`Role\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.Role\\"></a>
 
 \`\`\`csharp
-public IRole Role { get; set; }
+public IRole Role { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.IRole\`](#Amazon.CDK.aws_iam.IRole)
@@ -7163,7 +7163,7 @@ IAM role assumed by the EKS Control Plane.
 ##### \`Vpc\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.Vpc\\"></a>
 
 \`\`\`csharp
-public IVpc Vpc { get; set; }
+public IVpc Vpc { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.IVpc\`](#Amazon.CDK.aws_ec2.IVpc)
@@ -7175,7 +7175,7 @@ The VPC in which this Cluster was created.
 ##### \`DefaultCapacity\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.DefaultCapacity\\"></a>
 
 \`\`\`csharp
-public AutoScalingGroup DefaultCapacity { get; set; }
+public AutoScalingGroup DefaultCapacity { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_autoscaling.AutoScalingGroup\`](#Amazon.CDK.aws_autoscaling.AutoScalingGroup)
@@ -7190,7 +7190,7 @@ This will be \`undefined\` if the \`defaultCapacityType\` is not \`EC2\` or
 ##### \`DefaultNodegroup\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.DefaultNodegroup\\"></a>
 
 \`\`\`csharp
-public Nodegroup DefaultNodegroup { get; set; }
+public Nodegroup DefaultNodegroup { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_eks.Nodegroup\`](#Amazon.CDK.aws_eks.Nodegroup)
@@ -7205,7 +7205,7 @@ This will be \`undefined\` if the \`defaultCapacityType\` is \`EC2\` or
 ##### \`KubectlEnvironment\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.KubectlEnvironment\\"></a>
 
 \`\`\`csharp
-public System.Collections.Generic.IDictionary<string, string> KubectlEnvironment { get; set; }
+public System.Collections.Generic.IDictionary<string, string> KubectlEnvironment { get; }
 \`\`\`
 
 - *Type:* System.Collections.Generic.IDictionary<string, \`string\`>
@@ -7217,7 +7217,7 @@ Custom environment variables when running \`kubectl\` against this cluster.
 ##### \`KubectlLayer\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.KubectlLayer\\"></a>
 
 \`\`\`csharp
-public ILayerVersion KubectlLayer { get; set; }
+public ILayerVersion KubectlLayer { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_lambda.ILayerVersion\`](#Amazon.CDK.aws_lambda.ILayerVersion)
@@ -7232,7 +7232,7 @@ undefined, a SAR app that contains this layer will be used.
 ##### \`KubectlMemory\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.KubectlMemory\\"></a>
 
 \`\`\`csharp
-public Size KubectlMemory { get; set; }
+public Size KubectlMemory { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.Size\`](#Amazon.CDK.Size)
@@ -7244,7 +7244,7 @@ The amount of memory allocated to the kubectl provider's lambda function.
 ##### \`KubectlPrivateSubnets\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.KubectlPrivateSubnets\\"></a>
 
 \`\`\`csharp
-public ISubnet[] KubectlPrivateSubnets { get; set; }
+public ISubnet[] KubectlPrivateSubnets { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.ISubnet\`](#Amazon.CDK.aws_ec2.ISubnet)[]
@@ -7258,7 +7258,7 @@ Subnets to host the \`kubectl\` compute resources.
 ##### \`KubectlRole\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.KubectlRole\\"></a>
 
 \`\`\`csharp
-public IRole KubectlRole { get; set; }
+public IRole KubectlRole { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.IRole\`](#Amazon.CDK.aws_iam.IRole)
@@ -7272,7 +7272,7 @@ The role should be mapped to the \`system:masters\` Kubernetes RBAC role.
 ##### \`KubectlSecurityGroup\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.KubectlSecurityGroup\\"></a>
 
 \`\`\`csharp
-public ISecurityGroup KubectlSecurityGroup { get; set; }
+public ISecurityGroup KubectlSecurityGroup { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.ISecurityGroup\`](#Amazon.CDK.aws_ec2.ISecurityGroup)
@@ -7378,7 +7378,7 @@ new FargateProfile(Construct Scope, string Id, FargateProfileProps Props);
 ##### \`FargateProfileArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.FargateProfile.property.FargateProfileArn\\"></a>
 
 \`\`\`csharp
-public string FargateProfileArn { get; set; }
+public string FargateProfileArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -7390,7 +7390,7 @@ The full Amazon Resource Name (ARN) of the Fargate profile.
 ##### \`FargateProfileName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.FargateProfile.property.FargateProfileName\\"></a>
 
 \`\`\`csharp
-public string FargateProfileName { get; set; }
+public string FargateProfileName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -7402,7 +7402,7 @@ The name of the Fargate profile.
 ##### \`PodExecutionRole\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.FargateProfile.property.PodExecutionRole\\"></a>
 
 \`\`\`csharp
-public IRole PodExecutionRole { get; set; }
+public IRole PodExecutionRole { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.IRole\`](#Amazon.CDK.aws_iam.IRole)
@@ -7418,7 +7418,7 @@ ECR image repositories.
 ##### \`Tags\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.FargateProfile.property.Tags\\"></a>
 
 \`\`\`csharp
-public TagManager Tags { get; set; }
+public TagManager Tags { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.TagManager\`](#Amazon.CDK.TagManager)
@@ -7560,7 +7560,7 @@ new KubernetesObjectValue(Construct Scope, string Id, KubernetesObjectValueProps
 ##### \`Value\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.KubernetesObjectValue.property.Value\\"></a>
 
 \`\`\`csharp
-public string Value { get; set; }
+public string Value { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -7681,7 +7681,7 @@ Nodegroup.FromNodegroupName(Construct Scope, string Id, string NodegroupName);
 ##### \`Cluster\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Nodegroup.property.Cluster\\"></a>
 
 \`\`\`csharp
-public ICluster Cluster { get; set; }
+public ICluster Cluster { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_eks.ICluster\`](#Amazon.CDK.aws_eks.ICluster)
@@ -7693,7 +7693,7 @@ the Amazon EKS cluster resource.
 ##### \`NodegroupArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Nodegroup.property.NodegroupArn\\"></a>
 
 \`\`\`csharp
-public string NodegroupArn { get; set; }
+public string NodegroupArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -7705,7 +7705,7 @@ ARN of the nodegroup.
 ##### \`NodegroupName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Nodegroup.property.NodegroupName\\"></a>
 
 \`\`\`csharp
-public string NodegroupName { get; set; }
+public string NodegroupName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -7717,7 +7717,7 @@ Nodegroup name.
 ##### \`Role\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Nodegroup.property.Role\\"></a>
 
 \`\`\`csharp
-public IRole Role { get; set; }
+public IRole Role { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.IRole\`](#Amazon.CDK.aws_iam.IRole)
@@ -7828,7 +7828,7 @@ private AddToPrincipalPolicy(PolicyStatement Statement)
 ##### \`AssumeRoleAction\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ServiceAccount.property.AssumeRoleAction\\"></a>
 
 \`\`\`csharp
-public string AssumeRoleAction { get; set; }
+public string AssumeRoleAction { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -7840,7 +7840,7 @@ When this Principal is used in an AssumeRole policy, the action to use.
 ##### \`GrantPrincipal\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ServiceAccount.property.GrantPrincipal\\"></a>
 
 \`\`\`csharp
-public IPrincipal GrantPrincipal { get; set; }
+public IPrincipal GrantPrincipal { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.IPrincipal\`](#Amazon.CDK.aws_iam.IPrincipal)
@@ -7852,7 +7852,7 @@ The principal to grant permissions to.
 ##### \`PolicyFragment\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ServiceAccount.property.PolicyFragment\\"></a>
 
 \`\`\`csharp
-public PrincipalPolicyFragment PolicyFragment { get; set; }
+public PrincipalPolicyFragment PolicyFragment { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.PrincipalPolicyFragment\`](#Amazon.CDK.aws_iam.PrincipalPolicyFragment)
@@ -7864,7 +7864,7 @@ Return the policy fragment that identifies this principal in a Policy.
 ##### \`Role\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ServiceAccount.property.Role\\"></a>
 
 \`\`\`csharp
-public IRole Role { get; set; }
+public IRole Role { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.IRole\`](#Amazon.CDK.aws_iam.IRole)
@@ -7876,7 +7876,7 @@ The role which is linked to the service account.
 ##### \`ServiceAccountName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ServiceAccount.property.ServiceAccountName\\"></a>
 
 \`\`\`csharp
-public string ServiceAccountName { get; set; }
+public string ServiceAccountName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -7888,7 +7888,7 @@ The name of the service account.
 ##### \`ServiceAccountNamespace\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ServiceAccount.property.ServiceAccountNamespace\\"></a>
 
 \`\`\`csharp
-public string ServiceAccountNamespace { get; set; }
+public string ServiceAccountNamespace { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -13004,7 +13004,7 @@ custom version number.
 ##### \`Version\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.KubernetesVersion.property.Version\\"></a>
 
 \`\`\`csharp
-public string Version { get; set; }
+public string Version { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -13168,7 +13168,7 @@ service account options.
 ##### \`Node\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.Node\\"></a>
 
 \`\`\`csharp
-public Node Node { get; set; }
+public Node Node { get; }
 \`\`\`
 
 - *Type:* [\`Constructs.Node\`](#Constructs.Node)
@@ -13180,7 +13180,7 @@ The tree node.
 ##### \`Env\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.Env\\"></a>
 
 \`\`\`csharp
-public ResourceEnvironment Env { get; set; }
+public ResourceEnvironment Env { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.ResourceEnvironment\`](#Amazon.CDK.ResourceEnvironment)
@@ -13199,7 +13199,7 @@ that might be different than the stack they were imported into.
 ##### \`Stack\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.Stack\\"></a>
 
 \`\`\`csharp
-public Stack Stack { get; set; }
+public Stack Stack { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.Stack\`](#Amazon.CDK.Stack)
@@ -13211,7 +13211,7 @@ The stack in which this resource is defined.
 ##### \`Connections\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.Connections\\"></a>
 
 \`\`\`csharp
-public Connections Connections { get; set; }
+public Connections Connections { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.Connections\`](#Amazon.CDK.aws_ec2.Connections)
@@ -13221,7 +13221,7 @@ public Connections Connections { get; set; }
 ##### \`ClusterArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.ClusterArn\\"></a>
 
 \`\`\`csharp
-public string ClusterArn { get; set; }
+public string ClusterArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -13233,7 +13233,7 @@ The unique ARN assigned to the service by AWS in the form of arn:aws:eks:.
 ##### \`ClusterCertificateAuthorityData\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.ClusterCertificateAuthorityData\\"></a>
 
 \`\`\`csharp
-public string ClusterCertificateAuthorityData { get; set; }
+public string ClusterCertificateAuthorityData { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -13245,7 +13245,7 @@ The certificate-authority-data for your cluster.
 ##### \`ClusterEncryptionConfigKeyArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.ClusterEncryptionConfigKeyArn\\"></a>
 
 \`\`\`csharp
-public string ClusterEncryptionConfigKeyArn { get; set; }
+public string ClusterEncryptionConfigKeyArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -13257,7 +13257,7 @@ Amazon Resource Name (ARN) or alias of the customer master key (CMK).
 ##### \`ClusterEndpoint\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.ClusterEndpoint\\"></a>
 
 \`\`\`csharp
-public string ClusterEndpoint { get; set; }
+public string ClusterEndpoint { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -13269,7 +13269,7 @@ The API Server endpoint URL.
 ##### \`ClusterName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.ClusterName\\"></a>
 
 \`\`\`csharp
-public string ClusterName { get; set; }
+public string ClusterName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -13281,7 +13281,7 @@ The physical name of the Cluster.
 ##### \`ClusterSecurityGroup\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.ClusterSecurityGroup\\"></a>
 
 \`\`\`csharp
-public ISecurityGroup ClusterSecurityGroup { get; set; }
+public ISecurityGroup ClusterSecurityGroup { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.ISecurityGroup\`](#Amazon.CDK.aws_ec2.ISecurityGroup)
@@ -13293,7 +13293,7 @@ The cluster security group that was created by Amazon EKS for the cluster.
 ##### \`ClusterSecurityGroupId\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.ClusterSecurityGroupId\\"></a>
 
 \`\`\`csharp
-public string ClusterSecurityGroupId { get; set; }
+public string ClusterSecurityGroupId { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -13305,7 +13305,7 @@ The id of the cluster security group that was created by Amazon EKS for the clus
 ##### \`OpenIdConnectProvider\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.OpenIdConnectProvider\\"></a>
 
 \`\`\`csharp
-public IOpenIdConnectProvider OpenIdConnectProvider { get; set; }
+public IOpenIdConnectProvider OpenIdConnectProvider { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.IOpenIdConnectProvider\`](#Amazon.CDK.aws_iam.IOpenIdConnectProvider)
@@ -13317,7 +13317,7 @@ The Open ID Connect Provider of the cluster used to configure Service Accounts.
 ##### \`Prune\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.Prune\\"></a>
 
 \`\`\`csharp
-public bool Prune { get; set; }
+public bool Prune { get; }
 \`\`\`
 
 - *Type:* \`bool\`
@@ -13334,7 +13334,7 @@ apply\` operation with the \`--prune\` switch.
 ##### \`Vpc\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.Vpc\\"></a>
 
 \`\`\`csharp
-public IVpc Vpc { get; set; }
+public IVpc Vpc { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.IVpc\`](#Amazon.CDK.aws_ec2.IVpc)
@@ -13346,7 +13346,7 @@ The VPC in which this Cluster was created.
 ##### \`KubectlEnvironment\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.KubectlEnvironment\\"></a>
 
 \`\`\`csharp
-public System.Collections.Generic.IDictionary<string, string> KubectlEnvironment { get; set; }
+public System.Collections.Generic.IDictionary<string, string> KubectlEnvironment { get; }
 \`\`\`
 
 - *Type:* System.Collections.Generic.IDictionary<string, \`string\`>
@@ -13358,7 +13358,7 @@ Custom environment variables when running \`kubectl\` against this cluster.
 ##### \`KubectlLayer\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.KubectlLayer\\"></a>
 
 \`\`\`csharp
-public ILayerVersion KubectlLayer { get; set; }
+public ILayerVersion KubectlLayer { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_lambda.ILayerVersion\`](#Amazon.CDK.aws_lambda.ILayerVersion)
@@ -13372,7 +13372,7 @@ If not defined, a default layer will be used.
 ##### \`KubectlMemory\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.KubectlMemory\\"></a>
 
 \`\`\`csharp
-public Size KubectlMemory { get; set; }
+public Size KubectlMemory { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.Size\`](#Amazon.CDK.Size)
@@ -13384,7 +13384,7 @@ Amount of memory to allocate to the provider's lambda function.
 ##### \`KubectlPrivateSubnets\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.KubectlPrivateSubnets\\"></a>
 
 \`\`\`csharp
-public ISubnet[] KubectlPrivateSubnets { get; set; }
+public ISubnet[] KubectlPrivateSubnets { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.ISubnet\`](#Amazon.CDK.aws_ec2.ISubnet)[]
@@ -13399,7 +13399,7 @@ publicly.
 ##### \`KubectlRole\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.KubectlRole\\"></a>
 
 \`\`\`csharp
-public IRole KubectlRole { get; set; }
+public IRole KubectlRole { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.IRole\`](#Amazon.CDK.aws_iam.IRole)
@@ -13413,7 +13413,7 @@ The role should be mapped to the \`system:masters\` Kubernetes RBAC role.
 ##### \`KubectlSecurityGroup\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.KubectlSecurityGroup\\"></a>
 
 \`\`\`csharp
-public ISecurityGroup KubectlSecurityGroup { get; set; }
+public ISecurityGroup KubectlSecurityGroup { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.ISecurityGroup\`](#Amazon.CDK.aws_ec2.ISecurityGroup)
@@ -13439,7 +13439,7 @@ NodeGroup interface.
 ##### \`Node\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.INodegroup.property.Node\\"></a>
 
 \`\`\`csharp
-public Node Node { get; set; }
+public Node Node { get; }
 \`\`\`
 
 - *Type:* [\`Constructs.Node\`](#Constructs.Node)
@@ -13451,7 +13451,7 @@ The tree node.
 ##### \`Env\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.INodegroup.property.Env\\"></a>
 
 \`\`\`csharp
-public ResourceEnvironment Env { get; set; }
+public ResourceEnvironment Env { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.ResourceEnvironment\`](#Amazon.CDK.ResourceEnvironment)
@@ -13470,7 +13470,7 @@ that might be different than the stack they were imported into.
 ##### \`Stack\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.INodegroup.property.Stack\\"></a>
 
 \`\`\`csharp
-public Stack Stack { get; set; }
+public Stack Stack { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.Stack\`](#Amazon.CDK.Stack)
@@ -13482,7 +13482,7 @@ The stack in which this resource is defined.
 ##### \`NodegroupName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.INodegroup.property.NodegroupName\\"></a>
 
 \`\`\`csharp
-public string NodegroupName { get; set; }
+public string NodegroupName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15059,7 +15059,7 @@ tree inspector to collect and process attributes.
 ##### \`AttrArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnAddon.property.AttrArn\\"></a>
 
 \`\`\`csharp
-public string AttrArn { get; set; }
+public string AttrArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15069,7 +15069,7 @@ public string AttrArn { get; set; }
 ##### \`Tags\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnAddon.property.Tags\\"></a>
 
 \`\`\`csharp
-public TagManager Tags { get; set; }
+public TagManager Tags { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.TagManager\`](#Amazon.CDK.TagManager)
@@ -15083,7 +15083,7 @@ public TagManager Tags { get; set; }
 ##### \`AddonName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnAddon.property.AddonName\\"></a>
 
 \`\`\`csharp
-public string AddonName { get; set; }
+public string AddonName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15097,7 +15097,7 @@ public string AddonName { get; set; }
 ##### \`ClusterName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnAddon.property.ClusterName\\"></a>
 
 \`\`\`csharp
-public string ClusterName { get; set; }
+public string ClusterName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15111,7 +15111,7 @@ public string ClusterName { get; set; }
 ##### \`AddonVersion\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnAddon.property.AddonVersion\\"></a>
 
 \`\`\`csharp
-public string AddonVersion { get; set; }
+public string AddonVersion { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15125,7 +15125,7 @@ public string AddonVersion { get; set; }
 ##### \`ResolveConflicts\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnAddon.property.ResolveConflicts\\"></a>
 
 \`\`\`csharp
-public string ResolveConflicts { get; set; }
+public string ResolveConflicts { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15139,7 +15139,7 @@ public string ResolveConflicts { get; set; }
 ##### \`ServiceAccountRoleArn\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnAddon.property.ServiceAccountRoleArn\\"></a>
 
 \`\`\`csharp
-public string ServiceAccountRoleArn { get; set; }
+public string ServiceAccountRoleArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15222,7 +15222,7 @@ tree inspector to collect and process attributes.
 ##### \`AttrArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.AttrArn\\"></a>
 
 \`\`\`csharp
-public string AttrArn { get; set; }
+public string AttrArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15232,7 +15232,7 @@ public string AttrArn { get; set; }
 ##### \`AttrCertificateAuthorityData\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.AttrCertificateAuthorityData\\"></a>
 
 \`\`\`csharp
-public string AttrCertificateAuthorityData { get; set; }
+public string AttrCertificateAuthorityData { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15242,7 +15242,7 @@ public string AttrCertificateAuthorityData { get; set; }
 ##### \`AttrClusterSecurityGroupId\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.AttrClusterSecurityGroupId\\"></a>
 
 \`\`\`csharp
-public string AttrClusterSecurityGroupId { get; set; }
+public string AttrClusterSecurityGroupId { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15252,7 +15252,7 @@ public string AttrClusterSecurityGroupId { get; set; }
 ##### \`AttrEncryptionConfigKeyArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.AttrEncryptionConfigKeyArn\\"></a>
 
 \`\`\`csharp
-public string AttrEncryptionConfigKeyArn { get; set; }
+public string AttrEncryptionConfigKeyArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15262,7 +15262,7 @@ public string AttrEncryptionConfigKeyArn { get; set; }
 ##### \`AttrEndpoint\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.AttrEndpoint\\"></a>
 
 \`\`\`csharp
-public string AttrEndpoint { get; set; }
+public string AttrEndpoint { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15272,7 +15272,7 @@ public string AttrEndpoint { get; set; }
 ##### \`AttrOpenIdConnectIssuerUrl\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.AttrOpenIdConnectIssuerUrl\\"></a>
 
 \`\`\`csharp
-public string AttrOpenIdConnectIssuerUrl { get; set; }
+public string AttrOpenIdConnectIssuerUrl { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15282,7 +15282,7 @@ public string AttrOpenIdConnectIssuerUrl { get; set; }
 ##### \`ResourcesVpcConfig\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.ResourcesVpcConfig\\"></a>
 
 \`\`\`csharp
-public object ResourcesVpcConfig { get; set; }
+public object ResourcesVpcConfig { get; }
 \`\`\`
 
 - *Type:* object
@@ -15296,7 +15296,7 @@ public object ResourcesVpcConfig { get; set; }
 ##### \`RoleArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.RoleArn\\"></a>
 
 \`\`\`csharp
-public string RoleArn { get; set; }
+public string RoleArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15310,7 +15310,7 @@ public string RoleArn { get; set; }
 ##### \`EncryptionConfig\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.EncryptionConfig\\"></a>
 
 \`\`\`csharp
-public object EncryptionConfig { get; set; }
+public object EncryptionConfig { get; }
 \`\`\`
 
 - *Type:* object
@@ -15324,7 +15324,7 @@ public object EncryptionConfig { get; set; }
 ##### \`KubernetesNetworkConfig\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.KubernetesNetworkConfig\\"></a>
 
 \`\`\`csharp
-public object KubernetesNetworkConfig { get; set; }
+public object KubernetesNetworkConfig { get; }
 \`\`\`
 
 - *Type:* object
@@ -15338,7 +15338,7 @@ public object KubernetesNetworkConfig { get; set; }
 ##### \`Name\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.Name\\"></a>
 
 \`\`\`csharp
-public string Name { get; set; }
+public string Name { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15352,7 +15352,7 @@ public string Name { get; set; }
 ##### \`Version\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnCluster.property.Version\\"></a>
 
 \`\`\`csharp
-public string Version { get; set; }
+public string Version { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15435,7 +15435,7 @@ tree inspector to collect and process attributes.
 ##### \`AttrArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnFargateProfile.property.AttrArn\\"></a>
 
 \`\`\`csharp
-public string AttrArn { get; set; }
+public string AttrArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15445,7 +15445,7 @@ public string AttrArn { get; set; }
 ##### \`Tags\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnFargateProfile.property.Tags\\"></a>
 
 \`\`\`csharp
-public TagManager Tags { get; set; }
+public TagManager Tags { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.TagManager\`](#Amazon.CDK.TagManager)
@@ -15459,7 +15459,7 @@ public TagManager Tags { get; set; }
 ##### \`ClusterName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnFargateProfile.property.ClusterName\\"></a>
 
 \`\`\`csharp
-public string ClusterName { get; set; }
+public string ClusterName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15473,7 +15473,7 @@ public string ClusterName { get; set; }
 ##### \`PodExecutionRoleArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnFargateProfile.property.PodExecutionRoleArn\\"></a>
 
 \`\`\`csharp
-public string PodExecutionRoleArn { get; set; }
+public string PodExecutionRoleArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15487,7 +15487,7 @@ public string PodExecutionRoleArn { get; set; }
 ##### \`Selectors\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnFargateProfile.property.Selectors\\"></a>
 
 \`\`\`csharp
-public object Selectors { get; set; }
+public object Selectors { get; }
 \`\`\`
 
 - *Type:* object
@@ -15501,7 +15501,7 @@ public object Selectors { get; set; }
 ##### \`FargateProfileName\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnFargateProfile.property.FargateProfileName\\"></a>
 
 \`\`\`csharp
-public string FargateProfileName { get; set; }
+public string FargateProfileName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15515,7 +15515,7 @@ public string FargateProfileName { get; set; }
 ##### \`Subnets\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnFargateProfile.property.Subnets\\"></a>
 
 \`\`\`csharp
-public string[] Subnets { get; set; }
+public string[] Subnets { get; }
 \`\`\`
 
 - *Type:* \`string\`[]
@@ -15598,7 +15598,7 @@ tree inspector to collect and process attributes.
 ##### \`AttrArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.AttrArn\\"></a>
 
 \`\`\`csharp
-public string AttrArn { get; set; }
+public string AttrArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15608,7 +15608,7 @@ public string AttrArn { get; set; }
 ##### \`AttrClusterName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.AttrClusterName\\"></a>
 
 \`\`\`csharp
-public string AttrClusterName { get; set; }
+public string AttrClusterName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15618,7 +15618,7 @@ public string AttrClusterName { get; set; }
 ##### \`AttrNodegroupName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.AttrNodegroupName\\"></a>
 
 \`\`\`csharp
-public string AttrNodegroupName { get; set; }
+public string AttrNodegroupName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15628,7 +15628,7 @@ public string AttrNodegroupName { get; set; }
 ##### \`Tags\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.Tags\\"></a>
 
 \`\`\`csharp
-public TagManager Tags { get; set; }
+public TagManager Tags { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.TagManager\`](#Amazon.CDK.TagManager)
@@ -15642,7 +15642,7 @@ public TagManager Tags { get; set; }
 ##### \`ClusterName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.ClusterName\\"></a>
 
 \`\`\`csharp
-public string ClusterName { get; set; }
+public string ClusterName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15656,7 +15656,7 @@ public string ClusterName { get; set; }
 ##### \`Labels\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.Labels\\"></a>
 
 \`\`\`csharp
-public object Labels { get; set; }
+public object Labels { get; }
 \`\`\`
 
 - *Type:* \`object\`
@@ -15670,7 +15670,7 @@ public object Labels { get; set; }
 ##### \`NodeRole\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.NodeRole\\"></a>
 
 \`\`\`csharp
-public string NodeRole { get; set; }
+public string NodeRole { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15684,7 +15684,7 @@ public string NodeRole { get; set; }
 ##### \`Subnets\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.Subnets\\"></a>
 
 \`\`\`csharp
-public string[] Subnets { get; set; }
+public string[] Subnets { get; }
 \`\`\`
 
 - *Type:* \`string\`[]
@@ -15698,7 +15698,7 @@ public string[] Subnets { get; set; }
 ##### \`AmiType\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.AmiType\\"></a>
 
 \`\`\`csharp
-public string AmiType { get; set; }
+public string AmiType { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15712,7 +15712,7 @@ public string AmiType { get; set; }
 ##### \`CapacityType\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.CapacityType\\"></a>
 
 \`\`\`csharp
-public string CapacityType { get; set; }
+public string CapacityType { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15726,7 +15726,7 @@ public string CapacityType { get; set; }
 ##### \`DiskSize\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.DiskSize\\"></a>
 
 \`\`\`csharp
-public double DiskSize { get; set; }
+public double DiskSize { get; }
 \`\`\`
 
 - *Type:* \`double\`
@@ -15740,7 +15740,7 @@ public double DiskSize { get; set; }
 ##### \`ForceUpdateEnabled\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.ForceUpdateEnabled\\"></a>
 
 \`\`\`csharp
-public object ForceUpdateEnabled { get; set; }
+public object ForceUpdateEnabled { get; }
 \`\`\`
 
 - *Type:* object
@@ -15754,7 +15754,7 @@ public object ForceUpdateEnabled { get; set; }
 ##### \`InstanceTypes\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.InstanceTypes\\"></a>
 
 \`\`\`csharp
-public string[] InstanceTypes { get; set; }
+public string[] InstanceTypes { get; }
 \`\`\`
 
 - *Type:* \`string\`[]
@@ -15768,7 +15768,7 @@ public string[] InstanceTypes { get; set; }
 ##### \`LaunchTemplate\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.LaunchTemplate\\"></a>
 
 \`\`\`csharp
-public object LaunchTemplate { get; set; }
+public object LaunchTemplate { get; }
 \`\`\`
 
 - *Type:* object
@@ -15782,7 +15782,7 @@ public object LaunchTemplate { get; set; }
 ##### \`NodegroupName\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.NodegroupName\\"></a>
 
 \`\`\`csharp
-public string NodegroupName { get; set; }
+public string NodegroupName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15796,7 +15796,7 @@ public string NodegroupName { get; set; }
 ##### \`ReleaseVersion\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.ReleaseVersion\\"></a>
 
 \`\`\`csharp
-public string ReleaseVersion { get; set; }
+public string ReleaseVersion { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -15810,7 +15810,7 @@ public string ReleaseVersion { get; set; }
 ##### \`RemoteAccess\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.RemoteAccess\\"></a>
 
 \`\`\`csharp
-public object RemoteAccess { get; set; }
+public object RemoteAccess { get; }
 \`\`\`
 
 - *Type:* object
@@ -15824,7 +15824,7 @@ public object RemoteAccess { get; set; }
 ##### \`ScalingConfig\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.ScalingConfig\\"></a>
 
 \`\`\`csharp
-public object ScalingConfig { get; set; }
+public object ScalingConfig { get; }
 \`\`\`
 
 - *Type:* object
@@ -15838,7 +15838,7 @@ public object ScalingConfig { get; set; }
 ##### \`Taints\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.Taints\\"></a>
 
 \`\`\`csharp
-public object Taints { get; set; }
+public object Taints { get; }
 \`\`\`
 
 - *Type:* object
@@ -15852,7 +15852,7 @@ public object Taints { get; set; }
 ##### \`Version\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.CfnNodegroup.property.Version\\"></a>
 
 \`\`\`csharp
-public string Version { get; set; }
+public string Version { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -16145,7 +16145,7 @@ the cluster properties to use for importing information.
 ##### \`AdminRole\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.AdminRole\\"></a>
 
 \`\`\`csharp
-public Role AdminRole { get; set; }
+public Role AdminRole { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.Role\`](#Amazon.CDK.aws_iam.Role)
@@ -16159,7 +16159,7 @@ This role also has \`systems:master\` permissions.
 ##### \`AwsAuth\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.AwsAuth\\"></a>
 
 \`\`\`csharp
-public AwsAuth AwsAuth { get; set; }
+public AwsAuth AwsAuth { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_eks.AwsAuth\`](#Amazon.CDK.aws_eks.AwsAuth)
@@ -16171,7 +16171,7 @@ Lazily creates the AwsAuth resource, which manages AWS authentication mapping.
 ##### \`ClusterArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.ClusterArn\\"></a>
 
 \`\`\`csharp
-public string ClusterArn { get; set; }
+public string ClusterArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -16183,7 +16183,7 @@ The AWS generated ARN for the Cluster resource.
 ##### \`ClusterCertificateAuthorityData\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.ClusterCertificateAuthorityData\\"></a>
 
 \`\`\`csharp
-public string ClusterCertificateAuthorityData { get; set; }
+public string ClusterCertificateAuthorityData { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -16195,7 +16195,7 @@ The certificate-authority-data for your cluster.
 ##### \`ClusterEncryptionConfigKeyArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.ClusterEncryptionConfigKeyArn\\"></a>
 
 \`\`\`csharp
-public string ClusterEncryptionConfigKeyArn { get; set; }
+public string ClusterEncryptionConfigKeyArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -16207,7 +16207,7 @@ Amazon Resource Name (ARN) or alias of the customer master key (CMK).
 ##### \`ClusterEndpoint\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.ClusterEndpoint\\"></a>
 
 \`\`\`csharp
-public string ClusterEndpoint { get; set; }
+public string ClusterEndpoint { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -16221,7 +16221,7 @@ This is the URL inside the kubeconfig file to use with kubectl
 ##### \`ClusterName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.ClusterName\\"></a>
 
 \`\`\`csharp
-public string ClusterName { get; set; }
+public string ClusterName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -16233,7 +16233,7 @@ The Name of the created EKS Cluster.
 ##### \`ClusterOpenIdConnectIssuer\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.ClusterOpenIdConnectIssuer\\"></a>
 
 \`\`\`csharp
-public string ClusterOpenIdConnectIssuer { get; set; }
+public string ClusterOpenIdConnectIssuer { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -16249,7 +16249,7 @@ stock \`CfnCluster\`), this is \`undefined\`.
 ##### \`ClusterOpenIdConnectIssuerUrl\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.ClusterOpenIdConnectIssuerUrl\\"></a>
 
 \`\`\`csharp
-public string ClusterOpenIdConnectIssuerUrl { get; set; }
+public string ClusterOpenIdConnectIssuerUrl { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -16265,7 +16265,7 @@ stock \`CfnCluster\`), this is \`undefined\`.
 ##### \`ClusterSecurityGroup\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.ClusterSecurityGroup\\"></a>
 
 \`\`\`csharp
-public ISecurityGroup ClusterSecurityGroup { get; set; }
+public ISecurityGroup ClusterSecurityGroup { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.ISecurityGroup\`](#Amazon.CDK.aws_ec2.ISecurityGroup)
@@ -16277,7 +16277,7 @@ The cluster security group that was created by Amazon EKS for the cluster.
 ##### \`ClusterSecurityGroupId\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.ClusterSecurityGroupId\\"></a>
 
 \`\`\`csharp
-public string ClusterSecurityGroupId { get; set; }
+public string ClusterSecurityGroupId { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -16289,7 +16289,7 @@ The id of the cluster security group that was created by Amazon EKS for the clus
 ##### \`Connections\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.Connections\\"></a>
 
 \`\`\`csharp
-public Connections Connections { get; set; }
+public Connections Connections { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.Connections\`](#Amazon.CDK.aws_ec2.Connections)
@@ -16301,7 +16301,7 @@ Manages connection rules (Security Group Rules) for the cluster.
 ##### \`OpenIdConnectProvider\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.OpenIdConnectProvider\\"></a>
 
 \`\`\`csharp
-public IOpenIdConnectProvider OpenIdConnectProvider { get; set; }
+public IOpenIdConnectProvider OpenIdConnectProvider { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.IOpenIdConnectProvider\`](#Amazon.CDK.aws_iam.IOpenIdConnectProvider)
@@ -16315,7 +16315,7 @@ A provider will only be defined if this property is accessed (lazy initializatio
 ##### \`Prune\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.Prune\\"></a>
 
 \`\`\`csharp
-public bool Prune { get; set; }
+public bool Prune { get; }
 \`\`\`
 
 - *Type:* \`bool\`
@@ -16327,7 +16327,7 @@ Determines if Kubernetes resources can be pruned automatically.
 ##### \`Role\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.Role\\"></a>
 
 \`\`\`csharp
-public IRole Role { get; set; }
+public IRole Role { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.IRole\`](#Amazon.CDK.aws_iam.IRole)
@@ -16339,7 +16339,7 @@ IAM role assumed by the EKS Control Plane.
 ##### \`Vpc\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.Vpc\\"></a>
 
 \`\`\`csharp
-public IVpc Vpc { get; set; }
+public IVpc Vpc { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.IVpc\`](#Amazon.CDK.aws_ec2.IVpc)
@@ -16351,7 +16351,7 @@ The VPC in which this Cluster was created.
 ##### \`DefaultCapacity\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.DefaultCapacity\\"></a>
 
 \`\`\`csharp
-public AutoScalingGroup DefaultCapacity { get; set; }
+public AutoScalingGroup DefaultCapacity { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_autoscaling.AutoScalingGroup\`](#Amazon.CDK.aws_autoscaling.AutoScalingGroup)
@@ -16366,7 +16366,7 @@ This will be \`undefined\` if the \`defaultCapacityType\` is not \`EC2\` or
 ##### \`DefaultNodegroup\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.DefaultNodegroup\\"></a>
 
 \`\`\`csharp
-public Nodegroup DefaultNodegroup { get; set; }
+public Nodegroup DefaultNodegroup { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_eks.Nodegroup\`](#Amazon.CDK.aws_eks.Nodegroup)
@@ -16381,7 +16381,7 @@ This will be \`undefined\` if the \`defaultCapacityType\` is \`EC2\` or
 ##### \`KubectlEnvironment\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.KubectlEnvironment\\"></a>
 
 \`\`\`csharp
-public System.Collections.Generic.IDictionary<string, string> KubectlEnvironment { get; set; }
+public System.Collections.Generic.IDictionary<string, string> KubectlEnvironment { get; }
 \`\`\`
 
 - *Type:* System.Collections.Generic.IDictionary<string, \`string\`>
@@ -16393,7 +16393,7 @@ Custom environment variables when running \`kubectl\` against this cluster.
 ##### \`KubectlLayer\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.KubectlLayer\\"></a>
 
 \`\`\`csharp
-public ILayerVersion KubectlLayer { get; set; }
+public ILayerVersion KubectlLayer { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_lambda.ILayerVersion\`](#Amazon.CDK.aws_lambda.ILayerVersion)
@@ -16408,7 +16408,7 @@ undefined, a SAR app that contains this layer will be used.
 ##### \`KubectlMemory\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.KubectlMemory\\"></a>
 
 \`\`\`csharp
-public Size KubectlMemory { get; set; }
+public Size KubectlMemory { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.Size\`](#Amazon.CDK.Size)
@@ -16420,7 +16420,7 @@ The amount of memory allocated to the kubectl provider's lambda function.
 ##### \`KubectlPrivateSubnets\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.KubectlPrivateSubnets\\"></a>
 
 \`\`\`csharp
-public ISubnet[] KubectlPrivateSubnets { get; set; }
+public ISubnet[] KubectlPrivateSubnets { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.ISubnet\`](#Amazon.CDK.aws_ec2.ISubnet)[]
@@ -16434,7 +16434,7 @@ Subnets to host the \`kubectl\` compute resources.
 ##### \`KubectlRole\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.KubectlRole\\"></a>
 
 \`\`\`csharp
-public IRole KubectlRole { get; set; }
+public IRole KubectlRole { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.IRole\`](#Amazon.CDK.aws_iam.IRole)
@@ -16448,7 +16448,7 @@ The role should be mapped to the \`system:masters\` Kubernetes RBAC role.
 ##### \`KubectlSecurityGroup\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.Cluster.property.KubectlSecurityGroup\\"></a>
 
 \`\`\`csharp
-public ISecurityGroup KubectlSecurityGroup { get; set; }
+public ISecurityGroup KubectlSecurityGroup { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.ISecurityGroup\`](#Amazon.CDK.aws_ec2.ISecurityGroup)
@@ -16554,7 +16554,7 @@ new FargateProfile(Construct Scope, string Id, FargateProfileProps Props);
 ##### \`FargateProfileArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.FargateProfile.property.FargateProfileArn\\"></a>
 
 \`\`\`csharp
-public string FargateProfileArn { get; set; }
+public string FargateProfileArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -16566,7 +16566,7 @@ The full Amazon Resource Name (ARN) of the Fargate profile.
 ##### \`FargateProfileName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.FargateProfile.property.FargateProfileName\\"></a>
 
 \`\`\`csharp
-public string FargateProfileName { get; set; }
+public string FargateProfileName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -16578,7 +16578,7 @@ The name of the Fargate profile.
 ##### \`PodExecutionRole\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.FargateProfile.property.PodExecutionRole\\"></a>
 
 \`\`\`csharp
-public IRole PodExecutionRole { get; set; }
+public IRole PodExecutionRole { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.IRole\`](#Amazon.CDK.aws_iam.IRole)
@@ -16594,7 +16594,7 @@ ECR image repositories.
 ##### \`Tags\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.FargateProfile.property.Tags\\"></a>
 
 \`\`\`csharp
-public TagManager Tags { get; set; }
+public TagManager Tags { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.TagManager\`](#Amazon.CDK.TagManager)
@@ -16736,7 +16736,7 @@ new KubernetesObjectValue(Construct Scope, string Id, KubernetesObjectValueProps
 ##### \`Value\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.KubernetesObjectValue.property.Value\\"></a>
 
 \`\`\`csharp
-public string Value { get; set; }
+public string Value { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -16857,7 +16857,7 @@ Nodegroup.FromNodegroupName(Construct Scope, string Id, string NodegroupName);
 ##### \`Cluster\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Nodegroup.property.Cluster\\"></a>
 
 \`\`\`csharp
-public ICluster Cluster { get; set; }
+public ICluster Cluster { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_eks.ICluster\`](#Amazon.CDK.aws_eks.ICluster)
@@ -16869,7 +16869,7 @@ the Amazon EKS cluster resource.
 ##### \`NodegroupArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Nodegroup.property.NodegroupArn\\"></a>
 
 \`\`\`csharp
-public string NodegroupArn { get; set; }
+public string NodegroupArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -16881,7 +16881,7 @@ ARN of the nodegroup.
 ##### \`NodegroupName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Nodegroup.property.NodegroupName\\"></a>
 
 \`\`\`csharp
-public string NodegroupName { get; set; }
+public string NodegroupName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -16893,7 +16893,7 @@ Nodegroup name.
 ##### \`Role\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.Nodegroup.property.Role\\"></a>
 
 \`\`\`csharp
-public IRole Role { get; set; }
+public IRole Role { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.IRole\`](#Amazon.CDK.aws_iam.IRole)
@@ -17016,7 +17016,7 @@ private AddToPrincipalPolicy(PolicyStatement Statement)
 ##### \`AssumeRoleAction\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ServiceAccount.property.AssumeRoleAction\\"></a>
 
 \`\`\`csharp
-public string AssumeRoleAction { get; set; }
+public string AssumeRoleAction { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -17028,7 +17028,7 @@ When this Principal is used in an AssumeRole policy, the action to use.
 ##### \`GrantPrincipal\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ServiceAccount.property.GrantPrincipal\\"></a>
 
 \`\`\`csharp
-public IPrincipal GrantPrincipal { get; set; }
+public IPrincipal GrantPrincipal { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.IPrincipal\`](#Amazon.CDK.aws_iam.IPrincipal)
@@ -17040,7 +17040,7 @@ The principal to grant permissions to.
 ##### \`PolicyFragment\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ServiceAccount.property.PolicyFragment\\"></a>
 
 \`\`\`csharp
-public PrincipalPolicyFragment PolicyFragment { get; set; }
+public PrincipalPolicyFragment PolicyFragment { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.PrincipalPolicyFragment\`](#Amazon.CDK.aws_iam.PrincipalPolicyFragment)
@@ -17052,7 +17052,7 @@ Return the policy fragment that identifies this principal in a Policy.
 ##### \`Role\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ServiceAccount.property.Role\\"></a>
 
 \`\`\`csharp
-public IRole Role { get; set; }
+public IRole Role { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.IRole\`](#Amazon.CDK.aws_iam.IRole)
@@ -17064,7 +17064,7 @@ The role which is linked to the service account.
 ##### \`ServiceAccountName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ServiceAccount.property.ServiceAccountName\\"></a>
 
 \`\`\`csharp
-public string ServiceAccountName { get; set; }
+public string ServiceAccountName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -17076,7 +17076,7 @@ The name of the service account.
 ##### \`ServiceAccountNamespace\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ServiceAccount.property.ServiceAccountNamespace\\"></a>
 
 \`\`\`csharp
-public string ServiceAccountNamespace { get; set; }
+public string ServiceAccountNamespace { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -22341,7 +22341,7 @@ custom version number.
 ##### \`Version\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.KubernetesVersion.property.Version\\"></a>
 
 \`\`\`csharp
-public string Version { get; set; }
+public string Version { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -22505,7 +22505,7 @@ service account options.
 ##### \`Node\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.Node\\"></a>
 
 \`\`\`csharp
-public ConstructNode Node { get; set; }
+public ConstructNode Node { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.ConstructNode\`](#Amazon.CDK.ConstructNode)
@@ -22517,7 +22517,7 @@ The construct tree node for this construct.
 ##### \`Env\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.Env\\"></a>
 
 \`\`\`csharp
-public ResourceEnvironment Env { get; set; }
+public ResourceEnvironment Env { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.ResourceEnvironment\`](#Amazon.CDK.ResourceEnvironment)
@@ -22536,7 +22536,7 @@ that might be different than the stack they were imported into.
 ##### \`Stack\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.Stack\\"></a>
 
 \`\`\`csharp
-public Stack Stack { get; set; }
+public Stack Stack { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.Stack\`](#Amazon.CDK.Stack)
@@ -22548,7 +22548,7 @@ The stack in which this resource is defined.
 ##### \`Connections\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.Connections\\"></a>
 
 \`\`\`csharp
-public Connections Connections { get; set; }
+public Connections Connections { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.Connections\`](#Amazon.CDK.aws_ec2.Connections)
@@ -22558,7 +22558,7 @@ public Connections Connections { get; set; }
 ##### \`ClusterArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.ClusterArn\\"></a>
 
 \`\`\`csharp
-public string ClusterArn { get; set; }
+public string ClusterArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -22570,7 +22570,7 @@ The unique ARN assigned to the service by AWS in the form of arn:aws:eks:.
 ##### \`ClusterCertificateAuthorityData\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.ClusterCertificateAuthorityData\\"></a>
 
 \`\`\`csharp
-public string ClusterCertificateAuthorityData { get; set; }
+public string ClusterCertificateAuthorityData { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -22582,7 +22582,7 @@ The certificate-authority-data for your cluster.
 ##### \`ClusterEncryptionConfigKeyArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.ClusterEncryptionConfigKeyArn\\"></a>
 
 \`\`\`csharp
-public string ClusterEncryptionConfigKeyArn { get; set; }
+public string ClusterEncryptionConfigKeyArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -22594,7 +22594,7 @@ Amazon Resource Name (ARN) or alias of the customer master key (CMK).
 ##### \`ClusterEndpoint\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.ClusterEndpoint\\"></a>
 
 \`\`\`csharp
-public string ClusterEndpoint { get; set; }
+public string ClusterEndpoint { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -22606,7 +22606,7 @@ The API Server endpoint URL.
 ##### \`ClusterName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.ClusterName\\"></a>
 
 \`\`\`csharp
-public string ClusterName { get; set; }
+public string ClusterName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -22618,7 +22618,7 @@ The physical name of the Cluster.
 ##### \`ClusterSecurityGroup\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.ClusterSecurityGroup\\"></a>
 
 \`\`\`csharp
-public ISecurityGroup ClusterSecurityGroup { get; set; }
+public ISecurityGroup ClusterSecurityGroup { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.ISecurityGroup\`](#Amazon.CDK.aws_ec2.ISecurityGroup)
@@ -22630,7 +22630,7 @@ The cluster security group that was created by Amazon EKS for the cluster.
 ##### \`ClusterSecurityGroupId\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.ClusterSecurityGroupId\\"></a>
 
 \`\`\`csharp
-public string ClusterSecurityGroupId { get; set; }
+public string ClusterSecurityGroupId { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -22642,7 +22642,7 @@ The id of the cluster security group that was created by Amazon EKS for the clus
 ##### \`OpenIdConnectProvider\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.OpenIdConnectProvider\\"></a>
 
 \`\`\`csharp
-public IOpenIdConnectProvider OpenIdConnectProvider { get; set; }
+public IOpenIdConnectProvider OpenIdConnectProvider { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.IOpenIdConnectProvider\`](#Amazon.CDK.aws_iam.IOpenIdConnectProvider)
@@ -22654,7 +22654,7 @@ The Open ID Connect Provider of the cluster used to configure Service Accounts.
 ##### \`Prune\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.Prune\\"></a>
 
 \`\`\`csharp
-public bool Prune { get; set; }
+public bool Prune { get; }
 \`\`\`
 
 - *Type:* \`bool\`
@@ -22671,7 +22671,7 @@ apply\` operation with the \`--prune\` switch.
 ##### \`Vpc\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.Vpc\\"></a>
 
 \`\`\`csharp
-public IVpc Vpc { get; set; }
+public IVpc Vpc { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.IVpc\`](#Amazon.CDK.aws_ec2.IVpc)
@@ -22683,7 +22683,7 @@ The VPC in which this Cluster was created.
 ##### \`KubectlEnvironment\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.KubectlEnvironment\\"></a>
 
 \`\`\`csharp
-public System.Collections.Generic.IDictionary<string, string> KubectlEnvironment { get; set; }
+public System.Collections.Generic.IDictionary<string, string> KubectlEnvironment { get; }
 \`\`\`
 
 - *Type:* System.Collections.Generic.IDictionary<string, \`string\`>
@@ -22695,7 +22695,7 @@ Custom environment variables when running \`kubectl\` against this cluster.
 ##### \`KubectlLayer\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.KubectlLayer\\"></a>
 
 \`\`\`csharp
-public ILayerVersion KubectlLayer { get; set; }
+public ILayerVersion KubectlLayer { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_lambda.ILayerVersion\`](#Amazon.CDK.aws_lambda.ILayerVersion)
@@ -22709,7 +22709,7 @@ If not defined, a default layer will be used.
 ##### \`KubectlMemory\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.KubectlMemory\\"></a>
 
 \`\`\`csharp
-public Size KubectlMemory { get; set; }
+public Size KubectlMemory { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.Size\`](#Amazon.CDK.Size)
@@ -22721,7 +22721,7 @@ Amount of memory to allocate to the provider's lambda function.
 ##### \`KubectlPrivateSubnets\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.KubectlPrivateSubnets\\"></a>
 
 \`\`\`csharp
-public ISubnet[] KubectlPrivateSubnets { get; set; }
+public ISubnet[] KubectlPrivateSubnets { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.ISubnet\`](#Amazon.CDK.aws_ec2.ISubnet)[]
@@ -22736,7 +22736,7 @@ publicly.
 ##### \`KubectlRole\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.KubectlRole\\"></a>
 
 \`\`\`csharp
-public IRole KubectlRole { get; set; }
+public IRole KubectlRole { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_iam.IRole\`](#Amazon.CDK.aws_iam.IRole)
@@ -22750,7 +22750,7 @@ The role should be mapped to the \`system:masters\` Kubernetes RBAC role.
 ##### \`KubectlSecurityGroup\`<sup>Optional</sup> <a name=\\"Amazon.CDK.aws_eks.ICluster.property.KubectlSecurityGroup\\"></a>
 
 \`\`\`csharp
-public ISecurityGroup KubectlSecurityGroup { get; set; }
+public ISecurityGroup KubectlSecurityGroup { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.aws_ec2.ISecurityGroup\`](#Amazon.CDK.aws_ec2.ISecurityGroup)
@@ -22776,7 +22776,7 @@ NodeGroup interface.
 ##### \`Node\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.INodegroup.property.Node\\"></a>
 
 \`\`\`csharp
-public ConstructNode Node { get; set; }
+public ConstructNode Node { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.ConstructNode\`](#Amazon.CDK.ConstructNode)
@@ -22788,7 +22788,7 @@ The construct tree node for this construct.
 ##### \`Env\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.INodegroup.property.Env\\"></a>
 
 \`\`\`csharp
-public ResourceEnvironment Env { get; set; }
+public ResourceEnvironment Env { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.ResourceEnvironment\`](#Amazon.CDK.ResourceEnvironment)
@@ -22807,7 +22807,7 @@ that might be different than the stack they were imported into.
 ##### \`Stack\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.INodegroup.property.Stack\\"></a>
 
 \`\`\`csharp
-public Stack Stack { get; set; }
+public Stack Stack { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.Stack\`](#Amazon.CDK.Stack)
@@ -22819,7 +22819,7 @@ The stack in which this resource is defined.
 ##### \`NodegroupName\`<sup>Required</sup> <a name=\\"Amazon.CDK.aws_eks.INodegroup.property.NodegroupName\\"></a>
 
 \`\`\`csharp
-public string NodegroupName { get; set; }
+public string NodegroupName { get; }
 \`\`\`
 
 - *Type:* \`string\`

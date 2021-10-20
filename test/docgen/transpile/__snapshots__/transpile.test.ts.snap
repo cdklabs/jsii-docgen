@@ -220,7 +220,7 @@ private MetricThrottles(MetricOptions Props = null)
 ##### \`Connections\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.Connections\\"></a>
 
 \`\`\`csharp
-public Connections Connections { get; set; }
+public Connections Connections { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.EC2.Connections\`](#Amazon.CDK.AWS.EC2.Connections)
@@ -234,7 +234,7 @@ Connections are only applicable to VPC-enabled functions.
 ##### \`CurrentVersion\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.CurrentVersion\\"></a>
 
 \`\`\`csharp
-public IVersion CurrentVersion { get; set; }
+public IVersion CurrentVersion { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.IVersion\`](#Amazon.CDK.AWS.Lambda.IVersion)
@@ -246,7 +246,7 @@ Convenience method to make \`EdgeFunction\` conform to the same interface as \`F
 ##### \`EdgeArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.EdgeArn\\"></a>
 
 \`\`\`csharp
-public string EdgeArn { get; set; }
+public string EdgeArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -258,7 +258,7 @@ The ARN of the version for Lambda@Edge.
 ##### \`FunctionArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.FunctionArn\\"></a>
 
 \`\`\`csharp
-public string FunctionArn { get; set; }
+public string FunctionArn { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -270,7 +270,7 @@ The ARN of the function.
 ##### \`FunctionName\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.FunctionName\\"></a>
 
 \`\`\`csharp
-public string FunctionName { get; set; }
+public string FunctionName { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -282,7 +282,7 @@ The name of the function.
 ##### \`GrantPrincipal\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.GrantPrincipal\\"></a>
 
 \`\`\`csharp
-public IPrincipal GrantPrincipal { get; set; }
+public IPrincipal GrantPrincipal { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.IAM.IPrincipal\`](#Amazon.CDK.AWS.IAM.IPrincipal)
@@ -294,7 +294,7 @@ The principal to grant permissions to.
 ##### \`IsBoundToVpc\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.IsBoundToVpc\\"></a>
 
 \`\`\`csharp
-public bool IsBoundToVpc { get; set; }
+public bool IsBoundToVpc { get; }
 \`\`\`
 
 - *Type:* \`bool\`
@@ -308,7 +308,7 @@ If this is is \`false\`, trying to access the \`connections\` object will fail.
 ##### \`Lambda\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.Lambda\\"></a>
 
 \`\`\`csharp
-public IFunction Lambda { get; set; }
+public IFunction Lambda { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.IFunction\`](#Amazon.CDK.AWS.Lambda.IFunction)
@@ -320,7 +320,7 @@ The underlying AWS Lambda function.
 ##### \`LatestVersion\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.LatestVersion\\"></a>
 
 \`\`\`csharp
-public IVersion LatestVersion { get; set; }
+public IVersion LatestVersion { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.Lambda.IVersion\`](#Amazon.CDK.AWS.Lambda.IVersion)
@@ -339,7 +339,7 @@ function configuration, use \`lambdaFunction.currentVersion\` instead.
 ##### \`PermissionsNode\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.PermissionsNode\\"></a>
 
 \`\`\`csharp
-public ConstructNode PermissionsNode { get; set; }
+public ConstructNode PermissionsNode { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.ConstructNode\`](#Amazon.CDK.ConstructNode)
@@ -351,7 +351,7 @@ The construct node where permissions are attached.
 ##### \`Version\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.Version\\"></a>
 
 \`\`\`csharp
-public string Version { get; set; }
+public string Version { get; }
 \`\`\`
 
 - *Type:* \`string\`
@@ -363,7 +363,7 @@ The most recently deployed version of this function.
 ##### \`Role\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.Role\\"></a>
 
 \`\`\`csharp
-public IRole Role { get; set; }
+public IRole Role { get; }
 \`\`\`
 
 - *Type:* [\`Amazon.CDK.AWS.IAM.IRole\`](#Amazon.CDK.AWS.IAM.IRole)

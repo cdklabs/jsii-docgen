@@ -62,7 +62,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
       : Case.pascal(callable.name);
 
     const parameters = callable.parameters.sort(this.optionalityCompare);
-    const paramsFormatted = parameters.map(p => this.formatParameter(this.parameter(p))).join(', ');
+    const paramsFormatted = parameters.map(p => this.formatFnParam(this.parameter(p))).join(', ');
     const prefix = isInitializer || callable.protected ? 'protected' : 'private';
     const signatures = [`${prefix} ${name}(${paramsFormatted})`];
     const invocations = [isInitializer
@@ -90,7 +90,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
     const type = this.type(struct);
     const indent = ' '.repeat(4);
     const inputs = struct.allProperties.map((p) => {
-      return `${indent}${this.formatParameter(this.property(p))}`;
+      return `${indent}${this.formatFnParam(this.property(p))}`;
     }).flat();
     return {
       type: type,
@@ -119,7 +119,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
       parentType: this.type(parameter.parentType),
       typeReference: typeRef,
       optional: parameter.optional,
-      declaration: this.formatProperty(name, typeRef),
+      declaration: this.formatParameter(name, typeRef),
     };
   }
 
@@ -131,7 +131,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
       parentType: this.type(property.parentType),
       typeReference: typeRef,
       optional: property.optional,
-      declaration: this.formatProperty(name, typeRef, property.protected),
+      declaration: this.formatProperty(name, typeRef, property),
     };
   }
 
@@ -193,7 +193,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
     return `using ${type.module};`;
   };
 
-  private formatParameter(
+  private formatFnParam(
     transpiled: transpile.TranspiledParameter | transpile.TranspiledProperty,
   ): string {
     const tf = transpiled.typeReference.toString({
@@ -212,16 +212,27 @@ export class CSharpTranspile extends transpile.TranspileBase {
     ].join('\n');
   };
 
+  private formatParameter(name: string, typeReference: transpile.TranspiledTypeReference) {
+    const tf = typeReference.toString({
+      typeFormatter: (t) => t.name,
+    });
+
+    return `public ${tf} ${name}`;
+  }
+
   private formatProperty(
     name: string,
     typeReference: transpile.TranspiledTypeReference,
-    isProtected: boolean = false,
+    property: reflect.Property,
   ): string {
     const tf = typeReference.toString({
       typeFormatter: (t) => t.name,
     });
 
-    const prefix = isProtected ? 'protected' : 'public';
-    return `${prefix} ${tf} ${name} { get; set; }`;
+    const prefix = property.protected ? 'protected' : 'public';
+    // setters are always available on struct properties
+    const hasSetter = property.parentType.isDataType() || (!property.immutable && property.abstract);
+    const suffix = hasSetter ? '{ get; set; }' : '{ get; }';
+    return `${prefix} ${tf} ${name} ${suffix}`;
   }
 }
