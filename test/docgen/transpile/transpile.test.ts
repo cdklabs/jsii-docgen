@@ -18,6 +18,10 @@ describe('language', () => {
     expect(Language.fromString('java')).toEqual(Language.JAVA);
   });
 
+  test('csharp is supported', () => {
+    expect(Language.fromString('csharp')).toEqual(Language.CSHARP);
+  });
+
   test('throw error on unsupported language', () => {
     expect(() => Language.fromString('unsupported')).toThrowError(/Unsupported language: unsupported. Supported languages are/);
   });
@@ -46,4 +50,11 @@ describe('submodules without an explicit name', () => {
     expect(markdown.render()).toMatchSnapshot();
   });
 
+  test('csharp', async () => {
+    const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.AWSCDK_1_126_0, {
+      language: Language.CSHARP,
+    });
+    const markdown = docs.render({ submodule: 'experimental' });
+    expect(markdown.render()).toMatchSnapshot();
+  });
 });

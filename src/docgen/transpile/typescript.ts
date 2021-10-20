@@ -214,19 +214,6 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
     return { name: moduleLike.fqn };
   }
 
-  private optionalityCompare(
-    p1: reflect.Parameter,
-    p2: reflect.Parameter,
-  ): number {
-    if (!p1.optional && p2.optional) {
-      return -1;
-    }
-    if (!p2.optional && p1.optional) {
-      return 1;
-    }
-    return 0;
-  }
-
   private formatParameters(
     transpiled: transpile.TranspiledParameter | transpile.TranspiledProperty,
   ): string {

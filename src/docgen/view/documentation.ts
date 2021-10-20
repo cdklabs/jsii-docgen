@@ -6,6 +6,7 @@ import * as reflect from 'jsii-reflect';
 import { TargetLanguage } from 'jsii-rosetta';
 import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
 import { Markdown } from '../render/markdown';
+import { CSharpTranspile } from '../transpile/csharp';
 import { JavaTranspile } from '../transpile/java';
 import { PythonTranspile } from '../transpile/python';
 import { Transpile, Language, TranspiledType } from '../transpile/transpile';
@@ -176,6 +177,10 @@ export class Documentation {
         case Language.JAVA:
           language = TargetLanguage.JAVA;
           transpile = new JavaTranspile();
+          break;
+        case Language.CSHARP:
+          language = TargetLanguage.CSHARP;
+          transpile = new CSharpTranspile();
           break;
         default:
           throw new Error(`Unsupported language: ${options?.language}. Supported languages are ${Object.values(Language)}`);

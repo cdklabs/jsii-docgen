@@ -1,5 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`csharp snapshot 1`] = `
+" AuthorizationToken <a name=\\"Amazon.CDK.AWS.ECR.AuthorizationToken\\"></a>
+
+Authorization token to access private ECR repositories in the current environment via Docker CLI.
+
+> https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html
+
+
+# Static Functions <a name=\\"Static Functions\\"></a>
+
+## \`GrantRead\` <a name=\\"Amazon.CDK.AWS.ECR.AuthorizationToken.GrantRead\\"></a>
+
+\`\`\`csharp
+using Amazon.CDK.AWS.ECR;
+
+AuthorizationToken.GrantRead(IGrantable Grantee);
+\`\`\`
+
+### \`Grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.AuthorizationToken.parameter.Grantee\\"></a>
+
+- *Type:* [\`Amazon.CDK.AWS.IAM.IGrantable\`](#Amazon.CDK.AWS.IAM.IGrantable)
+
+---
+
+
+"
+`;
+
 exports[`java snapshot 1`] = `
 " AuthorizationToken <a name=\\"software.amazon.awscdk.services.ecr.AuthorizationToken\\"></a>
 

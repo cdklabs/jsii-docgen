@@ -20,6 +20,11 @@ export class Language {
   public static readonly JAVA = new Language('java');
 
   /**
+   * C#
+   */
+  public static readonly CSHARP = new Language('csharp');
+
+  /**
    * Transform a literal string to the `Language` object.
    *
    * Throws an `UnsupportedLanguageError` if the language is not supported.
@@ -32,13 +37,15 @@ export class Language {
         return Language.PYTHON;
       case Language.JAVA.toString():
         return Language.JAVA;
+      case Language.CSHARP.toString():
+        return Language.CSHARP;
       default:
         throw new UnsupportedLanguageError(lang, Language.values());
     }
   }
 
   public static values() {
-    return [Language.TYPESCRIPT, Language.PYTHON, Language.JAVA];
+    return [Language.TYPESCRIPT, Language.PYTHON, Language.JAVA, Language.CSHARP];
   }
 
   private constructor(private readonly lang: string) {}
@@ -660,5 +667,18 @@ export abstract class TranspileBase implements Transpile {
     }
 
     return moduleLike.types[0].assembly;
+  }
+
+  protected optionalityCompare(
+    p1: reflect.Parameter,
+    p2: reflect.Parameter,
+  ): number {
+    if (!p1.optional && p2.optional) {
+      return -1;
+    }
+    if (!p2.optional && p1.optional) {
+      return 1;
+    }
+    return 0;
   }
 }

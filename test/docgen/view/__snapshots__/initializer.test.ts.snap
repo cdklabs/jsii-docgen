@@ -1,5 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`csharp snapshot 1`] = `
+" Initializers <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.Initializer\\"></a>
+
+\`\`\`csharp
+using Amazon.CDK.AWS.ECR;
+
+new CfnPublicRepository(Construct Scope, string Id, CfnPublicRepositoryProps Props = null);
+\`\`\`
+
+# \`Scope\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.parameter.Scope\\"></a>
+
+- *Type:* [\`Amazon.CDK.Construct\`](#Amazon.CDK.Construct)
+
+scope in which this resource is defined.
+
+---
+
+# \`Id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.parameter.Id\\"></a>
+
+- *Type:* \`string\`
+
+scoped id of the resource.
+
+---
+
+# \`Props\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.parameter.Props\\"></a>
+
+- *Type:* [\`Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps\`](#Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps)
+
+resource properties.
+
+---
+"
+`;
+
 exports[`java snapshot 1`] = `
 " Initializers <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepository.Initializer\\"></a>
 

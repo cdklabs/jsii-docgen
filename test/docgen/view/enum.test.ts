@@ -1,4 +1,5 @@
 import * as reflect from 'jsii-reflect';
+import { CSharpTranspile } from '../../../src/docgen/transpile/csharp';
 import { JavaTranspile } from '../../../src/docgen/transpile/java';
 import { PythonTranspile } from '../../../src/docgen/transpile/python';
 import { TypeScriptTranspile } from '../../../src/docgen/transpile/typescript';
@@ -25,6 +26,14 @@ describe('typescript', () => {
 
 describe('java', () => {
   const transpile = new JavaTranspile();
+  test('snapshot', () => {
+    const enu = new Enum(transpile, assembly.enums[0]);
+    expect(enu.render().render()).toMatchSnapshot();
+  });
+});
+
+describe('csharp', () => {
+  const transpile = new CSharpTranspile();
   test('snapshot', () => {
     const enu = new Enum(transpile, assembly.enums[0]);
     expect(enu.render().render()).toMatchSnapshot();
