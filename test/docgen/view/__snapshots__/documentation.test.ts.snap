@@ -26044,7 +26044,7 @@ grants an IAM user access to call this API.
 import software.amazon.awscdk.services.iam.*;
 import software.amazon.awscdk.services.ecr.*;
 
-User user = new User(this, \\"User\\", new UserProps()...);
+User user = User.Builder.create(this, \\"User\\")....build();
 ecr.AuthorizationToken.grantRead(user);
 \`\`\`
 
@@ -26062,7 +26062,7 @@ The following code snippet grants an IAM user access to retrieve an authorizatio
 import software.amazon.awscdk.services.iam.*;
 import software.amazon.awscdk.services.ecr.*;
 
-User user = new User(this, \\"User\\", new UserProps()...);
+User user = User.Builder.create(this, \\"User\\")....build();
 ecr.PublicGalleryAuthorizationToken.grantRead(user);
 \`\`\`
 
