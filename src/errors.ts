@@ -45,26 +45,26 @@ export class NpmError extends Error {
    * Data the command produced to `STDOUT`. This field is not included in the
    * `JSON.stringify()` output for this type.
    */
-  public readonly stdout: string;
+  public readonly stdout: Buffer;
 
   /**
    * Data the command produced to `STDERR`. This field is not included in the
    * `JSON.stringify()` output for this type.
    */
-  public readonly stderr: string;
+  public readonly stderr: Buffer;
 
   /** @internal */
   public constructor(message: string, stdio: { stdout: readonly Buffer[]; stderr: readonly Buffer[] }) {
     super(message);
     Error.captureStackTrace(this, this.constructor);
 
-    this.stdout = Buffer.concat(stdio.stdout).toString('utf-8');
-    this.stderr = Buffer.concat(stdio.stderr).toString('utf-8');
+    this.stdout = Buffer.concat(stdio.stdout);
+    this.stderr = Buffer.concat(stdio.stderr);
 
     this.name = `${name}.${this.constructor.name}`;
 
     const ERROR_CODE_REGEX = /^npm\s+ERR!\s+(?:code|errno)\s+(E[^\s]+|\d+)$/gm;
-    for (const output of [this.stderr, this.stdout]) {
+    for (const output of [...linesFrom(this.stderr), ...linesFrom(this.stdout)]) {
       const [, match] = ERROR_CODE_REGEX.exec(output) ?? [];
       if (match) {
         this.npmErrorCode = match;
@@ -88,4 +88,43 @@ export class NpmError extends Error {
       npmErrorCode: this.npmErrorCode,
     };
   }
+}
+
+/**
+ * Extracts lines from a buffer individually within stringifying the whole
+ * buffer at once (so the buffer can be longer than the maximum string that can
+ * be obtained from a Buffer).
+ *
+ * @param buffer the buffer from which to read lines.
+ *
+ * @returns the lines of text contained in the buffer.
+ */
+function linesFrom(buffer: Buffer): string[] {
+  const lines = new Array<string>();
+  while (buffer.length > 0) {
+    const { pos, len } = firstLineBreak(buffer);
+    if (pos < 0) {
+      // We did not find a line break, so flush the rest of the string.
+      lines.push(buffer.toString('utf8'));
+      buffer = buffer.slice(buffer.length);
+    } else {
+      // We found a line, so extracting it and moving forward.
+      lines.push(buffer.slice(0, pos).toString('utf-8'));
+      buffer = buffer.slice(pos + len);
+    }
+  }
+  return lines;
+}
+
+function firstLineBreak(buffer: Buffer) {
+  const crlf = buffer.indexOf('\r\n');
+  if (crlf >= 0) {
+    return { pos: crlf, len: 2 };
+  }
+  const cr = buffer.indexOf('\r');
+  if (cr >= 0) {
+    return { pos: cr, len: 1 };
+  }
+  const lf = buffer.indexOf('\n');
+  return { pos: lf, len: lf < 0 ? 0 : 1 };
 }

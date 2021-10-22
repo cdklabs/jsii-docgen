@@ -21,6 +21,8 @@ export class Npm {
         '--no-save',
         // ensures we are installing devDependencies, too.
         '--include=dev',
+        // don't write or update a package-lock.json file
+        '--no-package-lock',
         target,
       ],
       {
@@ -34,23 +36,25 @@ export class Npm {
     if (this.#npmCommand) {
       return this.#npmCommand;
     }
-    // npm7 is needed so that we also install peerDependencies - they are needed to construct
+    // npm@8 is needed so that we also install peerDependencies - they are needed to construct
     // the full type system.
-    this.logger('Installing npm7...');
+    this.logger('Installing npm@8...');
     await this.runCommand(
       'npm',
-      ['install', 'npm@7', '--no-save'],
+      ['install', 'npm@8', '--no-package-lock', '--no-save'],
       {
         cwd: this.workingDirectory,
         shell: true,
       });
-    return this.#npmCommand = join(this.workingDirectory, 'node_modules', '.bin', 'npm');
+    this.#npmCommand = join(this.workingDirectory, 'node_modules', '.bin', 'npm');
+    this.logger(`Done installing npm@8 at ${this.#npmCommand}`);
+    return this.#npmCommand;
   }
 
   private async runCommand(command: string, args: readonly string[], options?: SpawnOptionsWithoutStdio): Promise<void> {
+    // Spawning before the promise so if the `spawn` call throws, runCommand's promise will reject
+    const child = spawn(command, args, { ...options, stdio: ['inherit', 'pipe', 'pipe'] });
     return new Promise<void>((ok, ko) => {
-      const child = spawn(command, args, { ...options, stdio: ['inherit', 'pipe', 'pipe'] });
-
       const stdout = new Array<Buffer>();
       child.stdout.on('data', (chunk) => {
         process.stdout.write(chunk);
@@ -65,28 +69,27 @@ export class Npm {
       child.once('error', ko);
       child.once('close', (code, signal) => {
         if (code === 0) {
-          ok();
-        } else {
-          const fullCommand = [command, ...args].join(' ');
-          if (signal != null) {
-            return ko(new NpmError(`Command "${fullCommand}" was killed by signal ${signal}`, { stdout, stderr }));
-          }
-          if (code === 228) {
-            // npm install exits with code 228 when it encounters the ENOSPC
-            // errno while doing it's business. This is effectively 256 - ENOSPC
-            // (which is 28). In this case, we'll throw a
-            // NoSpaceLeftOnDeviceError so that consumers can perform special
-            // handling if they so desire.
-            return ko(new NoSpaceLeftOnDevice(`No space left on device when running "${fullCommand}"`));
-          }
-          const maybeerrno = 256 - code!;
-          for (const [errname, errno] of Object.entries(os.constants.errno)) {
-            if (maybeerrno === errno) {
-              return ko(new NpmError(`Command "${fullCommand}' command exited with code ${code} (possibly ${errname})`, { stdout, stderr }));
-            }
-          }
-          ko(new NpmError(`Command "${fullCommand}' command exited with code ${code}`, { stdout, stderr }));
+          return ok();
         }
+        const fullCommand = [command, ...args].join(' ');
+        if (signal != null) {
+          return ko(new NpmError(`Command "${fullCommand}" was killed by signal ${signal}`, { stdout, stderr }));
+        }
+        if (code === 228) {
+          // npm install exits with code 228 when it encounters the ENOSPC
+          // errno while doing it's business. This is effectively 256 - ENOSPC
+          // (which is 28). In this case, we'll throw a
+          // NoSpaceLeftOnDeviceError so that consumers can perform special
+          // handling if they so desire.
+          return ko(new NoSpaceLeftOnDevice(`No space left on device when running "${fullCommand}"`));
+        }
+        const maybeerrno = 256 - code!;
+        for (const [errname, errno] of Object.entries(os.constants.errno)) {
+          if (maybeerrno === errno) {
+            return ko(new NpmError(`Command "${fullCommand}' command exited with code ${code} (possibly ${errname})`, { stdout, stderr }));
+          }
+        }
+        return ko(new NpmError(`Command "${fullCommand}' command exited with code ${code}`, { stdout, stderr }));
       });
     });
   }
