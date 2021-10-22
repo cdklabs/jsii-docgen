@@ -21,6 +21,8 @@ export class Npm {
         '--no-save',
         // ensures we are installing devDependencies, too.
         '--include=dev',
+        // don't write or update a package-lock.json file
+        '--no-package-lock',
         target,
       ],
       {
@@ -39,8 +41,7 @@ export class Npm {
     this.logger('Installing npm@8...');
     await this.runCommand(
       'npm',
-      // Apply --save-dev so that it's not removed by any use of `npm install`
-      ['install', 'npm@8', '--save-dev'],
+      ['install', 'npm@8', '--no-package-lock', '--no-save'],
       {
         cwd: this.workingDirectory,
         shell: true,
