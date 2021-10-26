@@ -68,28 +68,32 @@ export class Npm {
 
       child.once('error', ko);
       child.once('close', (code, signal) => {
-        if (code === 0) {
-          return ok();
-        }
-        const fullCommand = [command, ...args].join(' ');
-        if (signal != null) {
-          return ko(new NpmError(`Command "${fullCommand}" was killed by signal ${signal}`, { stdout, stderr }));
-        }
-        if (code === 228) {
-          // npm install exits with code 228 when it encounters the ENOSPC
-          // errno while doing it's business. This is effectively 256 - ENOSPC
-          // (which is 28). In this case, we'll throw a
-          // NoSpaceLeftOnDeviceError so that consumers can perform special
-          // handling if they so desire.
-          return ko(new NoSpaceLeftOnDevice(`No space left on device when running "${fullCommand}"`));
-        }
-        const maybeerrno = 256 - code!;
-        for (const [errname, errno] of Object.entries(os.constants.errno)) {
-          if (maybeerrno === errno) {
-            return ko(new NpmError(`Command "${fullCommand}' command exited with code ${code} (possibly ${errname})`, { stdout, stderr }));
+        try {
+          if (code === 0) {
+            return ok();
           }
+          const fullCommand = [command, ...args].join(' ');
+          if (signal != null) {
+            return ko(new NpmError(`Command "${fullCommand}" was killed by signal ${signal}`, { stdout, stderr }));
+          }
+          if (code === 228) {
+            // npm install exits with code 228 when it encounters the ENOSPC
+            // errno while doing it's business. This is effectively 256 - ENOSPC
+            // (which is 28). In this case, we'll throw a
+            // NoSpaceLeftOnDeviceError so that consumers can perform special
+            // handling if they so desire.
+            return ko(new NoSpaceLeftOnDevice(`No space left on device when running "${fullCommand}"`));
+          }
+          const maybeerrno = 256 - code!;
+          for (const [errname, errno] of Object.entries(os.constants.errno)) {
+            if (maybeerrno === errno) {
+              return ko(new NpmError(`Command "${fullCommand}' command exited with code ${code} (possibly ${errname})`, { stdout, stderr }));
+            }
+          }
+          return ko(new NpmError(`Command "${fullCommand}' command exited with code ${code}`, { stdout, stderr }));
+        } catch (unexpected) {
+          ko(unexpected);
         }
-        return ko(new NpmError(`Command "${fullCommand}' command exited with code ${code}`, { stdout, stderr }));
       });
     });
   }
