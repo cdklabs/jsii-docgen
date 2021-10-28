@@ -1,6 +1,6 @@
 import { ChildProcess, spawn } from 'child_process';
 import { EventEmitter } from 'events';
-import { constants, tmpdir } from 'os';
+import { tmpdir } from 'os';
 import { Readable, Writable } from 'stream';
 import { NoSpaceLeftOnDevice, NpmError } from '../../../src';
 import { Npm } from '../../../src/docgen/view/_npm';
@@ -15,7 +15,7 @@ const mockSpawn = require('child_process').spawn as jest.MockedFunction<
 
 test('NoSpaceLeftOnDevice error', () => {
   // GIVEN
-  const npm = new Npm(TMPDIR, () => void 0);
+  const npm = new Npm(TMPDIR, () => void 0, 'mock-npm');
 
   // WHEN
   const mockChildProcess = new MockChildProcess(228);
@@ -25,45 +25,43 @@ test('NoSpaceLeftOnDevice error', () => {
   return expect(npm.install('foo')).rejects.toThrowError(NoSpaceLeftOnDevice);
 });
 
-test('NpmError error (from STDERR)', async () => {
-  // GIVEN
-  const npm = new Npm(TMPDIR, () => void 0);
-
-  // WHEN
-  const mockChildProcess = new MockChildProcess(1, {
-    stderr: [
-      Buffer.from('Simulating that something has gone bad\n'),
-      Buffer.from('\n'),
-      Buffer.from('npm ERR! code EPROTO\n'),
-      Buffer.from('npm ERR!\n'),
-      Buffer.from('\n'),
-      Buffer.from('npm ERR! A complete log of this run can be found in:\n'),
-    ],
-  });
-  mockSpawn.mockReturnValue(mockChildProcess);
-
-  // THEN
-  const err = await npm.install('foo').then(
-    () => Promise.reject(fail('Expected an NpmError!')),
-    (e) => Promise.resolve(e),
-  );
-  expect(err).toBeInstanceOf(NpmError);
-  expect((err as NpmError).npmErrorCode).toBe('EPROTO');
-});
-
-test('NpmError error (from STDOUT)', async () => {
+test('NpmError error (with JSON error code)', async () => {
   // GIVEN
   const npm = new Npm(TMPDIR, () => void 0);
 
   // WHEN
   const mockChildProcess = new MockChildProcess(1, {
     stdout: [
-      Buffer.from('Simulating that something has gone bad\n'),
-      Buffer.from('\n'),
-      Buffer.from('npm ERR! code E429\n'),
-      Buffer.from('npm ERR!\n'),
-      Buffer.from('\n'),
-      Buffer.from('npm ERR! A complete log of this run can be found in:\n'),
+      Buffer.from('{\n'),
+      Buffer.from('  "error": {\n'),
+      Buffer.from('    "code": "E429",\n'),
+      Buffer.from('    "summary": "Slow down!",\n'),
+      Buffer.from('    "detail": "You are going too fast, slow down!"\n'),
+      Buffer.from('  }\n'),
+      Buffer.from('}\n'),
+    ],
+  });
+  mockSpawn.mockReturnValue(mockChildProcess);
+
+  // THEN
+  try {
+    await npm.install('foo');
+    fail('Expected an NpmError!');
+  } catch (err) {
+    expect(err).toBeInstanceOf(NpmError);
+    expect(err.name).toBe(`jsii-docgen.NpmError.E429`);
+    expect((err as NpmError).npmErrorCode).toBe('E429');
+  }
+});
+
+test('NpmError error (invalid JSON output)', async () => {
+  // GIVEN
+  const npm = new Npm(TMPDIR, () => void 0, 'mock-npm');
+
+  // WHEN
+  const mockChildProcess = new MockChildProcess(1, {
+    stdout: [
+      Buffer.from('Definitely not a JSON object\n'),
     ],
   });
   mockSpawn.mockReturnValue(mockChildProcess);
@@ -74,44 +72,9 @@ test('NpmError error (from STDOUT)', async () => {
     (e) => Promise.resolve(e),
   );
   expect(err).toBeInstanceOf(NpmError);
-  expect((err as NpmError).npmErrorCode).toBe('E429');
+  expect(err.name).toBe(`jsii-docgen.NpmError`);
+  expect((err as NpmError).npmErrorCode).toBeUndefined();
 });
-
-// Most platforms have a bunch of ERRNO synonyms (the same value corresponds to
-// several symbolic codes). For example, `EAGAIN` is typically the same value as
-// `EWOULDBLOCK` (each symnbolic name is relevant in different contexts). What
-// synonyms exist may differ on each platform, and we will always match the
-// first encountered constant in `constants.errno`. This map is here so we skip
-// the redundant entries properly.
-const checkedErrnos = new Set<number>();
-for (const [errname, errno] of Object.entries(constants.errno)) {
-  if (errname === 'ENOSPC') {
-    // This is NoSpaceLeftOnDevice
-    continue;
-  } else if (checkedErrnos.has(errno)) {
-    // This is a synonym of a previous code, so skipping it
-    continue;
-  } else {
-    checkedErrnos.add(errno);
-  }
-
-  test(`NpmError error (possibly ${errname})`, async () => {
-    // GIVEN
-    const npm = new Npm(TMPDIR, () => void 0);
-
-    // WHEN
-    const mockChildProcess = new MockChildProcess(256 - errno);
-    mockSpawn.mockReturnValue(mockChildProcess);
-
-    // THEN
-    const err = await npm.install('foo').then(
-      () => Promise.reject(fail('Expected an NpmError!')),
-      (e) => Promise.resolve(e),
-    );
-    expect(err).toBeInstanceOf(NpmError);
-    expect((err as NpmError).message).toContain(`possibly ${errname}`);
-  });
-}
 
 class MockChildProcess extends EventEmitter implements ChildProcess {
   // We are not using this, so we make it null here.
@@ -132,20 +95,14 @@ class MockChildProcess extends EventEmitter implements ChildProcess {
   public constructor(
     public readonly exitCode: number | null,
     {
-      stderr = [],
       stdout = [],
-    }: { stderr?: readonly Buffer[]; stdout?: readonly Buffer[] } = {},
+    }: { stdout?: readonly Buffer[] } = {},
   ) {
     super();
 
     setImmediate(() => {
-      for (let i = 0; i < Math.max(stderr.length, stdout.length); i++) {
-        if (i < stderr.length) {
-          this.stderr.emit('data', stderr[i]);
-        }
-        if (i < stdout.length) {
-          this.stdout.emit('data', stdout[i]);
-        }
+      for (const chunk of stdout) {
+        this.stdout.emit('data', chunk);
       }
       this.emit('close', this.exitCode);
     });

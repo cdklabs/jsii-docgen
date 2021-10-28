@@ -14,16 +14,18 @@ const project = new TypeScriptProject({
   },
   devDeps: [
     '@types/fs-extra',
+    '@types/semver',
   ],
   deps: [
-    'yargs',
-    'fs-extra',
+    '@jsii/spec',
     'case',
+    'fs-extra',
     'glob-promise',
     'glob',
     'jsii-reflect',
     'jsii-rosetta',
-    '@jsii/spec',
+    'semver',
+    'yargs',
   ],
   compileBeforeTest: true, // we need this for the CLI test
   releaseToNpm: true,
