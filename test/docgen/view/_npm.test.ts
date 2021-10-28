@@ -27,7 +27,7 @@ test('NoSpaceLeftOnDevice error', () => {
 
 test('NpmError error (with JSON error code)', async () => {
   // GIVEN
-  const npm = new Npm(TMPDIR, () => void 0);
+  const npm = new Npm(TMPDIR, () => void 0, 'mock-npm');
 
   // WHEN
   const mockChildProcess = new MockChildProcess(1, {

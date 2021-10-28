@@ -158,24 +158,22 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
   if (exitCode === 0) {
     return;
   }
-  if (exitCode !== 0) {
-    if (signal != null) {
-      throw new NpmError(`Command "${command}" was killed by ${signal}`, stdout);
-    }
-    if (exitCode === 228 || stdout.error?.code === 'ENOSPC') {
-      throw new NoSpaceLeftOnDevice(`Command "${command}" failed due to insufficient available disk space`);
-    }
-    const { code, detail, summary } = stdout.error;
-    const message = [
-      `Command "${command}" exited with code ${exitCode}`,
-      summary ? `: ${summary}` : '',
-      detail ? `\n${detail}` : '',
-      // If we have an error, but neither detail nor summary, then we probably
-      // have an actual Error object, so we'll stringify that here...
-      stdout.error && !detail && !summary ? stdout.error.toString() : '',
-    ].join('');
-    throw new NpmError(message, stdout, code);
+  if (signal != null) {
+    throw new NpmError(`Command "${command}" was killed by ${signal}`, stdout);
   }
+  if (exitCode === 228 || stdout.error?.code === 'ENOSPC') {
+    throw new NoSpaceLeftOnDevice(`Command "${command}" failed due to insufficient available disk space`);
+  }
+  const { code, detail, summary } = stdout.error;
+  const message = [
+    `Command "${command}" exited with code ${exitCode}`,
+    summary ? `: ${summary}` : '',
+    detail ? `\n${detail}` : '',
+    // If we have an error, but neither detail nor summary, then we probably
+    // have an actual Error object, so we'll stringify that here...
+    stdout.error && !detail && !summary ? `: ${stdout.error}` : '',
+  ].join('');
+  throw new NpmError(message, stdout, code);
 }
 
 /**
