@@ -49,7 +49,7 @@ test('NpmError error (with JSON error code)', async () => {
     fail('Expected an NpmError!');
   } catch (err) {
     expect(err).toBeInstanceOf(NpmError);
-    expect((err as NpmError).name).toBe(`jsii-docgen.NpmError.E429`);
+    expect((err as NpmError).name).toBe('jsii-docgen.NpmError.E429');
     expect((err as NpmError).npmErrorCode).toBe('E429');
   }
 });
@@ -72,7 +72,7 @@ test('NpmError error (invalid JSON output)', async () => {
     (e) => Promise.resolve(e),
   );
   expect(err).toBeInstanceOf(NpmError);
-  expect(err.name).toBe(`jsii-docgen.NpmError`);
+  expect(err.name).toBe('jsii-docgen.NpmError');
   expect((err as NpmError).npmErrorCode).toBeUndefined();
 });
 

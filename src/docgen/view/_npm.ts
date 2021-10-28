@@ -192,8 +192,8 @@ function chunksToObject(chunks: readonly Buffer[], encoding = 'utf-8'): Response
 
 type ResponseObject =
   // The error when we failed to parse the output as JSON
-  | { readonly error: any, readonly raw: readonly Buffer[]; }
+  | { readonly error: any; readonly raw: readonly Buffer[] }
   // The error objects npm returns when operating in --json mode
-  | { readonly error: { readonly code: string, readonly summary: string, readonly detail: string; }; }
+  | { readonly error: { readonly code: string; readonly summary: string; readonly detail: string } }
   // The successful objects are treated as opaque blobs here
-  | { readonly error: undefined, readonly [key: string]: unknown };
+  | { readonly error: undefined; readonly [key: string]: unknown };
