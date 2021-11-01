@@ -1,6 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`csharp snapshot 1`] = `
+exports[`csharp json snapshot 1`] = `
+Object {
+  "default": undefined,
+  "deprecated": false,
+  "deprecationReason": undefined,
+  "docs": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
+  "id": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps.RepositoryCatalogData",
+  "name": "RepositoryCatalogData",
+  "optional": true,
+  "type": Object {
+    "name": "object",
+  },
+}
+`;
+
+exports[`csharp markdown snapshot 1`] = `
 " \`RepositoryCatalogData\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps.property.RepositoryCatalogData\\"></a>
 
 \`\`\`csharp
@@ -17,7 +32,22 @@ public object RepositoryCatalogData { get; set; }
 "
 `;
 
-exports[`java snapshot 1`] = `
+exports[`java json snapshot 1`] = `
+Object {
+  "default": undefined,
+  "deprecated": false,
+  "deprecationReason": undefined,
+  "docs": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
+  "id": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.repositoryCatalogData",
+  "name": "repositoryCatalogData",
+  "optional": true,
+  "type": Object {
+    "name": "java.lang.Object",
+  },
+}
+`;
+
+exports[`java markdown snapshot 1`] = `
 " \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
 \`\`\`java
@@ -34,7 +64,22 @@ public java.lang.Object getRepositoryCatalogData();
 "
 `;
 
-exports[`python snapshot 1`] = `
+exports[`python json snapshot 1`] = `
+Object {
+  "default": undefined,
+  "deprecated": false,
+  "deprecationReason": undefined,
+  "docs": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
+  "id": "aws_cdk.aws_ecr.CfnPublicRepositoryProps.repository_catalog_data",
+  "name": "repository_catalog_data",
+  "optional": true,
+  "type": Object {
+    "name": "typing.Any",
+  },
+}
+`;
+
+exports[`python markdown snapshot 1`] = `
 " \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.property.repository_catalog_data\\"></a>
 
 \`\`\`python
@@ -51,7 +96,22 @@ repository_catalog_data: typing.Any
 "
 `;
 
-exports[`typescript snapshot 1`] = `
+exports[`typescript json snapshot 1`] = `
+Object {
+  "default": undefined,
+  "deprecated": false,
+  "deprecationReason": undefined,
+  "docs": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
+  "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.repositoryCatalogData",
+  "name": "repositoryCatalogData",
+  "optional": true,
+  "type": Object {
+    "name": "any",
+  },
+}
+`;
+
+exports[`typescript markdown snapshot 1`] = `
 " \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
 \`\`\`typescript

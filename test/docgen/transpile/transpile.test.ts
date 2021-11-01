@@ -34,7 +34,7 @@ describe('language', () => {
 
 describe('submodules without an explicit name', () => {
 
-  test('java', async () => {
+  test('java markdown', async () => {
     const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.AWSCDK_1_126_0, {
       language: Language.JAVA,
     });
@@ -42,7 +42,15 @@ describe('submodules without an explicit name', () => {
     expect(markdown.render()).toMatchSnapshot();
   });
 
-  test('python', async () => {
+  test('java json', async () => {
+    const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.AWSCDK_1_126_0, {
+      language: Language.JAVA,
+    });
+    const json = docs.toJson({ submodule: 'experimental' });
+    expect(json.render()).toMatchSnapshot();
+  });
+
+  test('python markdown', async () => {
     const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.AWSCDK_1_126_0, {
       language: Language.PYTHON,
     });
@@ -50,11 +58,27 @@ describe('submodules without an explicit name', () => {
     expect(markdown.render()).toMatchSnapshot();
   });
 
-  test('csharp', async () => {
+  test('python json', async () => {
+    const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.AWSCDK_1_126_0, {
+      language: Language.PYTHON,
+    });
+    const json = docs.toJson({ submodule: 'experimental' });
+    expect(json.render()).toMatchSnapshot();
+  });
+
+  test('csharp markdown', async () => {
     const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.AWSCDK_1_126_0, {
       language: Language.CSHARP,
     });
     const markdown = docs.toMarkdown({ submodule: 'experimental' });
     expect(markdown.render()).toMatchSnapshot();
+  });
+
+  test('csharp json', async () => {
+    const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.AWSCDK_1_126_0, {
+      language: Language.CSHARP,
+    });
+    const json = docs.toJson({ submodule: 'experimental' });
+    expect(json.render()).toMatchSnapshot();
   });
 });

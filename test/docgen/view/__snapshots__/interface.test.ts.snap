@@ -1,6 +1,410 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`csharp snapshot 1`] = `
+exports[`csharp json snapshot 1`] = `
+Object {
+  "docs": "Represents an ECR repository.",
+  "id": "Amazon.CDK.AWS.ECR.IRepository",
+  "implementations": Array [
+    Object {
+      "fqn": "@aws-cdk/aws-ecr.Repository",
+      "name": "Amazon.CDK.AWS.ECR.Repository",
+    },
+    Object {
+      "fqn": "@aws-cdk/aws-ecr.RepositoryBase",
+      "name": "Amazon.CDK.AWS.ECR.RepositoryBase",
+    },
+    Object {
+      "fqn": "@aws-cdk/aws-ecr.IRepository",
+      "name": "Amazon.CDK.AWS.ECR.IRepository",
+    },
+  ],
+  "instanceMethods": Array [
+    Object {
+      "id": "Amazon.CDK.AWS.ECR.IRepository.AddToResourcePolicy",
+      "name": "AddToResourcePolicy",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "Amazon.CDK.AWS.ECR.IRepository.Statement",
+          "name": "Statement",
+          "optional": false,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-iam.PolicyStatement",
+            "name": "Amazon.CDK.AWS.IAM.PolicyStatement",
+          },
+        },
+      ],
+      "snippet": "\`\`\`csharp
+private AddToResourcePolicy(PolicyStatement Statement)
+\`\`\`
+",
+    },
+    Object {
+      "id": "Amazon.CDK.AWS.ECR.IRepository.Grant",
+      "name": "Grant",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "Amazon.CDK.AWS.ECR.IRepository.Grantee",
+          "name": "Grantee",
+          "optional": false,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-iam.IGrantable",
+            "name": "Amazon.CDK.AWS.IAM.IGrantable",
+          },
+        },
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "Amazon.CDK.AWS.ECR.IRepository.Actions",
+          "name": "Actions",
+          "optional": false,
+          "type": Object {
+            "name": "string",
+          },
+        },
+      ],
+      "snippet": "\`\`\`csharp
+private Grant(IGrantable Grantee, string Actions)
+\`\`\`
+",
+    },
+    Object {
+      "id": "Amazon.CDK.AWS.ECR.IRepository.GrantPull",
+      "name": "GrantPull",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "Amazon.CDK.AWS.ECR.IRepository.Grantee",
+          "name": "Grantee",
+          "optional": false,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-iam.IGrantable",
+            "name": "Amazon.CDK.AWS.IAM.IGrantable",
+          },
+        },
+      ],
+      "snippet": "\`\`\`csharp
+private GrantPull(IGrantable Grantee)
+\`\`\`
+",
+    },
+    Object {
+      "id": "Amazon.CDK.AWS.ECR.IRepository.GrantPullPush",
+      "name": "GrantPullPush",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "Amazon.CDK.AWS.ECR.IRepository.Grantee",
+          "name": "Grantee",
+          "optional": false,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-iam.IGrantable",
+            "name": "Amazon.CDK.AWS.IAM.IGrantable",
+          },
+        },
+      ],
+      "snippet": "\`\`\`csharp
+private GrantPullPush(IGrantable Grantee)
+\`\`\`
+",
+    },
+    Object {
+      "id": "Amazon.CDK.AWS.ECR.IRepository.OnCloudTrailEvent",
+      "name": "OnCloudTrailEvent",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "The id of the rule.",
+          "id": "Amazon.CDK.AWS.ECR.IRepository.Id",
+          "name": "Id",
+          "optional": false,
+          "type": Object {
+            "name": "string",
+          },
+        },
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Options for adding the rule.",
+          "id": "Amazon.CDK.AWS.ECR.IRepository.Options",
+          "name": "Options",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-events.OnEventOptions",
+            "name": "Amazon.CDK.AWS.Events.OnEventOptions",
+          },
+        },
+      ],
+      "snippet": "\`\`\`csharp
+private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
+\`\`\`
+",
+    },
+    Object {
+      "id": "Amazon.CDK.AWS.ECR.IRepository.OnCloudTrailImagePushed",
+      "name": "OnCloudTrailImagePushed",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "The id of the rule.",
+          "id": "Amazon.CDK.AWS.ECR.IRepository.Id",
+          "name": "Id",
+          "optional": false,
+          "type": Object {
+            "name": "string",
+          },
+        },
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Options for adding the rule.",
+          "id": "Amazon.CDK.AWS.ECR.IRepository.Options",
+          "name": "Options",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions",
+            "name": "Amazon.CDK.AWS.ECR.OnCloudTrailImagePushedOptions",
+          },
+        },
+      ],
+      "snippet": "\`\`\`csharp
+private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
+\`\`\`
+",
+    },
+    Object {
+      "id": "Amazon.CDK.AWS.ECR.IRepository.OnEvent",
+      "name": "OnEvent",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "Amazon.CDK.AWS.ECR.IRepository.Id",
+          "name": "Id",
+          "optional": false,
+          "type": Object {
+            "name": "string",
+          },
+        },
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "Amazon.CDK.AWS.ECR.IRepository.Options",
+          "name": "Options",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-events.OnEventOptions",
+            "name": "Amazon.CDK.AWS.Events.OnEventOptions",
+          },
+        },
+      ],
+      "snippet": "\`\`\`csharp
+private OnEvent(string Id, OnEventOptions Options = null)
+\`\`\`
+",
+    },
+    Object {
+      "id": "Amazon.CDK.AWS.ECR.IRepository.OnImageScanCompleted",
+      "name": "OnImageScanCompleted",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "The id of the rule.",
+          "id": "Amazon.CDK.AWS.ECR.IRepository.Id",
+          "name": "Id",
+          "optional": false,
+          "type": Object {
+            "name": "string",
+          },
+        },
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Options for adding the rule.",
+          "id": "Amazon.CDK.AWS.ECR.IRepository.Options",
+          "name": "Options",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-ecr.OnImageScanCompletedOptions",
+            "name": "Amazon.CDK.AWS.ECR.OnImageScanCompletedOptions",
+          },
+        },
+      ],
+      "snippet": "\`\`\`csharp
+private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
+\`\`\`
+",
+    },
+    Object {
+      "id": "Amazon.CDK.AWS.ECR.IRepository.RepositoryUriForDigest",
+      "name": "RepositoryUriForDigest",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Image digest to use (tools usually default to the image with the \\"latest\\" tag if omitted).",
+          "id": "Amazon.CDK.AWS.ECR.IRepository.Digest",
+          "name": "Digest",
+          "optional": true,
+          "type": Object {
+            "name": "string",
+          },
+        },
+      ],
+      "snippet": "\`\`\`csharp
+private RepositoryUriForDigest(string Digest = null)
+\`\`\`
+",
+    },
+    Object {
+      "id": "Amazon.CDK.AWS.ECR.IRepository.RepositoryUriForTag",
+      "name": "RepositoryUriForTag",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Image tag to use (tools usually default to \\"latest\\" if omitted).",
+          "id": "Amazon.CDK.AWS.ECR.IRepository.Tag",
+          "name": "Tag",
+          "optional": true,
+          "type": Object {
+            "name": "string",
+          },
+        },
+      ],
+      "snippet": "\`\`\`csharp
+private RepositoryUriForTag(string Tag = null)
+\`\`\`
+",
+    },
+  ],
+  "interfaces": Array [
+    Object {
+      "fqn": "@aws-cdk/core.IResource",
+      "name": "Amazon.CDK.IResource",
+    },
+  ],
+  "name": "IRepository",
+  "properties": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The construct tree node for this construct.",
+      "id": "Amazon.CDK.AWS.ECR.IRepository.Node",
+      "name": "Node",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.ConstructNode",
+        "name": "Amazon.CDK.ConstructNode",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.",
+      "id": "Amazon.CDK.AWS.ECR.IRepository.Env",
+      "name": "Env",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.ResourceEnvironment",
+        "name": "Amazon.CDK.ResourceEnvironment",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The stack in which this resource is defined.",
+      "id": "Amazon.CDK.AWS.ECR.IRepository.Stack",
+      "name": "Stack",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.Stack",
+        "name": "Amazon.CDK.Stack",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The ARN of the repository.",
+      "id": "Amazon.CDK.AWS.ECR.IRepository.RepositoryArn",
+      "name": "RepositoryArn",
+      "optional": false,
+      "type": Object {
+        "name": "string",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The name of the repository.",
+      "id": "Amazon.CDK.AWS.ECR.IRepository.RepositoryName",
+      "name": "RepositoryName",
+      "optional": false,
+      "type": Object {
+        "name": "string",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The URI of this repository (represents the latest image):.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY",
+      "id": "Amazon.CDK.AWS.ECR.IRepository.RepositoryUri",
+      "name": "RepositoryUri",
+      "optional": false,
+      "type": Object {
+        "name": "string",
+      },
+    },
+  ],
+}
+`;
+
+exports[`csharp markdown snapshot 1`] = `
 " IRepository <a name=\\"Amazon.CDK.AWS.ECR.IRepository\\"></a>
 
 - *Extends:* [\`Amazon.CDK.IResource\`](#Amazon.CDK.IResource)
@@ -262,7 +666,417 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 "
 `;
 
-exports[`java snapshot 1`] = `
+exports[`java json snapshot 1`] = `
+Object {
+  "docs": "Represents an ECR repository.",
+  "id": "software.amazon.awscdk.services.ecr.IRepository",
+  "implementations": Array [
+    Object {
+      "fqn": "@aws-cdk/aws-ecr.Repository",
+      "name": "software.amazon.awscdk.services.ecr.Repository",
+    },
+    Object {
+      "fqn": "@aws-cdk/aws-ecr.RepositoryBase",
+      "name": "software.amazon.awscdk.services.ecr.RepositoryBase",
+    },
+    Object {
+      "fqn": "@aws-cdk/aws-ecr.IRepository",
+      "name": "software.amazon.awscdk.services.ecr.IRepository",
+    },
+  ],
+  "instanceMethods": Array [
+    Object {
+      "id": "software.amazon.awscdk.services.ecr.IRepository.addToResourcePolicy",
+      "name": "addToResourcePolicy",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "software.amazon.awscdk.services.ecr.IRepository.statement",
+          "name": "statement",
+          "optional": false,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-iam.PolicyStatement",
+            "name": "software.amazon.awscdk.services.iam.PolicyStatement",
+          },
+        },
+      ],
+      "snippet": "\`\`\`java
+public addToResourcePolicy(PolicyStatement statement)
+\`\`\`
+",
+    },
+    Object {
+      "id": "software.amazon.awscdk.services.ecr.IRepository.grant",
+      "name": "grant",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "software.amazon.awscdk.services.ecr.IRepository.grantee",
+          "name": "grantee",
+          "optional": false,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-iam.IGrantable",
+            "name": "software.amazon.awscdk.services.iam.IGrantable",
+          },
+        },
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "software.amazon.awscdk.services.ecr.IRepository.actions",
+          "name": "actions",
+          "optional": false,
+          "type": Object {
+            "name": "java.lang.String",
+          },
+        },
+      ],
+      "snippet": "\`\`\`java
+public grant(IGrantable grantee, java.lang.String actions)
+\`\`\`
+",
+    },
+    Object {
+      "id": "software.amazon.awscdk.services.ecr.IRepository.grantPull",
+      "name": "grantPull",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "software.amazon.awscdk.services.ecr.IRepository.grantee",
+          "name": "grantee",
+          "optional": false,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-iam.IGrantable",
+            "name": "software.amazon.awscdk.services.iam.IGrantable",
+          },
+        },
+      ],
+      "snippet": "\`\`\`java
+public grantPull(IGrantable grantee)
+\`\`\`
+",
+    },
+    Object {
+      "id": "software.amazon.awscdk.services.ecr.IRepository.grantPullPush",
+      "name": "grantPullPush",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "software.amazon.awscdk.services.ecr.IRepository.grantee",
+          "name": "grantee",
+          "optional": false,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-iam.IGrantable",
+            "name": "software.amazon.awscdk.services.iam.IGrantable",
+          },
+        },
+      ],
+      "snippet": "\`\`\`java
+public grantPullPush(IGrantable grantee)
+\`\`\`
+",
+    },
+    Object {
+      "id": "software.amazon.awscdk.services.ecr.IRepository.onCloudTrailEvent",
+      "name": "onCloudTrailEvent",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "The id of the rule.",
+          "id": "software.amazon.awscdk.services.ecr.IRepository.id",
+          "name": "id",
+          "optional": false,
+          "type": Object {
+            "name": "java.lang.String",
+          },
+        },
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Options for adding the rule.",
+          "id": "software.amazon.awscdk.services.ecr.IRepository.options",
+          "name": "options",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-events.OnEventOptions",
+            "name": "software.amazon.awscdk.services.events.OnEventOptions",
+          },
+        },
+      ],
+      "snippet": "\`\`\`java
+public onCloudTrailEvent(java.lang.String id)
+public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
+\`\`\`
+",
+    },
+    Object {
+      "id": "software.amazon.awscdk.services.ecr.IRepository.onCloudTrailImagePushed",
+      "name": "onCloudTrailImagePushed",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "The id of the rule.",
+          "id": "software.amazon.awscdk.services.ecr.IRepository.id",
+          "name": "id",
+          "optional": false,
+          "type": Object {
+            "name": "java.lang.String",
+          },
+        },
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Options for adding the rule.",
+          "id": "software.amazon.awscdk.services.ecr.IRepository.options",
+          "name": "options",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions",
+            "name": "software.amazon.awscdk.services.ecr.OnCloudTrailImagePushedOptions",
+          },
+        },
+      ],
+      "snippet": "\`\`\`java
+public onCloudTrailImagePushed(java.lang.String id)
+public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
+\`\`\`
+",
+    },
+    Object {
+      "id": "software.amazon.awscdk.services.ecr.IRepository.onEvent",
+      "name": "onEvent",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "software.amazon.awscdk.services.ecr.IRepository.id",
+          "name": "id",
+          "optional": false,
+          "type": Object {
+            "name": "java.lang.String",
+          },
+        },
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "software.amazon.awscdk.services.ecr.IRepository.options",
+          "name": "options",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-events.OnEventOptions",
+            "name": "software.amazon.awscdk.services.events.OnEventOptions",
+          },
+        },
+      ],
+      "snippet": "\`\`\`java
+public onEvent(java.lang.String id)
+public onEvent(java.lang.String id, OnEventOptions options)
+\`\`\`
+",
+    },
+    Object {
+      "id": "software.amazon.awscdk.services.ecr.IRepository.onImageScanCompleted",
+      "name": "onImageScanCompleted",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "The id of the rule.",
+          "id": "software.amazon.awscdk.services.ecr.IRepository.id",
+          "name": "id",
+          "optional": false,
+          "type": Object {
+            "name": "java.lang.String",
+          },
+        },
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Options for adding the rule.",
+          "id": "software.amazon.awscdk.services.ecr.IRepository.options",
+          "name": "options",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-ecr.OnImageScanCompletedOptions",
+            "name": "software.amazon.awscdk.services.ecr.OnImageScanCompletedOptions",
+          },
+        },
+      ],
+      "snippet": "\`\`\`java
+public onImageScanCompleted(java.lang.String id)
+public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
+\`\`\`
+",
+    },
+    Object {
+      "id": "software.amazon.awscdk.services.ecr.IRepository.repositoryUriForDigest",
+      "name": "repositoryUriForDigest",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Image digest to use (tools usually default to the image with the \\"latest\\" tag if omitted).",
+          "id": "software.amazon.awscdk.services.ecr.IRepository.digest",
+          "name": "digest",
+          "optional": true,
+          "type": Object {
+            "name": "java.lang.String",
+          },
+        },
+      ],
+      "snippet": "\`\`\`java
+public repositoryUriForDigest()
+public repositoryUriForDigest(java.lang.String digest)
+\`\`\`
+",
+    },
+    Object {
+      "id": "software.amazon.awscdk.services.ecr.IRepository.repositoryUriForTag",
+      "name": "repositoryUriForTag",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Image tag to use (tools usually default to \\"latest\\" if omitted).",
+          "id": "software.amazon.awscdk.services.ecr.IRepository.tag",
+          "name": "tag",
+          "optional": true,
+          "type": Object {
+            "name": "java.lang.String",
+          },
+        },
+      ],
+      "snippet": "\`\`\`java
+public repositoryUriForTag()
+public repositoryUriForTag(java.lang.String tag)
+\`\`\`
+",
+    },
+  ],
+  "interfaces": Array [
+    Object {
+      "fqn": "@aws-cdk/core.IResource",
+      "name": "software.amazon.awscdk.core.IResource",
+    },
+  ],
+  "name": "IRepository",
+  "properties": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The construct tree node for this construct.",
+      "id": "software.amazon.awscdk.services.ecr.IRepository.node",
+      "name": "node",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.ConstructNode",
+        "name": "software.amazon.awscdk.core.ConstructNode",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.",
+      "id": "software.amazon.awscdk.services.ecr.IRepository.env",
+      "name": "env",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.ResourceEnvironment",
+        "name": "software.amazon.awscdk.core.ResourceEnvironment",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The stack in which this resource is defined.",
+      "id": "software.amazon.awscdk.services.ecr.IRepository.stack",
+      "name": "stack",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.Stack",
+        "name": "software.amazon.awscdk.core.Stack",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The ARN of the repository.",
+      "id": "software.amazon.awscdk.services.ecr.IRepository.repositoryArn",
+      "name": "repositoryArn",
+      "optional": false,
+      "type": Object {
+        "name": "java.lang.String",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The name of the repository.",
+      "id": "software.amazon.awscdk.services.ecr.IRepository.repositoryName",
+      "name": "repositoryName",
+      "optional": false,
+      "type": Object {
+        "name": "java.lang.String",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The URI of this repository (represents the latest image):.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY",
+      "id": "software.amazon.awscdk.services.ecr.IRepository.repositoryUri",
+      "name": "repositoryUri",
+      "optional": false,
+      "type": Object {
+        "name": "java.lang.String",
+      },
+    },
+  ],
+}
+`;
+
+exports[`java markdown snapshot 1`] = `
 " IRepository <a name=\\"software.amazon.awscdk.services.ecr.IRepository\\"></a>
 
 - *Extends:* [\`software.amazon.awscdk.core.IResource\`](#software.amazon.awscdk.core.IResource)
@@ -530,7 +1344,645 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 "
 `;
 
-exports[`python snapshot 1`] = `
+exports[`python json snapshot 1`] = `
+Object {
+  "docs": "Represents an ECR repository.",
+  "id": "aws_cdk.aws_ecr.IRepository",
+  "implementations": Array [
+    Object {
+      "fqn": "@aws-cdk/aws-ecr.Repository",
+      "name": "aws_cdk.aws_ecr.Repository",
+    },
+    Object {
+      "fqn": "@aws-cdk/aws-ecr.RepositoryBase",
+      "name": "aws_cdk.aws_ecr.RepositoryBase",
+    },
+    Object {
+      "fqn": "@aws-cdk/aws-ecr.IRepository",
+      "name": "aws_cdk.aws_ecr.IRepository",
+    },
+  ],
+  "instanceMethods": Array [
+    Object {
+      "id": "aws_cdk.aws_ecr.IRepository.add_to_resource_policy",
+      "name": "add_to_resource_policy",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "aws_cdk.aws_ecr.IRepository.statement",
+          "name": "statement",
+          "optional": false,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-iam.PolicyStatement",
+            "name": "aws_cdk.aws_iam.PolicyStatement",
+          },
+        },
+      ],
+      "snippet": "\`\`\`python
+def add_to_resource_policy(
+  statement: PolicyStatement
+)
+\`\`\`
+",
+    },
+    Object {
+      "id": "aws_cdk.aws_ecr.IRepository.grant",
+      "name": "grant",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "aws_cdk.aws_ecr.IRepository.grantee",
+          "name": "grantee",
+          "optional": false,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-iam.IGrantable",
+            "name": "aws_cdk.aws_iam.IGrantable",
+          },
+        },
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "aws_cdk.aws_ecr.IRepository.actions",
+          "name": "actions",
+          "optional": false,
+          "type": Object {
+            "name": "str",
+          },
+        },
+      ],
+      "snippet": "\`\`\`python
+def grant(
+  grantee: IGrantable,
+  actions: str
+)
+\`\`\`
+",
+    },
+    Object {
+      "id": "aws_cdk.aws_ecr.IRepository.grant_pull",
+      "name": "grant_pull",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "aws_cdk.aws_ecr.IRepository.grantee",
+          "name": "grantee",
+          "optional": false,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-iam.IGrantable",
+            "name": "aws_cdk.aws_iam.IGrantable",
+          },
+        },
+      ],
+      "snippet": "\`\`\`python
+def grant_pull(
+  grantee: IGrantable
+)
+\`\`\`
+",
+    },
+    Object {
+      "id": "aws_cdk.aws_ecr.IRepository.grant_pull_push",
+      "name": "grant_pull_push",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "aws_cdk.aws_ecr.IRepository.grantee",
+          "name": "grantee",
+          "optional": false,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-iam.IGrantable",
+            "name": "aws_cdk.aws_iam.IGrantable",
+          },
+        },
+      ],
+      "snippet": "\`\`\`python
+def grant_pull_push(
+  grantee: IGrantable
+)
+\`\`\`
+",
+    },
+    Object {
+      "id": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_event",
+      "name": "on_cloud_trail_event",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "The id of the rule.",
+          "id": "aws_cdk.aws_ecr.IRepository.id",
+          "name": "id",
+          "optional": false,
+          "type": Object {
+            "name": "str",
+          },
+        },
+        Object {
+          "default": "- No description",
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "A description of the rule's purpose.",
+          "id": "aws_cdk.aws_events.OnEventOptions.description",
+          "name": "description",
+          "optional": true,
+          "type": Object {
+            "name": "str",
+          },
+        },
+        Object {
+          "default": "- No additional filtering based on an event pattern.",
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Additional restrictions for the event to route to the specified target.
+
+The method that generates the rule probably imposes some type of event
+filtering. The filtering implied by what you pass here is added
+on top of that filtering.",
+          "id": "aws_cdk.aws_events.OnEventOptions.event_pattern",
+          "name": "event_pattern",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-events.EventPattern",
+            "name": "aws_cdk.aws_events.EventPattern",
+          },
+        },
+        Object {
+          "default": "AWS CloudFormation generates a unique physical ID.",
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "A name for the rule.",
+          "id": "aws_cdk.aws_events.OnEventOptions.rule_name",
+          "name": "rule_name",
+          "optional": true,
+          "type": Object {
+            "name": "str",
+          },
+        },
+        Object {
+          "default": "- No target is added to the rule. Use \`addTarget()\` to add a target.",
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "The target to register for the event.",
+          "id": "aws_cdk.aws_events.OnEventOptions.target",
+          "name": "target",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-events.IRuleTarget",
+            "name": "aws_cdk.aws_events.IRuleTarget",
+          },
+        },
+      ],
+      "snippet": "\`\`\`python
+def on_cloud_trail_event(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None
+)
+\`\`\`
+",
+    },
+    Object {
+      "id": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_image_pushed",
+      "name": "on_cloud_trail_image_pushed",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "The id of the rule.",
+          "id": "aws_cdk.aws_ecr.IRepository.id",
+          "name": "id",
+          "optional": false,
+          "type": Object {
+            "name": "str",
+          },
+        },
+        Object {
+          "default": "- No description",
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "A description of the rule's purpose.",
+          "id": "aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions.description",
+          "name": "description",
+          "optional": true,
+          "type": Object {
+            "name": "str",
+          },
+        },
+        Object {
+          "default": "- No additional filtering based on an event pattern.",
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Additional restrictions for the event to route to the specified target.
+
+The method that generates the rule probably imposes some type of event
+filtering. The filtering implied by what you pass here is added
+on top of that filtering.",
+          "id": "aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions.event_pattern",
+          "name": "event_pattern",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-events.EventPattern",
+            "name": "aws_cdk.aws_events.EventPattern",
+          },
+        },
+        Object {
+          "default": "AWS CloudFormation generates a unique physical ID.",
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "A name for the rule.",
+          "id": "aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions.rule_name",
+          "name": "rule_name",
+          "optional": true,
+          "type": Object {
+            "name": "str",
+          },
+        },
+        Object {
+          "default": "- No target is added to the rule. Use \`addTarget()\` to add a target.",
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "The target to register for the event.",
+          "id": "aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions.target",
+          "name": "target",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-events.IRuleTarget",
+            "name": "aws_cdk.aws_events.IRuleTarget",
+          },
+        },
+        Object {
+          "default": "- Watch changes to all tags",
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Only watch changes to this image tag.",
+          "id": "aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions.image_tag",
+          "name": "image_tag",
+          "optional": true,
+          "type": Object {
+            "name": "str",
+          },
+        },
+      ],
+      "snippet": "\`\`\`python
+def on_cloud_trail_image_pushed(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tag: str = None
+)
+\`\`\`
+",
+    },
+    Object {
+      "id": "aws_cdk.aws_ecr.IRepository.on_event",
+      "name": "on_event",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "aws_cdk.aws_ecr.IRepository.id",
+          "name": "id",
+          "optional": false,
+          "type": Object {
+            "name": "str",
+          },
+        },
+        Object {
+          "default": "- No description",
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "A description of the rule's purpose.",
+          "id": "aws_cdk.aws_events.OnEventOptions.description",
+          "name": "description",
+          "optional": true,
+          "type": Object {
+            "name": "str",
+          },
+        },
+        Object {
+          "default": "- No additional filtering based on an event pattern.",
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Additional restrictions for the event to route to the specified target.
+
+The method that generates the rule probably imposes some type of event
+filtering. The filtering implied by what you pass here is added
+on top of that filtering.",
+          "id": "aws_cdk.aws_events.OnEventOptions.event_pattern",
+          "name": "event_pattern",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-events.EventPattern",
+            "name": "aws_cdk.aws_events.EventPattern",
+          },
+        },
+        Object {
+          "default": "AWS CloudFormation generates a unique physical ID.",
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "A name for the rule.",
+          "id": "aws_cdk.aws_events.OnEventOptions.rule_name",
+          "name": "rule_name",
+          "optional": true,
+          "type": Object {
+            "name": "str",
+          },
+        },
+        Object {
+          "default": "- No target is added to the rule. Use \`addTarget()\` to add a target.",
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "The target to register for the event.",
+          "id": "aws_cdk.aws_events.OnEventOptions.target",
+          "name": "target",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-events.IRuleTarget",
+            "name": "aws_cdk.aws_events.IRuleTarget",
+          },
+        },
+      ],
+      "snippet": "\`\`\`python
+def on_event(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None
+)
+\`\`\`
+",
+    },
+    Object {
+      "id": "aws_cdk.aws_ecr.IRepository.on_image_scan_completed",
+      "name": "on_image_scan_completed",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "The id of the rule.",
+          "id": "aws_cdk.aws_ecr.IRepository.id",
+          "name": "id",
+          "optional": false,
+          "type": Object {
+            "name": "str",
+          },
+        },
+        Object {
+          "default": "- No description",
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "A description of the rule's purpose.",
+          "id": "aws_cdk.aws_ecr.OnImageScanCompletedOptions.description",
+          "name": "description",
+          "optional": true,
+          "type": Object {
+            "name": "str",
+          },
+        },
+        Object {
+          "default": "- No additional filtering based on an event pattern.",
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Additional restrictions for the event to route to the specified target.
+
+The method that generates the rule probably imposes some type of event
+filtering. The filtering implied by what you pass here is added
+on top of that filtering.",
+          "id": "aws_cdk.aws_ecr.OnImageScanCompletedOptions.event_pattern",
+          "name": "event_pattern",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-events.EventPattern",
+            "name": "aws_cdk.aws_events.EventPattern",
+          },
+        },
+        Object {
+          "default": "AWS CloudFormation generates a unique physical ID.",
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "A name for the rule.",
+          "id": "aws_cdk.aws_ecr.OnImageScanCompletedOptions.rule_name",
+          "name": "rule_name",
+          "optional": true,
+          "type": Object {
+            "name": "str",
+          },
+        },
+        Object {
+          "default": "- No target is added to the rule. Use \`addTarget()\` to add a target.",
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "The target to register for the event.",
+          "id": "aws_cdk.aws_ecr.OnImageScanCompletedOptions.target",
+          "name": "target",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-events.IRuleTarget",
+            "name": "aws_cdk.aws_events.IRuleTarget",
+          },
+        },
+        Object {
+          "default": "- Watch the changes to the repository with all image tags",
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Only watch changes to the image tags spedified.
+
+Leave it undefined to watch the full repository.",
+          "id": "aws_cdk.aws_ecr.OnImageScanCompletedOptions.image_tags",
+          "name": "image_tags",
+          "optional": true,
+          "type": Object {
+            "name": "typing.List[%]",
+            "types": Array [
+              Object {
+                "name": "str",
+              },
+            ],
+          },
+        },
+      ],
+      "snippet": "\`\`\`python
+def on_image_scan_completed(
+  id: str,
+  description: str = None,
+  event_pattern: EventPattern = None,
+  rule_name: str = None,
+  target: IRuleTarget = None,
+  image_tags: typing.List[str] = None
+)
+\`\`\`
+",
+    },
+    Object {
+      "id": "aws_cdk.aws_ecr.IRepository.repository_uri_for_digest",
+      "name": "repository_uri_for_digest",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Image digest to use (tools usually default to the image with the \\"latest\\" tag if omitted).",
+          "id": "aws_cdk.aws_ecr.IRepository.digest",
+          "name": "digest",
+          "optional": true,
+          "type": Object {
+            "name": "str",
+          },
+        },
+      ],
+      "snippet": "\`\`\`python
+def repository_uri_for_digest(
+  digest: str = None
+)
+\`\`\`
+",
+    },
+    Object {
+      "id": "aws_cdk.aws_ecr.IRepository.repository_uri_for_tag",
+      "name": "repository_uri_for_tag",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Image tag to use (tools usually default to \\"latest\\" if omitted).",
+          "id": "aws_cdk.aws_ecr.IRepository.tag",
+          "name": "tag",
+          "optional": true,
+          "type": Object {
+            "name": "str",
+          },
+        },
+      ],
+      "snippet": "\`\`\`python
+def repository_uri_for_tag(
+  tag: str = None
+)
+\`\`\`
+",
+    },
+  ],
+  "interfaces": Array [
+    Object {
+      "fqn": "@aws-cdk/core.IResource",
+      "name": "aws_cdk.core.IResource",
+    },
+  ],
+  "name": "IRepository",
+  "properties": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The construct tree node for this construct.",
+      "id": "aws_cdk.aws_ecr.IRepository.node",
+      "name": "node",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.ConstructNode",
+        "name": "aws_cdk.core.ConstructNode",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.",
+      "id": "aws_cdk.aws_ecr.IRepository.env",
+      "name": "env",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.ResourceEnvironment",
+        "name": "aws_cdk.core.ResourceEnvironment",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The stack in which this resource is defined.",
+      "id": "aws_cdk.aws_ecr.IRepository.stack",
+      "name": "stack",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.Stack",
+        "name": "aws_cdk.core.Stack",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The ARN of the repository.",
+      "id": "aws_cdk.aws_ecr.IRepository.repository_arn",
+      "name": "repository_arn",
+      "optional": false,
+      "type": Object {
+        "name": "str",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The name of the repository.",
+      "id": "aws_cdk.aws_ecr.IRepository.repository_name",
+      "name": "repository_name",
+      "optional": false,
+      "type": Object {
+        "name": "str",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The URI of this repository (represents the latest image):.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY",
+      "id": "aws_cdk.aws_ecr.IRepository.repository_uri",
+      "name": "repository_uri",
+      "optional": false,
+      "type": Object {
+        "name": "str",
+      },
+    },
+  ],
+}
+`;
+
+exports[`python markdown snapshot 1`] = `
 " IRepository <a name=\\"aws_cdk.aws_ecr.IRepository\\"></a>
 
 - *Extends:* [\`aws_cdk.core.IResource\`](#aws_cdk.core.IResource)
@@ -989,7 +2441,411 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 "
 `;
 
-exports[`typescript snapshot 1`] = `
+exports[`typescript json snapshot 1`] = `
+Object {
+  "docs": "Represents an ECR repository.",
+  "id": "@aws-cdk/aws-ecr.IRepository",
+  "implementations": Array [
+    Object {
+      "fqn": "@aws-cdk/aws-ecr.Repository",
+      "name": "@aws-cdk/aws-ecr.Repository",
+    },
+    Object {
+      "fqn": "@aws-cdk/aws-ecr.RepositoryBase",
+      "name": "@aws-cdk/aws-ecr.RepositoryBase",
+    },
+    Object {
+      "fqn": "@aws-cdk/aws-ecr.IRepository",
+      "name": "@aws-cdk/aws-ecr.IRepository",
+    },
+  ],
+  "instanceMethods": Array [
+    Object {
+      "id": "@aws-cdk/aws-ecr.IRepository.addToResourcePolicy",
+      "name": "addToResourcePolicy",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "@aws-cdk/aws-ecr.IRepository.statement",
+          "name": "statement",
+          "optional": false,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-iam.PolicyStatement",
+            "name": "@aws-cdk/aws-iam.PolicyStatement",
+          },
+        },
+      ],
+      "snippet": "\`\`\`typescript
+public addToResourcePolicy(statement: PolicyStatement)
+\`\`\`
+",
+    },
+    Object {
+      "id": "@aws-cdk/aws-ecr.IRepository.grant",
+      "name": "grant",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "@aws-cdk/aws-ecr.IRepository.grantee",
+          "name": "grantee",
+          "optional": false,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-iam.IGrantable",
+            "name": "@aws-cdk/aws-iam.IGrantable",
+          },
+        },
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "@aws-cdk/aws-ecr.IRepository.actions",
+          "name": "actions",
+          "optional": false,
+          "type": Object {
+            "name": "string",
+          },
+        },
+      ],
+      "snippet": "\`\`\`typescript
+public grant(grantee: IGrantable, actions: string)
+\`\`\`
+",
+    },
+    Object {
+      "id": "@aws-cdk/aws-ecr.IRepository.grantPull",
+      "name": "grantPull",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "@aws-cdk/aws-ecr.IRepository.grantee",
+          "name": "grantee",
+          "optional": false,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-iam.IGrantable",
+            "name": "@aws-cdk/aws-iam.IGrantable",
+          },
+        },
+      ],
+      "snippet": "\`\`\`typescript
+public grantPull(grantee: IGrantable)
+\`\`\`
+",
+    },
+    Object {
+      "id": "@aws-cdk/aws-ecr.IRepository.grantPullPush",
+      "name": "grantPullPush",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "@aws-cdk/aws-ecr.IRepository.grantee",
+          "name": "grantee",
+          "optional": false,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-iam.IGrantable",
+            "name": "@aws-cdk/aws-iam.IGrantable",
+          },
+        },
+      ],
+      "snippet": "\`\`\`typescript
+public grantPullPush(grantee: IGrantable)
+\`\`\`
+",
+    },
+    Object {
+      "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent",
+      "name": "onCloudTrailEvent",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "The id of the rule.",
+          "id": "@aws-cdk/aws-ecr.IRepository.id",
+          "name": "id",
+          "optional": false,
+          "type": Object {
+            "name": "string",
+          },
+        },
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Options for adding the rule.",
+          "id": "@aws-cdk/aws-ecr.IRepository.options",
+          "name": "options",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-events.OnEventOptions",
+            "name": "@aws-cdk/aws-events.OnEventOptions",
+          },
+        },
+      ],
+      "snippet": "\`\`\`typescript
+public onCloudTrailEvent(id: string, options?: OnEventOptions)
+\`\`\`
+",
+    },
+    Object {
+      "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed",
+      "name": "onCloudTrailImagePushed",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "The id of the rule.",
+          "id": "@aws-cdk/aws-ecr.IRepository.id",
+          "name": "id",
+          "optional": false,
+          "type": Object {
+            "name": "string",
+          },
+        },
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Options for adding the rule.",
+          "id": "@aws-cdk/aws-ecr.IRepository.options",
+          "name": "options",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions",
+            "name": "@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions",
+          },
+        },
+      ],
+      "snippet": "\`\`\`typescript
+public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
+\`\`\`
+",
+    },
+    Object {
+      "id": "@aws-cdk/aws-ecr.IRepository.onEvent",
+      "name": "onEvent",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "@aws-cdk/aws-ecr.IRepository.id",
+          "name": "id",
+          "optional": false,
+          "type": Object {
+            "name": "string",
+          },
+        },
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "",
+          "id": "@aws-cdk/aws-ecr.IRepository.options",
+          "name": "options",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-events.OnEventOptions",
+            "name": "@aws-cdk/aws-events.OnEventOptions",
+          },
+        },
+      ],
+      "snippet": "\`\`\`typescript
+public onEvent(id: string, options?: OnEventOptions)
+\`\`\`
+",
+    },
+    Object {
+      "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted",
+      "name": "onImageScanCompleted",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "The id of the rule.",
+          "id": "@aws-cdk/aws-ecr.IRepository.id",
+          "name": "id",
+          "optional": false,
+          "type": Object {
+            "name": "string",
+          },
+        },
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Options for adding the rule.",
+          "id": "@aws-cdk/aws-ecr.IRepository.options",
+          "name": "options",
+          "optional": true,
+          "type": Object {
+            "fqn": "@aws-cdk/aws-ecr.OnImageScanCompletedOptions",
+            "name": "@aws-cdk/aws-ecr.OnImageScanCompletedOptions",
+          },
+        },
+      ],
+      "snippet": "\`\`\`typescript
+public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
+\`\`\`
+",
+    },
+    Object {
+      "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest",
+      "name": "repositoryUriForDigest",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Image digest to use (tools usually default to the image with the \\"latest\\" tag if omitted).",
+          "id": "@aws-cdk/aws-ecr.IRepository.digest",
+          "name": "digest",
+          "optional": true,
+          "type": Object {
+            "name": "string",
+          },
+        },
+      ],
+      "snippet": "\`\`\`typescript
+public repositoryUriForDigest(digest?: string)
+\`\`\`
+",
+    },
+    Object {
+      "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForTag",
+      "name": "repositoryUriForTag",
+      "parameters": Array [
+        Object {
+          "default": undefined,
+          "deprecated": false,
+          "deprecationReason": undefined,
+          "docs": "Image tag to use (tools usually default to \\"latest\\" if omitted).",
+          "id": "@aws-cdk/aws-ecr.IRepository.tag",
+          "name": "tag",
+          "optional": true,
+          "type": Object {
+            "name": "string",
+          },
+        },
+      ],
+      "snippet": "\`\`\`typescript
+public repositoryUriForTag(tag?: string)
+\`\`\`
+",
+    },
+  ],
+  "interfaces": Array [
+    Object {
+      "fqn": "@aws-cdk/core.IResource",
+      "name": "@aws-cdk/core.IResource",
+    },
+  ],
+  "name": "IRepository",
+  "properties": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The construct tree node for this construct.",
+      "id": "@aws-cdk/aws-ecr.IRepository.node",
+      "name": "node",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.ConstructNode",
+        "name": "@aws-cdk/core.ConstructNode",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.",
+      "id": "@aws-cdk/aws-ecr.IRepository.env",
+      "name": "env",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.ResourceEnvironment",
+        "name": "@aws-cdk/core.ResourceEnvironment",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The stack in which this resource is defined.",
+      "id": "@aws-cdk/aws-ecr.IRepository.stack",
+      "name": "stack",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.Stack",
+        "name": "@aws-cdk/core.Stack",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The ARN of the repository.",
+      "id": "@aws-cdk/aws-ecr.IRepository.repositoryArn",
+      "name": "repositoryArn",
+      "optional": false,
+      "type": Object {
+        "name": "string",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The name of the repository.",
+      "id": "@aws-cdk/aws-ecr.IRepository.repositoryName",
+      "name": "repositoryName",
+      "optional": false,
+      "type": Object {
+        "name": "string",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "The URI of this repository (represents the latest image):.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY",
+      "id": "@aws-cdk/aws-ecr.IRepository.repositoryUri",
+      "name": "repositoryUri",
+      "optional": false,
+      "type": Object {
+        "name": "string",
+      },
+    },
+  ],
+}
+`;
+
+exports[`typescript markdown snapshot 1`] = `
 " IRepository <a name=\\"@aws-cdk/aws-ecr.IRepository\\"></a>
 
 - *Extends:* [\`@aws-cdk/core.IResource\`](#@aws-cdk/core.IResource)

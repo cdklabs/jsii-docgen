@@ -11,44 +11,76 @@ const assembly: reflect.Assembly = Assemblies.instance.withoutSubmodules;
 
 describe('python', () => {
   const transpile = new PythonTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const parameter = new Property(
       transpile,
       assembly.system.interfaces[0].allProperties[0],
     );
     expect(parameter.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const parameter = new Property(
+      transpile,
+      assembly.system.interfaces[0].allProperties[0],
+    );
+    expect(parameter.toJson()).toMatchSnapshot();
   });
 });
 
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const parameter = new Property(
       transpile,
       assembly.system.interfaces[0].allProperties[0],
     );
     expect(parameter.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const parameter = new Property(
+      transpile,
+      assembly.system.interfaces[0].allProperties[0],
+    );
+    expect(parameter.toJson()).toMatchSnapshot();
   });
 });
 
 describe('java', () => {
   const transpile = new JavaTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const parameter = new Property(
       transpile,
       assembly.system.interfaces[0].allProperties[0],
     );
     expect(parameter.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
+
+  test('json snapshot', () => {
+    const parameter = new Property(
+      transpile,
+      assembly.system.interfaces[0].allProperties[0],
+    );
+    expect(parameter.toJson()).toMatchSnapshot();
+  });
 });
 
 describe('csharp', () => {
   const transpile = new CSharpTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const parameter = new Property(
       transpile,
       assembly.system.interfaces[0].allProperties[0],
     );
     expect(parameter.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const parameter = new Property(
+      transpile,
+      assembly.system.interfaces[0].allProperties[0],
+    );
+    expect(parameter.toJson()).toMatchSnapshot();
   });
 });

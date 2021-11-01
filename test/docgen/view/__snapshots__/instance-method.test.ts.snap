@@ -1,6 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`csharp snapshot 1`] = `
+exports[`csharp json snapshot 1`] = `
+Object {
+  "id": "Amazon.CDK.AWS.ECR.CfnPublicRepository.Inspect",
+  "name": "Inspect",
+  "parameters": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "- tree inspector to collect and process attributes.",
+      "id": "Amazon.CDK.AWS.ECR.CfnPublicRepository.Inspector",
+      "name": "Inspector",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.TreeInspector",
+        "name": "Amazon.CDK.TreeInspector",
+      },
+    },
+  ],
+  "snippet": "\`\`\`csharp
+private Inspect(TreeInspector Inspector)
+\`\`\`
+",
+}
+`;
+
+exports[`csharp markdown snapshot 1`] = `
 " \`Inspect\` <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.Inspect\\"></a>
 
 \`\`\`csharp
@@ -17,7 +43,33 @@ tree inspector to collect and process attributes.
 "
 `;
 
-exports[`java snapshot 1`] = `
+exports[`java json snapshot 1`] = `
+Object {
+  "id": "software.amazon.awscdk.services.ecr.CfnPublicRepository.inspect",
+  "name": "inspect",
+  "parameters": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "- tree inspector to collect and process attributes.",
+      "id": "software.amazon.awscdk.services.ecr.CfnPublicRepository.inspector",
+      "name": "inspector",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.TreeInspector",
+        "name": "software.amazon.awscdk.core.TreeInspector",
+      },
+    },
+  ],
+  "snippet": "\`\`\`java
+public inspect(TreeInspector inspector)
+\`\`\`
+",
+}
+`;
+
+exports[`java markdown snapshot 1`] = `
 " \`inspect\` <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`java
@@ -34,7 +86,35 @@ tree inspector to collect and process attributes.
 "
 `;
 
-exports[`python snapshot 1`] = `
+exports[`python json snapshot 1`] = `
+Object {
+  "id": "aws_cdk.aws_ecr.CfnPublicRepository.inspect",
+  "name": "inspect",
+  "parameters": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "- tree inspector to collect and process attributes.",
+      "id": "aws_cdk.aws_ecr.CfnPublicRepository.inspector",
+      "name": "inspector",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.TreeInspector",
+        "name": "aws_cdk.core.TreeInspector",
+      },
+    },
+  ],
+  "snippet": "\`\`\`python
+def inspect(
+  inspector: TreeInspector
+)
+\`\`\`
+",
+}
+`;
+
+exports[`python markdown snapshot 1`] = `
 " \`inspect\` <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`python
@@ -53,7 +133,33 @@ tree inspector to collect and process attributes.
 "
 `;
 
-exports[`typescript snapshot 1`] = `
+exports[`typescript json snapshot 1`] = `
+Object {
+  "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect",
+  "name": "inspect",
+  "parameters": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "- tree inspector to collect and process attributes.",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspector",
+      "name": "inspector",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.TreeInspector",
+        "name": "@aws-cdk/core.TreeInspector",
+      },
+    },
+  ],
+  "snippet": "\`\`\`typescript
+public inspect(inspector: TreeInspector)
+\`\`\`
+",
+}
+`;
+
+exports[`typescript markdown snapshot 1`] = `
 " \`inspect\` <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`typescript

@@ -1,6 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`csharp snapshot 1`] = `
+exports[`csharp json snapshot 1`] = `
+Object {
+  "default": undefined,
+  "deprecated": false,
+  "deprecationReason": undefined,
+  "docs": "",
+  "id": "Amazon.CDK.AWS.ECR.AuthorizationToken.Grantee",
+  "name": "Grantee",
+  "optional": false,
+  "type": Object {
+    "fqn": "@aws-cdk/aws-iam.IGrantable",
+    "name": "Amazon.CDK.AWS.IAM.IGrantable",
+  },
+}
+`;
+
+exports[`csharp markdown snapshot 1`] = `
 " \`Grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.AuthorizationToken.parameter.Grantee\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.IAM.IGrantable\`](#Amazon.CDK.AWS.IAM.IGrantable)
@@ -9,7 +25,23 @@ exports[`csharp snapshot 1`] = `
 "
 `;
 
-exports[`java snapshot 1`] = `
+exports[`java json snapshot 1`] = `
+Object {
+  "default": undefined,
+  "deprecated": false,
+  "deprecationReason": undefined,
+  "docs": "",
+  "id": "software.amazon.awscdk.services.ecr.AuthorizationToken.grantee",
+  "name": "grantee",
+  "optional": false,
+  "type": Object {
+    "fqn": "@aws-cdk/aws-iam.IGrantable",
+    "name": "software.amazon.awscdk.services.iam.IGrantable",
+  },
+}
+`;
+
+exports[`java markdown snapshot 1`] = `
 " \`grantee\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.AuthorizationToken.parameter.grantee\\"></a>
 
 - *Type:* [\`software.amazon.awscdk.services.iam.IGrantable\`](#software.amazon.awscdk.services.iam.IGrantable)
@@ -18,7 +50,23 @@ exports[`java snapshot 1`] = `
 "
 `;
 
-exports[`python snapshot 1`] = `
+exports[`python json snapshot 1`] = `
+Object {
+  "default": undefined,
+  "deprecated": false,
+  "deprecationReason": undefined,
+  "docs": "",
+  "id": "aws_cdk.aws_ecr.AuthorizationToken.grantee",
+  "name": "grantee",
+  "optional": false,
+  "type": Object {
+    "fqn": "@aws-cdk/aws-iam.IGrantable",
+    "name": "aws_cdk.aws_iam.IGrantable",
+  },
+}
+`;
+
+exports[`python markdown snapshot 1`] = `
 " \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.AuthorizationToken.parameter.grantee\\"></a>
 
 - *Type:* [\`aws_cdk.aws_iam.IGrantable\`](#aws_cdk.aws_iam.IGrantable)
@@ -27,7 +75,23 @@ exports[`python snapshot 1`] = `
 "
 `;
 
-exports[`typescript snapshot 1`] = `
+exports[`typescript json snapshot 1`] = `
+Object {
+  "default": undefined,
+  "deprecated": false,
+  "deprecationReason": undefined,
+  "docs": "",
+  "id": "@aws-cdk/aws-ecr.AuthorizationToken.grantee",
+  "name": "grantee",
+  "optional": false,
+  "type": Object {
+    "fqn": "@aws-cdk/aws-iam.IGrantable",
+    "name": "@aws-cdk/aws-iam.IGrantable",
+  },
+}
+`;
+
+exports[`typescript markdown snapshot 1`] = `
 " \`grantee\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
 
 - *Type:* [\`@aws-cdk/aws-iam.IGrantable\`](#@aws-cdk/aws-iam.IGrantable)

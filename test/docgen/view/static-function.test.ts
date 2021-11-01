@@ -22,32 +22,52 @@ const findStaticFunction = (): reflect.Method => {
 
 describe('python', () => {
   const transpile = new PythonTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const staticFunction = new StaticFunction(transpile, findStaticFunction());
     expect(staticFunction.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const staticFunction = new StaticFunction(transpile, findStaticFunction());
+    expect(staticFunction.toJson()).toMatchSnapshot();
   });
 });
 
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const staticFunction = new StaticFunction(transpile, findStaticFunction());
     expect(staticFunction.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const staticFunction = new StaticFunction(transpile, findStaticFunction());
+    expect(staticFunction.toJson()).toMatchSnapshot();
   });
 });
 
 describe('java', () => {
   const transpile = new JavaTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const staticFunction = new StaticFunction(transpile, findStaticFunction());
     expect(staticFunction.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const staticFunction = new StaticFunction(transpile, findStaticFunction());
+    expect(staticFunction.toJson()).toMatchSnapshot();
   });
 });
 
 describe('csharp', () => {
   const transpile = new CSharpTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const staticFunction = new StaticFunction(transpile, findStaticFunction());
     expect(staticFunction.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const staticFunction = new StaticFunction(transpile, findStaticFunction());
+    expect(staticFunction.toJson()).toMatchSnapshot();
   });
 });

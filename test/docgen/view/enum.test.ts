@@ -18,24 +18,39 @@ describe('python', () => {
 
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const enu = new Enum(transpile, assembly.enums[0]);
     expect(enu.toMarkdown().render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const enu = new Enum(transpile, assembly.enums[0]);
+    expect(enu.toJson()).toMatchSnapshot();
   });
 });
 
 describe('java', () => {
   const transpile = new JavaTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const enu = new Enum(transpile, assembly.enums[0]);
     expect(enu.toMarkdown().render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const enu = new Enum(transpile, assembly.enums[0]);
+    expect(enu.toJson()).toMatchSnapshot();
   });
 });
 
 describe('csharp', () => {
   const transpile = new CSharpTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const enu = new Enum(transpile, assembly.enums[0]);
     expect(enu.toMarkdown().render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const enu = new Enum(transpile, assembly.enums[0]);
+    expect(enu.toJson()).toMatchSnapshot();
   });
 });

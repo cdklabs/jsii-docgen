@@ -1,6 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`csharp snapshot 1`] = `
+exports[`csharp json snapshot 1`] = `
+Object {
+  "id": "Amazon.CDK.AWS.ECR.CfnPublicRepository.Initializer",
+  "parameters": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "- scope in which this resource is defined.",
+      "id": "Amazon.CDK.AWS.ECR.CfnPublicRepository.Scope",
+      "name": "Scope",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.Construct",
+        "name": "Amazon.CDK.Construct",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "- scoped id of the resource.",
+      "id": "Amazon.CDK.AWS.ECR.CfnPublicRepository.Id",
+      "name": "Id",
+      "optional": false,
+      "type": Object {
+        "name": "string",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "- resource properties.",
+      "id": "Amazon.CDK.AWS.ECR.CfnPublicRepository.Props",
+      "name": "Props",
+      "optional": true,
+      "type": Object {
+        "fqn": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+        "name": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps",
+      },
+    },
+  ],
+  "snippet": "\`\`\`csharp
+using Amazon.CDK.AWS.ECR;
+
+new CfnPublicRepository(Construct Scope, string Id, CfnPublicRepositoryProps Props = null);
+\`\`\`
+",
+}
+`;
+
+exports[`csharp markdown snapshot 1`] = `
 " Initializers <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.Initializer\\"></a>
 
 \`\`\`csharp
@@ -35,7 +87,105 @@ resource properties.
 "
 `;
 
-exports[`java snapshot 1`] = `
+exports[`java json snapshot 1`] = `
+Object {
+  "id": "software.amazon.awscdk.services.ecr.CfnPublicRepository.Initializer",
+  "parameters": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "- scope in which this resource is defined.",
+      "id": "software.amazon.awscdk.services.ecr.CfnPublicRepository.scope",
+      "name": "scope",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.Construct",
+        "name": "software.amazon.awscdk.core.Construct",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "- scoped id of the resource.",
+      "id": "software.amazon.awscdk.services.ecr.CfnPublicRepository.id",
+      "name": "id",
+      "optional": false,
+      "type": Object {
+        "name": "java.lang.String",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
+      "id": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.repositoryCatalogData",
+      "name": "repositoryCatalogData",
+      "optional": true,
+      "type": Object {
+        "name": "java.lang.Object",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
+      "id": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.repositoryName",
+      "name": "repositoryName",
+      "optional": true,
+      "type": Object {
+        "name": "java.lang.String",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
+      "id": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.repositoryPolicyText",
+      "name": "repositoryPolicyText",
+      "optional": true,
+      "type": Object {
+        "name": "java.lang.Object",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.Tags\`.",
+      "id": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.tags",
+      "name": "tags",
+      "optional": true,
+      "type": Object {
+        "name": "java.util.List<%>",
+        "types": Array [
+          Object {
+            "fqn": "@aws-cdk/core.CfnTag",
+            "name": "software.amazon.awscdk.core.CfnTag",
+          },
+        ],
+      },
+    },
+  ],
+  "snippet": "\`\`\`java
+import software.amazon.awscdk.services.ecr.CfnPublicRepository;
+
+CfnPublicRepository.Builder.create(Construct scope, java.lang.String id)
+//  .repositoryCatalogData(java.lang.Object)
+//  .repositoryName(java.lang.String)
+//  .repositoryPolicyText(java.lang.Object)
+//  .tags(java.util.List<CfnTag>)
+    .build();
+\`\`\`
+",
+}
+`;
+
+exports[`java markdown snapshot 1`] = `
 " Initializers <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepository.Initializer\\"></a>
 
 \`\`\`java
@@ -107,7 +257,107 @@ scoped id of the resource.
 "
 `;
 
-exports[`python snapshot 1`] = `
+exports[`python json snapshot 1`] = `
+Object {
+  "id": "aws_cdk.aws_ecr.CfnPublicRepository.Initializer",
+  "parameters": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "- scope in which this resource is defined.",
+      "id": "aws_cdk.aws_ecr.CfnPublicRepository.scope",
+      "name": "scope",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.Construct",
+        "name": "aws_cdk.core.Construct",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "- scoped id of the resource.",
+      "id": "aws_cdk.aws_ecr.CfnPublicRepository.id",
+      "name": "id",
+      "optional": false,
+      "type": Object {
+        "name": "str",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
+      "id": "aws_cdk.aws_ecr.CfnPublicRepositoryProps.repository_catalog_data",
+      "name": "repository_catalog_data",
+      "optional": true,
+      "type": Object {
+        "name": "typing.Any",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
+      "id": "aws_cdk.aws_ecr.CfnPublicRepositoryProps.repository_name",
+      "name": "repository_name",
+      "optional": true,
+      "type": Object {
+        "name": "str",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
+      "id": "aws_cdk.aws_ecr.CfnPublicRepositoryProps.repository_policy_text",
+      "name": "repository_policy_text",
+      "optional": true,
+      "type": Object {
+        "name": "typing.Any",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.Tags\`.",
+      "id": "aws_cdk.aws_ecr.CfnPublicRepositoryProps.tags",
+      "name": "tags",
+      "optional": true,
+      "type": Object {
+        "name": "typing.List[%]",
+        "types": Array [
+          Object {
+            "fqn": "@aws-cdk/core.CfnTag",
+            "name": "aws_cdk.core.CfnTag",
+          },
+        ],
+      },
+    },
+  ],
+  "snippet": "\`\`\`python
+import aws_cdk.aws_ecr
+
+aws_cdk.aws_ecr.CfnPublicRepository(
+  scope: Construct,
+  id: str,
+  repository_catalog_data: typing.Any = None,
+  repository_name: str = None,
+  repository_policy_text: typing.Any = None,
+  tags: typing.List[CfnTag] = None
+)
+\`\`\`
+",
+}
+`;
+
+exports[`python markdown snapshot 1`] = `
 " Initializers <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.Initializer\\"></a>
 
 \`\`\`python
@@ -181,7 +431,59 @@ scoped id of the resource.
 "
 `;
 
-exports[`typescript snapshot 1`] = `
+exports[`typescript json snapshot 1`] = `
+Object {
+  "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer",
+  "parameters": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "- scope in which this resource is defined.",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.scope",
+      "name": "scope",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/core.Construct",
+        "name": "@aws-cdk/core.Construct",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "- scoped id of the resource.",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.id",
+      "name": "id",
+      "optional": false,
+      "type": Object {
+        "name": "string",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "- resource properties.",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.props",
+      "name": "props",
+      "optional": true,
+      "type": Object {
+        "fqn": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+        "name": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+      },
+    },
+  ],
+  "snippet": "\`\`\`typescript
+import { CfnPublicRepository } from '@aws-cdk/aws-ecr'
+
+new CfnPublicRepository(scope: Construct, id: string, props?: CfnPublicRepositoryProps)
+\`\`\`
+",
+}
+`;
+
+exports[`typescript markdown snapshot 1`] = `
 " Initializers <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer\\"></a>
 
 \`\`\`typescript

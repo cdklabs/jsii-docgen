@@ -50,6 +50,74 @@ public greet()
 "
 `;
 
+exports[`specify format 1`] = `
+"{
+  \\"apiReference\\": {
+    \\"constructs\\": [
+      {
+        \\"id\\": \\"construct-library.GreeterBucket\\",
+        \\"name\\": \\"GreeterBucket\\",
+        \\"interfaces\\": [],
+        \\"docs\\": \\"\\",
+        \\"initializer\\": {
+          \\"id\\": \\"construct-library.GreeterBucket.Initializer\\",
+          \\"snippet\\": \\"\`\`\`typescript\\\\nimport { GreeterBucket } from 'construct-library'\\\\n\\\\nnew GreeterBucket(scope: Construct, id: string, props?: BucketProps)\\\\n\`\`\`\\\\n\\",
+          \\"parameters\\": [
+            {
+              \\"id\\": \\"construct-library.GreeterBucket.scope\\",
+              \\"name\\": \\"scope\\",
+              \\"optional\\": false,
+              \\"deprecated\\": false,
+              \\"docs\\": \\"\\",
+              \\"type\\": {
+                \\"fqn\\": \\"constructs.Construct\\",
+                \\"name\\": \\"constructs.Construct\\"
+              }
+            },
+            {
+              \\"id\\": \\"construct-library.GreeterBucket.id\\",
+              \\"name\\": \\"id\\",
+              \\"optional\\": false,
+              \\"deprecated\\": false,
+              \\"docs\\": \\"\\",
+              \\"type\\": {
+                \\"name\\": \\"string\\"
+              }
+            },
+            {
+              \\"id\\": \\"construct-library.GreeterBucket.props\\",
+              \\"name\\": \\"props\\",
+              \\"optional\\": true,
+              \\"deprecated\\": false,
+              \\"docs\\": \\"\\",
+              \\"type\\": {
+                \\"fqn\\": \\"@aws-cdk/aws-s3.BucketProps\\",
+                \\"name\\": \\"@aws-cdk/aws-s3.BucketProps\\"
+              }
+            }
+          ]
+        },
+        \\"instanceMethods\\": [
+          {
+            \\"id\\": \\"construct-library.GreeterBucket.greet\\",
+            \\"name\\": \\"greet\\",
+            \\"snippet\\": \\"\`\`\`typescript\\\\npublic greet()\\\\n\`\`\`\\\\n\\",
+            \\"parameters\\": []
+          }
+        ],
+        \\"staticFunctions\\": [],
+        \\"properties\\": [],
+        \\"constants\\": []
+      }
+    ],
+    \\"classes\\": [],
+    \\"structs\\": [],
+    \\"interfaces\\": [],
+    \\"enums\\": []
+  }
+}"
+`;
+
 exports[`specify language 1`] = `
 "# API Reference <a name=\\"API Reference\\"></a>
 

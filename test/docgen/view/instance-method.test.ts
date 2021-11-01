@@ -22,32 +22,52 @@ const findInstanceMethod = (): reflect.Method => {
 
 describe('python', () => {
   const transpile = new PythonTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const instanceMethod = new InstanceMethod(transpile, findInstanceMethod());
     expect(instanceMethod.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const instanceMethod = new InstanceMethod(transpile, findInstanceMethod());
+    expect(instanceMethod.toJson()).toMatchSnapshot();
   });
 });
 
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const instanceMethod = new InstanceMethod(transpile, findInstanceMethod());
     expect(instanceMethod.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const instanceMethod = new InstanceMethod(transpile, findInstanceMethod());
+    expect(instanceMethod.toJson()).toMatchSnapshot();
   });
 });
 
 describe('java', () => {
   const transpile = new JavaTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const instanceMethod = new InstanceMethod(transpile, findInstanceMethod());
     expect(instanceMethod.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const instanceMethod = new InstanceMethod(transpile, findInstanceMethod());
+    expect(instanceMethod.toJson()).toMatchSnapshot();
   });
 });
 
 describe('csharp', () => {
   const transpile = new CSharpTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const instanceMethod = new InstanceMethod(transpile, findInstanceMethod());
     expect(instanceMethod.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const instanceMethod = new InstanceMethod(transpile, findInstanceMethod());
+    expect(instanceMethod.toJson()).toMatchSnapshot();
   });
 });

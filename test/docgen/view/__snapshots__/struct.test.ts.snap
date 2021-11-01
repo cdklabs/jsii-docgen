@@ -1,6 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`csharp snapshot 1`] = `
+exports[`csharp json snapshot 1`] = `
+Object {
+  "docs": "Properties for defining a \`AWS::ECR::PublicRepository\`.",
+  "id": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps",
+  "initializer": "\`\`\`csharp
+using Amazon.CDK.AWS.ECR;
+
+new CfnPublicRepositoryProps {
+    object RepositoryCatalogData = null,
+    string RepositoryName = null,
+    object RepositoryPolicyText = null,
+    CfnTag[] Tags = null
+};
+\`\`\`
+",
+  "name": "CfnPublicRepositoryProps",
+  "properties": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
+      "id": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps.RepositoryCatalogData",
+      "name": "RepositoryCatalogData",
+      "optional": true,
+      "type": Object {
+        "name": "object",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
+      "id": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps.RepositoryName",
+      "name": "RepositoryName",
+      "optional": true,
+      "type": Object {
+        "name": "string",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
+      "id": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps.RepositoryPolicyText",
+      "name": "RepositoryPolicyText",
+      "optional": true,
+      "type": Object {
+        "name": "object",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.Tags\`.",
+      "id": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps.Tags",
+      "name": "Tags",
+      "optional": true,
+      "type": Object {
+        "name": "%[]",
+        "types": Array [
+          Object {
+            "fqn": "@aws-cdk/core.CfnTag",
+            "name": "Amazon.CDK.CfnTag",
+          },
+        ],
+      },
+    },
+  ],
+}
+`;
+
+exports[`csharp markdown snapshot 1`] = `
 " CfnPublicRepositoryProps <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps\\"></a>
 
 Properties for defining a \`AWS::ECR::PublicRepository\`.
@@ -78,7 +153,82 @@ public CfnTag[] Tags { get; set; }
 "
 `;
 
-exports[`java snapshot 1`] = `
+exports[`java json snapshot 1`] = `
+Object {
+  "docs": "Properties for defining a \`AWS::ECR::PublicRepository\`.",
+  "id": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps",
+  "initializer": "\`\`\`java
+import software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps;
+
+CfnPublicRepositoryProps.builder()
+//  .repositoryCatalogData(java.lang.Object)
+//  .repositoryName(java.lang.String)
+//  .repositoryPolicyText(java.lang.Object)
+//  .tags(java.util.List<CfnTag>)
+    .build();
+\`\`\`
+",
+  "name": "CfnPublicRepositoryProps",
+  "properties": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
+      "id": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.repositoryCatalogData",
+      "name": "repositoryCatalogData",
+      "optional": true,
+      "type": Object {
+        "name": "java.lang.Object",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
+      "id": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.repositoryName",
+      "name": "repositoryName",
+      "optional": true,
+      "type": Object {
+        "name": "java.lang.String",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
+      "id": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.repositoryPolicyText",
+      "name": "repositoryPolicyText",
+      "optional": true,
+      "type": Object {
+        "name": "java.lang.Object",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.Tags\`.",
+      "id": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.tags",
+      "name": "tags",
+      "optional": true,
+      "type": Object {
+        "name": "java.util.List<%>",
+        "types": Array [
+          Object {
+            "fqn": "@aws-cdk/core.CfnTag",
+            "name": "software.amazon.awscdk.core.CfnTag",
+          },
+        ],
+      },
+    },
+  ],
+}
+`;
+
+exports[`java markdown snapshot 1`] = `
 " CfnPublicRepositoryProps <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps\\"></a>
 
 Properties for defining a \`AWS::ECR::PublicRepository\`.
@@ -156,7 +306,82 @@ public java.util.List<CfnTag> getTags();
 "
 `;
 
-exports[`python snapshot 1`] = `
+exports[`python json snapshot 1`] = `
+Object {
+  "docs": "Properties for defining a \`AWS::ECR::PublicRepository\`.",
+  "id": "aws_cdk.aws_ecr.CfnPublicRepositoryProps",
+  "initializer": "\`\`\`python
+import aws_cdk.aws_ecr
+
+aws_cdk.aws_ecr.CfnPublicRepositoryProps(
+  repository_catalog_data: typing.Any = None,
+  repository_name: str = None,
+  repository_policy_text: typing.Any = None,
+  tags: typing.List[CfnTag] = None
+)
+\`\`\`
+",
+  "name": "CfnPublicRepositoryProps",
+  "properties": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
+      "id": "aws_cdk.aws_ecr.CfnPublicRepositoryProps.repository_catalog_data",
+      "name": "repository_catalog_data",
+      "optional": true,
+      "type": Object {
+        "name": "typing.Any",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
+      "id": "aws_cdk.aws_ecr.CfnPublicRepositoryProps.repository_name",
+      "name": "repository_name",
+      "optional": true,
+      "type": Object {
+        "name": "str",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
+      "id": "aws_cdk.aws_ecr.CfnPublicRepositoryProps.repository_policy_text",
+      "name": "repository_policy_text",
+      "optional": true,
+      "type": Object {
+        "name": "typing.Any",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.Tags\`.",
+      "id": "aws_cdk.aws_ecr.CfnPublicRepositoryProps.tags",
+      "name": "tags",
+      "optional": true,
+      "type": Object {
+        "name": "typing.List[%]",
+        "types": Array [
+          Object {
+            "fqn": "@aws-cdk/core.CfnTag",
+            "name": "aws_cdk.core.CfnTag",
+          },
+        ],
+      },
+    },
+  ],
+}
+`;
+
+exports[`python markdown snapshot 1`] = `
 " CfnPublicRepositoryProps <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps\\"></a>
 
 Properties for defining a \`AWS::ECR::PublicRepository\`.
@@ -234,7 +459,77 @@ tags: typing.List[CfnTag]
 "
 `;
 
-exports[`typescript snapshot 1`] = `
+exports[`typescript json snapshot 1`] = `
+Object {
+  "docs": "Properties for defining a \`AWS::ECR::PublicRepository\`.",
+  "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+  "initializer": "\`\`\`typescript
+import { CfnPublicRepositoryProps } from '@aws-cdk/aws-ecr'
+
+const cfnPublicRepositoryProps: CfnPublicRepositoryProps = { ... }
+\`\`\`
+",
+  "name": "CfnPublicRepositoryProps",
+  "properties": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.repositoryCatalogData",
+      "name": "repositoryCatalogData",
+      "optional": true,
+      "type": Object {
+        "name": "any",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.repositoryName",
+      "name": "repositoryName",
+      "optional": true,
+      "type": Object {
+        "name": "string",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.repositoryPolicyText",
+      "name": "repositoryPolicyText",
+      "optional": true,
+      "type": Object {
+        "name": "any",
+      },
+    },
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "\`AWS::ECR::PublicRepository.Tags\`.",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.tags",
+      "name": "tags",
+      "optional": true,
+      "type": Object {
+        "name": "%[]",
+        "types": Array [
+          Object {
+            "fqn": "@aws-cdk/core.CfnTag",
+            "name": "@aws-cdk/core.CfnTag",
+          },
+        ],
+      },
+    },
+  ],
+}
+`;
+
+exports[`typescript markdown snapshot 1`] = `
 " CfnPublicRepositoryProps <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps\\"></a>
 
 Properties for defining a \`AWS::ECR::PublicRepository\`.

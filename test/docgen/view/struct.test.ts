@@ -11,44 +11,76 @@ const assembly: reflect.Assembly = Assemblies.instance.withoutSubmodules;
 
 describe('python', () => {
   const transpile = new PythonTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const struct = new Struct(
       transpile,
       assembly.system.interfaces.filter((i) => i.datatype)[0],
     );
     expect(struct.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const struct = new Struct(
+      transpile,
+      assembly.system.interfaces.filter((i) => i.datatype)[0],
+    );
+    expect(struct.toJson()).toMatchSnapshot();
   });
 });
 
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const struct = new Struct(
       transpile,
       assembly.system.interfaces.filter((i) => i.datatype)[0],
     );
     expect(struct.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const struct = new Struct(
+      transpile,
+      assembly.system.interfaces.filter((i) => i.datatype)[0],
+    );
+    expect(struct.toJson()).toMatchSnapshot();
   });
 });
 
 describe('java', () => {
   const transpile = new JavaTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const struct = new Struct(
       transpile,
       assembly.system.interfaces.filter((i) => i.datatype)[0],
     );
     expect(struct.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
+
+  test('json snapshot', () => {
+    const struct = new Struct(
+      transpile,
+      assembly.system.interfaces.filter((i) => i.datatype)[0],
+    );
+    expect(struct.toJson()).toMatchSnapshot();
+  });
 });
 
 describe('csharp', () => {
   const transpile = new CSharpTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const struct = new Struct(
       transpile,
       assembly.system.interfaces.filter((i) => i.datatype)[0],
     );
     expect(struct.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const struct = new Struct(
+      transpile,
+      assembly.system.interfaces.filter((i) => i.datatype)[0],
+    );
+    expect(struct.toJson()).toMatchSnapshot();
   });
 });

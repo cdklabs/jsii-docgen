@@ -1,6 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`csharp snapshot 1`] = `
+exports[`csharp json snapshot 1`] = `
+Object {
+  "docs": "The tag mutability setting for your repository.",
+  "members": Array [
+    Object {
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "allow image tags to be overwritten.",
+      "id": "Amazon.CDK.AWS.ECR.TagMutability.MUTABLE",
+      "name": "MUTABLE",
+    },
+    Object {
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "all image tags within the repository will be immutable which will prevent them from being overwritten.",
+      "id": "Amazon.CDK.AWS.ECR.TagMutability.IMMUTABLE",
+      "name": "IMMUTABLE",
+    },
+  ],
+  "name": "TagMutability",
+}
+`;
+
+exports[`csharp markdown snapshot 1`] = `
 " TagMutability <a name=\\"TagMutability\\"></a>
 
 The tag mutability setting for your repository.
@@ -21,7 +44,30 @@ all image tags within the repository will be immutable which will prevent them f
 "
 `;
 
-exports[`java snapshot 1`] = `
+exports[`java json snapshot 1`] = `
+Object {
+  "docs": "The tag mutability setting for your repository.",
+  "members": Array [
+    Object {
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "allow image tags to be overwritten.",
+      "id": "software.amazon.awscdk.services.ecr.TagMutability.MUTABLE",
+      "name": "MUTABLE",
+    },
+    Object {
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "all image tags within the repository will be immutable which will prevent them from being overwritten.",
+      "id": "software.amazon.awscdk.services.ecr.TagMutability.IMMUTABLE",
+      "name": "IMMUTABLE",
+    },
+  ],
+  "name": "TagMutability",
+}
+`;
+
+exports[`java markdown snapshot 1`] = `
 " TagMutability <a name=\\"TagMutability\\"></a>
 
 The tag mutability setting for your repository.
@@ -63,7 +109,30 @@ all image tags within the repository will be immutable which will prevent them f
 "
 `;
 
-exports[`typescript snapshot 1`] = `
+exports[`typescript json snapshot 1`] = `
+Object {
+  "docs": "The tag mutability setting for your repository.",
+  "members": Array [
+    Object {
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "allow image tags to be overwritten.",
+      "id": "@aws-cdk/aws-ecr.TagMutability.MUTABLE",
+      "name": "MUTABLE",
+    },
+    Object {
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "all image tags within the repository will be immutable which will prevent them from being overwritten.",
+      "id": "@aws-cdk/aws-ecr.TagMutability.IMMUTABLE",
+      "name": "IMMUTABLE",
+    },
+  ],
+  "name": "TagMutability",
+}
+`;
+
+exports[`typescript markdown snapshot 1`] = `
 " TagMutability <a name=\\"TagMutability\\"></a>
 
 The tag mutability setting for your repository.

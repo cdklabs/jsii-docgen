@@ -29,3 +29,15 @@ test('specify language', () => {
   expect(md).toMatchSnapshot();
 
 });
+
+test('specify format', () => {
+
+  const libraryName = 'construct-library';
+  const fixture = join(`${__dirname}/__fixtures__/libraries/${libraryName}`);
+
+  // generate the documentation
+  execSync(`${process.execPath} ${cli} --format json`, { cwd: fixture });
+
+  const json = readFileSync(join(fixture, 'API.json'), 'utf-8');
+  expect(json).toMatchSnapshot();
+});

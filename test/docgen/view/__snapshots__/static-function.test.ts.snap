@@ -1,6 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`csharp snapshot 1`] = `
+exports[`csharp json snapshot 1`] = `
+Object {
+  "id": "Amazon.CDK.AWS.ECR.AuthorizationToken.Initializer",
+  "name": "GrantRead",
+  "parameters": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "",
+      "id": "Amazon.CDK.AWS.ECR.AuthorizationToken.Grantee",
+      "name": "Grantee",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/aws-iam.IGrantable",
+        "name": "Amazon.CDK.AWS.IAM.IGrantable",
+      },
+    },
+  ],
+  "snippet": "\`\`\`csharp
+using Amazon.CDK.AWS.ECR;
+
+AuthorizationToken.GrantRead(IGrantable Grantee);
+\`\`\`
+",
+}
+`;
+
+exports[`csharp markdown snapshot 1`] = `
 " \`GrantRead\` <a name=\\"Amazon.CDK.AWS.ECR.AuthorizationToken.GrantRead\\"></a>
 
 \`\`\`csharp
@@ -17,7 +45,35 @@ AuthorizationToken.GrantRead(IGrantable Grantee);
 "
 `;
 
-exports[`java snapshot 1`] = `
+exports[`java json snapshot 1`] = `
+Object {
+  "id": "software.amazon.awscdk.services.ecr.AuthorizationToken.Initializer",
+  "name": "grantRead",
+  "parameters": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "",
+      "id": "software.amazon.awscdk.services.ecr.AuthorizationToken.grantee",
+      "name": "grantee",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/aws-iam.IGrantable",
+        "name": "software.amazon.awscdk.services.iam.IGrantable",
+      },
+    },
+  ],
+  "snippet": "\`\`\`java
+import software.amazon.awscdk.services.ecr.AuthorizationToken;
+
+AuthorizationToken.grantRead(IGrantable grantee)
+\`\`\`
+",
+}
+`;
+
+exports[`java markdown snapshot 1`] = `
 " \`grantRead\` <a name=\\"software.amazon.awscdk.services.ecr.AuthorizationToken.grantRead\\"></a>
 
 \`\`\`java
@@ -34,7 +90,37 @@ AuthorizationToken.grantRead(IGrantable grantee)
 "
 `;
 
-exports[`python snapshot 1`] = `
+exports[`python json snapshot 1`] = `
+Object {
+  "id": "aws_cdk.aws_ecr.AuthorizationToken.Initializer",
+  "name": "grant_read",
+  "parameters": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "",
+      "id": "aws_cdk.aws_ecr.AuthorizationToken.grantee",
+      "name": "grantee",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/aws-iam.IGrantable",
+        "name": "aws_cdk.aws_iam.IGrantable",
+      },
+    },
+  ],
+  "snippet": "\`\`\`python
+import aws_cdk.aws_ecr
+
+aws_cdk.aws_ecr.AuthorizationToken.grant_read(
+  grantee: IGrantable
+)
+\`\`\`
+",
+}
+`;
+
+exports[`python markdown snapshot 1`] = `
 " \`grant_read\` <a name=\\"aws_cdk.aws_ecr.AuthorizationToken.grant_read\\"></a>
 
 \`\`\`python
@@ -53,7 +139,35 @@ aws_cdk.aws_ecr.AuthorizationToken.grant_read(
 "
 `;
 
-exports[`typescript snapshot 1`] = `
+exports[`typescript json snapshot 1`] = `
+Object {
+  "id": "@aws-cdk/aws-ecr.AuthorizationToken.Initializer",
+  "name": "grantRead",
+  "parameters": Array [
+    Object {
+      "default": undefined,
+      "deprecated": false,
+      "deprecationReason": undefined,
+      "docs": "",
+      "id": "@aws-cdk/aws-ecr.AuthorizationToken.grantee",
+      "name": "grantee",
+      "optional": false,
+      "type": Object {
+        "fqn": "@aws-cdk/aws-iam.IGrantable",
+        "name": "@aws-cdk/aws-iam.IGrantable",
+      },
+    },
+  ],
+  "snippet": "\`\`\`typescript
+import { AuthorizationToken } from '@aws-cdk/aws-ecr'
+
+AuthorizationToken.grantRead(grantee: IGrantable)
+\`\`\`
+",
+}
+`;
+
+exports[`typescript markdown snapshot 1`] = `
 " \`grantRead\` <a name=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead\\"></a>
 
 \`\`\`typescript

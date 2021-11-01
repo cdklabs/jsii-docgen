@@ -20,32 +20,52 @@ const findInitializer = (): reflect.Initializer => {
 
 describe('python', () => {
   const transpile = new PythonTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const initializer = new Initializer(transpile, findInitializer());
     expect(initializer.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const initializer = new Initializer(transpile, findInitializer());
+    expect(initializer.toJson()).toMatchSnapshot();
   });
 });
 
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const initializer = new Initializer(transpile, findInitializer());
     expect(initializer.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const initializer = new Initializer(transpile, findInitializer());
+    expect(initializer.toJson()).toMatchSnapshot();
   });
 });
 
 describe('java', () => {
   const transpile = new JavaTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const initializer = new Initializer(transpile, findInitializer());
     expect(initializer.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const initializer = new Initializer(transpile, findInitializer());
+    expect(initializer.toJson()).toMatchSnapshot();
   });
 });
 
 describe('csharp', () => {
   const transpile = new CSharpTranspile();
-  test('snapshot', () => {
+  test('markdown snapshot', () => {
     const initializer = new Initializer(transpile, findInitializer());
     expect(initializer.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
+  });
+
+  test('json snapshot', () => {
+    const initializer = new Initializer(transpile, findInitializer());
+    expect(initializer.toJson()).toMatchSnapshot();
   });
 });
