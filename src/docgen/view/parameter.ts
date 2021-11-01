@@ -8,12 +8,11 @@ export class Parameter {
   constructor(
     transpile: Transpile,
     private readonly parameter: reflect.Parameter,
-    private readonly linkFormatter: (type: TranspiledType) => string,
   ) {
     this.transpiled = transpile.parameter(parameter);
   }
 
-  public toMarkdown(): Markdown {
+  public toMarkdown(linkFormatter: (type: TranspiledType) => string): Markdown {
     const optionality = this.parameter.optional ? 'Optional' : 'Required';
 
     const md = new Markdown({
@@ -37,7 +36,7 @@ export class Parameter {
 
     const metadata: any = {
       Type: this.transpiled.typeReference.toString({
-        typeFormatter: (t) => `[${Markdown.pre(t.fqn)}](${this.linkFormatter(t)})`,
+        typeFormatter: (t) => `[${Markdown.pre(t.fqn)}](${linkFormatter(t)})`,
         stringFormatter: Markdown.pre,
       }),
     };

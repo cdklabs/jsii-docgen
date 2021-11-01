@@ -6,11 +6,11 @@ import { Class } from './class';
 
 export class Construct {
   private readonly construct: Class;
-  constructor(transpile: Transpile, klass: reflect.ClassType, linkFormatter: (type: TranspiledType) => string) {
-    this.construct = new Class(transpile, klass, linkFormatter);
+  constructor(transpile: Transpile, klass: reflect.ClassType) {
+    this.construct = new Class(transpile, klass);
   }
-  public toMarkdown(): Markdown {
-    return this.construct.toMarkdown();
+  public toMarkdown(linkFormatter: (type: TranspiledType) => string): Markdown {
+    return this.construct.toMarkdown(linkFormatter);
   }
   public toJson(): ConstructSchema {
     return this.construct.toJson();

@@ -41,6 +41,9 @@ export interface RenderOptions {
     * @default - Documentation is generated for the root module only.
     */
   readonly submodule?: string;
+}
+
+export interface MDRenderOptions extends RenderOptions {
 
   /**
    * How should links to types be rendered.
@@ -201,7 +204,7 @@ export class Documentation {
   /**
    * Generate markdown.
    */
-  public toMarkdown(options?: RenderOptions): Markdown {
+  public toMarkdown(options?: MDRenderOptions): Markdown {
     const documentation = new Markdown();
 
     const readme = this.createReadme(options);
@@ -210,7 +213,7 @@ export class Documentation {
       documentation.section(readme.toMarkdown());
     }
     if (apiReference) {
-      documentation.section(apiReference.toMarkdown());
+      documentation.section(apiReference.toMarkdown(options?.linkFormatter ?? ((t) => `#${t.fqn}`)));
     }
 
     return documentation;
@@ -238,7 +241,7 @@ export class Documentation {
   private createApiReference(options?: RenderOptions): ApiReference | undefined {
     const submodule = options?.submodule ? this.findSubmodule(this.assembly, options.submodule) : undefined;
     return (options?.apiReference ?? true)
-      ? new ApiReference(this.transpile, this.assembly, options?.linkFormatter ?? ((t: TranspiledType) => `#${t.fqn}`), submodule)
+      ? new ApiReference(this.transpile, this.assembly, submodule)
       : undefined;
   }
 

@@ -6,11 +6,11 @@ import { Property } from './property';
 
 export class Constant {
   private readonly constant: Property;
-  constructor(transpile: Transpile, property: reflect.Property, linkFormatter: (type: TranspiledType) => string) {
-    this.constant = new Property(transpile, property, linkFormatter);
+  constructor(transpile: Transpile, property: reflect.Property) {
+    this.constant = new Property(transpile, property);
   }
-  public toMarkdown(): Markdown {
-    return this.constant.toMarkdown();
+  public toMarkdown(linkFormatter: (type: TranspiledType) => string): Markdown {
+    return this.constant.toMarkdown(linkFormatter);
   }
   public toJson(): PropertySchema {
     return this.constant.toJson();

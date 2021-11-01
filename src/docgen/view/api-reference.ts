@@ -20,7 +20,6 @@ export class ApiReference {
   constructor(
     transpile: Transpile,
     assembly: reflect.Assembly,
-    linkFormatter: (type: TranspiledType) => string,
     submodule?: reflect.Submodule,
   ) {
     const classes = this.sortByName(
@@ -31,22 +30,24 @@ export class ApiReference {
     );
     const enums = this.sortByName(submodule ? submodule.enums : assembly.enums);
 
-    this.constructs = new Constructs(transpile, classes, linkFormatter);
-    this.classes = new Classes(transpile, classes, linkFormatter);
-    this.structs = new Structs(transpile, interfaces, linkFormatter);
-    this.interfaces = new Interfaces(transpile, interfaces, linkFormatter);
+    this.constructs = new Constructs(transpile, classes);
+    this.classes = new Classes(transpile, classes);
+    this.structs = new Structs(transpile, interfaces);
+    this.interfaces = new Interfaces(transpile, interfaces);
     this.enums = new Enums(transpile, enums);
   }
 
   /**
    * Generate markdown.
    */
-  public toMarkdown(): Markdown {
+  public toMarkdown(
+    linkFormatter: (type: TranspiledType) => string,
+  ): Markdown {
     const md = new Markdown({ header: { title: 'API Reference' } });
-    md.section(this.constructs.toMarkdown());
-    md.section(this.structs.toMarkdown());
-    md.section(this.classes.toMarkdown());
-    md.section(this.interfaces.toMarkdown());
+    md.section(this.constructs.toMarkdown(linkFormatter));
+    md.section(this.structs.toMarkdown(linkFormatter));
+    md.section(this.classes.toMarkdown(linkFormatter));
+    md.section(this.interfaces.toMarkdown(linkFormatter));
     md.section(this.enums.toMarkdown());
     return md;
   }

@@ -12,31 +12,31 @@ const assembly: reflect.Assembly = Assemblies.instance.withoutSubmodules;
 describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
-    const klass = new Class(transpile, assembly.classes[0], (t: TranspiledType) => `#${t.fqn}`);
-    expect(klass.toMarkdown().render()).toMatchSnapshot();
+    const klass = new Class(transpile, assembly.classes[0]);
+    expect(klass.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });
 
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
-    const klass = new Class(transpile, assembly.classes[0], (t: TranspiledType) => `#${t.fqn}`);
-    expect(klass.toMarkdown().render()).toMatchSnapshot();
+    const klass = new Class(transpile, assembly.classes[0]);
+    expect(klass.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });
 
 describe('java', () => {
   const transpile = new JavaTranspile();
   test('snapshot', () => {
-    const klass = new Class(transpile, assembly.classes[0], (t: TranspiledType) => `#${t.fqn}`);
-    expect(klass.toMarkdown().render()).toMatchSnapshot();
+    const klass = new Class(transpile, assembly.classes[0]);
+    expect(klass.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });
 
 describe('csharp', () => {
   const transpile = new CSharpTranspile();
   test('snapshot', () => {
-    const klass = new Class(transpile, assembly.classes[0], (t: TranspiledType) => `#${t.fqn}`);
-    expect(klass.toMarkdown().render()).toMatchSnapshot();
+    const klass = new Class(transpile, assembly.classes[0]);
+    expect(klass.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });

@@ -10,15 +10,14 @@ export class Struct {
   constructor(
     private readonly transpile: Transpile,
     private readonly iface: reflect.InterfaceType,
-    linkFormatter: (type: TranspiledType) => string,
   ) {
     this.transpiled = transpile.struct(iface);
     for (const property of this.iface.allProperties) {
-      this.properties.push(new Property(this.transpile, property, linkFormatter));
+      this.properties.push(new Property(this.transpile, property));
     }
   }
 
-  public toMarkdown(): Markdown {
+  public toMarkdown(linkFormatter: (type: TranspiledType) => string): Markdown {
     const md = new Markdown({
       id: this.transpiled.type.fqn,
       header: { title: this.transpiled.name },
@@ -41,7 +40,7 @@ export class Struct {
     );
 
     for (const property of this.properties) {
-      initializer.section(property.toMarkdown());
+      initializer.section(property.toMarkdown(linkFormatter));
     }
 
     md.section(initializer);

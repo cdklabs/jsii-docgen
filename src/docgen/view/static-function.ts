@@ -10,15 +10,14 @@ export class StaticFunction {
   constructor(
     private readonly transpile: Transpile,
     private readonly method: reflect.Method,
-    linkFormatter: (type: TranspiledType) => string,
   ) {
     this.transpiled = transpile.callable(method);
     this.parameters = this.transpiled.parameters.map(
-      (p) => new Parameter(this.transpile, p, linkFormatter),
+      (p) => new Parameter(this.transpile, p),
     );
   }
 
-  public toMarkdown(): Markdown {
+  public toMarkdown(linkFormatter: (type: TranspiledType) => string): Markdown {
     const md = new Markdown({
       id: `${this.transpiled.parentType.fqn}.${this.transpiled.name}`,
       header: {
@@ -36,7 +35,7 @@ export class StaticFunction {
     );
 
     for (const parameter of this.parameters) {
-      md.section(parameter.toMarkdown());
+      md.section(parameter.toMarkdown(linkFormatter));
     }
 
     return md;

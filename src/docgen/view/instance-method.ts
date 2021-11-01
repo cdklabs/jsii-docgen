@@ -10,15 +10,14 @@ export class InstanceMethod {
   constructor(
     private readonly transpile: Transpile,
     private readonly method: reflect.Method,
-    linkFormatter: (type: TranspiledType) => string,
   ) {
     this.transpiled = transpile.callable(method);
     this.parameters = this.transpiled.parameters.map(
-      (p) => new Parameter(this.transpile, p, linkFormatter),
+      (p) => new Parameter(this.transpile, p),
     );
   }
 
-  public toMarkdown(): Markdown {
+  public toMarkdown(linkFormatter: (type: TranspiledType) => string): Markdown {
     const md = new Markdown({
       id: `${this.transpiled.parentType.fqn}.${this.transpiled.name}`,
       header: {
@@ -31,7 +30,7 @@ export class InstanceMethod {
     md.code(this.transpile.language.toString(), this.transpiled.signatures.join('\n'));
 
     for (const parameter of this.parameters) {
-      md.section(parameter.toMarkdown());
+      md.section(parameter.toMarkdown(linkFormatter));
     }
 
     return md;

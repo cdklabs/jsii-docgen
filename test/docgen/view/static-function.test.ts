@@ -23,31 +23,31 @@ const findStaticFunction = (): reflect.Method => {
 describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
-    const staticFunction = new StaticFunction(transpile, findStaticFunction(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(staticFunction.toMarkdown().render()).toMatchSnapshot();
+    const staticFunction = new StaticFunction(transpile, findStaticFunction());
+    expect(staticFunction.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });
 
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
-    const staticFunction = new StaticFunction(transpile, findStaticFunction(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(staticFunction.toMarkdown().render()).toMatchSnapshot();
+    const staticFunction = new StaticFunction(transpile, findStaticFunction());
+    expect(staticFunction.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });
 
 describe('java', () => {
   const transpile = new JavaTranspile();
   test('snapshot', () => {
-    const staticFunction = new StaticFunction(transpile, findStaticFunction(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(staticFunction.toMarkdown().render()).toMatchSnapshot();
+    const staticFunction = new StaticFunction(transpile, findStaticFunction());
+    expect(staticFunction.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });
 
 describe('csharp', () => {
   const transpile = new CSharpTranspile();
   test('snapshot', () => {
-    const staticFunction = new StaticFunction(transpile, findStaticFunction(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(staticFunction.toMarkdown().render()).toMatchSnapshot();
+    const staticFunction = new StaticFunction(transpile, findStaticFunction());
+    expect(staticFunction.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });

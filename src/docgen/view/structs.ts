@@ -7,20 +7,20 @@ import { Struct } from './struct';
 
 export class Structs {
   private readonly structs: Struct[];
-  constructor(transpile: Transpile, interfaces: reflect.InterfaceType[], linkFormatter: (type: TranspiledType) => string) {
+  constructor(transpile: Transpile, interfaces: reflect.InterfaceType[]) {
     this.structs = interfaces
       .filter((i) => Interface.isStruct(i))
-      .map((i) => new Struct(transpile, i, linkFormatter));
+      .map((i) => new Struct(transpile, i));
   }
 
-  public toMarkdown(): Markdown {
+  public toMarkdown(linkFormatter: (type: TranspiledType) => string): Markdown {
     if (this.structs.length === 0) {
       return Markdown.EMPTY;
     }
 
     const md = new Markdown({ header: { title: 'Structs' } });
     for (const struct of this.structs) {
-      md.section(struct.toMarkdown());
+      md.section(struct.toMarkdown(linkFormatter));
     }
     return md;
   }

@@ -7,12 +7,12 @@ import { Interface } from './interface';
 export class Interfaces {
   private readonly interfaces: Interface[];
 
-  constructor(transpile: Transpile, interfaces: reflect.InterfaceType[], linkFormatter: (type: TranspiledType) => string) {
+  constructor(transpile: Transpile, interfaces: reflect.InterfaceType[]) {
     this.interfaces = interfaces
       .filter((i) => !Interface.isStruct(i))
-      .map((i) => new Interface(transpile, i, linkFormatter));
+      .map((i) => new Interface(transpile, i));
   }
-  public toMarkdown(): Markdown {
+  public toMarkdown(linkFormatter: (type: TranspiledType) => string): Markdown {
     if (this.interfaces.length === 0) {
       return Markdown.EMPTY;
     }
@@ -20,7 +20,7 @@ export class Interfaces {
     const md = new Markdown({ header: { title: 'Protocols' } });
 
     for (const iface of this.interfaces) {
-      md.section(iface.toMarkdown());
+      md.section(iface.toMarkdown(linkFormatter));
     }
 
     return md;

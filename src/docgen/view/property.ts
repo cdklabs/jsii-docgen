@@ -8,12 +8,11 @@ export class Property {
   constructor(
     private readonly transpile: Transpile,
     private readonly property: reflect.Property,
-    private readonly linkFormatter: (type: TranspiledType) => string,
   ) {
     this.transpiled = transpile.property(property);
   }
 
-  public toMarkdown(): Markdown {
+  public toMarkdown(linkFormatter: (type: TranspiledType) => string): Markdown {
     const optionality = this.property.const
       ? undefined
       : this.property.optional
@@ -45,7 +44,7 @@ export class Property {
 
     const metadata: any = {
       Type: this.transpiled.typeReference.toString({
-        typeFormatter: (t) => `[${Markdown.pre(t.fqn)}](${this.linkFormatter(t)})`,
+        typeFormatter: (t) => `[${Markdown.pre(t.fqn)}](${linkFormatter(t)})`,
         stringFormatter: Markdown.pre,
       }),
     };

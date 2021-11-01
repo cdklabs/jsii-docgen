@@ -7,20 +7,20 @@ import { Construct } from './construct';
 
 export class Constructs {
   private readonly constructs: Construct[];
-  constructor(transpile: Transpile, classes: reflect.ClassType[], linkFormatter: (type: TranspiledType) => string) {
+  constructor(transpile: Transpile, classes: reflect.ClassType[]) {
     this.constructs = classes
       .filter((c) => Class.isConstruct(c))
-      .map((c) => new Construct(transpile, c, linkFormatter));
+      .map((c) => new Construct(transpile, c));
   }
 
-  public toMarkdown(): Markdown {
+  public toMarkdown(linkFormatter: (type: TranspiledType) => string): Markdown {
     if (this.constructs.length === 0) {
       return Markdown.EMPTY;
     }
 
     const md = new Markdown({ header: { title: 'Constructs' } });
     for (const construct of this.constructs) {
-      md.section(construct.toMarkdown());
+      md.section(construct.toMarkdown(linkFormatter));
     }
     return md;
   }

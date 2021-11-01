@@ -21,31 +21,31 @@ const findInterface = () => {
 describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
-    const klass = new Interface(transpile, findInterface(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(klass.toMarkdown().render()).toMatchSnapshot();
+    const klass = new Interface(transpile, findInterface());
+    expect(klass.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });
 
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
-    const klass = new Interface(transpile, findInterface(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(klass.toMarkdown().render()).toMatchSnapshot();
+    const klass = new Interface(transpile, findInterface());
+    expect(klass.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });
 
 describe('java', () => {
   const transpile = new JavaTranspile();
   test('snapshot', () => {
-    const klass = new Interface(transpile, findInterface(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(klass.toMarkdown().render()).toMatchSnapshot();
+    const klass = new Interface(transpile, findInterface());
+    expect(klass.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });
 
 describe('csharp', () => {
   const transpile = new CSharpTranspile();
   test('snapshot', () => {
-    const klass = new Interface(transpile, findInterface(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(klass.toMarkdown().render()).toMatchSnapshot();
+    const klass = new Interface(transpile, findInterface());
+    expect(klass.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });

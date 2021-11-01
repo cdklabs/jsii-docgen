@@ -23,31 +23,31 @@ const findParameter = (): reflect.Parameter => {
 describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
-    const parameter = new Parameter(transpile, findParameter(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(parameter.toMarkdown().render()).toMatchSnapshot();
+    const parameter = new Parameter(transpile, findParameter());
+    expect(parameter.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });
 
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
-    const parameter = new Parameter(transpile, findParameter(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(parameter.toMarkdown().render()).toMatchSnapshot();
+    const parameter = new Parameter(transpile, findParameter());
+    expect(parameter.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });
 
 describe('java', () => {
   const transpile = new JavaTranspile();
   test('snapshot', () => {
-    const parameter = new Parameter(transpile, findParameter(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(parameter.toMarkdown().render()).toMatchSnapshot();
+    const parameter = new Parameter(transpile, findParameter());
+    expect(parameter.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });
 
 describe('csharp', () => {
   const transpile = new CSharpTranspile();
   test('snapshot', () => {
-    const parameter = new Parameter(transpile, findParameter(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(parameter.toMarkdown().render()).toMatchSnapshot();
+    const parameter = new Parameter(transpile, findParameter());
+    expect(parameter.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });

@@ -18,14 +18,13 @@ export class Interface {
   constructor(
     private readonly transpile: Transpile,
     private readonly iface: reflect.InterfaceType,
-    private readonly linkFormatter: (type: TranspiledType) => string,
   ) {
     this.transpiled = transpile.interface(iface);
-    this.instanceMethods = new InstanceMethods(transpile, iface.ownMethods, linkFormatter);
-    this.properties = new Properties(transpile, iface.allProperties, linkFormatter);
+    this.instanceMethods = new InstanceMethods(transpile, iface.ownMethods);
+    this.properties = new Properties(transpile, iface.allProperties);
   }
 
-  public toMarkdown(): Markdown {
+  public toMarkdown(linkFormatter: (type: TranspiledType) => string): Markdown {
     const md = new Markdown({
       id: this.transpiled.type.fqn,
       header: { title: this.transpiled.name },
@@ -35,7 +34,7 @@ export class Interface {
       const ifaces = [];
       for (const iface of this.iface.interfaces) {
         const transpiled = this.transpile.type(iface);
-        ifaces.push(`[${Markdown.pre(transpiled.fqn)}](${this.linkFormatter(transpiled)})`);
+        ifaces.push(`[${Markdown.pre(transpiled.fqn)}](${linkFormatter(transpiled)})`);
       }
       md.bullet(`${Markdown.italic('Extends:')} ${ifaces.join(', ')}`);
       md.lines('');
@@ -45,7 +44,7 @@ export class Interface {
       const impls = [];
       for (const impl of this.iface.allImplementations) {
         const transpiled = this.transpile.type(impl);
-        impls.push(`[${Markdown.pre(transpiled.fqn)}](${this.linkFormatter(transpiled)})`);
+        impls.push(`[${Markdown.pre(transpiled.fqn)}](${linkFormatter(transpiled)})`);
       }
       md.bullet(`${Markdown.italic('Implemented By:')} ${impls.join(', ')}`);
       md.lines('');
@@ -55,8 +54,8 @@ export class Interface {
       md.docs(this.iface.docs);
     }
 
-    md.section(this.instanceMethods.toMarkdown());
-    md.section(this.properties.toMarkdown());
+    md.section(this.instanceMethods.toMarkdown(linkFormatter));
+    md.section(this.properties.toMarkdown(linkFormatter));
     return md;
   }
 

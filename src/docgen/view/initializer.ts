@@ -10,15 +10,16 @@ export class Initializer {
   constructor(
     private readonly transpile: Transpile,
     initializer: reflect.Initializer,
-    linkFormatter: (type: TranspiledType) => string,
   ) {
     this.transpiled = transpile.callable(initializer);
     this.parameters = this.transpiled.parameters.map(
-      (p) => new Parameter(this.transpile, p, linkFormatter),
+      (p) => new Parameter(this.transpile, p),
     );
   }
 
-  public toMarkdown(): Markdown {
+  public toMarkdown(
+    linkFormatter: (type: TranspiledType) => string,
+  ): Markdown {
     const md = new Markdown({
       id: `${this.transpiled.parentType.fqn}.Initializer`,
       header: {
@@ -34,7 +35,7 @@ export class Initializer {
     );
 
     for (const parameter of this.parameters) {
-      md.section(parameter.toMarkdown());
+      md.section(parameter.toMarkdown(linkFormatter));
     }
 
     return md;

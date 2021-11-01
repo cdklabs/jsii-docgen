@@ -15,9 +15,8 @@ describe('python', () => {
     const struct = new Struct(
       transpile,
       assembly.system.interfaces.filter((i) => i.datatype)[0],
-      (t: TranspiledType) => `#${t.fqn}`,
     );
-    expect(struct.toMarkdown().render()).toMatchSnapshot();
+    expect(struct.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });
 
@@ -27,9 +26,8 @@ describe('typescript', () => {
     const struct = new Struct(
       transpile,
       assembly.system.interfaces.filter((i) => i.datatype)[0],
-      (t: TranspiledType) => `#${t.fqn}`,
     );
-    expect(struct.toMarkdown().render()).toMatchSnapshot();
+    expect(struct.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });
 
@@ -39,9 +37,8 @@ describe('java', () => {
     const struct = new Struct(
       transpile,
       assembly.system.interfaces.filter((i) => i.datatype)[0],
-      (t: TranspiledType) => `#${t.fqn}`,
     );
-    expect(struct.toMarkdown().render()).toMatchSnapshot();
+    expect(struct.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });
 
@@ -51,8 +48,7 @@ describe('csharp', () => {
     const struct = new Struct(
       transpile,
       assembly.system.interfaces.filter((i) => i.datatype)[0],
-      (t: TranspiledType) => `#${t.fqn}`,
     );
-    expect(struct.toMarkdown().render()).toMatchSnapshot();
+    expect(struct.toMarkdown((t: TranspiledType) => `#${t.fqn}`).render()).toMatchSnapshot();
   });
 });

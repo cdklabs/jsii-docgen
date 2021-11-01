@@ -32,19 +32,18 @@ export class Class {
   constructor(
     private readonly transpile: Transpile,
     private readonly klass: reflect.ClassType,
-    private readonly linkFormatter: (type: TranspiledType) => string,
   ) {
     if (klass.initializer) {
-      this.initializer = new Initializer(transpile, klass.initializer, linkFormatter);
+      this.initializer = new Initializer(transpile, klass.initializer);
     }
-    this.instanceMethods = new InstanceMethods(transpile, klass.ownMethods, linkFormatter);
-    this.staticFunctions = new StaticFunctions(transpile, klass.ownMethods, linkFormatter);
-    this.constants = new Constants(transpile, klass.ownProperties, linkFormatter);
-    this.properties = new Properties(transpile, klass.ownProperties, linkFormatter);
+    this.instanceMethods = new InstanceMethods(transpile, klass.ownMethods);
+    this.staticFunctions = new StaticFunctions(transpile, klass.ownMethods);
+    this.constants = new Constants(transpile, klass.ownProperties);
+    this.properties = new Properties(transpile, klass.ownProperties);
     this.transpiled = transpile.class(klass);
   }
 
-  public toMarkdown(): Markdown {
+  public toMarkdown(linkFormatter: (type: TranspiledType) => string): Markdown {
     const md = new Markdown({
       id: this.transpiled.type.fqn,
       header: { title: this.transpiled.name },
@@ -54,7 +53,7 @@ export class Class {
       const ifaces = [];
       for (const iface of this.klass.interfaces) {
         const transpiled = this.transpile.type(iface);
-        ifaces.push(`[${Markdown.pre(transpiled.fqn)}](${this.linkFormatter(transpiled)})`);
+        ifaces.push(`[${Markdown.pre(transpiled.fqn)}](${linkFormatter(transpiled)})`);
       }
       md.bullet(`${Markdown.italic('Implements:')} ${ifaces.join(', ')}`);
       md.lines('');
@@ -65,12 +64,12 @@ export class Class {
     }
 
     if (this.initializer) {
-      md.section(this.initializer.toMarkdown());
+      md.section(this.initializer.toMarkdown(linkFormatter));
     }
-    md.section(this.instanceMethods.toMarkdown());
-    md.section(this.staticFunctions.toMarkdown());
-    md.section(this.properties.toMarkdown());
-    md.section(this.constants.toMarkdown());
+    md.section(this.instanceMethods.toMarkdown(linkFormatter));
+    md.section(this.staticFunctions.toMarkdown(linkFormatter));
+    md.section(this.properties.toMarkdown(linkFormatter));
+    md.section(this.constants.toMarkdown(linkFormatter));
     return md;
   }
 
