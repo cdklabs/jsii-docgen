@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
+import { PropertySchema } from '../schema';
 import { Transpile, TranspiledType } from '../transpile/transpile';
 import { Property } from './property';
 
@@ -11,15 +12,19 @@ export class Properties {
       .map((p) => new Property(transpile, p, linkFormatter));
   }
 
-  public render(): Markdown {
+  public toMarkdown(): Markdown {
     if (this.properties.length === 0) {
       return Markdown.EMPTY;
     }
 
     const md = new Markdown({ header: { title: 'Properties' } });
     for (const property of this.properties) {
-      md.section(property.render());
+      md.section(property.toMarkdown());
     }
     return md;
+  }
+
+  public toJson(): PropertySchema[] {
+    return this.properties.map((property) => property.toJson());
   }
 }

@@ -24,7 +24,7 @@ describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
     const instanceMethod = new InstanceMethod(transpile, findInstanceMethod(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(instanceMethod.render().render()).toMatchSnapshot();
+    expect(instanceMethod.toMarkdown().render()).toMatchSnapshot();
   });
 });
 
@@ -32,7 +32,7 @@ describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
     const instanceMethod = new InstanceMethod(transpile, findInstanceMethod(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(instanceMethod.render().render()).toMatchSnapshot();
+    expect(instanceMethod.toMarkdown().render()).toMatchSnapshot();
   });
 });
 
@@ -40,7 +40,7 @@ describe('java', () => {
   const transpile = new JavaTranspile();
   test('snapshot', () => {
     const instanceMethod = new InstanceMethod(transpile, findInstanceMethod(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(instanceMethod.render().render()).toMatchSnapshot();
+    expect(instanceMethod.toMarkdown().render()).toMatchSnapshot();
   });
 });
 
@@ -48,6 +48,6 @@ describe('csharp', () => {
   const transpile = new CSharpTranspile();
   test('snapshot', () => {
     const instanceMethod = new InstanceMethod(transpile, findInstanceMethod(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(instanceMethod.render().render()).toMatchSnapshot();
+    expect(instanceMethod.toMarkdown().render()).toMatchSnapshot();
   });
 });

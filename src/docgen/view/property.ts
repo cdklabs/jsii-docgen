@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
+import { PropertySchema } from '../schema';
 import { Transpile, TranspiledProperty, TranspiledType } from '../transpile/transpile';
 
 export class Property {
@@ -12,7 +13,7 @@ export class Property {
     this.transpiled = transpile.property(property);
   }
 
-  public render(): Markdown {
+  public toMarkdown(): Markdown {
     const optionality = this.property.const
       ? undefined
       : this.property.optional
@@ -65,5 +66,18 @@ export class Property {
     md.split();
 
     return md;
+  }
+
+  public toJson(): PropertySchema {
+    return {
+      id: `${this.transpiled.parentType.fqn}.${this.transpiled.name}`,
+      name: this.transpiled.name,
+      optional: this.property.const ? false : this.property.optional,
+      deprecated: this.property.docs.deprecated,
+      deprecationReason: this.property.docs.deprecationReason,
+      docs: this.property.docs.toString(),
+      default: this.property.spec.docs?.default,
+      type: this.transpiled.typeReference.toJson(),
+    };
   }
 }

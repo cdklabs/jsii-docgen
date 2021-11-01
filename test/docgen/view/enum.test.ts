@@ -12,7 +12,7 @@ describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
     const enu = new Enum(transpile, assembly.enums[0]);
-    expect(enu.render().render()).toMatchSnapshot();
+    expect(enu.toMarkdown().render()).toMatchSnapshot();
   });
 });
 
@@ -20,7 +20,7 @@ describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
     const enu = new Enum(transpile, assembly.enums[0]);
-    expect(enu.render().render()).toMatchSnapshot();
+    expect(enu.toMarkdown().render()).toMatchSnapshot();
   });
 });
 
@@ -28,7 +28,7 @@ describe('java', () => {
   const transpile = new JavaTranspile();
   test('snapshot', () => {
     const enu = new Enum(transpile, assembly.enums[0]);
-    expect(enu.render().render()).toMatchSnapshot();
+    expect(enu.toMarkdown().render()).toMatchSnapshot();
   });
 });
 
@@ -36,6 +36,6 @@ describe('csharp', () => {
   const transpile = new CSharpTranspile();
   test('snapshot', () => {
     const enu = new Enum(transpile, assembly.enums[0]);
-    expect(enu.render().render()).toMatchSnapshot();
+    expect(enu.toMarkdown().render()).toMatchSnapshot();
   });
 });

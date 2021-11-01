@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
+import { StructSchema } from '../schema';
 import { Transpile, TranspiledType } from '../transpile/transpile';
 import { Interface } from './interface';
 import { Struct } from './struct';
@@ -12,15 +13,19 @@ export class Structs {
       .map((i) => new Struct(transpile, i, linkFormatter));
   }
 
-  public render(): Markdown {
+  public toMarkdown(): Markdown {
     if (this.structs.length === 0) {
       return Markdown.EMPTY;
     }
 
     const md = new Markdown({ header: { title: 'Structs' } });
     for (const struct of this.structs) {
-      md.section(struct.render());
+      md.section(struct.toMarkdown());
     }
     return md;
+  }
+
+  public toJson(): StructSchema[] {
+    return this.structs.map((struct) => struct.toJson());
   }
 }

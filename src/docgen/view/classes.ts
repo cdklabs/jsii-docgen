@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
+import { ClassSchema } from '../schema';
 import { Transpile, TranspiledType } from '../transpile/transpile';
 import { Class } from './class';
 
@@ -11,15 +12,19 @@ export class Classes {
       .map((c) => new Class(transpile, c, linkFormatter));
   }
 
-  public render(): Markdown {
+  public toMarkdown(): Markdown {
     if (this.classes.length === 0) {
       return Markdown.EMPTY;
     }
 
     const md = new Markdown({ header: { title: 'Classes' } });
     for (const klass of this.classes) {
-      md.section(klass.render());
+      md.section(klass.toMarkdown());
     }
     return md;
+  }
+
+  public toJson(): ClassSchema[] {
+    return this.classes.map((klass) => klass.toJson());
   }
 }

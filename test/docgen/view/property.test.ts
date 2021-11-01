@@ -17,7 +17,7 @@ describe('python', () => {
       assembly.system.interfaces[0].allProperties[0],
       (t: TranspiledType) => `#${t.fqn}`,
     );
-    expect(parameter.render().render()).toMatchSnapshot();
+    expect(parameter.toMarkdown().render()).toMatchSnapshot();
   });
 });
 
@@ -29,7 +29,7 @@ describe('typescript', () => {
       assembly.system.interfaces[0].allProperties[0],
       (t: TranspiledType) => `#${t.fqn}`,
     );
-    expect(parameter.render().render()).toMatchSnapshot();
+    expect(parameter.toMarkdown().render()).toMatchSnapshot();
   });
 });
 
@@ -41,7 +41,7 @@ describe('java', () => {
       assembly.system.interfaces[0].allProperties[0],
       (t: TranspiledType) => `#${t.fqn}`,
     );
-    expect(parameter.render().render()).toMatchSnapshot();
+    expect(parameter.toMarkdown().render()).toMatchSnapshot();
   });
 });
 
@@ -53,6 +53,6 @@ describe('csharp', () => {
       assembly.system.interfaces[0].allProperties[0],
       (t: TranspiledType) => `#${t.fqn}`,
     );
-    expect(parameter.render().render()).toMatchSnapshot();
+    expect(parameter.toMarkdown().render()).toMatchSnapshot();
   });
 });

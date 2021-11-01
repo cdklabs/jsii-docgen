@@ -24,7 +24,7 @@ describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
     const staticFunction = new StaticFunction(transpile, findStaticFunction(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(staticFunction.render().render()).toMatchSnapshot();
+    expect(staticFunction.toMarkdown().render()).toMatchSnapshot();
   });
 });
 
@@ -32,7 +32,7 @@ describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
     const staticFunction = new StaticFunction(transpile, findStaticFunction(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(staticFunction.render().render()).toMatchSnapshot();
+    expect(staticFunction.toMarkdown().render()).toMatchSnapshot();
   });
 });
 
@@ -40,7 +40,7 @@ describe('java', () => {
   const transpile = new JavaTranspile();
   test('snapshot', () => {
     const staticFunction = new StaticFunction(transpile, findStaticFunction(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(staticFunction.render().render()).toMatchSnapshot();
+    expect(staticFunction.toMarkdown().render()).toMatchSnapshot();
   });
 });
 
@@ -48,6 +48,6 @@ describe('csharp', () => {
   const transpile = new CSharpTranspile();
   test('snapshot', () => {
     const staticFunction = new StaticFunction(transpile, findStaticFunction(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(staticFunction.render().render()).toMatchSnapshot();
+    expect(staticFunction.toMarkdown().render()).toMatchSnapshot();
   });
 });

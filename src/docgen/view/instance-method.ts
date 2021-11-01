@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
+import { MethodSchema } from '../schema';
 import { Transpile, TranspiledCallable, TranspiledType } from '../transpile/transpile';
 import { Parameter } from './parameter';
 
@@ -17,7 +18,7 @@ export class InstanceMethod {
     );
   }
 
-  public render(): Markdown {
+  public toMarkdown(): Markdown {
     const md = new Markdown({
       id: `${this.transpiled.parentType.fqn}.${this.transpiled.name}`,
       header: {
@@ -30,9 +31,20 @@ export class InstanceMethod {
     md.code(this.transpile.language.toString(), this.transpiled.signatures.join('\n'));
 
     for (const parameter of this.parameters) {
-      md.section(parameter.render());
+      md.section(parameter.toMarkdown());
     }
 
     return md;
+  }
+
+  public toJson(): MethodSchema {
+    const md = new Markdown();
+    md.code(this.transpile.language.toString(), this.transpiled.signatures.join('\n'));
+    return {
+      id: `${this.transpiled.parentType.fqn}.${this.transpiled.name}`,
+      name: this.transpiled.name,
+      snippet: md.render(),
+      parameters: this.parameters.map((parameter) => parameter.toJson()),
+    };
   }
 }

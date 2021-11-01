@@ -1,5 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
+import { ApiReferenceSchema } from '../schema';
 import { Transpile, TranspiledType } from '../transpile/transpile';
 import { Classes } from './classes';
 import { Constructs } from './constructs';
@@ -40,14 +41,24 @@ export class ApiReference {
   /**
    * Generate markdown.
    */
-  public render(): Markdown {
+  public toMarkdown(): Markdown {
     const md = new Markdown({ header: { title: 'API Reference' } });
-    md.section(this.constructs.render());
-    md.section(this.structs.render());
-    md.section(this.classes.render());
-    md.section(this.interfaces.render());
-    md.section(this.enums.render());
+    md.section(this.constructs.toMarkdown());
+    md.section(this.structs.toMarkdown());
+    md.section(this.classes.toMarkdown());
+    md.section(this.interfaces.toMarkdown());
+    md.section(this.enums.toMarkdown());
     return md;
+  }
+
+  public toJson(): ApiReferenceSchema {
+    return {
+      constructs: this.constructs.toJson(),
+      classes: this.classes.toJson(),
+      structs: this.structs.toJson(),
+      interfaces: this.interfaces.toJson(),
+      enums: this.enums.toJson(),
+    };
   }
 
   private sortByName<Type extends reflect.Type>(arr: readonly Type[]): Type[] {

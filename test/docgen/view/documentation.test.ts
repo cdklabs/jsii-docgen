@@ -37,7 +37,7 @@ test('custom link formatter', async () => {
   const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0', {
     language: Language.PYTHON,
   });
-  const markdown = docs.render({ linkFormatter: (t: TranspiledType) => `#custom-${t.fqn}` });
+  const markdown = docs.toMarkdown({ linkFormatter: (t: TranspiledType) => `#custom-${t.fqn}` });
   expect(markdown.render()).toMatchSnapshot();
 });
 
@@ -61,7 +61,7 @@ test('package installation does not run lifecycle hooks', async () => {
 
   // this should succeed because the failure script should be ignored
   const docs = await Documentation.forPackage(path.join(workdir, 'dist', 'js', `${libraryName}@0.0.0.jsii.tgz`), { name: libraryName });
-  const markdown = docs.render();
+  const markdown = docs.toMarkdown();
   expect(markdown.render()).toMatchSnapshot();
 });
 
@@ -70,7 +70,7 @@ describe('python', () => {
     const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0', {
       language: Language.PYTHON,
     });
-    const markdown = docs.render();
+    const markdown = docs.toMarkdown();
     expect(markdown.render()).toMatchSnapshot();
   });
 
@@ -78,7 +78,7 @@ describe('python', () => {
     const docs = await Documentation.forAssembly('@aws-cdk/aws-ecr', Assemblies.AWSCDK_1_106_0, {
       language: Language.PYTHON,
     });
-    const markdown = docs.render();
+    const markdown = docs.toMarkdown();
     expect(markdown.render()).toMatchSnapshot();
   });
 
@@ -86,7 +86,7 @@ describe('python', () => {
     const docs = await Documentation.forAssembly('aws-cdk-lib', Assemblies.AWSCDK_1_106_0, {
       language: Language.PYTHON,
     });
-    const markdown = docs.render({ submodule: 'aws_eks' });
+    const markdown = docs.toMarkdown({ submodule: 'aws_eks' });
     expect(markdown.render()).toMatchSnapshot();
   });
 });
@@ -94,19 +94,19 @@ describe('python', () => {
 describe('typescript', () => {
   test('for package', async () => {
     const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0');
-    const markdown = docs.render();
+    const markdown = docs.toMarkdown();
     expect(markdown.render()).toMatchSnapshot();
   });
 
   test('snapshot - single module', async () => {
     const docs = await Documentation.forAssembly('@aws-cdk/aws-ecr', Assemblies.AWSCDK_1_106_0);
-    const markdown = docs.render();
+    const markdown = docs.toMarkdown();
     expect(markdown.render()).toMatchSnapshot();
   });
 
   test('snapshot - submodules', async () => {
     const docs = await Documentation.forAssembly('aws-cdk-lib', Assemblies.AWSCDK_1_106_0);
-    const markdown = docs.render({ submodule: 'aws_eks' });
+    const markdown = docs.toMarkdown({ submodule: 'aws_eks' });
     expect(markdown.render()).toMatchSnapshot();
   });
 });
@@ -116,7 +116,7 @@ describe('java', () => {
     const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0', {
       language: Language.JAVA,
     });
-    const markdown = docs.render();
+    const markdown = docs.toMarkdown();
     expect(markdown.render()).toMatchSnapshot();
   });
 
@@ -124,7 +124,7 @@ describe('java', () => {
     const docs = await Documentation.forAssembly('@aws-cdk/aws-ecr', Assemblies.AWSCDK_1_106_0, {
       language: Language.JAVA,
     });
-    const markdown = docs.render();
+    const markdown = docs.toMarkdown();
     expect(markdown.render()).toMatchSnapshot();
   });
 
@@ -132,7 +132,7 @@ describe('java', () => {
     const docs = await Documentation.forAssembly('aws-cdk-lib', Assemblies.AWSCDK_1_106_0, {
       language: Language.JAVA,
     });
-    const markdown = docs.render({ submodule: 'aws_eks' });
+    const markdown = docs.toMarkdown({ submodule: 'aws_eks' });
     expect(markdown.render()).toMatchSnapshot();
   });
 
@@ -140,7 +140,7 @@ describe('java', () => {
     const docs = await Documentation.forAssembly('monocdk', Assemblies.AWSCDK_1_106_0, {
       language: Language.JAVA,
     });
-    const markdown = docs.render({ submodule: 'aws_eks' });
+    const markdown = docs.toMarkdown({ submodule: 'aws_eks' });
     expect(markdown.render()).toMatchSnapshot();
   });
 });
@@ -150,7 +150,7 @@ describe('csharp', () => {
     const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0', {
       language: Language.CSHARP,
     });
-    const markdown = docs.render();
+    const markdown = docs.toMarkdown();
     expect(markdown.render()).toMatchSnapshot();
   });
 
@@ -158,7 +158,7 @@ describe('csharp', () => {
     const docs = await Documentation.forAssembly('@aws-cdk/aws-ecr', Assemblies.AWSCDK_1_106_0, {
       language: Language.CSHARP,
     });
-    const markdown = docs.render();
+    const markdown = docs.toMarkdown();
     expect(markdown.render()).toMatchSnapshot();
   });
 
@@ -166,7 +166,7 @@ describe('csharp', () => {
     const docs = await Documentation.forAssembly('aws-cdk-lib', Assemblies.AWSCDK_1_106_0, {
       language: Language.CSHARP,
     });
-    const markdown = docs.render({ submodule: 'aws_eks' });
+    const markdown = docs.toMarkdown({ submodule: 'aws_eks' });
     expect(markdown.render()).toMatchSnapshot();
   });
 
@@ -174,7 +174,7 @@ describe('csharp', () => {
     const docs = await Documentation.forAssembly('monocdk', Assemblies.AWSCDK_1_106_0, {
       language: Language.CSHARP,
     });
-    const markdown = docs.render({ submodule: 'aws_eks' });
+    const markdown = docs.toMarkdown({ submodule: 'aws_eks' });
     expect(markdown.render()).toMatchSnapshot();
   });
 });

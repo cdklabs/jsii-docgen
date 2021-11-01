@@ -8,14 +8,18 @@ export async function main() {
     .usage('Usage: $0')
     .option('output', { type: 'string', alias: 'o', required: false, desc: 'Output filename (defaults to API.md)' })
     .option('language', { alias: 'l', default: 'typescript', choices: Language.values().map(x => x.toString()), desc: 'Output language' })
+    .option('format', { alias: 'f', default: 'md', choices: ['md', 'json'], desc: 'Output format, markdown or json' })
     .example('$0', 'Generate documentation for the current module as a single file (auto-resolves node depedencies)')
     .argv;
 
   const language = Language.fromString(args.language);
   const docs = await Documentation.forProject(process.cwd(), { language });
-  const output = args.output ?? 'API.md';
-  const markdown = docs.render({ readme: false });
-  fs.writeFileSync(output, markdown.render());
+
+  const options = { readme: false };
+  const fileSuffix = args.format === 'md' ? 'md' : 'json';
+  const output = args.output ?? `API.${fileSuffix}`;
+  const content = args.format === 'md' ? docs.toMarkdown(options) : docs.toJson(options);
+  fs.writeFileSync(output, content.render());
 }
 
 main().catch(e => {
