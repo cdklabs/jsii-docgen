@@ -9341,9 +9341,11 @@ is used by the kubectl handler to apply manifests and install helm charts.
 
 The handler expects the layer to include the following executables:
 
-    helm/helm
-    kubectl/kubectl
-    awscli/aws
+\`\`\`
+helm/helm
+kubectl/kubectl
+awscli/aws
+\`\`\`
 
 ---
 
@@ -9606,7 +9608,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`csharp
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -9690,11 +9695,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`csharp
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
+var layer = new lambda.LayerVersion(this, \\"kubectl-layer\\", new Struct {
+    Code = lambda.Code.FromAsset($\\"{__dirname}/layer.zip\\")
+});[lambda.Runtime.PROVIDED] compatibleRuntimes;
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -9931,7 +9938,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`csharp
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -10015,11 +10025,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`csharp
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
+var layer = new lambda.LayerVersion(this, \\"kubectl-layer\\", new Struct {
+    Code = lambda.Code.FromAsset($\\"{__dirname}/layer.zip\\")
+});[lambda.Runtime.PROVIDED] compatibleRuntimes;
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -10290,7 +10302,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`csharp
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -10537,7 +10552,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`csharp
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -10621,11 +10639,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`csharp
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
+var layer = new lambda.LayerVersion(this, \\"kubectl-layer\\", new Struct {
+    Code = lambda.Code.FromAsset($\\"{__dirname}/layer.zip\\")
+});[lambda.Runtime.PROVIDED] compatibleRuntimes;
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -13326,8 +13346,7 @@ Indicates whether Kubernetes resources can be automatically pruned.
 
 When
 this is enabled (default), prune labels will be allocated and injected to
-each resource. These labels will then be used when issuing the \`kubectl
-apply\` operation with the \`--prune\` switch.
+each resource. These labels will then be used when issuing the \`kubectl apply\` operation with the \`--prune\` switch.
 
 ---
 
@@ -18638,9 +18657,11 @@ is used by the kubectl handler to apply manifests and install helm charts.
 
 The handler expects the layer to include the following executables:
 
-    helm/helm
-    kubectl/kubectl
-    awscli/aws
+\`\`\`
+helm/helm
+kubectl/kubectl
+awscli/aws
+\`\`\`
 
 ---
 
@@ -18903,7 +18924,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`csharp
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -18987,11 +19011,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`csharp
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
+var layer = new lambda.LayerVersion(this, \\"kubectl-layer\\", new Struct {
+    Code = lambda.Code.FromAsset($\\"{__dirname}/layer.zip\\")
+});[lambda.Runtime.PROVIDED] compatibleRuntimes;
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -19228,7 +19254,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`csharp
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -19312,11 +19341,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`csharp
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
+var layer = new lambda.LayerVersion(this, \\"kubectl-layer\\", new Struct {
+    Code = lambda.Code.FromAsset($\\"{__dirname}/layer.zip\\")
+});[lambda.Runtime.PROVIDED] compatibleRuntimes;
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -19587,7 +19618,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`csharp
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -19834,7 +19868,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`csharp
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -19918,11 +19955,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`csharp
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
+var layer = new lambda.LayerVersion(this, \\"kubectl-layer\\", new Struct {
+    Code = lambda.Code.FromAsset($\\"{__dirname}/layer.zip\\")
+});[lambda.Runtime.PROVIDED] compatibleRuntimes;
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -22663,8 +22702,7 @@ Indicates whether Kubernetes resources can be automatically pruned.
 
 When
 this is enabled (default), prune labels will be allocated and injected to
-each resource. These labels will then be used when issuing the \`kubectl
-apply\` operation with the \`--prune\` switch.
+each resource. These labels will then be used when issuing the \`kubectl apply\` operation with the \`--prune\` switch.
 
 ---
 
@@ -33665,7 +33703,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -33729,11 +33770,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
+Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")
+        .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))
+        .build();[lambda.Runtime.PROVIDED] compatibleRuntimes;
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -34513,7 +34556,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -34577,11 +34623,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
+Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")
+        .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))
+        .build();[lambda.Runtime.PROVIDED] compatibleRuntimes;
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -37285,9 +37333,11 @@ is used by the kubectl handler to apply manifests and install helm charts.
 
 The handler expects the layer to include the following executables:
 
-    helm/helm
-    kubectl/kubectl
-    awscli/aws
+\`\`\`
+helm/helm
+kubectl/kubectl
+awscli/aws
+\`\`\`
 
 ---
 
@@ -37550,7 +37600,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -37634,11 +37687,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
+Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")
+        .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))
+        .build();[lambda.Runtime.PROVIDED] compatibleRuntimes;
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -37875,7 +37930,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -37959,11 +38017,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
+Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")
+        .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))
+        .build();[lambda.Runtime.PROVIDED] compatibleRuntimes;
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -38234,7 +38294,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -38482,7 +38545,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -38566,11 +38632,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
+Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")
+        .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))
+        .build();[lambda.Runtime.PROVIDED] compatibleRuntimes;
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -41299,8 +41367,7 @@ Indicates whether Kubernetes resources can be automatically pruned.
 
 When
 this is enabled (default), prune labels will be allocated and injected to
-each resource. These labels will then be used when issuing the \`kubectl
-apply\` operation with the \`--prune\` switch.
+each resource. These labels will then be used when issuing the \`kubectl apply\` operation with the \`--prune\` switch.
 
 ---
 
@@ -44354,7 +44421,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -44418,11 +44488,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
+Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")
+        .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))
+        .build();[lambda.Runtime.PROVIDED] compatibleRuntimes;
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -45202,7 +45274,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -45266,11 +45341,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
+Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")
+        .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))
+        .build();[lambda.Runtime.PROVIDED] compatibleRuntimes;
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -48111,9 +48188,11 @@ is used by the kubectl handler to apply manifests and install helm charts.
 
 The handler expects the layer to include the following executables:
 
-    helm/helm
-    kubectl/kubectl
-    awscli/aws
+\`\`\`
+helm/helm
+kubectl/kubectl
+awscli/aws
+\`\`\`
 
 ---
 
@@ -48376,7 +48455,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -48460,11 +48542,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
+Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")
+        .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))
+        .build();[lambda.Runtime.PROVIDED] compatibleRuntimes;
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -48701,7 +48785,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -48785,11 +48872,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
+Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")
+        .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))
+        .build();[lambda.Runtime.PROVIDED] compatibleRuntimes;
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -49060,7 +49149,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -49308,7 +49400,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -49392,11 +49487,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`java
+// This example was automatically transliterated with incomplete type information. It may not work as-is.
+// See https://github.com/aws/jsii/issues/826 for more information.
+
+Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")
+        .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))
+        .build();[lambda.Runtime.PROVIDED] compatibleRuntimes;
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -52165,8 +52262,7 @@ Indicates whether Kubernetes resources can be automatically pruned.
 
 When
 this is enabled (default), prune labels will be allocated and injected to
-each resource. These labels will then be used when issuing the \`kubectl
-apply\` operation with the \`--prune\` switch.
+each resource. These labels will then be used when issuing the \`kubectl apply\` operation with the \`--prune\` switch.
 
 ---
 
@@ -61270,7 +61366,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`python
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -61334,11 +61433,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`python
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
+layer = lambda_.LayerVersion(self, \\"kubectl-layer\\",
+    code=lambda_.Code.from_asset(f\\"{__dirname}/layer.zip\\")
+)# compatible_runtimes is of type [lambda.Runtime.PROVIDED]
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -62506,9 +62607,11 @@ is used by the kubectl handler to apply manifests and install helm charts.
 
 The handler expects the layer to include the following executables:
 
-    helm/helm
-    kubectl/kubectl
-    awscli/aws
+\`\`\`
+helm/helm
+kubectl/kubectl
+awscli/aws
+\`\`\`
 
 ---
 
@@ -63046,7 +63149,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`python
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -63110,11 +63216,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`python
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
+layer = lambda_.LayerVersion(self, \\"kubectl-layer\\",
+    code=lambda_.Code.from_asset(f\\"{__dirname}/layer.zip\\")
+)# compatible_runtimes is of type [lambda.Runtime.PROVIDED]
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -65828,9 +65936,11 @@ is used by the kubectl handler to apply manifests and install helm charts.
 
 The handler expects the layer to include the following executables:
 
-    helm/helm
-    kubectl/kubectl
-    awscli/aws
+\`\`\`
+helm/helm
+kubectl/kubectl
+awscli/aws
+\`\`\`
 
 ---
 
@@ -66093,7 +66203,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`python
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -66177,11 +66290,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`python
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
+layer = lambda_.LayerVersion(self, \\"kubectl-layer\\",
+    code=lambda_.Code.from_asset(f\\"{__dirname}/layer.zip\\")
+)# compatible_runtimes is of type [lambda.Runtime.PROVIDED]
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -66418,7 +66533,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`python
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -66502,11 +66620,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`python
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
+layer = lambda_.LayerVersion(self, \\"kubectl-layer\\",
+    code=lambda_.Code.from_asset(f\\"{__dirname}/layer.zip\\")
+)# compatible_runtimes is of type [lambda.Runtime.PROVIDED]
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -66777,7 +66897,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`python
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -67024,7 +67147,10 @@ If you want to create public load balancers, this must include public subnets.
 
 For example, to only select private subnets, supply the following:
 
-\`\`\`ts
+\`\`\`python
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
 vpcSubnets: [
    { subnetType: ec2.SubnetType.Private }
 ]
@@ -67108,11 +67234,13 @@ https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.m
 for instructions on how to prepare the .zip file and then define it in your
 app as follows:
 
-\`\`\`ts
-const layer = new lambda.LayerVersion(this, 'kubectl-layer', {
-   code: lambda.Code.fromAsset(\`\${__dirname}/layer.zip\`)),
-   compatibleRuntimes: [lambda.Runtime.PROVIDED]
-})
+\`\`\`python
+# This example was automatically transliterated with incomplete type information. It may not work as-is.
+# See https://github.com/aws/jsii/issues/826 for more information.
+
+layer = lambda_.LayerVersion(self, \\"kubectl-layer\\",
+    code=lambda_.Code.from_asset(f\\"{__dirname}/layer.zip\\")
+)# compatible_runtimes is of type [lambda.Runtime.PROVIDED]
 \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
@@ -69951,8 +70079,7 @@ Indicates whether Kubernetes resources can be automatically pruned.
 
 When
 this is enabled (default), prune labels will be allocated and injected to
-each resource. These labels will then be used when issuing the \`kubectl
-apply\` operation with the \`--prune\` switch.
+each resource. These labels will then be used when issuing the \`kubectl apply\` operation with the \`--prune\` switch.
 
 ---
 
