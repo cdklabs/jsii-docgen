@@ -5,7 +5,7 @@ import * as glob from 'glob-promise';
 import * as reflect from 'jsii-reflect';
 import { TargetLanguage } from 'jsii-rosetta';
 import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
-import { UnprocessablePackage } from '../..';
+import { CorruptedAssemblyError } from '../..';
 import { Markdown } from '../render/markdown';
 import { CSharpTranspile } from '../transpile/csharp';
 import { JavaTranspile } from '../transpile/java';
@@ -221,7 +221,7 @@ export class Documentation {
         if (!(error instanceof Error)) {
           throw error;
         }
-        throw maybeUnprocessablePackage(error) ?? error;
+        throw maybeCorruptedAssemblyError(error) ?? error;
       }
     }
 
@@ -305,7 +305,7 @@ export function extractPackageName(spec: string) {
   return spec;
 }
 
-function maybeUnprocessablePackage(error: Error): UnprocessablePackage | undefined {
+function maybeCorruptedAssemblyError(error: Error): CorruptedAssemblyError | undefined {
 
   const match = error.message.match(NOT_FOUND_IN_ASSEMBLY_REGEX);
   if (!match) {
@@ -316,7 +316,7 @@ function maybeUnprocessablePackage(error: Error): UnprocessablePackage | undefin
   if (assembly === typeAssembly) {
     // we cant find a type within its own assembly.
     // this means the assembly is corrupt, nothing we can do about it.
-    return new UnprocessablePackage(error.message);
+    return new CorruptedAssemblyError(error.message);
   }
   return;
 }

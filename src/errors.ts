@@ -25,14 +25,41 @@ export class NoSpaceLeftOnDevice extends Error {
 }
 
 /**
- * This error is raised when docgen detects errors indicating that a package cannot be
- * processed. In such a case, author attention is required in order to publish a new package version
- * that resolves the issues.
+ * Raised when docgen is unable to install the given package.
+ * This can happen due to invalid dependency clojures for example.
  *
- * Users may perform an `err instanceof UnprocessablePackage` test to determine
+ * Users may perform an `err instanceof UnInstallablePackageError` test to determine
+ * whether this error was raised or not, and cut retry attempts.
+ *
+ */
+export class UnInstallablePackageError extends Error {
+
+  public readonly name = `${name}.${this.constructor.name}`;
+
+  /** @internal */
+  public constructor(message: string, stack?: string) {
+    super(message);
+    if (this.stack) {
+      this.stack = stack;
+    } else {
+      Error.captureStackTrace(this, this.constructor);
+    }
+  }
+
+}
+
+/**
+ * Raised when docgen detects corrupted assemblies, preventing it from
+ * generating documentation for a specific language.
+ * This can happen either due to jsii compiler bugs, or authoring mistakes.
+ *
+ * For example: https://github.com/aws/jsii/pull/3147
+ *
+ * Users may perform an `err instanceof CorruptedAssemblyError` test to determine
  * whether this error was raised or not, and cut retry attempts.
  */
-export class UnprocessablePackage extends Error {
+export class CorruptedAssemblyError extends Error {
+
   public readonly name = `${name}.${this.constructor.name}`;
 
   /** @internal */

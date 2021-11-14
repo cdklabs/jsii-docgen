@@ -55,4 +55,8 @@ for (const library of libraryFixtures) {
 
 // artifacts created by transpilation in tests
 project.gitignore.exclude('test/**/.jsii.*');
+
+// local vscode configuration
+project.gitignore.exclude('.vscode/');
+
 project.synth();

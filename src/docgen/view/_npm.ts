@@ -2,8 +2,7 @@ import { spawn, SpawnOptionsWithoutStdio } from 'child_process';
 import * as os from 'os';
 import { join } from 'path';
 import { major } from 'semver';
-import { UnprocessablePackage } from '../..';
-import { NoSpaceLeftOnDevice, NpmError } from '../../errors';
+import { NoSpaceLeftOnDevice, UnInstallablePackageError, NpmError } from '../../errors';
 
 export class Npm {
   #npmCommand: string | undefined;
@@ -183,7 +182,7 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
     case 'ERESOLVE':
       // dependency resolution problem requires a manual
       // intervention (most likely...)
-      throw new UnprocessablePackage(message);
+      throw new UnInstallablePackageError(message);
     default:
       throw new NpmError(message, stdout, code);
   }
