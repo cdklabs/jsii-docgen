@@ -63,8 +63,8 @@ grants an IAM user access to call this API.
 // This example was automatically transliterated with incomplete type information. It may not work as-is.
 // See https://github.com/aws/jsii/issues/826 for more information.
 
-using Aws.Cdk.Aws.Iam;
-using Aws.Cdk.Aws.Ecr;
+using Amazon.CDK.AWS.IAM;
+using Amazon.CDK.AWS.ECR;
 
 User user = new User(this, \\"User\\", new UserProps { ... });
 AuthorizationToken.GrantRead(user);
@@ -81,8 +81,8 @@ The following code snippet grants an IAM user access to retrieve an authorizatio
 // This example was automatically transliterated with incomplete type information. It may not work as-is.
 // See https://github.com/aws/jsii/issues/826 for more information.
 
-using Aws.Cdk.Aws.Iam;
-using Aws.Cdk.Aws.Ecr;
+using Amazon.CDK.AWS.IAM;
+using Amazon.CDK.AWS.ECR;
 
 User user = new User(this, \\"User\\", new UserProps { ... });
 PublicGalleryAuthorizationToken.GrantRead(user);
@@ -26079,8 +26079,8 @@ grants an IAM user access to call this API.
 // This example was automatically transliterated with incomplete type information. It may not work as-is.
 // See https://github.com/aws/jsii/issues/826 for more information.
 
-import aws.cdk.aws.iam.*;
-import aws.cdk.aws.ecr.*;
+import software.amazon.awscdk.services.iam.*;
+import software.amazon.awscdk.services.ecr.*;
 
 User user = User.Builder.create(this, \\"User\\")....build();
 ecr.AuthorizationToken.grantRead(user);
@@ -26097,8 +26097,8 @@ The following code snippet grants an IAM user access to retrieve an authorizatio
 // This example was automatically transliterated with incomplete type information. It may not work as-is.
 // See https://github.com/aws/jsii/issues/826 for more information.
 
-import aws.cdk.aws.iam.*;
-import aws.cdk.aws.ecr.*;
+import software.amazon.awscdk.services.iam.*;
+import software.amazon.awscdk.services.ecr.*;
 
 User user = User.Builder.create(this, \\"User\\")....build();
 ecr.PublicGalleryAuthorizationToken.grantRead(user);
