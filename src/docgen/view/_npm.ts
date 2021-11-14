@@ -1,6 +1,8 @@
 import { spawn, SpawnOptionsWithoutStdio } from 'child_process';
+import * as os from 'os';
 import { join } from 'path';
 import { major } from 'semver';
+import { UnprocessablePackage } from '../..';
 import { NoSpaceLeftOnDevice, NpmError } from '../../errors';
 
 export class Npm {
@@ -114,9 +116,12 @@ export class Npm {
     options?: SpawnOptionsWithoutStdio,
   ): Promise<CommandResult<T>> {
     return new Promise<CommandResult<T>>((ok, ko) => {
-      const child = spawn(command, args, { ...options, stdio: ['inherit', 'pipe', 'inherit'] });
+      const child = spawn(command, args, { ...options, stdio: ['inherit', 'pipe', 'pipe'] });
       const stdout = new Array<Buffer>();
       child.stdout.on('data', (chunk) => {
+        stdout.push(Buffer.from(chunk));
+      });
+      child.stderr.on('data', (chunk) => {
         stdout.push(Buffer.from(chunk));
       });
 
@@ -173,7 +178,16 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
     // have an actual Error object, so we'll stringify that here...
     stdout.error && !detail && !summary ? `: ${stdout.error}` : '',
   ].join('');
-  throw new NpmError(message, stdout, code);
+
+  switch (code) {
+    case 'ERESOLVE':
+      // dependency resolution problem requires a manual
+      // intervention (most likely...)
+      throw new UnprocessablePackage(message);
+    default:
+      throw new NpmError(message, stdout, code);
+  }
+
 }
 
 /**
@@ -184,7 +198,10 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
  */
 function chunksToObject(chunks: readonly Buffer[], encoding = 'utf-8'): ResponseObject {
   try {
-    return JSON.parse(Buffer.concat(chunks).toString(encoding));
+    // when npm prints to stderr it may contain non json output, identified with the `npm ERR!` prefix.
+    // stripping those out will leave us with the JSON object we want.
+    const onlyJson = Buffer.concat(chunks).toString(encoding).split(os.EOL).filter(l => !l.startsWith('npm ERR!')).join(os.EOL);
+    return JSON.parse(onlyJson);
   } catch (error) {
     return { error, raw: chunks };
   }

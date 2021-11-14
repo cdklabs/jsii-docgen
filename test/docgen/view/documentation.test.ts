@@ -2,7 +2,7 @@ import * as child from 'child_process';
 import * as os from 'os';
 import * as path from 'path';
 import * as fs from 'fs-extra';
-import { Language, Documentation, TranspiledType } from '../../../src';
+import { Language, Documentation, TranspiledType, UnprocessablePackage } from '../../../src';
 import { extractPackageName } from '../../../src/docgen/view/documentation';
 import { Assemblies } from '../assemblies';
 
@@ -177,4 +177,15 @@ describe('csharp', () => {
     const markdown = docs.render({ submodule: 'aws_eks' });
     expect(markdown.render()).toMatchSnapshot();
   });
+});
+
+test('throws unprocessable error on dependency conflict', async () => {
+  // this package decalres a fixed peerDependency on constructs, which conflicts with its other dependencies
+  return expect(Documentation.forPackage('cdk8s-mongo-sts@0.0.5')).rejects.toThrowError(UnprocessablePackage);
+});
+
+test('throws unprocessable error on assembly suspcestable to https://github.com/aws/jsii/pull/3147', async () => {
+  const docs = await Documentation.forPackage('@epilot/cdk-constructs@1.0.7');
+  // this package accepts an unexported HttpApiProps in a constructor
+  expect(() => docs.render()).toThrowError(UnprocessablePackage);
 });

@@ -25,6 +25,29 @@ export class NoSpaceLeftOnDevice extends Error {
 }
 
 /**
+ * This error is raised when docgen detects errors indicating that a package cannot be
+ * processed. In such a case, author attention is required in order to publish a new package version
+ * that resolves the issues.
+ *
+ * Users may perform an `err instanceof UnprocessablePackage` test to determine
+ * whether this error was raised or not, and cut retry attempts.
+ */
+export class UnprocessablePackage extends Error {
+  public readonly name = `${name}.${this.constructor.name}`;
+
+  /** @internal */
+  public constructor(message: string, stack?: string) {
+    super(message);
+    if (this.stack) {
+      this.stack = stack;
+    } else {
+      Error.captureStackTrace(this, this.constructor);
+    }
+  }
+
+}
+
+/**
  * The error raised when `npm` commands fail with an "opaque" exit code,
  * attempting to obtain more information from the commands output.
  */

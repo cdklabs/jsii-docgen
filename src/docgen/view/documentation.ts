@@ -5,6 +5,7 @@ import * as glob from 'glob-promise';
 import * as reflect from 'jsii-reflect';
 import { TargetLanguage } from 'jsii-rosetta';
 import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
+import { UnprocessablePackage } from '../..';
 import { Markdown } from '../render/markdown';
 import { CSharpTranspile } from '../transpile/csharp';
 import { JavaTranspile } from '../transpile/java';
@@ -14,6 +15,9 @@ import { TypeScriptTranspile } from '../transpile/typescript';
 import { Npm } from './_npm';
 import { ApiReference } from './api-reference';
 import { Readme } from './readme';
+
+// https://github.com/aws/jsii/blob/main/packages/jsii-reflect/lib/assembly.ts#L175
+const NOT_FOUND_IN_ASSEMBLY_REGEX = /Type '(.*)\..*' not found in assembly (.*)$/;
 
 /**
  * Options for rendering a `Documentation` object.
@@ -210,8 +214,15 @@ export class Documentation {
     }
 
     if (options?.apiReference ?? true) {
-      const apiReference = new ApiReference(this.transpile, this.assembly, options?.linkFormatter ?? ((t: TranspiledType) => `#${t.fqn}`), submodule);
-      documentation.section(apiReference.render());
+      try {
+        const apiReference = new ApiReference(this.transpile, this.assembly, options?.linkFormatter ?? ((t: TranspiledType) => `#${t.fqn}`), submodule);
+        documentation.section(apiReference.render());
+      } catch (error) {
+        if (!(error instanceof Error)) {
+          throw error;
+        }
+        throw maybeUnprocessablePackage(error) ?? error;
+      }
     }
 
     return documentation;
@@ -292,4 +303,20 @@ export function extractPackageName(spec: string) {
 
   // aws-cdk-lib
   return spec;
+}
+
+function maybeUnprocessablePackage(error: Error): UnprocessablePackage | undefined {
+
+  const match = error.message.match(NOT_FOUND_IN_ASSEMBLY_REGEX);
+  if (!match) {
+    throw error;
+  }
+  const assembly = match[2];
+  const typeAssembly = match[1];
+  if (assembly === typeAssembly) {
+    // we cant find a type within its own assembly.
+    // this means the assembly is corrupt, nothing we can do about it.
+    return new UnprocessablePackage(error.message);
+  }
+  return;
 }
