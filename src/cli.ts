@@ -12,9 +12,9 @@ export async function main() {
     .argv;
 
   const language = Language.fromString(args.language);
-  const docs = await Documentation.forProject(process.cwd(), { language });
+  const docs = await Documentation.forProject(process.cwd());
   const output = args.output ?? 'API.md';
-  const markdown = docs.render({ readme: false });
+  const markdown = await docs.render({ readme: false, language });
   fs.writeFileSync(output, markdown.render());
 }
 

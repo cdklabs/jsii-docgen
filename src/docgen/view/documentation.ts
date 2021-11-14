@@ -21,6 +21,21 @@ import { Readme } from './readme';
 export interface RenderOptions {
 
   /**
+   * Which language to generate docs for.
+   *
+   * @default Language.TYPESCRIPT
+   */
+  readonly language?: Language;
+
+  /**
+    * Whether to ignore missing fixture files that will prevent transliterating
+    * some code snippet examples.
+    *
+    * @default true
+    */
+  readonly loose?: boolean;
+
+  /**
    * Include a generated api reference in the documentation.
    *
    * @default true
@@ -51,30 +66,9 @@ export interface RenderOptions {
 }
 
 /**
- * Options for creating a `Documentation` object.
- */
-export interface DocumentationOptions {
-
-  /**
-   * Which language to generate docs for.
-   *
-   * @default Language.TYPESCRIPT
-   */
-  readonly language?: Language;
-
-  /**
-   * Whether to ignore missing fixture files that will prevent transliterating
-   * some code snippet examples.
-   *
-   * @default true
-   */
-  readonly loose?: boolean;
-}
-
-/**
  * Options for creating a `Documentation` object using the `fromLocalPackage` function.
  */
-export interface ForLocalPackageDocumentationOptions extends DocumentationOptions {
+export interface ForLocalPackageDocumentationOptions {
 
   /**
    * A local directory containing jsii assembly files that will
@@ -85,7 +79,7 @@ export interface ForLocalPackageDocumentationOptions extends DocumentationOption
   readonly assembliesDir?: string;
 }
 
-export interface ForPackageDocumentationOptions extends DocumentationOptions {
+export interface ForPackageDocumentationOptions {
 
   /**
    * The name of the package to be installed.
@@ -111,21 +105,20 @@ export class Documentation {
    * @throws NpmError if some `npm` command fails when preparing the working set
    */
   public static async forPackage(target: string, options: ForPackageDocumentationOptions = {}): Promise<Documentation> {
-    return withTempDir(async (workdir: string) => {
+    const workdir = await fs.mkdtemp(path.join(os.tmpdir(), path.sep));
 
-      if (await fs.pathExists(target) && !options.name) {
-        throw new Error('\'options.name\' must be provided when installing local packages.');
-      }
+    if (await fs.pathExists(target) && !options.name) {
+      throw new Error("'options.name' must be provided when installing local packages.");
+    }
 
-      const name = options?.name ?? extractPackageName(target);
+    const name = options?.name ?? extractPackageName(target);
 
-      const npm = new Npm(workdir);
+    const npm = new Npm(workdir);
 
-      console.log(`Installing package ${target}`);
-      await npm.install(target);
+    console.log(`Installing package ${target}`);
+    await npm.install(target);
 
-      return Documentation.forProject(path.join(workdir, 'node_modules', name), { ...options, assembliesDir: workdir });
-    });
+    return Documentation.forProject(path.join(workdir, 'node_modules', name), { ...options, assembliesDir: workdir });
   }
 
   /**
@@ -145,10 +138,7 @@ export class Documentation {
     const assembliesDir = options?.assembliesDir ?? root;
 
     const { name } = JSON.parse(await fs.readFile(manifestPath, 'utf-8'));
-    return Documentation.forAssembly(name, assembliesDir, {
-      language: options?.language,
-      loose: options?.loose,
-    });
+    return Documentation.forAssembly(name, assembliesDir);
   }
 
   /**
@@ -156,65 +146,86 @@ export class Documentation {
    *
    * @param assemblyName - The assembly name.
    * @param assembliesDir - The directory containing the assemblies that comprise the type-system.
-   * @param options - Additional options.
    */
-  public static async forAssembly(assemblyName: string, assembliesDir: string, options?: DocumentationOptions): Promise<Documentation> {
-    return withTempDir(async (workdir: string) => {
-
-      // always better not to operate on an externally provided directory
-      await fs.copy(assembliesDir, workdir);
-
-      let transpile, language;
-
-      switch (options?.language ?? Language.TYPESCRIPT) {
-        case Language.PYTHON:
-          language = TargetLanguage.PYTHON;
-          transpile = new PythonTranspile();
-          break;
-        case Language.TYPESCRIPT:
-          transpile = new TypeScriptTranspile();
-          break;
-        case Language.JAVA:
-          language = TargetLanguage.JAVA;
-          transpile = new JavaTranspile();
-          break;
-        case Language.CSHARP:
-          language = TargetLanguage.CSHARP;
-          transpile = new CSharpTranspile();
-          break;
-        default:
-          throw new Error(`Unsupported language: ${options?.language}. Supported languages are ${Object.values(Language)}`);
-      }
-      const assembly = await createAssembly(assemblyName, workdir, options?.loose ?? true, language);
-      return new Documentation(assembly, transpile);
-    });
-
+  public static async forAssembly(assemblyName: string, assembliesDir: string): Promise<Documentation> {
+    return new Documentation(assemblyName, assembliesDir);
   }
 
   private constructor(
-    public readonly assembly: reflect.Assembly,
-    private readonly transpile: Transpile,
+    private readonly assemblyName: string,
+    private readonly assembliesDir: string,
   ) {
   }
 
   /**
    * Generate markdown.
    */
-  public render(options?: RenderOptions): Markdown {
-    const submodule = options?.submodule ? this.findSubmodule(this.assembly, options.submodule) : undefined;
+  public async render(options?: RenderOptions): Promise<Markdown> {
+
+    const language = options?.language ?? Language.TYPESCRIPT;
+    const loose = options?.loose ?? true;
+
+    const assembly = await this.assemblyFor(language, loose);
+    const transpile = this.transpileFor(language);
+
+    const submodule = options?.submodule ? this.findSubmodule(assembly, options.submodule) : undefined;
     const documentation = new Markdown();
 
     if (options?.readme ?? true) {
-      const readme = new Readme(this.transpile, this.assembly, submodule);
+      const readme = new Readme(transpile, assembly, submodule);
       documentation.section(readme.render());
     }
 
     if (options?.apiReference ?? true) {
-      const apiReference = new ApiReference(this.transpile, this.assembly, options?.linkFormatter ?? ((t: TranspiledType) => `#${t.fqn}`), submodule);
+      const apiReference = new ApiReference(transpile, assembly, options?.linkFormatter ?? ((t: TranspiledType) => `#${t.fqn}`), submodule);
       documentation.section(apiReference.render());
     }
 
     return documentation;
+  }
+
+  private async assemblyFor(lang: Language, loose: boolean): Promise<reflect.Assembly> {
+
+    let language: TargetLanguage;
+
+    switch (lang) {
+      case Language.PYTHON:
+        language = TargetLanguage.PYTHON;
+        break;
+      case Language.TYPESCRIPT:
+        break;
+      case Language.JAVA:
+        language = TargetLanguage.JAVA;
+        break;
+      case Language.CSHARP:
+        language = TargetLanguage.CSHARP;
+        break;
+      default:
+        throw new Error(`Unsupported language: ${lang}. Supported languages are ${Object.values(Language)}`);
+    }
+
+    return withTempDir(async (workdir: string) => {
+      // always better not to operate on an externally provided directory
+      await fs.copy(this.assembliesDir, workdir);
+      return createAssembly(this.assemblyName, workdir, loose, language);
+    });
+  }
+
+  private transpileFor(lang: Language): Transpile {
+
+    switch (lang) {
+      case Language.PYTHON:
+        return new PythonTranspile();
+      case Language.TYPESCRIPT:
+        return new TypeScriptTranspile();
+      case Language.JAVA:
+        return new JavaTranspile();
+      case Language.CSHARP:
+        return new CSharpTranspile();
+      default:
+        throw new Error(`Unsupported language: ${lang}. Supported languages are ${Object.values(Language)}`);
+    }
+
   }
 
   /**
