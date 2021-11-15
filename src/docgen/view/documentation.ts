@@ -357,10 +357,11 @@ function maybeCorruptedAssemblyError(error: Error): CorruptedAssemblyError | und
   if (!match) {
     throw error;
   }
-  const assembly = match[2];
+  const searchedAssembly = match[2];
   const typeAssembly = match[1];
-  if (assembly === typeAssembly) {
-    // we cant find a type within its own assembly.
+
+  if (searchedAssembly === typeAssembly) {
+    // we cant find a type within our own assembly.
     // this means the assembly is corrupt, nothing we can do about it.
     return new CorruptedAssemblyError(error.message);
   }

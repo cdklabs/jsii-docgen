@@ -204,9 +204,11 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
 function chunksToObject(chunks: readonly Buffer[], encoding = 'utf-8'): ResponseObject {
   const raw = Buffer.concat(chunks).toString(encoding);
   try {
-    // when npm prints to stderr it may contain non json output, identified with the `npm ERR!` prefix.
-    // stripping those out will leave us with the JSON object we want.
-    const onlyJson = raw.split(os.EOL).filter(l => !l.startsWith('npm ERR!')).join(os.EOL);
+    // npm will sometimes print non json log lines even though --json was requested.
+    // observed these log lines always start with 'npm', so we filter those out.
+    // for example: "npm notice New patch version of npm available! 8.1.0 -> 8.1.3"
+    // for example: "npm ERR! must provide string spec"
+    const onlyJson = raw.split(os.EOL).filter(l => !l.startsWith('npm')).join(os.EOL);
     return JSON.parse(onlyJson);
   } catch (error) {
     return { error, raw };
