@@ -176,8 +176,7 @@ export class Documentation {
     const language = options?.language ?? Language.TYPESCRIPT;
     const loose = options?.loose ?? true;
 
-    const assembly = await this.assemblyFor(language, loose);
-    const transpile = this.transpileFor(language);
+    const { assembly, transpile } = await this.languageSpecific(language, loose);
 
     const submodule = options?.submodule ? this.findSubmodule(assembly, options.submodule) : undefined;
     const documentation = new Markdown();
@@ -208,44 +207,31 @@ export class Documentation {
     }
   }
 
-  private async assemblyFor(lang: Language, loose: boolean): Promise<reflect.Assembly> {
+  private async languageSpecific(lang: Language, loose: boolean): Promise<{ assembly: reflect.Assembly; transpile: Transpile}> {
 
-    let language = undefined;
+    let language, transpile = undefined;
 
     switch (lang) {
       case Language.PYTHON:
         language = TargetLanguage.PYTHON;
+        transpile = new PythonTranspile();
         break;
       case Language.TYPESCRIPT:
+        transpile = new TypeScriptTranspile();
         break;
       case Language.JAVA:
         language = TargetLanguage.JAVA;
+        transpile = new JavaTranspile();
         break;
       case Language.CSHARP:
+        transpile = new CSharpTranspile();
         language = TargetLanguage.CSHARP;
         break;
       default:
         throw new Error(`Unsupported language: ${lang}. Supported languages are ${Object.values(Language)}`);
     }
 
-    return createAssembly(this.assemblyName, this.assembliesDir, loose, language);
-  }
-
-  private transpileFor(lang: Language): Transpile {
-
-    switch (lang) {
-      case Language.PYTHON:
-        return new PythonTranspile();
-      case Language.TYPESCRIPT:
-        return new TypeScriptTranspile();
-      case Language.JAVA:
-        return new JavaTranspile();
-      case Language.CSHARP:
-        return new CSharpTranspile();
-      default:
-        throw new Error(`Unsupported language: ${lang}. Supported languages are ${Object.values(Language)}`);
-    }
-
+    return { assembly: await createAssembly(this.assemblyName, this.assembliesDir, loose, language), transpile };
   }
 
   /**
