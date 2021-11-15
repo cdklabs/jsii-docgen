@@ -178,6 +178,12 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
     stdout.error && !detail && !summary ? `: ${stdout.error}` : '',
   ].join('');
 
+  if (typeof(summary) === 'string' && summary.includes('must provide string spec')) {
+    // happens when package.json dependencies don't have a spec.
+    // for example: https://github.com/markusl/cdk-codepipeline-bitbucket-build-result-reporter/blob/v0.0.7/package.json
+    throw new UnInstallablePackageError(summary);
+  }
+
   switch (code) {
     case 'ERESOLVE':
       // dependency resolution problem requires a manual
@@ -196,19 +202,20 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
  * and the raw chunks.
  */
 function chunksToObject(chunks: readonly Buffer[], encoding = 'utf-8'): ResponseObject {
+  const raw = Buffer.concat(chunks).toString(encoding);
   try {
     // when npm prints to stderr it may contain non json output, identified with the `npm ERR!` prefix.
     // stripping those out will leave us with the JSON object we want.
-    const onlyJson = Buffer.concat(chunks).toString(encoding).split(os.EOL).filter(l => !l.startsWith('npm ERR!')).join(os.EOL);
+    const onlyJson = raw.split(os.EOL).filter(l => !l.startsWith('npm ERR!')).join(os.EOL);
     return JSON.parse(onlyJson);
   } catch (error) {
-    return { error, raw: chunks };
+    return { error, raw };
   }
 }
 
 type ResponseObject =
   // The error when we failed to parse the output as JSON
-  | { readonly error: any; readonly raw: readonly Buffer[] }
+  | { readonly error: any; readonly raw: string }
   // The error objects npm returns when operating in --json mode
   | { readonly error: { readonly code: string; readonly summary: string; readonly detail: string } }
   // The successful objects are treated as opaque blobs here
