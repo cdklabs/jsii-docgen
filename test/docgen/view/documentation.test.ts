@@ -193,15 +193,8 @@ test('throws uninstallable error on missing spec in dependencies', async () => {
   return expect(Documentation.forPackage('cdk-codepipeline-bitbucket-build-result-reporter@0.0.7')).rejects.toThrowError(UnInstallablePackageError);
 });
 
-test('throws corrupt assembly error on assembly suspcestable to https://github.com/aws/jsii/pull/3147', async () => {
+test('throws corrupt assembly', async () => {
   const docs = await Documentation.forPackage('@epilot/cdk-constructs@1.0.7');
   // this package accepts an unexported HttpApiProps in a constructor
-  return expect(docs.render()).rejects.toThrowError(CorruptedAssemblyError);
-});
-
-test('throws corrupt assembly on dependency breaking change ', async () => {
-  const docs = await Documentation.forPackage('@pahud/cdktf-aws-eks@0.2.42');
-  // this package was built with a dependency (@cdktf/aws-provider) that removed
-  // the EksCluster type in favor of a namespaced version (e.g EKS.EksCluster).
   return expect(docs.render()).rejects.toThrowError(CorruptedAssemblyError);
 });

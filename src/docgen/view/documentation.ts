@@ -201,10 +201,10 @@ export class Documentation {
         const apiReference = new ApiReference(transpile, assembly, options?.linkFormatter ?? ((t: TranspiledType) => `#${t.fqn}`), submodule);
         documentation.section(apiReference.render());
       } catch (error) {
-        if (!(error instanceof Error)) {
-          throw error;
+        if (error instanceof Error && error.message.match(NOT_FOUND_IN_ASSEMBLY_REGEX)) {
+          throw new CorruptedAssemblyError(error.message);
         }
-        throw maybeCorruptedAssemblyError(error) ?? error;
+        throw error;
       }
     }
 
@@ -335,21 +335,4 @@ export function extractPackageName(spec: string) {
 
   // aws-cdk-lib
   return spec;
-}
-
-function maybeCorruptedAssemblyError(error: Error): CorruptedAssemblyError | undefined {
-
-  const match = error.message.match(NOT_FOUND_IN_ASSEMBLY_REGEX);
-  if (!match) {
-    throw error;
-  }
-  const searchedAssembly = match[2];
-  const typeAssembly = match[1];
-
-  if (searchedAssembly === typeAssembly) {
-    // we cant find a type within our own assembly.
-    // this means the assembly is corrupt, nothing we can do about it.
-    return new CorruptedAssemblyError(error.message);
-  }
-  return;
 }
