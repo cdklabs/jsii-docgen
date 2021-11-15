@@ -16,28 +16,6 @@ import { ApiReference } from './api-reference';
 import { Readme } from './readme';
 
 /**
- * Rendering result for a specific language.
- */
-export interface RenderResult {
-  /**
-   * Which language this result refers to.
-   */
-  readonly language: Language;
-  /**
-   * The rendered markdown.
-   *
-   * Will be undefined if there was an error.
-   */
-  readonly markdown?: Markdown;
-  /**
-   * The error encountered during rendering.
-   *
-   * Will be undefined if rendering was successfull.
-   */
-  readonly error?: Error;
-}
-
-/**
  * Options for rendering a `Documentation` object.
  */
 export interface RenderOptions {
