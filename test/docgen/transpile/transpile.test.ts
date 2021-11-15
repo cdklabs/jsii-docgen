@@ -35,26 +35,20 @@ describe('language', () => {
 describe('submodules without an explicit name', () => {
 
   test('java', async () => {
-    const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.AWSCDK_1_126_0, {
-      language: Language.JAVA,
-    });
-    const markdown = docs.render({ submodule: 'experimental' });
+    const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.AWSCDK_1_126_0);
+    const markdown = await docs.render({ language: Language.JAVA, submodule: 'experimental' });
     expect(markdown.render()).toMatchSnapshot();
   });
 
   test('python', async () => {
-    const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.AWSCDK_1_126_0, {
-      language: Language.PYTHON,
-    });
-    const markdown = docs.render({ submodule: 'experimental' });
+    const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.AWSCDK_1_126_0);
+    const markdown = await docs.render({ language: Language.PYTHON, submodule: 'experimental' });
     expect(markdown.render()).toMatchSnapshot();
   });
 
   test('csharp', async () => {
-    const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.AWSCDK_1_126_0, {
-      language: Language.CSHARP,
-    });
-    const markdown = docs.render({ submodule: 'experimental' });
+    const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.AWSCDK_1_126_0);
+    const markdown = await docs.render({ language: Language.CSHARP, submodule: 'experimental' });
     expect(markdown.render()).toMatchSnapshot();
   });
 });
