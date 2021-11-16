@@ -160,8 +160,8 @@ export class Documentation {
     return new Documentation(assemblyName, assembliesDir);
   }
 
-  private readonly cleanupDirectories: string[] = [];
-  private readonly assembliesCache: Map<string, reflect.Assembly> = new Map();
+  private readonly cleanupDirectories: Set<string> = new Set<string>();
+  private readonly assembliesCache: Map<string, reflect.Assembly> = new Map<string, reflect.Assembly>();
 
   private constructor(
     private readonly assemblyName: string,
@@ -171,10 +171,10 @@ export class Documentation {
   /**
    * Generate markdown.
    */
-  public async render(options?: RenderOptions): Promise<Markdown> {
+  public async render(options: RenderOptions = {}): Promise<Markdown> {
 
-    const language = options?.language ?? Language.TYPESCRIPT;
-    const loose = options?.loose ?? true;
+    const language = options.language ?? Language.TYPESCRIPT;
+    const loose = options.loose ?? true;
 
     const { assembly, transpile } = await this.languageSpecific(language, loose);
 
@@ -195,15 +195,16 @@ export class Documentation {
   }
 
   private addCleanupDirectory(directory: string) {
-    this.cleanupDirectories.push(directory);
+    this.cleanupDirectories.add(directory);
   }
 
   /**
    * Removes any internal working directories.
    */
   public async cleanup() {
-    for (const dir of this.cleanupDirectories) {
+    for (const dir of [...this.cleanupDirectories]) {
       await fs.remove(dir);
+      this.cleanupDirectories.delete(dir);
     }
   }
 
