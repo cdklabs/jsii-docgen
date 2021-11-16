@@ -165,12 +165,12 @@ export class Documentation {
   }
 
   private readonly cleanupDirectories: string[] = [];
+  private readonly assembliesCache: Map<string, reflect.Assembly> = new Map();
 
   private constructor(
     private readonly assemblyName: string,
     private readonly assembliesDir: string,
-  ) {
-  }
+  ) {}
 
   /**
    * Generate markdown.
@@ -247,8 +247,7 @@ export class Documentation {
       default:
         throw new Error(`Unsupported language: ${lang}. Supported languages are ${Object.values(Language)}`);
     }
-
-    return { assembly: await createAssembly(this.assemblyName, this.assembliesDir, loose, language), transpile };
+    return { assembly: await this.createAssembly(loose, language), transpile };
   }
 
   /**
@@ -269,6 +268,42 @@ export class Documentation {
 
     return submodules[0];
   }
+
+  private async createAssembly(loose: boolean, language?: TargetLanguage): Promise<reflect.Assembly> {
+
+    const cacheKey = `lang:${language ?? 'ts'}.loose:${loose}`;
+    const cached = this.assembliesCache.get(cacheKey);
+    if (cached) {
+      return cached;
+    }
+
+    const created = await withTempDir(async (workdir: string) => {
+
+      // always better not to pollute an externally provided directory
+      await fs.copy(this.assembliesDir, workdir);
+
+      const ts = new reflect.TypeSystem();
+      for (let dotJsii of await glob.promise(`${workdir}/**/.jsii`)) {
+        // we only transliterate the top level assembly and not the entire type-system.
+        // note that the only reason to translate dependant assemblies is to show code examples
+        // for expanded python arguments - which we don't to right now anyway.
+        // we don't want to make any assumption of the directory structure, so this is the most
+        // robuse way to detect the root assembly.
+        const spec = JSON.parse(await fs.readFile(dotJsii, 'utf-8'));
+        if (language && spec.name === this.assemblyName) {
+          const packageDir = path.dirname(dotJsii);
+          await transliterateAssembly([packageDir], [language], { loose });
+          dotJsii = path.join(packageDir, `.jsii.${language}`);
+        }
+        await ts.load(dotJsii);
+      }
+      return ts.findAssembly(this.assemblyName);
+    });
+
+    this.assembliesCache.set(cacheKey, created);
+    return created;
+  }
+
 }
 
 async function withTempDir<T>(work: (workdir: string) => Promise<T>): Promise<T> {
@@ -283,35 +318,6 @@ async function withTempDir<T>(work: (workdir: string) => Promise<T>): Promise<T>
     process.chdir(cwd);
     await fs.remove(workdir);
   }
-}
-
-async function createAssembly(name: string, tsDir: string, loose: boolean, language?: TargetLanguage): Promise<reflect.Assembly> {
-
-  return withTempDir(async (workdir: string) => {
-
-    // always better not to pollute an externally provided directory
-    await fs.copy(tsDir, workdir);
-
-    console.log(`Creating assembly in ${language ?? 'ts'} for ${name} from ${tsDir} (loose: ${loose})`);
-    const ts = new reflect.TypeSystem();
-    for (let dotJsii of await glob.promise(`${workdir}/**/.jsii`)) {
-      // we only transliterate the top level assembly and not the entire type-system.
-      // note that the only reason to translate dependant assemblies is to show code examples
-      // for expanded python arguments - which we don't to right now anyway.
-      // we don't want to make any assumption of the directory structure, so this is the most
-      // robuse way to detect the root assembly.
-      const spec = JSON.parse(await fs.readFile(dotJsii, 'utf-8'));
-      if (language && spec.name === name) {
-        const packageDir = path.dirname(dotJsii);
-        await transliterateAssembly([packageDir], [language], { loose });
-        dotJsii = path.join(packageDir, `.jsii.${language}`);
-      }
-      await ts.load(dotJsii);
-    }
-    return ts.findAssembly(name);
-
-  });
-
 }
 
 export function extractPackageName(spec: string) {
