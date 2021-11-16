@@ -201,10 +201,10 @@ export class Documentation {
         const apiReference = new ApiReference(transpile, assembly, options?.linkFormatter ?? ((t: TranspiledType) => `#${t.fqn}`), submodule);
         documentation.section(apiReference.render());
       } catch (error) {
-        if (error instanceof Error && error.message.match(NOT_FOUND_IN_ASSEMBLY_REGEX)) {
-          throw new CorruptedAssemblyError(error.message);
+        if (!(error instanceof Error)) {
+          throw error;
         }
-        throw error;
+        throw maybeCorruptedAssemblyError(error) ?? error;
       }
     }
 
@@ -341,4 +341,34 @@ export function extractPackageName(spec: string) {
 
   // aws-cdk-lib
   return spec;
+}
+
+/**
+ * Return a `CorruptedAssemblyError` if the error matches, undefined otherwise.
+ *
+ * Note that an 'not found in assembly` can be thrown in two cases:
+ *
+ * 1. Direct usage of `assembly.findType(fqn)`
+ *
+ *    In this case the error could be caused by a wrong FQN being passed to the function. This is not considered
+ *    a corrupted assembly since the caller might be passing an FQN from a different assembly.
+ *
+ * 2. Implicit usage of `assembly.findType(fqn)` by calling `.type` (e.g `parameter.type`)
+ *
+ *    In this case the assembly we look in is always the same assembly the type itself comes from, and if it doesn't exist,
+ *    then the assembly is considered corrupt.
+ */
+function maybeCorruptedAssemblyError(error: Error): CorruptedAssemblyError | undefined {
+
+  const match = error.message.match(NOT_FOUND_IN_ASSEMBLY_REGEX);
+  if (!match) {
+    return;
+  }
+  const searchedAssembly = match[2];
+  const typeAssembly = match[1];
+
+  if (searchedAssembly === typeAssembly) {
+    return new CorruptedAssemblyError(error.message);
+  }
+  return;
 }
