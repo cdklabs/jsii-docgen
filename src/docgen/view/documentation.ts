@@ -5,6 +5,7 @@ import * as glob from 'glob-promise';
 import * as reflect from 'jsii-reflect';
 import { TargetLanguage } from 'jsii-rosetta';
 import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
+import { CorruptedAssemblyError, LanguageNotSupportedError } from '../..';
 import { Markdown } from '../render/markdown';
 import { CSharpTranspile } from '../transpile/csharp';
 import { JavaTranspile } from '../transpile/java';
@@ -14,6 +15,9 @@ import { TypeScriptTranspile } from '../transpile/typescript';
 import { Npm } from './_npm';
 import { ApiReference } from './api-reference';
 import { Readme } from './readme';
+
+// https://github.com/aws/jsii/blob/main/packages/jsii-reflect/lib/assembly.ts#L175
+const NOT_FOUND_IN_ASSEMBLY_REGEX = /Type '(.*)\..*' not found in assembly (.*)$/;
 
 /**
  * Options for rendering a `Documentation` object.
@@ -178,6 +182,20 @@ export class Documentation {
 
     const { assembly, transpile } = await this.languageSpecific(language, loose);
 
+    const assemblyFqn = `${assembly.name}@${assembly.version}`;
+
+    const targets = assembly.targets;
+
+    if (!targets) {
+      throw new Error(`Assembly ${assemblyFqn} does not have any targets defined`);
+    }
+
+    const isSupported = language === Language.TYPESCRIPT || assembly.targets[language.targetName];
+
+    if (!isSupported) {
+      throw new LanguageNotSupportedError(`Laguage ${language} is not supported for package ${assemblyFqn}`);
+    }
+
     const submodule = options?.submodule ? this.findSubmodule(assembly, options.submodule) : undefined;
     const documentation = new Markdown();
 
@@ -187,8 +205,15 @@ export class Documentation {
     }
 
     if (options?.apiReference ?? true) {
-      const apiReference = new ApiReference(transpile, assembly, options?.linkFormatter ?? ((t: TranspiledType) => `#${t.fqn}`), submodule);
-      documentation.section(apiReference.render());
+      try {
+        const apiReference = new ApiReference(transpile, assembly, options?.linkFormatter ?? ((t: TranspiledType) => `#${t.fqn}`), submodule);
+        documentation.section(apiReference.render());
+      } catch (error) {
+        if (!(error instanceof Error)) {
+          throw error;
+        }
+        throw maybeCorruptedAssemblyError(error) ?? error;
+      }
     }
 
     return documentation;
@@ -325,4 +350,34 @@ export function extractPackageName(spec: string) {
 
   // aws-cdk-lib
   return spec;
+}
+
+/**
+ * Return a `CorruptedAssemblyError` if the error matches, undefined otherwise.
+ *
+ * Note that an 'not found in assembly` can be thrown in two cases:
+ *
+ * 1. Direct usage of `assembly.findType(fqn)`
+ *
+ *    In this case the error could be caused by a wrong FQN being passed to the function. This is not considered
+ *    a corrupted assembly since the caller might be passing an FQN from a different assembly.
+ *
+ * 2. Implicit usage of `assembly.findType(fqn)` by calling `.type` (e.g `parameter.type`)
+ *
+ *    In this case the assembly we look in is always the same assembly the type itself comes from, and if it doesn't exist,
+ *    then the assembly is considered corrupt.
+ */
+function maybeCorruptedAssemblyError(error: Error): CorruptedAssemblyError | undefined {
+
+  const match = error.message.match(NOT_FOUND_IN_ASSEMBLY_REGEX);
+  if (!match) {
+    return;
+  }
+  const searchedAssembly = match[2];
+  const typeAssembly = match[1];
+
+  if (searchedAssembly === typeAssembly) {
+    return new CorruptedAssemblyError(error.message);
+  }
+  return;
 }

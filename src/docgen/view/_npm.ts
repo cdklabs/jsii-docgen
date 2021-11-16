@@ -1,7 +1,8 @@
 import { spawn, SpawnOptionsWithoutStdio } from 'child_process';
+import * as os from 'os';
 import { join } from 'path';
 import { major } from 'semver';
-import { NoSpaceLeftOnDevice, NpmError } from '../../errors';
+import { NoSpaceLeftOnDevice, UnInstallablePackageError, NpmError } from '../../errors';
 
 export class Npm {
   #npmCommand: string | undefined;
@@ -114,9 +115,12 @@ export class Npm {
     options?: SpawnOptionsWithoutStdio,
   ): Promise<CommandResult<T>> {
     return new Promise<CommandResult<T>>((ok, ko) => {
-      const child = spawn(command, args, { ...options, stdio: ['inherit', 'pipe', 'inherit'] });
+      const child = spawn(command, args, { ...options, stdio: ['inherit', 'pipe', 'pipe'] });
       const stdout = new Array<Buffer>();
       child.stdout.on('data', (chunk) => {
+        stdout.push(Buffer.from(chunk));
+      });
+      child.stderr.on('data', (chunk) => {
         stdout.push(Buffer.from(chunk));
       });
 
@@ -173,7 +177,22 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
     // have an actual Error object, so we'll stringify that here...
     stdout.error && !detail && !summary ? `: ${stdout.error}` : '',
   ].join('');
-  throw new NpmError(message, stdout, code);
+
+  if (typeof(summary) === 'string' && summary.includes('must provide string spec')) {
+    // happens when package.json dependencies don't have a spec.
+    // for example: https://github.com/markusl/cdk-codepipeline-bitbucket-build-result-reporter/blob/v0.0.7/package.json
+    throw new UnInstallablePackageError(summary);
+  }
+
+  switch (code) {
+    case 'ERESOLVE':
+      // dependency resolution problem requires a manual
+      // intervention (most likely...)
+      throw new UnInstallablePackageError(message);
+    default:
+      throw new NpmError(message, stdout, code);
+  }
+
 }
 
 /**
@@ -183,16 +202,22 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
  * and the raw chunks.
  */
 function chunksToObject(chunks: readonly Buffer[], encoding = 'utf-8'): ResponseObject {
+  const raw = Buffer.concat(chunks).toString(encoding);
   try {
-    return JSON.parse(Buffer.concat(chunks).toString(encoding));
+    // npm will sometimes print non json log lines even though --json was requested.
+    // observed these log lines always start with 'npm', so we filter those out.
+    // for example: "npm notice New patch version of npm available! 8.1.0 -> 8.1.3"
+    // for example: "npm ERR! must provide string spec"
+    const onlyJson = raw.split(os.EOL).filter(l => !l.startsWith('npm')).join(os.EOL);
+    return JSON.parse(onlyJson);
   } catch (error) {
-    return { error, raw: chunks };
+    return { error, raw };
   }
 }
 
 type ResponseObject =
   // The error when we failed to parse the output as JSON
-  | { readonly error: any; readonly raw: readonly Buffer[] }
+  | { readonly error: any; readonly raw: string }
   // The error objects npm returns when operating in --json mode
   | { readonly error: { readonly code: string; readonly summary: string; readonly detail: string } }
   // The successful objects are treated as opaque blobs here

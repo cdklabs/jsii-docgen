@@ -22,7 +22,7 @@ export class Language {
   /**
    * C#
    */
-  public static readonly CSHARP = new Language('csharp');
+  public static readonly CSHARP = new Language('csharp', 'dotnet');
 
   /**
    * Transform a literal string to the `Language` object.
@@ -31,13 +31,17 @@ export class Language {
    */
   public static fromString(lang: string) {
     switch (lang) {
-      case Language.TYPESCRIPT.toString():
+      case Language.TYPESCRIPT.name:
+      case Language.TYPESCRIPT.targetName:
         return Language.TYPESCRIPT;
-      case Language.PYTHON.toString():
+      case Language.PYTHON.name:
+      case Language.PYTHON.targetName:
         return Language.PYTHON;
-      case Language.JAVA.toString():
+      case Language.JAVA.name:
+      case Language.JAVA.targetName:
         return Language.JAVA;
-      case Language.CSHARP.toString():
+      case Language.CSHARP.name:
+      case Language.CSHARP.targetName:
         return Language.CSHARP;
       default:
         throw new UnsupportedLanguageError(lang, Language.values());
@@ -48,11 +52,12 @@ export class Language {
     return [Language.TYPESCRIPT, Language.PYTHON, Language.JAVA, Language.CSHARP];
   }
 
-  private constructor(private readonly lang: string) {}
+  private constructor(public readonly name: string, public readonly targetName = name) {}
 
   public toString() {
-    return this.lang;
+    return this.name;
   }
+
 }
 
 export class UnsupportedLanguageError extends Error {
