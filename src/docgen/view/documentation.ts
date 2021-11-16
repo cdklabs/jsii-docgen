@@ -182,10 +182,18 @@ export class Documentation {
 
     const { assembly, transpile } = await this.languageSpecific(language, loose);
 
-    const isSupported = language === Language.TYPESCRIPT || assembly.targets![language.targetName];
+    const assemblyFqn = `${assembly.name}@${assembly.version}`;
+
+    const targets = assembly.targets;
+
+    if (!targets) {
+      throw new Error(`Assembly ${assemblyFqn} does not have any targets defined`);
+    }
+
+    const isSupported = language === Language.TYPESCRIPT || assembly.targets[language.targetName];
 
     if (!isSupported) {
-      throw new LanguageNotSupportedError(`Laguage ${language} is not supported for package ${assembly.name}@${assembly.version}`);
+      throw new LanguageNotSupportedError(`Laguage ${language} is not supported for package ${assemblyFqn}`);
     }
 
     const submodule = options?.submodule ? this.findSubmodule(assembly, options.submodule) : undefined;

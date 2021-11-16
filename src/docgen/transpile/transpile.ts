@@ -54,6 +54,10 @@ export class Language {
 
   private constructor(public readonly name: string, public readonly targetName = name) {}
 
+  public toString() {
+    return this.name;
+  }
+
 }
 
 export class UnsupportedLanguageError extends Error {
