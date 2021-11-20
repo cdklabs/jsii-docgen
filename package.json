@@ -49,19 +49,19 @@
     "jest-junit": "^12",
     "json-schema": "^0.4.0",
     "npm-check-updates": "^11",
-    "projen": "^0.34.7",
+    "projen": "^0.34.10",
     "standard-version": "^9",
     "ts-jest": "^27.0.7",
     "typescript": "~4.5.2"
   },
   "dependencies": {
-    "@jsii/spec": "^1.44.2",
+    "@jsii/spec": "^1.45.0",
     "case": "^1.6.3",
     "fs-extra": "^10.0.0",
     "glob": "^7.2.0",
     "glob-promise": "^3.4.0",
-    "jsii-reflect": "^1.44.2",
-    "jsii-rosetta": "^1.44.2",
+    "jsii-reflect": "^1.45.0",
+    "jsii-rosetta": "^1.45.0",
     "semver": "^7.3.5",
     "yargs": "^16.2.0"
   },
