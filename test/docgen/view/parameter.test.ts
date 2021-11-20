@@ -51,3 +51,13 @@ describe('csharp', () => {
     expect(parameter.render().render()).toMatchSnapshot();
   });
 });
+
+describe('newlines in "defaults" are removed', () => {
+  const transpile = new TypeScriptTranspile();
+  test('snapshot', () => {
+    const reflectParameter = findParameter();
+    reflectParameter.spec.docs = { default: 'default option\nwith a newline' };
+    const docgenParameter = new Parameter(transpile, findParameter(), (t: TranspiledType) => `#${t.fqn}`);
+    expect(docgenParameter.render().render()).toMatchSnapshot();
+  });
+});

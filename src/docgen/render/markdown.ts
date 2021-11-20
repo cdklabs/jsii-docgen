@@ -76,6 +76,8 @@ export class Markdown {
       sanitized = sanitized.substring(1, line.length).trim();
     }
 
+    sanitized = sanitized.replace(/\n/g, ' ');
+
     return sanitized;
   }
 
