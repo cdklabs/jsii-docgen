@@ -26062,7 +26062,7 @@ To create an \`onImageScanCompleted\` event rule and trigger the event target
 // This example was automatically transliterated with incomplete type information. It may not work as-is.
 // See https://github.com/aws/jsii/issues/826 for more information.
 
-repository.onImageScanCompleted('ImageScanComplete').addTarget(...);
+repository.onImageScanCompleted(\\"ImageScanComplete\\").addTarget(...);
 \`\`\`
 
 ### Authorization Token
@@ -26082,8 +26082,8 @@ grants an IAM user access to call this API.
 import software.amazon.awscdk.services.iam.*;
 import software.amazon.awscdk.services.ecr.*;
 
-User user = User.Builder.create(this, \\"User\\")....build();
-ecr.AuthorizationToken.grantRead(user);
+User user = new User(this, \\"User\\", new UserProps()...);
+AuthorizationToken.grantRead(user);
 \`\`\`
 
 If you access images in the [Public ECR Gallery](https://gallery.ecr.aws/) as well, it is recommended you authenticate to the registry to benefit from
@@ -26100,8 +26100,8 @@ The following code snippet grants an IAM user access to retrieve an authorizatio
 import software.amazon.awscdk.services.iam.*;
 import software.amazon.awscdk.services.ecr.*;
 
-User user = User.Builder.create(this, \\"User\\")....build();
-ecr.PublicGalleryAuthorizationToken.grantRead(user);
+User user = new User(this, \\"User\\", new UserProps()...);
+PublicGalleryAuthorizationToken.grantRead(user);
 \`\`\`
 
 This user can then proceed to login to the registry using one of the [authentication methods](https://docs.aws.amazon.com/AmazonECR/latest/public/public-registries.html#public-registry-auth).
@@ -26114,7 +26114,7 @@ You can set tag immutability on images in our repository using the \`imageTagMut
 // This example was automatically transliterated with incomplete type information. It may not work as-is.
 // See https://github.com/aws/jsii/issues/826 for more information.
 
-Repository.Builder.create(stack, \\"Repo\\").imageTagMutability(ecr.TagMutability.getIMMUTABLE()).build();
+Repository.Builder.create(stack, \\"Repo\\").imageTagMutability(ecr.getTagMutability().getIMMUTABLE()).build();
 \`\`\`
 
 ## Automatically clean up repositories
@@ -28547,7 +28547,7 @@ To create an \`onImageScanCompleted\` event rule and trigger the event target
 // This example was automatically transliterated with incomplete type information. It may not work as-is.
 // See https://github.com/aws/jsii/issues/826 for more information.
 
-repository.onImageScanCompleted('ImageScanComplete').addTarget(...);
+repository.onImageScanCompleted(\\"ImageScanComplete\\").addTarget(...);
 \`\`\`
 
 ### Authorization Token
@@ -28568,7 +28568,7 @@ import aws.cdk.aws.iam.*;
 import aws.cdk.aws.ecr.*;
 
 Object user = User.Builder.create(this, \\"User\\")....build();
-ecr.AuthorizationToken.grantRead(user);
+AuthorizationToken.grantRead(user);
 \`\`\`
 
 If you access images in the [Public ECR Gallery](https://gallery.ecr.aws/) as well, it is recommended you authenticate to the registry to benefit from
@@ -28586,7 +28586,7 @@ import aws.cdk.aws.iam.*;
 import aws.cdk.aws.ecr.*;
 
 Object user = User.Builder.create(this, \\"User\\")....build();
-ecr.PublicGalleryAuthorizationToken.grantRead(user);
+PublicGalleryAuthorizationToken.grantRead(user);
 \`\`\`
 
 This user can then proceed to login to the registry using one of the [authentication methods](https://docs.aws.amazon.com/AmazonECR/latest/public/public-registries.html#public-registry-auth).
@@ -28599,7 +28599,7 @@ You can set tag immutability on images in our repository using the \`imageTagMut
 // This example was automatically transliterated with incomplete type information. It may not work as-is.
 // See https://github.com/aws/jsii/issues/826 for more information.
 
-Repository.Builder.create(stack, \\"Repo\\").imageTagMutability(ecr.TagMutability.getIMMUTABLE()).build();
+Repository.Builder.create(stack, \\"Repo\\").imageTagMutability(ecr.getTagMutability().getIMMUTABLE()).build();
 \`\`\`
 
 ## Automatically clean up repositories
