@@ -201,12 +201,7 @@ public ResourceEnvironment Env { get; }
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK
-(generally, those created by creating new class instances like Role, Bucket, etc.),
-this is always the same as the environment of the stack they belong to;
-however, for imported resources
-(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
-that might be different than the stack they were imported into.
+For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
 
 ---
 
@@ -469,12 +464,7 @@ public ResourceEnvironment getEnv();
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK
-(generally, those created by creating new class instances like Role, Bucket, etc.),
-this is always the same as the environment of the stack they belong to;
-however, for imported resources
-(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
-that might be different than the stack they were imported into.
+For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
 
 ---
 
@@ -640,9 +630,7 @@ A description of the rule's purpose.
 
 Additional restrictions for the event to route to the specified target.
 
-The method that generates the rule probably imposes some type of event
-filtering. The filtering implied by what you pass here is added
-on top of that filtering.
+The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
 
 > https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
 
@@ -703,9 +691,7 @@ A description of the rule's purpose.
 
 Additional restrictions for the event to route to the specified target.
 
-The method that generates the rule probably imposes some type of event
-filtering. The filtering implied by what you pass here is added
-on top of that filtering.
+The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
 
 > https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
 
@@ -772,9 +758,7 @@ A description of the rule's purpose.
 
 Additional restrictions for the event to route to the specified target.
 
-The method that generates the rule probably imposes some type of event
-filtering. The filtering implied by what you pass here is added
-on top of that filtering.
+The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
 
 > https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
 
@@ -835,9 +819,7 @@ A description of the rule's purpose.
 
 Additional restrictions for the event to route to the specified target.
 
-The method that generates the rule probably imposes some type of event
-filtering. The filtering implied by what you pass here is added
-on top of that filtering.
+The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
 
 > https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
 
@@ -928,12 +910,7 @@ env: ResourceEnvironment
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK
-(generally, those created by creating new class instances like Role, Bucket, etc.),
-this is always the same as the environment of the stack they belong to;
-however, for imported resources
-(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
-that might be different than the stack they were imported into.
+For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
 
 ---
 
@@ -1190,12 +1167,7 @@ public readonly env: ResourceEnvironment;
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK
-(generally, those created by creating new class instances like Role, Bucket, etc.),
-this is always the same as the environment of the stack they belong to;
-however, for imported resources
-(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
-that might be different than the stack they were imported into.
+For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
 
 ---
 

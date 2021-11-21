@@ -171,22 +171,18 @@ The CORS configuration of this bucket.
 
 The kind of server-side encryption to apply to this bucket.
 
-If you choose KMS, you can specify a KMS key via \`encryptionKey\`. If
-encryption key is not specified, a key will automatically be created.
+If you choose KMS, you can specify a KMS key via \`encryptionKey\`. If encryption key is not specified, a key will automatically be created.
 
 ---
 
 ##### \`encryption_key\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_s3.BucketProps.parameter.encryption_key\\"></a>
 
 - *Type:* [\`aws_cdk.aws_kms.IKey\`](#aws_cdk.aws_kms.IKey)
-- *Default:* If encryption is set to \\"Kms\\" and this property is undefined,
-a new KMS key will be created and associated with this bucket.
+- *Default:* If encryption is set to \\"Kms\\" and this property is undefined, a new KMS key will be created and associated with this bucket.
 
 External KMS key to use for bucket encryption.
 
-The 'encryption' property must be either not specified or set to \\"Kms\\".
-An error will be emitted if encryption is set to \\"Unencrypted\\" or
-\\"Managed\\".
+The 'encryption' property must be either not specified or set to \\"Kms\\". An error will be emitted if encryption is set to \\"Unencrypted\\" or \\"Managed\\".
 
 ---
 

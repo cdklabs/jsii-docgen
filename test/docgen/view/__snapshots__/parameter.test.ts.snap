@@ -18,6 +18,16 @@ exports[`java snapshot 1`] = `
 "
 `;
 
+exports[`newlines in "defaults" are removed snapshot 1`] = `
+" \`grantee\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
+
+- *Type:* [\`@aws-cdk/aws-iam.IGrantable\`](#@aws-cdk/aws-iam.IGrantable)
+- *Default:* default option with a newline
+
+---
+"
+`;
+
 exports[`python snapshot 1`] = `
 " \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.AuthorizationToken.parameter.grantee\\"></a>
 
