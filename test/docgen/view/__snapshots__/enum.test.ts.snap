@@ -1,18 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`csharp snapshot 1`] = `
-" TagMutability <a name=\\"TagMutability\\"></a>
+" TagMutability <a name=\\"TagMutability\\" id=\\"tagmutability\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`MUTABLE\`](#amazoncdkawsecrtagmutabilitymutable) | allow image tags to be overwritten. |
+| [\`IMMUTABLE\`](#amazoncdkawsecrtagmutabilityimmutable) | all image tags within the repository will be immutable which will prevent them from being overwritten. |
+
+---
 
 The tag mutability setting for your repository.
 
-# \`MUTABLE\` <a name=\\"Amazon.CDK.AWS.ECR.TagMutability.MUTABLE\\"></a>
+# \`MUTABLE\` <a name=\\"Amazon.CDK.AWS.ECR.TagMutability.MUTABLE\\" id=\\"amazoncdkawsecrtagmutabilitymutable\\"></a>
 
 allow image tags to be overwritten.
 
 ---
 
 
-# \`IMMUTABLE\` <a name=\\"Amazon.CDK.AWS.ECR.TagMutability.IMMUTABLE\\"></a>
+# \`IMMUTABLE\` <a name=\\"Amazon.CDK.AWS.ECR.TagMutability.IMMUTABLE\\" id=\\"amazoncdkawsecrtagmutabilityimmutable\\"></a>
 
 all image tags within the repository will be immutable which will prevent them from being overwritten.
 
@@ -22,18 +29,25 @@ all image tags within the repository will be immutable which will prevent them f
 `;
 
 exports[`java snapshot 1`] = `
-" TagMutability <a name=\\"TagMutability\\"></a>
+" TagMutability <a name=\\"TagMutability\\" id=\\"tagmutability\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`MUTABLE\`](#softwareamazonawscdkservicesecrtagmutabilitymutable) | allow image tags to be overwritten. |
+| [\`IMMUTABLE\`](#softwareamazonawscdkservicesecrtagmutabilityimmutable) | all image tags within the repository will be immutable which will prevent them from being overwritten. |
+
+---
 
 The tag mutability setting for your repository.
 
-# \`MUTABLE\` <a name=\\"software.amazon.awscdk.services.ecr.TagMutability.MUTABLE\\"></a>
+# \`MUTABLE\` <a name=\\"software.amazon.awscdk.services.ecr.TagMutability.MUTABLE\\" id=\\"softwareamazonawscdkservicesecrtagmutabilitymutable\\"></a>
 
 allow image tags to be overwritten.
 
 ---
 
 
-# \`IMMUTABLE\` <a name=\\"software.amazon.awscdk.services.ecr.TagMutability.IMMUTABLE\\"></a>
+# \`IMMUTABLE\` <a name=\\"software.amazon.awscdk.services.ecr.TagMutability.IMMUTABLE\\" id=\\"softwareamazonawscdkservicesecrtagmutabilityimmutable\\"></a>
 
 all image tags within the repository will be immutable which will prevent them from being overwritten.
 
@@ -43,18 +57,25 @@ all image tags within the repository will be immutable which will prevent them f
 `;
 
 exports[`python snapshot 1`] = `
-" TagMutability <a name=\\"TagMutability\\"></a>
+" TagMutability <a name=\\"TagMutability\\" id=\\"tagmutability\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`MUTABLE\`](#awscdkawsecrtagmutabilitymutable) | allow image tags to be overwritten. |
+| [\`IMMUTABLE\`](#awscdkawsecrtagmutabilityimmutable) | all image tags within the repository will be immutable which will prevent them from being overwritten. |
+
+---
 
 The tag mutability setting for your repository.
 
-# \`MUTABLE\` <a name=\\"aws_cdk.aws_ecr.TagMutability.MUTABLE\\"></a>
+# \`MUTABLE\` <a name=\\"aws_cdk.aws_ecr.TagMutability.MUTABLE\\" id=\\"awscdkawsecrtagmutabilitymutable\\"></a>
 
 allow image tags to be overwritten.
 
 ---
 
 
-# \`IMMUTABLE\` <a name=\\"aws_cdk.aws_ecr.TagMutability.IMMUTABLE\\"></a>
+# \`IMMUTABLE\` <a name=\\"aws_cdk.aws_ecr.TagMutability.IMMUTABLE\\" id=\\"awscdkawsecrtagmutabilityimmutable\\"></a>
 
 all image tags within the repository will be immutable which will prevent them from being overwritten.
 
@@ -64,18 +85,25 @@ all image tags within the repository will be immutable which will prevent them f
 `;
 
 exports[`typescript snapshot 1`] = `
-" TagMutability <a name=\\"TagMutability\\"></a>
+" TagMutability <a name=\\"TagMutability\\" id=\\"tagmutability\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`MUTABLE\`](#awscdkawsecrtagmutabilitymutable) | allow image tags to be overwritten. |
+| [\`IMMUTABLE\`](#awscdkawsecrtagmutabilityimmutable) | all image tags within the repository will be immutable which will prevent them from being overwritten. |
+
+---
 
 The tag mutability setting for your repository.
 
-# \`MUTABLE\` <a name=\\"@aws-cdk/aws-ecr.TagMutability.MUTABLE\\"></a>
+# \`MUTABLE\` <a name=\\"@aws-cdk/aws-ecr.TagMutability.MUTABLE\\" id=\\"awscdkawsecrtagmutabilitymutable\\"></a>
 
 allow image tags to be overwritten.
 
 ---
 
 
-# \`IMMUTABLE\` <a name=\\"@aws-cdk/aws-ecr.TagMutability.IMMUTABLE\\"></a>
+# \`IMMUTABLE\` <a name=\\"@aws-cdk/aws-ecr.TagMutability.IMMUTABLE\\" id=\\"awscdkawsecrtagmutabilityimmutable\\"></a>
 
 all image tags within the repository will be immutable which will prevent them from being overwritten.
 
