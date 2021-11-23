@@ -66,9 +66,9 @@ export class Class {
     if (this.initializer) {
       md.section(this.initializer.render());
     }
+    md.section(this.properties.render());
     md.section(this.instanceMethods.render());
     md.section(this.staticFunctions.render());
-    md.section(this.properties.render());
     md.section(this.constants.render());
     return md;
   }

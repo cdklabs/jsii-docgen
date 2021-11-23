@@ -37,8 +37,8 @@ export class Struct {
       `${this.transpiled.initialization}`,
     );
 
-    md.section(this.properties.render());
     md.section(initializer);
+    md.section(this.properties.render());
     return md;
   }
 }

@@ -54,8 +54,8 @@ export class Interface {
       md.docs(this.iface.docs);
     }
 
-    md.section(this.instanceMethods.render());
     md.section(this.properties.render());
+    md.section(this.instanceMethods.render());
     return md;
   }
 }
