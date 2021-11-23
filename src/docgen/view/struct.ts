@@ -1,20 +1,18 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
 import { Transpile, TranspiledStruct, TranspiledType } from '../transpile/transpile';
-import { Property } from './property';
+import { Properties } from './properties';
 
 export class Struct {
   private readonly transpiled: TranspiledStruct;
-  private readonly properties: Property[] = new Array<Property>();
+  private readonly properties: Properties;
   constructor(
     private readonly transpile: Transpile,
     private readonly iface: reflect.InterfaceType,
     linkFormatter: (type: TranspiledType) => string,
   ) {
     this.transpiled = transpile.struct(iface);
-    for (const property of this.iface.allProperties) {
-      this.properties.push(new Property(this.transpile, property, linkFormatter));
-    }
+    this.properties = new Properties(transpile, this.iface.allProperties, linkFormatter);
   }
 
   public render(): Markdown {
@@ -39,10 +37,7 @@ export class Struct {
       `${this.transpiled.initialization}`,
     );
 
-    for (const property of this.properties) {
-      initializer.section(property.render());
-    }
-
+    md.section(this.properties.render());
     md.section(initializer);
     return md;
   }

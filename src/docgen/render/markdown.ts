@@ -127,6 +127,18 @@ export class Markdown {
     }
   }
 
+  public table(data: string[][]) {
+    const numColumns = data[0].length;
+    const header = data[0];
+    const rows = data.slice(1);
+    this.lines('| ' + header.map(this.escapePipes).join(' | ') + ' |');
+    this.lines('|' + ' --- |'.repeat(numColumns));
+    for (const row of rows) {
+      this.lines('| ' + row.map(this.escapePipes).join(' | ') + ' |');
+    }
+    this.lines('');
+  }
+
   public quote(line: string) {
     this.lines(`> ${line}`);
     this.lines('');
@@ -211,5 +223,9 @@ export class Markdown {
     }
 
     return caption;
+  }
+
+  private escapePipes(line: string): string {
+    return line.replace(/\|/g, '\\|');
   }
 }

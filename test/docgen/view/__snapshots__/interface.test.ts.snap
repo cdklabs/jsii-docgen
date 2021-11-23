@@ -179,6 +179,17 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 
 # Properties <a name=\\"Properties\\"></a>
 
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| Node | [\`Amazon.CDK.ConstructNode\`](#Amazon.CDK.ConstructNode) | The construct tree node for this construct. |
+| Env | [\`Amazon.CDK.ResourceEnvironment\`](#Amazon.CDK.ResourceEnvironment) | The environment this resource belongs to. |
+| Stack | [\`Amazon.CDK.Stack\`](#Amazon.CDK.Stack) | The stack in which this resource is defined. |
+| RepositoryArn | \`string\` | The ARN of the repository. |
+| RepositoryName | \`string\` | The name of the repository. |
+| RepositoryUri | \`string\` | The URI of this repository (represents the latest image):. |
+
+---
+
 ## \`Node\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.Node\\"></a>
 
 \`\`\`csharp
@@ -441,6 +452,17 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 ---
 
 # Properties <a name=\\"Properties\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| node | [\`software.amazon.awscdk.core.ConstructNode\`](#software.amazon.awscdk.core.ConstructNode) | The construct tree node for this construct. |
+| env | [\`software.amazon.awscdk.core.ResourceEnvironment\`](#software.amazon.awscdk.core.ResourceEnvironment) | The environment this resource belongs to. |
+| stack | [\`software.amazon.awscdk.core.Stack\`](#software.amazon.awscdk.core.Stack) | The stack in which this resource is defined. |
+| repositoryArn | \`java.lang.String\` | The ARN of the repository. |
+| repositoryName | \`java.lang.String\` | The name of the repository. |
+| repositoryUri | \`java.lang.String\` | The URI of this repository (represents the latest image):. |
+
+---
 
 ## \`node\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.node\\"></a>
 
@@ -888,6 +910,17 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 
 # Properties <a name=\\"Properties\\"></a>
 
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| node | [\`aws_cdk.core.ConstructNode\`](#aws_cdk.core.ConstructNode) | The construct tree node for this construct. |
+| env | [\`aws_cdk.core.ResourceEnvironment\`](#aws_cdk.core.ResourceEnvironment) | The environment this resource belongs to. |
+| stack | [\`aws_cdk.core.Stack\`](#aws_cdk.core.Stack) | The stack in which this resource is defined. |
+| repository_arn | \`str\` | The ARN of the repository. |
+| repository_name | \`str\` | The name of the repository. |
+| repository_uri | \`str\` | The URI of this repository (represents the latest image):. |
+
+---
+
 ## \`node\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.property.node\\"></a>
 
 \`\`\`python
@@ -1144,6 +1177,17 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 ---
 
 # Properties <a name=\\"Properties\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| node | [\`@aws-cdk/core.ConstructNode\`](#@aws-cdk/core.ConstructNode) | The construct tree node for this construct. |
+| env | [\`@aws-cdk/core.ResourceEnvironment\`](#@aws-cdk/core.ResourceEnvironment) | The environment this resource belongs to. |
+| stack | [\`@aws-cdk/core.Stack\`](#@aws-cdk/core.Stack) | The stack in which this resource is defined. |
+| repositoryArn | \`string\` | The ARN of the repository. |
+| repositoryName | \`string\` | The name of the repository. |
+| repositoryUri | \`string\` | The URI of this repository (represents the latest image):. |
+
+---
 
 ## \`node\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.property.node\\"></a>
 

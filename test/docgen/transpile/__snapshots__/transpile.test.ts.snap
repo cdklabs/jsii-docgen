@@ -213,6 +213,23 @@ private MetricThrottles(MetricOptions Props = null)
 
 #### Properties <a name=\\"Properties\\"></a>
 
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| Connections | [\`Amazon.CDK.AWS.EC2.Connections\`](#Amazon.CDK.AWS.EC2.Connections) | Not supported. |
+| CurrentVersion | [\`Amazon.CDK.AWS.Lambda.IVersion\`](#Amazon.CDK.AWS.Lambda.IVersion) | Convenience method to make \`EdgeFunction\` conform to the same interface as \`Function\`. |
+| EdgeArn | \`string\` | The ARN of the version for Lambda@Edge. |
+| FunctionArn | \`string\` | The ARN of the function. |
+| FunctionName | \`string\` | The name of the function. |
+| GrantPrincipal | [\`Amazon.CDK.AWS.IAM.IPrincipal\`](#Amazon.CDK.AWS.IAM.IPrincipal) | The principal to grant permissions to. |
+| IsBoundToVpc | \`bool\` | Whether or not this Lambda function was bound to a VPC. |
+| Lambda | [\`Amazon.CDK.AWS.Lambda.IFunction\`](#Amazon.CDK.AWS.Lambda.IFunction) | The underlying AWS Lambda function. |
+| LatestVersion | [\`Amazon.CDK.AWS.Lambda.IVersion\`](#Amazon.CDK.AWS.Lambda.IVersion) | The \`$LATEST\` version of this function. |
+| PermissionsNode | [\`Amazon.CDK.ConstructNode\`](#Amazon.CDK.ConstructNode) | The construct node where permissions are attached. |
+| Version | \`string\` | The most recently deployed version of this function. |
+| Role | [\`Amazon.CDK.AWS.IAM.IRole\`](#Amazon.CDK.AWS.IAM.IRole) | The IAM role associated with this function. |
+
+---
+
 ##### \`Connections\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunction.property.Connections\\"></a>
 
 \`\`\`csharp
@@ -370,52 +387,50 @@ The IAM role associated with this function.
 
 Properties for creating a Lambda@Edge function.
 
-#### Initializer <a name=\\"[object Object].Initializer\\"></a>
+#### Properties <a name=\\"Properties\\"></a>
 
-\`\`\`csharp
-using Amazon.CDK.AWS.CloudFront;
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| MaxEventAge | [\`Amazon.CDK.Duration\`](#Amazon.CDK.Duration) | The maximum age of a request that Lambda sends to a function for processing. |
+| OnFailure | [\`Amazon.CDK.AWS.Lambda.IDestination\`](#Amazon.CDK.AWS.Lambda.IDestination) | The destination for failed invocations. |
+| OnSuccess | [\`Amazon.CDK.AWS.Lambda.IDestination\`](#Amazon.CDK.AWS.Lambda.IDestination) | The destination for successful invocations. |
+| RetryAttempts | \`double\` | The maximum number of times to retry when the function returns an error. |
+| AllowAllOutbound | \`bool\` | Whether to allow the Lambda to send all network traffic. |
+| AllowPublicSubnet | \`bool\` | Lambda Functions in a public subnet can NOT access the internet. |
+| Architectures | [\`Amazon.CDK.AWS.Lambda.Architecture\`](#Amazon.CDK.AWS.Lambda.Architecture)[] | The system architectures compatible with this lambda function. |
+| CodeSigningConfig | [\`Amazon.CDK.AWS.Lambda.ICodeSigningConfig\`](#Amazon.CDK.AWS.Lambda.ICodeSigningConfig) | Code signing config associated with this function. |
+| CurrentVersionOptions | [\`Amazon.CDK.AWS.Lambda.VersionOptions\`](#Amazon.CDK.AWS.Lambda.VersionOptions) | Options for the \`lambda.Version\` resource automatically created by the \`fn.currentVersion\` method. |
+| DeadLetterQueue | [\`Amazon.CDK.AWS.SQS.IQueue\`](#Amazon.CDK.AWS.SQS.IQueue) | The SQS queue to use if DLQ is enabled. |
+| DeadLetterQueueEnabled | \`bool\` | Enabled DLQ. |
+| Description | \`string\` | A description of the function. |
+| Environment | System.Collections.Generic.IDictionary<string, \`string\`> | Key-value pairs that Lambda caches and makes available for your Lambda functions. |
+| EnvironmentEncryption | [\`Amazon.CDK.AWS.KMS.IKey\`](#Amazon.CDK.AWS.KMS.IKey) | The AWS KMS key that's used to encrypt your function's environment variables. |
+| Events | [\`Amazon.CDK.AWS.Lambda.IEventSource\`](#Amazon.CDK.AWS.Lambda.IEventSource)[] | Event sources for this function. |
+| Filesystem | [\`Amazon.CDK.AWS.Lambda.FileSystem\`](#Amazon.CDK.AWS.Lambda.FileSystem) | The filesystem configuration for the lambda function. |
+| FunctionName | \`string\` | A name for the function. |
+| InitialPolicy | [\`Amazon.CDK.AWS.IAM.PolicyStatement\`](#Amazon.CDK.AWS.IAM.PolicyStatement)[] | Initial policy statements to add to the created Lambda Role. |
+| InsightsVersion | [\`Amazon.CDK.AWS.Lambda.LambdaInsightsVersion\`](#Amazon.CDK.AWS.Lambda.LambdaInsightsVersion) | Specify the version of CloudWatch Lambda insights to use for monitoring. |
+| Layers | [\`Amazon.CDK.AWS.Lambda.ILayerVersion\`](#Amazon.CDK.AWS.Lambda.ILayerVersion)[] | A list of layers to add to the function's execution environment. |
+| LogRetention | [\`Amazon.CDK.AWS.Logs.RetentionDays\`](#Amazon.CDK.AWS.Logs.RetentionDays) | The number of days log events are kept in CloudWatch Logs. |
+| LogRetentionRetryOptions | [\`Amazon.CDK.AWS.Lambda.LogRetentionRetryOptions\`](#Amazon.CDK.AWS.Lambda.LogRetentionRetryOptions) | When log retention is specified, a custom resource attempts to create the CloudWatch log group. |
+| LogRetentionRole | [\`Amazon.CDK.AWS.IAM.IRole\`](#Amazon.CDK.AWS.IAM.IRole) | The IAM role for the Lambda function associated with the custom resource that sets the retention policy. |
+| MemorySize | \`double\` | The amount of memory, in MB, that is allocated to your Lambda function. |
+| Profiling | \`bool\` | Enable profiling. |
+| ProfilingGroup | [\`Amazon.CDK.AWS.CodeGuruProfiler.IProfilingGroup\`](#Amazon.CDK.AWS.CodeGuruProfiler.IProfilingGroup) | Profiling Group. |
+| ReservedConcurrentExecutions | \`double\` | The maximum of concurrent executions you want to reserve for the function. |
+| Role | [\`Amazon.CDK.AWS.IAM.IRole\`](#Amazon.CDK.AWS.IAM.IRole) | Lambda execution role. |
+| SecurityGroup | [\`Amazon.CDK.AWS.EC2.ISecurityGroup\`](#Amazon.CDK.AWS.EC2.ISecurityGroup) | What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead. |
+| SecurityGroups | [\`Amazon.CDK.AWS.EC2.ISecurityGroup\`](#Amazon.CDK.AWS.EC2.ISecurityGroup)[] | The list of security groups to associate with the Lambda's network interfaces. |
+| Timeout | [\`Amazon.CDK.Duration\`](#Amazon.CDK.Duration) | The function execution time (in seconds) after which Lambda terminates the function. |
+| Tracing | [\`Amazon.CDK.AWS.Lambda.Tracing\`](#Amazon.CDK.AWS.Lambda.Tracing) | Enable AWS X-Ray Tracing for Lambda Function. |
+| Vpc | [\`Amazon.CDK.AWS.EC2.IVpc\`](#Amazon.CDK.AWS.EC2.IVpc) | VPC network to place Lambda network interfaces. |
+| VpcSubnets | [\`Amazon.CDK.AWS.EC2.SubnetSelection\`](#Amazon.CDK.AWS.EC2.SubnetSelection) | Where to place the network interfaces within the VPC. |
+| Code | [\`Amazon.CDK.AWS.Lambda.Code\`](#Amazon.CDK.AWS.Lambda.Code) | The source code of your Lambda function. |
+| Handler | \`string\` | The name of the method within your code that Lambda calls to execute your function. |
+| Runtime | [\`Amazon.CDK.AWS.Lambda.Runtime\`](#Amazon.CDK.AWS.Lambda.Runtime) | The runtime environment for the Lambda function that you are uploading. |
+| StackId | \`string\` | The stack ID of Lambda@Edge function. |
 
-new EdgeFunctionProps {
-    Duration MaxEventAge = null,
-    IDestination OnFailure = null,
-    IDestination OnSuccess = null,
-    double RetryAttempts = null,
-    bool AllowAllOutbound = null,
-    bool AllowPublicSubnet = null,
-    Architecture[] Architectures = null,
-    ICodeSigningConfig CodeSigningConfig = null,
-    VersionOptions CurrentVersionOptions = null,
-    IQueue DeadLetterQueue = null,
-    bool DeadLetterQueueEnabled = null,
-    string Description = null,
-    System.Collections.Generic.IDictionary<string, string> Environment = null,
-    IKey EnvironmentEncryption = null,
-    IEventSource[] Events = null,
-    FileSystem Filesystem = null,
-    string FunctionName = null,
-    PolicyStatement[] InitialPolicy = null,
-    LambdaInsightsVersion InsightsVersion = null,
-    ILayerVersion[] Layers = null,
-    RetentionDays LogRetention = null,
-    LogRetentionRetryOptions LogRetentionRetryOptions = null,
-    IRole LogRetentionRole = null,
-    double MemorySize = null,
-    bool Profiling = null,
-    IProfilingGroup ProfilingGroup = null,
-    double ReservedConcurrentExecutions = null,
-    IRole Role = null,
-    ISecurityGroup SecurityGroup = null,
-    ISecurityGroup[] SecurityGroups = null,
-    Duration Timeout = null,
-    Tracing Tracing = null,
-    IVpc Vpc = null,
-    SubnetSelection VpcSubnets = null,
-    Code Code,
-    string Handler,
-    Runtime Runtime,
-    string StackId = null
-};
-\`\`\`
+---
 
 ##### \`MaxEventAge\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps.property.MaxEventAge\\"></a>
 
@@ -961,6 +976,53 @@ public string StackId { get; set; }
 The stack ID of Lambda@Edge function.
 
 ---
+
+#### Initializer <a name=\\"[object Object].Initializer\\"></a>
+
+\`\`\`csharp
+using Amazon.CDK.AWS.CloudFront;
+
+new EdgeFunctionProps {
+    Duration MaxEventAge = null,
+    IDestination OnFailure = null,
+    IDestination OnSuccess = null,
+    double RetryAttempts = null,
+    bool AllowAllOutbound = null,
+    bool AllowPublicSubnet = null,
+    Architecture[] Architectures = null,
+    ICodeSigningConfig CodeSigningConfig = null,
+    VersionOptions CurrentVersionOptions = null,
+    IQueue DeadLetterQueue = null,
+    bool DeadLetterQueueEnabled = null,
+    string Description = null,
+    System.Collections.Generic.IDictionary<string, string> Environment = null,
+    IKey EnvironmentEncryption = null,
+    IEventSource[] Events = null,
+    FileSystem Filesystem = null,
+    string FunctionName = null,
+    PolicyStatement[] InitialPolicy = null,
+    LambdaInsightsVersion InsightsVersion = null,
+    ILayerVersion[] Layers = null,
+    RetentionDays LogRetention = null,
+    LogRetentionRetryOptions LogRetentionRetryOptions = null,
+    IRole LogRetentionRole = null,
+    double MemorySize = null,
+    bool Profiling = null,
+    IProfilingGroup ProfilingGroup = null,
+    double ReservedConcurrentExecutions = null,
+    IRole Role = null,
+    ISecurityGroup SecurityGroup = null,
+    ISecurityGroup[] SecurityGroups = null,
+    Duration Timeout = null,
+    Tracing Tracing = null,
+    IVpc Vpc = null,
+    SubnetSelection VpcSubnets = null,
+    Code Code,
+    string Handler,
+    Runtime Runtime,
+    string StackId = null
+};
+\`\`\`
 
 
 
@@ -1612,6 +1674,23 @@ public metricThrottles(MetricOptions props)
 
 #### Properties <a name=\\"Properties\\"></a>
 
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| connections | [\`software.amazon.awscdk.services.ec2.Connections\`](#software.amazon.awscdk.services.ec2.Connections) | Not supported. |
+| currentVersion | [\`software.amazon.awscdk.services.lambda.IVersion\`](#software.amazon.awscdk.services.lambda.IVersion) | Convenience method to make \`EdgeFunction\` conform to the same interface as \`Function\`. |
+| edgeArn | \`java.lang.String\` | The ARN of the version for Lambda@Edge. |
+| functionArn | \`java.lang.String\` | The ARN of the function. |
+| functionName | \`java.lang.String\` | The name of the function. |
+| grantPrincipal | [\`software.amazon.awscdk.services.iam.IPrincipal\`](#software.amazon.awscdk.services.iam.IPrincipal) | The principal to grant permissions to. |
+| isBoundToVpc | \`java.lang.Boolean\` | Whether or not this Lambda function was bound to a VPC. |
+| lambda | [\`software.amazon.awscdk.services.lambda.IFunction\`](#software.amazon.awscdk.services.lambda.IFunction) | The underlying AWS Lambda function. |
+| latestVersion | [\`software.amazon.awscdk.services.lambda.IVersion\`](#software.amazon.awscdk.services.lambda.IVersion) | The \`$LATEST\` version of this function. |
+| permissionsNode | [\`software.amazon.awscdk.core.ConstructNode\`](#software.amazon.awscdk.core.ConstructNode) | The construct node where permissions are attached. |
+| version | \`java.lang.String\` | The most recently deployed version of this function. |
+| role | [\`software.amazon.awscdk.services.iam.IRole\`](#software.amazon.awscdk.services.iam.IRole) | The IAM role associated with this function. |
+
+---
+
 ##### \`connections\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.cloudfront.experimental.EdgeFunction.property.connections\\"></a>
 
 \`\`\`java
@@ -1769,52 +1848,50 @@ The IAM role associated with this function.
 
 Properties for creating a Lambda@Edge function.
 
-#### Initializer <a name=\\"[object Object].Initializer\\"></a>
+#### Properties <a name=\\"Properties\\"></a>
 
-\`\`\`java
-import software.amazon.awscdk.services.cloudfront.experimental.EdgeFunctionProps;
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| maxEventAge | [\`software.amazon.awscdk.core.Duration\`](#software.amazon.awscdk.core.Duration) | The maximum age of a request that Lambda sends to a function for processing. |
+| onFailure | [\`software.amazon.awscdk.services.lambda.IDestination\`](#software.amazon.awscdk.services.lambda.IDestination) | The destination for failed invocations. |
+| onSuccess | [\`software.amazon.awscdk.services.lambda.IDestination\`](#software.amazon.awscdk.services.lambda.IDestination) | The destination for successful invocations. |
+| retryAttempts | \`java.lang.Number\` | The maximum number of times to retry when the function returns an error. |
+| allowAllOutbound | \`java.lang.Boolean\` | Whether to allow the Lambda to send all network traffic. |
+| allowPublicSubnet | \`java.lang.Boolean\` | Lambda Functions in a public subnet can NOT access the internet. |
+| architectures | java.util.List<[\`software.amazon.awscdk.services.lambda.Architecture\`](#software.amazon.awscdk.services.lambda.Architecture)> | The system architectures compatible with this lambda function. |
+| codeSigningConfig | [\`software.amazon.awscdk.services.lambda.ICodeSigningConfig\`](#software.amazon.awscdk.services.lambda.ICodeSigningConfig) | Code signing config associated with this function. |
+| currentVersionOptions | [\`software.amazon.awscdk.services.lambda.VersionOptions\`](#software.amazon.awscdk.services.lambda.VersionOptions) | Options for the \`lambda.Version\` resource automatically created by the \`fn.currentVersion\` method. |
+| deadLetterQueue | [\`software.amazon.awscdk.services.sqs.IQueue\`](#software.amazon.awscdk.services.sqs.IQueue) | The SQS queue to use if DLQ is enabled. |
+| deadLetterQueueEnabled | \`java.lang.Boolean\` | Enabled DLQ. |
+| description | \`java.lang.String\` | A description of the function. |
+| environment | java.util.Map<java.lang.String, \`java.lang.String\`> | Key-value pairs that Lambda caches and makes available for your Lambda functions. |
+| environmentEncryption | [\`software.amazon.awscdk.services.kms.IKey\`](#software.amazon.awscdk.services.kms.IKey) | The AWS KMS key that's used to encrypt your function's environment variables. |
+| events | java.util.List<[\`software.amazon.awscdk.services.lambda.IEventSource\`](#software.amazon.awscdk.services.lambda.IEventSource)> | Event sources for this function. |
+| filesystem | [\`software.amazon.awscdk.services.lambda.FileSystem\`](#software.amazon.awscdk.services.lambda.FileSystem) | The filesystem configuration for the lambda function. |
+| functionName | \`java.lang.String\` | A name for the function. |
+| initialPolicy | java.util.List<[\`software.amazon.awscdk.services.iam.PolicyStatement\`](#software.amazon.awscdk.services.iam.PolicyStatement)> | Initial policy statements to add to the created Lambda Role. |
+| insightsVersion | [\`software.amazon.awscdk.services.lambda.LambdaInsightsVersion\`](#software.amazon.awscdk.services.lambda.LambdaInsightsVersion) | Specify the version of CloudWatch Lambda insights to use for monitoring. |
+| layers | java.util.List<[\`software.amazon.awscdk.services.lambda.ILayerVersion\`](#software.amazon.awscdk.services.lambda.ILayerVersion)> | A list of layers to add to the function's execution environment. |
+| logRetention | [\`software.amazon.awscdk.services.logs.RetentionDays\`](#software.amazon.awscdk.services.logs.RetentionDays) | The number of days log events are kept in CloudWatch Logs. |
+| logRetentionRetryOptions | [\`software.amazon.awscdk.services.lambda.LogRetentionRetryOptions\`](#software.amazon.awscdk.services.lambda.LogRetentionRetryOptions) | When log retention is specified, a custom resource attempts to create the CloudWatch log group. |
+| logRetentionRole | [\`software.amazon.awscdk.services.iam.IRole\`](#software.amazon.awscdk.services.iam.IRole) | The IAM role for the Lambda function associated with the custom resource that sets the retention policy. |
+| memorySize | \`java.lang.Number\` | The amount of memory, in MB, that is allocated to your Lambda function. |
+| profiling | \`java.lang.Boolean\` | Enable profiling. |
+| profilingGroup | [\`software.amazon.awscdk.services.codeguruprofiler.IProfilingGroup\`](#software.amazon.awscdk.services.codeguruprofiler.IProfilingGroup) | Profiling Group. |
+| reservedConcurrentExecutions | \`java.lang.Number\` | The maximum of concurrent executions you want to reserve for the function. |
+| role | [\`software.amazon.awscdk.services.iam.IRole\`](#software.amazon.awscdk.services.iam.IRole) | Lambda execution role. |
+| securityGroup | [\`software.amazon.awscdk.services.ec2.ISecurityGroup\`](#software.amazon.awscdk.services.ec2.ISecurityGroup) | What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead. |
+| securityGroups | java.util.List<[\`software.amazon.awscdk.services.ec2.ISecurityGroup\`](#software.amazon.awscdk.services.ec2.ISecurityGroup)> | The list of security groups to associate with the Lambda's network interfaces. |
+| timeout | [\`software.amazon.awscdk.core.Duration\`](#software.amazon.awscdk.core.Duration) | The function execution time (in seconds) after which Lambda terminates the function. |
+| tracing | [\`software.amazon.awscdk.services.lambda.Tracing\`](#software.amazon.awscdk.services.lambda.Tracing) | Enable AWS X-Ray Tracing for Lambda Function. |
+| vpc | [\`software.amazon.awscdk.services.ec2.IVpc\`](#software.amazon.awscdk.services.ec2.IVpc) | VPC network to place Lambda network interfaces. |
+| vpcSubnets | [\`software.amazon.awscdk.services.ec2.SubnetSelection\`](#software.amazon.awscdk.services.ec2.SubnetSelection) | Where to place the network interfaces within the VPC. |
+| code | [\`software.amazon.awscdk.services.lambda.Code\`](#software.amazon.awscdk.services.lambda.Code) | The source code of your Lambda function. |
+| handler | \`java.lang.String\` | The name of the method within your code that Lambda calls to execute your function. |
+| runtime | [\`software.amazon.awscdk.services.lambda.Runtime\`](#software.amazon.awscdk.services.lambda.Runtime) | The runtime environment for the Lambda function that you are uploading. |
+| stackId | \`java.lang.String\` | The stack ID of Lambda@Edge function. |
 
-EdgeFunctionProps.builder()
-//  .maxEventAge(Duration)
-//  .onFailure(IDestination)
-//  .onSuccess(IDestination)
-//  .retryAttempts(java.lang.Number)
-//  .allowAllOutbound(java.lang.Boolean)
-//  .allowPublicSubnet(java.lang.Boolean)
-//  .architectures(java.util.List<Architecture>)
-//  .codeSigningConfig(ICodeSigningConfig)
-//  .currentVersionOptions(VersionOptions)
-//  .deadLetterQueue(IQueue)
-//  .deadLetterQueueEnabled(java.lang.Boolean)
-//  .description(java.lang.String)
-//  .environment(java.util.Map<java.lang.String, java.lang.String>)
-//  .environmentEncryption(IKey)
-//  .events(java.util.List<IEventSource>)
-//  .filesystem(FileSystem)
-//  .functionName(java.lang.String)
-//  .initialPolicy(java.util.List<PolicyStatement>)
-//  .insightsVersion(LambdaInsightsVersion)
-//  .layers(java.util.List<ILayerVersion>)
-//  .logRetention(RetentionDays)
-//  .logRetentionRetryOptions(LogRetentionRetryOptions)
-//  .logRetentionRole(IRole)
-//  .memorySize(java.lang.Number)
-//  .profiling(java.lang.Boolean)
-//  .profilingGroup(IProfilingGroup)
-//  .reservedConcurrentExecutions(java.lang.Number)
-//  .role(IRole)
-//  .securityGroup(ISecurityGroup)
-//  .securityGroups(java.util.List<ISecurityGroup>)
-//  .timeout(Duration)
-//  .tracing(Tracing)
-//  .vpc(IVpc)
-//  .vpcSubnets(SubnetSelection)
-    .code(Code)
-    .handler(java.lang.String)
-    .runtime(Runtime)
-//  .stackId(java.lang.String)
-    .build();
-\`\`\`
+---
 
 ##### \`maxEventAge\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.cloudfront.experimental.EdgeFunctionProps.property.maxEventAge\\"></a>
 
@@ -2360,6 +2437,53 @@ public java.lang.String getStackId();
 The stack ID of Lambda@Edge function.
 
 ---
+
+#### Initializer <a name=\\"[object Object].Initializer\\"></a>
+
+\`\`\`java
+import software.amazon.awscdk.services.cloudfront.experimental.EdgeFunctionProps;
+
+EdgeFunctionProps.builder()
+//  .maxEventAge(Duration)
+//  .onFailure(IDestination)
+//  .onSuccess(IDestination)
+//  .retryAttempts(java.lang.Number)
+//  .allowAllOutbound(java.lang.Boolean)
+//  .allowPublicSubnet(java.lang.Boolean)
+//  .architectures(java.util.List<Architecture>)
+//  .codeSigningConfig(ICodeSigningConfig)
+//  .currentVersionOptions(VersionOptions)
+//  .deadLetterQueue(IQueue)
+//  .deadLetterQueueEnabled(java.lang.Boolean)
+//  .description(java.lang.String)
+//  .environment(java.util.Map<java.lang.String, java.lang.String>)
+//  .environmentEncryption(IKey)
+//  .events(java.util.List<IEventSource>)
+//  .filesystem(FileSystem)
+//  .functionName(java.lang.String)
+//  .initialPolicy(java.util.List<PolicyStatement>)
+//  .insightsVersion(LambdaInsightsVersion)
+//  .layers(java.util.List<ILayerVersion>)
+//  .logRetention(RetentionDays)
+//  .logRetentionRetryOptions(LogRetentionRetryOptions)
+//  .logRetentionRole(IRole)
+//  .memorySize(java.lang.Number)
+//  .profiling(java.lang.Boolean)
+//  .profilingGroup(IProfilingGroup)
+//  .reservedConcurrentExecutions(java.lang.Number)
+//  .role(IRole)
+//  .securityGroup(ISecurityGroup)
+//  .securityGroups(java.util.List<ISecurityGroup>)
+//  .timeout(Duration)
+//  .tracing(Tracing)
+//  .vpc(IVpc)
+//  .vpcSubnets(SubnetSelection)
+    .code(Code)
+    .handler(java.lang.String)
+    .runtime(Runtime)
+//  .stackId(java.lang.String)
+    .build();
+\`\`\`
 
 
 
@@ -3813,6 +3937,23 @@ Only refer to datums emitted to the metric stream with the given unit and ignore
 
 #### Properties <a name=\\"Properties\\"></a>
 
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| connections | [\`aws_cdk.aws_ec2.Connections\`](#aws_cdk.aws_ec2.Connections) | Not supported. |
+| current_version | [\`aws_cdk.aws_lambda.IVersion\`](#aws_cdk.aws_lambda.IVersion) | Convenience method to make \`EdgeFunction\` conform to the same interface as \`Function\`. |
+| edge_arn | \`str\` | The ARN of the version for Lambda@Edge. |
+| function_arn | \`str\` | The ARN of the function. |
+| function_name | \`str\` | The name of the function. |
+| grant_principal | [\`aws_cdk.aws_iam.IPrincipal\`](#aws_cdk.aws_iam.IPrincipal) | The principal to grant permissions to. |
+| is_bound_to_vpc | \`bool\` | Whether or not this Lambda function was bound to a VPC. |
+| lambda | [\`aws_cdk.aws_lambda.IFunction\`](#aws_cdk.aws_lambda.IFunction) | The underlying AWS Lambda function. |
+| latest_version | [\`aws_cdk.aws_lambda.IVersion\`](#aws_cdk.aws_lambda.IVersion) | The \`$LATEST\` version of this function. |
+| permissions_node | [\`aws_cdk.core.ConstructNode\`](#aws_cdk.core.ConstructNode) | The construct node where permissions are attached. |
+| version | \`str\` | The most recently deployed version of this function. |
+| role | [\`aws_cdk.aws_iam.IRole\`](#aws_cdk.aws_iam.IRole) | The IAM role associated with this function. |
+
+---
+
 ##### \`connections\`<sup>Required</sup> <a name=\\"aws_cdk.experimental.EdgeFunction.property.connections\\"></a>
 
 \`\`\`python
@@ -3970,52 +4111,50 @@ The IAM role associated with this function.
 
 Properties for creating a Lambda@Edge function.
 
-#### Initializer <a name=\\"[object Object].Initializer\\"></a>
+#### Properties <a name=\\"Properties\\"></a>
 
-\`\`\`python
-from aws_cdk import aws_cloudfront
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| max_event_age | [\`aws_cdk.core.Duration\`](#aws_cdk.core.Duration) | The maximum age of a request that Lambda sends to a function for processing. |
+| on_failure | [\`aws_cdk.aws_lambda.IDestination\`](#aws_cdk.aws_lambda.IDestination) | The destination for failed invocations. |
+| on_success | [\`aws_cdk.aws_lambda.IDestination\`](#aws_cdk.aws_lambda.IDestination) | The destination for successful invocations. |
+| retry_attempts | \`typing.Union[int, float]\` | The maximum number of times to retry when the function returns an error. |
+| allow_all_outbound | \`bool\` | Whether to allow the Lambda to send all network traffic. |
+| allow_public_subnet | \`bool\` | Lambda Functions in a public subnet can NOT access the internet. |
+| architectures | typing.List[[\`aws_cdk.aws_lambda.Architecture\`](#aws_cdk.aws_lambda.Architecture)] | The system architectures compatible with this lambda function. |
+| code_signing_config | [\`aws_cdk.aws_lambda.ICodeSigningConfig\`](#aws_cdk.aws_lambda.ICodeSigningConfig) | Code signing config associated with this function. |
+| current_version_options | [\`aws_cdk.aws_lambda.VersionOptions\`](#aws_cdk.aws_lambda.VersionOptions) | Options for the \`lambda.Version\` resource automatically created by the \`fn.currentVersion\` method. |
+| dead_letter_queue | [\`aws_cdk.aws_sqs.IQueue\`](#aws_cdk.aws_sqs.IQueue) | The SQS queue to use if DLQ is enabled. |
+| dead_letter_queue_enabled | \`bool\` | Enabled DLQ. |
+| description | \`str\` | A description of the function. |
+| environment | typing.Mapping[\`str\`] | Key-value pairs that Lambda caches and makes available for your Lambda functions. |
+| environment_encryption | [\`aws_cdk.aws_kms.IKey\`](#aws_cdk.aws_kms.IKey) | The AWS KMS key that's used to encrypt your function's environment variables. |
+| events | typing.List[[\`aws_cdk.aws_lambda.IEventSource\`](#aws_cdk.aws_lambda.IEventSource)] | Event sources for this function. |
+| filesystem | [\`aws_cdk.aws_lambda.FileSystem\`](#aws_cdk.aws_lambda.FileSystem) | The filesystem configuration for the lambda function. |
+| function_name | \`str\` | A name for the function. |
+| initial_policy | typing.List[[\`aws_cdk.aws_iam.PolicyStatement\`](#aws_cdk.aws_iam.PolicyStatement)] | Initial policy statements to add to the created Lambda Role. |
+| insights_version | [\`aws_cdk.aws_lambda.LambdaInsightsVersion\`](#aws_cdk.aws_lambda.LambdaInsightsVersion) | Specify the version of CloudWatch Lambda insights to use for monitoring. |
+| layers | typing.List[[\`aws_cdk.aws_lambda.ILayerVersion\`](#aws_cdk.aws_lambda.ILayerVersion)] | A list of layers to add to the function's execution environment. |
+| log_retention | [\`aws_cdk.aws_logs.RetentionDays\`](#aws_cdk.aws_logs.RetentionDays) | The number of days log events are kept in CloudWatch Logs. |
+| log_retention_retry_options | [\`aws_cdk.aws_lambda.LogRetentionRetryOptions\`](#aws_cdk.aws_lambda.LogRetentionRetryOptions) | When log retention is specified, a custom resource attempts to create the CloudWatch log group. |
+| log_retention_role | [\`aws_cdk.aws_iam.IRole\`](#aws_cdk.aws_iam.IRole) | The IAM role for the Lambda function associated with the custom resource that sets the retention policy. |
+| memory_size | \`typing.Union[int, float]\` | The amount of memory, in MB, that is allocated to your Lambda function. |
+| profiling | \`bool\` | Enable profiling. |
+| profiling_group | [\`aws_cdk.aws_codeguruprofiler.IProfilingGroup\`](#aws_cdk.aws_codeguruprofiler.IProfilingGroup) | Profiling Group. |
+| reserved_concurrent_executions | \`typing.Union[int, float]\` | The maximum of concurrent executions you want to reserve for the function. |
+| role | [\`aws_cdk.aws_iam.IRole\`](#aws_cdk.aws_iam.IRole) | Lambda execution role. |
+| security_group | [\`aws_cdk.aws_ec2.ISecurityGroup\`](#aws_cdk.aws_ec2.ISecurityGroup) | What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead. |
+| security_groups | typing.List[[\`aws_cdk.aws_ec2.ISecurityGroup\`](#aws_cdk.aws_ec2.ISecurityGroup)] | The list of security groups to associate with the Lambda's network interfaces. |
+| timeout | [\`aws_cdk.core.Duration\`](#aws_cdk.core.Duration) | The function execution time (in seconds) after which Lambda terminates the function. |
+| tracing | [\`aws_cdk.aws_lambda.Tracing\`](#aws_cdk.aws_lambda.Tracing) | Enable AWS X-Ray Tracing for Lambda Function. |
+| vpc | [\`aws_cdk.aws_ec2.IVpc\`](#aws_cdk.aws_ec2.IVpc) | VPC network to place Lambda network interfaces. |
+| vpc_subnets | [\`aws_cdk.aws_ec2.SubnetSelection\`](#aws_cdk.aws_ec2.SubnetSelection) | Where to place the network interfaces within the VPC. |
+| code | [\`aws_cdk.aws_lambda.Code\`](#aws_cdk.aws_lambda.Code) | The source code of your Lambda function. |
+| handler | \`str\` | The name of the method within your code that Lambda calls to execute your function. |
+| runtime | [\`aws_cdk.aws_lambda.Runtime\`](#aws_cdk.aws_lambda.Runtime) | The runtime environment for the Lambda function that you are uploading. |
+| stack_id | \`str\` | The stack ID of Lambda@Edge function. |
 
-experimental.EdgeFunctionProps(
-  max_event_age: Duration = None,
-  on_failure: IDestination = None,
-  on_success: IDestination = None,
-  retry_attempts: typing.Union[int, float] = None,
-  allow_all_outbound: bool = None,
-  allow_public_subnet: bool = None,
-  architectures: typing.List[Architecture] = None,
-  code_signing_config: ICodeSigningConfig = None,
-  current_version_options: VersionOptions = None,
-  dead_letter_queue: IQueue = None,
-  dead_letter_queue_enabled: bool = None,
-  description: str = None,
-  environment: typing.Mapping[str] = None,
-  environment_encryption: IKey = None,
-  events: typing.List[IEventSource] = None,
-  filesystem: FileSystem = None,
-  function_name: str = None,
-  initial_policy: typing.List[PolicyStatement] = None,
-  insights_version: LambdaInsightsVersion = None,
-  layers: typing.List[ILayerVersion] = None,
-  log_retention: RetentionDays = None,
-  log_retention_retry_options: LogRetentionRetryOptions = None,
-  log_retention_role: IRole = None,
-  memory_size: typing.Union[int, float] = None,
-  profiling: bool = None,
-  profiling_group: IProfilingGroup = None,
-  reserved_concurrent_executions: typing.Union[int, float] = None,
-  role: IRole = None,
-  security_group: ISecurityGroup = None,
-  security_groups: typing.List[ISecurityGroup] = None,
-  timeout: Duration = None,
-  tracing: Tracing = None,
-  vpc: IVpc = None,
-  vpc_subnets: SubnetSelection = None,
-  code: Code,
-  handler: str,
-  runtime: Runtime,
-  stack_id: str = None
-)
-\`\`\`
+---
 
 ##### \`max_event_age\`<sup>Optional</sup> <a name=\\"aws_cdk.experimental.EdgeFunctionProps.property.max_event_age\\"></a>
 
@@ -4561,6 +4700,53 @@ stack_id: str
 The stack ID of Lambda@Edge function.
 
 ---
+
+#### Initializer <a name=\\"[object Object].Initializer\\"></a>
+
+\`\`\`python
+from aws_cdk import aws_cloudfront
+
+experimental.EdgeFunctionProps(
+  max_event_age: Duration = None,
+  on_failure: IDestination = None,
+  on_success: IDestination = None,
+  retry_attempts: typing.Union[int, float] = None,
+  allow_all_outbound: bool = None,
+  allow_public_subnet: bool = None,
+  architectures: typing.List[Architecture] = None,
+  code_signing_config: ICodeSigningConfig = None,
+  current_version_options: VersionOptions = None,
+  dead_letter_queue: IQueue = None,
+  dead_letter_queue_enabled: bool = None,
+  description: str = None,
+  environment: typing.Mapping[str] = None,
+  environment_encryption: IKey = None,
+  events: typing.List[IEventSource] = None,
+  filesystem: FileSystem = None,
+  function_name: str = None,
+  initial_policy: typing.List[PolicyStatement] = None,
+  insights_version: LambdaInsightsVersion = None,
+  layers: typing.List[ILayerVersion] = None,
+  log_retention: RetentionDays = None,
+  log_retention_retry_options: LogRetentionRetryOptions = None,
+  log_retention_role: IRole = None,
+  memory_size: typing.Union[int, float] = None,
+  profiling: bool = None,
+  profiling_group: IProfilingGroup = None,
+  reserved_concurrent_executions: typing.Union[int, float] = None,
+  role: IRole = None,
+  security_group: ISecurityGroup = None,
+  security_groups: typing.List[ISecurityGroup] = None,
+  timeout: Duration = None,
+  tracing: Tracing = None,
+  vpc: IVpc = None,
+  vpc_subnets: SubnetSelection = None,
+  code: Code,
+  handler: str,
+  runtime: Runtime,
+  stack_id: str = None
+)
+\`\`\`
 
 
 

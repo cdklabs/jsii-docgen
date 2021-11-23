@@ -12,6 +12,22 @@ export class Property {
     this.transpiled = transpile.property(property);
   }
 
+  public get name(): string {
+    return this.transpiled.name;
+  }
+
+  public get type(): string {
+    return this.transpiled.typeReference.toString({
+      typeFormatter: (t) => `[${Markdown.pre(t.fqn)}](${this.linkFormatter(t)})`,
+      stringFormatter: Markdown.pre,
+    });
+  }
+
+  public get description(): string {
+    const summary = this.property.docs.summary;
+    return summary.length > 0 ? summary : Markdown.italic('No description.');
+  }
+
   public render(): Markdown {
     const optionality = this.property.const
       ? undefined
@@ -42,12 +58,7 @@ export class Property {
       md.code(this.transpile.language.toString(), this.transpiled.declaration);
     }
 
-    const metadata: any = {
-      Type: this.transpiled.typeReference.toString({
-        typeFormatter: (t) => `[${Markdown.pre(t.fqn)}](${this.linkFormatter(t)})`,
-        stringFormatter: Markdown.pre,
-      }),
-    };
+    const metadata: Record<string, string> = { Type: this.type };
 
     if (this.property.spec.docs?.default) {
       metadata.Default = Markdown.sanitize(this.property.spec.docs?.default);
