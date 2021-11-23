@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
+import { anchorForId, Markdown } from '../render/markdown';
 import { Transpile, TranspiledCallable, TranspiledType } from '../transpile/transpile';
 import { Parameter } from './parameter';
 
@@ -17,9 +17,22 @@ export class StaticFunction {
     );
   }
 
+  public get id(): string {
+    return `${this.transpiled.parentType.fqn}.${this.transpiled.name}`;
+  }
+
+  public get linkedName(): string {
+    return `[${Markdown.pre(this.transpiled.name)}](#${anchorForId(this.id)})`;
+  }
+
+  public get description(): string {
+    const summary = this.method.docs.summary;
+    return summary.length > 0 ? summary : Markdown.italic('No description.');
+  }
+
   public render(): Markdown {
     const md = new Markdown({
-      id: `${this.transpiled.parentType.fqn}.${this.transpiled.name}`,
+      id: this.id,
       header: {
         title: this.transpiled.name,
         pre: true,

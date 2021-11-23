@@ -17,6 +17,13 @@ export class Constants {
     }
 
     const md = new Markdown({ header: { title: 'Constants' } });
+
+    md.table([
+      ['Name', 'Type', 'Description'].map(Markdown.bold),
+      ...this.constants.map((constant) => [constant.linkedName, constant.type, Markdown.sanitize(constant.description)]),
+    ]);
+    md.split();
+
     for (const c of this.constants) {
       md.section(c.render());
     }

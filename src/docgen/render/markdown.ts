@@ -7,6 +7,10 @@ const sanitize = (input: string): string => {
     .replace(/ /g, '-');
 };
 
+export const anchorForId = (id: string): string => {
+  return sanitize(id);
+};
+
 /**
  * Options for defining a markdown header.
  */
@@ -176,7 +180,7 @@ export class Markdown {
 
     const content: string[] = [];
     if (this.header) {
-      const anchor = sanitize(this.id ?? '');
+      const anchor = anchorForId(this.id ?? '');
       const heading = `${'#'.repeat(headerSize)} ${this.header}`;
 
       // This is nasty, i'm aware.
@@ -189,7 +193,7 @@ export class Markdown {
           `${heading} <span data-heading-title="${this.header}" data-heading-id="${anchor}"></span>`,
         );
       } else {
-        content.push(`${heading} <a name="${this.id}"></a>`);
+        content.push(`${heading} <a name="${this.id}" id="${anchor}"></a>`);
       }
       content.push('');
     }

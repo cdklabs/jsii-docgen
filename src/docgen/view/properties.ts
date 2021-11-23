@@ -20,7 +20,7 @@ export class Properties {
 
     md.table([
       ['Name', 'Type', 'Description'].map(Markdown.bold),
-      ...this.properties.map((prop) => [prop.name, prop.type, Markdown.sanitize(prop.description)]),
+      ...this.properties.map((prop) => [prop.linkedName, prop.type, Markdown.sanitize(prop.description)]),
     ]);
     md.split();
 
