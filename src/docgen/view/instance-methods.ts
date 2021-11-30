@@ -17,6 +17,13 @@ export class InstanceMethods {
     }
 
     const md = new Markdown({ header: { title: 'Methods' } });
+
+    md.table([
+      ['Name', 'Description'].map(Markdown.bold),
+      ...this.instanceMethods.map((method) => [method.linkedName, Markdown.sanitize(method.description)]),
+    ]);
+    md.split();
+
     for (const method of this.instanceMethods) {
       md.section(method.render());
     }

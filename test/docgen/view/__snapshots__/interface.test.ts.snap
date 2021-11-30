@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`csharp snapshot 1`] = `
-" IRepository <a name=\\"Amazon.CDK.AWS.ECR.IRepository\\"></a>
+" IRepository <a name=\\"Amazon.CDK.AWS.ECR.IRepository\\" id=\\"amazoncdkawsecrirepository\\"></a>
 
 - *Extends:* [\`Amazon.CDK.IResource\`](#Amazon.CDK.IResource)
 
@@ -9,69 +9,84 @@ exports[`csharp snapshot 1`] = `
 
 Represents an ECR repository.
 
-# Methods <a name=\\"Methods\\"></a>
+# Methods <a name=\\"Methods\\" id=\\"methods\\"></a>
 
-## \`AddToResourcePolicy\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.AddToResourcePolicy\\"></a>
+| **Name** | **Description** |
+| --- | --- |
+| [\`AddToResourcePolicy\`](#amazoncdkawsecrirepositoryaddtoresourcepolicy) | Add a policy statement to the repository's resource policy. |
+| [\`Grant\`](#amazoncdkawsecrirepositorygrant) | Grant the given principal identity permissions to perform the actions on this repository. |
+| [\`GrantPull\`](#amazoncdkawsecrirepositorygrantpull) | Grant the given identity permissions to pull images in this repository. |
+| [\`GrantPullPush\`](#amazoncdkawsecrirepositorygrantpullpush) | Grant the given identity permissions to pull and push images to this repository. |
+| [\`OnCloudTrailEvent\`](#amazoncdkawsecrirepositoryoncloudtrailevent) | Define a CloudWatch event that triggers when something happens to this repository. |
+| [\`OnCloudTrailImagePushed\`](#amazoncdkawsecrirepositoryoncloudtrailimagepushed) | Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository. |
+| [\`OnEvent\`](#amazoncdkawsecrirepositoryonevent) | Defines a CloudWatch event rule which triggers for repository events. |
+| [\`OnImageScanCompleted\`](#amazoncdkawsecrirepositoryonimagescancompleted) | Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed. |
+| [\`RepositoryUriForDigest\`](#amazoncdkawsecrirepositoryrepositoryurifordigest) | Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`. |
+| [\`RepositoryUriForTag\`](#amazoncdkawsecrirepositoryrepositoryurifortag) | Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`. |
+
+---
+
+## \`AddToResourcePolicy\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.AddToResourcePolicy\\" id=\\"amazoncdkawsecrirepositoryaddtoresourcepolicy\\"></a>
 
 \`\`\`csharp
 private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
-### \`Statement\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Statement\\"></a>
+### \`Statement\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Statement\\" id=\\"amazoncdkawsecrirepositoryparameterstatement\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.IAM.PolicyStatement\`](#Amazon.CDK.AWS.IAM.PolicyStatement)
 
 ---
 
-## \`Grant\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.Grant\\"></a>
+## \`Grant\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.Grant\\" id=\\"amazoncdkawsecrirepositorygrant\\"></a>
 
 \`\`\`csharp
 private Grant(IGrantable Grantee, string Actions)
 \`\`\`
 
-### \`Grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Grantee\\"></a>
+### \`Grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Grantee\\" id=\\"amazoncdkawsecrirepositoryparametergrantee\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.IAM.IGrantable\`](#Amazon.CDK.AWS.IAM.IGrantable)
 
 ---
 
-### \`Actions\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Actions\\"></a>
+### \`Actions\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Actions\\" id=\\"amazoncdkawsecrirepositoryparameteractions\\"></a>
 
 - *Type:* \`string\`
 
 ---
 
-## \`GrantPull\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.GrantPull\\"></a>
+## \`GrantPull\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.GrantPull\\" id=\\"amazoncdkawsecrirepositorygrantpull\\"></a>
 
 \`\`\`csharp
 private GrantPull(IGrantable Grantee)
 \`\`\`
 
-### \`Grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Grantee\\"></a>
+### \`Grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Grantee\\" id=\\"amazoncdkawsecrirepositoryparametergrantee\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.IAM.IGrantable\`](#Amazon.CDK.AWS.IAM.IGrantable)
 
 ---
 
-## \`GrantPullPush\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.GrantPullPush\\"></a>
+## \`GrantPullPush\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.GrantPullPush\\" id=\\"amazoncdkawsecrirepositorygrantpullpush\\"></a>
 
 \`\`\`csharp
 private GrantPullPush(IGrantable Grantee)
 \`\`\`
 
-### \`Grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Grantee\\"></a>
+### \`Grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Grantee\\" id=\\"amazoncdkawsecrirepositoryparametergrantee\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.IAM.IGrantable\`](#Amazon.CDK.AWS.IAM.IGrantable)
 
 ---
 
-## \`OnCloudTrailEvent\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.OnCloudTrailEvent\\"></a>
+## \`OnCloudTrailEvent\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.OnCloudTrailEvent\\" id=\\"amazoncdkawsecrirepositoryoncloudtrailevent\\"></a>
 
 \`\`\`csharp
 private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
-### \`Id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Id\\"></a>
+### \`Id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Id\\" id=\\"amazoncdkawsecrirepositoryparameterid\\"></a>
 
 - *Type:* \`string\`
 
@@ -79,7 +94,7 @@ The id of the rule.
 
 ---
 
-### \`Options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Options\\"></a>
+### \`Options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Options\\" id=\\"amazoncdkawsecrirepositoryparameteroptions\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.Events.OnEventOptions\`](#Amazon.CDK.AWS.Events.OnEventOptions)
 
@@ -87,13 +102,13 @@ Options for adding the rule.
 
 ---
 
-## \`OnCloudTrailImagePushed\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.OnCloudTrailImagePushed\\"></a>
+## \`OnCloudTrailImagePushed\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.OnCloudTrailImagePushed\\" id=\\"amazoncdkawsecrirepositoryoncloudtrailimagepushed\\"></a>
 
 \`\`\`csharp
 private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
-### \`Id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Id\\"></a>
+### \`Id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Id\\" id=\\"amazoncdkawsecrirepositoryparameterid\\"></a>
 
 - *Type:* \`string\`
 
@@ -101,7 +116,7 @@ The id of the rule.
 
 ---
 
-### \`Options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Options\\"></a>
+### \`Options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Options\\" id=\\"amazoncdkawsecrirepositoryparameteroptions\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.ECR.OnCloudTrailImagePushedOptions\`](#Amazon.CDK.AWS.ECR.OnCloudTrailImagePushedOptions)
 
@@ -109,31 +124,31 @@ Options for adding the rule.
 
 ---
 
-## \`OnEvent\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.OnEvent\\"></a>
+## \`OnEvent\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.OnEvent\\" id=\\"amazoncdkawsecrirepositoryonevent\\"></a>
 
 \`\`\`csharp
 private OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
-### \`Id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Id\\"></a>
+### \`Id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Id\\" id=\\"amazoncdkawsecrirepositoryparameterid\\"></a>
 
 - *Type:* \`string\`
 
 ---
 
-### \`Options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Options\\"></a>
+### \`Options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Options\\" id=\\"amazoncdkawsecrirepositoryparameteroptions\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.Events.OnEventOptions\`](#Amazon.CDK.AWS.Events.OnEventOptions)
 
 ---
 
-## \`OnImageScanCompleted\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.OnImageScanCompleted\\"></a>
+## \`OnImageScanCompleted\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.OnImageScanCompleted\\" id=\\"amazoncdkawsecrirepositoryonimagescancompleted\\"></a>
 
 \`\`\`csharp
 private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
 
-### \`Id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Id\\"></a>
+### \`Id\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Id\\" id=\\"amazoncdkawsecrirepositoryparameterid\\"></a>
 
 - *Type:* \`string\`
 
@@ -141,7 +156,7 @@ The id of the rule.
 
 ---
 
-### \`Options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Options\\"></a>
+### \`Options\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Options\\" id=\\"amazoncdkawsecrirepositoryparameteroptions\\"></a>
 
 - *Type:* [\`Amazon.CDK.AWS.ECR.OnImageScanCompletedOptions\`](#Amazon.CDK.AWS.ECR.OnImageScanCompletedOptions)
 
@@ -149,13 +164,13 @@ Options for adding the rule.
 
 ---
 
-## \`RepositoryUriForDigest\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.RepositoryUriForDigest\\"></a>
+## \`RepositoryUriForDigest\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.RepositoryUriForDigest\\" id=\\"amazoncdkawsecrirepositoryrepositoryurifordigest\\"></a>
 
 \`\`\`csharp
 private RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
-### \`Digest\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Digest\\"></a>
+### \`Digest\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Digest\\" id=\\"amazoncdkawsecrirepositoryparameterdigest\\"></a>
 
 - *Type:* \`string\`
 
@@ -163,13 +178,13 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 
 ---
 
-## \`RepositoryUriForTag\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.RepositoryUriForTag\\"></a>
+## \`RepositoryUriForTag\` <a name=\\"Amazon.CDK.AWS.ECR.IRepository.RepositoryUriForTag\\" id=\\"amazoncdkawsecrirepositoryrepositoryurifortag\\"></a>
 
 \`\`\`csharp
 private RepositoryUriForTag(string Tag = null)
 \`\`\`
 
-### \`Tag\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Tag\\"></a>
+### \`Tag\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.parameter.Tag\\" id=\\"amazoncdkawsecrirepositoryparametertag\\"></a>
 
 - *Type:* \`string\`
 
@@ -177,9 +192,20 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 
 ---
 
-# Properties <a name=\\"Properties\\"></a>
+# Properties <a name=\\"Properties\\" id=\\"properties\\"></a>
 
-## \`Node\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.Node\\"></a>
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| [\`Node\`](#amazoncdkawsecrirepositorypropertynode)<span title=\\"Required\\">*</span> | [\`Amazon.CDK.ConstructNode\`](#Amazon.CDK.ConstructNode) | The construct tree node for this construct. |
+| [\`Env\`](#amazoncdkawsecrirepositorypropertyenv)<span title=\\"Required\\">*</span> | [\`Amazon.CDK.ResourceEnvironment\`](#Amazon.CDK.ResourceEnvironment) | The environment this resource belongs to. |
+| [\`Stack\`](#amazoncdkawsecrirepositorypropertystack)<span title=\\"Required\\">*</span> | [\`Amazon.CDK.Stack\`](#Amazon.CDK.Stack) | The stack in which this resource is defined. |
+| [\`RepositoryArn\`](#amazoncdkawsecrirepositorypropertyrepositoryarn)<span title=\\"Required\\">*</span> | \`string\` | The ARN of the repository. |
+| [\`RepositoryName\`](#amazoncdkawsecrirepositorypropertyrepositoryname)<span title=\\"Required\\">*</span> | \`string\` | The name of the repository. |
+| [\`RepositoryUri\`](#amazoncdkawsecrirepositorypropertyrepositoryuri)<span title=\\"Required\\">*</span> | \`string\` | The URI of this repository (represents the latest image):. |
+
+---
+
+## \`Node\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.Node\\" id=\\"amazoncdkawsecrirepositorypropertynode\\"></a>
 
 \`\`\`csharp
 public ConstructNode Node { get; }
@@ -191,7 +217,7 @@ The construct tree node for this construct.
 
 ---
 
-## \`Env\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.Env\\"></a>
+## \`Env\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.Env\\" id=\\"amazoncdkawsecrirepositorypropertyenv\\"></a>
 
 \`\`\`csharp
 public ResourceEnvironment Env { get; }
@@ -205,7 +231,7 @@ For resources that are created and managed by the CDK (generally, those created 
 
 ---
 
-## \`Stack\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.Stack\\"></a>
+## \`Stack\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.Stack\\" id=\\"amazoncdkawsecrirepositorypropertystack\\"></a>
 
 \`\`\`csharp
 public Stack Stack { get; }
@@ -217,7 +243,7 @@ The stack in which this resource is defined.
 
 ---
 
-## \`RepositoryArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.RepositoryArn\\"></a>
+## \`RepositoryArn\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.RepositoryArn\\" id=\\"amazoncdkawsecrirepositorypropertyrepositoryarn\\"></a>
 
 \`\`\`csharp
 public string RepositoryArn { get; }
@@ -229,7 +255,7 @@ The ARN of the repository.
 
 ---
 
-## \`RepositoryName\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.RepositoryName\\"></a>
+## \`RepositoryName\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.RepositoryName\\" id=\\"amazoncdkawsecrirepositorypropertyrepositoryname\\"></a>
 
 \`\`\`csharp
 public string RepositoryName { get; }
@@ -241,7 +267,7 @@ The name of the repository.
 
 ---
 
-## \`RepositoryUri\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.RepositoryUri\\"></a>
+## \`RepositoryUri\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.IRepository.property.RepositoryUri\\" id=\\"amazoncdkawsecrirepositorypropertyrepositoryuri\\"></a>
 
 \`\`\`csharp
 public string RepositoryUri { get; }
@@ -258,7 +284,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 `;
 
 exports[`java snapshot 1`] = `
-" IRepository <a name=\\"software.amazon.awscdk.services.ecr.IRepository\\"></a>
+" IRepository <a name=\\"software.amazon.awscdk.services.ecr.IRepository\\" id=\\"softwareamazonawscdkservicesecrirepository\\"></a>
 
 - *Extends:* [\`software.amazon.awscdk.core.IResource\`](#software.amazon.awscdk.core.IResource)
 
@@ -266,70 +292,85 @@ exports[`java snapshot 1`] = `
 
 Represents an ECR repository.
 
-# Methods <a name=\\"Methods\\"></a>
+# Methods <a name=\\"Methods\\" id=\\"methods\\"></a>
 
-## \`addToResourcePolicy\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.addToResourcePolicy\\"></a>
+| **Name** | **Description** |
+| --- | --- |
+| [\`addToResourcePolicy\`](#softwareamazonawscdkservicesecrirepositoryaddtoresourcepolicy) | Add a policy statement to the repository's resource policy. |
+| [\`grant\`](#softwareamazonawscdkservicesecrirepositorygrant) | Grant the given principal identity permissions to perform the actions on this repository. |
+| [\`grantPull\`](#softwareamazonawscdkservicesecrirepositorygrantpull) | Grant the given identity permissions to pull images in this repository. |
+| [\`grantPullPush\`](#softwareamazonawscdkservicesecrirepositorygrantpullpush) | Grant the given identity permissions to pull and push images to this repository. |
+| [\`onCloudTrailEvent\`](#softwareamazonawscdkservicesecrirepositoryoncloudtrailevent) | Define a CloudWatch event that triggers when something happens to this repository. |
+| [\`onCloudTrailImagePushed\`](#softwareamazonawscdkservicesecrirepositoryoncloudtrailimagepushed) | Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository. |
+| [\`onEvent\`](#softwareamazonawscdkservicesecrirepositoryonevent) | Defines a CloudWatch event rule which triggers for repository events. |
+| [\`onImageScanCompleted\`](#softwareamazonawscdkservicesecrirepositoryonimagescancompleted) | Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed. |
+| [\`repositoryUriForDigest\`](#softwareamazonawscdkservicesecrirepositoryrepositoryurifordigest) | Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`. |
+| [\`repositoryUriForTag\`](#softwareamazonawscdkservicesecrirepositoryrepositoryurifortag) | Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`. |
+
+---
+
+## \`addToResourcePolicy\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.addToResourcePolicy\\" id=\\"softwareamazonawscdkservicesecrirepositoryaddtoresourcepolicy\\"></a>
 
 \`\`\`java
 public addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
-### \`statement\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.statement\\"></a>
+### \`statement\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.statement\\" id=\\"softwareamazonawscdkservicesecrirepositoryparameterstatement\\"></a>
 
 - *Type:* [\`software.amazon.awscdk.services.iam.PolicyStatement\`](#software.amazon.awscdk.services.iam.PolicyStatement)
 
 ---
 
-## \`grant\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.grant\\"></a>
+## \`grant\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.grant\\" id=\\"softwareamazonawscdkservicesecrirepositorygrant\\"></a>
 
 \`\`\`java
 public grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.grantee\\" id=\\"softwareamazonawscdkservicesecrirepositoryparametergrantee\\"></a>
 
 - *Type:* [\`software.amazon.awscdk.services.iam.IGrantable\`](#software.amazon.awscdk.services.iam.IGrantable)
 
 ---
 
-### \`actions\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.actions\\"></a>
+### \`actions\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.actions\\" id=\\"softwareamazonawscdkservicesecrirepositoryparameteractions\\"></a>
 
 - *Type:* \`java.lang.String\`
 
 ---
 
-## \`grantPull\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.grantPull\\"></a>
+## \`grantPull\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.grantPull\\" id=\\"softwareamazonawscdkservicesecrirepositorygrantpull\\"></a>
 
 \`\`\`java
 public grantPull(IGrantable grantee)
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.grantee\\" id=\\"softwareamazonawscdkservicesecrirepositoryparametergrantee\\"></a>
 
 - *Type:* [\`software.amazon.awscdk.services.iam.IGrantable\`](#software.amazon.awscdk.services.iam.IGrantable)
 
 ---
 
-## \`grantPullPush\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.grantPullPush\\"></a>
+## \`grantPullPush\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.grantPullPush\\" id=\\"softwareamazonawscdkservicesecrirepositorygrantpullpush\\"></a>
 
 \`\`\`java
 public grantPullPush(IGrantable grantee)
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.grantee\\" id=\\"softwareamazonawscdkservicesecrirepositoryparametergrantee\\"></a>
 
 - *Type:* [\`software.amazon.awscdk.services.iam.IGrantable\`](#software.amazon.awscdk.services.iam.IGrantable)
 
 ---
 
-## \`onCloudTrailEvent\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.onCloudTrailEvent\\"></a>
+## \`onCloudTrailEvent\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.onCloudTrailEvent\\" id=\\"softwareamazonawscdkservicesecrirepositoryoncloudtrailevent\\"></a>
 
 \`\`\`java
 public onCloudTrailEvent(java.lang.String id)
 public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.id\\" id=\\"softwareamazonawscdkservicesecrirepositoryparameterid\\"></a>
 
 - *Type:* \`java.lang.String\`
 
@@ -337,7 +378,7 @@ The id of the rule.
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.options\\"></a>
+### \`options\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.options\\" id=\\"softwareamazonawscdkservicesecrirepositoryparameteroptions\\"></a>
 
 - *Type:* [\`software.amazon.awscdk.services.events.OnEventOptions\`](#software.amazon.awscdk.services.events.OnEventOptions)
 
@@ -345,14 +386,14 @@ Options for adding the rule.
 
 ---
 
-## \`onCloudTrailImagePushed\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.onCloudTrailImagePushed\\"></a>
+## \`onCloudTrailImagePushed\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.onCloudTrailImagePushed\\" id=\\"softwareamazonawscdkservicesecrirepositoryoncloudtrailimagepushed\\"></a>
 
 \`\`\`java
 public onCloudTrailImagePushed(java.lang.String id)
 public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.id\\" id=\\"softwareamazonawscdkservicesecrirepositoryparameterid\\"></a>
 
 - *Type:* \`java.lang.String\`
 
@@ -360,7 +401,7 @@ The id of the rule.
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.options\\"></a>
+### \`options\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.options\\" id=\\"softwareamazonawscdkservicesecrirepositoryparameteroptions\\"></a>
 
 - *Type:* [\`software.amazon.awscdk.services.ecr.OnCloudTrailImagePushedOptions\`](#software.amazon.awscdk.services.ecr.OnCloudTrailImagePushedOptions)
 
@@ -368,33 +409,33 @@ Options for adding the rule.
 
 ---
 
-## \`onEvent\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.onEvent\\"></a>
+## \`onEvent\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.onEvent\\" id=\\"softwareamazonawscdkservicesecrirepositoryonevent\\"></a>
 
 \`\`\`java
 public onEvent(java.lang.String id)
 public onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.id\\" id=\\"softwareamazonawscdkservicesecrirepositoryparameterid\\"></a>
 
 - *Type:* \`java.lang.String\`
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.options\\"></a>
+### \`options\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.options\\" id=\\"softwareamazonawscdkservicesecrirepositoryparameteroptions\\"></a>
 
 - *Type:* [\`software.amazon.awscdk.services.events.OnEventOptions\`](#software.amazon.awscdk.services.events.OnEventOptions)
 
 ---
 
-## \`onImageScanCompleted\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.onImageScanCompleted\\"></a>
+## \`onImageScanCompleted\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.onImageScanCompleted\\" id=\\"softwareamazonawscdkservicesecrirepositoryonimagescancompleted\\"></a>
 
 \`\`\`java
 public onImageScanCompleted(java.lang.String id)
 public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.id\\" id=\\"softwareamazonawscdkservicesecrirepositoryparameterid\\"></a>
 
 - *Type:* \`java.lang.String\`
 
@@ -402,7 +443,7 @@ The id of the rule.
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.options\\"></a>
+### \`options\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.options\\" id=\\"softwareamazonawscdkservicesecrirepositoryparameteroptions\\"></a>
 
 - *Type:* [\`software.amazon.awscdk.services.ecr.OnImageScanCompletedOptions\`](#software.amazon.awscdk.services.ecr.OnImageScanCompletedOptions)
 
@@ -410,14 +451,14 @@ Options for adding the rule.
 
 ---
 
-## \`repositoryUriForDigest\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.repositoryUriForDigest\\"></a>
+## \`repositoryUriForDigest\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.repositoryUriForDigest\\" id=\\"softwareamazonawscdkservicesecrirepositoryrepositoryurifordigest\\"></a>
 
 \`\`\`java
 public repositoryUriForDigest()
 public repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
-### \`digest\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.digest\\"></a>
+### \`digest\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.digest\\" id=\\"softwareamazonawscdkservicesecrirepositoryparameterdigest\\"></a>
 
 - *Type:* \`java.lang.String\`
 
@@ -425,14 +466,14 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 
 ---
 
-## \`repositoryUriForTag\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.repositoryUriForTag\\"></a>
+## \`repositoryUriForTag\` <a name=\\"software.amazon.awscdk.services.ecr.IRepository.repositoryUriForTag\\" id=\\"softwareamazonawscdkservicesecrirepositoryrepositoryurifortag\\"></a>
 
 \`\`\`java
 public repositoryUriForTag()
 public repositoryUriForTag(java.lang.String tag)
 \`\`\`
 
-### \`tag\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.tag\\"></a>
+### \`tag\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.parameter.tag\\" id=\\"softwareamazonawscdkservicesecrirepositoryparametertag\\"></a>
 
 - *Type:* \`java.lang.String\`
 
@@ -440,9 +481,20 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 
 ---
 
-# Properties <a name=\\"Properties\\"></a>
+# Properties <a name=\\"Properties\\" id=\\"properties\\"></a>
 
-## \`node\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.node\\"></a>
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| [\`node\`](#softwareamazonawscdkservicesecrirepositorypropertynode)<span title=\\"Required\\">*</span> | [\`software.amazon.awscdk.core.ConstructNode\`](#software.amazon.awscdk.core.ConstructNode) | The construct tree node for this construct. |
+| [\`env\`](#softwareamazonawscdkservicesecrirepositorypropertyenv)<span title=\\"Required\\">*</span> | [\`software.amazon.awscdk.core.ResourceEnvironment\`](#software.amazon.awscdk.core.ResourceEnvironment) | The environment this resource belongs to. |
+| [\`stack\`](#softwareamazonawscdkservicesecrirepositorypropertystack)<span title=\\"Required\\">*</span> | [\`software.amazon.awscdk.core.Stack\`](#software.amazon.awscdk.core.Stack) | The stack in which this resource is defined. |
+| [\`repositoryArn\`](#softwareamazonawscdkservicesecrirepositorypropertyrepositoryarn)<span title=\\"Required\\">*</span> | \`java.lang.String\` | The ARN of the repository. |
+| [\`repositoryName\`](#softwareamazonawscdkservicesecrirepositorypropertyrepositoryname)<span title=\\"Required\\">*</span> | \`java.lang.String\` | The name of the repository. |
+| [\`repositoryUri\`](#softwareamazonawscdkservicesecrirepositorypropertyrepositoryuri)<span title=\\"Required\\">*</span> | \`java.lang.String\` | The URI of this repository (represents the latest image):. |
+
+---
+
+## \`node\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.node\\" id=\\"softwareamazonawscdkservicesecrirepositorypropertynode\\"></a>
 
 \`\`\`java
 public ConstructNode getNode();
@@ -454,7 +506,7 @@ The construct tree node for this construct.
 
 ---
 
-## \`env\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.env\\"></a>
+## \`env\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.env\\" id=\\"softwareamazonawscdkservicesecrirepositorypropertyenv\\"></a>
 
 \`\`\`java
 public ResourceEnvironment getEnv();
@@ -468,7 +520,7 @@ For resources that are created and managed by the CDK (generally, those created 
 
 ---
 
-## \`stack\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.stack\\"></a>
+## \`stack\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.stack\\" id=\\"softwareamazonawscdkservicesecrirepositorypropertystack\\"></a>
 
 \`\`\`java
 public Stack getStack();
@@ -480,7 +532,7 @@ The stack in which this resource is defined.
 
 ---
 
-## \`repositoryArn\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.repositoryArn\\"></a>
+## \`repositoryArn\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.repositoryArn\\" id=\\"softwareamazonawscdkservicesecrirepositorypropertyrepositoryarn\\"></a>
 
 \`\`\`java
 public java.lang.String getRepositoryArn();
@@ -492,7 +544,7 @@ The ARN of the repository.
 
 ---
 
-## \`repositoryName\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.repositoryName\\"></a>
+## \`repositoryName\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.repositoryName\\" id=\\"softwareamazonawscdkservicesecrirepositorypropertyrepositoryname\\"></a>
 
 \`\`\`java
 public java.lang.String getRepositoryName();
@@ -504,7 +556,7 @@ The name of the repository.
 
 ---
 
-## \`repositoryUri\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.repositoryUri\\"></a>
+## \`repositoryUri\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.IRepository.property.repositoryUri\\" id=\\"softwareamazonawscdkservicesecrirepositorypropertyrepositoryuri\\"></a>
 
 \`\`\`java
 public java.lang.String getRepositoryUri();
@@ -521,7 +573,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 `;
 
 exports[`python snapshot 1`] = `
-" IRepository <a name=\\"aws_cdk.aws_ecr.IRepository\\"></a>
+" IRepository <a name=\\"aws_cdk.aws_ecr.IRepository\\" id=\\"awscdkawsecrirepository\\"></a>
 
 - *Extends:* [\`aws_cdk.core.IResource\`](#aws_cdk.core.IResource)
 
@@ -529,9 +581,24 @@ exports[`python snapshot 1`] = `
 
 Represents an ECR repository.
 
-# Methods <a name=\\"Methods\\"></a>
+# Methods <a name=\\"Methods\\" id=\\"methods\\"></a>
 
-## \`add_to_resource_policy\` <a name=\\"aws_cdk.aws_ecr.IRepository.add_to_resource_policy\\"></a>
+| **Name** | **Description** |
+| --- | --- |
+| [\`add_to_resource_policy\`](#awscdkawsecrirepositoryaddtoresourcepolicy) | Add a policy statement to the repository's resource policy. |
+| [\`grant\`](#awscdkawsecrirepositorygrant) | Grant the given principal identity permissions to perform the actions on this repository. |
+| [\`grant_pull\`](#awscdkawsecrirepositorygrantpull) | Grant the given identity permissions to pull images in this repository. |
+| [\`grant_pull_push\`](#awscdkawsecrirepositorygrantpullpush) | Grant the given identity permissions to pull and push images to this repository. |
+| [\`on_cloud_trail_event\`](#awscdkawsecrirepositoryoncloudtrailevent) | Define a CloudWatch event that triggers when something happens to this repository. |
+| [\`on_cloud_trail_image_pushed\`](#awscdkawsecrirepositoryoncloudtrailimagepushed) | Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository. |
+| [\`on_event\`](#awscdkawsecrirepositoryonevent) | Defines a CloudWatch event rule which triggers for repository events. |
+| [\`on_image_scan_completed\`](#awscdkawsecrirepositoryonimagescancompleted) | Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed. |
+| [\`repository_uri_for_digest\`](#awscdkawsecrirepositoryrepositoryurifordigest) | Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`. |
+| [\`repository_uri_for_tag\`](#awscdkawsecrirepositoryrepositoryurifortag) | Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`. |
+
+---
+
+## \`add_to_resource_policy\` <a name=\\"aws_cdk.aws_ecr.IRepository.add_to_resource_policy\\" id=\\"awscdkawsecrirepositoryaddtoresourcepolicy\\"></a>
 
 \`\`\`python
 def add_to_resource_policy(
@@ -539,13 +606,13 @@ def add_to_resource_policy(
 )
 \`\`\`
 
-### \`statement\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.statement\\"></a>
+### \`statement\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.statement\\" id=\\"awscdkawsecrirepositoryparameterstatement\\"></a>
 
 - *Type:* [\`aws_cdk.aws_iam.PolicyStatement\`](#aws_cdk.aws_iam.PolicyStatement)
 
 ---
 
-## \`grant\` <a name=\\"aws_cdk.aws_ecr.IRepository.grant\\"></a>
+## \`grant\` <a name=\\"aws_cdk.aws_ecr.IRepository.grant\\" id=\\"awscdkawsecrirepositorygrant\\"></a>
 
 \`\`\`python
 def grant(
@@ -554,19 +621,19 @@ def grant(
 )
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.grantee\\" id=\\"awscdkawsecrirepositoryparametergrantee\\"></a>
 
 - *Type:* [\`aws_cdk.aws_iam.IGrantable\`](#aws_cdk.aws_iam.IGrantable)
 
 ---
 
-### \`actions\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.actions\\"></a>
+### \`actions\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.actions\\" id=\\"awscdkawsecrirepositoryparameteractions\\"></a>
 
 - *Type:* \`str\`
 
 ---
 
-## \`grant_pull\` <a name=\\"aws_cdk.aws_ecr.IRepository.grant_pull\\"></a>
+## \`grant_pull\` <a name=\\"aws_cdk.aws_ecr.IRepository.grant_pull\\" id=\\"awscdkawsecrirepositorygrantpull\\"></a>
 
 \`\`\`python
 def grant_pull(
@@ -574,13 +641,13 @@ def grant_pull(
 )
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.grantee\\" id=\\"awscdkawsecrirepositoryparametergrantee\\"></a>
 
 - *Type:* [\`aws_cdk.aws_iam.IGrantable\`](#aws_cdk.aws_iam.IGrantable)
 
 ---
 
-## \`grant_pull_push\` <a name=\\"aws_cdk.aws_ecr.IRepository.grant_pull_push\\"></a>
+## \`grant_pull_push\` <a name=\\"aws_cdk.aws_ecr.IRepository.grant_pull_push\\" id=\\"awscdkawsecrirepositorygrantpullpush\\"></a>
 
 \`\`\`python
 def grant_pull_push(
@@ -588,13 +655,13 @@ def grant_pull_push(
 )
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.grantee\\" id=\\"awscdkawsecrirepositoryparametergrantee\\"></a>
 
 - *Type:* [\`aws_cdk.aws_iam.IGrantable\`](#aws_cdk.aws_iam.IGrantable)
 
 ---
 
-## \`on_cloud_trail_event\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_cloud_trail_event\\"></a>
+## \`on_cloud_trail_event\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_cloud_trail_event\\" id=\\"awscdkawsecrirepositoryoncloudtrailevent\\"></a>
 
 \`\`\`python
 def on_cloud_trail_event(
@@ -606,7 +673,7 @@ def on_cloud_trail_event(
 )
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\" id=\\"awscdkawsecrirepositoryparameterid\\"></a>
 
 - *Type:* \`str\`
 
@@ -614,7 +681,7 @@ The id of the rule.
 
 ---
 
-### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_events.OnEventOptions.parameter.description\\"></a>
+### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_events.OnEventOptions.parameter.description\\" id=\\"awscdkawseventsoneventoptionsparameterdescription\\"></a>
 
 - *Type:* \`str\`
 - *Default:* No description
@@ -623,7 +690,7 @@ A description of the rule's purpose.
 
 ---
 
-### \`event_pattern\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_events.OnEventOptions.parameter.event_pattern\\"></a>
+### \`event_pattern\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_events.OnEventOptions.parameter.event_pattern\\" id=\\"awscdkawseventsoneventoptionsparametereventpattern\\"></a>
 
 - *Type:* [\`aws_cdk.aws_events.EventPattern\`](#aws_cdk.aws_events.EventPattern)
 - *Default:* No additional filtering based on an event pattern.
@@ -636,7 +703,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-### \`rule_name\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_events.OnEventOptions.parameter.rule_name\\"></a>
+### \`rule_name\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_events.OnEventOptions.parameter.rule_name\\" id=\\"awscdkawseventsoneventoptionsparameterrulename\\"></a>
 
 - *Type:* \`str\`
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -645,7 +712,7 @@ A name for the rule.
 
 ---
 
-### \`target\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_events.OnEventOptions.parameter.target\\"></a>
+### \`target\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_events.OnEventOptions.parameter.target\\" id=\\"awscdkawseventsoneventoptionsparametertarget\\"></a>
 
 - *Type:* [\`aws_cdk.aws_events.IRuleTarget\`](#aws_cdk.aws_events.IRuleTarget)
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -654,7 +721,7 @@ The target to register for the event.
 
 ---
 
-## \`on_cloud_trail_image_pushed\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_cloud_trail_image_pushed\\"></a>
+## \`on_cloud_trail_image_pushed\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_cloud_trail_image_pushed\\" id=\\"awscdkawsecrirepositoryoncloudtrailimagepushed\\"></a>
 
 \`\`\`python
 def on_cloud_trail_image_pushed(
@@ -667,7 +734,7 @@ def on_cloud_trail_image_pushed(
 )
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\" id=\\"awscdkawsecrirepositoryparameterid\\"></a>
 
 - *Type:* \`str\`
 
@@ -675,7 +742,7 @@ The id of the rule.
 
 ---
 
-### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions.parameter.description\\"></a>
+### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions.parameter.description\\" id=\\"awscdkawsecroncloudtrailimagepushedoptionsparameterdescription\\"></a>
 
 - *Type:* \`str\`
 - *Default:* No description
@@ -684,7 +751,7 @@ A description of the rule's purpose.
 
 ---
 
-### \`event_pattern\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions.parameter.event_pattern\\"></a>
+### \`event_pattern\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions.parameter.event_pattern\\" id=\\"awscdkawsecroncloudtrailimagepushedoptionsparametereventpattern\\"></a>
 
 - *Type:* [\`aws_cdk.aws_events.EventPattern\`](#aws_cdk.aws_events.EventPattern)
 - *Default:* No additional filtering based on an event pattern.
@@ -697,7 +764,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-### \`rule_name\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions.parameter.rule_name\\"></a>
+### \`rule_name\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions.parameter.rule_name\\" id=\\"awscdkawsecroncloudtrailimagepushedoptionsparameterrulename\\"></a>
 
 - *Type:* \`str\`
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -706,7 +773,7 @@ A name for the rule.
 
 ---
 
-### \`target\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions.parameter.target\\"></a>
+### \`target\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions.parameter.target\\" id=\\"awscdkawsecroncloudtrailimagepushedoptionsparametertarget\\"></a>
 
 - *Type:* [\`aws_cdk.aws_events.IRuleTarget\`](#aws_cdk.aws_events.IRuleTarget)
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -715,7 +782,7 @@ The target to register for the event.
 
 ---
 
-### \`image_tag\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions.parameter.image_tag\\"></a>
+### \`image_tag\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions.parameter.image_tag\\" id=\\"awscdkawsecroncloudtrailimagepushedoptionsparameterimagetag\\"></a>
 
 - *Type:* \`str\`
 - *Default:* Watch changes to all tags
@@ -724,7 +791,7 @@ Only watch changes to this image tag.
 
 ---
 
-## \`on_event\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_event\\"></a>
+## \`on_event\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_event\\" id=\\"awscdkawsecrirepositoryonevent\\"></a>
 
 \`\`\`python
 def on_event(
@@ -736,13 +803,13 @@ def on_event(
 )
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\" id=\\"awscdkawsecrirepositoryparameterid\\"></a>
 
 - *Type:* \`str\`
 
 ---
 
-### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_events.OnEventOptions.parameter.description\\"></a>
+### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_events.OnEventOptions.parameter.description\\" id=\\"awscdkawseventsoneventoptionsparameterdescription\\"></a>
 
 - *Type:* \`str\`
 - *Default:* No description
@@ -751,7 +818,7 @@ A description of the rule's purpose.
 
 ---
 
-### \`event_pattern\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_events.OnEventOptions.parameter.event_pattern\\"></a>
+### \`event_pattern\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_events.OnEventOptions.parameter.event_pattern\\" id=\\"awscdkawseventsoneventoptionsparametereventpattern\\"></a>
 
 - *Type:* [\`aws_cdk.aws_events.EventPattern\`](#aws_cdk.aws_events.EventPattern)
 - *Default:* No additional filtering based on an event pattern.
@@ -764,7 +831,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-### \`rule_name\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_events.OnEventOptions.parameter.rule_name\\"></a>
+### \`rule_name\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_events.OnEventOptions.parameter.rule_name\\" id=\\"awscdkawseventsoneventoptionsparameterrulename\\"></a>
 
 - *Type:* \`str\`
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -773,7 +840,7 @@ A name for the rule.
 
 ---
 
-### \`target\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_events.OnEventOptions.parameter.target\\"></a>
+### \`target\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_events.OnEventOptions.parameter.target\\" id=\\"awscdkawseventsoneventoptionsparametertarget\\"></a>
 
 - *Type:* [\`aws_cdk.aws_events.IRuleTarget\`](#aws_cdk.aws_events.IRuleTarget)
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -782,7 +849,7 @@ The target to register for the event.
 
 ---
 
-## \`on_image_scan_completed\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_image_scan_completed\\"></a>
+## \`on_image_scan_completed\` <a name=\\"aws_cdk.aws_ecr.IRepository.on_image_scan_completed\\" id=\\"awscdkawsecrirepositoryonimagescancompleted\\"></a>
 
 \`\`\`python
 def on_image_scan_completed(
@@ -795,7 +862,7 @@ def on_image_scan_completed(
 )
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.id\\" id=\\"awscdkawsecrirepositoryparameterid\\"></a>
 
 - *Type:* \`str\`
 
@@ -803,7 +870,7 @@ The id of the rule.
 
 ---
 
-### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnImageScanCompletedOptions.parameter.description\\"></a>
+### \`description\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnImageScanCompletedOptions.parameter.description\\" id=\\"awscdkawsecronimagescancompletedoptionsparameterdescription\\"></a>
 
 - *Type:* \`str\`
 - *Default:* No description
@@ -812,7 +879,7 @@ A description of the rule's purpose.
 
 ---
 
-### \`event_pattern\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnImageScanCompletedOptions.parameter.event_pattern\\"></a>
+### \`event_pattern\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnImageScanCompletedOptions.parameter.event_pattern\\" id=\\"awscdkawsecronimagescancompletedoptionsparametereventpattern\\"></a>
 
 - *Type:* [\`aws_cdk.aws_events.EventPattern\`](#aws_cdk.aws_events.EventPattern)
 - *Default:* No additional filtering based on an event pattern.
@@ -825,7 +892,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-### \`rule_name\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnImageScanCompletedOptions.parameter.rule_name\\"></a>
+### \`rule_name\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnImageScanCompletedOptions.parameter.rule_name\\" id=\\"awscdkawsecronimagescancompletedoptionsparameterrulename\\"></a>
 
 - *Type:* \`str\`
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -834,7 +901,7 @@ A name for the rule.
 
 ---
 
-### \`target\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnImageScanCompletedOptions.parameter.target\\"></a>
+### \`target\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnImageScanCompletedOptions.parameter.target\\" id=\\"awscdkawsecronimagescancompletedoptionsparametertarget\\"></a>
 
 - *Type:* [\`aws_cdk.aws_events.IRuleTarget\`](#aws_cdk.aws_events.IRuleTarget)
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -843,7 +910,7 @@ The target to register for the event.
 
 ---
 
-### \`image_tags\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnImageScanCompletedOptions.parameter.image_tags\\"></a>
+### \`image_tags\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.OnImageScanCompletedOptions.parameter.image_tags\\" id=\\"awscdkawsecronimagescancompletedoptionsparameterimagetags\\"></a>
 
 - *Type:* typing.List[\`str\`]
 - *Default:* Watch the changes to the repository with all image tags
@@ -854,7 +921,7 @@ Leave it undefined to watch the full repository.
 
 ---
 
-## \`repository_uri_for_digest\` <a name=\\"aws_cdk.aws_ecr.IRepository.repository_uri_for_digest\\"></a>
+## \`repository_uri_for_digest\` <a name=\\"aws_cdk.aws_ecr.IRepository.repository_uri_for_digest\\" id=\\"awscdkawsecrirepositoryrepositoryurifordigest\\"></a>
 
 \`\`\`python
 def repository_uri_for_digest(
@@ -862,7 +929,7 @@ def repository_uri_for_digest(
 )
 \`\`\`
 
-### \`digest\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.digest\\"></a>
+### \`digest\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.digest\\" id=\\"awscdkawsecrirepositoryparameterdigest\\"></a>
 
 - *Type:* \`str\`
 
@@ -870,7 +937,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 
 ---
 
-## \`repository_uri_for_tag\` <a name=\\"aws_cdk.aws_ecr.IRepository.repository_uri_for_tag\\"></a>
+## \`repository_uri_for_tag\` <a name=\\"aws_cdk.aws_ecr.IRepository.repository_uri_for_tag\\" id=\\"awscdkawsecrirepositoryrepositoryurifortag\\"></a>
 
 \`\`\`python
 def repository_uri_for_tag(
@@ -878,7 +945,7 @@ def repository_uri_for_tag(
 )
 \`\`\`
 
-### \`tag\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.tag\\"></a>
+### \`tag\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.parameter.tag\\" id=\\"awscdkawsecrirepositoryparametertag\\"></a>
 
 - *Type:* \`str\`
 
@@ -886,9 +953,20 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 
 ---
 
-# Properties <a name=\\"Properties\\"></a>
+# Properties <a name=\\"Properties\\" id=\\"properties\\"></a>
 
-## \`node\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.property.node\\"></a>
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| [\`node\`](#awscdkawsecrirepositorypropertynode)<span title=\\"Required\\">*</span> | [\`aws_cdk.core.ConstructNode\`](#aws_cdk.core.ConstructNode) | The construct tree node for this construct. |
+| [\`env\`](#awscdkawsecrirepositorypropertyenv)<span title=\\"Required\\">*</span> | [\`aws_cdk.core.ResourceEnvironment\`](#aws_cdk.core.ResourceEnvironment) | The environment this resource belongs to. |
+| [\`stack\`](#awscdkawsecrirepositorypropertystack)<span title=\\"Required\\">*</span> | [\`aws_cdk.core.Stack\`](#aws_cdk.core.Stack) | The stack in which this resource is defined. |
+| [\`repository_arn\`](#awscdkawsecrirepositorypropertyrepositoryarn)<span title=\\"Required\\">*</span> | \`str\` | The ARN of the repository. |
+| [\`repository_name\`](#awscdkawsecrirepositorypropertyrepositoryname)<span title=\\"Required\\">*</span> | \`str\` | The name of the repository. |
+| [\`repository_uri\`](#awscdkawsecrirepositorypropertyrepositoryuri)<span title=\\"Required\\">*</span> | \`str\` | The URI of this repository (represents the latest image):. |
+
+---
+
+## \`node\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.property.node\\" id=\\"awscdkawsecrirepositorypropertynode\\"></a>
 
 \`\`\`python
 node: ConstructNode
@@ -900,7 +978,7 @@ The construct tree node for this construct.
 
 ---
 
-## \`env\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.property.env\\"></a>
+## \`env\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.property.env\\" id=\\"awscdkawsecrirepositorypropertyenv\\"></a>
 
 \`\`\`python
 env: ResourceEnvironment
@@ -914,7 +992,7 @@ For resources that are created and managed by the CDK (generally, those created 
 
 ---
 
-## \`stack\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.property.stack\\"></a>
+## \`stack\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.property.stack\\" id=\\"awscdkawsecrirepositorypropertystack\\"></a>
 
 \`\`\`python
 stack: Stack
@@ -926,7 +1004,7 @@ The stack in which this resource is defined.
 
 ---
 
-## \`repository_arn\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.property.repository_arn\\"></a>
+## \`repository_arn\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.property.repository_arn\\" id=\\"awscdkawsecrirepositorypropertyrepositoryarn\\"></a>
 
 \`\`\`python
 repository_arn: str
@@ -938,7 +1016,7 @@ The ARN of the repository.
 
 ---
 
-## \`repository_name\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.property.repository_name\\"></a>
+## \`repository_name\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.property.repository_name\\" id=\\"awscdkawsecrirepositorypropertyrepositoryname\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -950,7 +1028,7 @@ The name of the repository.
 
 ---
 
-## \`repository_uri\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.property.repository_uri\\"></a>
+## \`repository_uri\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.IRepository.property.repository_uri\\" id=\\"awscdkawsecrirepositorypropertyrepositoryuri\\"></a>
 
 \`\`\`python
 repository_uri: str
@@ -967,7 +1045,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 `;
 
 exports[`typescript snapshot 1`] = `
-" IRepository <a name=\\"@aws-cdk/aws-ecr.IRepository\\"></a>
+" IRepository <a name=\\"@aws-cdk/aws-ecr.IRepository\\" id=\\"awscdkawsecrirepository\\"></a>
 
 - *Extends:* [\`@aws-cdk/core.IResource\`](#@aws-cdk/core.IResource)
 
@@ -975,69 +1053,84 @@ exports[`typescript snapshot 1`] = `
 
 Represents an ECR repository.
 
-# Methods <a name=\\"Methods\\"></a>
+# Methods <a name=\\"Methods\\" id=\\"methods\\"></a>
 
-## \`addToResourcePolicy\` <a name=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy\\"></a>
+| **Name** | **Description** |
+| --- | --- |
+| [\`addToResourcePolicy\`](#awscdkawsecrirepositoryaddtoresourcepolicy) | Add a policy statement to the repository's resource policy. |
+| [\`grant\`](#awscdkawsecrirepositorygrant) | Grant the given principal identity permissions to perform the actions on this repository. |
+| [\`grantPull\`](#awscdkawsecrirepositorygrantpull) | Grant the given identity permissions to pull images in this repository. |
+| [\`grantPullPush\`](#awscdkawsecrirepositorygrantpullpush) | Grant the given identity permissions to pull and push images to this repository. |
+| [\`onCloudTrailEvent\`](#awscdkawsecrirepositoryoncloudtrailevent) | Define a CloudWatch event that triggers when something happens to this repository. |
+| [\`onCloudTrailImagePushed\`](#awscdkawsecrirepositoryoncloudtrailimagepushed) | Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository. |
+| [\`onEvent\`](#awscdkawsecrirepositoryonevent) | Defines a CloudWatch event rule which triggers for repository events. |
+| [\`onImageScanCompleted\`](#awscdkawsecrirepositoryonimagescancompleted) | Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed. |
+| [\`repositoryUriForDigest\`](#awscdkawsecrirepositoryrepositoryurifordigest) | Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`. |
+| [\`repositoryUriForTag\`](#awscdkawsecrirepositoryrepositoryurifortag) | Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`. |
+
+---
+
+## \`addToResourcePolicy\` <a name=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy\\" id=\\"awscdkawsecrirepositoryaddtoresourcepolicy\\"></a>
 
 \`\`\`typescript
 public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`
 
-### \`statement\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.statement\\"></a>
+### \`statement\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.statement\\" id=\\"awscdkawsecrirepositoryparameterstatement\\"></a>
 
 - *Type:* [\`@aws-cdk/aws-iam.PolicyStatement\`](#@aws-cdk/aws-iam.PolicyStatement)
 
 ---
 
-## \`grant\` <a name=\\"@aws-cdk/aws-ecr.IRepository.grant\\"></a>
+## \`grant\` <a name=\\"@aws-cdk/aws-ecr.IRepository.grant\\" id=\\"awscdkawsecrirepositorygrant\\"></a>
 
 \`\`\`typescript
 public grant(grantee: IGrantable, actions: string)
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\" id=\\"awscdkawsecrirepositoryparametergrantee\\"></a>
 
 - *Type:* [\`@aws-cdk/aws-iam.IGrantable\`](#@aws-cdk/aws-iam.IGrantable)
 
 ---
 
-### \`actions\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.actions\\"></a>
+### \`actions\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.actions\\" id=\\"awscdkawsecrirepositoryparameteractions\\"></a>
 
 - *Type:* \`string\`
 
 ---
 
-## \`grantPull\` <a name=\\"@aws-cdk/aws-ecr.IRepository.grantPull\\"></a>
+## \`grantPull\` <a name=\\"@aws-cdk/aws-ecr.IRepository.grantPull\\" id=\\"awscdkawsecrirepositorygrantpull\\"></a>
 
 \`\`\`typescript
 public grantPull(grantee: IGrantable)
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\" id=\\"awscdkawsecrirepositoryparametergrantee\\"></a>
 
 - *Type:* [\`@aws-cdk/aws-iam.IGrantable\`](#@aws-cdk/aws-iam.IGrantable)
 
 ---
 
-## \`grantPullPush\` <a name=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush\\"></a>
+## \`grantPullPush\` <a name=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush\\" id=\\"awscdkawsecrirepositorygrantpullpush\\"></a>
 
 \`\`\`typescript
 public grantPullPush(grantee: IGrantable)
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\" id=\\"awscdkawsecrirepositoryparametergrantee\\"></a>
 
 - *Type:* [\`@aws-cdk/aws-iam.IGrantable\`](#@aws-cdk/aws-iam.IGrantable)
 
 ---
 
-## \`onCloudTrailEvent\` <a name=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent\\"></a>
+## \`onCloudTrailEvent\` <a name=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent\\" id=\\"awscdkawsecrirepositoryoncloudtrailevent\\"></a>
 
 \`\`\`typescript
 public onCloudTrailEvent(id: string, options?: OnEventOptions)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\" id=\\"awscdkawsecrirepositoryparameterid\\"></a>
 
 - *Type:* \`string\`
 
@@ -1045,7 +1138,7 @@ The id of the rule.
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\"></a>
+### \`options\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\" id=\\"awscdkawsecrirepositoryparameteroptions\\"></a>
 
 - *Type:* [\`@aws-cdk/aws-events.OnEventOptions\`](#@aws-cdk/aws-events.OnEventOptions)
 
@@ -1053,13 +1146,13 @@ Options for adding the rule.
 
 ---
 
-## \`onCloudTrailImagePushed\` <a name=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed\\"></a>
+## \`onCloudTrailImagePushed\` <a name=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed\\" id=\\"awscdkawsecrirepositoryoncloudtrailimagepushed\\"></a>
 
 \`\`\`typescript
 public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\" id=\\"awscdkawsecrirepositoryparameterid\\"></a>
 
 - *Type:* \`string\`
 
@@ -1067,7 +1160,7 @@ The id of the rule.
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\"></a>
+### \`options\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\" id=\\"awscdkawsecrirepositoryparameteroptions\\"></a>
 
 - *Type:* [\`@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions\`](#@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions)
 
@@ -1075,31 +1168,31 @@ Options for adding the rule.
 
 ---
 
-## \`onEvent\` <a name=\\"@aws-cdk/aws-ecr.IRepository.onEvent\\"></a>
+## \`onEvent\` <a name=\\"@aws-cdk/aws-ecr.IRepository.onEvent\\" id=\\"awscdkawsecrirepositoryonevent\\"></a>
 
 \`\`\`typescript
 public onEvent(id: string, options?: OnEventOptions)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\" id=\\"awscdkawsecrirepositoryparameterid\\"></a>
 
 - *Type:* \`string\`
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\"></a>
+### \`options\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\" id=\\"awscdkawsecrirepositoryparameteroptions\\"></a>
 
 - *Type:* [\`@aws-cdk/aws-events.OnEventOptions\`](#@aws-cdk/aws-events.OnEventOptions)
 
 ---
 
-## \`onImageScanCompleted\` <a name=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted\\"></a>
+## \`onImageScanCompleted\` <a name=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted\\" id=\\"awscdkawsecrirepositoryonimagescancompleted\\"></a>
 
 \`\`\`typescript
 public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\" id=\\"awscdkawsecrirepositoryparameterid\\"></a>
 
 - *Type:* \`string\`
 
@@ -1107,7 +1200,7 @@ The id of the rule.
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\"></a>
+### \`options\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\" id=\\"awscdkawsecrirepositoryparameteroptions\\"></a>
 
 - *Type:* [\`@aws-cdk/aws-ecr.OnImageScanCompletedOptions\`](#@aws-cdk/aws-ecr.OnImageScanCompletedOptions)
 
@@ -1115,13 +1208,13 @@ Options for adding the rule.
 
 ---
 
-## \`repositoryUriForDigest\` <a name=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest\\"></a>
+## \`repositoryUriForDigest\` <a name=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest\\" id=\\"awscdkawsecrirepositoryrepositoryurifordigest\\"></a>
 
 \`\`\`typescript
 public repositoryUriForDigest(digest?: string)
 \`\`\`
 
-### \`digest\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.digest\\"></a>
+### \`digest\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.digest\\" id=\\"awscdkawsecrirepositoryparameterdigest\\"></a>
 
 - *Type:* \`string\`
 
@@ -1129,13 +1222,13 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 
 ---
 
-## \`repositoryUriForTag\` <a name=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag\\"></a>
+## \`repositoryUriForTag\` <a name=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag\\" id=\\"awscdkawsecrirepositoryrepositoryurifortag\\"></a>
 
 \`\`\`typescript
 public repositoryUriForTag(tag?: string)
 \`\`\`
 
-### \`tag\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.tag\\"></a>
+### \`tag\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.parameter.tag\\" id=\\"awscdkawsecrirepositoryparametertag\\"></a>
 
 - *Type:* \`string\`
 
@@ -1143,9 +1236,20 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 
 ---
 
-# Properties <a name=\\"Properties\\"></a>
+# Properties <a name=\\"Properties\\" id=\\"properties\\"></a>
 
-## \`node\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.property.node\\"></a>
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| [\`node\`](#awscdkawsecrirepositorypropertynode)<span title=\\"Required\\">*</span> | [\`@aws-cdk/core.ConstructNode\`](#@aws-cdk/core.ConstructNode) | The construct tree node for this construct. |
+| [\`env\`](#awscdkawsecrirepositorypropertyenv)<span title=\\"Required\\">*</span> | [\`@aws-cdk/core.ResourceEnvironment\`](#@aws-cdk/core.ResourceEnvironment) | The environment this resource belongs to. |
+| [\`stack\`](#awscdkawsecrirepositorypropertystack)<span title=\\"Required\\">*</span> | [\`@aws-cdk/core.Stack\`](#@aws-cdk/core.Stack) | The stack in which this resource is defined. |
+| [\`repositoryArn\`](#awscdkawsecrirepositorypropertyrepositoryarn)<span title=\\"Required\\">*</span> | \`string\` | The ARN of the repository. |
+| [\`repositoryName\`](#awscdkawsecrirepositorypropertyrepositoryname)<span title=\\"Required\\">*</span> | \`string\` | The name of the repository. |
+| [\`repositoryUri\`](#awscdkawsecrirepositorypropertyrepositoryuri)<span title=\\"Required\\">*</span> | \`string\` | The URI of this repository (represents the latest image):. |
+
+---
+
+## \`node\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.property.node\\" id=\\"awscdkawsecrirepositorypropertynode\\"></a>
 
 \`\`\`typescript
 public readonly node: ConstructNode;
@@ -1157,7 +1261,7 @@ The construct tree node for this construct.
 
 ---
 
-## \`env\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.property.env\\"></a>
+## \`env\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.property.env\\" id=\\"awscdkawsecrirepositorypropertyenv\\"></a>
 
 \`\`\`typescript
 public readonly env: ResourceEnvironment;
@@ -1171,7 +1275,7 @@ For resources that are created and managed by the CDK (generally, those created 
 
 ---
 
-## \`stack\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.property.stack\\"></a>
+## \`stack\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.property.stack\\" id=\\"awscdkawsecrirepositorypropertystack\\"></a>
 
 \`\`\`typescript
 public readonly stack: Stack;
@@ -1183,7 +1287,7 @@ The stack in which this resource is defined.
 
 ---
 
-## \`repositoryArn\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.property.repositoryArn\\"></a>
+## \`repositoryArn\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.property.repositoryArn\\" id=\\"awscdkawsecrirepositorypropertyrepositoryarn\\"></a>
 
 \`\`\`typescript
 public readonly repositoryArn: string;
@@ -1195,7 +1299,7 @@ The ARN of the repository.
 
 ---
 
-## \`repositoryName\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.property.repositoryName\\"></a>
+## \`repositoryName\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.property.repositoryName\\" id=\\"awscdkawsecrirepositorypropertyrepositoryname\\"></a>
 
 \`\`\`typescript
 public readonly repositoryName: string;
@@ -1207,7 +1311,7 @@ The name of the repository.
 
 ---
 
-## \`repositoryUri\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.property.repositoryUri\\"></a>
+## \`repositoryUri\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.IRepository.property.repositoryUri\\" id=\\"awscdkawsecrirepositorypropertyrepositoryuri\\"></a>
 
 \`\`\`typescript
 public readonly repositoryUri: string;

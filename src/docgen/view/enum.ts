@@ -16,6 +16,12 @@ export class Enum {
     const transpiled = this.transpile.enum(this.enu);
     const md = new Markdown({ header: { title: transpiled.name } });
 
+    md.table([
+      ['Name', 'Description'].map(Markdown.bold),
+      ...this.members.map((member) => [member.linkedName, Markdown.sanitize(member.description)]),
+    ]);
+    md.split();
+
     if (this.enu.docs) {
       md.docs(this.enu.docs);
     }

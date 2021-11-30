@@ -32,6 +32,12 @@ export class Initializer {
       ...this.transpiled.invocations,
     );
 
+    md.table([
+      ['Name', 'Type', 'Description'].map(Markdown.bold),
+      ...this.parameters.map((param) => [param.linkedName, param.type, Markdown.sanitize(param.description)]),
+    ]);
+    md.split();
+
     for (const parameter of this.parameters) {
       md.section(parameter.render());
     }

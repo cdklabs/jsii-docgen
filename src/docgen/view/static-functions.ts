@@ -17,6 +17,13 @@ export class StaticFunctions {
     }
 
     const md = new Markdown({ header: { title: 'Static Functions' } });
+
+    md.table([
+      ['Name', 'Description'].map(Markdown.bold),
+      ...this.staticFunctions.map((func) => [func.linkedName, Markdown.sanitize(func.description)]),
+    ]);
+    md.split();
+
     for (const func of this.staticFunctions) {
       md.section(func.render());
     }

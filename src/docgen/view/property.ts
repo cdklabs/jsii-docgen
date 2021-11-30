@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
+import { anchorForId, Markdown } from '../render/markdown';
 import { Transpile, TranspiledProperty, TranspiledType } from '../transpile/transpile';
 
 export class Property {
@@ -12,6 +12,27 @@ export class Property {
     this.transpiled = transpile.property(property);
   }
 
+  public get id(): string {
+    return `${this.transpiled.parentType.fqn}.property.${this.transpiled.name}`;
+  }
+
+  public get linkedName(): string {
+    const isRequired = !this.property.optional ? '<span title="Required">*</span>' : '';
+    return `[${Markdown.pre(this.transpiled.name)}](#${anchorForId(this.id)})${isRequired}`;
+  }
+
+  public get type(): string {
+    return this.transpiled.typeReference.toString({
+      typeFormatter: (t) => `[${Markdown.pre(t.fqn)}](${this.linkFormatter(t)})`,
+      stringFormatter: Markdown.pre,
+    });
+  }
+
+  public get description(): string {
+    const summary = this.property.docs.summary;
+    return summary.length > 0 ? summary : Markdown.italic('No description.');
+  }
+
   public render(): Markdown {
     const optionality = this.property.const
       ? undefined
@@ -20,7 +41,7 @@ export class Property {
         : 'Required';
 
     const md = new Markdown({
-      id: `${this.transpiled.parentType.fqn}.property.${this.transpiled.name}`,
+      id: this.id,
       header: {
         title: this.transpiled.name,
         sup: optionality,
@@ -42,12 +63,7 @@ export class Property {
       md.code(this.transpile.language.toString(), this.transpiled.declaration);
     }
 
-    const metadata: any = {
-      Type: this.transpiled.typeReference.toString({
-        typeFormatter: (t) => `[${Markdown.pre(t.fqn)}](${this.linkFormatter(t)})`,
-        stringFormatter: Markdown.pre,
-      }),
-    };
+    const metadata: Record<string, string> = { Type: this.type };
 
     if (this.property.spec.docs?.default) {
       metadata.Default = Markdown.sanitize(this.property.spec.docs?.default);

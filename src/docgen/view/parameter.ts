@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
+import { anchorForId, Markdown } from '../render/markdown';
 import { Transpile, TranspiledParameter, TranspiledType } from '../transpile/transpile';
 
 export class Parameter {
@@ -12,11 +12,32 @@ export class Parameter {
     this.transpiled = transpile.parameter(parameter);
   }
 
+  public get id(): string {
+    return `${this.transpiled.parentType.fqn}.parameter.${this.transpiled.name}`;
+  }
+
+  public get linkedName(): string {
+    const isRequired = !this.parameter.optional ? '<span title="Required">*</span>' : '';
+    return `[${Markdown.pre(this.transpiled.name)}](#${anchorForId(this.id)})${isRequired}`;
+  }
+
+  public get type(): string {
+    return this.transpiled.typeReference.toString({
+      typeFormatter: (t) => `[${Markdown.pre(t.fqn)}](${this.linkFormatter(t)})`,
+      stringFormatter: Markdown.pre,
+    });
+  }
+
+  public get description(): string {
+    const summary = this.parameter.docs.summary;
+    return summary.length > 0 ? summary : Markdown.italic('No description.');
+  }
+
   public render(): Markdown {
     const optionality = this.parameter.optional ? 'Optional' : 'Required';
 
     const md = new Markdown({
-      id: `${this.transpiled.parentType.fqn}.parameter.${this.transpiled.name}`,
+      id: this.id,
       header: {
         title: this.transpiled.name,
         sup: optionality,
@@ -34,12 +55,7 @@ export class Parameter {
       md.lines('');
     }
 
-    const metadata: any = {
-      Type: this.transpiled.typeReference.toString({
-        typeFormatter: (t) => `[${Markdown.pre(t.fqn)}](${this.linkFormatter(t)})`,
-        stringFormatter: Markdown.pre,
-      }),
-    };
+    const metadata: any = { Type: this.type };
 
     if (this.parameter.spec.docs?.default) {
       metadata.Default = Markdown.sanitize(this.parameter.spec.docs?.default);

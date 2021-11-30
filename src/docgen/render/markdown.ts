@@ -7,6 +7,10 @@ const sanitize = (input: string): string => {
     .replace(/ /g, '-');
 };
 
+export const anchorForId = (id: string): string => {
+  return sanitize(id);
+};
+
 /**
  * Options for defining a markdown header.
  */
@@ -127,6 +131,18 @@ export class Markdown {
     }
   }
 
+  public table(data: string[][]) {
+    const numColumns = data[0].length;
+    const header = data[0];
+    const rows = data.slice(1);
+    this.lines('| ' + header.map(this.escapePipes).join(' | ') + ' |');
+    this.lines('|' + ' --- |'.repeat(numColumns));
+    for (const row of rows) {
+      this.lines('| ' + row.map(this.escapePipes).join(' | ') + ' |');
+    }
+    this.lines('');
+  }
+
   public quote(line: string) {
     this.lines(`> ${line}`);
     this.lines('');
@@ -164,7 +180,7 @@ export class Markdown {
 
     const content: string[] = [];
     if (this.header) {
-      const anchor = sanitize(this.id ?? '');
+      const anchor = anchorForId(this.id ?? '');
       const heading = `${'#'.repeat(headerSize)} ${this.header}`;
 
       // This is nasty, i'm aware.
@@ -177,7 +193,7 @@ export class Markdown {
           `${heading} <span data-heading-title="${this.header}" data-heading-id="${anchor}"></span>`,
         );
       } else {
-        content.push(`${heading} <a name="${this.id}"></a>`);
+        content.push(`${heading} <a name="${this.id}" id="${anchor}"></a>`);
       }
       content.push('');
     }
@@ -211,5 +227,9 @@ export class Markdown {
     }
 
     return caption;
+  }
+
+  private escapePipes(line: string): string {
+    return line.replace(/\|/g, '\\|');
   }
 }

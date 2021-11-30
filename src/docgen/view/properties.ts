@@ -17,9 +17,17 @@ export class Properties {
     }
 
     const md = new Markdown({ header: { title: 'Properties' } });
+
+    md.table([
+      ['Name', 'Type', 'Description'].map(Markdown.bold),
+      ...this.properties.map((prop) => [prop.linkedName, prop.type, Markdown.sanitize(prop.description)]),
+    ]);
+    md.split();
+
     for (const property of this.properties) {
       md.section(property.render());
     }
+
     return md;
   }
 }
