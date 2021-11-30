@@ -17,8 +17,8 @@ export class Parameter {
   }
 
   public get linkedName(): string {
-    const optionality = this.parameter.optional ? 'Optional' : 'Required';
-    return `[${Markdown.pre(this.transpiled.name)}](#${anchorForId(this.id)})<sup>${optionality}</sup>`;
+    const isRequired = !this.parameter.optional ? '<span title="Required">*</span>' : '';
+    return `[${Markdown.pre(this.transpiled.name)}](#${anchorForId(this.id)})${isRequired}`;
   }
 
   public get type(): string {
