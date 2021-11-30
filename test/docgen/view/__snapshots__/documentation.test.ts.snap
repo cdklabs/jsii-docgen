@@ -819,6 +819,15 @@ private AddToResourcePolicy(PolicyStatement Statement)
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`ArnForLocalRepository\`](#amazoncdkawsecrrepositoryarnforlocalrepository) | Returns an ECR ARN for a repository that resides in the same account/region as the current stack. |
+| [\`FromRepositoryArn\`](#amazoncdkawsecrrepositoryfromrepositoryarn) | *No description.* |
+| [\`FromRepositoryAttributes\`](#amazoncdkawsecrrepositoryfromrepositoryattributes) | Import a repository. |
+| [\`FromRepositoryName\`](#amazoncdkawsecrrepositoryfromrepositoryname) | *No description.* |
+
+---
+
 ##### \`ArnForLocalRepository\` <a name=\\"Amazon.CDK.AWS.ECR.Repository.ArnForLocalRepository\\" id=\\"amazoncdkawsecrrepositoryarnforlocalrepository\\"></a>
 
 \`\`\`csharp
@@ -2188,6 +2197,12 @@ Authorization token to access private ECR repositories in the current environmen
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`GrantRead\`](#amazoncdkawsecrauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
+
 ##### \`GrantRead\` <a name=\\"Amazon.CDK.AWS.ECR.AuthorizationToken.GrantRead\\" id=\\"amazoncdkawsecrauthorizationtokengrantread\\"></a>
 
 \`\`\`csharp
@@ -2212,6 +2227,12 @@ Authorization token to access the global public ECR Gallery via Docker CLI.
 
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`GrantRead\`](#amazoncdkawsecrpublicgalleryauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
 
 ##### \`GrantRead\` <a name=\\"Amazon.CDK.AWS.ECR.PublicGalleryAuthorizationToken.GrantRead\\" id=\\"amazoncdkawsecrpublicgalleryauthorizationtokengrantread\\"></a>
 
@@ -3392,6 +3413,15 @@ private AddToResourcePolicy(PolicyStatement Statement)
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`ArnForLocalRepository\`](#amazoncdkawsecrrepositoryarnforlocalrepository) | Returns an ECR ARN for a repository that resides in the same account/region as the current stack. |
+| [\`FromRepositoryArn\`](#amazoncdkawsecrrepositoryfromrepositoryarn) | *No description.* |
+| [\`FromRepositoryAttributes\`](#amazoncdkawsecrrepositoryfromrepositoryattributes) | Import a repository. |
+| [\`FromRepositoryName\`](#amazoncdkawsecrrepositoryfromrepositoryname) | *No description.* |
+
+---
+
 ##### \`ArnForLocalRepository\` <a name=\\"Amazon.CDK.AWS.ECR.Repository.ArnForLocalRepository\\" id=\\"amazoncdkawsecrrepositoryarnforlocalrepository\\"></a>
 
 \`\`\`csharp
@@ -4761,6 +4791,12 @@ Authorization token to access private ECR repositories in the current environmen
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`GrantRead\`](#amazoncdkawsecrauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
+
 ##### \`GrantRead\` <a name=\\"Amazon.CDK.AWS.ECR.AuthorizationToken.GrantRead\\" id=\\"amazoncdkawsecrauthorizationtokengrantread\\"></a>
 
 \`\`\`csharp
@@ -4785,6 +4821,12 @@ Authorization token to access the global public ECR Gallery via Docker CLI.
 
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`GrantRead\`](#amazoncdkawsecrpublicgalleryauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
 
 ##### \`GrantRead\` <a name=\\"Amazon.CDK.AWS.ECR.PublicGalleryAuthorizationToken.GrantRead\\" id=\\"amazoncdkawsecrpublicgalleryauthorizationtokengrantread\\"></a>
 
@@ -7774,6 +7816,12 @@ Additional operation options.
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`FromClusterAttributes\`](#amazoncdkawseksclusterfromclusterattributes) | Import an existing cluster. |
+
+---
+
 ##### \`FromClusterAttributes\` <a name=\\"Amazon.CDK.aws_eks.Cluster.FromClusterAttributes\\" id=\\"amazoncdkawseksclusterfromclusterattributes\\"></a>
 
 \`\`\`csharp
@@ -8578,6 +8626,12 @@ new Nodegroup(Construct Scope, string Id, NodegroupProps Props);
 
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`FromNodegroupName\`](#amazoncdkawseksnodegroupfromnodegroupname) | Import the Nodegroup from attributes. |
+
+---
 
 ##### \`FromNodegroupName\` <a name=\\"Amazon.CDK.aws_eks.Nodegroup.FromNodegroupName\\" id=\\"amazoncdkawseksnodegroupfromnodegroupname\\"></a>
 
@@ -14290,6 +14344,12 @@ Kubernetes cluster version.
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`Of\`](#amazoncdkawsekskubernetesversionof) | Custom cluster version. |
+
+---
+
 ##### \`Of\` <a name=\\"Amazon.CDK.aws_eks.KubernetesVersion.Of\\" id=\\"amazoncdkawsekskubernetesversionof\\"></a>
 
 \`\`\`csharp
@@ -17701,6 +17761,12 @@ Additional operation options.
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`FromClusterAttributes\`](#amazoncdkawseksclusterfromclusterattributes) | Import an existing cluster. |
+
+---
+
 ##### \`FromClusterAttributes\` <a name=\\"Amazon.CDK.aws_eks.Cluster.FromClusterAttributes\\" id=\\"amazoncdkawseksclusterfromclusterattributes\\"></a>
 
 \`\`\`csharp
@@ -18505,6 +18571,12 @@ new Nodegroup(Construct Scope, string Id, NodegroupProps Props);
 
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`FromNodegroupName\`](#amazoncdkawseksnodegroupfromnodegroupname) | Import the Nodegroup from attributes. |
+
+---
 
 ##### \`FromNodegroupName\` <a name=\\"Amazon.CDK.aws_eks.Nodegroup.FromNodegroupName\\" id=\\"amazoncdkawseksnodegroupfromnodegroupname\\"></a>
 
@@ -24378,6 +24450,12 @@ Kubernetes cluster version.
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`Of\`](#amazoncdkawsekskubernetesversionof) | Custom cluster version. |
+
+---
+
 ##### \`Of\` <a name=\\"Amazon.CDK.aws_eks.KubernetesVersion.Of\\" id=\\"amazoncdkawsekskubernetesversionof\\"></a>
 
 \`\`\`csharp
@@ -26250,6 +26328,15 @@ def add_to_resource_policy(
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`arn_for_local_repository\`](#awscdkawsecrrepositoryarnforlocalrepository) | Returns an ECR ARN for a repository that resides in the same account/region as the current stack. |
+| [\`from_repository_arn\`](#awscdkawsecrrepositoryfromrepositoryarn) | *No description.* |
+| [\`from_repository_attributes\`](#awscdkawsecrrepositoryfromrepositoryattributes) | Import a repository. |
+| [\`from_repository_name\`](#awscdkawsecrrepositoryfromrepositoryname) | *No description.* |
+
+---
+
 ##### \`arn_for_local_repository\` <a name=\\"aws_cdk.aws_ecr.Repository.arn_for_local_repository\\" id=\\"awscdkawsecrrepositoryarnforlocalrepository\\"></a>
 
 \`\`\`python
@@ -27875,6 +27962,12 @@ Authorization token to access private ECR repositories in the current environmen
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`grant_read\`](#awscdkawsecrauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
+
 ##### \`grant_read\` <a name=\\"aws_cdk.aws_ecr.AuthorizationToken.grant_read\\" id=\\"awscdkawsecrauthorizationtokengrantread\\"></a>
 
 \`\`\`python
@@ -27901,6 +27994,12 @@ Authorization token to access the global public ECR Gallery via Docker CLI.
 
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`grant_read\`](#awscdkawsecrpublicgalleryauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
 
 ##### \`grant_read\` <a name=\\"aws_cdk.aws_ecr.PublicGalleryAuthorizationToken.grant_read\\" id=\\"awscdkawsecrpublicgalleryauthorizationtokengrantread\\"></a>
 
@@ -29462,6 +29561,15 @@ public addToResourcePolicy(PolicyStatement statement)
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`arnForLocalRepository\`](#softwareamazonawscdkservicesecrrepositoryarnforlocalrepository) | Returns an ECR ARN for a repository that resides in the same account/region as the current stack. |
+| [\`fromRepositoryArn\`](#softwareamazonawscdkservicesecrrepositoryfromrepositoryarn) | *No description.* |
+| [\`fromRepositoryAttributes\`](#softwareamazonawscdkservicesecrrepositoryfromrepositoryattributes) | Import a repository. |
+| [\`fromRepositoryName\`](#softwareamazonawscdkservicesecrrepositoryfromrepositoryname) | *No description.* |
+
+---
+
 ##### \`arnForLocalRepository\` <a name=\\"software.amazon.awscdk.services.ecr.Repository.arnForLocalRepository\\" id=\\"softwareamazonawscdkservicesecrrepositoryarnforlocalrepository\\"></a>
 
 \`\`\`java
@@ -30886,6 +30994,12 @@ Authorization token to access private ECR repositories in the current environmen
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`grantRead\`](#softwareamazonawscdkservicesecrauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
+
 ##### \`grantRead\` <a name=\\"software.amazon.awscdk.services.ecr.AuthorizationToken.grantRead\\" id=\\"softwareamazonawscdkservicesecrauthorizationtokengrantread\\"></a>
 
 \`\`\`java
@@ -30910,6 +31024,12 @@ Authorization token to access the global public ECR Gallery via Docker CLI.
 
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`grantRead\`](#softwareamazonawscdkservicesecrpublicgalleryauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
 
 ##### \`grantRead\` <a name=\\"software.amazon.awscdk.services.ecr.PublicGalleryAuthorizationToken.grantRead\\" id=\\"softwareamazonawscdkservicesecrpublicgalleryauthorizationtokengrantread\\"></a>
 
@@ -32286,6 +32406,15 @@ public addToResourcePolicy(PolicyStatement statement)
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`arnForLocalRepository\`](#softwareamazonawscdkservicesecrrepositoryarnforlocalrepository) | Returns an ECR ARN for a repository that resides in the same account/region as the current stack. |
+| [\`fromRepositoryArn\`](#softwareamazonawscdkservicesecrrepositoryfromrepositoryarn) | *No description.* |
+| [\`fromRepositoryAttributes\`](#softwareamazonawscdkservicesecrrepositoryfromrepositoryattributes) | Import a repository. |
+| [\`fromRepositoryName\`](#softwareamazonawscdkservicesecrrepositoryfromrepositoryname) | *No description.* |
+
+---
+
 ##### \`arnForLocalRepository\` <a name=\\"software.amazon.awscdk.services.ecr.Repository.arnForLocalRepository\\" id=\\"softwareamazonawscdkservicesecrrepositoryarnforlocalrepository\\"></a>
 
 \`\`\`java
@@ -33710,6 +33839,12 @@ Authorization token to access private ECR repositories in the current environmen
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`grantRead\`](#softwareamazonawscdkservicesecrauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
+
 ##### \`grantRead\` <a name=\\"software.amazon.awscdk.services.ecr.AuthorizationToken.grantRead\\" id=\\"softwareamazonawscdkservicesecrauthorizationtokengrantread\\"></a>
 
 \`\`\`java
@@ -33734,6 +33869,12 @@ Authorization token to access the global public ECR Gallery via Docker CLI.
 
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`grantRead\`](#softwareamazonawscdkservicesecrpublicgalleryauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
 
 ##### \`grantRead\` <a name=\\"software.amazon.awscdk.services.ecr.PublicGalleryAuthorizationToken.grantRead\\" id=\\"softwareamazonawscdkservicesecrpublicgalleryauthorizationtokengrantread\\"></a>
 
@@ -37392,6 +37533,12 @@ Additional operation options.
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`fromClusterAttributes\`](#softwareamazonawscdkserviceseksclusterfromclusterattributes) | Import an existing cluster. |
+
+---
+
 ##### \`fromClusterAttributes\` <a name=\\"software.amazon.awscdk.services.eks.Cluster.fromClusterAttributes\\" id=\\"softwareamazonawscdkserviceseksclusterfromclusterattributes\\"></a>
 
 \`\`\`java
@@ -38982,6 +39129,12 @@ Cluster resource.
 
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`fromNodegroupName\`](#softwareamazonawscdkserviceseksnodegroupfromnodegroupname) | Import the Nodegroup from attributes. |
+
+---
 
 ##### \`fromNodegroupName\` <a name=\\"software.amazon.awscdk.services.eks.Nodegroup.fromNodegroupName\\" id=\\"softwareamazonawscdkserviceseksnodegroupfromnodegroupname\\"></a>
 
@@ -44766,6 +44919,12 @@ Kubernetes cluster version.
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`of\`](#softwareamazonawscdkservicesekskubernetesversionof) | Custom cluster version. |
+
+---
+
 ##### \`of\` <a name=\\"software.amazon.awscdk.services.eks.KubernetesVersion.of\\" id=\\"softwareamazonawscdkservicesekskubernetesversionof\\"></a>
 
 \`\`\`java
@@ -48841,6 +49000,12 @@ Additional operation options.
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`fromClusterAttributes\`](#softwareamazonawscdkserviceseksclusterfromclusterattributes) | Import an existing cluster. |
+
+---
+
 ##### \`fromClusterAttributes\` <a name=\\"software.amazon.awscdk.services.eks.Cluster.fromClusterAttributes\\" id=\\"softwareamazonawscdkserviceseksclusterfromclusterattributes\\"></a>
 
 \`\`\`java
@@ -50446,6 +50611,12 @@ Cluster resource.
 
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`fromNodegroupName\`](#softwareamazonawscdkserviceseksnodegroupfromnodegroupname) | Import the Nodegroup from attributes. |
+
+---
 
 ##### \`fromNodegroupName\` <a name=\\"software.amazon.awscdk.services.eks.Nodegroup.fromNodegroupName\\" id=\\"softwareamazonawscdkserviceseksnodegroupfromnodegroupname\\"></a>
 
@@ -56391,6 +56562,12 @@ Kubernetes cluster version.
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`of\`](#softwareamazonawscdkservicesekskubernetesversionof) | Custom cluster version. |
+
+---
+
 ##### \`of\` <a name=\\"software.amazon.awscdk.services.eks.KubernetesVersion.of\\" id=\\"softwareamazonawscdkservicesekskubernetesversionof\\"></a>
 
 \`\`\`java
@@ -58332,6 +58509,15 @@ def add_to_resource_policy(
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`arn_for_local_repository\`](#awscdkawsecrrepositoryarnforlocalrepository) | Returns an ECR ARN for a repository that resides in the same account/region as the current stack. |
+| [\`from_repository_arn\`](#awscdkawsecrrepositoryfromrepositoryarn) | *No description.* |
+| [\`from_repository_attributes\`](#awscdkawsecrrepositoryfromrepositoryattributes) | Import a repository. |
+| [\`from_repository_name\`](#awscdkawsecrrepositoryfromrepositoryname) | *No description.* |
+
+---
+
 ##### \`arn_for_local_repository\` <a name=\\"aws_cdk.aws_ecr.Repository.arn_for_local_repository\\" id=\\"awscdkawsecrrepositoryarnforlocalrepository\\"></a>
 
 \`\`\`python
@@ -59957,6 +60143,12 @@ Authorization token to access private ECR repositories in the current environmen
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`grant_read\`](#awscdkawsecrauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
+
 ##### \`grant_read\` <a name=\\"aws_cdk.aws_ecr.AuthorizationToken.grant_read\\" id=\\"awscdkawsecrauthorizationtokengrantread\\"></a>
 
 \`\`\`python
@@ -59983,6 +60175,12 @@ Authorization token to access the global public ECR Gallery via Docker CLI.
 
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`grant_read\`](#awscdkawsecrpublicgalleryauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
 
 ##### \`grant_read\` <a name=\\"aws_cdk.aws_ecr.PublicGalleryAuthorizationToken.grant_read\\" id=\\"awscdkawsecrpublicgalleryauthorizationtokengrantread\\"></a>
 
@@ -61624,6 +61822,15 @@ def add_to_resource_policy(
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`arn_for_local_repository\`](#awscdkawsecrrepositoryarnforlocalrepository) | Returns an ECR ARN for a repository that resides in the same account/region as the current stack. |
+| [\`from_repository_arn\`](#awscdkawsecrrepositoryfromrepositoryarn) | *No description.* |
+| [\`from_repository_attributes\`](#awscdkawsecrrepositoryfromrepositoryattributes) | Import a repository. |
+| [\`from_repository_name\`](#awscdkawsecrrepositoryfromrepositoryname) | *No description.* |
+
+---
+
 ##### \`arn_for_local_repository\` <a name=\\"aws_cdk.aws_ecr.Repository.arn_for_local_repository\\" id=\\"awscdkawsecrrepositoryarnforlocalrepository\\"></a>
 
 \`\`\`python
@@ -63249,6 +63456,12 @@ Authorization token to access private ECR repositories in the current environmen
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`grant_read\`](#awscdkawsecrauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
+
 ##### \`grant_read\` <a name=\\"aws_cdk.aws_ecr.AuthorizationToken.grant_read\\" id=\\"awscdkawsecrauthorizationtokengrantread\\"></a>
 
 \`\`\`python
@@ -63275,6 +63488,12 @@ Authorization token to access the global public ECR Gallery via Docker CLI.
 
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`grant_read\`](#awscdkawsecrpublicgalleryauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
 
 ##### \`grant_read\` <a name=\\"aws_cdk.aws_ecr.PublicGalleryAuthorizationToken.grant_read\\" id=\\"awscdkawsecrpublicgalleryauthorizationtokengrantread\\"></a>
 
@@ -67850,6 +68069,12 @@ Timeout for waiting on the load balancer address.
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`from_cluster_attributes\`](#awscdkawseksclusterfromclusterattributes) | Import an existing cluster. |
+
+---
+
 ##### \`from_cluster_attributes\` <a name=\\"aws_cdk.aws_eks.Cluster.from_cluster_attributes\\" id=\\"awscdkawseksclusterfromclusterattributes\\"></a>
 
 \`\`\`python
@@ -69608,6 +69833,12 @@ Cluster resource.
 
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`from_nodegroup_name\`](#awscdkawseksnodegroupfromnodegroupname) | Import the Nodegroup from attributes. |
+
+---
 
 ##### \`from_nodegroup_name\` <a name=\\"aws_cdk.aws_eks.Nodegroup.from_nodegroup_name\\" id=\\"awscdkawseksnodegroupfromnodegroupname\\"></a>
 
@@ -75391,6 +75622,12 @@ Kubernetes cluster version.
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`of\`](#awscdkawsekskubernetesversionof) | Custom cluster version. |
+
+---
+
 ##### \`of\` <a name=\\"aws_cdk.aws_eks.KubernetesVersion.of\\" id=\\"awscdkawsekskubernetesversionof\\"></a>
 
 \`\`\`python
@@ -77084,6 +77321,15 @@ public addToResourcePolicy(statement: PolicyStatement)
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`arnForLocalRepository\`](#awscdkawsecrrepositoryarnforlocalrepository) | Returns an ECR ARN for a repository that resides in the same account/region as the current stack. |
+| [\`fromRepositoryArn\`](#awscdkawsecrrepositoryfromrepositoryarn) | *No description.* |
+| [\`fromRepositoryAttributes\`](#awscdkawsecrrepositoryfromrepositoryattributes) | Import a repository. |
+| [\`fromRepositoryName\`](#awscdkawsecrrepositoryfromrepositoryname) | *No description.* |
+
+---
+
 ##### \`arnForLocalRepository\` <a name=\\"@aws-cdk/aws-ecr.Repository.arnForLocalRepository\\" id=\\"awscdkawsecrrepositoryarnforlocalrepository\\"></a>
 
 \`\`\`typescript
@@ -78397,6 +78643,12 @@ Authorization token to access private ECR repositories in the current environmen
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`grantRead\`](#awscdkawsecrauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
+
 ##### \`grantRead\` <a name=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead\\" id=\\"awscdkawsecrauthorizationtokengrantread\\"></a>
 
 \`\`\`typescript
@@ -78421,6 +78673,12 @@ Authorization token to access the global public ECR Gallery via Docker CLI.
 
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`grantRead\`](#awscdkawsecrpublicgalleryauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
 
 ##### \`grantRead\` <a name=\\"@aws-cdk/aws-ecr.PublicGalleryAuthorizationToken.grantRead\\" id=\\"awscdkawsecrpublicgalleryauthorizationtokengrantread\\"></a>
 
@@ -79583,6 +79841,15 @@ public addToResourcePolicy(statement: PolicyStatement)
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`arnForLocalRepository\`](#awscdkawsecrrepositoryarnforlocalrepository) | Returns an ECR ARN for a repository that resides in the same account/region as the current stack. |
+| [\`fromRepositoryArn\`](#awscdkawsecrrepositoryfromrepositoryarn) | *No description.* |
+| [\`fromRepositoryAttributes\`](#awscdkawsecrrepositoryfromrepositoryattributes) | Import a repository. |
+| [\`fromRepositoryName\`](#awscdkawsecrrepositoryfromrepositoryname) | *No description.* |
+
+---
+
 ##### \`arnForLocalRepository\` <a name=\\"@aws-cdk/aws-ecr.Repository.arnForLocalRepository\\" id=\\"awscdkawsecrrepositoryarnforlocalrepository\\"></a>
 
 \`\`\`typescript
@@ -80896,6 +81163,12 @@ Authorization token to access private ECR repositories in the current environmen
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`grantRead\`](#awscdkawsecrauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
+
 ##### \`grantRead\` <a name=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead\\" id=\\"awscdkawsecrauthorizationtokengrantread\\"></a>
 
 \`\`\`typescript
@@ -80920,6 +81193,12 @@ Authorization token to access the global public ECR Gallery via Docker CLI.
 
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`grantRead\`](#awscdkawsecrpublicgalleryauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
 
 ##### \`grantRead\` <a name=\\"@aws-cdk/aws-ecr.PublicGalleryAuthorizationToken.grantRead\\" id=\\"awscdkawsecrpublicgalleryauthorizationtokengrantread\\"></a>
 
@@ -83909,6 +84188,12 @@ Additional operation options.
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`fromClusterAttributes\`](#awscdklibawseksclusterfromclusterattributes) | Import an existing cluster. |
+
+---
+
 ##### \`fromClusterAttributes\` <a name=\\"aws-cdk-lib.aws_eks.Cluster.fromClusterAttributes\\" id=\\"awscdklibawseksclusterfromclusterattributes\\"></a>
 
 \`\`\`typescript
@@ -84713,6 +84998,12 @@ new aws_eks.Nodegroup(scope: Construct, id: string, props: NodegroupProps)
 
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`fromNodegroupName\`](#awscdklibawseksnodegroupfromnodegroupname) | Import the Nodegroup from attributes. |
+
+---
 
 ##### \`fromNodegroupName\` <a name=\\"aws-cdk-lib.aws_eks.Nodegroup.fromNodegroupName\\" id=\\"awscdklibawseksnodegroupfromnodegroupname\\"></a>
 
@@ -90102,6 +90393,12 @@ Kubernetes cluster version.
 
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`of\`](#awscdklibawsekskubernetesversionof) | Custom cluster version. |
+
+---
 
 ##### \`of\` <a name=\\"aws-cdk-lib.aws_eks.KubernetesVersion.of\\" id=\\"awscdklibawsekskubernetesversionof\\"></a>
 

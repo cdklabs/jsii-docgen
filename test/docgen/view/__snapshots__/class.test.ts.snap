@@ -10,6 +10,12 @@ Authorization token to access private ECR repositories in the current environmen
 
 # Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`GrantRead\`](#amazoncdkawsecrauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
+
 ## \`GrantRead\` <a name=\\"Amazon.CDK.AWS.ECR.AuthorizationToken.GrantRead\\" id=\\"amazoncdkawsecrauthorizationtokengrantread\\"></a>
 
 \`\`\`csharp
@@ -38,6 +44,12 @@ Authorization token to access private ECR repositories in the current environmen
 
 # Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| [\`grantRead\`](#softwareamazonawscdkservicesecrauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
+
 ## \`grantRead\` <a name=\\"software.amazon.awscdk.services.ecr.AuthorizationToken.grantRead\\" id=\\"softwareamazonawscdkservicesecrauthorizationtokengrantread\\"></a>
 
 \`\`\`java
@@ -65,6 +77,12 @@ Authorization token to access private ECR repositories in the current environmen
 
 
 # Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`grant_read\`](#awscdkawsecrauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
 
 ## \`grant_read\` <a name=\\"aws_cdk.aws_ecr.AuthorizationToken.grant_read\\" id=\\"awscdkawsecrauthorizationtokengrantread\\"></a>
 
@@ -95,6 +113,12 @@ Authorization token to access private ECR repositories in the current environmen
 
 
 # Static Functions <a name=\\"Static Functions\\" id=\\"static-functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| [\`grantRead\`](#awscdkawsecrauthorizationtokengrantread) | Grant access to retrieve an authorization token. |
+
+---
 
 ## \`grantRead\` <a name=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead\\" id=\\"awscdkawsecrauthorizationtokengrantread\\"></a>
 
