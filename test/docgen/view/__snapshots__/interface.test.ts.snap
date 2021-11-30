@@ -196,12 +196,12 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| [\`Node\`](#amazoncdkawsecrirepositorypropertynode)<sup>Required</sup> | [\`Amazon.CDK.ConstructNode\`](#Amazon.CDK.ConstructNode) | The construct tree node for this construct. |
-| [\`Env\`](#amazoncdkawsecrirepositorypropertyenv)<sup>Required</sup> | [\`Amazon.CDK.ResourceEnvironment\`](#Amazon.CDK.ResourceEnvironment) | The environment this resource belongs to. |
-| [\`Stack\`](#amazoncdkawsecrirepositorypropertystack)<sup>Required</sup> | [\`Amazon.CDK.Stack\`](#Amazon.CDK.Stack) | The stack in which this resource is defined. |
-| [\`RepositoryArn\`](#amazoncdkawsecrirepositorypropertyrepositoryarn)<sup>Required</sup> | \`string\` | The ARN of the repository. |
-| [\`RepositoryName\`](#amazoncdkawsecrirepositorypropertyrepositoryname)<sup>Required</sup> | \`string\` | The name of the repository. |
-| [\`RepositoryUri\`](#amazoncdkawsecrirepositorypropertyrepositoryuri)<sup>Required</sup> | \`string\` | The URI of this repository (represents the latest image):. |
+| [\`Node\`](#amazoncdkawsecrirepositorypropertynode)<span title=\\"Required\\">*</span> | [\`Amazon.CDK.ConstructNode\`](#Amazon.CDK.ConstructNode) | The construct tree node for this construct. |
+| [\`Env\`](#amazoncdkawsecrirepositorypropertyenv)<span title=\\"Required\\">*</span> | [\`Amazon.CDK.ResourceEnvironment\`](#Amazon.CDK.ResourceEnvironment) | The environment this resource belongs to. |
+| [\`Stack\`](#amazoncdkawsecrirepositorypropertystack)<span title=\\"Required\\">*</span> | [\`Amazon.CDK.Stack\`](#Amazon.CDK.Stack) | The stack in which this resource is defined. |
+| [\`RepositoryArn\`](#amazoncdkawsecrirepositorypropertyrepositoryarn)<span title=\\"Required\\">*</span> | \`string\` | The ARN of the repository. |
+| [\`RepositoryName\`](#amazoncdkawsecrirepositorypropertyrepositoryname)<span title=\\"Required\\">*</span> | \`string\` | The name of the repository. |
+| [\`RepositoryUri\`](#amazoncdkawsecrirepositorypropertyrepositoryuri)<span title=\\"Required\\">*</span> | \`string\` | The URI of this repository (represents the latest image):. |
 
 ---
 
@@ -485,12 +485,12 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| [\`node\`](#softwareamazonawscdkservicesecrirepositorypropertynode)<sup>Required</sup> | [\`software.amazon.awscdk.core.ConstructNode\`](#software.amazon.awscdk.core.ConstructNode) | The construct tree node for this construct. |
-| [\`env\`](#softwareamazonawscdkservicesecrirepositorypropertyenv)<sup>Required</sup> | [\`software.amazon.awscdk.core.ResourceEnvironment\`](#software.amazon.awscdk.core.ResourceEnvironment) | The environment this resource belongs to. |
-| [\`stack\`](#softwareamazonawscdkservicesecrirepositorypropertystack)<sup>Required</sup> | [\`software.amazon.awscdk.core.Stack\`](#software.amazon.awscdk.core.Stack) | The stack in which this resource is defined. |
-| [\`repositoryArn\`](#softwareamazonawscdkservicesecrirepositorypropertyrepositoryarn)<sup>Required</sup> | \`java.lang.String\` | The ARN of the repository. |
-| [\`repositoryName\`](#softwareamazonawscdkservicesecrirepositorypropertyrepositoryname)<sup>Required</sup> | \`java.lang.String\` | The name of the repository. |
-| [\`repositoryUri\`](#softwareamazonawscdkservicesecrirepositorypropertyrepositoryuri)<sup>Required</sup> | \`java.lang.String\` | The URI of this repository (represents the latest image):. |
+| [\`node\`](#softwareamazonawscdkservicesecrirepositorypropertynode)<span title=\\"Required\\">*</span> | [\`software.amazon.awscdk.core.ConstructNode\`](#software.amazon.awscdk.core.ConstructNode) | The construct tree node for this construct. |
+| [\`env\`](#softwareamazonawscdkservicesecrirepositorypropertyenv)<span title=\\"Required\\">*</span> | [\`software.amazon.awscdk.core.ResourceEnvironment\`](#software.amazon.awscdk.core.ResourceEnvironment) | The environment this resource belongs to. |
+| [\`stack\`](#softwareamazonawscdkservicesecrirepositorypropertystack)<span title=\\"Required\\">*</span> | [\`software.amazon.awscdk.core.Stack\`](#software.amazon.awscdk.core.Stack) | The stack in which this resource is defined. |
+| [\`repositoryArn\`](#softwareamazonawscdkservicesecrirepositorypropertyrepositoryarn)<span title=\\"Required\\">*</span> | \`java.lang.String\` | The ARN of the repository. |
+| [\`repositoryName\`](#softwareamazonawscdkservicesecrirepositorypropertyrepositoryname)<span title=\\"Required\\">*</span> | \`java.lang.String\` | The name of the repository. |
+| [\`repositoryUri\`](#softwareamazonawscdkservicesecrirepositorypropertyrepositoryuri)<span title=\\"Required\\">*</span> | \`java.lang.String\` | The URI of this repository (represents the latest image):. |
 
 ---
 
@@ -957,12 +957,12 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| [\`node\`](#awscdkawsecrirepositorypropertynode)<sup>Required</sup> | [\`aws_cdk.core.ConstructNode\`](#aws_cdk.core.ConstructNode) | The construct tree node for this construct. |
-| [\`env\`](#awscdkawsecrirepositorypropertyenv)<sup>Required</sup> | [\`aws_cdk.core.ResourceEnvironment\`](#aws_cdk.core.ResourceEnvironment) | The environment this resource belongs to. |
-| [\`stack\`](#awscdkawsecrirepositorypropertystack)<sup>Required</sup> | [\`aws_cdk.core.Stack\`](#aws_cdk.core.Stack) | The stack in which this resource is defined. |
-| [\`repository_arn\`](#awscdkawsecrirepositorypropertyrepositoryarn)<sup>Required</sup> | \`str\` | The ARN of the repository. |
-| [\`repository_name\`](#awscdkawsecrirepositorypropertyrepositoryname)<sup>Required</sup> | \`str\` | The name of the repository. |
-| [\`repository_uri\`](#awscdkawsecrirepositorypropertyrepositoryuri)<sup>Required</sup> | \`str\` | The URI of this repository (represents the latest image):. |
+| [\`node\`](#awscdkawsecrirepositorypropertynode)<span title=\\"Required\\">*</span> | [\`aws_cdk.core.ConstructNode\`](#aws_cdk.core.ConstructNode) | The construct tree node for this construct. |
+| [\`env\`](#awscdkawsecrirepositorypropertyenv)<span title=\\"Required\\">*</span> | [\`aws_cdk.core.ResourceEnvironment\`](#aws_cdk.core.ResourceEnvironment) | The environment this resource belongs to. |
+| [\`stack\`](#awscdkawsecrirepositorypropertystack)<span title=\\"Required\\">*</span> | [\`aws_cdk.core.Stack\`](#aws_cdk.core.Stack) | The stack in which this resource is defined. |
+| [\`repository_arn\`](#awscdkawsecrirepositorypropertyrepositoryarn)<span title=\\"Required\\">*</span> | \`str\` | The ARN of the repository. |
+| [\`repository_name\`](#awscdkawsecrirepositorypropertyrepositoryname)<span title=\\"Required\\">*</span> | \`str\` | The name of the repository. |
+| [\`repository_uri\`](#awscdkawsecrirepositorypropertyrepositoryuri)<span title=\\"Required\\">*</span> | \`str\` | The URI of this repository (represents the latest image):. |
 
 ---
 
@@ -1240,12 +1240,12 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| [\`node\`](#awscdkawsecrirepositorypropertynode)<sup>Required</sup> | [\`@aws-cdk/core.ConstructNode\`](#@aws-cdk/core.ConstructNode) | The construct tree node for this construct. |
-| [\`env\`](#awscdkawsecrirepositorypropertyenv)<sup>Required</sup> | [\`@aws-cdk/core.ResourceEnvironment\`](#@aws-cdk/core.ResourceEnvironment) | The environment this resource belongs to. |
-| [\`stack\`](#awscdkawsecrirepositorypropertystack)<sup>Required</sup> | [\`@aws-cdk/core.Stack\`](#@aws-cdk/core.Stack) | The stack in which this resource is defined. |
-| [\`repositoryArn\`](#awscdkawsecrirepositorypropertyrepositoryarn)<sup>Required</sup> | \`string\` | The ARN of the repository. |
-| [\`repositoryName\`](#awscdkawsecrirepositorypropertyrepositoryname)<sup>Required</sup> | \`string\` | The name of the repository. |
-| [\`repositoryUri\`](#awscdkawsecrirepositorypropertyrepositoryuri)<sup>Required</sup> | \`string\` | The URI of this repository (represents the latest image):. |
+| [\`node\`](#awscdkawsecrirepositorypropertynode)<span title=\\"Required\\">*</span> | [\`@aws-cdk/core.ConstructNode\`](#@aws-cdk/core.ConstructNode) | The construct tree node for this construct. |
+| [\`env\`](#awscdkawsecrirepositorypropertyenv)<span title=\\"Required\\">*</span> | [\`@aws-cdk/core.ResourceEnvironment\`](#@aws-cdk/core.ResourceEnvironment) | The environment this resource belongs to. |
+| [\`stack\`](#awscdkawsecrirepositorypropertystack)<span title=\\"Required\\">*</span> | [\`@aws-cdk/core.Stack\`](#@aws-cdk/core.Stack) | The stack in which this resource is defined. |
+| [\`repositoryArn\`](#awscdkawsecrirepositorypropertyrepositoryarn)<span title=\\"Required\\">*</span> | \`string\` | The ARN of the repository. |
+| [\`repositoryName\`](#awscdkawsecrirepositorypropertyrepositoryname)<span title=\\"Required\\">*</span> | \`string\` | The name of the repository. |
+| [\`repositoryUri\`](#awscdkawsecrirepositorypropertyrepositoryuri)<span title=\\"Required\\">*</span> | \`string\` | The URI of this repository (represents the latest image):. |
 
 ---
 
