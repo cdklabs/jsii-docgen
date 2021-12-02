@@ -161,7 +161,7 @@ Specifies a canned ACL that grants predefined permissions to the bucket.
 
 Whether all objects should be automatically deleted when the bucket is removed from the stack or when the stack is deleted.
 
-Requires the \`removalPolicy\` to be set to \`RemovalPolicy.DESTROY\`.
+Requires the \`removalPolicy\` to be set to \`RemovalPolicy.DESTROY\`.  **Warning** if you have deployed a bucket with \`autoDeleteObjects: true\`, switching this to \`false\` in a CDK version *before* \`1.126.0\` will lead to all objects in the bucket being deleted. Be sure to update your bucket resources by deploying with CDK version \`1.126.0\` or later **before** switching this value to \`false\`.
 
 ---
 

@@ -37,6 +37,8 @@ const project = new TypeScriptProject({
   autoApproveUpgrades: true,
 
   minNodeVersion: '12.13.0',
+  workflowNodeVersion: '12.22.0', // required by @typescript-eslint/eslint-plugin@5.5.0
+
   tsconfig: {
     compilerOptions: {
       target: 'ES2019',
