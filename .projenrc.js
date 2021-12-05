@@ -1,6 +1,6 @@
-const { TypeScriptProject } = require('projen');
+const { typescript } = require('projen');
 
-const project = new TypeScriptProject({
+const project = new typescript.TypeScriptProject({
   name: 'jsii-docgen',
   description: 'generates api docs for jsii modules',
   repository: 'https://github.com/cdklabs/jsii-docgen',
