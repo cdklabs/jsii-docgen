@@ -1,8 +1,8 @@
 import * as reflect from 'jsii-reflect';
+import { Language } from '../../../lib';
 import { CSharpTranspile } from '../../../src/docgen/transpile/csharp';
 import { JavaTranspile } from '../../../src/docgen/transpile/java';
 import { PythonTranspile } from '../../../src/docgen/transpile/python';
-import { TranspiledType } from '../../../src/docgen/transpile/transpile';
 import { TypeScriptTranspile } from '../../../src/docgen/transpile/typescript';
 import { Property } from '../../../src/docgen/view/property';
 import { Assemblies } from '../assemblies';
@@ -15,9 +15,10 @@ describe('python', () => {
     const parameter = new Property(
       transpile,
       assembly.system.interfaces[0].allProperties[0],
-      (t: TranspiledType) => `#${t.fqn}`,
-    );
-    expect(parameter.render().render()).toMatchSnapshot();
+    ).toJson();
+    const markdown = Property.toMarkdown(parameter, { language: Language.PYTHON });
+    expect(parameter).toMatchSnapshot();
+    expect(markdown.render()).toMatchSnapshot();
   });
 });
 
@@ -27,9 +28,10 @@ describe('typescript', () => {
     const parameter = new Property(
       transpile,
       assembly.system.interfaces[0].allProperties[0],
-      (t: TranspiledType) => `#${t.fqn}`,
-    );
-    expect(parameter.render().render()).toMatchSnapshot();
+    ).toJson();
+    const markdown = Property.toMarkdown(parameter, { language: Language.TYPESCRIPT });
+    expect(parameter).toMatchSnapshot();
+    expect(markdown.render()).toMatchSnapshot();
   });
 });
 
@@ -39,9 +41,10 @@ describe('java', () => {
     const parameter = new Property(
       transpile,
       assembly.system.interfaces[0].allProperties[0],
-      (t: TranspiledType) => `#${t.fqn}`,
-    );
-    expect(parameter.render().render()).toMatchSnapshot();
+    ).toJson();
+    const markdown = Property.toMarkdown(parameter, { language: Language.JAVA });
+    expect(parameter).toMatchSnapshot();
+    expect(markdown.render()).toMatchSnapshot();
   });
 });
 
@@ -51,8 +54,9 @@ describe('csharp', () => {
     const parameter = new Property(
       transpile,
       assembly.system.interfaces[0].allProperties[0],
-      (t: TranspiledType) => `#${t.fqn}`,
-    );
-    expect(parameter.render().render()).toMatchSnapshot();
+    ).toJson();
+    const markdown = Property.toMarkdown(parameter, { language: Language.CSHARP });
+    expect(parameter).toMatchSnapshot();
+    expect(markdown.render()).toMatchSnapshot();
   });
 });

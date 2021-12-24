@@ -1,50 +1,51 @@
 import * as reflect from 'jsii-reflect';
-import { anchorForId, Markdown } from '../render/markdown';
+import { Markdown } from '../render/markdown';
+import { EnumMemberSchema } from '../schema';
 import { Transpile, TranspiledEnumMember } from '../transpile/transpile';
+import { extractDocs } from '../util';
+import { MarkdownRenderOptions } from './documentation';
 
 export class EnumMember {
-  private readonly transpiled: TranspiledEnumMember;
-  constructor(transpile: Transpile, private readonly em: reflect.EnumMember) {
-    this.transpiled = transpile.enumMember(em);
-  }
-
-  public get id(): string {
-    return `${this.transpiled.fqn}`;
-  }
-
-  public get linkedName(): string {
-    return `[${Markdown.pre(this.transpiled.name)}](#${anchorForId(this.id)})`;
-  }
-
-  public get description(): string {
-    const summary = this.em.docs.summary;
-    return summary.length > 0 ? summary : Markdown.italic('No description.');
-  }
-
-  public render(): Markdown {
+  public static toMarkdown(
+    em: EnumMemberSchema,
+    _options: MarkdownRenderOptions,
+  ): Markdown {
     const md = new Markdown({
-      id: this.id,
+      id: em.id,
       header: {
-        title: this.transpiled.name,
+        title: em.fqn.split('.').pop(),
         pre: true,
-        strike: this.em.docs.deprecated,
+        strike: em.docs.deprecated,
       },
     });
 
-    if (this.em.docs.deprecated) {
+    if (em.docs.deprecated) {
       md.bullet(
-        `${Markdown.italic('Deprecated:')} ${this.em.docs.deprecationReason}`,
+        `${Markdown.italic('Deprecated:')} ${em.docs.deprecationReason}`,
       );
       md.lines('');
     }
 
-    if (this.em.docs) {
-      md.docs(this.em.docs);
+    if (em.docs) {
+      md.docs(em.docs);
     }
 
     md.split();
     md.lines('');
 
     return md;
+  }
+
+  private readonly transpiled: TranspiledEnumMember;
+  constructor(transpile: Transpile, private readonly em: reflect.EnumMember) {
+    this.transpiled = transpile.enumMember(em);
+  }
+
+  public toJson(): EnumMemberSchema {
+    return {
+      id: `${this.em.enumType.fqn}.${this.em.name}`,
+      fqn: this.transpiled.fqn,
+      docs: extractDocs(this.em.docs),
+    };
   }
 }

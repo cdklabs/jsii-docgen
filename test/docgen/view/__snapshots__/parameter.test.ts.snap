@@ -1,46 +1,112 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`csharp snapshot 1`] = `
-" \`Grantee\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.AuthorizationToken.parameter.Grantee\\" id=\\"amazoncdkawsecrauthorizationtokenparametergrantee\\"></a>
+Object {
+  "default": undefined,
+  "docs": Object {},
+  "fqn": "Amazon.CDK.AWS.ECR.AuthorizationToken.parameter.Grantee",
+  "id": "@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee",
+  "optional": undefined,
+  "type": Object {
+    "fqn": "@aws-cdk/aws-iam.IGrantable",
+    "id": "Amazon.CDK.AWS.IAM.IGrantable",
+    "name": "IGrantable",
+  },
+}
+`;
 
-- *Type:* [\`Amazon.CDK.AWS.IAM.IGrantable\`](#Amazon.CDK.AWS.IAM.IGrantable)
+exports[`csharp snapshot 2`] = `
+" \`Grantee\`<sup>Required</sup> <a id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
+
+- *Type:* <a href=\\"#@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
 
 ---
 "
 `;
 
 exports[`java snapshot 1`] = `
-" \`grantee\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.AuthorizationToken.parameter.grantee\\" id=\\"softwareamazonawscdkservicesecrauthorizationtokenparametergrantee\\"></a>
+Object {
+  "default": undefined,
+  "docs": Object {},
+  "fqn": "software.amazon.awscdk.services.ecr.AuthorizationToken.parameter.grantee",
+  "id": "@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee",
+  "optional": undefined,
+  "type": Object {
+    "fqn": "@aws-cdk/aws-iam.IGrantable",
+    "id": "software.amazon.awscdk.services.iam.IGrantable",
+    "name": "IGrantable",
+  },
+}
+`;
 
-- *Type:* [\`software.amazon.awscdk.services.iam.IGrantable\`](#software.amazon.awscdk.services.iam.IGrantable)
+exports[`java snapshot 2`] = `
+" \`grantee\`<sup>Required</sup> <a id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
+
+- *Type:* <a href=\\"#@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
 
 ---
 "
 `;
 
 exports[`newlines in "defaults" are removed snapshot 1`] = `
-" \`grantee\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\" id=\\"awscdkawsecrauthorizationtokenparametergrantee\\"></a>
-
-- *Type:* [\`@aws-cdk/aws-iam.IGrantable\`](#@aws-cdk/aws-iam.IGrantable)
-- *Default:* default option with a newline
-
----
-"
+Object {
+  "default": "default option
+with a newline",
+  "docs": Object {},
+  "fqn": "@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee",
+  "id": "@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee",
+  "optional": undefined,
+  "type": Object {
+    "fqn": "@aws-cdk/aws-iam.IGrantable",
+    "id": "@aws-cdk/aws-iam.IGrantable",
+    "name": "IGrantable",
+  },
+}
 `;
 
 exports[`python snapshot 1`] = `
-" \`grantee\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.AuthorizationToken.parameter.grantee\\" id=\\"awscdkawsecrauthorizationtokenparametergrantee\\"></a>
+Object {
+  "default": undefined,
+  "docs": Object {},
+  "fqn": "aws_cdk.aws_ecr.AuthorizationToken.parameter.grantee",
+  "id": "@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee",
+  "optional": undefined,
+  "type": Object {
+    "fqn": "@aws-cdk/aws-iam.IGrantable",
+    "id": "aws_cdk.aws_iam.IGrantable",
+    "name": "IGrantable",
+  },
+}
+`;
 
-- *Type:* [\`aws_cdk.aws_iam.IGrantable\`](#aws_cdk.aws_iam.IGrantable)
+exports[`python snapshot 2`] = `
+" \`grantee\`<sup>Required</sup> <a id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
+
+- *Type:* <a href=\\"#@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
 
 ---
 "
 `;
 
 exports[`typescript snapshot 1`] = `
-" \`grantee\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\" id=\\"awscdkawsecrauthorizationtokenparametergrantee\\"></a>
+Object {
+  "default": undefined,
+  "docs": Object {},
+  "fqn": "@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee",
+  "id": "@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee",
+  "optional": undefined,
+  "type": Object {
+    "fqn": "@aws-cdk/aws-iam.IGrantable",
+    "id": "@aws-cdk/aws-iam.IGrantable",
+    "name": "IGrantable",
+  },
+}
+`;
 
-- *Type:* [\`@aws-cdk/aws-iam.IGrantable\`](#@aws-cdk/aws-iam.IGrantable)
+exports[`typescript snapshot 2`] = `
+" \`grantee\`<sup>Required</sup> <a id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
+
+- *Type:* <a href=\\"#@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
 
 ---
 "

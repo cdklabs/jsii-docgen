@@ -6,11 +6,13 @@ import * as reflect from 'jsii-reflect';
 import { TargetLanguage } from 'jsii-rosetta';
 import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
 import { CorruptedAssemblyError, LanguageNotSupportedError } from '../..';
+import { Json } from '../render/json';
 import { Markdown } from '../render/markdown';
+import { Schema, TypeSchema } from '../schema';
 import { CSharpTranspile } from '../transpile/csharp';
 import { JavaTranspile } from '../transpile/java';
 import { PythonTranspile } from '../transpile/python';
-import { Transpile, Language, TranspiledType } from '../transpile/transpile';
+import { Transpile, Language } from '../transpile/transpile';
 import { TypeScriptTranspile } from '../transpile/typescript';
 import { Npm } from './_npm';
 import { ApiReference } from './api-reference';
@@ -23,20 +25,19 @@ const NOT_FOUND_IN_ASSEMBLY_REGEX = /Type '(.*)\..*' not found in assembly (.*)$
  * Options for rendering a `Documentation` object.
  */
 export interface RenderOptions {
-
   /**
    * Which language to generate docs for.
    *
    * @default Language.TYPESCRIPT
    */
-  readonly language?: Language;
+  readonly language: Language;
 
   /**
-    * Whether to ignore missing fixture files that will prevent transliterating
-    * some code snippet examples.
-    *
-    * @default true
-    */
+   * Whether to ignore missing fixture files that will prevent transliterating
+   * some code snippet examples.
+   *
+   * @default true
+   */
   readonly loose?: boolean;
 
   /**
@@ -47,26 +48,35 @@ export interface RenderOptions {
   readonly apiReference?: boolean;
 
   /**
-    * Include the user defined README.md in the documentation.
-    *
-    * @default true
-    */
+   * Include the user defined README.md in the documentation.
+   *
+   * @default true
+   */
   readonly readme?: boolean;
 
   /**
-    * Generate documentation only for a specific submodule.
-    *
-    * @default - Documentation is generated for the root module only.
-    */
+   * Generate documentation only for a specific submodule.
+   *
+   * @default - Documentation is generated for the root module only.
+   */
   readonly submodule?: string;
+}
+
+export interface MarkdownRenderOptions extends RenderOptions {
+  /**
+   * How should links to entities be rendered. For example, if a class or a
+   * property is referenced within a method description or table.
+   *
+   * @default - '[{name}](#{fqn})'
+   */
+  readonly linkFormatter?: (name: string, id: string) => string;
 
   /**
-   * How should links to types be rendered.
+   * How types should be formatted
    *
-   * @default '#{fqn}'
+   * @default - <code> block with linked type references
    */
-  readonly linkFormatter?: (type: TranspiledType) => string;
-
+  readonly typeFormatter?: (type: TypeSchema) => string;
 }
 
 /**
@@ -175,7 +185,7 @@ export class Documentation {
   /**
    * Generate markdown.
    */
-  public async render(options: RenderOptions = {}): Promise<Markdown> {
+  public async toJson(options: RenderOptions): Promise<Json<Schema>> {
 
     const language = options.language ?? Language.TYPESCRIPT;
     const loose = options.loose ?? true;
@@ -197,23 +207,41 @@ export class Documentation {
     }
 
     const submodule = options?.submodule ? this.findSubmodule(assembly, options.submodule) : undefined;
-    const documentation = new Markdown();
 
+    let readme: Markdown | undefined;
     if (options?.readme ?? true) {
-      const readme = new Readme(transpile, assembly, submodule);
-      documentation.section(readme.render());
+      readme = new Readme(transpile, assembly, submodule).render();
     }
 
+    // options?.linkFormatter ?? ((t: TranspiledType) => `#${t.fqn}`)
+
+    let apiReference: ApiReference | undefined;
     if (options?.apiReference ?? true) {
       try {
-        const apiReference = new ApiReference(transpile, assembly, options?.linkFormatter ?? ((t: TranspiledType) => `#${t.fqn}`), submodule);
-        documentation.section(apiReference.render());
+        apiReference = new ApiReference(transpile, assembly, submodule);
       } catch (error) {
         if (!(error instanceof Error)) {
           throw error;
         }
         throw maybeCorruptedAssemblyError(error) ?? error;
       }
+    }
+
+    return new Json({ readme: readme?.render(), apiReference: apiReference?.toJson() });
+  }
+
+  public async toMarkdown(options: MarkdownRenderOptions): Promise<Markdown> {
+    const json = (await this.toJson(options)).content;
+    const documentation = new Markdown();
+
+    if (json.readme) {
+      const md = new Markdown();
+      md.lines(json.readme);
+      documentation.section(md);
+    }
+
+    if (json.apiReference) {
+      documentation.section(ApiReference.toMarkdown(json.apiReference, options));
     }
 
     return documentation;

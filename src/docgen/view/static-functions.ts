@@ -1,32 +1,49 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
-import { Transpile, TranspiledType } from '../transpile/transpile';
+import { defaultLinkFormatter, Markdown } from '../render/markdown';
+import { MethodSchema } from '../schema';
+import { Transpile } from '../transpile/transpile';
+import { MarkdownRenderOptions } from './documentation';
 import { StaticFunction } from './static-function';
 
 export class StaticFunctions {
-  private readonly staticFunctions: StaticFunction[];
-  constructor(transpile: Transpile, methods: reflect.Method[], linkFormatter: (type: TranspiledType) => string) {
-    this.staticFunctions = methods
-      .filter((m) => !m.protected && m.static)
-      .map((m) => new StaticFunction(transpile, m, linkFormatter));
-  }
-
-  public render(): Markdown {
-    if (this.staticFunctions.length === 0) {
+  public static toMarkdown(
+    methods: MethodSchema[],
+    options: MarkdownRenderOptions,
+  ) {
+    if (methods.length === 0) {
       return Markdown.EMPTY;
     }
 
     const md = new Markdown({ header: { title: 'Static Functions' } });
 
-    md.table([
-      ['Name', 'Description'].map(Markdown.bold),
-      ...this.staticFunctions.map((func) => [func.linkedName, Markdown.sanitize(func.description)]),
-    ]);
+    const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
+
+    const tableRows: string[][] = [];
+    tableRows.push(['Name', 'Description'].map(Markdown.bold));
+    for (const method of methods) {
+      const methodLink = Markdown.pre(linkFormatter(method.fqn.split('.').pop()!, method.id));
+      const methodDescription = method.docs?.summary && method.docs?.summary.length > 0
+        ? method.docs?.summary
+        : Markdown.italic('No description.');
+      tableRows.push([methodLink, methodDescription]);
+    }
+    md.table(tableRows);
     md.split();
 
-    for (const func of this.staticFunctions) {
-      md.section(func.render());
+    for (const method of methods) {
+      md.section(StaticFunction.toMarkdown(method, options));
     }
     return md;
+  }
+
+  private readonly staticFunctions: StaticFunction[];
+  constructor(transpile: Transpile, methods: reflect.Method[]) {
+    this.staticFunctions = methods
+      .filter((m) => !m.protected && m.static)
+      .map((m) => new StaticFunction(transpile, m));
+  }
+
+  public toJson(): MethodSchema[] {
+    return this.staticFunctions.map((method) => method.toJson());
   }
 }

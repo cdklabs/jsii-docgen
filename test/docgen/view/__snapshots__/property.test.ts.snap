@@ -1,68 +1,128 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`csharp snapshot 1`] = `
-" \`RepositoryCatalogData\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps.property.RepositoryCatalogData\\" id=\\"amazoncdkawsecrcfnpublicrepositorypropspropertyrepositorycatalogdata\\"></a>
+Object {
+  "const": false,
+  "default": undefined,
+  "docs": Object {
+    "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
+  },
+  "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps.property.RepositoryCatalogData",
+  "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData",
+  "optional": true,
+  "type": Object {
+    "name": "object",
+  },
+  "usage": "public object RepositoryCatalogData { get; set; }",
+}
+`;
 
-\`\`\`csharp
+exports[`csharp snapshot 2`] = `
+" \`RepositoryCatalogData\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+
+<pre lang=\\"csharp\\">
 public object RepositoryCatalogData { get; set; }
-\`\`\`
+</pre>
 
-- *Type:* \`object\`
+- *Type:* object
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
-
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
 
 ---
 "
 `;
 
 exports[`java snapshot 1`] = `
-" \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\" id=\\"softwareamazonawscdkservicesecrcfnpublicrepositorypropspropertyrepositorycatalogdata\\"></a>
+Object {
+  "const": false,
+  "default": undefined,
+  "docs": Object {
+    "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
+  },
+  "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryCatalogData",
+  "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData",
+  "optional": true,
+  "type": Object {
+    "name": "java.lang.Object",
+  },
+  "usage": "public java.lang.Object getRepositoryCatalogData();",
+}
+`;
 
-\`\`\`java
+exports[`java snapshot 2`] = `
+" \`repositoryCatalogData\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+
+<pre lang=\\"java\\">
 public java.lang.Object getRepositoryCatalogData();
-\`\`\`
+</pre>
 
-- *Type:* \`java.lang.Object\`
+- *Type:* java.lang.Object
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
-
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
 
 ---
 "
 `;
 
 exports[`python snapshot 1`] = `
-" \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.property.repository_catalog_data\\" id=\\"awscdkawsecrcfnpublicrepositorypropspropertyrepositorycatalogdata\\"></a>
+Object {
+  "const": false,
+  "default": undefined,
+  "docs": Object {
+    "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
+  },
+  "fqn": "aws_cdk.aws_ecr.CfnPublicRepositoryProps.property.repository_catalog_data",
+  "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData",
+  "optional": true,
+  "type": Object {
+    "name": "typing.Any",
+  },
+  "usage": "repository_catalog_data: typing.Any",
+}
+`;
 
-\`\`\`python
+exports[`python snapshot 2`] = `
+" \`repository_catalog_data\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+
+<pre lang=\\"python\\">
 repository_catalog_data: typing.Any
-\`\`\`
+</pre>
 
-- *Type:* \`typing.Any\`
+- *Type:* typing.Any
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
-
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
 
 ---
 "
 `;
 
 exports[`typescript snapshot 1`] = `
-" \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\" id=\\"awscdkawsecrcfnpublicrepositorypropspropertyrepositorycatalogdata\\"></a>
+Object {
+  "const": false,
+  "default": undefined,
+  "docs": Object {
+    "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
+  },
+  "fqn": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData",
+  "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData",
+  "optional": true,
+  "type": Object {
+    "name": "any",
+  },
+  "usage": "public readonly repositoryCatalogData: any;",
+}
+`;
 
-\`\`\`typescript
+exports[`typescript snapshot 2`] = `
+" \`repositoryCatalogData\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+
+<pre lang=\\"typescript\\">
 public readonly repositoryCatalogData: any;
-\`\`\`
+</pre>
 
-- *Type:* \`any\`
+- *Type:* any
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
-
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
 
 ---
 "

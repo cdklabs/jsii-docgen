@@ -1,8 +1,10 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { Transpile, TranspiledType } from '../transpile/transpile';
+import { ApiReferenceSchema } from '../schema';
+import { Transpile } from '../transpile/transpile';
 import { Classes } from './classes';
 import { Constructs } from './constructs';
+import { MarkdownRenderOptions } from './documentation';
 import { Enums } from './enums';
 import { Interfaces } from './interfaces';
 import { Structs } from './structs';
@@ -11,6 +13,22 @@ import { Structs } from './structs';
  * Render an API reference based on the jsii assembly.
  */
 export class ApiReference {
+  /**
+   * Generate markdown.
+   */
+  public static toMarkdown(
+    apiRef: ApiReferenceSchema,
+    options: MarkdownRenderOptions,
+  ): Markdown {
+    const md = new Markdown({ header: { title: 'API Reference' } });
+    md.section(Constructs.toMarkdown(apiRef.constructs, options));
+    md.section(Structs.toMarkdown(apiRef.structs, options));
+    md.section(Classes.toMarkdown(apiRef.constructs, options));
+    md.section(Interfaces.toMarkdown(apiRef.interfaces, options));
+    md.section(Enums.toMarkdown(apiRef.enums, options));
+    return md;
+  }
+
   private readonly constructs: Constructs;
   private readonly structs: Structs;
   private readonly interfaces: Interfaces;
@@ -19,7 +37,6 @@ export class ApiReference {
   constructor(
     transpile: Transpile,
     assembly: reflect.Assembly,
-    linkFormatter: (type: TranspiledType) => string,
     submodule?: reflect.Submodule,
   ) {
     const classes = this.sortByName(
@@ -30,24 +47,24 @@ export class ApiReference {
     );
     const enums = this.sortByName(submodule ? submodule.enums : assembly.enums);
 
-    this.constructs = new Constructs(transpile, classes, linkFormatter);
-    this.classes = new Classes(transpile, classes, linkFormatter);
-    this.structs = new Structs(transpile, interfaces, linkFormatter);
-    this.interfaces = new Interfaces(transpile, interfaces, linkFormatter);
+    this.constructs = new Constructs(transpile, classes);
+    this.classes = new Classes(transpile, classes);
+    this.structs = new Structs(transpile, interfaces);
+    this.interfaces = new Interfaces(transpile, interfaces);
     this.enums = new Enums(transpile, enums);
   }
 
   /**
-   * Generate markdown.
+   * Generate JSON.
    */
-  public render(): Markdown {
-    const md = new Markdown({ header: { title: 'API Reference' } });
-    md.section(this.constructs.render());
-    md.section(this.structs.render());
-    md.section(this.classes.render());
-    md.section(this.interfaces.render());
-    md.section(this.enums.render());
-    return md;
+  public toJson(): ApiReferenceSchema {
+    return {
+      constructs: this.constructs.toJson(),
+      classes: this.classes.toJson(),
+      structs: this.structs.toJson(),
+      interfaces: this.interfaces.toJson(),
+      enums: this.enums.toJson(),
+    };
   }
 
   private sortByName<Type extends reflect.Type>(arr: readonly Type[]): Type[] {

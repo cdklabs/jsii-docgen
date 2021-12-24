@@ -1,15 +1,96 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`csharp snapshot 1`] = `
-" CfnPublicRepositoryProps <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps\\" id=\\"amazoncdkawsecrcfnpublicrepositoryprops\\"></a>
+Object {
+  "docs": Object {
+    "summary": "Properties for defining a \`AWS::ECR::PublicRepository\`.",
+  },
+  "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps",
+  "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+  "properties": Array [
+    Object {
+      "const": false,
+      "default": undefined,
+      "docs": Object {
+        "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
+      },
+      "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps.property.RepositoryCatalogData",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData",
+      "optional": true,
+      "type": Object {
+        "name": "object",
+      },
+      "usage": "public object RepositoryCatalogData { get; set; }",
+    },
+    Object {
+      "const": false,
+      "default": undefined,
+      "docs": Object {
+        "summary": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
+      },
+      "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps.property.RepositoryName",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName",
+      "optional": true,
+      "type": Object {
+        "name": "string",
+      },
+      "usage": "public string RepositoryName { get; set; }",
+    },
+    Object {
+      "const": false,
+      "default": undefined,
+      "docs": Object {
+        "summary": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
+      },
+      "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps.property.RepositoryPolicyText",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText",
+      "optional": true,
+      "type": Object {
+        "name": "object",
+      },
+      "usage": "public object RepositoryPolicyText { get; set; }",
+    },
+    Object {
+      "const": false,
+      "default": undefined,
+      "docs": Object {
+        "summary": "\`AWS::ECR::PublicRepository.Tags\`.",
+      },
+      "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps.property.Tags",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags",
+      "optional": true,
+      "type": Object {
+        "name": "%[]",
+        "types": Array [
+          Object {
+            "fqn": "@aws-cdk/core.CfnTag",
+            "id": "Amazon.CDK.CfnTag",
+            "name": "CfnTag",
+          },
+        ],
+      },
+      "usage": "public CfnTag[] Tags { get; set; }",
+    },
+  ],
+  "usage": "using Amazon.CDK.AWS.ECR;
+
+new CfnPublicRepositoryProps {
+    object RepositoryCatalogData = null,
+    string RepositoryName = null,
+    object RepositoryPolicyText = null,
+    CfnTag[] Tags = null
+};",
+}
+`;
+
+exports[`csharp snapshot 2`] = `
+" CfnPublicRepositoryProps <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps\\"></a>
 
 Properties for defining a \`AWS::ECR::PublicRepository\`.
 
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html)
+# Initializer <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.Initializer\\"></a>
 
-# Initializer <a name=\\"[object Object].Initializer\\" id=\\"object-objectinitializer\\"></a>
-
-\`\`\`csharp
+<pre lang=\\"python\\">
 using Amazon.CDK.AWS.ECR;
 
 new CfnPublicRepositoryProps {
@@ -18,87 +99,160 @@ new CfnPublicRepositoryProps {
     object RepositoryPolicyText = null,
     CfnTag[] Tags = null
 };
-\`\`\`
+</pre>
 
-# Properties <a name=\\"Properties\\" id=\\"properties\\"></a>
+# Properties <a id=\\"Properties\\"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| [\`RepositoryCatalogData\`](#amazoncdkawsecrcfnpublicrepositorypropspropertyrepositorycatalogdata) | \`object\` | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
-| [\`RepositoryName\`](#amazoncdkawsecrcfnpublicrepositorypropspropertyrepositoryname) | \`string\` | \`AWS::ECR::PublicRepository.RepositoryName\`. |
-| [\`RepositoryPolicyText\`](#amazoncdkawsecrcfnpublicrepositorypropspropertyrepositorypolicytext) | \`object\` | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
-| [\`Tags\`](#amazoncdkawsecrcfnpublicrepositorypropspropertytags) | [\`Amazon.CDK.CfnTag\`](#Amazon.CDK.CfnTag)[] | \`AWS::ECR::PublicRepository.Tags\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\">RepositoryCatalogData</a></code> | <code>object</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\">RepositoryName</a></code> | <code>string</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\">RepositoryPolicyText</a></code> | <code>object</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\">Tags</a></code> | <code><a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>[]</code> | \`AWS::ECR::PublicRepository.Tags\`. |
 
 ---
 
-## \`RepositoryCatalogData\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps.property.RepositoryCatalogData\\" id=\\"amazoncdkawsecrcfnpublicrepositorypropspropertyrepositorycatalogdata\\"></a>
+## \`RepositoryCatalogData\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
-\`\`\`csharp
+<pre lang=\\"python\\">
 public object RepositoryCatalogData { get; set; }
-\`\`\`
+</pre>
 
-- *Type:* \`object\`
+- *Type:* object
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
 
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
-
 ---
 
-## \`RepositoryName\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps.property.RepositoryName\\" id=\\"amazoncdkawsecrcfnpublicrepositorypropspropertyrepositoryname\\"></a>
+## \`RepositoryName\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
 
-\`\`\`csharp
+<pre lang=\\"python\\">
 public string RepositoryName { get; set; }
-\`\`\`
+</pre>
 
-- *Type:* \`string\`
+- *Type:* string
 
 \`AWS::ECR::PublicRepository.RepositoryName\`.
 
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname)
-
 ---
 
-## \`RepositoryPolicyText\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps.property.RepositoryPolicyText\\" id=\\"amazoncdkawsecrcfnpublicrepositorypropspropertyrepositorypolicytext\\"></a>
+## \`RepositoryPolicyText\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
 
-\`\`\`csharp
+<pre lang=\\"python\\">
 public object RepositoryPolicyText { get; set; }
-\`\`\`
+</pre>
 
-- *Type:* \`object\`
+- *Type:* object
 
 \`AWS::ECR::PublicRepository.RepositoryPolicyText\`.
 
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext)
-
 ---
 
-## \`Tags\`<sup>Optional</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps.property.Tags\\" id=\\"amazoncdkawsecrcfnpublicrepositorypropspropertytags\\"></a>
+## \`Tags\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\"></a>
 
-\`\`\`csharp
+<pre lang=\\"python\\">
 public CfnTag[] Tags { get; set; }
-\`\`\`
+</pre>
 
-- *Type:* [\`Amazon.CDK.CfnTag\`](#Amazon.CDK.CfnTag)[]
+- *Type:* <a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>[]
 
 \`AWS::ECR::PublicRepository.Tags\`.
-
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags)
 
 ---
 "
 `;
 
 exports[`java snapshot 1`] = `
-" CfnPublicRepositoryProps <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps\\" id=\\"softwareamazonawscdkservicesecrcfnpublicrepositoryprops\\"></a>
+Object {
+  "docs": Object {
+    "summary": "Properties for defining a \`AWS::ECR::PublicRepository\`.",
+  },
+  "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps",
+  "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+  "properties": Array [
+    Object {
+      "const": false,
+      "default": undefined,
+      "docs": Object {
+        "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
+      },
+      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryCatalogData",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData",
+      "optional": true,
+      "type": Object {
+        "name": "java.lang.Object",
+      },
+      "usage": "public java.lang.Object getRepositoryCatalogData();",
+    },
+    Object {
+      "const": false,
+      "default": undefined,
+      "docs": Object {
+        "summary": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
+      },
+      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryName",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName",
+      "optional": true,
+      "type": Object {
+        "name": "java.lang.String",
+      },
+      "usage": "public java.lang.String getRepositoryName();",
+    },
+    Object {
+      "const": false,
+      "default": undefined,
+      "docs": Object {
+        "summary": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
+      },
+      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryPolicyText",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText",
+      "optional": true,
+      "type": Object {
+        "name": "java.lang.Object",
+      },
+      "usage": "public java.lang.Object getRepositoryPolicyText();",
+    },
+    Object {
+      "const": false,
+      "default": undefined,
+      "docs": Object {
+        "summary": "\`AWS::ECR::PublicRepository.Tags\`.",
+      },
+      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.tags",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags",
+      "optional": true,
+      "type": Object {
+        "name": "java.util.List<%>",
+        "types": Array [
+          Object {
+            "fqn": "@aws-cdk/core.CfnTag",
+            "id": "software.amazon.awscdk.core.CfnTag",
+            "name": "CfnTag",
+          },
+        ],
+      },
+      "usage": "public java.util.List<CfnTag> getTags();",
+    },
+  ],
+  "usage": "import software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps;
+
+CfnPublicRepositoryProps.builder()
+//  .repositoryCatalogData(java.lang.Object)
+//  .repositoryName(java.lang.String)
+//  .repositoryPolicyText(java.lang.Object)
+//  .tags(java.util.List<CfnTag>)
+    .build();",
+}
+`;
+
+exports[`java snapshot 2`] = `
+" CfnPublicRepositoryProps <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps\\"></a>
 
 Properties for defining a \`AWS::ECR::PublicRepository\`.
 
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html)
+# Initializer <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.Initializer\\"></a>
 
-# Initializer <a name=\\"[object Object].Initializer\\" id=\\"object-objectinitializer\\"></a>
-
-\`\`\`java
+<pre lang=\\"python\\">
 import software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps;
 
 CfnPublicRepositoryProps.builder()
@@ -107,87 +261,160 @@ CfnPublicRepositoryProps.builder()
 //  .repositoryPolicyText(java.lang.Object)
 //  .tags(java.util.List<CfnTag>)
     .build();
-\`\`\`
+</pre>
 
-# Properties <a name=\\"Properties\\" id=\\"properties\\"></a>
+# Properties <a id=\\"Properties\\"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| [\`repositoryCatalogData\`](#softwareamazonawscdkservicesecrcfnpublicrepositorypropspropertyrepositorycatalogdata) | \`java.lang.Object\` | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
-| [\`repositoryName\`](#softwareamazonawscdkservicesecrcfnpublicrepositorypropspropertyrepositoryname) | \`java.lang.String\` | \`AWS::ECR::PublicRepository.RepositoryName\`. |
-| [\`repositoryPolicyText\`](#softwareamazonawscdkservicesecrcfnpublicrepositorypropspropertyrepositorypolicytext) | \`java.lang.Object\` | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
-| [\`tags\`](#softwareamazonawscdkservicesecrcfnpublicrepositorypropspropertytags) | java.util.List<[\`software.amazon.awscdk.core.CfnTag\`](#software.amazon.awscdk.core.CfnTag)> | \`AWS::ECR::PublicRepository.Tags\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\">repositoryCatalogData</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\">repositoryName</a></code> | <code>java.lang.String</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\">repositoryPolicyText</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\">tags</a></code> | <code>java.util.List<<a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>></code> | \`AWS::ECR::PublicRepository.Tags\`. |
 
 ---
 
-## \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\" id=\\"softwareamazonawscdkservicesecrcfnpublicrepositorypropspropertyrepositorycatalogdata\\"></a>
+## \`repositoryCatalogData\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
-\`\`\`java
+<pre lang=\\"python\\">
 public java.lang.Object getRepositoryCatalogData();
-\`\`\`
+</pre>
 
-- *Type:* \`java.lang.Object\`
+- *Type:* java.lang.Object
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
 
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
-
 ---
 
-## \`repositoryName\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryName\\" id=\\"softwareamazonawscdkservicesecrcfnpublicrepositorypropspropertyrepositoryname\\"></a>
+## \`repositoryName\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
 
-\`\`\`java
+<pre lang=\\"python\\">
 public java.lang.String getRepositoryName();
-\`\`\`
+</pre>
 
-- *Type:* \`java.lang.String\`
+- *Type:* java.lang.String
 
 \`AWS::ECR::PublicRepository.RepositoryName\`.
 
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname)
-
 ---
 
-## \`repositoryPolicyText\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\" id=\\"softwareamazonawscdkservicesecrcfnpublicrepositorypropspropertyrepositorypolicytext\\"></a>
+## \`repositoryPolicyText\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
 
-\`\`\`java
+<pre lang=\\"python\\">
 public java.lang.Object getRepositoryPolicyText();
-\`\`\`
+</pre>
 
-- *Type:* \`java.lang.Object\`
+- *Type:* java.lang.Object
 
 \`AWS::ECR::PublicRepository.RepositoryPolicyText\`.
 
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext)
-
 ---
 
-## \`tags\`<sup>Optional</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.tags\\" id=\\"softwareamazonawscdkservicesecrcfnpublicrepositorypropspropertytags\\"></a>
+## \`tags\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\"></a>
 
-\`\`\`java
+<pre lang=\\"python\\">
 public java.util.List<CfnTag> getTags();
-\`\`\`
+</pre>
 
-- *Type:* java.util.List<[\`software.amazon.awscdk.core.CfnTag\`](#software.amazon.awscdk.core.CfnTag)>
+- *Type:* java.util.List<<a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>>
 
 \`AWS::ECR::PublicRepository.Tags\`.
-
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags)
 
 ---
 "
 `;
 
 exports[`python snapshot 1`] = `
-" CfnPublicRepositoryProps <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps\\" id=\\"awscdkawsecrcfnpublicrepositoryprops\\"></a>
+Object {
+  "docs": Object {
+    "summary": "Properties for defining a \`AWS::ECR::PublicRepository\`.",
+  },
+  "fqn": "aws_cdk.aws_ecr.CfnPublicRepositoryProps",
+  "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+  "properties": Array [
+    Object {
+      "const": false,
+      "default": undefined,
+      "docs": Object {
+        "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
+      },
+      "fqn": "aws_cdk.aws_ecr.CfnPublicRepositoryProps.property.repository_catalog_data",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData",
+      "optional": true,
+      "type": Object {
+        "name": "typing.Any",
+      },
+      "usage": "repository_catalog_data: typing.Any",
+    },
+    Object {
+      "const": false,
+      "default": undefined,
+      "docs": Object {
+        "summary": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
+      },
+      "fqn": "aws_cdk.aws_ecr.CfnPublicRepositoryProps.property.repository_name",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName",
+      "optional": true,
+      "type": Object {
+        "name": "str",
+      },
+      "usage": "repository_name: str",
+    },
+    Object {
+      "const": false,
+      "default": undefined,
+      "docs": Object {
+        "summary": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
+      },
+      "fqn": "aws_cdk.aws_ecr.CfnPublicRepositoryProps.property.repository_policy_text",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText",
+      "optional": true,
+      "type": Object {
+        "name": "typing.Any",
+      },
+      "usage": "repository_policy_text: typing.Any",
+    },
+    Object {
+      "const": false,
+      "default": undefined,
+      "docs": Object {
+        "summary": "\`AWS::ECR::PublicRepository.Tags\`.",
+      },
+      "fqn": "aws_cdk.aws_ecr.CfnPublicRepositoryProps.property.tags",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags",
+      "optional": true,
+      "type": Object {
+        "name": "typing.List[%]",
+        "types": Array [
+          Object {
+            "fqn": "@aws-cdk/core.CfnTag",
+            "id": "aws_cdk.core.CfnTag",
+            "name": "CfnTag",
+          },
+        ],
+      },
+      "usage": "tags: typing.List[CfnTag]",
+    },
+  ],
+  "usage": "import aws_cdk.aws_ecr
+
+aws_cdk.aws_ecr.CfnPublicRepositoryProps(
+  repository_catalog_data: typing.Any = None,
+  repository_name: str = None,
+  repository_policy_text: typing.Any = None,
+  tags: typing.List[CfnTag] = None
+)",
+}
+`;
+
+exports[`python snapshot 2`] = `
+" CfnPublicRepositoryProps <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps\\"></a>
 
 Properties for defining a \`AWS::ECR::PublicRepository\`.
 
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html)
+# Initializer <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.Initializer\\"></a>
 
-# Initializer <a name=\\"[object Object].Initializer\\" id=\\"object-objectinitializer\\"></a>
-
-\`\`\`python
+<pre lang=\\"python\\">
 import aws_cdk.aws_ecr
 
 aws_cdk.aws_ecr.CfnPublicRepositoryProps(
@@ -196,156 +423,216 @@ aws_cdk.aws_ecr.CfnPublicRepositoryProps(
   repository_policy_text: typing.Any = None,
   tags: typing.List[CfnTag] = None
 )
-\`\`\`
+</pre>
 
-# Properties <a name=\\"Properties\\" id=\\"properties\\"></a>
+# Properties <a id=\\"Properties\\"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| [\`repository_catalog_data\`](#awscdkawsecrcfnpublicrepositorypropspropertyrepositorycatalogdata) | \`typing.Any\` | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
-| [\`repository_name\`](#awscdkawsecrcfnpublicrepositorypropspropertyrepositoryname) | \`str\` | \`AWS::ECR::PublicRepository.RepositoryName\`. |
-| [\`repository_policy_text\`](#awscdkawsecrcfnpublicrepositorypropspropertyrepositorypolicytext) | \`typing.Any\` | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
-| [\`tags\`](#awscdkawsecrcfnpublicrepositorypropspropertytags) | typing.List[[\`aws_cdk.core.CfnTag\`](#aws_cdk.core.CfnTag)] | \`AWS::ECR::PublicRepository.Tags\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\">repository_catalog_data</a></code> | <code>typing.Any</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\">repository_name</a></code> | <code>str</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\">repository_policy_text</a></code> | <code>typing.Any</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\">tags</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>]</code> | \`AWS::ECR::PublicRepository.Tags\`. |
 
 ---
 
-## \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.property.repository_catalog_data\\" id=\\"awscdkawsecrcfnpublicrepositorypropspropertyrepositorycatalogdata\\"></a>
+## \`repository_catalog_data\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
-\`\`\`python
+<pre lang=\\"python\\">
 repository_catalog_data: typing.Any
-\`\`\`
+</pre>
 
-- *Type:* \`typing.Any\`
+- *Type:* typing.Any
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
 
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
-
 ---
 
-## \`repository_name\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.property.repository_name\\" id=\\"awscdkawsecrcfnpublicrepositorypropspropertyrepositoryname\\"></a>
+## \`repository_name\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
 
-\`\`\`python
+<pre lang=\\"python\\">
 repository_name: str
-\`\`\`
+</pre>
 
-- *Type:* \`str\`
+- *Type:* str
 
 \`AWS::ECR::PublicRepository.RepositoryName\`.
 
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname)
-
 ---
 
-## \`repository_policy_text\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.property.repository_policy_text\\" id=\\"awscdkawsecrcfnpublicrepositorypropspropertyrepositorypolicytext\\"></a>
+## \`repository_policy_text\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
 
-\`\`\`python
+<pre lang=\\"python\\">
 repository_policy_text: typing.Any
-\`\`\`
+</pre>
 
-- *Type:* \`typing.Any\`
+- *Type:* typing.Any
 
 \`AWS::ECR::PublicRepository.RepositoryPolicyText\`.
 
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext)
-
 ---
 
-## \`tags\`<sup>Optional</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepositoryProps.property.tags\\" id=\\"awscdkawsecrcfnpublicrepositorypropspropertytags\\"></a>
+## \`tags\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\"></a>
 
-\`\`\`python
+<pre lang=\\"python\\">
 tags: typing.List[CfnTag]
-\`\`\`
+</pre>
 
-- *Type:* typing.List[[\`aws_cdk.core.CfnTag\`](#aws_cdk.core.CfnTag)]
+- *Type:* typing.List[<a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>]
 
 \`AWS::ECR::PublicRepository.Tags\`.
-
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags)
 
 ---
 "
 `;
 
 exports[`typescript snapshot 1`] = `
-" CfnPublicRepositoryProps <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps\\" id=\\"awscdkawsecrcfnpublicrepositoryprops\\"></a>
+Object {
+  "docs": Object {
+    "summary": "Properties for defining a \`AWS::ECR::PublicRepository\`.",
+  },
+  "fqn": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+  "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+  "properties": Array [
+    Object {
+      "const": false,
+      "default": undefined,
+      "docs": Object {
+        "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
+      },
+      "fqn": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData",
+      "optional": true,
+      "type": Object {
+        "name": "any",
+      },
+      "usage": "public readonly repositoryCatalogData: any;",
+    },
+    Object {
+      "const": false,
+      "default": undefined,
+      "docs": Object {
+        "summary": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
+      },
+      "fqn": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName",
+      "optional": true,
+      "type": Object {
+        "name": "string",
+      },
+      "usage": "public readonly repositoryName: string;",
+    },
+    Object {
+      "const": false,
+      "default": undefined,
+      "docs": Object {
+        "summary": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
+      },
+      "fqn": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText",
+      "optional": true,
+      "type": Object {
+        "name": "any",
+      },
+      "usage": "public readonly repositoryPolicyText: any;",
+    },
+    Object {
+      "const": false,
+      "default": undefined,
+      "docs": Object {
+        "summary": "\`AWS::ECR::PublicRepository.Tags\`.",
+      },
+      "fqn": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags",
+      "optional": true,
+      "type": Object {
+        "name": "%[]",
+        "types": Array [
+          Object {
+            "fqn": "@aws-cdk/core.CfnTag",
+            "id": "@aws-cdk/core.CfnTag",
+            "name": "CfnTag",
+          },
+        ],
+      },
+      "usage": "public readonly tags: CfnTag[];",
+    },
+  ],
+  "usage": "import { CfnPublicRepositoryProps } from '@aws-cdk/aws-ecr'
+
+const cfnPublicRepositoryProps: CfnPublicRepositoryProps = { ... }",
+}
+`;
+
+exports[`typescript snapshot 2`] = `
+" CfnPublicRepositoryProps <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps\\"></a>
 
 Properties for defining a \`AWS::ECR::PublicRepository\`.
 
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html)
+# Initializer <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.Initializer\\"></a>
 
-# Initializer <a name=\\"[object Object].Initializer\\" id=\\"object-objectinitializer\\"></a>
-
-\`\`\`typescript
+<pre lang=\\"python\\">
 import { CfnPublicRepositoryProps } from '@aws-cdk/aws-ecr'
 
 const cfnPublicRepositoryProps: CfnPublicRepositoryProps = { ... }
-\`\`\`
+</pre>
 
-# Properties <a name=\\"Properties\\" id=\\"properties\\"></a>
+# Properties <a id=\\"Properties\\"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| [\`repositoryCatalogData\`](#awscdkawsecrcfnpublicrepositorypropspropertyrepositorycatalogdata) | \`any\` | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
-| [\`repositoryName\`](#awscdkawsecrcfnpublicrepositorypropspropertyrepositoryname) | \`string\` | \`AWS::ECR::PublicRepository.RepositoryName\`. |
-| [\`repositoryPolicyText\`](#awscdkawsecrcfnpublicrepositorypropspropertyrepositorypolicytext) | \`any\` | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
-| [\`tags\`](#awscdkawsecrcfnpublicrepositorypropspropertytags) | [\`@aws-cdk/core.CfnTag\`](#@aws-cdk/core.CfnTag)[] | \`AWS::ECR::PublicRepository.Tags\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\">repositoryCatalogData</a></code> | <code>any</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\">repositoryName</a></code> | <code>string</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\">repositoryPolicyText</a></code> | <code>any</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\">tags</a></code> | <code><a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>[]</code> | \`AWS::ECR::PublicRepository.Tags\`. |
 
 ---
 
-## \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\" id=\\"awscdkawsecrcfnpublicrepositorypropspropertyrepositorycatalogdata\\"></a>
+## \`repositoryCatalogData\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
-\`\`\`typescript
+<pre lang=\\"python\\">
 public readonly repositoryCatalogData: any;
-\`\`\`
+</pre>
 
-- *Type:* \`any\`
+- *Type:* any
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
 
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
-
 ---
 
-## \`repositoryName\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\" id=\\"awscdkawsecrcfnpublicrepositorypropspropertyrepositoryname\\"></a>
+## \`repositoryName\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
 
-\`\`\`typescript
+<pre lang=\\"python\\">
 public readonly repositoryName: string;
-\`\`\`
+</pre>
 
-- *Type:* \`string\`
+- *Type:* string
 
 \`AWS::ECR::PublicRepository.RepositoryName\`.
 
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname)
-
 ---
 
-## \`repositoryPolicyText\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\" id=\\"awscdkawsecrcfnpublicrepositorypropspropertyrepositorypolicytext\\"></a>
+## \`repositoryPolicyText\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
 
-\`\`\`typescript
+<pre lang=\\"python\\">
 public readonly repositoryPolicyText: any;
-\`\`\`
+</pre>
 
-- *Type:* \`any\`
+- *Type:* any
 
 \`AWS::ECR::PublicRepository.RepositoryPolicyText\`.
 
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext)
-
 ---
 
-## \`tags\`<sup>Optional</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\" id=\\"awscdkawsecrcfnpublicrepositorypropspropertytags\\"></a>
+## \`tags\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\"></a>
 
-\`\`\`typescript
+<pre lang=\\"python\\">
 public readonly tags: CfnTag[];
-\`\`\`
+</pre>
 
-- *Type:* [\`@aws-cdk/core.CfnTag\`](#@aws-cdk/core.CfnTag)[]
+- *Type:* <a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>[]
 
 \`AWS::ECR::PublicRepository.Tags\`.
-
-> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags)
 
 ---
 "

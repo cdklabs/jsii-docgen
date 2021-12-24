@@ -1,64 +1,41 @@
 import * as reflect from 'jsii-reflect';
-import { anchorForId, Markdown } from '../render/markdown';
-import { Transpile, TranspiledParameter, TranspiledType } from '../transpile/transpile';
+import { defaultLinkFormatter, defaultTypeFormatter, Markdown } from '../render/markdown';
+import { ParameterSchema } from '../schema';
+import { Transpile, TranspiledParameter } from '../transpile/transpile';
+import { extractDocs } from '../util';
+import { MarkdownRenderOptions } from './documentation';
 
 export class Parameter {
-  private readonly transpiled: TranspiledParameter;
-  constructor(
-    transpile: Transpile,
-    private readonly parameter: reflect.Parameter,
-    private readonly linkFormatter: (type: TranspiledType) => string,
-  ) {
-    this.transpiled = transpile.parameter(parameter);
-  }
-
-  public get id(): string {
-    return `${this.transpiled.parentType.fqn}.parameter.${this.transpiled.name}`;
-  }
-
-  public get linkedName(): string {
-    const isRequired = !this.parameter.optional ? '<span title="Required">*</span>' : '';
-    return `[${Markdown.pre(this.transpiled.name)}](#${anchorForId(this.id)})${isRequired}`;
-  }
-
-  public get type(): string {
-    return this.transpiled.typeReference.toString({
-      typeFormatter: (t) => `[${Markdown.pre(t.fqn)}](${this.linkFormatter(t)})`,
-      stringFormatter: Markdown.pre,
-    });
-  }
-
-  public get description(): string {
-    const summary = this.parameter.docs.summary;
-    return summary.length > 0 ? summary : Markdown.italic('No description.');
-  }
-
-  public render(): Markdown {
-    const optionality = this.parameter.optional ? 'Optional' : 'Required';
+  public static toMarkdown(
+    parameter: ParameterSchema,
+    options: MarkdownRenderOptions,
+  ): Markdown {
+    const optionality = parameter.optional ? 'Optional' : 'Required';
 
     const md = new Markdown({
-      id: this.id,
+      id: parameter.id,
       header: {
-        title: this.transpiled.name,
+        title: parameter.fqn.split('.').pop(),
         sup: optionality,
         pre: true,
-        strike: this.parameter.docs.deprecated,
+        strike: parameter.docs.deprecated,
       },
     });
 
-    if (this.parameter.docs.deprecated) {
+    if (parameter.docs.deprecated) {
       md.bullet(
-        `${Markdown.italic('Deprecated:')} ${
-          this.parameter.docs.deprecationReason
-        }`,
+        `${Markdown.italic('Deprecated:')} ${parameter.docs.deprecationReason}`,
       );
       md.lines('');
     }
 
-    const metadata: any = { Type: this.type };
+    const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
+    const typeFormatter = options.typeFormatter ?? defaultTypeFormatter;
 
-    if (this.parameter.spec.docs?.default) {
-      metadata.Default = Markdown.sanitize(this.parameter.spec.docs?.default);
+    const metadata: any = { Type: typeFormatter(parameter.type, linkFormatter) };
+
+    if (parameter.default) {
+      metadata.Default = Markdown.sanitize(parameter.default);
     }
 
     for (const [key, value] of Object.entries(metadata)) {
@@ -66,12 +43,31 @@ export class Parameter {
     }
     md.lines('');
 
-    if (this.parameter.docs) {
-      md.docs(this.parameter.docs);
+    if (parameter.docs) {
+      md.docs(parameter.docs);
     }
 
     md.split();
 
     return md;
+  }
+
+  private readonly transpiled: TranspiledParameter;
+  constructor(
+    transpile: Transpile,
+    private readonly parameter: reflect.Parameter,
+  ) {
+    this.transpiled = transpile.parameter(parameter);
+  }
+
+  public toJson(): ParameterSchema {
+    return {
+      fqn: `${this.transpiled.parentType.fqn}.parameter.${this.transpiled.name}`,
+      id: `${this.parameter.parentType.fqn}.parameter.${this.parameter.name}`,
+      optional: this.transpiled.optional === true ? true : undefined, // to save space
+      default: this.parameter.spec.docs?.default,
+      type: this.transpiled.typeReference.toJson(),
+      docs: extractDocs(this.parameter.docs),
+    };
   }
 }

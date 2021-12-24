@@ -1,4 +1,5 @@
 import * as reflect from 'jsii-reflect';
+import { TypeSchema } from '../schema';
 
 /**
  * Supported languages to generate documentation in.
@@ -180,38 +181,64 @@ export interface TranspiledInterface {
 /**
  * Outcome of transpiling a generic jsii type.
  */
-export interface TranspiledType {
+export class TranspiledType {
 
   /**
    * The source type this was transliterated from.
    */
-  readonly source: reflect.Type;
+  public readonly source: reflect.Type;
 
   /**
    * The transliteration language.
    */
-  readonly language: Language;
+  public readonly language: Language;
 
   /**
    * The language specific fqn.
    */
-  readonly fqn: string;
+  public readonly fqn: string;
   /**
    * Simple name of the type.
    */
-  readonly name: string;
+  public readonly name: string;
   /**
    * Namespace of the type.
    */
-  readonly namespace?: string;
+  public readonly namespace?: string;
   /**
    * The language specific module name the type belongs to.
    */
-  readonly module: string;
+  public readonly module: string;
   /**
    * The language specific submodule name the type belongs to.
    */
-  readonly submodule?: string;
+  public readonly submodule?: string;
+
+  public constructor(options: {
+    source: reflect.Type;
+    language: Language;
+    fqn: string;
+    name: string;
+    namespace?: string;
+    module: string;
+    submodule?: string;
+  }) {
+    this.source = options.source;
+    this.language = options.language;
+    this.fqn = options.fqn;
+    this.name = options.name;
+    this.namespace = options.namespace;
+    this.module = options.module;
+    this.submodule = options.submodule;
+  }
+
+  toJson(): TypeSchema {
+    return {
+      fqn: this.fqn,
+      name: this.name,
+      id: this.source.fqn,
+    };
+  }
 }
 
 /**
@@ -285,7 +312,7 @@ export class TranspiledTypeReference {
     );
   }
   /**
-   * Create a type reference that reprenets a map of a type reference.
+   * Create a type reference that represents a map of a type reference.
    */
   public static mapOfType(
     transpile: Transpile,
@@ -303,7 +330,7 @@ export class TranspiledTypeReference {
     );
   }
   /**
-   * Create a type reference that reprenets a union of a type references.
+   * Create a type reference that represents a union of a type references.
    */
   public static unionOfTypes(
     transpile: Transpile,
@@ -381,6 +408,50 @@ export class TranspiledTypeReference {
       const refs = this.unionOfTypes.map((t) => t.toString(options));
       return this.transpile.unionOf(refs);
     }
+    throw new Error(`Invalid type reference: ${this.ref.toString()}`);
+  }
+
+  public toJson(): TypeSchema {
+    if (this.primitive) {
+      return {
+        name: this.primitive,
+      };
+    }
+
+    if (this.type) {
+      return {
+        fqn: this.ref.fqn,
+        name: this.type.name,
+        id: this.type.fqn,
+      };
+    }
+
+    if (this.isAny) {
+      return {
+        name: this.transpile.any(),
+      };
+    }
+
+    if (this.arrayOfType) {
+      return {
+        name: this.transpile.listOf('%'),
+        types: [this.arrayOfType.toJson()],
+      };
+    }
+    if (this.mapOfType) {
+      return {
+        name: this.transpile.mapOf('%'),
+        types: [this.mapOfType.toJson()],
+      };
+    }
+    if (this.unionOfTypes) {
+      const inner = Array(this.unionOfTypes.length).fill('%');
+      return {
+        name: this.transpile.unionOf(inner),
+        types: this.unionOfTypes.map((t) => t.toJson()),
+      };
+    }
+
     throw new Error(`Invalid type reference: ${this.ref.toString()}`);
   }
 }

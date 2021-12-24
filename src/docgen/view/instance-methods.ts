@@ -1,32 +1,50 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
-import { Transpile, TranspiledType } from '../transpile/transpile';
+import { defaultLinkFormatter, Markdown } from '../render/markdown';
+import { MethodSchema } from '../schema';
+import { Transpile } from '../transpile/transpile';
+import { MarkdownRenderOptions } from './documentation';
 import { InstanceMethod } from './instance-method';
 
 export class InstanceMethods {
-  private readonly instanceMethods: InstanceMethod[];
-  constructor(transpile: Transpile, methods: reflect.Method[], linkFormatter: (type: TranspiledType) => string) {
-    this.instanceMethods = methods
-      .filter((m) => !m.protected && !m.static)
-      .map((m) => new InstanceMethod(transpile, m, linkFormatter));
-  }
-
-  public render(): Markdown {
-    if (this.instanceMethods.length === 0) {
+  public static toMarkdown(
+    methods: MethodSchema[],
+    options: MarkdownRenderOptions,
+  ): Markdown {
+    if (methods.length === 0) {
       return Markdown.EMPTY;
     }
 
     const md = new Markdown({ header: { title: 'Methods' } });
 
-    md.table([
-      ['Name', 'Description'].map(Markdown.bold),
-      ...this.instanceMethods.map((method) => [method.linkedName, Markdown.sanitize(method.description)]),
-    ]);
+    const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
+
+    const tableRows: string[][] = [];
+    tableRows.push(['Name', 'Description'].map(Markdown.bold));
+
+    for (const method of methods) {
+      const methodLink = Markdown.pre(linkFormatter(method.fqn.split('.').pop()!, method.id));
+      const methodDescription = method.docs?.summary && method.docs?.summary.length > 0
+        ? method.docs?.summary
+        : Markdown.italic('No description.');
+      tableRows.push([methodLink, methodDescription]);
+    }
+    md.table(tableRows);
     md.split();
 
-    for (const method of this.instanceMethods) {
-      md.section(method.render());
+    for (const method of methods) {
+      md.section(InstanceMethod.toMarkdown(method, options));
     }
     return md;
+  }
+
+  private readonly instanceMethods: InstanceMethod[];
+  constructor(transpile: Transpile, methods: reflect.Method[]) {
+    this.instanceMethods = methods
+      .filter((m) => !m.protected && !m.static)
+      .map((m) => new InstanceMethod(transpile, m));
+  }
+
+  public toJson(): MethodSchema[] {
+    return this.instanceMethods.map((m) => m.toJson());
   }
 }

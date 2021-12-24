@@ -2,7 +2,7 @@ import * as reflect from 'jsii-reflect';
 import { CSharpTranspile } from '../../../src/docgen/transpile/csharp';
 import { JavaTranspile } from '../../../src/docgen/transpile/java';
 import { PythonTranspile } from '../../../src/docgen/transpile/python';
-import { TranspiledType } from '../../../src/docgen/transpile/transpile';
+import { Language } from '../../../src/docgen/transpile/transpile';
 import { TypeScriptTranspile } from '../../../src/docgen/transpile/typescript';
 import { InstanceMethod } from '../../../src/docgen/view/instance-method';
 import { Assemblies } from '../assemblies';
@@ -23,31 +23,39 @@ const findInstanceMethod = (): reflect.Method => {
 describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
-    const instanceMethod = new InstanceMethod(transpile, findInstanceMethod(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(instanceMethod.render().render()).toMatchSnapshot();
+    const instanceMethod = new InstanceMethod(transpile, findInstanceMethod()).toJson();
+    const markdown = InstanceMethod.toMarkdown(instanceMethod, { language: Language.PYTHON });
+    expect(instanceMethod).toMatchSnapshot();
+    expect(markdown.render()).toMatchSnapshot();
   });
 });
 
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
-    const instanceMethod = new InstanceMethod(transpile, findInstanceMethod(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(instanceMethod.render().render()).toMatchSnapshot();
+    const instanceMethod = new InstanceMethod(transpile, findInstanceMethod()).toJson();
+    const markdown = InstanceMethod.toMarkdown(instanceMethod, { language: Language.TYPESCRIPT });
+    expect(instanceMethod).toMatchSnapshot();
+    expect(markdown.render()).toMatchSnapshot();
   });
 });
 
 describe('java', () => {
   const transpile = new JavaTranspile();
   test('snapshot', () => {
-    const instanceMethod = new InstanceMethod(transpile, findInstanceMethod(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(instanceMethod.render().render()).toMatchSnapshot();
+    const instanceMethod = new InstanceMethod(transpile, findInstanceMethod()).toJson();
+    const markdown = InstanceMethod.toMarkdown(instanceMethod, { language: Language.JAVA });
+    expect(instanceMethod).toMatchSnapshot();
+    expect(markdown.render()).toMatchSnapshot();
   });
 });
 
 describe('csharp', () => {
   const transpile = new CSharpTranspile();
   test('snapshot', () => {
-    const instanceMethod = new InstanceMethod(transpile, findInstanceMethod(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(instanceMethod.render().render()).toMatchSnapshot();
+    const instanceMethod = new InstanceMethod(transpile, findInstanceMethod()).toJson();
+    const markdown = InstanceMethod.toMarkdown(instanceMethod, { language: Language.CSHARP });
+    expect(instanceMethod).toMatchSnapshot();
+    expect(markdown.render()).toMatchSnapshot();
   });
 });

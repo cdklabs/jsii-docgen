@@ -1,8 +1,8 @@
 import * as reflect from 'jsii-reflect';
+import { Language } from '../../../lib';
 import { CSharpTranspile } from '../../../src/docgen/transpile/csharp';
 import { JavaTranspile } from '../../../src/docgen/transpile/java';
 import { PythonTranspile } from '../../../src/docgen/transpile/python';
-import { TranspiledType } from '../../../src/docgen/transpile/transpile';
 import { TypeScriptTranspile } from '../../../src/docgen/transpile/typescript';
 import { Initializer } from '../../../src/docgen/view/initializer';
 import { Assemblies } from '../assemblies';
@@ -21,31 +21,39 @@ const findInitializer = (): reflect.Initializer => {
 describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
-    const initializer = new Initializer(transpile, findInitializer(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(initializer.render().render()).toMatchSnapshot();
+    const initializer = new Initializer(transpile, findInitializer()).toJson();
+    const markdown = Initializer.toMarkdown(initializer, { language: Language.PYTHON });
+    expect(initializer).toMatchSnapshot();
+    expect(markdown.render()).toMatchSnapshot();
   });
 });
 
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
-    const initializer = new Initializer(transpile, findInitializer(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(initializer.render().render()).toMatchSnapshot();
+    const initializer = new Initializer(transpile, findInitializer()).toJson();
+    const markdown = Initializer.toMarkdown(initializer, { language: Language.TYPESCRIPT });
+    expect(initializer).toMatchSnapshot();
+    expect(markdown.render()).toMatchSnapshot();
   });
 });
 
 describe('java', () => {
   const transpile = new JavaTranspile();
   test('snapshot', () => {
-    const initializer = new Initializer(transpile, findInitializer(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(initializer.render().render()).toMatchSnapshot();
+    const initializer = new Initializer(transpile, findInitializer()).toJson();
+    const markdown = Initializer.toMarkdown(initializer, { language: Language.JAVA });
+    expect(initializer).toMatchSnapshot();
+    expect(markdown.render()).toMatchSnapshot();
   });
 });
 
 describe('csharp', () => {
   const transpile = new CSharpTranspile();
   test('snapshot', () => {
-    const initializer = new Initializer(transpile, findInitializer(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(initializer.render().render()).toMatchSnapshot();
+    const initializer = new Initializer(transpile, findInitializer()).toJson();
+    const markdown = Initializer.toMarkdown(initializer, { language: Language.CSHARP });
+    expect(initializer).toMatchSnapshot();
+    expect(markdown.render()).toMatchSnapshot();
   });
 });

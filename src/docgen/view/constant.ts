@@ -1,31 +1,27 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { Transpile, TranspiledType } from '../transpile/transpile';
+import { PropertySchema } from '../schema';
+import { Transpile } from '../transpile/transpile';
+import { MarkdownRenderOptions } from './documentation';
 import { Property } from './property';
 
 export class Constant {
+  public static toMarkdown(
+    constant: PropertySchema,
+    options: MarkdownRenderOptions,
+  ): Markdown {
+    return Property.toMarkdown(constant, options);
+  }
+
   private readonly constant: Property;
-  constructor(transpile: Transpile, property: reflect.Property, linkFormatter: (type: TranspiledType) => string) {
-    this.constant = new Property(transpile, property, linkFormatter);
+  constructor(transpile: Transpile, property: reflect.Property) {
+    this.constant = new Property(transpile, property);
   }
 
-  public get id(): string {
-    return this.constant.id;
-  }
-
-  public get linkedName(): string {
-    return this.constant.linkedName;
-  }
-
-  public get type(): string {
-    return this.constant.type;
-  }
-
-  public get description(): string {
-    return this.constant.description;
-  }
-
-  public render(): Markdown {
-    return this.constant.render();
+  public toJson(): PropertySchema {
+    return {
+      ...this.constant.toJson(),
+      const: true,
+    };
   }
 }

@@ -193,7 +193,7 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
     }
     fqn.push(type.name);
 
-    return {
+    return new transpile.TranspiledType({
       fqn: fqn.join('.'),
       name: type.name,
       namespace: type.namespace,
@@ -201,7 +201,7 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
       submodule: moduleLike.submodule,
       source: type,
       language: this.language,
-    };
+    });
   }
 
   public moduleLike(

@@ -1,14 +1,24 @@
 import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
-import { Transpile, TranspiledType } from '../transpile/transpile';
+import { ConstructSchema } from '../schema';
+import { Transpile } from '../transpile/transpile';
 import { Class } from './class';
+import { MarkdownRenderOptions } from './documentation';
 
 export class Construct {
-  private readonly construct: Class;
-  constructor(transpile: Transpile, klass: reflect.ClassType, linkFormatter: (type: TranspiledType) => string) {
-    this.construct = new Class(transpile, klass, linkFormatter);
+  public static toMarkdown(
+    construct: ConstructSchema,
+    options: MarkdownRenderOptions,
+  ): Markdown {
+    return Class.toMarkdown(construct, options);
   }
-  public render(): Markdown {
-    return this.construct.render();
+
+  private readonly construct: Class;
+  constructor(transpile: Transpile, klass: reflect.ClassType) {
+    this.construct = new Class(transpile, klass);
+  }
+
+  public toJson(): ConstructSchema {
+    return this.construct.toJson();
   }
 }

@@ -1,4 +1,4 @@
-import * as reflect from 'jsii-reflect';
+import { DocsSchema, TypeSchema } from '../schema';
 
 const sanitize = (input: string): string => {
   return input
@@ -90,7 +90,8 @@ export class Markdown {
   }
 
   public static pre(text: string): string {
-    return `\`${text}\``;
+    // using <code> instead of backticks since this allows links
+    return `<code>${text}</code>`;
   }
 
   public static italic(text: string) {
@@ -109,9 +110,9 @@ export class Markdown {
   }
 
   /**
-   * Render a `jsii-reflect.Docs` element into the markdown.
+   * Render a docs element into the markdown.
    */
-  public docs(docs: reflect.Docs) {
+  public docs(docs: DocsSchema) {
     if (docs.summary) {
       this.lines(Markdown.sanitize(docs.summary));
       this.lines('');
@@ -121,13 +122,12 @@ export class Markdown {
       this.lines('');
     }
 
-    if (docs.docs.see) {
-      this.quote(docs.docs.see);
+    if (docs.see) {
+      this.quote(docs.see);
     }
 
-    const customLink = docs.customTag('link');
-    if (customLink) {
-      this.quote(`[${customLink}](${customLink})`);
+    if (docs.see) {
+      this.quote(`[${docs.see}](${docs.see})`);
     }
   }
 
@@ -153,7 +153,8 @@ export class Markdown {
   }
 
   public code(language: string, ...snippet: string[]) {
-    this.lines(`\`\`\`${language}`, ...snippet, '```');
+    // this.lines(`\`\`\`${language}`, ...snippet, '```');
+    this.lines(`<pre lang="${language}">`, ...snippet, '</pre>');
     this.lines('');
   }
 
@@ -180,21 +181,8 @@ export class Markdown {
 
     const content: string[] = [];
     if (this.header) {
-      const anchor = anchorForId(this.id ?? '');
       const heading = `${'#'.repeat(headerSize)} ${this.header}`;
-
-      // This is nasty, i'm aware.
-      // Its just an escape hatch so that produce working links by default, but also support producing the links that construct-hub currently relies on.
-      // This will be gone soon.
-      // Note though that cross links (i.e links dependencies will not work yet regardless)
-      const headerSpan = !!process.env.HEADER_SPAN;
-      if (headerSpan) {
-        content.push(
-          `${heading} <span data-heading-title="${this.header}" data-heading-id="${anchor}"></span>`,
-        );
-      } else {
-        content.push(`${heading} <a name="${this.id}" id="${anchor}"></a>`);
-      }
+      content.push(`${heading} <a id="${this.id}"></a>`);
       content.push('');
     }
 
@@ -233,3 +221,39 @@ export class Markdown {
     return line.replace(/\|/g, '\\|');
   }
 }
+
+export const defaultLinkFormatter = (name: string, id: string) => {
+  return `<a href="#${id}">${name}</a>`;
+};
+
+export const defaultTypeFormatter = (
+  type: TypeSchema,
+  linkFormatter: (name: string, id: string) => string,
+): string => {
+  // If the type has a FQN (so it's not a union, primitive, collection, etc.)
+  // just display it directly.
+  if (type.fqn) {
+    return linkFormatter(type.name, type.fqn);
+  }
+
+  // First, recursively format each referenced type.
+  const typeRefs = [];
+  for (const typeRef of type.types ?? []) {
+    typeRefs.push(defaultTypeFormatter(typeRef, linkFormatter));
+  }
+
+  // Second, substitute referred type into the original string in order
+  // of the % placeholders.
+  let result = type.name;
+  const placeholderMatcher = /\%/g;
+  for (const typeRef of typeRefs) {
+    const matches = placeholderMatcher.exec(result);
+    if (!matches) {
+      throw new Error(`Number of %s in "${type.name}" does not match number of types provided (${typeRefs.length})`);
+    }
+    const insertionIdx: number = matches.index;
+    result = result.substring(0, insertionIdx) + typeRef + result.substring(insertionIdx + 1);
+  }
+
+  return result;
+};
