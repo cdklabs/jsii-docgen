@@ -415,7 +415,6 @@ export class TranspiledTypeReference {
     if (this.primitive) {
       return {
         name: this.primitive,
-        types: [],
       };
     }
 
@@ -429,7 +428,6 @@ export class TranspiledTypeReference {
     if (this.isAny) {
       return {
         name: this.transpile.any(),
-        types: [],
       };
     }
 
