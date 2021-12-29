@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { defaultLinkFormatter, Markdown } from '../render/markdown';
+import { defaultAnchorFormatter, defaultLinkFormatter, Markdown } from '../render/markdown';
 import { InterfaceSchema, TypeSchema } from '../schema';
 import { Transpile, TranspiledInterface } from '../transpile/transpile';
 import { extractDocs } from '../util';
@@ -12,12 +12,13 @@ export class Interface {
     iface: InterfaceSchema,
     options: MarkdownRenderOptions,
   ): Markdown {
+    const anchorFormatter = options.anchorFormatter ?? defaultAnchorFormatter;
+    const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
+
     const md = new Markdown({
-      id: iface.id,
+      id: anchorFormatter(iface.id),
       header: { title: iface.fqn.split('.').pop() },
     });
-
-    const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
 
     if (iface.interfaces.length > 0) {
       const bases = [];

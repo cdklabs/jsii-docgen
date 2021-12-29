@@ -1,16 +1,18 @@
 /**
- * Describes a type.
+ * Describes a type. Values come in one of two forms and can be
+ * discriminated as such:
+ * - { name, types? }
+ * - { fqn, id }
  */
 export interface TypeSchema {
   /**
    * The language-specific name of the type. May contain "%" placeholder
-   * values to indicate references to types in the "types" array field.
+   * values to indicate references to types defined in the "types" field.
    *
-   * @example "%"
    * @example "typing.List[%]"
    * @example "Map<%, %>"
    */
-  readonly name: string;
+  readonly name?: string;
 
   /**
    * The language-specific type FQN.

@@ -415,20 +415,21 @@ export class TranspiledTypeReference {
     if (this.primitive) {
       return {
         name: this.primitive,
+        types: [],
       };
     }
 
     if (this.type) {
       return {
-        fqn: this.ref.fqn,
-        name: '%',
-        id: this.type.fqn,
+        id: this.ref.fqn,
+        fqn: this.type.fqn,
       };
     }
 
     if (this.isAny) {
       return {
         name: this.transpile.any(),
+        types: [],
       };
     }
 

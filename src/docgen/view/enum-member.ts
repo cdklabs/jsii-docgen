@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
+import { defaultAnchorFormatter, Markdown } from '../render/markdown';
 import { EnumMemberSchema } from '../schema';
 import { Transpile, TranspiledEnumMember } from '../transpile/transpile';
 import { extractDocs } from '../util';
@@ -8,10 +8,12 @@ import { MarkdownRenderOptions } from './documentation';
 export class EnumMember {
   public static toMarkdown(
     em: EnumMemberSchema,
-    _options: MarkdownRenderOptions,
+    options: MarkdownRenderOptions,
   ): Markdown {
+    const anchorFormatter = options.anchorFormatter ?? defaultAnchorFormatter;
+
     const md = new Markdown({
-      id: em.id,
+      id: anchorFormatter(em.id),
       header: {
         title: em.fqn.split('.').pop(),
         pre: true,

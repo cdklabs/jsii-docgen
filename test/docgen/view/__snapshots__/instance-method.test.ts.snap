@@ -17,9 +17,8 @@ Object {
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector",
       "optional": undefined,
       "type": Object {
-        "fqn": "@aws-cdk/core.TreeInspector",
-        "id": "Amazon.CDK.TreeInspector",
-        "name": "TreeInspector",
+        "fqn": "Amazon.CDK.TreeInspector",
+        "id": "@aws-cdk/core.TreeInspector",
       },
     },
   ],
@@ -61,9 +60,8 @@ Object {
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector",
       "optional": undefined,
       "type": Object {
-        "fqn": "@aws-cdk/core.TreeInspector",
-        "id": "software.amazon.awscdk.core.TreeInspector",
-        "name": "TreeInspector",
+        "fqn": "software.amazon.awscdk.core.TreeInspector",
+        "id": "@aws-cdk/core.TreeInspector",
       },
     },
   ],
@@ -105,9 +103,8 @@ Object {
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector",
       "optional": undefined,
       "type": Object {
-        "fqn": "@aws-cdk/core.TreeInspector",
-        "id": "aws_cdk.core.TreeInspector",
-        "name": "TreeInspector",
+        "fqn": "aws_cdk.core.TreeInspector",
+        "id": "@aws-cdk/core.TreeInspector",
       },
     },
   ],
@@ -155,7 +152,6 @@ Object {
       "type": Object {
         "fqn": "@aws-cdk/core.TreeInspector",
         "id": "@aws-cdk/core.TreeInspector",
-        "name": "TreeInspector",
       },
     },
   ],

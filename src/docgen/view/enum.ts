@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { defaultLinkFormatter, Markdown } from '../render/markdown';
+import { defaultAnchorFormatter, defaultLinkFormatter, Markdown } from '../render/markdown';
 import { EnumSchema } from '../schema';
 import { Transpile, TranspiledEnum } from '../transpile/transpile';
 import { extractDocs } from '../util';
@@ -11,15 +11,19 @@ export class Enum {
     enu: EnumSchema,
     options: MarkdownRenderOptions,
   ): Markdown {
-    const md = new Markdown({ header: { title: enu.fqn.split('.').pop() }, id: enu.id });
-
+    const anchorFormatter = options.anchorFormatter ?? defaultAnchorFormatter;
     const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
+
+    const md = new Markdown({
+      id: anchorFormatter(enu.id),
+      header: { title: enu.fqn.split('.').pop() },
+    });
 
     const tableRows: string[][] = [];
     tableRows.push(['Name', 'Description'].map(Markdown.bold));
 
     for (const em of enu.members) {
-      const emLink = Markdown.pre(linkFormatter(em.fqn.split('.').pop()!, em.id));
+      const emLink = Markdown.pre(linkFormatter(em.fqn, em.id));
       const emDescription = em.docs?.summary && em.docs?.summary.length > 0
         ? em.docs?.summary
         : Markdown.italic('No description.');

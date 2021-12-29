@@ -9,7 +9,6 @@ Object {
   "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
   "properties": Array [
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
@@ -19,11 +18,11 @@ Object {
       "optional": true,
       "type": Object {
         "name": "object",
+        "types": Array [],
       },
       "usage": "public object RepositoryCatalogData { get; set; }",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
@@ -33,11 +32,11 @@ Object {
       "optional": true,
       "type": Object {
         "name": "string",
+        "types": Array [],
       },
       "usage": "public string RepositoryName { get; set; }",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
@@ -47,11 +46,11 @@ Object {
       "optional": true,
       "type": Object {
         "name": "object",
+        "types": Array [],
       },
       "usage": "public object RepositoryPolicyText { get; set; }",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.Tags\`.",
@@ -63,9 +62,8 @@ Object {
         "name": "%[]",
         "types": Array [
           Object {
-            "fqn": "@aws-cdk/core.CfnTag",
-            "id": "Amazon.CDK.CfnTag",
-            "name": "CfnTag",
+            "fqn": "Amazon.CDK.CfnTag",
+            "id": "@aws-cdk/core.CfnTag",
           },
         ],
       },
@@ -171,7 +169,6 @@ Object {
   "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
   "properties": Array [
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
@@ -181,11 +178,11 @@ Object {
       "optional": true,
       "type": Object {
         "name": "java.lang.Object",
+        "types": Array [],
       },
       "usage": "public java.lang.Object getRepositoryCatalogData();",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
@@ -195,11 +192,11 @@ Object {
       "optional": true,
       "type": Object {
         "name": "java.lang.String",
+        "types": Array [],
       },
       "usage": "public java.lang.String getRepositoryName();",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
@@ -209,11 +206,11 @@ Object {
       "optional": true,
       "type": Object {
         "name": "java.lang.Object",
+        "types": Array [],
       },
       "usage": "public java.lang.Object getRepositoryPolicyText();",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.Tags\`.",
@@ -225,9 +222,8 @@ Object {
         "name": "java.util.List<%>",
         "types": Array [
           Object {
-            "fqn": "@aws-cdk/core.CfnTag",
-            "id": "software.amazon.awscdk.core.CfnTag",
-            "name": "CfnTag",
+            "fqn": "software.amazon.awscdk.core.CfnTag",
+            "id": "@aws-cdk/core.CfnTag",
           },
         ],
       },
@@ -333,7 +329,6 @@ Object {
   "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
   "properties": Array [
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
@@ -343,11 +338,11 @@ Object {
       "optional": true,
       "type": Object {
         "name": "typing.Any",
+        "types": Array [],
       },
       "usage": "repository_catalog_data: typing.Any",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
@@ -357,11 +352,11 @@ Object {
       "optional": true,
       "type": Object {
         "name": "str",
+        "types": Array [],
       },
       "usage": "repository_name: str",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
@@ -371,11 +366,11 @@ Object {
       "optional": true,
       "type": Object {
         "name": "typing.Any",
+        "types": Array [],
       },
       "usage": "repository_policy_text: typing.Any",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.Tags\`.",
@@ -387,9 +382,8 @@ Object {
         "name": "typing.List[%]",
         "types": Array [
           Object {
-            "fqn": "@aws-cdk/core.CfnTag",
-            "id": "aws_cdk.core.CfnTag",
-            "name": "CfnTag",
+            "fqn": "aws_cdk.core.CfnTag",
+            "id": "@aws-cdk/core.CfnTag",
           },
         ],
       },
@@ -495,7 +489,6 @@ Object {
   "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
   "properties": Array [
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
@@ -505,11 +498,11 @@ Object {
       "optional": true,
       "type": Object {
         "name": "any",
+        "types": Array [],
       },
       "usage": "public readonly repositoryCatalogData: any;",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
@@ -519,11 +512,11 @@ Object {
       "optional": true,
       "type": Object {
         "name": "string",
+        "types": Array [],
       },
       "usage": "public readonly repositoryName: string;",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
@@ -533,11 +526,11 @@ Object {
       "optional": true,
       "type": Object {
         "name": "any",
+        "types": Array [],
       },
       "usage": "public readonly repositoryPolicyText: any;",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.Tags\`.",
@@ -551,7 +544,6 @@ Object {
           Object {
             "fqn": "@aws-cdk/core.CfnTag",
             "id": "@aws-cdk/core.CfnTag",
-            "name": "CfnTag",
           },
         ],
       },

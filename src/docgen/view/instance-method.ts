@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
+import { defaultAnchorFormatter, Markdown } from '../render/markdown';
 import { MethodSchema } from '../schema';
 import { Transpile, TranspiledCallable } from '../transpile/transpile';
 import { extractDocs } from '../util';
@@ -11,8 +11,10 @@ export class InstanceMethod {
     method: MethodSchema,
     options: MarkdownRenderOptions,
   ): Markdown {
+    const anchorFormatter = options.anchorFormatter ?? defaultAnchorFormatter;
+
     const md = new Markdown({
-      id: method.id,
+      id: anchorFormatter(method.id),
       header: {
         title: method.fqn.split('.').pop(),
         pre: true,

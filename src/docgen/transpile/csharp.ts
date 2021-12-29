@@ -150,7 +150,6 @@ export class CSharpTranspile extends transpile.TranspileBase {
   }
 
   public unionOf(): string {
-    // TODO: try changing this to "x OR y OR z"
     return 'object';
   }
 

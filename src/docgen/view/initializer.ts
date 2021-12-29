@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { defaultLinkFormatter, defaultTypeFormatter, Markdown } from '../render/markdown';
+import { defaultAnchorFormatter, defaultLinkFormatter, defaultTypeFormatter, Markdown } from '../render/markdown';
 import { InitializerSchema } from '../schema';
 import { Transpile, TranspiledCallable } from '../transpile/transpile';
 import { MarkdownRenderOptions } from './documentation';
@@ -10,8 +10,12 @@ export class Initializer {
     init: InitializerSchema,
     options: MarkdownRenderOptions,
   ): Markdown {
+    const anchorFormatter = options.anchorFormatter ?? defaultAnchorFormatter;
+    const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
+    const typeFormatter = options.typeFormatter ?? defaultTypeFormatter;
+
     const md = new Markdown({
-      id: init.id,
+      id: anchorFormatter(init.id),
       header: {
         title: 'Initializers',
       },
@@ -24,13 +28,10 @@ export class Initializer {
       );
     }
 
-    const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
-    const typeFormatter = options.typeFormatter ?? defaultTypeFormatter;
-
     const tableRows: string[][] = [];
     tableRows.push(['Name', 'Type', 'Description'].map(Markdown.bold));
     for (const param of init.parameters) {
-      const paramLink = Markdown.pre(linkFormatter(param.fqn.split('.').pop()!, param.id));
+      const paramLink = Markdown.pre(linkFormatter(param.fqn, param.id));
       const paramType = Markdown.pre(typeFormatter(param.type, linkFormatter));
       const paramDescription = param.docs?.summary && param.docs?.summary.length > 0
         ? param.docs?.summary

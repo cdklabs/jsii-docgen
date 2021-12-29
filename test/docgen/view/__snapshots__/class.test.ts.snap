@@ -28,9 +28,8 @@ Object {
           "id": "@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee",
           "optional": undefined,
           "type": Object {
-            "fqn": "@aws-cdk/aws-iam.IGrantable",
-            "id": "Amazon.CDK.AWS.IAM.IGrantable",
-            "name": "IGrantable",
+            "fqn": "Amazon.CDK.AWS.IAM.IGrantable",
+            "id": "@aws-cdk/aws-iam.IGrantable",
           },
         },
       ],
@@ -106,9 +105,8 @@ Object {
           "id": "@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee",
           "optional": undefined,
           "type": Object {
-            "fqn": "@aws-cdk/aws-iam.IGrantable",
-            "id": "software.amazon.awscdk.services.iam.IGrantable",
-            "name": "IGrantable",
+            "fqn": "software.amazon.awscdk.services.iam.IGrantable",
+            "id": "@aws-cdk/aws-iam.IGrantable",
           },
         },
       ],
@@ -184,9 +182,8 @@ Object {
           "id": "@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee",
           "optional": undefined,
           "type": Object {
-            "fqn": "@aws-cdk/aws-iam.IGrantable",
-            "id": "aws_cdk.aws_iam.IGrantable",
-            "name": "IGrantable",
+            "fqn": "aws_cdk.aws_iam.IGrantable",
+            "id": "@aws-cdk/aws-iam.IGrantable",
           },
         },
       ],
@@ -268,7 +265,6 @@ Object {
           "type": Object {
             "fqn": "@aws-cdk/aws-iam.IGrantable",
             "id": "@aws-cdk/aws-iam.IGrantable",
-            "name": "IGrantable",
           },
         },
       ],

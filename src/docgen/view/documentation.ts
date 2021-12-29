@@ -64,17 +64,26 @@ export interface RenderOptions {
 
 export interface MarkdownRenderOptions extends RenderOptions {
   /**
+   * How IDs should be formatted into anchors. This should be customized
+   * alongside `linkFormatter`.
+   *
+   * @default - use the full id
+   */
+  readonly anchorFormatter?: (id: string) => string;
+
+  /**
    * How should links to entities be rendered. For example, if a class or a
    * property is referenced within a method description or table.
    *
-   * @default - '[{name}](#{fqn})'
+   * @default - '<a href="#{id}">{last part of fqn}</a>'
    */
-  readonly linkFormatter?: (name: string, id: string) => string;
+  readonly linkFormatter?: (fqn: string, id: string) => string;
 
   /**
-   * How types should be formatted
+   * How types should be formatted.
    *
-   * @default - <code> block with linked type references
+   * @default - HTML code block with type references linked
+   * according to `linkFormatter`
    */
   readonly typeFormatter?: (type: TypeSchema) => string;
 }

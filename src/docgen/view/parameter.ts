@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { defaultLinkFormatter, defaultTypeFormatter, Markdown } from '../render/markdown';
+import { defaultAnchorFormatter, defaultLinkFormatter, defaultTypeFormatter, Markdown } from '../render/markdown';
 import { ParameterSchema } from '../schema';
 import { Transpile, TranspiledParameter } from '../transpile/transpile';
 import { extractDocs } from '../util';
@@ -10,10 +10,14 @@ export class Parameter {
     parameter: ParameterSchema,
     options: MarkdownRenderOptions,
   ): Markdown {
+    const anchorFormatter = options.anchorFormatter ?? defaultAnchorFormatter;
+    const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
+    const typeFormatter = options.typeFormatter ?? defaultTypeFormatter;
+
     const optionality = parameter.optional ? 'Optional' : 'Required';
 
     const md = new Markdown({
-      id: parameter.id,
+      id: anchorFormatter(parameter.id),
       header: {
         title: parameter.fqn.split('.').pop(),
         sup: optionality,
@@ -29,8 +33,6 @@ export class Parameter {
       md.lines('');
     }
 
-    const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
-    const typeFormatter = options.typeFormatter ?? defaultTypeFormatter;
 
     const metadata: any = { Type: typeFormatter(parameter.type, linkFormatter) };
 

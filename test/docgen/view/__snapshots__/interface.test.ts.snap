@@ -39,9 +39,8 @@ Object {
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.statement",
           "optional": undefined,
           "type": Object {
-            "fqn": "@aws-cdk/aws-iam.PolicyStatement",
-            "id": "Amazon.CDK.AWS.IAM.PolicyStatement",
-            "name": "PolicyStatement",
+            "fqn": "Amazon.CDK.AWS.IAM.PolicyStatement",
+            "id": "@aws-cdk/aws-iam.PolicyStatement",
           },
         },
       ],
@@ -61,9 +60,8 @@ Object {
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
           "optional": undefined,
           "type": Object {
-            "fqn": "@aws-cdk/aws-iam.IGrantable",
-            "id": "Amazon.CDK.AWS.IAM.IGrantable",
-            "name": "IGrantable",
+            "fqn": "Amazon.CDK.AWS.IAM.IGrantable",
+            "id": "@aws-cdk/aws-iam.IGrantable",
           },
         },
         Object {
@@ -74,6 +72,7 @@ Object {
           "optional": undefined,
           "type": Object {
             "name": "string",
+            "types": Array [],
           },
         },
       ],
@@ -93,9 +92,8 @@ Object {
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
           "optional": undefined,
           "type": Object {
-            "fqn": "@aws-cdk/aws-iam.IGrantable",
-            "id": "Amazon.CDK.AWS.IAM.IGrantable",
-            "name": "IGrantable",
+            "fqn": "Amazon.CDK.AWS.IAM.IGrantable",
+            "id": "@aws-cdk/aws-iam.IGrantable",
           },
         },
       ],
@@ -115,9 +113,8 @@ Object {
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
           "optional": undefined,
           "type": Object {
-            "fqn": "@aws-cdk/aws-iam.IGrantable",
-            "id": "Amazon.CDK.AWS.IAM.IGrantable",
-            "name": "IGrantable",
+            "fqn": "Amazon.CDK.AWS.IAM.IGrantable",
+            "id": "@aws-cdk/aws-iam.IGrantable",
           },
         },
       ],
@@ -142,6 +139,7 @@ that captures the event. This method will not create the Trail.",
           "optional": undefined,
           "type": Object {
             "name": "string",
+            "types": Array [],
           },
         },
         Object {
@@ -153,9 +151,8 @@ that captures the event. This method will not create the Trail.",
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
           "optional": true,
           "type": Object {
-            "fqn": "@aws-cdk/aws-events.OnEventOptions",
-            "id": "Amazon.CDK.AWS.Events.OnEventOptions",
-            "name": "OnEventOptions",
+            "fqn": "Amazon.CDK.AWS.Events.OnEventOptions",
+            "id": "@aws-cdk/aws-events.OnEventOptions",
           },
         },
       ],
@@ -180,6 +177,7 @@ that captures the event. This method will not create the Trail.",
           "optional": undefined,
           "type": Object {
             "name": "string",
+            "types": Array [],
           },
         },
         Object {
@@ -191,9 +189,8 @@ that captures the event. This method will not create the Trail.",
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
           "optional": true,
           "type": Object {
-            "fqn": "@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions",
-            "id": "Amazon.CDK.AWS.ECR.OnCloudTrailImagePushedOptions",
-            "name": "OnCloudTrailImagePushedOptions",
+            "fqn": "Amazon.CDK.AWS.ECR.OnCloudTrailImagePushedOptions",
+            "id": "@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions",
           },
         },
       ],
@@ -216,6 +213,7 @@ that captures the event. This method will not create the Trail.",
           "optional": undefined,
           "type": Object {
             "name": "string",
+            "types": Array [],
           },
         },
         Object {
@@ -225,9 +223,8 @@ that captures the event. This method will not create the Trail.",
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
           "optional": true,
           "type": Object {
-            "fqn": "@aws-cdk/aws-events.OnEventOptions",
-            "id": "Amazon.CDK.AWS.Events.OnEventOptions",
-            "name": "OnEventOptions",
+            "fqn": "Amazon.CDK.AWS.Events.OnEventOptions",
+            "id": "@aws-cdk/aws-events.OnEventOptions",
           },
         },
       ],
@@ -250,6 +247,7 @@ that captures the event. This method will not create the Trail.",
           "optional": undefined,
           "type": Object {
             "name": "string",
+            "types": Array [],
           },
         },
         Object {
@@ -261,9 +259,8 @@ that captures the event. This method will not create the Trail.",
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
           "optional": true,
           "type": Object {
-            "fqn": "@aws-cdk/aws-ecr.OnImageScanCompletedOptions",
-            "id": "Amazon.CDK.AWS.ECR.OnImageScanCompletedOptions",
-            "name": "OnImageScanCompletedOptions",
+            "fqn": "Amazon.CDK.AWS.ECR.OnImageScanCompletedOptions",
+            "id": "@aws-cdk/aws-ecr.OnImageScanCompletedOptions",
           },
         },
       ],
@@ -287,6 +284,7 @@ that captures the event. This method will not create the Trail.",
           "optional": true,
           "type": Object {
             "name": "string",
+            "types": Array [],
           },
         },
       ],
@@ -310,6 +308,7 @@ that captures the event. This method will not create the Trail.",
           "optional": true,
           "type": Object {
             "name": "string",
+            "types": Array [],
           },
         },
       ],
@@ -325,23 +324,20 @@ that captures the event. This method will not create the Trail.",
   ],
   "properties": Array [
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "The construct tree node for this construct.",
       },
       "fqn": "Amazon.CDK.AWS.ECR.IRepository.property.Node",
       "id": "@aws-cdk/core.IConstruct.property.node",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
-        "fqn": "@aws-cdk/core.ConstructNode",
-        "id": "Amazon.CDK.ConstructNode",
-        "name": "ConstructNode",
+        "fqn": "Amazon.CDK.ConstructNode",
+        "id": "@aws-cdk/core.ConstructNode",
       },
       "usage": "public ConstructNode Node { get; }",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "remarks": "For resources that are created and managed by the CDK
@@ -354,60 +350,56 @@ that might be different than the stack they were imported into.",
       },
       "fqn": "Amazon.CDK.AWS.ECR.IRepository.property.Env",
       "id": "@aws-cdk/core.IResource.property.env",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
-        "fqn": "@aws-cdk/core.ResourceEnvironment",
-        "id": "Amazon.CDK.ResourceEnvironment",
-        "name": "ResourceEnvironment",
+        "fqn": "Amazon.CDK.ResourceEnvironment",
+        "id": "@aws-cdk/core.ResourceEnvironment",
       },
       "usage": "public ResourceEnvironment Env { get; }",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "The stack in which this resource is defined.",
       },
       "fqn": "Amazon.CDK.AWS.ECR.IRepository.property.Stack",
       "id": "@aws-cdk/core.IResource.property.stack",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
-        "fqn": "@aws-cdk/core.Stack",
-        "id": "Amazon.CDK.Stack",
-        "name": "Stack",
+        "fqn": "Amazon.CDK.Stack",
+        "id": "@aws-cdk/core.Stack",
       },
       "usage": "public Stack Stack { get; }",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "The ARN of the repository.",
       },
       "fqn": "Amazon.CDK.AWS.ECR.IRepository.property.RepositoryArn",
       "id": "@aws-cdk/aws-ecr.IRepository.property.repositoryArn",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
         "name": "string",
+        "types": Array [],
       },
       "usage": "public string RepositoryArn { get; }",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "The name of the repository.",
       },
       "fqn": "Amazon.CDK.AWS.ECR.IRepository.property.RepositoryName",
       "id": "@aws-cdk/aws-ecr.IRepository.property.repositoryName",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
         "name": "string",
+        "types": Array [],
       },
       "usage": "public string RepositoryName { get; }",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "remarks": "ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY",
@@ -415,9 +407,10 @@ that might be different than the stack they were imported into.",
       },
       "fqn": "Amazon.CDK.AWS.ECR.IRepository.property.RepositoryUri",
       "id": "@aws-cdk/aws-ecr.IRepository.property.repositoryUri",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
         "name": "string",
+        "types": Array [],
       },
       "usage": "public string RepositoryUri { get; }",
     },
@@ -428,9 +421,9 @@ that might be different than the stack they were imported into.",
 exports[`csharp snapshot 2`] = `
 " IRepository <a id=\\"@aws-cdk/aws-ecr.IRepository\\"></a>
 
-- *Extends:* <a href=\\"#@aws-cdk/core.IResource\\">Amazon.CDK.IResource</a>
+- *Extends:* <a href=\\"#@aws-cdk/core.IResource\\">IResource</a>
 
-- *Implemented By:* <a href=\\"#@aws-cdk/aws-ecr.Repository\\">Amazon.CDK.AWS.ECR.Repository</a>, <a href=\\"#@aws-cdk/aws-ecr.RepositoryBase\\">Amazon.CDK.AWS.ECR.RepositoryBase</a>, <a href=\\"#@aws-cdk/aws-ecr.IRepository\\">Amazon.CDK.AWS.ECR.IRepository</a>
+- *Implemented By:* <a href=\\"#@aws-cdk/aws-ecr.Repository\\">Repository</a>, <a href=\\"#@aws-cdk/aws-ecr.RepositoryBase\\">RepositoryBase</a>, <a href=\\"#@aws-cdk/aws-ecr.IRepository\\">IRepository</a>
 
 Represents an ECR repository.
 
@@ -747,9 +740,8 @@ Object {
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.statement",
           "optional": undefined,
           "type": Object {
-            "fqn": "@aws-cdk/aws-iam.PolicyStatement",
-            "id": "software.amazon.awscdk.services.iam.PolicyStatement",
-            "name": "PolicyStatement",
+            "fqn": "software.amazon.awscdk.services.iam.PolicyStatement",
+            "id": "@aws-cdk/aws-iam.PolicyStatement",
           },
         },
       ],
@@ -769,9 +761,8 @@ Object {
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
           "optional": undefined,
           "type": Object {
-            "fqn": "@aws-cdk/aws-iam.IGrantable",
-            "id": "software.amazon.awscdk.services.iam.IGrantable",
-            "name": "IGrantable",
+            "fqn": "software.amazon.awscdk.services.iam.IGrantable",
+            "id": "@aws-cdk/aws-iam.IGrantable",
           },
         },
         Object {
@@ -782,6 +773,7 @@ Object {
           "optional": undefined,
           "type": Object {
             "name": "java.lang.String",
+            "types": Array [],
           },
         },
       ],
@@ -801,9 +793,8 @@ Object {
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
           "optional": undefined,
           "type": Object {
-            "fqn": "@aws-cdk/aws-iam.IGrantable",
-            "id": "software.amazon.awscdk.services.iam.IGrantable",
-            "name": "IGrantable",
+            "fqn": "software.amazon.awscdk.services.iam.IGrantable",
+            "id": "@aws-cdk/aws-iam.IGrantable",
           },
         },
       ],
@@ -823,9 +814,8 @@ Object {
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
           "optional": undefined,
           "type": Object {
-            "fqn": "@aws-cdk/aws-iam.IGrantable",
-            "id": "software.amazon.awscdk.services.iam.IGrantable",
-            "name": "IGrantable",
+            "fqn": "software.amazon.awscdk.services.iam.IGrantable",
+            "id": "@aws-cdk/aws-iam.IGrantable",
           },
         },
       ],
@@ -850,6 +840,7 @@ that captures the event. This method will not create the Trail.",
           "optional": undefined,
           "type": Object {
             "name": "java.lang.String",
+            "types": Array [],
           },
         },
         Object {
@@ -861,9 +852,8 @@ that captures the event. This method will not create the Trail.",
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
           "optional": true,
           "type": Object {
-            "fqn": "@aws-cdk/aws-events.OnEventOptions",
-            "id": "software.amazon.awscdk.services.events.OnEventOptions",
-            "name": "OnEventOptions",
+            "fqn": "software.amazon.awscdk.services.events.OnEventOptions",
+            "id": "@aws-cdk/aws-events.OnEventOptions",
           },
         },
       ],
@@ -889,6 +879,7 @@ that captures the event. This method will not create the Trail.",
           "optional": undefined,
           "type": Object {
             "name": "java.lang.String",
+            "types": Array [],
           },
         },
         Object {
@@ -900,9 +891,8 @@ that captures the event. This method will not create the Trail.",
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
           "optional": true,
           "type": Object {
-            "fqn": "@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions",
-            "id": "software.amazon.awscdk.services.ecr.OnCloudTrailImagePushedOptions",
-            "name": "OnCloudTrailImagePushedOptions",
+            "fqn": "software.amazon.awscdk.services.ecr.OnCloudTrailImagePushedOptions",
+            "id": "@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions",
           },
         },
       ],
@@ -926,6 +916,7 @@ public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptio
           "optional": undefined,
           "type": Object {
             "name": "java.lang.String",
+            "types": Array [],
           },
         },
         Object {
@@ -935,9 +926,8 @@ public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptio
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
           "optional": true,
           "type": Object {
-            "fqn": "@aws-cdk/aws-events.OnEventOptions",
-            "id": "software.amazon.awscdk.services.events.OnEventOptions",
-            "name": "OnEventOptions",
+            "fqn": "software.amazon.awscdk.services.events.OnEventOptions",
+            "id": "@aws-cdk/aws-events.OnEventOptions",
           },
         },
       ],
@@ -961,6 +951,7 @@ public onEvent(java.lang.String id, OnEventOptions options)",
           "optional": undefined,
           "type": Object {
             "name": "java.lang.String",
+            "types": Array [],
           },
         },
         Object {
@@ -972,9 +963,8 @@ public onEvent(java.lang.String id, OnEventOptions options)",
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
           "optional": true,
           "type": Object {
-            "fqn": "@aws-cdk/aws-ecr.OnImageScanCompletedOptions",
-            "id": "software.amazon.awscdk.services.ecr.OnImageScanCompletedOptions",
-            "name": "OnImageScanCompletedOptions",
+            "fqn": "software.amazon.awscdk.services.ecr.OnImageScanCompletedOptions",
+            "id": "@aws-cdk/aws-ecr.OnImageScanCompletedOptions",
           },
         },
       ],
@@ -999,6 +989,7 @@ public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions opt
           "optional": true,
           "type": Object {
             "name": "java.lang.String",
+            "types": Array [],
           },
         },
       ],
@@ -1023,6 +1014,7 @@ public repositoryUriForDigest(java.lang.String digest)",
           "optional": true,
           "type": Object {
             "name": "java.lang.String",
+            "types": Array [],
           },
         },
       ],
@@ -1039,23 +1031,20 @@ public repositoryUriForTag(java.lang.String tag)",
   ],
   "properties": Array [
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "The construct tree node for this construct.",
       },
       "fqn": "software.amazon.awscdk.services.ecr.IRepository.property.node",
       "id": "@aws-cdk/core.IConstruct.property.node",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
-        "fqn": "@aws-cdk/core.ConstructNode",
-        "id": "software.amazon.awscdk.core.ConstructNode",
-        "name": "ConstructNode",
+        "fqn": "software.amazon.awscdk.core.ConstructNode",
+        "id": "@aws-cdk/core.ConstructNode",
       },
       "usage": "public ConstructNode getNode();",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "remarks": "For resources that are created and managed by the CDK
@@ -1068,60 +1057,56 @@ that might be different than the stack they were imported into.",
       },
       "fqn": "software.amazon.awscdk.services.ecr.IRepository.property.env",
       "id": "@aws-cdk/core.IResource.property.env",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
-        "fqn": "@aws-cdk/core.ResourceEnvironment",
-        "id": "software.amazon.awscdk.core.ResourceEnvironment",
-        "name": "ResourceEnvironment",
+        "fqn": "software.amazon.awscdk.core.ResourceEnvironment",
+        "id": "@aws-cdk/core.ResourceEnvironment",
       },
       "usage": "public ResourceEnvironment getEnv();",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "The stack in which this resource is defined.",
       },
       "fqn": "software.amazon.awscdk.services.ecr.IRepository.property.stack",
       "id": "@aws-cdk/core.IResource.property.stack",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
-        "fqn": "@aws-cdk/core.Stack",
-        "id": "software.amazon.awscdk.core.Stack",
-        "name": "Stack",
+        "fqn": "software.amazon.awscdk.core.Stack",
+        "id": "@aws-cdk/core.Stack",
       },
       "usage": "public Stack getStack();",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "The ARN of the repository.",
       },
       "fqn": "software.amazon.awscdk.services.ecr.IRepository.property.repositoryArn",
       "id": "@aws-cdk/aws-ecr.IRepository.property.repositoryArn",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
         "name": "java.lang.String",
+        "types": Array [],
       },
       "usage": "public java.lang.String getRepositoryArn();",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "The name of the repository.",
       },
       "fqn": "software.amazon.awscdk.services.ecr.IRepository.property.repositoryName",
       "id": "@aws-cdk/aws-ecr.IRepository.property.repositoryName",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
         "name": "java.lang.String",
+        "types": Array [],
       },
       "usage": "public java.lang.String getRepositoryName();",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "remarks": "ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY",
@@ -1129,9 +1114,10 @@ that might be different than the stack they were imported into.",
       },
       "fqn": "software.amazon.awscdk.services.ecr.IRepository.property.repositoryUri",
       "id": "@aws-cdk/aws-ecr.IRepository.property.repositoryUri",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
         "name": "java.lang.String",
+        "types": Array [],
       },
       "usage": "public java.lang.String getRepositoryUri();",
     },
@@ -1142,9 +1128,9 @@ that might be different than the stack they were imported into.",
 exports[`java snapshot 2`] = `
 " IRepository <a id=\\"@aws-cdk/aws-ecr.IRepository\\"></a>
 
-- *Extends:* <a href=\\"#@aws-cdk/core.IResource\\">software.amazon.awscdk.core.IResource</a>
+- *Extends:* <a href=\\"#@aws-cdk/core.IResource\\">IResource</a>
 
-- *Implemented By:* <a href=\\"#@aws-cdk/aws-ecr.Repository\\">software.amazon.awscdk.services.ecr.Repository</a>, <a href=\\"#@aws-cdk/aws-ecr.RepositoryBase\\">software.amazon.awscdk.services.ecr.RepositoryBase</a>, <a href=\\"#@aws-cdk/aws-ecr.IRepository\\">software.amazon.awscdk.services.ecr.IRepository</a>
+- *Implemented By:* <a href=\\"#@aws-cdk/aws-ecr.Repository\\">Repository</a>, <a href=\\"#@aws-cdk/aws-ecr.RepositoryBase\\">RepositoryBase</a>, <a href=\\"#@aws-cdk/aws-ecr.IRepository\\">IRepository</a>
 
 Represents an ECR repository.
 
@@ -1467,9 +1453,8 @@ Object {
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.statement",
           "optional": undefined,
           "type": Object {
-            "fqn": "@aws-cdk/aws-iam.PolicyStatement",
-            "id": "aws_cdk.aws_iam.PolicyStatement",
-            "name": "PolicyStatement",
+            "fqn": "aws_cdk.aws_iam.PolicyStatement",
+            "id": "@aws-cdk/aws-iam.PolicyStatement",
           },
         },
       ],
@@ -1491,9 +1476,8 @@ Object {
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
           "optional": undefined,
           "type": Object {
-            "fqn": "@aws-cdk/aws-iam.IGrantable",
-            "id": "aws_cdk.aws_iam.IGrantable",
-            "name": "IGrantable",
+            "fqn": "aws_cdk.aws_iam.IGrantable",
+            "id": "@aws-cdk/aws-iam.IGrantable",
           },
         },
         Object {
@@ -1504,6 +1488,7 @@ Object {
           "optional": undefined,
           "type": Object {
             "name": "str",
+            "types": Array [],
           },
         },
       ],
@@ -1526,9 +1511,8 @@ Object {
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
           "optional": undefined,
           "type": Object {
-            "fqn": "@aws-cdk/aws-iam.IGrantable",
-            "id": "aws_cdk.aws_iam.IGrantable",
-            "name": "IGrantable",
+            "fqn": "aws_cdk.aws_iam.IGrantable",
+            "id": "@aws-cdk/aws-iam.IGrantable",
           },
         },
       ],
@@ -1550,9 +1534,8 @@ Object {
           "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
           "optional": undefined,
           "type": Object {
-            "fqn": "@aws-cdk/aws-iam.IGrantable",
-            "id": "aws_cdk.aws_iam.IGrantable",
-            "name": "IGrantable",
+            "fqn": "aws_cdk.aws_iam.IGrantable",
+            "id": "@aws-cdk/aws-iam.IGrantable",
           },
         },
       ],
@@ -1579,6 +1562,7 @@ that captures the event. This method will not create the Trail.",
           "optional": undefined,
           "type": Object {
             "name": "str",
+            "types": Array [],
           },
         },
         Object {
@@ -1591,6 +1575,7 @@ that captures the event. This method will not create the Trail.",
           "optional": true,
           "type": Object {
             "name": "str",
+            "types": Array [],
           },
         },
         Object {
@@ -1606,9 +1591,8 @@ on top of that filtering.",
           "id": "@aws-cdk/aws-events.OnEventOptions.parameter.eventPattern",
           "optional": true,
           "type": Object {
-            "fqn": "@aws-cdk/aws-events.EventPattern",
-            "id": "aws_cdk.aws_events.EventPattern",
-            "name": "EventPattern",
+            "fqn": "aws_cdk.aws_events.EventPattern",
+            "id": "@aws-cdk/aws-events.EventPattern",
           },
         },
         Object {
@@ -1621,6 +1605,7 @@ on top of that filtering.",
           "optional": true,
           "type": Object {
             "name": "str",
+            "types": Array [],
           },
         },
         Object {
@@ -1632,9 +1617,8 @@ on top of that filtering.",
           "id": "@aws-cdk/aws-events.OnEventOptions.parameter.target",
           "optional": true,
           "type": Object {
-            "fqn": "@aws-cdk/aws-events.IRuleTarget",
-            "id": "aws_cdk.aws_events.IRuleTarget",
-            "name": "IRuleTarget",
+            "fqn": "aws_cdk.aws_events.IRuleTarget",
+            "id": "@aws-cdk/aws-events.IRuleTarget",
           },
         },
       ],
@@ -1665,6 +1649,7 @@ that captures the event. This method will not create the Trail.",
           "optional": undefined,
           "type": Object {
             "name": "str",
+            "types": Array [],
           },
         },
         Object {
@@ -1677,6 +1662,7 @@ that captures the event. This method will not create the Trail.",
           "optional": true,
           "type": Object {
             "name": "str",
+            "types": Array [],
           },
         },
         Object {
@@ -1692,9 +1678,8 @@ on top of that filtering.",
           "id": "@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions.parameter.eventPattern",
           "optional": true,
           "type": Object {
-            "fqn": "@aws-cdk/aws-events.EventPattern",
-            "id": "aws_cdk.aws_events.EventPattern",
-            "name": "EventPattern",
+            "fqn": "aws_cdk.aws_events.EventPattern",
+            "id": "@aws-cdk/aws-events.EventPattern",
           },
         },
         Object {
@@ -1707,6 +1692,7 @@ on top of that filtering.",
           "optional": true,
           "type": Object {
             "name": "str",
+            "types": Array [],
           },
         },
         Object {
@@ -1718,9 +1704,8 @@ on top of that filtering.",
           "id": "@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions.parameter.target",
           "optional": true,
           "type": Object {
-            "fqn": "@aws-cdk/aws-events.IRuleTarget",
-            "id": "aws_cdk.aws_events.IRuleTarget",
-            "name": "IRuleTarget",
+            "fqn": "aws_cdk.aws_events.IRuleTarget",
+            "id": "@aws-cdk/aws-events.IRuleTarget",
           },
         },
         Object {
@@ -1733,6 +1718,7 @@ on top of that filtering.",
           "optional": true,
           "type": Object {
             "name": "str",
+            "types": Array [],
           },
         },
       ],
@@ -1762,6 +1748,7 @@ on top of that filtering.",
           "optional": undefined,
           "type": Object {
             "name": "str",
+            "types": Array [],
           },
         },
         Object {
@@ -1774,6 +1761,7 @@ on top of that filtering.",
           "optional": true,
           "type": Object {
             "name": "str",
+            "types": Array [],
           },
         },
         Object {
@@ -1789,9 +1777,8 @@ on top of that filtering.",
           "id": "@aws-cdk/aws-events.OnEventOptions.parameter.eventPattern",
           "optional": true,
           "type": Object {
-            "fqn": "@aws-cdk/aws-events.EventPattern",
-            "id": "aws_cdk.aws_events.EventPattern",
-            "name": "EventPattern",
+            "fqn": "aws_cdk.aws_events.EventPattern",
+            "id": "@aws-cdk/aws-events.EventPattern",
           },
         },
         Object {
@@ -1804,6 +1791,7 @@ on top of that filtering.",
           "optional": true,
           "type": Object {
             "name": "str",
+            "types": Array [],
           },
         },
         Object {
@@ -1815,9 +1803,8 @@ on top of that filtering.",
           "id": "@aws-cdk/aws-events.OnEventOptions.parameter.target",
           "optional": true,
           "type": Object {
-            "fqn": "@aws-cdk/aws-events.IRuleTarget",
-            "id": "aws_cdk.aws_events.IRuleTarget",
-            "name": "IRuleTarget",
+            "fqn": "aws_cdk.aws_events.IRuleTarget",
+            "id": "@aws-cdk/aws-events.IRuleTarget",
           },
         },
       ],
@@ -1846,6 +1833,7 @@ on top of that filtering.",
           "optional": undefined,
           "type": Object {
             "name": "str",
+            "types": Array [],
           },
         },
         Object {
@@ -1858,6 +1846,7 @@ on top of that filtering.",
           "optional": true,
           "type": Object {
             "name": "str",
+            "types": Array [],
           },
         },
         Object {
@@ -1873,9 +1862,8 @@ on top of that filtering.",
           "id": "@aws-cdk/aws-ecr.OnImageScanCompletedOptions.parameter.eventPattern",
           "optional": true,
           "type": Object {
-            "fqn": "@aws-cdk/aws-events.EventPattern",
-            "id": "aws_cdk.aws_events.EventPattern",
-            "name": "EventPattern",
+            "fqn": "aws_cdk.aws_events.EventPattern",
+            "id": "@aws-cdk/aws-events.EventPattern",
           },
         },
         Object {
@@ -1888,6 +1876,7 @@ on top of that filtering.",
           "optional": true,
           "type": Object {
             "name": "str",
+            "types": Array [],
           },
         },
         Object {
@@ -1899,9 +1888,8 @@ on top of that filtering.",
           "id": "@aws-cdk/aws-ecr.OnImageScanCompletedOptions.parameter.target",
           "optional": true,
           "type": Object {
-            "fqn": "@aws-cdk/aws-events.IRuleTarget",
-            "id": "aws_cdk.aws_events.IRuleTarget",
-            "name": "IRuleTarget",
+            "fqn": "aws_cdk.aws_events.IRuleTarget",
+            "id": "@aws-cdk/aws-events.IRuleTarget",
           },
         },
         Object {
@@ -1918,6 +1906,7 @@ on top of that filtering.",
             "types": Array [
               Object {
                 "name": "str",
+                "types": Array [],
               },
             ],
           },
@@ -1950,6 +1939,7 @@ on top of that filtering.",
           "optional": true,
           "type": Object {
             "name": "str",
+            "types": Array [],
           },
         },
       ],
@@ -1975,6 +1965,7 @@ on top of that filtering.",
           "optional": true,
           "type": Object {
             "name": "str",
+            "types": Array [],
           },
         },
       ],
@@ -1992,23 +1983,20 @@ on top of that filtering.",
   ],
   "properties": Array [
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "The construct tree node for this construct.",
       },
       "fqn": "aws_cdk.aws_ecr.IRepository.property.node",
       "id": "@aws-cdk/core.IConstruct.property.node",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
-        "fqn": "@aws-cdk/core.ConstructNode",
-        "id": "aws_cdk.core.ConstructNode",
-        "name": "ConstructNode",
+        "fqn": "aws_cdk.core.ConstructNode",
+        "id": "@aws-cdk/core.ConstructNode",
       },
       "usage": "node: ConstructNode",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "remarks": "For resources that are created and managed by the CDK
@@ -2021,60 +2009,56 @@ that might be different than the stack they were imported into.",
       },
       "fqn": "aws_cdk.aws_ecr.IRepository.property.env",
       "id": "@aws-cdk/core.IResource.property.env",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
-        "fqn": "@aws-cdk/core.ResourceEnvironment",
-        "id": "aws_cdk.core.ResourceEnvironment",
-        "name": "ResourceEnvironment",
+        "fqn": "aws_cdk.core.ResourceEnvironment",
+        "id": "@aws-cdk/core.ResourceEnvironment",
       },
       "usage": "env: ResourceEnvironment",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "The stack in which this resource is defined.",
       },
       "fqn": "aws_cdk.aws_ecr.IRepository.property.stack",
       "id": "@aws-cdk/core.IResource.property.stack",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
-        "fqn": "@aws-cdk/core.Stack",
-        "id": "aws_cdk.core.Stack",
-        "name": "Stack",
+        "fqn": "aws_cdk.core.Stack",
+        "id": "@aws-cdk/core.Stack",
       },
       "usage": "stack: Stack",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "The ARN of the repository.",
       },
       "fqn": "aws_cdk.aws_ecr.IRepository.property.repository_arn",
       "id": "@aws-cdk/aws-ecr.IRepository.property.repositoryArn",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
         "name": "str",
+        "types": Array [],
       },
       "usage": "repository_arn: str",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "The name of the repository.",
       },
       "fqn": "aws_cdk.aws_ecr.IRepository.property.repository_name",
       "id": "@aws-cdk/aws-ecr.IRepository.property.repositoryName",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
         "name": "str",
+        "types": Array [],
       },
       "usage": "repository_name: str",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "remarks": "ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY",
@@ -2082,9 +2066,10 @@ that might be different than the stack they were imported into.",
       },
       "fqn": "aws_cdk.aws_ecr.IRepository.property.repository_uri",
       "id": "@aws-cdk/aws-ecr.IRepository.property.repositoryUri",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
         "name": "str",
+        "types": Array [],
       },
       "usage": "repository_uri: str",
     },
@@ -2095,9 +2080,9 @@ that might be different than the stack they were imported into.",
 exports[`python snapshot 2`] = `
 " IRepository <a id=\\"@aws-cdk/aws-ecr.IRepository\\"></a>
 
-- *Extends:* <a href=\\"#@aws-cdk/core.IResource\\">aws_cdk.core.IResource</a>
+- *Extends:* <a href=\\"#@aws-cdk/core.IResource\\">IResource</a>
 
-- *Implemented By:* <a href=\\"#@aws-cdk/aws-ecr.Repository\\">aws_cdk.aws_ecr.Repository</a>, <a href=\\"#@aws-cdk/aws-ecr.RepositoryBase\\">aws_cdk.aws_ecr.RepositoryBase</a>, <a href=\\"#@aws-cdk/aws-ecr.IRepository\\">aws_cdk.aws_ecr.IRepository</a>
+- *Implemented By:* <a href=\\"#@aws-cdk/aws-ecr.Repository\\">Repository</a>, <a href=\\"#@aws-cdk/aws-ecr.RepositoryBase\\">RepositoryBase</a>, <a href=\\"#@aws-cdk/aws-ecr.IRepository\\">IRepository</a>
 
 Represents an ECR repository.
 
@@ -2613,7 +2598,6 @@ Object {
           "type": Object {
             "fqn": "@aws-cdk/aws-iam.PolicyStatement",
             "id": "@aws-cdk/aws-iam.PolicyStatement",
-            "name": "PolicyStatement",
           },
         },
       ],
@@ -2635,7 +2619,6 @@ Object {
           "type": Object {
             "fqn": "@aws-cdk/aws-iam.IGrantable",
             "id": "@aws-cdk/aws-iam.IGrantable",
-            "name": "IGrantable",
           },
         },
         Object {
@@ -2646,6 +2629,7 @@ Object {
           "optional": undefined,
           "type": Object {
             "name": "string",
+            "types": Array [],
           },
         },
       ],
@@ -2667,7 +2651,6 @@ Object {
           "type": Object {
             "fqn": "@aws-cdk/aws-iam.IGrantable",
             "id": "@aws-cdk/aws-iam.IGrantable",
-            "name": "IGrantable",
           },
         },
       ],
@@ -2689,7 +2672,6 @@ Object {
           "type": Object {
             "fqn": "@aws-cdk/aws-iam.IGrantable",
             "id": "@aws-cdk/aws-iam.IGrantable",
-            "name": "IGrantable",
           },
         },
       ],
@@ -2714,6 +2696,7 @@ that captures the event. This method will not create the Trail.",
           "optional": undefined,
           "type": Object {
             "name": "string",
+            "types": Array [],
           },
         },
         Object {
@@ -2727,7 +2710,6 @@ that captures the event. This method will not create the Trail.",
           "type": Object {
             "fqn": "@aws-cdk/aws-events.OnEventOptions",
             "id": "@aws-cdk/aws-events.OnEventOptions",
-            "name": "OnEventOptions",
           },
         },
       ],
@@ -2752,6 +2734,7 @@ that captures the event. This method will not create the Trail.",
           "optional": undefined,
           "type": Object {
             "name": "string",
+            "types": Array [],
           },
         },
         Object {
@@ -2765,7 +2748,6 @@ that captures the event. This method will not create the Trail.",
           "type": Object {
             "fqn": "@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions",
             "id": "@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions",
-            "name": "OnCloudTrailImagePushedOptions",
           },
         },
       ],
@@ -2788,6 +2770,7 @@ that captures the event. This method will not create the Trail.",
           "optional": undefined,
           "type": Object {
             "name": "string",
+            "types": Array [],
           },
         },
         Object {
@@ -2799,7 +2782,6 @@ that captures the event. This method will not create the Trail.",
           "type": Object {
             "fqn": "@aws-cdk/aws-events.OnEventOptions",
             "id": "@aws-cdk/aws-events.OnEventOptions",
-            "name": "OnEventOptions",
           },
         },
       ],
@@ -2822,6 +2804,7 @@ that captures the event. This method will not create the Trail.",
           "optional": undefined,
           "type": Object {
             "name": "string",
+            "types": Array [],
           },
         },
         Object {
@@ -2835,7 +2818,6 @@ that captures the event. This method will not create the Trail.",
           "type": Object {
             "fqn": "@aws-cdk/aws-ecr.OnImageScanCompletedOptions",
             "id": "@aws-cdk/aws-ecr.OnImageScanCompletedOptions",
-            "name": "OnImageScanCompletedOptions",
           },
         },
       ],
@@ -2859,6 +2841,7 @@ that captures the event. This method will not create the Trail.",
           "optional": true,
           "type": Object {
             "name": "string",
+            "types": Array [],
           },
         },
       ],
@@ -2882,6 +2865,7 @@ that captures the event. This method will not create the Trail.",
           "optional": true,
           "type": Object {
             "name": "string",
+            "types": Array [],
           },
         },
       ],
@@ -2897,23 +2881,20 @@ that captures the event. This method will not create the Trail.",
   ],
   "properties": Array [
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "The construct tree node for this construct.",
       },
       "fqn": "@aws-cdk/aws-ecr.IRepository.property.node",
       "id": "@aws-cdk/core.IConstruct.property.node",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
         "fqn": "@aws-cdk/core.ConstructNode",
         "id": "@aws-cdk/core.ConstructNode",
-        "name": "ConstructNode",
       },
       "usage": "public readonly node: ConstructNode;",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "remarks": "For resources that are created and managed by the CDK
@@ -2926,60 +2907,56 @@ that might be different than the stack they were imported into.",
       },
       "fqn": "@aws-cdk/aws-ecr.IRepository.property.env",
       "id": "@aws-cdk/core.IResource.property.env",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
         "fqn": "@aws-cdk/core.ResourceEnvironment",
         "id": "@aws-cdk/core.ResourceEnvironment",
-        "name": "ResourceEnvironment",
       },
       "usage": "public readonly env: ResourceEnvironment;",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "The stack in which this resource is defined.",
       },
       "fqn": "@aws-cdk/aws-ecr.IRepository.property.stack",
       "id": "@aws-cdk/core.IResource.property.stack",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
         "fqn": "@aws-cdk/core.Stack",
         "id": "@aws-cdk/core.Stack",
-        "name": "Stack",
       },
       "usage": "public readonly stack: Stack;",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "The ARN of the repository.",
       },
       "fqn": "@aws-cdk/aws-ecr.IRepository.property.repositoryArn",
       "id": "@aws-cdk/aws-ecr.IRepository.property.repositoryArn",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
         "name": "string",
+        "types": Array [],
       },
       "usage": "public readonly repositoryArn: string;",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "summary": "The name of the repository.",
       },
       "fqn": "@aws-cdk/aws-ecr.IRepository.property.repositoryName",
       "id": "@aws-cdk/aws-ecr.IRepository.property.repositoryName",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
         "name": "string",
+        "types": Array [],
       },
       "usage": "public readonly repositoryName: string;",
     },
     Object {
-      "const": false,
       "default": undefined,
       "docs": Object {
         "remarks": "ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY",
@@ -2987,9 +2964,10 @@ that might be different than the stack they were imported into.",
       },
       "fqn": "@aws-cdk/aws-ecr.IRepository.property.repositoryUri",
       "id": "@aws-cdk/aws-ecr.IRepository.property.repositoryUri",
-      "optional": false,
+      "optional": undefined,
       "type": Object {
         "name": "string",
+        "types": Array [],
       },
       "usage": "public readonly repositoryUri: string;",
     },
@@ -3000,9 +2978,9 @@ that might be different than the stack they were imported into.",
 exports[`typescript snapshot 2`] = `
 " IRepository <a id=\\"@aws-cdk/aws-ecr.IRepository\\"></a>
 
-- *Extends:* <a href=\\"#@aws-cdk/core.IResource\\">@aws-cdk/core.IResource</a>
+- *Extends:* <a href=\\"#@aws-cdk/core.IResource\\">IResource</a>
 
-- *Implemented By:* <a href=\\"#@aws-cdk/aws-ecr.Repository\\">@aws-cdk/aws-ecr.Repository</a>, <a href=\\"#@aws-cdk/aws-ecr.RepositoryBase\\">@aws-cdk/aws-ecr.RepositoryBase</a>, <a href=\\"#@aws-cdk/aws-ecr.IRepository\\">@aws-cdk/aws-ecr.IRepository</a>
+- *Implemented By:* <a href=\\"#@aws-cdk/aws-ecr.Repository\\">Repository</a>, <a href=\\"#@aws-cdk/aws-ecr.RepositoryBase\\">RepositoryBase</a>, <a href=\\"#@aws-cdk/aws-ecr.IRepository\\">IRepository</a>
 
 Represents an ECR repository.
 

@@ -153,7 +153,6 @@ export class Markdown {
   }
 
   public code(language: string, ...snippet: string[]) {
-    // this.lines(`\`\`\`${language}`, ...snippet, '```');
     this.lines(`<pre lang="${language}">`, ...snippet, '</pre>');
     this.lines('');
   }
@@ -222,34 +221,39 @@ export class Markdown {
   }
 }
 
-export const defaultLinkFormatter = (name: string, id: string) => {
+export const defaultAnchorFormatter = (id: string) => {
+  return id;
+};
+
+export const defaultLinkFormatter = (fqn: string, id: string) => {
+  const name = fqn.split('.').pop()!;
   return `<a href="#${id}">${name}</a>`;
 };
 
 export const defaultTypeFormatter = (
   type: TypeSchema,
-  linkFormatter: (name: string, id: string) => string,
+  linkFormatter: (fqn: string, id: string) => string,
 ): string => {
-  // If the type has a FQN (so it's not a union, primitive, collection, etc.)
-  // just display it directly.
+  // if type is of the form `{ fqn, id }`, display it directly
   if (type.fqn) {
-    return linkFormatter(type.name, type.fqn);
+    return linkFormatter(type.fqn, type.id!);
   }
 
-  // First, recursively format each referenced type.
+  // else, type is of the form `{ name, types? }`
+  let result = type.name!;
   const typeRefs = [];
   for (const typeRef of type.types ?? []) {
     typeRefs.push(defaultTypeFormatter(typeRef, linkFormatter));
   }
 
-  // Second, substitute referred type into the original string in order
-  // of the % placeholders.
-  let result = type.name;
+  // substitute referred types into the original string
   const placeholderMatcher = /\%/g;
   for (const typeRef of typeRefs) {
     const matches = placeholderMatcher.exec(result);
     if (!matches) {
-      throw new Error(`Number of %s in "${type.name}" does not match number of types provided (${typeRefs.length})`);
+      // it's possible the number of %'s doesn't match the number of types provided
+      // e.g. csharp unions are currently rendered to `{ name: 'object', types: [type1, type2] }`
+      continue;
     }
     const insertionIdx: number = matches.index;
     result = result.substring(0, insertionIdx) + typeRef + result.substring(insertionIdx + 1);

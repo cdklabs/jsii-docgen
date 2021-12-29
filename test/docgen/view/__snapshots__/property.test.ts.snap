@@ -2,7 +2,6 @@
 
 exports[`csharp snapshot 1`] = `
 Object {
-  "const": false,
   "default": undefined,
   "docs": Object {
     "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
@@ -12,6 +11,7 @@ Object {
   "optional": true,
   "type": Object {
     "name": "object",
+    "types": Array [],
   },
   "usage": "public object RepositoryCatalogData { get; set; }",
 }
@@ -34,7 +34,6 @@ public object RepositoryCatalogData { get; set; }
 
 exports[`java snapshot 1`] = `
 Object {
-  "const": false,
   "default": undefined,
   "docs": Object {
     "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
@@ -44,6 +43,7 @@ Object {
   "optional": true,
   "type": Object {
     "name": "java.lang.Object",
+    "types": Array [],
   },
   "usage": "public java.lang.Object getRepositoryCatalogData();",
 }
@@ -66,7 +66,6 @@ public java.lang.Object getRepositoryCatalogData();
 
 exports[`python snapshot 1`] = `
 Object {
-  "const": false,
   "default": undefined,
   "docs": Object {
     "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
@@ -76,6 +75,7 @@ Object {
   "optional": true,
   "type": Object {
     "name": "typing.Any",
+    "types": Array [],
   },
   "usage": "repository_catalog_data: typing.Any",
 }
@@ -98,7 +98,6 @@ repository_catalog_data: typing.Any
 
 exports[`typescript snapshot 1`] = `
 Object {
-  "const": false,
   "default": undefined,
   "docs": Object {
     "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
@@ -108,6 +107,7 @@ Object {
   "optional": true,
   "type": Object {
     "name": "any",
+    "types": Array [],
   },
   "usage": "public readonly repositoryCatalogData: any;",
 }

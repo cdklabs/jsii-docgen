@@ -22,7 +22,7 @@ export class Properties {
     const tableRows: string[][] = [];
     tableRows.push(['Name', 'Type', 'Description'].map(Markdown.bold));
     for (const prop of properties) {
-      const propLink = Markdown.pre(linkFormatter(prop.fqn.split('.').pop()!, prop.id));
+      const propLink = Markdown.pre(linkFormatter(prop.fqn, prop.id));
       const propType = Markdown.pre(typeFormatter(prop.type, linkFormatter));
       const propDescription = prop.docs?.summary && prop.docs?.summary.length > 0
         ? prop.docs?.summary

@@ -14,15 +14,15 @@ export class InstanceMethods {
       return Markdown.EMPTY;
     }
 
-    const md = new Markdown({ header: { title: 'Methods' } });
-
     const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
+
+    const md = new Markdown({ header: { title: 'Methods' } });
 
     const tableRows: string[][] = [];
     tableRows.push(['Name', 'Description'].map(Markdown.bold));
 
     for (const method of methods) {
-      const methodLink = Markdown.pre(linkFormatter(method.fqn.split('.').pop()!, method.id));
+      const methodLink = Markdown.pre(linkFormatter(method.fqn, method.id));
       const methodDescription = method.docs?.summary && method.docs?.summary.length > 0
         ? method.docs?.summary
         : Markdown.italic('No description.');

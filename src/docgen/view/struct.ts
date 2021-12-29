@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
+import { defaultAnchorFormatter, Markdown } from '../render/markdown';
 import { StructSchema } from '../schema';
 import { Transpile, TranspiledStruct } from '../transpile/transpile';
 import { extractDocs } from '../util';
@@ -11,8 +11,10 @@ export class Struct {
     struct: StructSchema,
     options: MarkdownRenderOptions,
   ): Markdown {
+    const anchorFormatter = options.anchorFormatter ?? defaultAnchorFormatter;
+
     const md = new Markdown({
-      id: struct.id,
+      id: anchorFormatter(struct.id),
       header: { title: struct.fqn.split('.').pop() },
     });
 

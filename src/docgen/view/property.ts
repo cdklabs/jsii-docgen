@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { defaultLinkFormatter, defaultTypeFormatter, Markdown } from '../render/markdown';
+import { defaultAnchorFormatter, defaultLinkFormatter, defaultTypeFormatter, Markdown } from '../render/markdown';
 import { PropertySchema } from '../schema';
 import { Transpile, TranspiledProperty } from '../transpile/transpile';
 import { extractDocs } from '../util';
@@ -10,12 +10,16 @@ export class Property {
     property: PropertySchema,
     options: MarkdownRenderOptions,
   ): Markdown {
+    const anchorFormatter = options.anchorFormatter ?? defaultAnchorFormatter;
+    const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
+    const typeFormatter = options.typeFormatter ?? defaultTypeFormatter;
+
     const optionality = property.optional
       ? 'Optional'
       : 'Required';
 
     const md = new Markdown({
-      id: property.id,
+      id: anchorFormatter(property.id),
       header: {
         title: property.fqn.split('.').pop(),
         sup: optionality,
@@ -34,9 +38,6 @@ export class Property {
     if (property.usage) {
       md.code(options.language.toString(), property.usage);
     }
-
-    const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
-    const typeFormatter = options.typeFormatter ?? defaultTypeFormatter;
 
     const metadata: Record<string, string> = { Type: typeFormatter(property.type, linkFormatter) };
 

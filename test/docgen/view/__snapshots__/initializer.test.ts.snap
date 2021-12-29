@@ -14,9 +14,8 @@ Object {
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope",
       "optional": undefined,
       "type": Object {
-        "fqn": "@aws-cdk/core.Construct",
-        "id": "Amazon.CDK.Construct",
-        "name": "Construct",
+        "fqn": "Amazon.CDK.Construct",
+        "id": "@aws-cdk/core.Construct",
       },
     },
     Object {
@@ -29,6 +28,7 @@ Object {
       "optional": undefined,
       "type": Object {
         "name": "string",
+        "types": Array [],
       },
     },
     Object {
@@ -40,9 +40,8 @@ Object {
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.props",
       "optional": true,
       "type": Object {
-        "fqn": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
-        "id": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps",
-        "name": "CfnPublicRepositoryProps",
+        "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps",
+        "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
       },
     },
   ],
@@ -109,9 +108,8 @@ Object {
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope",
       "optional": undefined,
       "type": Object {
-        "fqn": "@aws-cdk/core.Construct",
-        "id": "software.amazon.awscdk.core.Construct",
-        "name": "Construct",
+        "fqn": "software.amazon.awscdk.core.Construct",
+        "id": "@aws-cdk/core.Construct",
       },
     },
     Object {
@@ -124,6 +122,7 @@ Object {
       "optional": undefined,
       "type": Object {
         "name": "java.lang.String",
+        "types": Array [],
       },
     },
     Object {
@@ -136,6 +135,7 @@ Object {
       "optional": true,
       "type": Object {
         "name": "java.lang.Object",
+        "types": Array [],
       },
     },
     Object {
@@ -148,6 +148,7 @@ Object {
       "optional": true,
       "type": Object {
         "name": "java.lang.String",
+        "types": Array [],
       },
     },
     Object {
@@ -160,6 +161,7 @@ Object {
       "optional": true,
       "type": Object {
         "name": "java.lang.Object",
+        "types": Array [],
       },
     },
     Object {
@@ -174,9 +176,8 @@ Object {
         "name": "java.util.List<%>",
         "types": Array [
           Object {
-            "fqn": "@aws-cdk/core.CfnTag",
-            "id": "software.amazon.awscdk.core.CfnTag",
-            "name": "CfnTag",
+            "fqn": "software.amazon.awscdk.core.CfnTag",
+            "id": "@aws-cdk/core.CfnTag",
           },
         ],
       },
@@ -282,9 +283,8 @@ Object {
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope",
       "optional": undefined,
       "type": Object {
-        "fqn": "@aws-cdk/core.Construct",
-        "id": "aws_cdk.core.Construct",
-        "name": "Construct",
+        "fqn": "aws_cdk.core.Construct",
+        "id": "@aws-cdk/core.Construct",
       },
     },
     Object {
@@ -297,6 +297,7 @@ Object {
       "optional": undefined,
       "type": Object {
         "name": "str",
+        "types": Array [],
       },
     },
     Object {
@@ -309,6 +310,7 @@ Object {
       "optional": true,
       "type": Object {
         "name": "typing.Any",
+        "types": Array [],
       },
     },
     Object {
@@ -321,6 +323,7 @@ Object {
       "optional": true,
       "type": Object {
         "name": "str",
+        "types": Array [],
       },
     },
     Object {
@@ -333,6 +336,7 @@ Object {
       "optional": true,
       "type": Object {
         "name": "typing.Any",
+        "types": Array [],
       },
     },
     Object {
@@ -347,9 +351,8 @@ Object {
         "name": "typing.List[%]",
         "types": Array [
           Object {
-            "fqn": "@aws-cdk/core.CfnTag",
-            "id": "aws_cdk.core.CfnTag",
-            "name": "CfnTag",
+            "fqn": "aws_cdk.core.CfnTag",
+            "id": "@aws-cdk/core.CfnTag",
           },
         ],
       },
@@ -461,7 +464,6 @@ Object {
       "type": Object {
         "fqn": "@aws-cdk/core.Construct",
         "id": "@aws-cdk/core.Construct",
-        "name": "Construct",
       },
     },
     Object {
@@ -474,6 +476,7 @@ Object {
       "optional": undefined,
       "type": Object {
         "name": "string",
+        "types": Array [],
       },
     },
     Object {
@@ -487,7 +490,6 @@ Object {
       "type": Object {
         "fqn": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
         "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
-        "name": "CfnPublicRepositoryProps",
       },
     },
   ],

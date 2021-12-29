@@ -22,7 +22,7 @@ export class Constants {
     const tableRows: string[][] = [];
     tableRows.push(['Name', 'Type', 'Description'].map(Markdown.bold));
     for (const con of constants) {
-      const conLink = Markdown.pre(linkFormatter(con.fqn.split('.').pop()!, con.id));
+      const conLink = Markdown.pre(linkFormatter(con.fqn, con.id));
       const conType = Markdown.pre(typeFormatter(con.type, linkFormatter));
       const conDescription = con.docs?.summary && con.docs?.summary.length > 0
         ? con.docs?.summary
