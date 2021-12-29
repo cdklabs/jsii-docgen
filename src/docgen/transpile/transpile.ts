@@ -421,7 +421,7 @@ export class TranspiledTypeReference {
     if (this.type) {
       return {
         fqn: this.ref.fqn,
-        name: this.type.name,
+        name: '%',
         id: this.type.fqn,
       };
     }

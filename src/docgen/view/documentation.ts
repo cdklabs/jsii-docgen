@@ -227,7 +227,11 @@ export class Documentation {
       }
     }
 
-    return new Json({ readme: readme?.render(), apiReference: apiReference?.toJson() });
+    return new Json({
+      version: '0.1',
+      readme: readme?.render(),
+      apiReference: apiReference?.toJson(),
+    });
   }
 
   public async toMarkdown(options: MarkdownRenderOptions): Promise<Markdown> {

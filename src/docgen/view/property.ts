@@ -70,11 +70,10 @@ export class Property {
     return {
       fqn: `${this.transpiled.parentType.fqn}.property.${this.transpiled.name}`,
       id: `${this.property.definingType.fqn}.property.${this.property.name}`,
-      optional: this.transpiled.optional,
+      optional: this.transpiled.optional === true ? true : undefined, // to save space
       default: this.property.spec.docs?.default,
       type: this.transpiled.typeReference.toJson(),
       docs: extractDocs(this.property.docs),
-      const: false,
       usage: this.transpiled.declaration,
     };
   }

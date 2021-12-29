@@ -3,13 +3,12 @@
  */
 export interface TypeSchema {
   /**
-   * The language-specific name of the type. May contain placeholder
-   * values like $1, $2 to indicate type references specified by
-   * the "types" field.
+   * The language-specific name of the type. May contain "%" placeholder
+   * values to indicate references to types in the "types" array field.
    *
-   * @example "$1"
-   * @example "typing.List[$1]"
-   * @example "Map<$1, $2>"
+   * @example "%"
+   * @example "typing.List[%]"
+   * @example "Map<%, %>"
    */
   readonly name: string;
 
@@ -304,6 +303,10 @@ export interface ApiReferenceSchema {
  * Describes the schema.
  */
 export interface Schema {
+  /**
+   * Schema version number.
+   */
+  readonly version: string;
 
   /**
    * Readme.
