@@ -162,28 +162,28 @@ construct_library.GreeterBucket(
 | --- | --- | --- |
 | <code><a href=\\"#construct-library.GreeterBucket.parameter.scope\\">scope</a></code> | <code><a href=\\"#constructs.Construct\\">Construct</a></code> | *No description.* |
 | <code><a href=\\"#construct-library.GreeterBucket.parameter.id\\">id</a></code> | <code>str</code> | *No description.* |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.accessControl\\">access_control</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.BucketAccessControl\\">BucketAccessControl</a></code> | Specifies a canned ACL that grants predefined permissions to the bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.autoDeleteObjects\\">auto_delete_objects</a></code> | <code>bool</code> | Whether all objects should be automatically deleted when the bucket is removed from the stack or when the stack is deleted. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.blockPublicAccess\\">block_public_access</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.BlockPublicAccess\\">BlockPublicAccess</a></code> | The block public access configuration of this bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.bucketKeyEnabled\\">bucket_key_enabled</a></code> | <code>bool</code> | Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.bucketName\\">bucket_name</a></code> | <code>str</code> | Physical name of this bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.cors\\">cors</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.CorsRule\\">CorsRule</a>]</code> | The CORS configuration of this bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.encryption\\">encryption</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.BucketEncryption\\">BucketEncryption</a></code> | The kind of server-side encryption to apply to this bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.encryptionKey\\">encryption_key</a></code> | <code><a href=\\"#@aws-cdk/aws-kms.IKey\\">IKey</a></code> | External KMS key to use for bucket encryption. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.enforceSSL\\">enforce_ss_l</a></code> | <code>bool</code> | Enforces SSL for requests. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.inventories\\">inventories</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.Inventory\\">Inventory</a>]</code> | The inventory configuration of the bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.lifecycleRules\\">lifecycle_rules</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.LifecycleRule\\">LifecycleRule</a>]</code> | Rules that define how Amazon S3 manages objects during their lifetime. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.metrics\\">metrics</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.BucketMetrics\\">BucketMetrics</a>]</code> | The metrics configuration of this bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.objectOwnership\\">object_ownership</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.ObjectOwnership\\">ObjectOwnership</a></code> | The objectOwnership of the bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.publicReadAccess\\">public_read_access</a></code> | <code>bool</code> | Grants public read access to all objects in the bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.removalPolicy\\">removal_policy</a></code> | <code><a href=\\"#@aws-cdk/core.RemovalPolicy\\">RemovalPolicy</a></code> | Policy to apply when the bucket is removed from this stack. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.serverAccessLogsBucket\\">server_access_logs_bucket</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.IBucket\\">IBucket</a></code> | Destination bucket for the server access logs. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.serverAccessLogsPrefix\\">server_access_logs_prefix</a></code> | <code>str</code> | Optional log file prefix to use for the bucket's access logs. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.versioned\\">versioned</a></code> | <code>bool</code> | Whether this bucket should have versioning turned on or not. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.websiteErrorDocument\\">website_error_document</a></code> | <code>str</code> | The name of the error document (e.g. \\"404.html\\") for the website. \`websiteIndexDocument\` must also be set if this is set. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.websiteIndexDocument\\">website_index_document</a></code> | <code>str</code> | The name of the index document (e.g. \\"index.html\\") for the website. Enables static website hosting for this bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.websiteRedirect\\">website_redirect</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.RedirectTarget\\">RedirectTarget</a></code> | Specifies the redirect behavior of all requests to a website endpoint of a bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.websiteRoutingRules\\">website_routing_rules</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.RoutingRule\\">RoutingRule</a>]</code> | Rules that define when a redirect is applied and the redirect behavior. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.accessControl\\">access_control</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.BucketAccessControl\\">BucketAccessControl</a></code> | Specifies a canned ACL that grants predefined permissions to the bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.autoDeleteObjects\\">auto_delete_objects</a></code> | <code>bool</code> | Whether all objects should be automatically deleted when the bucket is removed from the stack or when the stack is deleted. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.blockPublicAccess\\">block_public_access</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.BlockPublicAccess\\">BlockPublicAccess</a></code> | The block public access configuration of this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.bucketKeyEnabled\\">bucket_key_enabled</a></code> | <code>bool</code> | Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.bucketName\\">bucket_name</a></code> | <code>str</code> | Physical name of this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.cors\\">cors</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.CorsRule\\">CorsRule</a>]</code> | The CORS configuration of this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.encryption\\">encryption</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.BucketEncryption\\">BucketEncryption</a></code> | The kind of server-side encryption to apply to this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.encryptionKey\\">encryption_key</a></code> | <code><a href=\\"#@aws-cdk/aws-kms.IKey\\">IKey</a></code> | External KMS key to use for bucket encryption. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.enforceSSL\\">enforce_ss_l</a></code> | <code>bool</code> | Enforces SSL for requests. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.inventories\\">inventories</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.Inventory\\">Inventory</a>]</code> | The inventory configuration of the bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.lifecycleRules\\">lifecycle_rules</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.LifecycleRule\\">LifecycleRule</a>]</code> | Rules that define how Amazon S3 manages objects during their lifetime. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.metrics\\">metrics</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.BucketMetrics\\">BucketMetrics</a>]</code> | The metrics configuration of this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.objectOwnership\\">object_ownership</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.ObjectOwnership\\">ObjectOwnership</a></code> | The objectOwnership of the bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.publicReadAccess\\">public_read_access</a></code> | <code>bool</code> | Grants public read access to all objects in the bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.removalPolicy\\">removal_policy</a></code> | <code><a href=\\"#@aws-cdk/core.RemovalPolicy\\">RemovalPolicy</a></code> | Policy to apply when the bucket is removed from this stack. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.serverAccessLogsBucket\\">server_access_logs_bucket</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.IBucket\\">IBucket</a></code> | Destination bucket for the server access logs. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.serverAccessLogsPrefix\\">server_access_logs_prefix</a></code> | <code>str</code> | Optional log file prefix to use for the bucket's access logs. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.versioned\\">versioned</a></code> | <code>bool</code> | Whether this bucket should have versioning turned on or not. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.websiteErrorDocument\\">website_error_document</a></code> | <code>str</code> | The name of the error document (e.g. \\"404.html\\") for the website. \`websiteIndexDocument\` must also be set if this is set. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.websiteIndexDocument\\">website_index_document</a></code> | <code>str</code> | The name of the index document (e.g. \\"index.html\\") for the website. Enables static website hosting for this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.websiteRedirect\\">website_redirect</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.RedirectTarget\\">RedirectTarget</a></code> | Specifies the redirect behavior of all requests to a website endpoint of a bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.websiteRoutingRules\\">website_routing_rules</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.RoutingRule\\">RoutingRule</a>]</code> | Rules that define when a redirect is applied and the redirect behavior. |
 
 ---
 
@@ -199,7 +199,7 @@ construct_library.GreeterBucket(
 
 ---
 
-##### \`access_control\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.accessControl\\"></a>
+##### \`access_control\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.accessControl\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.BucketAccessControl\\">BucketAccessControl</a>
 - *Default:* BucketAccessControl.PRIVATE
@@ -208,7 +208,7 @@ Specifies a canned ACL that grants predefined permissions to the bucket.
 
 ---
 
-##### \`auto_delete_objects\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.autoDeleteObjects\\"></a>
+##### \`auto_delete_objects\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.autoDeleteObjects\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -219,7 +219,7 @@ Requires the \`removalPolicy\` to be set to \`RemovalPolicy.DESTROY\`.  **Warnin
 
 ---
 
-##### \`block_public_access\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.blockPublicAccess\\"></a>
+##### \`block_public_access\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.blockPublicAccess\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.BlockPublicAccess\\">BlockPublicAccess</a>
 - *Default:* CloudFormation defaults will apply. New buckets and objects don't allow public access, but users can modify bucket policies or object permissions to allow public access
@@ -232,7 +232,7 @@ The block public access configuration of this bucket.
 
 ---
 
-##### \`bucket_key_enabled\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.bucketKeyEnabled\\"></a>
+##### \`bucket_key_enabled\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.bucketKeyEnabled\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -243,7 +243,7 @@ Only relevant, when Encryption is set to {@link BucketEncryption.KMS}
 
 ---
 
-##### \`bucket_name\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.bucketName\\"></a>
+##### \`bucket_name\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.bucketName\\"></a>
 
 - *Type:* str
 - *Default:* Assigned by CloudFormation (recommended).
@@ -252,7 +252,7 @@ Physical name of this bucket.
 
 ---
 
-##### \`cors\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.cors\\"></a>
+##### \`cors\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.cors\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.CorsRule\\">CorsRule</a>]
 - *Default:* No CORS configuration.
@@ -265,7 +265,7 @@ The CORS configuration of this bucket.
 
 ---
 
-##### \`encryption\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.encryption\\"></a>
+##### \`encryption\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.encryption\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.BucketEncryption\\">BucketEncryption</a>
 - *Default:* \`Kms\` if \`encryptionKey\` is specified, or \`Unencrypted\` otherwise.
@@ -276,7 +276,7 @@ If you choose KMS, you can specify a KMS key via \`encryptionKey\`. If encryptio
 
 ---
 
-##### \`encryption_key\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.encryptionKey\\"></a>
+##### \`encryption_key\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.encryptionKey\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-kms.IKey\\">IKey</a>
 - *Default:* If encryption is set to \\"Kms\\" and this property is undefined, a new KMS key will be created and associated with this bucket.
@@ -287,7 +287,7 @@ The 'encryption' property must be either not specified or set to \\"Kms\\". An e
 
 ---
 
-##### \`enforce_ss_l\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.enforceSSL\\"></a>
+##### \`enforce_ss_l\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.enforceSSL\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -302,7 +302,7 @@ S3.5 of the AWS Foundational Security Best Practices Regarding S3.
 
 ---
 
-##### \`inventories\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.inventories\\"></a>
+##### \`inventories\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.inventories\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.Inventory\\">Inventory</a>]
 - *Default:* No inventory configuration
@@ -315,7 +315,7 @@ The inventory configuration of the bucket.
 
 ---
 
-##### \`lifecycle_rules\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.lifecycleRules\\"></a>
+##### \`lifecycle_rules\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.lifecycleRules\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.LifecycleRule\\">LifecycleRule</a>]
 - *Default:* No lifecycle rules.
@@ -324,7 +324,7 @@ Rules that define how Amazon S3 manages objects during their lifetime.
 
 ---
 
-##### \`metrics\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.metrics\\"></a>
+##### \`metrics\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.metrics\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.BucketMetrics\\">BucketMetrics</a>]
 - *Default:* No metrics configuration.
@@ -337,7 +337,7 @@ The metrics configuration of this bucket.
 
 ---
 
-##### \`object_ownership\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.objectOwnership\\"></a>
+##### \`object_ownership\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.objectOwnership\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.ObjectOwnership\\">ObjectOwnership</a>
 - *Default:* No ObjectOwnership configuration, uploading account will own the object.
@@ -350,7 +350,7 @@ The objectOwnership of the bucket.
 
 ---
 
-##### \`public_read_access\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.publicReadAccess\\"></a>
+##### \`public_read_access\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.publicReadAccess\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -361,7 +361,7 @@ Similar to calling \`bucket.grantPublicAccess()\`
 
 ---
 
-##### \`removal_policy\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.removalPolicy\\"></a>
+##### \`removal_policy\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.removalPolicy\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/core.RemovalPolicy\\">RemovalPolicy</a>
 - *Default:* The bucket will be orphaned.
@@ -370,7 +370,7 @@ Policy to apply when the bucket is removed from this stack.
 
 ---
 
-##### \`server_access_logs_bucket\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.serverAccessLogsBucket\\"></a>
+##### \`server_access_logs_bucket\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.serverAccessLogsBucket\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.IBucket\\">IBucket</a>
 - *Default:* If \\"serverAccessLogsPrefix\\" undefined - access logs disabled, otherwise - log to current bucket.
@@ -379,7 +379,7 @@ Destination bucket for the server access logs.
 
 ---
 
-##### \`server_access_logs_prefix\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.serverAccessLogsPrefix\\"></a>
+##### \`server_access_logs_prefix\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.serverAccessLogsPrefix\\"></a>
 
 - *Type:* str
 - *Default:* No log file prefix
@@ -390,7 +390,7 @@ If defined without \\"serverAccessLogsBucket\\", enables access logs to current 
 
 ---
 
-##### \`versioned\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.versioned\\"></a>
+##### \`versioned\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.versioned\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -399,7 +399,7 @@ Whether this bucket should have versioning turned on or not.
 
 ---
 
-##### \`website_error_document\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.websiteErrorDocument\\"></a>
+##### \`website_error_document\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.websiteErrorDocument\\"></a>
 
 - *Type:* str
 - *Default:* No error document.
@@ -408,7 +408,7 @@ The name of the error document (e.g. \\"404.html\\") for the website. \`websiteI
 
 ---
 
-##### \`website_index_document\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.websiteIndexDocument\\"></a>
+##### \`website_index_document\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.websiteIndexDocument\\"></a>
 
 - *Type:* str
 - *Default:* No index document.
@@ -417,7 +417,7 @@ The name of the index document (e.g. \\"index.html\\") for the website. Enables 
 
 ---
 
-##### \`website_redirect\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.websiteRedirect\\"></a>
+##### \`website_redirect\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.websiteRedirect\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.RedirectTarget\\">RedirectTarget</a>
 - *Default:* No redirection.
@@ -428,7 +428,7 @@ If you specify this property, you can't specify \\"websiteIndexDocument\\", \\"w
 
 ---
 
-##### \`website_routing_rules\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.websiteRoutingRules\\"></a>
+##### \`website_routing_rules\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.websiteRoutingRules\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.RoutingRule\\">RoutingRule</a>]
 - *Default:* No redirection rules.
@@ -496,28 +496,28 @@ construct_library.GreeterBucket(
 | --- | --- | --- |
 | <code><a href=\\"#construct-library.GreeterBucket.parameter.scope\\">scope</a></code> | <code><a href=\\"#constructs.Construct\\">Construct</a></code> | *No description.* |
 | <code><a href=\\"#construct-library.GreeterBucket.parameter.id\\">id</a></code> | <code>str</code> | *No description.* |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.accessControl\\">access_control</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.BucketAccessControl\\">BucketAccessControl</a></code> | Specifies a canned ACL that grants predefined permissions to the bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.autoDeleteObjects\\">auto_delete_objects</a></code> | <code>bool</code> | Whether all objects should be automatically deleted when the bucket is removed from the stack or when the stack is deleted. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.blockPublicAccess\\">block_public_access</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.BlockPublicAccess\\">BlockPublicAccess</a></code> | The block public access configuration of this bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.bucketKeyEnabled\\">bucket_key_enabled</a></code> | <code>bool</code> | Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.bucketName\\">bucket_name</a></code> | <code>str</code> | Physical name of this bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.cors\\">cors</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.CorsRule\\">CorsRule</a>]</code> | The CORS configuration of this bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.encryption\\">encryption</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.BucketEncryption\\">BucketEncryption</a></code> | The kind of server-side encryption to apply to this bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.encryptionKey\\">encryption_key</a></code> | <code><a href=\\"#@aws-cdk/aws-kms.IKey\\">IKey</a></code> | External KMS key to use for bucket encryption. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.enforceSSL\\">enforce_ss_l</a></code> | <code>bool</code> | Enforces SSL for requests. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.inventories\\">inventories</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.Inventory\\">Inventory</a>]</code> | The inventory configuration of the bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.lifecycleRules\\">lifecycle_rules</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.LifecycleRule\\">LifecycleRule</a>]</code> | Rules that define how Amazon S3 manages objects during their lifetime. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.metrics\\">metrics</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.BucketMetrics\\">BucketMetrics</a>]</code> | The metrics configuration of this bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.objectOwnership\\">object_ownership</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.ObjectOwnership\\">ObjectOwnership</a></code> | The objectOwnership of the bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.publicReadAccess\\">public_read_access</a></code> | <code>bool</code> | Grants public read access to all objects in the bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.removalPolicy\\">removal_policy</a></code> | <code><a href=\\"#@aws-cdk/core.RemovalPolicy\\">RemovalPolicy</a></code> | Policy to apply when the bucket is removed from this stack. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.serverAccessLogsBucket\\">server_access_logs_bucket</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.IBucket\\">IBucket</a></code> | Destination bucket for the server access logs. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.serverAccessLogsPrefix\\">server_access_logs_prefix</a></code> | <code>str</code> | Optional log file prefix to use for the bucket's access logs. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.versioned\\">versioned</a></code> | <code>bool</code> | Whether this bucket should have versioning turned on or not. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.websiteErrorDocument\\">website_error_document</a></code> | <code>str</code> | The name of the error document (e.g. \\"404.html\\") for the website. \`websiteIndexDocument\` must also be set if this is set. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.websiteIndexDocument\\">website_index_document</a></code> | <code>str</code> | The name of the index document (e.g. \\"index.html\\") for the website. Enables static website hosting for this bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.websiteRedirect\\">website_redirect</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.RedirectTarget\\">RedirectTarget</a></code> | Specifies the redirect behavior of all requests to a website endpoint of a bucket. |
-| <code><a href=\\"#@aws-cdk/aws-s3.BucketProps.parameter.websiteRoutingRules\\">website_routing_rules</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.RoutingRule\\">RoutingRule</a>]</code> | Rules that define when a redirect is applied and the redirect behavior. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.accessControl\\">access_control</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.BucketAccessControl\\">BucketAccessControl</a></code> | Specifies a canned ACL that grants predefined permissions to the bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.autoDeleteObjects\\">auto_delete_objects</a></code> | <code>bool</code> | Whether all objects should be automatically deleted when the bucket is removed from the stack or when the stack is deleted. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.blockPublicAccess\\">block_public_access</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.BlockPublicAccess\\">BlockPublicAccess</a></code> | The block public access configuration of this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.bucketKeyEnabled\\">bucket_key_enabled</a></code> | <code>bool</code> | Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.bucketName\\">bucket_name</a></code> | <code>str</code> | Physical name of this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.cors\\">cors</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.CorsRule\\">CorsRule</a>]</code> | The CORS configuration of this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.encryption\\">encryption</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.BucketEncryption\\">BucketEncryption</a></code> | The kind of server-side encryption to apply to this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.encryptionKey\\">encryption_key</a></code> | <code><a href=\\"#@aws-cdk/aws-kms.IKey\\">IKey</a></code> | External KMS key to use for bucket encryption. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.enforceSSL\\">enforce_ss_l</a></code> | <code>bool</code> | Enforces SSL for requests. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.inventories\\">inventories</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.Inventory\\">Inventory</a>]</code> | The inventory configuration of the bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.lifecycleRules\\">lifecycle_rules</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.LifecycleRule\\">LifecycleRule</a>]</code> | Rules that define how Amazon S3 manages objects during their lifetime. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.metrics\\">metrics</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.BucketMetrics\\">BucketMetrics</a>]</code> | The metrics configuration of this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.objectOwnership\\">object_ownership</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.ObjectOwnership\\">ObjectOwnership</a></code> | The objectOwnership of the bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.publicReadAccess\\">public_read_access</a></code> | <code>bool</code> | Grants public read access to all objects in the bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.removalPolicy\\">removal_policy</a></code> | <code><a href=\\"#@aws-cdk/core.RemovalPolicy\\">RemovalPolicy</a></code> | Policy to apply when the bucket is removed from this stack. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.serverAccessLogsBucket\\">server_access_logs_bucket</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.IBucket\\">IBucket</a></code> | Destination bucket for the server access logs. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.serverAccessLogsPrefix\\">server_access_logs_prefix</a></code> | <code>str</code> | Optional log file prefix to use for the bucket's access logs. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.versioned\\">versioned</a></code> | <code>bool</code> | Whether this bucket should have versioning turned on or not. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.websiteErrorDocument\\">website_error_document</a></code> | <code>str</code> | The name of the error document (e.g. \\"404.html\\") for the website. \`websiteIndexDocument\` must also be set if this is set. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.websiteIndexDocument\\">website_index_document</a></code> | <code>str</code> | The name of the index document (e.g. \\"index.html\\") for the website. Enables static website hosting for this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.websiteRedirect\\">website_redirect</a></code> | <code><a href=\\"#@aws-cdk/aws-s3.RedirectTarget\\">RedirectTarget</a></code> | Specifies the redirect behavior of all requests to a website endpoint of a bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.parameter.websiteRoutingRules\\">website_routing_rules</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-s3.RoutingRule\\">RoutingRule</a>]</code> | Rules that define when a redirect is applied and the redirect behavior. |
 
 ---
 
@@ -533,7 +533,7 @@ construct_library.GreeterBucket(
 
 ---
 
-##### \`access_control\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.accessControl\\"></a>
+##### \`access_control\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.accessControl\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.BucketAccessControl\\">BucketAccessControl</a>
 - *Default:* BucketAccessControl.PRIVATE
@@ -542,7 +542,7 @@ Specifies a canned ACL that grants predefined permissions to the bucket.
 
 ---
 
-##### \`auto_delete_objects\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.autoDeleteObjects\\"></a>
+##### \`auto_delete_objects\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.autoDeleteObjects\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -553,7 +553,7 @@ Requires the \`removalPolicy\` to be set to \`RemovalPolicy.DESTROY\`.  **Warnin
 
 ---
 
-##### \`block_public_access\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.blockPublicAccess\\"></a>
+##### \`block_public_access\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.blockPublicAccess\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.BlockPublicAccess\\">BlockPublicAccess</a>
 - *Default:* CloudFormation defaults will apply. New buckets and objects don't allow public access, but users can modify bucket policies or object permissions to allow public access
@@ -566,7 +566,7 @@ The block public access configuration of this bucket.
 
 ---
 
-##### \`bucket_key_enabled\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.bucketKeyEnabled\\"></a>
+##### \`bucket_key_enabled\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.bucketKeyEnabled\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -577,7 +577,7 @@ Only relevant, when Encryption is set to {@link BucketEncryption.KMS}
 
 ---
 
-##### \`bucket_name\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.bucketName\\"></a>
+##### \`bucket_name\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.bucketName\\"></a>
 
 - *Type:* str
 - *Default:* Assigned by CloudFormation (recommended).
@@ -586,7 +586,7 @@ Physical name of this bucket.
 
 ---
 
-##### \`cors\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.cors\\"></a>
+##### \`cors\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.cors\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.CorsRule\\">CorsRule</a>]
 - *Default:* No CORS configuration.
@@ -599,7 +599,7 @@ The CORS configuration of this bucket.
 
 ---
 
-##### \`encryption\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.encryption\\"></a>
+##### \`encryption\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.encryption\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.BucketEncryption\\">BucketEncryption</a>
 - *Default:* \`Kms\` if \`encryptionKey\` is specified, or \`Unencrypted\` otherwise.
@@ -610,7 +610,7 @@ If you choose KMS, you can specify a KMS key via \`encryptionKey\`. If encryptio
 
 ---
 
-##### \`encryption_key\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.encryptionKey\\"></a>
+##### \`encryption_key\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.encryptionKey\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-kms.IKey\\">IKey</a>
 - *Default:* If encryption is set to \\"Kms\\" and this property is undefined, a new KMS key will be created and associated with this bucket.
@@ -621,7 +621,7 @@ The 'encryption' property must be either not specified or set to \\"Kms\\". An e
 
 ---
 
-##### \`enforce_ss_l\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.enforceSSL\\"></a>
+##### \`enforce_ss_l\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.enforceSSL\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -636,7 +636,7 @@ S3.5 of the AWS Foundational Security Best Practices Regarding S3.
 
 ---
 
-##### \`inventories\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.inventories\\"></a>
+##### \`inventories\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.inventories\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.Inventory\\">Inventory</a>]
 - *Default:* No inventory configuration
@@ -649,7 +649,7 @@ The inventory configuration of the bucket.
 
 ---
 
-##### \`lifecycle_rules\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.lifecycleRules\\"></a>
+##### \`lifecycle_rules\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.lifecycleRules\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.LifecycleRule\\">LifecycleRule</a>]
 - *Default:* No lifecycle rules.
@@ -658,7 +658,7 @@ Rules that define how Amazon S3 manages objects during their lifetime.
 
 ---
 
-##### \`metrics\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.metrics\\"></a>
+##### \`metrics\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.metrics\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.BucketMetrics\\">BucketMetrics</a>]
 - *Default:* No metrics configuration.
@@ -671,7 +671,7 @@ The metrics configuration of this bucket.
 
 ---
 
-##### \`object_ownership\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.objectOwnership\\"></a>
+##### \`object_ownership\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.objectOwnership\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.ObjectOwnership\\">ObjectOwnership</a>
 - *Default:* No ObjectOwnership configuration, uploading account will own the object.
@@ -684,7 +684,7 @@ The objectOwnership of the bucket.
 
 ---
 
-##### \`public_read_access\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.publicReadAccess\\"></a>
+##### \`public_read_access\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.publicReadAccess\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -695,7 +695,7 @@ Similar to calling \`bucket.grantPublicAccess()\`
 
 ---
 
-##### \`removal_policy\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.removalPolicy\\"></a>
+##### \`removal_policy\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.removalPolicy\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/core.RemovalPolicy\\">RemovalPolicy</a>
 - *Default:* The bucket will be orphaned.
@@ -704,7 +704,7 @@ Policy to apply when the bucket is removed from this stack.
 
 ---
 
-##### \`server_access_logs_bucket\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.serverAccessLogsBucket\\"></a>
+##### \`server_access_logs_bucket\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.serverAccessLogsBucket\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.IBucket\\">IBucket</a>
 - *Default:* If \\"serverAccessLogsPrefix\\" undefined - access logs disabled, otherwise - log to current bucket.
@@ -713,7 +713,7 @@ Destination bucket for the server access logs.
 
 ---
 
-##### \`server_access_logs_prefix\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.serverAccessLogsPrefix\\"></a>
+##### \`server_access_logs_prefix\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.serverAccessLogsPrefix\\"></a>
 
 - *Type:* str
 - *Default:* No log file prefix
@@ -724,7 +724,7 @@ If defined without \\"serverAccessLogsBucket\\", enables access logs to current 
 
 ---
 
-##### \`versioned\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.versioned\\"></a>
+##### \`versioned\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.versioned\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -733,7 +733,7 @@ Whether this bucket should have versioning turned on or not.
 
 ---
 
-##### \`website_error_document\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.websiteErrorDocument\\"></a>
+##### \`website_error_document\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.websiteErrorDocument\\"></a>
 
 - *Type:* str
 - *Default:* No error document.
@@ -742,7 +742,7 @@ The name of the error document (e.g. \\"404.html\\") for the website. \`websiteI
 
 ---
 
-##### \`website_index_document\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.websiteIndexDocument\\"></a>
+##### \`website_index_document\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.websiteIndexDocument\\"></a>
 
 - *Type:* str
 - *Default:* No index document.
@@ -751,7 +751,7 @@ The name of the index document (e.g. \\"index.html\\") for the website. Enables 
 
 ---
 
-##### \`website_redirect\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.websiteRedirect\\"></a>
+##### \`website_redirect\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.websiteRedirect\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.RedirectTarget\\">RedirectTarget</a>
 - *Default:* No redirection.
@@ -762,7 +762,7 @@ If you specify this property, you can't specify \\"websiteIndexDocument\\", \\"w
 
 ---
 
-##### \`website_routing_rules\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-s3.BucketProps.parameter.websiteRoutingRules\\"></a>
+##### \`website_routing_rules\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.websiteRoutingRules\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.RoutingRule\\">RoutingRule</a>]
 - *Default:* No redirection rules.

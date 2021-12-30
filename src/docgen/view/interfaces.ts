@@ -2,13 +2,13 @@ import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
 import { InterfaceSchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
-import { MarkdownRenderOptions } from './documentation';
+import { MarkdownRenderContext } from './documentation';
 import { Interface } from './interface';
 
 export class Interfaces {
   public static toMarkdown(
     ifaces: InterfaceSchema[],
-    options: MarkdownRenderOptions,
+    context: MarkdownRenderContext,
   ) {
     if (ifaces.length === 0) {
       return Markdown.EMPTY;
@@ -17,7 +17,7 @@ export class Interfaces {
     const md = new Markdown({ header: { title: 'Protocols' } });
 
     for (const iface of ifaces) {
-      md.section(Interface.toMarkdown(iface, options));
+      md.section(Interface.toMarkdown(iface, context));
     }
 
     return md;

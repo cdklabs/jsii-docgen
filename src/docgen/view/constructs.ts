@@ -4,12 +4,12 @@ import { ConstructSchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
 import { Class } from './class';
 import { Construct } from './construct';
-import { MarkdownRenderOptions } from './documentation';
+import { MarkdownRenderContext } from './documentation';
 
 export class Constructs {
   public static toMarkdown(
     constructs: ConstructSchema[],
-    options: MarkdownRenderOptions,
+    context: MarkdownRenderContext,
   ): Markdown {
     if (constructs.length === 0) {
       return Markdown.EMPTY;
@@ -17,7 +17,7 @@ export class Constructs {
 
     const md = new Markdown({ header: { title: 'Constructs' } });
     for (const construct of constructs) {
-      md.section(Construct.toMarkdown(construct, options));
+      md.section(Construct.toMarkdown(construct, context));
     }
     return md;
   }

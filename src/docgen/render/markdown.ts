@@ -1,4 +1,4 @@
-import { DocsSchema, TypeSchema } from '../schema';
+import { DocsSchema, JsiiEntity, TypeSchema } from '../schema';
 
 const sanitize = (input: string): string => {
   return input
@@ -221,29 +221,31 @@ export class Markdown {
   }
 }
 
-export const defaultAnchorFormatter = (id: string) => {
-  return id;
+export const defaultAnchorFormatter = (type: JsiiEntity) => {
+  return type.id;
 };
 
-export const defaultLinkFormatter = (fqn: string, id: string) => {
-  const name = fqn.split('.').pop()!;
-  return `<a href="#${id}">${name}</a>`;
+export const defaultLinkFormatter = (type: JsiiEntity) => {
+  const name = type.fqn.split('.').pop()!;
+  return `<a href="#${type.id}">${name}</a>`;
 };
+
+function isJsiiType(value: any): value is JsiiEntity {
+  return typeof value === 'object' && value.fqn && value.id;
+}
 
 export const defaultTypeFormatter = (
   type: TypeSchema,
-  linkFormatter: (fqn: string, id: string) => string,
+  linkFormatter: (type: JsiiEntity) => string,
 ): string => {
-  // if type is of the form `{ fqn, id }`, display it directly
-  if (type.fqn) {
-    return linkFormatter(type.fqn, type.id!);
-  }
-
-  // else, type is of the form `{ name, types? }`
-  let result = type.name!;
+  let result = type.name;
   const typeRefs = [];
   for (const typeRef of type.types ?? []) {
-    typeRefs.push(defaultTypeFormatter(typeRef, linkFormatter));
+    if (isJsiiType(typeRef)) {
+      typeRefs.push(linkFormatter(typeRef));
+    } else {
+      typeRefs.push(defaultTypeFormatter(typeRef, linkFormatter));
+    }
   }
 
   // substitute referred types into the original string

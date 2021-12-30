@@ -1,29 +1,35 @@
 import * as reflect from 'jsii-reflect';
 import { defaultAnchorFormatter, defaultLinkFormatter, Markdown } from '../render/markdown';
-import { InterfaceSchema, TypeSchema } from '../schema';
+import { InterfaceSchema, JsiiEntity } from '../schema';
 import { Transpile, TranspiledInterface } from '../transpile/transpile';
 import { extractDocs } from '../util';
-import { MarkdownRenderOptions } from './documentation';
+import { MarkdownRenderContext } from './documentation';
 import { InstanceMethods } from './instance-methods';
 import { Properties } from './properties';
 
 export class Interface {
   public static toMarkdown(
     iface: InterfaceSchema,
-    options: MarkdownRenderOptions,
+    context: MarkdownRenderContext,
   ): Markdown {
-    const anchorFormatter = options.anchorFormatter ?? defaultAnchorFormatter;
-    const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
+    const anchorFormatter = context.anchorFormatter ?? defaultAnchorFormatter;
+    const linkFormatter = context.linkFormatter ?? defaultLinkFormatter;
 
     const md = new Markdown({
-      id: anchorFormatter(iface.id),
+      id: anchorFormatter({
+        id: iface.id,
+        fqn: iface.fqn,
+        packageName: context.packageName,
+        packageVersion: context.packageVersion,
+        submodule: context.submodule,
+      }),
       header: { title: iface.fqn.split('.').pop() },
     });
 
     if (iface.interfaces.length > 0) {
       const bases = [];
       for (const base of iface.interfaces) {
-        bases.push(linkFormatter(base.fqn!, base.id!));
+        bases.push(linkFormatter(base));
       }
       md.bullet(`${Markdown.italic('Extends:')} ${bases.join(', ')}`);
       md.lines('');
@@ -32,7 +38,7 @@ export class Interface {
     if (iface.implementations.length > 0) {
       const impls = [];
       for (const impl of iface.implementations) {
-        impls.push(linkFormatter(impl.fqn!, impl.id!));
+        impls.push(linkFormatter(impl));
       }
       md.bullet(`${Markdown.italic('Implemented By:')} ${impls.join(', ')}`);
       md.lines('');
@@ -42,8 +48,8 @@ export class Interface {
       md.docs(iface.docs);
     }
 
-    md.section(InstanceMethods.toMarkdown(iface.instanceMethods, options));
-    md.section(Properties.toMarkdown(iface.properties, options));
+    md.section(InstanceMethods.toMarkdown(iface.instanceMethods, context));
+    md.section(Properties.toMarkdown(iface.properties, context));
     return md;
   }
 
@@ -66,8 +72,8 @@ export class Interface {
   }
 
   public toJson(): InterfaceSchema {
-    const impls: TypeSchema[] = this.iface.allImplementations.map((impl) => this.transpile.type(impl).toJson());
-    const bases: TypeSchema[] = this.iface.interfaces.map((base) => this.transpile.type(base).toJson());
+    const impls: JsiiEntity[] = this.iface.allImplementations.map((impl) => this.transpile.type(impl).toJson());
+    const bases: JsiiEntity[] = this.iface.interfaces.map((base) => this.transpile.type(base).toJson());
     return {
       fqn: this.transpiled.type.fqn,
       id: this.iface.fqn,

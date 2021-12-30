@@ -2,13 +2,13 @@ import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
 import { EnumSchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
-import { MarkdownRenderOptions } from './documentation';
+import { MarkdownRenderContext } from './documentation';
 import { Enum } from './enum';
 
 export class Enums {
   public static toMarkdown(
     enums: EnumSchema[],
-    options: MarkdownRenderOptions,
+    context: MarkdownRenderContext,
   ): Markdown {
     if (enums.length === 0) {
       return Markdown.EMPTY;
@@ -16,7 +16,7 @@ export class Enums {
 
     const md = new Markdown({ header: { title: 'Enums' } });
     for (const enu of enums) {
-      md.section(Enum.toMarkdown(enu, options));
+      md.section(Enum.toMarkdown(enu, context));
     }
     return md;
   }

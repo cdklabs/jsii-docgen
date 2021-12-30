@@ -9,11 +9,23 @@ import { Assemblies } from '../assemblies';
 
 const assembly: reflect.Assembly = Assemblies.instance.withoutSubmodules;
 
+const metadata = {
+  packageName: assembly.name,
+  packageVersion: assembly.version,
+};
+
+const findEnum = (): reflect.EnumType => {
+  if (assembly.enums[0]) {
+    return assembly.enums[0];
+  }
+  throw new Error('Assembly does not contain an emum');
+};
+
 describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
-    const enu = new Enum(transpile, assembly.enums[0]).toJson();
-    const markdown = Enum.toMarkdown(enu, { language: Language.PYTHON });
+    const enu = new Enum(transpile, findEnum()).toJson();
+    const markdown = Enum.toMarkdown(enu, { language: Language.PYTHON, ...metadata });
     expect(enu).toMatchSnapshot();
     expect(markdown.render()).toMatchSnapshot();
   });
@@ -22,8 +34,8 @@ describe('python', () => {
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
-    const enu = new Enum(transpile, assembly.enums[0]).toJson();
-    const markdown = Enum.toMarkdown(enu, { language: Language.TYPESCRIPT });
+    const enu = new Enum(transpile, findEnum()).toJson();
+    const markdown = Enum.toMarkdown(enu, { language: Language.TYPESCRIPT, ...metadata });
     expect(enu).toMatchSnapshot();
     expect(markdown.render()).toMatchSnapshot();
   });
@@ -32,8 +44,8 @@ describe('typescript', () => {
 describe('java', () => {
   const transpile = new JavaTranspile();
   test('snapshot', () => {
-    const enu = new Enum(transpile, assembly.enums[0]).toJson();
-    const markdown = Enum.toMarkdown(enu, { language: Language.JAVA });
+    const enu = new Enum(transpile, findEnum()).toJson();
+    const markdown = Enum.toMarkdown(enu, { language: Language.JAVA, ...metadata });
     expect(enu).toMatchSnapshot();
     expect(markdown.render()).toMatchSnapshot();
   });
@@ -42,8 +54,8 @@ describe('java', () => {
 describe('csharp', () => {
   const transpile = new CSharpTranspile();
   test('snapshot', () => {
-    const enu = new Enum(transpile, assembly.enums[0]).toJson();
-    const markdown = Enum.toMarkdown(enu, { language: Language.CSHARP });
+    const enu = new Enum(transpile, findEnum()).toJson();
+    const markdown = Enum.toMarkdown(enu, { language: Language.CSHARP, ...metadata });
     expect(enu).toMatchSnapshot();
     expect(markdown.render()).toMatchSnapshot();
   });

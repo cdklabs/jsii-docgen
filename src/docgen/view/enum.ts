@@ -3,19 +3,25 @@ import { defaultAnchorFormatter, defaultLinkFormatter, Markdown } from '../rende
 import { EnumSchema } from '../schema';
 import { Transpile, TranspiledEnum } from '../transpile/transpile';
 import { extractDocs } from '../util';
-import { MarkdownRenderOptions } from './documentation';
+import { MarkdownRenderContext } from './documentation';
 import { EnumMember } from './enum-member';
 
 export class Enum {
   public static toMarkdown(
     enu: EnumSchema,
-    options: MarkdownRenderOptions,
+    context: MarkdownRenderContext,
   ): Markdown {
-    const anchorFormatter = options.anchorFormatter ?? defaultAnchorFormatter;
-    const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
+    const anchorFormatter = context.anchorFormatter ?? defaultAnchorFormatter;
+    const linkFormatter = context.linkFormatter ?? defaultLinkFormatter;
 
     const md = new Markdown({
-      id: anchorFormatter(enu.id),
+      id: anchorFormatter({
+        id: enu.id,
+        fqn: enu.fqn,
+        packageName: context.packageName,
+        packageVersion: context.packageVersion,
+        submodule: context.submodule,
+      }),
       header: { title: enu.fqn.split('.').pop() },
     });
 
@@ -23,7 +29,13 @@ export class Enum {
     tableRows.push(['Name', 'Description'].map(Markdown.bold));
 
     for (const em of enu.members) {
-      const emLink = Markdown.pre(linkFormatter(em.fqn, em.id));
+      const emLink = Markdown.pre(linkFormatter({
+        fqn: em.fqn,
+        id: em.id,
+        packageName: context.packageName,
+        packageVersion: context.packageVersion,
+        submodule: context.submodule,
+      }));
       const emDescription = em.docs?.summary && em.docs?.summary.length > 0
         ? em.docs?.summary
         : Markdown.italic('No description.');
@@ -37,7 +49,7 @@ export class Enum {
     }
 
     for (const em of enu.members) {
-      md.section(EnumMember.toMarkdown(em, options));
+      md.section(EnumMember.toMarkdown(em, context));
     }
 
     return md;

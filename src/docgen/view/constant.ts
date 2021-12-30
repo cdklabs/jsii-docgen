@@ -2,15 +2,15 @@ import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
 import { PropertySchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
-import { MarkdownRenderOptions } from './documentation';
+import { MarkdownRenderContext } from './documentation';
 import { Property } from './property';
 
 export class Constant {
   public static toMarkdown(
     constant: PropertySchema,
-    options: MarkdownRenderOptions,
+    context: MarkdownRenderContext,
   ): Markdown {
-    return Property.toMarkdown(constant, options);
+    return Property.toMarkdown(constant, context);
   }
 
   private readonly constant: Property;

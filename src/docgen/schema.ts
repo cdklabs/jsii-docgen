@@ -1,40 +1,40 @@
 /**
- * Describes a type. Values come in one of two forms and can be
- * discriminated as such:
- * - { name, types? }
- * - { fqn, id }
+ * Describes any kind of type. This could be a primitive, a user-defined type
+ * (like `Bucket`), or a composition of types (like `Map<string, Bucket>[]`).
  */
 export interface TypeSchema {
   /**
    * The language-specific name of the type. May contain "%" placeholder
    * values to indicate references to types defined in the "types" field.
    *
+   * @example "string"
+   * @example "%"
    * @example "typing.List[%]"
    * @example "Map<%, %>"
    */
-  readonly name?: string;
+  readonly name: string;
 
   /**
-   * The language-specific type FQN.
-   *
-   * If undefined, the type is either a primitive, a type union, or a
-   * collection type.
+   * Types referenced within the "name" field.
    */
-  readonly fqn?: string;
+  readonly types?: (TypeSchema | JsiiEntity)[];
+}
+
+/**
+ * Describes a single "entity" in the jsii type system. This may be a type,
+ * but it could also be a property, method, parameter, enum member, etc.
+ */
+export interface JsiiEntity extends AssemblyMetadataSchema {
+  /**
+   * The language-specific type FQN.
+   */
+  readonly fqn: string;
 
   /**
    * An id that uniquely identifies this type among all entities in the
    * document and is same across languages.
-   *
-   * If undefined, the type is either a primitive, a type union, or a
-   * collection type.
    */
-  readonly id?: string;
-
-  /**
-   * Types referred to within the "name".
-   */
-  readonly types?: TypeSchema[];
+  readonly id: string;
 }
 
 /**
@@ -139,7 +139,7 @@ export interface ClassSchema extends Documentable {
   /**
    * Interfaces this class implements.
    */
-  readonly interfaces: TypeSchema[];
+  readonly interfaces: JsiiEntity[];
 
   /**
    * Class initializer.
@@ -213,12 +213,12 @@ export interface InterfaceSchema extends Documentable {
   /**
    * Interfaces that this interface extends.
    */
-  readonly interfaces: TypeSchema[];
+  readonly interfaces: JsiiEntity[];
 
   /**
    * Types implementing this interface.
    */
-  readonly implementations: TypeSchema[];
+  readonly implementations: JsiiEntity[];
 
   /**
    * Methods.
@@ -302,6 +302,26 @@ export interface ApiReferenceSchema {
 }
 
 /**
+ * Metadata about a particular jsii assembly.
+ */
+export interface AssemblyMetadataSchema {
+  /**
+   * Name of the jsii assembly/package.
+   */
+  readonly packageName: string;
+
+  /**
+   * Version of the jsii assembly/package.
+   */
+  readonly packageVersion: string;
+
+  /**
+   * Name of the submodule this type is from within the jsii assembly (if any).
+   */
+  readonly submodule?: string;
+}
+
+/**
  * Describes the schema.
  */
 export interface Schema {
@@ -309,6 +329,11 @@ export interface Schema {
    * Schema version number.
    */
   readonly version: string;
+
+  /**
+   * Assembly metadata.
+   */
+  readonly metadata: AssemblyMetadataSchema;
 
   /**
    * Readme.
@@ -320,6 +345,7 @@ export interface Schema {
    */
   readonly apiReference?: ApiReferenceSchema;
 }
+
 
 //
 // SHARED INTERFACES

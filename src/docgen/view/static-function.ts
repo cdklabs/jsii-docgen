@@ -3,18 +3,24 @@ import { defaultAnchorFormatter, Markdown } from '../render/markdown';
 import { MethodSchema } from '../schema';
 import { Transpile, TranspiledCallable } from '../transpile/transpile';
 import { extractDocs } from '../util';
-import { MarkdownRenderOptions } from './documentation';
+import { MarkdownRenderContext } from './documentation';
 import { Parameter } from './parameter';
 
 export class StaticFunction {
   public static toMarkdown(
     method: MethodSchema,
-    options: MarkdownRenderOptions,
+    context: MarkdownRenderContext,
   ) {
-    const anchorFormatter = options.anchorFormatter ?? defaultAnchorFormatter;
+    const anchorFormatter = context.anchorFormatter ?? defaultAnchorFormatter;
 
     const md = new Markdown({
-      id: anchorFormatter(method.id),
+      id: anchorFormatter({
+        id: method.id,
+        fqn: method.fqn,
+        packageName: context.packageName,
+        packageVersion: context.packageVersion,
+        submodule: context.submodule,
+      }),
       header: {
         title: method.fqn.split('.').pop(),
         pre: true,
@@ -24,13 +30,13 @@ export class StaticFunction {
 
     if (method.usage) {
       md.code(
-        options.language.toString(),
+        context.language.toString(),
         method.usage,
       );
     }
 
     for (const param of method.parameters) {
-      md.section(Parameter.toMarkdown(param, options));
+      md.section(Parameter.toMarkdown(param, context));
     }
 
     return md;

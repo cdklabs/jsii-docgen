@@ -67,7 +67,7 @@ const propertyToParameter = (
     method: callable,
     name: property.name,
     optional: property.optional,
-    parentType: property.parentType,
+    parentType: callable.parentType,
     spec: property.spec,
     system: property.system,
     type: property.type,

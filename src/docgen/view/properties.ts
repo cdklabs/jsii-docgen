@@ -2,13 +2,13 @@ import * as reflect from 'jsii-reflect';
 import { defaultLinkFormatter, defaultTypeFormatter, Markdown } from '../render/markdown';
 import { PropertySchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
-import { MarkdownRenderOptions } from './documentation';
+import { MarkdownRenderContext } from './documentation';
 import { Property } from './property';
 
 export class Properties {
   public static toMarkdown(
     properties: PropertySchema[],
-    options: MarkdownRenderOptions,
+    context: MarkdownRenderContext,
   ): Markdown {
     if (properties.length === 0) {
       return Markdown.EMPTY;
@@ -16,13 +16,19 @@ export class Properties {
 
     const md = new Markdown({ header: { title: 'Properties' } });
 
-    const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
-    const typeFormatter = options.typeFormatter ?? defaultTypeFormatter;
+    const linkFormatter = context.linkFormatter ?? defaultLinkFormatter;
+    const typeFormatter = context.typeFormatter ?? defaultTypeFormatter;
 
     const tableRows: string[][] = [];
     tableRows.push(['Name', 'Type', 'Description'].map(Markdown.bold));
     for (const prop of properties) {
-      const propLink = Markdown.pre(linkFormatter(prop.fqn, prop.id));
+      const propLink = Markdown.pre(linkFormatter({
+        id: prop.id,
+        fqn: prop.fqn,
+        packageName: context.packageName,
+        packageVersion: context.packageVersion,
+        submodule: context.submodule,
+      }));
       const propType = Markdown.pre(typeFormatter(prop.type, linkFormatter));
       const propDescription = prop.docs?.summary && prop.docs?.summary.length > 0
         ? prop.docs?.summary
@@ -33,7 +39,7 @@ export class Properties {
     md.split();
 
     for (const prop of properties) {
-      md.section(Property.toMarkdown(prop, options));
+      md.section(Property.toMarkdown(prop, context));
     }
 
     return md;

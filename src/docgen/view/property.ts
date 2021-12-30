@@ -3,23 +3,29 @@ import { defaultAnchorFormatter, defaultLinkFormatter, defaultTypeFormatter, Mar
 import { PropertySchema } from '../schema';
 import { Transpile, TranspiledProperty } from '../transpile/transpile';
 import { extractDocs } from '../util';
-import { MarkdownRenderOptions } from './documentation';
+import { MarkdownRenderContext } from './documentation';
 
 export class Property {
   public static toMarkdown(
     property: PropertySchema,
-    options: MarkdownRenderOptions,
+    context: MarkdownRenderContext,
   ): Markdown {
-    const anchorFormatter = options.anchorFormatter ?? defaultAnchorFormatter;
-    const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
-    const typeFormatter = options.typeFormatter ?? defaultTypeFormatter;
+    const anchorFormatter = context.anchorFormatter ?? defaultAnchorFormatter;
+    const linkFormatter = context.linkFormatter ?? defaultLinkFormatter;
+    const typeFormatter = context.typeFormatter ?? defaultTypeFormatter;
 
     const optionality = property.optional
       ? 'Optional'
       : 'Required';
 
     const md = new Markdown({
-      id: anchorFormatter(property.id),
+      id: anchorFormatter({
+        id: property.id,
+        fqn: property.fqn,
+        packageName: context.packageName,
+        packageVersion: context.packageVersion,
+        submodule: context.submodule,
+      }),
       header: {
         title: property.fqn.split('.').pop(),
         sup: optionality,
@@ -36,7 +42,7 @@ export class Property {
     }
 
     if (property.usage) {
-      md.code(options.language.toString(), property.usage);
+      md.code(context.language.toString(), property.usage);
     }
 
     const metadata: Record<string, string> = { Type: typeFormatter(property.type, linkFormatter) };
@@ -70,7 +76,7 @@ export class Property {
   public toJson(): PropertySchema {
     return {
       fqn: `${this.transpiled.parentType.fqn}.property.${this.transpiled.name}`,
-      id: `${this.property.definingType.fqn}.property.${this.property.name}`,
+      id: `${this.transpiled.parentType.source.fqn}.property.${this.property.name}`,
       optional: this.transpiled.optional === true ? true : undefined, // to save space
       default: this.property.spec.docs?.default,
       type: this.transpiled.typeReference.toJson(),

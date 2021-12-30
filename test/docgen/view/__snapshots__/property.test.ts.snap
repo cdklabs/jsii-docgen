@@ -11,7 +11,6 @@ Object {
   "optional": true,
   "type": Object {
     "name": "object",
-    "types": Array [],
   },
   "usage": "public object RepositoryCatalogData { get; set; }",
 }
@@ -43,7 +42,6 @@ Object {
   "optional": true,
   "type": Object {
     "name": "java.lang.Object",
-    "types": Array [],
   },
   "usage": "public java.lang.Object getRepositoryCatalogData();",
 }
@@ -75,7 +73,6 @@ Object {
   "optional": true,
   "type": Object {
     "name": "typing.Any",
-    "types": Array [],
   },
   "usage": "repository_catalog_data: typing.Any",
 }
@@ -107,7 +104,6 @@ Object {
   "optional": true,
   "type": Object {
     "name": "any",
-    "types": Array [],
   },
   "usage": "public readonly repositoryCatalogData: any;",
 }

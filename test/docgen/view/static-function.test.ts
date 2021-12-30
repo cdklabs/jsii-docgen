@@ -9,6 +9,11 @@ import { Assemblies } from '../assemblies';
 
 const assembly: reflect.Assembly = Assemblies.instance.withoutSubmodules;
 
+const metadata = {
+  packageName: assembly.name,
+  packageVersion: assembly.version,
+};
+
 const findStaticFunction = (): reflect.Method => {
   for (const klass of assembly.system.classes) {
     for (const method of klass.ownMethods) {
@@ -24,7 +29,7 @@ describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
     const staticFunction = new StaticFunction(transpile, findStaticFunction()).toJson();
-    const markdown = StaticFunction.toMarkdown(staticFunction, { language: Language.PYTHON });
+    const markdown = StaticFunction.toMarkdown(staticFunction, { language: Language.PYTHON, ...metadata });
     expect(staticFunction).toMatchSnapshot();
     expect(markdown.render()).toMatchSnapshot();
   });
@@ -34,7 +39,7 @@ describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
     const staticFunction = new StaticFunction(transpile, findStaticFunction()).toJson();
-    const markdown = StaticFunction.toMarkdown(staticFunction, { language: Language.PYTHON });
+    const markdown = StaticFunction.toMarkdown(staticFunction, { language: Language.TYPESCRIPT, ...metadata });
     expect(staticFunction).toMatchSnapshot();
     expect(markdown.render()).toMatchSnapshot();
   });
@@ -44,7 +49,7 @@ describe('java', () => {
   const transpile = new JavaTranspile();
   test('snapshot', () => {
     const staticFunction = new StaticFunction(transpile, findStaticFunction()).toJson();
-    const markdown = StaticFunction.toMarkdown(staticFunction, { language: Language.PYTHON });
+    const markdown = StaticFunction.toMarkdown(staticFunction, { language: Language.JAVA, ...metadata });
     expect(staticFunction).toMatchSnapshot();
     expect(markdown.render()).toMatchSnapshot();
   });
@@ -54,7 +59,7 @@ describe('csharp', () => {
   const transpile = new CSharpTranspile();
   test('snapshot', () => {
     const staticFunction = new StaticFunction(transpile, findStaticFunction()).toJson();
-    const markdown = StaticFunction.toMarkdown(staticFunction, { language: Language.PYTHON });
+    const markdown = StaticFunction.toMarkdown(staticFunction, { language: Language.CSHARP, ...metadata });
     expect(staticFunction).toMatchSnapshot();
     expect(markdown.render()).toMatchSnapshot();
   });

@@ -3,17 +3,23 @@ import { defaultAnchorFormatter, Markdown } from '../render/markdown';
 import { EnumMemberSchema } from '../schema';
 import { Transpile, TranspiledEnumMember } from '../transpile/transpile';
 import { extractDocs } from '../util';
-import { MarkdownRenderOptions } from './documentation';
+import { MarkdownRenderContext } from './documentation';
 
 export class EnumMember {
   public static toMarkdown(
     em: EnumMemberSchema,
-    options: MarkdownRenderOptions,
+    context: MarkdownRenderContext,
   ): Markdown {
-    const anchorFormatter = options.anchorFormatter ?? defaultAnchorFormatter;
+    const anchorFormatter = context.anchorFormatter ?? defaultAnchorFormatter;
 
     const md = new Markdown({
-      id: anchorFormatter(em.id),
+      id: anchorFormatter({
+        id: em.id,
+        fqn: em.fqn,
+        packageName: context.packageName,
+        packageVersion: context.packageVersion,
+        submodule: context.submodule,
+      }),
       header: {
         title: em.fqn.split('.').pop(),
         pre: true,

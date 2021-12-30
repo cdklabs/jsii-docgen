@@ -9,7 +9,12 @@ import { Assemblies } from '../assemblies';
 
 const assembly: reflect.Assembly = Assemblies.instance.withoutSubmodules;
 
-const findInterface = () => {
+const metadata = {
+  packageName: assembly.name,
+  packageVersion: assembly.version,
+};
+
+const findInterface = (): reflect.InterfaceType => {
   for (const iface of assembly.interfaces) {
     if (!iface.datatype) {
       return iface;
@@ -22,7 +27,7 @@ describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
     const iface = new Interface(transpile, findInterface()).toJson();
-    const markdown = Interface.toMarkdown(iface, { language: Language.PYTHON });
+    const markdown = Interface.toMarkdown(iface, { language: Language.PYTHON, ...metadata });
     expect(iface).toMatchSnapshot();
     expect(markdown.render()).toMatchSnapshot();
   });
@@ -32,7 +37,7 @@ describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
     const iface = new Interface(transpile, findInterface()).toJson();
-    const markdown = Interface.toMarkdown(iface, { language: Language.TYPESCRIPT });
+    const markdown = Interface.toMarkdown(iface, { language: Language.TYPESCRIPT, ...metadata });
     expect(iface).toMatchSnapshot();
     expect(markdown.render()).toMatchSnapshot();
   });
@@ -42,7 +47,7 @@ describe('java', () => {
   const transpile = new JavaTranspile();
   test('snapshot', () => {
     const iface = new Interface(transpile, findInterface()).toJson();
-    const markdown = Interface.toMarkdown(iface, { language: Language.JAVA });
+    const markdown = Interface.toMarkdown(iface, { language: Language.JAVA, ...metadata });
     expect(iface).toMatchSnapshot();
     expect(markdown.render()).toMatchSnapshot();
   });
@@ -52,7 +57,7 @@ describe('csharp', () => {
   const transpile = new CSharpTranspile();
   test('snapshot', () => {
     const iface = new Interface(transpile, findInterface()).toJson();
-    const markdown = Interface.toMarkdown(iface, { language: Language.CSHARP });
+    const markdown = Interface.toMarkdown(iface, { language: Language.CSHARP, ...metadata });
     expect(iface).toMatchSnapshot();
     expect(markdown.render()).toMatchSnapshot();
   });

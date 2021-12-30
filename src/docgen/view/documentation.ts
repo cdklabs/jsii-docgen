@@ -8,7 +8,7 @@ import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
 import { CorruptedAssemblyError, LanguageNotSupportedError } from '../..';
 import { Json } from '../render/json';
 import { Markdown } from '../render/markdown';
-import { Schema, TypeSchema } from '../schema';
+import { JsiiEntity, Schema, TypeSchema } from '../schema';
 import { CSharpTranspile } from '../transpile/csharp';
 import { JavaTranspile } from '../transpile/java';
 import { PythonTranspile } from '../transpile/python';
@@ -27,8 +27,6 @@ const NOT_FOUND_IN_ASSEMBLY_REGEX = /Type '(.*)\..*' not found in assembly (.*)$
 export interface RenderOptions {
   /**
    * Which language to generate docs for.
-   *
-   * @default Language.TYPESCRIPT
    */
   readonly language: Language;
 
@@ -62,22 +60,22 @@ export interface RenderOptions {
   readonly submodule?: string;
 }
 
-export interface MarkdownRenderOptions extends RenderOptions {
+export interface MarkdownFormattingOptions {
   /**
    * How IDs should be formatted into anchors. This should be customized
-   * alongside `linkFormatter`.
+   * in conjunction with `linkFormatter`.
    *
    * @default - use the full id
    */
-  readonly anchorFormatter?: (id: string) => string;
+  readonly anchorFormatter?: (type: JsiiEntity) => string;
 
   /**
    * How should links to entities be rendered. For example, if a class or a
-   * property is referenced within a method description or table.
+   * property is referenced within a description or table.
    *
-   * @default - '<a href="#{id}">{last part of fqn}</a>'
+   * @default - '<a href="#{type.id}">{last part of type.fqn}</a>'
    */
-  readonly linkFormatter?: (fqn: string, id: string) => string;
+  readonly linkFormatter?: (type: JsiiEntity) => string;
 
   /**
    * How types should be formatted.
@@ -85,7 +83,31 @@ export interface MarkdownRenderOptions extends RenderOptions {
    * @default - HTML code block with type references linked
    * according to `linkFormatter`
    */
-  readonly typeFormatter?: (type: TypeSchema) => string;
+  readonly typeFormatter?: (type: TypeSchema, linkFormatter: (type: JsiiEntity) => string) => string;
+}
+
+export interface MarkdownRenderOptions extends RenderOptions, MarkdownFormattingOptions {}
+
+export interface MarkdownRenderContext extends MarkdownFormattingOptions {
+  /**
+   * Name of the jsii assembly/package.
+   */
+  readonly packageName: string;
+
+  /**
+   * Version of the jsii assembly/package.
+   */
+  readonly packageVersion: string;
+
+  /**
+   * Name of the submodule this type is from within the jsii assembly (if any).
+   */
+  readonly submodule?: string;
+
+  /**
+   * Language the documentation is rendered for.
+   */
+  readonly language: Language;
 }
 
 /**
@@ -222,8 +244,6 @@ export class Documentation {
       readme = new Readme(transpile, assembly, submodule).render();
     }
 
-    // options?.linkFormatter ?? ((t: TranspiledType) => `#${t.fqn}`)
-
     let apiReference: ApiReference | undefined;
     if (options?.apiReference ?? true) {
       try {
@@ -238,6 +258,11 @@ export class Documentation {
 
     return new Json({
       version: '0.1',
+      metadata: {
+        packageName: assembly.name,
+        packageVersion: assembly.version,
+        submodule: submodule?.name,
+      },
       readme: readme?.render(),
       apiReference: apiReference?.toJson(),
     });
@@ -253,8 +278,16 @@ export class Documentation {
       documentation.section(md);
     }
 
+    const context: MarkdownRenderContext = {
+      anchorFormatter: options.anchorFormatter,
+      linkFormatter: options.linkFormatter,
+      typeFormatter: options.typeFormatter,
+      language: options.language,
+      ...json.metadata,
+    };
+
     if (json.apiReference) {
-      documentation.section(ApiReference.toMarkdown(json.apiReference, options));
+      documentation.section(ApiReference.toMarkdown(json.apiReference, context));
     }
 
     return documentation;

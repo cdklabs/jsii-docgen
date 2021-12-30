@@ -33,16 +33,6 @@ describe('extractPackageName', () => {
 
 });
 
-test('custom link formatter', async () => {
-  const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0');
-  try {
-    const markdown = await docs.toMarkdown({ language: Language.PYTHON, linkFormatter: (name: string, id: string) => `<a href="#custom-${id}">${name}</a>` });
-    expect(markdown.render()).toMatchSnapshot();
-  } finally {
-    await docs.cleanup();
-  }
-});
-
 test('package installation does not run lifecycle hooks', async () => {
 
   const workdir = await fs.mkdtemp(path.join(os.tmpdir(), path.sep));

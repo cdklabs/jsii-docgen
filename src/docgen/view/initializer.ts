@@ -2,20 +2,26 @@ import * as reflect from 'jsii-reflect';
 import { defaultAnchorFormatter, defaultLinkFormatter, defaultTypeFormatter, Markdown } from '../render/markdown';
 import { InitializerSchema } from '../schema';
 import { Transpile, TranspiledCallable } from '../transpile/transpile';
-import { MarkdownRenderOptions } from './documentation';
+import { MarkdownRenderContext } from './documentation';
 import { Parameter } from './parameter';
 
 export class Initializer {
   public static toMarkdown(
     init: InitializerSchema,
-    options: MarkdownRenderOptions,
+    context: MarkdownRenderContext,
   ): Markdown {
-    const anchorFormatter = options.anchorFormatter ?? defaultAnchorFormatter;
-    const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
-    const typeFormatter = options.typeFormatter ?? defaultTypeFormatter;
+    const anchorFormatter = context.anchorFormatter ?? defaultAnchorFormatter;
+    const linkFormatter = context.linkFormatter ?? defaultLinkFormatter;
+    const typeFormatter = context.typeFormatter ?? defaultTypeFormatter;
 
     const md = new Markdown({
-      id: anchorFormatter(init.id),
+      id: anchorFormatter({
+        id: init.id,
+        fqn: init.fqn,
+        packageName: context.packageName,
+        packageVersion: context.packageVersion,
+        submodule: context.submodule,
+      }),
       header: {
         title: 'Initializers',
       },
@@ -23,7 +29,7 @@ export class Initializer {
 
     if (init.usage) {
       md.code(
-        options.language.toString(),
+        context.language.toString(),
         init.usage,
       );
     }
@@ -31,7 +37,13 @@ export class Initializer {
     const tableRows: string[][] = [];
     tableRows.push(['Name', 'Type', 'Description'].map(Markdown.bold));
     for (const param of init.parameters) {
-      const paramLink = Markdown.pre(linkFormatter(param.fqn, param.id));
+      const paramLink = Markdown.pre(linkFormatter({
+        id: param.id,
+        fqn: param.fqn,
+        packageName: context.packageName,
+        packageVersion: context.packageVersion,
+        submodule: context.submodule,
+      }));
       const paramType = Markdown.pre(typeFormatter(param.type, linkFormatter));
       const paramDescription = param.docs?.summary && param.docs?.summary.length > 0
         ? param.docs?.summary
@@ -42,7 +54,7 @@ export class Initializer {
     md.split();
 
     for (const param of init.parameters) {
-      md.section(Parameter.toMarkdown(param, options));
+      md.section(Parameter.toMarkdown(param, context));
     }
 
     return md;

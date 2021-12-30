@@ -9,14 +9,25 @@ import { Assemblies } from '../assemblies';
 
 const assembly: reflect.Assembly = Assemblies.instance.withoutSubmodules;
 
+const metadata = {
+  packageName: assembly.name,
+  packageVersion: assembly.version,
+};
+
+const findProperty = (): reflect.Property => {
+  for (const iface of assembly.system.interfaces) {
+    if (iface.allProperties.length > 0) {
+      return iface.allProperties[0];
+    }
+  }
+  throw new Error('Assembly does not contain a property');
+};
+
 describe('python', () => {
   const transpile = new PythonTranspile();
   test('snapshot', () => {
-    const parameter = new Property(
-      transpile,
-      assembly.system.interfaces[0].allProperties[0],
-    ).toJson();
-    const markdown = Property.toMarkdown(parameter, { language: Language.PYTHON });
+    const parameter = new Property(transpile, findProperty()).toJson();
+    const markdown = Property.toMarkdown(parameter, { language: Language.PYTHON, ...metadata });
     expect(parameter).toMatchSnapshot();
     expect(markdown.render()).toMatchSnapshot();
   });
@@ -25,11 +36,8 @@ describe('python', () => {
 describe('typescript', () => {
   const transpile = new TypeScriptTranspile();
   test('snapshot', () => {
-    const parameter = new Property(
-      transpile,
-      assembly.system.interfaces[0].allProperties[0],
-    ).toJson();
-    const markdown = Property.toMarkdown(parameter, { language: Language.TYPESCRIPT });
+    const parameter = new Property(transpile, findProperty()).toJson();
+    const markdown = Property.toMarkdown(parameter, { language: Language.TYPESCRIPT, ...metadata });
     expect(parameter).toMatchSnapshot();
     expect(markdown.render()).toMatchSnapshot();
   });
@@ -38,11 +46,8 @@ describe('typescript', () => {
 describe('java', () => {
   const transpile = new JavaTranspile();
   test('snapshot', () => {
-    const parameter = new Property(
-      transpile,
-      assembly.system.interfaces[0].allProperties[0],
-    ).toJson();
-    const markdown = Property.toMarkdown(parameter, { language: Language.JAVA });
+    const parameter = new Property(transpile, findProperty()).toJson();
+    const markdown = Property.toMarkdown(parameter, { language: Language.JAVA, ...metadata });
     expect(parameter).toMatchSnapshot();
     expect(markdown.render()).toMatchSnapshot();
   });
@@ -51,11 +56,8 @@ describe('java', () => {
 describe('csharp', () => {
   const transpile = new CSharpTranspile();
   test('snapshot', () => {
-    const parameter = new Property(
-      transpile,
-      assembly.system.interfaces[0].allProperties[0],
-    ).toJson();
-    const markdown = Property.toMarkdown(parameter, { language: Language.CSHARP });
+    const parameter = new Property(transpile, findProperty()).toJson();
+    const markdown = Property.toMarkdown(parameter, { language: Language.CSHARP, ...metadata });
     expect(parameter).toMatchSnapshot();
     expect(markdown.render()).toMatchSnapshot();
   });

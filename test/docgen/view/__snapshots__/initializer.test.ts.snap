@@ -14,8 +14,16 @@ Object {
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope",
       "optional": undefined,
       "type": Object {
-        "fqn": "Amazon.CDK.Construct",
-        "id": "@aws-cdk/core.Construct",
+        "name": "%",
+        "types": Array [
+          Object {
+            "fqn": "Amazon.CDK.Construct",
+            "id": "@aws-cdk/core.Construct",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+            "submodule": undefined,
+          },
+        ],
       },
     },
     Object {
@@ -28,7 +36,6 @@ Object {
       "optional": undefined,
       "type": Object {
         "name": "string",
-        "types": Array [],
       },
     },
     Object {
@@ -40,8 +47,16 @@ Object {
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.props",
       "optional": true,
       "type": Object {
-        "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps",
-        "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+        "name": "%",
+        "types": Array [
+          Object {
+            "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps",
+            "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+            "packageName": "@aws-cdk/aws-ecr",
+            "packageVersion": "1.106.0",
+            "submodule": undefined,
+          },
+        ],
       },
     },
   ],
@@ -108,8 +123,16 @@ Object {
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope",
       "optional": undefined,
       "type": Object {
-        "fqn": "software.amazon.awscdk.core.Construct",
-        "id": "@aws-cdk/core.Construct",
+        "name": "%",
+        "types": Array [
+          Object {
+            "fqn": "software.amazon.awscdk.core.Construct",
+            "id": "@aws-cdk/core.Construct",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+            "submodule": undefined,
+          },
+        ],
       },
     },
     Object {
@@ -122,7 +145,6 @@ Object {
       "optional": undefined,
       "type": Object {
         "name": "java.lang.String",
-        "types": Array [],
       },
     },
     Object {
@@ -130,12 +152,11 @@ Object {
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
       },
-      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.parameter.repositoryCatalogData",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.repositoryCatalogData",
+      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.repositoryCatalogData",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryCatalogData",
       "optional": true,
       "type": Object {
         "name": "java.lang.Object",
-        "types": Array [],
       },
     },
     Object {
@@ -143,12 +164,11 @@ Object {
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
       },
-      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.parameter.repositoryName",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.repositoryName",
+      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.repositoryName",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryName",
       "optional": true,
       "type": Object {
         "name": "java.lang.String",
-        "types": Array [],
       },
     },
     Object {
@@ -156,12 +176,11 @@ Object {
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
       },
-      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.parameter.repositoryPolicyText",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.repositoryPolicyText",
+      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.repositoryPolicyText",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryPolicyText",
       "optional": true,
       "type": Object {
         "name": "java.lang.Object",
-        "types": Array [],
       },
     },
     Object {
@@ -169,15 +188,23 @@ Object {
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.Tags\`.",
       },
-      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.parameter.tags",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.tags",
+      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.tags",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.tags",
       "optional": true,
       "type": Object {
         "name": "java.util.List<%>",
         "types": Array [
           Object {
-            "fqn": "software.amazon.awscdk.core.CfnTag",
-            "id": "@aws-cdk/core.CfnTag",
+            "name": "%",
+            "types": Array [
+              Object {
+                "fqn": "software.amazon.awscdk.core.CfnTag",
+                "id": "@aws-cdk/core.CfnTag",
+                "packageName": "@aws-cdk/core",
+                "packageVersion": "1.106.0",
+                "submodule": undefined,
+              },
+            ],
           },
         ],
       },
@@ -212,10 +239,10 @@ CfnPublicRepository.Builder.create(Construct scope, java.lang.String id)
 | --- | --- | --- |
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope\\">scope</a></code> | <code><a href=\\"#@aws-cdk/core.Construct\\">Construct</a></code> | - scope in which this resource is defined. |
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.id\\">id</a></code> | <code>java.lang.String</code> | - scoped id of the resource. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.repositoryCatalogData\\">repositoryCatalogData</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.repositoryName\\">repositoryName</a></code> | <code>java.lang.String</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.repositoryPolicyText\\">repositoryPolicyText</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.tags\\">tags</a></code> | <code>java.util.List<<a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>></code> | \`AWS::ECR::PublicRepository.Tags\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryCatalogData\\">repositoryCatalogData</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryName\\">repositoryName</a></code> | <code>java.lang.String</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryPolicyText\\">repositoryPolicyText</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.tags\\">tags</a></code> | <code>java.util.List<<a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>></code> | \`AWS::ECR::PublicRepository.Tags\`. |
 
 ---
 
@@ -235,7 +262,7 @@ scoped id of the resource.
 
 ---
 
-# \`repositoryCatalogData\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.repositoryCatalogData\\"></a>
+# \`repositoryCatalogData\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryCatalogData\\"></a>
 
 - *Type:* java.lang.Object
 
@@ -243,7 +270,7 @@ scoped id of the resource.
 
 ---
 
-# \`repositoryName\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.repositoryName\\"></a>
+# \`repositoryName\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryName\\"></a>
 
 - *Type:* java.lang.String
 
@@ -251,7 +278,7 @@ scoped id of the resource.
 
 ---
 
-# \`repositoryPolicyText\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.repositoryPolicyText\\"></a>
+# \`repositoryPolicyText\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryPolicyText\\"></a>
 
 - *Type:* java.lang.Object
 
@@ -259,7 +286,7 @@ scoped id of the resource.
 
 ---
 
-# \`tags\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.tags\\"></a>
+# \`tags\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.tags\\"></a>
 
 - *Type:* java.util.List<<a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>>
 
@@ -283,8 +310,16 @@ Object {
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope",
       "optional": undefined,
       "type": Object {
-        "fqn": "aws_cdk.core.Construct",
-        "id": "@aws-cdk/core.Construct",
+        "name": "%",
+        "types": Array [
+          Object {
+            "fqn": "aws_cdk.core.Construct",
+            "id": "@aws-cdk/core.Construct",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+            "submodule": undefined,
+          },
+        ],
       },
     },
     Object {
@@ -297,7 +332,6 @@ Object {
       "optional": undefined,
       "type": Object {
         "name": "str",
-        "types": Array [],
       },
     },
     Object {
@@ -305,12 +339,11 @@ Object {
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
       },
-      "fqn": "aws_cdk.aws_ecr.CfnPublicRepositoryProps.parameter.repository_catalog_data",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.repositoryCatalogData",
+      "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.parameter.repository_catalog_data",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryCatalogData",
       "optional": true,
       "type": Object {
         "name": "typing.Any",
-        "types": Array [],
       },
     },
     Object {
@@ -318,12 +351,11 @@ Object {
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
       },
-      "fqn": "aws_cdk.aws_ecr.CfnPublicRepositoryProps.parameter.repository_name",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.repositoryName",
+      "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.parameter.repository_name",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryName",
       "optional": true,
       "type": Object {
         "name": "str",
-        "types": Array [],
       },
     },
     Object {
@@ -331,12 +363,11 @@ Object {
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
       },
-      "fqn": "aws_cdk.aws_ecr.CfnPublicRepositoryProps.parameter.repository_policy_text",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.repositoryPolicyText",
+      "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.parameter.repository_policy_text",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryPolicyText",
       "optional": true,
       "type": Object {
         "name": "typing.Any",
-        "types": Array [],
       },
     },
     Object {
@@ -344,15 +375,23 @@ Object {
       "docs": Object {
         "summary": "\`AWS::ECR::PublicRepository.Tags\`.",
       },
-      "fqn": "aws_cdk.aws_ecr.CfnPublicRepositoryProps.parameter.tags",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.tags",
+      "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.parameter.tags",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.tags",
       "optional": true,
       "type": Object {
         "name": "typing.List[%]",
         "types": Array [
           Object {
-            "fqn": "aws_cdk.core.CfnTag",
-            "id": "@aws-cdk/core.CfnTag",
+            "name": "%",
+            "types": Array [
+              Object {
+                "fqn": "aws_cdk.core.CfnTag",
+                "id": "@aws-cdk/core.CfnTag",
+                "packageName": "@aws-cdk/core",
+                "packageVersion": "1.106.0",
+                "submodule": undefined,
+              },
+            ],
           },
         ],
       },
@@ -391,10 +430,10 @@ aws_cdk.aws_ecr.CfnPublicRepository(
 | --- | --- | --- |
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope\\">scope</a></code> | <code><a href=\\"#@aws-cdk/core.Construct\\">Construct</a></code> | - scope in which this resource is defined. |
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.id\\">id</a></code> | <code>str</code> | - scoped id of the resource. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.repositoryCatalogData\\">repository_catalog_data</a></code> | <code>typing.Any</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.repositoryName\\">repository_name</a></code> | <code>str</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.repositoryPolicyText\\">repository_policy_text</a></code> | <code>typing.Any</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.tags\\">tags</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>]</code> | \`AWS::ECR::PublicRepository.Tags\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryCatalogData\\">repository_catalog_data</a></code> | <code>typing.Any</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryName\\">repository_name</a></code> | <code>str</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryPolicyText\\">repository_policy_text</a></code> | <code>typing.Any</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.tags\\">tags</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>]</code> | \`AWS::ECR::PublicRepository.Tags\`. |
 
 ---
 
@@ -414,7 +453,7 @@ scoped id of the resource.
 
 ---
 
-# \`repository_catalog_data\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.repositoryCatalogData\\"></a>
+# \`repository_catalog_data\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryCatalogData\\"></a>
 
 - *Type:* typing.Any
 
@@ -422,7 +461,7 @@ scoped id of the resource.
 
 ---
 
-# \`repository_name\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.repositoryName\\"></a>
+# \`repository_name\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryName\\"></a>
 
 - *Type:* str
 
@@ -430,7 +469,7 @@ scoped id of the resource.
 
 ---
 
-# \`repository_policy_text\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.repositoryPolicyText\\"></a>
+# \`repository_policy_text\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryPolicyText\\"></a>
 
 - *Type:* typing.Any
 
@@ -438,7 +477,7 @@ scoped id of the resource.
 
 ---
 
-# \`tags\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.parameter.tags\\"></a>
+# \`tags\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.tags\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>]
 
@@ -462,8 +501,16 @@ Object {
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope",
       "optional": undefined,
       "type": Object {
-        "fqn": "@aws-cdk/core.Construct",
-        "id": "@aws-cdk/core.Construct",
+        "name": "%",
+        "types": Array [
+          Object {
+            "fqn": "@aws-cdk/core.Construct",
+            "id": "@aws-cdk/core.Construct",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+            "submodule": undefined,
+          },
+        ],
       },
     },
     Object {
@@ -476,7 +523,6 @@ Object {
       "optional": undefined,
       "type": Object {
         "name": "string",
-        "types": Array [],
       },
     },
     Object {
@@ -488,8 +534,16 @@ Object {
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.props",
       "optional": true,
       "type": Object {
-        "fqn": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
-        "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+        "name": "%",
+        "types": Array [
+          Object {
+            "fqn": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+            "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+            "packageName": "@aws-cdk/aws-ecr",
+            "packageVersion": "1.106.0",
+            "submodule": undefined,
+          },
+        ],
       },
     },
   ],

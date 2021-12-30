@@ -3,12 +3,12 @@ import { Markdown } from '../render/markdown';
 import { ClassSchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
 import { Class } from './class';
-import { MarkdownRenderOptions } from './documentation';
+import { MarkdownRenderContext } from './documentation';
 
 export class Classes {
   public static toMarkdown(
     classes: ClassSchema[],
-    options: MarkdownRenderOptions,
+    context: MarkdownRenderContext,
   ): Markdown {
     if (classes.length === 0) {
       return Markdown.EMPTY;
@@ -16,7 +16,7 @@ export class Classes {
 
     const md = new Markdown({ header: { title: 'Classes' } });
     for (const klass of classes) {
-      md.section(Class.toMarkdown(klass, options));
+      md.section(Class.toMarkdown(klass, context));
     }
     return md;
   }

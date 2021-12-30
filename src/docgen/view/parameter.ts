@@ -3,21 +3,27 @@ import { defaultAnchorFormatter, defaultLinkFormatter, defaultTypeFormatter, Mar
 import { ParameterSchema } from '../schema';
 import { Transpile, TranspiledParameter } from '../transpile/transpile';
 import { extractDocs } from '../util';
-import { MarkdownRenderOptions } from './documentation';
+import { MarkdownRenderContext } from './documentation';
 
 export class Parameter {
   public static toMarkdown(
     parameter: ParameterSchema,
-    options: MarkdownRenderOptions,
+    context: MarkdownRenderContext,
   ): Markdown {
-    const anchorFormatter = options.anchorFormatter ?? defaultAnchorFormatter;
-    const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
-    const typeFormatter = options.typeFormatter ?? defaultTypeFormatter;
+    const anchorFormatter = context.anchorFormatter ?? defaultAnchorFormatter;
+    const linkFormatter = context.linkFormatter ?? defaultLinkFormatter;
+    const typeFormatter = context.typeFormatter ?? defaultTypeFormatter;
 
     const optionality = parameter.optional ? 'Optional' : 'Required';
 
     const md = new Markdown({
-      id: anchorFormatter(parameter.id),
+      id: anchorFormatter({
+        id: parameter.id,
+        fqn: parameter.fqn,
+        packageName: context.packageName,
+        packageVersion: context.packageVersion,
+        submodule: context.submodule,
+      }),
       header: {
         title: parameter.fqn.split('.').pop(),
         sup: optionality,

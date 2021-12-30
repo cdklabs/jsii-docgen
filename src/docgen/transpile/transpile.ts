@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { TypeSchema } from '../schema';
+import { JsiiEntity, TypeSchema } from '../schema';
 
 /**
  * Supported languages to generate documentation in.
@@ -232,11 +232,13 @@ export class TranspiledType {
     this.submodule = options.submodule;
   }
 
-  toJson(): TypeSchema {
+  toJson(): JsiiEntity {
     return {
       fqn: this.fqn,
-      name: this.name,
       id: this.source.fqn,
+      packageName: this.source.assembly.name,
+      packageVersion: this.source.assembly.version,
+      submodule: this.submodule,
     };
   }
 }
@@ -419,9 +421,20 @@ export class TranspiledTypeReference {
     }
 
     if (this.type) {
+      if (!this.ref.fqn) {
+        throw new Error(`Original type reference for ${this.type.fqn} does not have a fqn.`);
+      }
       return {
-        id: this.ref.fqn,
-        fqn: this.type.fqn,
+        name: '%',
+        types: [
+          {
+            id: this.ref.fqn,
+            fqn: this.type.fqn,
+            packageName: this.type.source.assembly.name,
+            packageVersion: this.type.source.assembly.version,
+            submodule: this.type.submodule,
+          },
+        ],
       };
     }
 

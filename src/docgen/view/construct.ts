@@ -3,14 +3,14 @@ import { Markdown } from '../render/markdown';
 import { ConstructSchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
 import { Class } from './class';
-import { MarkdownRenderOptions } from './documentation';
+import { MarkdownRenderContext } from './documentation';
 
 export class Construct {
   public static toMarkdown(
     construct: ConstructSchema,
-    options: MarkdownRenderOptions,
+    context: MarkdownRenderContext,
   ): Markdown {
-    return Class.toMarkdown(construct, options);
+    return Class.toMarkdown(construct, context);
   }
 
   private readonly construct: Class;

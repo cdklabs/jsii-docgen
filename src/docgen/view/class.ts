@@ -4,7 +4,7 @@ import { ClassSchema } from '../schema';
 import { Transpile, TranspiledClass } from '../transpile/transpile';
 import { extractDocs } from '../util';
 import { Constants } from './constants';
-import { MarkdownRenderOptions } from './documentation';
+import { MarkdownRenderContext } from './documentation';
 import { Initializer } from './initializer';
 import { InstanceMethods } from './instance-methods';
 import { Properties } from './properties';
@@ -15,20 +15,26 @@ const CONSTRUCT_CLASS = 'constructs.Construct';
 export class Class {
   public static toMarkdown(
     klass: ClassSchema,
-    options: MarkdownRenderOptions,
+    context: MarkdownRenderContext,
   ) {
-    const anchorFormatter = options.anchorFormatter ?? defaultAnchorFormatter;
-    const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
+    const anchorFormatter = context.anchorFormatter ?? defaultAnchorFormatter;
+    const linkFormatter = context.linkFormatter ?? defaultLinkFormatter;
 
     const md = new Markdown({
-      id: anchorFormatter(klass.id),
+      id: anchorFormatter({
+        id: klass.id,
+        fqn: klass.fqn,
+        packageName: context.packageName,
+        packageVersion: context.packageVersion,
+        submodule: context.submodule,
+      }),
       header: { title: klass.fqn.split('.').pop() },
     });
 
     if (klass.interfaces.length > 0) {
       const ifaces = [];
       for (const iface of klass.interfaces) {
-        ifaces.push(linkFormatter(iface.fqn!, iface.id!));
+        ifaces.push(linkFormatter(iface));
       }
       md.bullet(`${Markdown.italic('Implements:')} ${ifaces.join(', ')}`);
       md.lines('');
@@ -39,13 +45,13 @@ export class Class {
     }
 
     if (klass.initializer) {
-      md.section(Initializer.toMarkdown(klass.initializer, options));
+      md.section(Initializer.toMarkdown(klass.initializer, context));
     }
 
-    md.section(InstanceMethods.toMarkdown(klass.instanceMethods, options));
-    md.section(StaticFunctions.toMarkdown(klass.staticMethods, options));
-    md.section(Properties.toMarkdown(klass.properties, options));
-    md.section(Constants.toMarkdown(klass.constants, options));
+    md.section(InstanceMethods.toMarkdown(klass.instanceMethods, context));
+    md.section(StaticFunctions.toMarkdown(klass.staticMethods, context));
+    md.section(Properties.toMarkdown(klass.properties, context));
+    md.section(Constants.toMarkdown(klass.constants, context));
     return md;
   }
 

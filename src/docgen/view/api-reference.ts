@@ -4,7 +4,7 @@ import { ApiReferenceSchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
 import { Classes } from './classes';
 import { Constructs } from './constructs';
-import { MarkdownRenderOptions } from './documentation';
+import { MarkdownRenderContext } from './documentation';
 import { Enums } from './enums';
 import { Interfaces } from './interfaces';
 import { Structs } from './structs';
@@ -18,14 +18,14 @@ export class ApiReference {
    */
   public static toMarkdown(
     apiRef: ApiReferenceSchema,
-    options: MarkdownRenderOptions,
+    context: MarkdownRenderContext,
   ): Markdown {
     const md = new Markdown({ header: { title: 'API Reference' } });
-    md.section(Constructs.toMarkdown(apiRef.constructs, options));
-    md.section(Structs.toMarkdown(apiRef.structs, options));
-    md.section(Classes.toMarkdown(apiRef.constructs, options));
-    md.section(Interfaces.toMarkdown(apiRef.interfaces, options));
-    md.section(Enums.toMarkdown(apiRef.enums, options));
+    md.section(Constructs.toMarkdown(apiRef.constructs, context));
+    md.section(Structs.toMarkdown(apiRef.structs, context));
+    md.section(Classes.toMarkdown(apiRef.constructs, context));
+    md.section(Interfaces.toMarkdown(apiRef.interfaces, context));
+    md.section(Enums.toMarkdown(apiRef.enums, context));
     return md;
   }
 

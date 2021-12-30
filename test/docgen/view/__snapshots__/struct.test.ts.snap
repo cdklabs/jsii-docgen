@@ -18,7 +18,6 @@ Object {
       "optional": true,
       "type": Object {
         "name": "object",
-        "types": Array [],
       },
       "usage": "public object RepositoryCatalogData { get; set; }",
     },
@@ -32,7 +31,6 @@ Object {
       "optional": true,
       "type": Object {
         "name": "string",
-        "types": Array [],
       },
       "usage": "public string RepositoryName { get; set; }",
     },
@@ -46,7 +44,6 @@ Object {
       "optional": true,
       "type": Object {
         "name": "object",
-        "types": Array [],
       },
       "usage": "public object RepositoryPolicyText { get; set; }",
     },
@@ -62,8 +59,16 @@ Object {
         "name": "%[]",
         "types": Array [
           Object {
-            "fqn": "Amazon.CDK.CfnTag",
-            "id": "@aws-cdk/core.CfnTag",
+            "name": "%",
+            "types": Array [
+              Object {
+                "fqn": "Amazon.CDK.CfnTag",
+                "id": "@aws-cdk/core.CfnTag",
+                "packageName": "@aws-cdk/core",
+                "packageVersion": "1.106.0",
+                "submodule": undefined,
+              },
+            ],
           },
         ],
       },
@@ -88,7 +93,7 @@ Properties for defining a \`AWS::ECR::PublicRepository\`.
 
 # Initializer <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.Initializer\\"></a>
 
-<pre lang=\\"python\\">
+<pre lang=\\"csharp\\">
 using Amazon.CDK.AWS.ECR;
 
 new CfnPublicRepositoryProps {
@@ -112,7 +117,7 @@ new CfnPublicRepositoryProps {
 
 ## \`RepositoryCatalogData\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
-<pre lang=\\"python\\">
+<pre lang=\\"csharp\\">
 public object RepositoryCatalogData { get; set; }
 </pre>
 
@@ -124,7 +129,7 @@ public object RepositoryCatalogData { get; set; }
 
 ## \`RepositoryName\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
 
-<pre lang=\\"python\\">
+<pre lang=\\"csharp\\">
 public string RepositoryName { get; set; }
 </pre>
 
@@ -136,7 +141,7 @@ public string RepositoryName { get; set; }
 
 ## \`RepositoryPolicyText\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
 
-<pre lang=\\"python\\">
+<pre lang=\\"csharp\\">
 public object RepositoryPolicyText { get; set; }
 </pre>
 
@@ -148,7 +153,7 @@ public object RepositoryPolicyText { get; set; }
 
 ## \`Tags\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\"></a>
 
-<pre lang=\\"python\\">
+<pre lang=\\"csharp\\">
 public CfnTag[] Tags { get; set; }
 </pre>
 
@@ -178,7 +183,6 @@ Object {
       "optional": true,
       "type": Object {
         "name": "java.lang.Object",
-        "types": Array [],
       },
       "usage": "public java.lang.Object getRepositoryCatalogData();",
     },
@@ -192,7 +196,6 @@ Object {
       "optional": true,
       "type": Object {
         "name": "java.lang.String",
-        "types": Array [],
       },
       "usage": "public java.lang.String getRepositoryName();",
     },
@@ -206,7 +209,6 @@ Object {
       "optional": true,
       "type": Object {
         "name": "java.lang.Object",
-        "types": Array [],
       },
       "usage": "public java.lang.Object getRepositoryPolicyText();",
     },
@@ -222,8 +224,16 @@ Object {
         "name": "java.util.List<%>",
         "types": Array [
           Object {
-            "fqn": "software.amazon.awscdk.core.CfnTag",
-            "id": "@aws-cdk/core.CfnTag",
+            "name": "%",
+            "types": Array [
+              Object {
+                "fqn": "software.amazon.awscdk.core.CfnTag",
+                "id": "@aws-cdk/core.CfnTag",
+                "packageName": "@aws-cdk/core",
+                "packageVersion": "1.106.0",
+                "submodule": undefined,
+              },
+            ],
           },
         ],
       },
@@ -248,7 +258,7 @@ Properties for defining a \`AWS::ECR::PublicRepository\`.
 
 # Initializer <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.Initializer\\"></a>
 
-<pre lang=\\"python\\">
+<pre lang=\\"java\\">
 import software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps;
 
 CfnPublicRepositoryProps.builder()
@@ -272,7 +282,7 @@ CfnPublicRepositoryProps.builder()
 
 ## \`repositoryCatalogData\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
-<pre lang=\\"python\\">
+<pre lang=\\"java\\">
 public java.lang.Object getRepositoryCatalogData();
 </pre>
 
@@ -284,7 +294,7 @@ public java.lang.Object getRepositoryCatalogData();
 
 ## \`repositoryName\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
 
-<pre lang=\\"python\\">
+<pre lang=\\"java\\">
 public java.lang.String getRepositoryName();
 </pre>
 
@@ -296,7 +306,7 @@ public java.lang.String getRepositoryName();
 
 ## \`repositoryPolicyText\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
 
-<pre lang=\\"python\\">
+<pre lang=\\"java\\">
 public java.lang.Object getRepositoryPolicyText();
 </pre>
 
@@ -308,7 +318,7 @@ public java.lang.Object getRepositoryPolicyText();
 
 ## \`tags\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\"></a>
 
-<pre lang=\\"python\\">
+<pre lang=\\"java\\">
 public java.util.List<CfnTag> getTags();
 </pre>
 
@@ -338,7 +348,6 @@ Object {
       "optional": true,
       "type": Object {
         "name": "typing.Any",
-        "types": Array [],
       },
       "usage": "repository_catalog_data: typing.Any",
     },
@@ -352,7 +361,6 @@ Object {
       "optional": true,
       "type": Object {
         "name": "str",
-        "types": Array [],
       },
       "usage": "repository_name: str",
     },
@@ -366,7 +374,6 @@ Object {
       "optional": true,
       "type": Object {
         "name": "typing.Any",
-        "types": Array [],
       },
       "usage": "repository_policy_text: typing.Any",
     },
@@ -382,8 +389,16 @@ Object {
         "name": "typing.List[%]",
         "types": Array [
           Object {
-            "fqn": "aws_cdk.core.CfnTag",
-            "id": "@aws-cdk/core.CfnTag",
+            "name": "%",
+            "types": Array [
+              Object {
+                "fqn": "aws_cdk.core.CfnTag",
+                "id": "@aws-cdk/core.CfnTag",
+                "packageName": "@aws-cdk/core",
+                "packageVersion": "1.106.0",
+                "submodule": undefined,
+              },
+            ],
           },
         ],
       },
@@ -498,7 +513,6 @@ Object {
       "optional": true,
       "type": Object {
         "name": "any",
-        "types": Array [],
       },
       "usage": "public readonly repositoryCatalogData: any;",
     },
@@ -512,7 +526,6 @@ Object {
       "optional": true,
       "type": Object {
         "name": "string",
-        "types": Array [],
       },
       "usage": "public readonly repositoryName: string;",
     },
@@ -526,7 +539,6 @@ Object {
       "optional": true,
       "type": Object {
         "name": "any",
-        "types": Array [],
       },
       "usage": "public readonly repositoryPolicyText: any;",
     },
@@ -542,8 +554,16 @@ Object {
         "name": "%[]",
         "types": Array [
           Object {
-            "fqn": "@aws-cdk/core.CfnTag",
-            "id": "@aws-cdk/core.CfnTag",
+            "name": "%",
+            "types": Array [
+              Object {
+                "fqn": "@aws-cdk/core.CfnTag",
+                "id": "@aws-cdk/core.CfnTag",
+                "packageName": "@aws-cdk/core",
+                "packageVersion": "1.106.0",
+                "submodule": undefined,
+              },
+            ],
           },
         ],
       },
@@ -563,7 +583,7 @@ Properties for defining a \`AWS::ECR::PublicRepository\`.
 
 # Initializer <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.Initializer\\"></a>
 
-<pre lang=\\"python\\">
+<pre lang=\\"typescript\\">
 import { CfnPublicRepositoryProps } from '@aws-cdk/aws-ecr'
 
 const cfnPublicRepositoryProps: CfnPublicRepositoryProps = { ... }
@@ -582,7 +602,7 @@ const cfnPublicRepositoryProps: CfnPublicRepositoryProps = { ... }
 
 ## \`repositoryCatalogData\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
-<pre lang=\\"python\\">
+<pre lang=\\"typescript\\">
 public readonly repositoryCatalogData: any;
 </pre>
 
@@ -594,7 +614,7 @@ public readonly repositoryCatalogData: any;
 
 ## \`repositoryName\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
 
-<pre lang=\\"python\\">
+<pre lang=\\"typescript\\">
 public readonly repositoryName: string;
 </pre>
 
@@ -606,7 +626,7 @@ public readonly repositoryName: string;
 
 ## \`repositoryPolicyText\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
 
-<pre lang=\\"python\\">
+<pre lang=\\"typescript\\">
 public readonly repositoryPolicyText: any;
 </pre>
 
@@ -618,7 +638,7 @@ public readonly repositoryPolicyText: any;
 
 ## \`tags\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\"></a>
 
-<pre lang=\\"python\\">
+<pre lang=\\"typescript\\">
 public readonly tags: CfnTag[];
 </pre>
 

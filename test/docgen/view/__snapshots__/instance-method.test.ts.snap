@@ -17,8 +17,16 @@ Object {
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector",
       "optional": undefined,
       "type": Object {
-        "fqn": "Amazon.CDK.TreeInspector",
-        "id": "@aws-cdk/core.TreeInspector",
+        "name": "%",
+        "types": Array [
+          Object {
+            "fqn": "Amazon.CDK.TreeInspector",
+            "id": "@aws-cdk/core.TreeInspector",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+            "submodule": undefined,
+          },
+        ],
       },
     },
   ],
@@ -60,8 +68,16 @@ Object {
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector",
       "optional": undefined,
       "type": Object {
-        "fqn": "software.amazon.awscdk.core.TreeInspector",
-        "id": "@aws-cdk/core.TreeInspector",
+        "name": "%",
+        "types": Array [
+          Object {
+            "fqn": "software.amazon.awscdk.core.TreeInspector",
+            "id": "@aws-cdk/core.TreeInspector",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+            "submodule": undefined,
+          },
+        ],
       },
     },
   ],
@@ -103,8 +119,16 @@ Object {
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector",
       "optional": undefined,
       "type": Object {
-        "fqn": "aws_cdk.core.TreeInspector",
-        "id": "@aws-cdk/core.TreeInspector",
+        "name": "%",
+        "types": Array [
+          Object {
+            "fqn": "aws_cdk.core.TreeInspector",
+            "id": "@aws-cdk/core.TreeInspector",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+            "submodule": undefined,
+          },
+        ],
       },
     },
   ],
@@ -150,8 +174,16 @@ Object {
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector",
       "optional": undefined,
       "type": Object {
-        "fqn": "@aws-cdk/core.TreeInspector",
-        "id": "@aws-cdk/core.TreeInspector",
+        "name": "%",
+        "types": Array [
+          Object {
+            "fqn": "@aws-cdk/core.TreeInspector",
+            "id": "@aws-cdk/core.TreeInspector",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+            "submodule": undefined,
+          },
+        ],
       },
     },
   ],

@@ -3,18 +3,24 @@ import { defaultAnchorFormatter, Markdown } from '../render/markdown';
 import { StructSchema } from '../schema';
 import { Transpile, TranspiledStruct } from '../transpile/transpile';
 import { extractDocs } from '../util';
-import { MarkdownRenderOptions } from './documentation';
+import { MarkdownRenderContext } from './documentation';
 import { Properties } from './properties';
 
 export class Struct {
   public static toMarkdown(
     struct: StructSchema,
-    options: MarkdownRenderOptions,
+    context: MarkdownRenderContext,
   ): Markdown {
-    const anchorFormatter = options.anchorFormatter ?? defaultAnchorFormatter;
+    const anchorFormatter = context.anchorFormatter ?? defaultAnchorFormatter;
 
     const md = new Markdown({
-      id: anchorFormatter(struct.id),
+      id: anchorFormatter({
+        id: struct.id,
+        fqn: struct.fqn,
+        packageName: context.packageName,
+        packageVersion: context.packageVersion,
+        submodule: context.submodule,
+      }),
       header: { title: struct.fqn.split('.').pop() },
     });
 
@@ -29,13 +35,13 @@ export class Struct {
 
     if (struct.usage) {
       initializer.code(
-        options.language.toString(),
+        context.language.toString(),
         struct.usage,
       );
     }
 
     md.section(initializer);
-    md.section(Properties.toMarkdown(struct.properties, options));
+    md.section(Properties.toMarkdown(struct.properties, context));
     return md;
   }
 
@@ -51,7 +57,7 @@ export class Struct {
 
   public toJson(): StructSchema {
     return {
-      fqn: `${this.transpiled.type.fqn}`,
+      fqn: this.transpiled.type.fqn,
       id: this.iface.fqn,
       properties: this.properties.toJson(),
       docs: extractDocs(this.iface.docs),

@@ -3,12 +3,12 @@ import { defaultLinkFormatter, defaultTypeFormatter, Markdown } from '../render/
 import { PropertySchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
 import { Constant } from './constant';
-import { MarkdownRenderOptions } from './documentation';
+import { MarkdownRenderContext } from './documentation';
 
 export class Constants {
   public static toMarkdown(
     constants: PropertySchema[],
-    options: MarkdownRenderOptions,
+    context: MarkdownRenderContext,
   ): Markdown {
     if (constants.length === 0) {
       return Markdown.EMPTY;
@@ -16,13 +16,19 @@ export class Constants {
 
     const md = new Markdown({ header: { title: 'Constants' } });
 
-    const linkFormatter = options.linkFormatter ?? defaultLinkFormatter;
-    const typeFormatter = options.typeFormatter ?? defaultTypeFormatter;
+    const linkFormatter = context.linkFormatter ?? defaultLinkFormatter;
+    const typeFormatter = context.typeFormatter ?? defaultTypeFormatter;
 
     const tableRows: string[][] = [];
     tableRows.push(['Name', 'Type', 'Description'].map(Markdown.bold));
     for (const con of constants) {
-      const conLink = Markdown.pre(linkFormatter(con.fqn, con.id));
+      const conLink = Markdown.pre(linkFormatter({
+        id: con.id,
+        fqn: con.fqn,
+        packageName: context.packageName,
+        packageVersion: context.packageVersion,
+        submodule: context.submodule,
+      }));
       const conType = Markdown.pre(typeFormatter(con.type, linkFormatter));
       const conDescription = con.docs?.summary && con.docs?.summary.length > 0
         ? con.docs?.summary
@@ -33,7 +39,7 @@ export class Constants {
     md.split();
 
     for (const prop of constants) {
-      md.section(Constant.toMarkdown(prop, options));
+      md.section(Constant.toMarkdown(prop, context));
     }
 
     return md;

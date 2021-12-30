@@ -28,8 +28,16 @@ Object {
           "id": "@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee",
           "optional": undefined,
           "type": Object {
-            "fqn": "Amazon.CDK.AWS.IAM.IGrantable",
-            "id": "@aws-cdk/aws-iam.IGrantable",
+            "name": "%",
+            "types": Array [
+              Object {
+                "fqn": "Amazon.CDK.AWS.IAM.IGrantable",
+                "id": "@aws-cdk/aws-iam.IGrantable",
+                "packageName": "@aws-cdk/aws-iam",
+                "packageVersion": "1.106.0",
+                "submodule": undefined,
+              },
+            ],
           },
         },
       ],
@@ -105,8 +113,16 @@ Object {
           "id": "@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee",
           "optional": undefined,
           "type": Object {
-            "fqn": "software.amazon.awscdk.services.iam.IGrantable",
-            "id": "@aws-cdk/aws-iam.IGrantable",
+            "name": "%",
+            "types": Array [
+              Object {
+                "fqn": "software.amazon.awscdk.services.iam.IGrantable",
+                "id": "@aws-cdk/aws-iam.IGrantable",
+                "packageName": "@aws-cdk/aws-iam",
+                "packageVersion": "1.106.0",
+                "submodule": undefined,
+              },
+            ],
           },
         },
       ],
@@ -182,8 +198,16 @@ Object {
           "id": "@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee",
           "optional": undefined,
           "type": Object {
-            "fqn": "aws_cdk.aws_iam.IGrantable",
-            "id": "@aws-cdk/aws-iam.IGrantable",
+            "name": "%",
+            "types": Array [
+              Object {
+                "fqn": "aws_cdk.aws_iam.IGrantable",
+                "id": "@aws-cdk/aws-iam.IGrantable",
+                "packageName": "@aws-cdk/aws-iam",
+                "packageVersion": "1.106.0",
+                "submodule": undefined,
+              },
+            ],
           },
         },
       ],
@@ -263,8 +287,16 @@ Object {
           "id": "@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee",
           "optional": undefined,
           "type": Object {
-            "fqn": "@aws-cdk/aws-iam.IGrantable",
-            "id": "@aws-cdk/aws-iam.IGrantable",
+            "name": "%",
+            "types": Array [
+              Object {
+                "fqn": "@aws-cdk/aws-iam.IGrantable",
+                "id": "@aws-cdk/aws-iam.IGrantable",
+                "packageName": "@aws-cdk/aws-iam",
+                "packageVersion": "1.106.0",
+                "submodule": undefined,
+              },
+            ],
           },
         },
       ],

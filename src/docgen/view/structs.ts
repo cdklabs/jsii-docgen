@@ -2,14 +2,14 @@ import * as reflect from 'jsii-reflect';
 import { Markdown } from '../render/markdown';
 import { StructSchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
-import { MarkdownRenderOptions } from './documentation';
+import { MarkdownRenderContext } from './documentation';
 import { Interface } from './interface';
 import { Struct } from './struct';
 
 export class Structs {
   public static toMarkdown(
     structs: StructSchema[],
-    options: MarkdownRenderOptions,
+    context: MarkdownRenderContext,
   ): Markdown {
     if (structs.length === 0) {
       return Markdown.EMPTY;
@@ -17,7 +17,7 @@ export class Structs {
 
     const md = new Markdown({ header: { title: 'Structs' } });
     for (const struct of structs) {
-      md.section(Struct.toMarkdown(struct, options));
+      md.section(Struct.toMarkdown(struct, context));
     }
     return md;
   }
