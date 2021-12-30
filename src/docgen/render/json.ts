@@ -4,7 +4,7 @@
 export class Json<T> {
   constructor(public readonly content: T) {};
 
-  public render(): string {
-    return JSON.stringify(this.content, null, 2);
+  public render(replacer?: any, space?: string | number): string {
+    return JSON.stringify(this.content, replacer, space);
   }
 }
