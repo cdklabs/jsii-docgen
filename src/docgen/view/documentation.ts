@@ -62,8 +62,8 @@ export interface RenderOptions {
 
 export interface MarkdownFormattingOptions {
   /**
-   * How IDs should be formatted into anchors. This should be customized
-   * in conjunction with `linkFormatter`.
+   * How jsii entity IDs should be formatted into anchors. This should be
+   * customized in conjunction with `linkFormatter`.
    *
    * @default - use the full id
    */
@@ -78,7 +78,8 @@ export interface MarkdownFormattingOptions {
   readonly linkFormatter?: (type: JsiiEntity) => string;
 
   /**
-   * How types should be formatted.
+   * How type signatures should be formatted, including those made of nested
+   * types (like `Map<string, Bucket>`).
    *
    * @default - HTML code block with type references linked
    * according to `linkFormatter`
