@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
+import { MarkdownDocument } from '../render/markdown-doc';
 import { InterfaceSchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
 import { MarkdownRenderContext } from './documentation';
@@ -11,10 +11,10 @@ export class Interfaces {
     context: MarkdownRenderContext,
   ) {
     if (ifaces.length === 0) {
-      return Markdown.EMPTY;
+      return MarkdownDocument.EMPTY;
     }
 
-    const md = new Markdown({ header: { title: 'Protocols' } });
+    const md = new MarkdownDocument({ header: { title: 'Protocols' } });
 
     for (const iface of ifaces) {
       md.section(Interface.toMarkdown(iface, context));

@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
+import { MarkdownDocument } from '../render/markdown-doc';
 import { EnumSchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
 import { MarkdownRenderContext } from './documentation';
@@ -9,12 +9,12 @@ export class Enums {
   public static toMarkdown(
     enums: EnumSchema[],
     context: MarkdownRenderContext,
-  ): Markdown {
+  ): MarkdownDocument {
     if (enums.length === 0) {
-      return Markdown.EMPTY;
+      return MarkdownDocument.EMPTY;
     }
 
-    const md = new Markdown({ header: { title: 'Enums' } });
+    const md = new MarkdownDocument({ header: { title: 'Enums' } });
     for (const enu of enums) {
       md.section(Enum.toMarkdown(enu, context));
     }

@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { defaultAnchorFormatter, defaultLinkFormatter, defaultTypeFormatter, Markdown } from '../render/markdown';
+import { defaultAnchorFormatter, defaultLinkFormatter, defaultTypeFormatter, MarkdownDocument } from '../render/markdown-doc';
 import { InitializerSchema } from '../schema';
 import { Transpile, TranspiledCallable } from '../transpile/transpile';
 import { MarkdownRenderContext } from './documentation';
@@ -9,12 +9,12 @@ export class Initializer {
   public static toMarkdown(
     init: InitializerSchema,
     context: MarkdownRenderContext,
-  ): Markdown {
+  ): MarkdownDocument {
     const anchorFormatter = context.anchorFormatter ?? defaultAnchorFormatter;
     const linkFormatter = context.linkFormatter ?? defaultLinkFormatter;
     const typeFormatter = context.typeFormatter ?? defaultTypeFormatter;
 
-    const md = new Markdown({
+    const md = new MarkdownDocument({
       id: anchorFormatter({
         id: init.id,
         displayName: init.displayName,
@@ -36,9 +36,9 @@ export class Initializer {
     }
 
     const tableRows: string[][] = [];
-    tableRows.push(['Name', 'Type', 'Description'].map(Markdown.bold));
+    tableRows.push(['Name', 'Type', 'Description'].map(MarkdownDocument.bold));
     for (const param of init.parameters) {
-      const paramLink = Markdown.pre(linkFormatter({
+      const paramLink = MarkdownDocument.pre(linkFormatter({
         id: param.id,
         displayName: param.displayName,
         fqn: param.fqn,
@@ -46,10 +46,10 @@ export class Initializer {
         packageVersion: context.packageVersion,
         submodule: context.submodule,
       }));
-      const paramType = Markdown.pre(typeFormatter(param.type, linkFormatter));
+      const paramType = MarkdownDocument.pre(typeFormatter(param.type, linkFormatter));
       const paramDescription = param.docs?.summary && param.docs?.summary.length > 0
         ? param.docs?.summary
-        : Markdown.italic('No description.');
+        : MarkdownDocument.italic('No description.');
       tableRows.push([paramLink, paramType, paramDescription]);
     }
     md.table(tableRows);

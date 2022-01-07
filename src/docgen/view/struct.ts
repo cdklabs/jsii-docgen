@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { defaultAnchorFormatter, Markdown } from '../render/markdown';
+import { defaultAnchorFormatter, MarkdownDocument } from '../render/markdown-doc';
 import { StructSchema } from '../schema';
 import { Transpile, TranspiledStruct } from '../transpile/transpile';
 import { extractDocs } from '../util';
@@ -10,10 +10,10 @@ export class Struct {
   public static toMarkdown(
     struct: StructSchema,
     context: MarkdownRenderContext,
-  ): Markdown {
+  ): MarkdownDocument {
     const anchorFormatter = context.anchorFormatter ?? defaultAnchorFormatter;
 
-    const md = new Markdown({
+    const md = new MarkdownDocument({
       id: anchorFormatter({
         id: struct.id,
         displayName: struct.displayName,
@@ -29,7 +29,7 @@ export class Struct {
       md.docs(struct.docs);
     }
 
-    const initializer = new Markdown({
+    const initializer = new MarkdownDocument({
       id: `${struct.id}.Initializer`,
       header: { title: 'Initializer' },
     });

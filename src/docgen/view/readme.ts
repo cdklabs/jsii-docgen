@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
+import { MarkdownDocument } from '../render/markdown-doc';
 import { Transpile } from '../transpile/transpile';
 
 /**
@@ -20,12 +20,12 @@ export class Readme {
   /**
    * Generate markdown.
    */
-  public render(): Markdown {
+  public render(): MarkdownDocument {
     if (!this.readme) {
-      return Markdown.EMPTY;
+      return MarkdownDocument.EMPTY;
     }
 
-    const md = new Markdown();
+    const md = new MarkdownDocument();
     if (this.readme) {
       md.lines(this.readme);
     }

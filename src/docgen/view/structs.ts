@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
+import { MarkdownDocument } from '../render/markdown-doc';
 import { StructSchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
 import { MarkdownRenderContext } from './documentation';
@@ -10,12 +10,12 @@ export class Structs {
   public static toMarkdown(
     structs: StructSchema[],
     context: MarkdownRenderContext,
-  ): Markdown {
+  ): MarkdownDocument {
     if (structs.length === 0) {
-      return Markdown.EMPTY;
+      return MarkdownDocument.EMPTY;
     }
 
-    const md = new Markdown({ header: { title: 'Structs' } });
+    const md = new MarkdownDocument({ header: { title: 'Structs' } });
     for (const struct of structs) {
       md.section(Struct.toMarkdown(struct, context));
     }

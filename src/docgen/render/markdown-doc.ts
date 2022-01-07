@@ -64,11 +64,11 @@ export interface MarkdownOptions {
 /**
  * Markdown element.
  */
-export class Markdown {
+export class MarkdownDocument {
   /**
    * An empty markdown element.
    */
-  public static readonly EMPTY = new Markdown();
+  public static readonly EMPTY = new MarkdownDocument();
 
   /**
    * Sanitize markdown reserved characters from external input.
@@ -99,7 +99,7 @@ export class Markdown {
   }
 
   private readonly _lines = new Array<string>();
-  private readonly _sections = new Array<Markdown>();
+  private readonly _sections = new Array<MarkdownDocument>();
 
   private readonly id?: string;
   private readonly header?: string;
@@ -114,11 +114,11 @@ export class Markdown {
    */
   public docs(docs: DocsSchema) {
     if (docs.summary) {
-      this.lines(Markdown.sanitize(docs.summary));
+      this.lines(MarkdownDocument.sanitize(docs.summary));
       this.lines('');
     }
     if (docs.remarks) {
-      this.lines(Markdown.sanitize(docs.remarks));
+      this.lines(MarkdownDocument.sanitize(docs.remarks));
       this.lines('');
     }
 
@@ -166,7 +166,7 @@ export class Markdown {
     this.lines('');
   }
 
-  public section(section: Markdown) {
+  public section(section: MarkdownDocument) {
     this._sections.push(section);
   }
 

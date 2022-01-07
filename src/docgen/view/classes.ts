@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
+import { MarkdownDocument } from '../render/markdown-doc';
 import { ClassSchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
 import { Class } from './class';
@@ -9,12 +9,12 @@ export class Classes {
   public static toMarkdown(
     classes: ClassSchema[],
     context: MarkdownRenderContext,
-  ): Markdown {
+  ): MarkdownDocument {
     if (classes.length === 0) {
-      return Markdown.EMPTY;
+      return MarkdownDocument.EMPTY;
     }
 
-    const md = new Markdown({ header: { title: 'Classes' } });
+    const md = new MarkdownDocument({ header: { title: 'Classes' } });
     for (const klass of classes) {
       md.section(Class.toMarkdown(klass, context));
     }

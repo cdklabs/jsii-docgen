@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
+import { MarkdownDocument } from '../render/markdown-doc';
 import { PropertySchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
 import { MarkdownRenderContext } from './documentation';
@@ -9,7 +9,7 @@ export class Constant {
   public static toMarkdown(
     constant: PropertySchema,
     context: MarkdownRenderContext,
-  ): Markdown {
+  ): MarkdownDocument {
     return Property.toMarkdown(constant, context);
   }
 

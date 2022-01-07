@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
+import { MarkdownDocument } from '../render/markdown-doc';
 import { ApiReferenceSchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
 import { Classes } from './classes';
@@ -19,8 +19,8 @@ export class ApiReference {
   public static toMarkdown(
     apiRef: ApiReferenceSchema,
     context: MarkdownRenderContext,
-  ): Markdown {
-    const md = new Markdown({ header: { title: 'API Reference' }, id: 'api-reference' });
+  ): MarkdownDocument {
+    const md = new MarkdownDocument({ header: { title: 'API Reference' }, id: 'api-reference' });
     md.section(Constructs.toMarkdown(apiRef.constructs, context));
     md.section(Structs.toMarkdown(apiRef.structs, context));
     md.section(Classes.toMarkdown(apiRef.constructs, context));

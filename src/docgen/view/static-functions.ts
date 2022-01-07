@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { defaultLinkFormatter, Markdown } from '../render/markdown';
+import { defaultLinkFormatter, MarkdownDocument } from '../render/markdown-doc';
 import { MethodSchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
 import { MarkdownRenderContext } from './documentation';
@@ -11,17 +11,17 @@ export class StaticFunctions {
     context: MarkdownRenderContext,
   ) {
     if (methods.length === 0) {
-      return Markdown.EMPTY;
+      return MarkdownDocument.EMPTY;
     }
 
     const linkFormatter = context.linkFormatter ?? defaultLinkFormatter;
 
-    const md = new Markdown({ header: { title: 'Static Functions' } });
+    const md = new MarkdownDocument({ header: { title: 'Static Functions' } });
 
     const tableRows: string[][] = [];
-    tableRows.push(['Name', 'Description'].map(Markdown.bold));
+    tableRows.push(['Name', 'Description'].map(MarkdownDocument.bold));
     for (const method of methods) {
-      const methodLink = Markdown.pre(linkFormatter({
+      const methodLink = MarkdownDocument.pre(linkFormatter({
         id: method.id,
         displayName: method.displayName,
         fqn: method.fqn,
@@ -31,7 +31,7 @@ export class StaticFunctions {
       }));
       const methodDescription = method.docs?.summary && method.docs?.summary.length > 0
         ? method.docs?.summary
-        : Markdown.italic('No description.');
+        : MarkdownDocument.italic('No description.');
       tableRows.push([methodLink, methodDescription]);
     }
     md.table(tableRows);

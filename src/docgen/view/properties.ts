@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { defaultLinkFormatter, defaultTypeFormatter, Markdown } from '../render/markdown';
+import { defaultLinkFormatter, defaultTypeFormatter, MarkdownDocument } from '../render/markdown-doc';
 import { PropertySchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
 import { MarkdownRenderContext } from './documentation';
@@ -9,20 +9,20 @@ export class Properties {
   public static toMarkdown(
     properties: PropertySchema[],
     context: MarkdownRenderContext,
-  ): Markdown {
+  ): MarkdownDocument {
     if (properties.length === 0) {
-      return Markdown.EMPTY;
+      return MarkdownDocument.EMPTY;
     }
 
-    const md = new Markdown({ header: { title: 'Properties' } });
+    const md = new MarkdownDocument({ header: { title: 'Properties' } });
 
     const linkFormatter = context.linkFormatter ?? defaultLinkFormatter;
     const typeFormatter = context.typeFormatter ?? defaultTypeFormatter;
 
     const tableRows: string[][] = [];
-    tableRows.push(['Name', 'Type', 'Description'].map(Markdown.bold));
+    tableRows.push(['Name', 'Type', 'Description'].map(MarkdownDocument.bold));
     for (const prop of properties) {
-      const propLink = Markdown.pre(linkFormatter({
+      const propLink = MarkdownDocument.pre(linkFormatter({
         id: prop.id,
         displayName: prop.displayName,
         fqn: prop.fqn,
@@ -30,10 +30,10 @@ export class Properties {
         packageVersion: context.packageVersion,
         submodule: context.submodule,
       }));
-      const propType = Markdown.pre(typeFormatter(prop.type, linkFormatter));
+      const propType = MarkdownDocument.pre(typeFormatter(prop.type, linkFormatter));
       const propDescription = prop.docs?.summary && prop.docs?.summary.length > 0
         ? prop.docs?.summary
-        : Markdown.italic('No description.');
+        : MarkdownDocument.italic('No description.');
       tableRows.push([propLink, propType, propDescription]);
     }
     md.table(tableRows);

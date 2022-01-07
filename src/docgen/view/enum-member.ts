@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { defaultAnchorFormatter, Markdown } from '../render/markdown';
+import { defaultAnchorFormatter, MarkdownDocument } from '../render/markdown-doc';
 import { EnumMemberSchema } from '../schema';
 import { Transpile, TranspiledEnumMember } from '../transpile/transpile';
 import { extractDocs } from '../util';
@@ -9,10 +9,10 @@ export class EnumMember {
   public static toMarkdown(
     em: EnumMemberSchema,
     context: MarkdownRenderContext,
-  ): Markdown {
+  ): MarkdownDocument {
     const anchorFormatter = context.anchorFormatter ?? defaultAnchorFormatter;
 
-    const md = new Markdown({
+    const md = new MarkdownDocument({
       id: anchorFormatter({
         id: em.id,
         displayName: em.displayName,
@@ -30,7 +30,7 @@ export class EnumMember {
 
     if (em.docs.deprecated) {
       md.bullet(
-        `${Markdown.italic('Deprecated:')} ${em.docs.deprecationReason}`,
+        `${MarkdownDocument.italic('Deprecated:')} ${em.docs.deprecationReason}`,
       );
       md.lines('');
     }

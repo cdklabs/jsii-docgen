@@ -7,7 +7,7 @@ import { TargetLanguage } from 'jsii-rosetta';
 import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
 import { CorruptedAssemblyError, LanguageNotSupportedError } from '../..';
 import { Json } from '../render/json';
-import { Markdown } from '../render/markdown';
+import { MarkdownDocument } from '../render/markdown-doc';
 import { JsiiEntity, Schema, TypeSchema } from '../schema';
 import { CSharpTranspile } from '../transpile/csharp';
 import { JavaTranspile } from '../transpile/java';
@@ -240,7 +240,7 @@ export class Documentation {
 
     const submodule = options?.submodule ? this.findSubmodule(assembly, options.submodule) : undefined;
 
-    let readme: Markdown | undefined;
+    let readme: MarkdownDocument | undefined;
     if (options?.readme ?? true) {
       readme = new Readme(transpile, assembly, submodule).render();
     }
@@ -269,12 +269,12 @@ export class Documentation {
     });
   }
 
-  public async toMarkdown(options: MarkdownRenderOptions): Promise<Markdown> {
+  public async toMarkdown(options: MarkdownRenderOptions): Promise<MarkdownDocument> {
     const json = (await this.toJson(options)).content;
-    const documentation = new Markdown();
+    const documentation = new MarkdownDocument();
 
     if (json.readme) {
-      const md = new Markdown();
+      const md = new MarkdownDocument();
       md.lines(json.readme);
       documentation.section(md);
     }

@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { defaultAnchorFormatter, defaultLinkFormatter, Markdown } from '../render/markdown';
+import { defaultAnchorFormatter, defaultLinkFormatter, MarkdownDocument } from '../render/markdown-doc';
 import { ClassSchema } from '../schema';
 import { Transpile, TranspiledClass } from '../transpile/transpile';
 import { extractDocs } from '../util';
@@ -20,7 +20,7 @@ export class Class {
     const anchorFormatter = context.anchorFormatter ?? defaultAnchorFormatter;
     const linkFormatter = context.linkFormatter ?? defaultLinkFormatter;
 
-    const md = new Markdown({
+    const md = new MarkdownDocument({
       id: anchorFormatter({
         id: klass.id,
         displayName: klass.displayName,
@@ -37,7 +37,7 @@ export class Class {
       for (const iface of klass.interfaces) {
         ifaces.push(linkFormatter(iface));
       }
-      md.bullet(`${Markdown.italic('Implements:')} ${ifaces.join(', ')}`);
+      md.bullet(`${MarkdownDocument.italic('Implements:')} ${ifaces.join(', ')}`);
       md.lines('');
     }
 

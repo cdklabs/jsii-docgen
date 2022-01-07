@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { defaultAnchorFormatter, defaultLinkFormatter, Markdown } from '../render/markdown';
+import { defaultAnchorFormatter, defaultLinkFormatter, MarkdownDocument } from '../render/markdown-doc';
 import { InterfaceSchema, JsiiEntity } from '../schema';
 import { Transpile, TranspiledInterface } from '../transpile/transpile';
 import { extractDocs } from '../util';
@@ -11,11 +11,11 @@ export class Interface {
   public static toMarkdown(
     iface: InterfaceSchema,
     context: MarkdownRenderContext,
-  ): Markdown {
+  ): MarkdownDocument {
     const anchorFormatter = context.anchorFormatter ?? defaultAnchorFormatter;
     const linkFormatter = context.linkFormatter ?? defaultLinkFormatter;
 
-    const md = new Markdown({
+    const md = new MarkdownDocument({
       id: anchorFormatter({
         id: iface.id,
         displayName: iface.displayName,
@@ -32,7 +32,7 @@ export class Interface {
       for (const base of iface.interfaces) {
         bases.push(linkFormatter(base));
       }
-      md.bullet(`${Markdown.italic('Extends:')} ${bases.join(', ')}`);
+      md.bullet(`${MarkdownDocument.italic('Extends:')} ${bases.join(', ')}`);
       md.lines('');
     }
 
@@ -41,7 +41,7 @@ export class Interface {
       for (const impl of iface.implementations) {
         impls.push(linkFormatter(impl));
       }
-      md.bullet(`${Markdown.italic('Implemented By:')} ${impls.join(', ')}`);
+      md.bullet(`${MarkdownDocument.italic('Implemented By:')} ${impls.join(', ')}`);
       md.lines('');
     }
 

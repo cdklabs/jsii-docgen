@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { defaultAnchorFormatter, defaultLinkFormatter, defaultTypeFormatter, Markdown } from '../render/markdown';
+import { defaultAnchorFormatter, defaultLinkFormatter, defaultTypeFormatter, MarkdownDocument } from '../render/markdown-doc';
 import { ParameterSchema } from '../schema';
 import { Transpile, TranspiledParameter } from '../transpile/transpile';
 import { extractDocs } from '../util';
@@ -9,14 +9,14 @@ export class Parameter {
   public static toMarkdown(
     parameter: ParameterSchema,
     context: MarkdownRenderContext,
-  ): Markdown {
+  ): MarkdownDocument {
     const anchorFormatter = context.anchorFormatter ?? defaultAnchorFormatter;
     const linkFormatter = context.linkFormatter ?? defaultLinkFormatter;
     const typeFormatter = context.typeFormatter ?? defaultTypeFormatter;
 
     const optionality = parameter.optional ? 'Optional' : 'Required';
 
-    const md = new Markdown({
+    const md = new MarkdownDocument({
       id: anchorFormatter({
         id: parameter.id,
         displayName: parameter.displayName,
@@ -35,7 +35,7 @@ export class Parameter {
 
     if (parameter.docs.deprecated) {
       md.bullet(
-        `${Markdown.italic('Deprecated:')} ${parameter.docs.deprecationReason}`,
+        `${MarkdownDocument.italic('Deprecated:')} ${parameter.docs.deprecationReason}`,
       );
       md.lines('');
     }
@@ -44,11 +44,11 @@ export class Parameter {
     const metadata: any = { Type: typeFormatter(parameter.type, linkFormatter) };
 
     if (parameter.default) {
-      metadata.Default = Markdown.sanitize(parameter.default);
+      metadata.Default = MarkdownDocument.sanitize(parameter.default);
     }
 
     for (const [key, value] of Object.entries(metadata)) {
-      md.bullet(`${Markdown.italic(`${key}:`)} ${value}`);
+      md.bullet(`${MarkdownDocument.italic(`${key}:`)} ${value}`);
     }
     md.lines('');
 

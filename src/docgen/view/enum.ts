@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { defaultAnchorFormatter, defaultLinkFormatter, Markdown } from '../render/markdown';
+import { defaultAnchorFormatter, defaultLinkFormatter, MarkdownDocument } from '../render/markdown-doc';
 import { EnumSchema } from '../schema';
 import { Transpile, TranspiledEnum } from '../transpile/transpile';
 import { extractDocs } from '../util';
@@ -10,11 +10,11 @@ export class Enum {
   public static toMarkdown(
     enu: EnumSchema,
     context: MarkdownRenderContext,
-  ): Markdown {
+  ): MarkdownDocument {
     const anchorFormatter = context.anchorFormatter ?? defaultAnchorFormatter;
     const linkFormatter = context.linkFormatter ?? defaultLinkFormatter;
 
-    const md = new Markdown({
+    const md = new MarkdownDocument({
       id: anchorFormatter({
         id: enu.id,
         displayName: enu.displayName,
@@ -27,10 +27,10 @@ export class Enum {
     });
 
     const tableRows: string[][] = [];
-    tableRows.push(['Name', 'Description'].map(Markdown.bold));
+    tableRows.push(['Name', 'Description'].map(MarkdownDocument.bold));
 
     for (const em of enu.members) {
-      const emLink = Markdown.pre(linkFormatter({
+      const emLink = MarkdownDocument.pre(linkFormatter({
         fqn: em.fqn,
         displayName: em.displayName,
         id: em.id,
@@ -40,7 +40,7 @@ export class Enum {
       }));
       const emDescription = em.docs?.summary && em.docs?.summary.length > 0
         ? em.docs?.summary
-        : Markdown.italic('No description.');
+        : MarkdownDocument.italic('No description.');
       tableRows.push([emLink, emDescription]);
     }
     md.table(tableRows);

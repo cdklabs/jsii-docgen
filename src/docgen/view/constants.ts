@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { defaultLinkFormatter, defaultTypeFormatter, Markdown } from '../render/markdown';
+import { defaultLinkFormatter, defaultTypeFormatter, MarkdownDocument } from '../render/markdown-doc';
 import { PropertySchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
 import { Constant } from './constant';
@@ -9,20 +9,20 @@ export class Constants {
   public static toMarkdown(
     constants: PropertySchema[],
     context: MarkdownRenderContext,
-  ): Markdown {
+  ): MarkdownDocument {
     if (constants.length === 0) {
-      return Markdown.EMPTY;
+      return MarkdownDocument.EMPTY;
     }
 
-    const md = new Markdown({ header: { title: 'Constants' } });
+    const md = new MarkdownDocument({ header: { title: 'Constants' } });
 
     const linkFormatter = context.linkFormatter ?? defaultLinkFormatter;
     const typeFormatter = context.typeFormatter ?? defaultTypeFormatter;
 
     const tableRows: string[][] = [];
-    tableRows.push(['Name', 'Type', 'Description'].map(Markdown.bold));
+    tableRows.push(['Name', 'Type', 'Description'].map(MarkdownDocument.bold));
     for (const con of constants) {
-      const conLink = Markdown.pre(linkFormatter({
+      const conLink = MarkdownDocument.pre(linkFormatter({
         id: con.id,
         displayName: con.displayName,
         fqn: con.fqn,
@@ -30,10 +30,10 @@ export class Constants {
         packageVersion: context.packageVersion,
         submodule: context.submodule,
       }));
-      const conType = Markdown.pre(typeFormatter(con.type, linkFormatter));
+      const conType = MarkdownDocument.pre(typeFormatter(con.type, linkFormatter));
       const conDescription = con.docs?.summary && con.docs?.summary.length > 0
         ? con.docs?.summary
-        : Markdown.italic('No description.');
+        : MarkdownDocument.italic('No description.');
       tableRows.push([conLink, conType, conDescription]);
     }
     md.table(tableRows);
