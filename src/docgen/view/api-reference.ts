@@ -20,7 +20,7 @@ export class ApiReference {
     apiRef: ApiReferenceSchema,
     context: MarkdownRenderContext,
   ): Markdown {
-    const md = new Markdown({ header: { title: 'API Reference' } });
+    const md = new Markdown({ header: { title: 'API Reference' }, id: 'api-reference' });
     md.section(Constructs.toMarkdown(apiRef.constructs, context));
     md.section(Structs.toMarkdown(apiRef.structs, context));
     md.section(Classes.toMarkdown(apiRef.constructs, context));

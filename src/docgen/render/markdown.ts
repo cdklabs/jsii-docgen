@@ -153,7 +153,7 @@ export class Markdown {
   }
 
   public code(language: string, ...snippet: string[]) {
-    this.lines(`<pre lang="${language}">`, ...snippet, '</pre>');
+    this.lines(`\`\`\`${language}`, ...snippet, '```');
     this.lines('');
   }
 
@@ -181,7 +181,16 @@ export class Markdown {
     const content: string[] = [];
     if (this.header) {
       const heading = `${'#'.repeat(headerSize)} ${this.header}`;
-      content.push(`${heading} <a id="${this.id}"></a>`);
+
+      // temporary hack to avoid breaking Construct Hub
+      const headerSpan = !!process.env.HEADER_SPAN;
+      if (headerSpan) {
+        content.push(
+          `${heading} <span data-heading-title="${this.header}" data-heading-id="${this.id}"></span>`,
+        );
+      } else {
+        content.push(`${heading} <a name="${this.id}" id="${this.id}"></a>`);
+      }
       content.push('');
     }
 
