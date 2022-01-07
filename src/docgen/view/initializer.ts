@@ -17,6 +17,7 @@ export class Initializer {
     const md = new Markdown({
       id: anchorFormatter({
         id: init.id,
+        displayName: init.displayName,
         fqn: init.fqn,
         packageName: context.packageName,
         packageVersion: context.packageVersion,
@@ -39,6 +40,7 @@ export class Initializer {
     for (const param of init.parameters) {
       const paramLink = Markdown.pre(linkFormatter({
         id: param.id,
+        displayName: param.displayName,
         fqn: param.fqn,
         packageName: context.packageName,
         packageVersion: context.packageVersion,
@@ -75,6 +77,7 @@ export class Initializer {
   public toJson(): InitializerSchema {
     return {
       fqn: `${this.transpiled.parentType.fqn}.Initializer`,
+      displayName: 'Initializer',
       id: `${this.initializer.parentType.fqn}.Initializer`,
       parameters: this.parameters.map((param) => param.toJson()),
       usage: `${this.transpiled.import}\n\n${this.transpiled.invocations}`,

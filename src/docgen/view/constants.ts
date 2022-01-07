@@ -24,6 +24,7 @@ export class Constants {
     for (const con of constants) {
       const conLink = Markdown.pre(linkFormatter({
         id: con.id,
+        displayName: con.displayName,
         fqn: con.fqn,
         packageName: context.packageName,
         packageVersion: context.packageVersion,

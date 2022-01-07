@@ -16,6 +16,7 @@ export class StaticFunction {
     const md = new Markdown({
       id: anchorFormatter({
         id: method.id,
+        displayName: method.displayName,
         fqn: method.fqn,
         packageName: context.packageName,
         packageVersion: context.packageVersion,
@@ -57,6 +58,7 @@ export class StaticFunction {
   public toJson(): MethodSchema {
     return {
       fqn: `${this.transpiled.parentType.fqn}.${this.transpiled.name}`,
+      displayName: this.transpiled.name,
       id: `${this.method.parentType.fqn}.${this.method.name}`,
       parameters: this.parameters.map((param) => param.toJson()),
       docs: extractDocs(this.method.docs),

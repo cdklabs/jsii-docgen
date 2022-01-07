@@ -66,7 +66,10 @@ describe('python', () => {
     const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0');
     try {
       const json = await docs.toJson({ language: Language.PYTHON });
-      expect(json.render()).toMatchSnapshot();
+      const markdown = await docs.toMarkdown({ language: Language.PYTHON });
+
+      expect(json.content).toMatchSnapshot();
+      expect(markdown.render()).toMatchSnapshot();
     } finally {
       await docs.cleanup();
     }

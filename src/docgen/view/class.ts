@@ -23,6 +23,7 @@ export class Class {
     const md = new Markdown({
       id: anchorFormatter({
         id: klass.id,
+        displayName: klass.displayName,
         fqn: klass.fqn,
         packageName: context.packageName,
         packageVersion: context.packageVersion,
@@ -97,6 +98,7 @@ export class Class {
       constants: this.constants.toJson(),
       properties: this.properties.toJson(),
       fqn: this.transpiled.type.fqn,
+      displayName: this.transpiled.type.fqn.split('.').pop()!,
       id: this.klass.fqn,
       docs: extractDocs(this.klass.docs),
     };

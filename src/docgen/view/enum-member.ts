@@ -15,6 +15,7 @@ export class EnumMember {
     const md = new Markdown({
       id: anchorFormatter({
         id: em.id,
+        displayName: em.displayName,
         fqn: em.fqn,
         packageName: context.packageName,
         packageVersion: context.packageVersion,
@@ -52,6 +53,7 @@ export class EnumMember {
   public toJson(): EnumMemberSchema {
     return {
       id: `${this.em.enumType.fqn}.${this.em.name}`,
+      displayName: this.em.name,
       fqn: this.transpiled.fqn,
       docs: extractDocs(this.em.docs),
     };

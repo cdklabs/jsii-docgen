@@ -73,7 +73,7 @@ export interface MarkdownFormattingOptions {
    * How should links to entities be rendered. For example, if a class or a
    * property is referenced within a description or table.
    *
-   * @default - '<a href="#{type.id}">{last part of type.fqn}</a>'
+   * @default - '<a href="#{type.id}">{type.displayName}</a>'
    */
   readonly linkFormatter?: (type: JsiiEntity) => string;
 

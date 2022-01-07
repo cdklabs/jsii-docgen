@@ -24,6 +24,7 @@ export class Properties {
     for (const prop of properties) {
       const propLink = Markdown.pre(linkFormatter({
         id: prop.id,
+        displayName: prop.displayName,
         fqn: prop.fqn,
         packageName: context.packageName,
         packageVersion: context.packageVersion,

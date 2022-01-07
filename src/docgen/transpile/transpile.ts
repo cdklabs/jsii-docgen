@@ -235,6 +235,7 @@ export class TranspiledType {
   toJson(): JsiiEntity {
     return {
       fqn: this.fqn,
+      displayName: this.name,
       id: this.source.fqn,
       packageName: this.source.assembly.name,
       packageVersion: this.source.assembly.version,
@@ -416,7 +417,7 @@ export class TranspiledTypeReference {
   public toJson(): TypeSchema {
     if (this.primitive) {
       return {
-        name: this.primitive,
+        formattingPattern: this.primitive,
       };
     }
 
@@ -425,10 +426,11 @@ export class TranspiledTypeReference {
         throw new Error(`Original type reference for ${this.type.fqn} does not have a fqn.`);
       }
       return {
-        name: '%',
+        formattingPattern: '%',
         types: [
           {
             id: this.ref.fqn,
+            displayName: this.type.name,
             fqn: this.type.fqn,
             packageName: this.type.source.assembly.name,
             packageVersion: this.type.source.assembly.version,
@@ -440,26 +442,26 @@ export class TranspiledTypeReference {
 
     if (this.isAny) {
       return {
-        name: this.transpile.any(),
+        formattingPattern: this.transpile.any(),
       };
     }
 
     if (this.arrayOfType) {
       return {
-        name: this.transpile.listOf('%'),
+        formattingPattern: this.transpile.listOf('%'),
         types: [this.arrayOfType.toJson()],
       };
     }
     if (this.mapOfType) {
       return {
-        name: this.transpile.mapOf('%'),
+        formattingPattern: this.transpile.mapOf('%'),
         types: [this.mapOfType.toJson()],
       };
     }
     if (this.unionOfTypes) {
       const inner = Array(this.unionOfTypes.length).fill('%');
       return {
-        name: this.transpile.unionOf(inner),
+        formattingPattern: this.transpile.unionOf(inner),
         types: this.unionOfTypes.map((t) => t.toJson()),
       };
     }

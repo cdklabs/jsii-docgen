@@ -18,6 +18,7 @@ export class Interface {
     const md = new Markdown({
       id: anchorFormatter({
         id: iface.id,
+        displayName: iface.displayName,
         fqn: iface.fqn,
         packageName: context.packageName,
         packageVersion: context.packageVersion,
@@ -76,6 +77,7 @@ export class Interface {
     const bases: JsiiEntity[] = this.iface.interfaces.map((base) => this.transpile.type(base).toJson());
     return {
       fqn: this.transpiled.type.fqn,
+      displayName: this.transpiled.type.fqn.split('.').pop()!,
       id: this.iface.fqn,
       implementations: impls,
       interfaces: bases,

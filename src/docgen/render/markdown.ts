@@ -189,7 +189,7 @@ export class Markdown {
           `${heading} <span data-heading-title="${this.header}" data-heading-id="${this.id}"></span>`,
         );
       } else {
-        content.push(`${heading} <a name="${this.id}" id="${this.id}"></a>`);
+        content.push(`${heading} <a name="${this.header}" id="${this.id}"></a>`);
       }
       content.push('');
     }
@@ -235,19 +235,24 @@ export const defaultAnchorFormatter = (type: JsiiEntity) => {
 };
 
 export const defaultLinkFormatter = (type: JsiiEntity) => {
-  const name = type.fqn.split('.').pop()!;
-  return `<a href="#${type.id}">${name}</a>`;
+  return `<a href="#${type.id}">${type.displayName}</a>`;
 };
 
 function isJsiiType(value: any): value is JsiiEntity {
-  return typeof value === 'object' && value.fqn && value.id;
+  return (
+    value !== null
+    && typeof value === 'object'
+    && value?.fqn
+    && value?.id
+    && value?.displayName
+  );
 }
 
 export const defaultTypeFormatter = (
   type: TypeSchema,
   linkFormatter: (type: JsiiEntity) => string,
 ): string => {
-  let result = type.name;
+  let result = type.formattingPattern;
   const typeRefs = [];
   for (const typeRef of type.types ?? []) {
     if (isJsiiType(typeRef)) {

@@ -8,7 +8,7 @@ test('custom link formatter', async () => {
   try {
     const markdown = await docs.toMarkdown({
       language: Language.PYTHON,
-      linkFormatter: (type: JsiiEntity) => `<a href="#custom-${type.id}">${type.fqn.split('.').pop()}</a>`,
+      linkFormatter: (type: JsiiEntity) => `<a href="#custom-${type.id}">${type.displayName}</a>`,
     });
     expect(markdown.render()).toMatchSnapshot();
   } finally {
@@ -24,9 +24,8 @@ test('custom anchor formatter', async () => {
       anchorFormatter: (type: JsiiEntity) => getAssemblyRelativeName(type),
       linkFormatter: (type: JsiiEntity) => {
         const name = getAssemblyRelativeName(type); // BucketProps.parameter.accessControl
-        const friendlyName = type.fqn.split('.').pop(); // access_control
         const submoduleParam = type.submodule ? `&submodule=${type.submodule}` : '';
-        return `<a href="/packages/${type.packageName}/v/${type.packageVersion}/api/${name}?lang=python${submoduleParam}">${friendlyName}</a>`;
+        return `<a href="/packages/${type.packageName}/v/${type.packageVersion}/api/${name}?lang=python${submoduleParam}">${type.displayName}</a>`;
       },
     });
     expect(markdown.render()).toMatchSnapshot();

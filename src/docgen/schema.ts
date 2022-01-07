@@ -12,7 +12,7 @@ export interface TypeSchema {
    * @example "typing.List[%]"
    * @example "Map<%, %>"
    */
-  readonly name: string;
+  readonly formattingPattern: string;
 
   /**
    * Types referenced within the "name" field.
@@ -26,15 +26,20 @@ export interface TypeSchema {
  */
 export interface JsiiEntity extends AssemblyMetadataSchema {
   /**
-   * The language-specific type FQN.
-   */
-  readonly fqn: string;
-
-  /**
    * An id that uniquely identifies this type among all entities in the
    * document and is same across languages.
    */
   readonly id: string;
+
+  /**
+   * The friendly language-specific name for the entity.
+   */
+  readonly displayName: string;
+
+  /**
+   * The language-specific type FQN.
+   */
+  readonly fqn: string;
 }
 
 /**
@@ -48,8 +53,12 @@ export interface PropertySchema extends Usage, Optional, Documentable {
   readonly id: string;
 
   /**
-   * The language-specific fqn. The last part after splitting by "." is
-   * the property name.
+   * The friendly language-specific name for the property.
+   */
+  readonly displayName: string;
+
+  /**
+   * The language-specific fqn.
    */
   readonly fqn: string;
 
@@ -76,8 +85,12 @@ export interface ParameterSchema extends Optional, Documentable {
   readonly id: string;
 
   /**
-   * The language-specific fqn. The last part after splitting by "." is
-   * the parameter name.
+   * The friendly language-specific name for the parameter.
+   */
+  readonly displayName: string;
+
+  /**
+   * The language-specific fqn.
    */
   readonly fqn: string;
 
@@ -99,8 +112,12 @@ export interface CallableSchema extends Usage {
   readonly id: string;
 
   /**
-   * The language-specific fqn. The last part after splitting by "." is
-   * the method name.
+   * The friendly language-specific name for the callable.
+   */
+  readonly displayName: string;
+
+  /**
+   * The language-specific fqn.
    */
   readonly fqn: string;
 
@@ -131,8 +148,12 @@ export interface ClassSchema extends Documentable {
   readonly id: string;
 
   /**
-   * The language-specific fqn. The last part after splitting by "." is
-   * the class name.
+   * The friendly language-specific name for the class.
+   */
+  readonly displayName: string;
+
+  /**
+   * The language-specific fqn.
    */
   readonly fqn: string;
 
@@ -183,8 +204,12 @@ export interface StructSchema extends Usage, Documentable {
   readonly id: string;
 
   /**
-   * The language-specific fqn. The last part after splitting by "." is
-   * the struct name.
+   * The friendly language-specific name for the struct.
+   */
+  readonly displayName: string;
+
+  /**
+   * The language-specific fqn.
    */
   readonly fqn: string;
 
@@ -205,8 +230,12 @@ export interface InterfaceSchema extends Documentable {
   readonly id: string;
 
   /**
-   * The language-specific fqn. The last part after splitting by "." is
-   * the interface name.
+   * The friendly language-specific name for the interface.
+   */
+  readonly displayName: string;
+
+  /**
+   * The language-specific fqn.
    */
   readonly fqn: string;
 
@@ -242,8 +271,12 @@ export interface EnumMemberSchema extends Documentable {
   readonly id: string;
 
   /**
-   * The language-specific fqn. The last part after splitting by "." is
-   * the member name.
+   * The friendly language-specific name for the enum member.
+   */
+  readonly displayName: string;
+
+  /**
+   * The language-specific fqn.
    */
   readonly fqn: string;
 }
@@ -259,8 +292,12 @@ export interface EnumSchema extends Documentable {
   readonly id: string;
 
   /**
-   * The language-specific fqn. The last part after splitting by "." is
-   * the enum name.
+   * The friendly language-specific name for the enum.
+   */
+  readonly displayName: string;
+
+  /**
+   * The language-specific fqn.
    */
   readonly fqn: string;
 

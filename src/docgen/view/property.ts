@@ -7,48 +7,49 @@ import { MarkdownRenderContext } from './documentation';
 
 export class Property {
   public static toMarkdown(
-    property: PropertySchema,
+    prop: PropertySchema,
     context: MarkdownRenderContext,
   ): Markdown {
     const anchorFormatter = context.anchorFormatter ?? defaultAnchorFormatter;
     const linkFormatter = context.linkFormatter ?? defaultLinkFormatter;
     const typeFormatter = context.typeFormatter ?? defaultTypeFormatter;
 
-    const optionality = property.optional
+    const optionality = prop.optional
       ? 'Optional'
       : 'Required';
 
     const md = new Markdown({
       id: anchorFormatter({
-        id: property.id,
-        fqn: property.fqn,
+        id: prop.id,
+        displayName: prop.displayName,
+        fqn: prop.fqn,
         packageName: context.packageName,
         packageVersion: context.packageVersion,
         submodule: context.submodule,
       }),
       header: {
-        title: property.fqn.split('.').pop(),
+        title: prop.fqn.split('.').pop(),
         sup: optionality,
         pre: true,
-        strike: property.docs.deprecated,
+        strike: prop.docs.deprecated,
       },
     });
 
-    if (property.docs.deprecated) {
+    if (prop.docs.deprecated) {
       md.bullet(
-        `${Markdown.italic('Deprecated:')} ${property.docs.deprecationReason}`,
+        `${Markdown.italic('Deprecated:')} ${prop.docs.deprecationReason}`,
       );
       md.lines('');
     }
 
-    if (property.usage) {
-      md.code(context.language.toString(), property.usage);
+    if (prop.usage) {
+      md.code(context.language.toString(), prop.usage);
     }
 
-    const metadata: Record<string, string> = { Type: typeFormatter(property.type, linkFormatter) };
+    const metadata: Record<string, string> = { Type: typeFormatter(prop.type, linkFormatter) };
 
-    if (property.default) {
-      metadata.Default = Markdown.sanitize(property.default);
+    if (prop.default) {
+      metadata.Default = Markdown.sanitize(prop.default);
     }
 
     for (const [key, value] of Object.entries(metadata)) {
@@ -56,8 +57,8 @@ export class Property {
     }
     md.lines('');
 
-    if (property.docs) {
-      md.docs(property.docs);
+    if (prop.docs) {
+      md.docs(prop.docs);
     }
 
     md.split();
@@ -76,6 +77,7 @@ export class Property {
   public toJson(): PropertySchema {
     return {
       fqn: `${this.transpiled.parentType.fqn}.property.${this.transpiled.name}`,
+      displayName: this.transpiled.name,
       id: `${this.transpiled.parentType.source.fqn}.property.${this.property.name}`,
       optional: this.transpiled.optional === true ? true : undefined, // to save space
       default: this.property.spec.docs?.default,

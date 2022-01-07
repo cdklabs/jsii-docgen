@@ -17,6 +17,7 @@ export class Enum {
     const md = new Markdown({
       id: anchorFormatter({
         id: enu.id,
+        displayName: enu.displayName,
         fqn: enu.fqn,
         packageName: context.packageName,
         packageVersion: context.packageVersion,
@@ -31,6 +32,7 @@ export class Enum {
     for (const em of enu.members) {
       const emLink = Markdown.pre(linkFormatter({
         fqn: em.fqn,
+        displayName: em.displayName,
         id: em.id,
         packageName: context.packageName,
         packageVersion: context.packageVersion,
@@ -68,6 +70,7 @@ export class Enum {
   public toJson(): EnumSchema {
     return {
       fqn: this.transpiled.fqn,
+      displayName: this.transpiled.fqn.split('.').pop()!,
       id: this.enu.fqn,
       members: this.members.map((em) => em.toJson()),
       docs: extractDocs(this.enu.docs),

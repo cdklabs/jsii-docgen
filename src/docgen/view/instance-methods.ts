@@ -24,6 +24,7 @@ export class InstanceMethods {
     for (const method of methods) {
       const methodLink = Markdown.pre(linkFormatter({
         id: method.id,
+        displayName: method.displayName,
         fqn: method.fqn,
         packageName: context.packageName,
         packageVersion: context.packageVersion,

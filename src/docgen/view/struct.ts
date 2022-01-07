@@ -16,6 +16,7 @@ export class Struct {
     const md = new Markdown({
       id: anchorFormatter({
         id: struct.id,
+        displayName: struct.displayName,
         fqn: struct.fqn,
         packageName: context.packageName,
         packageVersion: context.packageVersion,
@@ -58,6 +59,7 @@ export class Struct {
   public toJson(): StructSchema {
     return {
       fqn: this.transpiled.type.fqn,
+      displayName: this.transpiled.type.fqn.split('.').pop()!,
       id: this.iface.fqn,
       properties: this.properties.toJson(),
       docs: extractDocs(this.iface.docs),

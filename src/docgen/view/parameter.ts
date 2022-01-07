@@ -19,6 +19,7 @@ export class Parameter {
     const md = new Markdown({
       id: anchorFormatter({
         id: parameter.id,
+        displayName: parameter.displayName,
         fqn: parameter.fqn,
         packageName: context.packageName,
         packageVersion: context.packageVersion,
@@ -71,6 +72,7 @@ export class Parameter {
   public toJson(): ParameterSchema {
     return {
       fqn: `${this.transpiled.parentType.fqn}.parameter.${this.transpiled.name}`,
+      displayName: this.transpiled.name,
       id: `${this.parameter.parentType.fqn}.parameter.${this.parameter.name}`,
       optional: this.transpiled.optional === true ? true : undefined, // to save space
       default: this.parameter.spec.docs?.default,

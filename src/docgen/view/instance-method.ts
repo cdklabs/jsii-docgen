@@ -16,6 +16,7 @@ export class InstanceMethod {
     const md = new Markdown({
       id: anchorFormatter({
         id: method.id,
+        displayName: method.displayName,
         fqn: method.fqn,
         packageName: context.packageName,
         packageVersion: context.packageVersion,
@@ -54,6 +55,7 @@ export class InstanceMethod {
   public toJson(): MethodSchema {
     return {
       fqn: `${this.transpiled.parentType.fqn}.${this.transpiled.name}`,
+      displayName: this.transpiled.name,
       id: `${this.method.definingType.fqn}.${this.method.name}`,
       parameters: this.parameters.map((p) => p.toJson()),
       docs: extractDocs(this.method.docs),
