@@ -1,9 +1,7 @@
 import * as reflect from 'jsii-reflect';
-import { CSharpTranspile } from '../../../src/docgen/transpile/csharp';
-import { JavaTranspile } from '../../../src/docgen/transpile/java';
-import { PythonTranspile } from '../../../src/docgen/transpile/python';
+import { MarkdownRenderer } from '../../../src/docgen/render/markdown-render';
 import { Language } from '../../../src/docgen/transpile/transpile';
-import { TypeScriptTranspile } from '../../../src/docgen/transpile/typescript';
+import { getTranspilerForLanguage } from '../../../src/docgen/view/documentation';
 import { Enum } from '../../../src/docgen/view/enum';
 import { Assemblies } from '../assemblies';
 
@@ -21,42 +19,10 @@ const findEnum = (): reflect.EnumType => {
   throw new Error('Assembly does not contain an emum');
 };
 
-describe('python', () => {
-  const transpile = new PythonTranspile();
-  test('snapshot', () => {
-    const enu = new Enum(transpile, findEnum()).toJson();
-    const markdown = Enum.toMarkdown(enu, { language: Language.PYTHON, ...metadata });
-    expect(enu).toMatchSnapshot();
-    expect(markdown.render()).toMatchSnapshot();
-  });
-});
-
-describe('typescript', () => {
-  const transpile = new TypeScriptTranspile();
-  test('snapshot', () => {
-    const enu = new Enum(transpile, findEnum()).toJson();
-    const markdown = Enum.toMarkdown(enu, { language: Language.TYPESCRIPT, ...metadata });
-    expect(enu).toMatchSnapshot();
-    expect(markdown.render()).toMatchSnapshot();
-  });
-});
-
-describe('java', () => {
-  const transpile = new JavaTranspile();
-  test('snapshot', () => {
-    const enu = new Enum(transpile, findEnum()).toJson();
-    const markdown = Enum.toMarkdown(enu, { language: Language.JAVA, ...metadata });
-    expect(enu).toMatchSnapshot();
-    expect(markdown.render()).toMatchSnapshot();
-  });
-});
-
-describe('csharp', () => {
-  const transpile = new CSharpTranspile();
-  test('snapshot', () => {
-    const enu = new Enum(transpile, findEnum()).toJson();
-    const markdown = Enum.toMarkdown(enu, { language: Language.CSHARP, ...metadata });
-    expect(enu).toMatchSnapshot();
-    expect(markdown.render()).toMatchSnapshot();
-  });
+test.each(Language.values())('%s snapshot', (language) => {
+  const transpile = getTranspilerForLanguage(language);
+  const markdown = new MarkdownRenderer({ language, ...metadata });
+  const enu = new Enum(transpile, findEnum()).toJson();
+  expect(enu).toMatchSnapshot();
+  expect(markdown.visitEnum(enu).render()).toMatchSnapshot();
 });

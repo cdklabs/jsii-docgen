@@ -1,10 +1,8 @@
 import * as reflect from 'jsii-reflect';
-import { defaultAnchorFormatter, defaultLinkFormatter, MarkdownDocument } from '../render/markdown-doc';
 import { ClassSchema } from '../schema';
 import { Transpile, TranspiledClass } from '../transpile/transpile';
 import { extractDocs } from '../util';
 import { Constants } from './constants';
-import { MarkdownRenderContext } from './documentation';
 import { Initializer } from './initializer';
 import { InstanceMethods } from './instance-methods';
 import { Properties } from './properties';
@@ -13,49 +11,6 @@ import { StaticFunctions } from './static-functions';
 const CONSTRUCT_CLASS = 'constructs.Construct';
 
 export class Class {
-  public static toMarkdown(
-    klass: ClassSchema,
-    context: MarkdownRenderContext,
-  ) {
-    const anchorFormatter = context.anchorFormatter ?? defaultAnchorFormatter;
-    const linkFormatter = context.linkFormatter ?? defaultLinkFormatter;
-
-    const md = new MarkdownDocument({
-      id: anchorFormatter({
-        id: klass.id,
-        displayName: klass.displayName,
-        fqn: klass.fqn,
-        packageName: context.packageName,
-        packageVersion: context.packageVersion,
-        submodule: context.submodule,
-      }),
-      header: { title: klass.fqn.split('.').pop() },
-    });
-
-    if (klass.interfaces.length > 0) {
-      const ifaces = [];
-      for (const iface of klass.interfaces) {
-        ifaces.push(linkFormatter(iface));
-      }
-      md.bullet(`${MarkdownDocument.italic('Implements:')} ${ifaces.join(', ')}`);
-      md.lines('');
-    }
-
-    if (klass.docs) {
-      md.docs(klass.docs);
-    }
-
-    if (klass.initializer) {
-      md.section(Initializer.toMarkdown(klass.initializer, context));
-    }
-
-    md.section(InstanceMethods.toMarkdown(klass.instanceMethods, context));
-    md.section(StaticFunctions.toMarkdown(klass.staticMethods, context));
-    md.section(Properties.toMarkdown(klass.properties, context));
-    md.section(Constants.toMarkdown(klass.constants, context));
-    return md;
-  }
-
   public static isConstruct(klass: reflect.ClassType): boolean {
     if (klass.fqn === CONSTRUCT_CLASS) return true;
 

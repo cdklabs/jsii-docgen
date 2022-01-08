@@ -1,9 +1,7 @@
 import * as reflect from 'jsii-reflect';
-import { Language } from '../../../lib';
-import { CSharpTranspile } from '../../../src/docgen/transpile/csharp';
-import { JavaTranspile } from '../../../src/docgen/transpile/java';
-import { PythonTranspile } from '../../../src/docgen/transpile/python';
-import { TypeScriptTranspile } from '../../../src/docgen/transpile/typescript';
+import { Language } from '../../../src';
+import { MarkdownRenderer } from '../../../src/docgen/render/markdown-render';
+import { getTranspilerForLanguage } from '../../../src/docgen/view/documentation';
 import { Struct } from '../../../src/docgen/view/struct';
 import { Assemblies } from '../assemblies';
 
@@ -23,42 +21,10 @@ const findStruct = (): reflect.InterfaceType => {
   throw new Error('Assembly does not contain a struct');
 };
 
-describe('python', () => {
-  const transpile = new PythonTranspile();
-  test('snapshot', () => {
-    const struct = new Struct(transpile, findStruct()).toJson();
-    const markdown = Struct.toMarkdown(struct, { language: Language.PYTHON, ...metadata });
-    expect(struct).toMatchSnapshot();
-    expect(markdown.render()).toMatchSnapshot();
-  });
-});
-
-describe('typescript', () => {
-  const transpile = new TypeScriptTranspile();
-  test('snapshot', () => {
-    const struct = new Struct(transpile, findStruct()).toJson();
-    const markdown = Struct.toMarkdown(struct, { language: Language.TYPESCRIPT, ...metadata });
-    expect(struct).toMatchSnapshot();
-    expect(markdown.render()).toMatchSnapshot();
-  });
-});
-
-describe('java', () => {
-  const transpile = new JavaTranspile();
-  test('snapshot', () => {
-    const struct = new Struct(transpile, findStruct()).toJson();
-    const markdown = Struct.toMarkdown(struct, { language: Language.JAVA, ...metadata });
-    expect(struct).toMatchSnapshot();
-    expect(markdown.render()).toMatchSnapshot();
-  });
-});
-
-describe('csharp', () => {
-  const transpile = new CSharpTranspile();
-  test('snapshot', () => {
-    const struct = new Struct(transpile, findStruct()).toJson();
-    const markdown = Struct.toMarkdown(struct, { language: Language.CSHARP, ...metadata });
-    expect(struct).toMatchSnapshot();
-    expect(markdown.render()).toMatchSnapshot();
-  });
+test.each(Language.values())('%s snapshot', (language) => {
+  const transpile = getTranspilerForLanguage(language);
+  const markdown = new MarkdownRenderer({ language, ...metadata });
+  const struct = new Struct(transpile, findStruct()).toJson();
+  expect(struct).toMatchSnapshot();
+  expect(markdown.visitStruct(struct).render()).toMatchSnapshot();
 });

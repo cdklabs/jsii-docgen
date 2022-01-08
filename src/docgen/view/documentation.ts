@@ -8,7 +8,8 @@ import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
 import { CorruptedAssemblyError, LanguageNotSupportedError } from '../..';
 import { Json } from '../render/json';
 import { MarkdownDocument } from '../render/markdown-doc';
-import { JsiiEntity, Schema, TypeSchema } from '../schema';
+import { MarkdownFormattingOptions, MarkdownRenderer } from '../render/markdown-render';
+import { Schema } from '../schema';
 import { CSharpTranspile } from '../transpile/csharp';
 import { JavaTranspile } from '../transpile/java';
 import { PythonTranspile } from '../transpile/python';
@@ -60,56 +61,7 @@ export interface RenderOptions {
   readonly submodule?: string;
 }
 
-export interface MarkdownFormattingOptions {
-  /**
-   * How jsii entity IDs should be formatted into anchors. This should be
-   * customized in conjunction with `linkFormatter`.
-   *
-   * @default - use the full id
-   */
-  readonly anchorFormatter?: (type: JsiiEntity) => string;
-
-  /**
-   * How should links to entities be rendered. For example, if a class or a
-   * property is referenced within a description or table.
-   *
-   * @default - '<a href="#{type.id}">{type.displayName}</a>'
-   */
-  readonly linkFormatter?: (type: JsiiEntity) => string;
-
-  /**
-   * How type signatures should be formatted, including those made of nested
-   * types (like `Map<string, Bucket>`).
-   *
-   * @default - HTML code block with type references linked
-   * according to `linkFormatter`
-   */
-  readonly typeFormatter?: (type: TypeSchema, linkFormatter: (type: JsiiEntity) => string) => string;
-}
-
 export interface MarkdownRenderOptions extends RenderOptions, MarkdownFormattingOptions {}
-
-export interface MarkdownRenderContext extends MarkdownFormattingOptions {
-  /**
-   * Name of the jsii assembly/package.
-   */
-  readonly packageName: string;
-
-  /**
-   * Version of the jsii assembly/package.
-   */
-  readonly packageVersion: string;
-
-  /**
-   * Name of the submodule this type is from within the jsii assembly (if any).
-   */
-  readonly submodule?: string;
-
-  /**
-   * Language the documentation is rendered for.
-   */
-  readonly language: Language;
-}
 
 /**
  * Options for creating a `Documentation` object using the `fromLocalPackage` function.
@@ -279,16 +231,16 @@ export class Documentation {
       documentation.section(md);
     }
 
-    const context: MarkdownRenderContext = {
-      anchorFormatter: options.anchorFormatter,
-      linkFormatter: options.linkFormatter,
-      typeFormatter: options.typeFormatter,
-      language: options.language,
-      ...json.metadata,
-    };
-
     if (json.apiReference) {
-      documentation.section(ApiReference.toMarkdown(json.apiReference, context));
+      // documentation.section(ApiReference.toMarkdown(json.apiReference, context));
+      const renderer = new MarkdownRenderer({
+        anchorFormatter: options.anchorFormatter,
+        linkFormatter: options.linkFormatter,
+        typeFormatter: options.typeFormatter,
+        language: options.language,
+        ...json.metadata,
+      });
+      documentation.section(renderer.visitApiReference(json.apiReference));
     }
 
     return documentation;
@@ -310,28 +262,26 @@ export class Documentation {
 
   private async languageSpecific(lang: Language, loose: boolean): Promise<{ assembly: reflect.Assembly; transpile: Transpile}> {
 
-    let language, transpile = undefined;
-
+    let rosettaTarget = undefined;
     switch (lang) {
       case Language.PYTHON:
-        language = TargetLanguage.PYTHON;
-        transpile = new PythonTranspile();
+        rosettaTarget = TargetLanguage.PYTHON;
         break;
       case Language.TYPESCRIPT:
-        transpile = new TypeScriptTranspile();
         break;
       case Language.JAVA:
-        language = TargetLanguage.JAVA;
-        transpile = new JavaTranspile();
+        rosettaTarget = TargetLanguage.JAVA;
         break;
       case Language.CSHARP:
-        transpile = new CSharpTranspile();
-        language = TargetLanguage.CSHARP;
+        rosettaTarget = TargetLanguage.CSHARP;
         break;
       default:
         throw new Error(`Unsupported language: ${lang}. Supported languages are ${Object.values(Language)}`);
     }
-    return { assembly: await this.createAssembly(loose, language), transpile };
+
+    const transpile = getTranspilerForLanguage(lang);
+
+    return { assembly: await this.createAssembly(loose, rosettaTarget), transpile };
   }
 
   /**
@@ -388,6 +338,21 @@ export class Documentation {
     return created;
   }
 
+}
+
+export function getTranspilerForLanguage(lang: Language): Transpile {
+  switch (lang) {
+    case Language.PYTHON:
+      return new PythonTranspile();
+    case Language.TYPESCRIPT:
+      return new TypeScriptTranspile();
+    case Language.JAVA:
+      return new JavaTranspile();
+    case Language.CSHARP:
+      return new CSharpTranspile();
+    default:
+      throw new Error(`Unsupported language: ${lang}. Supported languages are ${Object.values(Language)}`);
+  }
 }
 
 async function withTempDir<T>(work: (workdir: string) => Promise<T>): Promise<T> {

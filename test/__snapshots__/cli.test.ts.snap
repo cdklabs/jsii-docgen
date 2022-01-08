@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`construct-library 1`] = `
-"# API Reference <a id=\\"API Reference\\"></a>
+"# API Reference <a name=\\"API Reference\\" id=\\"api-reference\\"></a>
 
-## Constructs <a id=\\"Constructs\\"></a>
+## Constructs <a name=\\"Constructs\\" id=\\"Constructs\\"></a>
 
-### GreeterBucket <a id=\\"construct-library.GreeterBucket\\"></a>
+### GreeterBucket <a name=\\"GreeterBucket\\" id=\\"construct-library.GreeterBucket\\"></a>
 
-#### Initializers <a id=\\"construct-library.GreeterBucket.Initializer\\"></a>
+#### Initializers <a name=\\"Initializers\\" id=\\"construct-library.GreeterBucket.Initializer\\"></a>
 
-<pre lang=\\"typescript\\">
+\`\`\`typescript
 import { GreeterBucket } from 'construct-library'
 
 new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
-</pre>
+\`\`\`
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
@@ -23,25 +23,25 @@ new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 
 ---
 
-##### \`scope\`<sup>Required</sup> <a id=\\"construct-library.GreeterBucket.parameter.scope\\"></a>
+##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"construct-library.GreeterBucket.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"#constructs.Construct\\">Construct</a>
 
 ---
 
-##### \`id\`<sup>Required</sup> <a id=\\"construct-library.GreeterBucket.parameter.id\\"></a>
+##### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"construct-library.GreeterBucket.parameter.id\\"></a>
 
 - *Type:* string
 
 ---
 
-##### \`props\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.props\\"></a>
+##### \`props\`<sup>Optional</sup> <a name=\\"\`props\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.props\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.BucketProps\\">BucketProps</a>
 
 ---
 
-#### Methods <a id=\\"Methods\\"></a>
+#### Methods <a name=\\"Methods\\" id=\\"Methods\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -49,27 +49,27 @@ new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 
 ---
 
-##### \`greet\` <a id=\\"construct-library.GreeterBucket.greet\\"></a>
+##### \`greet\` <a name=\\"\`greet\`\\" id=\\"construct-library.GreeterBucket.greet\\"></a>
 
-<pre lang=\\"typescript\\">
+\`\`\`typescript
 public greet()
-</pre>
+\`\`\`
 
 
 
 
 
-## Classes <a id=\\"Classes\\"></a>
+## Classes <a name=\\"Classes\\" id=\\"Classes\\"></a>
 
-### GreeterBucket <a id=\\"construct-library.GreeterBucket\\"></a>
+### GreeterBucket <a name=\\"GreeterBucket\\" id=\\"construct-library.GreeterBucket\\"></a>
 
-#### Initializers <a id=\\"construct-library.GreeterBucket.Initializer\\"></a>
+#### Initializers <a name=\\"Initializers\\" id=\\"construct-library.GreeterBucket.Initializer\\"></a>
 
-<pre lang=\\"typescript\\">
+\`\`\`typescript
 import { GreeterBucket } from 'construct-library'
 
 new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
-</pre>
+\`\`\`
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
@@ -79,25 +79,25 @@ new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 
 ---
 
-##### \`scope\`<sup>Required</sup> <a id=\\"construct-library.GreeterBucket.parameter.scope\\"></a>
+##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"construct-library.GreeterBucket.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"#constructs.Construct\\">Construct</a>
 
 ---
 
-##### \`id\`<sup>Required</sup> <a id=\\"construct-library.GreeterBucket.parameter.id\\"></a>
+##### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"construct-library.GreeterBucket.parameter.id\\"></a>
 
 - *Type:* string
 
 ---
 
-##### \`props\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.props\\"></a>
+##### \`props\`<sup>Optional</sup> <a name=\\"\`props\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.props\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.BucketProps\\">BucketProps</a>
 
 ---
 
-#### Methods <a id=\\"Methods\\"></a>
+#### Methods <a name=\\"Methods\\" id=\\"Methods\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -105,11 +105,11 @@ new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 
 ---
 
-##### \`greet\` <a id=\\"construct-library.GreeterBucket.greet\\"></a>
+##### \`greet\` <a name=\\"\`greet\`\\" id=\\"construct-library.GreeterBucket.greet\\"></a>
 
-<pre lang=\\"typescript\\">
+\`\`\`typescript
 public greet()
-</pre>
+\`\`\`
 
 
 
@@ -119,15 +119,15 @@ public greet()
 `;
 
 exports[`specify language 1`] = `
-"# API Reference <a id=\\"API Reference\\"></a>
+"# API Reference <a name=\\"API Reference\\" id=\\"api-reference\\"></a>
 
-## Constructs <a id=\\"Constructs\\"></a>
+## Constructs <a name=\\"Constructs\\" id=\\"Constructs\\"></a>
 
-### GreeterBucket <a id=\\"construct-library.GreeterBucket\\"></a>
+### GreeterBucket <a name=\\"GreeterBucket\\" id=\\"construct-library.GreeterBucket\\"></a>
 
-#### Initializers <a id=\\"construct-library.GreeterBucket.Initializer\\"></a>
+#### Initializers <a name=\\"Initializers\\" id=\\"construct-library.GreeterBucket.Initializer\\"></a>
 
-<pre lang=\\"python\\">
+\`\`\`python
 import construct_library
 
 construct_library.GreeterBucket(
@@ -156,7 +156,7 @@ construct_library.GreeterBucket(
   website_redirect: RedirectTarget = None,
   website_routing_rules: typing.List[RoutingRule] = None
 )
-</pre>
+\`\`\`
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
@@ -187,19 +187,19 @@ construct_library.GreeterBucket(
 
 ---
 
-##### \`scope\`<sup>Required</sup> <a id=\\"construct-library.GreeterBucket.parameter.scope\\"></a>
+##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"construct-library.GreeterBucket.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"#constructs.Construct\\">Construct</a>
 
 ---
 
-##### \`id\`<sup>Required</sup> <a id=\\"construct-library.GreeterBucket.parameter.id\\"></a>
+##### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"construct-library.GreeterBucket.parameter.id\\"></a>
 
 - *Type:* str
 
 ---
 
-##### \`access_control\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.accessControl\\"></a>
+##### \`access_control\`<sup>Optional</sup> <a name=\\"\`access_control\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.accessControl\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.BucketAccessControl\\">BucketAccessControl</a>
 - *Default:* BucketAccessControl.PRIVATE
@@ -208,7 +208,7 @@ Specifies a canned ACL that grants predefined permissions to the bucket.
 
 ---
 
-##### \`auto_delete_objects\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.autoDeleteObjects\\"></a>
+##### \`auto_delete_objects\`<sup>Optional</sup> <a name=\\"\`auto_delete_objects\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.autoDeleteObjects\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -219,7 +219,7 @@ Requires the \`removalPolicy\` to be set to \`RemovalPolicy.DESTROY\`.  **Warnin
 
 ---
 
-##### \`block_public_access\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.blockPublicAccess\\"></a>
+##### \`block_public_access\`<sup>Optional</sup> <a name=\\"\`block_public_access\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.blockPublicAccess\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.BlockPublicAccess\\">BlockPublicAccess</a>
 - *Default:* CloudFormation defaults will apply. New buckets and objects don't allow public access, but users can modify bucket policies or object permissions to allow public access
@@ -232,7 +232,7 @@ The block public access configuration of this bucket.
 
 ---
 
-##### \`bucket_key_enabled\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.bucketKeyEnabled\\"></a>
+##### \`bucket_key_enabled\`<sup>Optional</sup> <a name=\\"\`bucket_key_enabled\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.bucketKeyEnabled\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -243,7 +243,7 @@ Only relevant, when Encryption is set to {@link BucketEncryption.KMS}
 
 ---
 
-##### \`bucket_name\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.bucketName\\"></a>
+##### \`bucket_name\`<sup>Optional</sup> <a name=\\"\`bucket_name\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.bucketName\\"></a>
 
 - *Type:* str
 - *Default:* Assigned by CloudFormation (recommended).
@@ -252,7 +252,7 @@ Physical name of this bucket.
 
 ---
 
-##### \`cors\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.cors\\"></a>
+##### \`cors\`<sup>Optional</sup> <a name=\\"\`cors\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.cors\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.CorsRule\\">CorsRule</a>]
 - *Default:* No CORS configuration.
@@ -265,7 +265,7 @@ The CORS configuration of this bucket.
 
 ---
 
-##### \`encryption\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.encryption\\"></a>
+##### \`encryption\`<sup>Optional</sup> <a name=\\"\`encryption\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.encryption\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.BucketEncryption\\">BucketEncryption</a>
 - *Default:* \`Kms\` if \`encryptionKey\` is specified, or \`Unencrypted\` otherwise.
@@ -276,7 +276,7 @@ If you choose KMS, you can specify a KMS key via \`encryptionKey\`. If encryptio
 
 ---
 
-##### \`encryption_key\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.encryptionKey\\"></a>
+##### \`encryption_key\`<sup>Optional</sup> <a name=\\"\`encryption_key\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.encryptionKey\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-kms.IKey\\">IKey</a>
 - *Default:* If encryption is set to \\"Kms\\" and this property is undefined, a new KMS key will be created and associated with this bucket.
@@ -287,7 +287,7 @@ The 'encryption' property must be either not specified or set to \\"Kms\\". An e
 
 ---
 
-##### \`enforce_ss_l\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.enforceSSL\\"></a>
+##### \`enforce_ss_l\`<sup>Optional</sup> <a name=\\"\`enforce_ss_l\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.enforceSSL\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -302,7 +302,7 @@ S3.5 of the AWS Foundational Security Best Practices Regarding S3.
 
 ---
 
-##### \`inventories\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.inventories\\"></a>
+##### \`inventories\`<sup>Optional</sup> <a name=\\"\`inventories\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.inventories\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.Inventory\\">Inventory</a>]
 - *Default:* No inventory configuration
@@ -315,7 +315,7 @@ The inventory configuration of the bucket.
 
 ---
 
-##### \`lifecycle_rules\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.lifecycleRules\\"></a>
+##### \`lifecycle_rules\`<sup>Optional</sup> <a name=\\"\`lifecycle_rules\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.lifecycleRules\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.LifecycleRule\\">LifecycleRule</a>]
 - *Default:* No lifecycle rules.
@@ -324,7 +324,7 @@ Rules that define how Amazon S3 manages objects during their lifetime.
 
 ---
 
-##### \`metrics\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.metrics\\"></a>
+##### \`metrics\`<sup>Optional</sup> <a name=\\"\`metrics\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.metrics\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.BucketMetrics\\">BucketMetrics</a>]
 - *Default:* No metrics configuration.
@@ -337,7 +337,7 @@ The metrics configuration of this bucket.
 
 ---
 
-##### \`object_ownership\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.objectOwnership\\"></a>
+##### \`object_ownership\`<sup>Optional</sup> <a name=\\"\`object_ownership\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.objectOwnership\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.ObjectOwnership\\">ObjectOwnership</a>
 - *Default:* No ObjectOwnership configuration, uploading account will own the object.
@@ -350,7 +350,7 @@ The objectOwnership of the bucket.
 
 ---
 
-##### \`public_read_access\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.publicReadAccess\\"></a>
+##### \`public_read_access\`<sup>Optional</sup> <a name=\\"\`public_read_access\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.publicReadAccess\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -361,7 +361,7 @@ Similar to calling \`bucket.grantPublicAccess()\`
 
 ---
 
-##### \`removal_policy\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.removalPolicy\\"></a>
+##### \`removal_policy\`<sup>Optional</sup> <a name=\\"\`removal_policy\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.removalPolicy\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/core.RemovalPolicy\\">RemovalPolicy</a>
 - *Default:* The bucket will be orphaned.
@@ -370,7 +370,7 @@ Policy to apply when the bucket is removed from this stack.
 
 ---
 
-##### \`server_access_logs_bucket\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.serverAccessLogsBucket\\"></a>
+##### \`server_access_logs_bucket\`<sup>Optional</sup> <a name=\\"\`server_access_logs_bucket\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.serverAccessLogsBucket\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.IBucket\\">IBucket</a>
 - *Default:* If \\"serverAccessLogsPrefix\\" undefined - access logs disabled, otherwise - log to current bucket.
@@ -379,7 +379,7 @@ Destination bucket for the server access logs.
 
 ---
 
-##### \`server_access_logs_prefix\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.serverAccessLogsPrefix\\"></a>
+##### \`server_access_logs_prefix\`<sup>Optional</sup> <a name=\\"\`server_access_logs_prefix\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.serverAccessLogsPrefix\\"></a>
 
 - *Type:* str
 - *Default:* No log file prefix
@@ -390,7 +390,7 @@ If defined without \\"serverAccessLogsBucket\\", enables access logs to current 
 
 ---
 
-##### \`versioned\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.versioned\\"></a>
+##### \`versioned\`<sup>Optional</sup> <a name=\\"\`versioned\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.versioned\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -399,7 +399,7 @@ Whether this bucket should have versioning turned on or not.
 
 ---
 
-##### \`website_error_document\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.websiteErrorDocument\\"></a>
+##### \`website_error_document\`<sup>Optional</sup> <a name=\\"\`website_error_document\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.websiteErrorDocument\\"></a>
 
 - *Type:* str
 - *Default:* No error document.
@@ -408,7 +408,7 @@ The name of the error document (e.g. \\"404.html\\") for the website. \`websiteI
 
 ---
 
-##### \`website_index_document\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.websiteIndexDocument\\"></a>
+##### \`website_index_document\`<sup>Optional</sup> <a name=\\"\`website_index_document\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.websiteIndexDocument\\"></a>
 
 - *Type:* str
 - *Default:* No index document.
@@ -417,7 +417,7 @@ The name of the index document (e.g. \\"index.html\\") for the website. Enables 
 
 ---
 
-##### \`website_redirect\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.websiteRedirect\\"></a>
+##### \`website_redirect\`<sup>Optional</sup> <a name=\\"\`website_redirect\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.websiteRedirect\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.RedirectTarget\\">RedirectTarget</a>
 - *Default:* No redirection.
@@ -428,7 +428,7 @@ If you specify this property, you can't specify \\"websiteIndexDocument\\", \\"w
 
 ---
 
-##### \`website_routing_rules\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.websiteRoutingRules\\"></a>
+##### \`website_routing_rules\`<sup>Optional</sup> <a name=\\"\`website_routing_rules\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.websiteRoutingRules\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.RoutingRule\\">RoutingRule</a>]
 - *Default:* No redirection rules.
@@ -437,7 +437,7 @@ Rules that define when a redirect is applied and the redirect behavior.
 
 ---
 
-#### Methods <a id=\\"Methods\\"></a>
+#### Methods <a name=\\"Methods\\" id=\\"Methods\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -445,23 +445,23 @@ Rules that define when a redirect is applied and the redirect behavior.
 
 ---
 
-##### \`greet\` <a id=\\"construct-library.GreeterBucket.greet\\"></a>
+##### \`greet\` <a name=\\"\`greet\`\\" id=\\"construct-library.GreeterBucket.greet\\"></a>
 
-<pre lang=\\"python\\">
+\`\`\`python
 def greet()
-</pre>
+\`\`\`
 
 
 
 
 
-## Classes <a id=\\"Classes\\"></a>
+## Classes <a name=\\"Classes\\" id=\\"Classes\\"></a>
 
-### GreeterBucket <a id=\\"construct-library.GreeterBucket\\"></a>
+### GreeterBucket <a name=\\"GreeterBucket\\" id=\\"construct-library.GreeterBucket\\"></a>
 
-#### Initializers <a id=\\"construct-library.GreeterBucket.Initializer\\"></a>
+#### Initializers <a name=\\"Initializers\\" id=\\"construct-library.GreeterBucket.Initializer\\"></a>
 
-<pre lang=\\"python\\">
+\`\`\`python
 import construct_library
 
 construct_library.GreeterBucket(
@@ -490,7 +490,7 @@ construct_library.GreeterBucket(
   website_redirect: RedirectTarget = None,
   website_routing_rules: typing.List[RoutingRule] = None
 )
-</pre>
+\`\`\`
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
@@ -521,19 +521,19 @@ construct_library.GreeterBucket(
 
 ---
 
-##### \`scope\`<sup>Required</sup> <a id=\\"construct-library.GreeterBucket.parameter.scope\\"></a>
+##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"construct-library.GreeterBucket.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"#constructs.Construct\\">Construct</a>
 
 ---
 
-##### \`id\`<sup>Required</sup> <a id=\\"construct-library.GreeterBucket.parameter.id\\"></a>
+##### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"construct-library.GreeterBucket.parameter.id\\"></a>
 
 - *Type:* str
 
 ---
 
-##### \`access_control\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.accessControl\\"></a>
+##### \`access_control\`<sup>Optional</sup> <a name=\\"\`access_control\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.accessControl\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.BucketAccessControl\\">BucketAccessControl</a>
 - *Default:* BucketAccessControl.PRIVATE
@@ -542,7 +542,7 @@ Specifies a canned ACL that grants predefined permissions to the bucket.
 
 ---
 
-##### \`auto_delete_objects\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.autoDeleteObjects\\"></a>
+##### \`auto_delete_objects\`<sup>Optional</sup> <a name=\\"\`auto_delete_objects\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.autoDeleteObjects\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -553,7 +553,7 @@ Requires the \`removalPolicy\` to be set to \`RemovalPolicy.DESTROY\`.  **Warnin
 
 ---
 
-##### \`block_public_access\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.blockPublicAccess\\"></a>
+##### \`block_public_access\`<sup>Optional</sup> <a name=\\"\`block_public_access\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.blockPublicAccess\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.BlockPublicAccess\\">BlockPublicAccess</a>
 - *Default:* CloudFormation defaults will apply. New buckets and objects don't allow public access, but users can modify bucket policies or object permissions to allow public access
@@ -566,7 +566,7 @@ The block public access configuration of this bucket.
 
 ---
 
-##### \`bucket_key_enabled\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.bucketKeyEnabled\\"></a>
+##### \`bucket_key_enabled\`<sup>Optional</sup> <a name=\\"\`bucket_key_enabled\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.bucketKeyEnabled\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -577,7 +577,7 @@ Only relevant, when Encryption is set to {@link BucketEncryption.KMS}
 
 ---
 
-##### \`bucket_name\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.bucketName\\"></a>
+##### \`bucket_name\`<sup>Optional</sup> <a name=\\"\`bucket_name\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.bucketName\\"></a>
 
 - *Type:* str
 - *Default:* Assigned by CloudFormation (recommended).
@@ -586,7 +586,7 @@ Physical name of this bucket.
 
 ---
 
-##### \`cors\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.cors\\"></a>
+##### \`cors\`<sup>Optional</sup> <a name=\\"\`cors\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.cors\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.CorsRule\\">CorsRule</a>]
 - *Default:* No CORS configuration.
@@ -599,7 +599,7 @@ The CORS configuration of this bucket.
 
 ---
 
-##### \`encryption\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.encryption\\"></a>
+##### \`encryption\`<sup>Optional</sup> <a name=\\"\`encryption\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.encryption\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.BucketEncryption\\">BucketEncryption</a>
 - *Default:* \`Kms\` if \`encryptionKey\` is specified, or \`Unencrypted\` otherwise.
@@ -610,7 +610,7 @@ If you choose KMS, you can specify a KMS key via \`encryptionKey\`. If encryptio
 
 ---
 
-##### \`encryption_key\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.encryptionKey\\"></a>
+##### \`encryption_key\`<sup>Optional</sup> <a name=\\"\`encryption_key\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.encryptionKey\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-kms.IKey\\">IKey</a>
 - *Default:* If encryption is set to \\"Kms\\" and this property is undefined, a new KMS key will be created and associated with this bucket.
@@ -621,7 +621,7 @@ The 'encryption' property must be either not specified or set to \\"Kms\\". An e
 
 ---
 
-##### \`enforce_ss_l\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.enforceSSL\\"></a>
+##### \`enforce_ss_l\`<sup>Optional</sup> <a name=\\"\`enforce_ss_l\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.enforceSSL\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -636,7 +636,7 @@ S3.5 of the AWS Foundational Security Best Practices Regarding S3.
 
 ---
 
-##### \`inventories\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.inventories\\"></a>
+##### \`inventories\`<sup>Optional</sup> <a name=\\"\`inventories\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.inventories\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.Inventory\\">Inventory</a>]
 - *Default:* No inventory configuration
@@ -649,7 +649,7 @@ The inventory configuration of the bucket.
 
 ---
 
-##### \`lifecycle_rules\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.lifecycleRules\\"></a>
+##### \`lifecycle_rules\`<sup>Optional</sup> <a name=\\"\`lifecycle_rules\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.lifecycleRules\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.LifecycleRule\\">LifecycleRule</a>]
 - *Default:* No lifecycle rules.
@@ -658,7 +658,7 @@ Rules that define how Amazon S3 manages objects during their lifetime.
 
 ---
 
-##### \`metrics\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.metrics\\"></a>
+##### \`metrics\`<sup>Optional</sup> <a name=\\"\`metrics\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.metrics\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.BucketMetrics\\">BucketMetrics</a>]
 - *Default:* No metrics configuration.
@@ -671,7 +671,7 @@ The metrics configuration of this bucket.
 
 ---
 
-##### \`object_ownership\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.objectOwnership\\"></a>
+##### \`object_ownership\`<sup>Optional</sup> <a name=\\"\`object_ownership\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.objectOwnership\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.ObjectOwnership\\">ObjectOwnership</a>
 - *Default:* No ObjectOwnership configuration, uploading account will own the object.
@@ -684,7 +684,7 @@ The objectOwnership of the bucket.
 
 ---
 
-##### \`public_read_access\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.publicReadAccess\\"></a>
+##### \`public_read_access\`<sup>Optional</sup> <a name=\\"\`public_read_access\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.publicReadAccess\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -695,7 +695,7 @@ Similar to calling \`bucket.grantPublicAccess()\`
 
 ---
 
-##### \`removal_policy\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.removalPolicy\\"></a>
+##### \`removal_policy\`<sup>Optional</sup> <a name=\\"\`removal_policy\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.removalPolicy\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/core.RemovalPolicy\\">RemovalPolicy</a>
 - *Default:* The bucket will be orphaned.
@@ -704,7 +704,7 @@ Policy to apply when the bucket is removed from this stack.
 
 ---
 
-##### \`server_access_logs_bucket\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.serverAccessLogsBucket\\"></a>
+##### \`server_access_logs_bucket\`<sup>Optional</sup> <a name=\\"\`server_access_logs_bucket\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.serverAccessLogsBucket\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.IBucket\\">IBucket</a>
 - *Default:* If \\"serverAccessLogsPrefix\\" undefined - access logs disabled, otherwise - log to current bucket.
@@ -713,7 +713,7 @@ Destination bucket for the server access logs.
 
 ---
 
-##### \`server_access_logs_prefix\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.serverAccessLogsPrefix\\"></a>
+##### \`server_access_logs_prefix\`<sup>Optional</sup> <a name=\\"\`server_access_logs_prefix\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.serverAccessLogsPrefix\\"></a>
 
 - *Type:* str
 - *Default:* No log file prefix
@@ -724,7 +724,7 @@ If defined without \\"serverAccessLogsBucket\\", enables access logs to current 
 
 ---
 
-##### \`versioned\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.versioned\\"></a>
+##### \`versioned\`<sup>Optional</sup> <a name=\\"\`versioned\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.versioned\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -733,7 +733,7 @@ Whether this bucket should have versioning turned on or not.
 
 ---
 
-##### \`website_error_document\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.websiteErrorDocument\\"></a>
+##### \`website_error_document\`<sup>Optional</sup> <a name=\\"\`website_error_document\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.websiteErrorDocument\\"></a>
 
 - *Type:* str
 - *Default:* No error document.
@@ -742,7 +742,7 @@ The name of the error document (e.g. \\"404.html\\") for the website. \`websiteI
 
 ---
 
-##### \`website_index_document\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.websiteIndexDocument\\"></a>
+##### \`website_index_document\`<sup>Optional</sup> <a name=\\"\`website_index_document\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.websiteIndexDocument\\"></a>
 
 - *Type:* str
 - *Default:* No index document.
@@ -751,7 +751,7 @@ The name of the index document (e.g. \\"index.html\\") for the website. Enables 
 
 ---
 
-##### \`website_redirect\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.websiteRedirect\\"></a>
+##### \`website_redirect\`<sup>Optional</sup> <a name=\\"\`website_redirect\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.websiteRedirect\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-s3.RedirectTarget\\">RedirectTarget</a>
 - *Default:* No redirection.
@@ -762,7 +762,7 @@ If you specify this property, you can't specify \\"websiteIndexDocument\\", \\"w
 
 ---
 
-##### \`website_routing_rules\`<sup>Optional</sup> <a id=\\"construct-library.GreeterBucket.parameter.websiteRoutingRules\\"></a>
+##### \`website_routing_rules\`<sup>Optional</sup> <a name=\\"\`website_routing_rules\`<sup>Optional</sup>\\" id=\\"construct-library.GreeterBucket.parameter.websiteRoutingRules\\"></a>
 
 - *Type:* typing.List[<a href=\\"#@aws-cdk/aws-s3.RoutingRule\\">RoutingRule</a>]
 - *Default:* No redirection rules.
@@ -771,7 +771,7 @@ Rules that define when a redirect is applied and the redirect behavior.
 
 ---
 
-#### Methods <a id=\\"Methods\\"></a>
+#### Methods <a name=\\"Methods\\" id=\\"Methods\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -779,11 +779,11 @@ Rules that define when a redirect is applied and the redirect behavior.
 
 ---
 
-##### \`greet\` <a id=\\"construct-library.GreeterBucket.greet\\"></a>
+##### \`greet\` <a name=\\"\`greet\`\\" id=\\"construct-library.GreeterBucket.greet\\"></a>
 
-<pre lang=\\"python\\">
+\`\`\`python
 def greet()
-</pre>
+\`\`\`
 
 
 

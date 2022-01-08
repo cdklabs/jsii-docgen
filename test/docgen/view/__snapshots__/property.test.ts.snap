@@ -3,6 +3,7 @@
 exports[`csharp snapshot 1`] = `
 Object {
   "default": undefined,
+  "displayName": "RepositoryCatalogData",
   "docs": Object {
     "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
   },
@@ -10,18 +11,18 @@ Object {
   "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData",
   "optional": true,
   "type": Object {
-    "name": "object",
+    "formattingPattern": "object",
   },
   "usage": "public object RepositoryCatalogData { get; set; }",
 }
 `;
 
 exports[`csharp snapshot 2`] = `
-" \`RepositoryCatalogData\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+" \`RepositoryCatalogData\`<sup>Optional</sup> <a name=\\"\`RepositoryCatalogData\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
-<pre lang=\\"csharp\\">
+\`\`\`csharp
 public object RepositoryCatalogData { get; set; }
-</pre>
+\`\`\`
 
 - *Type:* object
 
@@ -34,6 +35,7 @@ public object RepositoryCatalogData { get; set; }
 exports[`java snapshot 1`] = `
 Object {
   "default": undefined,
+  "displayName": "repositoryCatalogData",
   "docs": Object {
     "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
   },
@@ -41,18 +43,18 @@ Object {
   "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData",
   "optional": true,
   "type": Object {
-    "name": "java.lang.Object",
+    "formattingPattern": "java.lang.Object",
   },
   "usage": "public java.lang.Object getRepositoryCatalogData();",
 }
 `;
 
 exports[`java snapshot 2`] = `
-" \`repositoryCatalogData\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+" \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"\`repositoryCatalogData\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
-<pre lang=\\"java\\">
+\`\`\`java
 public java.lang.Object getRepositoryCatalogData();
-</pre>
+\`\`\`
 
 - *Type:* java.lang.Object
 
@@ -65,6 +67,7 @@ public java.lang.Object getRepositoryCatalogData();
 exports[`python snapshot 1`] = `
 Object {
   "default": undefined,
+  "displayName": "repository_catalog_data",
   "docs": Object {
     "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
   },
@@ -72,18 +75,18 @@ Object {
   "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData",
   "optional": true,
   "type": Object {
-    "name": "typing.Any",
+    "formattingPattern": "typing.Any",
   },
   "usage": "repository_catalog_data: typing.Any",
 }
 `;
 
 exports[`python snapshot 2`] = `
-" \`repository_catalog_data\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+" \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"\`repository_catalog_data\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
-<pre lang=\\"python\\">
+\`\`\`python
 repository_catalog_data: typing.Any
-</pre>
+\`\`\`
 
 - *Type:* typing.Any
 
@@ -96,6 +99,7 @@ repository_catalog_data: typing.Any
 exports[`typescript snapshot 1`] = `
 Object {
   "default": undefined,
+  "displayName": "repositoryCatalogData",
   "docs": Object {
     "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
   },
@@ -103,18 +107,18 @@ Object {
   "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData",
   "optional": true,
   "type": Object {
-    "name": "any",
+    "formattingPattern": "any",
   },
   "usage": "public readonly repositoryCatalogData: any;",
 }
 `;
 
 exports[`typescript snapshot 2`] = `
-" \`repositoryCatalogData\`<sup>Optional</sup> <a id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+" \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"\`repositoryCatalogData\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
-<pre lang=\\"typescript\\">
+\`\`\`typescript
 public readonly repositoryCatalogData: any;
-</pre>
+\`\`\`
 
 - *Type:* any
 

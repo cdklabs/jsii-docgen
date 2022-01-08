@@ -1,4 +1,4 @@
-import { DocsSchema, JsiiEntity, TypeSchema } from '../schema';
+import { DocsSchema } from '../schema';
 
 const sanitize = (input: string): string => {
   return input
@@ -229,51 +229,3 @@ export class MarkdownDocument {
     return line.replace(/\|/g, '\\|');
   }
 }
-
-export const defaultAnchorFormatter = (type: JsiiEntity) => {
-  return type.id;
-};
-
-export const defaultLinkFormatter = (type: JsiiEntity) => {
-  return `<a href="#${type.id}">${type.displayName}</a>`;
-};
-
-function isJsiiType(value: any): value is JsiiEntity {
-  return (
-    value !== null
-    && typeof value === 'object'
-    && value?.fqn
-    && value?.id
-    && value?.displayName
-  );
-}
-
-export const defaultTypeFormatter = (
-  type: TypeSchema,
-  linkFormatter: (type: JsiiEntity) => string,
-): string => {
-  let result = type.formattingPattern;
-  const typeRefs = [];
-  for (const typeRef of type.types ?? []) {
-    if (isJsiiType(typeRef)) {
-      typeRefs.push(linkFormatter(typeRef));
-    } else {
-      typeRefs.push(defaultTypeFormatter(typeRef, linkFormatter));
-    }
-  }
-
-  // substitute referred types into the original string
-  const placeholderMatcher = /\%/g;
-  for (const typeRef of typeRefs) {
-    const matches = placeholderMatcher.exec(result);
-    if (!matches) {
-      // it's possible the number of %'s doesn't match the number of types provided
-      // e.g. csharp unions are currently rendered to `{ name: 'object', types: [type1, type2] }`
-      continue;
-    }
-    const insertionIdx: number = matches.index;
-    result = result.substring(0, insertionIdx) + typeRef + result.substring(insertionIdx + 1);
-  }
-
-  return result;
-};

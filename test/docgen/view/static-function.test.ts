@@ -1,9 +1,7 @@
 import * as reflect from 'jsii-reflect';
-import { Language } from '../../../lib';
-import { CSharpTranspile } from '../../../src/docgen/transpile/csharp';
-import { JavaTranspile } from '../../../src/docgen/transpile/java';
-import { PythonTranspile } from '../../../src/docgen/transpile/python';
-import { TypeScriptTranspile } from '../../../src/docgen/transpile/typescript';
+import { Language } from '../../../src';
+import { MarkdownRenderer } from '../../../src/docgen/render/markdown-render';
+import { getTranspilerForLanguage } from '../../../src/docgen/view/documentation';
 import { StaticFunction } from '../../../src/docgen/view/static-function';
 import { Assemblies } from '../assemblies';
 
@@ -25,42 +23,10 @@ const findStaticFunction = (): reflect.Method => {
   throw new Error('Assembly does not contain a static function');
 };
 
-describe('python', () => {
-  const transpile = new PythonTranspile();
-  test('snapshot', () => {
-    const staticFunction = new StaticFunction(transpile, findStaticFunction()).toJson();
-    const markdown = StaticFunction.toMarkdown(staticFunction, { language: Language.PYTHON, ...metadata });
-    expect(staticFunction).toMatchSnapshot();
-    expect(markdown.render()).toMatchSnapshot();
-  });
-});
-
-describe('typescript', () => {
-  const transpile = new TypeScriptTranspile();
-  test('snapshot', () => {
-    const staticFunction = new StaticFunction(transpile, findStaticFunction()).toJson();
-    const markdown = StaticFunction.toMarkdown(staticFunction, { language: Language.TYPESCRIPT, ...metadata });
-    expect(staticFunction).toMatchSnapshot();
-    expect(markdown.render()).toMatchSnapshot();
-  });
-});
-
-describe('java', () => {
-  const transpile = new JavaTranspile();
-  test('snapshot', () => {
-    const staticFunction = new StaticFunction(transpile, findStaticFunction()).toJson();
-    const markdown = StaticFunction.toMarkdown(staticFunction, { language: Language.JAVA, ...metadata });
-    expect(staticFunction).toMatchSnapshot();
-    expect(markdown.render()).toMatchSnapshot();
-  });
-});
-
-describe('csharp', () => {
-  const transpile = new CSharpTranspile();
-  test('snapshot', () => {
-    const staticFunction = new StaticFunction(transpile, findStaticFunction()).toJson();
-    const markdown = StaticFunction.toMarkdown(staticFunction, { language: Language.CSHARP, ...metadata });
-    expect(staticFunction).toMatchSnapshot();
-    expect(markdown.render()).toMatchSnapshot();
-  });
+test.each(Language.values())('%s snapshot', (language) => {
+  const transpile = getTranspilerForLanguage(language);
+  const markdown = new MarkdownRenderer({ language, ...metadata });
+  const func = new StaticFunction(transpile, findStaticFunction()).toJson();
+  expect(func).toMatchSnapshot();
+  expect(markdown.visitStaticFunction(func).render()).toMatchSnapshot();
 });

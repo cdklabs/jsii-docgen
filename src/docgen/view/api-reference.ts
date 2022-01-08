@@ -1,10 +1,8 @@
 import * as reflect from 'jsii-reflect';
-import { MarkdownDocument } from '../render/markdown-doc';
 import { ApiReferenceSchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
 import { Classes } from './classes';
 import { Constructs } from './constructs';
-import { MarkdownRenderContext } from './documentation';
 import { Enums } from './enums';
 import { Interfaces } from './interfaces';
 import { Structs } from './structs';
@@ -13,22 +11,6 @@ import { Structs } from './structs';
  * Render an API reference based on the jsii assembly.
  */
 export class ApiReference {
-  /**
-   * Generate markdown.
-   */
-  public static toMarkdown(
-    apiRef: ApiReferenceSchema,
-    context: MarkdownRenderContext,
-  ): MarkdownDocument {
-    const md = new MarkdownDocument({ header: { title: 'API Reference' }, id: 'api-reference' });
-    md.section(Constructs.toMarkdown(apiRef.constructs, context));
-    md.section(Structs.toMarkdown(apiRef.structs, context));
-    md.section(Classes.toMarkdown(apiRef.constructs, context));
-    md.section(Interfaces.toMarkdown(apiRef.interfaces, context));
-    md.section(Enums.toMarkdown(apiRef.enums, context));
-    return md;
-  }
-
   private readonly constructs: Constructs;
   private readonly structs: Structs;
   private readonly interfaces: Interfaces;
