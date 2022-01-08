@@ -1,4 +1,5 @@
 import * as reflect from 'jsii-reflect';
+import { ClassSchema } from '../schema';
 import { Transpile } from '../transpile/transpile';
 import { Class } from './class';
 
@@ -10,7 +11,7 @@ export class Classes {
       .map((c) => new Class(transpile, c));
   }
 
-  public toJson() {
+  public toJson(): ClassSchema[] {
     return this.classes.map((klass) => klass.toJson());
   }
 }

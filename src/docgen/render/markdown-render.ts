@@ -76,7 +76,7 @@ export class MarkdownRenderer {
     const md = new MarkdownDocument({ header: { title: 'API Reference' }, id: 'api-reference' });
     md.section(this.visitConstructs(apiRef.constructs));
     md.section(this.visitStructs(apiRef.structs));
-    md.section(this.visitClasses(apiRef.constructs));
+    md.section(this.visitClasses(apiRef.classes));
     md.section(this.visitInterfaces(apiRef.interfaces));
     md.section(this.visitEnums(apiRef.enums));
     return md;
