@@ -181,10 +181,7 @@ export class MarkdownRenderer {
     });
 
     if (struct.usage) {
-      initializer.code(
-        this.language.toString(),
-        struct.usage,
-      );
+      initializer.code(this.language.toString(), struct.usage);
     }
 
     md.section(initializer);
@@ -282,22 +279,7 @@ export class MarkdownRenderer {
       header: { title: enu.displayName },
     });
 
-    const tableRows: string[][] = [];
-    tableRows.push(['Name', 'Description'].map(MarkdownDocument.bold));
-
-    for (const em of enu.members) {
-      const emLink = MarkdownDocument.pre(this.linkFormatter({
-        fqn: em.fqn,
-        displayName: em.displayName,
-        id: em.id,
-        ...this.metadata,
-      }));
-      const emDescription = em.docs?.summary && em.docs?.summary.length > 0
-        ? em.docs?.summary
-        : MarkdownDocument.italic('No description.');
-      tableRows.push([emLink, emDescription]);
-    }
-    md.table(tableRows);
+    md.table(this.createTable(enu.members));
     md.split();
 
     if (enu.docs) {
@@ -320,22 +302,7 @@ export class MarkdownRenderer {
 
     const md = new MarkdownDocument({ header: { title: 'Properties' } });
 
-    const tableRows: string[][] = [];
-    tableRows.push(['Name', 'Type', 'Description'].map(MarkdownDocument.bold));
-    for (const prop of properties) {
-      const propLink = MarkdownDocument.pre(this.linkFormatter({
-        id: prop.id,
-        displayName: prop.displayName,
-        fqn: prop.fqn,
-        ...this.metadata,
-      }));
-      const propType = MarkdownDocument.pre(this.typeFormatter(prop.type, this.linkFormatter));
-      const propDescription = prop.docs?.summary && prop.docs?.summary.length > 0
-        ? prop.docs?.summary
-        : MarkdownDocument.italic('No description.');
-      tableRows.push([propLink, propType, propDescription]);
-    }
-    md.table(tableRows);
+    md.table(this.createTableWithTypes(properties));
     md.split();
 
     for (const prop of properties) {
@@ -361,28 +328,10 @@ export class MarkdownRenderer {
     });
 
     if (init.usage) {
-      md.code(
-        this.language.toString(),
-        init.usage,
-      );
+      md.code(this.language.toString(), init.usage);
     }
 
-    const tableRows: string[][] = [];
-    tableRows.push(['Name', 'Type', 'Description'].map(MarkdownDocument.bold));
-    for (const param of init.parameters) {
-      const paramLink = MarkdownDocument.pre(this.linkFormatter({
-        id: param.id,
-        displayName: param.displayName,
-        fqn: param.fqn,
-        ...this.metadata,
-      }));
-      const paramType = MarkdownDocument.pre(this.typeFormatter(param.type, this.linkFormatter));
-      const paramDescription = param.docs?.summary && param.docs?.summary.length > 0
-        ? param.docs?.summary
-        : MarkdownDocument.italic('No description.');
-      tableRows.push([paramLink, paramType, paramDescription]);
-    }
-    md.table(tableRows);
+    md.table(this.createTableWithTypes(init.parameters));
     md.split();
 
     for (const param of init.parameters) {
@@ -401,22 +350,7 @@ export class MarkdownRenderer {
 
     const md = new MarkdownDocument({ header: { title: 'Methods' } });
 
-    const tableRows: string[][] = [];
-    tableRows.push(['Name', 'Description'].map(MarkdownDocument.bold));
-
-    for (const method of methods) {
-      const methodLink = MarkdownDocument.pre(this.linkFormatter({
-        id: method.id,
-        displayName: method.displayName,
-        fqn: method.fqn,
-        ...this.metadata,
-      }));
-      const methodDescription = method.docs?.summary && method.docs?.summary.length > 0
-        ? method.docs?.summary
-        : MarkdownDocument.italic('No description.');
-      tableRows.push([methodLink, methodDescription]);
-    }
-    md.table(tableRows);
+    md.table(this.createTable(methods));
     md.split();
 
     for (const method of methods) {
@@ -434,21 +368,7 @@ export class MarkdownRenderer {
 
     const md = new MarkdownDocument({ header: { title: 'Static Functions' } });
 
-    const tableRows: string[][] = [];
-    tableRows.push(['Name', 'Description'].map(MarkdownDocument.bold));
-    for (const method of methods) {
-      const methodLink = MarkdownDocument.pre(this.linkFormatter({
-        id: method.id,
-        displayName: method.displayName,
-        fqn: method.fqn,
-        ...this.metadata,
-      }));
-      const methodDescription = method.docs?.summary && method.docs?.summary.length > 0
-        ? method.docs?.summary
-        : MarkdownDocument.italic('No description.');
-      tableRows.push([methodLink, methodDescription]);
-    }
-    md.table(tableRows);
+    md.table(this.createTable(methods));
     md.split();
 
     for (const method of methods) {
@@ -466,22 +386,7 @@ export class MarkdownRenderer {
 
     const md = new MarkdownDocument({ header: { title: 'Constants' } });
 
-    const tableRows: string[][] = [];
-    tableRows.push(['Name', 'Type', 'Description'].map(MarkdownDocument.bold));
-    for (const con of constants) {
-      const conLink = MarkdownDocument.pre(this.linkFormatter({
-        id: con.id,
-        displayName: con.displayName,
-        fqn: con.fqn,
-        ...this.metadata,
-      }));
-      const conType = MarkdownDocument.pre(this.typeFormatter(con.type, this.linkFormatter));
-      const conDescription = con.docs?.summary && con.docs?.summary.length > 0
-        ? con.docs?.summary
-        : MarkdownDocument.italic('No description.');
-      tableRows.push([conLink, conType, conDescription]);
-    }
-    md.table(tableRows);
+    md.table(this.createTableWithTypes(constants));
     md.split();
 
     for (const con of constants) {
@@ -691,6 +596,58 @@ export class MarkdownRenderer {
   ): MarkdownDocument {
     return this.visitProperty(constant);
   }
+
+  private createTable(items: SimpleTableItem[]): string[][] {
+    const tableRows: string[][] = [];
+    tableRows.push(['Name', 'Description'].map(MarkdownDocument.bold));
+
+    for (const item of items) {
+      const link = MarkdownDocument.pre(this.linkFormatter({
+        fqn: item.fqn,
+        displayName: item.displayName,
+        id: item.id,
+        ...this.metadata,
+      }));
+      const description = item.docs?.summary && item.docs?.summary.length > 0
+        ? item.docs?.summary
+        : MarkdownDocument.italic('No description.');
+      tableRows.push([link, description]);
+    }
+
+    return tableRows;
+  }
+
+  private createTableWithTypes(items: TypeTableItem[]): string[][] {
+    const tableRows: string[][] = [];
+    tableRows.push(['Name', 'Type', 'Description'].map(MarkdownDocument.bold));
+
+    for (const item of items) {
+      const link = MarkdownDocument.pre(this.linkFormatter({
+        fqn: item.fqn,
+        displayName: item.displayName,
+        id: item.id,
+        ...this.metadata,
+      }));
+      const type = MarkdownDocument.pre(this.typeFormatter(item.type, this.linkFormatter));
+      const description = item.docs?.summary && item.docs?.summary.length > 0
+        ? item.docs?.summary
+        : MarkdownDocument.italic('No description.');
+      tableRows.push([link, type, description]);
+    }
+
+    return tableRows;
+  }
+}
+
+interface SimpleTableItem {
+  readonly fqn: string;
+  readonly displayName: string;
+  readonly id: string;
+  readonly docs?: { summary?: string };
+}
+
+interface TypeTableItem extends SimpleTableItem {
+  readonly type: TypeSchema;
 }
 
 export const defaultAnchorFormatter = (type: JsiiEntity) => {
