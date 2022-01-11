@@ -21,9 +21,7 @@ Define a repository by creating a new instance of \`Repository\`. A repository
 holds multiple verions of a single container image.
 
 \`\`\`csharp
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 var repository = new ecr.Repository(this, \\"Repository\\");
 \`\`\`
 
@@ -32,9 +30,7 @@ var repository = new ecr.Repository(this, \\"Repository\\");
 Amazon ECR image scanning helps in identifying software vulnerabilities in your container images. You can manually scan container images stored in Amazon ECR, or you can configure your repositories to scan images when you push them to a repository. To create a new repository to scan on push, simply enable \`imageScanOnPush\` in the properties
 
 \`\`\`csharp
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 var repository = new ecr.Repository(stack, \\"Repo\\", new Struct {
     ImageScanOnPush = true
 });
@@ -43,9 +39,7 @@ var repository = new ecr.Repository(stack, \\"Repo\\", new Struct {
 To create an \`onImageScanCompleted\` event rule and trigger the event target
 
 \`\`\`csharp
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 repository.OnImageScanCompleted(\\"ImageScanComplete\\").AddTarget(...);
 \`\`\`
 
@@ -60,9 +54,7 @@ A Docker authorization token can be obtained using the \`GetAuthorizationToken\`
 grants an IAM user access to call this API.
 
 \`\`\`csharp
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 using Amazon.CDK.AWS.IAM;
 using Amazon.CDK.AWS.ECR;
 
@@ -78,9 +70,7 @@ higher rate and bandwidth limits.
 The following code snippet grants an IAM user access to retrieve an authorization token for the public gallery.
 
 \`\`\`csharp
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 using Amazon.CDK.AWS.IAM;
 using Amazon.CDK.AWS.ECR;
 
@@ -95,9 +85,7 @@ This user can then proceed to login to the registry using one of the [authentica
 You can set tag immutability on images in our repository using the \`imageTagMutability\` construct prop.
 
 \`\`\`csharp
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 new ecr.Repository(stack, \\"Repo\\", new Struct { ImageTagMutability = ecr.TagMutability.IMMUTABLE });
 \`\`\`
 
@@ -110,9 +98,7 @@ against that image. For example, the following deletes images older than
 is important here):
 
 \`\`\`csharp
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 repository.AddLifecycleRule(new Struct { TagPrefixList = new [] { \\"prod\\" }, MaxImageCount = 9999 });
 repository.AddLifecycleRule(new Struct { MaxImageAge = cdk.Duration.Days(30) });
 \`\`\`
@@ -2615,9 +2601,7 @@ Define a repository by creating a new instance of \`Repository\`. A repository
 holds multiple verions of a single container image.
 
 \`\`\`csharp
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 var repository = new ecr.Repository(this, \\"Repository\\");
 \`\`\`
 
@@ -2626,9 +2610,7 @@ var repository = new ecr.Repository(this, \\"Repository\\");
 Amazon ECR image scanning helps in identifying software vulnerabilities in your container images. You can manually scan container images stored in Amazon ECR, or you can configure your repositories to scan images when you push them to a repository. To create a new repository to scan on push, simply enable \`imageScanOnPush\` in the properties
 
 \`\`\`csharp
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 var repository = new ecr.Repository(stack, \\"Repo\\", new Struct {
     ImageScanOnPush = true
 });
@@ -2637,9 +2619,7 @@ var repository = new ecr.Repository(stack, \\"Repo\\", new Struct {
 To create an \`onImageScanCompleted\` event rule and trigger the event target
 
 \`\`\`csharp
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 repository.OnImageScanCompleted(\\"ImageScanComplete\\").AddTarget(...);
 \`\`\`
 
@@ -2654,9 +2634,7 @@ A Docker authorization token can be obtained using the \`GetAuthorizationToken\`
 grants an IAM user access to call this API.
 
 \`\`\`csharp
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 using Aws.Cdk.Aws.Iam;
 using Aws.Cdk.Aws.Ecr;
 
@@ -2672,9 +2650,7 @@ higher rate and bandwidth limits.
 The following code snippet grants an IAM user access to retrieve an authorization token for the public gallery.
 
 \`\`\`csharp
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 using Aws.Cdk.Aws.Iam;
 using Aws.Cdk.Aws.Ecr;
 
@@ -2689,9 +2665,7 @@ This user can then proceed to login to the registry using one of the [authentica
 You can set tag immutability on images in our repository using the \`imageTagMutability\` construct prop.
 
 \`\`\`csharp
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 new ecr.Repository(stack, \\"Repo\\", new Struct { ImageTagMutability = ecr.TagMutability.IMMUTABLE });
 \`\`\`
 
@@ -2704,9 +2678,7 @@ against that image. For example, the following deletes images older than
 is important here):
 
 \`\`\`csharp
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 repository.AddLifecycleRule(new Struct { TagPrefixList = new [] { \\"prod\\" }, MaxImageCount = 9999 });
 repository.AddLifecycleRule(new Struct { MaxImageAge = cdk.Duration.Days(30) });
 \`\`\`
@@ -10747,7 +10719,7 @@ public SubnetSelection[] VpcSubnets { get; set; }
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`csharp // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`csharp // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -10818,7 +10790,7 @@ public ILayerVersion KubectlLayer { get; set; }
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`csharp // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  var layer = new lambda.LayerVersion(this, \\"kubectl-layer\\", new Struct {     Code = lambda.Code.FromAsset($\\"{__dirname}/layer.zip\\") });[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`csharp // Example automatically generated from non-compiling source. May contain errors. var layer = new lambda.LayerVersion(this, \\"kubectl-layer\\", new Struct {     Code = lambda.Code.FromAsset($\\"{__dirname}/layer.zip\\") });[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -11073,7 +11045,7 @@ public SubnetSelection[] VpcSubnets { get; set; }
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`csharp // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`csharp // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -11144,7 +11116,7 @@ public ILayerVersion KubectlLayer { get; set; }
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`csharp // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  var layer = new lambda.LayerVersion(this, \\"kubectl-layer\\", new Struct {     Code = lambda.Code.FromAsset($\\"{__dirname}/layer.zip\\") });[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`csharp // Example automatically generated from non-compiling source. May contain errors. var layer = new lambda.LayerVersion(this, \\"kubectl-layer\\", new Struct {     Code = lambda.Code.FromAsset($\\"{__dirname}/layer.zip\\") });[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -11414,7 +11386,7 @@ public SubnetSelection[] VpcSubnets { get; set; }
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`csharp // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`csharp // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -11698,7 +11670,7 @@ public SubnetSelection[] VpcSubnets { get; set; }
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`csharp // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`csharp // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -11769,7 +11741,7 @@ public ILayerVersion KubectlLayer { get; set; }
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`csharp // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  var layer = new lambda.LayerVersion(this, \\"kubectl-layer\\", new Struct {     Code = lambda.Code.FromAsset($\\"{__dirname}/layer.zip\\") });[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`csharp // Example automatically generated from non-compiling source. May contain errors. var layer = new lambda.LayerVersion(this, \\"kubectl-layer\\", new Struct {     Code = lambda.Code.FromAsset($\\"{__dirname}/layer.zip\\") });[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -20815,7 +20787,7 @@ public SubnetSelection[] VpcSubnets { get; set; }
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`csharp // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`csharp // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -20886,7 +20858,7 @@ public ILayerVersion KubectlLayer { get; set; }
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`csharp // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  var layer = new lambda.LayerVersion(this, \\"kubectl-layer\\", new Struct {     Code = lambda.Code.FromAsset($\\"{__dirname}/layer.zip\\") });[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`csharp // Example automatically generated from non-compiling source. May contain errors. var layer = new lambda.LayerVersion(this, \\"kubectl-layer\\", new Struct {     Code = lambda.Code.FromAsset($\\"{__dirname}/layer.zip\\") });[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -21141,7 +21113,7 @@ public SubnetSelection[] VpcSubnets { get; set; }
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`csharp // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`csharp // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -21212,7 +21184,7 @@ public ILayerVersion KubectlLayer { get; set; }
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`csharp // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  var layer = new lambda.LayerVersion(this, \\"kubectl-layer\\", new Struct {     Code = lambda.Code.FromAsset($\\"{__dirname}/layer.zip\\") });[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`csharp // Example automatically generated from non-compiling source. May contain errors. var layer = new lambda.LayerVersion(this, \\"kubectl-layer\\", new Struct {     Code = lambda.Code.FromAsset($\\"{__dirname}/layer.zip\\") });[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -21482,7 +21454,7 @@ public SubnetSelection[] VpcSubnets { get; set; }
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`csharp // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`csharp // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -21766,7 +21738,7 @@ public SubnetSelection[] VpcSubnets { get; set; }
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`csharp // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`csharp // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -21837,7 +21809,7 @@ public ILayerVersion KubectlLayer { get; set; }
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`csharp // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  var layer = new lambda.LayerVersion(this, \\"kubectl-layer\\", new Struct {     Code = lambda.Code.FromAsset($\\"{__dirname}/layer.zip\\") });[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`csharp // Example automatically generated from non-compiling source. May contain errors. var layer = new lambda.LayerVersion(this, \\"kubectl-layer\\", new Struct {     Code = lambda.Code.FromAsset($\\"{__dirname}/layer.zip\\") });[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -25260,9 +25232,7 @@ Define a repository by creating a new instance of \`Repository\`. A repository
 holds multiple verions of a single container image.
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 repository = ecr.Repository(self, \\"Repository\\")
 \`\`\`
 
@@ -25271,9 +25241,7 @@ repository = ecr.Repository(self, \\"Repository\\")
 Amazon ECR image scanning helps in identifying software vulnerabilities in your container images. You can manually scan container images stored in Amazon ECR, or you can configure your repositories to scan images when you push them to a repository. To create a new repository to scan on push, simply enable \`imageScanOnPush\` in the properties
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 repository = ecr.Repository(stack, \\"Repo\\",
     image_scan_on_push=True
 )
@@ -25282,9 +25250,7 @@ repository = ecr.Repository(stack, \\"Repo\\",
 To create an \`onImageScanCompleted\` event rule and trigger the event target
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 repository.on_image_scan_completed(\\"ImageScanComplete\\").add_target(...)
 \`\`\`
 
@@ -25299,9 +25265,7 @@ A Docker authorization token can be obtained using the \`GetAuthorizationToken\`
 grants an IAM user access to call this API.
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 import aws_cdk.aws_iam as iam
 import aws_cdk.aws_ecr as ecr
 
@@ -25317,9 +25281,7 @@ higher rate and bandwidth limits.
 The following code snippet grants an IAM user access to retrieve an authorization token for the public gallery.
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 import aws_cdk.aws_iam as iam
 import aws_cdk.aws_ecr as ecr
 
@@ -25334,9 +25296,7 @@ This user can then proceed to login to the registry using one of the [authentica
 You can set tag immutability on images in our repository using the \`imageTagMutability\` construct prop.
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 ecr.Repository(stack, \\"Repo\\", image_tag_mutability=ecr.TagMutability.IMMUTABLE)
 \`\`\`
 
@@ -25349,9 +25309,7 @@ against that image. For example, the following deletes images older than
 is important here):
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 repository.add_lifecycle_rule(tag_prefix_list=[\\"prod\\"], max_image_count=9999)
 repository.add_lifecycle_rule(max_image_age=cdk.Duration.days(30))
 \`\`\`
@@ -28573,9 +28531,7 @@ Define a repository by creating a new instance of \`Repository\`. A repository
 holds multiple verions of a single container image.
 
 \`\`\`java
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 Object repository = new Repository(this, \\"Repository\\");
 \`\`\`
 
@@ -28584,9 +28540,7 @@ Object repository = new Repository(this, \\"Repository\\");
 Amazon ECR image scanning helps in identifying software vulnerabilities in your container images. You can manually scan container images stored in Amazon ECR, or you can configure your repositories to scan images when you push them to a repository. To create a new repository to scan on push, simply enable \`imageScanOnPush\` in the properties
 
 \`\`\`java
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 Object repository = Repository.Builder.create(stack, \\"Repo\\")
         .imageScanOnPush(true)
         .build();
@@ -28595,9 +28549,7 @@ Object repository = Repository.Builder.create(stack, \\"Repo\\")
 To create an \`onImageScanCompleted\` event rule and trigger the event target
 
 \`\`\`java
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 repository.onImageScanCompleted(\\"ImageScanComplete\\").addTarget(...);
 \`\`\`
 
@@ -28612,9 +28564,7 @@ A Docker authorization token can be obtained using the \`GetAuthorizationToken\`
 grants an IAM user access to call this API.
 
 \`\`\`java
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 import software.amazon.awscdk.services.iam.*;
 import software.amazon.awscdk.services.ecr.*;
 
@@ -28630,9 +28580,7 @@ higher rate and bandwidth limits.
 The following code snippet grants an IAM user access to retrieve an authorization token for the public gallery.
 
 \`\`\`java
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 import software.amazon.awscdk.services.iam.*;
 import software.amazon.awscdk.services.ecr.*;
 
@@ -28647,9 +28595,7 @@ This user can then proceed to login to the registry using one of the [authentica
 You can set tag immutability on images in our repository using the \`imageTagMutability\` construct prop.
 
 \`\`\`java
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 Repository.Builder.create(stack, \\"Repo\\").imageTagMutability(ecr.getTagMutability().getIMMUTABLE()).build();
 \`\`\`
 
@@ -28662,9 +28608,7 @@ against that image. For example, the following deletes images older than
 is important here):
 
 \`\`\`java
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 repository.addLifecycleRule(Map.of(\\"tagPrefixList\\", List.of(\\"prod\\"), \\"maxImageCount\\", 9999));
 repository.addLifecycleRule(Map.of(\\"maxImageAge\\", cdk.Duration.days(30)));
 \`\`\`
@@ -31418,9 +31362,7 @@ Define a repository by creating a new instance of \`Repository\`. A repository
 holds multiple verions of a single container image.
 
 \`\`\`java
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 Object repository = new Repository(this, \\"Repository\\");
 \`\`\`
 
@@ -31429,9 +31371,7 @@ Object repository = new Repository(this, \\"Repository\\");
 Amazon ECR image scanning helps in identifying software vulnerabilities in your container images. You can manually scan container images stored in Amazon ECR, or you can configure your repositories to scan images when you push them to a repository. To create a new repository to scan on push, simply enable \`imageScanOnPush\` in the properties
 
 \`\`\`java
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 Object repository = Repository.Builder.create(stack, \\"Repo\\")
         .imageScanOnPush(true)
         .build();
@@ -31440,9 +31380,7 @@ Object repository = Repository.Builder.create(stack, \\"Repo\\")
 To create an \`onImageScanCompleted\` event rule and trigger the event target
 
 \`\`\`java
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 repository.onImageScanCompleted(\\"ImageScanComplete\\").addTarget(...);
 \`\`\`
 
@@ -31457,9 +31395,7 @@ A Docker authorization token can be obtained using the \`GetAuthorizationToken\`
 grants an IAM user access to call this API.
 
 \`\`\`java
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 import aws.cdk.aws.iam.*;
 import aws.cdk.aws.ecr.*;
 
@@ -31475,9 +31411,7 @@ higher rate and bandwidth limits.
 The following code snippet grants an IAM user access to retrieve an authorization token for the public gallery.
 
 \`\`\`java
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 import aws.cdk.aws.iam.*;
 import aws.cdk.aws.ecr.*;
 
@@ -31492,9 +31426,7 @@ This user can then proceed to login to the registry using one of the [authentica
 You can set tag immutability on images in our repository using the \`imageTagMutability\` construct prop.
 
 \`\`\`java
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 Repository.Builder.create(stack, \\"Repo\\").imageTagMutability(ecr.getTagMutability().getIMMUTABLE()).build();
 \`\`\`
 
@@ -31507,9 +31439,7 @@ against that image. For example, the following deletes images older than
 is important here):
 
 \`\`\`java
-// This example was automatically transliterated with incomplete type information. It may not work as-is.
-// See https://github.com/aws/jsii/issues/826 for more information.
-
+// Example automatically generated from non-compiling source. May contain errors.
 repository.addLifecycleRule(Map.of(\\"tagPrefixList\\", List.of(\\"prod\\"), \\"maxImageCount\\", 9999));
 repository.addLifecycleRule(Map.of(\\"maxImageAge\\", cdk.Duration.days(30)));
 \`\`\`
@@ -37176,7 +37106,7 @@ The VPC in which to create the Cluster.
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -37227,7 +37157,7 @@ Only relevant for kubectl enabled clusters.
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -38056,7 +37986,7 @@ The VPC in which to create the Cluster.
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -38107,7 +38037,7 @@ Only relevant for kubectl enabled clusters.
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -41292,7 +41222,7 @@ public java.util.List<SubnetSelection> getVpcSubnets();
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -41363,7 +41293,7 @@ public ILayerVersion getKubectlLayer();
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -41618,7 +41548,7 @@ public java.util.List<SubnetSelection> getVpcSubnets();
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -41689,7 +41619,7 @@ public ILayerVersion getKubectlLayer();
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -41959,7 +41889,7 @@ public java.util.List<SubnetSelection> getVpcSubnets();
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -42244,7 +42174,7 @@ public java.util.List<SubnetSelection> getVpcSubnets();
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -42315,7 +42245,7 @@ public ILayerVersion getKubectlLayer();
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -48643,7 +48573,7 @@ The VPC in which to create the Cluster.
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -48694,7 +48624,7 @@ Only relevant for kubectl enabled clusters.
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -49523,7 +49453,7 @@ The VPC in which to create the Cluster.
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -49574,7 +49504,7 @@ Only relevant for kubectl enabled clusters.
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -52897,7 +52827,7 @@ public java.util.List<SubnetSelection> getVpcSubnets();
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -52968,7 +52898,7 @@ public ILayerVersion getKubectlLayer();
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -53223,7 +53153,7 @@ public java.util.List<SubnetSelection> getVpcSubnets();
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -53294,7 +53224,7 @@ public ILayerVersion getKubectlLayer();
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -53564,7 +53494,7 @@ public java.util.List<SubnetSelection> getVpcSubnets();
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -53849,7 +53779,7 @@ public java.util.List<SubnetSelection> getVpcSubnets();
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -53920,7 +53850,7 @@ public ILayerVersion getKubectlLayer();
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // This example was automatically transliterated with incomplete type information. It may not work as-is. // See https://github.com/aws/jsii/issues/826 for more information.  Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`java // Example automatically generated from non-compiling source. May contain errors. Object layer = LayerVersion.Builder.create(this, \\"kubectl-layer\\")         .code(lambda.Code.fromAsset(String.format(\\"%s/layer.zip\\", __dirname)))         .build();[lambda.Runtime.PROVIDED] compatibleRuntimes; \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -57441,9 +57371,7 @@ Define a repository by creating a new instance of \`Repository\`. A repository
 holds multiple verions of a single container image.
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 repository = ecr.Repository(self, \\"Repository\\")
 \`\`\`
 
@@ -57452,9 +57380,7 @@ repository = ecr.Repository(self, \\"Repository\\")
 Amazon ECR image scanning helps in identifying software vulnerabilities in your container images. You can manually scan container images stored in Amazon ECR, or you can configure your repositories to scan images when you push them to a repository. To create a new repository to scan on push, simply enable \`imageScanOnPush\` in the properties
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 repository = ecr.Repository(stack, \\"Repo\\",
     image_scan_on_push=True
 )
@@ -57463,9 +57389,7 @@ repository = ecr.Repository(stack, \\"Repo\\",
 To create an \`onImageScanCompleted\` event rule and trigger the event target
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 repository.on_image_scan_completed(\\"ImageScanComplete\\").add_target(...)
 \`\`\`
 
@@ -57480,9 +57404,7 @@ A Docker authorization token can be obtained using the \`GetAuthorizationToken\`
 grants an IAM user access to call this API.
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 import aws_cdk.aws_iam as iam
 import aws_cdk.aws_ecr as ecr
 
@@ -57498,9 +57420,7 @@ higher rate and bandwidth limits.
 The following code snippet grants an IAM user access to retrieve an authorization token for the public gallery.
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 import aws_cdk.aws_iam as iam
 import aws_cdk.aws_ecr as ecr
 
@@ -57515,9 +57435,7 @@ This user can then proceed to login to the registry using one of the [authentica
 You can set tag immutability on images in our repository using the \`imageTagMutability\` construct prop.
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 ecr.Repository(stack, \\"Repo\\", image_tag_mutability=ecr.TagMutability.IMMUTABLE)
 \`\`\`
 
@@ -57530,9 +57448,7 @@ against that image. For example, the following deletes images older than
 is important here):
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 repository.add_lifecycle_rule(tag_prefix_list=[\\"prod\\"], max_image_count=9999)
 repository.add_lifecycle_rule(max_image_age=cdk.Duration.days(30))
 \`\`\`
@@ -60754,9 +60670,7 @@ Define a repository by creating a new instance of \`Repository\`. A repository
 holds multiple verions of a single container image.
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 repository = ecr.Repository(self, \\"Repository\\")
 \`\`\`
 
@@ -60765,9 +60679,7 @@ repository = ecr.Repository(self, \\"Repository\\")
 Amazon ECR image scanning helps in identifying software vulnerabilities in your container images. You can manually scan container images stored in Amazon ECR, or you can configure your repositories to scan images when you push them to a repository. To create a new repository to scan on push, simply enable \`imageScanOnPush\` in the properties
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 repository = ecr.Repository(stack, \\"Repo\\",
     image_scan_on_push=True
 )
@@ -60776,9 +60688,7 @@ repository = ecr.Repository(stack, \\"Repo\\",
 To create an \`onImageScanCompleted\` event rule and trigger the event target
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 repository.on_image_scan_completed(\\"ImageScanComplete\\").add_target(...)
 \`\`\`
 
@@ -60793,9 +60703,7 @@ A Docker authorization token can be obtained using the \`GetAuthorizationToken\`
 grants an IAM user access to call this API.
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 import aws_cdk.aws_iam as iam
 import aws_cdk.aws_ecr as ecr
 
@@ -60811,9 +60719,7 @@ higher rate and bandwidth limits.
 The following code snippet grants an IAM user access to retrieve an authorization token for the public gallery.
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 import aws_cdk.aws_iam as iam
 import aws_cdk.aws_ecr as ecr
 
@@ -60828,9 +60734,7 @@ This user can then proceed to login to the registry using one of the [authentica
 You can set tag immutability on images in our repository using the \`imageTagMutability\` construct prop.
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 ecr.Repository(stack, \\"Repo\\", image_tag_mutability=ecr.TagMutability.IMMUTABLE)
 \`\`\`
 
@@ -60843,9 +60747,7 @@ against that image. For example, the following deletes images older than
 is important here):
 
 \`\`\`python
-# This example was automatically transliterated with incomplete type information. It may not work as-is.
-# See https://github.com/aws/jsii/issues/826 for more information.
-
+# Example automatically generated from non-compiling source. May contain errors.
 repository.add_lifecycle_rule(tag_prefix_list=[\\"prod\\"], max_image_count=9999)
 repository.add_lifecycle_rule(max_image_age=cdk.Duration.days(30))
 \`\`\`
@@ -67022,7 +66924,7 @@ The VPC in which to create the Cluster.
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`python # This example was automatically transliterated with incomplete type information. It may not work as-is. # See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`python # Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -67073,7 +66975,7 @@ Only relevant for kubectl enabled clusters.
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`python # This example was automatically transliterated with incomplete type information. It may not work as-is. # See https://github.com/aws/jsii/issues/826 for more information.  layer = lambda_.LayerVersion(self, \\"kubectl-layer\\",     code=lambda_.Code.from_asset(f\\"{__dirname}/layer.zip\\") )# compatible_runtimes is of type [lambda.Runtime.PROVIDED] \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`python # Example automatically generated from non-compiling source. May contain errors. layer = lambda_.LayerVersion(self, \\"kubectl-layer\\",     code=lambda_.Code.from_asset(f\\"{__dirname}/layer.zip\\") )# compatible_runtimes: [lambda.Runtime.PROVIDED] \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -68748,7 +68650,7 @@ The VPC in which to create the Cluster.
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`python # This example was automatically transliterated with incomplete type information. It may not work as-is. # See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`python # Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -68799,7 +68701,7 @@ Only relevant for kubectl enabled clusters.
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`python # This example was automatically transliterated with incomplete type information. It may not work as-is. # See https://github.com/aws/jsii/issues/826 for more information.  layer = lambda_.LayerVersion(self, \\"kubectl-layer\\",     code=lambda_.Code.from_asset(f\\"{__dirname}/layer.zip\\") )# compatible_runtimes is of type [lambda.Runtime.PROVIDED] \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`python # Example automatically generated from non-compiling source. May contain errors. layer = lambda_.LayerVersion(self, \\"kubectl-layer\\",     code=lambda_.Code.from_asset(f\\"{__dirname}/layer.zip\\") )# compatible_runtimes: [lambda.Runtime.PROVIDED] \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -71994,7 +71896,7 @@ vpc_subnets: typing.List[SubnetSelection]
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`python # This example was automatically transliterated with incomplete type information. It may not work as-is. # See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`python # Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -72065,7 +71967,7 @@ kubectl_layer: ILayerVersion
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`python # This example was automatically transliterated with incomplete type information. It may not work as-is. # See https://github.com/aws/jsii/issues/826 for more information.  layer = lambda_.LayerVersion(self, \\"kubectl-layer\\",     code=lambda_.Code.from_asset(f\\"{__dirname}/layer.zip\\") )# compatible_runtimes is of type [lambda.Runtime.PROVIDED] \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`python # Example automatically generated from non-compiling source. May contain errors. layer = lambda_.LayerVersion(self, \\"kubectl-layer\\",     code=lambda_.Code.from_asset(f\\"{__dirname}/layer.zip\\") )# compatible_runtimes: [lambda.Runtime.PROVIDED] \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -72320,7 +72222,7 @@ vpc_subnets: typing.List[SubnetSelection]
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`python # This example was automatically transliterated with incomplete type information. It may not work as-is. # See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`python # Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -72391,7 +72293,7 @@ kubectl_layer: ILayerVersion
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`python # This example was automatically transliterated with incomplete type information. It may not work as-is. # See https://github.com/aws/jsii/issues/826 for more information.  layer = lambda_.LayerVersion(self, \\"kubectl-layer\\",     code=lambda_.Code.from_asset(f\\"{__dirname}/layer.zip\\") )# compatible_runtimes is of type [lambda.Runtime.PROVIDED] \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`python # Example automatically generated from non-compiling source. May contain errors. layer = lambda_.LayerVersion(self, \\"kubectl-layer\\",     code=lambda_.Code.from_asset(f\\"{__dirname}/layer.zip\\") )# compatible_runtimes: [lambda.Runtime.PROVIDED] \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
@@ -72661,7 +72563,7 @@ vpc_subnets: typing.List[SubnetSelection]
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`python # This example was automatically transliterated with incomplete type information. It may not work as-is. # See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`python # Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -72945,7 +72847,7 @@ vpc_subnets: typing.List[SubnetSelection]
 
 Where to place EKS Control Plane ENIs.
 
-If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`python # This example was automatically transliterated with incomplete type information. It may not work as-is. # See https://github.com/aws/jsii/issues/826 for more information.  vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
+If you want to create public load balancers, this must include public subnets.  For example, to only select private subnets, supply the following:  \`\`\`python # Example automatically generated from non-compiling source. May contain errors. vpcSubnets: [    { subnetType: ec2.SubnetType.Private } ] \`\`\`
 
 ---
 
@@ -73016,7 +72918,7 @@ kubectl_layer: ILayerVersion
 
 An AWS Lambda Layer which includes \`kubectl\`, Helm and the AWS CLI.
 
-By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`python # This example was automatically transliterated with incomplete type information. It may not work as-is. # See https://github.com/aws/jsii/issues/826 for more information.  layer = lambda_.LayerVersion(self, \\"kubectl-layer\\",     code=lambda_.Code.from_asset(f\\"{__dirname}/layer.zip\\") )# compatible_runtimes is of type [lambda.Runtime.PROVIDED] \`\`\`
+By default, the provider will use the layer included in the \\"aws-lambda-layer-kubectl\\" SAR application which is available in all commercial regions.  To deploy the layer locally, visit https://github.com/aws-samples/aws-lambda-layer-kubectl/blob/master/cdk/README.md for instructions on how to prepare the .zip file and then define it in your app as follows:  \`\`\`python # Example automatically generated from non-compiling source. May contain errors. layer = lambda_.LayerVersion(self, \\"kubectl-layer\\",     code=lambda_.Code.from_asset(f\\"{__dirname}/layer.zip\\") )# compatible_runtimes: [lambda.Runtime.PROVIDED] \`\`\`
 
 > https://github.com/aws-samples/aws-lambda-layer-kubectl
 
