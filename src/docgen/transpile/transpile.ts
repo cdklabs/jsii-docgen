@@ -587,6 +587,9 @@ export interface TranspileBase extends Transpile {}
  * Common functionality between different transpilers.
  */
 export abstract class TranspileBase implements Transpile {
+
+  private readonly parentModulesCache = new Map<string, reflect.Assembly>();
+
   constructor(public readonly language: Language) {}
 
   public typeReference(ref: reflect.TypeReference): TranspiledTypeReference {
@@ -667,11 +670,16 @@ export abstract class TranspileBase implements Transpile {
   }
 
   protected getParentModule(moduleLike: reflect.ModuleLike): reflect.Assembly {
-    if (moduleLike.types.length === 0) {
+    const cached = this.parentModulesCache.get(moduleLike.fqn);
+    if (cached) return cached;
+
+    const types = moduleLike.types;
+    if (types.length === 0) {
       throw new Error(`unable to determine assembly since module does not have any types: ${moduleLike.fqn}`);
     }
-
-    return moduleLike.types[0].assembly;
+    const parent = types[0].assembly;
+    this.parentModulesCache.set(moduleLike.fqn, parent);
+    return parent;
   }
 
   protected optionalityCompare(

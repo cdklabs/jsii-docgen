@@ -12,7 +12,6 @@ const LIBRARIES = `${__dirname}/../../__fixtures__/libraries`;
 // if need to keep increasing this.
 jest.setTimeout(120 * 1000);
 
-
 describe('extractPackageName', () => {
 
   test('scope only', () => {
@@ -197,4 +196,10 @@ test('throws corrupt assembly', async () => {
   const docs = await Documentation.forPackage('@epilot/cdk-constructs@1.0.7');
   // this package accepts an unexported HttpApiProps in a constructor
   return expect(docs.render()).rejects.toThrowError(CorruptedAssemblyError);
+});
+
+test('performance on large modules', async () => {
+  const docs = await Documentation.forPackage('@cdktf/provider-aws@4.0.1');
+  // the assertion here is simply finishing the rendering in time.
+  await docs.render({ language: Language.PYTHON, submodule: 'wafv2' });
 });
