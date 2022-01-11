@@ -589,6 +589,7 @@ export interface TranspileBase extends Transpile {}
 export abstract class TranspileBase implements Transpile {
 
   private readonly parentModulesCache = new Map<string, reflect.Assembly>();
+  private readonly submodulesCache = new Map<string, reflect.Submodule | undefined>();
 
   constructor(public readonly language: Language) {}
 
@@ -645,28 +646,35 @@ export abstract class TranspileBase implements Transpile {
   }
 
   protected findSubmodule(type: reflect.Type): reflect.Submodule | undefined {
-    if (!type.namespace) {
-      return undefined;
+
+    if (this.submodulesCache.has(type.fqn)) {
+      return this.submodulesCache.get(type.fqn);
     }
 
-    // if the type is in a submodule, the submodule name is the first
-    // part of the namespace. we construct the full submodule fqn and search for it.
-    const submoduleFqn = `${type.assembly.name}.${type.namespace.split('.')[0]}`;
-    const submodules = type.assembly.submodules.filter(
-      (s) => s.fqn === submoduleFqn,
-    );
+    let submodule = undefined;
+    if (type.namespace) {
+      // if the type is in a submodule, the submodule name is the first
+      // part of the namespace. we construct the full submodule fqn and search for it.
+      const submoduleFqn = `${type.assembly.name}.${type.namespace.split('.')[0]}`;
+      const submodules = type.assembly.submodules.filter(
+        (s) => s.fqn === submoduleFqn,
+      );
 
-    if (submodules.length > 1) {
-      // can never happen, but the array data structure forces this handling.
-      throw new Error(`Found multiple submodulues with fqn ${submoduleFqn}`);
+      if (submodules.length > 1) {
+        // can never happen, but the array data structure forces this handling.
+        throw new Error(`Found multiple submodulues with fqn ${submoduleFqn}`);
+      }
+
+      if (submodules.length === 0) {
+        submodule = undefined;
+      }
+
+      // type is inside this submodule.
+      submodule = submodules[0];
     }
 
-    if (submodules.length === 0) {
-      return undefined;
-    }
-
-    // type is inside this submodule.
-    return submodules[0];
+    this.submodulesCache.set(type.fqn, submodule);
+    return submodule;
   }
 
   protected getParentModule(moduleLike: reflect.ModuleLike): reflect.Assembly {
