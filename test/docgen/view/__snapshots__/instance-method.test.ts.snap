@@ -46,7 +46,7 @@ private Inspect(TreeInspector Inspector)
 
 # \`Inspector\`<sup>Required</sup> <a name=\\"\`Inspector\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/core.TreeInspector\\">TreeInspector</a>
+- *Type:* Amazon.CDK.TreeInspector
 
 tree inspector to collect and process attributes.
 
@@ -100,7 +100,7 @@ public inspect(TreeInspector inspector)
 
 # \`inspector\`<sup>Required</sup> <a name=\\"\`inspector\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/core.TreeInspector\\">TreeInspector</a>
+- *Type:* software.amazon.awscdk.core.TreeInspector
 
 tree inspector to collect and process attributes.
 
@@ -158,7 +158,7 @@ def inspect(
 
 # \`inspector\`<sup>Required</sup> <a name=\\"\`inspector\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/core.TreeInspector\\">TreeInspector</a>
+- *Type:* aws_cdk.core.TreeInspector
 
 tree inspector to collect and process attributes.
 
@@ -212,7 +212,7 @@ public inspect(inspector: TreeInspector)
 
 # \`inspector\`<sup>Required</sup> <a name=\\"\`inspector\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/core.TreeInspector\\">TreeInspector</a>
+- *Type:* @aws-cdk/core.TreeInspector
 
 tree inspector to collect and process attributes.
 

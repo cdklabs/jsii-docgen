@@ -7,6 +7,9 @@ export interface MarkdownFormattingOptions {
    * How jsii entity IDs should be formatted into anchors. This should be
    * customized in conjunction with `linkFormatter`.
    *
+   * @param type - the entity we are creating an anchor for
+   *
+   * @experimental
    * @default - use the full id
    */
   readonly anchorFormatter?: (type: JsiiEntity) => string;
@@ -15,18 +18,39 @@ export interface MarkdownFormattingOptions {
    * How should links to entities be rendered. For example, if a class or a
    * property is referenced within a description or table.
    *
-   * @default - '<a href="#{type.id}">{type.displayName}</a>'
+   * The `metadata` parameter can be optionally used to customize links based
+   * on whether or not the type belongs to the package / submodule that is
+   * being generated.
+   *
+   * @param type - the entity we are creating a link for
+   * @param metadata - information about the module being docgen-ed
+   *
+   * @experimental
+   * @default - '<a href="#{type.id}">{type.displayName}</a>' if the type
+   *   belongs to this package, '{type.fqn}' otherwise
    */
-  readonly linkFormatter?: (type: JsiiEntity) => string;
+  readonly linkFormatter?: (type: JsiiEntity, metadata: AssemblyMetadataSchema) => string;
 
   /**
    * How type signatures should be formatted, including those made of nested
    * types (like `Map<string, Bucket>`).
    *
+   * The `metadata` and `linkFormatter` parameters are provided so that links
+   * can be included in the formatted types if desired.
+   *
+   * @param type - the type being formatted
+   * @param metadata - information about the module being docgen-ed
+   * @param linkFormatter - the type link formatter
+   *
+   * @experimental
    * @default - HTML code block with type references linked
    * according to `linkFormatter`
    */
-  readonly typeFormatter?: (type: TypeSchema, linkFormatter: (type: JsiiEntity) => string) => string;
+  readonly typeFormatter?: (
+    type: TypeSchema,
+    metadata: AssemblyMetadataSchema,
+    linkFormatter: (type: JsiiEntity, metadata: AssemblyMetadataSchema) => string
+  ) => string;
 }
 
 export interface MarkdownRendererOptions extends MarkdownFormattingOptions {
@@ -52,9 +76,9 @@ export interface MarkdownRendererOptions extends MarkdownFormattingOptions {
 }
 
 export class MarkdownRenderer {
-  private readonly anchorFormatter: (type: JsiiEntity) => string;
-  private readonly linkFormatter: (type: JsiiEntity) => string;
-  private readonly typeFormatter: (type: TypeSchema, linkFormatter: (type: JsiiEntity) => string) => string;
+  private readonly anchorFormatter: NonNullable<MarkdownFormattingOptions['anchorFormatter']>;
+  private readonly linkFormatter: NonNullable<MarkdownFormattingOptions['linkFormatter']>;
+  private readonly typeFormatter: NonNullable<MarkdownFormattingOptions['typeFormatter']>;
   private readonly metadata: AssemblyMetadataSchema;
   private readonly language: Language;
 
@@ -205,7 +229,7 @@ export class MarkdownRenderer {
     if (klass.interfaces.length > 0) {
       const ifaces = [];
       for (const iface of klass.interfaces) {
-        ifaces.push(this.linkFormatter(iface));
+        ifaces.push(this.linkFormatter(iface, this.metadata));
       }
       md.bullet(`${MarkdownDocument.italic('Implements:')} ${ifaces.join(', ')}`);
       md.lines('');
@@ -242,7 +266,7 @@ export class MarkdownRenderer {
     if (iface.interfaces.length > 0) {
       const bases = [];
       for (const base of iface.interfaces) {
-        bases.push(this.linkFormatter(base));
+        bases.push(this.linkFormatter(base, this.metadata));
       }
       md.bullet(`${MarkdownDocument.italic('Extends:')} ${bases.join(', ')}`);
       md.lines('');
@@ -251,7 +275,7 @@ export class MarkdownRenderer {
     if (iface.implementations.length > 0) {
       const impls = [];
       for (const impl of iface.implementations) {
-        impls.push(this.linkFormatter(impl));
+        impls.push(this.linkFormatter(impl, this.metadata));
       }
       md.bullet(`${MarkdownDocument.italic('Implemented By:')} ${impls.join(', ')}`);
       md.lines('');
@@ -464,7 +488,7 @@ export class MarkdownRenderer {
     }
 
     const metadata: Record<string, string> = {
-      Type: this.typeFormatter(prop.type, this.linkFormatter),
+      Type: this.typeFormatter(prop.type, this.metadata, this.linkFormatter),
     };
 
     if (prop.default) {
@@ -514,7 +538,7 @@ export class MarkdownRenderer {
 
 
     const metadata: any = {
-      Type: this.typeFormatter(parameter.type, this.linkFormatter),
+      Type: this.typeFormatter(parameter.type, this.metadata, this.linkFormatter),
     };
 
     if (parameter.default) {
@@ -607,7 +631,7 @@ export class MarkdownRenderer {
         displayName: item.displayName,
         id: item.id,
         ...this.metadata,
-      }));
+      }, this.metadata));
       const description = item.docs?.summary && item.docs?.summary.length > 0
         ? item.docs?.summary
         : MarkdownDocument.italic('No description.');
@@ -627,8 +651,8 @@ export class MarkdownRenderer {
         displayName: item.displayName,
         id: item.id,
         ...this.metadata,
-      }));
-      const type = MarkdownDocument.pre(this.typeFormatter(item.type, this.linkFormatter));
+      }, this.metadata));
+      const type = MarkdownDocument.pre(this.typeFormatter(item.type, this.metadata, this.linkFormatter));
       const description = item.docs?.summary && item.docs?.summary.length > 0
         ? item.docs?.summary
         : MarkdownDocument.italic('No description.');
@@ -654,8 +678,13 @@ export const defaultAnchorFormatter = (type: JsiiEntity) => {
   return type.id;
 };
 
-export const defaultLinkFormatter = (type: JsiiEntity) => {
-  return `<a href="#${type.id}">${type.displayName}</a>`;
+export const defaultLinkFormatter = (type: JsiiEntity, metadata: AssemblyMetadataSchema) => {
+  if (type.packageName === metadata.packageName && type.submodule === metadata.submodule) {
+    return `<a href="#${type.id}">${type.displayName}</a>`;
+  } else {
+    // do not display a link if the type isn't in this document
+    return type.fqn;
+  }
 };
 
 function isJsiiType(value: any): value is JsiiEntity {
@@ -670,15 +699,16 @@ function isJsiiType(value: any): value is JsiiEntity {
 
 export const defaultTypeFormatter = (
   type: TypeSchema,
-  linkFormatter: (type: JsiiEntity) => string,
+  metadata: AssemblyMetadataSchema,
+  linkFormatter: (type: JsiiEntity, metadata: AssemblyMetadataSchema) => string,
 ): string => {
   let result = type.formattingPattern;
   const typeRefs = [];
   for (const typeRef of type.types ?? []) {
     if (isJsiiType(typeRef)) {
-      typeRefs.push(linkFormatter(typeRef));
+      typeRefs.push(linkFormatter(typeRef, metadata));
     } else {
-      typeRefs.push(defaultTypeFormatter(typeRef, linkFormatter));
+      typeRefs.push(defaultTypeFormatter(typeRef, metadata, linkFormatter));
     }
   }
 

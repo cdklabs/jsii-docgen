@@ -27,7 +27,7 @@ Object {
 exports[`csharp snapshot 2`] = `
 " \`Grantee\`<sup>Required</sup> <a name=\\"\`Grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
+- *Type:* Amazon.CDK.AWS.IAM.IGrantable
 
 ---
 "
@@ -60,7 +60,7 @@ Object {
 exports[`java snapshot 2`] = `
 " \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
+- *Type:* software.amazon.awscdk.services.iam.IGrantable
 
 ---
 "
@@ -69,7 +69,7 @@ exports[`java snapshot 2`] = `
 exports[`newlines in "defaults" are removed 1`] = `
 " \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
+- *Type:* @aws-cdk/aws-iam.IGrantable
 - *Default:* default option with a newline
 
 ---
@@ -103,7 +103,7 @@ Object {
 exports[`python snapshot 2`] = `
 " \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
+- *Type:* aws_cdk.aws_iam.IGrantable
 
 ---
 "
@@ -136,7 +136,7 @@ Object {
 exports[`typescript snapshot 2`] = `
 " \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
+- *Type:* @aws-cdk/aws-iam.IGrantable
 
 ---
 "

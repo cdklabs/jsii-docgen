@@ -81,7 +81,7 @@ AuthorizationToken.GrantRead(IGrantable Grantee);
 
 ### \`Grantee\`<sup>Required</sup> <a name=\\"\`Grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
+- *Type:* Amazon.CDK.AWS.IAM.IGrantable
 
 ---
 
@@ -170,7 +170,7 @@ AuthorizationToken.grantRead(IGrantable grantee)
 
 ### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
+- *Type:* software.amazon.awscdk.services.iam.IGrantable
 
 ---
 
@@ -263,7 +263,7 @@ aws_cdk.aws_ecr.AuthorizationToken.grant_read(
 
 ### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
+- *Type:* aws_cdk.aws_iam.IGrantable
 
 ---
 
@@ -352,7 +352,7 @@ AuthorizationToken.grantRead(grantee: IGrantable)
 
 ### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
+- *Type:* @aws-cdk/aws-iam.IGrantable
 
 ---
 

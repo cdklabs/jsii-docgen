@@ -117,7 +117,7 @@ new CfnPublicRepositoryProps {
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\">RepositoryCatalogData</a></code> | <code>object</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\">RepositoryName</a></code> | <code>string</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\">RepositoryPolicyText</a></code> | <code>object</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\">Tags</a></code> | <code><a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>[]</code> | \`AWS::ECR::PublicRepository.Tags\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\">Tags</a></code> | <code>Amazon.CDK.CfnTag[]</code> | \`AWS::ECR::PublicRepository.Tags\`. |
 
 ---
 
@@ -163,7 +163,7 @@ public object RepositoryPolicyText { get; set; }
 public CfnTag[] Tags { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>[]
+- *Type:* Amazon.CDK.CfnTag[]
 
 \`AWS::ECR::PublicRepository.Tags\`.
 
@@ -288,7 +288,7 @@ CfnPublicRepositoryProps.builder()
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\">repositoryCatalogData</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\">repositoryName</a></code> | <code>java.lang.String</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\">repositoryPolicyText</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\">tags</a></code> | <code>java.util.List<<a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>></code> | \`AWS::ECR::PublicRepository.Tags\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\">tags</a></code> | <code>java.util.List<software.amazon.awscdk.core.CfnTag></code> | \`AWS::ECR::PublicRepository.Tags\`. |
 
 ---
 
@@ -334,7 +334,7 @@ public java.lang.Object getRepositoryPolicyText();
 public java.util.List<CfnTag> getTags();
 \`\`\`
 
-- *Type:* java.util.List<<a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>>
+- *Type:* java.util.List<software.amazon.awscdk.core.CfnTag>
 
 \`AWS::ECR::PublicRepository.Tags\`.
 
@@ -459,7 +459,7 @@ aws_cdk.aws_ecr.CfnPublicRepositoryProps(
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\">repository_catalog_data</a></code> | <code>typing.Any</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\">repository_name</a></code> | <code>str</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\">repository_policy_text</a></code> | <code>typing.Any</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\">tags</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>]</code> | \`AWS::ECR::PublicRepository.Tags\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\">tags</a></code> | <code>typing.List[aws_cdk.core.CfnTag]</code> | \`AWS::ECR::PublicRepository.Tags\`. |
 
 ---
 
@@ -505,7 +505,7 @@ repository_policy_text: typing.Any
 tags: typing.List[CfnTag]
 \`\`\`
 
-- *Type:* typing.List[<a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>]
+- *Type:* typing.List[aws_cdk.core.CfnTag]
 
 \`AWS::ECR::PublicRepository.Tags\`.
 
@@ -620,7 +620,7 @@ const cfnPublicRepositoryProps: CfnPublicRepositoryProps = { ... }
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\">repositoryCatalogData</a></code> | <code>any</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\">repositoryName</a></code> | <code>string</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\">repositoryPolicyText</a></code> | <code>any</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\">tags</a></code> | <code><a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>[]</code> | \`AWS::ECR::PublicRepository.Tags\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\">tags</a></code> | <code>@aws-cdk/core.CfnTag[]</code> | \`AWS::ECR::PublicRepository.Tags\`. |
 
 ---
 
@@ -666,7 +666,7 @@ public readonly repositoryPolicyText: any;
 public readonly tags: CfnTag[];
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/core.CfnTag\\">CfnTag</a>[]
+- *Type:* @aws-cdk/core.CfnTag[]
 
 \`AWS::ECR::PublicRepository.Tags\`.
 

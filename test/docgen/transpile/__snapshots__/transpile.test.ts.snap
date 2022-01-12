@@ -7,7 +7,7 @@ exports[`submodules without an explicit name csharp 1`] = `
 
 ### EdgeFunction <a name=\\"EdgeFunction\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction\\"></a>
 
-- *Implements:* <a href=\\"#@aws-cdk/aws-lambda.IVersion\\">IVersion</a>
+- *Implements:* Amazon.CDK.AWS.Lambda.IVersion
 
 A Lambda@Edge function.
 
@@ -23,15 +23,15 @@ new EdgeFunction(Construct Scope, string Id, EdgeFunctionProps Props);
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.scope\\">Scope</a></code> | <code><a href=\\"#constructs.Construct\\">Construct</a></code> | *No description.* |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.scope\\">Scope</a></code> | <code>Constructs.Construct</code> | *No description.* |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.id\\">Id</a></code> | <code>string</code> | *No description.* |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.props\\">Props</a></code> | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps\\">EdgeFunctionProps</a></code> | *No description.* |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.props\\">Props</a></code> | <code>Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps</code> | *No description.* |
 
 ---
 
 ##### \`Scope\`<sup>Required</sup> <a name=\\"\`Scope\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"#constructs.Construct\\">Construct</a>
+- *Type:* Constructs.Construct
 
 ---
 
@@ -43,7 +43,7 @@ new EdgeFunction(Construct Scope, string Id, EdgeFunctionProps Props);
 
 ##### \`Props\`<sup>Required</sup> <a name=\\"\`Props\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.props\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps\\">EdgeFunctionProps</a>
+- *Type:* Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps
 
 ---
 
@@ -80,7 +80,7 @@ private AddAlias(string AliasName, AliasOptions Options = null)
 
 ###### \`Options\`<sup>Optional</sup> <a name=\\"\`Options\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.options\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.AliasOptions\\">AliasOptions</a>
+- *Type:* Amazon.CDK.AWS.Lambda.AliasOptions
 
 ---
 
@@ -92,7 +92,7 @@ private AddEventSource(IEventSource Source)
 
 ###### \`Source\`<sup>Required</sup> <a name=\\"\`Source\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.source\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IEventSource\\">IEventSource</a>
+- *Type:* Amazon.CDK.AWS.Lambda.IEventSource
 
 ---
 
@@ -110,7 +110,7 @@ private AddEventSourceMapping(string Id, EventSourceMappingOptions Options)
 
 ###### \`Options\`<sup>Required</sup> <a name=\\"\`Options\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.options\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.EventSourceMappingOptions\\">EventSourceMappingOptions</a>
+- *Type:* Amazon.CDK.AWS.Lambda.EventSourceMappingOptions
 
 ---
 
@@ -128,7 +128,7 @@ private AddPermission(string Id, Permission Permission)
 
 ###### \`Permission\`<sup>Required</sup> <a name=\\"\`Permission\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.permission\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.Permission\\">Permission</a>
+- *Type:* Amazon.CDK.AWS.Lambda.Permission
 
 ---
 
@@ -140,7 +140,7 @@ private AddToRolePolicy(PolicyStatement Statement)
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"\`Statement\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.statement\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>
+- *Type:* Amazon.CDK.AWS.IAM.PolicyStatement
 
 ---
 
@@ -152,7 +152,7 @@ private ConfigureAsyncInvoke(EventInvokeConfigOptions Options)
 
 ###### \`Options\`<sup>Required</sup> <a name=\\"\`Options\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.options\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.EventInvokeConfigOptions\\">EventInvokeConfigOptions</a>
+- *Type:* Amazon.CDK.AWS.Lambda.EventInvokeConfigOptions
 
 ---
 
@@ -164,7 +164,7 @@ private GrantInvoke(IGrantable Identity)
 
 ###### \`Identity\`<sup>Required</sup> <a name=\\"\`Identity\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.identity\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
+- *Type:* Amazon.CDK.AWS.IAM.IGrantable
 
 ---
 
@@ -182,7 +182,7 @@ private Metric(string MetricName, MetricOptions Props = null)
 
 ###### \`Props\`<sup>Optional</sup> <a name=\\"\`Props\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.props\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-cloudwatch.MetricOptions\\">MetricOptions</a>
+- *Type:* Amazon.CDK.AWS.CloudWatch.MetricOptions
 
 ---
 
@@ -194,7 +194,7 @@ private MetricDuration(MetricOptions Props = null)
 
 ###### \`Props\`<sup>Optional</sup> <a name=\\"\`Props\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.props\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-cloudwatch.MetricOptions\\">MetricOptions</a>
+- *Type:* Amazon.CDK.AWS.CloudWatch.MetricOptions
 
 ---
 
@@ -206,7 +206,7 @@ private MetricErrors(MetricOptions Props = null)
 
 ###### \`Props\`<sup>Optional</sup> <a name=\\"\`Props\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.props\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-cloudwatch.MetricOptions\\">MetricOptions</a>
+- *Type:* Amazon.CDK.AWS.CloudWatch.MetricOptions
 
 ---
 
@@ -218,7 +218,7 @@ private MetricInvocations(MetricOptions Props = null)
 
 ###### \`Props\`<sup>Optional</sup> <a name=\\"\`Props\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.props\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-cloudwatch.MetricOptions\\">MetricOptions</a>
+- *Type:* Amazon.CDK.AWS.CloudWatch.MetricOptions
 
 ---
 
@@ -230,7 +230,7 @@ private MetricThrottles(MetricOptions Props = null)
 
 ###### \`Props\`<sup>Optional</sup> <a name=\\"\`Props\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.props\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-cloudwatch.MetricOptions\\">MetricOptions</a>
+- *Type:* Amazon.CDK.AWS.CloudWatch.MetricOptions
 
 ---
 
@@ -239,18 +239,18 @@ private MetricThrottles(MetricOptions Props = null)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.connections\\">Connections</a></code> | <code><a href=\\"#@aws-cdk/aws-ec2.Connections\\">Connections</a></code> | Not supported. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.currentVersion\\">CurrentVersion</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IVersion\\">IVersion</a></code> | Convenience method to make \`EdgeFunction\` conform to the same interface as \`Function\`. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.connections\\">Connections</a></code> | <code>Amazon.CDK.AWS.EC2.Connections</code> | Not supported. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.currentVersion\\">CurrentVersion</a></code> | <code>Amazon.CDK.AWS.Lambda.IVersion</code> | Convenience method to make \`EdgeFunction\` conform to the same interface as \`Function\`. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.edgeArn\\">EdgeArn</a></code> | <code>string</code> | The ARN of the version for Lambda@Edge. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.functionArn\\">FunctionArn</a></code> | <code>string</code> | The ARN of the function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.functionName\\">FunctionName</a></code> | <code>string</code> | The name of the function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.grantPrincipal\\">GrantPrincipal</a></code> | <code><a href=\\"#@aws-cdk/aws-iam.IPrincipal\\">IPrincipal</a></code> | The principal to grant permissions to. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.grantPrincipal\\">GrantPrincipal</a></code> | <code>Amazon.CDK.AWS.IAM.IPrincipal</code> | The principal to grant permissions to. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.isBoundToVpc\\">IsBoundToVpc</a></code> | <code>bool</code> | Whether or not this Lambda function was bound to a VPC. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.lambda\\">Lambda</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IFunction\\">IFunction</a></code> | The underlying AWS Lambda function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.latestVersion\\">LatestVersion</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IVersion\\">IVersion</a></code> | The \`$LATEST\` version of this function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.permissionsNode\\">PermissionsNode</a></code> | <code><a href=\\"#@aws-cdk/core.ConstructNode\\">ConstructNode</a></code> | The construct node where permissions are attached. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.lambda\\">Lambda</a></code> | <code>Amazon.CDK.AWS.Lambda.IFunction</code> | The underlying AWS Lambda function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.latestVersion\\">LatestVersion</a></code> | <code>Amazon.CDK.AWS.Lambda.IVersion</code> | The \`$LATEST\` version of this function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.permissionsNode\\">PermissionsNode</a></code> | <code>Amazon.CDK.ConstructNode</code> | The construct node where permissions are attached. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.version\\">Version</a></code> | <code>string</code> | The most recently deployed version of this function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.role\\">Role</a></code> | <code><a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a></code> | The IAM role associated with this function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.role\\">Role</a></code> | <code>Amazon.CDK.AWS.IAM.IRole</code> | The IAM role associated with this function. |
 
 ---
 
@@ -260,7 +260,7 @@ private MetricThrottles(MetricOptions Props = null)
 public Connections Connections { get; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-ec2.Connections\\">Connections</a>
+- *Type:* Amazon.CDK.AWS.EC2.Connections
 
 Not supported.
 
@@ -274,7 +274,7 @@ Connections are only applicable to VPC-enabled functions.
 public IVersion CurrentVersion { get; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IVersion\\">IVersion</a>
+- *Type:* Amazon.CDK.AWS.Lambda.IVersion
 
 Convenience method to make \`EdgeFunction\` conform to the same interface as \`Function\`.
 
@@ -322,7 +322,7 @@ The name of the function.
 public IPrincipal GrantPrincipal { get; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IPrincipal\\">IPrincipal</a>
+- *Type:* Amazon.CDK.AWS.IAM.IPrincipal
 
 The principal to grant permissions to.
 
@@ -348,7 +348,7 @@ If this is is \`false\`, trying to access the \`connections\` object will fail.
 public IFunction Lambda { get; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IFunction\\">IFunction</a>
+- *Type:* Amazon.CDK.AWS.Lambda.IFunction
 
 The underlying AWS Lambda function.
 
@@ -360,7 +360,7 @@ The underlying AWS Lambda function.
 public IVersion LatestVersion { get; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IVersion\\">IVersion</a>
+- *Type:* Amazon.CDK.AWS.Lambda.IVersion
 
 The \`$LATEST\` version of this function.
 
@@ -374,7 +374,7 @@ Note that this is reference to a non-specific AWS Lambda version, which means th
 public ConstructNode PermissionsNode { get; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/core.ConstructNode\\">ConstructNode</a>
+- *Type:* Amazon.CDK.ConstructNode
 
 The construct node where permissions are attached.
 
@@ -398,7 +398,7 @@ The most recently deployed version of this function.
 public IRole Role { get; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a>
+- *Type:* Amazon.CDK.AWS.IAM.IRole
 
 The IAM role associated with this function.
 
@@ -462,43 +462,43 @@ new EdgeFunctionProps {
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.maxEventAge\\">MaxEventAge</a></code> | <code><a href=\\"#@aws-cdk/core.Duration\\">Duration</a></code> | The maximum age of a request that Lambda sends to a function for processing. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.onFailure\\">OnFailure</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a></code> | The destination for failed invocations. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.onSuccess\\">OnSuccess</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a></code> | The destination for successful invocations. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.maxEventAge\\">MaxEventAge</a></code> | <code>Amazon.CDK.Duration</code> | The maximum age of a request that Lambda sends to a function for processing. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.onFailure\\">OnFailure</a></code> | <code>Amazon.CDK.AWS.Lambda.IDestination</code> | The destination for failed invocations. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.onSuccess\\">OnSuccess</a></code> | <code>Amazon.CDK.AWS.Lambda.IDestination</code> | The destination for successful invocations. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.retryAttempts\\">RetryAttempts</a></code> | <code>double</code> | The maximum number of times to retry when the function returns an error. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.allowAllOutbound\\">AllowAllOutbound</a></code> | <code>bool</code> | Whether to allow the Lambda to send all network traffic. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.allowPublicSubnet\\">AllowPublicSubnet</a></code> | <code>bool</code> | Lambda Functions in a public subnet can NOT access the internet. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.architectures\\">Architectures</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.Architecture\\">Architecture</a>[]</code> | The system architectures compatible with this lambda function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.codeSigningConfig\\">CodeSigningConfig</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.ICodeSigningConfig\\">ICodeSigningConfig</a></code> | Code signing config associated with this function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.currentVersionOptions\\">CurrentVersionOptions</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.VersionOptions\\">VersionOptions</a></code> | Options for the \`lambda.Version\` resource automatically created by the \`fn.currentVersion\` method. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.deadLetterQueue\\">DeadLetterQueue</a></code> | <code><a href=\\"#@aws-cdk/aws-sqs.IQueue\\">IQueue</a></code> | The SQS queue to use if DLQ is enabled. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.architectures\\">Architectures</a></code> | <code>Amazon.CDK.AWS.Lambda.Architecture[]</code> | The system architectures compatible with this lambda function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.codeSigningConfig\\">CodeSigningConfig</a></code> | <code>Amazon.CDK.AWS.Lambda.ICodeSigningConfig</code> | Code signing config associated with this function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.currentVersionOptions\\">CurrentVersionOptions</a></code> | <code>Amazon.CDK.AWS.Lambda.VersionOptions</code> | Options for the \`lambda.Version\` resource automatically created by the \`fn.currentVersion\` method. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.deadLetterQueue\\">DeadLetterQueue</a></code> | <code>Amazon.CDK.AWS.SQS.IQueue</code> | The SQS queue to use if DLQ is enabled. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.deadLetterQueueEnabled\\">DeadLetterQueueEnabled</a></code> | <code>bool</code> | Enabled DLQ. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.description\\">Description</a></code> | <code>string</code> | A description of the function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.environment\\">Environment</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | Key-value pairs that Lambda caches and makes available for your Lambda functions. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.environmentEncryption\\">EnvironmentEncryption</a></code> | <code><a href=\\"#@aws-cdk/aws-kms.IKey\\">IKey</a></code> | The AWS KMS key that's used to encrypt your function's environment variables. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.events\\">Events</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IEventSource\\">IEventSource</a>[]</code> | Event sources for this function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.filesystem\\">Filesystem</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.FileSystem\\">FileSystem</a></code> | The filesystem configuration for the lambda function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.environmentEncryption\\">EnvironmentEncryption</a></code> | <code>Amazon.CDK.AWS.KMS.IKey</code> | The AWS KMS key that's used to encrypt your function's environment variables. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.events\\">Events</a></code> | <code>Amazon.CDK.AWS.Lambda.IEventSource[]</code> | Event sources for this function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.filesystem\\">Filesystem</a></code> | <code>Amazon.CDK.AWS.Lambda.FileSystem</code> | The filesystem configuration for the lambda function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.functionName\\">FunctionName</a></code> | <code>string</code> | A name for the function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.initialPolicy\\">InitialPolicy</a></code> | <code><a href=\\"#@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>[]</code> | Initial policy statements to add to the created Lambda Role. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.insightsVersion\\">InsightsVersion</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.LambdaInsightsVersion\\">LambdaInsightsVersion</a></code> | Specify the version of CloudWatch Lambda insights to use for monitoring. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.layers\\">Layers</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.ILayerVersion\\">ILayerVersion</a>[]</code> | A list of layers to add to the function's execution environment. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.logRetention\\">LogRetention</a></code> | <code><a href=\\"#@aws-cdk/aws-logs.RetentionDays\\">RetentionDays</a></code> | The number of days log events are kept in CloudWatch Logs. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.logRetentionRetryOptions\\">LogRetentionRetryOptions</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.LogRetentionRetryOptions\\">LogRetentionRetryOptions</a></code> | When log retention is specified, a custom resource attempts to create the CloudWatch log group. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.logRetentionRole\\">LogRetentionRole</a></code> | <code><a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a></code> | The IAM role for the Lambda function associated with the custom resource that sets the retention policy. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.initialPolicy\\">InitialPolicy</a></code> | <code>Amazon.CDK.AWS.IAM.PolicyStatement[]</code> | Initial policy statements to add to the created Lambda Role. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.insightsVersion\\">InsightsVersion</a></code> | <code>Amazon.CDK.AWS.Lambda.LambdaInsightsVersion</code> | Specify the version of CloudWatch Lambda insights to use for monitoring. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.layers\\">Layers</a></code> | <code>Amazon.CDK.AWS.Lambda.ILayerVersion[]</code> | A list of layers to add to the function's execution environment. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.logRetention\\">LogRetention</a></code> | <code>Amazon.CDK.AWS.Logs.RetentionDays</code> | The number of days log events are kept in CloudWatch Logs. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.logRetentionRetryOptions\\">LogRetentionRetryOptions</a></code> | <code>Amazon.CDK.AWS.Lambda.LogRetentionRetryOptions</code> | When log retention is specified, a custom resource attempts to create the CloudWatch log group. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.logRetentionRole\\">LogRetentionRole</a></code> | <code>Amazon.CDK.AWS.IAM.IRole</code> | The IAM role for the Lambda function associated with the custom resource that sets the retention policy. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.memorySize\\">MemorySize</a></code> | <code>double</code> | The amount of memory, in MB, that is allocated to your Lambda function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.profiling\\">Profiling</a></code> | <code>bool</code> | Enable profiling. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.profilingGroup\\">ProfilingGroup</a></code> | <code><a href=\\"#@aws-cdk/aws-codeguruprofiler.IProfilingGroup\\">IProfilingGroup</a></code> | Profiling Group. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.profilingGroup\\">ProfilingGroup</a></code> | <code>Amazon.CDK.AWS.CodeGuruProfiler.IProfilingGroup</code> | Profiling Group. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.reservedConcurrentExecutions\\">ReservedConcurrentExecutions</a></code> | <code>double</code> | The maximum of concurrent executions you want to reserve for the function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.role\\">Role</a></code> | <code><a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a></code> | Lambda execution role. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.securityGroup\\">SecurityGroup</a></code> | <code><a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a></code> | What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.securityGroups\\">SecurityGroups</a></code> | <code><a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a>[]</code> | The list of security groups to associate with the Lambda's network interfaces. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.timeout\\">Timeout</a></code> | <code><a href=\\"#@aws-cdk/core.Duration\\">Duration</a></code> | The function execution time (in seconds) after which Lambda terminates the function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.tracing\\">Tracing</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.Tracing\\">Tracing</a></code> | Enable AWS X-Ray Tracing for Lambda Function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.vpc\\">Vpc</a></code> | <code><a href=\\"#@aws-cdk/aws-ec2.IVpc\\">IVpc</a></code> | VPC network to place Lambda network interfaces. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.vpcSubnets\\">VpcSubnets</a></code> | <code><a href=\\"#@aws-cdk/aws-ec2.SubnetSelection\\">SubnetSelection</a></code> | Where to place the network interfaces within the VPC. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.code\\">Code</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.Code\\">Code</a></code> | The source code of your Lambda function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.role\\">Role</a></code> | <code>Amazon.CDK.AWS.IAM.IRole</code> | Lambda execution role. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.securityGroup\\">SecurityGroup</a></code> | <code>Amazon.CDK.AWS.EC2.ISecurityGroup</code> | What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.securityGroups\\">SecurityGroups</a></code> | <code>Amazon.CDK.AWS.EC2.ISecurityGroup[]</code> | The list of security groups to associate with the Lambda's network interfaces. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.timeout\\">Timeout</a></code> | <code>Amazon.CDK.Duration</code> | The function execution time (in seconds) after which Lambda terminates the function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.tracing\\">Tracing</a></code> | <code>Amazon.CDK.AWS.Lambda.Tracing</code> | Enable AWS X-Ray Tracing for Lambda Function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.vpc\\">Vpc</a></code> | <code>Amazon.CDK.AWS.EC2.IVpc</code> | VPC network to place Lambda network interfaces. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.vpcSubnets\\">VpcSubnets</a></code> | <code>Amazon.CDK.AWS.EC2.SubnetSelection</code> | Where to place the network interfaces within the VPC. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.code\\">Code</a></code> | <code>Amazon.CDK.AWS.Lambda.Code</code> | The source code of your Lambda function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.handler\\">Handler</a></code> | <code>string</code> | The name of the method within your code that Lambda calls to execute your function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.runtime\\">Runtime</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.Runtime\\">Runtime</a></code> | The runtime environment for the Lambda function that you are uploading. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.runtime\\">Runtime</a></code> | <code>Amazon.CDK.AWS.Lambda.Runtime</code> | The runtime environment for the Lambda function that you are uploading. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.stackId\\">StackId</a></code> | <code>string</code> | The stack ID of Lambda@Edge function. |
 
 ---
@@ -509,7 +509,7 @@ new EdgeFunctionProps {
 public Duration MaxEventAge { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* Amazon.CDK.Duration
 - *Default:* Duration.hours(6)
 
 The maximum age of a request that Lambda sends to a function for processing.
@@ -524,7 +524,7 @@ Minimum: 60 seconds Maximum: 6 hours
 public IDestination OnFailure { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a>
+- *Type:* Amazon.CDK.AWS.Lambda.IDestination
 - *Default:* no destination
 
 The destination for failed invocations.
@@ -537,7 +537,7 @@ The destination for failed invocations.
 public IDestination OnSuccess { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a>
+- *Type:* Amazon.CDK.AWS.Lambda.IDestination
 - *Default:* no destination
 
 The destination for successful invocations.
@@ -599,7 +599,7 @@ Use this property to acknowledge this limitation and still place the function in
 public Architecture[] Architectures { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.Architecture\\">Architecture</a>[]
+- *Type:* Amazon.CDK.AWS.Lambda.Architecture[]
 - *Default:* [Architecture.X86_64]
 
 The system architectures compatible with this lambda function.
@@ -612,7 +612,7 @@ The system architectures compatible with this lambda function.
 public ICodeSigningConfig CodeSigningConfig { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.ICodeSigningConfig\\">ICodeSigningConfig</a>
+- *Type:* Amazon.CDK.AWS.Lambda.ICodeSigningConfig
 - *Default:* Not Sign the Code
 
 Code signing config associated with this function.
@@ -625,7 +625,7 @@ Code signing config associated with this function.
 public VersionOptions CurrentVersionOptions { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.VersionOptions\\">VersionOptions</a>
+- *Type:* Amazon.CDK.AWS.Lambda.VersionOptions
 - *Default:* default options as described in \`VersionOptions\`
 
 Options for the \`lambda.Version\` resource automatically created by the \`fn.currentVersion\` method.
@@ -638,7 +638,7 @@ Options for the \`lambda.Version\` resource automatically created by the \`fn.cu
 public IQueue DeadLetterQueue { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-sqs.IQueue\\">IQueue</a>
+- *Type:* Amazon.CDK.AWS.SQS.IQueue
 - *Default:* SQS queue with 14 day retention period if \`deadLetterQueueEnabled\` is \`true\`
 
 The SQS queue to use if DLQ is enabled.
@@ -694,7 +694,7 @@ Use environment variables to apply configuration changes, such as test and produ
 public IKey EnvironmentEncryption { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-kms.IKey\\">IKey</a>
+- *Type:* Amazon.CDK.AWS.KMS.IKey
 - *Default:* AWS Lambda creates and uses an AWS managed customer master key (CMK).
 
 The AWS KMS key that's used to encrypt your function's environment variables.
@@ -707,7 +707,7 @@ The AWS KMS key that's used to encrypt your function's environment variables.
 public IEventSource[] Events { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IEventSource\\">IEventSource</a>[]
+- *Type:* Amazon.CDK.AWS.Lambda.IEventSource[]
 - *Default:* No event sources.
 
 Event sources for this function.
@@ -722,7 +722,7 @@ You can also add event sources using \`addEventSource\`.
 public FileSystem Filesystem { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.FileSystem\\">FileSystem</a>
+- *Type:* Amazon.CDK.AWS.Lambda.FileSystem
 - *Default:* will not mount any filesystem
 
 The filesystem configuration for the lambda function.
@@ -748,7 +748,7 @@ A name for the function.
 public PolicyStatement[] InitialPolicy { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>[]
+- *Type:* Amazon.CDK.AWS.IAM.PolicyStatement[]
 - *Default:* No policy statements are added to the created Lambda role.
 
 Initial policy statements to add to the created Lambda Role.
@@ -763,7 +763,7 @@ You can call \`addToRolePolicy\` to the created lambda to add statements post cr
 public LambdaInsightsVersion InsightsVersion { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.LambdaInsightsVersion\\">LambdaInsightsVersion</a>
+- *Type:* Amazon.CDK.AWS.Lambda.LambdaInsightsVersion
 - *Default:* No Lambda Insights
 
 Specify the version of CloudWatch Lambda insights to use for monitoring.
@@ -780,7 +780,7 @@ Specify the version of CloudWatch Lambda insights to use for monitoring.
 public ILayerVersion[] Layers { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.ILayerVersion\\">ILayerVersion</a>[]
+- *Type:* Amazon.CDK.AWS.Lambda.ILayerVersion[]
 - *Default:* No layers.
 
 A list of layers to add to the function's execution environment.
@@ -795,7 +795,7 @@ You can configure your Lambda function to pull in additional code during initial
 public RetentionDays LogRetention { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-logs.RetentionDays\\">RetentionDays</a>
+- *Type:* Amazon.CDK.AWS.Logs.RetentionDays
 - *Default:* logs.RetentionDays.INFINITE
 
 The number of days log events are kept in CloudWatch Logs.
@@ -810,7 +810,7 @@ When updating this property, unsetting it doesn't remove the log retention polic
 public LogRetentionRetryOptions LogRetentionRetryOptions { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.LogRetentionRetryOptions\\">LogRetentionRetryOptions</a>
+- *Type:* Amazon.CDK.AWS.Lambda.LogRetentionRetryOptions
 - *Default:* Default AWS SDK retry options.
 
 When log retention is specified, a custom resource attempts to create the CloudWatch log group.
@@ -825,7 +825,7 @@ These options control the retry policy when interacting with CloudWatch APIs.
 public IRole LogRetentionRole { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a>
+- *Type:* Amazon.CDK.AWS.IAM.IRole
 - *Default:* A new role is created.
 
 The IAM role for the Lambda function associated with the custom resource that sets the retention policy.
@@ -870,7 +870,7 @@ Enable profiling.
 public IProfilingGroup ProfilingGroup { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-codeguruprofiler.IProfilingGroup\\">IProfilingGroup</a>
+- *Type:* Amazon.CDK.AWS.CodeGuruProfiler.IProfilingGroup
 - *Default:* A new profiling group will be created if \`profiling\` is set.
 
 Profiling Group.
@@ -904,7 +904,7 @@ The maximum of concurrent executions you want to reserve for the function.
 public IRole Role { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a>
+- *Type:* Amazon.CDK.AWS.IAM.IRole
 - *Default:* A unique role will be generated for this lambda function. Both supplied and generated roles can always be changed by calling \`addToRolePolicy\`.
 
 Lambda execution role.
@@ -921,7 +921,7 @@ This is the role that will be assumed by the function upon execution. It control
 public ISecurityGroup SecurityGroup { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a>
+- *Type:* Amazon.CDK.AWS.EC2.ISecurityGroup
 - *Default:* If the function is placed within a VPC and a security group is not specified, either by this or securityGroups prop, a dedicated security group will be created for this function.
 
 What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead.
@@ -936,7 +936,7 @@ Only used if 'vpc' is supplied.  Use securityGroups property instead. Function c
 public ISecurityGroup[] SecurityGroups { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a>[]
+- *Type:* Amazon.CDK.AWS.EC2.ISecurityGroup[]
 - *Default:* If the function is placed within a VPC and a security group is not specified, either by this or securityGroup prop, a dedicated security group will be created for this function.
 
 The list of security groups to associate with the Lambda's network interfaces.
@@ -951,7 +951,7 @@ Only used if 'vpc' is supplied.
 public Duration Timeout { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* Amazon.CDK.Duration
 - *Default:* Duration.seconds(3)
 
 The function execution time (in seconds) after which Lambda terminates the function.
@@ -966,7 +966,7 @@ Because the execution time affects cost, set this value based on the function's 
 public Tracing Tracing { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.Tracing\\">Tracing</a>
+- *Type:* Amazon.CDK.AWS.Lambda.Tracing
 - *Default:* Tracing.Disabled
 
 Enable AWS X-Ray Tracing for Lambda Function.
@@ -979,7 +979,7 @@ Enable AWS X-Ray Tracing for Lambda Function.
 public IVpc Vpc { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-ec2.IVpc\\">IVpc</a>
+- *Type:* Amazon.CDK.AWS.EC2.IVpc
 - *Default:* Function is not placed within a VPC.
 
 VPC network to place Lambda network interfaces.
@@ -994,7 +994,7 @@ Specify this if the Lambda function needs to access resources in a VPC.
 public SubnetSelection VpcSubnets { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-ec2.SubnetSelection\\">SubnetSelection</a>
+- *Type:* Amazon.CDK.AWS.EC2.SubnetSelection
 - *Default:* the Vpc default strategy if not specified
 
 Where to place the network interfaces within the VPC.
@@ -1009,7 +1009,7 @@ Only used if 'vpc' is supplied. Note: internet access for Lambdas requires a NAT
 public Code Code { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.Code\\">Code</a>
+- *Type:* Amazon.CDK.AWS.Lambda.Code
 
 The source code of your Lambda function.
 
@@ -1037,7 +1037,7 @@ The format includes the file name. It can also include namespaces and other qual
 public Runtime Runtime { get; set; }
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.Runtime\\">Runtime</a>
+- *Type:* Amazon.CDK.AWS.Lambda.Runtime
 
 The runtime environment for the Lambda function that you are uploading.
 
@@ -1070,7 +1070,7 @@ exports[`submodules without an explicit name java 1`] = `
 
 ### EdgeFunction <a name=\\"EdgeFunction\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction\\"></a>
 
-- *Implements:* <a href=\\"#@aws-cdk/aws-lambda.IVersion\\">IVersion</a>
+- *Implements:* software.amazon.awscdk.services.lambda.IVersion
 
 A Lambda@Edge function.
 
@@ -1125,52 +1125,52 @@ EdgeFunction.Builder.create(Construct scope, java.lang.String id)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.scope\\">scope</a></code> | <code><a href=\\"#constructs.Construct\\">Construct</a></code> | *No description.* |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.scope\\">scope</a></code> | <code>software.constructs.Construct</code> | *No description.* |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.id\\">id</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.maxEventAge\\">maxEventAge</a></code> | <code><a href=\\"#@aws-cdk/core.Duration\\">Duration</a></code> | The maximum age of a request that Lambda sends to a function for processing. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.onFailure\\">onFailure</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a></code> | The destination for failed invocations. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.onSuccess\\">onSuccess</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a></code> | The destination for successful invocations. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.maxEventAge\\">maxEventAge</a></code> | <code>software.amazon.awscdk.core.Duration</code> | The maximum age of a request that Lambda sends to a function for processing. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.onFailure\\">onFailure</a></code> | <code>software.amazon.awscdk.services.lambda.IDestination</code> | The destination for failed invocations. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.onSuccess\\">onSuccess</a></code> | <code>software.amazon.awscdk.services.lambda.IDestination</code> | The destination for successful invocations. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.retryAttempts\\">retryAttempts</a></code> | <code>java.lang.Number</code> | The maximum number of times to retry when the function returns an error. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.allowAllOutbound\\">allowAllOutbound</a></code> | <code>java.lang.Boolean</code> | Whether to allow the Lambda to send all network traffic. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.allowPublicSubnet\\">allowPublicSubnet</a></code> | <code>java.lang.Boolean</code> | Lambda Functions in a public subnet can NOT access the internet. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.architectures\\">architectures</a></code> | <code>java.util.List<<a href=\\"#@aws-cdk/aws-lambda.Architecture\\">Architecture</a>></code> | The system architectures compatible with this lambda function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.codeSigningConfig\\">codeSigningConfig</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.ICodeSigningConfig\\">ICodeSigningConfig</a></code> | Code signing config associated with this function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.currentVersionOptions\\">currentVersionOptions</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.VersionOptions\\">VersionOptions</a></code> | Options for the \`lambda.Version\` resource automatically created by the \`fn.currentVersion\` method. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.deadLetterQueue\\">deadLetterQueue</a></code> | <code><a href=\\"#@aws-cdk/aws-sqs.IQueue\\">IQueue</a></code> | The SQS queue to use if DLQ is enabled. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.architectures\\">architectures</a></code> | <code>java.util.List<software.amazon.awscdk.services.lambda.Architecture></code> | The system architectures compatible with this lambda function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.codeSigningConfig\\">codeSigningConfig</a></code> | <code>software.amazon.awscdk.services.lambda.ICodeSigningConfig</code> | Code signing config associated with this function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.currentVersionOptions\\">currentVersionOptions</a></code> | <code>software.amazon.awscdk.services.lambda.VersionOptions</code> | Options for the \`lambda.Version\` resource automatically created by the \`fn.currentVersion\` method. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.deadLetterQueue\\">deadLetterQueue</a></code> | <code>software.amazon.awscdk.services.sqs.IQueue</code> | The SQS queue to use if DLQ is enabled. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.deadLetterQueueEnabled\\">deadLetterQueueEnabled</a></code> | <code>java.lang.Boolean</code> | Enabled DLQ. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.description\\">description</a></code> | <code>java.lang.String</code> | A description of the function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.environment\\">environment</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | Key-value pairs that Lambda caches and makes available for your Lambda functions. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.environmentEncryption\\">environmentEncryption</a></code> | <code><a href=\\"#@aws-cdk/aws-kms.IKey\\">IKey</a></code> | The AWS KMS key that's used to encrypt your function's environment variables. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.events\\">events</a></code> | <code>java.util.List<<a href=\\"#@aws-cdk/aws-lambda.IEventSource\\">IEventSource</a>></code> | Event sources for this function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.filesystem\\">filesystem</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.FileSystem\\">FileSystem</a></code> | The filesystem configuration for the lambda function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.environmentEncryption\\">environmentEncryption</a></code> | <code>software.amazon.awscdk.services.kms.IKey</code> | The AWS KMS key that's used to encrypt your function's environment variables. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.events\\">events</a></code> | <code>java.util.List<software.amazon.awscdk.services.lambda.IEventSource></code> | Event sources for this function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.filesystem\\">filesystem</a></code> | <code>software.amazon.awscdk.services.lambda.FileSystem</code> | The filesystem configuration for the lambda function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.functionName\\">functionName</a></code> | <code>java.lang.String</code> | A name for the function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.initialPolicy\\">initialPolicy</a></code> | <code>java.util.List<<a href=\\"#@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>></code> | Initial policy statements to add to the created Lambda Role. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.insightsVersion\\">insightsVersion</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.LambdaInsightsVersion\\">LambdaInsightsVersion</a></code> | Specify the version of CloudWatch Lambda insights to use for monitoring. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.layers\\">layers</a></code> | <code>java.util.List<<a href=\\"#@aws-cdk/aws-lambda.ILayerVersion\\">ILayerVersion</a>></code> | A list of layers to add to the function's execution environment. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.logRetention\\">logRetention</a></code> | <code><a href=\\"#@aws-cdk/aws-logs.RetentionDays\\">RetentionDays</a></code> | The number of days log events are kept in CloudWatch Logs. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.logRetentionRetryOptions\\">logRetentionRetryOptions</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.LogRetentionRetryOptions\\">LogRetentionRetryOptions</a></code> | When log retention is specified, a custom resource attempts to create the CloudWatch log group. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.logRetentionRole\\">logRetentionRole</a></code> | <code><a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a></code> | The IAM role for the Lambda function associated with the custom resource that sets the retention policy. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.initialPolicy\\">initialPolicy</a></code> | <code>java.util.List<software.amazon.awscdk.services.iam.PolicyStatement></code> | Initial policy statements to add to the created Lambda Role. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.insightsVersion\\">insightsVersion</a></code> | <code>software.amazon.awscdk.services.lambda.LambdaInsightsVersion</code> | Specify the version of CloudWatch Lambda insights to use for monitoring. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.layers\\">layers</a></code> | <code>java.util.List<software.amazon.awscdk.services.lambda.ILayerVersion></code> | A list of layers to add to the function's execution environment. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.logRetention\\">logRetention</a></code> | <code>software.amazon.awscdk.services.logs.RetentionDays</code> | The number of days log events are kept in CloudWatch Logs. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.logRetentionRetryOptions\\">logRetentionRetryOptions</a></code> | <code>software.amazon.awscdk.services.lambda.LogRetentionRetryOptions</code> | When log retention is specified, a custom resource attempts to create the CloudWatch log group. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.logRetentionRole\\">logRetentionRole</a></code> | <code>software.amazon.awscdk.services.iam.IRole</code> | The IAM role for the Lambda function associated with the custom resource that sets the retention policy. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.memorySize\\">memorySize</a></code> | <code>java.lang.Number</code> | The amount of memory, in MB, that is allocated to your Lambda function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.profiling\\">profiling</a></code> | <code>java.lang.Boolean</code> | Enable profiling. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.profilingGroup\\">profilingGroup</a></code> | <code><a href=\\"#@aws-cdk/aws-codeguruprofiler.IProfilingGroup\\">IProfilingGroup</a></code> | Profiling Group. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.profilingGroup\\">profilingGroup</a></code> | <code>software.amazon.awscdk.services.codeguruprofiler.IProfilingGroup</code> | Profiling Group. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.reservedConcurrentExecutions\\">reservedConcurrentExecutions</a></code> | <code>java.lang.Number</code> | The maximum of concurrent executions you want to reserve for the function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.role\\">role</a></code> | <code><a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a></code> | Lambda execution role. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.securityGroup\\">securityGroup</a></code> | <code><a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a></code> | What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.securityGroups\\">securityGroups</a></code> | <code>java.util.List<<a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a>></code> | The list of security groups to associate with the Lambda's network interfaces. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.timeout\\">timeout</a></code> | <code><a href=\\"#@aws-cdk/core.Duration\\">Duration</a></code> | The function execution time (in seconds) after which Lambda terminates the function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.tracing\\">tracing</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.Tracing\\">Tracing</a></code> | Enable AWS X-Ray Tracing for Lambda Function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.vpc\\">vpc</a></code> | <code><a href=\\"#@aws-cdk/aws-ec2.IVpc\\">IVpc</a></code> | VPC network to place Lambda network interfaces. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.vpcSubnets\\">vpcSubnets</a></code> | <code><a href=\\"#@aws-cdk/aws-ec2.SubnetSelection\\">SubnetSelection</a></code> | Where to place the network interfaces within the VPC. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.code\\">code</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.Code\\">Code</a></code> | The source code of your Lambda function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.role\\">role</a></code> | <code>software.amazon.awscdk.services.iam.IRole</code> | Lambda execution role. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.securityGroup\\">securityGroup</a></code> | <code>software.amazon.awscdk.services.ec2.ISecurityGroup</code> | What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.securityGroups\\">securityGroups</a></code> | <code>java.util.List<software.amazon.awscdk.services.ec2.ISecurityGroup></code> | The list of security groups to associate with the Lambda's network interfaces. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.timeout\\">timeout</a></code> | <code>software.amazon.awscdk.core.Duration</code> | The function execution time (in seconds) after which Lambda terminates the function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.tracing\\">tracing</a></code> | <code>software.amazon.awscdk.services.lambda.Tracing</code> | Enable AWS X-Ray Tracing for Lambda Function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.vpc\\">vpc</a></code> | <code>software.amazon.awscdk.services.ec2.IVpc</code> | VPC network to place Lambda network interfaces. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.vpcSubnets\\">vpcSubnets</a></code> | <code>software.amazon.awscdk.services.ec2.SubnetSelection</code> | Where to place the network interfaces within the VPC. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.code\\">code</a></code> | <code>software.amazon.awscdk.services.lambda.Code</code> | The source code of your Lambda function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.handler\\">handler</a></code> | <code>java.lang.String</code> | The name of the method within your code that Lambda calls to execute your function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.runtime\\">runtime</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.Runtime\\">Runtime</a></code> | The runtime environment for the Lambda function that you are uploading. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.runtime\\">runtime</a></code> | <code>software.amazon.awscdk.services.lambda.Runtime</code> | The runtime environment for the Lambda function that you are uploading. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.stackId\\">stackId</a></code> | <code>java.lang.String</code> | The stack ID of Lambda@Edge function. |
 
 ---
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"#constructs.Construct\\">Construct</a>
+- *Type:* software.constructs.Construct
 
 ---
 
@@ -1182,7 +1182,7 @@ EdgeFunction.Builder.create(Construct scope, java.lang.String id)
 
 ##### \`maxEventAge\`<sup>Optional</sup> <a name=\\"\`maxEventAge\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.maxEventAge\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* software.amazon.awscdk.core.Duration
 - *Default:* Duration.hours(6)
 
 The maximum age of a request that Lambda sends to a function for processing.
@@ -1193,7 +1193,7 @@ Minimum: 60 seconds Maximum: 6 hours
 
 ##### \`onFailure\`<sup>Optional</sup> <a name=\\"\`onFailure\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.onFailure\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a>
+- *Type:* software.amazon.awscdk.services.lambda.IDestination
 - *Default:* no destination
 
 The destination for failed invocations.
@@ -1202,7 +1202,7 @@ The destination for failed invocations.
 
 ##### \`onSuccess\`<sup>Optional</sup> <a name=\\"\`onSuccess\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.onSuccess\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a>
+- *Type:* software.amazon.awscdk.services.lambda.IDestination
 - *Default:* no destination
 
 The destination for successful invocations.
@@ -1248,7 +1248,7 @@ Use this property to acknowledge this limitation and still place the function in
 
 ##### \`architectures\`<sup>Optional</sup> <a name=\\"\`architectures\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.architectures\\"></a>
 
-- *Type:* java.util.List<<a href=\\"#@aws-cdk/aws-lambda.Architecture\\">Architecture</a>>
+- *Type:* java.util.List<software.amazon.awscdk.services.lambda.Architecture>
 - *Default:* [Architecture.X86_64]
 
 The system architectures compatible with this lambda function.
@@ -1257,7 +1257,7 @@ The system architectures compatible with this lambda function.
 
 ##### \`codeSigningConfig\`<sup>Optional</sup> <a name=\\"\`codeSigningConfig\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.codeSigningConfig\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.ICodeSigningConfig\\">ICodeSigningConfig</a>
+- *Type:* software.amazon.awscdk.services.lambda.ICodeSigningConfig
 - *Default:* Not Sign the Code
 
 Code signing config associated with this function.
@@ -1266,7 +1266,7 @@ Code signing config associated with this function.
 
 ##### \`currentVersionOptions\`<sup>Optional</sup> <a name=\\"\`currentVersionOptions\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.currentVersionOptions\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.VersionOptions\\">VersionOptions</a>
+- *Type:* software.amazon.awscdk.services.lambda.VersionOptions
 - *Default:* default options as described in \`VersionOptions\`
 
 Options for the \`lambda.Version\` resource automatically created by the \`fn.currentVersion\` method.
@@ -1275,7 +1275,7 @@ Options for the \`lambda.Version\` resource automatically created by the \`fn.cu
 
 ##### \`deadLetterQueue\`<sup>Optional</sup> <a name=\\"\`deadLetterQueue\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.deadLetterQueue\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-sqs.IQueue\\">IQueue</a>
+- *Type:* software.amazon.awscdk.services.sqs.IQueue
 - *Default:* SQS queue with 14 day retention period if \`deadLetterQueueEnabled\` is \`true\`
 
 The SQS queue to use if DLQ is enabled.
@@ -1315,7 +1315,7 @@ Use environment variables to apply configuration changes, such as test and produ
 
 ##### \`environmentEncryption\`<sup>Optional</sup> <a name=\\"\`environmentEncryption\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.environmentEncryption\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-kms.IKey\\">IKey</a>
+- *Type:* software.amazon.awscdk.services.kms.IKey
 - *Default:* AWS Lambda creates and uses an AWS managed customer master key (CMK).
 
 The AWS KMS key that's used to encrypt your function's environment variables.
@@ -1324,7 +1324,7 @@ The AWS KMS key that's used to encrypt your function's environment variables.
 
 ##### \`events\`<sup>Optional</sup> <a name=\\"\`events\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.events\\"></a>
 
-- *Type:* java.util.List<<a href=\\"#@aws-cdk/aws-lambda.IEventSource\\">IEventSource</a>>
+- *Type:* java.util.List<software.amazon.awscdk.services.lambda.IEventSource>
 - *Default:* No event sources.
 
 Event sources for this function.
@@ -1335,7 +1335,7 @@ You can also add event sources using \`addEventSource\`.
 
 ##### \`filesystem\`<sup>Optional</sup> <a name=\\"\`filesystem\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.filesystem\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.FileSystem\\">FileSystem</a>
+- *Type:* software.amazon.awscdk.services.lambda.FileSystem
 - *Default:* will not mount any filesystem
 
 The filesystem configuration for the lambda function.
@@ -1353,7 +1353,7 @@ A name for the function.
 
 ##### \`initialPolicy\`<sup>Optional</sup> <a name=\\"\`initialPolicy\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.initialPolicy\\"></a>
 
-- *Type:* java.util.List<<a href=\\"#@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>>
+- *Type:* java.util.List<software.amazon.awscdk.services.iam.PolicyStatement>
 - *Default:* No policy statements are added to the created Lambda role.
 
 Initial policy statements to add to the created Lambda Role.
@@ -1364,7 +1364,7 @@ You can call \`addToRolePolicy\` to the created lambda to add statements post cr
 
 ##### \`insightsVersion\`<sup>Optional</sup> <a name=\\"\`insightsVersion\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.insightsVersion\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.LambdaInsightsVersion\\">LambdaInsightsVersion</a>
+- *Type:* software.amazon.awscdk.services.lambda.LambdaInsightsVersion
 - *Default:* No Lambda Insights
 
 Specify the version of CloudWatch Lambda insights to use for monitoring.
@@ -1377,7 +1377,7 @@ Specify the version of CloudWatch Lambda insights to use for monitoring.
 
 ##### \`layers\`<sup>Optional</sup> <a name=\\"\`layers\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.layers\\"></a>
 
-- *Type:* java.util.List<<a href=\\"#@aws-cdk/aws-lambda.ILayerVersion\\">ILayerVersion</a>>
+- *Type:* java.util.List<software.amazon.awscdk.services.lambda.ILayerVersion>
 - *Default:* No layers.
 
 A list of layers to add to the function's execution environment.
@@ -1388,7 +1388,7 @@ You can configure your Lambda function to pull in additional code during initial
 
 ##### \`logRetention\`<sup>Optional</sup> <a name=\\"\`logRetention\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.logRetention\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-logs.RetentionDays\\">RetentionDays</a>
+- *Type:* software.amazon.awscdk.services.logs.RetentionDays
 - *Default:* logs.RetentionDays.INFINITE
 
 The number of days log events are kept in CloudWatch Logs.
@@ -1399,7 +1399,7 @@ When updating this property, unsetting it doesn't remove the log retention polic
 
 ##### \`logRetentionRetryOptions\`<sup>Optional</sup> <a name=\\"\`logRetentionRetryOptions\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.logRetentionRetryOptions\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.LogRetentionRetryOptions\\">LogRetentionRetryOptions</a>
+- *Type:* software.amazon.awscdk.services.lambda.LogRetentionRetryOptions
 - *Default:* Default AWS SDK retry options.
 
 When log retention is specified, a custom resource attempts to create the CloudWatch log group.
@@ -1410,7 +1410,7 @@ These options control the retry policy when interacting with CloudWatch APIs.
 
 ##### \`logRetentionRole\`<sup>Optional</sup> <a name=\\"\`logRetentionRole\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.logRetentionRole\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a>
+- *Type:* software.amazon.awscdk.services.iam.IRole
 - *Default:* A new role is created.
 
 The IAM role for the Lambda function associated with the custom resource that sets the retention policy.
@@ -1443,7 +1443,7 @@ Enable profiling.
 
 ##### \`profilingGroup\`<sup>Optional</sup> <a name=\\"\`profilingGroup\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.profilingGroup\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-codeguruprofiler.IProfilingGroup\\">IProfilingGroup</a>
+- *Type:* software.amazon.awscdk.services.codeguruprofiler.IProfilingGroup
 - *Default:* A new profiling group will be created if \`profiling\` is set.
 
 Profiling Group.
@@ -1469,7 +1469,7 @@ The maximum of concurrent executions you want to reserve for the function.
 
 ##### \`role\`<sup>Optional</sup> <a name=\\"\`role\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.role\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a>
+- *Type:* software.amazon.awscdk.services.iam.IRole
 - *Default:* A unique role will be generated for this lambda function. Both supplied and generated roles can always be changed by calling \`addToRolePolicy\`.
 
 Lambda execution role.
@@ -1482,7 +1482,7 @@ This is the role that will be assumed by the function upon execution. It control
 
 - *Deprecated:* - This property is deprecated, use securityGroups instead
 
-- *Type:* <a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a>
+- *Type:* software.amazon.awscdk.services.ec2.ISecurityGroup
 - *Default:* If the function is placed within a VPC and a security group is not specified, either by this or securityGroups prop, a dedicated security group will be created for this function.
 
 What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead.
@@ -1493,7 +1493,7 @@ Only used if 'vpc' is supplied.  Use securityGroups property instead. Function c
 
 ##### \`securityGroups\`<sup>Optional</sup> <a name=\\"\`securityGroups\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.securityGroups\\"></a>
 
-- *Type:* java.util.List<<a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a>>
+- *Type:* java.util.List<software.amazon.awscdk.services.ec2.ISecurityGroup>
 - *Default:* If the function is placed within a VPC and a security group is not specified, either by this or securityGroup prop, a dedicated security group will be created for this function.
 
 The list of security groups to associate with the Lambda's network interfaces.
@@ -1504,7 +1504,7 @@ Only used if 'vpc' is supplied.
 
 ##### \`timeout\`<sup>Optional</sup> <a name=\\"\`timeout\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.timeout\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* software.amazon.awscdk.core.Duration
 - *Default:* Duration.seconds(3)
 
 The function execution time (in seconds) after which Lambda terminates the function.
@@ -1515,7 +1515,7 @@ Because the execution time affects cost, set this value based on the function's 
 
 ##### \`tracing\`<sup>Optional</sup> <a name=\\"\`tracing\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.tracing\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.Tracing\\">Tracing</a>
+- *Type:* software.amazon.awscdk.services.lambda.Tracing
 - *Default:* Tracing.Disabled
 
 Enable AWS X-Ray Tracing for Lambda Function.
@@ -1524,7 +1524,7 @@ Enable AWS X-Ray Tracing for Lambda Function.
 
 ##### \`vpc\`<sup>Optional</sup> <a name=\\"\`vpc\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.vpc\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-ec2.IVpc\\">IVpc</a>
+- *Type:* software.amazon.awscdk.services.ec2.IVpc
 - *Default:* Function is not placed within a VPC.
 
 VPC network to place Lambda network interfaces.
@@ -1535,7 +1535,7 @@ Specify this if the Lambda function needs to access resources in a VPC.
 
 ##### \`vpcSubnets\`<sup>Optional</sup> <a name=\\"\`vpcSubnets\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.vpcSubnets\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-ec2.SubnetSelection\\">SubnetSelection</a>
+- *Type:* software.amazon.awscdk.services.ec2.SubnetSelection
 - *Default:* the Vpc default strategy if not specified
 
 Where to place the network interfaces within the VPC.
@@ -1546,7 +1546,7 @@ Only used if 'vpc' is supplied. Note: internet access for Lambdas requires a NAT
 
 ##### \`code\`<sup>Required</sup> <a name=\\"\`code\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.code\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.Code\\">Code</a>
+- *Type:* software.amazon.awscdk.services.lambda.Code
 
 The source code of your Lambda function.
 
@@ -1566,7 +1566,7 @@ The format includes the file name. It can also include namespaces and other qual
 
 ##### \`runtime\`<sup>Required</sup> <a name=\\"\`runtime\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.runtime\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.Runtime\\">Runtime</a>
+- *Type:* software.amazon.awscdk.services.lambda.Runtime
 
 The runtime environment for the Lambda function that you are uploading.
 
@@ -1617,7 +1617,7 @@ public addAlias(java.lang.String aliasName, AliasOptions options)
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"\`options\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.options\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.AliasOptions\\">AliasOptions</a>
+- *Type:* software.amazon.awscdk.services.lambda.AliasOptions
 
 ---
 
@@ -1629,7 +1629,7 @@ public addEventSource(IEventSource source)
 
 ###### \`source\`<sup>Required</sup> <a name=\\"\`source\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.source\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IEventSource\\">IEventSource</a>
+- *Type:* software.amazon.awscdk.services.lambda.IEventSource
 
 ---
 
@@ -1647,7 +1647,7 @@ public addEventSourceMapping(java.lang.String id, EventSourceMappingOptions opti
 
 ###### \`options\`<sup>Required</sup> <a name=\\"\`options\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.options\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.EventSourceMappingOptions\\">EventSourceMappingOptions</a>
+- *Type:* software.amazon.awscdk.services.lambda.EventSourceMappingOptions
 
 ---
 
@@ -1665,7 +1665,7 @@ public addPermission(java.lang.String id, Permission permission)
 
 ###### \`permission\`<sup>Required</sup> <a name=\\"\`permission\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.permission\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.Permission\\">Permission</a>
+- *Type:* software.amazon.awscdk.services.lambda.Permission
 
 ---
 
@@ -1677,7 +1677,7 @@ public addToRolePolicy(PolicyStatement statement)
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"\`statement\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.statement\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>
+- *Type:* software.amazon.awscdk.services.iam.PolicyStatement
 
 ---
 
@@ -1689,7 +1689,7 @@ public configureAsyncInvoke(EventInvokeConfigOptions options)
 
 ###### \`options\`<sup>Required</sup> <a name=\\"\`options\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.options\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.EventInvokeConfigOptions\\">EventInvokeConfigOptions</a>
+- *Type:* software.amazon.awscdk.services.lambda.EventInvokeConfigOptions
 
 ---
 
@@ -1701,7 +1701,7 @@ public grantInvoke(IGrantable identity)
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"\`identity\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.identity\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
+- *Type:* software.amazon.awscdk.services.iam.IGrantable
 
 ---
 
@@ -1720,7 +1720,7 @@ public metric(java.lang.String metricName, MetricOptions props)
 
 ###### \`props\`<sup>Optional</sup> <a name=\\"\`props\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.props\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-cloudwatch.MetricOptions\\">MetricOptions</a>
+- *Type:* software.amazon.awscdk.services.cloudwatch.MetricOptions
 
 ---
 
@@ -1733,7 +1733,7 @@ public metricDuration(MetricOptions props)
 
 ###### \`props\`<sup>Optional</sup> <a name=\\"\`props\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.props\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-cloudwatch.MetricOptions\\">MetricOptions</a>
+- *Type:* software.amazon.awscdk.services.cloudwatch.MetricOptions
 
 ---
 
@@ -1746,7 +1746,7 @@ public metricErrors(MetricOptions props)
 
 ###### \`props\`<sup>Optional</sup> <a name=\\"\`props\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.props\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-cloudwatch.MetricOptions\\">MetricOptions</a>
+- *Type:* software.amazon.awscdk.services.cloudwatch.MetricOptions
 
 ---
 
@@ -1759,7 +1759,7 @@ public metricInvocations(MetricOptions props)
 
 ###### \`props\`<sup>Optional</sup> <a name=\\"\`props\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.props\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-cloudwatch.MetricOptions\\">MetricOptions</a>
+- *Type:* software.amazon.awscdk.services.cloudwatch.MetricOptions
 
 ---
 
@@ -1772,7 +1772,7 @@ public metricThrottles(MetricOptions props)
 
 ###### \`props\`<sup>Optional</sup> <a name=\\"\`props\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.props\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-cloudwatch.MetricOptions\\">MetricOptions</a>
+- *Type:* software.amazon.awscdk.services.cloudwatch.MetricOptions
 
 ---
 
@@ -1781,18 +1781,18 @@ public metricThrottles(MetricOptions props)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.connections\\">connections</a></code> | <code><a href=\\"#@aws-cdk/aws-ec2.Connections\\">Connections</a></code> | Not supported. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.currentVersion\\">currentVersion</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IVersion\\">IVersion</a></code> | Convenience method to make \`EdgeFunction\` conform to the same interface as \`Function\`. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.connections\\">connections</a></code> | <code>software.amazon.awscdk.services.ec2.Connections</code> | Not supported. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.currentVersion\\">currentVersion</a></code> | <code>software.amazon.awscdk.services.lambda.IVersion</code> | Convenience method to make \`EdgeFunction\` conform to the same interface as \`Function\`. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.edgeArn\\">edgeArn</a></code> | <code>java.lang.String</code> | The ARN of the version for Lambda@Edge. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.functionArn\\">functionArn</a></code> | <code>java.lang.String</code> | The ARN of the function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.functionName\\">functionName</a></code> | <code>java.lang.String</code> | The name of the function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.grantPrincipal\\">grantPrincipal</a></code> | <code><a href=\\"#@aws-cdk/aws-iam.IPrincipal\\">IPrincipal</a></code> | The principal to grant permissions to. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.grantPrincipal\\">grantPrincipal</a></code> | <code>software.amazon.awscdk.services.iam.IPrincipal</code> | The principal to grant permissions to. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.isBoundToVpc\\">isBoundToVpc</a></code> | <code>java.lang.Boolean</code> | Whether or not this Lambda function was bound to a VPC. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.lambda\\">lambda</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IFunction\\">IFunction</a></code> | The underlying AWS Lambda function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.latestVersion\\">latestVersion</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IVersion\\">IVersion</a></code> | The \`$LATEST\` version of this function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.permissionsNode\\">permissionsNode</a></code> | <code><a href=\\"#@aws-cdk/core.ConstructNode\\">ConstructNode</a></code> | The construct node where permissions are attached. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.lambda\\">lambda</a></code> | <code>software.amazon.awscdk.services.lambda.IFunction</code> | The underlying AWS Lambda function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.latestVersion\\">latestVersion</a></code> | <code>software.amazon.awscdk.services.lambda.IVersion</code> | The \`$LATEST\` version of this function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.permissionsNode\\">permissionsNode</a></code> | <code>software.amazon.awscdk.core.ConstructNode</code> | The construct node where permissions are attached. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.version\\">version</a></code> | <code>java.lang.String</code> | The most recently deployed version of this function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.role\\">role</a></code> | <code><a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a></code> | The IAM role associated with this function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.role\\">role</a></code> | <code>software.amazon.awscdk.services.iam.IRole</code> | The IAM role associated with this function. |
 
 ---
 
@@ -1802,7 +1802,7 @@ public metricThrottles(MetricOptions props)
 public Connections getConnections();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-ec2.Connections\\">Connections</a>
+- *Type:* software.amazon.awscdk.services.ec2.Connections
 
 Not supported.
 
@@ -1816,7 +1816,7 @@ Connections are only applicable to VPC-enabled functions.
 public IVersion getCurrentVersion();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IVersion\\">IVersion</a>
+- *Type:* software.amazon.awscdk.services.lambda.IVersion
 
 Convenience method to make \`EdgeFunction\` conform to the same interface as \`Function\`.
 
@@ -1864,7 +1864,7 @@ The name of the function.
 public IPrincipal getGrantPrincipal();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IPrincipal\\">IPrincipal</a>
+- *Type:* software.amazon.awscdk.services.iam.IPrincipal
 
 The principal to grant permissions to.
 
@@ -1890,7 +1890,7 @@ If this is is \`false\`, trying to access the \`connections\` object will fail.
 public IFunction getLambda();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IFunction\\">IFunction</a>
+- *Type:* software.amazon.awscdk.services.lambda.IFunction
 
 The underlying AWS Lambda function.
 
@@ -1902,7 +1902,7 @@ The underlying AWS Lambda function.
 public IVersion getLatestVersion();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IVersion\\">IVersion</a>
+- *Type:* software.amazon.awscdk.services.lambda.IVersion
 
 The \`$LATEST\` version of this function.
 
@@ -1916,7 +1916,7 @@ Note that this is reference to a non-specific AWS Lambda version, which means th
 public ConstructNode getPermissionsNode();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/core.ConstructNode\\">ConstructNode</a>
+- *Type:* software.amazon.awscdk.core.ConstructNode
 
 The construct node where permissions are attached.
 
@@ -1940,7 +1940,7 @@ The most recently deployed version of this function.
 public IRole getRole();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a>
+- *Type:* software.amazon.awscdk.services.iam.IRole
 
 The IAM role associated with this function.
 
@@ -2004,43 +2004,43 @@ EdgeFunctionProps.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.maxEventAge\\">maxEventAge</a></code> | <code><a href=\\"#@aws-cdk/core.Duration\\">Duration</a></code> | The maximum age of a request that Lambda sends to a function for processing. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.onFailure\\">onFailure</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a></code> | The destination for failed invocations. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.onSuccess\\">onSuccess</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a></code> | The destination for successful invocations. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.maxEventAge\\">maxEventAge</a></code> | <code>software.amazon.awscdk.core.Duration</code> | The maximum age of a request that Lambda sends to a function for processing. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.onFailure\\">onFailure</a></code> | <code>software.amazon.awscdk.services.lambda.IDestination</code> | The destination for failed invocations. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.onSuccess\\">onSuccess</a></code> | <code>software.amazon.awscdk.services.lambda.IDestination</code> | The destination for successful invocations. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.retryAttempts\\">retryAttempts</a></code> | <code>java.lang.Number</code> | The maximum number of times to retry when the function returns an error. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.allowAllOutbound\\">allowAllOutbound</a></code> | <code>java.lang.Boolean</code> | Whether to allow the Lambda to send all network traffic. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.allowPublicSubnet\\">allowPublicSubnet</a></code> | <code>java.lang.Boolean</code> | Lambda Functions in a public subnet can NOT access the internet. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.architectures\\">architectures</a></code> | <code>java.util.List<<a href=\\"#@aws-cdk/aws-lambda.Architecture\\">Architecture</a>></code> | The system architectures compatible with this lambda function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.codeSigningConfig\\">codeSigningConfig</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.ICodeSigningConfig\\">ICodeSigningConfig</a></code> | Code signing config associated with this function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.currentVersionOptions\\">currentVersionOptions</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.VersionOptions\\">VersionOptions</a></code> | Options for the \`lambda.Version\` resource automatically created by the \`fn.currentVersion\` method. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.deadLetterQueue\\">deadLetterQueue</a></code> | <code><a href=\\"#@aws-cdk/aws-sqs.IQueue\\">IQueue</a></code> | The SQS queue to use if DLQ is enabled. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.architectures\\">architectures</a></code> | <code>java.util.List<software.amazon.awscdk.services.lambda.Architecture></code> | The system architectures compatible with this lambda function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.codeSigningConfig\\">codeSigningConfig</a></code> | <code>software.amazon.awscdk.services.lambda.ICodeSigningConfig</code> | Code signing config associated with this function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.currentVersionOptions\\">currentVersionOptions</a></code> | <code>software.amazon.awscdk.services.lambda.VersionOptions</code> | Options for the \`lambda.Version\` resource automatically created by the \`fn.currentVersion\` method. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.deadLetterQueue\\">deadLetterQueue</a></code> | <code>software.amazon.awscdk.services.sqs.IQueue</code> | The SQS queue to use if DLQ is enabled. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.deadLetterQueueEnabled\\">deadLetterQueueEnabled</a></code> | <code>java.lang.Boolean</code> | Enabled DLQ. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.description\\">description</a></code> | <code>java.lang.String</code> | A description of the function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.environment\\">environment</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | Key-value pairs that Lambda caches and makes available for your Lambda functions. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.environmentEncryption\\">environmentEncryption</a></code> | <code><a href=\\"#@aws-cdk/aws-kms.IKey\\">IKey</a></code> | The AWS KMS key that's used to encrypt your function's environment variables. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.events\\">events</a></code> | <code>java.util.List<<a href=\\"#@aws-cdk/aws-lambda.IEventSource\\">IEventSource</a>></code> | Event sources for this function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.filesystem\\">filesystem</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.FileSystem\\">FileSystem</a></code> | The filesystem configuration for the lambda function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.environmentEncryption\\">environmentEncryption</a></code> | <code>software.amazon.awscdk.services.kms.IKey</code> | The AWS KMS key that's used to encrypt your function's environment variables. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.events\\">events</a></code> | <code>java.util.List<software.amazon.awscdk.services.lambda.IEventSource></code> | Event sources for this function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.filesystem\\">filesystem</a></code> | <code>software.amazon.awscdk.services.lambda.FileSystem</code> | The filesystem configuration for the lambda function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.functionName\\">functionName</a></code> | <code>java.lang.String</code> | A name for the function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.initialPolicy\\">initialPolicy</a></code> | <code>java.util.List<<a href=\\"#@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>></code> | Initial policy statements to add to the created Lambda Role. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.insightsVersion\\">insightsVersion</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.LambdaInsightsVersion\\">LambdaInsightsVersion</a></code> | Specify the version of CloudWatch Lambda insights to use for monitoring. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.layers\\">layers</a></code> | <code>java.util.List<<a href=\\"#@aws-cdk/aws-lambda.ILayerVersion\\">ILayerVersion</a>></code> | A list of layers to add to the function's execution environment. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.logRetention\\">logRetention</a></code> | <code><a href=\\"#@aws-cdk/aws-logs.RetentionDays\\">RetentionDays</a></code> | The number of days log events are kept in CloudWatch Logs. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.logRetentionRetryOptions\\">logRetentionRetryOptions</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.LogRetentionRetryOptions\\">LogRetentionRetryOptions</a></code> | When log retention is specified, a custom resource attempts to create the CloudWatch log group. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.logRetentionRole\\">logRetentionRole</a></code> | <code><a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a></code> | The IAM role for the Lambda function associated with the custom resource that sets the retention policy. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.initialPolicy\\">initialPolicy</a></code> | <code>java.util.List<software.amazon.awscdk.services.iam.PolicyStatement></code> | Initial policy statements to add to the created Lambda Role. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.insightsVersion\\">insightsVersion</a></code> | <code>software.amazon.awscdk.services.lambda.LambdaInsightsVersion</code> | Specify the version of CloudWatch Lambda insights to use for monitoring. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.layers\\">layers</a></code> | <code>java.util.List<software.amazon.awscdk.services.lambda.ILayerVersion></code> | A list of layers to add to the function's execution environment. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.logRetention\\">logRetention</a></code> | <code>software.amazon.awscdk.services.logs.RetentionDays</code> | The number of days log events are kept in CloudWatch Logs. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.logRetentionRetryOptions\\">logRetentionRetryOptions</a></code> | <code>software.amazon.awscdk.services.lambda.LogRetentionRetryOptions</code> | When log retention is specified, a custom resource attempts to create the CloudWatch log group. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.logRetentionRole\\">logRetentionRole</a></code> | <code>software.amazon.awscdk.services.iam.IRole</code> | The IAM role for the Lambda function associated with the custom resource that sets the retention policy. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.memorySize\\">memorySize</a></code> | <code>java.lang.Number</code> | The amount of memory, in MB, that is allocated to your Lambda function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.profiling\\">profiling</a></code> | <code>java.lang.Boolean</code> | Enable profiling. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.profilingGroup\\">profilingGroup</a></code> | <code><a href=\\"#@aws-cdk/aws-codeguruprofiler.IProfilingGroup\\">IProfilingGroup</a></code> | Profiling Group. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.profilingGroup\\">profilingGroup</a></code> | <code>software.amazon.awscdk.services.codeguruprofiler.IProfilingGroup</code> | Profiling Group. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.reservedConcurrentExecutions\\">reservedConcurrentExecutions</a></code> | <code>java.lang.Number</code> | The maximum of concurrent executions you want to reserve for the function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.role\\">role</a></code> | <code><a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a></code> | Lambda execution role. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.securityGroup\\">securityGroup</a></code> | <code><a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a></code> | What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.securityGroups\\">securityGroups</a></code> | <code>java.util.List<<a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a>></code> | The list of security groups to associate with the Lambda's network interfaces. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.timeout\\">timeout</a></code> | <code><a href=\\"#@aws-cdk/core.Duration\\">Duration</a></code> | The function execution time (in seconds) after which Lambda terminates the function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.tracing\\">tracing</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.Tracing\\">Tracing</a></code> | Enable AWS X-Ray Tracing for Lambda Function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.vpc\\">vpc</a></code> | <code><a href=\\"#@aws-cdk/aws-ec2.IVpc\\">IVpc</a></code> | VPC network to place Lambda network interfaces. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.vpcSubnets\\">vpcSubnets</a></code> | <code><a href=\\"#@aws-cdk/aws-ec2.SubnetSelection\\">SubnetSelection</a></code> | Where to place the network interfaces within the VPC. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.code\\">code</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.Code\\">Code</a></code> | The source code of your Lambda function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.role\\">role</a></code> | <code>software.amazon.awscdk.services.iam.IRole</code> | Lambda execution role. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.securityGroup\\">securityGroup</a></code> | <code>software.amazon.awscdk.services.ec2.ISecurityGroup</code> | What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.securityGroups\\">securityGroups</a></code> | <code>java.util.List<software.amazon.awscdk.services.ec2.ISecurityGroup></code> | The list of security groups to associate with the Lambda's network interfaces. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.timeout\\">timeout</a></code> | <code>software.amazon.awscdk.core.Duration</code> | The function execution time (in seconds) after which Lambda terminates the function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.tracing\\">tracing</a></code> | <code>software.amazon.awscdk.services.lambda.Tracing</code> | Enable AWS X-Ray Tracing for Lambda Function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.vpc\\">vpc</a></code> | <code>software.amazon.awscdk.services.ec2.IVpc</code> | VPC network to place Lambda network interfaces. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.vpcSubnets\\">vpcSubnets</a></code> | <code>software.amazon.awscdk.services.ec2.SubnetSelection</code> | Where to place the network interfaces within the VPC. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.code\\">code</a></code> | <code>software.amazon.awscdk.services.lambda.Code</code> | The source code of your Lambda function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.handler\\">handler</a></code> | <code>java.lang.String</code> | The name of the method within your code that Lambda calls to execute your function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.runtime\\">runtime</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.Runtime\\">Runtime</a></code> | The runtime environment for the Lambda function that you are uploading. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.runtime\\">runtime</a></code> | <code>software.amazon.awscdk.services.lambda.Runtime</code> | The runtime environment for the Lambda function that you are uploading. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.stackId\\">stackId</a></code> | <code>java.lang.String</code> | The stack ID of Lambda@Edge function. |
 
 ---
@@ -2051,7 +2051,7 @@ EdgeFunctionProps.builder()
 public Duration getMaxEventAge();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* software.amazon.awscdk.core.Duration
 - *Default:* Duration.hours(6)
 
 The maximum age of a request that Lambda sends to a function for processing.
@@ -2066,7 +2066,7 @@ Minimum: 60 seconds Maximum: 6 hours
 public IDestination getOnFailure();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a>
+- *Type:* software.amazon.awscdk.services.lambda.IDestination
 - *Default:* no destination
 
 The destination for failed invocations.
@@ -2079,7 +2079,7 @@ The destination for failed invocations.
 public IDestination getOnSuccess();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a>
+- *Type:* software.amazon.awscdk.services.lambda.IDestination
 - *Default:* no destination
 
 The destination for successful invocations.
@@ -2141,7 +2141,7 @@ Use this property to acknowledge this limitation and still place the function in
 public java.util.List<Architecture> getArchitectures();
 \`\`\`
 
-- *Type:* java.util.List<<a href=\\"#@aws-cdk/aws-lambda.Architecture\\">Architecture</a>>
+- *Type:* java.util.List<software.amazon.awscdk.services.lambda.Architecture>
 - *Default:* [Architecture.X86_64]
 
 The system architectures compatible with this lambda function.
@@ -2154,7 +2154,7 @@ The system architectures compatible with this lambda function.
 public ICodeSigningConfig getCodeSigningConfig();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.ICodeSigningConfig\\">ICodeSigningConfig</a>
+- *Type:* software.amazon.awscdk.services.lambda.ICodeSigningConfig
 - *Default:* Not Sign the Code
 
 Code signing config associated with this function.
@@ -2167,7 +2167,7 @@ Code signing config associated with this function.
 public VersionOptions getCurrentVersionOptions();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.VersionOptions\\">VersionOptions</a>
+- *Type:* software.amazon.awscdk.services.lambda.VersionOptions
 - *Default:* default options as described in \`VersionOptions\`
 
 Options for the \`lambda.Version\` resource automatically created by the \`fn.currentVersion\` method.
@@ -2180,7 +2180,7 @@ Options for the \`lambda.Version\` resource automatically created by the \`fn.cu
 public IQueue getDeadLetterQueue();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-sqs.IQueue\\">IQueue</a>
+- *Type:* software.amazon.awscdk.services.sqs.IQueue
 - *Default:* SQS queue with 14 day retention period if \`deadLetterQueueEnabled\` is \`true\`
 
 The SQS queue to use if DLQ is enabled.
@@ -2236,7 +2236,7 @@ Use environment variables to apply configuration changes, such as test and produ
 public IKey getEnvironmentEncryption();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-kms.IKey\\">IKey</a>
+- *Type:* software.amazon.awscdk.services.kms.IKey
 - *Default:* AWS Lambda creates and uses an AWS managed customer master key (CMK).
 
 The AWS KMS key that's used to encrypt your function's environment variables.
@@ -2249,7 +2249,7 @@ The AWS KMS key that's used to encrypt your function's environment variables.
 public java.util.List<IEventSource> getEvents();
 \`\`\`
 
-- *Type:* java.util.List<<a href=\\"#@aws-cdk/aws-lambda.IEventSource\\">IEventSource</a>>
+- *Type:* java.util.List<software.amazon.awscdk.services.lambda.IEventSource>
 - *Default:* No event sources.
 
 Event sources for this function.
@@ -2264,7 +2264,7 @@ You can also add event sources using \`addEventSource\`.
 public FileSystem getFilesystem();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.FileSystem\\">FileSystem</a>
+- *Type:* software.amazon.awscdk.services.lambda.FileSystem
 - *Default:* will not mount any filesystem
 
 The filesystem configuration for the lambda function.
@@ -2290,7 +2290,7 @@ A name for the function.
 public java.util.List<PolicyStatement> getInitialPolicy();
 \`\`\`
 
-- *Type:* java.util.List<<a href=\\"#@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>>
+- *Type:* java.util.List<software.amazon.awscdk.services.iam.PolicyStatement>
 - *Default:* No policy statements are added to the created Lambda role.
 
 Initial policy statements to add to the created Lambda Role.
@@ -2305,7 +2305,7 @@ You can call \`addToRolePolicy\` to the created lambda to add statements post cr
 public LambdaInsightsVersion getInsightsVersion();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.LambdaInsightsVersion\\">LambdaInsightsVersion</a>
+- *Type:* software.amazon.awscdk.services.lambda.LambdaInsightsVersion
 - *Default:* No Lambda Insights
 
 Specify the version of CloudWatch Lambda insights to use for monitoring.
@@ -2322,7 +2322,7 @@ Specify the version of CloudWatch Lambda insights to use for monitoring.
 public java.util.List<ILayerVersion> getLayers();
 \`\`\`
 
-- *Type:* java.util.List<<a href=\\"#@aws-cdk/aws-lambda.ILayerVersion\\">ILayerVersion</a>>
+- *Type:* java.util.List<software.amazon.awscdk.services.lambda.ILayerVersion>
 - *Default:* No layers.
 
 A list of layers to add to the function's execution environment.
@@ -2337,7 +2337,7 @@ You can configure your Lambda function to pull in additional code during initial
 public RetentionDays getLogRetention();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-logs.RetentionDays\\">RetentionDays</a>
+- *Type:* software.amazon.awscdk.services.logs.RetentionDays
 - *Default:* logs.RetentionDays.INFINITE
 
 The number of days log events are kept in CloudWatch Logs.
@@ -2352,7 +2352,7 @@ When updating this property, unsetting it doesn't remove the log retention polic
 public LogRetentionRetryOptions getLogRetentionRetryOptions();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.LogRetentionRetryOptions\\">LogRetentionRetryOptions</a>
+- *Type:* software.amazon.awscdk.services.lambda.LogRetentionRetryOptions
 - *Default:* Default AWS SDK retry options.
 
 When log retention is specified, a custom resource attempts to create the CloudWatch log group.
@@ -2367,7 +2367,7 @@ These options control the retry policy when interacting with CloudWatch APIs.
 public IRole getLogRetentionRole();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a>
+- *Type:* software.amazon.awscdk.services.iam.IRole
 - *Default:* A new role is created.
 
 The IAM role for the Lambda function associated with the custom resource that sets the retention policy.
@@ -2412,7 +2412,7 @@ Enable profiling.
 public IProfilingGroup getProfilingGroup();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-codeguruprofiler.IProfilingGroup\\">IProfilingGroup</a>
+- *Type:* software.amazon.awscdk.services.codeguruprofiler.IProfilingGroup
 - *Default:* A new profiling group will be created if \`profiling\` is set.
 
 Profiling Group.
@@ -2446,7 +2446,7 @@ The maximum of concurrent executions you want to reserve for the function.
 public IRole getRole();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a>
+- *Type:* software.amazon.awscdk.services.iam.IRole
 - *Default:* A unique role will be generated for this lambda function. Both supplied and generated roles can always be changed by calling \`addToRolePolicy\`.
 
 Lambda execution role.
@@ -2463,7 +2463,7 @@ This is the role that will be assumed by the function upon execution. It control
 public ISecurityGroup getSecurityGroup();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a>
+- *Type:* software.amazon.awscdk.services.ec2.ISecurityGroup
 - *Default:* If the function is placed within a VPC and a security group is not specified, either by this or securityGroups prop, a dedicated security group will be created for this function.
 
 What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead.
@@ -2478,7 +2478,7 @@ Only used if 'vpc' is supplied.  Use securityGroups property instead. Function c
 public java.util.List<ISecurityGroup> getSecurityGroups();
 \`\`\`
 
-- *Type:* java.util.List<<a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a>>
+- *Type:* java.util.List<software.amazon.awscdk.services.ec2.ISecurityGroup>
 - *Default:* If the function is placed within a VPC and a security group is not specified, either by this or securityGroup prop, a dedicated security group will be created for this function.
 
 The list of security groups to associate with the Lambda's network interfaces.
@@ -2493,7 +2493,7 @@ Only used if 'vpc' is supplied.
 public Duration getTimeout();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* software.amazon.awscdk.core.Duration
 - *Default:* Duration.seconds(3)
 
 The function execution time (in seconds) after which Lambda terminates the function.
@@ -2508,7 +2508,7 @@ Because the execution time affects cost, set this value based on the function's 
 public Tracing getTracing();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.Tracing\\">Tracing</a>
+- *Type:* software.amazon.awscdk.services.lambda.Tracing
 - *Default:* Tracing.Disabled
 
 Enable AWS X-Ray Tracing for Lambda Function.
@@ -2521,7 +2521,7 @@ Enable AWS X-Ray Tracing for Lambda Function.
 public IVpc getVpc();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-ec2.IVpc\\">IVpc</a>
+- *Type:* software.amazon.awscdk.services.ec2.IVpc
 - *Default:* Function is not placed within a VPC.
 
 VPC network to place Lambda network interfaces.
@@ -2536,7 +2536,7 @@ Specify this if the Lambda function needs to access resources in a VPC.
 public SubnetSelection getVpcSubnets();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-ec2.SubnetSelection\\">SubnetSelection</a>
+- *Type:* software.amazon.awscdk.services.ec2.SubnetSelection
 - *Default:* the Vpc default strategy if not specified
 
 Where to place the network interfaces within the VPC.
@@ -2551,7 +2551,7 @@ Only used if 'vpc' is supplied. Note: internet access for Lambdas requires a NAT
 public Code getCode();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.Code\\">Code</a>
+- *Type:* software.amazon.awscdk.services.lambda.Code
 
 The source code of your Lambda function.
 
@@ -2579,7 +2579,7 @@ The format includes the file name. It can also include namespaces and other qual
 public Runtime getRuntime();
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.Runtime\\">Runtime</a>
+- *Type:* software.amazon.awscdk.services.lambda.Runtime
 
 The runtime environment for the Lambda function that you are uploading.
 
@@ -2612,7 +2612,7 @@ exports[`submodules without an explicit name python 1`] = `
 
 ### EdgeFunction <a name=\\"EdgeFunction\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction\\"></a>
 
-- *Implements:* <a href=\\"#@aws-cdk/aws-lambda.IVersion\\">IVersion</a>
+- *Implements:* aws_cdk.aws_lambda.IVersion
 
 A Lambda@Edge function.
 
@@ -2669,52 +2669,52 @@ experimental.EdgeFunction(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.scope\\">scope</a></code> | <code><a href=\\"#constructs.Construct\\">Construct</a></code> | *No description.* |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.scope\\">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.id\\">id</a></code> | <code>str</code> | *No description.* |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.maxEventAge\\">max_event_age</a></code> | <code><a href=\\"#@aws-cdk/core.Duration\\">Duration</a></code> | The maximum age of a request that Lambda sends to a function for processing. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.onFailure\\">on_failure</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a></code> | The destination for failed invocations. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.onSuccess\\">on_success</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a></code> | The destination for successful invocations. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.maxEventAge\\">max_event_age</a></code> | <code>aws_cdk.core.Duration</code> | The maximum age of a request that Lambda sends to a function for processing. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.onFailure\\">on_failure</a></code> | <code>aws_cdk.aws_lambda.IDestination</code> | The destination for failed invocations. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.onSuccess\\">on_success</a></code> | <code>aws_cdk.aws_lambda.IDestination</code> | The destination for successful invocations. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.retryAttempts\\">retry_attempts</a></code> | <code>typing.Union[int, float]</code> | The maximum number of times to retry when the function returns an error. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.allowAllOutbound\\">allow_all_outbound</a></code> | <code>bool</code> | Whether to allow the Lambda to send all network traffic. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.allowPublicSubnet\\">allow_public_subnet</a></code> | <code>bool</code> | Lambda Functions in a public subnet can NOT access the internet. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.architectures\\">architectures</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-lambda.Architecture\\">Architecture</a>]</code> | The system architectures compatible with this lambda function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.codeSigningConfig\\">code_signing_config</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.ICodeSigningConfig\\">ICodeSigningConfig</a></code> | Code signing config associated with this function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.currentVersionOptions\\">current_version_options</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.VersionOptions\\">VersionOptions</a></code> | Options for the \`lambda.Version\` resource automatically created by the \`fn.currentVersion\` method. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.deadLetterQueue\\">dead_letter_queue</a></code> | <code><a href=\\"#@aws-cdk/aws-sqs.IQueue\\">IQueue</a></code> | The SQS queue to use if DLQ is enabled. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.architectures\\">architectures</a></code> | <code>typing.List[aws_cdk.aws_lambda.Architecture]</code> | The system architectures compatible with this lambda function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.codeSigningConfig\\">code_signing_config</a></code> | <code>aws_cdk.aws_lambda.ICodeSigningConfig</code> | Code signing config associated with this function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.currentVersionOptions\\">current_version_options</a></code> | <code>aws_cdk.aws_lambda.VersionOptions</code> | Options for the \`lambda.Version\` resource automatically created by the \`fn.currentVersion\` method. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.deadLetterQueue\\">dead_letter_queue</a></code> | <code>aws_cdk.aws_sqs.IQueue</code> | The SQS queue to use if DLQ is enabled. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.deadLetterQueueEnabled\\">dead_letter_queue_enabled</a></code> | <code>bool</code> | Enabled DLQ. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.description\\">description</a></code> | <code>str</code> | A description of the function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.environment\\">environment</a></code> | <code>typing.Mapping[str]</code> | Key-value pairs that Lambda caches and makes available for your Lambda functions. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.environmentEncryption\\">environment_encryption</a></code> | <code><a href=\\"#@aws-cdk/aws-kms.IKey\\">IKey</a></code> | The AWS KMS key that's used to encrypt your function's environment variables. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.events\\">events</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-lambda.IEventSource\\">IEventSource</a>]</code> | Event sources for this function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.filesystem\\">filesystem</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.FileSystem\\">FileSystem</a></code> | The filesystem configuration for the lambda function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.environmentEncryption\\">environment_encryption</a></code> | <code>aws_cdk.aws_kms.IKey</code> | The AWS KMS key that's used to encrypt your function's environment variables. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.events\\">events</a></code> | <code>typing.List[aws_cdk.aws_lambda.IEventSource]</code> | Event sources for this function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.filesystem\\">filesystem</a></code> | <code>aws_cdk.aws_lambda.FileSystem</code> | The filesystem configuration for the lambda function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.functionName\\">function_name</a></code> | <code>str</code> | A name for the function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.initialPolicy\\">initial_policy</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>]</code> | Initial policy statements to add to the created Lambda Role. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.insightsVersion\\">insights_version</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.LambdaInsightsVersion\\">LambdaInsightsVersion</a></code> | Specify the version of CloudWatch Lambda insights to use for monitoring. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.layers\\">layers</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-lambda.ILayerVersion\\">ILayerVersion</a>]</code> | A list of layers to add to the function's execution environment. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.logRetention\\">log_retention</a></code> | <code><a href=\\"#@aws-cdk/aws-logs.RetentionDays\\">RetentionDays</a></code> | The number of days log events are kept in CloudWatch Logs. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.logRetentionRetryOptions\\">log_retention_retry_options</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.LogRetentionRetryOptions\\">LogRetentionRetryOptions</a></code> | When log retention is specified, a custom resource attempts to create the CloudWatch log group. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.logRetentionRole\\">log_retention_role</a></code> | <code><a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a></code> | The IAM role for the Lambda function associated with the custom resource that sets the retention policy. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.initialPolicy\\">initial_policy</a></code> | <code>typing.List[aws_cdk.aws_iam.PolicyStatement]</code> | Initial policy statements to add to the created Lambda Role. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.insightsVersion\\">insights_version</a></code> | <code>aws_cdk.aws_lambda.LambdaInsightsVersion</code> | Specify the version of CloudWatch Lambda insights to use for monitoring. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.layers\\">layers</a></code> | <code>typing.List[aws_cdk.aws_lambda.ILayerVersion]</code> | A list of layers to add to the function's execution environment. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.logRetention\\">log_retention</a></code> | <code>aws_cdk.aws_logs.RetentionDays</code> | The number of days log events are kept in CloudWatch Logs. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.logRetentionRetryOptions\\">log_retention_retry_options</a></code> | <code>aws_cdk.aws_lambda.LogRetentionRetryOptions</code> | When log retention is specified, a custom resource attempts to create the CloudWatch log group. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.logRetentionRole\\">log_retention_role</a></code> | <code>aws_cdk.aws_iam.IRole</code> | The IAM role for the Lambda function associated with the custom resource that sets the retention policy. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.memorySize\\">memory_size</a></code> | <code>typing.Union[int, float]</code> | The amount of memory, in MB, that is allocated to your Lambda function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.profiling\\">profiling</a></code> | <code>bool</code> | Enable profiling. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.profilingGroup\\">profiling_group</a></code> | <code><a href=\\"#@aws-cdk/aws-codeguruprofiler.IProfilingGroup\\">IProfilingGroup</a></code> | Profiling Group. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.profilingGroup\\">profiling_group</a></code> | <code>aws_cdk.aws_codeguruprofiler.IProfilingGroup</code> | Profiling Group. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.reservedConcurrentExecutions\\">reserved_concurrent_executions</a></code> | <code>typing.Union[int, float]</code> | The maximum of concurrent executions you want to reserve for the function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.role\\">role</a></code> | <code><a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a></code> | Lambda execution role. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.securityGroup\\">security_group</a></code> | <code><a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a></code> | What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.securityGroups\\">security_groups</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a>]</code> | The list of security groups to associate with the Lambda's network interfaces. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.timeout\\">timeout</a></code> | <code><a href=\\"#@aws-cdk/core.Duration\\">Duration</a></code> | The function execution time (in seconds) after which Lambda terminates the function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.tracing\\">tracing</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.Tracing\\">Tracing</a></code> | Enable AWS X-Ray Tracing for Lambda Function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.vpc\\">vpc</a></code> | <code><a href=\\"#@aws-cdk/aws-ec2.IVpc\\">IVpc</a></code> | VPC network to place Lambda network interfaces. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.vpcSubnets\\">vpc_subnets</a></code> | <code><a href=\\"#@aws-cdk/aws-ec2.SubnetSelection\\">SubnetSelection</a></code> | Where to place the network interfaces within the VPC. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.code\\">code</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.Code\\">Code</a></code> | The source code of your Lambda function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.role\\">role</a></code> | <code>aws_cdk.aws_iam.IRole</code> | Lambda execution role. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.securityGroup\\">security_group</a></code> | <code>aws_cdk.aws_ec2.ISecurityGroup</code> | What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.securityGroups\\">security_groups</a></code> | <code>typing.List[aws_cdk.aws_ec2.ISecurityGroup]</code> | The list of security groups to associate with the Lambda's network interfaces. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.timeout\\">timeout</a></code> | <code>aws_cdk.core.Duration</code> | The function execution time (in seconds) after which Lambda terminates the function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.tracing\\">tracing</a></code> | <code>aws_cdk.aws_lambda.Tracing</code> | Enable AWS X-Ray Tracing for Lambda Function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.vpc\\">vpc</a></code> | <code>aws_cdk.aws_ec2.IVpc</code> | VPC network to place Lambda network interfaces. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.vpcSubnets\\">vpc_subnets</a></code> | <code>aws_cdk.aws_ec2.SubnetSelection</code> | Where to place the network interfaces within the VPC. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.code\\">code</a></code> | <code>aws_cdk.aws_lambda.Code</code> | The source code of your Lambda function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.handler\\">handler</a></code> | <code>str</code> | The name of the method within your code that Lambda calls to execute your function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.runtime\\">runtime</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.Runtime\\">Runtime</a></code> | The runtime environment for the Lambda function that you are uploading. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.runtime\\">runtime</a></code> | <code>aws_cdk.aws_lambda.Runtime</code> | The runtime environment for the Lambda function that you are uploading. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.stackId\\">stack_id</a></code> | <code>str</code> | The stack ID of Lambda@Edge function. |
 
 ---
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"#constructs.Construct\\">Construct</a>
+- *Type:* constructs.Construct
 
 ---
 
@@ -2726,7 +2726,7 @@ experimental.EdgeFunction(
 
 ##### \`max_event_age\`<sup>Optional</sup> <a name=\\"\`max_event_age\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.maxEventAge\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* aws_cdk.core.Duration
 - *Default:* Duration.hours(6)
 
 The maximum age of a request that Lambda sends to a function for processing.
@@ -2737,7 +2737,7 @@ Minimum: 60 seconds Maximum: 6 hours
 
 ##### \`on_failure\`<sup>Optional</sup> <a name=\\"\`on_failure\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.onFailure\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a>
+- *Type:* aws_cdk.aws_lambda.IDestination
 - *Default:* no destination
 
 The destination for failed invocations.
@@ -2746,7 +2746,7 @@ The destination for failed invocations.
 
 ##### \`on_success\`<sup>Optional</sup> <a name=\\"\`on_success\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.onSuccess\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a>
+- *Type:* aws_cdk.aws_lambda.IDestination
 - *Default:* no destination
 
 The destination for successful invocations.
@@ -2792,7 +2792,7 @@ Use this property to acknowledge this limitation and still place the function in
 
 ##### \`architectures\`<sup>Optional</sup> <a name=\\"\`architectures\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.architectures\\"></a>
 
-- *Type:* typing.List[<a href=\\"#@aws-cdk/aws-lambda.Architecture\\">Architecture</a>]
+- *Type:* typing.List[aws_cdk.aws_lambda.Architecture]
 - *Default:* [Architecture.X86_64]
 
 The system architectures compatible with this lambda function.
@@ -2801,7 +2801,7 @@ The system architectures compatible with this lambda function.
 
 ##### \`code_signing_config\`<sup>Optional</sup> <a name=\\"\`code_signing_config\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.codeSigningConfig\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.ICodeSigningConfig\\">ICodeSigningConfig</a>
+- *Type:* aws_cdk.aws_lambda.ICodeSigningConfig
 - *Default:* Not Sign the Code
 
 Code signing config associated with this function.
@@ -2810,7 +2810,7 @@ Code signing config associated with this function.
 
 ##### \`current_version_options\`<sup>Optional</sup> <a name=\\"\`current_version_options\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.currentVersionOptions\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.VersionOptions\\">VersionOptions</a>
+- *Type:* aws_cdk.aws_lambda.VersionOptions
 - *Default:* default options as described in \`VersionOptions\`
 
 Options for the \`lambda.Version\` resource automatically created by the \`fn.currentVersion\` method.
@@ -2819,7 +2819,7 @@ Options for the \`lambda.Version\` resource automatically created by the \`fn.cu
 
 ##### \`dead_letter_queue\`<sup>Optional</sup> <a name=\\"\`dead_letter_queue\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.deadLetterQueue\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-sqs.IQueue\\">IQueue</a>
+- *Type:* aws_cdk.aws_sqs.IQueue
 - *Default:* SQS queue with 14 day retention period if \`deadLetterQueueEnabled\` is \`true\`
 
 The SQS queue to use if DLQ is enabled.
@@ -2859,7 +2859,7 @@ Use environment variables to apply configuration changes, such as test and produ
 
 ##### \`environment_encryption\`<sup>Optional</sup> <a name=\\"\`environment_encryption\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.environmentEncryption\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-kms.IKey\\">IKey</a>
+- *Type:* aws_cdk.aws_kms.IKey
 - *Default:* AWS Lambda creates and uses an AWS managed customer master key (CMK).
 
 The AWS KMS key that's used to encrypt your function's environment variables.
@@ -2868,7 +2868,7 @@ The AWS KMS key that's used to encrypt your function's environment variables.
 
 ##### \`events\`<sup>Optional</sup> <a name=\\"\`events\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.events\\"></a>
 
-- *Type:* typing.List[<a href=\\"#@aws-cdk/aws-lambda.IEventSource\\">IEventSource</a>]
+- *Type:* typing.List[aws_cdk.aws_lambda.IEventSource]
 - *Default:* No event sources.
 
 Event sources for this function.
@@ -2879,7 +2879,7 @@ You can also add event sources using \`addEventSource\`.
 
 ##### \`filesystem\`<sup>Optional</sup> <a name=\\"\`filesystem\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.filesystem\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.FileSystem\\">FileSystem</a>
+- *Type:* aws_cdk.aws_lambda.FileSystem
 - *Default:* will not mount any filesystem
 
 The filesystem configuration for the lambda function.
@@ -2897,7 +2897,7 @@ A name for the function.
 
 ##### \`initial_policy\`<sup>Optional</sup> <a name=\\"\`initial_policy\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.initialPolicy\\"></a>
 
-- *Type:* typing.List[<a href=\\"#@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>]
+- *Type:* typing.List[aws_cdk.aws_iam.PolicyStatement]
 - *Default:* No policy statements are added to the created Lambda role.
 
 Initial policy statements to add to the created Lambda Role.
@@ -2908,7 +2908,7 @@ You can call \`addToRolePolicy\` to the created lambda to add statements post cr
 
 ##### \`insights_version\`<sup>Optional</sup> <a name=\\"\`insights_version\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.insightsVersion\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.LambdaInsightsVersion\\">LambdaInsightsVersion</a>
+- *Type:* aws_cdk.aws_lambda.LambdaInsightsVersion
 - *Default:* No Lambda Insights
 
 Specify the version of CloudWatch Lambda insights to use for monitoring.
@@ -2921,7 +2921,7 @@ Specify the version of CloudWatch Lambda insights to use for monitoring.
 
 ##### \`layers\`<sup>Optional</sup> <a name=\\"\`layers\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.layers\\"></a>
 
-- *Type:* typing.List[<a href=\\"#@aws-cdk/aws-lambda.ILayerVersion\\">ILayerVersion</a>]
+- *Type:* typing.List[aws_cdk.aws_lambda.ILayerVersion]
 - *Default:* No layers.
 
 A list of layers to add to the function's execution environment.
@@ -2932,7 +2932,7 @@ You can configure your Lambda function to pull in additional code during initial
 
 ##### \`log_retention\`<sup>Optional</sup> <a name=\\"\`log_retention\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.logRetention\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-logs.RetentionDays\\">RetentionDays</a>
+- *Type:* aws_cdk.aws_logs.RetentionDays
 - *Default:* logs.RetentionDays.INFINITE
 
 The number of days log events are kept in CloudWatch Logs.
@@ -2943,7 +2943,7 @@ When updating this property, unsetting it doesn't remove the log retention polic
 
 ##### \`log_retention_retry_options\`<sup>Optional</sup> <a name=\\"\`log_retention_retry_options\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.logRetentionRetryOptions\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.LogRetentionRetryOptions\\">LogRetentionRetryOptions</a>
+- *Type:* aws_cdk.aws_lambda.LogRetentionRetryOptions
 - *Default:* Default AWS SDK retry options.
 
 When log retention is specified, a custom resource attempts to create the CloudWatch log group.
@@ -2954,7 +2954,7 @@ These options control the retry policy when interacting with CloudWatch APIs.
 
 ##### \`log_retention_role\`<sup>Optional</sup> <a name=\\"\`log_retention_role\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.logRetentionRole\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a>
+- *Type:* aws_cdk.aws_iam.IRole
 - *Default:* A new role is created.
 
 The IAM role for the Lambda function associated with the custom resource that sets the retention policy.
@@ -2987,7 +2987,7 @@ Enable profiling.
 
 ##### \`profiling_group\`<sup>Optional</sup> <a name=\\"\`profiling_group\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.profilingGroup\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-codeguruprofiler.IProfilingGroup\\">IProfilingGroup</a>
+- *Type:* aws_cdk.aws_codeguruprofiler.IProfilingGroup
 - *Default:* A new profiling group will be created if \`profiling\` is set.
 
 Profiling Group.
@@ -3013,7 +3013,7 @@ The maximum of concurrent executions you want to reserve for the function.
 
 ##### \`role\`<sup>Optional</sup> <a name=\\"\`role\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.role\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a>
+- *Type:* aws_cdk.aws_iam.IRole
 - *Default:* A unique role will be generated for this lambda function. Both supplied and generated roles can always be changed by calling \`addToRolePolicy\`.
 
 Lambda execution role.
@@ -3026,7 +3026,7 @@ This is the role that will be assumed by the function upon execution. It control
 
 - *Deprecated:* - This property is deprecated, use securityGroups instead
 
-- *Type:* <a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a>
+- *Type:* aws_cdk.aws_ec2.ISecurityGroup
 - *Default:* If the function is placed within a VPC and a security group is not specified, either by this or securityGroups prop, a dedicated security group will be created for this function.
 
 What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead.
@@ -3037,7 +3037,7 @@ Only used if 'vpc' is supplied.  Use securityGroups property instead. Function c
 
 ##### \`security_groups\`<sup>Optional</sup> <a name=\\"\`security_groups\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.securityGroups\\"></a>
 
-- *Type:* typing.List[<a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a>]
+- *Type:* typing.List[aws_cdk.aws_ec2.ISecurityGroup]
 - *Default:* If the function is placed within a VPC and a security group is not specified, either by this or securityGroup prop, a dedicated security group will be created for this function.
 
 The list of security groups to associate with the Lambda's network interfaces.
@@ -3048,7 +3048,7 @@ Only used if 'vpc' is supplied.
 
 ##### \`timeout\`<sup>Optional</sup> <a name=\\"\`timeout\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.timeout\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* aws_cdk.core.Duration
 - *Default:* Duration.seconds(3)
 
 The function execution time (in seconds) after which Lambda terminates the function.
@@ -3059,7 +3059,7 @@ Because the execution time affects cost, set this value based on the function's 
 
 ##### \`tracing\`<sup>Optional</sup> <a name=\\"\`tracing\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.tracing\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.Tracing\\">Tracing</a>
+- *Type:* aws_cdk.aws_lambda.Tracing
 - *Default:* Tracing.Disabled
 
 Enable AWS X-Ray Tracing for Lambda Function.
@@ -3068,7 +3068,7 @@ Enable AWS X-Ray Tracing for Lambda Function.
 
 ##### \`vpc\`<sup>Optional</sup> <a name=\\"\`vpc\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.vpc\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-ec2.IVpc\\">IVpc</a>
+- *Type:* aws_cdk.aws_ec2.IVpc
 - *Default:* Function is not placed within a VPC.
 
 VPC network to place Lambda network interfaces.
@@ -3079,7 +3079,7 @@ Specify this if the Lambda function needs to access resources in a VPC.
 
 ##### \`vpc_subnets\`<sup>Optional</sup> <a name=\\"\`vpc_subnets\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.vpcSubnets\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-ec2.SubnetSelection\\">SubnetSelection</a>
+- *Type:* aws_cdk.aws_ec2.SubnetSelection
 - *Default:* the Vpc default strategy if not specified
 
 Where to place the network interfaces within the VPC.
@@ -3090,7 +3090,7 @@ Only used if 'vpc' is supplied. Note: internet access for Lambdas requires a NAT
 
 ##### \`code\`<sup>Required</sup> <a name=\\"\`code\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.code\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.Code\\">Code</a>
+- *Type:* aws_cdk.aws_lambda.Code
 
 The source code of your Lambda function.
 
@@ -3110,7 +3110,7 @@ The format includes the file name. It can also include namespaces and other qual
 
 ##### \`runtime\`<sup>Required</sup> <a name=\\"\`runtime\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.runtime\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.Runtime\\">Runtime</a>
+- *Type:* aws_cdk.aws_lambda.Runtime
 
 The runtime environment for the Lambda function that you are uploading.
 
@@ -3169,7 +3169,7 @@ def add_alias(
 
 ###### \`max_event_age\`<sup>Optional</sup> <a name=\\"\`max_event_age\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.maxEventAge\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* aws_cdk.core.Duration
 - *Default:* Duration.hours(6)
 
 The maximum age of a request that Lambda sends to a function for processing.
@@ -3180,7 +3180,7 @@ Minimum: 60 seconds Maximum: 6 hours
 
 ###### \`on_failure\`<sup>Optional</sup> <a name=\\"\`on_failure\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.onFailure\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a>
+- *Type:* aws_cdk.aws_lambda.IDestination
 - *Default:* no destination
 
 The destination for failed invocations.
@@ -3189,7 +3189,7 @@ The destination for failed invocations.
 
 ###### \`on_success\`<sup>Optional</sup> <a name=\\"\`on_success\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.onSuccess\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a>
+- *Type:* aws_cdk.aws_lambda.IDestination
 - *Default:* no destination
 
 The destination for successful invocations.
@@ -3209,7 +3209,7 @@ Minimum: 0 Maximum: 2
 
 ###### \`additional_versions\`<sup>Optional</sup> <a name=\\"\`additional_versions\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.additionalVersions\\"></a>
 
-- *Type:* typing.List[<a href=\\"#@aws-cdk/aws-lambda.VersionWeight\\">VersionWeight</a>]
+- *Type:* typing.List[aws_cdk.aws_lambda.VersionWeight]
 - *Default:* No additional versions
 
 Additional versions with individual weights this alias points to.
@@ -3246,7 +3246,7 @@ def add_event_source(
 
 ###### \`source\`<sup>Required</sup> <a name=\\"\`source\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.source\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IEventSource\\">IEventSource</a>
+- *Type:* aws_cdk.aws_lambda.IEventSource
 
 ---
 
@@ -3341,7 +3341,7 @@ The name of the Kafka topic.
 
 ###### \`max_batching_window\`<sup>Optional</sup> <a name=\\"\`max_batching_window\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.maxBatchingWindow\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* aws_cdk.core.Duration
 - *Default:* Duration.seconds(0)
 
 The maximum amount of time to gather records before invoking the function.
@@ -3352,7 +3352,7 @@ Maximum of Duration.minutes(5)
 
 ###### \`max_record_age\`<sup>Optional</sup> <a name=\\"\`max_record_age\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.maxRecordAge\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* aws_cdk.core.Duration
 - *Default:* infinite or until the record expires.
 
 The maximum age of a record that Lambda sends to a function for processing.
@@ -3363,7 +3363,7 @@ Valid Range: * Minimum value of 60 seconds * Maximum value of 7 days
 
 ###### \`on_failure\`<sup>Optional</sup> <a name=\\"\`on_failure\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.onFailure\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IEventSourceDlq\\">IEventSourceDlq</a>
+- *Type:* aws_cdk.aws_lambda.IEventSourceDlq
 - *Default:* discarded records are ignored
 
 An Amazon SQS queue or Amazon SNS topic destination for discarded records.
@@ -3407,7 +3407,7 @@ Set to \`undefined\` if you want lambda to keep retrying infinitely or until the
 
 ###### \`source_access_configurations\`<sup>Optional</sup> <a name=\\"\`source_access_configurations\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.sourceAccessConfigurations\\"></a>
 
-- *Type:* typing.List[<a href=\\"#@aws-cdk/aws-lambda.SourceAccessConfiguration\\">SourceAccessConfiguration</a>]
+- *Type:* typing.List[aws_cdk.aws_lambda.SourceAccessConfiguration]
 - *Default:* none
 
 Specific settings like the authentication protocol or the VPC components to secure access to your event source.
@@ -3420,7 +3420,7 @@ Specific settings like the authentication protocol or the VPC components to secu
 
 ###### \`starting_position\`<sup>Optional</sup> <a name=\\"\`starting_position\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.startingPosition\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.StartingPosition\\">StartingPosition</a>
+- *Type:* aws_cdk.aws_lambda.StartingPosition
 - *Default:* Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources.
 
 The position in the DynamoDB, Kinesis or MSK stream where AWS Lambda should start reading.
@@ -3433,7 +3433,7 @@ The position in the DynamoDB, Kinesis or MSK stream where AWS Lambda should star
 
 ###### \`tumbling_window\`<sup>Optional</sup> <a name=\\"\`tumbling_window\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.tumblingWindow\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* aws_cdk.core.Duration
 - *Default:* None
 
 The size of the tumbling windows to group records sent to DynamoDB or Kinesis.
@@ -3472,7 +3472,7 @@ def add_permission(
 
 ###### \`principal\`<sup>Required</sup> <a name=\\"\`principal\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.principal\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IPrincipal\\">IPrincipal</a>
+- *Type:* aws_cdk.aws_iam.IPrincipal
 
 The entity for which you are granting permission to invoke the Lambda function.
 
@@ -3502,7 +3502,7 @@ A unique token that must be supplied by the principal invoking the function.
 
 ###### \`scope\`<sup>Optional</sup> <a name=\\"\`scope\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/core.Construct\\">Construct</a>
+- *Type:* aws_cdk.core.Construct
 - *Default:* The instance of lambda.IFunction
 
 The scope to which the permission constructs be attached.
@@ -3541,7 +3541,7 @@ def add_to_role_policy(
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"\`statement\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.statement\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>
+- *Type:* aws_cdk.aws_iam.PolicyStatement
 
 ---
 
@@ -3558,7 +3558,7 @@ def configure_async_invoke(
 
 ###### \`max_event_age\`<sup>Optional</sup> <a name=\\"\`max_event_age\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.maxEventAge\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* aws_cdk.core.Duration
 - *Default:* Duration.hours(6)
 
 The maximum age of a request that Lambda sends to a function for processing.
@@ -3569,7 +3569,7 @@ Minimum: 60 seconds Maximum: 6 hours
 
 ###### \`on_failure\`<sup>Optional</sup> <a name=\\"\`on_failure\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.onFailure\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a>
+- *Type:* aws_cdk.aws_lambda.IDestination
 - *Default:* no destination
 
 The destination for failed invocations.
@@ -3578,7 +3578,7 @@ The destination for failed invocations.
 
 ###### \`on_success\`<sup>Optional</sup> <a name=\\"\`on_success\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.onSuccess\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a>
+- *Type:* aws_cdk.aws_lambda.IDestination
 - *Default:* no destination
 
 The destination for successful invocations.
@@ -3606,7 +3606,7 @@ def grant_invoke(
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"\`identity\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.identity\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
+- *Type:* aws_cdk.aws_iam.IGrantable
 
 ---
 
@@ -3682,7 +3682,7 @@ Label for this metric when added to a Graph in a Dashboard.
 
 ###### \`period\`<sup>Optional</sup> <a name=\\"\`period\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.period\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* aws_cdk.core.Duration
 - *Default:* Duration.minutes(5)
 
 The period over which the specified statistic is applied.
@@ -3711,7 +3711,7 @@ Can be one of the following:  - \\"Minimum\\" | \\"min\\" - \\"Maximum\\" | \\"m
 
 ###### \`unit\`<sup>Optional</sup> <a name=\\"\`unit\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.unit\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-cloudwatch.Unit\\">Unit</a>
+- *Type:* aws_cdk.aws_cloudwatch.Unit
 - *Default:* All metric datums in the given metric stream
 
 Unit used to filter the metric stream.
@@ -3785,7 +3785,7 @@ Label for this metric when added to a Graph in a Dashboard.
 
 ###### \`period\`<sup>Optional</sup> <a name=\\"\`period\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.period\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* aws_cdk.core.Duration
 - *Default:* Duration.minutes(5)
 
 The period over which the specified statistic is applied.
@@ -3814,7 +3814,7 @@ Can be one of the following:  - \\"Minimum\\" | \\"min\\" - \\"Maximum\\" | \\"m
 
 ###### \`unit\`<sup>Optional</sup> <a name=\\"\`unit\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.unit\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-cloudwatch.Unit\\">Unit</a>
+- *Type:* aws_cdk.aws_cloudwatch.Unit
 - *Default:* All metric datums in the given metric stream
 
 Unit used to filter the metric stream.
@@ -3888,7 +3888,7 @@ Label for this metric when added to a Graph in a Dashboard.
 
 ###### \`period\`<sup>Optional</sup> <a name=\\"\`period\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.period\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* aws_cdk.core.Duration
 - *Default:* Duration.minutes(5)
 
 The period over which the specified statistic is applied.
@@ -3917,7 +3917,7 @@ Can be one of the following:  - \\"Minimum\\" | \\"min\\" - \\"Maximum\\" | \\"m
 
 ###### \`unit\`<sup>Optional</sup> <a name=\\"\`unit\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.unit\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-cloudwatch.Unit\\">Unit</a>
+- *Type:* aws_cdk.aws_cloudwatch.Unit
 - *Default:* All metric datums in the given metric stream
 
 Unit used to filter the metric stream.
@@ -3991,7 +3991,7 @@ Label for this metric when added to a Graph in a Dashboard.
 
 ###### \`period\`<sup>Optional</sup> <a name=\\"\`period\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.period\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* aws_cdk.core.Duration
 - *Default:* Duration.minutes(5)
 
 The period over which the specified statistic is applied.
@@ -4020,7 +4020,7 @@ Can be one of the following:  - \\"Minimum\\" | \\"min\\" - \\"Maximum\\" | \\"m
 
 ###### \`unit\`<sup>Optional</sup> <a name=\\"\`unit\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.unit\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-cloudwatch.Unit\\">Unit</a>
+- *Type:* aws_cdk.aws_cloudwatch.Unit
 - *Default:* All metric datums in the given metric stream
 
 Unit used to filter the metric stream.
@@ -4094,7 +4094,7 @@ Label for this metric when added to a Graph in a Dashboard.
 
 ###### \`period\`<sup>Optional</sup> <a name=\\"\`period\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.period\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* aws_cdk.core.Duration
 - *Default:* Duration.minutes(5)
 
 The period over which the specified statistic is applied.
@@ -4123,7 +4123,7 @@ Can be one of the following:  - \\"Minimum\\" | \\"min\\" - \\"Maximum\\" | \\"m
 
 ###### \`unit\`<sup>Optional</sup> <a name=\\"\`unit\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.parameter.unit\\"></a>
 
-- *Type:* <a href=\\"#@aws-cdk/aws-cloudwatch.Unit\\">Unit</a>
+- *Type:* aws_cdk.aws_cloudwatch.Unit
 - *Default:* All metric datums in the given metric stream
 
 Unit used to filter the metric stream.
@@ -4137,18 +4137,18 @@ Only refer to datums emitted to the metric stream with the given unit and ignore
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.connections\\">connections</a></code> | <code><a href=\\"#@aws-cdk/aws-ec2.Connections\\">Connections</a></code> | Not supported. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.currentVersion\\">current_version</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IVersion\\">IVersion</a></code> | Convenience method to make \`EdgeFunction\` conform to the same interface as \`Function\`. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.connections\\">connections</a></code> | <code>aws_cdk.aws_ec2.Connections</code> | Not supported. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.currentVersion\\">current_version</a></code> | <code>aws_cdk.aws_lambda.IVersion</code> | Convenience method to make \`EdgeFunction\` conform to the same interface as \`Function\`. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.edgeArn\\">edge_arn</a></code> | <code>str</code> | The ARN of the version for Lambda@Edge. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.functionArn\\">function_arn</a></code> | <code>str</code> | The ARN of the function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.functionName\\">function_name</a></code> | <code>str</code> | The name of the function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.grantPrincipal\\">grant_principal</a></code> | <code><a href=\\"#@aws-cdk/aws-iam.IPrincipal\\">IPrincipal</a></code> | The principal to grant permissions to. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.grantPrincipal\\">grant_principal</a></code> | <code>aws_cdk.aws_iam.IPrincipal</code> | The principal to grant permissions to. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.isBoundToVpc\\">is_bound_to_vpc</a></code> | <code>bool</code> | Whether or not this Lambda function was bound to a VPC. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.lambda\\">lambda</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IFunction\\">IFunction</a></code> | The underlying AWS Lambda function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.latestVersion\\">latest_version</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IVersion\\">IVersion</a></code> | The \`$LATEST\` version of this function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.permissionsNode\\">permissions_node</a></code> | <code><a href=\\"#@aws-cdk/core.ConstructNode\\">ConstructNode</a></code> | The construct node where permissions are attached. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.lambda\\">lambda</a></code> | <code>aws_cdk.aws_lambda.IFunction</code> | The underlying AWS Lambda function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.latestVersion\\">latest_version</a></code> | <code>aws_cdk.aws_lambda.IVersion</code> | The \`$LATEST\` version of this function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.permissionsNode\\">permissions_node</a></code> | <code>aws_cdk.core.ConstructNode</code> | The construct node where permissions are attached. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.version\\">version</a></code> | <code>str</code> | The most recently deployed version of this function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.role\\">role</a></code> | <code><a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a></code> | The IAM role associated with this function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.role\\">role</a></code> | <code>aws_cdk.aws_iam.IRole</code> | The IAM role associated with this function. |
 
 ---
 
@@ -4158,7 +4158,7 @@ Only refer to datums emitted to the metric stream with the given unit and ignore
 connections: Connections
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-ec2.Connections\\">Connections</a>
+- *Type:* aws_cdk.aws_ec2.Connections
 
 Not supported.
 
@@ -4172,7 +4172,7 @@ Connections are only applicable to VPC-enabled functions.
 current_version: IVersion
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IVersion\\">IVersion</a>
+- *Type:* aws_cdk.aws_lambda.IVersion
 
 Convenience method to make \`EdgeFunction\` conform to the same interface as \`Function\`.
 
@@ -4220,7 +4220,7 @@ The name of the function.
 grant_principal: IPrincipal
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IPrincipal\\">IPrincipal</a>
+- *Type:* aws_cdk.aws_iam.IPrincipal
 
 The principal to grant permissions to.
 
@@ -4246,7 +4246,7 @@ If this is is \`false\`, trying to access the \`connections\` object will fail.
 lambda: IFunction
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IFunction\\">IFunction</a>
+- *Type:* aws_cdk.aws_lambda.IFunction
 
 The underlying AWS Lambda function.
 
@@ -4258,7 +4258,7 @@ The underlying AWS Lambda function.
 latest_version: IVersion
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IVersion\\">IVersion</a>
+- *Type:* aws_cdk.aws_lambda.IVersion
 
 The \`$LATEST\` version of this function.
 
@@ -4272,7 +4272,7 @@ Note that this is reference to a non-specific AWS Lambda version, which means th
 permissions_node: ConstructNode
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/core.ConstructNode\\">ConstructNode</a>
+- *Type:* aws_cdk.core.ConstructNode
 
 The construct node where permissions are attached.
 
@@ -4296,7 +4296,7 @@ The most recently deployed version of this function.
 role: IRole
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a>
+- *Type:* aws_cdk.aws_iam.IRole
 
 The IAM role associated with this function.
 
@@ -4360,43 +4360,43 @@ experimental.EdgeFunctionProps(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.maxEventAge\\">max_event_age</a></code> | <code><a href=\\"#@aws-cdk/core.Duration\\">Duration</a></code> | The maximum age of a request that Lambda sends to a function for processing. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.onFailure\\">on_failure</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a></code> | The destination for failed invocations. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.onSuccess\\">on_success</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a></code> | The destination for successful invocations. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.maxEventAge\\">max_event_age</a></code> | <code>aws_cdk.core.Duration</code> | The maximum age of a request that Lambda sends to a function for processing. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.onFailure\\">on_failure</a></code> | <code>aws_cdk.aws_lambda.IDestination</code> | The destination for failed invocations. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.onSuccess\\">on_success</a></code> | <code>aws_cdk.aws_lambda.IDestination</code> | The destination for successful invocations. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.retryAttempts\\">retry_attempts</a></code> | <code>typing.Union[int, float]</code> | The maximum number of times to retry when the function returns an error. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.allowAllOutbound\\">allow_all_outbound</a></code> | <code>bool</code> | Whether to allow the Lambda to send all network traffic. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.allowPublicSubnet\\">allow_public_subnet</a></code> | <code>bool</code> | Lambda Functions in a public subnet can NOT access the internet. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.architectures\\">architectures</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-lambda.Architecture\\">Architecture</a>]</code> | The system architectures compatible with this lambda function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.codeSigningConfig\\">code_signing_config</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.ICodeSigningConfig\\">ICodeSigningConfig</a></code> | Code signing config associated with this function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.currentVersionOptions\\">current_version_options</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.VersionOptions\\">VersionOptions</a></code> | Options for the \`lambda.Version\` resource automatically created by the \`fn.currentVersion\` method. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.deadLetterQueue\\">dead_letter_queue</a></code> | <code><a href=\\"#@aws-cdk/aws-sqs.IQueue\\">IQueue</a></code> | The SQS queue to use if DLQ is enabled. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.architectures\\">architectures</a></code> | <code>typing.List[aws_cdk.aws_lambda.Architecture]</code> | The system architectures compatible with this lambda function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.codeSigningConfig\\">code_signing_config</a></code> | <code>aws_cdk.aws_lambda.ICodeSigningConfig</code> | Code signing config associated with this function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.currentVersionOptions\\">current_version_options</a></code> | <code>aws_cdk.aws_lambda.VersionOptions</code> | Options for the \`lambda.Version\` resource automatically created by the \`fn.currentVersion\` method. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.deadLetterQueue\\">dead_letter_queue</a></code> | <code>aws_cdk.aws_sqs.IQueue</code> | The SQS queue to use if DLQ is enabled. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.deadLetterQueueEnabled\\">dead_letter_queue_enabled</a></code> | <code>bool</code> | Enabled DLQ. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.description\\">description</a></code> | <code>str</code> | A description of the function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.environment\\">environment</a></code> | <code>typing.Mapping[str]</code> | Key-value pairs that Lambda caches and makes available for your Lambda functions. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.environmentEncryption\\">environment_encryption</a></code> | <code><a href=\\"#@aws-cdk/aws-kms.IKey\\">IKey</a></code> | The AWS KMS key that's used to encrypt your function's environment variables. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.events\\">events</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-lambda.IEventSource\\">IEventSource</a>]</code> | Event sources for this function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.filesystem\\">filesystem</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.FileSystem\\">FileSystem</a></code> | The filesystem configuration for the lambda function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.environmentEncryption\\">environment_encryption</a></code> | <code>aws_cdk.aws_kms.IKey</code> | The AWS KMS key that's used to encrypt your function's environment variables. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.events\\">events</a></code> | <code>typing.List[aws_cdk.aws_lambda.IEventSource]</code> | Event sources for this function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.filesystem\\">filesystem</a></code> | <code>aws_cdk.aws_lambda.FileSystem</code> | The filesystem configuration for the lambda function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.functionName\\">function_name</a></code> | <code>str</code> | A name for the function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.initialPolicy\\">initial_policy</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>]</code> | Initial policy statements to add to the created Lambda Role. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.insightsVersion\\">insights_version</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.LambdaInsightsVersion\\">LambdaInsightsVersion</a></code> | Specify the version of CloudWatch Lambda insights to use for monitoring. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.layers\\">layers</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-lambda.ILayerVersion\\">ILayerVersion</a>]</code> | A list of layers to add to the function's execution environment. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.logRetention\\">log_retention</a></code> | <code><a href=\\"#@aws-cdk/aws-logs.RetentionDays\\">RetentionDays</a></code> | The number of days log events are kept in CloudWatch Logs. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.logRetentionRetryOptions\\">log_retention_retry_options</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.LogRetentionRetryOptions\\">LogRetentionRetryOptions</a></code> | When log retention is specified, a custom resource attempts to create the CloudWatch log group. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.logRetentionRole\\">log_retention_role</a></code> | <code><a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a></code> | The IAM role for the Lambda function associated with the custom resource that sets the retention policy. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.initialPolicy\\">initial_policy</a></code> | <code>typing.List[aws_cdk.aws_iam.PolicyStatement]</code> | Initial policy statements to add to the created Lambda Role. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.insightsVersion\\">insights_version</a></code> | <code>aws_cdk.aws_lambda.LambdaInsightsVersion</code> | Specify the version of CloudWatch Lambda insights to use for monitoring. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.layers\\">layers</a></code> | <code>typing.List[aws_cdk.aws_lambda.ILayerVersion]</code> | A list of layers to add to the function's execution environment. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.logRetention\\">log_retention</a></code> | <code>aws_cdk.aws_logs.RetentionDays</code> | The number of days log events are kept in CloudWatch Logs. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.logRetentionRetryOptions\\">log_retention_retry_options</a></code> | <code>aws_cdk.aws_lambda.LogRetentionRetryOptions</code> | When log retention is specified, a custom resource attempts to create the CloudWatch log group. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.logRetentionRole\\">log_retention_role</a></code> | <code>aws_cdk.aws_iam.IRole</code> | The IAM role for the Lambda function associated with the custom resource that sets the retention policy. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.memorySize\\">memory_size</a></code> | <code>typing.Union[int, float]</code> | The amount of memory, in MB, that is allocated to your Lambda function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.profiling\\">profiling</a></code> | <code>bool</code> | Enable profiling. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.profilingGroup\\">profiling_group</a></code> | <code><a href=\\"#@aws-cdk/aws-codeguruprofiler.IProfilingGroup\\">IProfilingGroup</a></code> | Profiling Group. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.profilingGroup\\">profiling_group</a></code> | <code>aws_cdk.aws_codeguruprofiler.IProfilingGroup</code> | Profiling Group. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.reservedConcurrentExecutions\\">reserved_concurrent_executions</a></code> | <code>typing.Union[int, float]</code> | The maximum of concurrent executions you want to reserve for the function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.role\\">role</a></code> | <code><a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a></code> | Lambda execution role. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.securityGroup\\">security_group</a></code> | <code><a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a></code> | What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.securityGroups\\">security_groups</a></code> | <code>typing.List[<a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a>]</code> | The list of security groups to associate with the Lambda's network interfaces. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.timeout\\">timeout</a></code> | <code><a href=\\"#@aws-cdk/core.Duration\\">Duration</a></code> | The function execution time (in seconds) after which Lambda terminates the function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.tracing\\">tracing</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.Tracing\\">Tracing</a></code> | Enable AWS X-Ray Tracing for Lambda Function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.vpc\\">vpc</a></code> | <code><a href=\\"#@aws-cdk/aws-ec2.IVpc\\">IVpc</a></code> | VPC network to place Lambda network interfaces. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.vpcSubnets\\">vpc_subnets</a></code> | <code><a href=\\"#@aws-cdk/aws-ec2.SubnetSelection\\">SubnetSelection</a></code> | Where to place the network interfaces within the VPC. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.code\\">code</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.Code\\">Code</a></code> | The source code of your Lambda function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.role\\">role</a></code> | <code>aws_cdk.aws_iam.IRole</code> | Lambda execution role. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.securityGroup\\">security_group</a></code> | <code>aws_cdk.aws_ec2.ISecurityGroup</code> | What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.securityGroups\\">security_groups</a></code> | <code>typing.List[aws_cdk.aws_ec2.ISecurityGroup]</code> | The list of security groups to associate with the Lambda's network interfaces. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.timeout\\">timeout</a></code> | <code>aws_cdk.core.Duration</code> | The function execution time (in seconds) after which Lambda terminates the function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.tracing\\">tracing</a></code> | <code>aws_cdk.aws_lambda.Tracing</code> | Enable AWS X-Ray Tracing for Lambda Function. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.vpc\\">vpc</a></code> | <code>aws_cdk.aws_ec2.IVpc</code> | VPC network to place Lambda network interfaces. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.vpcSubnets\\">vpc_subnets</a></code> | <code>aws_cdk.aws_ec2.SubnetSelection</code> | Where to place the network interfaces within the VPC. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.code\\">code</a></code> | <code>aws_cdk.aws_lambda.Code</code> | The source code of your Lambda function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.handler\\">handler</a></code> | <code>str</code> | The name of the method within your code that Lambda calls to execute your function. |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.runtime\\">runtime</a></code> | <code><a href=\\"#@aws-cdk/aws-lambda.Runtime\\">Runtime</a></code> | The runtime environment for the Lambda function that you are uploading. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.runtime\\">runtime</a></code> | <code>aws_cdk.aws_lambda.Runtime</code> | The runtime environment for the Lambda function that you are uploading. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.property.stackId\\">stack_id</a></code> | <code>str</code> | The stack ID of Lambda@Edge function. |
 
 ---
@@ -4407,7 +4407,7 @@ experimental.EdgeFunctionProps(
 max_event_age: Duration
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* aws_cdk.core.Duration
 - *Default:* Duration.hours(6)
 
 The maximum age of a request that Lambda sends to a function for processing.
@@ -4422,7 +4422,7 @@ Minimum: 60 seconds Maximum: 6 hours
 on_failure: IDestination
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a>
+- *Type:* aws_cdk.aws_lambda.IDestination
 - *Default:* no destination
 
 The destination for failed invocations.
@@ -4435,7 +4435,7 @@ The destination for failed invocations.
 on_success: IDestination
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.IDestination\\">IDestination</a>
+- *Type:* aws_cdk.aws_lambda.IDestination
 - *Default:* no destination
 
 The destination for successful invocations.
@@ -4497,7 +4497,7 @@ Use this property to acknowledge this limitation and still place the function in
 architectures: typing.List[Architecture]
 \`\`\`
 
-- *Type:* typing.List[<a href=\\"#@aws-cdk/aws-lambda.Architecture\\">Architecture</a>]
+- *Type:* typing.List[aws_cdk.aws_lambda.Architecture]
 - *Default:* [Architecture.X86_64]
 
 The system architectures compatible with this lambda function.
@@ -4510,7 +4510,7 @@ The system architectures compatible with this lambda function.
 code_signing_config: ICodeSigningConfig
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.ICodeSigningConfig\\">ICodeSigningConfig</a>
+- *Type:* aws_cdk.aws_lambda.ICodeSigningConfig
 - *Default:* Not Sign the Code
 
 Code signing config associated with this function.
@@ -4523,7 +4523,7 @@ Code signing config associated with this function.
 current_version_options: VersionOptions
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.VersionOptions\\">VersionOptions</a>
+- *Type:* aws_cdk.aws_lambda.VersionOptions
 - *Default:* default options as described in \`VersionOptions\`
 
 Options for the \`lambda.Version\` resource automatically created by the \`fn.currentVersion\` method.
@@ -4536,7 +4536,7 @@ Options for the \`lambda.Version\` resource automatically created by the \`fn.cu
 dead_letter_queue: IQueue
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-sqs.IQueue\\">IQueue</a>
+- *Type:* aws_cdk.aws_sqs.IQueue
 - *Default:* SQS queue with 14 day retention period if \`deadLetterQueueEnabled\` is \`true\`
 
 The SQS queue to use if DLQ is enabled.
@@ -4592,7 +4592,7 @@ Use environment variables to apply configuration changes, such as test and produ
 environment_encryption: IKey
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-kms.IKey\\">IKey</a>
+- *Type:* aws_cdk.aws_kms.IKey
 - *Default:* AWS Lambda creates and uses an AWS managed customer master key (CMK).
 
 The AWS KMS key that's used to encrypt your function's environment variables.
@@ -4605,7 +4605,7 @@ The AWS KMS key that's used to encrypt your function's environment variables.
 events: typing.List[IEventSource]
 \`\`\`
 
-- *Type:* typing.List[<a href=\\"#@aws-cdk/aws-lambda.IEventSource\\">IEventSource</a>]
+- *Type:* typing.List[aws_cdk.aws_lambda.IEventSource]
 - *Default:* No event sources.
 
 Event sources for this function.
@@ -4620,7 +4620,7 @@ You can also add event sources using \`addEventSource\`.
 filesystem: FileSystem
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.FileSystem\\">FileSystem</a>
+- *Type:* aws_cdk.aws_lambda.FileSystem
 - *Default:* will not mount any filesystem
 
 The filesystem configuration for the lambda function.
@@ -4646,7 +4646,7 @@ A name for the function.
 initial_policy: typing.List[PolicyStatement]
 \`\`\`
 
-- *Type:* typing.List[<a href=\\"#@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>]
+- *Type:* typing.List[aws_cdk.aws_iam.PolicyStatement]
 - *Default:* No policy statements are added to the created Lambda role.
 
 Initial policy statements to add to the created Lambda Role.
@@ -4661,7 +4661,7 @@ You can call \`addToRolePolicy\` to the created lambda to add statements post cr
 insights_version: LambdaInsightsVersion
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.LambdaInsightsVersion\\">LambdaInsightsVersion</a>
+- *Type:* aws_cdk.aws_lambda.LambdaInsightsVersion
 - *Default:* No Lambda Insights
 
 Specify the version of CloudWatch Lambda insights to use for monitoring.
@@ -4678,7 +4678,7 @@ Specify the version of CloudWatch Lambda insights to use for monitoring.
 layers: typing.List[ILayerVersion]
 \`\`\`
 
-- *Type:* typing.List[<a href=\\"#@aws-cdk/aws-lambda.ILayerVersion\\">ILayerVersion</a>]
+- *Type:* typing.List[aws_cdk.aws_lambda.ILayerVersion]
 - *Default:* No layers.
 
 A list of layers to add to the function's execution environment.
@@ -4693,7 +4693,7 @@ You can configure your Lambda function to pull in additional code during initial
 log_retention: RetentionDays
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-logs.RetentionDays\\">RetentionDays</a>
+- *Type:* aws_cdk.aws_logs.RetentionDays
 - *Default:* logs.RetentionDays.INFINITE
 
 The number of days log events are kept in CloudWatch Logs.
@@ -4708,7 +4708,7 @@ When updating this property, unsetting it doesn't remove the log retention polic
 log_retention_retry_options: LogRetentionRetryOptions
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.LogRetentionRetryOptions\\">LogRetentionRetryOptions</a>
+- *Type:* aws_cdk.aws_lambda.LogRetentionRetryOptions
 - *Default:* Default AWS SDK retry options.
 
 When log retention is specified, a custom resource attempts to create the CloudWatch log group.
@@ -4723,7 +4723,7 @@ These options control the retry policy when interacting with CloudWatch APIs.
 log_retention_role: IRole
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a>
+- *Type:* aws_cdk.aws_iam.IRole
 - *Default:* A new role is created.
 
 The IAM role for the Lambda function associated with the custom resource that sets the retention policy.
@@ -4768,7 +4768,7 @@ Enable profiling.
 profiling_group: IProfilingGroup
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-codeguruprofiler.IProfilingGroup\\">IProfilingGroup</a>
+- *Type:* aws_cdk.aws_codeguruprofiler.IProfilingGroup
 - *Default:* A new profiling group will be created if \`profiling\` is set.
 
 Profiling Group.
@@ -4802,7 +4802,7 @@ The maximum of concurrent executions you want to reserve for the function.
 role: IRole
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-iam.IRole\\">IRole</a>
+- *Type:* aws_cdk.aws_iam.IRole
 - *Default:* A unique role will be generated for this lambda function. Both supplied and generated roles can always be changed by calling \`addToRolePolicy\`.
 
 Lambda execution role.
@@ -4819,7 +4819,7 @@ This is the role that will be assumed by the function upon execution. It control
 security_group: ISecurityGroup
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a>
+- *Type:* aws_cdk.aws_ec2.ISecurityGroup
 - *Default:* If the function is placed within a VPC and a security group is not specified, either by this or securityGroups prop, a dedicated security group will be created for this function.
 
 What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead.
@@ -4834,7 +4834,7 @@ Only used if 'vpc' is supplied.  Use securityGroups property instead. Function c
 security_groups: typing.List[ISecurityGroup]
 \`\`\`
 
-- *Type:* typing.List[<a href=\\"#@aws-cdk/aws-ec2.ISecurityGroup\\">ISecurityGroup</a>]
+- *Type:* typing.List[aws_cdk.aws_ec2.ISecurityGroup]
 - *Default:* If the function is placed within a VPC and a security group is not specified, either by this or securityGroup prop, a dedicated security group will be created for this function.
 
 The list of security groups to associate with the Lambda's network interfaces.
@@ -4849,7 +4849,7 @@ Only used if 'vpc' is supplied.
 timeout: Duration
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/core.Duration\\">Duration</a>
+- *Type:* aws_cdk.core.Duration
 - *Default:* Duration.seconds(3)
 
 The function execution time (in seconds) after which Lambda terminates the function.
@@ -4864,7 +4864,7 @@ Because the execution time affects cost, set this value based on the function's 
 tracing: Tracing
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.Tracing\\">Tracing</a>
+- *Type:* aws_cdk.aws_lambda.Tracing
 - *Default:* Tracing.Disabled
 
 Enable AWS X-Ray Tracing for Lambda Function.
@@ -4877,7 +4877,7 @@ Enable AWS X-Ray Tracing for Lambda Function.
 vpc: IVpc
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-ec2.IVpc\\">IVpc</a>
+- *Type:* aws_cdk.aws_ec2.IVpc
 - *Default:* Function is not placed within a VPC.
 
 VPC network to place Lambda network interfaces.
@@ -4892,7 +4892,7 @@ Specify this if the Lambda function needs to access resources in a VPC.
 vpc_subnets: SubnetSelection
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-ec2.SubnetSelection\\">SubnetSelection</a>
+- *Type:* aws_cdk.aws_ec2.SubnetSelection
 - *Default:* the Vpc default strategy if not specified
 
 Where to place the network interfaces within the VPC.
@@ -4907,7 +4907,7 @@ Only used if 'vpc' is supplied. Note: internet access for Lambdas requires a NAT
 code: Code
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.Code\\">Code</a>
+- *Type:* aws_cdk.aws_lambda.Code
 
 The source code of your Lambda function.
 
@@ -4935,7 +4935,7 @@ The format includes the file name. It can also include namespaces and other qual
 runtime: Runtime
 \`\`\`
 
-- *Type:* <a href=\\"#@aws-cdk/aws-lambda.Runtime\\">Runtime</a>
+- *Type:* aws_cdk.aws_lambda.Runtime
 
 The runtime environment for the Lambda function that you are uploading.
 

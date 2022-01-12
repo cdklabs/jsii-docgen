@@ -851,7 +851,7 @@ aws_cdk.aws_ecr.Repository(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/constructs/v/3.3.183/api/Construct?lang=python\\">Construct</a></code> | *No description.* |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/constructs/v/3.3.186/api/Construct?lang=python\\">Construct</a></code> | *No description.* |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.parameter.id?lang=python\\">id</a></code> | <code>str</code> | *No description.* |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.parameter.imageScanOnPush?lang=python\\">image_scan_on_push</a></code> | <code>bool</code> | Enable the scan on push when creating the repository. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.parameter.imageTagMutability?lang=python\\">image_tag_mutability</a></code> | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/TagMutability?lang=python\\">TagMutability</a></code> | The tag mutability setting for the repository. |
@@ -864,7 +864,7 @@ aws_cdk.aws_ecr.Repository(
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"Repository.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/constructs/v/3.3.183/api/Construct?lang=python\\">Construct</a>
+- *Type:* <a href=\\"/packages/constructs/v/3.3.186/api/Construct?lang=python\\">Construct</a>
 
 ---
 
@@ -1062,7 +1062,7 @@ aws_cdk.aws_ecr.Repository.arn_for_local_repository(
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"Repository.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/constructs/v/3.3.183/api/IConstruct?lang=python\\">IConstruct</a>
+- *Type:* <a href=\\"/packages/constructs/v/3.3.186/api/IConstruct?lang=python\\">IConstruct</a>
 
 ---
 
@@ -1086,7 +1086,7 @@ aws_cdk.aws_ecr.Repository.from_repository_arn(
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"Repository.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/constructs/v/3.3.183/api/Construct?lang=python\\">Construct</a>
+- *Type:* <a href=\\"/packages/constructs/v/3.3.186/api/Construct?lang=python\\">Construct</a>
 
 ---
 
@@ -1117,7 +1117,7 @@ aws_cdk.aws_ecr.Repository.from_repository_attributes(
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"Repository.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/constructs/v/3.3.183/api/Construct?lang=python\\">Construct</a>
+- *Type:* <a href=\\"/packages/constructs/v/3.3.186/api/Construct?lang=python\\">Construct</a>
 
 ---
 
@@ -1153,7 +1153,7 @@ aws_cdk.aws_ecr.Repository.from_repository_name(
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"Repository.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/constructs/v/3.3.183/api/Construct?lang=python\\">Construct</a>
+- *Type:* <a href=\\"/packages/constructs/v/3.3.186/api/Construct?lang=python\\">Construct</a>
 
 ---
 
@@ -1228,7 +1228,7 @@ aws_cdk.aws_ecr.RepositoryBase(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryBase.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/constructs/v/3.3.183/api/Construct?lang=python\\">Construct</a></code> | *No description.* |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryBase.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/constructs/v/3.3.186/api/Construct?lang=python\\">Construct</a></code> | *No description.* |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryBase.parameter.id?lang=python\\">id</a></code> | <code>str</code> | *No description.* |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryBase.parameter.account?lang=python\\">account</a></code> | <code>str</code> | The AWS account ID this resource belongs to. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryBase.parameter.environmentFromArn?lang=python\\">environment_from_arn</a></code> | <code>str</code> | ARN to deduce region and account from. |
@@ -1239,7 +1239,7 @@ aws_cdk.aws_ecr.RepositoryBase(
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"RepositoryBase.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/constructs/v/3.3.183/api/Construct?lang=python\\">Construct</a>
+- *Type:* <a href=\\"/packages/constructs/v/3.3.186/api/Construct?lang=python\\">Construct</a>
 
 ---
 
