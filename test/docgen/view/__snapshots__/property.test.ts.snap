@@ -18,7 +18,7 @@ Object {
 `;
 
 exports[`csharp snapshot 2`] = `
-" \`RepositoryCatalogData\`<sup>Optional</sup> <a name=\\"\`RepositoryCatalogData\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+" \`RepositoryCatalogData\`<sup>Optional</sup> <a name=\\"RepositoryCatalogData\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
 \`\`\`csharp
 public object RepositoryCatalogData { get; set; }
@@ -50,7 +50,7 @@ Object {
 `;
 
 exports[`java snapshot 2`] = `
-" \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"\`repositoryCatalogData\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+" \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"repositoryCatalogData\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
 \`\`\`java
 public java.lang.Object getRepositoryCatalogData();
@@ -82,7 +82,7 @@ Object {
 `;
 
 exports[`python snapshot 2`] = `
-" \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"\`repository_catalog_data\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+" \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"repository_catalog_data\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
 \`\`\`python
 repository_catalog_data: typing.Any
@@ -114,7 +114,7 @@ Object {
 `;
 
 exports[`typescript snapshot 2`] = `
-" \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"\`repositoryCatalogData\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+" \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"repositoryCatalogData\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
 \`\`\`typescript
 public readonly repositoryCatalogData: any;

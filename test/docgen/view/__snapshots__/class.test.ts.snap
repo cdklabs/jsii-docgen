@@ -71,7 +71,7 @@ Authorization token to access private ECR repositories in the current environmen
 
 ---
 
-## \`GrantRead\` <a name=\\"\`GrantRead\`\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead\\"></a>
+## \`GrantRead\` <a name=\\"GrantRead\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead\\"></a>
 
 \`\`\`csharp
 using Amazon.CDK.AWS.ECR;
@@ -79,7 +79,7 @@ using Amazon.CDK.AWS.ECR;
 AuthorizationToken.GrantRead(IGrantable Grantee);
 \`\`\`
 
-### \`Grantee\`<sup>Required</sup> <a name=\\"\`Grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
+### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.IGrantable
 
@@ -160,7 +160,7 @@ Authorization token to access private ECR repositories in the current environmen
 
 ---
 
-## \`grantRead\` <a name=\\"\`grantRead\`\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead\\"></a>
+## \`grantRead\` <a name=\\"grantRead\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead\\"></a>
 
 \`\`\`java
 import software.amazon.awscdk.services.ecr.AuthorizationToken;
@@ -168,7 +168,7 @@ import software.amazon.awscdk.services.ecr.AuthorizationToken;
 AuthorizationToken.grantRead(IGrantable grantee)
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.IGrantable
 
@@ -251,7 +251,7 @@ Authorization token to access private ECR repositories in the current environmen
 
 ---
 
-## \`grant_read\` <a name=\\"\`grant_read\`\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead\\"></a>
+## \`grant_read\` <a name=\\"grant_read\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -261,7 +261,7 @@ aws_cdk.aws_ecr.AuthorizationToken.grant_read(
 )
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
 
 - *Type:* aws_cdk.aws_iam.IGrantable
 
@@ -342,7 +342,7 @@ Authorization token to access private ECR repositories in the current environmen
 
 ---
 
-## \`grantRead\` <a name=\\"\`grantRead\`\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead\\"></a>
+## \`grantRead\` <a name=\\"grantRead\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead\\"></a>
 
 \`\`\`typescript
 import { AuthorizationToken } from '@aws-cdk/aws-ecr'
@@ -350,7 +350,7 @@ import { AuthorizationToken } from '@aws-cdk/aws-ecr'
 AuthorizationToken.grantRead(grantee: IGrantable)
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
 
 - *Type:* @aws-cdk/aws-iam.IGrantable
 

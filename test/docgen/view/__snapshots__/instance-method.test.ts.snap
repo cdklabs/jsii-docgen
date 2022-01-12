@@ -38,13 +38,13 @@ Object {
 `;
 
 exports[`csharp snapshot 2`] = `
-" \`Inspect\` <a name=\\"\`Inspect\`\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
+" \`Inspect\` <a name=\\"Inspect\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`csharp
 private Inspect(TreeInspector Inspector)
 \`\`\`
 
-# \`Inspector\`<sup>Required</sup> <a name=\\"\`Inspector\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\"></a>
+# \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\"></a>
 
 - *Type:* Amazon.CDK.TreeInspector
 
@@ -92,13 +92,13 @@ Object {
 `;
 
 exports[`java snapshot 2`] = `
-" \`inspect\` <a name=\\"\`inspect\`\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
+" \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`java
 public inspect(TreeInspector inspector)
 \`\`\`
 
-# \`inspector\`<sup>Required</sup> <a name=\\"\`inspector\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\"></a>
+# \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\"></a>
 
 - *Type:* software.amazon.awscdk.core.TreeInspector
 
@@ -148,7 +148,7 @@ Object {
 `;
 
 exports[`python snapshot 2`] = `
-" \`inspect\` <a name=\\"\`inspect\`\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
+" \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`python
 def inspect(
@@ -156,7 +156,7 @@ def inspect(
 )
 \`\`\`
 
-# \`inspector\`<sup>Required</sup> <a name=\\"\`inspector\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\"></a>
+# \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\"></a>
 
 - *Type:* aws_cdk.core.TreeInspector
 
@@ -204,13 +204,13 @@ Object {
 `;
 
 exports[`typescript snapshot 2`] = `
-" \`inspect\` <a name=\\"\`inspect\`\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
+" \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`typescript
 public inspect(inspector: TreeInspector)
 \`\`\`
 
-# \`inspector\`<sup>Required</sup> <a name=\\"\`inspector\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\"></a>
+# \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\"></a>
 
 - *Type:* @aws-cdk/core.TreeInspector
 

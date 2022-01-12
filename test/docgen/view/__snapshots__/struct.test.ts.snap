@@ -121,7 +121,7 @@ new CfnPublicRepositoryProps {
 
 ---
 
-## \`RepositoryCatalogData\`<sup>Optional</sup> <a name=\\"\`RepositoryCatalogData\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+## \`RepositoryCatalogData\`<sup>Optional</sup> <a name=\\"RepositoryCatalogData\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
 \`\`\`csharp
 public object RepositoryCatalogData { get; set; }
@@ -133,7 +133,7 @@ public object RepositoryCatalogData { get; set; }
 
 ---
 
-## \`RepositoryName\`<sup>Optional</sup> <a name=\\"\`RepositoryName\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
+## \`RepositoryName\`<sup>Optional</sup> <a name=\\"RepositoryName\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
 
 \`\`\`csharp
 public string RepositoryName { get; set; }
@@ -145,7 +145,7 @@ public string RepositoryName { get; set; }
 
 ---
 
-## \`RepositoryPolicyText\`<sup>Optional</sup> <a name=\\"\`RepositoryPolicyText\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
+## \`RepositoryPolicyText\`<sup>Optional</sup> <a name=\\"RepositoryPolicyText\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
 
 \`\`\`csharp
 public object RepositoryPolicyText { get; set; }
@@ -157,7 +157,7 @@ public object RepositoryPolicyText { get; set; }
 
 ---
 
-## \`Tags\`<sup>Optional</sup> <a name=\\"\`Tags\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\"></a>
+## \`Tags\`<sup>Optional</sup> <a name=\\"Tags\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\"></a>
 
 \`\`\`csharp
 public CfnTag[] Tags { get; set; }
@@ -292,7 +292,7 @@ CfnPublicRepositoryProps.builder()
 
 ---
 
-## \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"\`repositoryCatalogData\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+## \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"repositoryCatalogData\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
 \`\`\`java
 public java.lang.Object getRepositoryCatalogData();
@@ -304,7 +304,7 @@ public java.lang.Object getRepositoryCatalogData();
 
 ---
 
-## \`repositoryName\`<sup>Optional</sup> <a name=\\"\`repositoryName\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
+## \`repositoryName\`<sup>Optional</sup> <a name=\\"repositoryName\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
 
 \`\`\`java
 public java.lang.String getRepositoryName();
@@ -316,7 +316,7 @@ public java.lang.String getRepositoryName();
 
 ---
 
-## \`repositoryPolicyText\`<sup>Optional</sup> <a name=\\"\`repositoryPolicyText\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
+## \`repositoryPolicyText\`<sup>Optional</sup> <a name=\\"repositoryPolicyText\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
 
 \`\`\`java
 public java.lang.Object getRepositoryPolicyText();
@@ -328,7 +328,7 @@ public java.lang.Object getRepositoryPolicyText();
 
 ---
 
-## \`tags\`<sup>Optional</sup> <a name=\\"\`tags\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\"></a>
+## \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\"></a>
 
 \`\`\`java
 public java.util.List<CfnTag> getTags();
@@ -463,7 +463,7 @@ aws_cdk.aws_ecr.CfnPublicRepositoryProps(
 
 ---
 
-## \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"\`repository_catalog_data\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+## \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"repository_catalog_data\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
 \`\`\`python
 repository_catalog_data: typing.Any
@@ -475,7 +475,7 @@ repository_catalog_data: typing.Any
 
 ---
 
-## \`repository_name\`<sup>Optional</sup> <a name=\\"\`repository_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
+## \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -487,7 +487,7 @@ repository_name: str
 
 ---
 
-## \`repository_policy_text\`<sup>Optional</sup> <a name=\\"\`repository_policy_text\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
+## \`repository_policy_text\`<sup>Optional</sup> <a name=\\"repository_policy_text\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
 
 \`\`\`python
 repository_policy_text: typing.Any
@@ -499,7 +499,7 @@ repository_policy_text: typing.Any
 
 ---
 
-## \`tags\`<sup>Optional</sup> <a name=\\"\`tags\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\"></a>
+## \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\"></a>
 
 \`\`\`python
 tags: typing.List[CfnTag]
@@ -624,7 +624,7 @@ const cfnPublicRepositoryProps: CfnPublicRepositoryProps = { ... }
 
 ---
 
-## \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"\`repositoryCatalogData\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+## \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"repositoryCatalogData\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
 \`\`\`typescript
 public readonly repositoryCatalogData: any;
@@ -636,7 +636,7 @@ public readonly repositoryCatalogData: any;
 
 ---
 
-## \`repositoryName\`<sup>Optional</sup> <a name=\\"\`repositoryName\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
+## \`repositoryName\`<sup>Optional</sup> <a name=\\"repositoryName\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
 
 \`\`\`typescript
 public readonly repositoryName: string;
@@ -648,7 +648,7 @@ public readonly repositoryName: string;
 
 ---
 
-## \`repositoryPolicyText\`<sup>Optional</sup> <a name=\\"\`repositoryPolicyText\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
+## \`repositoryPolicyText\`<sup>Optional</sup> <a name=\\"repositoryPolicyText\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
 
 \`\`\`typescript
 public readonly repositoryPolicyText: any;
@@ -660,7 +660,7 @@ public readonly repositoryPolicyText: any;
 
 ---
 
-## \`tags\`<sup>Optional</sup> <a name=\\"\`tags\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\"></a>
+## \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\"></a>
 
 \`\`\`typescript
 public readonly tags: CfnTag[];

@@ -138,7 +138,7 @@ aws_cdk.aws_ecr.CfnPublicRepository(
 
 ---
 
-##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"CfnPublicRepository.parameter.scope\\"></a>
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"CfnPublicRepository.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/Construct?lang=python\\">Construct</a>
 
@@ -146,7 +146,7 @@ scope in which this resource is defined.
 
 ---
 
-##### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"CfnPublicRepository.parameter.id\\"></a>
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"CfnPublicRepository.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -154,7 +154,7 @@ scoped id of the resource.
 
 ---
 
-##### \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"\`repository_catalog_data\`<sup>Optional</sup>\\" id=\\"CfnPublicRepository.parameter.repositoryCatalogData\\"></a>
+##### \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"repository_catalog_data\\" id=\\"CfnPublicRepository.parameter.repositoryCatalogData\\"></a>
 
 - *Type:* typing.Any
 
@@ -162,7 +162,7 @@ scoped id of the resource.
 
 ---
 
-##### \`repository_name\`<sup>Optional</sup> <a name=\\"\`repository_name\`<sup>Optional</sup>\\" id=\\"CfnPublicRepository.parameter.repositoryName\\"></a>
+##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"CfnPublicRepository.parameter.repositoryName\\"></a>
 
 - *Type:* str
 
@@ -170,7 +170,7 @@ scoped id of the resource.
 
 ---
 
-##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"\`repository_policy_text\`<sup>Optional</sup>\\" id=\\"CfnPublicRepository.parameter.repositoryPolicyText\\"></a>
+##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"repository_policy_text\\" id=\\"CfnPublicRepository.parameter.repositoryPolicyText\\"></a>
 
 - *Type:* typing.Any
 
@@ -178,7 +178,7 @@ scoped id of the resource.
 
 ---
 
-##### \`tags\`<sup>Optional</sup> <a name=\\"\`tags\`<sup>Optional</sup>\\" id=\\"CfnPublicRepository.parameter.tags\\"></a>
+##### \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"CfnPublicRepository.parameter.tags\\"></a>
 
 - *Type:* typing.List[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/CfnTag?lang=python\\">CfnTag</a>]
 
@@ -194,7 +194,7 @@ scoped id of the resource.
 
 ---
 
-##### \`inspect\` <a name=\\"\`inspect\`\\" id=\\"CfnPublicRepository.inspect\\"></a>
+##### \`inspect\` <a name=\\"inspect\\" id=\\"CfnPublicRepository.inspect\\"></a>
 
 \`\`\`python
 def inspect(
@@ -202,7 +202,7 @@ def inspect(
 )
 \`\`\`
 
-###### \`inspector\`<sup>Required</sup> <a name=\\"\`inspector\`<sup>Required</sup>\\" id=\\"CfnPublicRepository.parameter.inspector\\"></a>
+###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnPublicRepository.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/TreeInspector?lang=python\\">TreeInspector</a>
 
@@ -223,7 +223,7 @@ tree inspector to collect and process attributes.
 
 ---
 
-##### \`attr_arn\`<sup>Required</sup> <a name=\\"\`attr_arn\`<sup>Required</sup>\\" id=\\"CfnPublicRepository.property.attrArn\\"></a>
+##### \`attr_arn\`<sup>Required</sup> <a name=\\"attr_arn\\" id=\\"CfnPublicRepository.property.attrArn\\"></a>
 
 \`\`\`python
 attr_arn: str
@@ -233,7 +233,7 @@ attr_arn: str
 
 ---
 
-##### \`tags\`<sup>Required</sup> <a name=\\"\`tags\`<sup>Required</sup>\\" id=\\"CfnPublicRepository.property.tags\\"></a>
+##### \`tags\`<sup>Required</sup> <a name=\\"tags\\" id=\\"CfnPublicRepository.property.tags\\"></a>
 
 \`\`\`python
 tags: TagManager
@@ -245,7 +245,7 @@ tags: TagManager
 
 ---
 
-##### \`repository_catalog_data\`<sup>Required</sup> <a name=\\"\`repository_catalog_data\`<sup>Required</sup>\\" id=\\"CfnPublicRepository.property.repositoryCatalogData\\"></a>
+##### \`repository_catalog_data\`<sup>Required</sup> <a name=\\"repository_catalog_data\\" id=\\"CfnPublicRepository.property.repositoryCatalogData\\"></a>
 
 \`\`\`python
 repository_catalog_data: typing.Any
@@ -257,7 +257,7 @@ repository_catalog_data: typing.Any
 
 ---
 
-##### \`repository_policy_text\`<sup>Required</sup> <a name=\\"\`repository_policy_text\`<sup>Required</sup>\\" id=\\"CfnPublicRepository.property.repositoryPolicyText\\"></a>
+##### \`repository_policy_text\`<sup>Required</sup> <a name=\\"repository_policy_text\\" id=\\"CfnPublicRepository.property.repositoryPolicyText\\"></a>
 
 \`\`\`python
 repository_policy_text: typing.Any
@@ -269,7 +269,7 @@ repository_policy_text: typing.Any
 
 ---
 
-##### \`repository_name\`<sup>Optional</sup> <a name=\\"\`repository_name\`<sup>Optional</sup>\\" id=\\"CfnPublicRepository.property.repositoryName\\"></a>
+##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"CfnPublicRepository.property.repositoryName\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -289,7 +289,7 @@ repository_name: str
 
 ---
 
-##### \`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup> <a name=\\"\`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup>\\" id=\\"CfnPublicRepository.property.CFN_RESOURCE_TYPE_NAME\\"></a>
+##### \`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup> <a name=\\"CFN_RESOURCE_TYPE_NAME\\" id=\\"CfnPublicRepository.property.CFN_RESOURCE_TYPE_NAME\\"></a>
 
 \`\`\`python
 CFN_RESOURCE_TYPE_NAME: str
@@ -327,7 +327,7 @@ aws_cdk.aws_ecr.CfnRegistryPolicy(
 
 ---
 
-##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"CfnRegistryPolicy.parameter.scope\\"></a>
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"CfnRegistryPolicy.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/Construct?lang=python\\">Construct</a>
 
@@ -335,7 +335,7 @@ scope in which this resource is defined.
 
 ---
 
-##### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"CfnRegistryPolicy.parameter.id\\"></a>
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"CfnRegistryPolicy.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -343,7 +343,7 @@ scoped id of the resource.
 
 ---
 
-##### \`policy_text\`<sup>Required</sup> <a name=\\"\`policy_text\`<sup>Required</sup>\\" id=\\"CfnRegistryPolicy.parameter.policyText\\"></a>
+##### \`policy_text\`<sup>Required</sup> <a name=\\"policy_text\\" id=\\"CfnRegistryPolicy.parameter.policyText\\"></a>
 
 - *Type:* typing.Any
 
@@ -359,7 +359,7 @@ scoped id of the resource.
 
 ---
 
-##### \`inspect\` <a name=\\"\`inspect\`\\" id=\\"CfnRegistryPolicy.inspect\\"></a>
+##### \`inspect\` <a name=\\"inspect\\" id=\\"CfnRegistryPolicy.inspect\\"></a>
 
 \`\`\`python
 def inspect(
@@ -367,7 +367,7 @@ def inspect(
 )
 \`\`\`
 
-###### \`inspector\`<sup>Required</sup> <a name=\\"\`inspector\`<sup>Required</sup>\\" id=\\"CfnRegistryPolicy.parameter.inspector\\"></a>
+###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnRegistryPolicy.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/TreeInspector?lang=python\\">TreeInspector</a>
 
@@ -385,7 +385,7 @@ tree inspector to collect and process attributes.
 
 ---
 
-##### \`attr_registry_id\`<sup>Required</sup> <a name=\\"\`attr_registry_id\`<sup>Required</sup>\\" id=\\"CfnRegistryPolicy.property.attrRegistryId\\"></a>
+##### \`attr_registry_id\`<sup>Required</sup> <a name=\\"attr_registry_id\\" id=\\"CfnRegistryPolicy.property.attrRegistryId\\"></a>
 
 \`\`\`python
 attr_registry_id: str
@@ -395,7 +395,7 @@ attr_registry_id: str
 
 ---
 
-##### \`policy_text\`<sup>Required</sup> <a name=\\"\`policy_text\`<sup>Required</sup>\\" id=\\"CfnRegistryPolicy.property.policyText\\"></a>
+##### \`policy_text\`<sup>Required</sup> <a name=\\"policy_text\\" id=\\"CfnRegistryPolicy.property.policyText\\"></a>
 
 \`\`\`python
 policy_text: typing.Any
@@ -415,7 +415,7 @@ policy_text: typing.Any
 
 ---
 
-##### \`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup> <a name=\\"\`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup>\\" id=\\"CfnRegistryPolicy.property.CFN_RESOURCE_TYPE_NAME\\"></a>
+##### \`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup> <a name=\\"CFN_RESOURCE_TYPE_NAME\\" id=\\"CfnRegistryPolicy.property.CFN_RESOURCE_TYPE_NAME\\"></a>
 
 \`\`\`python
 CFN_RESOURCE_TYPE_NAME: str
@@ -453,7 +453,7 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration(
 
 ---
 
-##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"CfnReplicationConfiguration.parameter.scope\\"></a>
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"CfnReplicationConfiguration.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/Construct?lang=python\\">Construct</a>
 
@@ -461,7 +461,7 @@ scope in which this resource is defined.
 
 ---
 
-##### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"CfnReplicationConfiguration.parameter.id\\"></a>
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"CfnReplicationConfiguration.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -469,7 +469,7 @@ scoped id of the resource.
 
 ---
 
-##### \`replication_configuration\`<sup>Required</sup> <a name=\\"\`replication_configuration\`<sup>Required</sup>\\" id=\\"CfnReplicationConfiguration.parameter.replicationConfiguration\\"></a>
+##### \`replication_configuration\`<sup>Required</sup> <a name=\\"replication_configuration\\" id=\\"CfnReplicationConfiguration.parameter.replicationConfiguration\\"></a>
 
 - *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python\\">ReplicationConfigurationProperty</a>]
 
@@ -485,7 +485,7 @@ scoped id of the resource.
 
 ---
 
-##### \`inspect\` <a name=\\"\`inspect\`\\" id=\\"CfnReplicationConfiguration.inspect\\"></a>
+##### \`inspect\` <a name=\\"inspect\\" id=\\"CfnReplicationConfiguration.inspect\\"></a>
 
 \`\`\`python
 def inspect(
@@ -493,7 +493,7 @@ def inspect(
 )
 \`\`\`
 
-###### \`inspector\`<sup>Required</sup> <a name=\\"\`inspector\`<sup>Required</sup>\\" id=\\"CfnReplicationConfiguration.parameter.inspector\\"></a>
+###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnReplicationConfiguration.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/TreeInspector?lang=python\\">TreeInspector</a>
 
@@ -511,7 +511,7 @@ tree inspector to collect and process attributes.
 
 ---
 
-##### \`attr_registry_id\`<sup>Required</sup> <a name=\\"\`attr_registry_id\`<sup>Required</sup>\\" id=\\"CfnReplicationConfiguration.property.attrRegistryId\\"></a>
+##### \`attr_registry_id\`<sup>Required</sup> <a name=\\"attr_registry_id\\" id=\\"CfnReplicationConfiguration.property.attrRegistryId\\"></a>
 
 \`\`\`python
 attr_registry_id: str
@@ -521,7 +521,7 @@ attr_registry_id: str
 
 ---
 
-##### \`replication_configuration\`<sup>Required</sup> <a name=\\"\`replication_configuration\`<sup>Required</sup>\\" id=\\"CfnReplicationConfiguration.property.replicationConfiguration\\"></a>
+##### \`replication_configuration\`<sup>Required</sup> <a name=\\"replication_configuration\\" id=\\"CfnReplicationConfiguration.property.replicationConfiguration\\"></a>
 
 \`\`\`python
 replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
@@ -541,7 +541,7 @@ replication_configuration: typing.Union[IResolvable, ReplicationConfigurationPro
 
 ---
 
-##### \`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup> <a name=\\"\`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup>\\" id=\\"CfnReplicationConfiguration.property.CFN_RESOURCE_TYPE_NAME\\"></a>
+##### \`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup> <a name=\\"CFN_RESOURCE_TYPE_NAME\\" id=\\"CfnReplicationConfiguration.property.CFN_RESOURCE_TYPE_NAME\\"></a>
 
 \`\`\`python
 CFN_RESOURCE_TYPE_NAME: str
@@ -591,7 +591,7 @@ aws_cdk.aws_ecr.CfnRepository(
 
 ---
 
-##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"CfnRepository.parameter.scope\\"></a>
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"CfnRepository.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/Construct?lang=python\\">Construct</a>
 
@@ -599,7 +599,7 @@ scope in which this resource is defined.
 
 ---
 
-##### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"CfnRepository.parameter.id\\"></a>
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"CfnRepository.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -607,7 +607,7 @@ scoped id of the resource.
 
 ---
 
-##### \`encryption_configuration\`<sup>Optional</sup> <a name=\\"\`encryption_configuration\`<sup>Optional</sup>\\" id=\\"CfnRepository.parameter.encryptionConfiguration\\"></a>
+##### \`encryption_configuration\`<sup>Optional</sup> <a name=\\"encryption_configuration\\" id=\\"CfnRepository.parameter.encryptionConfiguration\\"></a>
 
 - *Type:* typing.Any
 
@@ -615,7 +615,7 @@ scoped id of the resource.
 
 ---
 
-##### \`image_scanning_configuration\`<sup>Optional</sup> <a name=\\"\`image_scanning_configuration\`<sup>Optional</sup>\\" id=\\"CfnRepository.parameter.imageScanningConfiguration\\"></a>
+##### \`image_scanning_configuration\`<sup>Optional</sup> <a name=\\"image_scanning_configuration\\" id=\\"CfnRepository.parameter.imageScanningConfiguration\\"></a>
 
 - *Type:* typing.Any
 
@@ -623,7 +623,7 @@ scoped id of the resource.
 
 ---
 
-##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"\`image_tag_mutability\`<sup>Optional</sup>\\" id=\\"CfnRepository.parameter.imageTagMutability\\"></a>
+##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"image_tag_mutability\\" id=\\"CfnRepository.parameter.imageTagMutability\\"></a>
 
 - *Type:* str
 
@@ -631,7 +631,7 @@ scoped id of the resource.
 
 ---
 
-##### \`lifecycle_policy\`<sup>Optional</sup> <a name=\\"\`lifecycle_policy\`<sup>Optional</sup>\\" id=\\"CfnRepository.parameter.lifecyclePolicy\\"></a>
+##### \`lifecycle_policy\`<sup>Optional</sup> <a name=\\"lifecycle_policy\\" id=\\"CfnRepository.parameter.lifecyclePolicy\\"></a>
 
 - *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.LifecyclePolicyProperty?lang=python\\">LifecyclePolicyProperty</a>]
 
@@ -639,7 +639,7 @@ scoped id of the resource.
 
 ---
 
-##### \`repository_name\`<sup>Optional</sup> <a name=\\"\`repository_name\`<sup>Optional</sup>\\" id=\\"CfnRepository.parameter.repositoryName\\"></a>
+##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"CfnRepository.parameter.repositoryName\\"></a>
 
 - *Type:* str
 
@@ -647,7 +647,7 @@ scoped id of the resource.
 
 ---
 
-##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"\`repository_policy_text\`<sup>Optional</sup>\\" id=\\"CfnRepository.parameter.repositoryPolicyText\\"></a>
+##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"repository_policy_text\\" id=\\"CfnRepository.parameter.repositoryPolicyText\\"></a>
 
 - *Type:* typing.Any
 
@@ -655,7 +655,7 @@ scoped id of the resource.
 
 ---
 
-##### \`tags\`<sup>Optional</sup> <a name=\\"\`tags\`<sup>Optional</sup>\\" id=\\"CfnRepository.parameter.tags\\"></a>
+##### \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"CfnRepository.parameter.tags\\"></a>
 
 - *Type:* typing.List[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/CfnTag?lang=python\\">CfnTag</a>]
 
@@ -671,7 +671,7 @@ scoped id of the resource.
 
 ---
 
-##### \`inspect\` <a name=\\"\`inspect\`\\" id=\\"CfnRepository.inspect\\"></a>
+##### \`inspect\` <a name=\\"inspect\\" id=\\"CfnRepository.inspect\\"></a>
 
 \`\`\`python
 def inspect(
@@ -679,7 +679,7 @@ def inspect(
 )
 \`\`\`
 
-###### \`inspector\`<sup>Required</sup> <a name=\\"\`inspector\`<sup>Required</sup>\\" id=\\"CfnRepository.parameter.inspector\\"></a>
+###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnRepository.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/TreeInspector?lang=python\\">TreeInspector</a>
 
@@ -704,7 +704,7 @@ tree inspector to collect and process attributes.
 
 ---
 
-##### \`attr_arn\`<sup>Required</sup> <a name=\\"\`attr_arn\`<sup>Required</sup>\\" id=\\"CfnRepository.property.attrArn\\"></a>
+##### \`attr_arn\`<sup>Required</sup> <a name=\\"attr_arn\\" id=\\"CfnRepository.property.attrArn\\"></a>
 
 \`\`\`python
 attr_arn: str
@@ -714,7 +714,7 @@ attr_arn: str
 
 ---
 
-##### \`attr_repository_uri\`<sup>Required</sup> <a name=\\"\`attr_repository_uri\`<sup>Required</sup>\\" id=\\"CfnRepository.property.attrRepositoryUri\\"></a>
+##### \`attr_repository_uri\`<sup>Required</sup> <a name=\\"attr_repository_uri\\" id=\\"CfnRepository.property.attrRepositoryUri\\"></a>
 
 \`\`\`python
 attr_repository_uri: str
@@ -724,7 +724,7 @@ attr_repository_uri: str
 
 ---
 
-##### \`tags\`<sup>Required</sup> <a name=\\"\`tags\`<sup>Required</sup>\\" id=\\"CfnRepository.property.tags\\"></a>
+##### \`tags\`<sup>Required</sup> <a name=\\"tags\\" id=\\"CfnRepository.property.tags\\"></a>
 
 \`\`\`python
 tags: TagManager
@@ -736,7 +736,7 @@ tags: TagManager
 
 ---
 
-##### \`encryption_configuration\`<sup>Required</sup> <a name=\\"\`encryption_configuration\`<sup>Required</sup>\\" id=\\"CfnRepository.property.encryptionConfiguration\\"></a>
+##### \`encryption_configuration\`<sup>Required</sup> <a name=\\"encryption_configuration\\" id=\\"CfnRepository.property.encryptionConfiguration\\"></a>
 
 \`\`\`python
 encryption_configuration: typing.Any
@@ -748,7 +748,7 @@ encryption_configuration: typing.Any
 
 ---
 
-##### \`image_scanning_configuration\`<sup>Required</sup> <a name=\\"\`image_scanning_configuration\`<sup>Required</sup>\\" id=\\"CfnRepository.property.imageScanningConfiguration\\"></a>
+##### \`image_scanning_configuration\`<sup>Required</sup> <a name=\\"image_scanning_configuration\\" id=\\"CfnRepository.property.imageScanningConfiguration\\"></a>
 
 \`\`\`python
 image_scanning_configuration: typing.Any
@@ -760,7 +760,7 @@ image_scanning_configuration: typing.Any
 
 ---
 
-##### \`repository_policy_text\`<sup>Required</sup> <a name=\\"\`repository_policy_text\`<sup>Required</sup>\\" id=\\"CfnRepository.property.repositoryPolicyText\\"></a>
+##### \`repository_policy_text\`<sup>Required</sup> <a name=\\"repository_policy_text\\" id=\\"CfnRepository.property.repositoryPolicyText\\"></a>
 
 \`\`\`python
 repository_policy_text: typing.Any
@@ -772,7 +772,7 @@ repository_policy_text: typing.Any
 
 ---
 
-##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"\`image_tag_mutability\`<sup>Optional</sup>\\" id=\\"CfnRepository.property.imageTagMutability\\"></a>
+##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"image_tag_mutability\\" id=\\"CfnRepository.property.imageTagMutability\\"></a>
 
 \`\`\`python
 image_tag_mutability: str
@@ -784,7 +784,7 @@ image_tag_mutability: str
 
 ---
 
-##### \`lifecycle_policy\`<sup>Optional</sup> <a name=\\"\`lifecycle_policy\`<sup>Optional</sup>\\" id=\\"CfnRepository.property.lifecyclePolicy\\"></a>
+##### \`lifecycle_policy\`<sup>Optional</sup> <a name=\\"lifecycle_policy\\" id=\\"CfnRepository.property.lifecyclePolicy\\"></a>
 
 \`\`\`python
 lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty]
@@ -796,7 +796,7 @@ lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty]
 
 ---
 
-##### \`repository_name\`<sup>Optional</sup> <a name=\\"\`repository_name\`<sup>Optional</sup>\\" id=\\"CfnRepository.property.repositoryName\\"></a>
+##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"CfnRepository.property.repositoryName\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -816,7 +816,7 @@ repository_name: str
 
 ---
 
-##### \`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup> <a name=\\"\`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup>\\" id=\\"CfnRepository.property.CFN_RESOURCE_TYPE_NAME\\"></a>
+##### \`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup> <a name=\\"CFN_RESOURCE_TYPE_NAME\\" id=\\"CfnRepository.property.CFN_RESOURCE_TYPE_NAME\\"></a>
 
 \`\`\`python
 CFN_RESOURCE_TYPE_NAME: str
@@ -862,19 +862,19 @@ aws_cdk.aws_ecr.Repository(
 
 ---
 
-##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"Repository.parameter.scope\\"></a>
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Repository.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"/packages/constructs/v/3.3.186/api/Construct?lang=python\\">Construct</a>
 
 ---
 
-##### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"Repository.parameter.id\\"></a>
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"Repository.parameter.id\\"></a>
 
 - *Type:* str
 
 ---
 
-##### \`image_scan_on_push\`<sup>Optional</sup> <a name=\\"\`image_scan_on_push\`<sup>Optional</sup>\\" id=\\"Repository.parameter.imageScanOnPush\\"></a>
+##### \`image_scan_on_push\`<sup>Optional</sup> <a name=\\"image_scan_on_push\\" id=\\"Repository.parameter.imageScanOnPush\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -883,7 +883,7 @@ Enable the scan on push when creating the repository.
 
 ---
 
-##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"\`image_tag_mutability\`<sup>Optional</sup>\\" id=\\"Repository.parameter.imageTagMutability\\"></a>
+##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"image_tag_mutability\\" id=\\"Repository.parameter.imageTagMutability\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/TagMutability?lang=python\\">TagMutability</a>
 - *Default:* TagMutability.MUTABLE
@@ -894,7 +894,7 @@ If this parameter is omitted, the default setting of MUTABLE will be used which 
 
 ---
 
-##### \`lifecycle_registry_id\`<sup>Optional</sup> <a name=\\"\`lifecycle_registry_id\`<sup>Optional</sup>\\" id=\\"Repository.parameter.lifecycleRegistryId\\"></a>
+##### \`lifecycle_registry_id\`<sup>Optional</sup> <a name=\\"lifecycle_registry_id\\" id=\\"Repository.parameter.lifecycleRegistryId\\"></a>
 
 - *Type:* str
 - *Default:* The default registry is assumed.
@@ -907,7 +907,7 @@ The AWS account ID associated with the registry that contains the repository.
 
 ---
 
-##### \`lifecycle_rules\`<sup>Optional</sup> <a name=\\"\`lifecycle_rules\`<sup>Optional</sup>\\" id=\\"Repository.parameter.lifecycleRules\\"></a>
+##### \`lifecycle_rules\`<sup>Optional</sup> <a name=\\"lifecycle_rules\\" id=\\"Repository.parameter.lifecycleRules\\"></a>
 
 - *Type:* typing.List[<a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/LifecycleRule?lang=python\\">LifecycleRule</a>]
 - *Default:* No life cycle rules
@@ -916,7 +916,7 @@ Life cycle rules to apply to this registry.
 
 ---
 
-##### \`removal_policy\`<sup>Optional</sup> <a name=\\"\`removal_policy\`<sup>Optional</sup>\\" id=\\"Repository.parameter.removalPolicy\\"></a>
+##### \`removal_policy\`<sup>Optional</sup> <a name=\\"removal_policy\\" id=\\"Repository.parameter.removalPolicy\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/RemovalPolicy?lang=python\\">RemovalPolicy</a>
 - *Default:* RemovalPolicy.Retain
@@ -925,7 +925,7 @@ Determine what happens to the repository when the resource/stack is deleted.
 
 ---
 
-##### \`repository_name\`<sup>Optional</sup> <a name=\\"\`repository_name\`<sup>Optional</sup>\\" id=\\"Repository.parameter.repositoryName\\"></a>
+##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"Repository.parameter.repositoryName\\"></a>
 
 - *Type:* str
 - *Default:* Automatically generated name.
@@ -943,7 +943,7 @@ Name for this repository.
 
 ---
 
-##### \`add_lifecycle_rule\` <a name=\\"\`add_lifecycle_rule\`\\" id=\\"Repository.addLifecycleRule\\"></a>
+##### \`add_lifecycle_rule\` <a name=\\"add_lifecycle_rule\\" id=\\"Repository.addLifecycleRule\\"></a>
 
 \`\`\`python
 def add_lifecycle_rule(
@@ -956,7 +956,7 @@ def add_lifecycle_rule(
 )
 \`\`\`
 
-###### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"Repository.parameter.description\\"></a>
+###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"Repository.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -965,7 +965,7 @@ Describes the purpose of the rule.
 
 ---
 
-###### \`max_image_age\`<sup>Optional</sup> <a name=\\"\`max_image_age\`<sup>Optional</sup>\\" id=\\"Repository.parameter.maxImageAge\\"></a>
+###### \`max_image_age\`<sup>Optional</sup> <a name=\\"max_image_age\\" id=\\"Repository.parameter.maxImageAge\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/Duration?lang=python\\">Duration</a>
 
@@ -975,7 +975,7 @@ Specify exactly one of maxImageCount and maxImageAge.
 
 ---
 
-###### \`max_image_count\`<sup>Optional</sup> <a name=\\"\`max_image_count\`<sup>Optional</sup>\\" id=\\"Repository.parameter.maxImageCount\\"></a>
+###### \`max_image_count\`<sup>Optional</sup> <a name=\\"max_image_count\\" id=\\"Repository.parameter.maxImageCount\\"></a>
 
 - *Type:* typing.Union[int, float]
 
@@ -985,7 +985,7 @@ Specify exactly one of maxImageCount and maxImageAge.
 
 ---
 
-###### \`rule_priority\`<sup>Optional</sup> <a name=\\"\`rule_priority\`<sup>Optional</sup>\\" id=\\"Repository.parameter.rulePriority\\"></a>
+###### \`rule_priority\`<sup>Optional</sup> <a name=\\"rule_priority\\" id=\\"Repository.parameter.rulePriority\\"></a>
 
 - *Type:* typing.Union[int, float]
 - *Default:* Automatically assigned
@@ -996,7 +996,7 @@ All rules must have a unique priority, where lower numbers have higher precedenc
 
 ---
 
-###### \`tag_prefix_list\`<sup>Optional</sup> <a name=\\"\`tag_prefix_list\`<sup>Optional</sup>\\" id=\\"Repository.parameter.tagPrefixList\\"></a>
+###### \`tag_prefix_list\`<sup>Optional</sup> <a name=\\"tag_prefix_list\\" id=\\"Repository.parameter.tagPrefixList\\"></a>
 
 - *Type:* typing.List[str]
 
@@ -1006,7 +1006,7 @@ Only if tagStatus == TagStatus.Tagged
 
 ---
 
-###### \`tag_status\`<sup>Optional</sup> <a name=\\"\`tag_status\`<sup>Optional</sup>\\" id=\\"Repository.parameter.tagStatus\\"></a>
+###### \`tag_status\`<sup>Optional</sup> <a name=\\"tag_status\\" id=\\"Repository.parameter.tagStatus\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/TagStatus?lang=python\\">TagStatus</a>
 - *Default:* TagStatus.Tagged if tagPrefixList is given, TagStatus.Any otherwise
@@ -1017,7 +1017,7 @@ Only one rule is allowed to select untagged images, and it must have the highest
 
 ---
 
-##### \`add_to_resource_policy\` <a name=\\"\`add_to_resource_policy\`\\" id=\\"Repository.addToResourcePolicy\\"></a>
+##### \`add_to_resource_policy\` <a name=\\"add_to_resource_policy\\" id=\\"Repository.addToResourcePolicy\\"></a>
 
 \`\`\`python
 def add_to_resource_policy(
@@ -1025,7 +1025,7 @@ def add_to_resource_policy(
 )
 \`\`\`
 
-###### \`statement\`<sup>Required</sup> <a name=\\"\`statement\`<sup>Required</sup>\\" id=\\"Repository.parameter.statement\\"></a>
+###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"Repository.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/PolicyStatement?lang=python\\">PolicyStatement</a>
 
@@ -1042,7 +1042,7 @@ def add_to_resource_policy(
 
 ---
 
-##### \`arn_for_local_repository\` <a name=\\"\`arn_for_local_repository\`\\" id=\\"Repository.arnForLocalRepository\\"></a>
+##### \`arn_for_local_repository\` <a name=\\"arn_for_local_repository\\" id=\\"Repository.arnForLocalRepository\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -1054,25 +1054,25 @@ aws_cdk.aws_ecr.Repository.arn_for_local_repository(
 )
 \`\`\`
 
-###### \`repository_name\`<sup>Required</sup> <a name=\\"\`repository_name\`<sup>Required</sup>\\" id=\\"Repository.parameter.repositoryName\\"></a>
+###### \`repository_name\`<sup>Required</sup> <a name=\\"repository_name\\" id=\\"Repository.parameter.repositoryName\\"></a>
 
 - *Type:* str
 
 ---
 
-###### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"Repository.parameter.scope\\"></a>
+###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Repository.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"/packages/constructs/v/3.3.186/api/IConstruct?lang=python\\">IConstruct</a>
 
 ---
 
-###### \`account\`<sup>Optional</sup> <a name=\\"\`account\`<sup>Optional</sup>\\" id=\\"Repository.parameter.account\\"></a>
+###### \`account\`<sup>Optional</sup> <a name=\\"account\\" id=\\"Repository.parameter.account\\"></a>
 
 - *Type:* str
 
 ---
 
-##### \`from_repository_arn\` <a name=\\"\`from_repository_arn\`\\" id=\\"Repository.fromRepositoryArn\\"></a>
+##### \`from_repository_arn\` <a name=\\"from_repository_arn\\" id=\\"Repository.fromRepositoryArn\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -1084,25 +1084,25 @@ aws_cdk.aws_ecr.Repository.from_repository_arn(
 )
 \`\`\`
 
-###### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"Repository.parameter.scope\\"></a>
+###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Repository.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"/packages/constructs/v/3.3.186/api/Construct?lang=python\\">Construct</a>
 
 ---
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"Repository.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"Repository.parameter.id\\"></a>
 
 - *Type:* str
 
 ---
 
-###### \`repository_arn\`<sup>Required</sup> <a name=\\"\`repository_arn\`<sup>Required</sup>\\" id=\\"Repository.parameter.repositoryArn\\"></a>
+###### \`repository_arn\`<sup>Required</sup> <a name=\\"repository_arn\\" id=\\"Repository.parameter.repositoryArn\\"></a>
 
 - *Type:* str
 
 ---
 
-##### \`from_repository_attributes\` <a name=\\"\`from_repository_attributes\`\\" id=\\"Repository.fromRepositoryAttributes\\"></a>
+##### \`from_repository_attributes\` <a name=\\"from_repository_attributes\\" id=\\"Repository.fromRepositoryAttributes\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -1115,31 +1115,31 @@ aws_cdk.aws_ecr.Repository.from_repository_attributes(
 )
 \`\`\`
 
-###### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"Repository.parameter.scope\\"></a>
+###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Repository.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"/packages/constructs/v/3.3.186/api/Construct?lang=python\\">Construct</a>
 
 ---
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"Repository.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"Repository.parameter.id\\"></a>
 
 - *Type:* str
 
 ---
 
-###### \`repository_arn\`<sup>Required</sup> <a name=\\"\`repository_arn\`<sup>Required</sup>\\" id=\\"Repository.parameter.repositoryArn\\"></a>
+###### \`repository_arn\`<sup>Required</sup> <a name=\\"repository_arn\\" id=\\"Repository.parameter.repositoryArn\\"></a>
 
 - *Type:* str
 
 ---
 
-###### \`repository_name\`<sup>Required</sup> <a name=\\"\`repository_name\`<sup>Required</sup>\\" id=\\"Repository.parameter.repositoryName\\"></a>
+###### \`repository_name\`<sup>Required</sup> <a name=\\"repository_name\\" id=\\"Repository.parameter.repositoryName\\"></a>
 
 - *Type:* str
 
 ---
 
-##### \`from_repository_name\` <a name=\\"\`from_repository_name\`\\" id=\\"Repository.fromRepositoryName\\"></a>
+##### \`from_repository_name\` <a name=\\"from_repository_name\\" id=\\"Repository.fromRepositoryName\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -1151,19 +1151,19 @@ aws_cdk.aws_ecr.Repository.from_repository_name(
 )
 \`\`\`
 
-###### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"Repository.parameter.scope\\"></a>
+###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Repository.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"/packages/constructs/v/3.3.186/api/Construct?lang=python\\">Construct</a>
 
 ---
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"Repository.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"Repository.parameter.id\\"></a>
 
 - *Type:* str
 
 ---
 
-###### \`repository_name\`<sup>Required</sup> <a name=\\"\`repository_name\`<sup>Required</sup>\\" id=\\"Repository.parameter.repositoryName\\"></a>
+###### \`repository_name\`<sup>Required</sup> <a name=\\"repository_name\\" id=\\"Repository.parameter.repositoryName\\"></a>
 
 - *Type:* str
 
@@ -1178,7 +1178,7 @@ aws_cdk.aws_ecr.Repository.from_repository_name(
 
 ---
 
-##### \`repository_arn\`<sup>Required</sup> <a name=\\"\`repository_arn\`<sup>Required</sup>\\" id=\\"Repository.property.repositoryArn\\"></a>
+##### \`repository_arn\`<sup>Required</sup> <a name=\\"repository_arn\\" id=\\"Repository.property.repositoryArn\\"></a>
 
 \`\`\`python
 repository_arn: str
@@ -1190,7 +1190,7 @@ The ARN of the repository.
 
 ---
 
-##### \`repository_name\`<sup>Required</sup> <a name=\\"\`repository_name\`<sup>Required</sup>\\" id=\\"Repository.property.repositoryName\\"></a>
+##### \`repository_name\`<sup>Required</sup> <a name=\\"repository_name\\" id=\\"Repository.property.repositoryName\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -1237,19 +1237,19 @@ aws_cdk.aws_ecr.RepositoryBase(
 
 ---
 
-##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"RepositoryBase.parameter.scope\\"></a>
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"RepositoryBase.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"/packages/constructs/v/3.3.186/api/Construct?lang=python\\">Construct</a>
 
 ---
 
-##### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"RepositoryBase.parameter.id\\"></a>
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.parameter.id\\"></a>
 
 - *Type:* str
 
 ---
 
-##### \`account\`<sup>Optional</sup> <a name=\\"\`account\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.account\\"></a>
+##### \`account\`<sup>Optional</sup> <a name=\\"account\\" id=\\"RepositoryBase.parameter.account\\"></a>
 
 - *Type:* str
 - *Default:* the resource is in the same account as the stack it belongs to
@@ -1258,7 +1258,7 @@ The AWS account ID this resource belongs to.
 
 ---
 
-##### \`environment_from_arn\`<sup>Optional</sup> <a name=\\"\`environment_from_arn\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.environmentFromArn\\"></a>
+##### \`environment_from_arn\`<sup>Optional</sup> <a name=\\"environment_from_arn\\" id=\\"RepositoryBase.parameter.environmentFromArn\\"></a>
 
 - *Type:* str
 - *Default:* take environment from \`account\`, \`region\` parameters, or use Stack environment.
@@ -1269,7 +1269,7 @@ The ARN is parsed and the account and region are taken from the ARN. This should
 
 ---
 
-##### \`physical_name\`<sup>Optional</sup> <a name=\\"\`physical_name\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.physicalName\\"></a>
+##### \`physical_name\`<sup>Optional</sup> <a name=\\"physical_name\\" id=\\"RepositoryBase.parameter.physicalName\\"></a>
 
 - *Type:* str
 - *Default:* The physical name will be allocated by CloudFormation at deployment time
@@ -1280,7 +1280,7 @@ The value passed in by users to the physical name prop of the resource.
 
 ---
 
-##### \`region\`<sup>Optional</sup> <a name=\\"\`region\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.region\\"></a>
+##### \`region\`<sup>Optional</sup> <a name=\\"region\\" id=\\"RepositoryBase.parameter.region\\"></a>
 
 - *Type:* str
 - *Default:* the resource is in the same region as the stack it belongs to
@@ -1306,7 +1306,7 @@ The AWS region this resource belongs to.
 
 ---
 
-##### \`add_to_resource_policy\` <a name=\\"\`add_to_resource_policy\`\\" id=\\"RepositoryBase.addToResourcePolicy\\"></a>
+##### \`add_to_resource_policy\` <a name=\\"add_to_resource_policy\\" id=\\"RepositoryBase.addToResourcePolicy\\"></a>
 
 \`\`\`python
 def add_to_resource_policy(
@@ -1314,13 +1314,13 @@ def add_to_resource_policy(
 )
 \`\`\`
 
-###### \`statement\`<sup>Required</sup> <a name=\\"\`statement\`<sup>Required</sup>\\" id=\\"RepositoryBase.parameter.statement\\"></a>
+###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"RepositoryBase.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/PolicyStatement?lang=python\\">PolicyStatement</a>
 
 ---
 
-##### \`grant\` <a name=\\"\`grant\`\\" id=\\"RepositoryBase.grant\\"></a>
+##### \`grant\` <a name=\\"grant\\" id=\\"RepositoryBase.grant\\"></a>
 
 \`\`\`python
 def grant(
@@ -1329,19 +1329,19 @@ def grant(
 )
 \`\`\`
 
-###### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"RepositoryBase.parameter.grantee\\"></a>
+###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/IGrantable?lang=python\\">IGrantable</a>
 
 ---
 
-###### \`actions\`<sup>Required</sup> <a name=\\"\`actions\`<sup>Required</sup>\\" id=\\"RepositoryBase.parameter.actions\\"></a>
+###### \`actions\`<sup>Required</sup> <a name=\\"actions\\" id=\\"RepositoryBase.parameter.actions\\"></a>
 
 - *Type:* str
 
 ---
 
-##### \`grant_pull\` <a name=\\"\`grant_pull\`\\" id=\\"RepositoryBase.grantPull\\"></a>
+##### \`grant_pull\` <a name=\\"grant_pull\\" id=\\"RepositoryBase.grantPull\\"></a>
 
 \`\`\`python
 def grant_pull(
@@ -1349,13 +1349,13 @@ def grant_pull(
 )
 \`\`\`
 
-###### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"RepositoryBase.parameter.grantee\\"></a>
+###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/IGrantable?lang=python\\">IGrantable</a>
 
 ---
 
-##### \`grant_pull_push\` <a name=\\"\`grant_pull_push\`\\" id=\\"RepositoryBase.grantPullPush\\"></a>
+##### \`grant_pull_push\` <a name=\\"grant_pull_push\\" id=\\"RepositoryBase.grantPullPush\\"></a>
 
 \`\`\`python
 def grant_pull_push(
@@ -1363,13 +1363,13 @@ def grant_pull_push(
 )
 \`\`\`
 
-###### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"RepositoryBase.parameter.grantee\\"></a>
+###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/IGrantable?lang=python\\">IGrantable</a>
 
 ---
 
-##### \`on_cloud_trail_event\` <a name=\\"\`on_cloud_trail_event\`\\" id=\\"RepositoryBase.onCloudTrailEvent\\"></a>
+##### \`on_cloud_trail_event\` <a name=\\"on_cloud_trail_event\\" id=\\"RepositoryBase.onCloudTrailEvent\\"></a>
 
 \`\`\`python
 def on_cloud_trail_event(
@@ -1381,7 +1381,7 @@ def on_cloud_trail_event(
 )
 \`\`\`
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"RepositoryBase.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -1389,7 +1389,7 @@ The id of the rule.
 
 ---
 
-###### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.description\\"></a>
+###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"RepositoryBase.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -1398,7 +1398,7 @@ A description of the rule's purpose.
 
 ---
 
-###### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.eventPattern\\"></a>
+###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"RepositoryBase.parameter.eventPattern\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
@@ -1413,7 +1413,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-###### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.ruleName\\"></a>
+###### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"RepositoryBase.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -1422,7 +1422,7 @@ A name for the rule.
 
 ---
 
-###### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.target\\"></a>
+###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"RepositoryBase.parameter.target\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -1431,7 +1431,7 @@ The target to register for the event.
 
 ---
 
-##### \`on_cloud_trail_image_pushed\` <a name=\\"\`on_cloud_trail_image_pushed\`\\" id=\\"RepositoryBase.onCloudTrailImagePushed\\"></a>
+##### \`on_cloud_trail_image_pushed\` <a name=\\"on_cloud_trail_image_pushed\\" id=\\"RepositoryBase.onCloudTrailImagePushed\\"></a>
 
 \`\`\`python
 def on_cloud_trail_image_pushed(
@@ -1444,7 +1444,7 @@ def on_cloud_trail_image_pushed(
 )
 \`\`\`
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"RepositoryBase.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -1452,7 +1452,7 @@ The id of the rule.
 
 ---
 
-###### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.description\\"></a>
+###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"RepositoryBase.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -1461,7 +1461,7 @@ A description of the rule's purpose.
 
 ---
 
-###### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.eventPattern\\"></a>
+###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"RepositoryBase.parameter.eventPattern\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
@@ -1476,7 +1476,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-###### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.ruleName\\"></a>
+###### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"RepositoryBase.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -1485,7 +1485,7 @@ A name for the rule.
 
 ---
 
-###### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.target\\"></a>
+###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"RepositoryBase.parameter.target\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -1494,7 +1494,7 @@ The target to register for the event.
 
 ---
 
-###### \`image_tag\`<sup>Optional</sup> <a name=\\"\`image_tag\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.imageTag\\"></a>
+###### \`image_tag\`<sup>Optional</sup> <a name=\\"image_tag\\" id=\\"RepositoryBase.parameter.imageTag\\"></a>
 
 - *Type:* str
 - *Default:* Watch changes to all tags
@@ -1503,7 +1503,7 @@ Only watch changes to this image tag.
 
 ---
 
-##### \`on_event\` <a name=\\"\`on_event\`\\" id=\\"RepositoryBase.onEvent\\"></a>
+##### \`on_event\` <a name=\\"on_event\\" id=\\"RepositoryBase.onEvent\\"></a>
 
 \`\`\`python
 def on_event(
@@ -1515,13 +1515,13 @@ def on_event(
 )
 \`\`\`
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"RepositoryBase.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.parameter.id\\"></a>
 
 - *Type:* str
 
 ---
 
-###### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.description\\"></a>
+###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"RepositoryBase.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -1530,7 +1530,7 @@ A description of the rule's purpose.
 
 ---
 
-###### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.eventPattern\\"></a>
+###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"RepositoryBase.parameter.eventPattern\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
@@ -1545,7 +1545,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-###### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.ruleName\\"></a>
+###### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"RepositoryBase.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -1554,7 +1554,7 @@ A name for the rule.
 
 ---
 
-###### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.target\\"></a>
+###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"RepositoryBase.parameter.target\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -1563,7 +1563,7 @@ The target to register for the event.
 
 ---
 
-##### \`on_image_scan_completed\` <a name=\\"\`on_image_scan_completed\`\\" id=\\"RepositoryBase.onImageScanCompleted\\"></a>
+##### \`on_image_scan_completed\` <a name=\\"on_image_scan_completed\\" id=\\"RepositoryBase.onImageScanCompleted\\"></a>
 
 \`\`\`python
 def on_image_scan_completed(
@@ -1576,7 +1576,7 @@ def on_image_scan_completed(
 )
 \`\`\`
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"RepositoryBase.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -1584,7 +1584,7 @@ The id of the rule.
 
 ---
 
-###### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.description\\"></a>
+###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"RepositoryBase.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -1593,7 +1593,7 @@ A description of the rule's purpose.
 
 ---
 
-###### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.eventPattern\\"></a>
+###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"RepositoryBase.parameter.eventPattern\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
@@ -1608,7 +1608,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-###### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.ruleName\\"></a>
+###### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"RepositoryBase.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -1617,7 +1617,7 @@ A name for the rule.
 
 ---
 
-###### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.target\\"></a>
+###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"RepositoryBase.parameter.target\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -1626,7 +1626,7 @@ The target to register for the event.
 
 ---
 
-###### \`image_tags\`<sup>Optional</sup> <a name=\\"\`image_tags\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.imageTags\\"></a>
+###### \`image_tags\`<sup>Optional</sup> <a name=\\"image_tags\\" id=\\"RepositoryBase.parameter.imageTags\\"></a>
 
 - *Type:* typing.List[str]
 - *Default:* Watch the changes to the repository with all image tags
@@ -1637,7 +1637,7 @@ Leave it undefined to watch the full repository.
 
 ---
 
-##### \`repository_uri_for_digest\` <a name=\\"\`repository_uri_for_digest\`\\" id=\\"RepositoryBase.repositoryUriForDigest\\"></a>
+##### \`repository_uri_for_digest\` <a name=\\"repository_uri_for_digest\\" id=\\"RepositoryBase.repositoryUriForDigest\\"></a>
 
 \`\`\`python
 def repository_uri_for_digest(
@@ -1645,7 +1645,7 @@ def repository_uri_for_digest(
 )
 \`\`\`
 
-###### \`digest\`<sup>Optional</sup> <a name=\\"\`digest\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.digest\\"></a>
+###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"RepositoryBase.parameter.digest\\"></a>
 
 - *Type:* str
 
@@ -1653,7 +1653,7 @@ Optional image digest.
 
 ---
 
-##### \`repository_uri_for_tag\` <a name=\\"\`repository_uri_for_tag\`\\" id=\\"RepositoryBase.repositoryUriForTag\\"></a>
+##### \`repository_uri_for_tag\` <a name=\\"repository_uri_for_tag\\" id=\\"RepositoryBase.repositoryUriForTag\\"></a>
 
 \`\`\`python
 def repository_uri_for_tag(
@@ -1661,7 +1661,7 @@ def repository_uri_for_tag(
 )
 \`\`\`
 
-###### \`tag\`<sup>Optional</sup> <a name=\\"\`tag\`<sup>Optional</sup>\\" id=\\"RepositoryBase.parameter.tag\\"></a>
+###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"RepositoryBase.parameter.tag\\"></a>
 
 - *Type:* str
 
@@ -1680,7 +1680,7 @@ Optional image tag.
 
 ---
 
-##### \`repository_arn\`<sup>Required</sup> <a name=\\"\`repository_arn\`<sup>Required</sup>\\" id=\\"RepositoryBase.property.repositoryArn\\"></a>
+##### \`repository_arn\`<sup>Required</sup> <a name=\\"repository_arn\\" id=\\"RepositoryBase.property.repositoryArn\\"></a>
 
 \`\`\`python
 repository_arn: str
@@ -1692,7 +1692,7 @@ The ARN of the repository.
 
 ---
 
-##### \`repository_name\`<sup>Required</sup> <a name=\\"\`repository_name\`<sup>Required</sup>\\" id=\\"RepositoryBase.property.repositoryName\\"></a>
+##### \`repository_name\`<sup>Required</sup> <a name=\\"repository_name\\" id=\\"RepositoryBase.property.repositoryName\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -1704,7 +1704,7 @@ The name of the repository.
 
 ---
 
-##### \`repository_uri\`<sup>Required</sup> <a name=\\"\`repository_uri\`<sup>Required</sup>\\" id=\\"RepositoryBase.property.repositoryUri\\"></a>
+##### \`repository_uri\`<sup>Required</sup> <a name=\\"repository_uri\\" id=\\"RepositoryBase.property.repositoryUri\\"></a>
 
 \`\`\`python
 repository_uri: str
@@ -1749,7 +1749,7 @@ aws_cdk.aws_ecr.CfnPublicRepositoryProps(
 
 ---
 
-##### \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"\`repository_catalog_data\`<sup>Optional</sup>\\" id=\\"CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+##### \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"repository_catalog_data\\" id=\\"CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
 \`\`\`python
 repository_catalog_data: typing.Any
@@ -1761,7 +1761,7 @@ repository_catalog_data: typing.Any
 
 ---
 
-##### \`repository_name\`<sup>Optional</sup> <a name=\\"\`repository_name\`<sup>Optional</sup>\\" id=\\"CfnPublicRepositoryProps.property.repositoryName\\"></a>
+##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"CfnPublicRepositoryProps.property.repositoryName\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -1773,7 +1773,7 @@ repository_name: str
 
 ---
 
-##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"\`repository_policy_text\`<sup>Optional</sup>\\" id=\\"CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
+##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"repository_policy_text\\" id=\\"CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
 
 \`\`\`python
 repository_policy_text: typing.Any
@@ -1785,7 +1785,7 @@ repository_policy_text: typing.Any
 
 ---
 
-##### \`tags\`<sup>Optional</sup> <a name=\\"\`tags\`<sup>Optional</sup>\\" id=\\"CfnPublicRepositoryProps.property.tags\\"></a>
+##### \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"CfnPublicRepositoryProps.property.tags\\"></a>
 
 \`\`\`python
 tags: typing.List[CfnTag]
@@ -1819,7 +1819,7 @@ aws_cdk.aws_ecr.CfnRegistryPolicyProps(
 
 ---
 
-##### \`policy_text\`<sup>Required</sup> <a name=\\"\`policy_text\`<sup>Required</sup>\\" id=\\"CfnRegistryPolicyProps.property.policyText\\"></a>
+##### \`policy_text\`<sup>Required</sup> <a name=\\"policy_text\\" id=\\"CfnRegistryPolicyProps.property.policyText\\"></a>
 
 \`\`\`python
 policy_text: typing.Any
@@ -1853,7 +1853,7 @@ aws_cdk.aws_ecr.CfnReplicationConfigurationProps(
 
 ---
 
-##### \`replication_configuration\`<sup>Required</sup> <a name=\\"\`replication_configuration\`<sup>Required</sup>\\" id=\\"CfnReplicationConfigurationProps.property.replicationConfiguration\\"></a>
+##### \`replication_configuration\`<sup>Required</sup> <a name=\\"replication_configuration\\" id=\\"CfnReplicationConfigurationProps.property.replicationConfiguration\\"></a>
 
 \`\`\`python
 replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
@@ -1899,7 +1899,7 @@ aws_cdk.aws_ecr.CfnRepositoryProps(
 
 ---
 
-##### \`encryption_configuration\`<sup>Optional</sup> <a name=\\"\`encryption_configuration\`<sup>Optional</sup>\\" id=\\"CfnRepositoryProps.property.encryptionConfiguration\\"></a>
+##### \`encryption_configuration\`<sup>Optional</sup> <a name=\\"encryption_configuration\\" id=\\"CfnRepositoryProps.property.encryptionConfiguration\\"></a>
 
 \`\`\`python
 encryption_configuration: typing.Any
@@ -1911,7 +1911,7 @@ encryption_configuration: typing.Any
 
 ---
 
-##### \`image_scanning_configuration\`<sup>Optional</sup> <a name=\\"\`image_scanning_configuration\`<sup>Optional</sup>\\" id=\\"CfnRepositoryProps.property.imageScanningConfiguration\\"></a>
+##### \`image_scanning_configuration\`<sup>Optional</sup> <a name=\\"image_scanning_configuration\\" id=\\"CfnRepositoryProps.property.imageScanningConfiguration\\"></a>
 
 \`\`\`python
 image_scanning_configuration: typing.Any
@@ -1923,7 +1923,7 @@ image_scanning_configuration: typing.Any
 
 ---
 
-##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"\`image_tag_mutability\`<sup>Optional</sup>\\" id=\\"CfnRepositoryProps.property.imageTagMutability\\"></a>
+##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"image_tag_mutability\\" id=\\"CfnRepositoryProps.property.imageTagMutability\\"></a>
 
 \`\`\`python
 image_tag_mutability: str
@@ -1935,7 +1935,7 @@ image_tag_mutability: str
 
 ---
 
-##### \`lifecycle_policy\`<sup>Optional</sup> <a name=\\"\`lifecycle_policy\`<sup>Optional</sup>\\" id=\\"CfnRepositoryProps.property.lifecyclePolicy\\"></a>
+##### \`lifecycle_policy\`<sup>Optional</sup> <a name=\\"lifecycle_policy\\" id=\\"CfnRepositoryProps.property.lifecyclePolicy\\"></a>
 
 \`\`\`python
 lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty]
@@ -1947,7 +1947,7 @@ lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty]
 
 ---
 
-##### \`repository_name\`<sup>Optional</sup> <a name=\\"\`repository_name\`<sup>Optional</sup>\\" id=\\"CfnRepositoryProps.property.repositoryName\\"></a>
+##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"CfnRepositoryProps.property.repositoryName\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -1959,7 +1959,7 @@ repository_name: str
 
 ---
 
-##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"\`repository_policy_text\`<sup>Optional</sup>\\" id=\\"CfnRepositoryProps.property.repositoryPolicyText\\"></a>
+##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"repository_policy_text\\" id=\\"CfnRepositoryProps.property.repositoryPolicyText\\"></a>
 
 \`\`\`python
 repository_policy_text: typing.Any
@@ -1971,7 +1971,7 @@ repository_policy_text: typing.Any
 
 ---
 
-##### \`tags\`<sup>Optional</sup> <a name=\\"\`tags\`<sup>Optional</sup>\\" id=\\"CfnRepositoryProps.property.tags\\"></a>
+##### \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"CfnRepositoryProps.property.tags\\"></a>
 
 \`\`\`python
 tags: typing.List[CfnTag]
@@ -2005,7 +2005,7 @@ aws_cdk.aws_ecr.CfnRepository.LifecyclePolicyProperty(
 
 ---
 
-##### \`lifecycle_policy_text\`<sup>Optional</sup> <a name=\\"\`lifecycle_policy_text\`<sup>Optional</sup>\\" id=\\"CfnRepository.LifecyclePolicyProperty.property.lifecyclePolicyText\\"></a>
+##### \`lifecycle_policy_text\`<sup>Optional</sup> <a name=\\"lifecycle_policy_text\\" id=\\"CfnRepository.LifecyclePolicyProperty.property.lifecyclePolicyText\\"></a>
 
 \`\`\`python
 lifecycle_policy_text: str
@@ -2017,7 +2017,7 @@ lifecycle_policy_text: str
 
 ---
 
-##### \`registry_id\`<sup>Optional</sup> <a name=\\"\`registry_id\`<sup>Optional</sup>\\" id=\\"CfnRepository.LifecyclePolicyProperty.property.registryId\\"></a>
+##### \`registry_id\`<sup>Optional</sup> <a name=\\"registry_id\\" id=\\"CfnRepository.LifecyclePolicyProperty.property.registryId\\"></a>
 
 \`\`\`python
 registry_id: str
@@ -2061,7 +2061,7 @@ aws_cdk.aws_ecr.LifecycleRule(
 
 ---
 
-##### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"LifecycleRule.property.description\\"></a>
+##### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"LifecycleRule.property.description\\"></a>
 
 \`\`\`python
 description: str
@@ -2074,7 +2074,7 @@ Describes the purpose of the rule.
 
 ---
 
-##### \`max_image_age\`<sup>Optional</sup> <a name=\\"\`max_image_age\`<sup>Optional</sup>\\" id=\\"LifecycleRule.property.maxImageAge\\"></a>
+##### \`max_image_age\`<sup>Optional</sup> <a name=\\"max_image_age\\" id=\\"LifecycleRule.property.maxImageAge\\"></a>
 
 \`\`\`python
 max_image_age: Duration
@@ -2088,7 +2088,7 @@ Specify exactly one of maxImageCount and maxImageAge.
 
 ---
 
-##### \`max_image_count\`<sup>Optional</sup> <a name=\\"\`max_image_count\`<sup>Optional</sup>\\" id=\\"LifecycleRule.property.maxImageCount\\"></a>
+##### \`max_image_count\`<sup>Optional</sup> <a name=\\"max_image_count\\" id=\\"LifecycleRule.property.maxImageCount\\"></a>
 
 \`\`\`python
 max_image_count: typing.Union[int, float]
@@ -2102,7 +2102,7 @@ Specify exactly one of maxImageCount and maxImageAge.
 
 ---
 
-##### \`rule_priority\`<sup>Optional</sup> <a name=\\"\`rule_priority\`<sup>Optional</sup>\\" id=\\"LifecycleRule.property.rulePriority\\"></a>
+##### \`rule_priority\`<sup>Optional</sup> <a name=\\"rule_priority\\" id=\\"LifecycleRule.property.rulePriority\\"></a>
 
 \`\`\`python
 rule_priority: typing.Union[int, float]
@@ -2117,7 +2117,7 @@ All rules must have a unique priority, where lower numbers have higher precedenc
 
 ---
 
-##### \`tag_prefix_list\`<sup>Optional</sup> <a name=\\"\`tag_prefix_list\`<sup>Optional</sup>\\" id=\\"LifecycleRule.property.tagPrefixList\\"></a>
+##### \`tag_prefix_list\`<sup>Optional</sup> <a name=\\"tag_prefix_list\\" id=\\"LifecycleRule.property.tagPrefixList\\"></a>
 
 \`\`\`python
 tag_prefix_list: typing.List[str]
@@ -2131,7 +2131,7 @@ Only if tagStatus == TagStatus.Tagged
 
 ---
 
-##### \`tag_status\`<sup>Optional</sup> <a name=\\"\`tag_status\`<sup>Optional</sup>\\" id=\\"LifecycleRule.property.tagStatus\\"></a>
+##### \`tag_status\`<sup>Optional</sup> <a name=\\"tag_status\\" id=\\"LifecycleRule.property.tagStatus\\"></a>
 
 \`\`\`python
 tag_status: TagStatus
@@ -2176,7 +2176,7 @@ aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions(
 
 ---
 
-##### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"OnCloudTrailImagePushedOptions.property.description\\"></a>
+##### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"OnCloudTrailImagePushedOptions.property.description\\"></a>
 
 \`\`\`python
 description: str
@@ -2189,7 +2189,7 @@ A description of the rule's purpose.
 
 ---
 
-##### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"OnCloudTrailImagePushedOptions.property.eventPattern\\"></a>
+##### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"OnCloudTrailImagePushedOptions.property.eventPattern\\"></a>
 
 \`\`\`python
 event_pattern: EventPattern
@@ -2208,7 +2208,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-##### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"OnCloudTrailImagePushedOptions.property.ruleName\\"></a>
+##### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"OnCloudTrailImagePushedOptions.property.ruleName\\"></a>
 
 \`\`\`python
 rule_name: str
@@ -2221,7 +2221,7 @@ A name for the rule.
 
 ---
 
-##### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"OnCloudTrailImagePushedOptions.property.target\\"></a>
+##### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"OnCloudTrailImagePushedOptions.property.target\\"></a>
 
 \`\`\`python
 target: IRuleTarget
@@ -2234,7 +2234,7 @@ The target to register for the event.
 
 ---
 
-##### \`image_tag\`<sup>Optional</sup> <a name=\\"\`image_tag\`<sup>Optional</sup>\\" id=\\"OnCloudTrailImagePushedOptions.property.imageTag\\"></a>
+##### \`image_tag\`<sup>Optional</sup> <a name=\\"image_tag\\" id=\\"OnCloudTrailImagePushedOptions.property.imageTag\\"></a>
 
 \`\`\`python
 image_tag: str
@@ -2277,7 +2277,7 @@ aws_cdk.aws_ecr.OnImageScanCompletedOptions(
 
 ---
 
-##### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"OnImageScanCompletedOptions.property.description\\"></a>
+##### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"OnImageScanCompletedOptions.property.description\\"></a>
 
 \`\`\`python
 description: str
@@ -2290,7 +2290,7 @@ A description of the rule's purpose.
 
 ---
 
-##### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"OnImageScanCompletedOptions.property.eventPattern\\"></a>
+##### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"OnImageScanCompletedOptions.property.eventPattern\\"></a>
 
 \`\`\`python
 event_pattern: EventPattern
@@ -2309,7 +2309,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-##### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"OnImageScanCompletedOptions.property.ruleName\\"></a>
+##### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"OnImageScanCompletedOptions.property.ruleName\\"></a>
 
 \`\`\`python
 rule_name: str
@@ -2322,7 +2322,7 @@ A name for the rule.
 
 ---
 
-##### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"OnImageScanCompletedOptions.property.target\\"></a>
+##### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"OnImageScanCompletedOptions.property.target\\"></a>
 
 \`\`\`python
 target: IRuleTarget
@@ -2335,7 +2335,7 @@ The target to register for the event.
 
 ---
 
-##### \`image_tags\`<sup>Optional</sup> <a name=\\"\`image_tags\`<sup>Optional</sup>\\" id=\\"OnImageScanCompletedOptions.property.imageTags\\"></a>
+##### \`image_tags\`<sup>Optional</sup> <a name=\\"image_tags\\" id=\\"OnImageScanCompletedOptions.property.imageTags\\"></a>
 
 \`\`\`python
 image_tags: typing.List[str]
@@ -2370,7 +2370,7 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty(
 
 ---
 
-##### \`rules\`<sup>Required</sup> <a name=\\"\`rules\`<sup>Required</sup>\\" id=\\"CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules\\"></a>
+##### \`rules\`<sup>Required</sup> <a name=\\"rules\\" id=\\"CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules\\"></a>
 
 \`\`\`python
 rules: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationRuleProperty]]]
@@ -2404,7 +2404,7 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationDestinationProperty(
 
 ---
 
-##### \`region\`<sup>Required</sup> <a name=\\"\`region\`<sup>Required</sup>\\" id=\\"CfnReplicationConfiguration.ReplicationDestinationProperty.property.region\\"></a>
+##### \`region\`<sup>Required</sup> <a name=\\"region\\" id=\\"CfnReplicationConfiguration.ReplicationDestinationProperty.property.region\\"></a>
 
 \`\`\`python
 region: str
@@ -2416,7 +2416,7 @@ region: str
 
 ---
 
-##### \`registry_id\`<sup>Required</sup> <a name=\\"\`registry_id\`<sup>Required</sup>\\" id=\\"CfnReplicationConfiguration.ReplicationDestinationProperty.property.registryId\\"></a>
+##### \`registry_id\`<sup>Required</sup> <a name=\\"registry_id\\" id=\\"CfnReplicationConfiguration.ReplicationDestinationProperty.property.registryId\\"></a>
 
 \`\`\`python
 registry_id: str
@@ -2448,7 +2448,7 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty(
 
 ---
 
-##### \`destinations\`<sup>Required</sup> <a name=\\"\`destinations\`<sup>Required</sup>\\" id=\\"CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations\\"></a>
+##### \`destinations\`<sup>Required</sup> <a name=\\"destinations\\" id=\\"CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations\\"></a>
 
 \`\`\`python
 destinations: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationDestinationProperty]]]
@@ -2482,7 +2482,7 @@ aws_cdk.aws_ecr.RepositoryAttributes(
 
 ---
 
-##### \`repository_arn\`<sup>Required</sup> <a name=\\"\`repository_arn\`<sup>Required</sup>\\" id=\\"RepositoryAttributes.property.repositoryArn\\"></a>
+##### \`repository_arn\`<sup>Required</sup> <a name=\\"repository_arn\\" id=\\"RepositoryAttributes.property.repositoryArn\\"></a>
 
 \`\`\`python
 repository_arn: str
@@ -2492,7 +2492,7 @@ repository_arn: str
 
 ---
 
-##### \`repository_name\`<sup>Required</sup> <a name=\\"\`repository_name\`<sup>Required</sup>\\" id=\\"RepositoryAttributes.property.repositoryName\\"></a>
+##### \`repository_name\`<sup>Required</sup> <a name=\\"repository_name\\" id=\\"RepositoryAttributes.property.repositoryName\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -2532,7 +2532,7 @@ aws_cdk.aws_ecr.RepositoryProps(
 
 ---
 
-##### \`image_scan_on_push\`<sup>Optional</sup> <a name=\\"\`image_scan_on_push\`<sup>Optional</sup>\\" id=\\"RepositoryProps.property.imageScanOnPush\\"></a>
+##### \`image_scan_on_push\`<sup>Optional</sup> <a name=\\"image_scan_on_push\\" id=\\"RepositoryProps.property.imageScanOnPush\\"></a>
 
 \`\`\`python
 image_scan_on_push: bool
@@ -2545,7 +2545,7 @@ Enable the scan on push when creating the repository.
 
 ---
 
-##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"\`image_tag_mutability\`<sup>Optional</sup>\\" id=\\"RepositoryProps.property.imageTagMutability\\"></a>
+##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"image_tag_mutability\\" id=\\"RepositoryProps.property.imageTagMutability\\"></a>
 
 \`\`\`python
 image_tag_mutability: TagMutability
@@ -2560,7 +2560,7 @@ If this parameter is omitted, the default setting of MUTABLE will be used which 
 
 ---
 
-##### \`lifecycle_registry_id\`<sup>Optional</sup> <a name=\\"\`lifecycle_registry_id\`<sup>Optional</sup>\\" id=\\"RepositoryProps.property.lifecycleRegistryId\\"></a>
+##### \`lifecycle_registry_id\`<sup>Optional</sup> <a name=\\"lifecycle_registry_id\\" id=\\"RepositoryProps.property.lifecycleRegistryId\\"></a>
 
 \`\`\`python
 lifecycle_registry_id: str
@@ -2577,7 +2577,7 @@ The AWS account ID associated with the registry that contains the repository.
 
 ---
 
-##### \`lifecycle_rules\`<sup>Optional</sup> <a name=\\"\`lifecycle_rules\`<sup>Optional</sup>\\" id=\\"RepositoryProps.property.lifecycleRules\\"></a>
+##### \`lifecycle_rules\`<sup>Optional</sup> <a name=\\"lifecycle_rules\\" id=\\"RepositoryProps.property.lifecycleRules\\"></a>
 
 \`\`\`python
 lifecycle_rules: typing.List[LifecycleRule]
@@ -2590,7 +2590,7 @@ Life cycle rules to apply to this registry.
 
 ---
 
-##### \`removal_policy\`<sup>Optional</sup> <a name=\\"\`removal_policy\`<sup>Optional</sup>\\" id=\\"RepositoryProps.property.removalPolicy\\"></a>
+##### \`removal_policy\`<sup>Optional</sup> <a name=\\"removal_policy\\" id=\\"RepositoryProps.property.removalPolicy\\"></a>
 
 \`\`\`python
 removal_policy: RemovalPolicy
@@ -2603,7 +2603,7 @@ Determine what happens to the repository when the resource/stack is deleted.
 
 ---
 
-##### \`repository_name\`<sup>Optional</sup> <a name=\\"\`repository_name\`<sup>Optional</sup>\\" id=\\"RepositoryProps.property.repositoryName\\"></a>
+##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"RepositoryProps.property.repositoryName\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -2635,7 +2635,7 @@ Authorization token to access private ECR repositories in the current environmen
 
 ---
 
-##### \`grant_read\` <a name=\\"\`grant_read\`\\" id=\\"AuthorizationToken.grantRead\\"></a>
+##### \`grant_read\` <a name=\\"grant_read\\" id=\\"AuthorizationToken.grantRead\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -2645,7 +2645,7 @@ aws_cdk.aws_ecr.AuthorizationToken.grant_read(
 )
 \`\`\`
 
-###### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"AuthorizationToken.parameter.grantee\\"></a>
+###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"AuthorizationToken.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/IGrantable?lang=python\\">IGrantable</a>
 
@@ -2670,7 +2670,7 @@ Authorization token to access the global public ECR Gallery via Docker CLI.
 
 ---
 
-##### \`grant_read\` <a name=\\"\`grant_read\`\\" id=\\"PublicGalleryAuthorizationToken.grantRead\\"></a>
+##### \`grant_read\` <a name=\\"grant_read\\" id=\\"PublicGalleryAuthorizationToken.grantRead\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -2680,7 +2680,7 @@ aws_cdk.aws_ecr.PublicGalleryAuthorizationToken.grant_read(
 )
 \`\`\`
 
-###### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"PublicGalleryAuthorizationToken.parameter.grantee\\"></a>
+###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"PublicGalleryAuthorizationToken.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/IGrantable?lang=python\\">IGrantable</a>
 
@@ -2715,7 +2715,7 @@ Represents an ECR repository.
 
 ---
 
-##### \`add_to_resource_policy\` <a name=\\"\`add_to_resource_policy\`\\" id=\\"IRepository.addToResourcePolicy\\"></a>
+##### \`add_to_resource_policy\` <a name=\\"add_to_resource_policy\\" id=\\"IRepository.addToResourcePolicy\\"></a>
 
 \`\`\`python
 def add_to_resource_policy(
@@ -2723,13 +2723,13 @@ def add_to_resource_policy(
 )
 \`\`\`
 
-###### \`statement\`<sup>Required</sup> <a name=\\"\`statement\`<sup>Required</sup>\\" id=\\"IRepository.parameter.statement\\"></a>
+###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"IRepository.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/PolicyStatement?lang=python\\">PolicyStatement</a>
 
 ---
 
-##### \`grant\` <a name=\\"\`grant\`\\" id=\\"IRepository.grant\\"></a>
+##### \`grant\` <a name=\\"grant\\" id=\\"IRepository.grant\\"></a>
 
 \`\`\`python
 def grant(
@@ -2738,19 +2738,19 @@ def grant(
 )
 \`\`\`
 
-###### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"IRepository.parameter.grantee\\"></a>
+###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/IGrantable?lang=python\\">IGrantable</a>
 
 ---
 
-###### \`actions\`<sup>Required</sup> <a name=\\"\`actions\`<sup>Required</sup>\\" id=\\"IRepository.parameter.actions\\"></a>
+###### \`actions\`<sup>Required</sup> <a name=\\"actions\\" id=\\"IRepository.parameter.actions\\"></a>
 
 - *Type:* str
 
 ---
 
-##### \`grant_pull\` <a name=\\"\`grant_pull\`\\" id=\\"IRepository.grantPull\\"></a>
+##### \`grant_pull\` <a name=\\"grant_pull\\" id=\\"IRepository.grantPull\\"></a>
 
 \`\`\`python
 def grant_pull(
@@ -2758,13 +2758,13 @@ def grant_pull(
 )
 \`\`\`
 
-###### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"IRepository.parameter.grantee\\"></a>
+###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/IGrantable?lang=python\\">IGrantable</a>
 
 ---
 
-##### \`grant_pull_push\` <a name=\\"\`grant_pull_push\`\\" id=\\"IRepository.grantPullPush\\"></a>
+##### \`grant_pull_push\` <a name=\\"grant_pull_push\\" id=\\"IRepository.grantPullPush\\"></a>
 
 \`\`\`python
 def grant_pull_push(
@@ -2772,13 +2772,13 @@ def grant_pull_push(
 )
 \`\`\`
 
-###### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"IRepository.parameter.grantee\\"></a>
+###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/IGrantable?lang=python\\">IGrantable</a>
 
 ---
 
-##### \`on_cloud_trail_event\` <a name=\\"\`on_cloud_trail_event\`\\" id=\\"IRepository.onCloudTrailEvent\\"></a>
+##### \`on_cloud_trail_event\` <a name=\\"on_cloud_trail_event\\" id=\\"IRepository.onCloudTrailEvent\\"></a>
 
 \`\`\`python
 def on_cloud_trail_event(
@@ -2790,7 +2790,7 @@ def on_cloud_trail_event(
 )
 \`\`\`
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"IRepository.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -2798,7 +2798,7 @@ The id of the rule.
 
 ---
 
-###### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.description\\"></a>
+###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"IRepository.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -2807,7 +2807,7 @@ A description of the rule's purpose.
 
 ---
 
-###### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.eventPattern\\"></a>
+###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"IRepository.parameter.eventPattern\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
@@ -2822,7 +2822,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-###### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.ruleName\\"></a>
+###### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"IRepository.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -2831,7 +2831,7 @@ A name for the rule.
 
 ---
 
-###### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.target\\"></a>
+###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"IRepository.parameter.target\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -2840,7 +2840,7 @@ The target to register for the event.
 
 ---
 
-##### \`on_cloud_trail_image_pushed\` <a name=\\"\`on_cloud_trail_image_pushed\`\\" id=\\"IRepository.onCloudTrailImagePushed\\"></a>
+##### \`on_cloud_trail_image_pushed\` <a name=\\"on_cloud_trail_image_pushed\\" id=\\"IRepository.onCloudTrailImagePushed\\"></a>
 
 \`\`\`python
 def on_cloud_trail_image_pushed(
@@ -2853,7 +2853,7 @@ def on_cloud_trail_image_pushed(
 )
 \`\`\`
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"IRepository.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -2861,7 +2861,7 @@ The id of the rule.
 
 ---
 
-###### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.description\\"></a>
+###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"IRepository.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -2870,7 +2870,7 @@ A description of the rule's purpose.
 
 ---
 
-###### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.eventPattern\\"></a>
+###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"IRepository.parameter.eventPattern\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
@@ -2885,7 +2885,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-###### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.ruleName\\"></a>
+###### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"IRepository.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -2894,7 +2894,7 @@ A name for the rule.
 
 ---
 
-###### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.target\\"></a>
+###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"IRepository.parameter.target\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -2903,7 +2903,7 @@ The target to register for the event.
 
 ---
 
-###### \`image_tag\`<sup>Optional</sup> <a name=\\"\`image_tag\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.imageTag\\"></a>
+###### \`image_tag\`<sup>Optional</sup> <a name=\\"image_tag\\" id=\\"IRepository.parameter.imageTag\\"></a>
 
 - *Type:* str
 - *Default:* Watch changes to all tags
@@ -2912,7 +2912,7 @@ Only watch changes to this image tag.
 
 ---
 
-##### \`on_event\` <a name=\\"\`on_event\`\\" id=\\"IRepository.onEvent\\"></a>
+##### \`on_event\` <a name=\\"on_event\\" id=\\"IRepository.onEvent\\"></a>
 
 \`\`\`python
 def on_event(
@@ -2924,13 +2924,13 @@ def on_event(
 )
 \`\`\`
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"IRepository.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.parameter.id\\"></a>
 
 - *Type:* str
 
 ---
 
-###### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.description\\"></a>
+###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"IRepository.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -2939,7 +2939,7 @@ A description of the rule's purpose.
 
 ---
 
-###### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.eventPattern\\"></a>
+###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"IRepository.parameter.eventPattern\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
@@ -2954,7 +2954,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-###### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.ruleName\\"></a>
+###### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"IRepository.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -2963,7 +2963,7 @@ A name for the rule.
 
 ---
 
-###### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.target\\"></a>
+###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"IRepository.parameter.target\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -2972,7 +2972,7 @@ The target to register for the event.
 
 ---
 
-##### \`on_image_scan_completed\` <a name=\\"\`on_image_scan_completed\`\\" id=\\"IRepository.onImageScanCompleted\\"></a>
+##### \`on_image_scan_completed\` <a name=\\"on_image_scan_completed\\" id=\\"IRepository.onImageScanCompleted\\"></a>
 
 \`\`\`python
 def on_image_scan_completed(
@@ -2985,7 +2985,7 @@ def on_image_scan_completed(
 )
 \`\`\`
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"IRepository.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -2993,7 +2993,7 @@ The id of the rule.
 
 ---
 
-###### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.description\\"></a>
+###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"IRepository.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -3002,7 +3002,7 @@ A description of the rule's purpose.
 
 ---
 
-###### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.eventPattern\\"></a>
+###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"IRepository.parameter.eventPattern\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
@@ -3017,7 +3017,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-###### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.ruleName\\"></a>
+###### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"IRepository.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -3026,7 +3026,7 @@ A name for the rule.
 
 ---
 
-###### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.target\\"></a>
+###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"IRepository.parameter.target\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -3035,7 +3035,7 @@ The target to register for the event.
 
 ---
 
-###### \`image_tags\`<sup>Optional</sup> <a name=\\"\`image_tags\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.imageTags\\"></a>
+###### \`image_tags\`<sup>Optional</sup> <a name=\\"image_tags\\" id=\\"IRepository.parameter.imageTags\\"></a>
 
 - *Type:* typing.List[str]
 - *Default:* Watch the changes to the repository with all image tags
@@ -3046,7 +3046,7 @@ Leave it undefined to watch the full repository.
 
 ---
 
-##### \`repository_uri_for_digest\` <a name=\\"\`repository_uri_for_digest\`\\" id=\\"IRepository.repositoryUriForDigest\\"></a>
+##### \`repository_uri_for_digest\` <a name=\\"repository_uri_for_digest\\" id=\\"IRepository.repositoryUriForDigest\\"></a>
 
 \`\`\`python
 def repository_uri_for_digest(
@@ -3054,7 +3054,7 @@ def repository_uri_for_digest(
 )
 \`\`\`
 
-###### \`digest\`<sup>Optional</sup> <a name=\\"\`digest\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.digest\\"></a>
+###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"IRepository.parameter.digest\\"></a>
 
 - *Type:* str
 
@@ -3062,7 +3062,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 
 ---
 
-##### \`repository_uri_for_tag\` <a name=\\"\`repository_uri_for_tag\`\\" id=\\"IRepository.repositoryUriForTag\\"></a>
+##### \`repository_uri_for_tag\` <a name=\\"repository_uri_for_tag\\" id=\\"IRepository.repositoryUriForTag\\"></a>
 
 \`\`\`python
 def repository_uri_for_tag(
@@ -3070,7 +3070,7 @@ def repository_uri_for_tag(
 )
 \`\`\`
 
-###### \`tag\`<sup>Optional</sup> <a name=\\"\`tag\`<sup>Optional</sup>\\" id=\\"IRepository.parameter.tag\\"></a>
+###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"IRepository.parameter.tag\\"></a>
 
 - *Type:* str
 
@@ -3091,7 +3091,7 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 
 ---
 
-##### \`node\`<sup>Required</sup> <a name=\\"\`node\`<sup>Required</sup>\\" id=\\"IRepository.property.node\\"></a>
+##### \`node\`<sup>Required</sup> <a name=\\"node\\" id=\\"IRepository.property.node\\"></a>
 
 \`\`\`python
 node: ConstructNode
@@ -3103,7 +3103,7 @@ The construct tree node for this construct.
 
 ---
 
-##### \`env\`<sup>Required</sup> <a name=\\"\`env\`<sup>Required</sup>\\" id=\\"IRepository.property.env\\"></a>
+##### \`env\`<sup>Required</sup> <a name=\\"env\\" id=\\"IRepository.property.env\\"></a>
 
 \`\`\`python
 env: ResourceEnvironment
@@ -3117,7 +3117,7 @@ For resources that are created and managed by the CDK (generally, those created 
 
 ---
 
-##### \`stack\`<sup>Required</sup> <a name=\\"\`stack\`<sup>Required</sup>\\" id=\\"IRepository.property.stack\\"></a>
+##### \`stack\`<sup>Required</sup> <a name=\\"stack\\" id=\\"IRepository.property.stack\\"></a>
 
 \`\`\`python
 stack: Stack
@@ -3129,7 +3129,7 @@ The stack in which this resource is defined.
 
 ---
 
-##### \`repository_arn\`<sup>Required</sup> <a name=\\"\`repository_arn\`<sup>Required</sup>\\" id=\\"IRepository.property.repositoryArn\\"></a>
+##### \`repository_arn\`<sup>Required</sup> <a name=\\"repository_arn\\" id=\\"IRepository.property.repositoryArn\\"></a>
 
 \`\`\`python
 repository_arn: str
@@ -3141,7 +3141,7 @@ The ARN of the repository.
 
 ---
 
-##### \`repository_name\`<sup>Required</sup> <a name=\\"\`repository_name\`<sup>Required</sup>\\" id=\\"IRepository.property.repositoryName\\"></a>
+##### \`repository_name\`<sup>Required</sup> <a name=\\"repository_name\\" id=\\"IRepository.property.repositoryName\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -3153,7 +3153,7 @@ The name of the repository.
 
 ---
 
-##### \`repository_uri\`<sup>Required</sup> <a name=\\"\`repository_uri\`<sup>Required</sup>\\" id=\\"IRepository.property.repositoryUri\\"></a>
+##### \`repository_uri\`<sup>Required</sup> <a name=\\"repository_uri\\" id=\\"IRepository.property.repositoryUri\\"></a>
 
 \`\`\`python
 repository_uri: str
@@ -3180,14 +3180,14 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 The tag mutability setting for your repository.
 
-#### \`MUTABLE\` <a name=\\"\`MUTABLE\`\\" id=\\"TagMutability.MUTABLE\\"></a>
+#### \`MUTABLE\` <a name=\\"MUTABLE\\" id=\\"TagMutability.MUTABLE\\"></a>
 
 allow image tags to be overwritten.
 
 ---
 
 
-#### \`IMMUTABLE\` <a name=\\"\`IMMUTABLE\`\\" id=\\"TagMutability.IMMUTABLE\\"></a>
+#### \`IMMUTABLE\` <a name=\\"IMMUTABLE\\" id=\\"TagMutability.IMMUTABLE\\"></a>
 
 all image tags within the repository will be immutable which will prevent them from being overwritten.
 
@@ -3206,21 +3206,21 @@ all image tags within the repository will be immutable which will prevent them f
 
 Select images based on tags.
 
-#### \`ANY\` <a name=\\"\`ANY\`\\" id=\\"TagStatus.ANY\\"></a>
+#### \`ANY\` <a name=\\"ANY\\" id=\\"TagStatus.ANY\\"></a>
 
 Rule applies to all images.
 
 ---
 
 
-#### \`TAGGED\` <a name=\\"\`TAGGED\`\\" id=\\"TagStatus.TAGGED\\"></a>
+#### \`TAGGED\` <a name=\\"TAGGED\\" id=\\"TagStatus.TAGGED\\"></a>
 
 Rule applies to tagged images.
 
 ---
 
 
-#### \`UNTAGGED\` <a name=\\"\`UNTAGGED\`\\" id=\\"TagStatus.UNTAGGED\\"></a>
+#### \`UNTAGGED\` <a name=\\"UNTAGGED\\" id=\\"TagStatus.UNTAGGED\\"></a>
 
 Rule applies to untagged images.
 
@@ -3367,7 +3367,7 @@ aws_cdk.aws_ecr.CfnPublicRepository(
 
 ---
 
-##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope\\"></a>
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.Construct\\">Construct</a>
 
@@ -3375,7 +3375,7 @@ scope in which this resource is defined.
 
 ---
 
-##### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.id\\"></a>
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -3383,7 +3383,7 @@ scoped id of the resource.
 
 ---
 
-##### \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"\`repository_catalog_data\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryCatalogData\\"></a>
+##### \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"repository_catalog_data\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryCatalogData\\"></a>
 
 - *Type:* typing.Any
 
@@ -3391,7 +3391,7 @@ scoped id of the resource.
 
 ---
 
-##### \`repository_name\`<sup>Optional</sup> <a name=\\"\`repository_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryName\\"></a>
+##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryName\\"></a>
 
 - *Type:* str
 
@@ -3399,7 +3399,7 @@ scoped id of the resource.
 
 ---
 
-##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"\`repository_policy_text\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryPolicyText\\"></a>
+##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"repository_policy_text\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryPolicyText\\"></a>
 
 - *Type:* typing.Any
 
@@ -3407,7 +3407,7 @@ scoped id of the resource.
 
 ---
 
-##### \`tags\`<sup>Optional</sup> <a name=\\"\`tags\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.tags\\"></a>
+##### \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.tags\\"></a>
 
 - *Type:* typing.List[<a href=\\"#custom-@aws-cdk/core.CfnTag\\">CfnTag</a>]
 
@@ -3423,7 +3423,7 @@ scoped id of the resource.
 
 ---
 
-##### \`inspect\` <a name=\\"\`inspect\`\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
+##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`python
 def inspect(
@@ -3431,7 +3431,7 @@ def inspect(
 )
 \`\`\`
 
-###### \`inspector\`<sup>Required</sup> <a name=\\"\`inspector\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\"></a>
+###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.TreeInspector\\">TreeInspector</a>
 
@@ -3452,7 +3452,7 @@ tree inspector to collect and process attributes.
 
 ---
 
-##### \`attr_arn\`<sup>Required</sup> <a name=\\"\`attr_arn\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.property.attrArn\\"></a>
+##### \`attr_arn\`<sup>Required</sup> <a name=\\"attr_arn\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.property.attrArn\\"></a>
 
 \`\`\`python
 attr_arn: str
@@ -3462,7 +3462,7 @@ attr_arn: str
 
 ---
 
-##### \`tags\`<sup>Required</sup> <a name=\\"\`tags\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.property.tags\\"></a>
+##### \`tags\`<sup>Required</sup> <a name=\\"tags\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.property.tags\\"></a>
 
 \`\`\`python
 tags: TagManager
@@ -3474,7 +3474,7 @@ tags: TagManager
 
 ---
 
-##### \`repository_catalog_data\`<sup>Required</sup> <a name=\\"\`repository_catalog_data\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.property.repositoryCatalogData\\"></a>
+##### \`repository_catalog_data\`<sup>Required</sup> <a name=\\"repository_catalog_data\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.property.repositoryCatalogData\\"></a>
 
 \`\`\`python
 repository_catalog_data: typing.Any
@@ -3486,7 +3486,7 @@ repository_catalog_data: typing.Any
 
 ---
 
-##### \`repository_policy_text\`<sup>Required</sup> <a name=\\"\`repository_policy_text\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.property.repositoryPolicyText\\"></a>
+##### \`repository_policy_text\`<sup>Required</sup> <a name=\\"repository_policy_text\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.property.repositoryPolicyText\\"></a>
 
 \`\`\`python
 repository_policy_text: typing.Any
@@ -3498,7 +3498,7 @@ repository_policy_text: typing.Any
 
 ---
 
-##### \`repository_name\`<sup>Optional</sup> <a name=\\"\`repository_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.property.repositoryName\\"></a>
+##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.property.repositoryName\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -3518,7 +3518,7 @@ repository_name: str
 
 ---
 
-##### \`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup> <a name=\\"\`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.property.CFN_RESOURCE_TYPE_NAME\\"></a>
+##### \`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup> <a name=\\"CFN_RESOURCE_TYPE_NAME\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.property.CFN_RESOURCE_TYPE_NAME\\"></a>
 
 \`\`\`python
 CFN_RESOURCE_TYPE_NAME: str
@@ -3556,7 +3556,7 @@ aws_cdk.aws_ecr.CfnRegistryPolicy(
 
 ---
 
-##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.parameter.scope\\"></a>
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.Construct\\">Construct</a>
 
@@ -3564,7 +3564,7 @@ scope in which this resource is defined.
 
 ---
 
-##### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.parameter.id\\"></a>
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -3572,7 +3572,7 @@ scoped id of the resource.
 
 ---
 
-##### \`policy_text\`<sup>Required</sup> <a name=\\"\`policy_text\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.parameter.policyText\\"></a>
+##### \`policy_text\`<sup>Required</sup> <a name=\\"policy_text\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.parameter.policyText\\"></a>
 
 - *Type:* typing.Any
 
@@ -3588,7 +3588,7 @@ scoped id of the resource.
 
 ---
 
-##### \`inspect\` <a name=\\"\`inspect\`\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect\\"></a>
+##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect\\"></a>
 
 \`\`\`python
 def inspect(
@@ -3596,7 +3596,7 @@ def inspect(
 )
 \`\`\`
 
-###### \`inspector\`<sup>Required</sup> <a name=\\"\`inspector\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.parameter.inspector\\"></a>
+###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.TreeInspector\\">TreeInspector</a>
 
@@ -3614,7 +3614,7 @@ tree inspector to collect and process attributes.
 
 ---
 
-##### \`attr_registry_id\`<sup>Required</sup> <a name=\\"\`attr_registry_id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.property.attrRegistryId\\"></a>
+##### \`attr_registry_id\`<sup>Required</sup> <a name=\\"attr_registry_id\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.property.attrRegistryId\\"></a>
 
 \`\`\`python
 attr_registry_id: str
@@ -3624,7 +3624,7 @@ attr_registry_id: str
 
 ---
 
-##### \`policy_text\`<sup>Required</sup> <a name=\\"\`policy_text\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.property.policyText\\"></a>
+##### \`policy_text\`<sup>Required</sup> <a name=\\"policy_text\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.property.policyText\\"></a>
 
 \`\`\`python
 policy_text: typing.Any
@@ -3644,7 +3644,7 @@ policy_text: typing.Any
 
 ---
 
-##### \`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup> <a name=\\"\`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.property.CFN_RESOURCE_TYPE_NAME\\"></a>
+##### \`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup> <a name=\\"CFN_RESOURCE_TYPE_NAME\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.property.CFN_RESOURCE_TYPE_NAME\\"></a>
 
 \`\`\`python
 CFN_RESOURCE_TYPE_NAME: str
@@ -3682,7 +3682,7 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration(
 
 ---
 
-##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.parameter.scope\\"></a>
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.Construct\\">Construct</a>
 
@@ -3690,7 +3690,7 @@ scope in which this resource is defined.
 
 ---
 
-##### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.parameter.id\\"></a>
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -3698,7 +3698,7 @@ scoped id of the resource.
 
 ---
 
-##### \`replication_configuration\`<sup>Required</sup> <a name=\\"\`replication_configuration\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.parameter.replicationConfiguration\\"></a>
+##### \`replication_configuration\`<sup>Required</sup> <a name=\\"replication_configuration\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.parameter.replicationConfiguration\\"></a>
 
 - *Type:* typing.Union[<a href=\\"#custom-@aws-cdk/core.IResolvable\\">IResolvable</a>, <a href=\\"#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty\\">ReplicationConfigurationProperty</a>]
 
@@ -3714,7 +3714,7 @@ scoped id of the resource.
 
 ---
 
-##### \`inspect\` <a name=\\"\`inspect\`\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect\\"></a>
+##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect\\"></a>
 
 \`\`\`python
 def inspect(
@@ -3722,7 +3722,7 @@ def inspect(
 )
 \`\`\`
 
-###### \`inspector\`<sup>Required</sup> <a name=\\"\`inspector\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.parameter.inspector\\"></a>
+###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.TreeInspector\\">TreeInspector</a>
 
@@ -3740,7 +3740,7 @@ tree inspector to collect and process attributes.
 
 ---
 
-##### \`attr_registry_id\`<sup>Required</sup> <a name=\\"\`attr_registry_id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.attrRegistryId\\"></a>
+##### \`attr_registry_id\`<sup>Required</sup> <a name=\\"attr_registry_id\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.attrRegistryId\\"></a>
 
 \`\`\`python
 attr_registry_id: str
@@ -3750,7 +3750,7 @@ attr_registry_id: str
 
 ---
 
-##### \`replication_configuration\`<sup>Required</sup> <a name=\\"\`replication_configuration\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.replicationConfiguration\\"></a>
+##### \`replication_configuration\`<sup>Required</sup> <a name=\\"replication_configuration\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.replicationConfiguration\\"></a>
 
 \`\`\`python
 replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
@@ -3770,7 +3770,7 @@ replication_configuration: typing.Union[IResolvable, ReplicationConfigurationPro
 
 ---
 
-##### \`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup> <a name=\\"\`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.CFN_RESOURCE_TYPE_NAME\\"></a>
+##### \`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup> <a name=\\"CFN_RESOURCE_TYPE_NAME\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.CFN_RESOURCE_TYPE_NAME\\"></a>
 
 \`\`\`python
 CFN_RESOURCE_TYPE_NAME: str
@@ -3820,7 +3820,7 @@ aws_cdk.aws_ecr.CfnRepository(
 
 ---
 
-##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.scope\\"></a>
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.Construct\\">Construct</a>
 
@@ -3828,7 +3828,7 @@ scope in which this resource is defined.
 
 ---
 
-##### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.id\\"></a>
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -3836,7 +3836,7 @@ scoped id of the resource.
 
 ---
 
-##### \`encryption_configuration\`<sup>Optional</sup> <a name=\\"\`encryption_configuration\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.encryptionConfiguration\\"></a>
+##### \`encryption_configuration\`<sup>Optional</sup> <a name=\\"encryption_configuration\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.encryptionConfiguration\\"></a>
 
 - *Type:* typing.Any
 
@@ -3844,7 +3844,7 @@ scoped id of the resource.
 
 ---
 
-##### \`image_scanning_configuration\`<sup>Optional</sup> <a name=\\"\`image_scanning_configuration\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.imageScanningConfiguration\\"></a>
+##### \`image_scanning_configuration\`<sup>Optional</sup> <a name=\\"image_scanning_configuration\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.imageScanningConfiguration\\"></a>
 
 - *Type:* typing.Any
 
@@ -3852,7 +3852,7 @@ scoped id of the resource.
 
 ---
 
-##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"\`image_tag_mutability\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.imageTagMutability\\"></a>
+##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"image_tag_mutability\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.imageTagMutability\\"></a>
 
 - *Type:* str
 
@@ -3860,7 +3860,7 @@ scoped id of the resource.
 
 ---
 
-##### \`lifecycle_policy\`<sup>Optional</sup> <a name=\\"\`lifecycle_policy\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.lifecyclePolicy\\"></a>
+##### \`lifecycle_policy\`<sup>Optional</sup> <a name=\\"lifecycle_policy\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.lifecyclePolicy\\"></a>
 
 - *Type:* typing.Union[<a href=\\"#custom-@aws-cdk/core.IResolvable\\">IResolvable</a>, <a href=\\"#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty\\">LifecyclePolicyProperty</a>]
 
@@ -3868,7 +3868,7 @@ scoped id of the resource.
 
 ---
 
-##### \`repository_name\`<sup>Optional</sup> <a name=\\"\`repository_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.repositoryName\\"></a>
+##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.repositoryName\\"></a>
 
 - *Type:* str
 
@@ -3876,7 +3876,7 @@ scoped id of the resource.
 
 ---
 
-##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"\`repository_policy_text\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.repositoryPolicyText\\"></a>
+##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"repository_policy_text\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.repositoryPolicyText\\"></a>
 
 - *Type:* typing.Any
 
@@ -3884,7 +3884,7 @@ scoped id of the resource.
 
 ---
 
-##### \`tags\`<sup>Optional</sup> <a name=\\"\`tags\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.tags\\"></a>
+##### \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.tags\\"></a>
 
 - *Type:* typing.List[<a href=\\"#custom-@aws-cdk/core.CfnTag\\">CfnTag</a>]
 
@@ -3900,7 +3900,7 @@ scoped id of the resource.
 
 ---
 
-##### \`inspect\` <a name=\\"\`inspect\`\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect\\"></a>
+##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect\\"></a>
 
 \`\`\`python
 def inspect(
@@ -3908,7 +3908,7 @@ def inspect(
 )
 \`\`\`
 
-###### \`inspector\`<sup>Required</sup> <a name=\\"\`inspector\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.inspector\\"></a>
+###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.TreeInspector\\">TreeInspector</a>
 
@@ -3933,7 +3933,7 @@ tree inspector to collect and process attributes.
 
 ---
 
-##### \`attr_arn\`<sup>Required</sup> <a name=\\"\`attr_arn\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.attrArn\\"></a>
+##### \`attr_arn\`<sup>Required</sup> <a name=\\"attr_arn\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.attrArn\\"></a>
 
 \`\`\`python
 attr_arn: str
@@ -3943,7 +3943,7 @@ attr_arn: str
 
 ---
 
-##### \`attr_repository_uri\`<sup>Required</sup> <a name=\\"\`attr_repository_uri\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.attrRepositoryUri\\"></a>
+##### \`attr_repository_uri\`<sup>Required</sup> <a name=\\"attr_repository_uri\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.attrRepositoryUri\\"></a>
 
 \`\`\`python
 attr_repository_uri: str
@@ -3953,7 +3953,7 @@ attr_repository_uri: str
 
 ---
 
-##### \`tags\`<sup>Required</sup> <a name=\\"\`tags\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.tags\\"></a>
+##### \`tags\`<sup>Required</sup> <a name=\\"tags\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.tags\\"></a>
 
 \`\`\`python
 tags: TagManager
@@ -3965,7 +3965,7 @@ tags: TagManager
 
 ---
 
-##### \`encryption_configuration\`<sup>Required</sup> <a name=\\"\`encryption_configuration\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.encryptionConfiguration\\"></a>
+##### \`encryption_configuration\`<sup>Required</sup> <a name=\\"encryption_configuration\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.encryptionConfiguration\\"></a>
 
 \`\`\`python
 encryption_configuration: typing.Any
@@ -3977,7 +3977,7 @@ encryption_configuration: typing.Any
 
 ---
 
-##### \`image_scanning_configuration\`<sup>Required</sup> <a name=\\"\`image_scanning_configuration\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.imageScanningConfiguration\\"></a>
+##### \`image_scanning_configuration\`<sup>Required</sup> <a name=\\"image_scanning_configuration\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.imageScanningConfiguration\\"></a>
 
 \`\`\`python
 image_scanning_configuration: typing.Any
@@ -3989,7 +3989,7 @@ image_scanning_configuration: typing.Any
 
 ---
 
-##### \`repository_policy_text\`<sup>Required</sup> <a name=\\"\`repository_policy_text\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.repositoryPolicyText\\"></a>
+##### \`repository_policy_text\`<sup>Required</sup> <a name=\\"repository_policy_text\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.repositoryPolicyText\\"></a>
 
 \`\`\`python
 repository_policy_text: typing.Any
@@ -4001,7 +4001,7 @@ repository_policy_text: typing.Any
 
 ---
 
-##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"\`image_tag_mutability\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.imageTagMutability\\"></a>
+##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"image_tag_mutability\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.imageTagMutability\\"></a>
 
 \`\`\`python
 image_tag_mutability: str
@@ -4013,7 +4013,7 @@ image_tag_mutability: str
 
 ---
 
-##### \`lifecycle_policy\`<sup>Optional</sup> <a name=\\"\`lifecycle_policy\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.lifecyclePolicy\\"></a>
+##### \`lifecycle_policy\`<sup>Optional</sup> <a name=\\"lifecycle_policy\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.lifecyclePolicy\\"></a>
 
 \`\`\`python
 lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty]
@@ -4025,7 +4025,7 @@ lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty]
 
 ---
 
-##### \`repository_name\`<sup>Optional</sup> <a name=\\"\`repository_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.repositoryName\\"></a>
+##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.repositoryName\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -4045,7 +4045,7 @@ repository_name: str
 
 ---
 
-##### \`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup> <a name=\\"\`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.CFN_RESOURCE_TYPE_NAME\\"></a>
+##### \`CFN_RESOURCE_TYPE_NAME\`<sup>Required</sup> <a name=\\"CFN_RESOURCE_TYPE_NAME\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.CFN_RESOURCE_TYPE_NAME\\"></a>
 
 \`\`\`python
 CFN_RESOURCE_TYPE_NAME: str
@@ -4091,19 +4091,19 @@ aws_cdk.aws_ecr.Repository(
 
 ---
 
-##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.scope\\"></a>
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"#custom-constructs.Construct\\">Construct</a>
 
 ---
 
-##### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.id\\"></a>
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.id\\"></a>
 
 - *Type:* str
 
 ---
 
-##### \`image_scan_on_push\`<sup>Optional</sup> <a name=\\"\`image_scan_on_push\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.imageScanOnPush\\"></a>
+##### \`image_scan_on_push\`<sup>Optional</sup> <a name=\\"image_scan_on_push\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.imageScanOnPush\\"></a>
 
 - *Type:* bool
 - *Default:* false
@@ -4112,7 +4112,7 @@ Enable the scan on push when creating the repository.
 
 ---
 
-##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"\`image_tag_mutability\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.imageTagMutability\\"></a>
+##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"image_tag_mutability\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.imageTagMutability\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-ecr.TagMutability\\">TagMutability</a>
 - *Default:* TagMutability.MUTABLE
@@ -4123,7 +4123,7 @@ If this parameter is omitted, the default setting of MUTABLE will be used which 
 
 ---
 
-##### \`lifecycle_registry_id\`<sup>Optional</sup> <a name=\\"\`lifecycle_registry_id\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.lifecycleRegistryId\\"></a>
+##### \`lifecycle_registry_id\`<sup>Optional</sup> <a name=\\"lifecycle_registry_id\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.lifecycleRegistryId\\"></a>
 
 - *Type:* str
 - *Default:* The default registry is assumed.
@@ -4136,7 +4136,7 @@ The AWS account ID associated with the registry that contains the repository.
 
 ---
 
-##### \`lifecycle_rules\`<sup>Optional</sup> <a name=\\"\`lifecycle_rules\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.lifecycleRules\\"></a>
+##### \`lifecycle_rules\`<sup>Optional</sup> <a name=\\"lifecycle_rules\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.lifecycleRules\\"></a>
 
 - *Type:* typing.List[<a href=\\"#custom-@aws-cdk/aws-ecr.LifecycleRule\\">LifecycleRule</a>]
 - *Default:* No life cycle rules
@@ -4145,7 +4145,7 @@ Life cycle rules to apply to this registry.
 
 ---
 
-##### \`removal_policy\`<sup>Optional</sup> <a name=\\"\`removal_policy\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.removalPolicy\\"></a>
+##### \`removal_policy\`<sup>Optional</sup> <a name=\\"removal_policy\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.removalPolicy\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.RemovalPolicy\\">RemovalPolicy</a>
 - *Default:* RemovalPolicy.Retain
@@ -4154,7 +4154,7 @@ Determine what happens to the repository when the resource/stack is deleted.
 
 ---
 
-##### \`repository_name\`<sup>Optional</sup> <a name=\\"\`repository_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.repositoryName\\"></a>
+##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.repositoryName\\"></a>
 
 - *Type:* str
 - *Default:* Automatically generated name.
@@ -4172,7 +4172,7 @@ Name for this repository.
 
 ---
 
-##### \`add_lifecycle_rule\` <a name=\\"\`add_lifecycle_rule\`\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule\\"></a>
+##### \`add_lifecycle_rule\` <a name=\\"add_lifecycle_rule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule\\"></a>
 
 \`\`\`python
 def add_lifecycle_rule(
@@ -4185,7 +4185,7 @@ def add_lifecycle_rule(
 )
 \`\`\`
 
-###### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.description\\"></a>
+###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -4194,7 +4194,7 @@ Describes the purpose of the rule.
 
 ---
 
-###### \`max_image_age\`<sup>Optional</sup> <a name=\\"\`max_image_age\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.maxImageAge\\"></a>
+###### \`max_image_age\`<sup>Optional</sup> <a name=\\"max_image_age\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.maxImageAge\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.Duration\\">Duration</a>
 
@@ -4204,7 +4204,7 @@ Specify exactly one of maxImageCount and maxImageAge.
 
 ---
 
-###### \`max_image_count\`<sup>Optional</sup> <a name=\\"\`max_image_count\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.maxImageCount\\"></a>
+###### \`max_image_count\`<sup>Optional</sup> <a name=\\"max_image_count\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.maxImageCount\\"></a>
 
 - *Type:* typing.Union[int, float]
 
@@ -4214,7 +4214,7 @@ Specify exactly one of maxImageCount and maxImageAge.
 
 ---
 
-###### \`rule_priority\`<sup>Optional</sup> <a name=\\"\`rule_priority\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.rulePriority\\"></a>
+###### \`rule_priority\`<sup>Optional</sup> <a name=\\"rule_priority\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.rulePriority\\"></a>
 
 - *Type:* typing.Union[int, float]
 - *Default:* Automatically assigned
@@ -4225,7 +4225,7 @@ All rules must have a unique priority, where lower numbers have higher precedenc
 
 ---
 
-###### \`tag_prefix_list\`<sup>Optional</sup> <a name=\\"\`tag_prefix_list\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.tagPrefixList\\"></a>
+###### \`tag_prefix_list\`<sup>Optional</sup> <a name=\\"tag_prefix_list\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.tagPrefixList\\"></a>
 
 - *Type:* typing.List[str]
 
@@ -4235,7 +4235,7 @@ Only if tagStatus == TagStatus.Tagged
 
 ---
 
-###### \`tag_status\`<sup>Optional</sup> <a name=\\"\`tag_status\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.tagStatus\\"></a>
+###### \`tag_status\`<sup>Optional</sup> <a name=\\"tag_status\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.tagStatus\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-ecr.TagStatus\\">TagStatus</a>
 - *Default:* TagStatus.Tagged if tagPrefixList is given, TagStatus.Any otherwise
@@ -4246,7 +4246,7 @@ Only one rule is allowed to select untagged images, and it must have the highest
 
 ---
 
-##### \`add_to_resource_policy\` <a name=\\"\`add_to_resource_policy\`\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy\\"></a>
+##### \`add_to_resource_policy\` <a name=\\"add_to_resource_policy\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy\\"></a>
 
 \`\`\`python
 def add_to_resource_policy(
@@ -4254,7 +4254,7 @@ def add_to_resource_policy(
 )
 \`\`\`
 
-###### \`statement\`<sup>Required</sup> <a name=\\"\`statement\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.statement\\"></a>
+###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>
 
@@ -4271,7 +4271,7 @@ def add_to_resource_policy(
 
 ---
 
-##### \`arn_for_local_repository\` <a name=\\"\`arn_for_local_repository\`\\" id=\\"@aws-cdk/aws-ecr.Repository.arnForLocalRepository\\"></a>
+##### \`arn_for_local_repository\` <a name=\\"arn_for_local_repository\\" id=\\"@aws-cdk/aws-ecr.Repository.arnForLocalRepository\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -4283,25 +4283,25 @@ aws_cdk.aws_ecr.Repository.arn_for_local_repository(
 )
 \`\`\`
 
-###### \`repository_name\`<sup>Required</sup> <a name=\\"\`repository_name\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.repositoryName\\"></a>
+###### \`repository_name\`<sup>Required</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.repositoryName\\"></a>
 
 - *Type:* str
 
 ---
 
-###### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.scope\\"></a>
+###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"#custom-constructs.IConstruct\\">IConstruct</a>
 
 ---
 
-###### \`account\`<sup>Optional</sup> <a name=\\"\`account\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.account\\"></a>
+###### \`account\`<sup>Optional</sup> <a name=\\"account\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.account\\"></a>
 
 - *Type:* str
 
 ---
 
-##### \`from_repository_arn\` <a name=\\"\`from_repository_arn\`\\" id=\\"@aws-cdk/aws-ecr.Repository.fromRepositoryArn\\"></a>
+##### \`from_repository_arn\` <a name=\\"from_repository_arn\\" id=\\"@aws-cdk/aws-ecr.Repository.fromRepositoryArn\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -4313,25 +4313,25 @@ aws_cdk.aws_ecr.Repository.from_repository_arn(
 )
 \`\`\`
 
-###### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.scope\\"></a>
+###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"#custom-constructs.Construct\\">Construct</a>
 
 ---
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.id\\"></a>
 
 - *Type:* str
 
 ---
 
-###### \`repository_arn\`<sup>Required</sup> <a name=\\"\`repository_arn\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.repositoryArn\\"></a>
+###### \`repository_arn\`<sup>Required</sup> <a name=\\"repository_arn\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.repositoryArn\\"></a>
 
 - *Type:* str
 
 ---
 
-##### \`from_repository_attributes\` <a name=\\"\`from_repository_attributes\`\\" id=\\"@aws-cdk/aws-ecr.Repository.fromRepositoryAttributes\\"></a>
+##### \`from_repository_attributes\` <a name=\\"from_repository_attributes\\" id=\\"@aws-cdk/aws-ecr.Repository.fromRepositoryAttributes\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -4344,31 +4344,31 @@ aws_cdk.aws_ecr.Repository.from_repository_attributes(
 )
 \`\`\`
 
-###### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.scope\\"></a>
+###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"#custom-constructs.Construct\\">Construct</a>
 
 ---
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.id\\"></a>
 
 - *Type:* str
 
 ---
 
-###### \`repository_arn\`<sup>Required</sup> <a name=\\"\`repository_arn\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.repositoryArn\\"></a>
+###### \`repository_arn\`<sup>Required</sup> <a name=\\"repository_arn\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.repositoryArn\\"></a>
 
 - *Type:* str
 
 ---
 
-###### \`repository_name\`<sup>Required</sup> <a name=\\"\`repository_name\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.repositoryName\\"></a>
+###### \`repository_name\`<sup>Required</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.repositoryName\\"></a>
 
 - *Type:* str
 
 ---
 
-##### \`from_repository_name\` <a name=\\"\`from_repository_name\`\\" id=\\"@aws-cdk/aws-ecr.Repository.fromRepositoryName\\"></a>
+##### \`from_repository_name\` <a name=\\"from_repository_name\\" id=\\"@aws-cdk/aws-ecr.Repository.fromRepositoryName\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -4380,19 +4380,19 @@ aws_cdk.aws_ecr.Repository.from_repository_name(
 )
 \`\`\`
 
-###### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.scope\\"></a>
+###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"#custom-constructs.Construct\\">Construct</a>
 
 ---
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.id\\"></a>
 
 - *Type:* str
 
 ---
 
-###### \`repository_name\`<sup>Required</sup> <a name=\\"\`repository_name\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.repositoryName\\"></a>
+###### \`repository_name\`<sup>Required</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.Repository.parameter.repositoryName\\"></a>
 
 - *Type:* str
 
@@ -4407,7 +4407,7 @@ aws_cdk.aws_ecr.Repository.from_repository_name(
 
 ---
 
-##### \`repository_arn\`<sup>Required</sup> <a name=\\"\`repository_arn\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.property.repositoryArn\\"></a>
+##### \`repository_arn\`<sup>Required</sup> <a name=\\"repository_arn\\" id=\\"@aws-cdk/aws-ecr.Repository.property.repositoryArn\\"></a>
 
 \`\`\`python
 repository_arn: str
@@ -4419,7 +4419,7 @@ The ARN of the repository.
 
 ---
 
-##### \`repository_name\`<sup>Required</sup> <a name=\\"\`repository_name\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.Repository.property.repositoryName\\"></a>
+##### \`repository_name\`<sup>Required</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.Repository.property.repositoryName\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -4466,19 +4466,19 @@ aws_cdk.aws_ecr.RepositoryBase(
 
 ---
 
-##### \`scope\`<sup>Required</sup> <a name=\\"\`scope\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.scope\\"></a>
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.scope\\"></a>
 
 - *Type:* <a href=\\"#custom-constructs.Construct\\">Construct</a>
 
 ---
 
-##### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.id\\"></a>
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.id\\"></a>
 
 - *Type:* str
 
 ---
 
-##### \`account\`<sup>Optional</sup> <a name=\\"\`account\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.account\\"></a>
+##### \`account\`<sup>Optional</sup> <a name=\\"account\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.account\\"></a>
 
 - *Type:* str
 - *Default:* the resource is in the same account as the stack it belongs to
@@ -4487,7 +4487,7 @@ The AWS account ID this resource belongs to.
 
 ---
 
-##### \`environment_from_arn\`<sup>Optional</sup> <a name=\\"\`environment_from_arn\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.environmentFromArn\\"></a>
+##### \`environment_from_arn\`<sup>Optional</sup> <a name=\\"environment_from_arn\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.environmentFromArn\\"></a>
 
 - *Type:* str
 - *Default:* take environment from \`account\`, \`region\` parameters, or use Stack environment.
@@ -4498,7 +4498,7 @@ The ARN is parsed and the account and region are taken from the ARN. This should
 
 ---
 
-##### \`physical_name\`<sup>Optional</sup> <a name=\\"\`physical_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.physicalName\\"></a>
+##### \`physical_name\`<sup>Optional</sup> <a name=\\"physical_name\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.physicalName\\"></a>
 
 - *Type:* str
 - *Default:* The physical name will be allocated by CloudFormation at deployment time
@@ -4509,7 +4509,7 @@ The value passed in by users to the physical name prop of the resource.
 
 ---
 
-##### \`region\`<sup>Optional</sup> <a name=\\"\`region\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.region\\"></a>
+##### \`region\`<sup>Optional</sup> <a name=\\"region\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.region\\"></a>
 
 - *Type:* str
 - *Default:* the resource is in the same region as the stack it belongs to
@@ -4535,7 +4535,7 @@ The AWS region this resource belongs to.
 
 ---
 
-##### \`add_to_resource_policy\` <a name=\\"\`add_to_resource_policy\`\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy\\"></a>
+##### \`add_to_resource_policy\` <a name=\\"add_to_resource_policy\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy\\"></a>
 
 \`\`\`python
 def add_to_resource_policy(
@@ -4543,13 +4543,13 @@ def add_to_resource_policy(
 )
 \`\`\`
 
-###### \`statement\`<sup>Required</sup> <a name=\\"\`statement\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.statement\\"></a>
+###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>
 
 ---
 
-##### \`grant\` <a name=\\"\`grant\`\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant\\"></a>
+##### \`grant\` <a name=\\"grant\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant\\"></a>
 
 \`\`\`python
 def grant(
@@ -4558,19 +4558,19 @@ def grant(
 )
 \`\`\`
 
-###### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.grantee\\"></a>
+###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
 
 ---
 
-###### \`actions\`<sup>Required</sup> <a name=\\"\`actions\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.actions\\"></a>
+###### \`actions\`<sup>Required</sup> <a name=\\"actions\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.actions\\"></a>
 
 - *Type:* str
 
 ---
 
-##### \`grant_pull\` <a name=\\"\`grant_pull\`\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull\\"></a>
+##### \`grant_pull\` <a name=\\"grant_pull\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull\\"></a>
 
 \`\`\`python
 def grant_pull(
@@ -4578,13 +4578,13 @@ def grant_pull(
 )
 \`\`\`
 
-###### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.grantee\\"></a>
+###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
 
 ---
 
-##### \`grant_pull_push\` <a name=\\"\`grant_pull_push\`\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush\\"></a>
+##### \`grant_pull_push\` <a name=\\"grant_pull_push\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush\\"></a>
 
 \`\`\`python
 def grant_pull_push(
@@ -4592,13 +4592,13 @@ def grant_pull_push(
 )
 \`\`\`
 
-###### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.grantee\\"></a>
+###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
 
 ---
 
-##### \`on_cloud_trail_event\` <a name=\\"\`on_cloud_trail_event\`\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent\\"></a>
+##### \`on_cloud_trail_event\` <a name=\\"on_cloud_trail_event\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent\\"></a>
 
 \`\`\`python
 def on_cloud_trail_event(
@@ -4610,7 +4610,7 @@ def on_cloud_trail_event(
 )
 \`\`\`
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -4618,7 +4618,7 @@ The id of the rule.
 
 ---
 
-###### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.description\\"></a>
+###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -4627,7 +4627,7 @@ A description of the rule's purpose.
 
 ---
 
-###### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.eventPattern\\"></a>
+###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.eventPattern\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-events.EventPattern\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
@@ -4642,7 +4642,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-###### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.ruleName\\"></a>
+###### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -4651,7 +4651,7 @@ A name for the rule.
 
 ---
 
-###### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.target\\"></a>
+###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.target\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-events.IRuleTarget\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -4660,7 +4660,7 @@ The target to register for the event.
 
 ---
 
-##### \`on_cloud_trail_image_pushed\` <a name=\\"\`on_cloud_trail_image_pushed\`\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed\\"></a>
+##### \`on_cloud_trail_image_pushed\` <a name=\\"on_cloud_trail_image_pushed\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed\\"></a>
 
 \`\`\`python
 def on_cloud_trail_image_pushed(
@@ -4673,7 +4673,7 @@ def on_cloud_trail_image_pushed(
 )
 \`\`\`
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -4681,7 +4681,7 @@ The id of the rule.
 
 ---
 
-###### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.description\\"></a>
+###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -4690,7 +4690,7 @@ A description of the rule's purpose.
 
 ---
 
-###### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.eventPattern\\"></a>
+###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.eventPattern\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-events.EventPattern\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
@@ -4705,7 +4705,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-###### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.ruleName\\"></a>
+###### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -4714,7 +4714,7 @@ A name for the rule.
 
 ---
 
-###### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.target\\"></a>
+###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.target\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-events.IRuleTarget\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -4723,7 +4723,7 @@ The target to register for the event.
 
 ---
 
-###### \`image_tag\`<sup>Optional</sup> <a name=\\"\`image_tag\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.imageTag\\"></a>
+###### \`image_tag\`<sup>Optional</sup> <a name=\\"image_tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.imageTag\\"></a>
 
 - *Type:* str
 - *Default:* Watch changes to all tags
@@ -4732,7 +4732,7 @@ Only watch changes to this image tag.
 
 ---
 
-##### \`on_event\` <a name=\\"\`on_event\`\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent\\"></a>
+##### \`on_event\` <a name=\\"on_event\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent\\"></a>
 
 \`\`\`python
 def on_event(
@@ -4744,13 +4744,13 @@ def on_event(
 )
 \`\`\`
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.id\\"></a>
 
 - *Type:* str
 
 ---
 
-###### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.description\\"></a>
+###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -4759,7 +4759,7 @@ A description of the rule's purpose.
 
 ---
 
-###### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.eventPattern\\"></a>
+###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.eventPattern\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-events.EventPattern\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
@@ -4774,7 +4774,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-###### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.ruleName\\"></a>
+###### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -4783,7 +4783,7 @@ A name for the rule.
 
 ---
 
-###### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.target\\"></a>
+###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.target\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-events.IRuleTarget\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -4792,7 +4792,7 @@ The target to register for the event.
 
 ---
 
-##### \`on_image_scan_completed\` <a name=\\"\`on_image_scan_completed\`\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted\\"></a>
+##### \`on_image_scan_completed\` <a name=\\"on_image_scan_completed\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted\\"></a>
 
 \`\`\`python
 def on_image_scan_completed(
@@ -4805,7 +4805,7 @@ def on_image_scan_completed(
 )
 \`\`\`
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -4813,7 +4813,7 @@ The id of the rule.
 
 ---
 
-###### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.description\\"></a>
+###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -4822,7 +4822,7 @@ A description of the rule's purpose.
 
 ---
 
-###### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.eventPattern\\"></a>
+###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.eventPattern\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-events.EventPattern\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
@@ -4837,7 +4837,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-###### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.ruleName\\"></a>
+###### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -4846,7 +4846,7 @@ A name for the rule.
 
 ---
 
-###### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.target\\"></a>
+###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.target\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-events.IRuleTarget\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -4855,7 +4855,7 @@ The target to register for the event.
 
 ---
 
-###### \`image_tags\`<sup>Optional</sup> <a name=\\"\`image_tags\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.imageTags\\"></a>
+###### \`image_tags\`<sup>Optional</sup> <a name=\\"image_tags\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.imageTags\\"></a>
 
 - *Type:* typing.List[str]
 - *Default:* Watch the changes to the repository with all image tags
@@ -4866,7 +4866,7 @@ Leave it undefined to watch the full repository.
 
 ---
 
-##### \`repository_uri_for_digest\` <a name=\\"\`repository_uri_for_digest\`\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest\\"></a>
+##### \`repository_uri_for_digest\` <a name=\\"repository_uri_for_digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest\\"></a>
 
 \`\`\`python
 def repository_uri_for_digest(
@@ -4874,7 +4874,7 @@ def repository_uri_for_digest(
 )
 \`\`\`
 
-###### \`digest\`<sup>Optional</sup> <a name=\\"\`digest\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.digest\\"></a>
+###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.digest\\"></a>
 
 - *Type:* str
 
@@ -4882,7 +4882,7 @@ Optional image digest.
 
 ---
 
-##### \`repository_uri_for_tag\` <a name=\\"\`repository_uri_for_tag\`\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag\\"></a>
+##### \`repository_uri_for_tag\` <a name=\\"repository_uri_for_tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag\\"></a>
 
 \`\`\`python
 def repository_uri_for_tag(
@@ -4890,7 +4890,7 @@ def repository_uri_for_tag(
 )
 \`\`\`
 
-###### \`tag\`<sup>Optional</sup> <a name=\\"\`tag\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.tag\\"></a>
+###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.parameter.tag\\"></a>
 
 - *Type:* str
 
@@ -4909,7 +4909,7 @@ Optional image tag.
 
 ---
 
-##### \`repository_arn\`<sup>Required</sup> <a name=\\"\`repository_arn\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.property.repositoryArn\\"></a>
+##### \`repository_arn\`<sup>Required</sup> <a name=\\"repository_arn\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.property.repositoryArn\\"></a>
 
 \`\`\`python
 repository_arn: str
@@ -4921,7 +4921,7 @@ The ARN of the repository.
 
 ---
 
-##### \`repository_name\`<sup>Required</sup> <a name=\\"\`repository_name\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.property.repositoryName\\"></a>
+##### \`repository_name\`<sup>Required</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.property.repositoryName\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -4933,7 +4933,7 @@ The name of the repository.
 
 ---
 
-##### \`repository_uri\`<sup>Required</sup> <a name=\\"\`repository_uri\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.property.repositoryUri\\"></a>
+##### \`repository_uri\`<sup>Required</sup> <a name=\\"repository_uri\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.property.repositoryUri\\"></a>
 
 \`\`\`python
 repository_uri: str
@@ -4978,7 +4978,7 @@ aws_cdk.aws_ecr.CfnPublicRepositoryProps(
 
 ---
 
-##### \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"\`repository_catalog_data\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+##### \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"repository_catalog_data\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
 \`\`\`python
 repository_catalog_data: typing.Any
@@ -4990,7 +4990,7 @@ repository_catalog_data: typing.Any
 
 ---
 
-##### \`repository_name\`<sup>Optional</sup> <a name=\\"\`repository_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
+##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -5002,7 +5002,7 @@ repository_name: str
 
 ---
 
-##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"\`repository_policy_text\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
+##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"repository_policy_text\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\"></a>
 
 \`\`\`python
 repository_policy_text: typing.Any
@@ -5014,7 +5014,7 @@ repository_policy_text: typing.Any
 
 ---
 
-##### \`tags\`<sup>Optional</sup> <a name=\\"\`tags\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\"></a>
+##### \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\"></a>
 
 \`\`\`python
 tags: typing.List[CfnTag]
@@ -5048,7 +5048,7 @@ aws_cdk.aws_ecr.CfnRegistryPolicyProps(
 
 ---
 
-##### \`policy_text\`<sup>Required</sup> <a name=\\"\`policy_text\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicyProps.property.policyText\\"></a>
+##### \`policy_text\`<sup>Required</sup> <a name=\\"policy_text\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicyProps.property.policyText\\"></a>
 
 \`\`\`python
 policy_text: typing.Any
@@ -5082,7 +5082,7 @@ aws_cdk.aws_ecr.CfnReplicationConfigurationProps(
 
 ---
 
-##### \`replication_configuration\`<sup>Required</sup> <a name=\\"\`replication_configuration\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfigurationProps.property.replicationConfiguration\\"></a>
+##### \`replication_configuration\`<sup>Required</sup> <a name=\\"replication_configuration\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfigurationProps.property.replicationConfiguration\\"></a>
 
 \`\`\`python
 replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
@@ -5128,7 +5128,7 @@ aws_cdk.aws_ecr.CfnRepositoryProps(
 
 ---
 
-##### \`encryption_configuration\`<sup>Optional</sup> <a name=\\"\`encryption_configuration\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.property.encryptionConfiguration\\"></a>
+##### \`encryption_configuration\`<sup>Optional</sup> <a name=\\"encryption_configuration\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.property.encryptionConfiguration\\"></a>
 
 \`\`\`python
 encryption_configuration: typing.Any
@@ -5140,7 +5140,7 @@ encryption_configuration: typing.Any
 
 ---
 
-##### \`image_scanning_configuration\`<sup>Optional</sup> <a name=\\"\`image_scanning_configuration\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.property.imageScanningConfiguration\\"></a>
+##### \`image_scanning_configuration\`<sup>Optional</sup> <a name=\\"image_scanning_configuration\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.property.imageScanningConfiguration\\"></a>
 
 \`\`\`python
 image_scanning_configuration: typing.Any
@@ -5152,7 +5152,7 @@ image_scanning_configuration: typing.Any
 
 ---
 
-##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"\`image_tag_mutability\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.property.imageTagMutability\\"></a>
+##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"image_tag_mutability\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.property.imageTagMutability\\"></a>
 
 \`\`\`python
 image_tag_mutability: str
@@ -5164,7 +5164,7 @@ image_tag_mutability: str
 
 ---
 
-##### \`lifecycle_policy\`<sup>Optional</sup> <a name=\\"\`lifecycle_policy\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.property.lifecyclePolicy\\"></a>
+##### \`lifecycle_policy\`<sup>Optional</sup> <a name=\\"lifecycle_policy\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.property.lifecyclePolicy\\"></a>
 
 \`\`\`python
 lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty]
@@ -5176,7 +5176,7 @@ lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty]
 
 ---
 
-##### \`repository_name\`<sup>Optional</sup> <a name=\\"\`repository_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.property.repositoryName\\"></a>
+##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.property.repositoryName\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -5188,7 +5188,7 @@ repository_name: str
 
 ---
 
-##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"\`repository_policy_text\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.property.repositoryPolicyText\\"></a>
+##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"repository_policy_text\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.property.repositoryPolicyText\\"></a>
 
 \`\`\`python
 repository_policy_text: typing.Any
@@ -5200,7 +5200,7 @@ repository_policy_text: typing.Any
 
 ---
 
-##### \`tags\`<sup>Optional</sup> <a name=\\"\`tags\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.property.tags\\"></a>
+##### \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.property.tags\\"></a>
 
 \`\`\`python
 tags: typing.List[CfnTag]
@@ -5234,7 +5234,7 @@ aws_cdk.aws_ecr.CfnRepository.LifecyclePolicyProperty(
 
 ---
 
-##### \`lifecycle_policy_text\`<sup>Optional</sup> <a name=\\"\`lifecycle_policy_text\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty.property.lifecyclePolicyText\\"></a>
+##### \`lifecycle_policy_text\`<sup>Optional</sup> <a name=\\"lifecycle_policy_text\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty.property.lifecyclePolicyText\\"></a>
 
 \`\`\`python
 lifecycle_policy_text: str
@@ -5246,7 +5246,7 @@ lifecycle_policy_text: str
 
 ---
 
-##### \`registry_id\`<sup>Optional</sup> <a name=\\"\`registry_id\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty.property.registryId\\"></a>
+##### \`registry_id\`<sup>Optional</sup> <a name=\\"registry_id\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty.property.registryId\\"></a>
 
 \`\`\`python
 registry_id: str
@@ -5290,7 +5290,7 @@ aws_cdk.aws_ecr.LifecycleRule(
 
 ---
 
-##### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.LifecycleRule.property.description\\"></a>
+##### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.LifecycleRule.property.description\\"></a>
 
 \`\`\`python
 description: str
@@ -5303,7 +5303,7 @@ Describes the purpose of the rule.
 
 ---
 
-##### \`max_image_age\`<sup>Optional</sup> <a name=\\"\`max_image_age\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.LifecycleRule.property.maxImageAge\\"></a>
+##### \`max_image_age\`<sup>Optional</sup> <a name=\\"max_image_age\\" id=\\"@aws-cdk/aws-ecr.LifecycleRule.property.maxImageAge\\"></a>
 
 \`\`\`python
 max_image_age: Duration
@@ -5317,7 +5317,7 @@ Specify exactly one of maxImageCount and maxImageAge.
 
 ---
 
-##### \`max_image_count\`<sup>Optional</sup> <a name=\\"\`max_image_count\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.LifecycleRule.property.maxImageCount\\"></a>
+##### \`max_image_count\`<sup>Optional</sup> <a name=\\"max_image_count\\" id=\\"@aws-cdk/aws-ecr.LifecycleRule.property.maxImageCount\\"></a>
 
 \`\`\`python
 max_image_count: typing.Union[int, float]
@@ -5331,7 +5331,7 @@ Specify exactly one of maxImageCount and maxImageAge.
 
 ---
 
-##### \`rule_priority\`<sup>Optional</sup> <a name=\\"\`rule_priority\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.LifecycleRule.property.rulePriority\\"></a>
+##### \`rule_priority\`<sup>Optional</sup> <a name=\\"rule_priority\\" id=\\"@aws-cdk/aws-ecr.LifecycleRule.property.rulePriority\\"></a>
 
 \`\`\`python
 rule_priority: typing.Union[int, float]
@@ -5346,7 +5346,7 @@ All rules must have a unique priority, where lower numbers have higher precedenc
 
 ---
 
-##### \`tag_prefix_list\`<sup>Optional</sup> <a name=\\"\`tag_prefix_list\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.LifecycleRule.property.tagPrefixList\\"></a>
+##### \`tag_prefix_list\`<sup>Optional</sup> <a name=\\"tag_prefix_list\\" id=\\"@aws-cdk/aws-ecr.LifecycleRule.property.tagPrefixList\\"></a>
 
 \`\`\`python
 tag_prefix_list: typing.List[str]
@@ -5360,7 +5360,7 @@ Only if tagStatus == TagStatus.Tagged
 
 ---
 
-##### \`tag_status\`<sup>Optional</sup> <a name=\\"\`tag_status\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.LifecycleRule.property.tagStatus\\"></a>
+##### \`tag_status\`<sup>Optional</sup> <a name=\\"tag_status\\" id=\\"@aws-cdk/aws-ecr.LifecycleRule.property.tagStatus\\"></a>
 
 \`\`\`python
 tag_status: TagStatus
@@ -5405,7 +5405,7 @@ aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions(
 
 ---
 
-##### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions.property.description\\"></a>
+##### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions.property.description\\"></a>
 
 \`\`\`python
 description: str
@@ -5418,7 +5418,7 @@ A description of the rule's purpose.
 
 ---
 
-##### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions.property.eventPattern\\"></a>
+##### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions.property.eventPattern\\"></a>
 
 \`\`\`python
 event_pattern: EventPattern
@@ -5437,7 +5437,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-##### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions.property.ruleName\\"></a>
+##### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions.property.ruleName\\"></a>
 
 \`\`\`python
 rule_name: str
@@ -5450,7 +5450,7 @@ A name for the rule.
 
 ---
 
-##### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions.property.target\\"></a>
+##### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions.property.target\\"></a>
 
 \`\`\`python
 target: IRuleTarget
@@ -5463,7 +5463,7 @@ The target to register for the event.
 
 ---
 
-##### \`image_tag\`<sup>Optional</sup> <a name=\\"\`image_tag\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions.property.imageTag\\"></a>
+##### \`image_tag\`<sup>Optional</sup> <a name=\\"image_tag\\" id=\\"@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions.property.imageTag\\"></a>
 
 \`\`\`python
 image_tag: str
@@ -5506,7 +5506,7 @@ aws_cdk.aws_ecr.OnImageScanCompletedOptions(
 
 ---
 
-##### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.OnImageScanCompletedOptions.property.description\\"></a>
+##### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.OnImageScanCompletedOptions.property.description\\"></a>
 
 \`\`\`python
 description: str
@@ -5519,7 +5519,7 @@ A description of the rule's purpose.
 
 ---
 
-##### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.OnImageScanCompletedOptions.property.eventPattern\\"></a>
+##### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"@aws-cdk/aws-ecr.OnImageScanCompletedOptions.property.eventPattern\\"></a>
 
 \`\`\`python
 event_pattern: EventPattern
@@ -5538,7 +5538,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-##### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.OnImageScanCompletedOptions.property.ruleName\\"></a>
+##### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"@aws-cdk/aws-ecr.OnImageScanCompletedOptions.property.ruleName\\"></a>
 
 \`\`\`python
 rule_name: str
@@ -5551,7 +5551,7 @@ A name for the rule.
 
 ---
 
-##### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.OnImageScanCompletedOptions.property.target\\"></a>
+##### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"@aws-cdk/aws-ecr.OnImageScanCompletedOptions.property.target\\"></a>
 
 \`\`\`python
 target: IRuleTarget
@@ -5564,7 +5564,7 @@ The target to register for the event.
 
 ---
 
-##### \`image_tags\`<sup>Optional</sup> <a name=\\"\`image_tags\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.OnImageScanCompletedOptions.property.imageTags\\"></a>
+##### \`image_tags\`<sup>Optional</sup> <a name=\\"image_tags\\" id=\\"@aws-cdk/aws-ecr.OnImageScanCompletedOptions.property.imageTags\\"></a>
 
 \`\`\`python
 image_tags: typing.List[str]
@@ -5599,7 +5599,7 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty(
 
 ---
 
-##### \`rules\`<sup>Required</sup> <a name=\\"\`rules\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules\\"></a>
+##### \`rules\`<sup>Required</sup> <a name=\\"rules\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules\\"></a>
 
 \`\`\`python
 rules: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationRuleProperty]]]
@@ -5633,7 +5633,7 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationDestinationProperty(
 
 ---
 
-##### \`region\`<sup>Required</sup> <a name=\\"\`region\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty.property.region\\"></a>
+##### \`region\`<sup>Required</sup> <a name=\\"region\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty.property.region\\"></a>
 
 \`\`\`python
 region: str
@@ -5645,7 +5645,7 @@ region: str
 
 ---
 
-##### \`registry_id\`<sup>Required</sup> <a name=\\"\`registry_id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty.property.registryId\\"></a>
+##### \`registry_id\`<sup>Required</sup> <a name=\\"registry_id\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty.property.registryId\\"></a>
 
 \`\`\`python
 registry_id: str
@@ -5677,7 +5677,7 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty(
 
 ---
 
-##### \`destinations\`<sup>Required</sup> <a name=\\"\`destinations\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations\\"></a>
+##### \`destinations\`<sup>Required</sup> <a name=\\"destinations\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations\\"></a>
 
 \`\`\`python
 destinations: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationDestinationProperty]]]
@@ -5711,7 +5711,7 @@ aws_cdk.aws_ecr.RepositoryAttributes(
 
 ---
 
-##### \`repository_arn\`<sup>Required</sup> <a name=\\"\`repository_arn\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryAttributes.property.repositoryArn\\"></a>
+##### \`repository_arn\`<sup>Required</sup> <a name=\\"repository_arn\\" id=\\"@aws-cdk/aws-ecr.RepositoryAttributes.property.repositoryArn\\"></a>
 
 \`\`\`python
 repository_arn: str
@@ -5721,7 +5721,7 @@ repository_arn: str
 
 ---
 
-##### \`repository_name\`<sup>Required</sup> <a name=\\"\`repository_name\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryAttributes.property.repositoryName\\"></a>
+##### \`repository_name\`<sup>Required</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.RepositoryAttributes.property.repositoryName\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -5761,7 +5761,7 @@ aws_cdk.aws_ecr.RepositoryProps(
 
 ---
 
-##### \`image_scan_on_push\`<sup>Optional</sup> <a name=\\"\`image_scan_on_push\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryProps.property.imageScanOnPush\\"></a>
+##### \`image_scan_on_push\`<sup>Optional</sup> <a name=\\"image_scan_on_push\\" id=\\"@aws-cdk/aws-ecr.RepositoryProps.property.imageScanOnPush\\"></a>
 
 \`\`\`python
 image_scan_on_push: bool
@@ -5774,7 +5774,7 @@ Enable the scan on push when creating the repository.
 
 ---
 
-##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"\`image_tag_mutability\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryProps.property.imageTagMutability\\"></a>
+##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"image_tag_mutability\\" id=\\"@aws-cdk/aws-ecr.RepositoryProps.property.imageTagMutability\\"></a>
 
 \`\`\`python
 image_tag_mutability: TagMutability
@@ -5789,7 +5789,7 @@ If this parameter is omitted, the default setting of MUTABLE will be used which 
 
 ---
 
-##### \`lifecycle_registry_id\`<sup>Optional</sup> <a name=\\"\`lifecycle_registry_id\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryProps.property.lifecycleRegistryId\\"></a>
+##### \`lifecycle_registry_id\`<sup>Optional</sup> <a name=\\"lifecycle_registry_id\\" id=\\"@aws-cdk/aws-ecr.RepositoryProps.property.lifecycleRegistryId\\"></a>
 
 \`\`\`python
 lifecycle_registry_id: str
@@ -5806,7 +5806,7 @@ The AWS account ID associated with the registry that contains the repository.
 
 ---
 
-##### \`lifecycle_rules\`<sup>Optional</sup> <a name=\\"\`lifecycle_rules\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryProps.property.lifecycleRules\\"></a>
+##### \`lifecycle_rules\`<sup>Optional</sup> <a name=\\"lifecycle_rules\\" id=\\"@aws-cdk/aws-ecr.RepositoryProps.property.lifecycleRules\\"></a>
 
 \`\`\`python
 lifecycle_rules: typing.List[LifecycleRule]
@@ -5819,7 +5819,7 @@ Life cycle rules to apply to this registry.
 
 ---
 
-##### \`removal_policy\`<sup>Optional</sup> <a name=\\"\`removal_policy\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryProps.property.removalPolicy\\"></a>
+##### \`removal_policy\`<sup>Optional</sup> <a name=\\"removal_policy\\" id=\\"@aws-cdk/aws-ecr.RepositoryProps.property.removalPolicy\\"></a>
 
 \`\`\`python
 removal_policy: RemovalPolicy
@@ -5832,7 +5832,7 @@ Determine what happens to the repository when the resource/stack is deleted.
 
 ---
 
-##### \`repository_name\`<sup>Optional</sup> <a name=\\"\`repository_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.RepositoryProps.property.repositoryName\\"></a>
+##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.RepositoryProps.property.repositoryName\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -5864,7 +5864,7 @@ Authorization token to access private ECR repositories in the current environmen
 
 ---
 
-##### \`grant_read\` <a name=\\"\`grant_read\`\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead\\"></a>
+##### \`grant_read\` <a name=\\"grant_read\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -5874,7 +5874,7 @@ aws_cdk.aws_ecr.AuthorizationToken.grant_read(
 )
 \`\`\`
 
-###### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
+###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
 
@@ -5899,7 +5899,7 @@ Authorization token to access the global public ECR Gallery via Docker CLI.
 
 ---
 
-##### \`grant_read\` <a name=\\"\`grant_read\`\\" id=\\"@aws-cdk/aws-ecr.PublicGalleryAuthorizationToken.grantRead\\"></a>
+##### \`grant_read\` <a name=\\"grant_read\\" id=\\"@aws-cdk/aws-ecr.PublicGalleryAuthorizationToken.grantRead\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -5909,7 +5909,7 @@ aws_cdk.aws_ecr.PublicGalleryAuthorizationToken.grant_read(
 )
 \`\`\`
 
-###### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.PublicGalleryAuthorizationToken.parameter.grantee\\"></a>
+###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.PublicGalleryAuthorizationToken.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
 
@@ -5944,7 +5944,7 @@ Represents an ECR repository.
 
 ---
 
-##### \`add_to_resource_policy\` <a name=\\"\`add_to_resource_policy\`\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy\\"></a>
+##### \`add_to_resource_policy\` <a name=\\"add_to_resource_policy\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy\\"></a>
 
 \`\`\`python
 def add_to_resource_policy(
@@ -5952,13 +5952,13 @@ def add_to_resource_policy(
 )
 \`\`\`
 
-###### \`statement\`<sup>Required</sup> <a name=\\"\`statement\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.statement\\"></a>
+###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>
 
 ---
 
-##### \`grant\` <a name=\\"\`grant\`\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant\\"></a>
+##### \`grant\` <a name=\\"grant\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant\\"></a>
 
 \`\`\`python
 def grant(
@@ -5967,19 +5967,19 @@ def grant(
 )
 \`\`\`
 
-###### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
+###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
 
 ---
 
-###### \`actions\`<sup>Required</sup> <a name=\\"\`actions\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.actions\\"></a>
+###### \`actions\`<sup>Required</sup> <a name=\\"actions\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.actions\\"></a>
 
 - *Type:* str
 
 ---
 
-##### \`grant_pull\` <a name=\\"\`grant_pull\`\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull\\"></a>
+##### \`grant_pull\` <a name=\\"grant_pull\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull\\"></a>
 
 \`\`\`python
 def grant_pull(
@@ -5987,13 +5987,13 @@ def grant_pull(
 )
 \`\`\`
 
-###### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
+###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
 
 ---
 
-##### \`grant_pull_push\` <a name=\\"\`grant_pull_push\`\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush\\"></a>
+##### \`grant_pull_push\` <a name=\\"grant_pull_push\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush\\"></a>
 
 \`\`\`python
 def grant_pull_push(
@@ -6001,13 +6001,13 @@ def grant_pull_push(
 )
 \`\`\`
 
-###### \`grantee\`<sup>Required</sup> <a name=\\"\`grantee\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
+###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
 
 ---
 
-##### \`on_cloud_trail_event\` <a name=\\"\`on_cloud_trail_event\`\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent\\"></a>
+##### \`on_cloud_trail_event\` <a name=\\"on_cloud_trail_event\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent\\"></a>
 
 \`\`\`python
 def on_cloud_trail_event(
@@ -6019,7 +6019,7 @@ def on_cloud_trail_event(
 )
 \`\`\`
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -6027,7 +6027,7 @@ The id of the rule.
 
 ---
 
-###### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.description\\"></a>
+###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -6036,7 +6036,7 @@ A description of the rule's purpose.
 
 ---
 
-###### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.eventPattern\\"></a>
+###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.eventPattern\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-events.EventPattern\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
@@ -6051,7 +6051,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-###### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.ruleName\\"></a>
+###### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -6060,7 +6060,7 @@ A name for the rule.
 
 ---
 
-###### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.target\\"></a>
+###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.target\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-events.IRuleTarget\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -6069,7 +6069,7 @@ The target to register for the event.
 
 ---
 
-##### \`on_cloud_trail_image_pushed\` <a name=\\"\`on_cloud_trail_image_pushed\`\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed\\"></a>
+##### \`on_cloud_trail_image_pushed\` <a name=\\"on_cloud_trail_image_pushed\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed\\"></a>
 
 \`\`\`python
 def on_cloud_trail_image_pushed(
@@ -6082,7 +6082,7 @@ def on_cloud_trail_image_pushed(
 )
 \`\`\`
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -6090,7 +6090,7 @@ The id of the rule.
 
 ---
 
-###### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.description\\"></a>
+###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -6099,7 +6099,7 @@ A description of the rule's purpose.
 
 ---
 
-###### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.eventPattern\\"></a>
+###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.eventPattern\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-events.EventPattern\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
@@ -6114,7 +6114,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-###### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.ruleName\\"></a>
+###### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -6123,7 +6123,7 @@ A name for the rule.
 
 ---
 
-###### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.target\\"></a>
+###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.target\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-events.IRuleTarget\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -6132,7 +6132,7 @@ The target to register for the event.
 
 ---
 
-###### \`image_tag\`<sup>Optional</sup> <a name=\\"\`image_tag\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.imageTag\\"></a>
+###### \`image_tag\`<sup>Optional</sup> <a name=\\"image_tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.imageTag\\"></a>
 
 - *Type:* str
 - *Default:* Watch changes to all tags
@@ -6141,7 +6141,7 @@ Only watch changes to this image tag.
 
 ---
 
-##### \`on_event\` <a name=\\"\`on_event\`\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent\\"></a>
+##### \`on_event\` <a name=\\"on_event\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent\\"></a>
 
 \`\`\`python
 def on_event(
@@ -6153,13 +6153,13 @@ def on_event(
 )
 \`\`\`
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
 
 - *Type:* str
 
 ---
 
-###### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.description\\"></a>
+###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -6168,7 +6168,7 @@ A description of the rule's purpose.
 
 ---
 
-###### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.eventPattern\\"></a>
+###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.eventPattern\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-events.EventPattern\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
@@ -6183,7 +6183,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-###### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.ruleName\\"></a>
+###### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -6192,7 +6192,7 @@ A name for the rule.
 
 ---
 
-###### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.target\\"></a>
+###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.target\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-events.IRuleTarget\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -6201,7 +6201,7 @@ The target to register for the event.
 
 ---
 
-##### \`on_image_scan_completed\` <a name=\\"\`on_image_scan_completed\`\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted\\"></a>
+##### \`on_image_scan_completed\` <a name=\\"on_image_scan_completed\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted\\"></a>
 
 \`\`\`python
 def on_image_scan_completed(
@@ -6214,7 +6214,7 @@ def on_image_scan_completed(
 )
 \`\`\`
 
-###### \`id\`<sup>Required</sup> <a name=\\"\`id\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -6222,7 +6222,7 @@ The id of the rule.
 
 ---
 
-###### \`description\`<sup>Optional</sup> <a name=\\"\`description\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.description\\"></a>
+###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -6231,7 +6231,7 @@ A description of the rule's purpose.
 
 ---
 
-###### \`event_pattern\`<sup>Optional</sup> <a name=\\"\`event_pattern\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.eventPattern\\"></a>
+###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.eventPattern\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-events.EventPattern\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
@@ -6246,7 +6246,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-###### \`rule_name\`<sup>Optional</sup> <a name=\\"\`rule_name\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.ruleName\\"></a>
+###### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -6255,7 +6255,7 @@ A name for the rule.
 
 ---
 
-###### \`target\`<sup>Optional</sup> <a name=\\"\`target\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.target\\"></a>
+###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.target\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-events.IRuleTarget\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -6264,7 +6264,7 @@ The target to register for the event.
 
 ---
 
-###### \`image_tags\`<sup>Optional</sup> <a name=\\"\`image_tags\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.imageTags\\"></a>
+###### \`image_tags\`<sup>Optional</sup> <a name=\\"image_tags\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.imageTags\\"></a>
 
 - *Type:* typing.List[str]
 - *Default:* Watch the changes to the repository with all image tags
@@ -6275,7 +6275,7 @@ Leave it undefined to watch the full repository.
 
 ---
 
-##### \`repository_uri_for_digest\` <a name=\\"\`repository_uri_for_digest\`\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest\\"></a>
+##### \`repository_uri_for_digest\` <a name=\\"repository_uri_for_digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest\\"></a>
 
 \`\`\`python
 def repository_uri_for_digest(
@@ -6283,7 +6283,7 @@ def repository_uri_for_digest(
 )
 \`\`\`
 
-###### \`digest\`<sup>Optional</sup> <a name=\\"\`digest\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.digest\\"></a>
+###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.digest\\"></a>
 
 - *Type:* str
 
@@ -6291,7 +6291,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 
 ---
 
-##### \`repository_uri_for_tag\` <a name=\\"\`repository_uri_for_tag\`\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag\\"></a>
+##### \`repository_uri_for_tag\` <a name=\\"repository_uri_for_tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag\\"></a>
 
 \`\`\`python
 def repository_uri_for_tag(
@@ -6299,7 +6299,7 @@ def repository_uri_for_tag(
 )
 \`\`\`
 
-###### \`tag\`<sup>Optional</sup> <a name=\\"\`tag\`<sup>Optional</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.tag\\"></a>
+###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.tag\\"></a>
 
 - *Type:* str
 
@@ -6320,7 +6320,7 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 
 ---
 
-##### \`node\`<sup>Required</sup> <a name=\\"\`node\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.property.node\\"></a>
+##### \`node\`<sup>Required</sup> <a name=\\"node\\" id=\\"@aws-cdk/aws-ecr.IRepository.property.node\\"></a>
 
 \`\`\`python
 node: ConstructNode
@@ -6332,7 +6332,7 @@ The construct tree node for this construct.
 
 ---
 
-##### \`env\`<sup>Required</sup> <a name=\\"\`env\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.property.env\\"></a>
+##### \`env\`<sup>Required</sup> <a name=\\"env\\" id=\\"@aws-cdk/aws-ecr.IRepository.property.env\\"></a>
 
 \`\`\`python
 env: ResourceEnvironment
@@ -6346,7 +6346,7 @@ For resources that are created and managed by the CDK (generally, those created 
 
 ---
 
-##### \`stack\`<sup>Required</sup> <a name=\\"\`stack\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.property.stack\\"></a>
+##### \`stack\`<sup>Required</sup> <a name=\\"stack\\" id=\\"@aws-cdk/aws-ecr.IRepository.property.stack\\"></a>
 
 \`\`\`python
 stack: Stack
@@ -6358,7 +6358,7 @@ The stack in which this resource is defined.
 
 ---
 
-##### \`repository_arn\`<sup>Required</sup> <a name=\\"\`repository_arn\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.property.repositoryArn\\"></a>
+##### \`repository_arn\`<sup>Required</sup> <a name=\\"repository_arn\\" id=\\"@aws-cdk/aws-ecr.IRepository.property.repositoryArn\\"></a>
 
 \`\`\`python
 repository_arn: str
@@ -6370,7 +6370,7 @@ The ARN of the repository.
 
 ---
 
-##### \`repository_name\`<sup>Required</sup> <a name=\\"\`repository_name\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.property.repositoryName\\"></a>
+##### \`repository_name\`<sup>Required</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.IRepository.property.repositoryName\\"></a>
 
 \`\`\`python
 repository_name: str
@@ -6382,7 +6382,7 @@ The name of the repository.
 
 ---
 
-##### \`repository_uri\`<sup>Required</sup> <a name=\\"\`repository_uri\`<sup>Required</sup>\\" id=\\"@aws-cdk/aws-ecr.IRepository.property.repositoryUri\\"></a>
+##### \`repository_uri\`<sup>Required</sup> <a name=\\"repository_uri\\" id=\\"@aws-cdk/aws-ecr.IRepository.property.repositoryUri\\"></a>
 
 \`\`\`python
 repository_uri: str
@@ -6409,14 +6409,14 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 The tag mutability setting for your repository.
 
-#### \`MUTABLE\` <a name=\\"\`MUTABLE\`\\" id=\\"@aws-cdk/aws-ecr.TagMutability.MUTABLE\\"></a>
+#### \`MUTABLE\` <a name=\\"MUTABLE\\" id=\\"@aws-cdk/aws-ecr.TagMutability.MUTABLE\\"></a>
 
 allow image tags to be overwritten.
 
 ---
 
 
-#### \`IMMUTABLE\` <a name=\\"\`IMMUTABLE\`\\" id=\\"@aws-cdk/aws-ecr.TagMutability.IMMUTABLE\\"></a>
+#### \`IMMUTABLE\` <a name=\\"IMMUTABLE\\" id=\\"@aws-cdk/aws-ecr.TagMutability.IMMUTABLE\\"></a>
 
 all image tags within the repository will be immutable which will prevent them from being overwritten.
 
@@ -6435,21 +6435,21 @@ all image tags within the repository will be immutable which will prevent them f
 
 Select images based on tags.
 
-#### \`ANY\` <a name=\\"\`ANY\`\\" id=\\"@aws-cdk/aws-ecr.TagStatus.ANY\\"></a>
+#### \`ANY\` <a name=\\"ANY\\" id=\\"@aws-cdk/aws-ecr.TagStatus.ANY\\"></a>
 
 Rule applies to all images.
 
 ---
 
 
-#### \`TAGGED\` <a name=\\"\`TAGGED\`\\" id=\\"@aws-cdk/aws-ecr.TagStatus.TAGGED\\"></a>
+#### \`TAGGED\` <a name=\\"TAGGED\\" id=\\"@aws-cdk/aws-ecr.TagStatus.TAGGED\\"></a>
 
 Rule applies to tagged images.
 
 ---
 
 
-#### \`UNTAGGED\` <a name=\\"\`UNTAGGED\`\\" id=\\"@aws-cdk/aws-ecr.TagStatus.UNTAGGED\\"></a>
+#### \`UNTAGGED\` <a name=\\"UNTAGGED\\" id=\\"@aws-cdk/aws-ecr.TagStatus.UNTAGGED\\"></a>
 
 Rule applies to untagged images.
 

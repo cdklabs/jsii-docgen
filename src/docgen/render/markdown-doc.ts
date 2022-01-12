@@ -1,16 +1,5 @@
 import { DocsSchema } from '../schema';
 
-const sanitize = (input: string): string => {
-  return input
-    .toLowerCase()
-    .replace(/[^a-zA-Z0-9 ]/g, '')
-    .replace(/ /g, '-');
-};
-
-export const anchorForId = (id: string): string => {
-  return sanitize(id);
-};
-
 /**
  * Options for defining a markdown header.
  */
@@ -186,10 +175,10 @@ export class MarkdownDocument {
       const headerSpan = !!process.env.HEADER_SPAN;
       if (headerSpan) {
         content.push(
-          `${heading} <span data-heading-title="${this.header}" data-heading-id="${this.id}"></span>`,
+          `${heading} <span data-heading-title="${this.options.header?.title}" data-heading-id="${this.id}"></span>`,
         );
       } else {
-        content.push(`${heading} <a name="${this.header}" id="${this.id}"></a>`);
+        content.push(`${heading} <a name="${this.options.header?.title}" id="${this.id}"></a>`);
       }
       content.push('');
     }

@@ -194,5 +194,5 @@ test('throws corrupt assembly', async () => {
 test('performance on large modules', async () => {
   const docs = await Documentation.forPackage('@cdktf/provider-aws@4.0.1');
   // the assertion here is simply finishing the rendering in time.
-  await docs.render({ language: Language.PYTHON, submodule: 'wafv2' });
+  await docs.toMarkdown({ language: Language.PYTHON, submodule: 'wafv2' });
 });
