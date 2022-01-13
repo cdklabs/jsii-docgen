@@ -1,7 +1,6 @@
 import * as reflect from 'jsii-reflect';
-import { EnumMemberSchema } from '../schema';
+import { EnumMemberSchema, extractDocs } from '../schema';
 import { Transpile, TranspiledEnumMember } from '../transpile/transpile';
-import { extractDocs } from '../util';
 
 export class EnumMember {
   private readonly transpiled: TranspiledEnumMember;

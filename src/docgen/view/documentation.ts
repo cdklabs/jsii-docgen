@@ -211,6 +211,7 @@ export class Documentation {
 
     return new Json({
       version: '0.1',
+      language: language.toString(),
       metadata: {
         packageName: assembly.name,
         packageVersion: assembly.version,
@@ -223,27 +224,11 @@ export class Documentation {
 
   public async toMarkdown(options: MarkdownRenderOptions): Promise<MarkdownDocument> {
     const json = (await this.toJson(options)).content;
-    const documentation = new MarkdownDocument();
-
-    if (json.readme) {
-      const md = new MarkdownDocument();
-      md.lines(json.readme);
-      documentation.section(md);
-    }
-
-    if (json.apiReference) {
-      // documentation.section(ApiReference.toMarkdown(json.apiReference, context));
-      const renderer = new MarkdownRenderer({
-        anchorFormatter: options.anchorFormatter,
-        linkFormatter: options.linkFormatter,
-        typeFormatter: options.typeFormatter,
-        language: options.language,
-        ...json.metadata,
-      });
-      documentation.section(renderer.visitApiReference(json.apiReference));
-    }
-
-    return documentation;
+    return MarkdownRenderer.fromSchema(json, {
+      anchorFormatter: options.anchorFormatter,
+      linkFormatter: options.linkFormatter,
+      typeFormatter: options.typeFormatter,
+    });
   }
 
   private addCleanupDirectory(directory: string) {
@@ -261,26 +246,7 @@ export class Documentation {
   }
 
   private async languageSpecific(lang: Language, loose: boolean): Promise<{ assembly: reflect.Assembly; transpile: Transpile}> {
-
-    let rosettaTarget = undefined;
-    switch (lang) {
-      case Language.PYTHON:
-        rosettaTarget = TargetLanguage.PYTHON;
-        break;
-      case Language.TYPESCRIPT:
-        break;
-      case Language.JAVA:
-        rosettaTarget = TargetLanguage.JAVA;
-        break;
-      case Language.CSHARP:
-        rosettaTarget = TargetLanguage.CSHARP;
-        break;
-      default:
-        throw new Error(`Unsupported language: ${lang}. Supported languages are ${Object.values(Language)}`);
-    }
-
-    const transpile = getTranspilerForLanguage(lang);
-
+    const { rosettaTarget, transpile } = LANGUAGE_SPECIFIC[lang.toString()];
     return { assembly: await this.createAssembly(loose, rosettaTarget), transpile };
   }
 
@@ -340,20 +306,24 @@ export class Documentation {
 
 }
 
-export function getTranspilerForLanguage(lang: Language): Transpile {
-  switch (lang) {
-    case Language.PYTHON:
-      return new PythonTranspile();
-    case Language.TYPESCRIPT:
-      return new TypeScriptTranspile();
-    case Language.JAVA:
-      return new JavaTranspile();
-    case Language.CSHARP:
-      return new CSharpTranspile();
-    default:
-      throw new Error(`Unsupported language: ${lang}. Supported languages are ${Object.values(Language)}`);
-  }
-}
+export const LANGUAGE_SPECIFIC = {
+  [Language.PYTHON.toString()]: {
+    transpile: new PythonTranspile(),
+    rosettaTarget: TargetLanguage.PYTHON,
+  },
+  [Language.TYPESCRIPT.toString()]: {
+    transpile: new TypeScriptTranspile(),
+    rosettaTarget: undefined, // no transpilation needed
+  },
+  [Language.JAVA.toString()]: {
+    transpile: new JavaTranspile(),
+    rosettaTarget: TargetLanguage.JAVA,
+  },
+  [Language.CSHARP.toString()]: {
+    transpile: new CSharpTranspile(),
+    rosettaTarget: TargetLanguage.CSHARP,
+  },
+};
 
 async function withTempDir<T>(work: (workdir: string) => Promise<T>): Promise<T> {
   const workdir = await fs.mkdtemp(path.join(os.tmpdir(), path.sep));

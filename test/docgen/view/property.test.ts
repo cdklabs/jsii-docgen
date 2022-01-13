@@ -1,7 +1,7 @@
 import * as reflect from 'jsii-reflect';
 import { Language } from '../../../src';
 import { MarkdownRenderer } from '../../../src/docgen/render/markdown-render';
-import { getTranspilerForLanguage } from '../../../src/docgen/view/documentation';
+import { LANGUAGE_SPECIFIC } from '../../../src/docgen/view/documentation';
 import { Property } from '../../../src/docgen/view/property';
 import { Assemblies } from '../assemblies';
 
@@ -22,7 +22,7 @@ const findProperty = (): reflect.Property => {
 };
 
 test.each(Language.values())('%s snapshot', (language) => {
-  const transpile = getTranspilerForLanguage(language);
+  const { transpile } = LANGUAGE_SPECIFIC[language.toString()];
   const markdown = new MarkdownRenderer({ language, ...metadata });
   const prop = new Property(transpile, findProperty()).toJson();
   expect(prop).toMatchSnapshot();

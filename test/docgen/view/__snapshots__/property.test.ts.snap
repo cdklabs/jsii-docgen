@@ -5,6 +5,9 @@ Object {
   "default": undefined,
   "displayName": "RepositoryCatalogData",
   "docs": Object {
+    "links": Array [
+      "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata",
+    ],
     "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
   },
   "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps.property.RepositoryCatalogData",
@@ -28,6 +31,8 @@ public object RepositoryCatalogData { get; set; }
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
+
 ---
 "
 `;
@@ -37,6 +42,9 @@ Object {
   "default": undefined,
   "displayName": "repositoryCatalogData",
   "docs": Object {
+    "links": Array [
+      "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata",
+    ],
     "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
   },
   "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps.property.repositoryCatalogData",
@@ -60,6 +68,8 @@ public java.lang.Object getRepositoryCatalogData();
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
+
 ---
 "
 `;
@@ -69,6 +79,9 @@ Object {
   "default": undefined,
   "displayName": "repository_catalog_data",
   "docs": Object {
+    "links": Array [
+      "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata",
+    ],
     "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
   },
   "fqn": "aws_cdk.aws_ecr.CfnPublicRepositoryProps.property.repository_catalog_data",
@@ -92,6 +105,8 @@ repository_catalog_data: typing.Any
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
+
 ---
 "
 `;
@@ -101,6 +116,9 @@ Object {
   "default": undefined,
   "displayName": "repositoryCatalogData",
   "docs": Object {
+    "links": Array [
+      "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata",
+    ],
     "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
   },
   "fqn": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData",
@@ -123,6 +141,8 @@ public readonly repositoryCatalogData: any;
 - *Type:* any
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
 
 ---
 "

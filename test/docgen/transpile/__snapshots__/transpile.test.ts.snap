@@ -587,8 +587,6 @@ Lambda Functions in a public subnet can NOT access the internet.
 
 Use this property to acknowledge this limitation and still place the function in a public subnet.
 
-> https://stackoverflow.com/questions/52992085/why-cant-an-aws-lambda-function-inside-a-public-subnet-in-a-vpc-connect-to-the/52994841#52994841
-
 > [https://stackoverflow.com/questions/52992085/why-cant-an-aws-lambda-function-inside-a-public-subnet-in-a-vpc-connect-to-the/52994841#52994841](https://stackoverflow.com/questions/52992085/why-cant-an-aws-lambda-function-inside-a-public-subnet-in-a-vpc-connect-to-the/52994841#52994841)
 
 ---
@@ -768,8 +766,6 @@ public LambdaInsightsVersion InsightsVersion { get; set; }
 
 Specify the version of CloudWatch Lambda insights to use for monitoring.
 
-> https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights.html
-
 > [https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights.html](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights.html)
 
 ---
@@ -858,8 +854,6 @@ public bool Profiling { get; set; }
 
 Enable profiling.
 
-> https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html
-
 > [https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html)
 
 ---
@@ -875,8 +869,6 @@ public IProfilingGroup ProfilingGroup { get; set; }
 
 Profiling Group.
 
-> https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html
-
 > [https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html)
 
 ---
@@ -891,8 +883,6 @@ public double ReservedConcurrentExecutions { get; set; }
 - *Default:* No specific limit - account limit.
 
 The maximum of concurrent executions you want to reserve for the function.
-
-> https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html
 
 > [https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html](https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html)
 
@@ -1240,8 +1230,6 @@ Lambda Functions in a public subnet can NOT access the internet.
 
 Use this property to acknowledge this limitation and still place the function in a public subnet.
 
-> https://stackoverflow.com/questions/52992085/why-cant-an-aws-lambda-function-inside-a-public-subnet-in-a-vpc-connect-to-the/52994841#52994841
-
 > [https://stackoverflow.com/questions/52992085/why-cant-an-aws-lambda-function-inside-a-public-subnet-in-a-vpc-connect-to-the/52994841#52994841](https://stackoverflow.com/questions/52992085/why-cant-an-aws-lambda-function-inside-a-public-subnet-in-a-vpc-connect-to-the/52994841#52994841)
 
 ---
@@ -1369,8 +1357,6 @@ You can call \`addToRolePolicy\` to the created lambda to add statements post cr
 
 Specify the version of CloudWatch Lambda insights to use for monitoring.
 
-> https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights.html
-
 > [https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights.html](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights.html)
 
 ---
@@ -1435,8 +1421,6 @@ Lambda uses this value to proportionally allocate the amount of CPU power. For m
 
 Enable profiling.
 
-> https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html
-
 > [https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html)
 
 ---
@@ -1448,8 +1432,6 @@ Enable profiling.
 
 Profiling Group.
 
-> https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html
-
 > [https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html)
 
 ---
@@ -1460,8 +1442,6 @@ Profiling Group.
 - *Default:* No specific limit - account limit.
 
 The maximum of concurrent executions you want to reserve for the function.
-
-> https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html
 
 > [https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html](https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html)
 
@@ -2129,8 +2109,6 @@ Lambda Functions in a public subnet can NOT access the internet.
 
 Use this property to acknowledge this limitation and still place the function in a public subnet.
 
-> https://stackoverflow.com/questions/52992085/why-cant-an-aws-lambda-function-inside-a-public-subnet-in-a-vpc-connect-to-the/52994841#52994841
-
 > [https://stackoverflow.com/questions/52992085/why-cant-an-aws-lambda-function-inside-a-public-subnet-in-a-vpc-connect-to-the/52994841#52994841](https://stackoverflow.com/questions/52992085/why-cant-an-aws-lambda-function-inside-a-public-subnet-in-a-vpc-connect-to-the/52994841#52994841)
 
 ---
@@ -2310,8 +2288,6 @@ public LambdaInsightsVersion getInsightsVersion();
 
 Specify the version of CloudWatch Lambda insights to use for monitoring.
 
-> https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights.html
-
 > [https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights.html](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights.html)
 
 ---
@@ -2400,8 +2376,6 @@ public java.lang.Boolean getProfiling();
 
 Enable profiling.
 
-> https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html
-
 > [https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html)
 
 ---
@@ -2417,8 +2391,6 @@ public IProfilingGroup getProfilingGroup();
 
 Profiling Group.
 
-> https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html
-
 > [https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html)
 
 ---
@@ -2433,8 +2405,6 @@ public java.lang.Number getReservedConcurrentExecutions();
 - *Default:* No specific limit - account limit.
 
 The maximum of concurrent executions you want to reserve for the function.
-
-> https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html
 
 > [https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html](https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html)
 
@@ -2784,8 +2754,6 @@ Lambda Functions in a public subnet can NOT access the internet.
 
 Use this property to acknowledge this limitation and still place the function in a public subnet.
 
-> https://stackoverflow.com/questions/52992085/why-cant-an-aws-lambda-function-inside-a-public-subnet-in-a-vpc-connect-to-the/52994841#52994841
-
 > [https://stackoverflow.com/questions/52992085/why-cant-an-aws-lambda-function-inside-a-public-subnet-in-a-vpc-connect-to-the/52994841#52994841](https://stackoverflow.com/questions/52992085/why-cant-an-aws-lambda-function-inside-a-public-subnet-in-a-vpc-connect-to-the/52994841#52994841)
 
 ---
@@ -2913,8 +2881,6 @@ You can call \`addToRolePolicy\` to the created lambda to add statements post cr
 
 Specify the version of CloudWatch Lambda insights to use for monitoring.
 
-> https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights.html
-
 > [https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights.html](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights.html)
 
 ---
@@ -2979,8 +2945,6 @@ Lambda uses this value to proportionally allocate the amount of CPU power. For m
 
 Enable profiling.
 
-> https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html
-
 > [https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html)
 
 ---
@@ -2992,8 +2956,6 @@ Enable profiling.
 
 Profiling Group.
 
-> https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html
-
 > [https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html)
 
 ---
@@ -3004,8 +2966,6 @@ Profiling Group.
 - *Default:* No specific limit - account limit.
 
 The maximum of concurrent executions you want to reserve for the function.
-
-> https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html
 
 > [https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html](https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html)
 
@@ -3388,8 +3348,6 @@ Valid Range: * Minimum value of 1 * Maximum value of 10
 
 Allow functions to return partially successful responses for a batch of records.
 
-> https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-ddb-batchfailurereporting
-
 > [https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-ddb-batchfailurereporting](https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-ddb-batchfailurereporting)
 
 ---
@@ -3412,8 +3370,6 @@ Set to \`undefined\` if you want lambda to keep retrying infinitely or until the
 
 Specific settings like the authentication protocol or the VPC components to secure access to your event source.
 
-> https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-sourceaccessconfiguration.html
-
 > [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-sourceaccessconfiguration.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-sourceaccessconfiguration.html)
 
 ---
@@ -3425,8 +3381,6 @@ Specific settings like the authentication protocol or the VPC components to secu
 
 The position in the DynamoDB, Kinesis or MSK stream where AWS Lambda should start reading.
 
-> https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType
-
 > [https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType](https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType)
 
 ---
@@ -3437,10 +3391,6 @@ The position in the DynamoDB, Kinesis or MSK stream where AWS Lambda should star
 - *Default:* None
 
 The size of the tumbling windows to group records sent to DynamoDB or Kinesis.
-
-> https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-ddb-windows
-
-Valid Range: 0 - 15 minutes
 
 > [https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-ddb-windows
 
@@ -4485,8 +4435,6 @@ Lambda Functions in a public subnet can NOT access the internet.
 
 Use this property to acknowledge this limitation and still place the function in a public subnet.
 
-> https://stackoverflow.com/questions/52992085/why-cant-an-aws-lambda-function-inside-a-public-subnet-in-a-vpc-connect-to-the/52994841#52994841
-
 > [https://stackoverflow.com/questions/52992085/why-cant-an-aws-lambda-function-inside-a-public-subnet-in-a-vpc-connect-to-the/52994841#52994841](https://stackoverflow.com/questions/52992085/why-cant-an-aws-lambda-function-inside-a-public-subnet-in-a-vpc-connect-to-the/52994841#52994841)
 
 ---
@@ -4666,8 +4614,6 @@ insights_version: LambdaInsightsVersion
 
 Specify the version of CloudWatch Lambda insights to use for monitoring.
 
-> https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights.html
-
 > [https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights.html](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights.html)
 
 ---
@@ -4756,8 +4702,6 @@ profiling: bool
 
 Enable profiling.
 
-> https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html
-
 > [https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html)
 
 ---
@@ -4773,8 +4717,6 @@ profiling_group: IProfilingGroup
 
 Profiling Group.
 
-> https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html
-
 > [https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/setting-up-lambda.html)
 
 ---
@@ -4789,8 +4731,6 @@ reserved_concurrent_executions: typing.Union[int, float]
 - *Default:* No specific limit - account limit.
 
 The maximum of concurrent executions you want to reserve for the function.
-
-> https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html
 
 > [https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html](https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html)
 

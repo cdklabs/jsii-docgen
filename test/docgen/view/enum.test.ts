@@ -1,7 +1,7 @@
 import * as reflect from 'jsii-reflect';
 import { MarkdownRenderer } from '../../../src/docgen/render/markdown-render';
 import { Language } from '../../../src/docgen/transpile/transpile';
-import { getTranspilerForLanguage } from '../../../src/docgen/view/documentation';
+import { LANGUAGE_SPECIFIC } from '../../../src/docgen/view/documentation';
 import { Enum } from '../../../src/docgen/view/enum';
 import { Assemblies } from '../assemblies';
 
@@ -20,7 +20,7 @@ const findEnum = (): reflect.EnumType => {
 };
 
 test.each(Language.values())('%s snapshot', (language) => {
-  const transpile = getTranspilerForLanguage(language);
+  const { transpile } = LANGUAGE_SPECIFIC[language.toString()];
   const markdown = new MarkdownRenderer({ language, ...metadata });
   const enu = new Enum(transpile, findEnum()).toJson();
   expect(enu).toMatchSnapshot();

@@ -1,7 +1,6 @@
 import * as reflect from 'jsii-reflect';
-import { InterfaceSchema, JsiiEntity } from '../schema';
+import { extractDocs, InterfaceSchema, JsiiEntity } from '../schema';
 import { Transpile, TranspiledInterface } from '../transpile/transpile';
-import { extractDocs } from '../util';
 import { InstanceMethods } from './instance-methods';
 import { Properties } from './properties';
 

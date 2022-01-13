@@ -161,6 +161,9 @@ Object {
       "default": undefined,
       "displayName": "repositoryCatalogData",
       "docs": Object {
+        "links": Array [
+          "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata",
+        ],
         "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
       },
       "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.repositoryCatalogData",
@@ -174,6 +177,9 @@ Object {
       "default": undefined,
       "displayName": "repositoryName",
       "docs": Object {
+        "links": Array [
+          "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname",
+        ],
         "summary": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
       },
       "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.repositoryName",
@@ -187,6 +193,9 @@ Object {
       "default": undefined,
       "displayName": "repositoryPolicyText",
       "docs": Object {
+        "links": Array [
+          "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext",
+        ],
         "summary": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
       },
       "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.repositoryPolicyText",
@@ -200,6 +209,9 @@ Object {
       "default": undefined,
       "displayName": "tags",
       "docs": Object {
+        "links": Array [
+          "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags",
+        ],
         "summary": "\`AWS::ECR::PublicRepository.Tags\`.",
       },
       "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.tags",
@@ -283,6 +295,8 @@ scoped id of the resource.
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
+
 ---
 
 # \`repositoryName\`<sup>Optional</sup> <a name=\\"repositoryName\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryName\\"></a>
@@ -290,6 +304,8 @@ scoped id of the resource.
 - *Type:* java.lang.String
 
 \`AWS::ECR::PublicRepository.RepositoryName\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname)
 
 ---
 
@@ -299,6 +315,8 @@ scoped id of the resource.
 
 \`AWS::ECR::PublicRepository.RepositoryPolicyText\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext)
+
 ---
 
 # \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.tags\\"></a>
@@ -306,6 +324,8 @@ scoped id of the resource.
 - *Type:* java.util.List<software.amazon.awscdk.core.CfnTag>
 
 \`AWS::ECR::PublicRepository.Tags\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags)
 
 ---
 "
@@ -357,6 +377,9 @@ Object {
       "default": undefined,
       "displayName": "repository_catalog_data",
       "docs": Object {
+        "links": Array [
+          "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata",
+        ],
         "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
       },
       "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.parameter.repository_catalog_data",
@@ -370,6 +393,9 @@ Object {
       "default": undefined,
       "displayName": "repository_name",
       "docs": Object {
+        "links": Array [
+          "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname",
+        ],
         "summary": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
       },
       "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.parameter.repository_name",
@@ -383,6 +409,9 @@ Object {
       "default": undefined,
       "displayName": "repository_policy_text",
       "docs": Object {
+        "links": Array [
+          "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext",
+        ],
         "summary": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
       },
       "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.parameter.repository_policy_text",
@@ -396,6 +425,9 @@ Object {
       "default": undefined,
       "displayName": "tags",
       "docs": Object {
+        "links": Array [
+          "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags",
+        ],
         "summary": "\`AWS::ECR::PublicRepository.Tags\`.",
       },
       "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.parameter.tags",
@@ -483,6 +515,8 @@ scoped id of the resource.
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
+
 ---
 
 # \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryName\\"></a>
@@ -490,6 +524,8 @@ scoped id of the resource.
 - *Type:* str
 
 \`AWS::ECR::PublicRepository.RepositoryName\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname)
 
 ---
 
@@ -499,6 +535,8 @@ scoped id of the resource.
 
 \`AWS::ECR::PublicRepository.RepositoryPolicyText\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext)
+
 ---
 
 # \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.tags\\"></a>
@@ -506,6 +544,8 @@ scoped id of the resource.
 - *Type:* typing.List[aws_cdk.core.CfnTag]
 
 \`AWS::ECR::PublicRepository.Tags\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags)
 
 ---
 "

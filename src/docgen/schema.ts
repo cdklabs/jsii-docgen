@@ -1,3 +1,5 @@
+import * as jsii from 'jsii-reflect';
+
 /**
  * Describes any kind of type. This could be a primitive, a user-defined type
  * (like `Bucket`), or a composition of types (like `Map<string, Bucket>[]`).
@@ -15,7 +17,8 @@ export interface TypeSchema {
   readonly formattingPattern: string;
 
   /**
-   * Types referenced within the "name" field.
+   * Types referenced within the "name" field. The order of these corresponds
+   * to the order of the %'s in `formattingPattern`.
    */
   readonly types?: (TypeSchema | JsiiEntity)[];
 }
@@ -353,19 +356,25 @@ export interface AssemblyMetadataSchema {
   readonly packageVersion: string;
 
   /**
-   * Name of the submodule this type is from within the jsii assembly (if any).
+   * Name of the submodule within the jsii assembly (if undefined, this is the
+   * root module).
    */
   readonly submodule?: string;
 }
 
 /**
- * Describes the schema.
+ * Describes the top-level schema.
  */
 export interface Schema {
   /**
    * Schema version number.
    */
   readonly version: string;
+
+  /**
+   * Language that the documentation has been transliterated to.
+   */
+  readonly language: string;
 
   /**
    * Assembly metadata.
@@ -421,9 +430,9 @@ export interface DocsSchema {
   readonly remarks?: string;
 
   /**
-   * A `@see` link with more information.
+   * `@see` and `@link` links with more information.
    */
-  readonly see?: string;
+  readonly links?: string[];
 
   /**
    * Whether or not it is deprecated.
@@ -462,4 +471,34 @@ export interface Optional {
    * @default - none
    */
   readonly default?: string;
+}
+
+export function extractDocs(docs: jsii.Docs): DocsSchema {
+  const links = [];
+  const see = docs.docs.see; // @see
+  if (see && see.length > 0) {
+    links.push(see);
+  }
+  const link = docs.customTag('link'); // @link
+  if (link && link.length > 0) {
+    links.push(link);
+  }
+  return filterUndefined({
+    // ignore defaults and empty strings to save space
+    summary: docs.summary.length > 0 ? docs.summary : undefined,
+    remarks: docs.remarks.length > 0 ? docs.remarks : undefined,
+    links: links.length > 0 ? links : undefined,
+    deprecated: docs.deprecated === true ? true : undefined,
+    deprecationReason: docs.deprecationReason,
+  });
+}
+
+function filterUndefined<T>(obj: T): T {
+  const ret: any = {};
+  for (const [k, v] of Object.entries(obj)) {
+    if (v !== undefined) {
+      ret[k] = v;
+    }
+  }
+  return ret;
 }

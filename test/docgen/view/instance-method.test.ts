@@ -1,7 +1,7 @@
 import * as reflect from 'jsii-reflect';
 import { MarkdownRenderer } from '../../../src/docgen/render/markdown-render';
 import { Language } from '../../../src/docgen/transpile/transpile';
-import { getTranspilerForLanguage } from '../../../src/docgen/view/documentation';
+import { LANGUAGE_SPECIFIC } from '../../../src/docgen/view/documentation';
 import { InstanceMethod } from '../../../src/docgen/view/instance-method';
 import { Assemblies } from '../assemblies';
 
@@ -24,7 +24,7 @@ const findInstanceMethod = (): reflect.Method => {
 };
 
 test.each(Language.values())('%s snapshot', (language) => {
-  const transpile = getTranspilerForLanguage(language);
+  const { transpile } = LANGUAGE_SPECIFIC[language.toString()];
   const markdown = new MarkdownRenderer({ language, ...metadata });
   const method = new InstanceMethod(transpile, findInstanceMethod()).toJson();
   expect(method).toMatchSnapshot();

@@ -1,7 +1,6 @@
 import * as reflect from 'jsii-reflect';
-import { EnumSchema } from '../schema';
+import { EnumSchema, extractDocs } from '../schema';
 import { Transpile, TranspiledEnum } from '../transpile/transpile';
-import { extractDocs } from '../util';
 import { EnumMember } from './enum-member';
 
 export class Enum {

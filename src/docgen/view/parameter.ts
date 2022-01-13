@@ -1,7 +1,6 @@
 import * as reflect from 'jsii-reflect';
-import { ParameterSchema } from '../schema';
+import { extractDocs, ParameterSchema } from '../schema';
 import { Transpile, TranspiledParameter } from '../transpile/transpile';
-import { extractDocs } from '../util';
 
 export class Parameter {
   private readonly transpiled: TranspiledParameter;

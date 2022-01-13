@@ -1,7 +1,6 @@
 import * as reflect from 'jsii-reflect';
-import { PropertySchema } from '../schema';
+import { extractDocs, PropertySchema } from '../schema';
 import { Transpile, TranspiledProperty } from '../transpile/transpile';
-import { extractDocs } from '../util';
 
 export class Property {
   private readonly transpiled: TranspiledProperty;
@@ -16,7 +15,7 @@ export class Property {
     return {
       fqn: `${this.transpiled.parentType.fqn}.property.${this.transpiled.name}`,
       displayName: this.transpiled.name,
-      id: `${this.transpiled.parentType.source.fqn}.property.${this.property.name}`,
+      id: `${this.property.parentType.fqn}.property.${this.property.name}`,
       optional: this.transpiled.optional === true ? true : undefined, // to save space
       default: this.property.spec.docs?.default,
       type: this.transpiled.typeReference.toJson(),

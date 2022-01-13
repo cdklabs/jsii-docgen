@@ -1,7 +1,6 @@
 import * as reflect from 'jsii-reflect';
-import { MethodSchema } from '../schema';
+import { extractDocs, MethodSchema } from '../schema';
 import { Transpile, TranspiledCallable } from '../transpile/transpile';
-import { extractDocs } from '../util';
 import { Parameter } from './parameter';
 
 export class InstanceMethod {

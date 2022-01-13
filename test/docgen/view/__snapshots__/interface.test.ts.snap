@@ -1903,10 +1903,12 @@ that captures the event. This method will not create the Trail.",
           "default": "- No additional filtering based on an event pattern.",
           "displayName": "event_pattern",
           "docs": Object {
+            "links": Array [
+              "https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html",
+            ],
             "remarks": "The method that generates the rule probably imposes some type of event
 filtering. The filtering implied by what you pass here is added
 on top of that filtering.",
-            "see": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html",
             "summary": "Additional restrictions for the event to route to the specified target.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.parameter.event_pattern",
@@ -2011,10 +2013,12 @@ that captures the event. This method will not create the Trail.",
           "default": "- No additional filtering based on an event pattern.",
           "displayName": "event_pattern",
           "docs": Object {
+            "links": Array [
+              "https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html",
+            ],
             "remarks": "The method that generates the rule probably imposes some type of event
 filtering. The filtering implied by what you pass here is added
 on top of that filtering.",
-            "see": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html",
             "summary": "Additional restrictions for the event to route to the specified target.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.parameter.event_pattern",
@@ -2131,10 +2135,12 @@ on top of that filtering.",
           "default": "- No additional filtering based on an event pattern.",
           "displayName": "event_pattern",
           "docs": Object {
+            "links": Array [
+              "https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html",
+            ],
             "remarks": "The method that generates the rule probably imposes some type of event
 filtering. The filtering implied by what you pass here is added
 on top of that filtering.",
-            "see": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html",
             "summary": "Additional restrictions for the event to route to the specified target.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.parameter.event_pattern",
@@ -2237,10 +2243,12 @@ on top of that filtering.",
           "default": "- No additional filtering based on an event pattern.",
           "displayName": "event_pattern",
           "docs": Object {
+            "links": Array [
+              "https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html",
+            ],
             "remarks": "The method that generates the rule probably imposes some type of event
 filtering. The filtering implied by what you pass here is added
 on top of that filtering.",
-            "see": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html",
             "summary": "Additional restrictions for the event to route to the specified target.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.parameter.event_pattern",
@@ -2643,8 +2651,6 @@ Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
 
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
-
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
 ---
@@ -2705,8 +2711,6 @@ A description of the rule's purpose.
 Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
-
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
@@ -2775,8 +2779,6 @@ Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
 
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
-
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
 ---
@@ -2837,8 +2839,6 @@ A description of the rule's purpose.
 Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
-
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 

@@ -172,8 +172,6 @@ Requires the \`removalPolicy\` to be set to \`RemovalPolicy.DESTROY\`.  **Warnin
 
 The block public access configuration of this bucket.
 
-> https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html
-
 > [https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html)
 
 ---
@@ -204,8 +202,6 @@ Physical name of this bucket.
 - *Default:* No CORS configuration.
 
 The CORS configuration of this bucket.
-
-> https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors.html
 
 > [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors.html)
 
@@ -242,8 +238,6 @@ Enforces SSL for requests.
 
 S3.5 of the AWS Foundational Security Best Practices Regarding S3.
 
-> https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-ssl-requests-only.html
-
 > [https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-ssl-requests-only.html](https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-ssl-requests-only.html)
 
 ---
@@ -254,8 +248,6 @@ S3.5 of the AWS Foundational Security Best Practices Regarding S3.
 - *Default:* No inventory configuration
 
 The inventory configuration of the bucket.
-
-> https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html
 
 > [https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html)
 
@@ -277,8 +269,6 @@ Rules that define how Amazon S3 manages objects during their lifetime.
 
 The metrics configuration of this bucket.
 
-> https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html
-
 > [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html)
 
 ---
@@ -289,8 +279,6 @@ The metrics configuration of this bucket.
 - *Default:* No ObjectOwnership configuration, uploading account will own the object.
 
 The objectOwnership of the bucket.
-
-> https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html
 
 > [https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html)
 

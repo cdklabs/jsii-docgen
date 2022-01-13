@@ -2,7 +2,7 @@ import * as reflect from 'jsii-reflect';
 import { Language } from '../../../src';
 import { MarkdownRenderer } from '../../../src/docgen/render/markdown-render';
 import { TypeScriptTranspile } from '../../../src/docgen/transpile/typescript';
-import { getTranspilerForLanguage } from '../../../src/docgen/view/documentation';
+import { LANGUAGE_SPECIFIC } from '../../../src/docgen/view/documentation';
 import { Parameter } from '../../../src/docgen/view/parameter';
 import { Assemblies } from '../assemblies';
 
@@ -25,7 +25,7 @@ const findParameter = (): reflect.Parameter => {
 };
 
 test.each(Language.values())('%s snapshot', (language) => {
-  const transpile = getTranspilerForLanguage(language);
+  const { transpile } = LANGUAGE_SPECIFIC[language.toString()];
   const markdown = new MarkdownRenderer({ language, ...metadata });
   const param = new Parameter(transpile, findParameter()).toJson();
   expect(param).toMatchSnapshot();

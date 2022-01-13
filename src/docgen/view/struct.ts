@@ -1,7 +1,6 @@
 import * as reflect from 'jsii-reflect';
-import { StructSchema } from '../schema';
+import { extractDocs, StructSchema } from '../schema';
 import { Transpile, TranspiledStruct } from '../transpile/transpile';
-import { extractDocs } from '../util';
 import { Properties } from './properties';
 
 export class Struct {

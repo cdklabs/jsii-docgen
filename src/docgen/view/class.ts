@@ -1,7 +1,6 @@
 import * as reflect from 'jsii-reflect';
-import { ClassSchema } from '../schema';
+import { ClassSchema, extractDocs } from '../schema';
 import { Transpile, TranspiledClass } from '../transpile/transpile';
-import { extractDocs } from '../util';
 import { Constants } from './constants';
 import { Initializer } from './initializer';
 import { InstanceMethods } from './instance-methods';

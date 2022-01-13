@@ -112,6 +112,8 @@ repository.add_lifecycle_rule(max_image_age=cdk.Duration.days(30))
 
 A CloudFormation \`AWS::ECR::PublicRepository\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html)
+
 #### Initializers <a name=\\"Initializers\\" id=\\"CfnPublicRepository.Initializer\\"></a>
 
 \`\`\`python
@@ -160,6 +162,8 @@ scoped id of the resource.
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
+
 ---
 
 ##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"CfnPublicRepository.parameter.repositoryName\\"></a>
@@ -167,6 +171,8 @@ scoped id of the resource.
 - *Type:* str
 
 \`AWS::ECR::PublicRepository.RepositoryName\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname)
 
 ---
 
@@ -176,6 +182,8 @@ scoped id of the resource.
 
 \`AWS::ECR::PublicRepository.RepositoryPolicyText\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext)
+
 ---
 
 ##### \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"CfnPublicRepository.parameter.tags\\"></a>
@@ -183,6 +191,8 @@ scoped id of the resource.
 - *Type:* typing.List[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/CfnTag?lang=python\\">CfnTag</a>]
 
 \`AWS::ECR::PublicRepository.Tags\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags)
 
 ---
 
@@ -243,6 +253,8 @@ tags: TagManager
 
 \`AWS::ECR::PublicRepository.Tags\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags)
+
 ---
 
 ##### \`repository_catalog_data\`<sup>Required</sup> <a name=\\"repository_catalog_data\\" id=\\"CfnPublicRepository.property.repositoryCatalogData\\"></a>
@@ -254,6 +266,8 @@ repository_catalog_data: typing.Any
 - *Type:* typing.Any
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
 
 ---
 
@@ -267,6 +281,8 @@ repository_policy_text: typing.Any
 
 \`AWS::ECR::PublicRepository.RepositoryPolicyText\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext)
+
 ---
 
 ##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"CfnPublicRepository.property.repositoryName\\"></a>
@@ -278,6 +294,8 @@ repository_name: str
 - *Type:* str
 
 \`AWS::ECR::PublicRepository.RepositoryName\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname)
 
 ---
 
@@ -306,6 +324,8 @@ The CloudFormation resource type name for this resource class.
 - *Implements:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python\\">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::RegistryPolicy\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html)
 
 #### Initializers <a name=\\"Initializers\\" id=\\"CfnRegistryPolicy.Initializer\\"></a>
 
@@ -348,6 +368,8 @@ scoped id of the resource.
 - *Type:* typing.Any
 
 \`AWS::ECR::RegistryPolicy.PolicyText\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html#cfn-ecr-registrypolicy-policytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html#cfn-ecr-registrypolicy-policytext)
 
 ---
 
@@ -405,6 +427,8 @@ policy_text: typing.Any
 
 \`AWS::ECR::RegistryPolicy.PolicyText\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html#cfn-ecr-registrypolicy-policytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html#cfn-ecr-registrypolicy-policytext)
+
 ---
 
 #### Constants <a name=\\"Constants\\" id=\\"Constants\\"></a>
@@ -432,6 +456,8 @@ The CloudFormation resource type name for this resource class.
 - *Implements:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python\\">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html)
 
 #### Initializers <a name=\\"Initializers\\" id=\\"CfnReplicationConfiguration.Initializer\\"></a>
 
@@ -474,6 +500,8 @@ scoped id of the resource.
 - *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python\\">ReplicationConfigurationProperty</a>]
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration)
 
 ---
 
@@ -531,6 +559,8 @@ replication_configuration: typing.Union[IResolvable, ReplicationConfigurationPro
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration)
+
 ---
 
 #### Constants <a name=\\"Constants\\" id=\\"Constants\\"></a>
@@ -558,6 +588,8 @@ The CloudFormation resource type name for this resource class.
 - *Implements:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python\\">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::Repository\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html)
 
 #### Initializers <a name=\\"Initializers\\" id=\\"CfnRepository.Initializer\\"></a>
 
@@ -613,6 +645,8 @@ scoped id of the resource.
 
 \`AWS::ECR::Repository.EncryptionConfiguration\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-encryptionconfiguration](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-encryptionconfiguration)
+
 ---
 
 ##### \`image_scanning_configuration\`<sup>Optional</sup> <a name=\\"image_scanning_configuration\\" id=\\"CfnRepository.parameter.imageScanningConfiguration\\"></a>
@@ -620,6 +654,8 @@ scoped id of the resource.
 - *Type:* typing.Any
 
 \`AWS::ECR::Repository.ImageScanningConfiguration\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagescanningconfiguration](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagescanningconfiguration)
 
 ---
 
@@ -629,6 +665,8 @@ scoped id of the resource.
 
 \`AWS::ECR::Repository.ImageTagMutability\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagetagmutability](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagetagmutability)
+
 ---
 
 ##### \`lifecycle_policy\`<sup>Optional</sup> <a name=\\"lifecycle_policy\\" id=\\"CfnRepository.parameter.lifecyclePolicy\\"></a>
@@ -636,6 +674,8 @@ scoped id of the resource.
 - *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.LifecyclePolicyProperty?lang=python\\">LifecyclePolicyProperty</a>]
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy)
 
 ---
 
@@ -645,6 +685,8 @@ scoped id of the resource.
 
 \`AWS::ECR::Repository.RepositoryName\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositoryname)
+
 ---
 
 ##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"repository_policy_text\\" id=\\"CfnRepository.parameter.repositoryPolicyText\\"></a>
@@ -653,6 +695,8 @@ scoped id of the resource.
 
 \`AWS::ECR::Repository.RepositoryPolicyText\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositorypolicytext)
+
 ---
 
 ##### \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"CfnRepository.parameter.tags\\"></a>
@@ -660,6 +704,8 @@ scoped id of the resource.
 - *Type:* typing.List[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/CfnTag?lang=python\\">CfnTag</a>]
 
 \`AWS::ECR::Repository.Tags\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-tags)
 
 ---
 
@@ -734,6 +780,8 @@ tags: TagManager
 
 \`AWS::ECR::Repository.Tags\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-tags)
+
 ---
 
 ##### \`encryption_configuration\`<sup>Required</sup> <a name=\\"encryption_configuration\\" id=\\"CfnRepository.property.encryptionConfiguration\\"></a>
@@ -745,6 +793,8 @@ encryption_configuration: typing.Any
 - *Type:* typing.Any
 
 \`AWS::ECR::Repository.EncryptionConfiguration\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-encryptionconfiguration](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-encryptionconfiguration)
 
 ---
 
@@ -758,6 +808,8 @@ image_scanning_configuration: typing.Any
 
 \`AWS::ECR::Repository.ImageScanningConfiguration\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagescanningconfiguration](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagescanningconfiguration)
+
 ---
 
 ##### \`repository_policy_text\`<sup>Required</sup> <a name=\\"repository_policy_text\\" id=\\"CfnRepository.property.repositoryPolicyText\\"></a>
@@ -769,6 +821,8 @@ repository_policy_text: typing.Any
 - *Type:* typing.Any
 
 \`AWS::ECR::Repository.RepositoryPolicyText\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositorypolicytext)
 
 ---
 
@@ -782,6 +836,8 @@ image_tag_mutability: str
 
 \`AWS::ECR::Repository.ImageTagMutability\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagetagmutability](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagetagmutability)
+
 ---
 
 ##### \`lifecycle_policy\`<sup>Optional</sup> <a name=\\"lifecycle_policy\\" id=\\"CfnRepository.property.lifecyclePolicy\\"></a>
@@ -794,6 +850,8 @@ lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty]
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy)
+
 ---
 
 ##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"CfnRepository.property.repositoryName\\"></a>
@@ -805,6 +863,8 @@ repository_name: str
 - *Type:* str
 
 \`AWS::ECR::Repository.RepositoryName\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositoryname)
 
 ---
 
@@ -851,7 +911,7 @@ aws_cdk.aws_ecr.Repository(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/constructs/v/3.3.186/api/Construct?lang=python\\">Construct</a></code> | *No description.* |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/constructs/v/3.3.187/api/Construct?lang=python\\">Construct</a></code> | *No description.* |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.parameter.id?lang=python\\">id</a></code> | <code>str</code> | *No description.* |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.parameter.imageScanOnPush?lang=python\\">image_scan_on_push</a></code> | <code>bool</code> | Enable the scan on push when creating the repository. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.parameter.imageTagMutability?lang=python\\">image_tag_mutability</a></code> | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/TagMutability?lang=python\\">TagMutability</a></code> | The tag mutability setting for the repository. |
@@ -864,7 +924,7 @@ aws_cdk.aws_ecr.Repository(
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Repository.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/constructs/v/3.3.186/api/Construct?lang=python\\">Construct</a>
+- *Type:* <a href=\\"/packages/constructs/v/3.3.187/api/Construct?lang=python\\">Construct</a>
 
 ---
 
@@ -900,8 +960,6 @@ If this parameter is omitted, the default setting of MUTABLE will be used which 
 - *Default:* The default registry is assumed.
 
 The AWS account ID associated with the registry that contains the repository.
-
-> https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutLifecyclePolicy.html
 
 > [https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutLifecyclePolicy.html](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutLifecyclePolicy.html)
 
@@ -1062,7 +1120,7 @@ aws_cdk.aws_ecr.Repository.arn_for_local_repository(
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Repository.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/constructs/v/3.3.186/api/IConstruct?lang=python\\">IConstruct</a>
+- *Type:* <a href=\\"/packages/constructs/v/3.3.187/api/IConstruct?lang=python\\">IConstruct</a>
 
 ---
 
@@ -1086,7 +1144,7 @@ aws_cdk.aws_ecr.Repository.from_repository_arn(
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Repository.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/constructs/v/3.3.186/api/Construct?lang=python\\">Construct</a>
+- *Type:* <a href=\\"/packages/constructs/v/3.3.187/api/Construct?lang=python\\">Construct</a>
 
 ---
 
@@ -1117,7 +1175,7 @@ aws_cdk.aws_ecr.Repository.from_repository_attributes(
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Repository.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/constructs/v/3.3.186/api/Construct?lang=python\\">Construct</a>
+- *Type:* <a href=\\"/packages/constructs/v/3.3.187/api/Construct?lang=python\\">Construct</a>
 
 ---
 
@@ -1153,7 +1211,7 @@ aws_cdk.aws_ecr.Repository.from_repository_name(
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Repository.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/constructs/v/3.3.186/api/Construct?lang=python\\">Construct</a>
+- *Type:* <a href=\\"/packages/constructs/v/3.3.187/api/Construct?lang=python\\">Construct</a>
 
 ---
 
@@ -1228,7 +1286,7 @@ aws_cdk.aws_ecr.RepositoryBase(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryBase.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/constructs/v/3.3.186/api/Construct?lang=python\\">Construct</a></code> | *No description.* |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryBase.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/constructs/v/3.3.187/api/Construct?lang=python\\">Construct</a></code> | *No description.* |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryBase.parameter.id?lang=python\\">id</a></code> | <code>str</code> | *No description.* |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryBase.parameter.account?lang=python\\">account</a></code> | <code>str</code> | The AWS account ID this resource belongs to. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryBase.parameter.environmentFromArn?lang=python\\">environment_from_arn</a></code> | <code>str</code> | ARN to deduce region and account from. |
@@ -1239,7 +1297,7 @@ aws_cdk.aws_ecr.RepositoryBase(
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"RepositoryBase.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/constructs/v/3.3.186/api/Construct?lang=python\\">Construct</a>
+- *Type:* <a href=\\"/packages/constructs/v/3.3.187/api/Construct?lang=python\\">Construct</a>
 
 ---
 
@@ -1407,8 +1465,6 @@ Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
 
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
-
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
 ---
@@ -1469,8 +1525,6 @@ A description of the rule's purpose.
 Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
-
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
@@ -1539,8 +1593,6 @@ Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
 
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
-
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
 ---
@@ -1601,8 +1653,6 @@ A description of the rule's purpose.
 Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
-
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
@@ -1725,6 +1775,8 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 Properties for defining a \`AWS::ECR::PublicRepository\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html)
+
 #### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.Initializer\\"></a>
 
 \`\`\`python
@@ -1759,6 +1811,8 @@ repository_catalog_data: typing.Any
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
+
 ---
 
 ##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"CfnPublicRepositoryProps.property.repositoryName\\"></a>
@@ -1770,6 +1824,8 @@ repository_name: str
 - *Type:* str
 
 \`AWS::ECR::PublicRepository.RepositoryName\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname)
 
 ---
 
@@ -1783,6 +1839,8 @@ repository_policy_text: typing.Any
 
 \`AWS::ECR::PublicRepository.RepositoryPolicyText\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext)
+
 ---
 
 ##### \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"CfnPublicRepositoryProps.property.tags\\"></a>
@@ -1795,11 +1853,15 @@ tags: typing.List[CfnTag]
 
 \`AWS::ECR::PublicRepository.Tags\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags)
+
 ---
 
 ### CfnRegistryPolicyProps <a name=\\"CfnRegistryPolicyProps\\" id=\\"CfnRegistryPolicyProps\\"></a>
 
 Properties for defining a \`AWS::ECR::RegistryPolicy\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html)
 
 #### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicyProps.Initializer\\"></a>
 
@@ -1829,11 +1891,15 @@ policy_text: typing.Any
 
 \`AWS::ECR::RegistryPolicy.PolicyText\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html#cfn-ecr-registrypolicy-policytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html#cfn-ecr-registrypolicy-policytext)
+
 ---
 
 ### CfnReplicationConfigurationProps <a name=\\"CfnReplicationConfigurationProps\\" id=\\"CfnReplicationConfigurationProps\\"></a>
 
 Properties for defining a \`AWS::ECR::ReplicationConfiguration\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html)
 
 #### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfigurationProps.Initializer\\"></a>
 
@@ -1863,11 +1929,15 @@ replication_configuration: typing.Union[IResolvable, ReplicationConfigurationPro
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration)
+
 ---
 
 ### CfnRepositoryProps <a name=\\"CfnRepositoryProps\\" id=\\"CfnRepositoryProps\\"></a>
 
 Properties for defining a \`AWS::ECR::Repository\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html)
 
 #### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.Initializer\\"></a>
 
@@ -1909,6 +1979,8 @@ encryption_configuration: typing.Any
 
 \`AWS::ECR::Repository.EncryptionConfiguration\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-encryptionconfiguration](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-encryptionconfiguration)
+
 ---
 
 ##### \`image_scanning_configuration\`<sup>Optional</sup> <a name=\\"image_scanning_configuration\\" id=\\"CfnRepositoryProps.property.imageScanningConfiguration\\"></a>
@@ -1920,6 +1992,8 @@ image_scanning_configuration: typing.Any
 - *Type:* typing.Any
 
 \`AWS::ECR::Repository.ImageScanningConfiguration\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagescanningconfiguration](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagescanningconfiguration)
 
 ---
 
@@ -1933,6 +2007,8 @@ image_tag_mutability: str
 
 \`AWS::ECR::Repository.ImageTagMutability\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagetagmutability](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagetagmutability)
+
 ---
 
 ##### \`lifecycle_policy\`<sup>Optional</sup> <a name=\\"lifecycle_policy\\" id=\\"CfnRepositoryProps.property.lifecyclePolicy\\"></a>
@@ -1944,6 +2020,8 @@ lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty]
 - *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.LifecyclePolicyProperty?lang=python\\">LifecyclePolicyProperty</a>]
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy)
 
 ---
 
@@ -1957,6 +2035,8 @@ repository_name: str
 
 \`AWS::ECR::Repository.RepositoryName\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositoryname)
+
 ---
 
 ##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"repository_policy_text\\" id=\\"CfnRepositoryProps.property.repositoryPolicyText\\"></a>
@@ -1968,6 +2048,8 @@ repository_policy_text: typing.Any
 - *Type:* typing.Any
 
 \`AWS::ECR::Repository.RepositoryPolicyText\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositorypolicytext)
 
 ---
 
@@ -1981,9 +2063,13 @@ tags: typing.List[CfnTag]
 
 \`AWS::ECR::Repository.Tags\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-tags)
+
 ---
 
 ### LifecyclePolicyProperty <a name=\\"LifecyclePolicyProperty\\" id=\\"CfnRepository.LifecyclePolicyProperty\\"></a>
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html)
 
 #### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty.Initializer\\"></a>
 
@@ -2015,6 +2101,8 @@ lifecycle_policy_text: str
 
 \`CfnRepository.LifecyclePolicyProperty.LifecyclePolicyText\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html#cfn-ecr-repository-lifecyclepolicy-lifecyclepolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html#cfn-ecr-repository-lifecyclepolicy-lifecyclepolicytext)
+
 ---
 
 ##### \`registry_id\`<sup>Optional</sup> <a name=\\"registry_id\\" id=\\"CfnRepository.LifecyclePolicyProperty.property.registryId\\"></a>
@@ -2026,6 +2114,8 @@ registry_id: str
 - *Type:* str
 
 \`CfnRepository.LifecyclePolicyProperty.RegistryId\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html#cfn-ecr-repository-lifecyclepolicy-registryid](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html#cfn-ecr-repository-lifecyclepolicy-registryid)
 
 ---
 
@@ -2202,8 +2292,6 @@ Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
 
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
-
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
 ---
@@ -2303,8 +2391,6 @@ Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
 
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
-
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
 ---
@@ -2352,6 +2438,8 @@ Leave it undefined to watch the full repository.
 
 ### ReplicationConfigurationProperty <a name=\\"ReplicationConfigurationProperty\\" id=\\"CfnReplicationConfiguration.ReplicationConfigurationProperty\\"></a>
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationconfiguration.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationconfiguration.html)
+
 #### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.Initializer\\"></a>
 
 \`\`\`python
@@ -2380,9 +2468,13 @@ rules: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, Replicati
 
 \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration-rules](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration-rules)
+
 ---
 
 ### ReplicationDestinationProperty <a name=\\"ReplicationDestinationProperty\\" id=\\"CfnReplicationConfiguration.ReplicationDestinationProperty\\"></a>
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html)
 
 #### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty.Initializer\\"></a>
 
@@ -2414,6 +2506,8 @@ region: str
 
 \`CfnReplicationConfiguration.ReplicationDestinationProperty.Region\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html#cfn-ecr-replicationconfiguration-replicationdestination-region](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html#cfn-ecr-replicationconfiguration-replicationdestination-region)
+
 ---
 
 ##### \`registry_id\`<sup>Required</sup> <a name=\\"registry_id\\" id=\\"CfnReplicationConfiguration.ReplicationDestinationProperty.property.registryId\\"></a>
@@ -2426,9 +2520,13 @@ registry_id: str
 
 \`CfnReplicationConfiguration.ReplicationDestinationProperty.RegistryId\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html#cfn-ecr-replicationconfiguration-replicationdestination-registryid](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html#cfn-ecr-replicationconfiguration-replicationdestination-registryid)
+
 ---
 
 ### ReplicationRuleProperty <a name=\\"ReplicationRuleProperty\\" id=\\"CfnReplicationConfiguration.ReplicationRuleProperty\\"></a>
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html)
 
 #### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty.Initializer\\"></a>
 
@@ -2457,6 +2555,8 @@ destinations: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, Re
 - *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, typing.List[typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationDestinationProperty?lang=python\\">ReplicationDestinationProperty</a>]]]
 
 \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html#cfn-ecr-replicationconfiguration-replicationrule-destinations](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html#cfn-ecr-replicationconfiguration-replicationrule-destinations)
 
 ---
 
@@ -2571,8 +2671,6 @@ lifecycle_registry_id: str
 
 The AWS account ID associated with the registry that contains the repository.
 
-> https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutLifecyclePolicy.html
-
 > [https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutLifecyclePolicy.html](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutLifecyclePolicy.html)
 
 ---
@@ -2622,8 +2720,6 @@ Name for this repository.
 
 Authorization token to access private ECR repositories in the current environment via Docker CLI.
 
-> https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html
-
 > [https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html](https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html)
 
 
@@ -2656,8 +2752,6 @@ aws_cdk.aws_ecr.AuthorizationToken.grant_read(
 ### PublicGalleryAuthorizationToken <a name=\\"PublicGalleryAuthorizationToken\\" id=\\"PublicGalleryAuthorizationToken\\"></a>
 
 Authorization token to access the global public ECR Gallery via Docker CLI.
-
-> https://docs.aws.amazon.com/AmazonECR/latest/public/public-registries.html#public-registry-auth
 
 > [https://docs.aws.amazon.com/AmazonECR/latest/public/public-registries.html#public-registry-auth](https://docs.aws.amazon.com/AmazonECR/latest/public/public-registries.html#public-registry-auth)
 
@@ -2816,8 +2910,6 @@ Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
 
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
-
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
 ---
@@ -2878,8 +2970,6 @@ A description of the rule's purpose.
 Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
-
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
@@ -2948,8 +3038,6 @@ Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
 
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
-
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
 ---
@@ -3010,8 +3098,6 @@ A description of the rule's purpose.
 Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
-
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
@@ -3341,6 +3427,8 @@ repository.add_lifecycle_rule(max_image_age=cdk.Duration.days(30))
 
 A CloudFormation \`AWS::ECR::PublicRepository\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html)
+
 #### Initializers <a name=\\"Initializers\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer\\"></a>
 
 \`\`\`python
@@ -3389,6 +3477,8 @@ scoped id of the resource.
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
+
 ---
 
 ##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryName\\"></a>
@@ -3396,6 +3486,8 @@ scoped id of the resource.
 - *Type:* str
 
 \`AWS::ECR::PublicRepository.RepositoryName\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname)
 
 ---
 
@@ -3405,6 +3497,8 @@ scoped id of the resource.
 
 \`AWS::ECR::PublicRepository.RepositoryPolicyText\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext)
+
 ---
 
 ##### \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.tags\\"></a>
@@ -3412,6 +3506,8 @@ scoped id of the resource.
 - *Type:* typing.List[<a href=\\"#custom-@aws-cdk/core.CfnTag\\">CfnTag</a>]
 
 \`AWS::ECR::PublicRepository.Tags\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags)
 
 ---
 
@@ -3472,6 +3568,8 @@ tags: TagManager
 
 \`AWS::ECR::PublicRepository.Tags\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags)
+
 ---
 
 ##### \`repository_catalog_data\`<sup>Required</sup> <a name=\\"repository_catalog_data\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.property.repositoryCatalogData\\"></a>
@@ -3483,6 +3581,8 @@ repository_catalog_data: typing.Any
 - *Type:* typing.Any
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
 
 ---
 
@@ -3496,6 +3596,8 @@ repository_policy_text: typing.Any
 
 \`AWS::ECR::PublicRepository.RepositoryPolicyText\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext)
+
 ---
 
 ##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.property.repositoryName\\"></a>
@@ -3507,6 +3609,8 @@ repository_name: str
 - *Type:* str
 
 \`AWS::ECR::PublicRepository.RepositoryName\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname)
 
 ---
 
@@ -3535,6 +3639,8 @@ The CloudFormation resource type name for this resource class.
 - *Implements:* <a href=\\"#custom-@aws-cdk/core.IInspectable\\">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::RegistryPolicy\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html)
 
 #### Initializers <a name=\\"Initializers\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.Initializer\\"></a>
 
@@ -3577,6 +3683,8 @@ scoped id of the resource.
 - *Type:* typing.Any
 
 \`AWS::ECR::RegistryPolicy.PolicyText\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html#cfn-ecr-registrypolicy-policytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html#cfn-ecr-registrypolicy-policytext)
 
 ---
 
@@ -3634,6 +3742,8 @@ policy_text: typing.Any
 
 \`AWS::ECR::RegistryPolicy.PolicyText\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html#cfn-ecr-registrypolicy-policytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html#cfn-ecr-registrypolicy-policytext)
+
 ---
 
 #### Constants <a name=\\"Constants\\" id=\\"Constants\\"></a>
@@ -3661,6 +3771,8 @@ The CloudFormation resource type name for this resource class.
 - *Implements:* <a href=\\"#custom-@aws-cdk/core.IInspectable\\">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html)
 
 #### Initializers <a name=\\"Initializers\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.Initializer\\"></a>
 
@@ -3703,6 +3815,8 @@ scoped id of the resource.
 - *Type:* typing.Union[<a href=\\"#custom-@aws-cdk/core.IResolvable\\">IResolvable</a>, <a href=\\"#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty\\">ReplicationConfigurationProperty</a>]
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration)
 
 ---
 
@@ -3760,6 +3874,8 @@ replication_configuration: typing.Union[IResolvable, ReplicationConfigurationPro
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration)
+
 ---
 
 #### Constants <a name=\\"Constants\\" id=\\"Constants\\"></a>
@@ -3787,6 +3903,8 @@ The CloudFormation resource type name for this resource class.
 - *Implements:* <a href=\\"#custom-@aws-cdk/core.IInspectable\\">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::Repository\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html)
 
 #### Initializers <a name=\\"Initializers\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.Initializer\\"></a>
 
@@ -3842,6 +3960,8 @@ scoped id of the resource.
 
 \`AWS::ECR::Repository.EncryptionConfiguration\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-encryptionconfiguration](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-encryptionconfiguration)
+
 ---
 
 ##### \`image_scanning_configuration\`<sup>Optional</sup> <a name=\\"image_scanning_configuration\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.imageScanningConfiguration\\"></a>
@@ -3849,6 +3969,8 @@ scoped id of the resource.
 - *Type:* typing.Any
 
 \`AWS::ECR::Repository.ImageScanningConfiguration\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagescanningconfiguration](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagescanningconfiguration)
 
 ---
 
@@ -3858,6 +3980,8 @@ scoped id of the resource.
 
 \`AWS::ECR::Repository.ImageTagMutability\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagetagmutability](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagetagmutability)
+
 ---
 
 ##### \`lifecycle_policy\`<sup>Optional</sup> <a name=\\"lifecycle_policy\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.lifecyclePolicy\\"></a>
@@ -3865,6 +3989,8 @@ scoped id of the resource.
 - *Type:* typing.Union[<a href=\\"#custom-@aws-cdk/core.IResolvable\\">IResolvable</a>, <a href=\\"#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty\\">LifecyclePolicyProperty</a>]
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy)
 
 ---
 
@@ -3874,6 +4000,8 @@ scoped id of the resource.
 
 \`AWS::ECR::Repository.RepositoryName\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositoryname)
+
 ---
 
 ##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"repository_policy_text\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.repositoryPolicyText\\"></a>
@@ -3882,6 +4010,8 @@ scoped id of the resource.
 
 \`AWS::ECR::Repository.RepositoryPolicyText\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositorypolicytext)
+
 ---
 
 ##### \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.parameter.tags\\"></a>
@@ -3889,6 +4019,8 @@ scoped id of the resource.
 - *Type:* typing.List[<a href=\\"#custom-@aws-cdk/core.CfnTag\\">CfnTag</a>]
 
 \`AWS::ECR::Repository.Tags\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-tags)
 
 ---
 
@@ -3963,6 +4095,8 @@ tags: TagManager
 
 \`AWS::ECR::Repository.Tags\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-tags)
+
 ---
 
 ##### \`encryption_configuration\`<sup>Required</sup> <a name=\\"encryption_configuration\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.encryptionConfiguration\\"></a>
@@ -3974,6 +4108,8 @@ encryption_configuration: typing.Any
 - *Type:* typing.Any
 
 \`AWS::ECR::Repository.EncryptionConfiguration\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-encryptionconfiguration](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-encryptionconfiguration)
 
 ---
 
@@ -3987,6 +4123,8 @@ image_scanning_configuration: typing.Any
 
 \`AWS::ECR::Repository.ImageScanningConfiguration\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagescanningconfiguration](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagescanningconfiguration)
+
 ---
 
 ##### \`repository_policy_text\`<sup>Required</sup> <a name=\\"repository_policy_text\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.repositoryPolicyText\\"></a>
@@ -3998,6 +4136,8 @@ repository_policy_text: typing.Any
 - *Type:* typing.Any
 
 \`AWS::ECR::Repository.RepositoryPolicyText\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositorypolicytext)
 
 ---
 
@@ -4011,6 +4151,8 @@ image_tag_mutability: str
 
 \`AWS::ECR::Repository.ImageTagMutability\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagetagmutability](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagetagmutability)
+
 ---
 
 ##### \`lifecycle_policy\`<sup>Optional</sup> <a name=\\"lifecycle_policy\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.lifecyclePolicy\\"></a>
@@ -4023,6 +4165,8 @@ lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty]
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy)
+
 ---
 
 ##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.property.repositoryName\\"></a>
@@ -4034,6 +4178,8 @@ repository_name: str
 - *Type:* str
 
 \`AWS::ECR::Repository.RepositoryName\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositoryname)
 
 ---
 
@@ -4129,8 +4275,6 @@ If this parameter is omitted, the default setting of MUTABLE will be used which 
 - *Default:* The default registry is assumed.
 
 The AWS account ID associated with the registry that contains the repository.
-
-> https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutLifecyclePolicy.html
 
 > [https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutLifecyclePolicy.html](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutLifecyclePolicy.html)
 
@@ -4636,8 +4780,6 @@ Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
 
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
-
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
 ---
@@ -4698,8 +4840,6 @@ A description of the rule's purpose.
 Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
-
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
@@ -4768,8 +4908,6 @@ Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
 
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
-
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
 ---
@@ -4830,8 +4968,6 @@ A description of the rule's purpose.
 Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
-
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
@@ -4954,6 +5090,8 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 Properties for defining a \`AWS::ECR::PublicRepository\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html)
+
 #### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.Initializer\\"></a>
 
 \`\`\`python
@@ -4988,6 +5126,8 @@ repository_catalog_data: typing.Any
 
 \`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
+
 ---
 
 ##### \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\"></a>
@@ -4999,6 +5139,8 @@ repository_name: str
 - *Type:* str
 
 \`AWS::ECR::PublicRepository.RepositoryName\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname)
 
 ---
 
@@ -5012,6 +5154,8 @@ repository_policy_text: typing.Any
 
 \`AWS::ECR::PublicRepository.RepositoryPolicyText\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext)
+
 ---
 
 ##### \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\"></a>
@@ -5024,11 +5168,15 @@ tags: typing.List[CfnTag]
 
 \`AWS::ECR::PublicRepository.Tags\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-tags)
+
 ---
 
 ### CfnRegistryPolicyProps <a name=\\"CfnRegistryPolicyProps\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicyProps\\"></a>
 
 Properties for defining a \`AWS::ECR::RegistryPolicy\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html)
 
 #### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicyProps.Initializer\\"></a>
 
@@ -5058,11 +5206,15 @@ policy_text: typing.Any
 
 \`AWS::ECR::RegistryPolicy.PolicyText\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html#cfn-ecr-registrypolicy-policytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html#cfn-ecr-registrypolicy-policytext)
+
 ---
 
 ### CfnReplicationConfigurationProps <a name=\\"CfnReplicationConfigurationProps\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfigurationProps\\"></a>
 
 Properties for defining a \`AWS::ECR::ReplicationConfiguration\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html)
 
 #### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfigurationProps.Initializer\\"></a>
 
@@ -5092,11 +5244,15 @@ replication_configuration: typing.Union[IResolvable, ReplicationConfigurationPro
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration)
+
 ---
 
 ### CfnRepositoryProps <a name=\\"CfnRepositoryProps\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps\\"></a>
 
 Properties for defining a \`AWS::ECR::Repository\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html)
 
 #### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.Initializer\\"></a>
 
@@ -5138,6 +5294,8 @@ encryption_configuration: typing.Any
 
 \`AWS::ECR::Repository.EncryptionConfiguration\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-encryptionconfiguration](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-encryptionconfiguration)
+
 ---
 
 ##### \`image_scanning_configuration\`<sup>Optional</sup> <a name=\\"image_scanning_configuration\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.property.imageScanningConfiguration\\"></a>
@@ -5149,6 +5307,8 @@ image_scanning_configuration: typing.Any
 - *Type:* typing.Any
 
 \`AWS::ECR::Repository.ImageScanningConfiguration\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagescanningconfiguration](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagescanningconfiguration)
 
 ---
 
@@ -5162,6 +5322,8 @@ image_tag_mutability: str
 
 \`AWS::ECR::Repository.ImageTagMutability\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagetagmutability](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagetagmutability)
+
 ---
 
 ##### \`lifecycle_policy\`<sup>Optional</sup> <a name=\\"lifecycle_policy\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.property.lifecyclePolicy\\"></a>
@@ -5173,6 +5335,8 @@ lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty]
 - *Type:* typing.Union[<a href=\\"#custom-@aws-cdk/core.IResolvable\\">IResolvable</a>, <a href=\\"#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty\\">LifecyclePolicyProperty</a>]
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy)
 
 ---
 
@@ -5186,6 +5350,8 @@ repository_name: str
 
 \`AWS::ECR::Repository.RepositoryName\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositoryname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositoryname)
+
 ---
 
 ##### \`repository_policy_text\`<sup>Optional</sup> <a name=\\"repository_policy_text\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.property.repositoryPolicyText\\"></a>
@@ -5197,6 +5363,8 @@ repository_policy_text: typing.Any
 - *Type:* typing.Any
 
 \`AWS::ECR::Repository.RepositoryPolicyText\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositorypolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositorypolicytext)
 
 ---
 
@@ -5210,9 +5378,13 @@ tags: typing.List[CfnTag]
 
 \`AWS::ECR::Repository.Tags\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-tags)
+
 ---
 
 ### LifecyclePolicyProperty <a name=\\"LifecyclePolicyProperty\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty\\"></a>
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html)
 
 #### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty.Initializer\\"></a>
 
@@ -5244,6 +5416,8 @@ lifecycle_policy_text: str
 
 \`CfnRepository.LifecyclePolicyProperty.LifecyclePolicyText\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html#cfn-ecr-repository-lifecyclepolicy-lifecyclepolicytext](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html#cfn-ecr-repository-lifecyclepolicy-lifecyclepolicytext)
+
 ---
 
 ##### \`registry_id\`<sup>Optional</sup> <a name=\\"registry_id\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty.property.registryId\\"></a>
@@ -5255,6 +5429,8 @@ registry_id: str
 - *Type:* str
 
 \`CfnRepository.LifecyclePolicyProperty.RegistryId\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html#cfn-ecr-repository-lifecyclepolicy-registryid](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html#cfn-ecr-repository-lifecyclepolicy-registryid)
 
 ---
 
@@ -5431,8 +5607,6 @@ Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
 
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
-
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
 ---
@@ -5532,8 +5706,6 @@ Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
 
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
-
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
 ---
@@ -5581,6 +5753,8 @@ Leave it undefined to watch the full repository.
 
 ### ReplicationConfigurationProperty <a name=\\"ReplicationConfigurationProperty\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty\\"></a>
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationconfiguration.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationconfiguration.html)
+
 #### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.Initializer\\"></a>
 
 \`\`\`python
@@ -5609,9 +5783,13 @@ rules: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, Replicati
 
 \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration-rules](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration-rules)
+
 ---
 
 ### ReplicationDestinationProperty <a name=\\"ReplicationDestinationProperty\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty\\"></a>
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html)
 
 #### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty.Initializer\\"></a>
 
@@ -5643,6 +5821,8 @@ region: str
 
 \`CfnReplicationConfiguration.ReplicationDestinationProperty.Region\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html#cfn-ecr-replicationconfiguration-replicationdestination-region](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html#cfn-ecr-replicationconfiguration-replicationdestination-region)
+
 ---
 
 ##### \`registry_id\`<sup>Required</sup> <a name=\\"registry_id\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty.property.registryId\\"></a>
@@ -5655,9 +5835,13 @@ registry_id: str
 
 \`CfnReplicationConfiguration.ReplicationDestinationProperty.RegistryId\`.
 
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html#cfn-ecr-replicationconfiguration-replicationdestination-registryid](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html#cfn-ecr-replicationconfiguration-replicationdestination-registryid)
+
 ---
 
 ### ReplicationRuleProperty <a name=\\"ReplicationRuleProperty\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty\\"></a>
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html)
 
 #### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty.Initializer\\"></a>
 
@@ -5686,6 +5870,8 @@ destinations: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, Re
 - *Type:* typing.Union[<a href=\\"#custom-@aws-cdk/core.IResolvable\\">IResolvable</a>, typing.List[typing.Union[<a href=\\"#custom-@aws-cdk/core.IResolvable\\">IResolvable</a>, <a href=\\"#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty\\">ReplicationDestinationProperty</a>]]]
 
 \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html#cfn-ecr-replicationconfiguration-replicationrule-destinations](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html#cfn-ecr-replicationconfiguration-replicationrule-destinations)
 
 ---
 
@@ -5800,8 +5986,6 @@ lifecycle_registry_id: str
 
 The AWS account ID associated with the registry that contains the repository.
 
-> https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutLifecyclePolicy.html
-
 > [https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutLifecyclePolicy.html](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutLifecyclePolicy.html)
 
 ---
@@ -5851,8 +6035,6 @@ Name for this repository.
 
 Authorization token to access private ECR repositories in the current environment via Docker CLI.
 
-> https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html
-
 > [https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html](https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html)
 
 
@@ -5885,8 +6067,6 @@ aws_cdk.aws_ecr.AuthorizationToken.grant_read(
 ### PublicGalleryAuthorizationToken <a name=\\"PublicGalleryAuthorizationToken\\" id=\\"@aws-cdk/aws-ecr.PublicGalleryAuthorizationToken\\"></a>
 
 Authorization token to access the global public ECR Gallery via Docker CLI.
-
-> https://docs.aws.amazon.com/AmazonECR/latest/public/public-registries.html#public-registry-auth
 
 > [https://docs.aws.amazon.com/AmazonECR/latest/public/public-registries.html#public-registry-auth](https://docs.aws.amazon.com/AmazonECR/latest/public/public-registries.html#public-registry-auth)
 
@@ -6045,8 +6225,6 @@ Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
 
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
-
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
 ---
@@ -6107,8 +6285,6 @@ A description of the rule's purpose.
 Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
-
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
@@ -6177,8 +6353,6 @@ Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
 
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
-
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
 ---
@@ -6239,8 +6413,6 @@ A description of the rule's purpose.
 Additional restrictions for the event to route to the specified target.
 
 The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
-
-> https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 

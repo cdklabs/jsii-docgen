@@ -1,4 +1,4 @@
-import { ApiReferenceSchema, AssemblyMetadataSchema, ClassSchema, ConstructSchema, EnumMemberSchema, EnumSchema, InitializerSchema, InterfaceSchema, JsiiEntity, MethodSchema, ParameterSchema, PropertySchema, StructSchema, TypeSchema } from '../schema';
+import { ApiReferenceSchema, AssemblyMetadataSchema, ClassSchema, ConstructSchema, EnumMemberSchema, EnumSchema, InitializerSchema, InterfaceSchema, JsiiEntity, MethodSchema, ParameterSchema, PropertySchema, Schema, StructSchema, TypeSchema } from '../schema';
 import { Language } from '../transpile/transpile';
 import { MarkdownDocument } from './markdown-doc';
 
@@ -53,29 +53,58 @@ export interface MarkdownFormattingOptions {
   ) => string;
 }
 
-export interface MarkdownRendererOptions extends MarkdownFormattingOptions {
-  /**
-   * Name of the jsii assembly/package.
-   */
-  readonly packageName: string;
-
-  /**
-   * Version of the jsii assembly/package.
-   */
-  readonly packageVersion: string;
-
-  /**
-   * Name of the submodule this type is from within the jsii assembly (if any).
-   */
-  readonly submodule?: string;
-
+export interface MarkdownRendererOptions extends MarkdownFormattingOptions, AssemblyMetadataSchema {
   /**
    * Language the documentation is rendered for.
    */
   readonly language: Language;
 }
 
+/**
+ * Generates `MarkdownDocument` instances from `API.json` or its parts.
+ *
+ * This class can be used in two ways:
+ *
+ * 1. Instantiate it via the constructor with `options`, which requires
+ * passing in some global context about the module and language you are
+ * generated for. (This context can be found in the top-level `metadata`
+ * field of API.json.) Then, call a `visitXxx` method to generate a
+ * `MarkdownDocument` for the appropriate part of the schema.
+ *
+ * 2. Generate a `MarkdownDocument` from the complete `API.json` using the
+ * `fromSchema` static method (no instantiation needed). Global context is
+ * automatically inferred from the API.json.
+ *
+ * Both choices allow customizing the output via `MarkdownFormattingOptions`.
+ */
 export class MarkdownRenderer {
+  public static fromSchema(schema: Schema, options: MarkdownFormattingOptions): MarkdownDocument {
+    const documentation = new MarkdownDocument();
+
+    if (schema.version !== '0.1') {
+      throw new Error(`Unexpected schema version: ${schema.version}`);
+    }
+
+    if (schema.readme) {
+      const md = new MarkdownDocument();
+      md.lines(schema.readme);
+      documentation.section(md);
+    }
+
+    if (schema.apiReference) {
+      const renderer = new MarkdownRenderer({
+        anchorFormatter: options.anchorFormatter,
+        linkFormatter: options.linkFormatter,
+        typeFormatter: options.typeFormatter,
+        language: Language.fromString(schema.language),
+        ...schema.metadata,
+      });
+      documentation.section(renderer.visitApiReference(schema.apiReference));
+    }
+
+    return documentation;
+  }
+
   private readonly anchorFormatter: NonNullable<MarkdownFormattingOptions['anchorFormatter']>;
   private readonly linkFormatter: NonNullable<MarkdownFormattingOptions['linkFormatter']>;
   private readonly typeFormatter: NonNullable<MarkdownFormattingOptions['typeFormatter']>;

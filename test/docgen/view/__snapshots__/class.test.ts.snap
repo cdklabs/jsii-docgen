@@ -5,7 +5,9 @@ Object {
   "constants": Array [],
   "displayName": "AuthorizationToken",
   "docs": Object {
-    "see": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html",
+    "links": Array [
+      "https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html",
+    ],
     "summary": "Authorization token to access private ECR repositories in the current environment via Docker CLI.",
   },
   "fqn": "Amazon.CDK.AWS.ECR.AuthorizationToken",
@@ -58,8 +60,6 @@ exports[`csharp snapshot 2`] = `
 
 Authorization token to access private ECR repositories in the current environment via Docker CLI.
 
-> https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html
-
 > [https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html](https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html)
 
 
@@ -94,7 +94,9 @@ Object {
   "constants": Array [],
   "displayName": "AuthorizationToken",
   "docs": Object {
-    "see": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html",
+    "links": Array [
+      "https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html",
+    ],
     "summary": "Authorization token to access private ECR repositories in the current environment via Docker CLI.",
   },
   "fqn": "software.amazon.awscdk.services.ecr.AuthorizationToken",
@@ -147,8 +149,6 @@ exports[`java snapshot 2`] = `
 
 Authorization token to access private ECR repositories in the current environment via Docker CLI.
 
-> https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html
-
 > [https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html](https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html)
 
 
@@ -183,7 +183,9 @@ Object {
   "constants": Array [],
   "displayName": "AuthorizationToken",
   "docs": Object {
-    "see": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html",
+    "links": Array [
+      "https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html",
+    ],
     "summary": "Authorization token to access private ECR repositories in the current environment via Docker CLI.",
   },
   "fqn": "aws_cdk.aws_ecr.AuthorizationToken",
@@ -238,8 +240,6 @@ exports[`python snapshot 2`] = `
 
 Authorization token to access private ECR repositories in the current environment via Docker CLI.
 
-> https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html
-
 > [https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html](https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html)
 
 
@@ -276,7 +276,9 @@ Object {
   "constants": Array [],
   "displayName": "AuthorizationToken",
   "docs": Object {
-    "see": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html",
+    "links": Array [
+      "https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html",
+    ],
     "summary": "Authorization token to access private ECR repositories in the current environment via Docker CLI.",
   },
   "fqn": "@aws-cdk/aws-ecr.AuthorizationToken",
@@ -328,8 +330,6 @@ exports[`typescript snapshot 2`] = `
 " AuthorizationToken <a name=\\"AuthorizationToken\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken\\"></a>
 
 Authorization token to access private ECR repositories in the current environment via Docker CLI.
-
-> https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html
 
 > [https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html](https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html)
 

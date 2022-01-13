@@ -111,12 +111,10 @@ export class MarkdownDocument {
       this.lines('');
     }
 
-    if (docs.see) {
-      this.quote(docs.see);
-    }
-
-    if (docs.see) {
-      this.quote(`[${docs.see}](${docs.see})`);
+    if (docs.links) {
+      for (const link of docs.links) {
+        this.quote(`[${link}](${link})`);
+      }
     }
   }
 
