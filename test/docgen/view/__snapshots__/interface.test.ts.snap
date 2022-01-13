@@ -47,8 +47,8 @@ Object {
           "default": undefined,
           "displayName": "Statement",
           "docs": Object {},
-          "fqn": "Amazon.CDK.AWS.ECR.IRepository.parameter.Statement",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.statement",
+          "fqn": "Amazon.CDK.AWS.ECR.IRepository.AddToResourcePolicy.parameter.Statement",
+          "id": "@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "%",
@@ -79,8 +79,8 @@ Object {
           "default": undefined,
           "displayName": "Grantee",
           "docs": Object {},
-          "fqn": "Amazon.CDK.AWS.ECR.IRepository.parameter.Grantee",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
+          "fqn": "Amazon.CDK.AWS.ECR.IRepository.Grant.parameter.Grantee",
+          "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "%",
@@ -100,8 +100,8 @@ Object {
           "default": undefined,
           "displayName": "Actions",
           "docs": Object {},
-          "fqn": "Amazon.CDK.AWS.ECR.IRepository.parameter.Actions",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.actions",
+          "fqn": "Amazon.CDK.AWS.ECR.IRepository.Grant.parameter.Actions",
+          "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "string",
@@ -122,8 +122,8 @@ Object {
           "default": undefined,
           "displayName": "Grantee",
           "docs": Object {},
-          "fqn": "Amazon.CDK.AWS.ECR.IRepository.parameter.Grantee",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
+          "fqn": "Amazon.CDK.AWS.ECR.IRepository.GrantPull.parameter.Grantee",
+          "id": "@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "%",
@@ -154,8 +154,8 @@ Object {
           "default": undefined,
           "displayName": "Grantee",
           "docs": Object {},
-          "fqn": "Amazon.CDK.AWS.ECR.IRepository.parameter.Grantee",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
+          "fqn": "Amazon.CDK.AWS.ECR.IRepository.GrantPullPush.parameter.Grantee",
+          "id": "@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "%",
@@ -190,8 +190,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "The id of the rule.",
           },
-          "fqn": "Amazon.CDK.AWS.ECR.IRepository.parameter.Id",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.id",
+          "fqn": "Amazon.CDK.AWS.ECR.IRepository.OnCloudTrailEvent.parameter.Id",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "string",
@@ -203,8 +203,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "Options for adding the rule.",
           },
-          "fqn": "Amazon.CDK.AWS.ECR.IRepository.parameter.Options",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
+          "fqn": "Amazon.CDK.AWS.ECR.IRepository.OnCloudTrailEvent.parameter.Options",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.options",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -239,8 +239,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "The id of the rule.",
           },
-          "fqn": "Amazon.CDK.AWS.ECR.IRepository.parameter.Id",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.id",
+          "fqn": "Amazon.CDK.AWS.ECR.IRepository.OnCloudTrailImagePushed.parameter.Id",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "string",
@@ -252,8 +252,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "Options for adding the rule.",
           },
-          "fqn": "Amazon.CDK.AWS.ECR.IRepository.parameter.Options",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
+          "fqn": "Amazon.CDK.AWS.ECR.IRepository.OnCloudTrailImagePushed.parameter.Options",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.options",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -286,8 +286,8 @@ that captures the event. This method will not create the Trail.",
           "default": undefined,
           "displayName": "Id",
           "docs": Object {},
-          "fqn": "Amazon.CDK.AWS.ECR.IRepository.parameter.Id",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.id",
+          "fqn": "Amazon.CDK.AWS.ECR.IRepository.OnEvent.parameter.Id",
+          "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "string",
@@ -297,8 +297,8 @@ that captures the event. This method will not create the Trail.",
           "default": undefined,
           "displayName": "Options",
           "docs": Object {},
-          "fqn": "Amazon.CDK.AWS.ECR.IRepository.parameter.Options",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
+          "fqn": "Amazon.CDK.AWS.ECR.IRepository.OnEvent.parameter.Options",
+          "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.options",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -331,8 +331,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "The id of the rule.",
           },
-          "fqn": "Amazon.CDK.AWS.ECR.IRepository.parameter.Id",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.id",
+          "fqn": "Amazon.CDK.AWS.ECR.IRepository.OnImageScanCompleted.parameter.Id",
+          "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "string",
@@ -344,8 +344,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "Options for adding the rule.",
           },
-          "fqn": "Amazon.CDK.AWS.ECR.IRepository.parameter.Options",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
+          "fqn": "Amazon.CDK.AWS.ECR.IRepository.OnImageScanCompleted.parameter.Options",
+          "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.options",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -379,8 +379,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "Image digest to use (tools usually default to the image with the \\"latest\\" tag if omitted).",
           },
-          "fqn": "Amazon.CDK.AWS.ECR.IRepository.parameter.Digest",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.digest",
+          "fqn": "Amazon.CDK.AWS.ECR.IRepository.RepositoryUriForDigest.parameter.Digest",
+          "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest",
           "optional": true,
           "type": Object {
             "formattingPattern": "string",
@@ -404,8 +404,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "Image tag to use (tools usually default to \\"latest\\" if omitted).",
           },
-          "fqn": "Amazon.CDK.AWS.ECR.IRepository.parameter.Tag",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.tag",
+          "fqn": "Amazon.CDK.AWS.ECR.IRepository.RepositoryUriForTag.parameter.Tag",
+          "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag",
           "optional": true,
           "type": Object {
             "formattingPattern": "string",
@@ -583,7 +583,7 @@ Represents an ECR repository.
 private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
-### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.statement\\"></a>
+### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.PolicyStatement
 
@@ -595,13 +595,13 @@ private AddToResourcePolicy(PolicyStatement Statement)
 private Grant(IGrantable Grantee, string Actions)
 \`\`\`
 
-### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
+### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.IGrantable
 
 ---
 
-### \`Actions\`<sup>Required</sup> <a name=\\"Actions\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.actions\\"></a>
+### \`Actions\`<sup>Required</sup> <a name=\\"Actions\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.actions\\"></a>
 
 - *Type:* string
 
@@ -613,7 +613,7 @@ private Grant(IGrantable Grantee, string Actions)
 private GrantPull(IGrantable Grantee)
 \`\`\`
 
-### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
+### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.IGrantable
 
@@ -625,7 +625,7 @@ private GrantPull(IGrantable Grantee)
 private GrantPullPush(IGrantable Grantee)
 \`\`\`
 
-### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
+### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.IGrantable
 
@@ -637,7 +637,7 @@ private GrantPullPush(IGrantable Grantee)
 private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
-### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
 - *Type:* string
 
@@ -645,7 +645,7 @@ The id of the rule.
 
 ---
 
-### \`Options\`<sup>Optional</sup> <a name=\\"Options\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\"></a>
+### \`Options\`<sup>Optional</sup> <a name=\\"Options\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.options\\"></a>
 
 - *Type:* Amazon.CDK.AWS.Events.OnEventOptions
 
@@ -659,7 +659,7 @@ Options for adding the rule.
 private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
-### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* string
 
@@ -667,7 +667,7 @@ The id of the rule.
 
 ---
 
-### \`Options\`<sup>Optional</sup> <a name=\\"Options\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\"></a>
+### \`Options\`<sup>Optional</sup> <a name=\\"Options\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.options\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions\\">OnCloudTrailImagePushedOptions</a>
 
@@ -681,13 +681,13 @@ Options for adding the rule.
 private OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
-### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* string
 
 ---
 
-### \`Options\`<sup>Optional</sup> <a name=\\"Options\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\"></a>
+### \`Options\`<sup>Optional</sup> <a name=\\"Options\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.options\\"></a>
 
 - *Type:* Amazon.CDK.AWS.Events.OnEventOptions
 
@@ -699,7 +699,7 @@ private OnEvent(string Id, OnEventOptions Options = null)
 private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
 
-### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
 
 - *Type:* string
 
@@ -707,7 +707,7 @@ The id of the rule.
 
 ---
 
-### \`Options\`<sup>Optional</sup> <a name=\\"Options\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\"></a>
+### \`Options\`<sup>Optional</sup> <a name=\\"Options\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.options\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-ecr.OnImageScanCompletedOptions\\">OnImageScanCompletedOptions</a>
 
@@ -721,7 +721,7 @@ Options for adding the rule.
 private RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
-### \`Digest\`<sup>Optional</sup> <a name=\\"Digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.digest\\"></a>
+### \`Digest\`<sup>Optional</sup> <a name=\\"Digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* string
 
@@ -735,7 +735,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 private RepositoryUriForTag(string Tag = null)
 \`\`\`
 
-### \`Tag\`<sup>Optional</sup> <a name=\\"Tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.tag\\"></a>
+### \`Tag\`<sup>Optional</sup> <a name=\\"Tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
 
 - *Type:* string
 
@@ -881,8 +881,8 @@ Object {
           "default": undefined,
           "displayName": "statement",
           "docs": Object {},
-          "fqn": "software.amazon.awscdk.services.ecr.IRepository.parameter.statement",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.statement",
+          "fqn": "software.amazon.awscdk.services.ecr.IRepository.addToResourcePolicy.parameter.statement",
+          "id": "@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "%",
@@ -913,8 +913,8 @@ Object {
           "default": undefined,
           "displayName": "grantee",
           "docs": Object {},
-          "fqn": "software.amazon.awscdk.services.ecr.IRepository.parameter.grantee",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
+          "fqn": "software.amazon.awscdk.services.ecr.IRepository.grant.parameter.grantee",
+          "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "%",
@@ -934,8 +934,8 @@ Object {
           "default": undefined,
           "displayName": "actions",
           "docs": Object {},
-          "fqn": "software.amazon.awscdk.services.ecr.IRepository.parameter.actions",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.actions",
+          "fqn": "software.amazon.awscdk.services.ecr.IRepository.grant.parameter.actions",
+          "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "java.lang.String",
@@ -956,8 +956,8 @@ Object {
           "default": undefined,
           "displayName": "grantee",
           "docs": Object {},
-          "fqn": "software.amazon.awscdk.services.ecr.IRepository.parameter.grantee",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
+          "fqn": "software.amazon.awscdk.services.ecr.IRepository.grantPull.parameter.grantee",
+          "id": "@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "%",
@@ -988,8 +988,8 @@ Object {
           "default": undefined,
           "displayName": "grantee",
           "docs": Object {},
-          "fqn": "software.amazon.awscdk.services.ecr.IRepository.parameter.grantee",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
+          "fqn": "software.amazon.awscdk.services.ecr.IRepository.grantPullPush.parameter.grantee",
+          "id": "@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "%",
@@ -1024,8 +1024,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "The id of the rule.",
           },
-          "fqn": "software.amazon.awscdk.services.ecr.IRepository.parameter.id",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.id",
+          "fqn": "software.amazon.awscdk.services.ecr.IRepository.onCloudTrailEvent.parameter.id",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "java.lang.String",
@@ -1037,8 +1037,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "Options for adding the rule.",
           },
-          "fqn": "software.amazon.awscdk.services.ecr.IRepository.parameter.options",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
+          "fqn": "software.amazon.awscdk.services.ecr.IRepository.onCloudTrailEvent.parameter.options",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.options",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -1074,8 +1074,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "The id of the rule.",
           },
-          "fqn": "software.amazon.awscdk.services.ecr.IRepository.parameter.id",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.id",
+          "fqn": "software.amazon.awscdk.services.ecr.IRepository.onCloudTrailImagePushed.parameter.id",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "java.lang.String",
@@ -1087,8 +1087,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "Options for adding the rule.",
           },
-          "fqn": "software.amazon.awscdk.services.ecr.IRepository.parameter.options",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
+          "fqn": "software.amazon.awscdk.services.ecr.IRepository.onCloudTrailImagePushed.parameter.options",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.options",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -1122,8 +1122,8 @@ public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptio
           "default": undefined,
           "displayName": "id",
           "docs": Object {},
-          "fqn": "software.amazon.awscdk.services.ecr.IRepository.parameter.id",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.id",
+          "fqn": "software.amazon.awscdk.services.ecr.IRepository.onEvent.parameter.id",
+          "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "java.lang.String",
@@ -1133,8 +1133,8 @@ public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptio
           "default": undefined,
           "displayName": "options",
           "docs": Object {},
-          "fqn": "software.amazon.awscdk.services.ecr.IRepository.parameter.options",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
+          "fqn": "software.amazon.awscdk.services.ecr.IRepository.onEvent.parameter.options",
+          "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.options",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -1168,8 +1168,8 @@ public onEvent(java.lang.String id, OnEventOptions options)",
           "docs": Object {
             "summary": "The id of the rule.",
           },
-          "fqn": "software.amazon.awscdk.services.ecr.IRepository.parameter.id",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.id",
+          "fqn": "software.amazon.awscdk.services.ecr.IRepository.onImageScanCompleted.parameter.id",
+          "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "java.lang.String",
@@ -1181,8 +1181,8 @@ public onEvent(java.lang.String id, OnEventOptions options)",
           "docs": Object {
             "summary": "Options for adding the rule.",
           },
-          "fqn": "software.amazon.awscdk.services.ecr.IRepository.parameter.options",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
+          "fqn": "software.amazon.awscdk.services.ecr.IRepository.onImageScanCompleted.parameter.options",
+          "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.options",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -1217,8 +1217,8 @@ public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions opt
           "docs": Object {
             "summary": "Image digest to use (tools usually default to the image with the \\"latest\\" tag if omitted).",
           },
-          "fqn": "software.amazon.awscdk.services.ecr.IRepository.parameter.digest",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.digest",
+          "fqn": "software.amazon.awscdk.services.ecr.IRepository.repositoryUriForDigest.parameter.digest",
+          "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest",
           "optional": true,
           "type": Object {
             "formattingPattern": "java.lang.String",
@@ -1243,8 +1243,8 @@ public repositoryUriForDigest(java.lang.String digest)",
           "docs": Object {
             "summary": "Image tag to use (tools usually default to \\"latest\\" if omitted).",
           },
-          "fqn": "software.amazon.awscdk.services.ecr.IRepository.parameter.tag",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.tag",
+          "fqn": "software.amazon.awscdk.services.ecr.IRepository.repositoryUriForTag.parameter.tag",
+          "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag",
           "optional": true,
           "type": Object {
             "formattingPattern": "java.lang.String",
@@ -1423,7 +1423,7 @@ Represents an ECR repository.
 public addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
-### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.statement\\"></a>
+### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.PolicyStatement
 
@@ -1435,13 +1435,13 @@ public addToResourcePolicy(PolicyStatement statement)
 public grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.IGrantable
 
 ---
 
-### \`actions\`<sup>Required</sup> <a name=\\"actions\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.actions\\"></a>
+### \`actions\`<sup>Required</sup> <a name=\\"actions\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.actions\\"></a>
 
 - *Type:* java.lang.String
 
@@ -1453,7 +1453,7 @@ public grant(IGrantable grantee, java.lang.String actions)
 public grantPull(IGrantable grantee)
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.IGrantable
 
@@ -1465,7 +1465,7 @@ public grantPull(IGrantable grantee)
 public grantPullPush(IGrantable grantee)
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.IGrantable
 
@@ -1478,7 +1478,7 @@ public onCloudTrailEvent(java.lang.String id)
 public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
 - *Type:* java.lang.String
 
@@ -1486,7 +1486,7 @@ The id of the rule.
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\"></a>
+### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.options\\"></a>
 
 - *Type:* software.amazon.awscdk.services.events.OnEventOptions
 
@@ -1501,7 +1501,7 @@ public onCloudTrailImagePushed(java.lang.String id)
 public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* java.lang.String
 
@@ -1509,7 +1509,7 @@ The id of the rule.
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\"></a>
+### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.options\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions\\">OnCloudTrailImagePushedOptions</a>
 
@@ -1524,13 +1524,13 @@ public onEvent(java.lang.String id)
 public onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* java.lang.String
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\"></a>
+### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.options\\"></a>
 
 - *Type:* software.amazon.awscdk.services.events.OnEventOptions
 
@@ -1543,7 +1543,7 @@ public onImageScanCompleted(java.lang.String id)
 public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
 
 - *Type:* java.lang.String
 
@@ -1551,7 +1551,7 @@ The id of the rule.
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\"></a>
+### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.options\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-ecr.OnImageScanCompletedOptions\\">OnImageScanCompletedOptions</a>
 
@@ -1566,7 +1566,7 @@ public repositoryUriForDigest()
 public repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
-### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.digest\\"></a>
+### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* java.lang.String
 
@@ -1581,7 +1581,7 @@ public repositoryUriForTag()
 public repositoryUriForTag(java.lang.String tag)
 \`\`\`
 
-### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.tag\\"></a>
+### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
 
 - *Type:* java.lang.String
 
@@ -1727,8 +1727,8 @@ Object {
           "default": undefined,
           "displayName": "statement",
           "docs": Object {},
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.statement",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.statement",
+          "fqn": "aws_cdk.aws_ecr.IRepository.add_to_resource_policy.parameter.statement",
+          "id": "@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "%",
@@ -1761,8 +1761,8 @@ Object {
           "default": undefined,
           "displayName": "grantee",
           "docs": Object {},
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.grantee",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
+          "fqn": "aws_cdk.aws_ecr.IRepository.grant.parameter.grantee",
+          "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "%",
@@ -1782,8 +1782,8 @@ Object {
           "default": undefined,
           "displayName": "actions",
           "docs": Object {},
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.actions",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.actions",
+          "fqn": "aws_cdk.aws_ecr.IRepository.grant.parameter.actions",
+          "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "str",
@@ -1807,8 +1807,8 @@ Object {
           "default": undefined,
           "displayName": "grantee",
           "docs": Object {},
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.grantee",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
+          "fqn": "aws_cdk.aws_ecr.IRepository.grant_pull.parameter.grantee",
+          "id": "@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "%",
@@ -1841,8 +1841,8 @@ Object {
           "default": undefined,
           "displayName": "grantee",
           "docs": Object {},
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.grantee",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
+          "fqn": "aws_cdk.aws_ecr.IRepository.grant_pull_push.parameter.grantee",
+          "id": "@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "%",
@@ -1879,8 +1879,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "The id of the rule.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.id",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.id",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_event.parameter.id",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "str",
@@ -1892,8 +1892,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "A description of the rule's purpose.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.description",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.description",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_event.parameter.description",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.description",
           "optional": true,
           "type": Object {
             "formattingPattern": "str",
@@ -1911,8 +1911,8 @@ filtering. The filtering implied by what you pass here is added
 on top of that filtering.",
             "summary": "Additional restrictions for the event to route to the specified target.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.event_pattern",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.eventPattern",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_event.parameter.event_pattern",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.eventPattern",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -1934,8 +1934,8 @@ on top of that filtering.",
           "docs": Object {
             "summary": "A name for the rule.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.rule_name",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.ruleName",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_event.parameter.rule_name",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.ruleName",
           "optional": true,
           "type": Object {
             "formattingPattern": "str",
@@ -1947,8 +1947,8 @@ on top of that filtering.",
           "docs": Object {
             "summary": "The target to register for the event.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.target",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.target",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_event.parameter.target",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.target",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -1989,8 +1989,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "The id of the rule.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.id",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.id",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_image_pushed.parameter.id",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "str",
@@ -2002,8 +2002,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "A description of the rule's purpose.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.description",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.description",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_image_pushed.parameter.description",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.description",
           "optional": true,
           "type": Object {
             "formattingPattern": "str",
@@ -2021,8 +2021,8 @@ filtering. The filtering implied by what you pass here is added
 on top of that filtering.",
             "summary": "Additional restrictions for the event to route to the specified target.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.event_pattern",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.eventPattern",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_image_pushed.parameter.event_pattern",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.eventPattern",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -2044,8 +2044,8 @@ on top of that filtering.",
           "docs": Object {
             "summary": "A name for the rule.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.rule_name",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.ruleName",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_image_pushed.parameter.rule_name",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.ruleName",
           "optional": true,
           "type": Object {
             "formattingPattern": "str",
@@ -2057,8 +2057,8 @@ on top of that filtering.",
           "docs": Object {
             "summary": "The target to register for the event.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.target",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.target",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_image_pushed.parameter.target",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.target",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -2080,8 +2080,8 @@ on top of that filtering.",
           "docs": Object {
             "summary": "Only watch changes to this image tag.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.image_tag",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.imageTag",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_image_pushed.parameter.image_tag",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.imageTag",
           "optional": true,
           "type": Object {
             "formattingPattern": "str",
@@ -2111,8 +2111,8 @@ on top of that filtering.",
           "default": undefined,
           "displayName": "id",
           "docs": Object {},
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.id",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.id",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_event.parameter.id",
+          "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "str",
@@ -2124,8 +2124,8 @@ on top of that filtering.",
           "docs": Object {
             "summary": "A description of the rule's purpose.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.description",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.description",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_event.parameter.description",
+          "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.description",
           "optional": true,
           "type": Object {
             "formattingPattern": "str",
@@ -2143,8 +2143,8 @@ filtering. The filtering implied by what you pass here is added
 on top of that filtering.",
             "summary": "Additional restrictions for the event to route to the specified target.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.event_pattern",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.eventPattern",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_event.parameter.event_pattern",
+          "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.eventPattern",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -2166,8 +2166,8 @@ on top of that filtering.",
           "docs": Object {
             "summary": "A name for the rule.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.rule_name",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.ruleName",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_event.parameter.rule_name",
+          "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.ruleName",
           "optional": true,
           "type": Object {
             "formattingPattern": "str",
@@ -2179,8 +2179,8 @@ on top of that filtering.",
           "docs": Object {
             "summary": "The target to register for the event.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.target",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.target",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_event.parameter.target",
+          "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.target",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -2219,8 +2219,8 @@ on top of that filtering.",
           "docs": Object {
             "summary": "The id of the rule.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.id",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.id",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_image_scan_completed.parameter.id",
+          "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "str",
@@ -2232,8 +2232,8 @@ on top of that filtering.",
           "docs": Object {
             "summary": "A description of the rule's purpose.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.description",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.description",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_image_scan_completed.parameter.description",
+          "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.description",
           "optional": true,
           "type": Object {
             "formattingPattern": "str",
@@ -2251,8 +2251,8 @@ filtering. The filtering implied by what you pass here is added
 on top of that filtering.",
             "summary": "Additional restrictions for the event to route to the specified target.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.event_pattern",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.eventPattern",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_image_scan_completed.parameter.event_pattern",
+          "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.eventPattern",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -2274,8 +2274,8 @@ on top of that filtering.",
           "docs": Object {
             "summary": "A name for the rule.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.rule_name",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.ruleName",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_image_scan_completed.parameter.rule_name",
+          "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.ruleName",
           "optional": true,
           "type": Object {
             "formattingPattern": "str",
@@ -2287,8 +2287,8 @@ on top of that filtering.",
           "docs": Object {
             "summary": "The target to register for the event.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.target",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.target",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_image_scan_completed.parameter.target",
+          "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.target",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -2311,8 +2311,8 @@ on top of that filtering.",
             "remarks": "Leave it undefined to watch the full repository.",
             "summary": "Only watch changes to the image tags spedified.",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.image_tags",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.imageTags",
+          "fqn": "aws_cdk.aws_ecr.IRepository.on_image_scan_completed.parameter.image_tags",
+          "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.imageTags",
           "optional": true,
           "type": Object {
             "formattingPattern": "typing.List[%]",
@@ -2348,8 +2348,8 @@ on top of that filtering.",
           "docs": Object {
             "summary": "Image digest to use (tools usually default to the image with the \\"latest\\" tag if omitted).",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.digest",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.digest",
+          "fqn": "aws_cdk.aws_ecr.IRepository.repository_uri_for_digest.parameter.digest",
+          "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest",
           "optional": true,
           "type": Object {
             "formattingPattern": "str",
@@ -2375,8 +2375,8 @@ on top of that filtering.",
           "docs": Object {
             "summary": "Image tag to use (tools usually default to \\"latest\\" if omitted).",
           },
-          "fqn": "aws_cdk.aws_ecr.IRepository.parameter.tag",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.tag",
+          "fqn": "aws_cdk.aws_ecr.IRepository.repository_uri_for_tag.parameter.tag",
+          "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag",
           "optional": true,
           "type": Object {
             "formattingPattern": "str",
@@ -2558,7 +2558,7 @@ def add_to_resource_policy(
 )
 \`\`\`
 
-### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.statement\\"></a>
+### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* aws_cdk.aws_iam.PolicyStatement
 
@@ -2573,13 +2573,13 @@ def grant(
 )
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
 
 - *Type:* aws_cdk.aws_iam.IGrantable
 
 ---
 
-### \`actions\`<sup>Required</sup> <a name=\\"actions\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.actions\\"></a>
+### \`actions\`<sup>Required</sup> <a name=\\"actions\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.actions\\"></a>
 
 - *Type:* str
 
@@ -2593,7 +2593,7 @@ def grant_pull(
 )
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* aws_cdk.aws_iam.IGrantable
 
@@ -2607,7 +2607,7 @@ def grant_pull_push(
 )
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* aws_cdk.aws_iam.IGrantable
 
@@ -2625,7 +2625,7 @@ def on_cloud_trail_event(
 )
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -2633,7 +2633,7 @@ The id of the rule.
 
 ---
 
-### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.description\\"></a>
+### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -2642,7 +2642,7 @@ A description of the rule's purpose.
 
 ---
 
-### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.eventPattern\\"></a>
+### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.eventPattern\\"></a>
 
 - *Type:* aws_cdk.aws_events.EventPattern
 - *Default:* No additional filtering based on an event pattern.
@@ -2655,7 +2655,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.ruleName\\"></a>
+### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -2664,7 +2664,7 @@ A name for the rule.
 
 ---
 
-### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.target\\"></a>
+### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.target\\"></a>
 
 - *Type:* aws_cdk.aws_events.IRuleTarget
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -2686,7 +2686,7 @@ def on_cloud_trail_image_pushed(
 )
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -2694,7 +2694,7 @@ The id of the rule.
 
 ---
 
-### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.description\\"></a>
+### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -2703,7 +2703,7 @@ A description of the rule's purpose.
 
 ---
 
-### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.eventPattern\\"></a>
+### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.eventPattern\\"></a>
 
 - *Type:* aws_cdk.aws_events.EventPattern
 - *Default:* No additional filtering based on an event pattern.
@@ -2716,7 +2716,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.ruleName\\"></a>
+### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -2725,7 +2725,7 @@ A name for the rule.
 
 ---
 
-### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.target\\"></a>
+### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.target\\"></a>
 
 - *Type:* aws_cdk.aws_events.IRuleTarget
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -2734,7 +2734,7 @@ The target to register for the event.
 
 ---
 
-### \`image_tag\`<sup>Optional</sup> <a name=\\"image_tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.imageTag\\"></a>
+### \`image_tag\`<sup>Optional</sup> <a name=\\"image_tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.imageTag\\"></a>
 
 - *Type:* str
 - *Default:* Watch changes to all tags
@@ -2755,13 +2755,13 @@ def on_event(
 )
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* str
 
 ---
 
-### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.description\\"></a>
+### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -2770,7 +2770,7 @@ A description of the rule's purpose.
 
 ---
 
-### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.eventPattern\\"></a>
+### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.eventPattern\\"></a>
 
 - *Type:* aws_cdk.aws_events.EventPattern
 - *Default:* No additional filtering based on an event pattern.
@@ -2783,7 +2783,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.ruleName\\"></a>
+### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -2792,7 +2792,7 @@ A name for the rule.
 
 ---
 
-### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.target\\"></a>
+### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.target\\"></a>
 
 - *Type:* aws_cdk.aws_events.IRuleTarget
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -2814,7 +2814,7 @@ def on_image_scan_completed(
 )
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -2822,7 +2822,7 @@ The id of the rule.
 
 ---
 
-### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.description\\"></a>
+### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.description\\"></a>
 
 - *Type:* str
 - *Default:* No description
@@ -2831,7 +2831,7 @@ A description of the rule's purpose.
 
 ---
 
-### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.eventPattern\\"></a>
+### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.eventPattern\\"></a>
 
 - *Type:* aws_cdk.aws_events.EventPattern
 - *Default:* No additional filtering based on an event pattern.
@@ -2844,7 +2844,7 @@ The method that generates the rule probably imposes some type of event filtering
 
 ---
 
-### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.ruleName\\"></a>
+### \`rule_name\`<sup>Optional</sup> <a name=\\"rule_name\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.ruleName\\"></a>
 
 - *Type:* str
 - *Default:* AWS CloudFormation generates a unique physical ID.
@@ -2853,7 +2853,7 @@ A name for the rule.
 
 ---
 
-### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.target\\"></a>
+### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.target\\"></a>
 
 - *Type:* aws_cdk.aws_events.IRuleTarget
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
@@ -2862,7 +2862,7 @@ The target to register for the event.
 
 ---
 
-### \`image_tags\`<sup>Optional</sup> <a name=\\"image_tags\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.imageTags\\"></a>
+### \`image_tags\`<sup>Optional</sup> <a name=\\"image_tags\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.imageTags\\"></a>
 
 - *Type:* typing.List[str]
 - *Default:* Watch the changes to the repository with all image tags
@@ -2881,7 +2881,7 @@ def repository_uri_for_digest(
 )
 \`\`\`
 
-### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.digest\\"></a>
+### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* str
 
@@ -2897,7 +2897,7 @@ def repository_uri_for_tag(
 )
 \`\`\`
 
-### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.tag\\"></a>
+### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
 
 - *Type:* str
 
@@ -3043,8 +3043,8 @@ Object {
           "default": undefined,
           "displayName": "statement",
           "docs": Object {},
-          "fqn": "@aws-cdk/aws-ecr.IRepository.parameter.statement",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.statement",
+          "fqn": "@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement",
+          "id": "@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "%",
@@ -3075,8 +3075,8 @@ Object {
           "default": undefined,
           "displayName": "grantee",
           "docs": Object {},
-          "fqn": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
+          "fqn": "@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee",
+          "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "%",
@@ -3096,8 +3096,8 @@ Object {
           "default": undefined,
           "displayName": "actions",
           "docs": Object {},
-          "fqn": "@aws-cdk/aws-ecr.IRepository.parameter.actions",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.actions",
+          "fqn": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
+          "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "string",
@@ -3118,8 +3118,8 @@ Object {
           "default": undefined,
           "displayName": "grantee",
           "docs": Object {},
-          "fqn": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
+          "fqn": "@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee",
+          "id": "@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "%",
@@ -3150,8 +3150,8 @@ Object {
           "default": undefined,
           "displayName": "grantee",
           "docs": Object {},
-          "fqn": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.grantee",
+          "fqn": "@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee",
+          "id": "@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "%",
@@ -3186,8 +3186,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "The id of the rule.",
           },
-          "fqn": "@aws-cdk/aws-ecr.IRepository.parameter.id",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.id",
+          "fqn": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "string",
@@ -3199,8 +3199,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "Options for adding the rule.",
           },
-          "fqn": "@aws-cdk/aws-ecr.IRepository.parameter.options",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
+          "fqn": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.options",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.options",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -3235,8 +3235,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "The id of the rule.",
           },
-          "fqn": "@aws-cdk/aws-ecr.IRepository.parameter.id",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.id",
+          "fqn": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "string",
@@ -3248,8 +3248,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "Options for adding the rule.",
           },
-          "fqn": "@aws-cdk/aws-ecr.IRepository.parameter.options",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
+          "fqn": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.options",
+          "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.options",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -3282,8 +3282,8 @@ that captures the event. This method will not create the Trail.",
           "default": undefined,
           "displayName": "id",
           "docs": Object {},
-          "fqn": "@aws-cdk/aws-ecr.IRepository.parameter.id",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.id",
+          "fqn": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id",
+          "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "string",
@@ -3293,8 +3293,8 @@ that captures the event. This method will not create the Trail.",
           "default": undefined,
           "displayName": "options",
           "docs": Object {},
-          "fqn": "@aws-cdk/aws-ecr.IRepository.parameter.options",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
+          "fqn": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.options",
+          "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.options",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -3327,8 +3327,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "The id of the rule.",
           },
-          "fqn": "@aws-cdk/aws-ecr.IRepository.parameter.id",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.id",
+          "fqn": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id",
+          "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id",
           "optional": undefined,
           "type": Object {
             "formattingPattern": "string",
@@ -3340,8 +3340,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "Options for adding the rule.",
           },
-          "fqn": "@aws-cdk/aws-ecr.IRepository.parameter.options",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.options",
+          "fqn": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.options",
+          "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.options",
           "optional": true,
           "type": Object {
             "formattingPattern": "%",
@@ -3375,8 +3375,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "Image digest to use (tools usually default to the image with the \\"latest\\" tag if omitted).",
           },
-          "fqn": "@aws-cdk/aws-ecr.IRepository.parameter.digest",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.digest",
+          "fqn": "@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest",
+          "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest",
           "optional": true,
           "type": Object {
             "formattingPattern": "string",
@@ -3400,8 +3400,8 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {
             "summary": "Image tag to use (tools usually default to \\"latest\\" if omitted).",
           },
-          "fqn": "@aws-cdk/aws-ecr.IRepository.parameter.tag",
-          "id": "@aws-cdk/aws-ecr.IRepository.parameter.tag",
+          "fqn": "@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag",
+          "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag",
           "optional": true,
           "type": Object {
             "formattingPattern": "string",
@@ -3579,7 +3579,7 @@ Represents an ECR repository.
 public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`
 
-### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.statement\\"></a>
+### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* @aws-cdk/aws-iam.PolicyStatement
 
@@ -3591,13 +3591,13 @@ public addToResourcePolicy(statement: PolicyStatement)
 public grant(grantee: IGrantable, actions: string)
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
 
 - *Type:* @aws-cdk/aws-iam.IGrantable
 
 ---
 
-### \`actions\`<sup>Required</sup> <a name=\\"actions\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.actions\\"></a>
+### \`actions\`<sup>Required</sup> <a name=\\"actions\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.actions\\"></a>
 
 - *Type:* string
 
@@ -3609,7 +3609,7 @@ public grant(grantee: IGrantable, actions: string)
 public grantPull(grantee: IGrantable)
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* @aws-cdk/aws-iam.IGrantable
 
@@ -3621,7 +3621,7 @@ public grantPull(grantee: IGrantable)
 public grantPullPush(grantee: IGrantable)
 \`\`\`
 
-### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.grantee\\"></a>
+### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* @aws-cdk/aws-iam.IGrantable
 
@@ -3633,7 +3633,7 @@ public grantPullPush(grantee: IGrantable)
 public onCloudTrailEvent(id: string, options?: OnEventOptions)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
 - *Type:* string
 
@@ -3641,7 +3641,7 @@ The id of the rule.
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\"></a>
+### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.options\\"></a>
 
 - *Type:* @aws-cdk/aws-events.OnEventOptions
 
@@ -3655,7 +3655,7 @@ Options for adding the rule.
 public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* string
 
@@ -3663,7 +3663,7 @@ The id of the rule.
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\"></a>
+### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.options\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions\\">OnCloudTrailImagePushedOptions</a>
 
@@ -3677,13 +3677,13 @@ Options for adding the rule.
 public onEvent(id: string, options?: OnEventOptions)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* string
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\"></a>
+### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.options\\"></a>
 
 - *Type:* @aws-cdk/aws-events.OnEventOptions
 
@@ -3695,7 +3695,7 @@ public onEvent(id: string, options?: OnEventOptions)
 public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
 \`\`\`
 
-### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.id\\"></a>
+### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
 
 - *Type:* string
 
@@ -3703,7 +3703,7 @@ The id of the rule.
 
 ---
 
-### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.options\\"></a>
+### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.options\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-ecr.OnImageScanCompletedOptions\\">OnImageScanCompletedOptions</a>
 
@@ -3717,7 +3717,7 @@ Options for adding the rule.
 public repositoryUriForDigest(digest?: string)
 \`\`\`
 
-### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.digest\\"></a>
+### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* string
 
@@ -3731,7 +3731,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 public repositoryUriForTag(tag?: string)
 \`\`\`
 
-### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.parameter.tag\\"></a>
+### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
 
 - *Type:* string
 

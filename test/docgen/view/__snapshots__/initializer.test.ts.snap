@@ -12,8 +12,8 @@ Object {
       "docs": Object {
         "summary": "- scope in which this resource is defined.",
       },
-      "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepository.parameter.Scope",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope",
+      "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepository.Initializer.parameter.Scope",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope",
       "optional": undefined,
       "type": Object {
         "formattingPattern": "%",
@@ -35,8 +35,8 @@ Object {
       "docs": Object {
         "summary": "- scoped id of the resource.",
       },
-      "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepository.parameter.Id",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.id",
+      "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepository.Initializer.parameter.Id",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id",
       "optional": undefined,
       "type": Object {
         "formattingPattern": "string",
@@ -48,8 +48,8 @@ Object {
       "docs": Object {
         "summary": "- resource properties.",
       },
-      "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepository.parameter.Props",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.props",
+      "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepository.Initializer.parameter.Props",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.props",
       "optional": true,
       "type": Object {
         "formattingPattern": "%",
@@ -83,13 +83,13 @@ new CfnPublicRepository(Construct Scope, string Id, CfnPublicRepositoryProps Pro
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope\\">Scope</a></code> | <code>Amazon.CDK.Construct</code> | - scope in which this resource is defined. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.id\\">Id</a></code> | <code>string</code> | - scoped id of the resource. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.props\\">Props</a></code> | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps\\">CfnPublicRepositoryProps</a></code> | - resource properties. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope\\">Scope</a></code> | <code>Amazon.CDK.Construct</code> | - scope in which this resource is defined. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id\\">Id</a></code> | <code>string</code> | - scoped id of the resource. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.props\\">Props</a></code> | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps\\">CfnPublicRepositoryProps</a></code> | - resource properties. |
 
 ---
 
-# \`Scope\`<sup>Required</sup> <a name=\\"Scope\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope\\"></a>
+# \`Scope\`<sup>Required</sup> <a name=\\"Scope\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope\\"></a>
 
 - *Type:* Amazon.CDK.Construct
 
@@ -97,7 +97,7 @@ scope in which this resource is defined.
 
 ---
 
-# \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.id\\"></a>
+# \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id\\"></a>
 
 - *Type:* string
 
@@ -105,7 +105,7 @@ scoped id of the resource.
 
 ---
 
-# \`Props\`<sup>Optional</sup> <a name=\\"Props\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.props\\"></a>
+# \`Props\`<sup>Optional</sup> <a name=\\"Props\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.props\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps\\">CfnPublicRepositoryProps</a>
 
@@ -127,8 +127,8 @@ Object {
       "docs": Object {
         "summary": "- scope in which this resource is defined.",
       },
-      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.scope",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope",
+      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.Initializer.parameter.scope",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope",
       "optional": undefined,
       "type": Object {
         "formattingPattern": "%",
@@ -150,8 +150,8 @@ Object {
       "docs": Object {
         "summary": "- scoped id of the resource.",
       },
-      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.id",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.id",
+      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.Initializer.parameter.id",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id",
       "optional": undefined,
       "type": Object {
         "formattingPattern": "java.lang.String",
@@ -166,8 +166,8 @@ Object {
         ],
         "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
       },
-      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.repositoryCatalogData",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryCatalogData",
+      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.Initializer.parameter.repositoryCatalogData",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryCatalogData",
       "optional": true,
       "type": Object {
         "formattingPattern": "java.lang.Object",
@@ -182,8 +182,8 @@ Object {
         ],
         "summary": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
       },
-      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.repositoryName",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryName",
+      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.Initializer.parameter.repositoryName",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryName",
       "optional": true,
       "type": Object {
         "formattingPattern": "java.lang.String",
@@ -198,8 +198,8 @@ Object {
         ],
         "summary": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
       },
-      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.repositoryPolicyText",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryPolicyText",
+      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.Initializer.parameter.repositoryPolicyText",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryPolicyText",
       "optional": true,
       "type": Object {
         "formattingPattern": "java.lang.Object",
@@ -214,8 +214,8 @@ Object {
         ],
         "summary": "\`AWS::ECR::PublicRepository.Tags\`.",
       },
-      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.tags",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.tags",
+      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.Initializer.parameter.tags",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.tags",
       "optional": true,
       "type": Object {
         "formattingPattern": "java.util.List<%>",
@@ -264,16 +264,16 @@ CfnPublicRepository.Builder.create(Construct scope, java.lang.String id)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope\\">scope</a></code> | <code>software.amazon.awscdk.core.Construct</code> | - scope in which this resource is defined. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.id\\">id</a></code> | <code>java.lang.String</code> | - scoped id of the resource. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryCatalogData\\">repositoryCatalogData</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryName\\">repositoryName</a></code> | <code>java.lang.String</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryPolicyText\\">repositoryPolicyText</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.tags\\">tags</a></code> | <code>java.util.List<software.amazon.awscdk.core.CfnTag></code> | \`AWS::ECR::PublicRepository.Tags\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope\\">scope</a></code> | <code>software.amazon.awscdk.core.Construct</code> | - scope in which this resource is defined. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id\\">id</a></code> | <code>java.lang.String</code> | - scoped id of the resource. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryCatalogData\\">repositoryCatalogData</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryName\\">repositoryName</a></code> | <code>java.lang.String</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryPolicyText\\">repositoryPolicyText</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.tags\\">tags</a></code> | <code>java.util.List<software.amazon.awscdk.core.CfnTag></code> | \`AWS::ECR::PublicRepository.Tags\`. |
 
 ---
 
-# \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope\\"></a>
+# \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope\\"></a>
 
 - *Type:* software.amazon.awscdk.core.Construct
 
@@ -281,7 +281,7 @@ scope in which this resource is defined.
 
 ---
 
-# \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.id\\"></a>
+# \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id\\"></a>
 
 - *Type:* java.lang.String
 
@@ -289,7 +289,7 @@ scoped id of the resource.
 
 ---
 
-# \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"repositoryCatalogData\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryCatalogData\\"></a>
+# \`repositoryCatalogData\`<sup>Optional</sup> <a name=\\"repositoryCatalogData\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryCatalogData\\"></a>
 
 - *Type:* java.lang.Object
 
@@ -299,7 +299,7 @@ scoped id of the resource.
 
 ---
 
-# \`repositoryName\`<sup>Optional</sup> <a name=\\"repositoryName\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryName\\"></a>
+# \`repositoryName\`<sup>Optional</sup> <a name=\\"repositoryName\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryName\\"></a>
 
 - *Type:* java.lang.String
 
@@ -309,7 +309,7 @@ scoped id of the resource.
 
 ---
 
-# \`repositoryPolicyText\`<sup>Optional</sup> <a name=\\"repositoryPolicyText\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryPolicyText\\"></a>
+# \`repositoryPolicyText\`<sup>Optional</sup> <a name=\\"repositoryPolicyText\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryPolicyText\\"></a>
 
 - *Type:* java.lang.Object
 
@@ -319,7 +319,7 @@ scoped id of the resource.
 
 ---
 
-# \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.tags\\"></a>
+# \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.tags\\"></a>
 
 - *Type:* java.util.List<software.amazon.awscdk.core.CfnTag>
 
@@ -343,8 +343,8 @@ Object {
       "docs": Object {
         "summary": "- scope in which this resource is defined.",
       },
-      "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.parameter.scope",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope",
+      "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.Initializer.parameter.scope",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope",
       "optional": undefined,
       "type": Object {
         "formattingPattern": "%",
@@ -366,8 +366,8 @@ Object {
       "docs": Object {
         "summary": "- scoped id of the resource.",
       },
-      "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.parameter.id",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.id",
+      "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.Initializer.parameter.id",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id",
       "optional": undefined,
       "type": Object {
         "formattingPattern": "str",
@@ -382,8 +382,8 @@ Object {
         ],
         "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
       },
-      "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.parameter.repository_catalog_data",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryCatalogData",
+      "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.Initializer.parameter.repository_catalog_data",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryCatalogData",
       "optional": true,
       "type": Object {
         "formattingPattern": "typing.Any",
@@ -398,8 +398,8 @@ Object {
         ],
         "summary": "\`AWS::ECR::PublicRepository.RepositoryName\`.",
       },
-      "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.parameter.repository_name",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryName",
+      "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.Initializer.parameter.repository_name",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryName",
       "optional": true,
       "type": Object {
         "formattingPattern": "str",
@@ -414,8 +414,8 @@ Object {
         ],
         "summary": "\`AWS::ECR::PublicRepository.RepositoryPolicyText\`.",
       },
-      "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.parameter.repository_policy_text",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryPolicyText",
+      "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.Initializer.parameter.repository_policy_text",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryPolicyText",
       "optional": true,
       "type": Object {
         "formattingPattern": "typing.Any",
@@ -430,8 +430,8 @@ Object {
         ],
         "summary": "\`AWS::ECR::PublicRepository.Tags\`.",
       },
-      "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.parameter.tags",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.tags",
+      "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.Initializer.parameter.tags",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.tags",
       "optional": true,
       "type": Object {
         "formattingPattern": "typing.List[%]",
@@ -484,16 +484,16 @@ aws_cdk.aws_ecr.CfnPublicRepository(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope\\">scope</a></code> | <code>aws_cdk.core.Construct</code> | - scope in which this resource is defined. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.id\\">id</a></code> | <code>str</code> | - scoped id of the resource. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryCatalogData\\">repository_catalog_data</a></code> | <code>typing.Any</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryName\\">repository_name</a></code> | <code>str</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryPolicyText\\">repository_policy_text</a></code> | <code>typing.Any</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.tags\\">tags</a></code> | <code>typing.List[aws_cdk.core.CfnTag]</code> | \`AWS::ECR::PublicRepository.Tags\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope\\">scope</a></code> | <code>aws_cdk.core.Construct</code> | - scope in which this resource is defined. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id\\">id</a></code> | <code>str</code> | - scoped id of the resource. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryCatalogData\\">repository_catalog_data</a></code> | <code>typing.Any</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryName\\">repository_name</a></code> | <code>str</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryPolicyText\\">repository_policy_text</a></code> | <code>typing.Any</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.tags\\">tags</a></code> | <code>typing.List[aws_cdk.core.CfnTag]</code> | \`AWS::ECR::PublicRepository.Tags\`. |
 
 ---
 
-# \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope\\"></a>
+# \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope\\"></a>
 
 - *Type:* aws_cdk.core.Construct
 
@@ -501,7 +501,7 @@ scope in which this resource is defined.
 
 ---
 
-# \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.id\\"></a>
+# \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id\\"></a>
 
 - *Type:* str
 
@@ -509,7 +509,7 @@ scoped id of the resource.
 
 ---
 
-# \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"repository_catalog_data\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryCatalogData\\"></a>
+# \`repository_catalog_data\`<sup>Optional</sup> <a name=\\"repository_catalog_data\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryCatalogData\\"></a>
 
 - *Type:* typing.Any
 
@@ -519,7 +519,7 @@ scoped id of the resource.
 
 ---
 
-# \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryName\\"></a>
+# \`repository_name\`<sup>Optional</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryName\\"></a>
 
 - *Type:* str
 
@@ -529,7 +529,7 @@ scoped id of the resource.
 
 ---
 
-# \`repository_policy_text\`<sup>Optional</sup> <a name=\\"repository_policy_text\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.repositoryPolicyText\\"></a>
+# \`repository_policy_text\`<sup>Optional</sup> <a name=\\"repository_policy_text\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryPolicyText\\"></a>
 
 - *Type:* typing.Any
 
@@ -539,7 +539,7 @@ scoped id of the resource.
 
 ---
 
-# \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.tags\\"></a>
+# \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.tags\\"></a>
 
 - *Type:* typing.List[aws_cdk.core.CfnTag]
 
@@ -563,8 +563,8 @@ Object {
       "docs": Object {
         "summary": "- scope in which this resource is defined.",
       },
-      "fqn": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope",
+      "fqn": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope",
       "optional": undefined,
       "type": Object {
         "formattingPattern": "%",
@@ -586,8 +586,8 @@ Object {
       "docs": Object {
         "summary": "- scoped id of the resource.",
       },
-      "fqn": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.id",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.id",
+      "fqn": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id",
       "optional": undefined,
       "type": Object {
         "formattingPattern": "string",
@@ -599,8 +599,8 @@ Object {
       "docs": Object {
         "summary": "- resource properties.",
       },
-      "fqn": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.props",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.props",
+      "fqn": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.props",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.props",
       "optional": true,
       "type": Object {
         "formattingPattern": "%",
@@ -634,13 +634,13 @@ new CfnPublicRepository(scope: Construct, id: string, props?: CfnPublicRepositor
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope\\">scope</a></code> | <code>@aws-cdk/core.Construct</code> | - scope in which this resource is defined. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.id\\">id</a></code> | <code>string</code> | - scoped id of the resource. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.parameter.props\\">props</a></code> | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps\\">CfnPublicRepositoryProps</a></code> | - resource properties. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope\\">scope</a></code> | <code>@aws-cdk/core.Construct</code> | - scope in which this resource is defined. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id\\">id</a></code> | <code>string</code> | - scoped id of the resource. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.props\\">props</a></code> | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps\\">CfnPublicRepositoryProps</a></code> | - resource properties. |
 
 ---
 
-# \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.scope\\"></a>
+# \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope\\"></a>
 
 - *Type:* @aws-cdk/core.Construct
 
@@ -648,7 +648,7 @@ scope in which this resource is defined.
 
 ---
 
-# \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.id\\"></a>
+# \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id\\"></a>
 
 - *Type:* string
 
@@ -656,7 +656,7 @@ scoped id of the resource.
 
 ---
 
-# \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.props\\"></a>
+# \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.props\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps\\">CfnPublicRepositoryProps</a>
 

@@ -15,8 +15,8 @@ Object {
       "docs": Object {
         "summary": "- tree inspector to collect and process attributes.",
       },
-      "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepository.parameter.Inspector",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector",
+      "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepository.Inspect.parameter.Inspector",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
       "optional": undefined,
       "type": Object {
         "formattingPattern": "%",
@@ -44,7 +44,7 @@ exports[`csharp snapshot 2`] = `
 private Inspect(TreeInspector Inspector)
 \`\`\`
 
-# \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\"></a>
+# \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* Amazon.CDK.TreeInspector
 
@@ -69,8 +69,8 @@ Object {
       "docs": Object {
         "summary": "- tree inspector to collect and process attributes.",
       },
-      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.inspector",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector",
+      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.inspect.parameter.inspector",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
       "optional": undefined,
       "type": Object {
         "formattingPattern": "%",
@@ -98,7 +98,7 @@ exports[`java snapshot 2`] = `
 public inspect(TreeInspector inspector)
 \`\`\`
 
-# \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\"></a>
+# \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* software.amazon.awscdk.core.TreeInspector
 
@@ -123,8 +123,8 @@ Object {
       "docs": Object {
         "summary": "- tree inspector to collect and process attributes.",
       },
-      "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.parameter.inspector",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector",
+      "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.inspect.parameter.inspector",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
       "optional": undefined,
       "type": Object {
         "formattingPattern": "%",
@@ -156,7 +156,7 @@ def inspect(
 )
 \`\`\`
 
-# \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\"></a>
+# \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* aws_cdk.core.TreeInspector
 
@@ -181,8 +181,8 @@ Object {
       "docs": Object {
         "summary": "- tree inspector to collect and process attributes.",
       },
-      "fqn": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector",
+      "fqn": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
       "optional": undefined,
       "type": Object {
         "formattingPattern": "%",
@@ -210,7 +210,7 @@ exports[`typescript snapshot 2`] = `
 public inspect(inspector: TreeInspector)
 \`\`\`
 
-# \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\"></a>
+# \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* @aws-cdk/core.TreeInspector
 
