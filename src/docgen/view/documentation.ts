@@ -25,19 +25,11 @@ const NOT_FOUND_IN_ASSEMBLY_REGEX = /Type '(.*)\..*' not found in assembly (.*)$
 /**
  * Options for rendering a `Documentation` object.
  */
-export interface RenderOptions {
+export interface RenderOptions extends TransliterationOptions {
   /**
    * Which language to generate docs for.
    */
   readonly language: Language;
-
-  /**
-   * Whether to ignore missing fixture files that will prevent transliterating
-   * some code snippet examples.
-   *
-   * @default true
-   */
-  readonly loose?: boolean;
 
   /**
    * Include a generated api reference in the documentation.
@@ -59,6 +51,24 @@ export interface RenderOptions {
    * @default - Documentation is generated for the root module only.
    */
   readonly submodule?: string;
+}
+
+export interface TransliterationOptions {
+  /**
+   * Whether to ignore missing fixture files that will prevent transliterating
+   * some code snippet examples.
+   *
+   * @default true
+   */
+  readonly loose?: boolean;
+
+  /**
+   * Whether to validate jsii assemblies against the jsii schema before
+   * using them.
+   *
+   * @default false
+   */
+  readonly validate?: boolean;
 }
 
 export interface MarkdownRenderOptions extends RenderOptions, MarkdownFormattingOptions {}
@@ -173,8 +183,9 @@ export class Documentation {
 
     const language = options.language ?? Language.TYPESCRIPT;
     const loose = options.loose ?? true;
+    const validate = options.validate ?? false;
 
-    const { assembly, transpile } = await this.languageSpecific(language, loose);
+    const { assembly, transpile } = await this.languageSpecific(language, { loose, validate });
 
     const assemblyFqn = `${assembly.name}@${assembly.version}`;
 
@@ -245,9 +256,9 @@ export class Documentation {
     }
   }
 
-  private async languageSpecific(lang: Language, loose: boolean): Promise<{ assembly: reflect.Assembly; transpile: Transpile}> {
+  private async languageSpecific(lang: Language, options: TransliterationOptions): Promise<{ assembly: reflect.Assembly; transpile: Transpile}> {
     const { rosettaTarget, transpile } = LANGUAGE_SPECIFIC[lang.toString()];
-    return { assembly: await this.createAssembly(loose, rosettaTarget), transpile };
+    return { assembly: await this.createAssembly(rosettaTarget, options), transpile };
   }
 
   /**
@@ -269,9 +280,9 @@ export class Documentation {
     return submodules[0];
   }
 
-  private async createAssembly(loose: boolean, language?: TargetLanguage): Promise<reflect.Assembly> {
+  private async createAssembly(language: TargetLanguage | undefined, options: TransliterationOptions): Promise<reflect.Assembly> {
 
-    const cacheKey = `lang:${language ?? 'ts'}.loose:${loose}`;
+    const cacheKey = `lang:${language ?? 'ts'}.loose:${options.loose}.validate:${options.validate}`;
     const cached = this.assembliesCache.get(cacheKey);
     if (cached) {
       return cached;
@@ -292,10 +303,10 @@ export class Documentation {
         const spec = JSON.parse(await fs.readFile(dotJsii, 'utf-8'));
         if (language && spec.name === this.assemblyName) {
           const packageDir = path.dirname(dotJsii);
-          await transliterateAssembly([packageDir], [language], { loose });
+          await transliterateAssembly([packageDir], [language], { loose: options.loose });
           dotJsii = path.join(packageDir, `.jsii.${language}`);
         }
-        await ts.load(dotJsii);
+        await ts.load(dotJsii, { validate: options.validate });
       }
       return ts.findAssembly(this.assemblyName);
     });
