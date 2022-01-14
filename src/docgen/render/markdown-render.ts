@@ -704,7 +704,8 @@ interface TypeTableItem extends SimpleTableItem {
 }
 
 export const defaultAnchorFormatter = (type: JsiiEntity) => {
-  return type.id;
+  // HTML5 allows any character in IDs /except/ whitespace
+  return type.id.replace(/ /g, '-');
 };
 
 export const defaultLinkFormatter = (type: JsiiEntity, metadata: AssemblyMetadataSchema) => {
