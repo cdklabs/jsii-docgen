@@ -425,6 +425,15 @@ export class TranspiledTypeReference {
       if (!this.ref.fqn) {
         throw new Error(`Original type reference for ${this.type.fqn} does not have a fqn.`);
       }
+
+      // If we are running in a test, report a fake stable version since types
+      // may belong to dependency packages, which could be specified with caret
+      // dependencies - this means the packageVersion of a type like
+      // `construct.Construct` will be set to whichever version is installed.
+      // This is okay in practice, but makes snapshot tests inconsistent.
+      const IS_TEST_RUN = process.env.NODE_ENV === 'test';
+      const packageVersion = IS_TEST_RUN ? '99.99.99' : this.type.source.assembly.version;
+
       return {
         formattingPattern: '%',
         types: [
@@ -433,7 +442,7 @@ export class TranspiledTypeReference {
             displayName: this.type.name,
             fqn: this.type.fqn,
             packageName: this.type.source.assembly.name,
-            packageVersion: this.type.source.assembly.version,
+            packageVersion,
             submodule: this.type.submodule,
           },
         ],

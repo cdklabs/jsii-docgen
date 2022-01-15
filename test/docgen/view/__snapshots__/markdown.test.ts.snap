@@ -131,18 +131,18 @@ aws_cdk.aws_ecr.CfnPublicRepository(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnPublicRepository.Initializer.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/Construct?lang=python\\">Construct</a></code> | - scope in which this resource is defined. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnPublicRepository.Initializer.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/Construct?lang=python\\">Construct</a></code> | - scope in which this resource is defined. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnPublicRepository.Initializer.parameter.id?lang=python\\">id</a></code> | <code>str</code> | - scoped id of the resource. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnPublicRepository.Initializer.parameter.repositoryCatalogData?lang=python\\">repository_catalog_data</a></code> | <code>typing.Any</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnPublicRepository.Initializer.parameter.repositoryName?lang=python\\">repository_name</a></code> | <code>str</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnPublicRepository.Initializer.parameter.repositoryPolicyText?lang=python\\">repository_policy_text</a></code> | <code>typing.Any</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnPublicRepository.Initializer.parameter.tags?lang=python\\">tags</a></code> | <code>typing.List[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/CfnTag?lang=python\\">CfnTag</a>]</code> | \`AWS::ECR::PublicRepository.Tags\`. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnPublicRepository.Initializer.parameter.tags?lang=python\\">tags</a></code> | <code>typing.List[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/CfnTag?lang=python\\">CfnTag</a>]</code> | \`AWS::ECR::PublicRepository.Tags\`. |
 
 ---
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"CfnPublicRepository.Initializer.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/Construct?lang=python\\">Construct</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/Construct?lang=python\\">Construct</a>
 
 scope in which this resource is defined.
 
@@ -188,7 +188,7 @@ scoped id of the resource.
 
 ##### \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"CfnPublicRepository.Initializer.parameter.tags\\"></a>
 
-- *Type:* typing.List[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/CfnTag?lang=python\\">CfnTag</a>]
+- *Type:* typing.List[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/CfnTag?lang=python\\">CfnTag</a>]
 
 \`AWS::ECR::PublicRepository.Tags\`.
 
@@ -214,7 +214,7 @@ def inspect(
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/TreeInspector?lang=python\\">TreeInspector</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/TreeInspector?lang=python\\">TreeInspector</a>
 
 tree inspector to collect and process attributes.
 
@@ -226,7 +226,7 @@ tree inspector to collect and process attributes.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnPublicRepository.property.attrArn?lang=python\\">attr_arn</a></code> | <code>str</code> | *No description.* |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnPublicRepository.property.tags?lang=python\\">tags</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/TagManager?lang=python\\">TagManager</a></code> | \`AWS::ECR::PublicRepository.Tags\`. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnPublicRepository.property.tags?lang=python\\">tags</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/TagManager?lang=python\\">TagManager</a></code> | \`AWS::ECR::PublicRepository.Tags\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnPublicRepository.property.repositoryCatalogData?lang=python\\">repository_catalog_data</a></code> | <code>typing.Any</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnPublicRepository.property.repositoryPolicyText?lang=python\\">repository_policy_text</a></code> | <code>typing.Any</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnPublicRepository.property.repositoryName?lang=python\\">repository_name</a></code> | <code>str</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
@@ -249,7 +249,7 @@ attr_arn: str
 tags: TagManager
 \`\`\`
 
-- *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/TagManager?lang=python\\">TagManager</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/TagManager?lang=python\\">TagManager</a>
 
 \`AWS::ECR::PublicRepository.Tags\`.
 
@@ -341,7 +341,7 @@ aws_cdk.aws_ecr.CfnRegistryPolicy(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRegistryPolicy.Initializer.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/Construct?lang=python\\">Construct</a></code> | - scope in which this resource is defined. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRegistryPolicy.Initializer.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/Construct?lang=python\\">Construct</a></code> | - scope in which this resource is defined. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRegistryPolicy.Initializer.parameter.id?lang=python\\">id</a></code> | <code>str</code> | - scoped id of the resource. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRegistryPolicy.Initializer.parameter.policyText?lang=python\\">policy_text</a></code> | <code>typing.Any</code> | \`AWS::ECR::RegistryPolicy.PolicyText\`. |
 
@@ -349,7 +349,7 @@ aws_cdk.aws_ecr.CfnRegistryPolicy(
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"CfnRegistryPolicy.Initializer.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/Construct?lang=python\\">Construct</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/Construct?lang=python\\">Construct</a>
 
 scope in which this resource is defined.
 
@@ -391,7 +391,7 @@ def inspect(
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/TreeInspector?lang=python\\">TreeInspector</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/TreeInspector?lang=python\\">TreeInspector</a>
 
 tree inspector to collect and process attributes.
 
@@ -473,15 +473,15 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.Initializer.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/Construct?lang=python\\">Construct</a></code> | - scope in which this resource is defined. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.Initializer.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/Construct?lang=python\\">Construct</a></code> | - scope in which this resource is defined. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.Initializer.parameter.id?lang=python\\">id</a></code> | <code>str</code> | - scoped id of the resource. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.Initializer.parameter.replicationConfiguration?lang=python\\">replication_configuration</a></code> | <code>typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python\\">ReplicationConfigurationProperty</a>]</code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.Initializer.parameter.replicationConfiguration?lang=python\\">replication_configuration</a></code> | <code>typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python\\">ReplicationConfigurationProperty</a>]</code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
 
 ---
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"CfnReplicationConfiguration.Initializer.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/Construct?lang=python\\">Construct</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/Construct?lang=python\\">Construct</a>
 
 scope in which this resource is defined.
 
@@ -497,7 +497,7 @@ scoped id of the resource.
 
 ##### \`replication_configuration\`<sup>Required</sup> <a name=\\"replication_configuration\\" id=\\"CfnReplicationConfiguration.Initializer.parameter.replicationConfiguration\\"></a>
 
-- *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python\\">ReplicationConfigurationProperty</a>]
+- *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python\\">ReplicationConfigurationProperty</a>]
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
@@ -523,7 +523,7 @@ def inspect(
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/TreeInspector?lang=python\\">TreeInspector</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/TreeInspector?lang=python\\">TreeInspector</a>
 
 tree inspector to collect and process attributes.
 
@@ -535,7 +535,7 @@ tree inspector to collect and process attributes.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.property.attrRegistryId?lang=python\\">attr_registry_id</a></code> | <code>str</code> | *No description.* |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.property.replicationConfiguration?lang=python\\">replication_configuration</a></code> | <code>typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python\\">ReplicationConfigurationProperty</a>]</code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.property.replicationConfiguration?lang=python\\">replication_configuration</a></code> | <code>typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python\\">ReplicationConfigurationProperty</a>]</code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
 
 ---
 
@@ -555,7 +555,7 @@ attr_registry_id: str
 replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
 \`\`\`
 
-- *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python\\">ReplicationConfigurationProperty</a>]
+- *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python\\">ReplicationConfigurationProperty</a>]
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
@@ -611,21 +611,21 @@ aws_cdk.aws_ecr.CfnRepository(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/Construct?lang=python\\">Construct</a></code> | - scope in which this resource is defined. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/Construct?lang=python\\">Construct</a></code> | - scope in which this resource is defined. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.id?lang=python\\">id</a></code> | <code>str</code> | - scoped id of the resource. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.encryptionConfiguration?lang=python\\">encryption_configuration</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.EncryptionConfiguration\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.imageScanningConfiguration?lang=python\\">image_scanning_configuration</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.ImageScanningConfiguration\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.imageTagMutability?lang=python\\">image_tag_mutability</a></code> | <code>str</code> | \`AWS::ECR::Repository.ImageTagMutability\`. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.lifecyclePolicy?lang=python\\">lifecycle_policy</a></code> | <code>typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.LifecyclePolicyProperty?lang=python\\">LifecyclePolicyProperty</a>]</code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.lifecyclePolicy?lang=python\\">lifecycle_policy</a></code> | <code>typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python\\">LifecyclePolicyProperty</a>]</code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.repositoryName?lang=python\\">repository_name</a></code> | <code>str</code> | \`AWS::ECR::Repository.RepositoryName\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.repositoryPolicyText?lang=python\\">repository_policy_text</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.RepositoryPolicyText\`. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.tags?lang=python\\">tags</a></code> | <code>typing.List[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/CfnTag?lang=python\\">CfnTag</a>]</code> | \`AWS::ECR::Repository.Tags\`. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.tags?lang=python\\">tags</a></code> | <code>typing.List[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/CfnTag?lang=python\\">CfnTag</a>]</code> | \`AWS::ECR::Repository.Tags\`. |
 
 ---
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"CfnRepository.Initializer.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/Construct?lang=python\\">Construct</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/Construct?lang=python\\">Construct</a>
 
 scope in which this resource is defined.
 
@@ -671,7 +671,7 @@ scoped id of the resource.
 
 ##### \`lifecycle_policy\`<sup>Optional</sup> <a name=\\"lifecycle_policy\\" id=\\"CfnRepository.Initializer.parameter.lifecyclePolicy\\"></a>
 
-- *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.LifecyclePolicyProperty?lang=python\\">LifecyclePolicyProperty</a>]
+- *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python\\">LifecyclePolicyProperty</a>]
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
@@ -701,7 +701,7 @@ scoped id of the resource.
 
 ##### \`tags\`<sup>Optional</sup> <a name=\\"tags\\" id=\\"CfnRepository.Initializer.parameter.tags\\"></a>
 
-- *Type:* typing.List[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/CfnTag?lang=python\\">CfnTag</a>]
+- *Type:* typing.List[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/CfnTag?lang=python\\">CfnTag</a>]
 
 \`AWS::ECR::Repository.Tags\`.
 
@@ -727,7 +727,7 @@ def inspect(
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnRepository.inspect.parameter.inspector\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/TreeInspector?lang=python\\">TreeInspector</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/TreeInspector?lang=python\\">TreeInspector</a>
 
 tree inspector to collect and process attributes.
 
@@ -740,12 +740,12 @@ tree inspector to collect and process attributes.
 | --- | --- | --- |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.attrArn?lang=python\\">attr_arn</a></code> | <code>str</code> | *No description.* |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.attrRepositoryUri?lang=python\\">attr_repository_uri</a></code> | <code>str</code> | *No description.* |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.tags?lang=python\\">tags</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/TagManager?lang=python\\">TagManager</a></code> | \`AWS::ECR::Repository.Tags\`. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.tags?lang=python\\">tags</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/TagManager?lang=python\\">TagManager</a></code> | \`AWS::ECR::Repository.Tags\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.encryptionConfiguration?lang=python\\">encryption_configuration</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.EncryptionConfiguration\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.imageScanningConfiguration?lang=python\\">image_scanning_configuration</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.ImageScanningConfiguration\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.repositoryPolicyText?lang=python\\">repository_policy_text</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.RepositoryPolicyText\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.imageTagMutability?lang=python\\">image_tag_mutability</a></code> | <code>str</code> | \`AWS::ECR::Repository.ImageTagMutability\`. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.lifecyclePolicy?lang=python\\">lifecycle_policy</a></code> | <code>typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.LifecyclePolicyProperty?lang=python\\">LifecyclePolicyProperty</a>]</code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.lifecyclePolicy?lang=python\\">lifecycle_policy</a></code> | <code>typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python\\">LifecyclePolicyProperty</a>]</code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.repositoryName?lang=python\\">repository_name</a></code> | <code>str</code> | \`AWS::ECR::Repository.RepositoryName\`. |
 
 ---
@@ -776,7 +776,7 @@ attr_repository_uri: str
 tags: TagManager
 \`\`\`
 
-- *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/TagManager?lang=python\\">TagManager</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/TagManager?lang=python\\">TagManager</a>
 
 \`AWS::ECR::Repository.Tags\`.
 
@@ -846,7 +846,7 @@ image_tag_mutability: str
 lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty]
 \`\`\`
 
-- *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.LifecyclePolicyProperty?lang=python\\">LifecyclePolicyProperty</a>]
+- *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python\\">LifecyclePolicyProperty</a>]
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
@@ -911,20 +911,20 @@ aws_cdk.aws_ecr.Repository(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.Initializer.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/constructs/v/3.3.188/api/Construct?lang=python\\">Construct</a></code> | *No description.* |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.Initializer.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/constructs/v/99.99.99/api/Construct?lang=python\\">Construct</a></code> | *No description.* |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.Initializer.parameter.id?lang=python\\">id</a></code> | <code>str</code> | *No description.* |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.Initializer.parameter.imageScanOnPush?lang=python\\">image_scan_on_push</a></code> | <code>bool</code> | Enable the scan on push when creating the repository. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.Initializer.parameter.imageTagMutability?lang=python\\">image_tag_mutability</a></code> | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/TagMutability?lang=python\\">TagMutability</a></code> | The tag mutability setting for the repository. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.Initializer.parameter.imageTagMutability?lang=python\\">image_tag_mutability</a></code> | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/TagMutability?lang=python\\">TagMutability</a></code> | The tag mutability setting for the repository. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.Initializer.parameter.lifecycleRegistryId?lang=python\\">lifecycle_registry_id</a></code> | <code>str</code> | The AWS account ID associated with the registry that contains the repository. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.Initializer.parameter.lifecycleRules?lang=python\\">lifecycle_rules</a></code> | <code>typing.List[<a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/LifecycleRule?lang=python\\">LifecycleRule</a>]</code> | Life cycle rules to apply to this registry. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.Initializer.parameter.removalPolicy?lang=python\\">removal_policy</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/RemovalPolicy?lang=python\\">RemovalPolicy</a></code> | Determine what happens to the repository when the resource/stack is deleted. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.Initializer.parameter.lifecycleRules?lang=python\\">lifecycle_rules</a></code> | <code>typing.List[<a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/LifecycleRule?lang=python\\">LifecycleRule</a>]</code> | Life cycle rules to apply to this registry. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.Initializer.parameter.removalPolicy?lang=python\\">removal_policy</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/RemovalPolicy?lang=python\\">RemovalPolicy</a></code> | Determine what happens to the repository when the resource/stack is deleted. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/Repository.Initializer.parameter.repositoryName?lang=python\\">repository_name</a></code> | <code>str</code> | Name for this repository. |
 
 ---
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Repository.Initializer.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/constructs/v/3.3.188/api/Construct?lang=python\\">Construct</a>
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/Construct?lang=python\\">Construct</a>
 
 ---
 
@@ -945,7 +945,7 @@ Enable the scan on push when creating the repository.
 
 ##### \`image_tag_mutability\`<sup>Optional</sup> <a name=\\"image_tag_mutability\\" id=\\"Repository.Initializer.parameter.imageTagMutability\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/TagMutability?lang=python\\">TagMutability</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/TagMutability?lang=python\\">TagMutability</a>
 - *Default:* TagMutability.MUTABLE
 
 The tag mutability setting for the repository.
@@ -967,7 +967,7 @@ The AWS account ID associated with the registry that contains the repository.
 
 ##### \`lifecycle_rules\`<sup>Optional</sup> <a name=\\"lifecycle_rules\\" id=\\"Repository.Initializer.parameter.lifecycleRules\\"></a>
 
-- *Type:* typing.List[<a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/LifecycleRule?lang=python\\">LifecycleRule</a>]
+- *Type:* typing.List[<a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/LifecycleRule?lang=python\\">LifecycleRule</a>]
 - *Default:* No life cycle rules
 
 Life cycle rules to apply to this registry.
@@ -976,7 +976,7 @@ Life cycle rules to apply to this registry.
 
 ##### \`removal_policy\`<sup>Optional</sup> <a name=\\"removal_policy\\" id=\\"Repository.Initializer.parameter.removalPolicy\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/RemovalPolicy?lang=python\\">RemovalPolicy</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/RemovalPolicy?lang=python\\">RemovalPolicy</a>
 - *Default:* RemovalPolicy.Retain
 
 Determine what happens to the repository when the resource/stack is deleted.
@@ -1025,7 +1025,7 @@ Describes the purpose of the rule.
 
 ###### \`max_image_age\`<sup>Optional</sup> <a name=\\"max_image_age\\" id=\\"Repository.addLifecycleRule.parameter.maxImageAge\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/Duration?lang=python\\">Duration</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/Duration?lang=python\\">Duration</a>
 
 The maximum age of images to retain. The value must represent a number of days.
 
@@ -1066,7 +1066,7 @@ Only if tagStatus == TagStatus.Tagged
 
 ###### \`tag_status\`<sup>Optional</sup> <a name=\\"tag_status\\" id=\\"Repository.addLifecycleRule.parameter.tagStatus\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/TagStatus?lang=python\\">TagStatus</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/TagStatus?lang=python\\">TagStatus</a>
 - *Default:* TagStatus.Tagged if tagPrefixList is given, TagStatus.Any otherwise
 
 Select images based on tags.
@@ -1085,7 +1085,7 @@ def add_to_resource_policy(
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"Repository.addToResourcePolicy.parameter.statement\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/PolicyStatement?lang=python\\">PolicyStatement</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/PolicyStatement?lang=python\\">PolicyStatement</a>
 
 ---
 
@@ -1120,7 +1120,7 @@ aws_cdk.aws_ecr.Repository.arn_for_local_repository(
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Repository.arnForLocalRepository.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/constructs/v/3.3.188/api/IConstruct?lang=python\\">IConstruct</a>
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/IConstruct?lang=python\\">IConstruct</a>
 
 ---
 
@@ -1144,7 +1144,7 @@ aws_cdk.aws_ecr.Repository.from_repository_arn(
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Repository.fromRepositoryArn.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/constructs/v/3.3.188/api/Construct?lang=python\\">Construct</a>
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/Construct?lang=python\\">Construct</a>
 
 ---
 
@@ -1175,7 +1175,7 @@ aws_cdk.aws_ecr.Repository.from_repository_attributes(
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Repository.fromRepositoryAttributes.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/constructs/v/3.3.188/api/Construct?lang=python\\">Construct</a>
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/Construct?lang=python\\">Construct</a>
 
 ---
 
@@ -1211,7 +1211,7 @@ aws_cdk.aws_ecr.Repository.from_repository_name(
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Repository.fromRepositoryName.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/constructs/v/3.3.188/api/Construct?lang=python\\">Construct</a>
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/Construct?lang=python\\">Construct</a>
 
 ---
 
@@ -1286,7 +1286,7 @@ aws_cdk.aws_ecr.RepositoryBase(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryBase.Initializer.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/constructs/v/3.3.188/api/Construct?lang=python\\">Construct</a></code> | *No description.* |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryBase.Initializer.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/constructs/v/99.99.99/api/Construct?lang=python\\">Construct</a></code> | *No description.* |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryBase.Initializer.parameter.id?lang=python\\">id</a></code> | <code>str</code> | *No description.* |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryBase.Initializer.parameter.account?lang=python\\">account</a></code> | <code>str</code> | The AWS account ID this resource belongs to. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryBase.Initializer.parameter.environmentFromArn?lang=python\\">environment_from_arn</a></code> | <code>str</code> | ARN to deduce region and account from. |
@@ -1297,7 +1297,7 @@ aws_cdk.aws_ecr.RepositoryBase(
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"RepositoryBase.Initializer.parameter.scope\\"></a>
 
-- *Type:* <a href=\\"/packages/constructs/v/3.3.188/api/Construct?lang=python\\">Construct</a>
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/Construct?lang=python\\">Construct</a>
 
 ---
 
@@ -1374,7 +1374,7 @@ def add_to_resource_policy(
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/PolicyStatement?lang=python\\">PolicyStatement</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/PolicyStatement?lang=python\\">PolicyStatement</a>
 
 ---
 
@@ -1389,7 +1389,7 @@ def grant(
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grant.parameter.grantee\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/IGrantable?lang=python\\">IGrantable</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
 
 ---
 
@@ -1409,7 +1409,7 @@ def grant_pull(
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grantPull.parameter.grantee\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/IGrantable?lang=python\\">IGrantable</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
 
 ---
 
@@ -1423,7 +1423,7 @@ def grant_pull_push(
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grantPullPush.parameter.grantee\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/IGrantable?lang=python\\">IGrantable</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
 
 ---
 
@@ -1458,7 +1458,7 @@ A description of the rule's purpose.
 
 ###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"RepositoryBase.onCloudTrailEvent.parameter.eventPattern\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/EventPattern?lang=python\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
 
 Additional restrictions for the event to route to the specified target.
@@ -1480,7 +1480,7 @@ A name for the rule.
 
 ###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"RepositoryBase.onCloudTrailEvent.parameter.target\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/IRuleTarget?lang=python\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
 
 The target to register for the event.
@@ -1519,7 +1519,7 @@ A description of the rule's purpose.
 
 ###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"RepositoryBase.onCloudTrailImagePushed.parameter.eventPattern\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/EventPattern?lang=python\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
 
 Additional restrictions for the event to route to the specified target.
@@ -1541,7 +1541,7 @@ A name for the rule.
 
 ###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"RepositoryBase.onCloudTrailImagePushed.parameter.target\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/IRuleTarget?lang=python\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
 
 The target to register for the event.
@@ -1586,7 +1586,7 @@ A description of the rule's purpose.
 
 ###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"RepositoryBase.onEvent.parameter.eventPattern\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/EventPattern?lang=python\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
 
 Additional restrictions for the event to route to the specified target.
@@ -1608,7 +1608,7 @@ A name for the rule.
 
 ###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"RepositoryBase.onEvent.parameter.target\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/IRuleTarget?lang=python\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
 
 The target to register for the event.
@@ -1647,7 +1647,7 @@ A description of the rule's purpose.
 
 ###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"RepositoryBase.onImageScanCompleted.parameter.eventPattern\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/EventPattern?lang=python\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
 
 Additional restrictions for the event to route to the specified target.
@@ -1669,7 +1669,7 @@ A name for the rule.
 
 ###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"RepositoryBase.onImageScanCompleted.parameter.target\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/IRuleTarget?lang=python\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
 
 The target to register for the event.
@@ -1797,7 +1797,7 @@ aws_cdk.aws_ecr.CfnPublicRepositoryProps(
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnPublicRepositoryProps.property.repositoryCatalogData?lang=python\\">repository_catalog_data</a></code> | <code>typing.Any</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnPublicRepositoryProps.property.repositoryName?lang=python\\">repository_name</a></code> | <code>str</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnPublicRepositoryProps.property.repositoryPolicyText?lang=python\\">repository_policy_text</a></code> | <code>typing.Any</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnPublicRepositoryProps.property.tags?lang=python\\">tags</a></code> | <code>typing.List[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/CfnTag?lang=python\\">CfnTag</a>]</code> | \`AWS::ECR::PublicRepository.Tags\`. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnPublicRepositoryProps.property.tags?lang=python\\">tags</a></code> | <code>typing.List[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/CfnTag?lang=python\\">CfnTag</a>]</code> | \`AWS::ECR::PublicRepository.Tags\`. |
 
 ---
 
@@ -1849,7 +1849,7 @@ repository_policy_text: typing.Any
 tags: typing.List[CfnTag]
 \`\`\`
 
-- *Type:* typing.List[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/CfnTag?lang=python\\">CfnTag</a>]
+- *Type:* typing.List[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/CfnTag?lang=python\\">CfnTag</a>]
 
 \`AWS::ECR::PublicRepository.Tags\`.
 
@@ -1915,7 +1915,7 @@ aws_cdk.aws_ecr.CfnReplicationConfigurationProps(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfigurationProps.property.replicationConfiguration?lang=python\\">replication_configuration</a></code> | <code>typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python\\">ReplicationConfigurationProperty</a>]</code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfigurationProps.property.replicationConfiguration?lang=python\\">replication_configuration</a></code> | <code>typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python\\">ReplicationConfigurationProperty</a>]</code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
 
 ---
 
@@ -1925,7 +1925,7 @@ aws_cdk.aws_ecr.CfnReplicationConfigurationProps(
 replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
 \`\`\`
 
-- *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python\\">ReplicationConfigurationProperty</a>]
+- *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python\\">ReplicationConfigurationProperty</a>]
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
@@ -1962,10 +1962,10 @@ aws_cdk.aws_ecr.CfnRepositoryProps(
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.encryptionConfiguration?lang=python\\">encryption_configuration</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.EncryptionConfiguration\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.imageScanningConfiguration?lang=python\\">image_scanning_configuration</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.ImageScanningConfiguration\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.imageTagMutability?lang=python\\">image_tag_mutability</a></code> | <code>str</code> | \`AWS::ECR::Repository.ImageTagMutability\`. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.lifecyclePolicy?lang=python\\">lifecycle_policy</a></code> | <code>typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.LifecyclePolicyProperty?lang=python\\">LifecyclePolicyProperty</a>]</code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.lifecyclePolicy?lang=python\\">lifecycle_policy</a></code> | <code>typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python\\">LifecyclePolicyProperty</a>]</code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.repositoryName?lang=python\\">repository_name</a></code> | <code>str</code> | \`AWS::ECR::Repository.RepositoryName\`. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.repositoryPolicyText?lang=python\\">repository_policy_text</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.RepositoryPolicyText\`. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.tags?lang=python\\">tags</a></code> | <code>typing.List[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/CfnTag?lang=python\\">CfnTag</a>]</code> | \`AWS::ECR::Repository.Tags\`. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.tags?lang=python\\">tags</a></code> | <code>typing.List[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/CfnTag?lang=python\\">CfnTag</a>]</code> | \`AWS::ECR::Repository.Tags\`. |
 
 ---
 
@@ -2017,7 +2017,7 @@ image_tag_mutability: str
 lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty]
 \`\`\`
 
-- *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.LifecyclePolicyProperty?lang=python\\">LifecyclePolicyProperty</a>]
+- *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python\\">LifecyclePolicyProperty</a>]
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
@@ -2059,7 +2059,7 @@ repository_policy_text: typing.Any
 tags: typing.List[CfnTag]
 \`\`\`
 
-- *Type:* typing.List[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/CfnTag?lang=python\\">CfnTag</a>]
+- *Type:* typing.List[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/CfnTag?lang=python\\">CfnTag</a>]
 
 \`AWS::ECR::Repository.Tags\`.
 
@@ -2143,11 +2143,11 @@ aws_cdk.aws_ecr.LifecycleRule(
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/LifecycleRule.property.description?lang=python\\">description</a></code> | <code>str</code> | Describes the purpose of the rule. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/LifecycleRule.property.maxImageAge?lang=python\\">max_image_age</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/Duration?lang=python\\">Duration</a></code> | The maximum age of images to retain. The value must represent a number of days. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/LifecycleRule.property.maxImageAge?lang=python\\">max_image_age</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/Duration?lang=python\\">Duration</a></code> | The maximum age of images to retain. The value must represent a number of days. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/LifecycleRule.property.maxImageCount?lang=python\\">max_image_count</a></code> | <code>typing.Union[int, float]</code> | The maximum number of images to retain. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/LifecycleRule.property.rulePriority?lang=python\\">rule_priority</a></code> | <code>typing.Union[int, float]</code> | Controls the order in which rules are evaluated (low to high). |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/LifecycleRule.property.tagPrefixList?lang=python\\">tag_prefix_list</a></code> | <code>typing.List[str]</code> | Select images that have ALL the given prefixes in their tag. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/LifecycleRule.property.tagStatus?lang=python\\">tag_status</a></code> | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/TagStatus?lang=python\\">TagStatus</a></code> | Select images based on tags. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/LifecycleRule.property.tagStatus?lang=python\\">tag_status</a></code> | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/TagStatus?lang=python\\">TagStatus</a></code> | Select images based on tags. |
 
 ---
 
@@ -2170,7 +2170,7 @@ Describes the purpose of the rule.
 max_image_age: Duration
 \`\`\`
 
-- *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/Duration?lang=python\\">Duration</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/Duration?lang=python\\">Duration</a>
 
 The maximum age of images to retain. The value must represent a number of days.
 
@@ -2227,7 +2227,7 @@ Only if tagStatus == TagStatus.Tagged
 tag_status: TagStatus
 \`\`\`
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/TagStatus?lang=python\\">TagStatus</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/TagStatus?lang=python\\">TagStatus</a>
 - *Default:* TagStatus.Tagged if tagPrefixList is given, TagStatus.Any otherwise
 
 Select images based on tags.
@@ -2259,9 +2259,9 @@ aws_cdk.aws_ecr.OnCloudTrailImagePushedOptions(
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/OnCloudTrailImagePushedOptions.property.description?lang=python\\">description</a></code> | <code>str</code> | A description of the rule's purpose. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/OnCloudTrailImagePushedOptions.property.eventPattern?lang=python\\">event_pattern</a></code> | <code><a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a></code> | Additional restrictions for the event to route to the specified target. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/OnCloudTrailImagePushedOptions.property.eventPattern?lang=python\\">event_pattern</a></code> | <code><a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/EventPattern?lang=python\\">EventPattern</a></code> | Additional restrictions for the event to route to the specified target. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/OnCloudTrailImagePushedOptions.property.ruleName?lang=python\\">rule_name</a></code> | <code>str</code> | A name for the rule. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/OnCloudTrailImagePushedOptions.property.target?lang=python\\">target</a></code> | <code><a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a></code> | The target to register for the event. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/OnCloudTrailImagePushedOptions.property.target?lang=python\\">target</a></code> | <code><a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/IRuleTarget?lang=python\\">IRuleTarget</a></code> | The target to register for the event. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/OnCloudTrailImagePushedOptions.property.imageTag?lang=python\\">image_tag</a></code> | <code>str</code> | Only watch changes to this image tag. |
 
 ---
@@ -2285,7 +2285,7 @@ A description of the rule's purpose.
 event_pattern: EventPattern
 \`\`\`
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/EventPattern?lang=python\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
 
 Additional restrictions for the event to route to the specified target.
@@ -2315,7 +2315,7 @@ A name for the rule.
 target: IRuleTarget
 \`\`\`
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/IRuleTarget?lang=python\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
 
 The target to register for the event.
@@ -2358,9 +2358,9 @@ aws_cdk.aws_ecr.OnImageScanCompletedOptions(
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/OnImageScanCompletedOptions.property.description?lang=python\\">description</a></code> | <code>str</code> | A description of the rule's purpose. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/OnImageScanCompletedOptions.property.eventPattern?lang=python\\">event_pattern</a></code> | <code><a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a></code> | Additional restrictions for the event to route to the specified target. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/OnImageScanCompletedOptions.property.eventPattern?lang=python\\">event_pattern</a></code> | <code><a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/EventPattern?lang=python\\">EventPattern</a></code> | Additional restrictions for the event to route to the specified target. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/OnImageScanCompletedOptions.property.ruleName?lang=python\\">rule_name</a></code> | <code>str</code> | A name for the rule. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/OnImageScanCompletedOptions.property.target?lang=python\\">target</a></code> | <code><a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a></code> | The target to register for the event. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/OnImageScanCompletedOptions.property.target?lang=python\\">target</a></code> | <code><a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/IRuleTarget?lang=python\\">IRuleTarget</a></code> | The target to register for the event. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/OnImageScanCompletedOptions.property.imageTags?lang=python\\">image_tags</a></code> | <code>typing.List[str]</code> | Only watch changes to the image tags spedified. |
 
 ---
@@ -2384,7 +2384,7 @@ A description of the rule's purpose.
 event_pattern: EventPattern
 \`\`\`
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/EventPattern?lang=python\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
 
 Additional restrictions for the event to route to the specified target.
@@ -2414,7 +2414,7 @@ A name for the rule.
 target: IRuleTarget
 \`\`\`
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/IRuleTarget?lang=python\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
 
 The target to register for the event.
@@ -2454,7 +2454,7 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules?lang=python\\">rules</a></code> | <code>typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, typing.List[typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationRuleProperty?lang=python\\">ReplicationRuleProperty</a>]]]</code> | \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules?lang=python\\">rules</a></code> | <code>typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, typing.List[typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationRuleProperty?lang=python\\">ReplicationRuleProperty</a>]]]</code> | \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`. |
 
 ---
 
@@ -2464,7 +2464,7 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty(
 rules: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationRuleProperty]]]
 \`\`\`
 
-- *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, typing.List[typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationRuleProperty?lang=python\\">ReplicationRuleProperty</a>]]]
+- *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, typing.List[typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationRuleProperty?lang=python\\">ReplicationRuleProperty</a>]]]
 
 \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`.
 
@@ -2542,7 +2542,7 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations?lang=python\\">destinations</a></code> | <code>typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, typing.List[typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationDestinationProperty?lang=python\\">ReplicationDestinationProperty</a>]]]</code> | \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations?lang=python\\">destinations</a></code> | <code>typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, typing.List[typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationDestinationProperty?lang=python\\">ReplicationDestinationProperty</a>]]]</code> | \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`. |
 
 ---
 
@@ -2552,7 +2552,7 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty(
 destinations: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationDestinationProperty]]]
 \`\`\`
 
-- *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, typing.List[typing.Union[<a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationDestinationProperty?lang=python\\">ReplicationDestinationProperty</a>]]]
+- *Type:* typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, typing.List[typing.Union[<a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python\\">IResolvable</a>, <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationDestinationProperty?lang=python\\">ReplicationDestinationProperty</a>]]]
 
 \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`.
 
@@ -2624,10 +2624,10 @@ aws_cdk.aws_ecr.RepositoryProps(
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryProps.property.imageScanOnPush?lang=python\\">image_scan_on_push</a></code> | <code>bool</code> | Enable the scan on push when creating the repository. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryProps.property.imageTagMutability?lang=python\\">image_tag_mutability</a></code> | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/TagMutability?lang=python\\">TagMutability</a></code> | The tag mutability setting for the repository. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryProps.property.imageTagMutability?lang=python\\">image_tag_mutability</a></code> | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/TagMutability?lang=python\\">TagMutability</a></code> | The tag mutability setting for the repository. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryProps.property.lifecycleRegistryId?lang=python\\">lifecycle_registry_id</a></code> | <code>str</code> | The AWS account ID associated with the registry that contains the repository. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryProps.property.lifecycleRules?lang=python\\">lifecycle_rules</a></code> | <code>typing.List[<a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/LifecycleRule?lang=python\\">LifecycleRule</a>]</code> | Life cycle rules to apply to this registry. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryProps.property.removalPolicy?lang=python\\">removal_policy</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/RemovalPolicy?lang=python\\">RemovalPolicy</a></code> | Determine what happens to the repository when the resource/stack is deleted. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryProps.property.lifecycleRules?lang=python\\">lifecycle_rules</a></code> | <code>typing.List[<a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/LifecycleRule?lang=python\\">LifecycleRule</a>]</code> | Life cycle rules to apply to this registry. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryProps.property.removalPolicy?lang=python\\">removal_policy</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/RemovalPolicy?lang=python\\">RemovalPolicy</a></code> | Determine what happens to the repository when the resource/stack is deleted. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/RepositoryProps.property.repositoryName?lang=python\\">repository_name</a></code> | <code>str</code> | Name for this repository. |
 
 ---
@@ -2651,7 +2651,7 @@ Enable the scan on push when creating the repository.
 image_tag_mutability: TagMutability
 \`\`\`
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/TagMutability?lang=python\\">TagMutability</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/TagMutability?lang=python\\">TagMutability</a>
 - *Default:* TagMutability.MUTABLE
 
 The tag mutability setting for the repository.
@@ -2681,7 +2681,7 @@ The AWS account ID associated with the registry that contains the repository.
 lifecycle_rules: typing.List[LifecycleRule]
 \`\`\`
 
-- *Type:* typing.List[<a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/LifecycleRule?lang=python\\">LifecycleRule</a>]
+- *Type:* typing.List[<a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/LifecycleRule?lang=python\\">LifecycleRule</a>]
 - *Default:* No life cycle rules
 
 Life cycle rules to apply to this registry.
@@ -2694,7 +2694,7 @@ Life cycle rules to apply to this registry.
 removal_policy: RemovalPolicy
 \`\`\`
 
-- *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/RemovalPolicy?lang=python\\">RemovalPolicy</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/RemovalPolicy?lang=python\\">RemovalPolicy</a>
 - *Default:* RemovalPolicy.Retain
 
 Determine what happens to the repository when the resource/stack is deleted.
@@ -2743,7 +2743,7 @@ aws_cdk.aws_ecr.AuthorizationToken.grant_read(
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/IGrantable?lang=python\\">IGrantable</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
 
 ---
 
@@ -2776,7 +2776,7 @@ aws_cdk.aws_ecr.PublicGalleryAuthorizationToken.grant_read(
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"PublicGalleryAuthorizationToken.grantRead.parameter.grantee\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/IGrantable?lang=python\\">IGrantable</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
 
 ---
 
@@ -2819,7 +2819,7 @@ def add_to_resource_policy(
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/PolicyStatement?lang=python\\">PolicyStatement</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/PolicyStatement?lang=python\\">PolicyStatement</a>
 
 ---
 
@@ -2834,7 +2834,7 @@ def grant(
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grant.parameter.grantee\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/IGrantable?lang=python\\">IGrantable</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
 
 ---
 
@@ -2854,7 +2854,7 @@ def grant_pull(
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grantPull.parameter.grantee\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/IGrantable?lang=python\\">IGrantable</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
 
 ---
 
@@ -2868,7 +2868,7 @@ def grant_pull_push(
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grantPullPush.parameter.grantee\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/1.106.0/api/IGrantable?lang=python\\">IGrantable</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
 
 ---
 
@@ -2903,7 +2903,7 @@ A description of the rule's purpose.
 
 ###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"IRepository.onCloudTrailEvent.parameter.eventPattern\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/EventPattern?lang=python\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
 
 Additional restrictions for the event to route to the specified target.
@@ -2925,7 +2925,7 @@ A name for the rule.
 
 ###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"IRepository.onCloudTrailEvent.parameter.target\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/IRuleTarget?lang=python\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
 
 The target to register for the event.
@@ -2964,7 +2964,7 @@ A description of the rule's purpose.
 
 ###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"IRepository.onCloudTrailImagePushed.parameter.eventPattern\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/EventPattern?lang=python\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
 
 Additional restrictions for the event to route to the specified target.
@@ -2986,7 +2986,7 @@ A name for the rule.
 
 ###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"IRepository.onCloudTrailImagePushed.parameter.target\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/IRuleTarget?lang=python\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
 
 The target to register for the event.
@@ -3031,7 +3031,7 @@ A description of the rule's purpose.
 
 ###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"IRepository.onEvent.parameter.eventPattern\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/EventPattern?lang=python\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
 
 Additional restrictions for the event to route to the specified target.
@@ -3053,7 +3053,7 @@ A name for the rule.
 
 ###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"IRepository.onEvent.parameter.target\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/IRuleTarget?lang=python\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
 
 The target to register for the event.
@@ -3092,7 +3092,7 @@ A description of the rule's purpose.
 
 ###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"IRepository.onImageScanCompleted.parameter.eventPattern\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/EventPattern?lang=python\\">EventPattern</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/EventPattern?lang=python\\">EventPattern</a>
 - *Default:* No additional filtering based on an event pattern.
 
 Additional restrictions for the event to route to the specified target.
@@ -3114,7 +3114,7 @@ A name for the rule.
 
 ###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"IRepository.onImageScanCompleted.parameter.target\\"></a>
 
-- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/1.106.0/api/IRuleTarget?lang=python\\">IRuleTarget</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/aws-events/v/99.99.99/api/IRuleTarget?lang=python\\">IRuleTarget</a>
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
 
 The target to register for the event.
@@ -3168,9 +3168,9 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository.property.node?lang=python\\">node</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/ConstructNode?lang=python\\">ConstructNode</a></code> | The construct tree node for this construct. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository.property.env?lang=python\\">env</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/ResourceEnvironment?lang=python\\">ResourceEnvironment</a></code> | The environment this resource belongs to. |
-| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository.property.stack?lang=python\\">stack</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/Stack?lang=python\\">Stack</a></code> | The stack in which this resource is defined. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository.property.node?lang=python\\">node</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/ConstructNode?lang=python\\">ConstructNode</a></code> | The construct tree node for this construct. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository.property.env?lang=python\\">env</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/ResourceEnvironment?lang=python\\">ResourceEnvironment</a></code> | The environment this resource belongs to. |
+| <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository.property.stack?lang=python\\">stack</a></code> | <code><a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/Stack?lang=python\\">Stack</a></code> | The stack in which this resource is defined. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository.property.repositoryArn?lang=python\\">repository_arn</a></code> | <code>str</code> | The ARN of the repository. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository.property.repositoryName?lang=python\\">repository_name</a></code> | <code>str</code> | The name of the repository. |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository.property.repositoryUri?lang=python\\">repository_uri</a></code> | <code>str</code> | The URI of this repository (represents the latest image):. |
@@ -3183,7 +3183,7 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 node: ConstructNode
 \`\`\`
 
-- *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/ConstructNode?lang=python\\">ConstructNode</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/ConstructNode?lang=python\\">ConstructNode</a>
 
 The construct tree node for this construct.
 
@@ -3195,7 +3195,7 @@ The construct tree node for this construct.
 env: ResourceEnvironment
 \`\`\`
 
-- *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/ResourceEnvironment?lang=python\\">ResourceEnvironment</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/ResourceEnvironment?lang=python\\">ResourceEnvironment</a>
 
 The environment this resource belongs to.
 
@@ -3209,7 +3209,7 @@ For resources that are created and managed by the CDK (generally, those created 
 stack: Stack
 \`\`\`
 
-- *Type:* <a href=\\"/packages/@aws-cdk/core/v/1.106.0/api/Stack?lang=python\\">Stack</a>
+- *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/Stack?lang=python\\">Stack</a>
 
 The stack in which this resource is defined.
 
