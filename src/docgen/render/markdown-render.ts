@@ -703,14 +703,18 @@ interface TypeTableItem extends SimpleTableItem {
   readonly type: TypeSchema;
 }
 
+function sanitize(str: string) {
+  return str.replace(/ /g, '-');
+}
+
 export const defaultAnchorFormatter = (type: JsiiEntity) => {
   // HTML5 allows any character in IDs /except/ whitespace
-  return type.id.replace(/ /g, '-');
+  return sanitize(type.id);
 };
 
 export const defaultLinkFormatter = (type: JsiiEntity, metadata: AssemblyMetadataSchema) => {
   if (type.packageName === metadata.packageName && type.submodule === metadata.submodule) {
-    return `<a href="#${type.id}">${type.displayName}</a>`;
+    return `<a href="#${sanitize(type.id)}">${type.displayName}</a>`;
   } else {
     // do not display a link if the type isn't in this document
     return type.fqn;
