@@ -6,11 +6,14 @@ import * as reflect from 'jsii-reflect';
 import { TargetLanguage } from 'jsii-rosetta';
 import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
 import { CorruptedAssemblyError, LanguageNotSupportedError } from '../..';
-import { Markdown } from '../render/markdown';
+import { Json } from '../render/json';
+import { MarkdownDocument } from '../render/markdown-doc';
+import { MarkdownFormattingOptions, MarkdownRenderer } from '../render/markdown-render';
+import { Schema } from '../schema';
 import { CSharpTranspile } from '../transpile/csharp';
 import { JavaTranspile } from '../transpile/java';
 import { PythonTranspile } from '../transpile/python';
-import { Transpile, Language, TranspiledType } from '../transpile/transpile';
+import { Transpile, Language } from '../transpile/transpile';
 import { TypeScriptTranspile } from '../transpile/typescript';
 import { Npm } from './_npm';
 import { ApiReference } from './api-reference';
@@ -23,20 +26,17 @@ const NOT_FOUND_IN_ASSEMBLY_REGEX = /Type '(.*)\..*' not found in assembly (.*)$
  * Options for rendering a `Documentation` object.
  */
 export interface RenderOptions {
-
   /**
    * Which language to generate docs for.
-   *
-   * @default Language.TYPESCRIPT
    */
-  readonly language?: Language;
+  readonly language: Language;
 
   /**
-    * Whether to ignore missing fixture files that will prevent transliterating
-    * some code snippet examples.
-    *
-    * @default true
-    */
+   * Whether to ignore missing fixture files that will prevent transliterating
+   * some code snippet examples.
+   *
+   * @default true
+   */
   readonly loose?: boolean;
 
   /**
@@ -47,27 +47,21 @@ export interface RenderOptions {
   readonly apiReference?: boolean;
 
   /**
-    * Include the user defined README.md in the documentation.
-    *
-    * @default true
-    */
+   * Include the user defined README.md in the documentation.
+   *
+   * @default true
+   */
   readonly readme?: boolean;
 
   /**
-    * Generate documentation only for a specific submodule.
-    *
-    * @default - Documentation is generated for the root module only.
-    */
-  readonly submodule?: string;
-
-  /**
-   * How should links to types be rendered.
+   * Generate documentation only for a specific submodule.
    *
-   * @default '#{fqn}'
+   * @default - Documentation is generated for the root module only.
    */
-  readonly linkFormatter?: (type: TranspiledType) => string;
-
+  readonly submodule?: string;
 }
+
+export interface MarkdownRenderOptions extends RenderOptions, MarkdownFormattingOptions {}
 
 /**
  * Options for creating a `Documentation` object using the `fromLocalPackage` function.
@@ -175,7 +169,7 @@ export class Documentation {
   /**
    * Generate markdown.
    */
-  public async render(options: RenderOptions = {}): Promise<Markdown> {
+  public async toJson(options: RenderOptions): Promise<Json<Schema>> {
 
     const language = options.language ?? Language.TYPESCRIPT;
     const loose = options.loose ?? true;
@@ -197,17 +191,16 @@ export class Documentation {
     }
 
     const submodule = options?.submodule ? this.findSubmodule(assembly, options.submodule) : undefined;
-    const documentation = new Markdown();
 
+    let readme: MarkdownDocument | undefined;
     if (options?.readme ?? true) {
-      const readme = new Readme(transpile, assembly, submodule);
-      documentation.section(readme.render());
+      readme = new Readme(transpile, assembly, submodule).render();
     }
 
+    let apiReference: ApiReference | undefined;
     if (options?.apiReference ?? true) {
       try {
-        const apiReference = new ApiReference(transpile, assembly, options?.linkFormatter ?? ((t: TranspiledType) => `#${t.fqn}`), submodule);
-        documentation.section(apiReference.render());
+        apiReference = new ApiReference(transpile, assembly, submodule);
       } catch (error) {
         if (!(error instanceof Error)) {
           throw error;
@@ -216,7 +209,26 @@ export class Documentation {
       }
     }
 
-    return documentation;
+    return new Json({
+      version: '0.1',
+      language: language.toString(),
+      metadata: {
+        packageName: assembly.name,
+        packageVersion: assembly.version,
+        submodule: submodule?.name,
+      },
+      readme: readme?.render(),
+      apiReference: apiReference?.toJson(),
+    });
+  }
+
+  public async toMarkdown(options: MarkdownRenderOptions): Promise<MarkdownDocument> {
+    const json = (await this.toJson(options)).content;
+    return MarkdownRenderer.fromSchema(json, {
+      anchorFormatter: options.anchorFormatter,
+      linkFormatter: options.linkFormatter,
+      typeFormatter: options.typeFormatter,
+    });
   }
 
   private addCleanupDirectory(directory: string) {
@@ -234,29 +246,8 @@ export class Documentation {
   }
 
   private async languageSpecific(lang: Language, loose: boolean): Promise<{ assembly: reflect.Assembly; transpile: Transpile}> {
-
-    let language, transpile = undefined;
-
-    switch (lang) {
-      case Language.PYTHON:
-        language = TargetLanguage.PYTHON;
-        transpile = new PythonTranspile();
-        break;
-      case Language.TYPESCRIPT:
-        transpile = new TypeScriptTranspile();
-        break;
-      case Language.JAVA:
-        language = TargetLanguage.JAVA;
-        transpile = new JavaTranspile();
-        break;
-      case Language.CSHARP:
-        transpile = new CSharpTranspile();
-        language = TargetLanguage.CSHARP;
-        break;
-      default:
-        throw new Error(`Unsupported language: ${lang}. Supported languages are ${Object.values(Language)}`);
-    }
-    return { assembly: await this.createAssembly(loose, language), transpile };
+    const { rosettaTarget, transpile } = LANGUAGE_SPECIFIC[lang.toString()];
+    return { assembly: await this.createAssembly(loose, rosettaTarget), transpile };
   }
 
   /**
@@ -314,6 +305,25 @@ export class Documentation {
   }
 
 }
+
+export const LANGUAGE_SPECIFIC = {
+  [Language.PYTHON.toString()]: {
+    transpile: new PythonTranspile(),
+    rosettaTarget: TargetLanguage.PYTHON,
+  },
+  [Language.TYPESCRIPT.toString()]: {
+    transpile: new TypeScriptTranspile(),
+    rosettaTarget: undefined, // no transpilation needed
+  },
+  [Language.JAVA.toString()]: {
+    transpile: new JavaTranspile(),
+    rosettaTarget: TargetLanguage.JAVA,
+  },
+  [Language.CSHARP.toString()]: {
+    transpile: new CSharpTranspile(),
+    rosettaTarget: TargetLanguage.CSHARP,
+  },
+};
 
 async function withTempDir<T>(work: (workdir: string) => Promise<T>): Promise<T> {
   const workdir = await fs.mkdtemp(path.join(os.tmpdir(), path.sep));

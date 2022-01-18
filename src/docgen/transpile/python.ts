@@ -67,7 +67,7 @@ const propertyToParameter = (
     method: callable,
     name: property.name,
     optional: property.optional,
-    parentType: property.parentType,
+    parentType: callable.parentType,
     spec: property.spec,
     system: property.system,
     type: property.type,
@@ -228,7 +228,7 @@ export class PythonTranspile extends transpile.TranspileBase {
     }
     fqn.push(type.name);
 
-    return {
+    return new transpile.TranspiledType({
       fqn: fqn.join('.'),
       name: type.name,
       namespace: type.namespace,
@@ -236,7 +236,7 @@ export class PythonTranspile extends transpile.TranspileBase {
       submodule: moduleLike.submodule,
       source: type,
       language: this.language,
-    };
+    });
   }
 
   public moduleLike(

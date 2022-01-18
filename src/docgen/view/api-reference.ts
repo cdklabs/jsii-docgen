@@ -1,6 +1,6 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
-import { Transpile, TranspiledType } from '../transpile/transpile';
+import { ApiReferenceSchema } from '../schema';
+import { Transpile } from '../transpile/transpile';
 import { Classes } from './classes';
 import { Constructs } from './constructs';
 import { Enums } from './enums';
@@ -19,7 +19,6 @@ export class ApiReference {
   constructor(
     transpile: Transpile,
     assembly: reflect.Assembly,
-    linkFormatter: (type: TranspiledType) => string,
     submodule?: reflect.Submodule,
   ) {
     const classes = this.sortByName(
@@ -30,24 +29,24 @@ export class ApiReference {
     );
     const enums = this.sortByName(submodule ? submodule.enums : assembly.enums);
 
-    this.constructs = new Constructs(transpile, classes, linkFormatter);
-    this.classes = new Classes(transpile, classes, linkFormatter);
-    this.structs = new Structs(transpile, interfaces, linkFormatter);
-    this.interfaces = new Interfaces(transpile, interfaces, linkFormatter);
+    this.constructs = new Constructs(transpile, classes);
+    this.classes = new Classes(transpile, classes);
+    this.structs = new Structs(transpile, interfaces);
+    this.interfaces = new Interfaces(transpile, interfaces);
     this.enums = new Enums(transpile, enums);
   }
 
   /**
-   * Generate markdown.
+   * Generate JSON.
    */
-  public render(): Markdown {
-    const md = new Markdown({ header: { title: 'API Reference' } });
-    md.section(this.constructs.render());
-    md.section(this.structs.render());
-    md.section(this.classes.render());
-    md.section(this.interfaces.render());
-    md.section(this.enums.render());
-    return md;
+  public toJson(): ApiReferenceSchema {
+    return {
+      constructs: this.constructs.toJson(),
+      classes: this.classes.toJson(),
+      structs: this.structs.toJson(),
+      interfaces: this.interfaces.toJson(),
+      enums: this.enums.toJson(),
+    };
   }
 
   private sortByName<Type extends reflect.Type>(arr: readonly Type[]): Type[] {

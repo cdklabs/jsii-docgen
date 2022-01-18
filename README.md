@@ -15,13 +15,20 @@ Will produce a file called `API.md` with the api reference for this module.
 As a library:
 
 ```ts
-import { Documentation } from 'jsii-docgen';
+import { Documentation, Language } from 'jsii-docgen';
 
-const docs = await Documentation.forLocalPackage('.', { language: 'ts' });
-const markdown = docs.render().render(); // returns a markdown string
+const docs = await Documentation.forProject('.');
+const markdown = await docs.toMarkdown({ language: Language.TYPESCRIPT }).render(); // returns a markdown string
+
+const json = await docs.toJson({ language: Language.TYPESCRIPT }).render(); // returns a JSON object
 ```
 
-Note that you can pass in either `ts` or `python` as the language, as opposed to the CLI, which only produces a TypeScript reference.
+Curreently jsii-docgen supports generating documentation in the following languages:
+
+- TypeScript (`typescript`)
+- Python (`python`)
+- Java (`java`)
+- C# (`csharp` or `dotnet`)
 
 ## Contributions
 

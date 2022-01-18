@@ -1,77 +1,30 @@
 import * as reflect from 'jsii-reflect';
-import { anchorForId, Markdown } from '../render/markdown';
-import { Transpile, TranspiledParameter, TranspiledType } from '../transpile/transpile';
+import { extractDocs, ParameterSchema } from '../schema';
+import { Transpile, TranspiledCallable, TranspiledParameter } from '../transpile/transpile';
 
 export class Parameter {
-  private readonly transpiled: TranspiledParameter;
+  private readonly transpiledParam: TranspiledParameter;
+  private readonly transpiledCallable: TranspiledCallable;
   constructor(
     transpile: Transpile,
     private readonly parameter: reflect.Parameter,
-    private readonly linkFormatter: (type: TranspiledType) => string,
   ) {
-    this.transpiled = transpile.parameter(parameter);
+    this.transpiledParam = transpile.parameter(parameter);
+    this.transpiledCallable = transpile.callable(parameter.method);
   }
 
-  public get id(): string {
-    return `${this.transpiled.parentType.fqn}.parameter.${this.transpiled.name}`;
-  }
-
-  public get linkedName(): string {
-    const isRequired = !this.parameter.optional ? '<span title="Required">*</span>' : '';
-    return `[${Markdown.pre(this.transpiled.name)}](#${anchorForId(this.id)})${isRequired}`;
-  }
-
-  public get type(): string {
-    return this.transpiled.typeReference.toString({
-      typeFormatter: (t) => `[${Markdown.pre(t.fqn)}](${this.linkFormatter(t)})`,
-      stringFormatter: Markdown.pre,
-    });
-  }
-
-  public get description(): string {
-    const summary = this.parameter.docs.summary;
-    return summary.length > 0 ? summary : Markdown.italic('No description.');
-  }
-
-  public render(): Markdown {
-    const optionality = this.parameter.optional ? 'Optional' : 'Required';
-
-    const md = new Markdown({
-      id: this.id,
-      header: {
-        title: this.transpiled.name,
-        sup: optionality,
-        pre: true,
-        strike: this.parameter.docs.deprecated,
-      },
-    });
-
-    if (this.parameter.docs.deprecated) {
-      md.bullet(
-        `${Markdown.italic('Deprecated:')} ${
-          this.parameter.docs.deprecationReason
-        }`,
-      );
-      md.lines('');
-    }
-
-    const metadata: any = { Type: this.type };
-
-    if (this.parameter.spec.docs?.default) {
-      metadata.Default = Markdown.sanitize(this.parameter.spec.docs?.default);
-    }
-
-    for (const [key, value] of Object.entries(metadata)) {
-      md.bullet(`${Markdown.italic(`${key}:`)} ${value}`);
-    }
-    md.lines('');
-
-    if (this.parameter.docs) {
-      md.docs(this.parameter.docs);
-    }
-
-    md.split();
-
-    return md;
+  public toJson(): ParameterSchema {
+    const isInitializer = this.parameter.method.kind === reflect.MemberKind.Initializer;
+    const methodName = isInitializer ? 'Initializer' : this.transpiledCallable.name;
+    const methodId = isInitializer ? 'Initializer' : this.parameter.method.name;
+    return {
+      fqn: `${this.transpiledParam.parentType.fqn}.${methodName}.parameter.${this.transpiledParam.name}`,
+      displayName: this.transpiledParam.name,
+      id: `${this.parameter.parentType.fqn}.${methodId}.parameter.${this.parameter.name}`,
+      optional: this.transpiledParam.optional === true ? true : undefined, // to save space
+      default: this.parameter.spec.docs?.default,
+      type: this.transpiledParam.typeReference.toJson(),
+      docs: extractDocs(this.parameter.docs),
+    };
   }
 }

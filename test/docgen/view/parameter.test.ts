@@ -1,13 +1,17 @@
 import * as reflect from 'jsii-reflect';
-import { CSharpTranspile } from '../../../src/docgen/transpile/csharp';
-import { JavaTranspile } from '../../../src/docgen/transpile/java';
-import { PythonTranspile } from '../../../src/docgen/transpile/python';
-import { TranspiledType } from '../../../src/docgen/transpile/transpile';
+import { Language } from '../../../src';
+import { MarkdownRenderer } from '../../../src/docgen/render/markdown-render';
 import { TypeScriptTranspile } from '../../../src/docgen/transpile/typescript';
+import { LANGUAGE_SPECIFIC } from '../../../src/docgen/view/documentation';
 import { Parameter } from '../../../src/docgen/view/parameter';
 import { Assemblies } from '../assemblies';
 
 const assembly: reflect.Assembly = Assemblies.instance.withoutSubmodules;
+
+const metadata = {
+  packageName: assembly.name,
+  packageVersion: assembly.version,
+};
 
 const findParameter = (): reflect.Parameter => {
   for (const klass of assembly.system.classes) {
@@ -20,44 +24,21 @@ const findParameter = (): reflect.Parameter => {
   throw new Error('Assembly does not contain a parameter');
 };
 
-describe('python', () => {
-  const transpile = new PythonTranspile();
-  test('snapshot', () => {
-    const parameter = new Parameter(transpile, findParameter(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(parameter.render().render()).toMatchSnapshot();
-  });
+test.each(Language.values())('%s snapshot', (language) => {
+  const { transpile } = LANGUAGE_SPECIFIC[language.toString()];
+  const markdown = new MarkdownRenderer({ language, ...metadata });
+  const param = new Parameter(transpile, findParameter()).toJson();
+  expect(param).toMatchSnapshot();
+  expect(markdown.visitParameter(param).render()).toMatchSnapshot();
 });
 
-describe('typescript', () => {
+test('newlines in "defaults" are removed', () => {
   const transpile = new TypeScriptTranspile();
-  test('snapshot', () => {
-    const parameter = new Parameter(transpile, findParameter(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(parameter.render().render()).toMatchSnapshot();
-  });
-});
-
-describe('java', () => {
-  const transpile = new JavaTranspile();
-  test('snapshot', () => {
-    const parameter = new Parameter(transpile, findParameter(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(parameter.render().render()).toMatchSnapshot();
-  });
-});
-
-describe('csharp', () => {
-  const transpile = new CSharpTranspile();
-  test('snapshot', () => {
-    const parameter = new Parameter(transpile, findParameter(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(parameter.render().render()).toMatchSnapshot();
-  });
-});
-
-describe('newlines in "defaults" are removed', () => {
-  const transpile = new TypeScriptTranspile();
-  test('snapshot', () => {
-    const reflectParameter = findParameter();
-    reflectParameter.spec.docs = { default: 'default option\nwith a newline' };
-    const docgenParameter = new Parameter(transpile, findParameter(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(docgenParameter.render().render()).toMatchSnapshot();
-  });
+  const reflectParameter = findParameter();
+  reflectParameter.spec.docs = { default: 'default option\nwith a newline' };
+  const docgenParameter = new Parameter(transpile, reflectParameter).toJson();
+  const renderer = new MarkdownRenderer({ language: Language.TYPESCRIPT, ...metadata });
+  const markdown = renderer.visitParameter(docgenParameter).render();
+  expect(markdown).toMatchSnapshot();
+  expect(markdown).toContain('default option with a newline');
 });

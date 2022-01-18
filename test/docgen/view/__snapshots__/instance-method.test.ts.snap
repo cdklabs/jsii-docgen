@@ -1,15 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`csharp snapshot 1`] = `
-" \`Inspect\` <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.Inspect\\" id=\\"amazoncdkawsecrcfnpublicrepositoryinspect\\"></a>
+Object {
+  "displayName": "Inspect",
+  "docs": Object {
+    "summary": "Examines the CloudFormation resource and discloses attributes.",
+  },
+  "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepository.Inspect",
+  "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect",
+  "parameters": Array [
+    Object {
+      "default": undefined,
+      "displayName": "Inspector",
+      "docs": Object {
+        "summary": "- tree inspector to collect and process attributes.",
+      },
+      "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepository.Inspect.parameter.Inspector",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
+      "optional": undefined,
+      "type": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "TreeInspector",
+            "fqn": "Amazon.CDK.TreeInspector",
+            "id": "@aws-cdk/core.TreeInspector",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "99.99.99",
+            "submodule": undefined,
+          },
+        ],
+      },
+    },
+  ],
+  "usage": "private Inspect(TreeInspector Inspector)",
+}
+`;
+
+exports[`csharp snapshot 2`] = `
+" \`Inspect\` <a name=\\"Inspect\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`csharp
 private Inspect(TreeInspector Inspector)
 \`\`\`
 
-# \`Inspector\`<sup>Required</sup> <a name=\\"Amazon.CDK.AWS.ECR.CfnPublicRepository.parameter.Inspector\\" id=\\"amazoncdkawsecrcfnpublicrepositoryparameterinspector\\"></a>
+# \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
-- *Type:* [\`Amazon.CDK.TreeInspector\`](#Amazon.CDK.TreeInspector)
+- *Type:* Amazon.CDK.TreeInspector
 
 tree inspector to collect and process attributes.
 
@@ -18,15 +55,52 @@ tree inspector to collect and process attributes.
 `;
 
 exports[`java snapshot 1`] = `
-" \`inspect\` <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepository.inspect\\" id=\\"softwareamazonawscdkservicesecrcfnpublicrepositoryinspect\\"></a>
+Object {
+  "displayName": "inspect",
+  "docs": Object {
+    "summary": "Examines the CloudFormation resource and discloses attributes.",
+  },
+  "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.inspect",
+  "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect",
+  "parameters": Array [
+    Object {
+      "default": undefined,
+      "displayName": "inspector",
+      "docs": Object {
+        "summary": "- tree inspector to collect and process attributes.",
+      },
+      "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.inspect.parameter.inspector",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
+      "optional": undefined,
+      "type": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "TreeInspector",
+            "fqn": "software.amazon.awscdk.core.TreeInspector",
+            "id": "@aws-cdk/core.TreeInspector",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "99.99.99",
+            "submodule": undefined,
+          },
+        ],
+      },
+    },
+  ],
+  "usage": "public inspect(TreeInspector inspector)",
+}
+`;
+
+exports[`java snapshot 2`] = `
+" \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`java
 public inspect(TreeInspector inspector)
 \`\`\`
 
-# \`inspector\`<sup>Required</sup> <a name=\\"software.amazon.awscdk.services.ecr.CfnPublicRepository.parameter.inspector\\" id=\\"softwareamazonawscdkservicesecrcfnpublicrepositoryparameterinspector\\"></a>
+# \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
-- *Type:* [\`software.amazon.awscdk.core.TreeInspector\`](#software.amazon.awscdk.core.TreeInspector)
+- *Type:* software.amazon.awscdk.core.TreeInspector
 
 tree inspector to collect and process attributes.
 
@@ -35,7 +109,46 @@ tree inspector to collect and process attributes.
 `;
 
 exports[`python snapshot 1`] = `
-" \`inspect\` <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.inspect\\" id=\\"awscdkawsecrcfnpublicrepositoryinspect\\"></a>
+Object {
+  "displayName": "inspect",
+  "docs": Object {
+    "summary": "Examines the CloudFormation resource and discloses attributes.",
+  },
+  "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.inspect",
+  "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect",
+  "parameters": Array [
+    Object {
+      "default": undefined,
+      "displayName": "inspector",
+      "docs": Object {
+        "summary": "- tree inspector to collect and process attributes.",
+      },
+      "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.inspect.parameter.inspector",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
+      "optional": undefined,
+      "type": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "TreeInspector",
+            "fqn": "aws_cdk.core.TreeInspector",
+            "id": "@aws-cdk/core.TreeInspector",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "99.99.99",
+            "submodule": undefined,
+          },
+        ],
+      },
+    },
+  ],
+  "usage": "def inspect(
+  inspector: TreeInspector
+)",
+}
+`;
+
+exports[`python snapshot 2`] = `
+" \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`python
 def inspect(
@@ -43,9 +156,9 @@ def inspect(
 )
 \`\`\`
 
-# \`inspector\`<sup>Required</sup> <a name=\\"aws_cdk.aws_ecr.CfnPublicRepository.parameter.inspector\\" id=\\"awscdkawsecrcfnpublicrepositoryparameterinspector\\"></a>
+# \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
-- *Type:* [\`aws_cdk.core.TreeInspector\`](#aws_cdk.core.TreeInspector)
+- *Type:* aws_cdk.core.TreeInspector
 
 tree inspector to collect and process attributes.
 
@@ -54,15 +167,52 @@ tree inspector to collect and process attributes.
 `;
 
 exports[`typescript snapshot 1`] = `
-" \`inspect\` <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\" id=\\"awscdkawsecrcfnpublicrepositoryinspect\\"></a>
+Object {
+  "displayName": "inspect",
+  "docs": Object {
+    "summary": "Examines the CloudFormation resource and discloses attributes.",
+  },
+  "fqn": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect",
+  "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect",
+  "parameters": Array [
+    Object {
+      "default": undefined,
+      "displayName": "inspector",
+      "docs": Object {
+        "summary": "- tree inspector to collect and process attributes.",
+      },
+      "fqn": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
+      "optional": undefined,
+      "type": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "TreeInspector",
+            "fqn": "@aws-cdk/core.TreeInspector",
+            "id": "@aws-cdk/core.TreeInspector",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "99.99.99",
+            "submodule": undefined,
+          },
+        ],
+      },
+    },
+  ],
+  "usage": "public inspect(inspector: TreeInspector)",
+}
+`;
+
+exports[`typescript snapshot 2`] = `
+" \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`typescript
 public inspect(inspector: TreeInspector)
 \`\`\`
 
-# \`inspector\`<sup>Required</sup> <a name=\\"@aws-cdk/aws-ecr.CfnPublicRepository.parameter.inspector\\" id=\\"awscdkawsecrcfnpublicrepositoryparameterinspector\\"></a>
+# \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
-- *Type:* [\`@aws-cdk/core.TreeInspector\`](#@aws-cdk/core.TreeInspector)
+- *Type:* @aws-cdk/core.TreeInspector
 
 tree inspector to collect and process attributes.
 

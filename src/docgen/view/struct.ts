@@ -1,44 +1,27 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
-import { Transpile, TranspiledStruct, TranspiledType } from '../transpile/transpile';
+import { extractDocs, StructSchema } from '../schema';
+import { Transpile, TranspiledStruct } from '../transpile/transpile';
 import { Properties } from './properties';
 
 export class Struct {
   private readonly transpiled: TranspiledStruct;
   private readonly properties: Properties;
   constructor(
-    private readonly transpile: Transpile,
+    transpile: Transpile,
     private readonly iface: reflect.InterfaceType,
-    linkFormatter: (type: TranspiledType) => string,
   ) {
     this.transpiled = transpile.struct(iface);
-    this.properties = new Properties(transpile, this.iface.allProperties, linkFormatter);
+    this.properties = new Properties(transpile, this.iface.allProperties);
   }
 
-  public render(): Markdown {
-    const md = new Markdown({
-      id: this.transpiled.type.fqn,
-      header: { title: this.transpiled.name },
-    });
-
-    if (this.iface.docs) {
-      md.docs(this.iface.docs);
-    }
-
-    const initializer = new Markdown({
-      id: `${this.transpiled.type}.Initializer`,
-      header: { title: 'Initializer' },
-    });
-
-    initializer.code(
-      this.transpile.language.toString(),
-      `${this.transpiled.import}`,
-      '',
-      `${this.transpiled.initialization}`,
-    );
-
-    md.section(initializer);
-    md.section(this.properties.render());
-    return md;
+  public toJson(): StructSchema {
+    return {
+      fqn: this.transpiled.type.fqn,
+      displayName: this.transpiled.type.fqn.split('.').pop()!,
+      id: this.iface.fqn,
+      properties: this.properties.toJson(),
+      docs: extractDocs(this.iface.docs),
+      usage: `${this.transpiled.import}\n\n${this.transpiled.initialization}`,
+    };
   }
 }

@@ -1,13 +1,16 @@
 import * as reflect from 'jsii-reflect';
-import { CSharpTranspile } from '../../../src/docgen/transpile/csharp';
-import { JavaTranspile } from '../../../src/docgen/transpile/java';
-import { PythonTranspile } from '../../../src/docgen/transpile/python';
-import { TranspiledType } from '../../../src/docgen/transpile/transpile';
-import { TypeScriptTranspile } from '../../../src/docgen/transpile/typescript';
+import { Language } from '../../../src';
+import { MarkdownRenderer } from '../../../src/docgen/render/markdown-render';
+import { LANGUAGE_SPECIFIC } from '../../../src/docgen/view/documentation';
 import { Initializer } from '../../../src/docgen/view/initializer';
 import { Assemblies } from '../assemblies';
 
 const assembly: reflect.Assembly = Assemblies.instance.withoutSubmodules;
+
+const metadata = {
+  packageName: assembly.name,
+  packageVersion: assembly.version,
+};
 
 const findInitializer = (): reflect.Initializer => {
   for (const klass of assembly.system.classes) {
@@ -18,34 +21,10 @@ const findInitializer = (): reflect.Initializer => {
   throw new Error('Assembly does not contain an initializer');
 };
 
-describe('python', () => {
-  const transpile = new PythonTranspile();
-  test('snapshot', () => {
-    const initializer = new Initializer(transpile, findInitializer(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(initializer.render().render()).toMatchSnapshot();
-  });
-});
-
-describe('typescript', () => {
-  const transpile = new TypeScriptTranspile();
-  test('snapshot', () => {
-    const initializer = new Initializer(transpile, findInitializer(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(initializer.render().render()).toMatchSnapshot();
-  });
-});
-
-describe('java', () => {
-  const transpile = new JavaTranspile();
-  test('snapshot', () => {
-    const initializer = new Initializer(transpile, findInitializer(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(initializer.render().render()).toMatchSnapshot();
-  });
-});
-
-describe('csharp', () => {
-  const transpile = new CSharpTranspile();
-  test('snapshot', () => {
-    const initializer = new Initializer(transpile, findInitializer(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(initializer.render().render()).toMatchSnapshot();
-  });
+test.each(Language.values())('%s snapshot', (language) => {
+  const { transpile } = LANGUAGE_SPECIFIC[language.toString()];
+  const markdown = new MarkdownRenderer({ language, ...metadata });
+  const init = new Initializer(transpile, findInitializer()).toJson();
+  expect(init).toMatchSnapshot();
+  expect(markdown.visitInitializer(init).render()).toMatchSnapshot();
 });

@@ -1,15 +1,4 @@
-import * as reflect from 'jsii-reflect';
-
-const sanitize = (input: string): string => {
-  return input
-    .toLowerCase()
-    .replace(/[^a-zA-Z0-9 ]/g, '')
-    .replace(/ /g, '-');
-};
-
-export const anchorForId = (id: string): string => {
-  return sanitize(id);
-};
+import { DocsSchema } from '../schema';
 
 /**
  * Options for defining a markdown header.
@@ -64,11 +53,11 @@ export interface MarkdownOptions {
 /**
  * Markdown element.
  */
-export class Markdown {
+export class MarkdownDocument {
   /**
    * An empty markdown element.
    */
-  public static readonly EMPTY = new Markdown();
+  public static readonly EMPTY = new MarkdownDocument();
 
   /**
    * Sanitize markdown reserved characters from external input.
@@ -90,7 +79,8 @@ export class Markdown {
   }
 
   public static pre(text: string): string {
-    return `\`${text}\``;
+    // using <code> instead of backticks since this allows links
+    return `<code>${text}</code>`;
   }
 
   public static italic(text: string) {
@@ -98,7 +88,7 @@ export class Markdown {
   }
 
   private readonly _lines = new Array<string>();
-  private readonly _sections = new Array<Markdown>();
+  private readonly _sections = new Array<MarkdownDocument>();
 
   private readonly id?: string;
   private readonly header?: string;
@@ -109,25 +99,22 @@ export class Markdown {
   }
 
   /**
-   * Render a `jsii-reflect.Docs` element into the markdown.
+   * Render a docs element into the markdown.
    */
-  public docs(docs: reflect.Docs) {
+  public docs(docs: DocsSchema) {
     if (docs.summary) {
-      this.lines(Markdown.sanitize(docs.summary));
+      this.lines(MarkdownDocument.sanitize(docs.summary));
       this.lines('');
     }
     if (docs.remarks) {
-      this.lines(Markdown.sanitize(docs.remarks));
+      this.lines(MarkdownDocument.sanitize(docs.remarks));
       this.lines('');
     }
 
-    if (docs.docs.see) {
-      this.quote(docs.docs.see);
-    }
-
-    const customLink = docs.customTag('link');
-    if (customLink) {
-      this.quote(`[${customLink}](${customLink})`);
+    if (docs.links) {
+      for (const link of docs.links) {
+        this.quote(`[${link}](${link})`);
+      }
     }
   }
 
@@ -166,7 +153,7 @@ export class Markdown {
     this.lines('');
   }
 
-  public section(section: Markdown) {
+  public section(section: MarkdownDocument) {
     this._sections.push(section);
   }
 
@@ -180,20 +167,16 @@ export class Markdown {
 
     const content: string[] = [];
     if (this.header) {
-      const anchor = anchorForId(this.id ?? '');
       const heading = `${'#'.repeat(headerSize)} ${this.header}`;
 
-      // This is nasty, i'm aware.
-      // Its just an escape hatch so that produce working links by default, but also support producing the links that construct-hub currently relies on.
-      // This will be gone soon.
-      // Note though that cross links (i.e links dependencies will not work yet regardless)
+      // temporary hack to avoid breaking Construct Hub
       const headerSpan = !!process.env.HEADER_SPAN;
       if (headerSpan) {
         content.push(
-          `${heading} <span data-heading-title="${this.header}" data-heading-id="${anchor}"></span>`,
+          `${heading} <span data-heading-title="${this.options.header?.title}" data-heading-id="${this.id}"></span>`,
         );
       } else {
-        content.push(`${heading} <a name="${this.id}" id="${anchor}"></a>`);
+        content.push(`${heading} <a name="${this.options.header?.title}" id="${this.id}"></a>`);
       }
       content.push('');
     }

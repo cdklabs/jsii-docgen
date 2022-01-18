@@ -1,6 +1,6 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
-import { Transpile, TranspiledCallable, TranspiledType } from '../transpile/transpile';
+import { InitializerSchema } from '../schema';
+import { Transpile, TranspiledCallable } from '../transpile/transpile';
 import { Parameter } from './parameter';
 
 export class Initializer {
@@ -8,40 +8,21 @@ export class Initializer {
   private readonly parameters: Parameter[];
   constructor(
     private readonly transpile: Transpile,
-    initializer: reflect.Initializer,
-    linkFormatter: (type: TranspiledType) => string,
+    private readonly initializer: reflect.Initializer,
   ) {
     this.transpiled = transpile.callable(initializer);
     this.parameters = this.transpiled.parameters.map(
-      (p) => new Parameter(this.transpile, p, linkFormatter),
+      (p) => new Parameter(this.transpile, p),
     );
   }
 
-  public render(): Markdown {
-    const md = new Markdown({
-      id: `${this.transpiled.parentType.fqn}.Initializer`,
-      header: {
-        title: 'Initializers',
-      },
-    });
-
-    md.code(
-      this.transpile.language.toString(),
-      `${this.transpiled.import}`,
-      '',
-      ...this.transpiled.invocations,
-    );
-
-    md.table([
-      ['Name', 'Type', 'Description'].map(Markdown.bold),
-      ...this.parameters.map((param) => [param.linkedName, param.type, Markdown.sanitize(param.description)]),
-    ]);
-    md.split();
-
-    for (const parameter of this.parameters) {
-      md.section(parameter.render());
-    }
-
-    return md;
+  public toJson(): InitializerSchema {
+    return {
+      fqn: `${this.transpiled.parentType.fqn}.Initializer`,
+      displayName: 'Initializer',
+      id: `${this.initializer.parentType.fqn}.Initializer`,
+      parameters: this.parameters.map((param) => param.toJson()),
+      usage: `${this.transpiled.import}\n\n${this.transpiled.invocations}`,
+    };
   }
 }

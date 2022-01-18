@@ -1,6 +1,6 @@
 import * as reflect from 'jsii-reflect';
-import { anchorForId, Markdown } from '../render/markdown';
-import { Transpile, TranspiledCallable, TranspiledType } from '../transpile/transpile';
+import { extractDocs, MethodSchema } from '../schema';
+import { Transpile, TranspiledCallable } from '../transpile/transpile';
 import { Parameter } from './parameter';
 
 export class InstanceMethod {
@@ -9,43 +9,21 @@ export class InstanceMethod {
   constructor(
     private readonly transpile: Transpile,
     private readonly method: reflect.Method,
-    linkFormatter: (type: TranspiledType) => string,
   ) {
     this.transpiled = transpile.callable(method);
     this.parameters = this.transpiled.parameters.map(
-      (p) => new Parameter(this.transpile, p, linkFormatter),
+      (p) => new Parameter(this.transpile, p),
     );
   }
 
-  public get id(): string {
-    return `${this.transpiled.parentType.fqn}.${this.transpiled.name}`;
-  }
-
-  public get linkedName(): string {
-    return `[${Markdown.pre(this.transpiled.name)}](#${anchorForId(this.id)})`;
-  }
-
-  public get description(): string {
-    const summary = this.method.docs.summary;
-    return summary.length > 0 ? summary : Markdown.italic('No description.');
-  }
-
-  public render(): Markdown {
-    const md = new Markdown({
-      id: this.id,
-      header: {
-        title: this.transpiled.name,
-        pre: true,
-        strike: this.method.docs.deprecated,
-      },
-    });
-
-    md.code(this.transpile.language.toString(), this.transpiled.signatures.join('\n'));
-
-    for (const parameter of this.parameters) {
-      md.section(parameter.render());
-    }
-
-    return md;
+  public toJson(): MethodSchema {
+    return {
+      fqn: `${this.transpiled.parentType.fqn}.${this.transpiled.name}`,
+      displayName: this.transpiled.name,
+      id: `${this.method.definingType.fqn}.${this.method.name}`,
+      parameters: this.parameters.map((p) => p.toJson()),
+      docs: extractDocs(this.method.docs),
+      usage: this.transpiled.signatures.join('\n'),
+    };
   }
 }

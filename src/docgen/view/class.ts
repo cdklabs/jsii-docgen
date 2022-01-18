@@ -1,6 +1,6 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
-import { Transpile, TranspiledClass, TranspiledType } from '../transpile/transpile';
+import { ClassSchema, extractDocs } from '../schema';
+import { Transpile, TranspiledClass } from '../transpile/transpile';
 import { Constants } from './constants';
 import { Initializer } from './initializer';
 import { InstanceMethods } from './instance-methods';
@@ -31,46 +31,30 @@ export class Class {
   constructor(
     private readonly transpile: Transpile,
     private readonly klass: reflect.ClassType,
-    private readonly linkFormatter: (type: TranspiledType) => string,
   ) {
     if (klass.initializer) {
-      this.initializer = new Initializer(transpile, klass.initializer, linkFormatter);
+      this.initializer = new Initializer(transpile, klass.initializer);
     }
-    this.instanceMethods = new InstanceMethods(transpile, klass.ownMethods, linkFormatter);
-    this.staticFunctions = new StaticFunctions(transpile, klass.ownMethods, linkFormatter);
-    this.constants = new Constants(transpile, klass.ownProperties, linkFormatter);
-    this.properties = new Properties(transpile, klass.ownProperties, linkFormatter);
+    this.instanceMethods = new InstanceMethods(transpile, klass.ownMethods);
+    this.staticFunctions = new StaticFunctions(transpile, klass.ownMethods);
+    this.constants = new Constants(transpile, klass.ownProperties);
+    this.properties = new Properties(transpile, klass.ownProperties);
     this.transpiled = transpile.class(klass);
   }
 
-  public render(): Markdown {
-    const md = new Markdown({
-      id: this.transpiled.type.fqn,
-      header: { title: this.transpiled.name },
-    });
-
-    if (this.klass.interfaces.length > 0) {
-      const ifaces = [];
-      for (const iface of this.klass.interfaces) {
-        const transpiled = this.transpile.type(iface);
-        ifaces.push(`[${Markdown.pre(transpiled.fqn)}](${this.linkFormatter(transpiled)})`);
-      }
-      md.bullet(`${Markdown.italic('Implements:')} ${ifaces.join(', ')}`);
-      md.lines('');
-    }
-
-    if (this.klass.docs) {
-      md.docs(this.klass.docs);
-    }
-
-    if (this.initializer) {
-      md.section(this.initializer.render());
-    }
-
-    md.section(this.instanceMethods.render());
-    md.section(this.staticFunctions.render());
-    md.section(this.properties.render());
-    md.section(this.constants.render());
-    return md;
+  public toJson(): ClassSchema {
+    const interfaces = this.klass.interfaces.map((iface) => this.transpile.type(iface).toJson());
+    return {
+      initializer: this.initializer?.toJson(),
+      interfaces: interfaces,
+      instanceMethods: this.instanceMethods.toJson(),
+      staticMethods: this.staticFunctions.toJson(),
+      constants: this.constants.toJson(),
+      properties: this.properties.toJson(),
+      fqn: this.transpiled.type.fqn,
+      displayName: this.transpiled.type.fqn.split('.').pop()!,
+      id: this.klass.fqn,
+      docs: extractDocs(this.klass.docs),
+    };
   }
 }

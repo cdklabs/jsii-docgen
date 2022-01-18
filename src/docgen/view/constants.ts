@@ -1,32 +1,17 @@
 import * as reflect from 'jsii-reflect';
-import { Markdown } from '../render/markdown';
-import { Transpile, TranspiledType } from '../transpile/transpile';
+import { PropertySchema } from '../schema';
+import { Transpile } from '../transpile/transpile';
 import { Constant } from './constant';
 
 export class Constants {
   private readonly constants: Constant[];
-  constructor(transpile: Transpile, properties: reflect.Property[], linkFormatter: (type: TranspiledType) => string) {
+  constructor(transpile: Transpile, properties: reflect.Property[]) {
     this.constants = properties
       .filter((p) => !p.protected && p.const)
-      .map((p) => new Constant(transpile, p, linkFormatter));
+      .map((p) => new Constant(transpile, p));
   }
 
-  public render(): Markdown {
-    if (this.constants.length === 0) {
-      return Markdown.EMPTY;
-    }
-
-    const md = new Markdown({ header: { title: 'Constants' } });
-
-    md.table([
-      ['Name', 'Type', 'Description'].map(Markdown.bold),
-      ...this.constants.map((constant) => [constant.linkedName, constant.type, Markdown.sanitize(constant.description)]),
-    ]);
-    md.split();
-
-    for (const c of this.constants) {
-      md.section(c.render());
-    }
-    return md;
+  public toJson(): PropertySchema[] {
+    return this.constants.map((c) => c.toJson());
   }
 }

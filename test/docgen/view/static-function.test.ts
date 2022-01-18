@@ -1,13 +1,16 @@
 import * as reflect from 'jsii-reflect';
-import { CSharpTranspile } from '../../../src/docgen/transpile/csharp';
-import { JavaTranspile } from '../../../src/docgen/transpile/java';
-import { PythonTranspile } from '../../../src/docgen/transpile/python';
-import { TranspiledType } from '../../../src/docgen/transpile/transpile';
-import { TypeScriptTranspile } from '../../../src/docgen/transpile/typescript';
+import { Language } from '../../../src';
+import { MarkdownRenderer } from '../../../src/docgen/render/markdown-render';
+import { LANGUAGE_SPECIFIC } from '../../../src/docgen/view/documentation';
 import { StaticFunction } from '../../../src/docgen/view/static-function';
 import { Assemblies } from '../assemblies';
 
 const assembly: reflect.Assembly = Assemblies.instance.withoutSubmodules;
+
+const metadata = {
+  packageName: assembly.name,
+  packageVersion: assembly.version,
+};
 
 const findStaticFunction = (): reflect.Method => {
   for (const klass of assembly.system.classes) {
@@ -20,34 +23,10 @@ const findStaticFunction = (): reflect.Method => {
   throw new Error('Assembly does not contain a static function');
 };
 
-describe('python', () => {
-  const transpile = new PythonTranspile();
-  test('snapshot', () => {
-    const staticFunction = new StaticFunction(transpile, findStaticFunction(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(staticFunction.render().render()).toMatchSnapshot();
-  });
-});
-
-describe('typescript', () => {
-  const transpile = new TypeScriptTranspile();
-  test('snapshot', () => {
-    const staticFunction = new StaticFunction(transpile, findStaticFunction(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(staticFunction.render().render()).toMatchSnapshot();
-  });
-});
-
-describe('java', () => {
-  const transpile = new JavaTranspile();
-  test('snapshot', () => {
-    const staticFunction = new StaticFunction(transpile, findStaticFunction(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(staticFunction.render().render()).toMatchSnapshot();
-  });
-});
-
-describe('csharp', () => {
-  const transpile = new CSharpTranspile();
-  test('snapshot', () => {
-    const staticFunction = new StaticFunction(transpile, findStaticFunction(), (t: TranspiledType) => `#${t.fqn}`);
-    expect(staticFunction.render().render()).toMatchSnapshot();
-  });
+test.each(Language.values())('%s snapshot', (language) => {
+  const { transpile } = LANGUAGE_SPECIFIC[language.toString()];
+  const markdown = new MarkdownRenderer({ language, ...metadata });
+  const func = new StaticFunction(transpile, findStaticFunction()).toJson();
+  expect(func).toMatchSnapshot();
+  expect(markdown.visitStaticFunction(func).render()).toMatchSnapshot();
 });

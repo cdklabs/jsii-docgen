@@ -2,7 +2,7 @@ import * as child from 'child_process';
 import * as os from 'os';
 import * as path from 'path';
 import * as fs from 'fs-extra';
-import { Language, Documentation, TranspiledType, UnInstallablePackageError, CorruptedAssemblyError } from '../../../src';
+import { Language, Documentation, UnInstallablePackageError, CorruptedAssemblyError } from '../../../src';
 import { extractPackageName } from '../../../src/docgen/view/documentation';
 import { Assemblies } from '../assemblies';
 
@@ -32,16 +32,6 @@ describe('extractPackageName', () => {
 
 });
 
-test('custom link formatter', async () => {
-  const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0');
-  try {
-    const markdown = await docs.render({ language: Language.PYTHON, linkFormatter: (t: TranspiledType) => `#custom-${t.fqn}` });
-    expect(markdown.render()).toMatchSnapshot();
-  } finally {
-    await docs.cleanup();
-  }
-});
-
 test('package installation does not run lifecycle hooks', async () => {
 
   const workdir = await fs.mkdtemp(path.join(os.tmpdir(), path.sep));
@@ -63,7 +53,7 @@ test('package installation does not run lifecycle hooks', async () => {
   // this should succeed because the failure script should be ignored
   const docs = await Documentation.forPackage(path.join(workdir, 'dist', 'js', `${libraryName}@0.0.0.jsii.tgz`), { name: libraryName });
   try {
-    const markdown = await docs.render();
+    const markdown = await docs.toMarkdown({ language: Language.TYPESCRIPT });
     expect(markdown.render()).toMatchSnapshot();
   } finally {
     await docs.cleanup();
@@ -74,7 +64,10 @@ describe('python', () => {
   test('for package', async () => {
     const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0');
     try {
-      const markdown = await docs.render({ language: Language.PYTHON });
+      const json = await docs.toJson({ language: Language.PYTHON });
+      const markdown = await docs.toMarkdown({ language: Language.PYTHON });
+
+      expect(json.content).toMatchSnapshot();
       expect(markdown.render()).toMatchSnapshot();
     } finally {
       await docs.cleanup();
@@ -83,14 +76,14 @@ describe('python', () => {
 
   test('snapshot - root module', async () => {
     const docs = await Documentation.forAssembly('@aws-cdk/aws-ecr', Assemblies.AWSCDK_1_106_0);
-    const markdown = await docs.render({ language: Language.PYTHON });
+    const markdown = await docs.toMarkdown({ language: Language.PYTHON });
     expect(markdown.render()).toMatchSnapshot();
   });
 
   test('snapshot - submodules', async () => {
     const docs = await Documentation.forAssembly('aws-cdk-lib', Assemblies.AWSCDK_1_106_0);
     try {
-      const markdown = await docs.render({ language: Language.PYTHON, submodule: 'aws_eks' });
+      const markdown = await docs.toMarkdown({ language: Language.PYTHON, submodule: 'aws_eks' });
       expect(markdown.render()).toMatchSnapshot();
     } finally {
       await docs.cleanup();
@@ -102,7 +95,7 @@ describe('typescript', () => {
   test('for package', async () => {
     const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0');
     try {
-      const markdown = await docs.render();
+      const markdown = await docs.toMarkdown({ language: Language.TYPESCRIPT });
       expect(markdown.render()).toMatchSnapshot();
     } finally {
       await docs.cleanup();
@@ -111,13 +104,13 @@ describe('typescript', () => {
 
   test('snapshot - single module', async () => {
     const docs = await Documentation.forAssembly('@aws-cdk/aws-ecr', Assemblies.AWSCDK_1_106_0);
-    const markdown = await docs.render();
+    const markdown = await docs.toMarkdown({ language: Language.TYPESCRIPT });
     expect(markdown.render()).toMatchSnapshot();
   });
 
   test('snapshot - submodules', async () => {
     const docs = await Documentation.forAssembly('aws-cdk-lib', Assemblies.AWSCDK_1_106_0);
-    const markdown = await docs.render({ submodule: 'aws_eks' });
+    const markdown = await docs.toMarkdown({ language: Language.TYPESCRIPT, submodule: 'aws_eks' });
     expect(markdown.render()).toMatchSnapshot();
   });
 });
@@ -126,7 +119,7 @@ describe('java', () => {
   test('for package', async () => {
     const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0');
     try {
-      const markdown = await docs.render({ language: Language.JAVA });
+      const markdown = await docs.toMarkdown({ language: Language.JAVA });
       expect(markdown.render()).toMatchSnapshot();
     } finally {
       await docs.cleanup();
@@ -135,19 +128,19 @@ describe('java', () => {
 
   test('snapshot - root module', async () => {
     const docs = await Documentation.forAssembly('@aws-cdk/aws-ecr', Assemblies.AWSCDK_1_106_0);
-    const markdown = await docs.render({ language: Language.JAVA });
+    const markdown = await docs.toMarkdown({ language: Language.JAVA });
     expect(markdown.render()).toMatchSnapshot();
   });
 
   test('snapshot - submodules', async () => {
     const docs = await Documentation.forAssembly('aws-cdk-lib', Assemblies.AWSCDK_1_106_0);
-    const markdown = await docs.render({ language: Language.JAVA, submodule: 'aws_eks' });
+    const markdown = await docs.toMarkdown({ language: Language.JAVA, submodule: 'aws_eks' });
     expect(markdown.render()).toMatchSnapshot();
   });
 
   test('snapshot - submodules 2', async () => {
     const docs = await Documentation.forAssembly('monocdk', Assemblies.AWSCDK_1_106_0);
-    const markdown = await docs.render({ language: Language.JAVA, submodule: 'aws_eks' });
+    const markdown = await docs.toMarkdown({ language: Language.JAVA, submodule: 'aws_eks' });
     expect(markdown.render()).toMatchSnapshot();
   });
 });
@@ -156,7 +149,7 @@ describe('csharp', () => {
   test('for package', async () => {
     const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0');
     try {
-      const markdown = await docs.render({ language: Language.CSHARP });
+      const markdown = await docs.toMarkdown({ language: Language.CSHARP });
       expect(markdown.render()).toMatchSnapshot();
     } finally {
       await docs.cleanup();
@@ -165,19 +158,19 @@ describe('csharp', () => {
 
   test('snapshot - root module', async () => {
     const docs = await Documentation.forAssembly('@aws-cdk/aws-ecr', Assemblies.AWSCDK_1_106_0);
-    const markdown = await docs.render({ language: Language.CSHARP });
+    const markdown = await docs.toMarkdown({ language: Language.CSHARP });
     expect(markdown.render()).toMatchSnapshot();
   });
 
   test('snapshot - submodules', async () => {
     const docs = await Documentation.forAssembly('aws-cdk-lib', Assemblies.AWSCDK_1_106_0);
-    const markdown = await docs.render({ language: Language.CSHARP, submodule: 'aws_eks' });
+    const markdown = await docs.toMarkdown({ language: Language.CSHARP, submodule: 'aws_eks' });
     expect(markdown.render()).toMatchSnapshot();
   });
 
   test('snapshot - submodules 2', async () => {
     const docs = await Documentation.forAssembly('monocdk', Assemblies.AWSCDK_1_106_0);
-    const markdown = await docs.render({ language: Language.CSHARP, submodule: 'aws_eks' });
+    const markdown = await docs.toMarkdown({ language: Language.CSHARP, submodule: 'aws_eks' });
     expect(markdown.render()).toMatchSnapshot();
   });
 });
@@ -195,11 +188,11 @@ test('throws uninstallable error on missing spec in dependencies', async () => {
 test('throws corrupt assembly', async () => {
   const docs = await Documentation.forPackage('@epilot/cdk-constructs@1.0.7');
   // this package accepts an unexported HttpApiProps in a constructor
-  return expect(docs.render()).rejects.toThrowError(CorruptedAssemblyError);
+  return expect(docs.toMarkdown({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
 });
 
 test('performance on large modules', async () => {
   const docs = await Documentation.forPackage('@cdktf/provider-aws@4.0.1');
   // the assertion here is simply finishing the rendering in time.
-  await docs.render({ language: Language.PYTHON, submodule: 'wafv2' });
+  await docs.toMarkdown({ language: Language.PYTHON, submodule: 'wafv2' });
 });

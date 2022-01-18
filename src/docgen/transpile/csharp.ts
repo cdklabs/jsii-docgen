@@ -43,7 +43,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
     }
     fqn.push(type.name);
 
-    return {
+    return new transpile.TranspiledType({
       fqn: fqn.join('.'),
       name: type.name,
       namespace: namespace,
@@ -51,7 +51,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
       submodule: moduleLike.submodule,
       source: type,
       language: this.language,
-    };
+    });
   }
 
   public callable(callable: reflect.Callable): transpile.TranspiledCallable {
