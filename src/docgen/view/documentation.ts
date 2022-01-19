@@ -256,7 +256,10 @@ export class Documentation {
     }
   }
 
-  private async languageSpecific(lang: Language, options: TransliterationOptions): Promise<{ assembly: reflect.Assembly; transpile: Transpile}> {
+  private async languageSpecific(
+    lang: Language,
+    options: Required<TransliterationOptions>,
+  ): Promise<{ assembly: reflect.Assembly; transpile: Transpile}> {
     const { rosettaTarget, transpile } = LANGUAGE_SPECIFIC[lang.toString()];
     return { assembly: await this.createAssembly(rosettaTarget, options), transpile };
   }
@@ -280,7 +283,10 @@ export class Documentation {
     return submodules[0];
   }
 
-  private async createAssembly(language: TargetLanguage | undefined, options: TransliterationOptions): Promise<reflect.Assembly> {
+  private async createAssembly(
+    language: TargetLanguage | undefined,
+    options: Required<TransliterationOptions>,
+  ): Promise<reflect.Assembly> {
 
     const cacheKey = `lang:${language ?? 'ts'}.loose:${options.loose}.validate:${options.validate}`;
     const cached = this.assembliesCache.get(cacheKey);
