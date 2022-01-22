@@ -9,7 +9,7 @@ import { CorruptedAssemblyError, LanguageNotSupportedError } from '../..';
 import { Json } from '../render/json';
 import { MarkdownDocument } from '../render/markdown-doc';
 import { MarkdownFormattingOptions, MarkdownRenderer } from '../render/markdown-render';
-import { Schema } from '../schema';
+import { Schema, CURRENT_SCHEMA_VERSION, submodulePath } from '../schema';
 import { CSharpTranspile } from '../transpile/csharp';
 import { JavaTranspile } from '../transpile/java';
 import { PythonTranspile } from '../transpile/python';
@@ -220,17 +220,19 @@ export class Documentation {
       }
     }
 
-    return new Json({
-      version: '0.1',
+    const contents: Schema = {
+      version: CURRENT_SCHEMA_VERSION,
       language: language.toString(),
       metadata: {
         packageName: assembly.name,
         packageVersion: assembly.version,
-        submodule: submodule?.name,
+        submodule: submodulePath(submodule),
       },
       readme: readme?.render(),
       apiReference: apiReference?.toJson(),
-    });
+    };
+
+    return new Json(contents);
   }
 
   public async toMarkdown(options: MarkdownRenderOptions): Promise<MarkdownDocument> {

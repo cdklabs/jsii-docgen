@@ -1,5 +1,6 @@
 import * as Case from 'case';
 import * as reflect from 'jsii-reflect';
+import { submodulePath } from '../schema';
 import * as transpile from './transpile';
 
 // Helper methods
@@ -106,6 +107,7 @@ export class JavaTranspile extends transpile.TranspileBase {
       namespace: namespace,
       module: moduleLike.name,
       submodule: moduleLike.submodule,
+      submoduleFqn: submodulePath(submodule),
       source: type,
       language: this.language,
     });
