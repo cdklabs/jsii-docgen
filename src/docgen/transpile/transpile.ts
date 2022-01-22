@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { JsiiEntity, TypeSchema } from '../schema';
+import { filterUndefined, JsiiEntity, TypeSchema } from '../schema';
 
 /**
  * Supported languages to generate documentation in.
@@ -239,14 +239,14 @@ export class TranspiledType {
   }
 
   toJson(): JsiiEntity {
-    return {
+    return filterUndefined({
       fqn: this.fqn,
       displayName: this.name,
       id: this.source.fqn,
       packageName: this.source.assembly.name,
       packageVersion: this.source.assembly.version,
       submodule: this.submoduleFqn,
-    };
+    });
   }
 }
 
@@ -443,14 +443,14 @@ export class TranspiledTypeReference {
       return {
         formattingPattern: '%',
         types: [
-          {
+          filterUndefined({
             id: this.ref.fqn,
             displayName: this.type.name,
             fqn: this.type.fqn,
             packageName: this.type.source.assembly.name,
             packageVersion,
             submodule: this.type.submoduleFqn,
-          },
+          }),
         ],
       };
     }
