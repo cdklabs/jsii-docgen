@@ -52,8 +52,7 @@ describe('complex link formatter - aws-solutions-constructs', () => {
 
 function complexLinkFormatter(type: JsiiEntity) {
   const name = getAssemblyRelativeName(type); // BucketProps.parameter.accessControl
-  const submodule = type.submodule ? type.submodule.split('.').slice(1).join('.') : undefined;
-  const submoduleParam = submodule ? `&submodule=${submodule}` : '';
+  const submoduleParam = type.submodule ? `&submodule=${type.submodule}` : '';
   return `<a href="/packages/${type.packageName}/v/${type.packageVersion}/api/${name}?lang=python${submoduleParam}">${type.displayName}</a>`;
 }
 
