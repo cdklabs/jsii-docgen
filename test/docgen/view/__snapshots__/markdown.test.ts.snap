@@ -138,18 +138,18 @@ LambdaToSqs.Builder.create(Construct scope, java.lang.String id)
 | --- | --- | --- |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/constructs/v/99.99.99/api/Construct?lang=python\\">Construct</a></code> | - represents the scope for all the resources. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.id?lang=python\\">id</a></code> | <code>java.lang.String</code> | - this is a a scope-unique id. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.deadLetterQueueProps?lang=python\\">deadLetterQueueProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a></code> | Optional user provided properties for the dead letter queue. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.deadLetterQueueProps?lang=python\\">deadLetterQueueProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a></code> | Optional user provided properties for the dead letter queue. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.deployDeadLetterQueue?lang=python\\">deployDeadLetterQueue</a></code> | <code>java.lang.Boolean</code> | Whether to deploy a secondary queue to be used as a dead letter queue. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.deployVpc?lang=python\\">deployVpc</a></code> | <code>java.lang.Boolean</code> | Whether to deploy a new VPC. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.enableQueuePurging?lang=python\\">enableQueuePurging</a></code> | <code>java.lang.Boolean</code> | Whether to grant additional permissions to the Lambda function enabling it to purge the SQS queue. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.existingLambdaObj?lang=python\\">existingLambdaObj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python\\">Function</a></code> | Existing instance of Lambda Function object, providing both this and \`lambdaFunctionProps\` will cause an error. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.existingQueueObj?lang=python\\">existingQueueObj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python\\">Queue</a></code> | Existing instance of SQS queue object, Providing both this and queueProps will cause an error. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.existingVpc?lang=python\\">existingVpc</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python\\">IVpc</a></code> | An existing VPC for the construct to use (construct will NOT create a new VPC in this case). |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.lambdaFunctionProps?lang=python\\">lambdaFunctionProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python\\">FunctionProps</a></code> | User provided props to override the default props for the Lambda function. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.existingLambdaObj?lang=python\\">existingLambdaObj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python&submodule=aws_lambda\\">Function</a></code> | Existing instance of Lambda Function object, providing both this and \`lambdaFunctionProps\` will cause an error. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.existingQueueObj?lang=python\\">existingQueueObj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python&submodule=aws_sqs\\">Queue</a></code> | Existing instance of SQS queue object, Providing both this and queueProps will cause an error. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.existingVpc?lang=python\\">existingVpc</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python&submodule=aws_ec2\\">IVpc</a></code> | An existing VPC for the construct to use (construct will NOT create a new VPC in this case). |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.lambdaFunctionProps?lang=python\\">lambdaFunctionProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python&submodule=aws_lambda\\">FunctionProps</a></code> | User provided props to override the default props for the Lambda function. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.maxReceiveCount?lang=python\\">maxReceiveCount</a></code> | <code>java.lang.Number</code> | The number of times a message can be unsuccessfully dequeued before being moved to the dead-letter queue. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.queueEnvironmentVariableName?lang=python\\">queueEnvironmentVariableName</a></code> | <code>java.lang.String</code> | Optional Name for the SQS queue URL environment variable set for the Lambda function. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.queueProps?lang=python\\">queueProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a></code> | Optional user-provided props to override the default props for the SQS queue. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.vpcProps?lang=python\\">vpcProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python\\">VpcProps</a></code> | Properties to override default properties if deployVpc is true. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.queueProps?lang=python\\">queueProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a></code> | Optional user-provided props to override the default props for the SQS queue. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.vpcProps?lang=python\\">vpcProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python&submodule=aws_ec2\\">VpcProps</a></code> | Properties to override default properties if deployVpc is true. |
 
 ---
 
@@ -171,7 +171,7 @@ this is a a scope-unique id.
 
 ##### \`deadLetterQueueProps\`<sup>Optional</sup> <a name=\\"deadLetterQueueProps\\" id=\\"LambdaToSqs.Initializer.parameter.deadLetterQueueProps\\"></a>
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a>
 - *Default:* Default props are used
 
 Optional user provided properties for the dead letter queue.
@@ -207,7 +207,7 @@ Whether to grant additional permissions to the Lambda function enabling it to pu
 
 ##### \`existingLambdaObj\`<sup>Optional</sup> <a name=\\"existingLambdaObj\\" id=\\"LambdaToSqs.Initializer.parameter.existingLambdaObj\\"></a>
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python\\">Function</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python&submodule=aws_lambda\\">Function</a>
 - *Default:* None
 
 Existing instance of Lambda Function object, providing both this and \`lambdaFunctionProps\` will cause an error.
@@ -216,7 +216,7 @@ Existing instance of Lambda Function object, providing both this and \`lambdaFun
 
 ##### \`existingQueueObj\`<sup>Optional</sup> <a name=\\"existingQueueObj\\" id=\\"LambdaToSqs.Initializer.parameter.existingQueueObj\\"></a>
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python\\">Queue</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python&submodule=aws_sqs\\">Queue</a>
 - *Default:* Default props are used
 
 Existing instance of SQS queue object, Providing both this and queueProps will cause an error.
@@ -225,7 +225,7 @@ Existing instance of SQS queue object, Providing both this and queueProps will c
 
 ##### \`existingVpc\`<sup>Optional</sup> <a name=\\"existingVpc\\" id=\\"LambdaToSqs.Initializer.parameter.existingVpc\\"></a>
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python\\">IVpc</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python&submodule=aws_ec2\\">IVpc</a>
 
 An existing VPC for the construct to use (construct will NOT create a new VPC in this case).
 
@@ -233,7 +233,7 @@ An existing VPC for the construct to use (construct will NOT create a new VPC in
 
 ##### \`lambdaFunctionProps\`<sup>Optional</sup> <a name=\\"lambdaFunctionProps\\" id=\\"LambdaToSqs.Initializer.parameter.lambdaFunctionProps\\"></a>
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python\\">FunctionProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python&submodule=aws_lambda\\">FunctionProps</a>
 - *Default:* Default properties are used.
 
 User provided props to override the default props for the Lambda function.
@@ -260,7 +260,7 @@ Optional Name for the SQS queue URL environment variable set for the Lambda func
 
 ##### \`queueProps\`<sup>Optional</sup> <a name=\\"queueProps\\" id=\\"LambdaToSqs.Initializer.parameter.queueProps\\"></a>
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a>
 - *Default:* Default props are used
 
 Optional user-provided props to override the default props for the SQS queue.
@@ -269,7 +269,7 @@ Optional user-provided props to override the default props for the SQS queue.
 
 ##### \`vpcProps\`<sup>Optional</sup> <a name=\\"vpcProps\\" id=\\"LambdaToSqs.Initializer.parameter.vpcProps\\"></a>
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python\\">VpcProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python&submodule=aws_ec2\\">VpcProps</a>
 
 Properties to override default properties if deployVpc is true.
 
@@ -281,10 +281,10 @@ Properties to override default properties if deployVpc is true.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.lambdaFunction?lang=python\\">lambdaFunction</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python\\">Function</a></code> | *No description.* |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.sqsQueue?lang=python\\">sqsQueue</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python\\">Queue</a></code> | *No description.* |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.deadLetterQueue?lang=python\\">deadLetterQueue</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/DeadLetterQueue?lang=python\\">DeadLetterQueue</a></code> | *No description.* |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.vpc?lang=python\\">vpc</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python\\">IVpc</a></code> | *No description.* |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.lambdaFunction?lang=python\\">lambdaFunction</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python&submodule=aws_lambda\\">Function</a></code> | *No description.* |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.sqsQueue?lang=python\\">sqsQueue</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python&submodule=aws_sqs\\">Queue</a></code> | *No description.* |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.deadLetterQueue?lang=python\\">deadLetterQueue</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/DeadLetterQueue?lang=python&submodule=aws_sqs\\">DeadLetterQueue</a></code> | *No description.* |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.vpc?lang=python\\">vpc</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python&submodule=aws_ec2\\">IVpc</a></code> | *No description.* |
 
 ---
 
@@ -294,7 +294,7 @@ Properties to override default properties if deployVpc is true.
 public Function getLambdaFunction();
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python\\">Function</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python&submodule=aws_lambda\\">Function</a>
 
 ---
 
@@ -304,7 +304,7 @@ public Function getLambdaFunction();
 public Queue getSqsQueue();
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python\\">Queue</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python&submodule=aws_sqs\\">Queue</a>
 
 ---
 
@@ -314,7 +314,7 @@ public Queue getSqsQueue();
 public DeadLetterQueue getDeadLetterQueue();
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/DeadLetterQueue?lang=python\\">DeadLetterQueue</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/DeadLetterQueue?lang=python&submodule=aws_sqs\\">DeadLetterQueue</a>
 
 ---
 
@@ -324,7 +324,7 @@ public DeadLetterQueue getDeadLetterQueue();
 public IVpc getVpc();
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python\\">IVpc</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python&submodule=aws_ec2\\">IVpc</a>
 
 ---
 
@@ -358,18 +358,18 @@ LambdaToSqsProps.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.deadLetterQueueProps?lang=python\\">deadLetterQueueProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a></code> | Optional user provided properties for the dead letter queue. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.deadLetterQueueProps?lang=python\\">deadLetterQueueProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a></code> | Optional user provided properties for the dead letter queue. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.deployDeadLetterQueue?lang=python\\">deployDeadLetterQueue</a></code> | <code>java.lang.Boolean</code> | Whether to deploy a secondary queue to be used as a dead letter queue. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.deployVpc?lang=python\\">deployVpc</a></code> | <code>java.lang.Boolean</code> | Whether to deploy a new VPC. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.enableQueuePurging?lang=python\\">enableQueuePurging</a></code> | <code>java.lang.Boolean</code> | Whether to grant additional permissions to the Lambda function enabling it to purge the SQS queue. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.existingLambdaObj?lang=python\\">existingLambdaObj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python\\">Function</a></code> | Existing instance of Lambda Function object, providing both this and \`lambdaFunctionProps\` will cause an error. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.existingQueueObj?lang=python\\">existingQueueObj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python\\">Queue</a></code> | Existing instance of SQS queue object, Providing both this and queueProps will cause an error. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.existingVpc?lang=python\\">existingVpc</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python\\">IVpc</a></code> | An existing VPC for the construct to use (construct will NOT create a new VPC in this case). |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.lambdaFunctionProps?lang=python\\">lambdaFunctionProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python\\">FunctionProps</a></code> | User provided props to override the default props for the Lambda function. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.existingLambdaObj?lang=python\\">existingLambdaObj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python&submodule=aws_lambda\\">Function</a></code> | Existing instance of Lambda Function object, providing both this and \`lambdaFunctionProps\` will cause an error. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.existingQueueObj?lang=python\\">existingQueueObj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python&submodule=aws_sqs\\">Queue</a></code> | Existing instance of SQS queue object, Providing both this and queueProps will cause an error. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.existingVpc?lang=python\\">existingVpc</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python&submodule=aws_ec2\\">IVpc</a></code> | An existing VPC for the construct to use (construct will NOT create a new VPC in this case). |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.lambdaFunctionProps?lang=python\\">lambdaFunctionProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python&submodule=aws_lambda\\">FunctionProps</a></code> | User provided props to override the default props for the Lambda function. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.maxReceiveCount?lang=python\\">maxReceiveCount</a></code> | <code>java.lang.Number</code> | The number of times a message can be unsuccessfully dequeued before being moved to the dead-letter queue. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.queueEnvironmentVariableName?lang=python\\">queueEnvironmentVariableName</a></code> | <code>java.lang.String</code> | Optional Name for the SQS queue URL environment variable set for the Lambda function. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.queueProps?lang=python\\">queueProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a></code> | Optional user-provided props to override the default props for the SQS queue. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.vpcProps?lang=python\\">vpcProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python\\">VpcProps</a></code> | Properties to override default properties if deployVpc is true. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.queueProps?lang=python\\">queueProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a></code> | Optional user-provided props to override the default props for the SQS queue. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.vpcProps?lang=python\\">vpcProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python&submodule=aws_ec2\\">VpcProps</a></code> | Properties to override default properties if deployVpc is true. |
 
 ---
 
@@ -379,7 +379,7 @@ LambdaToSqsProps.builder()
 public QueueProps getDeadLetterQueueProps();
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a>
 - *Default:* Default props are used
 
 Optional user provided properties for the dead letter queue.
@@ -431,7 +431,7 @@ Whether to grant additional permissions to the Lambda function enabling it to pu
 public Function getExistingLambdaObj();
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python\\">Function</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python&submodule=aws_lambda\\">Function</a>
 - *Default:* None
 
 Existing instance of Lambda Function object, providing both this and \`lambdaFunctionProps\` will cause an error.
@@ -444,7 +444,7 @@ Existing instance of Lambda Function object, providing both this and \`lambdaFun
 public Queue getExistingQueueObj();
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python\\">Queue</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python&submodule=aws_sqs\\">Queue</a>
 - *Default:* Default props are used
 
 Existing instance of SQS queue object, Providing both this and queueProps will cause an error.
@@ -457,7 +457,7 @@ Existing instance of SQS queue object, Providing both this and queueProps will c
 public IVpc getExistingVpc();
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python\\">IVpc</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python&submodule=aws_ec2\\">IVpc</a>
 
 An existing VPC for the construct to use (construct will NOT create a new VPC in this case).
 
@@ -469,7 +469,7 @@ An existing VPC for the construct to use (construct will NOT create a new VPC in
 public FunctionProps getLambdaFunctionProps();
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python\\">FunctionProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python&submodule=aws_lambda\\">FunctionProps</a>
 - *Default:* Default properties are used.
 
 User provided props to override the default props for the Lambda function.
@@ -508,7 +508,7 @@ Optional Name for the SQS queue URL environment variable set for the Lambda func
 public QueueProps getQueueProps();
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a>
 - *Default:* Default props are used
 
 Optional user-provided props to override the default props for the SQS queue.
@@ -521,7 +521,7 @@ Optional user-provided props to override the default props for the SQS queue.
 public VpcProps getVpcProps();
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python\\">VpcProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python&submodule=aws_ec2\\">VpcProps</a>
 
 Properties to override default properties if deployVpc is true.
 
@@ -672,18 +672,18 @@ aws_solutions_constructs.aws_lambda_sqs.LambdaToSqs(
 | --- | --- | --- |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/constructs/v/99.99.99/api/Construct?lang=python\\">Construct</a></code> | - represents the scope for all the resources. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.id?lang=python\\">id</a></code> | <code>str</code> | - this is a a scope-unique id. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.deadLetterQueueProps?lang=python\\">dead_letter_queue_props</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a></code> | Optional user provided properties for the dead letter queue. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.deadLetterQueueProps?lang=python\\">dead_letter_queue_props</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a></code> | Optional user provided properties for the dead letter queue. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.deployDeadLetterQueue?lang=python\\">deploy_dead_letter_queue</a></code> | <code>bool</code> | Whether to deploy a secondary queue to be used as a dead letter queue. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.deployVpc?lang=python\\">deploy_vpc</a></code> | <code>bool</code> | Whether to deploy a new VPC. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.enableQueuePurging?lang=python\\">enable_queue_purging</a></code> | <code>bool</code> | Whether to grant additional permissions to the Lambda function enabling it to purge the SQS queue. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.existingLambdaObj?lang=python\\">existing_lambda_obj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python\\">Function</a></code> | Existing instance of Lambda Function object, providing both this and \`lambdaFunctionProps\` will cause an error. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.existingQueueObj?lang=python\\">existing_queue_obj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python\\">Queue</a></code> | Existing instance of SQS queue object, Providing both this and queueProps will cause an error. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.existingVpc?lang=python\\">existing_vpc</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python\\">IVpc</a></code> | An existing VPC for the construct to use (construct will NOT create a new VPC in this case). |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.lambdaFunctionProps?lang=python\\">lambda_function_props</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python\\">FunctionProps</a></code> | User provided props to override the default props for the Lambda function. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.existingLambdaObj?lang=python\\">existing_lambda_obj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python&submodule=aws_lambda\\">Function</a></code> | Existing instance of Lambda Function object, providing both this and \`lambdaFunctionProps\` will cause an error. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.existingQueueObj?lang=python\\">existing_queue_obj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python&submodule=aws_sqs\\">Queue</a></code> | Existing instance of SQS queue object, Providing both this and queueProps will cause an error. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.existingVpc?lang=python\\">existing_vpc</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python&submodule=aws_ec2\\">IVpc</a></code> | An existing VPC for the construct to use (construct will NOT create a new VPC in this case). |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.lambdaFunctionProps?lang=python\\">lambda_function_props</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python&submodule=aws_lambda\\">FunctionProps</a></code> | User provided props to override the default props for the Lambda function. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.maxReceiveCount?lang=python\\">max_receive_count</a></code> | <code>typing.Union[int, float]</code> | The number of times a message can be unsuccessfully dequeued before being moved to the dead-letter queue. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.queueEnvironmentVariableName?lang=python\\">queue_environment_variable_name</a></code> | <code>str</code> | Optional Name for the SQS queue URL environment variable set for the Lambda function. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.queueProps?lang=python\\">queue_props</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a></code> | Optional user-provided props to override the default props for the SQS queue. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.vpcProps?lang=python\\">vpc_props</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python\\">VpcProps</a></code> | Properties to override default properties if deployVpc is true. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.queueProps?lang=python\\">queue_props</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a></code> | Optional user-provided props to override the default props for the SQS queue. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.Initializer.parameter.vpcProps?lang=python\\">vpc_props</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python&submodule=aws_ec2\\">VpcProps</a></code> | Properties to override default properties if deployVpc is true. |
 
 ---
 
@@ -705,7 +705,7 @@ this is a a scope-unique id.
 
 ##### \`dead_letter_queue_props\`<sup>Optional</sup> <a name=\\"dead_letter_queue_props\\" id=\\"LambdaToSqs.Initializer.parameter.deadLetterQueueProps\\"></a>
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a>
 - *Default:* Default props are used
 
 Optional user provided properties for the dead letter queue.
@@ -741,7 +741,7 @@ Whether to grant additional permissions to the Lambda function enabling it to pu
 
 ##### \`existing_lambda_obj\`<sup>Optional</sup> <a name=\\"existing_lambda_obj\\" id=\\"LambdaToSqs.Initializer.parameter.existingLambdaObj\\"></a>
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python\\">Function</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python&submodule=aws_lambda\\">Function</a>
 - *Default:* None
 
 Existing instance of Lambda Function object, providing both this and \`lambdaFunctionProps\` will cause an error.
@@ -750,7 +750,7 @@ Existing instance of Lambda Function object, providing both this and \`lambdaFun
 
 ##### \`existing_queue_obj\`<sup>Optional</sup> <a name=\\"existing_queue_obj\\" id=\\"LambdaToSqs.Initializer.parameter.existingQueueObj\\"></a>
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python\\">Queue</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python&submodule=aws_sqs\\">Queue</a>
 - *Default:* Default props are used
 
 Existing instance of SQS queue object, Providing both this and queueProps will cause an error.
@@ -759,7 +759,7 @@ Existing instance of SQS queue object, Providing both this and queueProps will c
 
 ##### \`existing_vpc\`<sup>Optional</sup> <a name=\\"existing_vpc\\" id=\\"LambdaToSqs.Initializer.parameter.existingVpc\\"></a>
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python\\">IVpc</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python&submodule=aws_ec2\\">IVpc</a>
 
 An existing VPC for the construct to use (construct will NOT create a new VPC in this case).
 
@@ -767,7 +767,7 @@ An existing VPC for the construct to use (construct will NOT create a new VPC in
 
 ##### \`lambda_function_props\`<sup>Optional</sup> <a name=\\"lambda_function_props\\" id=\\"LambdaToSqs.Initializer.parameter.lambdaFunctionProps\\"></a>
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python\\">FunctionProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python&submodule=aws_lambda\\">FunctionProps</a>
 - *Default:* Default properties are used.
 
 User provided props to override the default props for the Lambda function.
@@ -794,7 +794,7 @@ Optional Name for the SQS queue URL environment variable set for the Lambda func
 
 ##### \`queue_props\`<sup>Optional</sup> <a name=\\"queue_props\\" id=\\"LambdaToSqs.Initializer.parameter.queueProps\\"></a>
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a>
 - *Default:* Default props are used
 
 Optional user-provided props to override the default props for the SQS queue.
@@ -803,7 +803,7 @@ Optional user-provided props to override the default props for the SQS queue.
 
 ##### \`vpc_props\`<sup>Optional</sup> <a name=\\"vpc_props\\" id=\\"LambdaToSqs.Initializer.parameter.vpcProps\\"></a>
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python\\">VpcProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python&submodule=aws_ec2\\">VpcProps</a>
 
 Properties to override default properties if deployVpc is true.
 
@@ -815,10 +815,10 @@ Properties to override default properties if deployVpc is true.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.lambdaFunction?lang=python\\">lambda_function</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python\\">Function</a></code> | *No description.* |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.sqsQueue?lang=python\\">sqs_queue</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python\\">Queue</a></code> | *No description.* |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.deadLetterQueue?lang=python\\">dead_letter_queue</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/DeadLetterQueue?lang=python\\">DeadLetterQueue</a></code> | *No description.* |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.vpc?lang=python\\">vpc</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python\\">IVpc</a></code> | *No description.* |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.lambdaFunction?lang=python\\">lambda_function</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python&submodule=aws_lambda\\">Function</a></code> | *No description.* |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.sqsQueue?lang=python\\">sqs_queue</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python&submodule=aws_sqs\\">Queue</a></code> | *No description.* |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.deadLetterQueue?lang=python\\">dead_letter_queue</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/DeadLetterQueue?lang=python&submodule=aws_sqs\\">DeadLetterQueue</a></code> | *No description.* |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.vpc?lang=python\\">vpc</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python&submodule=aws_ec2\\">IVpc</a></code> | *No description.* |
 
 ---
 
@@ -828,7 +828,7 @@ Properties to override default properties if deployVpc is true.
 lambda_function: Function
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python\\">Function</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python&submodule=aws_lambda\\">Function</a>
 
 ---
 
@@ -838,7 +838,7 @@ lambda_function: Function
 sqs_queue: Queue
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python\\">Queue</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python&submodule=aws_sqs\\">Queue</a>
 
 ---
 
@@ -848,7 +848,7 @@ sqs_queue: Queue
 dead_letter_queue: DeadLetterQueue
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/DeadLetterQueue?lang=python\\">DeadLetterQueue</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/DeadLetterQueue?lang=python&submodule=aws_sqs\\">DeadLetterQueue</a>
 
 ---
 
@@ -858,7 +858,7 @@ dead_letter_queue: DeadLetterQueue
 vpc: IVpc
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python\\">IVpc</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python&submodule=aws_ec2\\">IVpc</a>
 
 ---
 
@@ -892,18 +892,18 @@ aws_solutions_constructs.aws_lambda_sqs.LambdaToSqsProps(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.deadLetterQueueProps?lang=python\\">dead_letter_queue_props</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a></code> | Optional user provided properties for the dead letter queue. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.deadLetterQueueProps?lang=python\\">dead_letter_queue_props</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a></code> | Optional user provided properties for the dead letter queue. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.deployDeadLetterQueue?lang=python\\">deploy_dead_letter_queue</a></code> | <code>bool</code> | Whether to deploy a secondary queue to be used as a dead letter queue. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.deployVpc?lang=python\\">deploy_vpc</a></code> | <code>bool</code> | Whether to deploy a new VPC. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.enableQueuePurging?lang=python\\">enable_queue_purging</a></code> | <code>bool</code> | Whether to grant additional permissions to the Lambda function enabling it to purge the SQS queue. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.existingLambdaObj?lang=python\\">existing_lambda_obj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python\\">Function</a></code> | Existing instance of Lambda Function object, providing both this and \`lambdaFunctionProps\` will cause an error. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.existingQueueObj?lang=python\\">existing_queue_obj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python\\">Queue</a></code> | Existing instance of SQS queue object, Providing both this and queueProps will cause an error. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.existingVpc?lang=python\\">existing_vpc</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python\\">IVpc</a></code> | An existing VPC for the construct to use (construct will NOT create a new VPC in this case). |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.lambdaFunctionProps?lang=python\\">lambda_function_props</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python\\">FunctionProps</a></code> | User provided props to override the default props for the Lambda function. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.existingLambdaObj?lang=python\\">existing_lambda_obj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python&submodule=aws_lambda\\">Function</a></code> | Existing instance of Lambda Function object, providing both this and \`lambdaFunctionProps\` will cause an error. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.existingQueueObj?lang=python\\">existing_queue_obj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python&submodule=aws_sqs\\">Queue</a></code> | Existing instance of SQS queue object, Providing both this and queueProps will cause an error. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.existingVpc?lang=python\\">existing_vpc</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python&submodule=aws_ec2\\">IVpc</a></code> | An existing VPC for the construct to use (construct will NOT create a new VPC in this case). |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.lambdaFunctionProps?lang=python\\">lambda_function_props</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python&submodule=aws_lambda\\">FunctionProps</a></code> | User provided props to override the default props for the Lambda function. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.maxReceiveCount?lang=python\\">max_receive_count</a></code> | <code>typing.Union[int, float]</code> | The number of times a message can be unsuccessfully dequeued before being moved to the dead-letter queue. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.queueEnvironmentVariableName?lang=python\\">queue_environment_variable_name</a></code> | <code>str</code> | Optional Name for the SQS queue URL environment variable set for the Lambda function. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.queueProps?lang=python\\">queue_props</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a></code> | Optional user-provided props to override the default props for the SQS queue. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.vpcProps?lang=python\\">vpc_props</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python\\">VpcProps</a></code> | Properties to override default properties if deployVpc is true. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.queueProps?lang=python\\">queue_props</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a></code> | Optional user-provided props to override the default props for the SQS queue. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.vpcProps?lang=python\\">vpc_props</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python&submodule=aws_ec2\\">VpcProps</a></code> | Properties to override default properties if deployVpc is true. |
 
 ---
 
@@ -913,7 +913,7 @@ aws_solutions_constructs.aws_lambda_sqs.LambdaToSqsProps(
 dead_letter_queue_props: QueueProps
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a>
 - *Default:* Default props are used
 
 Optional user provided properties for the dead letter queue.
@@ -965,7 +965,7 @@ Whether to grant additional permissions to the Lambda function enabling it to pu
 existing_lambda_obj: Function
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python\\">Function</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python&submodule=aws_lambda\\">Function</a>
 - *Default:* None
 
 Existing instance of Lambda Function object, providing both this and \`lambdaFunctionProps\` will cause an error.
@@ -978,7 +978,7 @@ Existing instance of Lambda Function object, providing both this and \`lambdaFun
 existing_queue_obj: Queue
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python\\">Queue</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python&submodule=aws_sqs\\">Queue</a>
 - *Default:* Default props are used
 
 Existing instance of SQS queue object, Providing both this and queueProps will cause an error.
@@ -991,7 +991,7 @@ Existing instance of SQS queue object, Providing both this and queueProps will c
 existing_vpc: IVpc
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python\\">IVpc</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python&submodule=aws_ec2\\">IVpc</a>
 
 An existing VPC for the construct to use (construct will NOT create a new VPC in this case).
 
@@ -1003,7 +1003,7 @@ An existing VPC for the construct to use (construct will NOT create a new VPC in
 lambda_function_props: FunctionProps
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python\\">FunctionProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python&submodule=aws_lambda\\">FunctionProps</a>
 - *Default:* Default properties are used.
 
 User provided props to override the default props for the Lambda function.
@@ -1042,7 +1042,7 @@ Optional Name for the SQS queue URL environment variable set for the Lambda func
 queue_props: QueueProps
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a>
 - *Default:* Default props are used
 
 Optional user-provided props to override the default props for the SQS queue.
@@ -1055,7 +1055,7 @@ Optional user-provided props to override the default props for the SQS queue.
 vpc_props: VpcProps
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python\\">VpcProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python&submodule=aws_ec2\\">VpcProps</a>
 
 Properties to override default properties if deployVpc is true.
 
@@ -1217,10 +1217,10 @@ user provided props for the construct.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.lambdaFunction?lang=python\\">lambdaFunction</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python\\">Function</a></code> | *No description.* |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.sqsQueue?lang=python\\">sqsQueue</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python\\">Queue</a></code> | *No description.* |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.deadLetterQueue?lang=python\\">deadLetterQueue</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/DeadLetterQueue?lang=python\\">DeadLetterQueue</a></code> | *No description.* |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.vpc?lang=python\\">vpc</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python\\">IVpc</a></code> | *No description.* |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.lambdaFunction?lang=python\\">lambdaFunction</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python&submodule=aws_lambda\\">Function</a></code> | *No description.* |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.sqsQueue?lang=python\\">sqsQueue</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python&submodule=aws_sqs\\">Queue</a></code> | *No description.* |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.deadLetterQueue?lang=python\\">deadLetterQueue</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/DeadLetterQueue?lang=python&submodule=aws_sqs\\">DeadLetterQueue</a></code> | *No description.* |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.property.vpc?lang=python\\">vpc</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python&submodule=aws_ec2\\">IVpc</a></code> | *No description.* |
 
 ---
 
@@ -1230,7 +1230,7 @@ user provided props for the construct.
 public readonly lambdaFunction: Function;
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python\\">Function</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python&submodule=aws_lambda\\">Function</a>
 
 ---
 
@@ -1240,7 +1240,7 @@ public readonly lambdaFunction: Function;
 public readonly sqsQueue: Queue;
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python\\">Queue</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python&submodule=aws_sqs\\">Queue</a>
 
 ---
 
@@ -1250,7 +1250,7 @@ public readonly sqsQueue: Queue;
 public readonly deadLetterQueue: DeadLetterQueue;
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/DeadLetterQueue?lang=python\\">DeadLetterQueue</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/DeadLetterQueue?lang=python&submodule=aws_sqs\\">DeadLetterQueue</a>
 
 ---
 
@@ -1260,7 +1260,7 @@ public readonly deadLetterQueue: DeadLetterQueue;
 public readonly vpc: IVpc;
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python\\">IVpc</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python&submodule=aws_ec2\\">IVpc</a>
 
 ---
 
@@ -1281,18 +1281,18 @@ const lambdaToSqsProps: LambdaToSqsProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.deadLetterQueueProps?lang=python\\">deadLetterQueueProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a></code> | Optional user provided properties for the dead letter queue. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.deadLetterQueueProps?lang=python\\">deadLetterQueueProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a></code> | Optional user provided properties for the dead letter queue. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.deployDeadLetterQueue?lang=python\\">deployDeadLetterQueue</a></code> | <code>boolean</code> | Whether to deploy a secondary queue to be used as a dead letter queue. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.deployVpc?lang=python\\">deployVpc</a></code> | <code>boolean</code> | Whether to deploy a new VPC. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.enableQueuePurging?lang=python\\">enableQueuePurging</a></code> | <code>boolean</code> | Whether to grant additional permissions to the Lambda function enabling it to purge the SQS queue. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.existingLambdaObj?lang=python\\">existingLambdaObj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python\\">Function</a></code> | Existing instance of Lambda Function object, providing both this and \`lambdaFunctionProps\` will cause an error. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.existingQueueObj?lang=python\\">existingQueueObj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python\\">Queue</a></code> | Existing instance of SQS queue object, Providing both this and queueProps will cause an error. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.existingVpc?lang=python\\">existingVpc</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python\\">IVpc</a></code> | An existing VPC for the construct to use (construct will NOT create a new VPC in this case). |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.lambdaFunctionProps?lang=python\\">lambdaFunctionProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python\\">FunctionProps</a></code> | User provided props to override the default props for the Lambda function. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.existingLambdaObj?lang=python\\">existingLambdaObj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python&submodule=aws_lambda\\">Function</a></code> | Existing instance of Lambda Function object, providing both this and \`lambdaFunctionProps\` will cause an error. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.existingQueueObj?lang=python\\">existingQueueObj</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python&submodule=aws_sqs\\">Queue</a></code> | Existing instance of SQS queue object, Providing both this and queueProps will cause an error. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.existingVpc?lang=python\\">existingVpc</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python&submodule=aws_ec2\\">IVpc</a></code> | An existing VPC for the construct to use (construct will NOT create a new VPC in this case). |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.lambdaFunctionProps?lang=python\\">lambdaFunctionProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python&submodule=aws_lambda\\">FunctionProps</a></code> | User provided props to override the default props for the Lambda function. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.maxReceiveCount?lang=python\\">maxReceiveCount</a></code> | <code>number</code> | The number of times a message can be unsuccessfully dequeued before being moved to the dead-letter queue. |
 | <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.queueEnvironmentVariableName?lang=python\\">queueEnvironmentVariableName</a></code> | <code>string</code> | Optional Name for the SQS queue URL environment variable set for the Lambda function. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.queueProps?lang=python\\">queueProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a></code> | Optional user-provided props to override the default props for the SQS queue. |
-| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.vpcProps?lang=python\\">vpcProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python\\">VpcProps</a></code> | Properties to override default properties if deployVpc is true. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.queueProps?lang=python\\">queueProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a></code> | Optional user-provided props to override the default props for the SQS queue. |
+| <code><a href=\\"/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqsProps.property.vpcProps?lang=python\\">vpcProps</a></code> | <code><a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python&submodule=aws_ec2\\">VpcProps</a></code> | Properties to override default properties if deployVpc is true. |
 
 ---
 
@@ -1302,7 +1302,7 @@ const lambdaToSqsProps: LambdaToSqsProps = { ... }
 public readonly deadLetterQueueProps: QueueProps;
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a>
 - *Default:* Default props are used
 
 Optional user provided properties for the dead letter queue.
@@ -1354,7 +1354,7 @@ Whether to grant additional permissions to the Lambda function enabling it to pu
 public readonly existingLambdaObj: Function;
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python\\">Function</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Function?lang=python&submodule=aws_lambda\\">Function</a>
 - *Default:* None
 
 Existing instance of Lambda Function object, providing both this and \`lambdaFunctionProps\` will cause an error.
@@ -1367,7 +1367,7 @@ Existing instance of Lambda Function object, providing both this and \`lambdaFun
 public readonly existingQueueObj: Queue;
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python\\">Queue</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/Queue?lang=python&submodule=aws_sqs\\">Queue</a>
 - *Default:* Default props are used
 
 Existing instance of SQS queue object, Providing both this and queueProps will cause an error.
@@ -1380,7 +1380,7 @@ Existing instance of SQS queue object, Providing both this and queueProps will c
 public readonly existingVpc: IVpc;
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python\\">IVpc</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/IVpc?lang=python&submodule=aws_ec2\\">IVpc</a>
 
 An existing VPC for the construct to use (construct will NOT create a new VPC in this case).
 
@@ -1392,7 +1392,7 @@ An existing VPC for the construct to use (construct will NOT create a new VPC in
 public readonly lambdaFunctionProps: FunctionProps;
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python\\">FunctionProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/FunctionProps?lang=python&submodule=aws_lambda\\">FunctionProps</a>
 - *Default:* Default properties are used.
 
 User provided props to override the default props for the Lambda function.
@@ -1431,7 +1431,7 @@ Optional Name for the SQS queue URL environment variable set for the Lambda func
 public readonly queueProps: QueueProps;
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python\\">QueueProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/QueueProps?lang=python&submodule=aws_sqs\\">QueueProps</a>
 - *Default:* Default props are used
 
 Optional user-provided props to override the default props for the SQS queue.
@@ -1444,7 +1444,7 @@ Optional user-provided props to override the default props for the SQS queue.
 public readonly vpcProps: VpcProps;
 \`\`\`
 
-- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python\\">VpcProps</a>
+- *Type:* <a href=\\"/packages/aws-cdk-lib/v/99.99.99/api/VpcProps?lang=python&submodule=aws_ec2\\">VpcProps</a>
 
 Properties to override default properties if deployVpc is true.
 
