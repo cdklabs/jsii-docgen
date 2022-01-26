@@ -216,7 +216,7 @@ export class TranspiledType {
   /**
    * The language-independent name of the submodule the type belongs to.
    */
-  public readonly submoduleFqn?: string;
+  public readonly submodulePath?: string;
 
   public constructor(options: {
     source: reflect.Type;
@@ -226,7 +226,7 @@ export class TranspiledType {
     namespace?: string;
     module: string;
     submodule?: string;
-    submoduleFqn?: string;
+    submodulePath?: string;
   }) {
     this.source = options.source;
     this.language = options.language;
@@ -235,7 +235,7 @@ export class TranspiledType {
     this.namespace = options.namespace;
     this.module = options.module;
     this.submodule = options.submodule;
-    this.submoduleFqn = options.submoduleFqn;
+    this.submodulePath = options.submodulePath;
   }
 
   toJson(): JsiiEntity {
@@ -245,7 +245,7 @@ export class TranspiledType {
       id: this.source.fqn,
       packageName: this.source.assembly.name,
       packageVersion: this.source.assembly.version,
-      submodule: this.submoduleFqn,
+      submodule: this.submodulePath,
     });
   }
 }
@@ -449,7 +449,7 @@ export class TranspiledTypeReference {
             fqn: this.type.fqn,
             packageName: this.type.source.assembly.name,
             packageVersion,
-            submodule: this.type.submoduleFqn,
+            submodule: this.type.submodulePath,
           }),
         ],
       };

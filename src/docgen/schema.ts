@@ -358,7 +358,7 @@ export interface AssemblyMetadataSchema {
   readonly packageVersion: string;
 
   /**
-   * Fully qualified name of the language-independent jsii submodule -
+   * Language-independent name of the jsii submodule.
    * if undefined, it is implicitly the root module.
    *
    * @example `aws_sqs`

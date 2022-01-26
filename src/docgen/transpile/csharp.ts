@@ -50,7 +50,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
       namespace: namespace,
       module: moduleLike.name,
       submodule: moduleLike.submodule,
-      submoduleFqn: submodulePath(submodule),
+      submodulePath: submodulePath(submodule),
       source: type,
       language: this.language,
     });
