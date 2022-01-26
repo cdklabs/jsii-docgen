@@ -377,6 +377,14 @@ export interface Schema {
   readonly language: string;
 
   /**
+   * Whether this document represents documentation for all submodules
+   * (including the root).
+   *
+   * @default false
+   */
+  readonly allSubmodules?: boolean;
+
+  /**
    * Assembly metadata.
    */
   readonly metadata: AssemblyMetadataSchema;

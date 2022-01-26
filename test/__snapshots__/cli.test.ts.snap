@@ -5,6 +5,59 @@ exports[`construct-library 1`] = `
 
 ## Constructs <a name=\\"Constructs\\" id=\\"Constructs\\"></a>
 
+### GoodbyeBucket <a name=\\"GoodbyeBucket\\" id=\\"construct-library.submod1.GoodbyeBucket\\"></a>
+
+#### Initializers <a name=\\"Initializers\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer\\"></a>
+
+\`\`\`typescript
+import { submod1 } from 'construct-library'
+
+new submod1.GoodbyeBucket(scope: Construct, id: string, props?: BucketProps)
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.scope\\">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.id\\">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.props\\">props</a></code> | <code>@aws-cdk/aws-s3.BucketProps</code> | *No description.* |
+
+---
+
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.scope\\"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.id\\"></a>
+
+- *Type:* string
+
+---
+
+##### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.props\\"></a>
+
+- *Type:* @aws-cdk/aws-s3.BucketProps
+
+---
+
+#### Methods <a name=\\"Methods\\" id=\\"Methods\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.goodbye\\">goodbye</a></code> | *No description.* |
+
+---
+
+##### \`goodbye\` <a name=\\"goodbye\\" id=\\"construct-library.submod1.GoodbyeBucket.goodbye\\"></a>
+
+\`\`\`typescript
+public goodbye()
+\`\`\`
+
+
+
+
 ### GreeterBucket <a name=\\"GreeterBucket\\" id=\\"construct-library.GreeterBucket\\"></a>
 
 #### Initializers <a name=\\"Initializers\\" id=\\"construct-library.GreeterBucket.Initializer\\"></a>
@@ -68,6 +121,325 @@ exports[`specify language 1`] = `
 "# API Reference <a name=\\"API Reference\\" id=\\"api-reference\\"></a>
 
 ## Constructs <a name=\\"Constructs\\" id=\\"Constructs\\"></a>
+
+### GoodbyeBucket <a name=\\"GoodbyeBucket\\" id=\\"construct-library.submod1.GoodbyeBucket\\"></a>
+
+#### Initializers <a name=\\"Initializers\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer\\"></a>
+
+\`\`\`python
+from construct_library import submod1
+
+submod1.GoodbyeBucket(
+  scope: Construct,
+  id: str,
+  access_control: BucketAccessControl = None,
+  auto_delete_objects: bool = None,
+  block_public_access: BlockPublicAccess = None,
+  bucket_key_enabled: bool = None,
+  bucket_name: str = None,
+  cors: typing.List[CorsRule] = None,
+  encryption: BucketEncryption = None,
+  encryption_key: IKey = None,
+  enforce_ss_l: bool = None,
+  inventories: typing.List[Inventory] = None,
+  lifecycle_rules: typing.List[LifecycleRule] = None,
+  metrics: typing.List[BucketMetrics] = None,
+  object_ownership: ObjectOwnership = None,
+  public_read_access: bool = None,
+  removal_policy: RemovalPolicy = None,
+  server_access_logs_bucket: IBucket = None,
+  server_access_logs_prefix: str = None,
+  versioned: bool = None,
+  website_error_document: str = None,
+  website_index_document: str = None,
+  website_redirect: RedirectTarget = None,
+  website_routing_rules: typing.List[RoutingRule] = None
+)
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.scope\\">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.id\\">id</a></code> | <code>str</code> | *No description.* |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.accessControl\\">access_control</a></code> | <code>aws_cdk.aws_s3.BucketAccessControl</code> | Specifies a canned ACL that grants predefined permissions to the bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.autoDeleteObjects\\">auto_delete_objects</a></code> | <code>bool</code> | Whether all objects should be automatically deleted when the bucket is removed from the stack or when the stack is deleted. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.blockPublicAccess\\">block_public_access</a></code> | <code>aws_cdk.aws_s3.BlockPublicAccess</code> | The block public access configuration of this bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.bucketKeyEnabled\\">bucket_key_enabled</a></code> | <code>bool</code> | Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.bucketName\\">bucket_name</a></code> | <code>str</code> | Physical name of this bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.cors\\">cors</a></code> | <code>typing.List[aws_cdk.aws_s3.CorsRule]</code> | The CORS configuration of this bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.encryption\\">encryption</a></code> | <code>aws_cdk.aws_s3.BucketEncryption</code> | The kind of server-side encryption to apply to this bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.encryptionKey\\">encryption_key</a></code> | <code>aws_cdk.aws_kms.IKey</code> | External KMS key to use for bucket encryption. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.enforceSSL\\">enforce_ss_l</a></code> | <code>bool</code> | Enforces SSL for requests. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.inventories\\">inventories</a></code> | <code>typing.List[aws_cdk.aws_s3.Inventory]</code> | The inventory configuration of the bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.lifecycleRules\\">lifecycle_rules</a></code> | <code>typing.List[aws_cdk.aws_s3.LifecycleRule]</code> | Rules that define how Amazon S3 manages objects during their lifetime. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.metrics\\">metrics</a></code> | <code>typing.List[aws_cdk.aws_s3.BucketMetrics]</code> | The metrics configuration of this bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.objectOwnership\\">object_ownership</a></code> | <code>aws_cdk.aws_s3.ObjectOwnership</code> | The objectOwnership of the bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.publicReadAccess\\">public_read_access</a></code> | <code>bool</code> | Grants public read access to all objects in the bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.removalPolicy\\">removal_policy</a></code> | <code>aws_cdk.core.RemovalPolicy</code> | Policy to apply when the bucket is removed from this stack. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.serverAccessLogsBucket\\">server_access_logs_bucket</a></code> | <code>aws_cdk.aws_s3.IBucket</code> | Destination bucket for the server access logs. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.serverAccessLogsPrefix\\">server_access_logs_prefix</a></code> | <code>str</code> | Optional log file prefix to use for the bucket's access logs. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.versioned\\">versioned</a></code> | <code>bool</code> | Whether this bucket should have versioning turned on or not. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.websiteErrorDocument\\">website_error_document</a></code> | <code>str</code> | The name of the error document (e.g. \\"404.html\\") for the website. \`websiteIndexDocument\` must also be set if this is set. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.websiteIndexDocument\\">website_index_document</a></code> | <code>str</code> | The name of the index document (e.g. \\"index.html\\") for the website. Enables static website hosting for this bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.websiteRedirect\\">website_redirect</a></code> | <code>aws_cdk.aws_s3.RedirectTarget</code> | Specifies the redirect behavior of all requests to a website endpoint of a bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.websiteRoutingRules\\">website_routing_rules</a></code> | <code>typing.List[aws_cdk.aws_s3.RoutingRule]</code> | Rules that define when a redirect is applied and the redirect behavior. |
+
+---
+
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.scope\\"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.id\\"></a>
+
+- *Type:* str
+
+---
+
+##### \`access_control\`<sup>Optional</sup> <a name=\\"access_control\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.accessControl\\"></a>
+
+- *Type:* aws_cdk.aws_s3.BucketAccessControl
+- *Default:* BucketAccessControl.PRIVATE
+
+Specifies a canned ACL that grants predefined permissions to the bucket.
+
+---
+
+##### \`auto_delete_objects\`<sup>Optional</sup> <a name=\\"auto_delete_objects\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.autoDeleteObjects\\"></a>
+
+- *Type:* bool
+- *Default:* false
+
+Whether all objects should be automatically deleted when the bucket is removed from the stack or when the stack is deleted.
+
+Requires the \`removalPolicy\` to be set to \`RemovalPolicy.DESTROY\`.  **Warning** if you have deployed a bucket with \`autoDeleteObjects: true\`, switching this to \`false\` in a CDK version *before* \`1.126.0\` will lead to all objects in the bucket being deleted. Be sure to update your bucket resources by deploying with CDK version \`1.126.0\` or later **before** switching this value to \`false\`.
+
+---
+
+##### \`block_public_access\`<sup>Optional</sup> <a name=\\"block_public_access\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.blockPublicAccess\\"></a>
+
+- *Type:* aws_cdk.aws_s3.BlockPublicAccess
+- *Default:* CloudFormation defaults will apply. New buckets and objects don't allow public access, but users can modify bucket policies or object permissions to allow public access
+
+The block public access configuration of this bucket.
+
+> [https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html)
+
+---
+
+##### \`bucket_key_enabled\`<sup>Optional</sup> <a name=\\"bucket_key_enabled\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.bucketKeyEnabled\\"></a>
+
+- *Type:* bool
+- *Default:* false
+
+Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket.
+
+Only relevant, when Encryption is set to {@link BucketEncryption.KMS}
+
+---
+
+##### \`bucket_name\`<sup>Optional</sup> <a name=\\"bucket_name\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.bucketName\\"></a>
+
+- *Type:* str
+- *Default:* Assigned by CloudFormation (recommended).
+
+Physical name of this bucket.
+
+---
+
+##### \`cors\`<sup>Optional</sup> <a name=\\"cors\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.cors\\"></a>
+
+- *Type:* typing.List[aws_cdk.aws_s3.CorsRule]
+- *Default:* No CORS configuration.
+
+The CORS configuration of this bucket.
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors.html)
+
+---
+
+##### \`encryption\`<sup>Optional</sup> <a name=\\"encryption\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.encryption\\"></a>
+
+- *Type:* aws_cdk.aws_s3.BucketEncryption
+- *Default:* \`Kms\` if \`encryptionKey\` is specified, or \`Unencrypted\` otherwise.
+
+The kind of server-side encryption to apply to this bucket.
+
+If you choose KMS, you can specify a KMS key via \`encryptionKey\`. If encryption key is not specified, a key will automatically be created.
+
+---
+
+##### \`encryption_key\`<sup>Optional</sup> <a name=\\"encryption_key\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.encryptionKey\\"></a>
+
+- *Type:* aws_cdk.aws_kms.IKey
+- *Default:* If encryption is set to \\"Kms\\" and this property is undefined, a new KMS key will be created and associated with this bucket.
+
+External KMS key to use for bucket encryption.
+
+The 'encryption' property must be either not specified or set to \\"Kms\\". An error will be emitted if encryption is set to \\"Unencrypted\\" or \\"Managed\\".
+
+---
+
+##### \`enforce_ss_l\`<sup>Optional</sup> <a name=\\"enforce_ss_l\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.enforceSSL\\"></a>
+
+- *Type:* bool
+- *Default:* false
+
+Enforces SSL for requests.
+
+S3.5 of the AWS Foundational Security Best Practices Regarding S3.
+
+> [https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-ssl-requests-only.html](https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-ssl-requests-only.html)
+
+---
+
+##### \`inventories\`<sup>Optional</sup> <a name=\\"inventories\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.inventories\\"></a>
+
+- *Type:* typing.List[aws_cdk.aws_s3.Inventory]
+- *Default:* No inventory configuration
+
+The inventory configuration of the bucket.
+
+> [https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html)
+
+---
+
+##### \`lifecycle_rules\`<sup>Optional</sup> <a name=\\"lifecycle_rules\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.lifecycleRules\\"></a>
+
+- *Type:* typing.List[aws_cdk.aws_s3.LifecycleRule]
+- *Default:* No lifecycle rules.
+
+Rules that define how Amazon S3 manages objects during their lifetime.
+
+---
+
+##### \`metrics\`<sup>Optional</sup> <a name=\\"metrics\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.metrics\\"></a>
+
+- *Type:* typing.List[aws_cdk.aws_s3.BucketMetrics]
+- *Default:* No metrics configuration.
+
+The metrics configuration of this bucket.
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html)
+
+---
+
+##### \`object_ownership\`<sup>Optional</sup> <a name=\\"object_ownership\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.objectOwnership\\"></a>
+
+- *Type:* aws_cdk.aws_s3.ObjectOwnership
+- *Default:* No ObjectOwnership configuration, uploading account will own the object.
+
+The objectOwnership of the bucket.
+
+> [https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html)
+
+---
+
+##### \`public_read_access\`<sup>Optional</sup> <a name=\\"public_read_access\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.publicReadAccess\\"></a>
+
+- *Type:* bool
+- *Default:* false
+
+Grants public read access to all objects in the bucket.
+
+Similar to calling \`bucket.grantPublicAccess()\`
+
+---
+
+##### \`removal_policy\`<sup>Optional</sup> <a name=\\"removal_policy\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.removalPolicy\\"></a>
+
+- *Type:* aws_cdk.core.RemovalPolicy
+- *Default:* The bucket will be orphaned.
+
+Policy to apply when the bucket is removed from this stack.
+
+---
+
+##### \`server_access_logs_bucket\`<sup>Optional</sup> <a name=\\"server_access_logs_bucket\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.serverAccessLogsBucket\\"></a>
+
+- *Type:* aws_cdk.aws_s3.IBucket
+- *Default:* If \\"serverAccessLogsPrefix\\" undefined - access logs disabled, otherwise - log to current bucket.
+
+Destination bucket for the server access logs.
+
+---
+
+##### \`server_access_logs_prefix\`<sup>Optional</sup> <a name=\\"server_access_logs_prefix\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.serverAccessLogsPrefix\\"></a>
+
+- *Type:* str
+- *Default:* No log file prefix
+
+Optional log file prefix to use for the bucket's access logs.
+
+If defined without \\"serverAccessLogsBucket\\", enables access logs to current bucket with this prefix.
+
+---
+
+##### \`versioned\`<sup>Optional</sup> <a name=\\"versioned\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.versioned\\"></a>
+
+- *Type:* bool
+- *Default:* false
+
+Whether this bucket should have versioning turned on or not.
+
+---
+
+##### \`website_error_document\`<sup>Optional</sup> <a name=\\"website_error_document\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.websiteErrorDocument\\"></a>
+
+- *Type:* str
+- *Default:* No error document.
+
+The name of the error document (e.g. \\"404.html\\") for the website. \`websiteIndexDocument\` must also be set if this is set.
+
+---
+
+##### \`website_index_document\`<sup>Optional</sup> <a name=\\"website_index_document\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.websiteIndexDocument\\"></a>
+
+- *Type:* str
+- *Default:* No index document.
+
+The name of the index document (e.g. \\"index.html\\") for the website. Enables static website hosting for this bucket.
+
+---
+
+##### \`website_redirect\`<sup>Optional</sup> <a name=\\"website_redirect\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.websiteRedirect\\"></a>
+
+- *Type:* aws_cdk.aws_s3.RedirectTarget
+- *Default:* No redirection.
+
+Specifies the redirect behavior of all requests to a website endpoint of a bucket.
+
+If you specify this property, you can't specify \\"websiteIndexDocument\\", \\"websiteErrorDocument\\" nor , \\"websiteRoutingRules\\".
+
+---
+
+##### \`website_routing_rules\`<sup>Optional</sup> <a name=\\"website_routing_rules\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.websiteRoutingRules\\"></a>
+
+- *Type:* typing.List[aws_cdk.aws_s3.RoutingRule]
+- *Default:* No redirection rules.
+
+Rules that define when a redirect is applied and the redirect behavior.
+
+---
+
+#### Methods <a name=\\"Methods\\" id=\\"Methods\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.goodbye\\">goodbye</a></code> | *No description.* |
+
+---
+
+##### \`goodbye\` <a name=\\"goodbye\\" id=\\"construct-library.submod1.GoodbyeBucket.goodbye\\"></a>
+
+\`\`\`python
+def goodbye()
+\`\`\`
+
+
+
 
 ### GreeterBucket <a name=\\"GreeterBucket\\" id=\\"construct-library.GreeterBucket\\"></a>
 
@@ -383,6 +755,134 @@ Rules that define when a redirect is applied and the redirect behavior.
 
 \`\`\`python
 def greet()
+\`\`\`
+
+
+
+
+
+
+
+"
+`;
+
+exports[`specify root submodule 1`] = `
+"# API Reference <a name=\\"API Reference\\" id=\\"api-reference\\"></a>
+
+## Constructs <a name=\\"Constructs\\" id=\\"Constructs\\"></a>
+
+### GreeterBucket <a name=\\"GreeterBucket\\" id=\\"construct-library.GreeterBucket\\"></a>
+
+#### Initializers <a name=\\"Initializers\\" id=\\"construct-library.GreeterBucket.Initializer\\"></a>
+
+\`\`\`typescript
+import { GreeterBucket } from 'construct-library'
+
+new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.scope\\">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.id\\">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.props\\">props</a></code> | <code>@aws-cdk/aws-s3.BucketProps</code> | *No description.* |
+
+---
+
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.scope\\"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.id\\"></a>
+
+- *Type:* string
+
+---
+
+##### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.props\\"></a>
+
+- *Type:* @aws-cdk/aws-s3.BucketProps
+
+---
+
+#### Methods <a name=\\"Methods\\" id=\\"Methods\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#construct-library.GreeterBucket.greet\\">greet</a></code> | *No description.* |
+
+---
+
+##### \`greet\` <a name=\\"greet\\" id=\\"construct-library.GreeterBucket.greet\\"></a>
+
+\`\`\`typescript
+public greet()
+\`\`\`
+
+
+
+
+
+
+
+"
+`;
+
+exports[`specify submodule 1`] = `
+"# API Reference <a name=\\"API Reference\\" id=\\"api-reference\\"></a>
+
+## Constructs <a name=\\"Constructs\\" id=\\"Constructs\\"></a>
+
+### GoodbyeBucket <a name=\\"GoodbyeBucket\\" id=\\"construct-library.submod1.GoodbyeBucket\\"></a>
+
+#### Initializers <a name=\\"Initializers\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer\\"></a>
+
+\`\`\`typescript
+import { submod1 } from 'construct-library'
+
+new submod1.GoodbyeBucket(scope: Construct, id: string, props?: BucketProps)
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.scope\\">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.id\\">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.props\\">props</a></code> | <code>@aws-cdk/aws-s3.BucketProps</code> | *No description.* |
+
+---
+
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.scope\\"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.id\\"></a>
+
+- *Type:* string
+
+---
+
+##### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.props\\"></a>
+
+- *Type:* @aws-cdk/aws-s3.BucketProps
+
+---
+
+#### Methods <a name=\\"Methods\\" id=\\"Methods\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.goodbye\\">goodbye</a></code> | *No description.* |
+
+---
+
+##### \`goodbye\` <a name=\\"goodbye\\" id=\\"construct-library.submod1.GoodbyeBucket.goodbye\\"></a>
+
+\`\`\`typescript
+public goodbye()
 \`\`\`
 
 

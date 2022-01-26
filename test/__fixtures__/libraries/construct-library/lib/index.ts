@@ -6,3 +6,5 @@ export class GreeterBucket extends s3.Bucket {
     console.log(this.bucketName);
   }
 }
+
+export * as submod1 from './submod1';
