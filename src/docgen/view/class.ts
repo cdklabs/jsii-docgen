@@ -1,6 +1,6 @@
 import * as reflect from 'jsii-reflect';
 import { ClassSchema, extractDocs } from '../schema';
-import { Transpile, TranspiledClass } from '../transpile/transpile';
+import { Transpile, TranspiledClass, TranspiledType } from '../transpile/transpile';
 import { Constants } from './constants';
 import { Initializer } from './initializer';
 import { InstanceMethods } from './instance-methods';
@@ -27,6 +27,7 @@ export class Class {
   private readonly staticFunctions: StaticFunctions;
   private readonly constants: Constants;
   private readonly properties: Properties;
+  private readonly interfaces: TranspiledType[];
 
   constructor(
     private readonly transpile: Transpile,
@@ -39,14 +40,14 @@ export class Class {
     this.staticFunctions = new StaticFunctions(transpile, klass.ownMethods);
     this.constants = new Constants(transpile, klass.ownProperties);
     this.properties = new Properties(transpile, klass.ownProperties);
+    this.interfaces = klass.interfaces.map((iface) => this.transpile.type(iface));
     this.transpiled = transpile.class(klass);
   }
 
   public toJson(): ClassSchema {
-    const interfaces = this.klass.interfaces.map((iface) => this.transpile.type(iface).toJson());
     return {
       initializer: this.initializer?.toJson(),
-      interfaces: interfaces,
+      interfaces: this.interfaces.map((iface) => iface.toJson()),
       instanceMethods: this.instanceMethods.toJson(),
       staticMethods: this.staticFunctions.toJson(),
       constants: this.constants.toJson(),

@@ -188,7 +188,15 @@ test('throws uninstallable error on missing spec in dependencies', async () => {
 test('throws corrupt assembly', async () => {
   const docs = await Documentation.forPackage('@epilot/cdk-constructs@1.0.7');
   // this package accepts an unexported HttpApiProps in a constructor
-  return expect(docs.toMarkdown({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
+  await expect(docs.toMarkdown({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
+  await expect(docs.toJson({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
+});
+
+test('throws corrupt assembly 2', async () => {
+  const docs = await Documentation.forPackage('@pahud/cdktf-aws-ecs@v0.1.35');
+  // this package had a peerDependency which underwent a breaking change in a minor version (cdktf.ComplexObject interface was removed)
+  await expect(docs.toMarkdown({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
+  await expect(docs.toJson({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
 });
 
 test('performance on large modules', async () => {

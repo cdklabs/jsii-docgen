@@ -1,4 +1,4 @@
-import { ApiReferenceSchema, AssemblyMetadataSchema, ClassSchema, ConstructSchema, EnumMemberSchema, EnumSchema, InitializerSchema, InterfaceSchema, JsiiEntity, MethodSchema, ParameterSchema, PropertySchema, Schema, StructSchema, TypeSchema } from '../schema';
+import { ApiReferenceSchema, AssemblyMetadataSchema, ClassSchema, ConstructSchema, EnumMemberSchema, EnumSchema, InitializerSchema, InterfaceSchema, JsiiEntity, MethodSchema, ParameterSchema, PropertySchema, Schema, CURRENT_SCHEMA_VERSION, StructSchema, TypeSchema } from '../schema';
 import { Language } from '../transpile/transpile';
 import { MarkdownDocument } from './markdown-doc';
 
@@ -81,7 +81,7 @@ export class MarkdownRenderer {
   public static fromSchema(schema: Schema, options: MarkdownFormattingOptions): MarkdownDocument {
     const documentation = new MarkdownDocument();
 
-    if (schema.version !== '0.1') {
+    if (schema.version !== CURRENT_SCHEMA_VERSION) {
       throw new Error(`Unexpected schema version: ${schema.version}`);
     }
 

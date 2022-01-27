@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { JsiiEntity, TypeSchema } from '../schema';
+import { filterUndefined, JsiiEntity, TypeSchema } from '../schema';
 
 /**
  * Supported languages to generate documentation in.
@@ -213,6 +213,10 @@ export class TranspiledType {
    * The language specific submodule name the type belongs to.
    */
   public readonly submodule?: string;
+  /**
+   * The language-independent name of the submodule the type belongs to.
+   */
+  public readonly submodulePath?: string;
 
   public constructor(options: {
     source: reflect.Type;
@@ -222,6 +226,7 @@ export class TranspiledType {
     namespace?: string;
     module: string;
     submodule?: string;
+    submodulePath?: string;
   }) {
     this.source = options.source;
     this.language = options.language;
@@ -230,17 +235,18 @@ export class TranspiledType {
     this.namespace = options.namespace;
     this.module = options.module;
     this.submodule = options.submodule;
+    this.submodulePath = options.submodulePath;
   }
 
   toJson(): JsiiEntity {
-    return {
+    return filterUndefined({
       fqn: this.fqn,
       displayName: this.name,
       id: this.source.fqn,
       packageName: this.source.assembly.name,
       packageVersion: this.source.assembly.version,
-      submodule: this.submodule,
-    };
+      submodule: this.submodulePath,
+    });
   }
 }
 
@@ -437,14 +443,14 @@ export class TranspiledTypeReference {
       return {
         formattingPattern: '%',
         types: [
-          {
+          filterUndefined({
             id: this.ref.fqn,
             displayName: this.type.name,
             fqn: this.type.fqn,
             packageName: this.type.source.assembly.name,
             packageVersion,
-            submodule: this.type.submodule,
-          },
+            submodule: this.type.submodulePath,
+          }),
         ],
       };
     }
