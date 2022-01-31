@@ -1,4 +1,5 @@
 import * as reflect from 'jsii-reflect';
+import { submodulePath } from '../schema';
 import * as transpile from './transpile';
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const Case = require('case');
@@ -199,6 +200,7 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
       namespace: type.namespace,
       module: moduleLike.name,
       submodule: moduleLike.submodule,
+      submodulePath: submodulePath(submodule),
       source: type,
       language: this.language,
     });

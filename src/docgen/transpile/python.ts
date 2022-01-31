@@ -1,5 +1,6 @@
 import * as Case from 'case';
 import * as reflect from 'jsii-reflect';
+import { submodulePath } from '../schema';
 import * as transpile from './transpile';
 
 // Helpers
@@ -234,6 +235,7 @@ export class PythonTranspile extends transpile.TranspileBase {
       namespace: type.namespace,
       module: moduleLike.name,
       submodule: moduleLike.submodule,
+      submodulePath: submodulePath(submodule),
       source: type,
       language: this.language,
     });

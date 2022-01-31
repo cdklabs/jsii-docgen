@@ -1,4 +1,6 @@
-import * as jsii from 'jsii-reflect';
+import * as reflect from 'jsii-reflect';
+
+export const CURRENT_SCHEMA_VERSION = '0.1';
 
 /**
  * Describes any kind of type. This could be a primitive, a user-defined type
@@ -356,8 +358,10 @@ export interface AssemblyMetadataSchema {
   readonly packageVersion: string;
 
   /**
-   * Name of the submodule within the jsii assembly (if undefined, this is the
-   * root module).
+   * Language-independent name of the jsii submodule.
+   * if undefined, it is implicitly the root module.
+   *
+   * @example `aws_sqs`
    */
   readonly submodule?: string;
 }
@@ -481,7 +485,7 @@ export interface Optional {
   readonly default?: string;
 }
 
-export function extractDocs(docs: jsii.Docs): DocsSchema {
+export function extractDocs(docs: reflect.Docs): DocsSchema {
   const links = [];
   const see = docs.docs.see; // @see
   if (see && see.length > 0) {
@@ -501,7 +505,16 @@ export function extractDocs(docs: jsii.Docs): DocsSchema {
   });
 }
 
-function filterUndefined<T>(obj: T): T {
+/**
+ * Generates the name of the submodule.
+ */
+export function submodulePath(module?: reflect.Submodule): string | undefined {
+  if (!module) return undefined;
+  const path = module.fqn.split('.').splice(1).join('.');
+  return path.length > 0 ? path : undefined;
+}
+
+export function filterUndefined<T>(obj: T): T {
   const ret: any = {};
   for (const [k, v] of Object.entries(obj)) {
     if (v !== undefined) {

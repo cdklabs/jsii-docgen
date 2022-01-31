@@ -1,5 +1,6 @@
 import * as Case from 'case';
 import * as reflect from 'jsii-reflect';
+import { submodulePath } from '../schema';
 import * as transpile from './transpile';
 
 export class CSharpTranspile extends transpile.TranspileBase {
@@ -49,6 +50,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
       namespace: namespace,
       module: moduleLike.name,
       submodule: moduleLike.submodule,
+      submodulePath: submodulePath(submodule),
       source: type,
       language: this.language,
     });

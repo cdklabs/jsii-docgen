@@ -25,7 +25,7 @@ new EdgeFunction(Construct Scope, string Id, EdgeFunctionProps Props);
 | --- | --- | --- |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.Initializer.parameter.scope\\">Scope</a></code> | <code>Constructs.Construct</code> | *No description.* |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.Initializer.parameter.id\\">Id</a></code> | <code>string</code> | *No description.* |
-| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.Initializer.parameter.props\\">Props</a></code> | <code>Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps</code> | *No description.* |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.Initializer.parameter.props\\">Props</a></code> | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps\\">EdgeFunctionProps</a></code> | *No description.* |
 
 ---
 
@@ -43,7 +43,7 @@ new EdgeFunction(Construct Scope, string Id, EdgeFunctionProps Props);
 
 ##### \`Props\`<sup>Required</sup> <a name=\\"Props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.Initializer.parameter.props\\"></a>
 
-- *Type:* Amazon.CDK.AWS.CloudFront.experimental.EdgeFunctionProps
+- *Type:* <a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps\\">EdgeFunctionProps</a>
 
 ---
 
