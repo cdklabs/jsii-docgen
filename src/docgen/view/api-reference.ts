@@ -20,14 +20,20 @@ export class ApiReference {
     transpile: Transpile,
     assembly: reflect.Assembly,
     submodule?: reflect.Submodule,
+    allSubmodules?: boolean,
   ) {
-    const classes = this.sortByName(
-      submodule ? submodule.classes : assembly.classes,
-    );
-    const interfaces = this.sortByName(
-      submodule ? submodule.interfaces : assembly.interfaces,
-    );
-    const enums = this.sortByName(submodule ? submodule.enums : assembly.enums);
+    let classes: reflect.ClassType[];
+    let interfaces: reflect.InterfaceType[];
+    let enums: reflect.EnumType[];
+    if (allSubmodules ?? false) {
+      classes = this.sortByName([...assembly.classes, ...flatMap(assembly.submodules, submod => [...submod.classes])]);
+      interfaces = this.sortByName([...assembly.interfaces, ...flatMap(assembly.submodules, submod => [...submod.interfaces])]);
+      enums = this.sortByName([...assembly.enums, ...flatMap(assembly.submodules, submod => [...submod.enums])]);
+    } else {
+      classes = this.sortByName(submodule ? submodule.classes : assembly.classes);
+      interfaces = this.sortByName(submodule ? submodule.interfaces : assembly.interfaces);
+      enums = this.sortByName(submodule ? submodule.enums : assembly.enums);
+    }
 
     this.constructs = new Constructs(transpile, classes);
     this.classes = new Classes(transpile, classes);
@@ -52,4 +58,8 @@ export class ApiReference {
   private sortByName<Type extends reflect.Type>(arr: readonly Type[]): Type[] {
     return [...arr].sort((s1, s2) => s1.name.localeCompare(s2.name));
   }
+}
+
+function flatMap<T, U>(xs: readonly T[], fn: (value: T, index: number, array: readonly T[]) => U[]): U[] {
+  return Array.prototype.concat(...xs.map(fn));
 }

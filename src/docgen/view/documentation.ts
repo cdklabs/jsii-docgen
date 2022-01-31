@@ -51,6 +51,16 @@ export interface RenderOptions extends TransliterationOptions {
    * @default - Documentation is generated for the root module only.
    */
   readonly submodule?: string;
+
+  /**
+   * Generate a single document with APIs from all assembly submodules
+   * (including the root).
+   *
+   * Note: only the root-level README is included.
+   *
+   * @default false
+   */
+  readonly allSubmodules?: boolean;
 }
 
 export interface TransliterationOptions {
@@ -184,6 +194,11 @@ export class Documentation {
     const language = options.language ?? Language.TYPESCRIPT;
     const loose = options.loose ?? true;
     const validate = options.validate ?? false;
+    const allSubmodules = options.allSubmodules ?? false;
+
+    if (allSubmodules && options?.submodule) {
+      throw new Error('Cannot call toJson with allSubmodules and a specific submodule both selected.');
+    }
 
     const { assembly, transpile } = await this.languageSpecific(language, { loose, validate });
 
@@ -211,7 +226,7 @@ export class Documentation {
     let apiReference: ApiReference | undefined;
     if (options?.apiReference ?? true) {
       try {
-        apiReference = new ApiReference(transpile, assembly, submodule);
+        apiReference = new ApiReference(transpile, assembly, submodule, allSubmodules);
       } catch (error) {
         if (!(error instanceof Error)) {
           throw error;
