@@ -36,10 +36,10 @@ export class Class {
     if (klass.initializer) {
       this.initializer = new Initializer(transpile, klass.initializer);
     }
-    this.instanceMethods = new InstanceMethods(transpile, klass.ownMethods);
-    this.staticFunctions = new StaticFunctions(transpile, klass.ownMethods);
-    this.constants = new Constants(transpile, klass.ownProperties);
-    this.properties = new Properties(transpile, klass.ownProperties);
+    this.instanceMethods = new InstanceMethods(transpile, klass.allMethods);
+    this.staticFunctions = new StaticFunctions(transpile, klass.allMethods);
+    this.constants = new Constants(transpile, klass.allProperties);
+    this.properties = new Properties(transpile, klass.allProperties);
     this.interfaces = klass.interfaces.map((iface) => this.transpile.type(iface));
     this.transpiled = transpile.class(klass);
   }
