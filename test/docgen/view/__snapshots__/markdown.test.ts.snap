@@ -333,7 +333,7 @@ public IVpc getVpc();
 
 ### LambdaToSqsProps <a name=\\"LambdaToSqsProps\\" id=\\"LambdaToSqsProps\\"></a>
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-solutions-constructs/aws-lambda-sqs.LambdaToSqsProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"LambdaToSqsProps.Initializer\\"></a>
 
 \`\`\`java
 import software.amazon.awsconstructs.services.lambdasqs.LambdaToSqsProps;
@@ -867,7 +867,7 @@ vpc: IVpc
 
 ### LambdaToSqsProps <a name=\\"LambdaToSqsProps\\" id=\\"LambdaToSqsProps\\"></a>
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-solutions-constructs/aws-lambda-sqs.LambdaToSqsProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"LambdaToSqsProps.Initializer\\"></a>
 
 \`\`\`python
 import aws_solutions_constructs.aws_lambda_sqs
@@ -1269,7 +1269,7 @@ public readonly vpc: IVpc;
 
 ### LambdaToSqsProps <a name=\\"LambdaToSqsProps\\" id=\\"LambdaToSqsProps\\"></a>
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-solutions-constructs/aws-lambda-sqs.LambdaToSqsProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"LambdaToSqsProps.Initializer\\"></a>
 
 \`\`\`typescript
 import { LambdaToSqsProps } from '@aws-solutions-constructs/aws-lambda-sqs'
@@ -2706,7 +2706,7 @@ Properties for defining a \`AWS::ECR::PublicRepository\`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnPublicRepositoryProps.Initializer\\"></a>
 
 \`\`\`csharp
 using Amazon.CDK.AWS.ECR;
@@ -2792,7 +2792,7 @@ Properties for defining a \`AWS::ECR::RegistryPolicy\`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicyProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnRegistryPolicyProps.Initializer\\"></a>
 
 \`\`\`csharp
 using Amazon.CDK.AWS.ECR;
@@ -2830,7 +2830,7 @@ Properties for defining a \`AWS::ECR::ReplicationConfiguration\`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfigurationProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnReplicationConfigurationProps.Initializer\\"></a>
 
 \`\`\`csharp
 using Amazon.CDK.AWS.ECR;
@@ -2868,7 +2868,7 @@ Properties for defining a \`AWS::ECR::Repository\`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnRepositoryProps.Initializer\\"></a>
 
 \`\`\`csharp
 using Amazon.CDK.AWS.ECR;
@@ -3000,7 +3000,7 @@ public CfnTag[] Tags { get; set; }
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnRepository.LifecyclePolicyProperty.Initializer\\"></a>
 
 \`\`\`csharp
 using Amazon.CDK.AWS.ECR;
@@ -3052,7 +3052,7 @@ public string RegistryId { get; set; }
 
 An ECR life cycle rule.
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.LifecycleRule.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"LifecycleRule.Initializer\\"></a>
 
 \`\`\`csharp
 using Amazon.CDK.AWS.ECR;
@@ -3169,7 +3169,7 @@ Only one rule is allowed to select untagged images, and it must have the highest
 
 Options for the onCloudTrailImagePushed method.
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"OnCloudTrailImagePushedOptions.Initializer\\"></a>
 
 \`\`\`csharp
 using Amazon.CDK.AWS.ECR;
@@ -3268,7 +3268,7 @@ Only watch changes to this image tag.
 
 Options for the OnImageScanCompleted method.
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.OnImageScanCompletedOptions.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"OnImageScanCompletedOptions.Initializer\\"></a>
 
 \`\`\`csharp
 using Amazon.CDK.AWS.ECR;
@@ -3369,7 +3369,7 @@ Leave it undefined to watch the full repository.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationconfiguration.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationconfiguration.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnReplicationConfiguration.ReplicationConfigurationProperty.Initializer\\"></a>
 
 \`\`\`csharp
 using Amazon.CDK.AWS.ECR;
@@ -3405,7 +3405,7 @@ public object Rules { get; set; }
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnReplicationConfiguration.ReplicationDestinationProperty.Initializer\\"></a>
 
 \`\`\`csharp
 using Amazon.CDK.AWS.ECR;
@@ -3457,7 +3457,7 @@ public string RegistryId { get; set; }
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnReplicationConfiguration.ReplicationRuleProperty.Initializer\\"></a>
 
 \`\`\`csharp
 using Amazon.CDK.AWS.ECR;
@@ -3491,7 +3491,7 @@ public object Destinations { get; set; }
 
 ### RepositoryAttributes <a name=\\"RepositoryAttributes\\" id=\\"RepositoryAttributes\\"></a>
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.RepositoryAttributes.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"RepositoryAttributes.Initializer\\"></a>
 
 \`\`\`csharp
 using Amazon.CDK.AWS.ECR;
@@ -3533,7 +3533,7 @@ public string RepositoryName { get; set; }
 
 ### RepositoryProps <a name=\\"RepositoryProps\\" id=\\"RepositoryProps\\"></a>
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.RepositoryProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"RepositoryProps.Initializer\\"></a>
 
 \`\`\`csharp
 using Amazon.CDK.AWS.ECR;
@@ -5540,7 +5540,7 @@ Properties for defining a \`AWS::ECR::PublicRepository\`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnPublicRepositoryProps.Initializer\\"></a>
 
 \`\`\`java
 import software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps;
@@ -5626,7 +5626,7 @@ Properties for defining a \`AWS::ECR::RegistryPolicy\`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicyProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnRegistryPolicyProps.Initializer\\"></a>
 
 \`\`\`java
 import software.amazon.awscdk.services.ecr.CfnRegistryPolicyProps;
@@ -5664,7 +5664,7 @@ Properties for defining a \`AWS::ECR::ReplicationConfiguration\`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfigurationProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnReplicationConfigurationProps.Initializer\\"></a>
 
 \`\`\`java
 import software.amazon.awscdk.services.ecr.CfnReplicationConfigurationProps;
@@ -5703,7 +5703,7 @@ Properties for defining a \`AWS::ECR::Repository\`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnRepositoryProps.Initializer\\"></a>
 
 \`\`\`java
 import software.amazon.awscdk.services.ecr.CfnRepositoryProps;
@@ -5836,7 +5836,7 @@ public java.util.List<CfnTag> getTags();
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnRepository.LifecyclePolicyProperty.Initializer\\"></a>
 
 \`\`\`java
 import software.amazon.awscdk.services.ecr.CfnRepository.LifecyclePolicyProperty;
@@ -5888,7 +5888,7 @@ public java.lang.String getRegistryId();
 
 An ECR life cycle rule.
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.LifecycleRule.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"LifecycleRule.Initializer\\"></a>
 
 \`\`\`java
 import software.amazon.awscdk.services.ecr.LifecycleRule;
@@ -6005,7 +6005,7 @@ Only one rule is allowed to select untagged images, and it must have the highest
 
 Options for the onCloudTrailImagePushed method.
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"OnCloudTrailImagePushedOptions.Initializer\\"></a>
 
 \`\`\`java
 import software.amazon.awscdk.services.ecr.OnCloudTrailImagePushedOptions;
@@ -6104,7 +6104,7 @@ Only watch changes to this image tag.
 
 Options for the OnImageScanCompleted method.
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.OnImageScanCompletedOptions.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"OnImageScanCompletedOptions.Initializer\\"></a>
 
 \`\`\`java
 import software.amazon.awscdk.services.ecr.OnImageScanCompletedOptions;
@@ -6205,7 +6205,7 @@ Leave it undefined to watch the full repository.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationconfiguration.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationconfiguration.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnReplicationConfiguration.ReplicationConfigurationProperty.Initializer\\"></a>
 
 \`\`\`java
 import software.amazon.awscdk.services.ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty;
@@ -6243,7 +6243,7 @@ public java.lang.Object getRules();
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnReplicationConfiguration.ReplicationDestinationProperty.Initializer\\"></a>
 
 \`\`\`java
 import software.amazon.awscdk.services.ecr.CfnReplicationConfiguration.ReplicationDestinationProperty;
@@ -6295,7 +6295,7 @@ public java.lang.String getRegistryId();
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnReplicationConfiguration.ReplicationRuleProperty.Initializer\\"></a>
 
 \`\`\`java
 import software.amazon.awscdk.services.ecr.CfnReplicationConfiguration.ReplicationRuleProperty;
@@ -6331,7 +6331,7 @@ public java.lang.Object getDestinations();
 
 ### RepositoryAttributes <a name=\\"RepositoryAttributes\\" id=\\"RepositoryAttributes\\"></a>
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.RepositoryAttributes.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"RepositoryAttributes.Initializer\\"></a>
 
 \`\`\`java
 import software.amazon.awscdk.services.ecr.RepositoryAttributes;
@@ -6373,7 +6373,7 @@ public java.lang.String getRepositoryName();
 
 ### RepositoryProps <a name=\\"RepositoryProps\\" id=\\"RepositoryProps\\"></a>
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.RepositoryProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"RepositoryProps.Initializer\\"></a>
 
 \`\`\`java
 import software.amazon.awscdk.services.ecr.RepositoryProps;
@@ -8674,7 +8674,7 @@ Properties for defining a \`AWS::ECR::PublicRepository\`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnPublicRepositoryProps.Initializer\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -8760,7 +8760,7 @@ Properties for defining a \`AWS::ECR::RegistryPolicy\`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicyProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnRegistryPolicyProps.Initializer\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -8798,7 +8798,7 @@ Properties for defining a \`AWS::ECR::ReplicationConfiguration\`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfigurationProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnReplicationConfigurationProps.Initializer\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -8836,7 +8836,7 @@ Properties for defining a \`AWS::ECR::Repository\`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnRepositoryProps.Initializer\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -8968,7 +8968,7 @@ tags: typing.List[CfnTag]
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnRepository.LifecyclePolicyProperty.Initializer\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -9020,7 +9020,7 @@ registry_id: str
 
 An ECR life cycle rule.
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.LifecycleRule.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"LifecycleRule.Initializer\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -9137,7 +9137,7 @@ Only one rule is allowed to select untagged images, and it must have the highest
 
 Options for the onCloudTrailImagePushed method.
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"OnCloudTrailImagePushedOptions.Initializer\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -9236,7 +9236,7 @@ Only watch changes to this image tag.
 
 Options for the OnImageScanCompleted method.
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.OnImageScanCompletedOptions.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"OnImageScanCompletedOptions.Initializer\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -9337,7 +9337,7 @@ Leave it undefined to watch the full repository.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationconfiguration.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationconfiguration.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnReplicationConfiguration.ReplicationConfigurationProperty.Initializer\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -9373,7 +9373,7 @@ rules: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, Replicati
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnReplicationConfiguration.ReplicationDestinationProperty.Initializer\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -9425,7 +9425,7 @@ registry_id: str
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnReplicationConfiguration.ReplicationRuleProperty.Initializer\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -9459,7 +9459,7 @@ destinations: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, Re
 
 ### RepositoryAttributes <a name=\\"RepositoryAttributes\\" id=\\"RepositoryAttributes\\"></a>
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.RepositoryAttributes.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"RepositoryAttributes.Initializer\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -9501,7 +9501,7 @@ repository_name: str
 
 ### RepositoryProps <a name=\\"RepositoryProps\\" id=\\"RepositoryProps\\"></a>
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.RepositoryProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"RepositoryProps.Initializer\\"></a>
 
 \`\`\`python
 import aws_cdk.aws_ecr
@@ -11459,7 +11459,7 @@ Properties for defining a \`AWS::ECR::PublicRepository\`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnPublicRepositoryProps.Initializer\\"></a>
 
 \`\`\`typescript
 import { CfnPublicRepositoryProps } from '@aws-cdk/aws-ecr'
@@ -11540,7 +11540,7 @@ Properties for defining a \`AWS::ECR::RegistryPolicy\`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicyProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnRegistryPolicyProps.Initializer\\"></a>
 
 \`\`\`typescript
 import { CfnRegistryPolicyProps } from '@aws-cdk/aws-ecr'
@@ -11576,7 +11576,7 @@ Properties for defining a \`AWS::ECR::ReplicationConfiguration\`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfigurationProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnReplicationConfigurationProps.Initializer\\"></a>
 
 \`\`\`typescript
 import { CfnReplicationConfigurationProps } from '@aws-cdk/aws-ecr'
@@ -11612,7 +11612,7 @@ Properties for defining a \`AWS::ECR::Repository\`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnRepositoryProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnRepositoryProps.Initializer\\"></a>
 
 \`\`\`typescript
 import { CfnRepositoryProps } from '@aws-cdk/aws-ecr'
@@ -11736,7 +11736,7 @@ public readonly tags: CfnTag[];
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnRepository.LifecyclePolicyProperty.Initializer\\"></a>
 
 \`\`\`typescript
 import { LifecyclePolicyProperty } from '@aws-cdk/aws-ecr'
@@ -11785,7 +11785,7 @@ public readonly registryId: string;
 
 An ECR life cycle rule.
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.LifecycleRule.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"LifecycleRule.Initializer\\"></a>
 
 \`\`\`typescript
 import { LifecycleRule } from '@aws-cdk/aws-ecr'
@@ -11895,7 +11895,7 @@ Only one rule is allowed to select untagged images, and it must have the highest
 
 Options for the onCloudTrailImagePushed method.
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.OnCloudTrailImagePushedOptions.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"OnCloudTrailImagePushedOptions.Initializer\\"></a>
 
 \`\`\`typescript
 import { OnCloudTrailImagePushedOptions } from '@aws-cdk/aws-ecr'
@@ -11988,7 +11988,7 @@ Only watch changes to this image tag.
 
 Options for the OnImageScanCompleted method.
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.OnImageScanCompletedOptions.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"OnImageScanCompletedOptions.Initializer\\"></a>
 
 \`\`\`typescript
 import { OnImageScanCompletedOptions } from '@aws-cdk/aws-ecr'
@@ -12083,7 +12083,7 @@ Leave it undefined to watch the full repository.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationconfiguration.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationconfiguration.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnReplicationConfiguration.ReplicationConfigurationProperty.Initializer\\"></a>
 
 \`\`\`typescript
 import { ReplicationConfigurationProperty } from '@aws-cdk/aws-ecr'
@@ -12117,7 +12117,7 @@ public readonly rules: IResolvable | IResolvable | ReplicationRuleProperty[];
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnReplicationConfiguration.ReplicationDestinationProperty.Initializer\\"></a>
 
 \`\`\`typescript
 import { ReplicationDestinationProperty } from '@aws-cdk/aws-ecr'
@@ -12166,7 +12166,7 @@ public readonly registryId: string;
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html)
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"CfnReplicationConfiguration.ReplicationRuleProperty.Initializer\\"></a>
 
 \`\`\`typescript
 import { ReplicationRuleProperty } from '@aws-cdk/aws-ecr'
@@ -12198,7 +12198,7 @@ public readonly destinations: IResolvable | IResolvable | ReplicationDestination
 
 ### RepositoryAttributes <a name=\\"RepositoryAttributes\\" id=\\"RepositoryAttributes\\"></a>
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.RepositoryAttributes.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"RepositoryAttributes.Initializer\\"></a>
 
 \`\`\`typescript
 import { RepositoryAttributes } from '@aws-cdk/aws-ecr'
@@ -12237,7 +12237,7 @@ public readonly repositoryName: string;
 
 ### RepositoryProps <a name=\\"RepositoryProps\\" id=\\"RepositoryProps\\"></a>
 
-#### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-ecr.RepositoryProps.Initializer\\"></a>
+#### Initializer <a name=\\"Initializer\\" id=\\"RepositoryProps.Initializer\\"></a>
 
 \`\`\`typescript
 import { RepositoryProps } from '@aws-cdk/aws-ecr'
