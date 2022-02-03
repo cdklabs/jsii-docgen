@@ -229,7 +229,12 @@ export class MarkdownRenderer {
     }
 
     const initializer = new MarkdownDocument({
-      id: `${struct.id}.Initializer`,
+      id: this.anchorFormatter({
+        id: `${struct.id}.Initializer`,
+        displayName: 'Initializer',
+        fqn: `${struct.fqn}.Initializer`,
+        ...this.metadata,
+      }),
       header: { title: 'Initializer' },
     });
 
