@@ -52,7 +52,7 @@ new submod1.GoodbyeBucket(scope: Construct, id: string, props?: BucketProps)
 ##### \`goodbye\` <a name=\\"goodbye\\" id=\\"construct-library.submod1.GoodbyeBucket.goodbye\\"></a>
 
 \`\`\`typescript
-public goodbye()
+public goodbye(): void
 \`\`\`
 
 
@@ -105,7 +105,7 @@ new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 ##### \`greet\` <a name=\\"greet\\" id=\\"construct-library.GreeterBucket.greet\\"></a>
 
 \`\`\`typescript
-public greet()
+public greet(): void
 \`\`\`
 
 
@@ -435,7 +435,7 @@ Rules that define when a redirect is applied and the redirect behavior.
 ##### \`goodbye\` <a name=\\"goodbye\\" id=\\"construct-library.submod1.GoodbyeBucket.goodbye\\"></a>
 
 \`\`\`python
-def goodbye()
+def goodbye() -> None
 \`\`\`
 
 
@@ -754,7 +754,7 @@ Rules that define when a redirect is applied and the redirect behavior.
 ##### \`greet\` <a name=\\"greet\\" id=\\"construct-library.GreeterBucket.greet\\"></a>
 
 \`\`\`python
-def greet()
+def greet() -> None
 \`\`\`
 
 
@@ -818,7 +818,7 @@ new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 ##### \`greet\` <a name=\\"greet\\" id=\\"construct-library.GreeterBucket.greet\\"></a>
 
 \`\`\`typescript
-public greet()
+public greet(): void
 \`\`\`
 
 
@@ -882,7 +882,7 @@ new submod1.GoodbyeBucket(scope: Construct, id: string, props?: BucketProps)
 ##### \`goodbye\` <a name=\\"goodbye\\" id=\\"construct-library.submod1.GoodbyeBucket.goodbye\\"></a>
 
 \`\`\`typescript
-public goodbye()
+public goodbye(): void
 \`\`\`
 
 

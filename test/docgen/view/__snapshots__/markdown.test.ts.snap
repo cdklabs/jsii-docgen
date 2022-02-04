@@ -1620,7 +1620,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"CfnPublicRepository.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"CfnPublicRepository.inspect.parameter.inspector\\"></a>
@@ -1789,7 +1789,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"CfnRegistryPolicy.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
@@ -1913,7 +1913,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"CfnReplicationConfiguration.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
@@ -2037,7 +2037,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"CfnRepository.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"CfnRepository.inspect.parameter.inspector\\"></a>
@@ -2253,7 +2253,7 @@ new Repository(Construct Scope, string Id, RepositoryProps Props = null);
 ##### \`AddLifecycleRule\` <a name=\\"AddLifecycleRule\\" id=\\"Repository.addLifecycleRule\\"></a>
 
 \`\`\`csharp
-private AddLifecycleRule(LifecycleRule Rule)
+private void AddLifecycleRule(LifecycleRule Rule)
 \`\`\`
 
 ###### \`Rule\`<sup>Required</sup> <a name=\\"Rule\\" id=\\"Repository.addLifecycleRule.parameter.rule\\"></a>
@@ -2265,7 +2265,7 @@ private AddLifecycleRule(LifecycleRule Rule)
 ##### \`AddToResourcePolicy\` <a name=\\"AddToResourcePolicy\\" id=\\"Repository.addToResourcePolicy\\"></a>
 
 \`\`\`csharp
-private AddToResourcePolicy(PolicyStatement Statement)
+private AddToResourcePolicyResult AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"Repository.addToResourcePolicy.parameter.statement\\"></a>
@@ -2485,7 +2485,7 @@ new RepositoryBase(Construct Scope, string Id, ResourceProps Props = null);
 ##### \`AddToResourcePolicy\` <a name=\\"AddToResourcePolicy\\" id=\\"RepositoryBase.addToResourcePolicy\\"></a>
 
 \`\`\`csharp
-private AddToResourcePolicy(PolicyStatement Statement)
+private AddToResourcePolicyResult AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
@@ -2497,7 +2497,7 @@ private AddToResourcePolicy(PolicyStatement Statement)
 ##### \`Grant\` <a name=\\"Grant\\" id=\\"RepositoryBase.grant\\"></a>
 
 \`\`\`csharp
-private Grant(IGrantable Grantee, string Actions)
+private Grant Grant(IGrantable Grantee, string Actions)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"RepositoryBase.grant.parameter.grantee\\"></a>
@@ -2515,7 +2515,7 @@ private Grant(IGrantable Grantee, string Actions)
 ##### \`GrantPull\` <a name=\\"GrantPull\\" id=\\"RepositoryBase.grantPull\\"></a>
 
 \`\`\`csharp
-private GrantPull(IGrantable Grantee)
+private Grant GrantPull(IGrantable Grantee)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"RepositoryBase.grantPull.parameter.grantee\\"></a>
@@ -2527,7 +2527,7 @@ private GrantPull(IGrantable Grantee)
 ##### \`GrantPullPush\` <a name=\\"GrantPullPush\\" id=\\"RepositoryBase.grantPullPush\\"></a>
 
 \`\`\`csharp
-private GrantPullPush(IGrantable Grantee)
+private Grant GrantPullPush(IGrantable Grantee)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"RepositoryBase.grantPullPush.parameter.grantee\\"></a>
@@ -2539,7 +2539,7 @@ private GrantPullPush(IGrantable Grantee)
 ##### \`OnCloudTrailEvent\` <a name=\\"OnCloudTrailEvent\\" id=\\"RepositoryBase.onCloudTrailEvent\\"></a>
 
 \`\`\`csharp
-private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
+private Rule OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
@@ -2561,7 +2561,7 @@ Options for adding the rule.
 ##### \`OnCloudTrailImagePushed\` <a name=\\"OnCloudTrailImagePushed\\" id=\\"RepositoryBase.onCloudTrailImagePushed\\"></a>
 
 \`\`\`csharp
-private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
+private Rule OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -2583,7 +2583,7 @@ Options for adding the rule.
 ##### \`OnEvent\` <a name=\\"OnEvent\\" id=\\"RepositoryBase.onEvent\\"></a>
 
 \`\`\`csharp
-private OnEvent(string Id, OnEventOptions Options = null)
+private Rule OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"RepositoryBase.onEvent.parameter.id\\"></a>
@@ -2601,7 +2601,7 @@ private OnEvent(string Id, OnEventOptions Options = null)
 ##### \`OnImageScanCompleted\` <a name=\\"OnImageScanCompleted\\" id=\\"RepositoryBase.onImageScanCompleted\\"></a>
 
 \`\`\`csharp
-private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
+private Rule OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
@@ -2623,7 +2623,7 @@ Options for adding the rule.
 ##### \`RepositoryUriForDigest\` <a name=\\"RepositoryUriForDigest\\" id=\\"RepositoryBase.repositoryUriForDigest\\"></a>
 
 \`\`\`csharp
-private RepositoryUriForDigest(string Digest = null)
+private string RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
 ###### \`Digest\`<sup>Optional</sup> <a name=\\"Digest\\" id=\\"RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
@@ -2637,7 +2637,7 @@ Optional image digest.
 ##### \`RepositoryUriForTag\` <a name=\\"RepositoryUriForTag\\" id=\\"RepositoryBase.repositoryUriForTag\\"></a>
 
 \`\`\`csharp
-private RepositoryUriForTag(string Tag = null)
+private string RepositoryUriForTag(string Tag = null)
 \`\`\`
 
 ###### \`Tag\`<sup>Optional</sup> <a name=\\"Tag\\" id=\\"RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
@@ -3737,7 +3737,7 @@ Represents an ECR repository.
 ##### \`AddToResourcePolicy\` <a name=\\"AddToResourcePolicy\\" id=\\"IRepository.addToResourcePolicy\\"></a>
 
 \`\`\`csharp
-private AddToResourcePolicy(PolicyStatement Statement)
+private AddToResourcePolicyResult AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"IRepository.addToResourcePolicy.parameter.statement\\"></a>
@@ -3749,7 +3749,7 @@ private AddToResourcePolicy(PolicyStatement Statement)
 ##### \`Grant\` <a name=\\"Grant\\" id=\\"IRepository.grant\\"></a>
 
 \`\`\`csharp
-private Grant(IGrantable Grantee, string Actions)
+private Grant Grant(IGrantable Grantee, string Actions)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"IRepository.grant.parameter.grantee\\"></a>
@@ -3767,7 +3767,7 @@ private Grant(IGrantable Grantee, string Actions)
 ##### \`GrantPull\` <a name=\\"GrantPull\\" id=\\"IRepository.grantPull\\"></a>
 
 \`\`\`csharp
-private GrantPull(IGrantable Grantee)
+private Grant GrantPull(IGrantable Grantee)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"IRepository.grantPull.parameter.grantee\\"></a>
@@ -3779,7 +3779,7 @@ private GrantPull(IGrantable Grantee)
 ##### \`GrantPullPush\` <a name=\\"GrantPullPush\\" id=\\"IRepository.grantPullPush\\"></a>
 
 \`\`\`csharp
-private GrantPullPush(IGrantable Grantee)
+private Grant GrantPullPush(IGrantable Grantee)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"IRepository.grantPullPush.parameter.grantee\\"></a>
@@ -3791,7 +3791,7 @@ private GrantPullPush(IGrantable Grantee)
 ##### \`OnCloudTrailEvent\` <a name=\\"OnCloudTrailEvent\\" id=\\"IRepository.onCloudTrailEvent\\"></a>
 
 \`\`\`csharp
-private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
+private Rule OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"IRepository.onCloudTrailEvent.parameter.id\\"></a>
@@ -3813,7 +3813,7 @@ Options for adding the rule.
 ##### \`OnCloudTrailImagePushed\` <a name=\\"OnCloudTrailImagePushed\\" id=\\"IRepository.onCloudTrailImagePushed\\"></a>
 
 \`\`\`csharp
-private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
+private Rule OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -3835,7 +3835,7 @@ Options for adding the rule.
 ##### \`OnEvent\` <a name=\\"OnEvent\\" id=\\"IRepository.onEvent\\"></a>
 
 \`\`\`csharp
-private OnEvent(string Id, OnEventOptions Options = null)
+private Rule OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"IRepository.onEvent.parameter.id\\"></a>
@@ -3853,7 +3853,7 @@ private OnEvent(string Id, OnEventOptions Options = null)
 ##### \`OnImageScanCompleted\` <a name=\\"OnImageScanCompleted\\" id=\\"IRepository.onImageScanCompleted\\"></a>
 
 \`\`\`csharp
-private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
+private Rule OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"IRepository.onImageScanCompleted.parameter.id\\"></a>
@@ -3875,7 +3875,7 @@ Options for adding the rule.
 ##### \`RepositoryUriForDigest\` <a name=\\"RepositoryUriForDigest\\" id=\\"IRepository.repositoryUriForDigest\\"></a>
 
 \`\`\`csharp
-private RepositoryUriForDigest(string Digest = null)
+private string RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
 ###### \`Digest\`<sup>Optional</sup> <a name=\\"Digest\\" id=\\"IRepository.repositoryUriForDigest.parameter.digest\\"></a>
@@ -3889,7 +3889,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ##### \`RepositoryUriForTag\` <a name=\\"RepositoryUriForTag\\" id=\\"IRepository.repositoryUriForTag\\"></a>
 
 \`\`\`csharp
-private RepositoryUriForTag(string Tag = null)
+private string RepositoryUriForTag(string Tag = null)
 \`\`\`
 
 ###### \`Tag\`<sup>Optional</sup> <a name=\\"Tag\\" id=\\"IRepository.repositoryUriForTag.parameter.tag\\"></a>
@@ -4256,7 +4256,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"CfnPublicRepository.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnPublicRepository.inspect.parameter.inspector\\"></a>
@@ -4429,7 +4429,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"CfnRegistryPolicy.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
@@ -4558,7 +4558,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"CfnReplicationConfiguration.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
@@ -4759,7 +4759,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"CfnRepository.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnRepository.inspect.parameter.inspector\\"></a>
@@ -5039,7 +5039,7 @@ Name for this repository.
 ##### \`addLifecycleRule\` <a name=\\"addLifecycleRule\\" id=\\"Repository.addLifecycleRule\\"></a>
 
 \`\`\`java
-public addLifecycleRule(LifecycleRule rule)
+public void addLifecycleRule(LifecycleRule rule)
 \`\`\`
 
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"Repository.addLifecycleRule.parameter.rule\\"></a>
@@ -5051,7 +5051,7 @@ public addLifecycleRule(LifecycleRule rule)
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"Repository.addToResourcePolicy\\"></a>
 
 \`\`\`java
-public addToResourcePolicy(PolicyStatement statement)
+public AddToResourcePolicyResult addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"Repository.addToResourcePolicy.parameter.statement\\"></a>
@@ -5313,7 +5313,7 @@ The AWS region this resource belongs to.
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"RepositoryBase.addToResourcePolicy\\"></a>
 
 \`\`\`java
-public addToResourcePolicy(PolicyStatement statement)
+public AddToResourcePolicyResult addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
@@ -5325,7 +5325,7 @@ public addToResourcePolicy(PolicyStatement statement)
 ##### \`grant\` <a name=\\"grant\\" id=\\"RepositoryBase.grant\\"></a>
 
 \`\`\`java
-public grant(IGrantable grantee, java.lang.String actions)
+public Grant grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grant.parameter.grantee\\"></a>
@@ -5343,7 +5343,7 @@ public grant(IGrantable grantee, java.lang.String actions)
 ##### \`grantPull\` <a name=\\"grantPull\\" id=\\"RepositoryBase.grantPull\\"></a>
 
 \`\`\`java
-public grantPull(IGrantable grantee)
+public Grant grantPull(IGrantable grantee)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grantPull.parameter.grantee\\"></a>
@@ -5355,7 +5355,7 @@ public grantPull(IGrantable grantee)
 ##### \`grantPullPush\` <a name=\\"grantPullPush\\" id=\\"RepositoryBase.grantPullPush\\"></a>
 
 \`\`\`java
-public grantPullPush(IGrantable grantee)
+public Grant grantPullPush(IGrantable grantee)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grantPullPush.parameter.grantee\\"></a>
@@ -5367,8 +5367,8 @@ public grantPullPush(IGrantable grantee)
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"RepositoryBase.onCloudTrailEvent\\"></a>
 
 \`\`\`java
-public onCloudTrailEvent(java.lang.String id)
-public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
+public Rule onCloudTrailEvent(java.lang.String id)
+public Rule onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
@@ -5390,8 +5390,8 @@ Options for adding the rule.
 ##### \`onCloudTrailImagePushed\` <a name=\\"onCloudTrailImagePushed\\" id=\\"RepositoryBase.onCloudTrailImagePushed\\"></a>
 
 \`\`\`java
-public onCloudTrailImagePushed(java.lang.String id)
-public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
+public Rule onCloudTrailImagePushed(java.lang.String id)
+public Rule onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -5413,8 +5413,8 @@ Options for adding the rule.
 ##### \`onEvent\` <a name=\\"onEvent\\" id=\\"RepositoryBase.onEvent\\"></a>
 
 \`\`\`java
-public onEvent(java.lang.String id)
-public onEvent(java.lang.String id, OnEventOptions options)
+public Rule onEvent(java.lang.String id)
+public Rule onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onEvent.parameter.id\\"></a>
@@ -5432,8 +5432,8 @@ public onEvent(java.lang.String id, OnEventOptions options)
 ##### \`onImageScanCompleted\` <a name=\\"onImageScanCompleted\\" id=\\"RepositoryBase.onImageScanCompleted\\"></a>
 
 \`\`\`java
-public onImageScanCompleted(java.lang.String id)
-public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
+public Rule onImageScanCompleted(java.lang.String id)
+public Rule onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
@@ -5455,8 +5455,8 @@ Options for adding the rule.
 ##### \`repositoryUriForDigest\` <a name=\\"repositoryUriForDigest\\" id=\\"RepositoryBase.repositoryUriForDigest\\"></a>
 
 \`\`\`java
-public repositoryUriForDigest()
-public repositoryUriForDigest(java.lang.String digest)
+public java.lang.String repositoryUriForDigest()
+public java.lang.String repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
@@ -5470,8 +5470,8 @@ Optional image digest.
 ##### \`repositoryUriForTag\` <a name=\\"repositoryUriForTag\\" id=\\"RepositoryBase.repositoryUriForTag\\"></a>
 
 \`\`\`java
-public repositoryUriForTag()
-public repositoryUriForTag(java.lang.String tag)
+public java.lang.String repositoryUriForTag()
+public java.lang.String repositoryUriForTag(java.lang.String tag)
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
@@ -6577,7 +6577,7 @@ Represents an ECR repository.
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"IRepository.addToResourcePolicy\\"></a>
 
 \`\`\`java
-public addToResourcePolicy(PolicyStatement statement)
+public AddToResourcePolicyResult addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"IRepository.addToResourcePolicy.parameter.statement\\"></a>
@@ -6589,7 +6589,7 @@ public addToResourcePolicy(PolicyStatement statement)
 ##### \`grant\` <a name=\\"grant\\" id=\\"IRepository.grant\\"></a>
 
 \`\`\`java
-public grant(IGrantable grantee, java.lang.String actions)
+public Grant grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grant.parameter.grantee\\"></a>
@@ -6607,7 +6607,7 @@ public grant(IGrantable grantee, java.lang.String actions)
 ##### \`grantPull\` <a name=\\"grantPull\\" id=\\"IRepository.grantPull\\"></a>
 
 \`\`\`java
-public grantPull(IGrantable grantee)
+public Grant grantPull(IGrantable grantee)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grantPull.parameter.grantee\\"></a>
@@ -6619,7 +6619,7 @@ public grantPull(IGrantable grantee)
 ##### \`grantPullPush\` <a name=\\"grantPullPush\\" id=\\"IRepository.grantPullPush\\"></a>
 
 \`\`\`java
-public grantPullPush(IGrantable grantee)
+public Grant grantPullPush(IGrantable grantee)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grantPullPush.parameter.grantee\\"></a>
@@ -6631,8 +6631,8 @@ public grantPullPush(IGrantable grantee)
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"IRepository.onCloudTrailEvent\\"></a>
 
 \`\`\`java
-public onCloudTrailEvent(java.lang.String id)
-public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
+public Rule onCloudTrailEvent(java.lang.String id)
+public Rule onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onCloudTrailEvent.parameter.id\\"></a>
@@ -6654,8 +6654,8 @@ Options for adding the rule.
 ##### \`onCloudTrailImagePushed\` <a name=\\"onCloudTrailImagePushed\\" id=\\"IRepository.onCloudTrailImagePushed\\"></a>
 
 \`\`\`java
-public onCloudTrailImagePushed(java.lang.String id)
-public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
+public Rule onCloudTrailImagePushed(java.lang.String id)
+public Rule onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -6677,8 +6677,8 @@ Options for adding the rule.
 ##### \`onEvent\` <a name=\\"onEvent\\" id=\\"IRepository.onEvent\\"></a>
 
 \`\`\`java
-public onEvent(java.lang.String id)
-public onEvent(java.lang.String id, OnEventOptions options)
+public Rule onEvent(java.lang.String id)
+public Rule onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onEvent.parameter.id\\"></a>
@@ -6696,8 +6696,8 @@ public onEvent(java.lang.String id, OnEventOptions options)
 ##### \`onImageScanCompleted\` <a name=\\"onImageScanCompleted\\" id=\\"IRepository.onImageScanCompleted\\"></a>
 
 \`\`\`java
-public onImageScanCompleted(java.lang.String id)
-public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
+public Rule onImageScanCompleted(java.lang.String id)
+public Rule onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onImageScanCompleted.parameter.id\\"></a>
@@ -6719,8 +6719,8 @@ Options for adding the rule.
 ##### \`repositoryUriForDigest\` <a name=\\"repositoryUriForDigest\\" id=\\"IRepository.repositoryUriForDigest\\"></a>
 
 \`\`\`java
-public repositoryUriForDigest()
-public repositoryUriForDigest(java.lang.String digest)
+public java.lang.String repositoryUriForDigest()
+public java.lang.String repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"IRepository.repositoryUriForDigest.parameter.digest\\"></a>
@@ -6734,8 +6734,8 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ##### \`repositoryUriForTag\` <a name=\\"repositoryUriForTag\\" id=\\"IRepository.repositoryUriForTag\\"></a>
 
 \`\`\`java
-public repositoryUriForTag()
-public repositoryUriForTag(java.lang.String tag)
+public java.lang.String repositoryUriForTag()
+public java.lang.String repositoryUriForTag(java.lang.String tag)
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"IRepository.repositoryUriForTag.parameter.tag\\"></a>
@@ -7106,7 +7106,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnPublicRepository.inspect.parameter.inspector\\"></a>
@@ -7283,7 +7283,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
@@ -7415,7 +7415,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
@@ -7619,7 +7619,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnRepository.inspect.parameter.inspector\\"></a>
@@ -7908,7 +7908,7 @@ def add_lifecycle_rule(
   rule_priority: typing.Union[int, float] = None,
   tag_prefix_list: typing.List[str] = None,
   tag_status: TagStatus = None
-)
+) -> None
 \`\`\`
 
 ###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"Repository.addLifecycleRule.parameter.description\\"></a>
@@ -7977,7 +7977,7 @@ Only one rule is allowed to select untagged images, and it must have the highest
 \`\`\`python
 def add_to_resource_policy(
   statement: PolicyStatement
-)
+) -> AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"Repository.addToResourcePolicy.parameter.statement\\"></a>
@@ -8266,7 +8266,7 @@ The AWS region this resource belongs to.
 \`\`\`python
 def add_to_resource_policy(
   statement: PolicyStatement
-)
+) -> AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
@@ -8281,7 +8281,7 @@ def add_to_resource_policy(
 def grant(
   grantee: IGrantable,
   actions: str
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grant.parameter.grantee\\"></a>
@@ -8301,7 +8301,7 @@ def grant(
 \`\`\`python
 def grant_pull(
   grantee: IGrantable
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grantPull.parameter.grantee\\"></a>
@@ -8315,7 +8315,7 @@ def grant_pull(
 \`\`\`python
 def grant_pull_push(
   grantee: IGrantable
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grantPullPush.parameter.grantee\\"></a>
@@ -8333,7 +8333,7 @@ def on_cloud_trail_event(
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
@@ -8394,7 +8394,7 @@ def on_cloud_trail_image_pushed(
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tag: str = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -8463,7 +8463,7 @@ def on_event(
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onEvent.parameter.id\\"></a>
@@ -8522,7 +8522,7 @@ def on_image_scan_completed(
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tags: typing.List[str] = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
@@ -8589,7 +8589,7 @@ Leave it undefined to watch the full repository.
 \`\`\`python
 def repository_uri_for_digest(
   digest: str = None
-)
+) -> str
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
@@ -8605,7 +8605,7 @@ Optional image digest.
 \`\`\`python
 def repository_uri_for_tag(
   tag: str = None
-)
+) -> str
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
@@ -9711,7 +9711,7 @@ Represents an ECR repository.
 \`\`\`python
 def add_to_resource_policy(
   statement: PolicyStatement
-)
+) -> AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"IRepository.addToResourcePolicy.parameter.statement\\"></a>
@@ -9726,7 +9726,7 @@ def add_to_resource_policy(
 def grant(
   grantee: IGrantable,
   actions: str
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grant.parameter.grantee\\"></a>
@@ -9746,7 +9746,7 @@ def grant(
 \`\`\`python
 def grant_pull(
   grantee: IGrantable
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grantPull.parameter.grantee\\"></a>
@@ -9760,7 +9760,7 @@ def grant_pull(
 \`\`\`python
 def grant_pull_push(
   grantee: IGrantable
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grantPullPush.parameter.grantee\\"></a>
@@ -9778,7 +9778,7 @@ def on_cloud_trail_event(
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onCloudTrailEvent.parameter.id\\"></a>
@@ -9839,7 +9839,7 @@ def on_cloud_trail_image_pushed(
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tag: str = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -9908,7 +9908,7 @@ def on_event(
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onEvent.parameter.id\\"></a>
@@ -9967,7 +9967,7 @@ def on_image_scan_completed(
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tags: typing.List[str] = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onImageScanCompleted.parameter.id\\"></a>
@@ -10034,7 +10034,7 @@ Leave it undefined to watch the full repository.
 \`\`\`python
 def repository_uri_for_digest(
   digest: str = None
-)
+) -> str
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"IRepository.repositoryUriForDigest.parameter.digest\\"></a>
@@ -10050,7 +10050,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 \`\`\`python
 def repository_uri_for_tag(
   tag: str = None
-)
+) -> str
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"IRepository.repositoryUriForTag.parameter.tag\\"></a>
@@ -10373,7 +10373,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"CfnPublicRepository.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnPublicRepository.inspect.parameter.inspector\\"></a>
@@ -10542,7 +10542,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"CfnRegistryPolicy.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
@@ -10666,7 +10666,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"CfnReplicationConfiguration.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
@@ -10790,7 +10790,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"CfnRepository.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnRepository.inspect.parameter.inspector\\"></a>
@@ -11006,7 +11006,7 @@ new Repository(scope: Construct, id: string, props?: RepositoryProps)
 ##### \`addLifecycleRule\` <a name=\\"addLifecycleRule\\" id=\\"Repository.addLifecycleRule\\"></a>
 
 \`\`\`typescript
-public addLifecycleRule(rule: LifecycleRule)
+public addLifecycleRule(rule: LifecycleRule): void
 \`\`\`
 
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"Repository.addLifecycleRule.parameter.rule\\"></a>
@@ -11018,7 +11018,7 @@ public addLifecycleRule(rule: LifecycleRule)
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"Repository.addToResourcePolicy\\"></a>
 
 \`\`\`typescript
-public addToResourcePolicy(statement: PolicyStatement)
+public addToResourcePolicy(statement: PolicyStatement): AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"Repository.addToResourcePolicy.parameter.statement\\"></a>
@@ -11238,7 +11238,7 @@ new RepositoryBase(scope: Construct, id: string, props?: ResourceProps)
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"RepositoryBase.addToResourcePolicy\\"></a>
 
 \`\`\`typescript
-public addToResourcePolicy(statement: PolicyStatement)
+public addToResourcePolicy(statement: PolicyStatement): AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
@@ -11250,7 +11250,7 @@ public addToResourcePolicy(statement: PolicyStatement)
 ##### \`grant\` <a name=\\"grant\\" id=\\"RepositoryBase.grant\\"></a>
 
 \`\`\`typescript
-public grant(grantee: IGrantable, actions: string)
+public grant(grantee: IGrantable, actions: string): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grant.parameter.grantee\\"></a>
@@ -11268,7 +11268,7 @@ public grant(grantee: IGrantable, actions: string)
 ##### \`grantPull\` <a name=\\"grantPull\\" id=\\"RepositoryBase.grantPull\\"></a>
 
 \`\`\`typescript
-public grantPull(grantee: IGrantable)
+public grantPull(grantee: IGrantable): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grantPull.parameter.grantee\\"></a>
@@ -11280,7 +11280,7 @@ public grantPull(grantee: IGrantable)
 ##### \`grantPullPush\` <a name=\\"grantPullPush\\" id=\\"RepositoryBase.grantPullPush\\"></a>
 
 \`\`\`typescript
-public grantPullPush(grantee: IGrantable)
+public grantPullPush(grantee: IGrantable): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grantPullPush.parameter.grantee\\"></a>
@@ -11292,7 +11292,7 @@ public grantPullPush(grantee: IGrantable)
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"RepositoryBase.onCloudTrailEvent\\"></a>
 
 \`\`\`typescript
-public onCloudTrailEvent(id: string, options?: OnEventOptions)
+public onCloudTrailEvent(id: string, options?: OnEventOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
@@ -11314,7 +11314,7 @@ Options for adding the rule.
 ##### \`onCloudTrailImagePushed\` <a name=\\"onCloudTrailImagePushed\\" id=\\"RepositoryBase.onCloudTrailImagePushed\\"></a>
 
 \`\`\`typescript
-public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
+public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -11336,7 +11336,7 @@ Options for adding the rule.
 ##### \`onEvent\` <a name=\\"onEvent\\" id=\\"RepositoryBase.onEvent\\"></a>
 
 \`\`\`typescript
-public onEvent(id: string, options?: OnEventOptions)
+public onEvent(id: string, options?: OnEventOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onEvent.parameter.id\\"></a>
@@ -11354,7 +11354,7 @@ public onEvent(id: string, options?: OnEventOptions)
 ##### \`onImageScanCompleted\` <a name=\\"onImageScanCompleted\\" id=\\"RepositoryBase.onImageScanCompleted\\"></a>
 
 \`\`\`typescript
-public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
+public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
@@ -11376,7 +11376,7 @@ Options for adding the rule.
 ##### \`repositoryUriForDigest\` <a name=\\"repositoryUriForDigest\\" id=\\"RepositoryBase.repositoryUriForDigest\\"></a>
 
 \`\`\`typescript
-public repositoryUriForDigest(digest?: string)
+public repositoryUriForDigest(digest?: string): string
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
@@ -11390,7 +11390,7 @@ Optional image digest.
 ##### \`repositoryUriForTag\` <a name=\\"repositoryUriForTag\\" id=\\"RepositoryBase.repositoryUriForTag\\"></a>
 
 \`\`\`typescript
-public repositoryUriForTag(tag?: string)
+public repositoryUriForTag(tag?: string): string
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
@@ -12434,7 +12434,7 @@ Represents an ECR repository.
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"IRepository.addToResourcePolicy\\"></a>
 
 \`\`\`typescript
-public addToResourcePolicy(statement: PolicyStatement)
+public addToResourcePolicy(statement: PolicyStatement): AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"IRepository.addToResourcePolicy.parameter.statement\\"></a>
@@ -12446,7 +12446,7 @@ public addToResourcePolicy(statement: PolicyStatement)
 ##### \`grant\` <a name=\\"grant\\" id=\\"IRepository.grant\\"></a>
 
 \`\`\`typescript
-public grant(grantee: IGrantable, actions: string)
+public grant(grantee: IGrantable, actions: string): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grant.parameter.grantee\\"></a>
@@ -12464,7 +12464,7 @@ public grant(grantee: IGrantable, actions: string)
 ##### \`grantPull\` <a name=\\"grantPull\\" id=\\"IRepository.grantPull\\"></a>
 
 \`\`\`typescript
-public grantPull(grantee: IGrantable)
+public grantPull(grantee: IGrantable): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grantPull.parameter.grantee\\"></a>
@@ -12476,7 +12476,7 @@ public grantPull(grantee: IGrantable)
 ##### \`grantPullPush\` <a name=\\"grantPullPush\\" id=\\"IRepository.grantPullPush\\"></a>
 
 \`\`\`typescript
-public grantPullPush(grantee: IGrantable)
+public grantPullPush(grantee: IGrantable): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grantPullPush.parameter.grantee\\"></a>
@@ -12488,7 +12488,7 @@ public grantPullPush(grantee: IGrantable)
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"IRepository.onCloudTrailEvent\\"></a>
 
 \`\`\`typescript
-public onCloudTrailEvent(id: string, options?: OnEventOptions)
+public onCloudTrailEvent(id: string, options?: OnEventOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onCloudTrailEvent.parameter.id\\"></a>
@@ -12510,7 +12510,7 @@ Options for adding the rule.
 ##### \`onCloudTrailImagePushed\` <a name=\\"onCloudTrailImagePushed\\" id=\\"IRepository.onCloudTrailImagePushed\\"></a>
 
 \`\`\`typescript
-public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
+public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -12532,7 +12532,7 @@ Options for adding the rule.
 ##### \`onEvent\` <a name=\\"onEvent\\" id=\\"IRepository.onEvent\\"></a>
 
 \`\`\`typescript
-public onEvent(id: string, options?: OnEventOptions)
+public onEvent(id: string, options?: OnEventOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onEvent.parameter.id\\"></a>
@@ -12550,7 +12550,7 @@ public onEvent(id: string, options?: OnEventOptions)
 ##### \`onImageScanCompleted\` <a name=\\"onImageScanCompleted\\" id=\\"IRepository.onImageScanCompleted\\"></a>
 
 \`\`\`typescript
-public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
+public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onImageScanCompleted.parameter.id\\"></a>
@@ -12572,7 +12572,7 @@ Options for adding the rule.
 ##### \`repositoryUriForDigest\` <a name=\\"repositoryUriForDigest\\" id=\\"IRepository.repositoryUriForDigest\\"></a>
 
 \`\`\`typescript
-public repositoryUriForDigest(digest?: string)
+public repositoryUriForDigest(digest?: string): string
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"IRepository.repositoryUriForDigest.parameter.digest\\"></a>
@@ -12586,7 +12586,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ##### \`repositoryUriForTag\` <a name=\\"repositoryUriForTag\\" id=\\"IRepository.repositoryUriForTag\\"></a>
 
 \`\`\`typescript
-public repositoryUriForTag(tag?: string)
+public repositoryUriForTag(tag?: string): string
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"IRepository.repositoryUriForTag.parameter.tag\\"></a>
@@ -12913,7 +12913,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
@@ -13082,7 +13082,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
@@ -13206,7 +13206,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
@@ -13330,7 +13330,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
@@ -13546,7 +13546,7 @@ new Repository(Construct Scope, string Id, RepositoryProps Props = null);
 ##### \`AddLifecycleRule\` <a name=\\"AddLifecycleRule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule\\"></a>
 
 \`\`\`csharp
-private AddLifecycleRule(LifecycleRule Rule)
+private void AddLifecycleRule(LifecycleRule Rule)
 \`\`\`
 
 ###### \`Rule\`<sup>Required</sup> <a name=\\"Rule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.rule\\"></a>
@@ -13558,7 +13558,7 @@ private AddLifecycleRule(LifecycleRule Rule)
 ##### \`AddToResourcePolicy\` <a name=\\"AddToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy\\"></a>
 
 \`\`\`csharp
-private AddToResourcePolicy(PolicyStatement Statement)
+private AddToResourcePolicyResult AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
@@ -13778,7 +13778,7 @@ new RepositoryBase(Construct Scope, string Id, ResourceProps Props = null);
 ##### \`AddToResourcePolicy\` <a name=\\"AddToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy\\"></a>
 
 \`\`\`csharp
-private AddToResourcePolicy(PolicyStatement Statement)
+private AddToResourcePolicyResult AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
@@ -13790,7 +13790,7 @@ private AddToResourcePolicy(PolicyStatement Statement)
 ##### \`Grant\` <a name=\\"Grant\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant\\"></a>
 
 \`\`\`csharp
-private Grant(IGrantable Grantee, string Actions)
+private Grant Grant(IGrantable Grantee, string Actions)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
@@ -13808,7 +13808,7 @@ private Grant(IGrantable Grantee, string Actions)
 ##### \`GrantPull\` <a name=\\"GrantPull\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull\\"></a>
 
 \`\`\`csharp
-private GrantPull(IGrantable Grantee)
+private Grant GrantPull(IGrantable Grantee)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
@@ -13820,7 +13820,7 @@ private GrantPull(IGrantable Grantee)
 ##### \`GrantPullPush\` <a name=\\"GrantPullPush\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush\\"></a>
 
 \`\`\`csharp
-private GrantPullPush(IGrantable Grantee)
+private Grant GrantPullPush(IGrantable Grantee)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
@@ -13832,7 +13832,7 @@ private GrantPullPush(IGrantable Grantee)
 ##### \`OnCloudTrailEvent\` <a name=\\"OnCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent\\"></a>
 
 \`\`\`csharp
-private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
+private Rule OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
@@ -13854,7 +13854,7 @@ Options for adding the rule.
 ##### \`OnCloudTrailImagePushed\` <a name=\\"OnCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed\\"></a>
 
 \`\`\`csharp
-private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
+private Rule OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -13876,7 +13876,7 @@ Options for adding the rule.
 ##### \`OnEvent\` <a name=\\"OnEvent\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent\\"></a>
 
 \`\`\`csharp
-private OnEvent(string Id, OnEventOptions Options = null)
+private Rule OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
@@ -13894,7 +13894,7 @@ private OnEvent(string Id, OnEventOptions Options = null)
 ##### \`OnImageScanCompleted\` <a name=\\"OnImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted\\"></a>
 
 \`\`\`csharp
-private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
+private Rule OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
@@ -13916,7 +13916,7 @@ Options for adding the rule.
 ##### \`RepositoryUriForDigest\` <a name=\\"RepositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest\\"></a>
 
 \`\`\`csharp
-private RepositoryUriForDigest(string Digest = null)
+private string RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
 ###### \`Digest\`<sup>Optional</sup> <a name=\\"Digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
@@ -13930,7 +13930,7 @@ Optional image digest.
 ##### \`RepositoryUriForTag\` <a name=\\"RepositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag\\"></a>
 
 \`\`\`csharp
-private RepositoryUriForTag(string Tag = null)
+private string RepositoryUriForTag(string Tag = null)
 \`\`\`
 
 ###### \`Tag\`<sup>Optional</sup> <a name=\\"Tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
@@ -15030,7 +15030,7 @@ Represents an ECR repository.
 ##### \`AddToResourcePolicy\` <a name=\\"AddToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy\\"></a>
 
 \`\`\`csharp
-private AddToResourcePolicy(PolicyStatement Statement)
+private AddToResourcePolicyResult AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
@@ -15042,7 +15042,7 @@ private AddToResourcePolicy(PolicyStatement Statement)
 ##### \`Grant\` <a name=\\"Grant\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant\\"></a>
 
 \`\`\`csharp
-private Grant(IGrantable Grantee, string Actions)
+private Grant Grant(IGrantable Grantee, string Actions)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
@@ -15060,7 +15060,7 @@ private Grant(IGrantable Grantee, string Actions)
 ##### \`GrantPull\` <a name=\\"GrantPull\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull\\"></a>
 
 \`\`\`csharp
-private GrantPull(IGrantable Grantee)
+private Grant GrantPull(IGrantable Grantee)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
@@ -15072,7 +15072,7 @@ private GrantPull(IGrantable Grantee)
 ##### \`GrantPullPush\` <a name=\\"GrantPullPush\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush\\"></a>
 
 \`\`\`csharp
-private GrantPullPush(IGrantable Grantee)
+private Grant GrantPullPush(IGrantable Grantee)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
@@ -15084,7 +15084,7 @@ private GrantPullPush(IGrantable Grantee)
 ##### \`OnCloudTrailEvent\` <a name=\\"OnCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent\\"></a>
 
 \`\`\`csharp
-private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
+private Rule OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
@@ -15106,7 +15106,7 @@ Options for adding the rule.
 ##### \`OnCloudTrailImagePushed\` <a name=\\"OnCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed\\"></a>
 
 \`\`\`csharp
-private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
+private Rule OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -15128,7 +15128,7 @@ Options for adding the rule.
 ##### \`OnEvent\` <a name=\\"OnEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent\\"></a>
 
 \`\`\`csharp
-private OnEvent(string Id, OnEventOptions Options = null)
+private Rule OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
@@ -15146,7 +15146,7 @@ private OnEvent(string Id, OnEventOptions Options = null)
 ##### \`OnImageScanCompleted\` <a name=\\"OnImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted\\"></a>
 
 \`\`\`csharp
-private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
+private Rule OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
@@ -15168,7 +15168,7 @@ Options for adding the rule.
 ##### \`RepositoryUriForDigest\` <a name=\\"RepositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest\\"></a>
 
 \`\`\`csharp
-private RepositoryUriForDigest(string Digest = null)
+private string RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
 ###### \`Digest\`<sup>Optional</sup> <a name=\\"Digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
@@ -15182,7 +15182,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ##### \`RepositoryUriForTag\` <a name=\\"RepositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag\\"></a>
 
 \`\`\`csharp
-private RepositoryUriForTag(string Tag = null)
+private string RepositoryUriForTag(string Tag = null)
 \`\`\`
 
 ###### \`Tag\`<sup>Optional</sup> <a name=\\"Tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
@@ -15549,7 +15549,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
@@ -15722,7 +15722,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
@@ -15851,7 +15851,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
@@ -16052,7 +16052,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
@@ -16332,7 +16332,7 @@ Name for this repository.
 ##### \`addLifecycleRule\` <a name=\\"addLifecycleRule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule\\"></a>
 
 \`\`\`java
-public addLifecycleRule(LifecycleRule rule)
+public void addLifecycleRule(LifecycleRule rule)
 \`\`\`
 
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.rule\\"></a>
@@ -16344,7 +16344,7 @@ public addLifecycleRule(LifecycleRule rule)
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy\\"></a>
 
 \`\`\`java
-public addToResourcePolicy(PolicyStatement statement)
+public AddToResourcePolicyResult addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
@@ -16606,7 +16606,7 @@ The AWS region this resource belongs to.
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy\\"></a>
 
 \`\`\`java
-public addToResourcePolicy(PolicyStatement statement)
+public AddToResourcePolicyResult addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
@@ -16618,7 +16618,7 @@ public addToResourcePolicy(PolicyStatement statement)
 ##### \`grant\` <a name=\\"grant\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant\\"></a>
 
 \`\`\`java
-public grant(IGrantable grantee, java.lang.String actions)
+public Grant grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
@@ -16636,7 +16636,7 @@ public grant(IGrantable grantee, java.lang.String actions)
 ##### \`grantPull\` <a name=\\"grantPull\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull\\"></a>
 
 \`\`\`java
-public grantPull(IGrantable grantee)
+public Grant grantPull(IGrantable grantee)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
@@ -16648,7 +16648,7 @@ public grantPull(IGrantable grantee)
 ##### \`grantPullPush\` <a name=\\"grantPullPush\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush\\"></a>
 
 \`\`\`java
-public grantPullPush(IGrantable grantee)
+public Grant grantPullPush(IGrantable grantee)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
@@ -16660,8 +16660,8 @@ public grantPullPush(IGrantable grantee)
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent\\"></a>
 
 \`\`\`java
-public onCloudTrailEvent(java.lang.String id)
-public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
+public Rule onCloudTrailEvent(java.lang.String id)
+public Rule onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
@@ -16683,8 +16683,8 @@ Options for adding the rule.
 ##### \`onCloudTrailImagePushed\` <a name=\\"onCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed\\"></a>
 
 \`\`\`java
-public onCloudTrailImagePushed(java.lang.String id)
-public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
+public Rule onCloudTrailImagePushed(java.lang.String id)
+public Rule onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -16706,8 +16706,8 @@ Options for adding the rule.
 ##### \`onEvent\` <a name=\\"onEvent\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent\\"></a>
 
 \`\`\`java
-public onEvent(java.lang.String id)
-public onEvent(java.lang.String id, OnEventOptions options)
+public Rule onEvent(java.lang.String id)
+public Rule onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
@@ -16725,8 +16725,8 @@ public onEvent(java.lang.String id, OnEventOptions options)
 ##### \`onImageScanCompleted\` <a name=\\"onImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted\\"></a>
 
 \`\`\`java
-public onImageScanCompleted(java.lang.String id)
-public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
+public Rule onImageScanCompleted(java.lang.String id)
+public Rule onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
@@ -16748,8 +16748,8 @@ Options for adding the rule.
 ##### \`repositoryUriForDigest\` <a name=\\"repositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest\\"></a>
 
 \`\`\`java
-public repositoryUriForDigest()
-public repositoryUriForDigest(java.lang.String digest)
+public java.lang.String repositoryUriForDigest()
+public java.lang.String repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
@@ -16763,8 +16763,8 @@ Optional image digest.
 ##### \`repositoryUriForTag\` <a name=\\"repositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag\\"></a>
 
 \`\`\`java
-public repositoryUriForTag()
-public repositoryUriForTag(java.lang.String tag)
+public java.lang.String repositoryUriForTag()
+public java.lang.String repositoryUriForTag(java.lang.String tag)
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
@@ -17870,7 +17870,7 @@ Represents an ECR repository.
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy\\"></a>
 
 \`\`\`java
-public addToResourcePolicy(PolicyStatement statement)
+public AddToResourcePolicyResult addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
@@ -17882,7 +17882,7 @@ public addToResourcePolicy(PolicyStatement statement)
 ##### \`grant\` <a name=\\"grant\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant\\"></a>
 
 \`\`\`java
-public grant(IGrantable grantee, java.lang.String actions)
+public Grant grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
@@ -17900,7 +17900,7 @@ public grant(IGrantable grantee, java.lang.String actions)
 ##### \`grantPull\` <a name=\\"grantPull\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull\\"></a>
 
 \`\`\`java
-public grantPull(IGrantable grantee)
+public Grant grantPull(IGrantable grantee)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
@@ -17912,7 +17912,7 @@ public grantPull(IGrantable grantee)
 ##### \`grantPullPush\` <a name=\\"grantPullPush\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush\\"></a>
 
 \`\`\`java
-public grantPullPush(IGrantable grantee)
+public Grant grantPullPush(IGrantable grantee)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
@@ -17924,8 +17924,8 @@ public grantPullPush(IGrantable grantee)
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent\\"></a>
 
 \`\`\`java
-public onCloudTrailEvent(java.lang.String id)
-public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
+public Rule onCloudTrailEvent(java.lang.String id)
+public Rule onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
@@ -17947,8 +17947,8 @@ Options for adding the rule.
 ##### \`onCloudTrailImagePushed\` <a name=\\"onCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed\\"></a>
 
 \`\`\`java
-public onCloudTrailImagePushed(java.lang.String id)
-public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
+public Rule onCloudTrailImagePushed(java.lang.String id)
+public Rule onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -17970,8 +17970,8 @@ Options for adding the rule.
 ##### \`onEvent\` <a name=\\"onEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent\\"></a>
 
 \`\`\`java
-public onEvent(java.lang.String id)
-public onEvent(java.lang.String id, OnEventOptions options)
+public Rule onEvent(java.lang.String id)
+public Rule onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
@@ -17989,8 +17989,8 @@ public onEvent(java.lang.String id, OnEventOptions options)
 ##### \`onImageScanCompleted\` <a name=\\"onImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted\\"></a>
 
 \`\`\`java
-public onImageScanCompleted(java.lang.String id)
-public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
+public Rule onImageScanCompleted(java.lang.String id)
+public Rule onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
@@ -18012,8 +18012,8 @@ Options for adding the rule.
 ##### \`repositoryUriForDigest\` <a name=\\"repositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest\\"></a>
 
 \`\`\`java
-public repositoryUriForDigest()
-public repositoryUriForDigest(java.lang.String digest)
+public java.lang.String repositoryUriForDigest()
+public java.lang.String repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
@@ -18027,8 +18027,8 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ##### \`repositoryUriForTag\` <a name=\\"repositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag\\"></a>
 
 \`\`\`java
-public repositoryUriForTag()
-public repositoryUriForTag(java.lang.String tag)
+public java.lang.String repositoryUriForTag()
+public java.lang.String repositoryUriForTag(java.lang.String tag)
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
@@ -18399,7 +18399,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
@@ -18576,7 +18576,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
@@ -18708,7 +18708,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
@@ -18912,7 +18912,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
@@ -19201,7 +19201,7 @@ def add_lifecycle_rule(
   rule_priority: typing.Union[int, float] = None,
   tag_prefix_list: typing.List[str] = None,
   tag_status: TagStatus = None
-)
+) -> None
 \`\`\`
 
 ###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.description\\"></a>
@@ -19270,7 +19270,7 @@ Only one rule is allowed to select untagged images, and it must have the highest
 \`\`\`python
 def add_to_resource_policy(
   statement: PolicyStatement
-)
+) -> AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
@@ -19559,7 +19559,7 @@ The AWS region this resource belongs to.
 \`\`\`python
 def add_to_resource_policy(
   statement: PolicyStatement
-)
+) -> AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
@@ -19574,7 +19574,7 @@ def add_to_resource_policy(
 def grant(
   grantee: IGrantable,
   actions: str
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
@@ -19594,7 +19594,7 @@ def grant(
 \`\`\`python
 def grant_pull(
   grantee: IGrantable
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
@@ -19608,7 +19608,7 @@ def grant_pull(
 \`\`\`python
 def grant_pull_push(
   grantee: IGrantable
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
@@ -19626,7 +19626,7 @@ def on_cloud_trail_event(
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
@@ -19687,7 +19687,7 @@ def on_cloud_trail_image_pushed(
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tag: str = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -19756,7 +19756,7 @@ def on_event(
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
@@ -19815,7 +19815,7 @@ def on_image_scan_completed(
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tags: typing.List[str] = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
@@ -19882,7 +19882,7 @@ Leave it undefined to watch the full repository.
 \`\`\`python
 def repository_uri_for_digest(
   digest: str = None
-)
+) -> str
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
@@ -19898,7 +19898,7 @@ Optional image digest.
 \`\`\`python
 def repository_uri_for_tag(
   tag: str = None
-)
+) -> str
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
@@ -21004,7 +21004,7 @@ Represents an ECR repository.
 \`\`\`python
 def add_to_resource_policy(
   statement: PolicyStatement
-)
+) -> AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
@@ -21019,7 +21019,7 @@ def add_to_resource_policy(
 def grant(
   grantee: IGrantable,
   actions: str
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
@@ -21039,7 +21039,7 @@ def grant(
 \`\`\`python
 def grant_pull(
   grantee: IGrantable
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
@@ -21053,7 +21053,7 @@ def grant_pull(
 \`\`\`python
 def grant_pull_push(
   grantee: IGrantable
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
@@ -21071,7 +21071,7 @@ def on_cloud_trail_event(
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
@@ -21132,7 +21132,7 @@ def on_cloud_trail_image_pushed(
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tag: str = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -21201,7 +21201,7 @@ def on_event(
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
@@ -21260,7 +21260,7 @@ def on_image_scan_completed(
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tags: typing.List[str] = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
@@ -21327,7 +21327,7 @@ Leave it undefined to watch the full repository.
 \`\`\`python
 def repository_uri_for_digest(
   digest: str = None
-)
+) -> str
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
@@ -21343,7 +21343,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 \`\`\`python
 def repository_uri_for_tag(
   tag: str = None
-)
+) -> str
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
@@ -21666,7 +21666,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
@@ -21835,7 +21835,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
@@ -21959,7 +21959,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
@@ -22083,7 +22083,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
@@ -22299,7 +22299,7 @@ new Repository(scope: Construct, id: string, props?: RepositoryProps)
 ##### \`addLifecycleRule\` <a name=\\"addLifecycleRule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule\\"></a>
 
 \`\`\`typescript
-public addLifecycleRule(rule: LifecycleRule)
+public addLifecycleRule(rule: LifecycleRule): void
 \`\`\`
 
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.rule\\"></a>
@@ -22311,7 +22311,7 @@ public addLifecycleRule(rule: LifecycleRule)
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy\\"></a>
 
 \`\`\`typescript
-public addToResourcePolicy(statement: PolicyStatement)
+public addToResourcePolicy(statement: PolicyStatement): AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
@@ -22531,7 +22531,7 @@ new RepositoryBase(scope: Construct, id: string, props?: ResourceProps)
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy\\"></a>
 
 \`\`\`typescript
-public addToResourcePolicy(statement: PolicyStatement)
+public addToResourcePolicy(statement: PolicyStatement): AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
@@ -22543,7 +22543,7 @@ public addToResourcePolicy(statement: PolicyStatement)
 ##### \`grant\` <a name=\\"grant\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant\\"></a>
 
 \`\`\`typescript
-public grant(grantee: IGrantable, actions: string)
+public grant(grantee: IGrantable, actions: string): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
@@ -22561,7 +22561,7 @@ public grant(grantee: IGrantable, actions: string)
 ##### \`grantPull\` <a name=\\"grantPull\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull\\"></a>
 
 \`\`\`typescript
-public grantPull(grantee: IGrantable)
+public grantPull(grantee: IGrantable): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
@@ -22573,7 +22573,7 @@ public grantPull(grantee: IGrantable)
 ##### \`grantPullPush\` <a name=\\"grantPullPush\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush\\"></a>
 
 \`\`\`typescript
-public grantPullPush(grantee: IGrantable)
+public grantPullPush(grantee: IGrantable): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
@@ -22585,7 +22585,7 @@ public grantPullPush(grantee: IGrantable)
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent\\"></a>
 
 \`\`\`typescript
-public onCloudTrailEvent(id: string, options?: OnEventOptions)
+public onCloudTrailEvent(id: string, options?: OnEventOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
@@ -22607,7 +22607,7 @@ Options for adding the rule.
 ##### \`onCloudTrailImagePushed\` <a name=\\"onCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed\\"></a>
 
 \`\`\`typescript
-public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
+public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -22629,7 +22629,7 @@ Options for adding the rule.
 ##### \`onEvent\` <a name=\\"onEvent\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent\\"></a>
 
 \`\`\`typescript
-public onEvent(id: string, options?: OnEventOptions)
+public onEvent(id: string, options?: OnEventOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
@@ -22647,7 +22647,7 @@ public onEvent(id: string, options?: OnEventOptions)
 ##### \`onImageScanCompleted\` <a name=\\"onImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted\\"></a>
 
 \`\`\`typescript
-public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
+public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
@@ -22669,7 +22669,7 @@ Options for adding the rule.
 ##### \`repositoryUriForDigest\` <a name=\\"repositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest\\"></a>
 
 \`\`\`typescript
-public repositoryUriForDigest(digest?: string)
+public repositoryUriForDigest(digest?: string): string
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
@@ -22683,7 +22683,7 @@ Optional image digest.
 ##### \`repositoryUriForTag\` <a name=\\"repositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag\\"></a>
 
 \`\`\`typescript
-public repositoryUriForTag(tag?: string)
+public repositoryUriForTag(tag?: string): string
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
@@ -23727,7 +23727,7 @@ Represents an ECR repository.
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy\\"></a>
 
 \`\`\`typescript
-public addToResourcePolicy(statement: PolicyStatement)
+public addToResourcePolicy(statement: PolicyStatement): AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
@@ -23739,7 +23739,7 @@ public addToResourcePolicy(statement: PolicyStatement)
 ##### \`grant\` <a name=\\"grant\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant\\"></a>
 
 \`\`\`typescript
-public grant(grantee: IGrantable, actions: string)
+public grant(grantee: IGrantable, actions: string): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
@@ -23757,7 +23757,7 @@ public grant(grantee: IGrantable, actions: string)
 ##### \`grantPull\` <a name=\\"grantPull\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull\\"></a>
 
 \`\`\`typescript
-public grantPull(grantee: IGrantable)
+public grantPull(grantee: IGrantable): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
@@ -23769,7 +23769,7 @@ public grantPull(grantee: IGrantable)
 ##### \`grantPullPush\` <a name=\\"grantPullPush\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush\\"></a>
 
 \`\`\`typescript
-public grantPullPush(grantee: IGrantable)
+public grantPullPush(grantee: IGrantable): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
@@ -23781,7 +23781,7 @@ public grantPullPush(grantee: IGrantable)
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent\\"></a>
 
 \`\`\`typescript
-public onCloudTrailEvent(id: string, options?: OnEventOptions)
+public onCloudTrailEvent(id: string, options?: OnEventOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
@@ -23803,7 +23803,7 @@ Options for adding the rule.
 ##### \`onCloudTrailImagePushed\` <a name=\\"onCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed\\"></a>
 
 \`\`\`typescript
-public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
+public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -23825,7 +23825,7 @@ Options for adding the rule.
 ##### \`onEvent\` <a name=\\"onEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent\\"></a>
 
 \`\`\`typescript
-public onEvent(id: string, options?: OnEventOptions)
+public onEvent(id: string, options?: OnEventOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
@@ -23843,7 +23843,7 @@ public onEvent(id: string, options?: OnEventOptions)
 ##### \`onImageScanCompleted\` <a name=\\"onImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted\\"></a>
 
 \`\`\`typescript
-public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
+public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
@@ -23865,7 +23865,7 @@ Options for adding the rule.
 ##### \`repositoryUriForDigest\` <a name=\\"repositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest\\"></a>
 
 \`\`\`typescript
-public repositoryUriForDigest(digest?: string)
+public repositoryUriForDigest(digest?: string): string
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
@@ -23879,7 +23879,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ##### \`repositoryUriForTag\` <a name=\\"repositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag\\"></a>
 
 \`\`\`typescript
-public repositoryUriForTag(tag?: string)
+public repositoryUriForTag(tag?: string): string
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>

@@ -50,9 +50,9 @@ const formatInvocation = (
   return `${target}${formatArguments(inputs)}`;
 };
 
-const formatSignature = (name: string, inputs: string[]) => {
+const formatSignature = (name: string, inputs: string[], returns?: string) => {
   const def = 'def ';
-  return `${def}${name}${formatArguments(inputs)}`;
+  return `${def}${name}${formatArguments(inputs)}${returns ? ' -> ' + returns : ''}`;
 };
 
 /**
@@ -102,6 +102,10 @@ export class PythonTranspile extends transpile.TranspileBase {
 
   public any(): string {
     return this.typing('Any');
+  }
+
+  public void(): string {
+    return 'None';
   }
 
   public boolean(): string {
@@ -204,12 +208,22 @@ export class PythonTranspile extends transpile.TranspileBase {
     const name = toSnakeCase(callable.name);
     const inputs = parameters.map((p) => this.formatParameters(this.parameter(p)));
 
+    let returnType: transpile.TranspiledTypeReference | undefined;
+    if (reflect.Initializer.isInitializer(callable)) {
+      returnType = this.typeReference(callable.parentType.reference);
+    } else if (reflect.Method.isMethod(callable)) {
+      returnType = this.typeReference(callable.returns.type);
+    }
+    const returns = returnType?.toString({
+      typeFormatter: (t) => t.name,
+    });
+
     return {
       name,
       parentType: type,
       import: formatImport(type),
       parameters,
-      signatures: [formatSignature(name, inputs)],
+      signatures: [formatSignature(name, inputs, returns)],
       invocations: [formatInvocation(
         type,
         inputs,

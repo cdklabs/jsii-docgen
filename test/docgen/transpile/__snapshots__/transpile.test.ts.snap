@@ -69,7 +69,7 @@ new EdgeFunction(Construct Scope, string Id, EdgeFunctionProps Props);
 ##### \`AddAlias\` <a name=\\"AddAlias\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addAlias\\"></a>
 
 \`\`\`csharp
-private AddAlias(string AliasName, AliasOptions Options = null)
+private Alias AddAlias(string AliasName, AliasOptions Options = null)
 \`\`\`
 
 ###### \`AliasName\`<sup>Required</sup> <a name=\\"AliasName\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addAlias.parameter.aliasName\\"></a>
@@ -87,7 +87,7 @@ private AddAlias(string AliasName, AliasOptions Options = null)
 ##### \`AddEventSource\` <a name=\\"AddEventSource\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSource\\"></a>
 
 \`\`\`csharp
-private AddEventSource(IEventSource Source)
+private void AddEventSource(IEventSource Source)
 \`\`\`
 
 ###### \`Source\`<sup>Required</sup> <a name=\\"Source\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSource.parameter.source\\"></a>
@@ -99,7 +99,7 @@ private AddEventSource(IEventSource Source)
 ##### \`AddEventSourceMapping\` <a name=\\"AddEventSourceMapping\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSourceMapping\\"></a>
 
 \`\`\`csharp
-private AddEventSourceMapping(string Id, EventSourceMappingOptions Options)
+private EventSourceMapping AddEventSourceMapping(string Id, EventSourceMappingOptions Options)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSourceMapping.parameter.id\\"></a>
@@ -117,7 +117,7 @@ private AddEventSourceMapping(string Id, EventSourceMappingOptions Options)
 ##### \`AddPermission\` <a name=\\"AddPermission\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addPermission\\"></a>
 
 \`\`\`csharp
-private AddPermission(string Id, Permission Permission)
+private void AddPermission(string Id, Permission Permission)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addPermission.parameter.id\\"></a>
@@ -135,7 +135,7 @@ private AddPermission(string Id, Permission Permission)
 ##### \`AddToRolePolicy\` <a name=\\"AddToRolePolicy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addToRolePolicy\\"></a>
 
 \`\`\`csharp
-private AddToRolePolicy(PolicyStatement Statement)
+private void AddToRolePolicy(PolicyStatement Statement)
 \`\`\`
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addToRolePolicy.parameter.statement\\"></a>
@@ -147,7 +147,7 @@ private AddToRolePolicy(PolicyStatement Statement)
 ##### \`ConfigureAsyncInvoke\` <a name=\\"ConfigureAsyncInvoke\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.configureAsyncInvoke\\"></a>
 
 \`\`\`csharp
-private ConfigureAsyncInvoke(EventInvokeConfigOptions Options)
+private void ConfigureAsyncInvoke(EventInvokeConfigOptions Options)
 \`\`\`
 
 ###### \`Options\`<sup>Required</sup> <a name=\\"Options\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.configureAsyncInvoke.parameter.options\\"></a>
@@ -159,7 +159,7 @@ private ConfigureAsyncInvoke(EventInvokeConfigOptions Options)
 ##### \`GrantInvoke\` <a name=\\"GrantInvoke\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.grantInvoke\\"></a>
 
 \`\`\`csharp
-private GrantInvoke(IGrantable Identity)
+private Grant GrantInvoke(IGrantable Identity)
 \`\`\`
 
 ###### \`Identity\`<sup>Required</sup> <a name=\\"Identity\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.grantInvoke.parameter.identity\\"></a>
@@ -171,7 +171,7 @@ private GrantInvoke(IGrantable Identity)
 ##### \`Metric\` <a name=\\"Metric\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metric\\"></a>
 
 \`\`\`csharp
-private Metric(string MetricName, MetricOptions Props = null)
+private Metric Metric(string MetricName, MetricOptions Props = null)
 \`\`\`
 
 ###### \`MetricName\`<sup>Required</sup> <a name=\\"MetricName\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metric.parameter.metricName\\"></a>
@@ -189,7 +189,7 @@ private Metric(string MetricName, MetricOptions Props = null)
 ##### \`MetricDuration\` <a name=\\"MetricDuration\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricDuration\\"></a>
 
 \`\`\`csharp
-private MetricDuration(MetricOptions Props = null)
+private Metric MetricDuration(MetricOptions Props = null)
 \`\`\`
 
 ###### \`Props\`<sup>Optional</sup> <a name=\\"Props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricDuration.parameter.props\\"></a>
@@ -201,7 +201,7 @@ private MetricDuration(MetricOptions Props = null)
 ##### \`MetricErrors\` <a name=\\"MetricErrors\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricErrors\\"></a>
 
 \`\`\`csharp
-private MetricErrors(MetricOptions Props = null)
+private Metric MetricErrors(MetricOptions Props = null)
 \`\`\`
 
 ###### \`Props\`<sup>Optional</sup> <a name=\\"Props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricErrors.parameter.props\\"></a>
@@ -213,7 +213,7 @@ private MetricErrors(MetricOptions Props = null)
 ##### \`MetricInvocations\` <a name=\\"MetricInvocations\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricInvocations\\"></a>
 
 \`\`\`csharp
-private MetricInvocations(MetricOptions Props = null)
+private Metric MetricInvocations(MetricOptions Props = null)
 \`\`\`
 
 ###### \`Props\`<sup>Optional</sup> <a name=\\"Props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricInvocations.parameter.props\\"></a>
@@ -225,7 +225,7 @@ private MetricInvocations(MetricOptions Props = null)
 ##### \`MetricThrottles\` <a name=\\"MetricThrottles\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricThrottles\\"></a>
 
 \`\`\`csharp
-private MetricThrottles(MetricOptions Props = null)
+private Metric MetricThrottles(MetricOptions Props = null)
 \`\`\`
 
 ###### \`Props\`<sup>Optional</sup> <a name=\\"Props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricThrottles.parameter.props\\"></a>
@@ -1585,8 +1585,8 @@ The stack ID of Lambda@Edge function.
 ##### \`addAlias\` <a name=\\"addAlias\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addAlias\\"></a>
 
 \`\`\`java
-public addAlias(java.lang.String aliasName)
-public addAlias(java.lang.String aliasName, AliasOptions options)
+public Alias addAlias(java.lang.String aliasName)
+public Alias addAlias(java.lang.String aliasName, AliasOptions options)
 \`\`\`
 
 ###### \`aliasName\`<sup>Required</sup> <a name=\\"aliasName\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addAlias.parameter.aliasName\\"></a>
@@ -1604,7 +1604,7 @@ public addAlias(java.lang.String aliasName, AliasOptions options)
 ##### \`addEventSource\` <a name=\\"addEventSource\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSource\\"></a>
 
 \`\`\`java
-public addEventSource(IEventSource source)
+public void addEventSource(IEventSource source)
 \`\`\`
 
 ###### \`source\`<sup>Required</sup> <a name=\\"source\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSource.parameter.source\\"></a>
@@ -1616,7 +1616,7 @@ public addEventSource(IEventSource source)
 ##### \`addEventSourceMapping\` <a name=\\"addEventSourceMapping\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSourceMapping\\"></a>
 
 \`\`\`java
-public addEventSourceMapping(java.lang.String id, EventSourceMappingOptions options)
+public EventSourceMapping addEventSourceMapping(java.lang.String id, EventSourceMappingOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSourceMapping.parameter.id\\"></a>
@@ -1634,7 +1634,7 @@ public addEventSourceMapping(java.lang.String id, EventSourceMappingOptions opti
 ##### \`addPermission\` <a name=\\"addPermission\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addPermission\\"></a>
 
 \`\`\`java
-public addPermission(java.lang.String id, Permission permission)
+public void addPermission(java.lang.String id, Permission permission)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addPermission.parameter.id\\"></a>
@@ -1652,7 +1652,7 @@ public addPermission(java.lang.String id, Permission permission)
 ##### \`addToRolePolicy\` <a name=\\"addToRolePolicy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addToRolePolicy\\"></a>
 
 \`\`\`java
-public addToRolePolicy(PolicyStatement statement)
+public void addToRolePolicy(PolicyStatement statement)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addToRolePolicy.parameter.statement\\"></a>
@@ -1664,7 +1664,7 @@ public addToRolePolicy(PolicyStatement statement)
 ##### \`configureAsyncInvoke\` <a name=\\"configureAsyncInvoke\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.configureAsyncInvoke\\"></a>
 
 \`\`\`java
-public configureAsyncInvoke(EventInvokeConfigOptions options)
+public void configureAsyncInvoke(EventInvokeConfigOptions options)
 \`\`\`
 
 ###### \`options\`<sup>Required</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.configureAsyncInvoke.parameter.options\\"></a>
@@ -1676,7 +1676,7 @@ public configureAsyncInvoke(EventInvokeConfigOptions options)
 ##### \`grantInvoke\` <a name=\\"grantInvoke\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.grantInvoke\\"></a>
 
 \`\`\`java
-public grantInvoke(IGrantable identity)
+public Grant grantInvoke(IGrantable identity)
 \`\`\`
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.grantInvoke.parameter.identity\\"></a>
@@ -1688,8 +1688,8 @@ public grantInvoke(IGrantable identity)
 ##### \`metric\` <a name=\\"metric\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metric\\"></a>
 
 \`\`\`java
-public metric(java.lang.String metricName)
-public metric(java.lang.String metricName, MetricOptions props)
+public Metric metric(java.lang.String metricName)
+public Metric metric(java.lang.String metricName, MetricOptions props)
 \`\`\`
 
 ###### \`metricName\`<sup>Required</sup> <a name=\\"metricName\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metric.parameter.metricName\\"></a>
@@ -1707,8 +1707,8 @@ public metric(java.lang.String metricName, MetricOptions props)
 ##### \`metricDuration\` <a name=\\"metricDuration\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricDuration\\"></a>
 
 \`\`\`java
-public metricDuration()
-public metricDuration(MetricOptions props)
+public Metric metricDuration()
+public Metric metricDuration(MetricOptions props)
 \`\`\`
 
 ###### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricDuration.parameter.props\\"></a>
@@ -1720,8 +1720,8 @@ public metricDuration(MetricOptions props)
 ##### \`metricErrors\` <a name=\\"metricErrors\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricErrors\\"></a>
 
 \`\`\`java
-public metricErrors()
-public metricErrors(MetricOptions props)
+public Metric metricErrors()
+public Metric metricErrors(MetricOptions props)
 \`\`\`
 
 ###### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricErrors.parameter.props\\"></a>
@@ -1733,8 +1733,8 @@ public metricErrors(MetricOptions props)
 ##### \`metricInvocations\` <a name=\\"metricInvocations\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricInvocations\\"></a>
 
 \`\`\`java
-public metricInvocations()
-public metricInvocations(MetricOptions props)
+public Metric metricInvocations()
+public Metric metricInvocations(MetricOptions props)
 \`\`\`
 
 ###### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricInvocations.parameter.props\\"></a>
@@ -1746,8 +1746,8 @@ public metricInvocations(MetricOptions props)
 ##### \`metricThrottles\` <a name=\\"metricThrottles\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricThrottles\\"></a>
 
 \`\`\`java
-public metricThrottles()
-public metricThrottles(MetricOptions props)
+public Metric metricThrottles()
+public Metric metricThrottles(MetricOptions props)
 \`\`\`
 
 ###### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricThrottles.parameter.props\\"></a>
@@ -3118,7 +3118,7 @@ def add_alias(
   additional_versions: typing.List[VersionWeight] = None,
   description: str = None,
   provisioned_concurrent_executions: typing.Union[int, float] = None
-)
+) -> Alias
 \`\`\`
 
 ###### \`alias_name\`<sup>Required</sup> <a name=\\"alias_name\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addAlias.parameter.aliasName\\"></a>
@@ -3201,7 +3201,7 @@ Specifies a provisioned concurrency configuration for a function's alias.
 \`\`\`python
 def add_event_source(
   source: IEventSource
-)
+) -> None
 \`\`\`
 
 ###### \`source\`<sup>Required</sup> <a name=\\"source\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSource.parameter.source\\"></a>
@@ -3230,7 +3230,7 @@ def add_event_source_mapping(
   source_access_configurations: typing.List[SourceAccessConfiguration] = None,
   starting_position: StartingPosition = None,
   tumbling_window: Duration = None
-)
+) -> EventSourceMapping
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSourceMapping.parameter.id\\"></a>
@@ -3411,7 +3411,7 @@ def add_permission(
   scope: Construct = None,
   source_account: str = None,
   source_arn: str = None
-)
+) -> None
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addPermission.parameter.id\\"></a>
@@ -3486,7 +3486,7 @@ When granting Amazon Simple Storage Service (Amazon S3) permission to invoke you
 \`\`\`python
 def add_to_role_policy(
   statement: PolicyStatement
-)
+) -> None
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addToRolePolicy.parameter.statement\\"></a>
@@ -3503,7 +3503,7 @@ def configure_async_invoke(
   on_failure: IDestination = None,
   on_success: IDestination = None,
   retry_attempts: typing.Union[int, float] = None
-)
+) -> None
 \`\`\`
 
 ###### \`max_event_age\`<sup>Optional</sup> <a name=\\"max_event_age\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.configureAsyncInvoke.parameter.maxEventAge\\"></a>
@@ -3551,7 +3551,7 @@ Minimum: 0 Maximum: 2
 \`\`\`python
 def grant_invoke(
   identity: IGrantable
-)
+) -> Grant
 \`\`\`
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.grantInvoke.parameter.identity\\"></a>
@@ -3574,7 +3574,7 @@ def metric(
   region: str = None,
   statistic: str = None,
   unit: Unit = None
-)
+) -> Metric
 \`\`\`
 
 ###### \`metric_name\`<sup>Required</sup> <a name=\\"metric_name\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metric.parameter.metricName\\"></a>
@@ -3683,7 +3683,7 @@ def metric_duration(
   region: str = None,
   statistic: str = None,
   unit: Unit = None
-)
+) -> Metric
 \`\`\`
 
 ###### \`account\`<sup>Optional</sup> <a name=\\"account\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricDuration.parameter.account\\"></a>
@@ -3786,7 +3786,7 @@ def metric_errors(
   region: str = None,
   statistic: str = None,
   unit: Unit = None
-)
+) -> Metric
 \`\`\`
 
 ###### \`account\`<sup>Optional</sup> <a name=\\"account\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricErrors.parameter.account\\"></a>
@@ -3889,7 +3889,7 @@ def metric_invocations(
   region: str = None,
   statistic: str = None,
   unit: Unit = None
-)
+) -> Metric
 \`\`\`
 
 ###### \`account\`<sup>Optional</sup> <a name=\\"account\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricInvocations.parameter.account\\"></a>
@@ -3992,7 +3992,7 @@ def metric_throttles(
   region: str = None,
   statistic: str = None,
   unit: Unit = None
-)
+) -> Metric
 \`\`\`
 
 ###### \`account\`<sup>Optional</sup> <a name=\\"account\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricThrottles.parameter.account\\"></a>

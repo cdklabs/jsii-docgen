@@ -165,7 +165,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
@@ -334,7 +334,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
@@ -458,7 +458,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
@@ -582,7 +582,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
@@ -798,7 +798,7 @@ new Repository(Construct Scope, string Id, RepositoryProps Props = null);
 ##### \`AddLifecycleRule\` <a name=\\"AddLifecycleRule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule\\"></a>
 
 \`\`\`csharp
-private AddLifecycleRule(LifecycleRule Rule)
+private void AddLifecycleRule(LifecycleRule Rule)
 \`\`\`
 
 ###### \`Rule\`<sup>Required</sup> <a name=\\"Rule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.rule\\"></a>
@@ -810,7 +810,7 @@ private AddLifecycleRule(LifecycleRule Rule)
 ##### \`AddToResourcePolicy\` <a name=\\"AddToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy\\"></a>
 
 \`\`\`csharp
-private AddToResourcePolicy(PolicyStatement Statement)
+private AddToResourcePolicyResult AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
@@ -1030,7 +1030,7 @@ new RepositoryBase(Construct Scope, string Id, ResourceProps Props = null);
 ##### \`AddToResourcePolicy\` <a name=\\"AddToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy\\"></a>
 
 \`\`\`csharp
-private AddToResourcePolicy(PolicyStatement Statement)
+private AddToResourcePolicyResult AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
@@ -1042,7 +1042,7 @@ private AddToResourcePolicy(PolicyStatement Statement)
 ##### \`Grant\` <a name=\\"Grant\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant\\"></a>
 
 \`\`\`csharp
-private Grant(IGrantable Grantee, string Actions)
+private Grant Grant(IGrantable Grantee, string Actions)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
@@ -1060,7 +1060,7 @@ private Grant(IGrantable Grantee, string Actions)
 ##### \`GrantPull\` <a name=\\"GrantPull\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull\\"></a>
 
 \`\`\`csharp
-private GrantPull(IGrantable Grantee)
+private Grant GrantPull(IGrantable Grantee)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
@@ -1072,7 +1072,7 @@ private GrantPull(IGrantable Grantee)
 ##### \`GrantPullPush\` <a name=\\"GrantPullPush\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush\\"></a>
 
 \`\`\`csharp
-private GrantPullPush(IGrantable Grantee)
+private Grant GrantPullPush(IGrantable Grantee)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
@@ -1084,7 +1084,7 @@ private GrantPullPush(IGrantable Grantee)
 ##### \`OnCloudTrailEvent\` <a name=\\"OnCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent\\"></a>
 
 \`\`\`csharp
-private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
+private Rule OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
@@ -1106,7 +1106,7 @@ Options for adding the rule.
 ##### \`OnCloudTrailImagePushed\` <a name=\\"OnCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed\\"></a>
 
 \`\`\`csharp
-private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
+private Rule OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -1128,7 +1128,7 @@ Options for adding the rule.
 ##### \`OnEvent\` <a name=\\"OnEvent\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent\\"></a>
 
 \`\`\`csharp
-private OnEvent(string Id, OnEventOptions Options = null)
+private Rule OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
@@ -1146,7 +1146,7 @@ private OnEvent(string Id, OnEventOptions Options = null)
 ##### \`OnImageScanCompleted\` <a name=\\"OnImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted\\"></a>
 
 \`\`\`csharp
-private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
+private Rule OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
@@ -1168,7 +1168,7 @@ Options for adding the rule.
 ##### \`RepositoryUriForDigest\` <a name=\\"RepositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest\\"></a>
 
 \`\`\`csharp
-private RepositoryUriForDigest(string Digest = null)
+private string RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
 ###### \`Digest\`<sup>Optional</sup> <a name=\\"Digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
@@ -1182,7 +1182,7 @@ Optional image digest.
 ##### \`RepositoryUriForTag\` <a name=\\"RepositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag\\"></a>
 
 \`\`\`csharp
-private RepositoryUriForTag(string Tag = null)
+private string RepositoryUriForTag(string Tag = null)
 \`\`\`
 
 ###### \`Tag\`<sup>Optional</sup> <a name=\\"Tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
@@ -2282,7 +2282,7 @@ Represents an ECR repository.
 ##### \`AddToResourcePolicy\` <a name=\\"AddToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy\\"></a>
 
 \`\`\`csharp
-private AddToResourcePolicy(PolicyStatement Statement)
+private AddToResourcePolicyResult AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
@@ -2294,7 +2294,7 @@ private AddToResourcePolicy(PolicyStatement Statement)
 ##### \`Grant\` <a name=\\"Grant\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant\\"></a>
 
 \`\`\`csharp
-private Grant(IGrantable Grantee, string Actions)
+private Grant Grant(IGrantable Grantee, string Actions)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
@@ -2312,7 +2312,7 @@ private Grant(IGrantable Grantee, string Actions)
 ##### \`GrantPull\` <a name=\\"GrantPull\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull\\"></a>
 
 \`\`\`csharp
-private GrantPull(IGrantable Grantee)
+private Grant GrantPull(IGrantable Grantee)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
@@ -2324,7 +2324,7 @@ private GrantPull(IGrantable Grantee)
 ##### \`GrantPullPush\` <a name=\\"GrantPullPush\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush\\"></a>
 
 \`\`\`csharp
-private GrantPullPush(IGrantable Grantee)
+private Grant GrantPullPush(IGrantable Grantee)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
@@ -2336,7 +2336,7 @@ private GrantPullPush(IGrantable Grantee)
 ##### \`OnCloudTrailEvent\` <a name=\\"OnCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent\\"></a>
 
 \`\`\`csharp
-private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
+private Rule OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
@@ -2358,7 +2358,7 @@ Options for adding the rule.
 ##### \`OnCloudTrailImagePushed\` <a name=\\"OnCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed\\"></a>
 
 \`\`\`csharp
-private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
+private Rule OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -2380,7 +2380,7 @@ Options for adding the rule.
 ##### \`OnEvent\` <a name=\\"OnEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent\\"></a>
 
 \`\`\`csharp
-private OnEvent(string Id, OnEventOptions Options = null)
+private Rule OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
@@ -2398,7 +2398,7 @@ private OnEvent(string Id, OnEventOptions Options = null)
 ##### \`OnImageScanCompleted\` <a name=\\"OnImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted\\"></a>
 
 \`\`\`csharp
-private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
+private Rule OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
@@ -2420,7 +2420,7 @@ Options for adding the rule.
 ##### \`RepositoryUriForDigest\` <a name=\\"RepositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest\\"></a>
 
 \`\`\`csharp
-private RepositoryUriForDigest(string Digest = null)
+private string RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
 ###### \`Digest\`<sup>Optional</sup> <a name=\\"Digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
@@ -2434,7 +2434,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ##### \`RepositoryUriForTag\` <a name=\\"RepositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag\\"></a>
 
 \`\`\`csharp
-private RepositoryUriForTag(string Tag = null)
+private string RepositoryUriForTag(string Tag = null)
 \`\`\`
 
 ###### \`Tag\`<sup>Optional</sup> <a name=\\"Tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
@@ -2761,7 +2761,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
@@ -2930,7 +2930,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
@@ -3054,7 +3054,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
@@ -3178,7 +3178,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
@@ -3394,7 +3394,7 @@ new Repository(Construct Scope, string Id, RepositoryProps Props = null);
 ##### \`AddLifecycleRule\` <a name=\\"AddLifecycleRule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule\\"></a>
 
 \`\`\`csharp
-private AddLifecycleRule(LifecycleRule Rule)
+private void AddLifecycleRule(LifecycleRule Rule)
 \`\`\`
 
 ###### \`Rule\`<sup>Required</sup> <a name=\\"Rule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.rule\\"></a>
@@ -3406,7 +3406,7 @@ private AddLifecycleRule(LifecycleRule Rule)
 ##### \`AddToResourcePolicy\` <a name=\\"AddToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy\\"></a>
 
 \`\`\`csharp
-private AddToResourcePolicy(PolicyStatement Statement)
+private AddToResourcePolicyResult AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
@@ -3626,7 +3626,7 @@ new RepositoryBase(Construct Scope, string Id, ResourceProps Props = null);
 ##### \`AddToResourcePolicy\` <a name=\\"AddToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy\\"></a>
 
 \`\`\`csharp
-private AddToResourcePolicy(PolicyStatement Statement)
+private AddToResourcePolicyResult AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
@@ -3638,7 +3638,7 @@ private AddToResourcePolicy(PolicyStatement Statement)
 ##### \`Grant\` <a name=\\"Grant\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant\\"></a>
 
 \`\`\`csharp
-private Grant(IGrantable Grantee, string Actions)
+private Grant Grant(IGrantable Grantee, string Actions)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
@@ -3656,7 +3656,7 @@ private Grant(IGrantable Grantee, string Actions)
 ##### \`GrantPull\` <a name=\\"GrantPull\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull\\"></a>
 
 \`\`\`csharp
-private GrantPull(IGrantable Grantee)
+private Grant GrantPull(IGrantable Grantee)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
@@ -3668,7 +3668,7 @@ private GrantPull(IGrantable Grantee)
 ##### \`GrantPullPush\` <a name=\\"GrantPullPush\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush\\"></a>
 
 \`\`\`csharp
-private GrantPullPush(IGrantable Grantee)
+private Grant GrantPullPush(IGrantable Grantee)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
@@ -3680,7 +3680,7 @@ private GrantPullPush(IGrantable Grantee)
 ##### \`OnCloudTrailEvent\` <a name=\\"OnCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent\\"></a>
 
 \`\`\`csharp
-private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
+private Rule OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
@@ -3702,7 +3702,7 @@ Options for adding the rule.
 ##### \`OnCloudTrailImagePushed\` <a name=\\"OnCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed\\"></a>
 
 \`\`\`csharp
-private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
+private Rule OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -3724,7 +3724,7 @@ Options for adding the rule.
 ##### \`OnEvent\` <a name=\\"OnEvent\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent\\"></a>
 
 \`\`\`csharp
-private OnEvent(string Id, OnEventOptions Options = null)
+private Rule OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
@@ -3742,7 +3742,7 @@ private OnEvent(string Id, OnEventOptions Options = null)
 ##### \`OnImageScanCompleted\` <a name=\\"OnImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted\\"></a>
 
 \`\`\`csharp
-private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
+private Rule OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
@@ -3764,7 +3764,7 @@ Options for adding the rule.
 ##### \`RepositoryUriForDigest\` <a name=\\"RepositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest\\"></a>
 
 \`\`\`csharp
-private RepositoryUriForDigest(string Digest = null)
+private string RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
 ###### \`Digest\`<sup>Optional</sup> <a name=\\"Digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
@@ -3778,7 +3778,7 @@ Optional image digest.
 ##### \`RepositoryUriForTag\` <a name=\\"RepositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag\\"></a>
 
 \`\`\`csharp
-private RepositoryUriForTag(string Tag = null)
+private string RepositoryUriForTag(string Tag = null)
 \`\`\`
 
 ###### \`Tag\`<sup>Optional</sup> <a name=\\"Tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
@@ -4878,7 +4878,7 @@ Represents an ECR repository.
 ##### \`AddToResourcePolicy\` <a name=\\"AddToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy\\"></a>
 
 \`\`\`csharp
-private AddToResourcePolicy(PolicyStatement Statement)
+private AddToResourcePolicyResult AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
@@ -4890,7 +4890,7 @@ private AddToResourcePolicy(PolicyStatement Statement)
 ##### \`Grant\` <a name=\\"Grant\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant\\"></a>
 
 \`\`\`csharp
-private Grant(IGrantable Grantee, string Actions)
+private Grant Grant(IGrantable Grantee, string Actions)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
@@ -4908,7 +4908,7 @@ private Grant(IGrantable Grantee, string Actions)
 ##### \`GrantPull\` <a name=\\"GrantPull\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull\\"></a>
 
 \`\`\`csharp
-private GrantPull(IGrantable Grantee)
+private Grant GrantPull(IGrantable Grantee)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
@@ -4920,7 +4920,7 @@ private GrantPull(IGrantable Grantee)
 ##### \`GrantPullPush\` <a name=\\"GrantPullPush\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush\\"></a>
 
 \`\`\`csharp
-private GrantPullPush(IGrantable Grantee)
+private Grant GrantPullPush(IGrantable Grantee)
 \`\`\`
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
@@ -4932,7 +4932,7 @@ private GrantPullPush(IGrantable Grantee)
 ##### \`OnCloudTrailEvent\` <a name=\\"OnCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent\\"></a>
 
 \`\`\`csharp
-private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
+private Rule OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
@@ -4954,7 +4954,7 @@ Options for adding the rule.
 ##### \`OnCloudTrailImagePushed\` <a name=\\"OnCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed\\"></a>
 
 \`\`\`csharp
-private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
+private Rule OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -4976,7 +4976,7 @@ Options for adding the rule.
 ##### \`OnEvent\` <a name=\\"OnEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent\\"></a>
 
 \`\`\`csharp
-private OnEvent(string Id, OnEventOptions Options = null)
+private Rule OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
@@ -4994,7 +4994,7 @@ private OnEvent(string Id, OnEventOptions Options = null)
 ##### \`OnImageScanCompleted\` <a name=\\"OnImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted\\"></a>
 
 \`\`\`csharp
-private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
+private Rule OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
@@ -5016,7 +5016,7 @@ Options for adding the rule.
 ##### \`RepositoryUriForDigest\` <a name=\\"RepositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest\\"></a>
 
 \`\`\`csharp
-private RepositoryUriForDigest(string Digest = null)
+private string RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
 ###### \`Digest\`<sup>Optional</sup> <a name=\\"Digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
@@ -5030,7 +5030,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ##### \`RepositoryUriForTag\` <a name=\\"RepositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag\\"></a>
 
 \`\`\`csharp
-private RepositoryUriForTag(string Tag = null)
+private string RepositoryUriForTag(string Tag = null)
 \`\`\`
 
 ###### \`Tag\`<sup>Optional</sup> <a name=\\"Tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
@@ -6462,7 +6462,7 @@ new AwsAuth(Construct Scope, string Id, AwsAuthProps Props);
 ##### \`AddAccount\` <a name=\\"AddAccount\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addAccount\\"></a>
 
 \`\`\`csharp
-private AddAccount(string AccountId)
+private void AddAccount(string AccountId)
 \`\`\`
 
 ###### \`AccountId\`<sup>Required</sup> <a name=\\"AccountId\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addAccount.parameter.accountId\\"></a>
@@ -6476,7 +6476,7 @@ account number.
 ##### \`AddMastersRole\` <a name=\\"AddMastersRole\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addMastersRole\\"></a>
 
 \`\`\`csharp
-private AddMastersRole(IRole Role, string Username = null)
+private void AddMastersRole(IRole Role, string Username = null)
 \`\`\`
 
 ###### \`Role\`<sup>Required</sup> <a name=\\"Role\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addMastersRole.parameter.role\\"></a>
@@ -6498,7 +6498,7 @@ Optional user (defaults to the role ARN).
 ##### \`AddRoleMapping\` <a name=\\"AddRoleMapping\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addRoleMapping\\"></a>
 
 \`\`\`csharp
-private AddRoleMapping(IRole Role, AwsAuthMapping Mapping)
+private void AddRoleMapping(IRole Role, AwsAuthMapping Mapping)
 \`\`\`
 
 ###### \`Role\`<sup>Required</sup> <a name=\\"Role\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addRoleMapping.parameter.role\\"></a>
@@ -6520,7 +6520,7 @@ Mapping to k8s user name and groups.
 ##### \`AddUserMapping\` <a name=\\"AddUserMapping\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addUserMapping\\"></a>
 
 \`\`\`csharp
-private AddUserMapping(IUser User, AwsAuthMapping Mapping)
+private void AddUserMapping(IUser User, AwsAuthMapping Mapping)
 \`\`\`
 
 ###### \`User\`<sup>Required</sup> <a name=\\"User\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addUserMapping.parameter.user\\"></a>
@@ -6601,7 +6601,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"aws-cdk-lib.aws_eks.CfnAddon.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnAddon.inspect.parameter.inspector\\"></a>
@@ -6800,7 +6800,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"aws-cdk-lib.aws_eks.CfnCluster.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnCluster.inspect.parameter.inspector\\"></a>
@@ -7054,7 +7054,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"aws-cdk-lib.aws_eks.CfnFargateProfile.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnFargateProfile.inspect.parameter.inspector\\"></a>
@@ -7253,7 +7253,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"aws-cdk-lib.aws_eks.CfnNodegroup.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnNodegroup.inspect.parameter.inspector\\"></a>
@@ -7647,7 +7647,7 @@ properties in the IClusterProps interface.
 ##### \`AddAutoScalingGroupCapacity\` <a name=\\"AddAutoScalingGroupCapacity\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addAutoScalingGroupCapacity\\"></a>
 
 \`\`\`csharp
-private AddAutoScalingGroupCapacity(string Id, AutoScalingGroupCapacityOptions Options)
+private AutoScalingGroup AddAutoScalingGroupCapacity(string Id, AutoScalingGroupCapacityOptions Options)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addAutoScalingGroupCapacity.parameter.id\\"></a>
@@ -7665,7 +7665,7 @@ private AddAutoScalingGroupCapacity(string Id, AutoScalingGroupCapacityOptions O
 ##### \`AddCdk8sChart\` <a name=\\"AddCdk8sChart\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addCdk8sChart\\"></a>
 
 \`\`\`csharp
-private AddCdk8sChart(string Id, Construct Chart)
+private KubernetesManifest AddCdk8sChart(string Id, Construct Chart)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addCdk8sChart.parameter.id\\"></a>
@@ -7687,7 +7687,7 @@ the cdk8s chart.
 ##### \`AddFargateProfile\` <a name=\\"AddFargateProfile\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addFargateProfile\\"></a>
 
 \`\`\`csharp
-private AddFargateProfile(string Id, FargateProfileOptions Options)
+private FargateProfile AddFargateProfile(string Id, FargateProfileOptions Options)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addFargateProfile.parameter.id\\"></a>
@@ -7709,7 +7709,7 @@ profile options.
 ##### \`AddHelmChart\` <a name=\\"AddHelmChart\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addHelmChart\\"></a>
 
 \`\`\`csharp
-private AddHelmChart(string Id, HelmChartOptions Options)
+private HelmChart AddHelmChart(string Id, HelmChartOptions Options)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addHelmChart.parameter.id\\"></a>
@@ -7731,7 +7731,7 @@ options of this chart.
 ##### \`AddManifest\` <a name=\\"AddManifest\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addManifest\\"></a>
 
 \`\`\`csharp
-private AddManifest(string Id, System.Collections.Generic.IDictionary<string, object> Manifest)
+private KubernetesManifest AddManifest(string Id, System.Collections.Generic.IDictionary<string, object> Manifest)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addManifest.parameter.id\\"></a>
@@ -7753,7 +7753,7 @@ a list of Kubernetes resource specifications.
 ##### \`AddNodegroupCapacity\` <a name=\\"AddNodegroupCapacity\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addNodegroupCapacity\\"></a>
 
 \`\`\`csharp
-private AddNodegroupCapacity(string Id, NodegroupOptions Options = null)
+private Nodegroup AddNodegroupCapacity(string Id, NodegroupOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addNodegroupCapacity.parameter.id\\"></a>
@@ -7775,7 +7775,7 @@ options for creating a new nodegroup.
 ##### \`AddServiceAccount\` <a name=\\"AddServiceAccount\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addServiceAccount\\"></a>
 
 \`\`\`csharp
-private AddServiceAccount(string Id, ServiceAccountOptions Options = null)
+private ServiceAccount AddServiceAccount(string Id, ServiceAccountOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addServiceAccount.parameter.id\\"></a>
@@ -7793,7 +7793,7 @@ private AddServiceAccount(string Id, ServiceAccountOptions Options = null)
 ##### \`ConnectAutoScalingGroupCapacity\` <a name=\\"ConnectAutoScalingGroupCapacity\\" id=\\"aws-cdk-lib.aws_eks.Cluster.connectAutoScalingGroupCapacity\\"></a>
 
 \`\`\`csharp
-private ConnectAutoScalingGroupCapacity(AutoScalingGroup AutoScalingGroup, AutoScalingGroupOptions Options)
+private void ConnectAutoScalingGroupCapacity(AutoScalingGroup AutoScalingGroup, AutoScalingGroupOptions Options)
 \`\`\`
 
 ###### \`AutoScalingGroup\`<sup>Required</sup> <a name=\\"AutoScalingGroup\\" id=\\"aws-cdk-lib.aws_eks.Cluster.connectAutoScalingGroupCapacity.parameter.autoScalingGroup\\"></a>
@@ -7815,7 +7815,7 @@ options for adding auto scaling groups, like customizing the bootstrap script.
 ##### \`GetServiceLoadBalancerAddress\` <a name=\\"GetServiceLoadBalancerAddress\\" id=\\"aws-cdk-lib.aws_eks.Cluster.getServiceLoadBalancerAddress\\"></a>
 
 \`\`\`csharp
-private GetServiceLoadBalancerAddress(string ServiceName, ServiceLoadBalancerAddressOptions Options = null)
+private string GetServiceLoadBalancerAddress(string ServiceName, ServiceLoadBalancerAddressOptions Options = null)
 \`\`\`
 
 ###### \`ServiceName\`<sup>Required</sup> <a name=\\"ServiceName\\" id=\\"aws-cdk-lib.aws_eks.Cluster.getServiceLoadBalancerAddress.parameter.serviceName\\"></a>
@@ -8854,7 +8854,7 @@ new ServiceAccount(Construct Scope, string Id, ServiceAccountProps Props);
 ##### \`AddToPrincipalPolicy\` <a name=\\"AddToPrincipalPolicy\\" id=\\"aws-cdk-lib.aws_eks.ServiceAccount.addToPrincipalPolicy\\"></a>
 
 \`\`\`csharp
-private AddToPrincipalPolicy(PolicyStatement Statement)
+private AddToPrincipalPolicyResult AddToPrincipalPolicy(PolicyStatement Statement)
 \`\`\`
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"aws-cdk-lib.aws_eks.ServiceAccount.addToPrincipalPolicy.parameter.statement\\"></a>
@@ -14289,7 +14289,7 @@ new EksOptimizedImage(EksOptimizedImageProps Props = null);
 ##### \`GetImage\` <a name=\\"GetImage\\" id=\\"aws-cdk-lib.aws_eks.EksOptimizedImage.getImage\\"></a>
 
 \`\`\`csharp
-private GetImage(Construct Scope)
+private MachineImageConfig GetImage(Construct Scope)
 \`\`\`
 
 ###### \`Scope\`<sup>Required</sup> <a name=\\"Scope\\" id=\\"aws-cdk-lib.aws_eks.EksOptimizedImage.getImage.parameter.scope\\"></a>
@@ -14316,7 +14316,7 @@ Endpoint access characteristics.
 ##### \`OnlyFrom\` <a name=\\"OnlyFrom\\" id=\\"aws-cdk-lib.aws_eks.EndpointAccess.onlyFrom\\"></a>
 
 \`\`\`csharp
-private OnlyFrom(string Cidr)
+private EndpointAccess OnlyFrom(string Cidr)
 \`\`\`
 
 ###### \`Cidr\`<sup>Required</sup> <a name=\\"Cidr\\" id=\\"aws-cdk-lib.aws_eks.EndpointAccess.onlyFrom.parameter.cidr\\"></a>
@@ -14539,7 +14539,7 @@ An EKS cluster.
 ##### \`AddCdk8sChart\` <a name=\\"AddCdk8sChart\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addCdk8sChart\\"></a>
 
 \`\`\`csharp
-private AddCdk8sChart(string Id, Construct Chart)
+private KubernetesManifest AddCdk8sChart(string Id, Construct Chart)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addCdk8sChart.parameter.id\\"></a>
@@ -14561,7 +14561,7 @@ the cdk8s chart.
 ##### \`AddHelmChart\` <a name=\\"AddHelmChart\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addHelmChart\\"></a>
 
 \`\`\`csharp
-private AddHelmChart(string Id, HelmChartOptions Options)
+private HelmChart AddHelmChart(string Id, HelmChartOptions Options)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addHelmChart.parameter.id\\"></a>
@@ -14583,7 +14583,7 @@ options of this chart.
 ##### \`AddManifest\` <a name=\\"AddManifest\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addManifest\\"></a>
 
 \`\`\`csharp
-private AddManifest(string Id, System.Collections.Generic.IDictionary<string, object> Manifest)
+private KubernetesManifest AddManifest(string Id, System.Collections.Generic.IDictionary<string, object> Manifest)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addManifest.parameter.id\\"></a>
@@ -14605,7 +14605,7 @@ a list of Kubernetes resource specifications.
 ##### \`AddServiceAccount\` <a name=\\"AddServiceAccount\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addServiceAccount\\"></a>
 
 \`\`\`csharp
-private AddServiceAccount(string Id, ServiceAccountOptions Options = null)
+private ServiceAccount AddServiceAccount(string Id, ServiceAccountOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addServiceAccount.parameter.id\\"></a>
@@ -16471,7 +16471,7 @@ new AwsAuth(Construct Scope, string Id, AwsAuthProps Props);
 ##### \`AddAccount\` <a name=\\"AddAccount\\" id=\\"monocdk.aws_eks.AwsAuth.addAccount\\"></a>
 
 \`\`\`csharp
-private AddAccount(string AccountId)
+private void AddAccount(string AccountId)
 \`\`\`
 
 ###### \`AccountId\`<sup>Required</sup> <a name=\\"AccountId\\" id=\\"monocdk.aws_eks.AwsAuth.addAccount.parameter.accountId\\"></a>
@@ -16485,7 +16485,7 @@ account number.
 ##### \`AddMastersRole\` <a name=\\"AddMastersRole\\" id=\\"monocdk.aws_eks.AwsAuth.addMastersRole\\"></a>
 
 \`\`\`csharp
-private AddMastersRole(IRole Role, string Username = null)
+private void AddMastersRole(IRole Role, string Username = null)
 \`\`\`
 
 ###### \`Role\`<sup>Required</sup> <a name=\\"Role\\" id=\\"monocdk.aws_eks.AwsAuth.addMastersRole.parameter.role\\"></a>
@@ -16507,7 +16507,7 @@ Optional user (defaults to the role ARN).
 ##### \`AddRoleMapping\` <a name=\\"AddRoleMapping\\" id=\\"monocdk.aws_eks.AwsAuth.addRoleMapping\\"></a>
 
 \`\`\`csharp
-private AddRoleMapping(IRole Role, AwsAuthMapping Mapping)
+private void AddRoleMapping(IRole Role, AwsAuthMapping Mapping)
 \`\`\`
 
 ###### \`Role\`<sup>Required</sup> <a name=\\"Role\\" id=\\"monocdk.aws_eks.AwsAuth.addRoleMapping.parameter.role\\"></a>
@@ -16529,7 +16529,7 @@ Mapping to k8s user name and groups.
 ##### \`AddUserMapping\` <a name=\\"AddUserMapping\\" id=\\"monocdk.aws_eks.AwsAuth.addUserMapping\\"></a>
 
 \`\`\`csharp
-private AddUserMapping(IUser User, AwsAuthMapping Mapping)
+private void AddUserMapping(IUser User, AwsAuthMapping Mapping)
 \`\`\`
 
 ###### \`User\`<sup>Required</sup> <a name=\\"User\\" id=\\"monocdk.aws_eks.AwsAuth.addUserMapping.parameter.user\\"></a>
@@ -16610,7 +16610,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"monocdk.aws_eks.CfnAddon.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"monocdk.aws_eks.CfnAddon.inspect.parameter.inspector\\"></a>
@@ -16809,7 +16809,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"monocdk.aws_eks.CfnCluster.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"monocdk.aws_eks.CfnCluster.inspect.parameter.inspector\\"></a>
@@ -17063,7 +17063,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"monocdk.aws_eks.CfnFargateProfile.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"monocdk.aws_eks.CfnFargateProfile.inspect.parameter.inspector\\"></a>
@@ -17262,7 +17262,7 @@ resource properties.
 ##### \`Inspect\` <a name=\\"Inspect\\" id=\\"monocdk.aws_eks.CfnNodegroup.inspect\\"></a>
 
 \`\`\`csharp
-private Inspect(TreeInspector Inspector)
+private void Inspect(TreeInspector Inspector)
 \`\`\`
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"monocdk.aws_eks.CfnNodegroup.inspect.parameter.inspector\\"></a>
@@ -17656,7 +17656,7 @@ properties in the IClusterProps interface.
 ##### \`AddAutoScalingGroupCapacity\` <a name=\\"AddAutoScalingGroupCapacity\\" id=\\"monocdk.aws_eks.Cluster.addAutoScalingGroupCapacity\\"></a>
 
 \`\`\`csharp
-private AddAutoScalingGroupCapacity(string Id, AutoScalingGroupCapacityOptions Options)
+private AutoScalingGroup AddAutoScalingGroupCapacity(string Id, AutoScalingGroupCapacityOptions Options)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.Cluster.addAutoScalingGroupCapacity.parameter.id\\"></a>
@@ -17674,7 +17674,7 @@ private AddAutoScalingGroupCapacity(string Id, AutoScalingGroupCapacityOptions O
 ##### \`AddCdk8sChart\` <a name=\\"AddCdk8sChart\\" id=\\"monocdk.aws_eks.Cluster.addCdk8sChart\\"></a>
 
 \`\`\`csharp
-private AddCdk8sChart(string Id, Construct Chart)
+private KubernetesManifest AddCdk8sChart(string Id, Construct Chart)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.Cluster.addCdk8sChart.parameter.id\\"></a>
@@ -17696,7 +17696,7 @@ the cdk8s chart.
 ##### \`AddFargateProfile\` <a name=\\"AddFargateProfile\\" id=\\"monocdk.aws_eks.Cluster.addFargateProfile\\"></a>
 
 \`\`\`csharp
-private AddFargateProfile(string Id, FargateProfileOptions Options)
+private FargateProfile AddFargateProfile(string Id, FargateProfileOptions Options)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.Cluster.addFargateProfile.parameter.id\\"></a>
@@ -17718,7 +17718,7 @@ profile options.
 ##### \`AddHelmChart\` <a name=\\"AddHelmChart\\" id=\\"monocdk.aws_eks.Cluster.addHelmChart\\"></a>
 
 \`\`\`csharp
-private AddHelmChart(string Id, HelmChartOptions Options)
+private HelmChart AddHelmChart(string Id, HelmChartOptions Options)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.Cluster.addHelmChart.parameter.id\\"></a>
@@ -17740,7 +17740,7 @@ options of this chart.
 ##### \`AddManifest\` <a name=\\"AddManifest\\" id=\\"monocdk.aws_eks.Cluster.addManifest\\"></a>
 
 \`\`\`csharp
-private AddManifest(string Id, System.Collections.Generic.IDictionary<string, object> Manifest)
+private KubernetesManifest AddManifest(string Id, System.Collections.Generic.IDictionary<string, object> Manifest)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.Cluster.addManifest.parameter.id\\"></a>
@@ -17762,7 +17762,7 @@ a list of Kubernetes resource specifications.
 ##### \`AddNodegroupCapacity\` <a name=\\"AddNodegroupCapacity\\" id=\\"monocdk.aws_eks.Cluster.addNodegroupCapacity\\"></a>
 
 \`\`\`csharp
-private AddNodegroupCapacity(string Id, NodegroupOptions Options = null)
+private Nodegroup AddNodegroupCapacity(string Id, NodegroupOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.Cluster.addNodegroupCapacity.parameter.id\\"></a>
@@ -17784,7 +17784,7 @@ options for creating a new nodegroup.
 ##### \`AddServiceAccount\` <a name=\\"AddServiceAccount\\" id=\\"monocdk.aws_eks.Cluster.addServiceAccount\\"></a>
 
 \`\`\`csharp
-private AddServiceAccount(string Id, ServiceAccountOptions Options = null)
+private ServiceAccount AddServiceAccount(string Id, ServiceAccountOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.Cluster.addServiceAccount.parameter.id\\"></a>
@@ -17802,7 +17802,7 @@ private AddServiceAccount(string Id, ServiceAccountOptions Options = null)
 ##### \`ConnectAutoScalingGroupCapacity\` <a name=\\"ConnectAutoScalingGroupCapacity\\" id=\\"monocdk.aws_eks.Cluster.connectAutoScalingGroupCapacity\\"></a>
 
 \`\`\`csharp
-private ConnectAutoScalingGroupCapacity(AutoScalingGroup AutoScalingGroup, AutoScalingGroupOptions Options)
+private void ConnectAutoScalingGroupCapacity(AutoScalingGroup AutoScalingGroup, AutoScalingGroupOptions Options)
 \`\`\`
 
 ###### \`AutoScalingGroup\`<sup>Required</sup> <a name=\\"AutoScalingGroup\\" id=\\"monocdk.aws_eks.Cluster.connectAutoScalingGroupCapacity.parameter.autoScalingGroup\\"></a>
@@ -17824,7 +17824,7 @@ options for adding auto scaling groups, like customizing the bootstrap script.
 ##### \`GetServiceLoadBalancerAddress\` <a name=\\"GetServiceLoadBalancerAddress\\" id=\\"monocdk.aws_eks.Cluster.getServiceLoadBalancerAddress\\"></a>
 
 \`\`\`csharp
-private GetServiceLoadBalancerAddress(string ServiceName, ServiceLoadBalancerAddressOptions Options = null)
+private string GetServiceLoadBalancerAddress(string ServiceName, ServiceLoadBalancerAddressOptions Options = null)
 \`\`\`
 
 ###### \`ServiceName\`<sup>Required</sup> <a name=\\"ServiceName\\" id=\\"monocdk.aws_eks.Cluster.getServiceLoadBalancerAddress.parameter.serviceName\\"></a>
@@ -18864,7 +18864,7 @@ new ServiceAccount(Construct Scope, string Id, ServiceAccountProps Props);
 ##### ~~\`AddToPolicy\`~~ <a name=\\"AddToPolicy\\" id=\\"monocdk.aws_eks.ServiceAccount.addToPolicy\\"></a>
 
 \`\`\`csharp
-private AddToPolicy(PolicyStatement Statement)
+private bool AddToPolicy(PolicyStatement Statement)
 \`\`\`
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"monocdk.aws_eks.ServiceAccount.addToPolicy.parameter.statement\\"></a>
@@ -18876,7 +18876,7 @@ private AddToPolicy(PolicyStatement Statement)
 ##### \`AddToPrincipalPolicy\` <a name=\\"AddToPrincipalPolicy\\" id=\\"monocdk.aws_eks.ServiceAccount.addToPrincipalPolicy\\"></a>
 
 \`\`\`csharp
-private AddToPrincipalPolicy(PolicyStatement Statement)
+private AddToPrincipalPolicyResult AddToPrincipalPolicy(PolicyStatement Statement)
 \`\`\`
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"monocdk.aws_eks.ServiceAccount.addToPrincipalPolicy.parameter.statement\\"></a>
@@ -24459,7 +24459,7 @@ new EksOptimizedImage(EksOptimizedImageProps Props = null);
 ##### \`GetImage\` <a name=\\"GetImage\\" id=\\"monocdk.aws_eks.EksOptimizedImage.getImage\\"></a>
 
 \`\`\`csharp
-private GetImage(Construct Scope)
+private MachineImageConfig GetImage(Construct Scope)
 \`\`\`
 
 ###### \`Scope\`<sup>Required</sup> <a name=\\"Scope\\" id=\\"monocdk.aws_eks.EksOptimizedImage.getImage.parameter.scope\\"></a>
@@ -24486,7 +24486,7 @@ Endpoint access characteristics.
 ##### \`OnlyFrom\` <a name=\\"OnlyFrom\\" id=\\"monocdk.aws_eks.EndpointAccess.onlyFrom\\"></a>
 
 \`\`\`csharp
-private OnlyFrom(string Cidr)
+private EndpointAccess OnlyFrom(string Cidr)
 \`\`\`
 
 ###### \`Cidr\`<sup>Required</sup> <a name=\\"Cidr\\" id=\\"monocdk.aws_eks.EndpointAccess.onlyFrom.parameter.cidr\\"></a>
@@ -24709,7 +24709,7 @@ An EKS cluster.
 ##### \`AddCdk8sChart\` <a name=\\"AddCdk8sChart\\" id=\\"monocdk.aws_eks.ICluster.addCdk8sChart\\"></a>
 
 \`\`\`csharp
-private AddCdk8sChart(string Id, Construct Chart)
+private KubernetesManifest AddCdk8sChart(string Id, Construct Chart)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.ICluster.addCdk8sChart.parameter.id\\"></a>
@@ -24731,7 +24731,7 @@ the cdk8s chart.
 ##### \`AddHelmChart\` <a name=\\"AddHelmChart\\" id=\\"monocdk.aws_eks.ICluster.addHelmChart\\"></a>
 
 \`\`\`csharp
-private AddHelmChart(string Id, HelmChartOptions Options)
+private HelmChart AddHelmChart(string Id, HelmChartOptions Options)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.ICluster.addHelmChart.parameter.id\\"></a>
@@ -24753,7 +24753,7 @@ options of this chart.
 ##### \`AddManifest\` <a name=\\"AddManifest\\" id=\\"monocdk.aws_eks.ICluster.addManifest\\"></a>
 
 \`\`\`csharp
-private AddManifest(string Id, System.Collections.Generic.IDictionary<string, object> Manifest)
+private KubernetesManifest AddManifest(string Id, System.Collections.Generic.IDictionary<string, object> Manifest)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.ICluster.addManifest.parameter.id\\"></a>
@@ -24775,7 +24775,7 @@ a list of Kubernetes resource specifications.
 ##### \`AddServiceAccount\` <a name=\\"AddServiceAccount\\" id=\\"monocdk.aws_eks.ICluster.addServiceAccount\\"></a>
 
 \`\`\`csharp
-private AddServiceAccount(string Id, ServiceAccountOptions Options = null)
+private ServiceAccount AddServiceAccount(string Id, ServiceAccountOptions Options = null)
 \`\`\`
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.ICluster.addServiceAccount.parameter.id\\"></a>
@@ -25576,7 +25576,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
@@ -25749,7 +25749,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
@@ -25878,7 +25878,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
@@ -26079,7 +26079,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
@@ -26359,7 +26359,7 @@ Name for this repository.
 ##### \`addLifecycleRule\` <a name=\\"addLifecycleRule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule\\"></a>
 
 \`\`\`java
-public addLifecycleRule(LifecycleRule rule)
+public void addLifecycleRule(LifecycleRule rule)
 \`\`\`
 
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.rule\\"></a>
@@ -26371,7 +26371,7 @@ public addLifecycleRule(LifecycleRule rule)
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy\\"></a>
 
 \`\`\`java
-public addToResourcePolicy(PolicyStatement statement)
+public AddToResourcePolicyResult addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
@@ -26633,7 +26633,7 @@ The AWS region this resource belongs to.
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy\\"></a>
 
 \`\`\`java
-public addToResourcePolicy(PolicyStatement statement)
+public AddToResourcePolicyResult addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
@@ -26645,7 +26645,7 @@ public addToResourcePolicy(PolicyStatement statement)
 ##### \`grant\` <a name=\\"grant\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant\\"></a>
 
 \`\`\`java
-public grant(IGrantable grantee, java.lang.String actions)
+public Grant grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
@@ -26663,7 +26663,7 @@ public grant(IGrantable grantee, java.lang.String actions)
 ##### \`grantPull\` <a name=\\"grantPull\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull\\"></a>
 
 \`\`\`java
-public grantPull(IGrantable grantee)
+public Grant grantPull(IGrantable grantee)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
@@ -26675,7 +26675,7 @@ public grantPull(IGrantable grantee)
 ##### \`grantPullPush\` <a name=\\"grantPullPush\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush\\"></a>
 
 \`\`\`java
-public grantPullPush(IGrantable grantee)
+public Grant grantPullPush(IGrantable grantee)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
@@ -26687,8 +26687,8 @@ public grantPullPush(IGrantable grantee)
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent\\"></a>
 
 \`\`\`java
-public onCloudTrailEvent(java.lang.String id)
-public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
+public Rule onCloudTrailEvent(java.lang.String id)
+public Rule onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
@@ -26710,8 +26710,8 @@ Options for adding the rule.
 ##### \`onCloudTrailImagePushed\` <a name=\\"onCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed\\"></a>
 
 \`\`\`java
-public onCloudTrailImagePushed(java.lang.String id)
-public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
+public Rule onCloudTrailImagePushed(java.lang.String id)
+public Rule onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -26733,8 +26733,8 @@ Options for adding the rule.
 ##### \`onEvent\` <a name=\\"onEvent\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent\\"></a>
 
 \`\`\`java
-public onEvent(java.lang.String id)
-public onEvent(java.lang.String id, OnEventOptions options)
+public Rule onEvent(java.lang.String id)
+public Rule onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
@@ -26752,8 +26752,8 @@ public onEvent(java.lang.String id, OnEventOptions options)
 ##### \`onImageScanCompleted\` <a name=\\"onImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted\\"></a>
 
 \`\`\`java
-public onImageScanCompleted(java.lang.String id)
-public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
+public Rule onImageScanCompleted(java.lang.String id)
+public Rule onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
@@ -26775,8 +26775,8 @@ Options for adding the rule.
 ##### \`repositoryUriForDigest\` <a name=\\"repositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest\\"></a>
 
 \`\`\`java
-public repositoryUriForDigest()
-public repositoryUriForDigest(java.lang.String digest)
+public java.lang.String repositoryUriForDigest()
+public java.lang.String repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
@@ -26790,8 +26790,8 @@ Optional image digest.
 ##### \`repositoryUriForTag\` <a name=\\"repositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag\\"></a>
 
 \`\`\`java
-public repositoryUriForTag()
-public repositoryUriForTag(java.lang.String tag)
+public java.lang.String repositoryUriForTag()
+public java.lang.String repositoryUriForTag(java.lang.String tag)
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
@@ -27897,7 +27897,7 @@ Represents an ECR repository.
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy\\"></a>
 
 \`\`\`java
-public addToResourcePolicy(PolicyStatement statement)
+public AddToResourcePolicyResult addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
@@ -27909,7 +27909,7 @@ public addToResourcePolicy(PolicyStatement statement)
 ##### \`grant\` <a name=\\"grant\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant\\"></a>
 
 \`\`\`java
-public grant(IGrantable grantee, java.lang.String actions)
+public Grant grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
@@ -27927,7 +27927,7 @@ public grant(IGrantable grantee, java.lang.String actions)
 ##### \`grantPull\` <a name=\\"grantPull\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull\\"></a>
 
 \`\`\`java
-public grantPull(IGrantable grantee)
+public Grant grantPull(IGrantable grantee)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
@@ -27939,7 +27939,7 @@ public grantPull(IGrantable grantee)
 ##### \`grantPullPush\` <a name=\\"grantPullPush\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush\\"></a>
 
 \`\`\`java
-public grantPullPush(IGrantable grantee)
+public Grant grantPullPush(IGrantable grantee)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
@@ -27951,8 +27951,8 @@ public grantPullPush(IGrantable grantee)
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent\\"></a>
 
 \`\`\`java
-public onCloudTrailEvent(java.lang.String id)
-public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
+public Rule onCloudTrailEvent(java.lang.String id)
+public Rule onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
@@ -27974,8 +27974,8 @@ Options for adding the rule.
 ##### \`onCloudTrailImagePushed\` <a name=\\"onCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed\\"></a>
 
 \`\`\`java
-public onCloudTrailImagePushed(java.lang.String id)
-public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
+public Rule onCloudTrailImagePushed(java.lang.String id)
+public Rule onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -27997,8 +27997,8 @@ Options for adding the rule.
 ##### \`onEvent\` <a name=\\"onEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent\\"></a>
 
 \`\`\`java
-public onEvent(java.lang.String id)
-public onEvent(java.lang.String id, OnEventOptions options)
+public Rule onEvent(java.lang.String id)
+public Rule onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
@@ -28016,8 +28016,8 @@ public onEvent(java.lang.String id, OnEventOptions options)
 ##### \`onImageScanCompleted\` <a name=\\"onImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted\\"></a>
 
 \`\`\`java
-public onImageScanCompleted(java.lang.String id)
-public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
+public Rule onImageScanCompleted(java.lang.String id)
+public Rule onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
@@ -28039,8 +28039,8 @@ Options for adding the rule.
 ##### \`repositoryUriForDigest\` <a name=\\"repositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest\\"></a>
 
 \`\`\`java
-public repositoryUriForDigest()
-public repositoryUriForDigest(java.lang.String digest)
+public java.lang.String repositoryUriForDigest()
+public java.lang.String repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
@@ -28054,8 +28054,8 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ##### \`repositoryUriForTag\` <a name=\\"repositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag\\"></a>
 
 \`\`\`java
-public repositoryUriForTag()
-public repositoryUriForTag(java.lang.String tag)
+public java.lang.String repositoryUriForTag()
+public java.lang.String repositoryUriForTag(java.lang.String tag)
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
@@ -28422,7 +28422,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
@@ -28595,7 +28595,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
@@ -28724,7 +28724,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
@@ -28925,7 +28925,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
@@ -29205,7 +29205,7 @@ Name for this repository.
 ##### \`addLifecycleRule\` <a name=\\"addLifecycleRule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule\\"></a>
 
 \`\`\`java
-public addLifecycleRule(LifecycleRule rule)
+public void addLifecycleRule(LifecycleRule rule)
 \`\`\`
 
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.rule\\"></a>
@@ -29217,7 +29217,7 @@ public addLifecycleRule(LifecycleRule rule)
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy\\"></a>
 
 \`\`\`java
-public addToResourcePolicy(PolicyStatement statement)
+public AddToResourcePolicyResult addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
@@ -29479,7 +29479,7 @@ The AWS region this resource belongs to.
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy\\"></a>
 
 \`\`\`java
-public addToResourcePolicy(PolicyStatement statement)
+public AddToResourcePolicyResult addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
@@ -29491,7 +29491,7 @@ public addToResourcePolicy(PolicyStatement statement)
 ##### \`grant\` <a name=\\"grant\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant\\"></a>
 
 \`\`\`java
-public grant(IGrantable grantee, java.lang.String actions)
+public Grant grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
@@ -29509,7 +29509,7 @@ public grant(IGrantable grantee, java.lang.String actions)
 ##### \`grantPull\` <a name=\\"grantPull\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull\\"></a>
 
 \`\`\`java
-public grantPull(IGrantable grantee)
+public Grant grantPull(IGrantable grantee)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
@@ -29521,7 +29521,7 @@ public grantPull(IGrantable grantee)
 ##### \`grantPullPush\` <a name=\\"grantPullPush\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush\\"></a>
 
 \`\`\`java
-public grantPullPush(IGrantable grantee)
+public Grant grantPullPush(IGrantable grantee)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
@@ -29533,8 +29533,8 @@ public grantPullPush(IGrantable grantee)
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent\\"></a>
 
 \`\`\`java
-public onCloudTrailEvent(java.lang.String id)
-public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
+public Rule onCloudTrailEvent(java.lang.String id)
+public Rule onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
@@ -29556,8 +29556,8 @@ Options for adding the rule.
 ##### \`onCloudTrailImagePushed\` <a name=\\"onCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed\\"></a>
 
 \`\`\`java
-public onCloudTrailImagePushed(java.lang.String id)
-public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
+public Rule onCloudTrailImagePushed(java.lang.String id)
+public Rule onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -29579,8 +29579,8 @@ Options for adding the rule.
 ##### \`onEvent\` <a name=\\"onEvent\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent\\"></a>
 
 \`\`\`java
-public onEvent(java.lang.String id)
-public onEvent(java.lang.String id, OnEventOptions options)
+public Rule onEvent(java.lang.String id)
+public Rule onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
@@ -29598,8 +29598,8 @@ public onEvent(java.lang.String id, OnEventOptions options)
 ##### \`onImageScanCompleted\` <a name=\\"onImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted\\"></a>
 
 \`\`\`java
-public onImageScanCompleted(java.lang.String id)
-public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
+public Rule onImageScanCompleted(java.lang.String id)
+public Rule onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
@@ -29621,8 +29621,8 @@ Options for adding the rule.
 ##### \`repositoryUriForDigest\` <a name=\\"repositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest\\"></a>
 
 \`\`\`java
-public repositoryUriForDigest()
-public repositoryUriForDigest(java.lang.String digest)
+public java.lang.String repositoryUriForDigest()
+public java.lang.String repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
@@ -29636,8 +29636,8 @@ Optional image digest.
 ##### \`repositoryUriForTag\` <a name=\\"repositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag\\"></a>
 
 \`\`\`java
-public repositoryUriForTag()
-public repositoryUriForTag(java.lang.String tag)
+public java.lang.String repositoryUriForTag()
+public java.lang.String repositoryUriForTag(java.lang.String tag)
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
@@ -30743,7 +30743,7 @@ Represents an ECR repository.
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy\\"></a>
 
 \`\`\`java
-public addToResourcePolicy(PolicyStatement statement)
+public AddToResourcePolicyResult addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
@@ -30755,7 +30755,7 @@ public addToResourcePolicy(PolicyStatement statement)
 ##### \`grant\` <a name=\\"grant\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant\\"></a>
 
 \`\`\`java
-public grant(IGrantable grantee, java.lang.String actions)
+public Grant grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
@@ -30773,7 +30773,7 @@ public grant(IGrantable grantee, java.lang.String actions)
 ##### \`grantPull\` <a name=\\"grantPull\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull\\"></a>
 
 \`\`\`java
-public grantPull(IGrantable grantee)
+public Grant grantPull(IGrantable grantee)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
@@ -30785,7 +30785,7 @@ public grantPull(IGrantable grantee)
 ##### \`grantPullPush\` <a name=\\"grantPullPush\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush\\"></a>
 
 \`\`\`java
-public grantPullPush(IGrantable grantee)
+public Grant grantPullPush(IGrantable grantee)
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
@@ -30797,8 +30797,8 @@ public grantPullPush(IGrantable grantee)
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent\\"></a>
 
 \`\`\`java
-public onCloudTrailEvent(java.lang.String id)
-public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
+public Rule onCloudTrailEvent(java.lang.String id)
+public Rule onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
@@ -30820,8 +30820,8 @@ Options for adding the rule.
 ##### \`onCloudTrailImagePushed\` <a name=\\"onCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed\\"></a>
 
 \`\`\`java
-public onCloudTrailImagePushed(java.lang.String id)
-public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
+public Rule onCloudTrailImagePushed(java.lang.String id)
+public Rule onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -30843,8 +30843,8 @@ Options for adding the rule.
 ##### \`onEvent\` <a name=\\"onEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent\\"></a>
 
 \`\`\`java
-public onEvent(java.lang.String id)
-public onEvent(java.lang.String id, OnEventOptions options)
+public Rule onEvent(java.lang.String id)
+public Rule onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
@@ -30862,8 +30862,8 @@ public onEvent(java.lang.String id, OnEventOptions options)
 ##### \`onImageScanCompleted\` <a name=\\"onImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted\\"></a>
 
 \`\`\`java
-public onImageScanCompleted(java.lang.String id)
-public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
+public Rule onImageScanCompleted(java.lang.String id)
+public Rule onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
@@ -30885,8 +30885,8 @@ Options for adding the rule.
 ##### \`repositoryUriForDigest\` <a name=\\"repositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest\\"></a>
 
 \`\`\`java
-public repositoryUriForDigest()
-public repositoryUriForDigest(java.lang.String digest)
+public java.lang.String repositoryUriForDigest()
+public java.lang.String repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
@@ -30900,8 +30900,8 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ##### \`repositoryUriForTag\` <a name=\\"repositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag\\"></a>
 
 \`\`\`java
-public repositoryUriForTag()
-public repositoryUriForTag(java.lang.String tag)
+public java.lang.String repositoryUriForTag()
+public java.lang.String repositoryUriForTag(java.lang.String tag)
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
@@ -32339,7 +32339,7 @@ The EKS cluster to apply this configuration to.
 ##### \`addAccount\` <a name=\\"addAccount\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addAccount\\"></a>
 
 \`\`\`java
-public addAccount(java.lang.String accountId)
+public void addAccount(java.lang.String accountId)
 \`\`\`
 
 ###### \`accountId\`<sup>Required</sup> <a name=\\"accountId\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addAccount.parameter.accountId\\"></a>
@@ -32353,8 +32353,8 @@ account number.
 ##### \`addMastersRole\` <a name=\\"addMastersRole\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addMastersRole\\"></a>
 
 \`\`\`java
-public addMastersRole(IRole role)
-public addMastersRole(IRole role, java.lang.String username)
+public void addMastersRole(IRole role)
+public void addMastersRole(IRole role, java.lang.String username)
 \`\`\`
 
 ###### \`role\`<sup>Required</sup> <a name=\\"role\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addMastersRole.parameter.role\\"></a>
@@ -32376,7 +32376,7 @@ Optional user (defaults to the role ARN).
 ##### \`addRoleMapping\` <a name=\\"addRoleMapping\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addRoleMapping\\"></a>
 
 \`\`\`java
-public addRoleMapping(IRole role, AwsAuthMapping mapping)
+public void addRoleMapping(IRole role, AwsAuthMapping mapping)
 \`\`\`
 
 ###### \`role\`<sup>Required</sup> <a name=\\"role\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addRoleMapping.parameter.role\\"></a>
@@ -32398,7 +32398,7 @@ Mapping to k8s user name and groups.
 ##### \`addUserMapping\` <a name=\\"addUserMapping\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addUserMapping\\"></a>
 
 \`\`\`java
-public addUserMapping(IUser user, AwsAuthMapping mapping)
+public void addUserMapping(IUser user, AwsAuthMapping mapping)
 \`\`\`
 
 ###### \`user\`<sup>Required</sup> <a name=\\"user\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addUserMapping.parameter.user\\"></a>
@@ -32543,7 +32543,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"aws-cdk-lib.aws_eks.CfnAddon.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnAddon.inspect.parameter.inspector\\"></a>
@@ -32810,7 +32810,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"aws-cdk-lib.aws_eks.CfnCluster.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnCluster.inspect.parameter.inspector\\"></a>
@@ -33130,7 +33130,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"aws-cdk-lib.aws_eks.CfnFargateProfile.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnFargateProfile.inspect.parameter.inspector\\"></a>
@@ -33531,7 +33531,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"aws-cdk-lib.aws_eks.CfnNodegroup.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnNodegroup.inspect.parameter.inspector\\"></a>
@@ -34178,7 +34178,7 @@ The default capacity type for the cluster.
 ##### \`addAutoScalingGroupCapacity\` <a name=\\"addAutoScalingGroupCapacity\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addAutoScalingGroupCapacity\\"></a>
 
 \`\`\`java
-public addAutoScalingGroupCapacity(java.lang.String id, AutoScalingGroupCapacityOptions options)
+public AutoScalingGroup addAutoScalingGroupCapacity(java.lang.String id, AutoScalingGroupCapacityOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addAutoScalingGroupCapacity.parameter.id\\"></a>
@@ -34196,7 +34196,7 @@ public addAutoScalingGroupCapacity(java.lang.String id, AutoScalingGroupCapacity
 ##### \`addCdk8sChart\` <a name=\\"addCdk8sChart\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addCdk8sChart\\"></a>
 
 \`\`\`java
-public addCdk8sChart(java.lang.String id, Construct chart)
+public KubernetesManifest addCdk8sChart(java.lang.String id, Construct chart)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addCdk8sChart.parameter.id\\"></a>
@@ -34218,7 +34218,7 @@ the cdk8s chart.
 ##### \`addFargateProfile\` <a name=\\"addFargateProfile\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addFargateProfile\\"></a>
 
 \`\`\`java
-public addFargateProfile(java.lang.String id, FargateProfileOptions options)
+public FargateProfile addFargateProfile(java.lang.String id, FargateProfileOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addFargateProfile.parameter.id\\"></a>
@@ -34240,7 +34240,7 @@ profile options.
 ##### \`addHelmChart\` <a name=\\"addHelmChart\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addHelmChart\\"></a>
 
 \`\`\`java
-public addHelmChart(java.lang.String id, HelmChartOptions options)
+public HelmChart addHelmChart(java.lang.String id, HelmChartOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addHelmChart.parameter.id\\"></a>
@@ -34262,7 +34262,7 @@ options of this chart.
 ##### \`addManifest\` <a name=\\"addManifest\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addManifest\\"></a>
 
 \`\`\`java
-public addManifest(java.lang.String id, java.util.Map<java.lang.String, java.lang.Object> manifest)
+public KubernetesManifest addManifest(java.lang.String id, java.util.Map<java.lang.String, java.lang.Object> manifest)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addManifest.parameter.id\\"></a>
@@ -34284,8 +34284,8 @@ a list of Kubernetes resource specifications.
 ##### \`addNodegroupCapacity\` <a name=\\"addNodegroupCapacity\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addNodegroupCapacity\\"></a>
 
 \`\`\`java
-public addNodegroupCapacity(java.lang.String id)
-public addNodegroupCapacity(java.lang.String id, NodegroupOptions options)
+public Nodegroup addNodegroupCapacity(java.lang.String id)
+public Nodegroup addNodegroupCapacity(java.lang.String id, NodegroupOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addNodegroupCapacity.parameter.id\\"></a>
@@ -34307,8 +34307,8 @@ options for creating a new nodegroup.
 ##### \`addServiceAccount\` <a name=\\"addServiceAccount\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addServiceAccount\\"></a>
 
 \`\`\`java
-public addServiceAccount(java.lang.String id)
-public addServiceAccount(java.lang.String id, ServiceAccountOptions options)
+public ServiceAccount addServiceAccount(java.lang.String id)
+public ServiceAccount addServiceAccount(java.lang.String id, ServiceAccountOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addServiceAccount.parameter.id\\"></a>
@@ -34326,7 +34326,7 @@ public addServiceAccount(java.lang.String id, ServiceAccountOptions options)
 ##### \`connectAutoScalingGroupCapacity\` <a name=\\"connectAutoScalingGroupCapacity\\" id=\\"aws-cdk-lib.aws_eks.Cluster.connectAutoScalingGroupCapacity\\"></a>
 
 \`\`\`java
-public connectAutoScalingGroupCapacity(AutoScalingGroup autoScalingGroup, AutoScalingGroupOptions options)
+public void connectAutoScalingGroupCapacity(AutoScalingGroup autoScalingGroup, AutoScalingGroupOptions options)
 \`\`\`
 
 ###### \`autoScalingGroup\`<sup>Required</sup> <a name=\\"autoScalingGroup\\" id=\\"aws-cdk-lib.aws_eks.Cluster.connectAutoScalingGroupCapacity.parameter.autoScalingGroup\\"></a>
@@ -34348,8 +34348,8 @@ options for adding auto scaling groups, like customizing the bootstrap script.
 ##### \`getServiceLoadBalancerAddress\` <a name=\\"getServiceLoadBalancerAddress\\" id=\\"aws-cdk-lib.aws_eks.Cluster.getServiceLoadBalancerAddress\\"></a>
 
 \`\`\`java
-public getServiceLoadBalancerAddress(java.lang.String serviceName)
-public getServiceLoadBalancerAddress(java.lang.String serviceName, ServiceLoadBalancerAddressOptions options)
+public java.lang.String getServiceLoadBalancerAddress(java.lang.String serviceName)
+public java.lang.String getServiceLoadBalancerAddress(java.lang.String serviceName, ServiceLoadBalancerAddressOptions options)
 \`\`\`
 
 ###### \`serviceName\`<sup>Required</sup> <a name=\\"serviceName\\" id=\\"aws-cdk-lib.aws_eks.Cluster.getServiceLoadBalancerAddress.parameter.serviceName\\"></a>
@@ -36204,7 +36204,7 @@ The cluster to apply the patch to.
 ##### \`addToPrincipalPolicy\` <a name=\\"addToPrincipalPolicy\\" id=\\"aws-cdk-lib.aws_eks.ServiceAccount.addToPrincipalPolicy\\"></a>
 
 \`\`\`java
-public addToPrincipalPolicy(PolicyStatement statement)
+public AddToPrincipalPolicyResult addToPrincipalPolicy(PolicyStatement statement)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"aws-cdk-lib.aws_eks.ServiceAccount.addToPrincipalPolicy.parameter.statement\\"></a>
@@ -41681,7 +41681,7 @@ What instance type to retrieve the image for (standard or GPU-optimized).
 ##### \`getImage\` <a name=\\"getImage\\" id=\\"aws-cdk-lib.aws_eks.EksOptimizedImage.getImage\\"></a>
 
 \`\`\`java
-public getImage(Construct scope)
+public MachineImageConfig getImage(Construct scope)
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"aws-cdk-lib.aws_eks.EksOptimizedImage.getImage.parameter.scope\\"></a>
@@ -41708,7 +41708,7 @@ Endpoint access characteristics.
 ##### \`onlyFrom\` <a name=\\"onlyFrom\\" id=\\"aws-cdk-lib.aws_eks.EndpointAccess.onlyFrom\\"></a>
 
 \`\`\`java
-public onlyFrom(java.lang.String cidr)
+public EndpointAccess onlyFrom(java.lang.String cidr)
 \`\`\`
 
 ###### \`cidr\`<sup>Required</sup> <a name=\\"cidr\\" id=\\"aws-cdk-lib.aws_eks.EndpointAccess.onlyFrom.parameter.cidr\\"></a>
@@ -41931,7 +41931,7 @@ An EKS cluster.
 ##### \`addCdk8sChart\` <a name=\\"addCdk8sChart\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addCdk8sChart\\"></a>
 
 \`\`\`java
-public addCdk8sChart(java.lang.String id, Construct chart)
+public KubernetesManifest addCdk8sChart(java.lang.String id, Construct chart)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addCdk8sChart.parameter.id\\"></a>
@@ -41953,7 +41953,7 @@ the cdk8s chart.
 ##### \`addHelmChart\` <a name=\\"addHelmChart\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addHelmChart\\"></a>
 
 \`\`\`java
-public addHelmChart(java.lang.String id, HelmChartOptions options)
+public HelmChart addHelmChart(java.lang.String id, HelmChartOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addHelmChart.parameter.id\\"></a>
@@ -41975,7 +41975,7 @@ options of this chart.
 ##### \`addManifest\` <a name=\\"addManifest\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addManifest\\"></a>
 
 \`\`\`java
-public addManifest(java.lang.String id, java.util.Map<java.lang.String, java.lang.Object> manifest)
+public KubernetesManifest addManifest(java.lang.String id, java.util.Map<java.lang.String, java.lang.Object> manifest)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addManifest.parameter.id\\"></a>
@@ -41997,8 +41997,8 @@ a list of Kubernetes resource specifications.
 ##### \`addServiceAccount\` <a name=\\"addServiceAccount\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addServiceAccount\\"></a>
 
 \`\`\`java
-public addServiceAccount(java.lang.String id)
-public addServiceAccount(java.lang.String id, ServiceAccountOptions options)
+public ServiceAccount addServiceAccount(java.lang.String id)
+public ServiceAccount addServiceAccount(java.lang.String id, ServiceAccountOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addServiceAccount.parameter.id\\"></a>
@@ -43870,7 +43870,7 @@ The EKS cluster to apply this configuration to.
 ##### \`addAccount\` <a name=\\"addAccount\\" id=\\"monocdk.aws_eks.AwsAuth.addAccount\\"></a>
 
 \`\`\`java
-public addAccount(java.lang.String accountId)
+public void addAccount(java.lang.String accountId)
 \`\`\`
 
 ###### \`accountId\`<sup>Required</sup> <a name=\\"accountId\\" id=\\"monocdk.aws_eks.AwsAuth.addAccount.parameter.accountId\\"></a>
@@ -43884,8 +43884,8 @@ account number.
 ##### \`addMastersRole\` <a name=\\"addMastersRole\\" id=\\"monocdk.aws_eks.AwsAuth.addMastersRole\\"></a>
 
 \`\`\`java
-public addMastersRole(IRole role)
-public addMastersRole(IRole role, java.lang.String username)
+public void addMastersRole(IRole role)
+public void addMastersRole(IRole role, java.lang.String username)
 \`\`\`
 
 ###### \`role\`<sup>Required</sup> <a name=\\"role\\" id=\\"monocdk.aws_eks.AwsAuth.addMastersRole.parameter.role\\"></a>
@@ -43907,7 +43907,7 @@ Optional user (defaults to the role ARN).
 ##### \`addRoleMapping\` <a name=\\"addRoleMapping\\" id=\\"monocdk.aws_eks.AwsAuth.addRoleMapping\\"></a>
 
 \`\`\`java
-public addRoleMapping(IRole role, AwsAuthMapping mapping)
+public void addRoleMapping(IRole role, AwsAuthMapping mapping)
 \`\`\`
 
 ###### \`role\`<sup>Required</sup> <a name=\\"role\\" id=\\"monocdk.aws_eks.AwsAuth.addRoleMapping.parameter.role\\"></a>
@@ -43929,7 +43929,7 @@ Mapping to k8s user name and groups.
 ##### \`addUserMapping\` <a name=\\"addUserMapping\\" id=\\"monocdk.aws_eks.AwsAuth.addUserMapping\\"></a>
 
 \`\`\`java
-public addUserMapping(IUser user, AwsAuthMapping mapping)
+public void addUserMapping(IUser user, AwsAuthMapping mapping)
 \`\`\`
 
 ###### \`user\`<sup>Required</sup> <a name=\\"user\\" id=\\"monocdk.aws_eks.AwsAuth.addUserMapping.parameter.user\\"></a>
@@ -44074,7 +44074,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"monocdk.aws_eks.CfnAddon.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"monocdk.aws_eks.CfnAddon.inspect.parameter.inspector\\"></a>
@@ -44341,7 +44341,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"monocdk.aws_eks.CfnCluster.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"monocdk.aws_eks.CfnCluster.inspect.parameter.inspector\\"></a>
@@ -44661,7 +44661,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"monocdk.aws_eks.CfnFargateProfile.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"monocdk.aws_eks.CfnFargateProfile.inspect.parameter.inspector\\"></a>
@@ -45062,7 +45062,7 @@ scoped id of the resource.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"monocdk.aws_eks.CfnNodegroup.inspect\\"></a>
 
 \`\`\`java
-public inspect(TreeInspector inspector)
+public void inspect(TreeInspector inspector)
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"monocdk.aws_eks.CfnNodegroup.inspect.parameter.inspector\\"></a>
@@ -45709,7 +45709,7 @@ The default capacity type for the cluster.
 ##### \`addAutoScalingGroupCapacity\` <a name=\\"addAutoScalingGroupCapacity\\" id=\\"monocdk.aws_eks.Cluster.addAutoScalingGroupCapacity\\"></a>
 
 \`\`\`java
-public addAutoScalingGroupCapacity(java.lang.String id, AutoScalingGroupCapacityOptions options)
+public AutoScalingGroup addAutoScalingGroupCapacity(java.lang.String id, AutoScalingGroupCapacityOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.Cluster.addAutoScalingGroupCapacity.parameter.id\\"></a>
@@ -45727,7 +45727,7 @@ public addAutoScalingGroupCapacity(java.lang.String id, AutoScalingGroupCapacity
 ##### \`addCdk8sChart\` <a name=\\"addCdk8sChart\\" id=\\"monocdk.aws_eks.Cluster.addCdk8sChart\\"></a>
 
 \`\`\`java
-public addCdk8sChart(java.lang.String id, Construct chart)
+public KubernetesManifest addCdk8sChart(java.lang.String id, Construct chart)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.Cluster.addCdk8sChart.parameter.id\\"></a>
@@ -45749,7 +45749,7 @@ the cdk8s chart.
 ##### \`addFargateProfile\` <a name=\\"addFargateProfile\\" id=\\"monocdk.aws_eks.Cluster.addFargateProfile\\"></a>
 
 \`\`\`java
-public addFargateProfile(java.lang.String id, FargateProfileOptions options)
+public FargateProfile addFargateProfile(java.lang.String id, FargateProfileOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.Cluster.addFargateProfile.parameter.id\\"></a>
@@ -45771,7 +45771,7 @@ profile options.
 ##### \`addHelmChart\` <a name=\\"addHelmChart\\" id=\\"monocdk.aws_eks.Cluster.addHelmChart\\"></a>
 
 \`\`\`java
-public addHelmChart(java.lang.String id, HelmChartOptions options)
+public HelmChart addHelmChart(java.lang.String id, HelmChartOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.Cluster.addHelmChart.parameter.id\\"></a>
@@ -45793,7 +45793,7 @@ options of this chart.
 ##### \`addManifest\` <a name=\\"addManifest\\" id=\\"monocdk.aws_eks.Cluster.addManifest\\"></a>
 
 \`\`\`java
-public addManifest(java.lang.String id, java.util.Map<java.lang.String, java.lang.Object> manifest)
+public KubernetesManifest addManifest(java.lang.String id, java.util.Map<java.lang.String, java.lang.Object> manifest)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.Cluster.addManifest.parameter.id\\"></a>
@@ -45815,8 +45815,8 @@ a list of Kubernetes resource specifications.
 ##### \`addNodegroupCapacity\` <a name=\\"addNodegroupCapacity\\" id=\\"monocdk.aws_eks.Cluster.addNodegroupCapacity\\"></a>
 
 \`\`\`java
-public addNodegroupCapacity(java.lang.String id)
-public addNodegroupCapacity(java.lang.String id, NodegroupOptions options)
+public Nodegroup addNodegroupCapacity(java.lang.String id)
+public Nodegroup addNodegroupCapacity(java.lang.String id, NodegroupOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.Cluster.addNodegroupCapacity.parameter.id\\"></a>
@@ -45838,8 +45838,8 @@ options for creating a new nodegroup.
 ##### \`addServiceAccount\` <a name=\\"addServiceAccount\\" id=\\"monocdk.aws_eks.Cluster.addServiceAccount\\"></a>
 
 \`\`\`java
-public addServiceAccount(java.lang.String id)
-public addServiceAccount(java.lang.String id, ServiceAccountOptions options)
+public ServiceAccount addServiceAccount(java.lang.String id)
+public ServiceAccount addServiceAccount(java.lang.String id, ServiceAccountOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.Cluster.addServiceAccount.parameter.id\\"></a>
@@ -45857,7 +45857,7 @@ public addServiceAccount(java.lang.String id, ServiceAccountOptions options)
 ##### \`connectAutoScalingGroupCapacity\` <a name=\\"connectAutoScalingGroupCapacity\\" id=\\"monocdk.aws_eks.Cluster.connectAutoScalingGroupCapacity\\"></a>
 
 \`\`\`java
-public connectAutoScalingGroupCapacity(AutoScalingGroup autoScalingGroup, AutoScalingGroupOptions options)
+public void connectAutoScalingGroupCapacity(AutoScalingGroup autoScalingGroup, AutoScalingGroupOptions options)
 \`\`\`
 
 ###### \`autoScalingGroup\`<sup>Required</sup> <a name=\\"autoScalingGroup\\" id=\\"monocdk.aws_eks.Cluster.connectAutoScalingGroupCapacity.parameter.autoScalingGroup\\"></a>
@@ -45879,8 +45879,8 @@ options for adding auto scaling groups, like customizing the bootstrap script.
 ##### \`getServiceLoadBalancerAddress\` <a name=\\"getServiceLoadBalancerAddress\\" id=\\"monocdk.aws_eks.Cluster.getServiceLoadBalancerAddress\\"></a>
 
 \`\`\`java
-public getServiceLoadBalancerAddress(java.lang.String serviceName)
-public getServiceLoadBalancerAddress(java.lang.String serviceName, ServiceLoadBalancerAddressOptions options)
+public java.lang.String getServiceLoadBalancerAddress(java.lang.String serviceName)
+public java.lang.String getServiceLoadBalancerAddress(java.lang.String serviceName, ServiceLoadBalancerAddressOptions options)
 \`\`\`
 
 ###### \`serviceName\`<sup>Required</sup> <a name=\\"serviceName\\" id=\\"monocdk.aws_eks.Cluster.getServiceLoadBalancerAddress.parameter.serviceName\\"></a>
@@ -47751,7 +47751,7 @@ The cluster to apply the patch to.
 ##### ~~\`addToPolicy\`~~ <a name=\\"addToPolicy\\" id=\\"monocdk.aws_eks.ServiceAccount.addToPolicy\\"></a>
 
 \`\`\`java
-public addToPolicy(PolicyStatement statement)
+public java.lang.Boolean addToPolicy(PolicyStatement statement)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"monocdk.aws_eks.ServiceAccount.addToPolicy.parameter.statement\\"></a>
@@ -47763,7 +47763,7 @@ public addToPolicy(PolicyStatement statement)
 ##### \`addToPrincipalPolicy\` <a name=\\"addToPrincipalPolicy\\" id=\\"monocdk.aws_eks.ServiceAccount.addToPrincipalPolicy\\"></a>
 
 \`\`\`java
-public addToPrincipalPolicy(PolicyStatement statement)
+public AddToPrincipalPolicyResult addToPrincipalPolicy(PolicyStatement statement)
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"monocdk.aws_eks.ServiceAccount.addToPrincipalPolicy.parameter.statement\\"></a>
@@ -53388,7 +53388,7 @@ What instance type to retrieve the image for (standard or GPU-optimized).
 ##### \`getImage\` <a name=\\"getImage\\" id=\\"monocdk.aws_eks.EksOptimizedImage.getImage\\"></a>
 
 \`\`\`java
-public getImage(Construct scope)
+public MachineImageConfig getImage(Construct scope)
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"monocdk.aws_eks.EksOptimizedImage.getImage.parameter.scope\\"></a>
@@ -53415,7 +53415,7 @@ Endpoint access characteristics.
 ##### \`onlyFrom\` <a name=\\"onlyFrom\\" id=\\"monocdk.aws_eks.EndpointAccess.onlyFrom\\"></a>
 
 \`\`\`java
-public onlyFrom(java.lang.String cidr)
+public EndpointAccess onlyFrom(java.lang.String cidr)
 \`\`\`
 
 ###### \`cidr\`<sup>Required</sup> <a name=\\"cidr\\" id=\\"monocdk.aws_eks.EndpointAccess.onlyFrom.parameter.cidr\\"></a>
@@ -53638,7 +53638,7 @@ An EKS cluster.
 ##### \`addCdk8sChart\` <a name=\\"addCdk8sChart\\" id=\\"monocdk.aws_eks.ICluster.addCdk8sChart\\"></a>
 
 \`\`\`java
-public addCdk8sChart(java.lang.String id, Construct chart)
+public KubernetesManifest addCdk8sChart(java.lang.String id, Construct chart)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.ICluster.addCdk8sChart.parameter.id\\"></a>
@@ -53660,7 +53660,7 @@ the cdk8s chart.
 ##### \`addHelmChart\` <a name=\\"addHelmChart\\" id=\\"monocdk.aws_eks.ICluster.addHelmChart\\"></a>
 
 \`\`\`java
-public addHelmChart(java.lang.String id, HelmChartOptions options)
+public HelmChart addHelmChart(java.lang.String id, HelmChartOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.ICluster.addHelmChart.parameter.id\\"></a>
@@ -53682,7 +53682,7 @@ options of this chart.
 ##### \`addManifest\` <a name=\\"addManifest\\" id=\\"monocdk.aws_eks.ICluster.addManifest\\"></a>
 
 \`\`\`java
-public addManifest(java.lang.String id, java.util.Map<java.lang.String, java.lang.Object> manifest)
+public KubernetesManifest addManifest(java.lang.String id, java.util.Map<java.lang.String, java.lang.Object> manifest)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.ICluster.addManifest.parameter.id\\"></a>
@@ -53704,8 +53704,8 @@ a list of Kubernetes resource specifications.
 ##### \`addServiceAccount\` <a name=\\"addServiceAccount\\" id=\\"monocdk.aws_eks.ICluster.addServiceAccount\\"></a>
 
 \`\`\`java
-public addServiceAccount(java.lang.String id)
-public addServiceAccount(java.lang.String id, ServiceAccountOptions options)
+public ServiceAccount addServiceAccount(java.lang.String id)
+public ServiceAccount addServiceAccount(java.lang.String id, ServiceAccountOptions options)
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.ICluster.addServiceAccount.parameter.id\\"></a>
@@ -54357,7 +54357,7 @@ new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 ##### \`greet\` <a name=\\"greet\\" id=\\"construct-library.GreeterBucket.greet\\"></a>
 
 \`\`\`typescript
-public greet()
+public greet(): void
 \`\`\`
 
 
@@ -54672,7 +54672,7 @@ aws_cdk.aws_ecr.CfnPublicRepository(
             ],
             "usage": "def inspect(
   inspector: TreeInspector
-)",
+) -> None",
           },
         ],
         "interfaces": Array [
@@ -54903,7 +54903,7 @@ aws_cdk.aws_ecr.CfnRegistryPolicy(
             ],
             "usage": "def inspect(
   inspector: TreeInspector
-)",
+) -> None",
           },
         ],
         "interfaces": Array [
@@ -55100,7 +55100,7 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration(
             ],
             "usage": "def inspect(
   inspector: TreeInspector
-)",
+) -> None",
           },
         ],
         "interfaces": Array [
@@ -55439,7 +55439,7 @@ aws_cdk.aws_ecr.CfnRepository(
             ],
             "usage": "def inspect(
   inspector: TreeInspector
-)",
+) -> None",
           },
         ],
         "interfaces": Array [
@@ -55938,7 +55938,7 @@ have the highest rulePriority.",
   rule_priority: typing.Union[int, float] = None,
   tag_prefix_list: typing.List[str] = None,
   tag_status: TagStatus = None
-)",
+) -> None",
           },
           Object {
             "displayName": "add_to_resource_policy",
@@ -55971,7 +55971,7 @@ have the highest rulePriority.",
             ],
             "usage": "def add_to_resource_policy(
   statement: PolicyStatement
-)",
+) -> AddToResourcePolicyResult",
           },
         ],
         "interfaces": Array [],
@@ -56402,7 +56402,7 @@ aws_cdk.aws_ecr.RepositoryBase(
             ],
             "usage": "def add_to_resource_policy(
   statement: PolicyStatement
-)",
+) -> AddToResourcePolicyResult",
           },
           Object {
             "displayName": "grant",
@@ -56447,7 +56447,7 @@ aws_cdk.aws_ecr.RepositoryBase(
             "usage": "def grant(
   grantee: IGrantable,
   actions: str
-)",
+) -> Grant",
           },
           Object {
             "displayName": "grant_pull",
@@ -56480,7 +56480,7 @@ aws_cdk.aws_ecr.RepositoryBase(
             ],
             "usage": "def grant_pull(
   grantee: IGrantable
-)",
+) -> Grant",
           },
           Object {
             "displayName": "grant_pull_push",
@@ -56513,7 +56513,7 @@ aws_cdk.aws_ecr.RepositoryBase(
             ],
             "usage": "def grant_pull_push(
   grantee: IGrantable
-)",
+) -> Grant",
           },
           Object {
             "displayName": "on_cloud_trail_event",
@@ -56621,7 +56621,7 @@ on top of that filtering.",
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)",
+) -> Rule",
           },
           Object {
             "displayName": "on_cloud_trail_image_pushed",
@@ -56743,7 +56743,7 @@ on top of that filtering.",
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tag: str = None
-)",
+) -> Rule",
           },
           Object {
             "displayName": "on_event",
@@ -56849,7 +56849,7 @@ on top of that filtering.",
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)",
+) -> Rule",
           },
           Object {
             "displayName": "on_image_scan_completed",
@@ -56975,7 +56975,7 @@ on top of that filtering.",
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tags: typing.List[str] = None
-)",
+) -> Rule",
           },
           Object {
             "displayName": "repository_uri_for_digest",
@@ -57002,7 +57002,7 @@ on top of that filtering.",
             ],
             "usage": "def repository_uri_for_digest(
   digest: str = None
-)",
+) -> str",
           },
           Object {
             "displayName": "repository_uri_for_tag",
@@ -57029,7 +57029,7 @@ on top of that filtering.",
             ],
             "usage": "def repository_uri_for_tag(
   tag: str = None
-)",
+) -> str",
           },
         ],
         "interfaces": Array [
@@ -57214,7 +57214,7 @@ on top of that filtering.",
             ],
             "usage": "def add_to_resource_policy(
   statement: PolicyStatement
-)",
+) -> AddToResourcePolicyResult",
           },
           Object {
             "displayName": "grant",
@@ -57259,7 +57259,7 @@ on top of that filtering.",
             "usage": "def grant(
   grantee: IGrantable,
   actions: str
-)",
+) -> Grant",
           },
           Object {
             "displayName": "grant_pull",
@@ -57292,7 +57292,7 @@ on top of that filtering.",
             ],
             "usage": "def grant_pull(
   grantee: IGrantable
-)",
+) -> Grant",
           },
           Object {
             "displayName": "grant_pull_push",
@@ -57325,7 +57325,7 @@ on top of that filtering.",
             ],
             "usage": "def grant_pull_push(
   grantee: IGrantable
-)",
+) -> Grant",
           },
           Object {
             "displayName": "on_cloud_trail_event",
@@ -57433,7 +57433,7 @@ on top of that filtering.",
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)",
+) -> Rule",
           },
           Object {
             "displayName": "on_cloud_trail_image_pushed",
@@ -57555,7 +57555,7 @@ on top of that filtering.",
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tag: str = None
-)",
+) -> Rule",
           },
           Object {
             "displayName": "on_event",
@@ -57661,7 +57661,7 @@ on top of that filtering.",
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)",
+) -> Rule",
           },
           Object {
             "displayName": "on_image_scan_completed",
@@ -57787,7 +57787,7 @@ on top of that filtering.",
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tags: typing.List[str] = None
-)",
+) -> Rule",
           },
           Object {
             "displayName": "repository_uri_for_digest",
@@ -57814,7 +57814,7 @@ on top of that filtering.",
             ],
             "usage": "def repository_uri_for_digest(
   digest: str = None
-)",
+) -> str",
           },
           Object {
             "displayName": "repository_uri_for_tag",
@@ -57841,7 +57841,7 @@ on top of that filtering.",
             ],
             "usage": "def repository_uri_for_tag(
   tag: str = None
-)",
+) -> str",
           },
         ],
         "interfaces": Array [
@@ -59496,7 +59496,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
@@ -59673,7 +59673,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
@@ -59805,7 +59805,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
@@ -60009,7 +60009,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
@@ -60298,7 +60298,7 @@ def add_lifecycle_rule(
   rule_priority: typing.Union[int, float] = None,
   tag_prefix_list: typing.List[str] = None,
   tag_status: TagStatus = None
-)
+) -> None
 \`\`\`
 
 ###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.description\\"></a>
@@ -60367,7 +60367,7 @@ Only one rule is allowed to select untagged images, and it must have the highest
 \`\`\`python
 def add_to_resource_policy(
   statement: PolicyStatement
-)
+) -> AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
@@ -60656,7 +60656,7 @@ The AWS region this resource belongs to.
 \`\`\`python
 def add_to_resource_policy(
   statement: PolicyStatement
-)
+) -> AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
@@ -60671,7 +60671,7 @@ def add_to_resource_policy(
 def grant(
   grantee: IGrantable,
   actions: str
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
@@ -60691,7 +60691,7 @@ def grant(
 \`\`\`python
 def grant_pull(
   grantee: IGrantable
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
@@ -60705,7 +60705,7 @@ def grant_pull(
 \`\`\`python
 def grant_pull_push(
   grantee: IGrantable
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
@@ -60723,7 +60723,7 @@ def on_cloud_trail_event(
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
@@ -60784,7 +60784,7 @@ def on_cloud_trail_image_pushed(
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tag: str = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -60853,7 +60853,7 @@ def on_event(
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
@@ -60912,7 +60912,7 @@ def on_image_scan_completed(
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tags: typing.List[str] = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
@@ -60979,7 +60979,7 @@ Leave it undefined to watch the full repository.
 \`\`\`python
 def repository_uri_for_digest(
   digest: str = None
-)
+) -> str
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
@@ -60995,7 +60995,7 @@ Optional image digest.
 \`\`\`python
 def repository_uri_for_tag(
   tag: str = None
-)
+) -> str
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
@@ -62101,7 +62101,7 @@ Represents an ECR repository.
 \`\`\`python
 def add_to_resource_policy(
   statement: PolicyStatement
-)
+) -> AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
@@ -62116,7 +62116,7 @@ def add_to_resource_policy(
 def grant(
   grantee: IGrantable,
   actions: str
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
@@ -62136,7 +62136,7 @@ def grant(
 \`\`\`python
 def grant_pull(
   grantee: IGrantable
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
@@ -62150,7 +62150,7 @@ def grant_pull(
 \`\`\`python
 def grant_pull_push(
   grantee: IGrantable
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
@@ -62168,7 +62168,7 @@ def on_cloud_trail_event(
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
@@ -62229,7 +62229,7 @@ def on_cloud_trail_image_pushed(
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tag: str = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -62298,7 +62298,7 @@ def on_event(
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
@@ -62357,7 +62357,7 @@ def on_image_scan_completed(
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tags: typing.List[str] = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
@@ -62424,7 +62424,7 @@ Leave it undefined to watch the full repository.
 \`\`\`python
 def repository_uri_for_digest(
   digest: str = None
-)
+) -> str
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
@@ -62440,7 +62440,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 \`\`\`python
 def repository_uri_for_tag(
   tag: str = None
-)
+) -> str
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
@@ -62811,7 +62811,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
@@ -62988,7 +62988,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
@@ -63120,7 +63120,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
@@ -63324,7 +63324,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
@@ -63613,7 +63613,7 @@ def add_lifecycle_rule(
   rule_priority: typing.Union[int, float] = None,
   tag_prefix_list: typing.List[str] = None,
   tag_status: TagStatus = None
-)
+) -> None
 \`\`\`
 
 ###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.description\\"></a>
@@ -63682,7 +63682,7 @@ Only one rule is allowed to select untagged images, and it must have the highest
 \`\`\`python
 def add_to_resource_policy(
   statement: PolicyStatement
-)
+) -> AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
@@ -63971,7 +63971,7 @@ The AWS region this resource belongs to.
 \`\`\`python
 def add_to_resource_policy(
   statement: PolicyStatement
-)
+) -> AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
@@ -63986,7 +63986,7 @@ def add_to_resource_policy(
 def grant(
   grantee: IGrantable,
   actions: str
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
@@ -64006,7 +64006,7 @@ def grant(
 \`\`\`python
 def grant_pull(
   grantee: IGrantable
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
@@ -64020,7 +64020,7 @@ def grant_pull(
 \`\`\`python
 def grant_pull_push(
   grantee: IGrantable
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
@@ -64038,7 +64038,7 @@ def on_cloud_trail_event(
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
@@ -64099,7 +64099,7 @@ def on_cloud_trail_image_pushed(
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tag: str = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -64168,7 +64168,7 @@ def on_event(
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
@@ -64227,7 +64227,7 @@ def on_image_scan_completed(
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tags: typing.List[str] = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
@@ -64294,7 +64294,7 @@ Leave it undefined to watch the full repository.
 \`\`\`python
 def repository_uri_for_digest(
   digest: str = None
-)
+) -> str
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
@@ -64310,7 +64310,7 @@ Optional image digest.
 \`\`\`python
 def repository_uri_for_tag(
   tag: str = None
-)
+) -> str
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
@@ -65416,7 +65416,7 @@ Represents an ECR repository.
 \`\`\`python
 def add_to_resource_policy(
   statement: PolicyStatement
-)
+) -> AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
@@ -65431,7 +65431,7 @@ def add_to_resource_policy(
 def grant(
   grantee: IGrantable,
   actions: str
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
@@ -65451,7 +65451,7 @@ def grant(
 \`\`\`python
 def grant_pull(
   grantee: IGrantable
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
@@ -65465,7 +65465,7 @@ def grant_pull(
 \`\`\`python
 def grant_pull_push(
   grantee: IGrantable
-)
+) -> Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
@@ -65483,7 +65483,7 @@ def on_cloud_trail_event(
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
@@ -65544,7 +65544,7 @@ def on_cloud_trail_image_pushed(
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tag: str = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -65613,7 +65613,7 @@ def on_event(
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
@@ -65672,7 +65672,7 @@ def on_image_scan_completed(
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tags: typing.List[str] = None
-)
+) -> Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
@@ -65739,7 +65739,7 @@ Leave it undefined to watch the full repository.
 \`\`\`python
 def repository_uri_for_digest(
   digest: str = None
-)
+) -> str
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
@@ -65755,7 +65755,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 \`\`\`python
 def repository_uri_for_tag(
   tag: str = None
-)
+) -> str
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
@@ -67197,7 +67197,7 @@ The EKS cluster to apply this configuration to.
 \`\`\`python
 def add_account(
   account_id: str
-)
+) -> None
 \`\`\`
 
 ###### \`account_id\`<sup>Required</sup> <a name=\\"account_id\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addAccount.parameter.accountId\\"></a>
@@ -67214,7 +67214,7 @@ account number.
 def add_masters_role(
   role: IRole,
   username: str = None
-)
+) -> None
 \`\`\`
 
 ###### \`role\`<sup>Required</sup> <a name=\\"role\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addMastersRole.parameter.role\\"></a>
@@ -67240,7 +67240,7 @@ def add_role_mapping(
   role: IRole,
   groups: typing.List[str],
   username: str = None
-)
+) -> None
 \`\`\`
 
 ###### \`role\`<sup>Required</sup> <a name=\\"role\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addRoleMapping.parameter.role\\"></a>
@@ -67277,7 +67277,7 @@ def add_user_mapping(
   user: IUser,
   groups: typing.List[str],
   username: str = None
-)
+) -> None
 \`\`\`
 
 ###### \`user\`<sup>Required</sup> <a name=\\"user\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addUserMapping.parameter.user\\"></a>
@@ -67437,7 +67437,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnAddon.inspect.parameter.inspector\\"></a>
@@ -67704,7 +67704,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnCluster.inspect.parameter.inspector\\"></a>
@@ -68026,7 +68026,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnFargateProfile.inspect.parameter.inspector\\"></a>
@@ -68425,7 +68425,7 @@ scoped id of the resource.
 \`\`\`python
 def inspect(
   inspector: TreeInspector
-)
+) -> None
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnNodegroup.inspect.parameter.inspector\\"></a>
@@ -69102,7 +69102,7 @@ def add_auto_scaling_group_capacity(
   machine_image_type: MachineImageType = None,
   map_role: bool = None,
   spot_interrupt_handler: bool = None
-)
+) -> AutoScalingGroup
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addAutoScalingGroupCapacity.parameter.id\\"></a>
@@ -69388,7 +69388,7 @@ Only relevant if \`spotPrice\` is used.
 def add_cdk8s_chart(
   id: str,
   chart: Construct
-)
+) -> KubernetesManifest
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addCdk8sChart.parameter.id\\"></a>
@@ -69417,7 +69417,7 @@ def add_fargate_profile(
   pod_execution_role: IRole = None,
   subnet_selection: SubnetSelection = None,
   vpc: IVpc = None
-)
+) -> FargateProfile
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addFargateProfile.parameter.id\\"></a>
@@ -69496,7 +69496,7 @@ def add_helm_chart(
   values: typing.Mapping[typing.Any] = None,
   version: str = None,
   wait: bool = None
-)
+) -> HelmChart
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addHelmChart.parameter.id\\"></a>
@@ -69597,7 +69597,7 @@ Whether or not Helm should wait until all Pods, PVCs, Services, and minimum numb
 def add_manifest(
   id: str,
   manifest: typing.Mapping[typing.Any]
-)
+) -> KubernetesManifest
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addManifest.parameter.id\\"></a>
@@ -69637,7 +69637,7 @@ def add_nodegroup_capacity(
   remote_access: NodegroupRemoteAccess = None,
   subnets: SubnetSelection = None,
   tags: typing.Mapping[str] = None
-)
+) -> Nodegroup
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addNodegroupCapacity.parameter.id\\"></a>
@@ -69819,7 +69819,7 @@ def add_service_account(
   id: str,
   name: str = None,
   namespace: str = None
-)
+) -> ServiceAccount
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addServiceAccount.parameter.id\\"></a>
@@ -69856,7 +69856,7 @@ def connect_auto_scaling_group_capacity(
   machine_image_type: MachineImageType = None,
   map_role: bool = None,
   spot_interrupt_handler: bool = None
-)
+) -> None
 \`\`\`
 
 ###### \`auto_scaling_group\`<sup>Required</sup> <a name=\\"auto_scaling_group\\" id=\\"aws-cdk-lib.aws_eks.Cluster.connectAutoScalingGroupCapacity.parameter.autoScalingGroup\\"></a>
@@ -69925,7 +69925,7 @@ def get_service_load_balancer_address(
   service_name: str,
   namespace: str = None,
   timeout: Duration = None
-)
+) -> str
 \`\`\`
 
 ###### \`service_name\`<sup>Required</sup> <a name=\\"service_name\\" id=\\"aws-cdk-lib.aws_eks.Cluster.getServiceLoadBalancerAddress.parameter.serviceName\\"></a>
@@ -71968,7 +71968,7 @@ The cluster to apply the patch to.
 \`\`\`python
 def add_to_principal_policy(
   statement: PolicyStatement
-)
+) -> AddToPrincipalPolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"aws-cdk-lib.aws_eks.ServiceAccount.addToPrincipalPolicy.parameter.statement\\"></a>
@@ -77432,7 +77432,7 @@ What instance type to retrieve the image for (standard or GPU-optimized).
 \`\`\`python
 def get_image(
   scope: Construct
-)
+) -> MachineImageConfig
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"aws-cdk-lib.aws_eks.EksOptimizedImage.getImage.parameter.scope\\"></a>
@@ -77461,7 +77461,7 @@ Endpoint access characteristics.
 \`\`\`python
 def only_from(
   cidr: str
-)
+) -> EndpointAccess
 \`\`\`
 
 ###### \`cidr\`<sup>Required</sup> <a name=\\"cidr\\" id=\\"aws-cdk-lib.aws_eks.EndpointAccess.onlyFrom.parameter.cidr\\"></a>
@@ -77689,7 +77689,7 @@ An EKS cluster.
 def add_cdk8s_chart(
   id: str,
   chart: Construct
-)
+) -> KubernetesManifest
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addCdk8sChart.parameter.id\\"></a>
@@ -77722,7 +77722,7 @@ def add_helm_chart(
   values: typing.Mapping[typing.Any] = None,
   version: str = None,
   wait: bool = None
-)
+) -> HelmChart
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addHelmChart.parameter.id\\"></a>
@@ -77823,7 +77823,7 @@ Whether or not Helm should wait until all Pods, PVCs, Services, and minimum numb
 def add_manifest(
   id: str,
   manifest: typing.Mapping[typing.Any]
-)
+) -> KubernetesManifest
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addManifest.parameter.id\\"></a>
@@ -77849,7 +77849,7 @@ def add_service_account(
   id: str,
   name: str = None,
   namespace: str = None
-)
+) -> ServiceAccount
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addServiceAccount.parameter.id\\"></a>
@@ -78616,7 +78616,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
@@ -78785,7 +78785,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
@@ -78909,7 +78909,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
@@ -79033,7 +79033,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
@@ -79249,7 +79249,7 @@ new Repository(scope: Construct, id: string, props?: RepositoryProps)
 ##### \`addLifecycleRule\` <a name=\\"addLifecycleRule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule\\"></a>
 
 \`\`\`typescript
-public addLifecycleRule(rule: LifecycleRule)
+public addLifecycleRule(rule: LifecycleRule): void
 \`\`\`
 
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.rule\\"></a>
@@ -79261,7 +79261,7 @@ public addLifecycleRule(rule: LifecycleRule)
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy\\"></a>
 
 \`\`\`typescript
-public addToResourcePolicy(statement: PolicyStatement)
+public addToResourcePolicy(statement: PolicyStatement): AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
@@ -79481,7 +79481,7 @@ new RepositoryBase(scope: Construct, id: string, props?: ResourceProps)
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy\\"></a>
 
 \`\`\`typescript
-public addToResourcePolicy(statement: PolicyStatement)
+public addToResourcePolicy(statement: PolicyStatement): AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
@@ -79493,7 +79493,7 @@ public addToResourcePolicy(statement: PolicyStatement)
 ##### \`grant\` <a name=\\"grant\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant\\"></a>
 
 \`\`\`typescript
-public grant(grantee: IGrantable, actions: string)
+public grant(grantee: IGrantable, actions: string): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
@@ -79511,7 +79511,7 @@ public grant(grantee: IGrantable, actions: string)
 ##### \`grantPull\` <a name=\\"grantPull\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull\\"></a>
 
 \`\`\`typescript
-public grantPull(grantee: IGrantable)
+public grantPull(grantee: IGrantable): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
@@ -79523,7 +79523,7 @@ public grantPull(grantee: IGrantable)
 ##### \`grantPullPush\` <a name=\\"grantPullPush\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush\\"></a>
 
 \`\`\`typescript
-public grantPullPush(grantee: IGrantable)
+public grantPullPush(grantee: IGrantable): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
@@ -79535,7 +79535,7 @@ public grantPullPush(grantee: IGrantable)
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent\\"></a>
 
 \`\`\`typescript
-public onCloudTrailEvent(id: string, options?: OnEventOptions)
+public onCloudTrailEvent(id: string, options?: OnEventOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
@@ -79557,7 +79557,7 @@ Options for adding the rule.
 ##### \`onCloudTrailImagePushed\` <a name=\\"onCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed\\"></a>
 
 \`\`\`typescript
-public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
+public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -79579,7 +79579,7 @@ Options for adding the rule.
 ##### \`onEvent\` <a name=\\"onEvent\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent\\"></a>
 
 \`\`\`typescript
-public onEvent(id: string, options?: OnEventOptions)
+public onEvent(id: string, options?: OnEventOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
@@ -79597,7 +79597,7 @@ public onEvent(id: string, options?: OnEventOptions)
 ##### \`onImageScanCompleted\` <a name=\\"onImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted\\"></a>
 
 \`\`\`typescript
-public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
+public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
@@ -79619,7 +79619,7 @@ Options for adding the rule.
 ##### \`repositoryUriForDigest\` <a name=\\"repositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest\\"></a>
 
 \`\`\`typescript
-public repositoryUriForDigest(digest?: string)
+public repositoryUriForDigest(digest?: string): string
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
@@ -79633,7 +79633,7 @@ Optional image digest.
 ##### \`repositoryUriForTag\` <a name=\\"repositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag\\"></a>
 
 \`\`\`typescript
-public repositoryUriForTag(tag?: string)
+public repositoryUriForTag(tag?: string): string
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
@@ -80677,7 +80677,7 @@ Represents an ECR repository.
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy\\"></a>
 
 \`\`\`typescript
-public addToResourcePolicy(statement: PolicyStatement)
+public addToResourcePolicy(statement: PolicyStatement): AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
@@ -80689,7 +80689,7 @@ public addToResourcePolicy(statement: PolicyStatement)
 ##### \`grant\` <a name=\\"grant\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant\\"></a>
 
 \`\`\`typescript
-public grant(grantee: IGrantable, actions: string)
+public grant(grantee: IGrantable, actions: string): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
@@ -80707,7 +80707,7 @@ public grant(grantee: IGrantable, actions: string)
 ##### \`grantPull\` <a name=\\"grantPull\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull\\"></a>
 
 \`\`\`typescript
-public grantPull(grantee: IGrantable)
+public grantPull(grantee: IGrantable): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
@@ -80719,7 +80719,7 @@ public grantPull(grantee: IGrantable)
 ##### \`grantPullPush\` <a name=\\"grantPullPush\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush\\"></a>
 
 \`\`\`typescript
-public grantPullPush(grantee: IGrantable)
+public grantPullPush(grantee: IGrantable): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
@@ -80731,7 +80731,7 @@ public grantPullPush(grantee: IGrantable)
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent\\"></a>
 
 \`\`\`typescript
-public onCloudTrailEvent(id: string, options?: OnEventOptions)
+public onCloudTrailEvent(id: string, options?: OnEventOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
@@ -80753,7 +80753,7 @@ Options for adding the rule.
 ##### \`onCloudTrailImagePushed\` <a name=\\"onCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed\\"></a>
 
 \`\`\`typescript
-public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
+public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -80775,7 +80775,7 @@ Options for adding the rule.
 ##### \`onEvent\` <a name=\\"onEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent\\"></a>
 
 \`\`\`typescript
-public onEvent(id: string, options?: OnEventOptions)
+public onEvent(id: string, options?: OnEventOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
@@ -80793,7 +80793,7 @@ public onEvent(id: string, options?: OnEventOptions)
 ##### \`onImageScanCompleted\` <a name=\\"onImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted\\"></a>
 
 \`\`\`typescript
-public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
+public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
@@ -80815,7 +80815,7 @@ Options for adding the rule.
 ##### \`repositoryUriForDigest\` <a name=\\"repositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest\\"></a>
 
 \`\`\`typescript
-public repositoryUriForDigest(digest?: string)
+public repositoryUriForDigest(digest?: string): string
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
@@ -80829,7 +80829,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ##### \`repositoryUriForTag\` <a name=\\"repositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag\\"></a>
 
 \`\`\`typescript
-public repositoryUriForTag(tag?: string)
+public repositoryUriForTag(tag?: string): string
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
@@ -81152,7 +81152,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
@@ -81321,7 +81321,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
@@ -81445,7 +81445,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
@@ -81569,7 +81569,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
@@ -81785,7 +81785,7 @@ new Repository(scope: Construct, id: string, props?: RepositoryProps)
 ##### \`addLifecycleRule\` <a name=\\"addLifecycleRule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule\\"></a>
 
 \`\`\`typescript
-public addLifecycleRule(rule: LifecycleRule)
+public addLifecycleRule(rule: LifecycleRule): void
 \`\`\`
 
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.rule\\"></a>
@@ -81797,7 +81797,7 @@ public addLifecycleRule(rule: LifecycleRule)
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy\\"></a>
 
 \`\`\`typescript
-public addToResourcePolicy(statement: PolicyStatement)
+public addToResourcePolicy(statement: PolicyStatement): AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
@@ -82017,7 +82017,7 @@ new RepositoryBase(scope: Construct, id: string, props?: ResourceProps)
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy\\"></a>
 
 \`\`\`typescript
-public addToResourcePolicy(statement: PolicyStatement)
+public addToResourcePolicy(statement: PolicyStatement): AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
@@ -82029,7 +82029,7 @@ public addToResourcePolicy(statement: PolicyStatement)
 ##### \`grant\` <a name=\\"grant\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant\\"></a>
 
 \`\`\`typescript
-public grant(grantee: IGrantable, actions: string)
+public grant(grantee: IGrantable, actions: string): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
@@ -82047,7 +82047,7 @@ public grant(grantee: IGrantable, actions: string)
 ##### \`grantPull\` <a name=\\"grantPull\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull\\"></a>
 
 \`\`\`typescript
-public grantPull(grantee: IGrantable)
+public grantPull(grantee: IGrantable): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
@@ -82059,7 +82059,7 @@ public grantPull(grantee: IGrantable)
 ##### \`grantPullPush\` <a name=\\"grantPullPush\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush\\"></a>
 
 \`\`\`typescript
-public grantPullPush(grantee: IGrantable)
+public grantPullPush(grantee: IGrantable): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
@@ -82071,7 +82071,7 @@ public grantPullPush(grantee: IGrantable)
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent\\"></a>
 
 \`\`\`typescript
-public onCloudTrailEvent(id: string, options?: OnEventOptions)
+public onCloudTrailEvent(id: string, options?: OnEventOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
@@ -82093,7 +82093,7 @@ Options for adding the rule.
 ##### \`onCloudTrailImagePushed\` <a name=\\"onCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed\\"></a>
 
 \`\`\`typescript
-public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
+public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -82115,7 +82115,7 @@ Options for adding the rule.
 ##### \`onEvent\` <a name=\\"onEvent\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent\\"></a>
 
 \`\`\`typescript
-public onEvent(id: string, options?: OnEventOptions)
+public onEvent(id: string, options?: OnEventOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
@@ -82133,7 +82133,7 @@ public onEvent(id: string, options?: OnEventOptions)
 ##### \`onImageScanCompleted\` <a name=\\"onImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted\\"></a>
 
 \`\`\`typescript
-public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
+public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
@@ -82155,7 +82155,7 @@ Options for adding the rule.
 ##### \`repositoryUriForDigest\` <a name=\\"repositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest\\"></a>
 
 \`\`\`typescript
-public repositoryUriForDigest(digest?: string)
+public repositoryUriForDigest(digest?: string): string
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
@@ -82169,7 +82169,7 @@ Optional image digest.
 ##### \`repositoryUriForTag\` <a name=\\"repositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag\\"></a>
 
 \`\`\`typescript
-public repositoryUriForTag(tag?: string)
+public repositoryUriForTag(tag?: string): string
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
@@ -83213,7 +83213,7 @@ Represents an ECR repository.
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy\\"></a>
 
 \`\`\`typescript
-public addToResourcePolicy(statement: PolicyStatement)
+public addToResourcePolicy(statement: PolicyStatement): AddToResourcePolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
@@ -83225,7 +83225,7 @@ public addToResourcePolicy(statement: PolicyStatement)
 ##### \`grant\` <a name=\\"grant\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant\\"></a>
 
 \`\`\`typescript
-public grant(grantee: IGrantable, actions: string)
+public grant(grantee: IGrantable, actions: string): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
@@ -83243,7 +83243,7 @@ public grant(grantee: IGrantable, actions: string)
 ##### \`grantPull\` <a name=\\"grantPull\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull\\"></a>
 
 \`\`\`typescript
-public grantPull(grantee: IGrantable)
+public grantPull(grantee: IGrantable): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
@@ -83255,7 +83255,7 @@ public grantPull(grantee: IGrantable)
 ##### \`grantPullPush\` <a name=\\"grantPullPush\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush\\"></a>
 
 \`\`\`typescript
-public grantPullPush(grantee: IGrantable)
+public grantPullPush(grantee: IGrantable): Grant
 \`\`\`
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
@@ -83267,7 +83267,7 @@ public grantPullPush(grantee: IGrantable)
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent\\"></a>
 
 \`\`\`typescript
-public onCloudTrailEvent(id: string, options?: OnEventOptions)
+public onCloudTrailEvent(id: string, options?: OnEventOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
@@ -83289,7 +83289,7 @@ Options for adding the rule.
 ##### \`onCloudTrailImagePushed\` <a name=\\"onCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed\\"></a>
 
 \`\`\`typescript
-public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
+public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
@@ -83311,7 +83311,7 @@ Options for adding the rule.
 ##### \`onEvent\` <a name=\\"onEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent\\"></a>
 
 \`\`\`typescript
-public onEvent(id: string, options?: OnEventOptions)
+public onEvent(id: string, options?: OnEventOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
@@ -83329,7 +83329,7 @@ public onEvent(id: string, options?: OnEventOptions)
 ##### \`onImageScanCompleted\` <a name=\\"onImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted\\"></a>
 
 \`\`\`typescript
-public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
+public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions): Rule
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
@@ -83351,7 +83351,7 @@ Options for adding the rule.
 ##### \`repositoryUriForDigest\` <a name=\\"repositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest\\"></a>
 
 \`\`\`typescript
-public repositoryUriForDigest(digest?: string)
+public repositoryUriForDigest(digest?: string): string
 \`\`\`
 
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
@@ -83365,7 +83365,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ##### \`repositoryUriForTag\` <a name=\\"repositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag\\"></a>
 
 \`\`\`typescript
-public repositoryUriForTag(tag?: string)
+public repositoryUriForTag(tag?: string): string
 \`\`\`
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
@@ -84797,7 +84797,7 @@ new aws_eks.AwsAuth(scope: Construct, id: string, props: AwsAuthProps)
 ##### \`addAccount\` <a name=\\"addAccount\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addAccount\\"></a>
 
 \`\`\`typescript
-public addAccount(accountId: string)
+public addAccount(accountId: string): void
 \`\`\`
 
 ###### \`accountId\`<sup>Required</sup> <a name=\\"accountId\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addAccount.parameter.accountId\\"></a>
@@ -84811,7 +84811,7 @@ account number.
 ##### \`addMastersRole\` <a name=\\"addMastersRole\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addMastersRole\\"></a>
 
 \`\`\`typescript
-public addMastersRole(role: IRole, username?: string)
+public addMastersRole(role: IRole, username?: string): void
 \`\`\`
 
 ###### \`role\`<sup>Required</sup> <a name=\\"role\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addMastersRole.parameter.role\\"></a>
@@ -84833,7 +84833,7 @@ Optional user (defaults to the role ARN).
 ##### \`addRoleMapping\` <a name=\\"addRoleMapping\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addRoleMapping\\"></a>
 
 \`\`\`typescript
-public addRoleMapping(role: IRole, mapping: AwsAuthMapping)
+public addRoleMapping(role: IRole, mapping: AwsAuthMapping): void
 \`\`\`
 
 ###### \`role\`<sup>Required</sup> <a name=\\"role\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addRoleMapping.parameter.role\\"></a>
@@ -84855,7 +84855,7 @@ Mapping to k8s user name and groups.
 ##### \`addUserMapping\` <a name=\\"addUserMapping\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addUserMapping\\"></a>
 
 \`\`\`typescript
-public addUserMapping(user: IUser, mapping: AwsAuthMapping)
+public addUserMapping(user: IUser, mapping: AwsAuthMapping): void
 \`\`\`
 
 ###### \`user\`<sup>Required</sup> <a name=\\"user\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addUserMapping.parameter.user\\"></a>
@@ -84936,7 +84936,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"aws-cdk-lib.aws_eks.CfnAddon.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnAddon.inspect.parameter.inspector\\"></a>
@@ -85135,7 +85135,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"aws-cdk-lib.aws_eks.CfnCluster.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnCluster.inspect.parameter.inspector\\"></a>
@@ -85389,7 +85389,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"aws-cdk-lib.aws_eks.CfnFargateProfile.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnFargateProfile.inspect.parameter.inspector\\"></a>
@@ -85588,7 +85588,7 @@ resource properties.
 ##### \`inspect\` <a name=\\"inspect\\" id=\\"aws-cdk-lib.aws_eks.CfnNodegroup.inspect\\"></a>
 
 \`\`\`typescript
-public inspect(inspector: TreeInspector)
+public inspect(inspector: TreeInspector): void
 \`\`\`
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnNodegroup.inspect.parameter.inspector\\"></a>
@@ -85982,7 +85982,7 @@ properties in the IClusterProps interface.
 ##### \`addAutoScalingGroupCapacity\` <a name=\\"addAutoScalingGroupCapacity\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addAutoScalingGroupCapacity\\"></a>
 
 \`\`\`typescript
-public addAutoScalingGroupCapacity(id: string, options: AutoScalingGroupCapacityOptions)
+public addAutoScalingGroupCapacity(id: string, options: AutoScalingGroupCapacityOptions): AutoScalingGroup
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addAutoScalingGroupCapacity.parameter.id\\"></a>
@@ -86000,7 +86000,7 @@ public addAutoScalingGroupCapacity(id: string, options: AutoScalingGroupCapacity
 ##### \`addCdk8sChart\` <a name=\\"addCdk8sChart\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addCdk8sChart\\"></a>
 
 \`\`\`typescript
-public addCdk8sChart(id: string, chart: Construct)
+public addCdk8sChart(id: string, chart: Construct): KubernetesManifest
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addCdk8sChart.parameter.id\\"></a>
@@ -86022,7 +86022,7 @@ the cdk8s chart.
 ##### \`addFargateProfile\` <a name=\\"addFargateProfile\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addFargateProfile\\"></a>
 
 \`\`\`typescript
-public addFargateProfile(id: string, options: FargateProfileOptions)
+public addFargateProfile(id: string, options: FargateProfileOptions): FargateProfile
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addFargateProfile.parameter.id\\"></a>
@@ -86044,7 +86044,7 @@ profile options.
 ##### \`addHelmChart\` <a name=\\"addHelmChart\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addHelmChart\\"></a>
 
 \`\`\`typescript
-public addHelmChart(id: string, options: HelmChartOptions)
+public addHelmChart(id: string, options: HelmChartOptions): HelmChart
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addHelmChart.parameter.id\\"></a>
@@ -86066,7 +86066,7 @@ options of this chart.
 ##### \`addManifest\` <a name=\\"addManifest\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addManifest\\"></a>
 
 \`\`\`typescript
-public addManifest(id: string, manifest: {[ key: string ]: any})
+public addManifest(id: string, manifest: {[ key: string ]: any}): KubernetesManifest
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addManifest.parameter.id\\"></a>
@@ -86088,7 +86088,7 @@ a list of Kubernetes resource specifications.
 ##### \`addNodegroupCapacity\` <a name=\\"addNodegroupCapacity\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addNodegroupCapacity\\"></a>
 
 \`\`\`typescript
-public addNodegroupCapacity(id: string, options?: NodegroupOptions)
+public addNodegroupCapacity(id: string, options?: NodegroupOptions): Nodegroup
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addNodegroupCapacity.parameter.id\\"></a>
@@ -86110,7 +86110,7 @@ options for creating a new nodegroup.
 ##### \`addServiceAccount\` <a name=\\"addServiceAccount\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addServiceAccount\\"></a>
 
 \`\`\`typescript
-public addServiceAccount(id: string, options?: ServiceAccountOptions)
+public addServiceAccount(id: string, options?: ServiceAccountOptions): ServiceAccount
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addServiceAccount.parameter.id\\"></a>
@@ -86128,7 +86128,7 @@ public addServiceAccount(id: string, options?: ServiceAccountOptions)
 ##### \`connectAutoScalingGroupCapacity\` <a name=\\"connectAutoScalingGroupCapacity\\" id=\\"aws-cdk-lib.aws_eks.Cluster.connectAutoScalingGroupCapacity\\"></a>
 
 \`\`\`typescript
-public connectAutoScalingGroupCapacity(autoScalingGroup: AutoScalingGroup, options: AutoScalingGroupOptions)
+public connectAutoScalingGroupCapacity(autoScalingGroup: AutoScalingGroup, options: AutoScalingGroupOptions): void
 \`\`\`
 
 ###### \`autoScalingGroup\`<sup>Required</sup> <a name=\\"autoScalingGroup\\" id=\\"aws-cdk-lib.aws_eks.Cluster.connectAutoScalingGroupCapacity.parameter.autoScalingGroup\\"></a>
@@ -86150,7 +86150,7 @@ options for adding auto scaling groups, like customizing the bootstrap script.
 ##### \`getServiceLoadBalancerAddress\` <a name=\\"getServiceLoadBalancerAddress\\" id=\\"aws-cdk-lib.aws_eks.Cluster.getServiceLoadBalancerAddress\\"></a>
 
 \`\`\`typescript
-public getServiceLoadBalancerAddress(serviceName: string, options?: ServiceLoadBalancerAddressOptions)
+public getServiceLoadBalancerAddress(serviceName: string, options?: ServiceLoadBalancerAddressOptions): string
 \`\`\`
 
 ###### \`serviceName\`<sup>Required</sup> <a name=\\"serviceName\\" id=\\"aws-cdk-lib.aws_eks.Cluster.getServiceLoadBalancerAddress.parameter.serviceName\\"></a>
@@ -87189,7 +87189,7 @@ new aws_eks.ServiceAccount(scope: Construct, id: string, props: ServiceAccountPr
 ##### \`addToPrincipalPolicy\` <a name=\\"addToPrincipalPolicy\\" id=\\"aws-cdk-lib.aws_eks.ServiceAccount.addToPrincipalPolicy\\"></a>
 
 \`\`\`typescript
-public addToPrincipalPolicy(statement: PolicyStatement)
+public addToPrincipalPolicy(statement: PolicyStatement): AddToPrincipalPolicyResult
 \`\`\`
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"aws-cdk-lib.aws_eks.ServiceAccount.addToPrincipalPolicy.parameter.statement\\"></a>
@@ -92302,7 +92302,7 @@ new aws_eks.EksOptimizedImage(props?: EksOptimizedImageProps)
 ##### \`getImage\` <a name=\\"getImage\\" id=\\"aws-cdk-lib.aws_eks.EksOptimizedImage.getImage\\"></a>
 
 \`\`\`typescript
-public getImage(scope: Construct)
+public getImage(scope: Construct): MachineImageConfig
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"aws-cdk-lib.aws_eks.EksOptimizedImage.getImage.parameter.scope\\"></a>
@@ -92329,7 +92329,7 @@ Endpoint access characteristics.
 ##### \`onlyFrom\` <a name=\\"onlyFrom\\" id=\\"aws-cdk-lib.aws_eks.EndpointAccess.onlyFrom\\"></a>
 
 \`\`\`typescript
-public onlyFrom(cidr: string)
+public onlyFrom(cidr: string): EndpointAccess
 \`\`\`
 
 ###### \`cidr\`<sup>Required</sup> <a name=\\"cidr\\" id=\\"aws-cdk-lib.aws_eks.EndpointAccess.onlyFrom.parameter.cidr\\"></a>
@@ -92552,7 +92552,7 @@ An EKS cluster.
 ##### \`addCdk8sChart\` <a name=\\"addCdk8sChart\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addCdk8sChart\\"></a>
 
 \`\`\`typescript
-public addCdk8sChart(id: string, chart: Construct)
+public addCdk8sChart(id: string, chart: Construct): KubernetesManifest
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addCdk8sChart.parameter.id\\"></a>
@@ -92574,7 +92574,7 @@ the cdk8s chart.
 ##### \`addHelmChart\` <a name=\\"addHelmChart\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addHelmChart\\"></a>
 
 \`\`\`typescript
-public addHelmChart(id: string, options: HelmChartOptions)
+public addHelmChart(id: string, options: HelmChartOptions): HelmChart
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addHelmChart.parameter.id\\"></a>
@@ -92596,7 +92596,7 @@ options of this chart.
 ##### \`addManifest\` <a name=\\"addManifest\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addManifest\\"></a>
 
 \`\`\`typescript
-public addManifest(id: string, manifest: {[ key: string ]: any})
+public addManifest(id: string, manifest: {[ key: string ]: any}): KubernetesManifest
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addManifest.parameter.id\\"></a>
@@ -92618,7 +92618,7 @@ a list of Kubernetes resource specifications.
 ##### \`addServiceAccount\` <a name=\\"addServiceAccount\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addServiceAccount\\"></a>
 
 \`\`\`typescript
-public addServiceAccount(id: string, options?: ServiceAccountOptions)
+public addServiceAccount(id: string, options?: ServiceAccountOptions): ServiceAccount
 \`\`\`
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addServiceAccount.parameter.id\\"></a>
