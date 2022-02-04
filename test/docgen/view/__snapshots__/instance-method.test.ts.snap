@@ -43,6 +43,8 @@ exports[`csharp snapshot 2`] = `
 private Inspect(TreeInspector Inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 # \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* Amazon.CDK.TreeInspector
@@ -95,6 +97,8 @@ exports[`java snapshot 2`] = `
 \`\`\`java
 public inspect(TreeInspector inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 # \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
@@ -153,6 +157,8 @@ def inspect(
 )
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 # \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* aws_cdk.core.TreeInspector
@@ -205,6 +211,8 @@ exports[`typescript snapshot 2`] = `
 \`\`\`typescript
 public inspect(inspector: TreeInspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 # \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
