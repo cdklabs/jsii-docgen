@@ -1623,6 +1623,8 @@ resource properties.
 private Inspect(TreeInspector Inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/TreeInspector?lang=python\\">TreeInspector</a>
@@ -1792,6 +1794,8 @@ resource properties.
 private Inspect(TreeInspector Inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/TreeInspector?lang=python\\">TreeInspector</a>
@@ -1916,6 +1920,8 @@ resource properties.
 private Inspect(TreeInspector Inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/TreeInspector?lang=python\\">TreeInspector</a>
@@ -2039,6 +2045,8 @@ resource properties.
 \`\`\`csharp
 private Inspect(TreeInspector Inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"CfnRepository.inspect.parameter.inspector\\"></a>
 
@@ -2256,6 +2264,10 @@ new Repository(Construct Scope, string Id, RepositoryProps Props = null);
 private AddLifecycleRule(LifecycleRule Rule)
 \`\`\`
 
+Add a life cycle rule to the repository.
+
+Life cycle rules automatically expire images from the repository that match certain conditions.
+
 ###### \`Rule\`<sup>Required</sup> <a name=\\"Rule\\" id=\\"Repository.addLifecycleRule.parameter.rule\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/LifecycleRule?lang=python\\">LifecycleRule</a>
@@ -2267,6 +2279,8 @@ private AddLifecycleRule(LifecycleRule Rule)
 \`\`\`csharp
 private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
+
+Add a policy statement to the repository's resource policy.
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"Repository.addToResourcePolicy.parameter.statement\\"></a>
 
@@ -2292,6 +2306,8 @@ using Amazon.CDK.AWS.ECR;
 
 Repository.ArnForLocalRepository(string RepositoryName, IConstruct Scope, string Account = null);
 \`\`\`
+
+Returns an ECR ARN for a repository that resides in the same account/region as the current stack.
 
 ###### \`RepositoryName\`<sup>Required</sup> <a name=\\"RepositoryName\\" id=\\"Repository.arnForLocalRepository.parameter.repositoryName\\"></a>
 
@@ -2344,6 +2360,8 @@ using Amazon.CDK.AWS.ECR;
 
 Repository.FromRepositoryAttributes(Construct Scope, string Id, RepositoryAttributes Attrs);
 \`\`\`
+
+Import a repository.
 
 ###### \`Scope\`<sup>Required</sup> <a name=\\"Scope\\" id=\\"Repository.fromRepositoryAttributes.parameter.scope\\"></a>
 
@@ -2488,6 +2506,8 @@ new RepositoryBase(Construct Scope, string Id, ResourceProps Props = null);
 private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/PolicyStatement?lang=python\\">PolicyStatement</a>
@@ -2499,6 +2519,8 @@ private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`csharp
 private Grant(IGrantable Grantee, string Actions)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"RepositoryBase.grant.parameter.grantee\\"></a>
 
@@ -2518,6 +2540,8 @@ private Grant(IGrantable Grantee, string Actions)
 private GrantPull(IGrantable Grantee)
 \`\`\`
 
+Grant the given identity permissions to use the images in this repository.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"RepositoryBase.grantPull.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
@@ -2530,6 +2554,8 @@ private GrantPull(IGrantable Grantee)
 private GrantPullPush(IGrantable Grantee)
 \`\`\`
 
+Grant the given identity permissions to pull and push images to this repository.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"RepositoryBase.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
@@ -2541,6 +2567,10 @@ private GrantPullPush(IGrantable Grantee)
 \`\`\`csharp
 private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -2564,6 +2594,10 @@ Options for adding the rule.
 private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* string
@@ -2586,6 +2620,10 @@ Options for adding the rule.
 private OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"RepositoryBase.onEvent.parameter.id\\"></a>
 
 - *Type:* string
@@ -2603,6 +2641,8 @@ private OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`csharp
 private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image scan is completed.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
 
@@ -2626,6 +2666,10 @@ Options for adding the rule.
 private RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`Digest\`<sup>Optional</sup> <a name=\\"Digest\\" id=\\"RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* string
@@ -2639,6 +2683,10 @@ Optional image digest.
 \`\`\`csharp
 private RepositoryUriForTag(string Tag = null)
 \`\`\`
+
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`Tag\`<sup>Optional</sup> <a name=\\"Tag\\" id=\\"RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -3668,6 +3716,8 @@ using Amazon.CDK.AWS.ECR;
 AuthorizationToken.GrantRead(IGrantable Grantee);
 \`\`\`
 
+Grant access to retrieve an authorization token.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
@@ -3698,6 +3748,8 @@ using Amazon.CDK.AWS.ECR;
 
 PublicGalleryAuthorizationToken.GrantRead(IGrantable Grantee);
 \`\`\`
+
+Grant access to retrieve an authorization token.
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"PublicGalleryAuthorizationToken.grantRead.parameter.grantee\\"></a>
 
@@ -3740,6 +3792,8 @@ Represents an ECR repository.
 private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/PolicyStatement?lang=python\\">PolicyStatement</a>
@@ -3751,6 +3805,8 @@ private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`csharp
 private Grant(IGrantable Grantee, string Actions)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"IRepository.grant.parameter.grantee\\"></a>
 
@@ -3770,6 +3826,8 @@ private Grant(IGrantable Grantee, string Actions)
 private GrantPull(IGrantable Grantee)
 \`\`\`
 
+Grant the given identity permissions to pull images in this repository.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
@@ -3782,6 +3840,8 @@ private GrantPull(IGrantable Grantee)
 private GrantPullPush(IGrantable Grantee)
 \`\`\`
 
+Grant the given identity permissions to pull and push images to this repository.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"IRepository.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
@@ -3793,6 +3853,10 @@ private GrantPullPush(IGrantable Grantee)
 \`\`\`csharp
 private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -3816,6 +3880,10 @@ Options for adding the rule.
 private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* string
@@ -3838,6 +3906,10 @@ Options for adding the rule.
 private OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* string
@@ -3855,6 +3927,8 @@ private OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`csharp
 private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"IRepository.onImageScanCompleted.parameter.id\\"></a>
 
@@ -3878,6 +3952,10 @@ Options for adding the rule.
 private RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`Digest\`<sup>Optional</sup> <a name=\\"Digest\\" id=\\"IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* string
@@ -3891,6 +3969,10 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 \`\`\`csharp
 private RepositoryUriForTag(string Tag = null)
 \`\`\`
+
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`Tag\`<sup>Optional</sup> <a name=\\"Tag\\" id=\\"IRepository.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -4259,6 +4341,8 @@ scoped id of the resource.
 public inspect(TreeInspector inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/TreeInspector?lang=python\\">TreeInspector</a>
@@ -4432,6 +4516,8 @@ scoped id of the resource.
 public inspect(TreeInspector inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/TreeInspector?lang=python\\">TreeInspector</a>
@@ -4560,6 +4646,8 @@ scoped id of the resource.
 \`\`\`java
 public inspect(TreeInspector inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
 
@@ -4761,6 +4849,8 @@ scoped id of the resource.
 \`\`\`java
 public inspect(TreeInspector inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnRepository.inspect.parameter.inspector\\"></a>
 
@@ -5042,6 +5132,10 @@ Name for this repository.
 public addLifecycleRule(LifecycleRule rule)
 \`\`\`
 
+Add a life cycle rule to the repository.
+
+Life cycle rules automatically expire images from the repository that match certain conditions.
+
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"Repository.addLifecycleRule.parameter.rule\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/LifecycleRule?lang=python\\">LifecycleRule</a>
@@ -5053,6 +5147,8 @@ public addLifecycleRule(LifecycleRule rule)
 \`\`\`java
 public addToResourcePolicy(PolicyStatement statement)
 \`\`\`
+
+Add a policy statement to the repository's resource policy.
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"Repository.addToResourcePolicy.parameter.statement\\"></a>
 
@@ -5078,6 +5174,8 @@ import software.amazon.awscdk.services.ecr.Repository;
 
 Repository.arnForLocalRepository(java.lang.String repositoryName, IConstruct scope),Repository.arnForLocalRepository(java.lang.String repositoryName, IConstruct scope, java.lang.String account)
 \`\`\`
+
+Returns an ECR ARN for a repository that resides in the same account/region as the current stack.
 
 ###### \`repositoryName\`<sup>Required</sup> <a name=\\"repositoryName\\" id=\\"Repository.arnForLocalRepository.parameter.repositoryName\\"></a>
 
@@ -5130,6 +5228,8 @@ import software.amazon.awscdk.services.ecr.Repository;
 
 Repository.fromRepositoryAttributes(Construct scope, java.lang.String id, RepositoryAttributes attrs)
 \`\`\`
+
+Import a repository.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Repository.fromRepositoryAttributes.parameter.scope\\"></a>
 
@@ -5316,6 +5416,8 @@ The AWS region this resource belongs to.
 public addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/PolicyStatement?lang=python\\">PolicyStatement</a>
@@ -5327,6 +5429,8 @@ public addToResourcePolicy(PolicyStatement statement)
 \`\`\`java
 public grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grant.parameter.grantee\\"></a>
 
@@ -5346,6 +5450,8 @@ public grant(IGrantable grantee, java.lang.String actions)
 public grantPull(IGrantable grantee)
 \`\`\`
 
+Grant the given identity permissions to use the images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grantPull.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
@@ -5357,6 +5463,8 @@ public grantPull(IGrantable grantee)
 \`\`\`java
 public grantPullPush(IGrantable grantee)
 \`\`\`
+
+Grant the given identity permissions to pull and push images to this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grantPullPush.parameter.grantee\\"></a>
 
@@ -5370,6 +5478,10 @@ public grantPullPush(IGrantable grantee)
 public onCloudTrailEvent(java.lang.String id)
 public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -5394,6 +5506,10 @@ public onCloudTrailImagePushed(java.lang.String id)
 public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -5417,6 +5533,10 @@ public onEvent(java.lang.String id)
 public onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onEvent.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -5435,6 +5555,8 @@ public onEvent(java.lang.String id, OnEventOptions options)
 public onImageScanCompleted(java.lang.String id)
 public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
 
@@ -5459,6 +5581,10 @@ public repositoryUriForDigest()
 public repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* java.lang.String
@@ -5473,6 +5599,10 @@ Optional image digest.
 public repositoryUriForTag()
 public repositoryUriForTag(java.lang.String tag)
 \`\`\`
+
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -6508,6 +6638,8 @@ import software.amazon.awscdk.services.ecr.AuthorizationToken;
 AuthorizationToken.grantRead(IGrantable grantee)
 \`\`\`
 
+Grant access to retrieve an authorization token.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
@@ -6538,6 +6670,8 @@ import software.amazon.awscdk.services.ecr.PublicGalleryAuthorizationToken;
 
 PublicGalleryAuthorizationToken.grantRead(IGrantable grantee)
 \`\`\`
+
+Grant access to retrieve an authorization token.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"PublicGalleryAuthorizationToken.grantRead.parameter.grantee\\"></a>
 
@@ -6580,6 +6714,8 @@ Represents an ECR repository.
 public addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/PolicyStatement?lang=python\\">PolicyStatement</a>
@@ -6591,6 +6727,8 @@ public addToResourcePolicy(PolicyStatement statement)
 \`\`\`java
 public grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grant.parameter.grantee\\"></a>
 
@@ -6610,6 +6748,8 @@ public grant(IGrantable grantee, java.lang.String actions)
 public grantPull(IGrantable grantee)
 \`\`\`
 
+Grant the given identity permissions to pull images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
@@ -6621,6 +6761,8 @@ public grantPull(IGrantable grantee)
 \`\`\`java
 public grantPullPush(IGrantable grantee)
 \`\`\`
+
+Grant the given identity permissions to pull and push images to this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grantPullPush.parameter.grantee\\"></a>
 
@@ -6634,6 +6776,10 @@ public grantPullPush(IGrantable grantee)
 public onCloudTrailEvent(java.lang.String id)
 public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -6658,6 +6804,10 @@ public onCloudTrailImagePushed(java.lang.String id)
 public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -6681,6 +6831,10 @@ public onEvent(java.lang.String id)
 public onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -6699,6 +6853,8 @@ public onEvent(java.lang.String id, OnEventOptions options)
 public onImageScanCompleted(java.lang.String id)
 public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onImageScanCompleted.parameter.id\\"></a>
 
@@ -6723,6 +6879,10 @@ public repositoryUriForDigest()
 public repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* java.lang.String
@@ -6737,6 +6897,10 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 public repositoryUriForTag()
 public repositoryUriForTag(java.lang.String tag)
 \`\`\`
+
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"IRepository.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -7109,6 +7273,8 @@ def inspect(
 )
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/TreeInspector?lang=python\\">TreeInspector</a>
@@ -7286,6 +7452,8 @@ def inspect(
 )
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/TreeInspector?lang=python\\">TreeInspector</a>
@@ -7417,6 +7585,8 @@ def inspect(
   inspector: TreeInspector
 )
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
 
@@ -7621,6 +7791,8 @@ def inspect(
   inspector: TreeInspector
 )
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnRepository.inspect.parameter.inspector\\"></a>
 
@@ -7911,6 +8083,10 @@ def add_lifecycle_rule(
 )
 \`\`\`
 
+Add a life cycle rule to the repository.
+
+Life cycle rules automatically expire images from the repository that match certain conditions.
+
 ###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"Repository.addLifecycleRule.parameter.description\\"></a>
 
 - *Type:* str
@@ -7980,6 +8156,8 @@ def add_to_resource_policy(
 )
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"Repository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/PolicyStatement?lang=python\\">PolicyStatement</a>
@@ -8008,6 +8186,8 @@ aws_cdk.aws_ecr.Repository.arn_for_local_repository(
   account: str = None
 )
 \`\`\`
+
+Returns an ECR ARN for a repository that resides in the same account/region as the current stack.
 
 ###### \`repository_name\`<sup>Required</sup> <a name=\\"repository_name\\" id=\\"Repository.arnForLocalRepository.parameter.repositoryName\\"></a>
 
@@ -8069,6 +8249,8 @@ aws_cdk.aws_ecr.Repository.from_repository_attributes(
   repository_name: str
 )
 \`\`\`
+
+Import a repository.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Repository.fromRepositoryAttributes.parameter.scope\\"></a>
 
@@ -8269,6 +8451,8 @@ def add_to_resource_policy(
 )
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/PolicyStatement?lang=python\\">PolicyStatement</a>
@@ -8283,6 +8467,8 @@ def grant(
   actions: str
 )
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grant.parameter.grantee\\"></a>
 
@@ -8304,6 +8490,8 @@ def grant_pull(
 )
 \`\`\`
 
+Grant the given identity permissions to use the images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grantPull.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
@@ -8317,6 +8505,8 @@ def grant_pull_push(
   grantee: IGrantable
 )
 \`\`\`
+
+Grant the given identity permissions to pull and push images to this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grantPullPush.parameter.grantee\\"></a>
 
@@ -8335,6 +8525,10 @@ def on_cloud_trail_event(
   target: IRuleTarget = None
 )
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -8396,6 +8590,10 @@ def on_cloud_trail_image_pushed(
   image_tag: str = None
 )
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
 
@@ -8466,6 +8664,10 @@ def on_event(
 )
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onEvent.parameter.id\\"></a>
 
 - *Type:* str
@@ -8524,6 +8726,8 @@ def on_image_scan_completed(
   image_tags: typing.List[str] = None
 )
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
 
@@ -8592,6 +8796,10 @@ def repository_uri_for_digest(
 )
 \`\`\`
 
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* str
@@ -8607,6 +8815,10 @@ def repository_uri_for_tag(
   tag: str = None
 )
 \`\`\`
+
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -9638,6 +9850,8 @@ aws_cdk.aws_ecr.AuthorizationToken.grant_read(
 )
 \`\`\`
 
+Grant access to retrieve an authorization token.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
@@ -9670,6 +9884,8 @@ aws_cdk.aws_ecr.PublicGalleryAuthorizationToken.grant_read(
   grantee: IGrantable
 )
 \`\`\`
+
+Grant access to retrieve an authorization token.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"PublicGalleryAuthorizationToken.grantRead.parameter.grantee\\"></a>
 
@@ -9714,6 +9930,8 @@ def add_to_resource_policy(
 )
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/PolicyStatement?lang=python\\">PolicyStatement</a>
@@ -9728,6 +9946,8 @@ def grant(
   actions: str
 )
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grant.parameter.grantee\\"></a>
 
@@ -9749,6 +9969,8 @@ def grant_pull(
 )
 \`\`\`
 
+Grant the given identity permissions to pull images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
@@ -9762,6 +9984,8 @@ def grant_pull_push(
   grantee: IGrantable
 )
 \`\`\`
+
+Grant the given identity permissions to pull and push images to this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grantPullPush.parameter.grantee\\"></a>
 
@@ -9780,6 +10004,10 @@ def on_cloud_trail_event(
   target: IRuleTarget = None
 )
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -9841,6 +10069,10 @@ def on_cloud_trail_image_pushed(
   image_tag: str = None
 )
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
@@ -9911,6 +10143,10 @@ def on_event(
 )
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* str
@@ -9969,6 +10205,8 @@ def on_image_scan_completed(
   image_tags: typing.List[str] = None
 )
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onImageScanCompleted.parameter.id\\"></a>
 
@@ -10037,6 +10275,10 @@ def repository_uri_for_digest(
 )
 \`\`\`
 
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* str
@@ -10052,6 +10294,10 @@ def repository_uri_for_tag(
   tag: str = None
 )
 \`\`\`
+
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"IRepository.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -10376,6 +10622,8 @@ resource properties.
 public inspect(inspector: TreeInspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/TreeInspector?lang=python\\">TreeInspector</a>
@@ -10545,6 +10793,8 @@ resource properties.
 public inspect(inspector: TreeInspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/TreeInspector?lang=python\\">TreeInspector</a>
@@ -10669,6 +10919,8 @@ resource properties.
 public inspect(inspector: TreeInspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/core/v/99.99.99/api/TreeInspector?lang=python\\">TreeInspector</a>
@@ -10792,6 +11044,8 @@ resource properties.
 \`\`\`typescript
 public inspect(inspector: TreeInspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"CfnRepository.inspect.parameter.inspector\\"></a>
 
@@ -11009,6 +11263,10 @@ new Repository(scope: Construct, id: string, props?: RepositoryProps)
 public addLifecycleRule(rule: LifecycleRule)
 \`\`\`
 
+Add a life cycle rule to the repository.
+
+Life cycle rules automatically expire images from the repository that match certain conditions.
+
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"Repository.addLifecycleRule.parameter.rule\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-ecr/v/99.99.99/api/LifecycleRule?lang=python\\">LifecycleRule</a>
@@ -11020,6 +11278,8 @@ public addLifecycleRule(rule: LifecycleRule)
 \`\`\`typescript
 public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`
+
+Add a policy statement to the repository's resource policy.
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"Repository.addToResourcePolicy.parameter.statement\\"></a>
 
@@ -11045,6 +11305,8 @@ import { Repository } from '@aws-cdk/aws-ecr'
 
 Repository.arnForLocalRepository(repositoryName: string, scope: IConstruct, account?: string)
 \`\`\`
+
+Returns an ECR ARN for a repository that resides in the same account/region as the current stack.
 
 ###### \`repositoryName\`<sup>Required</sup> <a name=\\"repositoryName\\" id=\\"Repository.arnForLocalRepository.parameter.repositoryName\\"></a>
 
@@ -11097,6 +11359,8 @@ import { Repository } from '@aws-cdk/aws-ecr'
 
 Repository.fromRepositoryAttributes(scope: Construct, id: string, attrs: RepositoryAttributes)
 \`\`\`
+
+Import a repository.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Repository.fromRepositoryAttributes.parameter.scope\\"></a>
 
@@ -11241,6 +11505,8 @@ new RepositoryBase(scope: Construct, id: string, props?: ResourceProps)
 public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/PolicyStatement?lang=python\\">PolicyStatement</a>
@@ -11252,6 +11518,8 @@ public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`typescript
 public grant(grantee: IGrantable, actions: string)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grant.parameter.grantee\\"></a>
 
@@ -11271,6 +11539,8 @@ public grant(grantee: IGrantable, actions: string)
 public grantPull(grantee: IGrantable)
 \`\`\`
 
+Grant the given identity permissions to use the images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grantPull.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
@@ -11283,6 +11553,8 @@ public grantPull(grantee: IGrantable)
 public grantPullPush(grantee: IGrantable)
 \`\`\`
 
+Grant the given identity permissions to pull and push images to this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"RepositoryBase.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
@@ -11294,6 +11566,10 @@ public grantPullPush(grantee: IGrantable)
 \`\`\`typescript
 public onCloudTrailEvent(id: string, options?: OnEventOptions)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -11317,6 +11593,10 @@ Options for adding the rule.
 public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* string
@@ -11339,6 +11619,10 @@ Options for adding the rule.
 public onEvent(id: string, options?: OnEventOptions)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onEvent.parameter.id\\"></a>
 
 - *Type:* string
@@ -11356,6 +11640,8 @@ public onEvent(id: string, options?: OnEventOptions)
 \`\`\`typescript
 public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
 
@@ -11379,6 +11665,10 @@ Options for adding the rule.
 public repositoryUriForDigest(digest?: string)
 \`\`\`
 
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* string
@@ -11392,6 +11682,10 @@ Optional image digest.
 \`\`\`typescript
 public repositoryUriForTag(tag?: string)
 \`\`\`
+
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -12365,6 +12659,8 @@ import { AuthorizationToken } from '@aws-cdk/aws-ecr'
 AuthorizationToken.grantRead(grantee: IGrantable)
 \`\`\`
 
+Grant access to retrieve an authorization token.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
@@ -12395,6 +12691,8 @@ import { PublicGalleryAuthorizationToken } from '@aws-cdk/aws-ecr'
 
 PublicGalleryAuthorizationToken.grantRead(grantee: IGrantable)
 \`\`\`
+
+Grant access to retrieve an authorization token.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"PublicGalleryAuthorizationToken.grantRead.parameter.grantee\\"></a>
 
@@ -12437,6 +12735,8 @@ Represents an ECR repository.
 public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/PolicyStatement?lang=python\\">PolicyStatement</a>
@@ -12448,6 +12748,8 @@ public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`typescript
 public grant(grantee: IGrantable, actions: string)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grant.parameter.grantee\\"></a>
 
@@ -12467,6 +12769,8 @@ public grant(grantee: IGrantable, actions: string)
 public grantPull(grantee: IGrantable)
 \`\`\`
 
+Grant the given identity permissions to pull images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
@@ -12479,6 +12783,8 @@ public grantPull(grantee: IGrantable)
 public grantPullPush(grantee: IGrantable)
 \`\`\`
 
+Grant the given identity permissions to pull and push images to this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"IRepository.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"/packages/@aws-cdk/aws-iam/v/99.99.99/api/IGrantable?lang=python\\">IGrantable</a>
@@ -12490,6 +12796,10 @@ public grantPullPush(grantee: IGrantable)
 \`\`\`typescript
 public onCloudTrailEvent(id: string, options?: OnEventOptions)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -12513,6 +12823,10 @@ Options for adding the rule.
 public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* string
@@ -12535,6 +12849,10 @@ Options for adding the rule.
 public onEvent(id: string, options?: OnEventOptions)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* string
@@ -12552,6 +12870,8 @@ public onEvent(id: string, options?: OnEventOptions)
 \`\`\`typescript
 public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"IRepository.onImageScanCompleted.parameter.id\\"></a>
 
@@ -12575,6 +12895,10 @@ Options for adding the rule.
 public repositoryUriForDigest(digest?: string)
 \`\`\`
 
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* string
@@ -12588,6 +12912,10 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 \`\`\`typescript
 public repositoryUriForTag(tag?: string)
 \`\`\`
+
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"IRepository.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -12916,6 +13244,8 @@ resource properties.
 private Inspect(TreeInspector Inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.TreeInspector\\">TreeInspector</a>
@@ -13085,6 +13415,8 @@ resource properties.
 private Inspect(TreeInspector Inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.TreeInspector\\">TreeInspector</a>
@@ -13209,6 +13541,8 @@ resource properties.
 private Inspect(TreeInspector Inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.TreeInspector\\">TreeInspector</a>
@@ -13332,6 +13666,8 @@ resource properties.
 \`\`\`csharp
 private Inspect(TreeInspector Inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
 
@@ -13549,6 +13885,10 @@ new Repository(Construct Scope, string Id, RepositoryProps Props = null);
 private AddLifecycleRule(LifecycleRule Rule)
 \`\`\`
 
+Add a life cycle rule to the repository.
+
+Life cycle rules automatically expire images from the repository that match certain conditions.
+
 ###### \`Rule\`<sup>Required</sup> <a name=\\"Rule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.rule\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-ecr.LifecycleRule\\">LifecycleRule</a>
@@ -13560,6 +13900,8 @@ private AddLifecycleRule(LifecycleRule Rule)
 \`\`\`csharp
 private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
+
+Add a policy statement to the repository's resource policy.
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
 
@@ -13585,6 +13927,8 @@ using Amazon.CDK.AWS.ECR;
 
 Repository.ArnForLocalRepository(string RepositoryName, IConstruct Scope, string Account = null);
 \`\`\`
+
+Returns an ECR ARN for a repository that resides in the same account/region as the current stack.
 
 ###### \`RepositoryName\`<sup>Required</sup> <a name=\\"RepositoryName\\" id=\\"@aws-cdk/aws-ecr.Repository.arnForLocalRepository.parameter.repositoryName\\"></a>
 
@@ -13637,6 +13981,8 @@ using Amazon.CDK.AWS.ECR;
 
 Repository.FromRepositoryAttributes(Construct Scope, string Id, RepositoryAttributes Attrs);
 \`\`\`
+
+Import a repository.
 
 ###### \`Scope\`<sup>Required</sup> <a name=\\"Scope\\" id=\\"@aws-cdk/aws-ecr.Repository.fromRepositoryAttributes.parameter.scope\\"></a>
 
@@ -13781,6 +14127,8 @@ new RepositoryBase(Construct Scope, string Id, ResourceProps Props = null);
 private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>
@@ -13792,6 +14140,8 @@ private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`csharp
 private Grant(IGrantable Grantee, string Actions)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
 
@@ -13811,6 +14161,8 @@ private Grant(IGrantable Grantee, string Actions)
 private GrantPull(IGrantable Grantee)
 \`\`\`
 
+Grant the given identity permissions to use the images in this repository.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
@@ -13823,6 +14175,8 @@ private GrantPull(IGrantable Grantee)
 private GrantPullPush(IGrantable Grantee)
 \`\`\`
 
+Grant the given identity permissions to pull and push images to this repository.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
@@ -13834,6 +14188,10 @@ private GrantPullPush(IGrantable Grantee)
 \`\`\`csharp
 private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -13857,6 +14215,10 @@ Options for adding the rule.
 private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* string
@@ -13879,6 +14241,10 @@ Options for adding the rule.
 private OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
 
 - *Type:* string
@@ -13896,6 +14262,8 @@ private OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`csharp
 private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image scan is completed.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
 
@@ -13919,6 +14287,10 @@ Options for adding the rule.
 private RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`Digest\`<sup>Optional</sup> <a name=\\"Digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* string
@@ -13932,6 +14304,10 @@ Optional image digest.
 \`\`\`csharp
 private RepositoryUriForTag(string Tag = null)
 \`\`\`
+
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`Tag\`<sup>Optional</sup> <a name=\\"Tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -14961,6 +15337,8 @@ using Amazon.CDK.AWS.ECR;
 AuthorizationToken.GrantRead(IGrantable Grantee);
 \`\`\`
 
+Grant access to retrieve an authorization token.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
@@ -14991,6 +15369,8 @@ using Amazon.CDK.AWS.ECR;
 
 PublicGalleryAuthorizationToken.GrantRead(IGrantable Grantee);
 \`\`\`
+
+Grant access to retrieve an authorization token.
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.PublicGalleryAuthorizationToken.grantRead.parameter.grantee\\"></a>
 
@@ -15033,6 +15413,8 @@ Represents an ECR repository.
 private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>
@@ -15044,6 +15426,8 @@ private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`csharp
 private Grant(IGrantable Grantee, string Actions)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
 
@@ -15063,6 +15447,8 @@ private Grant(IGrantable Grantee, string Actions)
 private GrantPull(IGrantable Grantee)
 \`\`\`
 
+Grant the given identity permissions to pull images in this repository.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
@@ -15075,6 +15461,8 @@ private GrantPull(IGrantable Grantee)
 private GrantPullPush(IGrantable Grantee)
 \`\`\`
 
+Grant the given identity permissions to pull and push images to this repository.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
@@ -15086,6 +15474,10 @@ private GrantPullPush(IGrantable Grantee)
 \`\`\`csharp
 private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -15109,6 +15501,10 @@ Options for adding the rule.
 private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* string
@@ -15131,6 +15527,10 @@ Options for adding the rule.
 private OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* string
@@ -15148,6 +15548,8 @@ private OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`csharp
 private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
 
@@ -15171,6 +15573,10 @@ Options for adding the rule.
 private RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`Digest\`<sup>Optional</sup> <a name=\\"Digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* string
@@ -15184,6 +15590,10 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 \`\`\`csharp
 private RepositoryUriForTag(string Tag = null)
 \`\`\`
+
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`Tag\`<sup>Optional</sup> <a name=\\"Tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -15552,6 +15962,8 @@ scoped id of the resource.
 public inspect(TreeInspector inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.TreeInspector\\">TreeInspector</a>
@@ -15725,6 +16137,8 @@ scoped id of the resource.
 public inspect(TreeInspector inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.TreeInspector\\">TreeInspector</a>
@@ -15853,6 +16267,8 @@ scoped id of the resource.
 \`\`\`java
 public inspect(TreeInspector inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
 
@@ -16054,6 +16470,8 @@ scoped id of the resource.
 \`\`\`java
 public inspect(TreeInspector inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
 
@@ -16335,6 +16753,10 @@ Name for this repository.
 public addLifecycleRule(LifecycleRule rule)
 \`\`\`
 
+Add a life cycle rule to the repository.
+
+Life cycle rules automatically expire images from the repository that match certain conditions.
+
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.rule\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-ecr.LifecycleRule\\">LifecycleRule</a>
@@ -16346,6 +16768,8 @@ public addLifecycleRule(LifecycleRule rule)
 \`\`\`java
 public addToResourcePolicy(PolicyStatement statement)
 \`\`\`
+
+Add a policy statement to the repository's resource policy.
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
 
@@ -16371,6 +16795,8 @@ import software.amazon.awscdk.services.ecr.Repository;
 
 Repository.arnForLocalRepository(java.lang.String repositoryName, IConstruct scope),Repository.arnForLocalRepository(java.lang.String repositoryName, IConstruct scope, java.lang.String account)
 \`\`\`
+
+Returns an ECR ARN for a repository that resides in the same account/region as the current stack.
 
 ###### \`repositoryName\`<sup>Required</sup> <a name=\\"repositoryName\\" id=\\"@aws-cdk/aws-ecr.Repository.arnForLocalRepository.parameter.repositoryName\\"></a>
 
@@ -16423,6 +16849,8 @@ import software.amazon.awscdk.services.ecr.Repository;
 
 Repository.fromRepositoryAttributes(Construct scope, java.lang.String id, RepositoryAttributes attrs)
 \`\`\`
+
+Import a repository.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.Repository.fromRepositoryAttributes.parameter.scope\\"></a>
 
@@ -16609,6 +17037,8 @@ The AWS region this resource belongs to.
 public addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>
@@ -16620,6 +17050,8 @@ public addToResourcePolicy(PolicyStatement statement)
 \`\`\`java
 public grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
 
@@ -16639,6 +17071,8 @@ public grant(IGrantable grantee, java.lang.String actions)
 public grantPull(IGrantable grantee)
 \`\`\`
 
+Grant the given identity permissions to use the images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
@@ -16650,6 +17084,8 @@ public grantPull(IGrantable grantee)
 \`\`\`java
 public grantPullPush(IGrantable grantee)
 \`\`\`
+
+Grant the given identity permissions to pull and push images to this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
 
@@ -16663,6 +17099,10 @@ public grantPullPush(IGrantable grantee)
 public onCloudTrailEvent(java.lang.String id)
 public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -16687,6 +17127,10 @@ public onCloudTrailImagePushed(java.lang.String id)
 public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -16710,6 +17154,10 @@ public onEvent(java.lang.String id)
 public onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -16728,6 +17176,8 @@ public onEvent(java.lang.String id, OnEventOptions options)
 public onImageScanCompleted(java.lang.String id)
 public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
 
@@ -16752,6 +17202,10 @@ public repositoryUriForDigest()
 public repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* java.lang.String
@@ -16766,6 +17220,10 @@ Optional image digest.
 public repositoryUriForTag()
 public repositoryUriForTag(java.lang.String tag)
 \`\`\`
+
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -17801,6 +18259,8 @@ import software.amazon.awscdk.services.ecr.AuthorizationToken;
 AuthorizationToken.grantRead(IGrantable grantee)
 \`\`\`
 
+Grant access to retrieve an authorization token.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
@@ -17831,6 +18291,8 @@ import software.amazon.awscdk.services.ecr.PublicGalleryAuthorizationToken;
 
 PublicGalleryAuthorizationToken.grantRead(IGrantable grantee)
 \`\`\`
+
+Grant access to retrieve an authorization token.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.PublicGalleryAuthorizationToken.grantRead.parameter.grantee\\"></a>
 
@@ -17873,6 +18335,8 @@ Represents an ECR repository.
 public addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>
@@ -17884,6 +18348,8 @@ public addToResourcePolicy(PolicyStatement statement)
 \`\`\`java
 public grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
 
@@ -17903,6 +18369,8 @@ public grant(IGrantable grantee, java.lang.String actions)
 public grantPull(IGrantable grantee)
 \`\`\`
 
+Grant the given identity permissions to pull images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
@@ -17914,6 +18382,8 @@ public grantPull(IGrantable grantee)
 \`\`\`java
 public grantPullPush(IGrantable grantee)
 \`\`\`
+
+Grant the given identity permissions to pull and push images to this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
 
@@ -17927,6 +18397,10 @@ public grantPullPush(IGrantable grantee)
 public onCloudTrailEvent(java.lang.String id)
 public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -17951,6 +18425,10 @@ public onCloudTrailImagePushed(java.lang.String id)
 public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -17974,6 +18452,10 @@ public onEvent(java.lang.String id)
 public onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -17992,6 +18474,8 @@ public onEvent(java.lang.String id, OnEventOptions options)
 public onImageScanCompleted(java.lang.String id)
 public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
 
@@ -18016,6 +18500,10 @@ public repositoryUriForDigest()
 public repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* java.lang.String
@@ -18030,6 +18518,10 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 public repositoryUriForTag()
 public repositoryUriForTag(java.lang.String tag)
 \`\`\`
+
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -18402,6 +18894,8 @@ def inspect(
 )
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.TreeInspector\\">TreeInspector</a>
@@ -18579,6 +19073,8 @@ def inspect(
 )
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.TreeInspector\\">TreeInspector</a>
@@ -18710,6 +19206,8 @@ def inspect(
   inspector: TreeInspector
 )
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
 
@@ -18914,6 +19412,8 @@ def inspect(
   inspector: TreeInspector
 )
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
 
@@ -19204,6 +19704,10 @@ def add_lifecycle_rule(
 )
 \`\`\`
 
+Add a life cycle rule to the repository.
+
+Life cycle rules automatically expire images from the repository that match certain conditions.
+
 ###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.description\\"></a>
 
 - *Type:* str
@@ -19273,6 +19777,8 @@ def add_to_resource_policy(
 )
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>
@@ -19301,6 +19807,8 @@ aws_cdk.aws_ecr.Repository.arn_for_local_repository(
   account: str = None
 )
 \`\`\`
+
+Returns an ECR ARN for a repository that resides in the same account/region as the current stack.
 
 ###### \`repository_name\`<sup>Required</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.Repository.arnForLocalRepository.parameter.repositoryName\\"></a>
 
@@ -19362,6 +19870,8 @@ aws_cdk.aws_ecr.Repository.from_repository_attributes(
   repository_name: str
 )
 \`\`\`
+
+Import a repository.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.Repository.fromRepositoryAttributes.parameter.scope\\"></a>
 
@@ -19562,6 +20072,8 @@ def add_to_resource_policy(
 )
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>
@@ -19576,6 +20088,8 @@ def grant(
   actions: str
 )
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
 
@@ -19597,6 +20111,8 @@ def grant_pull(
 )
 \`\`\`
 
+Grant the given identity permissions to use the images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
@@ -19610,6 +20126,8 @@ def grant_pull_push(
   grantee: IGrantable
 )
 \`\`\`
+
+Grant the given identity permissions to pull and push images to this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
 
@@ -19628,6 +20146,10 @@ def on_cloud_trail_event(
   target: IRuleTarget = None
 )
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -19689,6 +20211,10 @@ def on_cloud_trail_image_pushed(
   image_tag: str = None
 )
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
 
@@ -19759,6 +20285,10 @@ def on_event(
 )
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
 
 - *Type:* str
@@ -19817,6 +20347,8 @@ def on_image_scan_completed(
   image_tags: typing.List[str] = None
 )
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
 
@@ -19885,6 +20417,10 @@ def repository_uri_for_digest(
 )
 \`\`\`
 
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* str
@@ -19900,6 +20436,10 @@ def repository_uri_for_tag(
   tag: str = None
 )
 \`\`\`
+
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -20931,6 +21471,8 @@ aws_cdk.aws_ecr.AuthorizationToken.grant_read(
 )
 \`\`\`
 
+Grant access to retrieve an authorization token.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
@@ -20963,6 +21505,8 @@ aws_cdk.aws_ecr.PublicGalleryAuthorizationToken.grant_read(
   grantee: IGrantable
 )
 \`\`\`
+
+Grant access to retrieve an authorization token.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.PublicGalleryAuthorizationToken.grantRead.parameter.grantee\\"></a>
 
@@ -21007,6 +21551,8 @@ def add_to_resource_policy(
 )
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>
@@ -21021,6 +21567,8 @@ def grant(
   actions: str
 )
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
 
@@ -21042,6 +21590,8 @@ def grant_pull(
 )
 \`\`\`
 
+Grant the given identity permissions to pull images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
@@ -21055,6 +21605,8 @@ def grant_pull_push(
   grantee: IGrantable
 )
 \`\`\`
+
+Grant the given identity permissions to pull and push images to this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
 
@@ -21073,6 +21625,10 @@ def on_cloud_trail_event(
   target: IRuleTarget = None
 )
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -21134,6 +21690,10 @@ def on_cloud_trail_image_pushed(
   image_tag: str = None
 )
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
@@ -21204,6 +21764,10 @@ def on_event(
 )
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* str
@@ -21262,6 +21826,8 @@ def on_image_scan_completed(
   image_tags: typing.List[str] = None
 )
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
 
@@ -21330,6 +21896,10 @@ def repository_uri_for_digest(
 )
 \`\`\`
 
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* str
@@ -21345,6 +21915,10 @@ def repository_uri_for_tag(
   tag: str = None
 )
 \`\`\`
+
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -21669,6 +22243,8 @@ resource properties.
 public inspect(inspector: TreeInspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.TreeInspector\\">TreeInspector</a>
@@ -21838,6 +22414,8 @@ resource properties.
 public inspect(inspector: TreeInspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.TreeInspector\\">TreeInspector</a>
@@ -21962,6 +22540,8 @@ resource properties.
 public inspect(inspector: TreeInspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/core.TreeInspector\\">TreeInspector</a>
@@ -22085,6 +22665,8 @@ resource properties.
 \`\`\`typescript
 public inspect(inspector: TreeInspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
 
@@ -22302,6 +22884,10 @@ new Repository(scope: Construct, id: string, props?: RepositoryProps)
 public addLifecycleRule(rule: LifecycleRule)
 \`\`\`
 
+Add a life cycle rule to the repository.
+
+Life cycle rules automatically expire images from the repository that match certain conditions.
+
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.rule\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-ecr.LifecycleRule\\">LifecycleRule</a>
@@ -22313,6 +22899,8 @@ public addLifecycleRule(rule: LifecycleRule)
 \`\`\`typescript
 public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`
+
+Add a policy statement to the repository's resource policy.
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
 
@@ -22338,6 +22926,8 @@ import { Repository } from '@aws-cdk/aws-ecr'
 
 Repository.arnForLocalRepository(repositoryName: string, scope: IConstruct, account?: string)
 \`\`\`
+
+Returns an ECR ARN for a repository that resides in the same account/region as the current stack.
 
 ###### \`repositoryName\`<sup>Required</sup> <a name=\\"repositoryName\\" id=\\"@aws-cdk/aws-ecr.Repository.arnForLocalRepository.parameter.repositoryName\\"></a>
 
@@ -22390,6 +22980,8 @@ import { Repository } from '@aws-cdk/aws-ecr'
 
 Repository.fromRepositoryAttributes(scope: Construct, id: string, attrs: RepositoryAttributes)
 \`\`\`
+
+Import a repository.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.Repository.fromRepositoryAttributes.parameter.scope\\"></a>
 
@@ -22534,6 +23126,8 @@ new RepositoryBase(scope: Construct, id: string, props?: ResourceProps)
 public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>
@@ -22545,6 +23139,8 @@ public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`typescript
 public grant(grantee: IGrantable, actions: string)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
 
@@ -22564,6 +23160,8 @@ public grant(grantee: IGrantable, actions: string)
 public grantPull(grantee: IGrantable)
 \`\`\`
 
+Grant the given identity permissions to use the images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
@@ -22576,6 +23174,8 @@ public grantPull(grantee: IGrantable)
 public grantPullPush(grantee: IGrantable)
 \`\`\`
 
+Grant the given identity permissions to pull and push images to this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
@@ -22587,6 +23187,10 @@ public grantPullPush(grantee: IGrantable)
 \`\`\`typescript
 public onCloudTrailEvent(id: string, options?: OnEventOptions)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -22610,6 +23214,10 @@ Options for adding the rule.
 public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* string
@@ -22632,6 +23240,10 @@ Options for adding the rule.
 public onEvent(id: string, options?: OnEventOptions)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
 
 - *Type:* string
@@ -22649,6 +23261,8 @@ public onEvent(id: string, options?: OnEventOptions)
 \`\`\`typescript
 public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
 
@@ -22672,6 +23286,10 @@ Options for adding the rule.
 public repositoryUriForDigest(digest?: string)
 \`\`\`
 
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* string
@@ -22685,6 +23303,10 @@ Optional image digest.
 \`\`\`typescript
 public repositoryUriForTag(tag?: string)
 \`\`\`
+
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -23658,6 +24280,8 @@ import { AuthorizationToken } from '@aws-cdk/aws-ecr'
 AuthorizationToken.grantRead(grantee: IGrantable)
 \`\`\`
 
+Grant access to retrieve an authorization token.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
@@ -23688,6 +24312,8 @@ import { PublicGalleryAuthorizationToken } from '@aws-cdk/aws-ecr'
 
 PublicGalleryAuthorizationToken.grantRead(grantee: IGrantable)
 \`\`\`
+
+Grant access to retrieve an authorization token.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.PublicGalleryAuthorizationToken.grantRead.parameter.grantee\\"></a>
 
@@ -23730,6 +24356,8 @@ Represents an ECR repository.
 public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.PolicyStatement\\">PolicyStatement</a>
@@ -23741,6 +24369,8 @@ public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`typescript
 public grant(grantee: IGrantable, actions: string)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
 
@@ -23760,6 +24390,8 @@ public grant(grantee: IGrantable, actions: string)
 public grantPull(grantee: IGrantable)
 \`\`\`
 
+Grant the given identity permissions to pull images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
@@ -23772,6 +24404,8 @@ public grantPull(grantee: IGrantable)
 public grantPullPush(grantee: IGrantable)
 \`\`\`
 
+Grant the given identity permissions to pull and push images to this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* <a href=\\"#custom-@aws-cdk/aws-iam.IGrantable\\">IGrantable</a>
@@ -23783,6 +24417,10 @@ public grantPullPush(grantee: IGrantable)
 \`\`\`typescript
 public onCloudTrailEvent(id: string, options?: OnEventOptions)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -23806,6 +24444,10 @@ Options for adding the rule.
 public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* string
@@ -23828,6 +24470,10 @@ Options for adding the rule.
 public onEvent(id: string, options?: OnEventOptions)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* string
@@ -23845,6 +24491,8 @@ public onEvent(id: string, options?: OnEventOptions)
 \`\`\`typescript
 public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
 
@@ -23868,6 +24516,10 @@ Options for adding the rule.
 public repositoryUriForDigest(digest?: string)
 \`\`\`
 
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* string
@@ -23881,6 +24533,10 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 \`\`\`typescript
 public repositoryUriForTag(tag?: string)
 \`\`\`
+
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
 

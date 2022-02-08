@@ -168,6 +168,8 @@ resource properties.
 private Inspect(TreeInspector Inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* Amazon.CDK.TreeInspector
@@ -337,6 +339,8 @@ resource properties.
 private Inspect(TreeInspector Inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
 
 - *Type:* Amazon.CDK.TreeInspector
@@ -461,6 +465,8 @@ resource properties.
 private Inspect(TreeInspector Inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
 
 - *Type:* Amazon.CDK.TreeInspector
@@ -584,6 +590,8 @@ resource properties.
 \`\`\`csharp
 private Inspect(TreeInspector Inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
 
@@ -801,6 +809,10 @@ new Repository(Construct Scope, string Id, RepositoryProps Props = null);
 private AddLifecycleRule(LifecycleRule Rule)
 \`\`\`
 
+Add a life cycle rule to the repository.
+
+Life cycle rules automatically expire images from the repository that match certain conditions.
+
 ###### \`Rule\`<sup>Required</sup> <a name=\\"Rule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.rule\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-ecr.LifecycleRule\\">LifecycleRule</a>
@@ -812,6 +824,8 @@ private AddLifecycleRule(LifecycleRule Rule)
 \`\`\`csharp
 private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
+
+Add a policy statement to the repository's resource policy.
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
 
@@ -837,6 +851,8 @@ using Amazon.CDK.AWS.ECR;
 
 Repository.ArnForLocalRepository(string RepositoryName, IConstruct Scope, string Account = null);
 \`\`\`
+
+Returns an ECR ARN for a repository that resides in the same account/region as the current stack.
 
 ###### \`RepositoryName\`<sup>Required</sup> <a name=\\"RepositoryName\\" id=\\"@aws-cdk/aws-ecr.Repository.arnForLocalRepository.parameter.repositoryName\\"></a>
 
@@ -889,6 +905,8 @@ using Amazon.CDK.AWS.ECR;
 
 Repository.FromRepositoryAttributes(Construct Scope, string Id, RepositoryAttributes Attrs);
 \`\`\`
+
+Import a repository.
 
 ###### \`Scope\`<sup>Required</sup> <a name=\\"Scope\\" id=\\"@aws-cdk/aws-ecr.Repository.fromRepositoryAttributes.parameter.scope\\"></a>
 
@@ -1033,6 +1051,8 @@ new RepositoryBase(Construct Scope, string Id, ResourceProps Props = null);
 private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.PolicyStatement
@@ -1044,6 +1064,8 @@ private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`csharp
 private Grant(IGrantable Grantee, string Actions)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
 
@@ -1063,6 +1085,8 @@ private Grant(IGrantable Grantee, string Actions)
 private GrantPull(IGrantable Grantee)
 \`\`\`
 
+Grant the given identity permissions to use the images in this repository.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.IGrantable
@@ -1075,6 +1099,8 @@ private GrantPull(IGrantable Grantee)
 private GrantPullPush(IGrantable Grantee)
 \`\`\`
 
+Grant the given identity permissions to pull and push images to this repository.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.IGrantable
@@ -1086,6 +1112,10 @@ private GrantPullPush(IGrantable Grantee)
 \`\`\`csharp
 private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -1109,6 +1139,10 @@ Options for adding the rule.
 private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* string
@@ -1131,6 +1165,10 @@ Options for adding the rule.
 private OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
 
 - *Type:* string
@@ -1148,6 +1186,8 @@ private OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`csharp
 private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image scan is completed.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
 
@@ -1171,6 +1211,10 @@ Options for adding the rule.
 private RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`Digest\`<sup>Optional</sup> <a name=\\"Digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* string
@@ -1184,6 +1228,10 @@ Optional image digest.
 \`\`\`csharp
 private RepositoryUriForTag(string Tag = null)
 \`\`\`
+
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`Tag\`<sup>Optional</sup> <a name=\\"Tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -2213,6 +2261,8 @@ using Amazon.CDK.AWS.ECR;
 AuthorizationToken.GrantRead(IGrantable Grantee);
 \`\`\`
 
+Grant access to retrieve an authorization token.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.IGrantable
@@ -2243,6 +2293,8 @@ using Amazon.CDK.AWS.ECR;
 
 PublicGalleryAuthorizationToken.GrantRead(IGrantable Grantee);
 \`\`\`
+
+Grant access to retrieve an authorization token.
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.PublicGalleryAuthorizationToken.grantRead.parameter.grantee\\"></a>
 
@@ -2285,6 +2337,8 @@ Represents an ECR repository.
 private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.PolicyStatement
@@ -2296,6 +2350,8 @@ private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`csharp
 private Grant(IGrantable Grantee, string Actions)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
 
@@ -2315,6 +2371,8 @@ private Grant(IGrantable Grantee, string Actions)
 private GrantPull(IGrantable Grantee)
 \`\`\`
 
+Grant the given identity permissions to pull images in this repository.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.IGrantable
@@ -2327,6 +2385,8 @@ private GrantPull(IGrantable Grantee)
 private GrantPullPush(IGrantable Grantee)
 \`\`\`
 
+Grant the given identity permissions to pull and push images to this repository.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.IGrantable
@@ -2338,6 +2398,10 @@ private GrantPullPush(IGrantable Grantee)
 \`\`\`csharp
 private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -2361,6 +2425,10 @@ Options for adding the rule.
 private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* string
@@ -2383,6 +2451,10 @@ Options for adding the rule.
 private OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* string
@@ -2400,6 +2472,8 @@ private OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`csharp
 private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
 
@@ -2423,6 +2497,10 @@ Options for adding the rule.
 private RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`Digest\`<sup>Optional</sup> <a name=\\"Digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* string
@@ -2436,6 +2514,10 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 \`\`\`csharp
 private RepositoryUriForTag(string Tag = null)
 \`\`\`
+
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`Tag\`<sup>Optional</sup> <a name=\\"Tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -2764,6 +2846,8 @@ resource properties.
 private Inspect(TreeInspector Inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* Amazon.CDK.TreeInspector
@@ -2933,6 +3017,8 @@ resource properties.
 private Inspect(TreeInspector Inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
 
 - *Type:* Amazon.CDK.TreeInspector
@@ -3057,6 +3143,8 @@ resource properties.
 private Inspect(TreeInspector Inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
 
 - *Type:* Amazon.CDK.TreeInspector
@@ -3180,6 +3268,8 @@ resource properties.
 \`\`\`csharp
 private Inspect(TreeInspector Inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
 
@@ -3397,6 +3487,10 @@ new Repository(Construct Scope, string Id, RepositoryProps Props = null);
 private AddLifecycleRule(LifecycleRule Rule)
 \`\`\`
 
+Add a life cycle rule to the repository.
+
+Life cycle rules automatically expire images from the repository that match certain conditions.
+
 ###### \`Rule\`<sup>Required</sup> <a name=\\"Rule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.rule\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-ecr.LifecycleRule\\">LifecycleRule</a>
@@ -3408,6 +3502,8 @@ private AddLifecycleRule(LifecycleRule Rule)
 \`\`\`csharp
 private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
+
+Add a policy statement to the repository's resource policy.
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
 
@@ -3433,6 +3529,8 @@ using Amazon.CDK.AWS.ECR;
 
 Repository.ArnForLocalRepository(string RepositoryName, IConstruct Scope, string Account = null);
 \`\`\`
+
+Returns an ECR ARN for a repository that resides in the same account/region as the current stack.
 
 ###### \`RepositoryName\`<sup>Required</sup> <a name=\\"RepositoryName\\" id=\\"@aws-cdk/aws-ecr.Repository.arnForLocalRepository.parameter.repositoryName\\"></a>
 
@@ -3485,6 +3583,8 @@ using Amazon.CDK.AWS.ECR;
 
 Repository.FromRepositoryAttributes(Construct Scope, string Id, RepositoryAttributes Attrs);
 \`\`\`
+
+Import a repository.
 
 ###### \`Scope\`<sup>Required</sup> <a name=\\"Scope\\" id=\\"@aws-cdk/aws-ecr.Repository.fromRepositoryAttributes.parameter.scope\\"></a>
 
@@ -3629,6 +3729,8 @@ new RepositoryBase(Construct Scope, string Id, ResourceProps Props = null);
 private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.PolicyStatement
@@ -3640,6 +3742,8 @@ private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`csharp
 private Grant(IGrantable Grantee, string Actions)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
 
@@ -3659,6 +3763,8 @@ private Grant(IGrantable Grantee, string Actions)
 private GrantPull(IGrantable Grantee)
 \`\`\`
 
+Grant the given identity permissions to use the images in this repository.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.IGrantable
@@ -3671,6 +3777,8 @@ private GrantPull(IGrantable Grantee)
 private GrantPullPush(IGrantable Grantee)
 \`\`\`
 
+Grant the given identity permissions to pull and push images to this repository.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.IGrantable
@@ -3682,6 +3790,10 @@ private GrantPullPush(IGrantable Grantee)
 \`\`\`csharp
 private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -3705,6 +3817,10 @@ Options for adding the rule.
 private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* string
@@ -3727,6 +3843,10 @@ Options for adding the rule.
 private OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
 
 - *Type:* string
@@ -3744,6 +3864,8 @@ private OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`csharp
 private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image scan is completed.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
 
@@ -3767,6 +3889,10 @@ Options for adding the rule.
 private RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`Digest\`<sup>Optional</sup> <a name=\\"Digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* string
@@ -3780,6 +3906,10 @@ Optional image digest.
 \`\`\`csharp
 private RepositoryUriForTag(string Tag = null)
 \`\`\`
+
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`Tag\`<sup>Optional</sup> <a name=\\"Tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -4809,6 +4939,8 @@ using Amazon.CDK.AWS.ECR;
 AuthorizationToken.GrantRead(IGrantable Grantee);
 \`\`\`
 
+Grant access to retrieve an authorization token.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.IGrantable
@@ -4839,6 +4971,8 @@ using Amazon.CDK.AWS.ECR;
 
 PublicGalleryAuthorizationToken.GrantRead(IGrantable Grantee);
 \`\`\`
+
+Grant access to retrieve an authorization token.
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.PublicGalleryAuthorizationToken.grantRead.parameter.grantee\\"></a>
 
@@ -4881,6 +5015,8 @@ Represents an ECR repository.
 private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.PolicyStatement
@@ -4892,6 +5028,8 @@ private AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`csharp
 private Grant(IGrantable Grantee, string Actions)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
 
@@ -4911,6 +5049,8 @@ private Grant(IGrantable Grantee, string Actions)
 private GrantPull(IGrantable Grantee)
 \`\`\`
 
+Grant the given identity permissions to pull images in this repository.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.IGrantable
@@ -4923,6 +5063,8 @@ private GrantPull(IGrantable Grantee)
 private GrantPullPush(IGrantable Grantee)
 \`\`\`
 
+Grant the given identity permissions to pull and push images to this repository.
+
 ###### \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.IGrantable
@@ -4934,6 +5076,10 @@ private GrantPullPush(IGrantable Grantee)
 \`\`\`csharp
 private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -4957,6 +5103,10 @@ Options for adding the rule.
 private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* string
@@ -4979,6 +5129,10 @@ Options for adding the rule.
 private OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* string
@@ -4996,6 +5150,8 @@ private OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`csharp
 private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
 
@@ -5019,6 +5175,10 @@ Options for adding the rule.
 private RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`Digest\`<sup>Optional</sup> <a name=\\"Digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* string
@@ -5032,6 +5192,10 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 \`\`\`csharp
 private RepositoryUriForTag(string Tag = null)
 \`\`\`
+
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`Tag\`<sup>Optional</sup> <a name=\\"Tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -6465,6 +6629,8 @@ new AwsAuth(Construct Scope, string Id, AwsAuthProps Props);
 private AddAccount(string AccountId)
 \`\`\`
 
+Additional AWS account to add to the aws-auth configmap.
+
 ###### \`AccountId\`<sup>Required</sup> <a name=\\"AccountId\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addAccount.parameter.accountId\\"></a>
 
 - *Type:* string
@@ -6478,6 +6644,8 @@ account number.
 \`\`\`csharp
 private AddMastersRole(IRole Role, string Username = null)
 \`\`\`
+
+Adds the specified IAM role to the \`system:masters\` RBAC group, which means that anyone that can assume it will be able to administer this Kubernetes system.
 
 ###### \`Role\`<sup>Required</sup> <a name=\\"Role\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addMastersRole.parameter.role\\"></a>
 
@@ -6501,6 +6669,8 @@ Optional user (defaults to the role ARN).
 private AddRoleMapping(IRole Role, AwsAuthMapping Mapping)
 \`\`\`
 
+Adds a mapping between an IAM role to a Kubernetes user and groups.
+
 ###### \`Role\`<sup>Required</sup> <a name=\\"Role\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addRoleMapping.parameter.role\\"></a>
 
 - *Type:* Amazon.CDK.aws_iam.IRole
@@ -6522,6 +6692,8 @@ Mapping to k8s user name and groups.
 \`\`\`csharp
 private AddUserMapping(IUser User, AwsAuthMapping Mapping)
 \`\`\`
+
+Adds a mapping between an IAM user to a Kubernetes user and groups.
 
 ###### \`User\`<sup>Required</sup> <a name=\\"User\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addUserMapping.parameter.user\\"></a>
 
@@ -6603,6 +6775,8 @@ resource properties.
 \`\`\`csharp
 private Inspect(TreeInspector Inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnAddon.inspect.parameter.inspector\\"></a>
 
@@ -6802,6 +6976,8 @@ resource properties.
 \`\`\`csharp
 private Inspect(TreeInspector Inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnCluster.inspect.parameter.inspector\\"></a>
 
@@ -7057,6 +7233,8 @@ resource properties.
 private Inspect(TreeInspector Inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnFargateProfile.inspect.parameter.inspector\\"></a>
 
 - *Type:* Amazon.CDK.TreeInspector
@@ -7255,6 +7433,8 @@ resource properties.
 \`\`\`csharp
 private Inspect(TreeInspector Inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnNodegroup.inspect.parameter.inspector\\"></a>
 
@@ -7650,6 +7830,10 @@ properties in the IClusterProps interface.
 private AddAutoScalingGroupCapacity(string Id, AutoScalingGroupCapacityOptions Options)
 \`\`\`
 
+Add nodes to this EKS cluster.
+
+The nodes will automatically be configured with the right VPC and AMI for the instance type and Kubernetes version.  Note that if you specify \`updateType: RollingUpdate\` or \`updateType: ReplacingUpdate\`, your nodes might be replaced at deploy time without notice in case the recommended AMI for your machine image type has been updated by AWS. The default behavior for \`updateType\` is \`None\`, which means only new instances will be launched using the new AMI.  Spot instances will be labeled \`lifecycle=Ec2Spot\` and tainted with \`PreferNoSchedule\`. In addition, the [spot interrupt handler](https://github.com/awslabs/ec2-spot-labs/tree/master/ec2-spot-eks-solution/spot-termination-handler) daemon will be installed on all spot instances to handle [EC2 Spot Instance Termination Notices](https://aws.amazon.com/blogs/aws/new-ec2-spot-instance-termination-notices/).
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addAutoScalingGroupCapacity.parameter.id\\"></a>
 
 - *Type:* string
@@ -7667,6 +7851,8 @@ private AddAutoScalingGroupCapacity(string Id, AutoScalingGroupCapacityOptions O
 \`\`\`csharp
 private AddCdk8sChart(string Id, Construct Chart)
 \`\`\`
+
+Defines a CDK8s chart in this cluster.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addCdk8sChart.parameter.id\\"></a>
 
@@ -7690,6 +7876,10 @@ the cdk8s chart.
 private AddFargateProfile(string Id, FargateProfileOptions Options)
 \`\`\`
 
+Adds a Fargate profile to this cluster.
+
+> [https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html](https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html)
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addFargateProfile.parameter.id\\"></a>
 
 - *Type:* string
@@ -7711,6 +7901,8 @@ profile options.
 \`\`\`csharp
 private AddHelmChart(string Id, HelmChartOptions Options)
 \`\`\`
+
+Defines a Helm chart in this cluster.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addHelmChart.parameter.id\\"></a>
 
@@ -7734,6 +7926,10 @@ options of this chart.
 private AddManifest(string Id, System.Collections.Generic.IDictionary<string, object> Manifest)
 \`\`\`
 
+Defines a Kubernetes resource in this cluster.
+
+The manifest will be applied/deleted using kubectl as needed.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addManifest.parameter.id\\"></a>
 
 - *Type:* string
@@ -7755,6 +7951,12 @@ a list of Kubernetes resource specifications.
 \`\`\`csharp
 private AddNodegroupCapacity(string Id, NodegroupOptions Options = null)
 \`\`\`
+
+Add managed nodegroup to this Amazon EKS cluster.
+
+This method will create a new managed nodegroup and add into the capacity.
+
+> [https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html)
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addNodegroupCapacity.parameter.id\\"></a>
 
@@ -7778,6 +7980,8 @@ options for creating a new nodegroup.
 private AddServiceAccount(string Id, ServiceAccountOptions Options = null)
 \`\`\`
 
+Creates a new service account with corresponding IAM Role (IRSA).
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addServiceAccount.parameter.id\\"></a>
 
 - *Type:* string
@@ -7795,6 +7999,12 @@ private AddServiceAccount(string Id, ServiceAccountOptions Options = null)
 \`\`\`csharp
 private ConnectAutoScalingGroupCapacity(AutoScalingGroup AutoScalingGroup, AutoScalingGroupOptions Options)
 \`\`\`
+
+Connect capacity in the form of an existing AutoScalingGroup to the EKS cluster.
+
+The AutoScalingGroup must be running an EKS-optimized AMI containing the /etc/eks/bootstrap.sh script. This method will configure Security Groups, add the right policies to the instance role, apply the right tags, and add the required user data to the instance's launch configuration.  Spot instances will be labeled \`lifecycle=Ec2Spot\` and tainted with \`PreferNoSchedule\`. If kubectl is enabled, the [spot interrupt handler](https://github.com/awslabs/ec2-spot-labs/tree/master/ec2-spot-eks-solution/spot-termination-handler) daemon will be installed on all spot instances to handle [EC2 Spot Instance Termination Notices](https://aws.amazon.com/blogs/aws/new-ec2-spot-instance-termination-notices/).  Prefer to use \`addAutoScalingGroupCapacity\` if possible.
+
+> [https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html](https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html)
 
 ###### \`AutoScalingGroup\`<sup>Required</sup> <a name=\\"AutoScalingGroup\\" id=\\"aws-cdk-lib.aws_eks.Cluster.connectAutoScalingGroupCapacity.parameter.autoScalingGroup\\"></a>
 
@@ -7817,6 +8027,8 @@ options for adding auto scaling groups, like customizing the bootstrap script.
 \`\`\`csharp
 private GetServiceLoadBalancerAddress(string ServiceName, ServiceLoadBalancerAddressOptions Options = null)
 \`\`\`
+
+Fetch the load balancer address of a service of type 'LoadBalancer'.
 
 ###### \`ServiceName\`<sup>Required</sup> <a name=\\"ServiceName\\" id=\\"aws-cdk-lib.aws_eks.Cluster.getServiceLoadBalancerAddress.parameter.serviceName\\"></a>
 
@@ -7849,6 +8061,8 @@ using Amazon.CDK;
 
 Cluster.FromClusterAttributes(Construct Scope, string Id, ClusterAttributes Attrs);
 \`\`\`
+
+Import an existing cluster.
 
 ###### \`Scope\`<sup>Required</sup> <a name=\\"Scope\\" id=\\"aws-cdk-lib.aws_eks.Cluster.fromClusterAttributes.parameter.scope\\"></a>
 
@@ -8673,6 +8887,8 @@ using Amazon.CDK;
 Nodegroup.FromNodegroupName(Construct Scope, string Id, string NodegroupName);
 \`\`\`
 
+Import the Nodegroup from attributes.
+
 ###### \`Scope\`<sup>Required</sup> <a name=\\"Scope\\" id=\\"aws-cdk-lib.aws_eks.Nodegroup.fromNodegroupName.parameter.scope\\"></a>
 
 - *Type:* Constructs.Construct
@@ -8856,6 +9072,8 @@ new ServiceAccount(Construct Scope, string Id, ServiceAccountProps Props);
 \`\`\`csharp
 private AddToPrincipalPolicy(PolicyStatement Statement)
 \`\`\`
+
+Add to the policy of this principal.
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"aws-cdk-lib.aws_eks.ServiceAccount.addToPrincipalPolicy.parameter.statement\\"></a>
 
@@ -14292,6 +14510,8 @@ new EksOptimizedImage(EksOptimizedImageProps Props = null);
 private GetImage(Construct Scope)
 \`\`\`
 
+Return the correct image.
+
 ###### \`Scope\`<sup>Required</sup> <a name=\\"Scope\\" id=\\"aws-cdk-lib.aws_eks.EksOptimizedImage.getImage.parameter.scope\\"></a>
 
 - *Type:* Constructs.Construct
@@ -14318,6 +14538,10 @@ Endpoint access characteristics.
 \`\`\`csharp
 private OnlyFrom(string Cidr)
 \`\`\`
+
+Restrict public access to specific CIDR blocks.
+
+If public access is disabled, this method will result in an error.
 
 ###### \`Cidr\`<sup>Required</sup> <a name=\\"Cidr\\" id=\\"aws-cdk-lib.aws_eks.EndpointAccess.onlyFrom.parameter.cidr\\"></a>
 
@@ -14401,6 +14625,8 @@ using Amazon.CDK;
 
 KubernetesVersion.Of(string Version);
 \`\`\`
+
+Custom cluster version.
 
 ###### \`Version\`<sup>Required</sup> <a name=\\"Version\\" id=\\"aws-cdk-lib.aws_eks.KubernetesVersion.of.parameter.version\\"></a>
 
@@ -14542,6 +14768,8 @@ An EKS cluster.
 private AddCdk8sChart(string Id, Construct Chart)
 \`\`\`
 
+Defines a CDK8s chart in this cluster.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addCdk8sChart.parameter.id\\"></a>
 
 - *Type:* string
@@ -14563,6 +14791,8 @@ the cdk8s chart.
 \`\`\`csharp
 private AddHelmChart(string Id, HelmChartOptions Options)
 \`\`\`
+
+Defines a Helm chart in this cluster.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addHelmChart.parameter.id\\"></a>
 
@@ -14586,6 +14816,10 @@ options of this chart.
 private AddManifest(string Id, System.Collections.Generic.IDictionary<string, object> Manifest)
 \`\`\`
 
+Defines a Kubernetes resource in this cluster.
+
+The manifest will be applied/deleted using kubectl as needed.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addManifest.parameter.id\\"></a>
 
 - *Type:* string
@@ -14607,6 +14841,8 @@ a list of Kubernetes resource specifications.
 \`\`\`csharp
 private AddServiceAccount(string Id, ServiceAccountOptions Options = null)
 \`\`\`
+
+Creates a new service account with corresponding IAM Role (IRSA).
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addServiceAccount.parameter.id\\"></a>
 
@@ -16474,6 +16710,8 @@ new AwsAuth(Construct Scope, string Id, AwsAuthProps Props);
 private AddAccount(string AccountId)
 \`\`\`
 
+Additional AWS account to add to the aws-auth configmap.
+
 ###### \`AccountId\`<sup>Required</sup> <a name=\\"AccountId\\" id=\\"monocdk.aws_eks.AwsAuth.addAccount.parameter.accountId\\"></a>
 
 - *Type:* string
@@ -16487,6 +16725,8 @@ account number.
 \`\`\`csharp
 private AddMastersRole(IRole Role, string Username = null)
 \`\`\`
+
+Adds the specified IAM role to the \`system:masters\` RBAC group, which means that anyone that can assume it will be able to administer this Kubernetes system.
 
 ###### \`Role\`<sup>Required</sup> <a name=\\"Role\\" id=\\"monocdk.aws_eks.AwsAuth.addMastersRole.parameter.role\\"></a>
 
@@ -16510,6 +16750,8 @@ Optional user (defaults to the role ARN).
 private AddRoleMapping(IRole Role, AwsAuthMapping Mapping)
 \`\`\`
 
+Adds a mapping between an IAM role to a Kubernetes user and groups.
+
 ###### \`Role\`<sup>Required</sup> <a name=\\"Role\\" id=\\"monocdk.aws_eks.AwsAuth.addRoleMapping.parameter.role\\"></a>
 
 - *Type:* Amazon.CDK.aws_iam.IRole
@@ -16531,6 +16773,8 @@ Mapping to k8s user name and groups.
 \`\`\`csharp
 private AddUserMapping(IUser User, AwsAuthMapping Mapping)
 \`\`\`
+
+Adds a mapping between an IAM user to a Kubernetes user and groups.
 
 ###### \`User\`<sup>Required</sup> <a name=\\"User\\" id=\\"monocdk.aws_eks.AwsAuth.addUserMapping.parameter.user\\"></a>
 
@@ -16612,6 +16856,8 @@ resource properties.
 \`\`\`csharp
 private Inspect(TreeInspector Inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"monocdk.aws_eks.CfnAddon.inspect.parameter.inspector\\"></a>
 
@@ -16811,6 +17057,8 @@ resource properties.
 \`\`\`csharp
 private Inspect(TreeInspector Inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"monocdk.aws_eks.CfnCluster.inspect.parameter.inspector\\"></a>
 
@@ -17066,6 +17314,8 @@ resource properties.
 private Inspect(TreeInspector Inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"monocdk.aws_eks.CfnFargateProfile.inspect.parameter.inspector\\"></a>
 
 - *Type:* Amazon.CDK.TreeInspector
@@ -17264,6 +17514,8 @@ resource properties.
 \`\`\`csharp
 private Inspect(TreeInspector Inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"monocdk.aws_eks.CfnNodegroup.inspect.parameter.inspector\\"></a>
 
@@ -17659,6 +17911,10 @@ properties in the IClusterProps interface.
 private AddAutoScalingGroupCapacity(string Id, AutoScalingGroupCapacityOptions Options)
 \`\`\`
 
+Add nodes to this EKS cluster.
+
+The nodes will automatically be configured with the right VPC and AMI for the instance type and Kubernetes version.  Note that if you specify \`updateType: RollingUpdate\` or \`updateType: ReplacingUpdate\`, your nodes might be replaced at deploy time without notice in case the recommended AMI for your machine image type has been updated by AWS. The default behavior for \`updateType\` is \`None\`, which means only new instances will be launched using the new AMI.  Spot instances will be labeled \`lifecycle=Ec2Spot\` and tainted with \`PreferNoSchedule\`. In addition, the [spot interrupt handler](https://github.com/awslabs/ec2-spot-labs/tree/master/ec2-spot-eks-solution/spot-termination-handler) daemon will be installed on all spot instances to handle [EC2 Spot Instance Termination Notices](https://aws.amazon.com/blogs/aws/new-ec2-spot-instance-termination-notices/).
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.Cluster.addAutoScalingGroupCapacity.parameter.id\\"></a>
 
 - *Type:* string
@@ -17676,6 +17932,8 @@ private AddAutoScalingGroupCapacity(string Id, AutoScalingGroupCapacityOptions O
 \`\`\`csharp
 private AddCdk8sChart(string Id, Construct Chart)
 \`\`\`
+
+Defines a CDK8s chart in this cluster.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.Cluster.addCdk8sChart.parameter.id\\"></a>
 
@@ -17699,6 +17957,10 @@ the cdk8s chart.
 private AddFargateProfile(string Id, FargateProfileOptions Options)
 \`\`\`
 
+Adds a Fargate profile to this cluster.
+
+> [https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html](https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html)
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.Cluster.addFargateProfile.parameter.id\\"></a>
 
 - *Type:* string
@@ -17720,6 +17982,8 @@ profile options.
 \`\`\`csharp
 private AddHelmChart(string Id, HelmChartOptions Options)
 \`\`\`
+
+Defines a Helm chart in this cluster.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.Cluster.addHelmChart.parameter.id\\"></a>
 
@@ -17743,6 +18007,10 @@ options of this chart.
 private AddManifest(string Id, System.Collections.Generic.IDictionary<string, object> Manifest)
 \`\`\`
 
+Defines a Kubernetes resource in this cluster.
+
+The manifest will be applied/deleted using kubectl as needed.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.Cluster.addManifest.parameter.id\\"></a>
 
 - *Type:* string
@@ -17764,6 +18032,12 @@ a list of Kubernetes resource specifications.
 \`\`\`csharp
 private AddNodegroupCapacity(string Id, NodegroupOptions Options = null)
 \`\`\`
+
+Add managed nodegroup to this Amazon EKS cluster.
+
+This method will create a new managed nodegroup and add into the capacity.
+
+> [https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html)
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.Cluster.addNodegroupCapacity.parameter.id\\"></a>
 
@@ -17787,6 +18061,8 @@ options for creating a new nodegroup.
 private AddServiceAccount(string Id, ServiceAccountOptions Options = null)
 \`\`\`
 
+Creates a new service account with corresponding IAM Role (IRSA).
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.Cluster.addServiceAccount.parameter.id\\"></a>
 
 - *Type:* string
@@ -17804,6 +18080,12 @@ private AddServiceAccount(string Id, ServiceAccountOptions Options = null)
 \`\`\`csharp
 private ConnectAutoScalingGroupCapacity(AutoScalingGroup AutoScalingGroup, AutoScalingGroupOptions Options)
 \`\`\`
+
+Connect capacity in the form of an existing AutoScalingGroup to the EKS cluster.
+
+The AutoScalingGroup must be running an EKS-optimized AMI containing the /etc/eks/bootstrap.sh script. This method will configure Security Groups, add the right policies to the instance role, apply the right tags, and add the required user data to the instance's launch configuration.  Spot instances will be labeled \`lifecycle=Ec2Spot\` and tainted with \`PreferNoSchedule\`. If kubectl is enabled, the [spot interrupt handler](https://github.com/awslabs/ec2-spot-labs/tree/master/ec2-spot-eks-solution/spot-termination-handler) daemon will be installed on all spot instances to handle [EC2 Spot Instance Termination Notices](https://aws.amazon.com/blogs/aws/new-ec2-spot-instance-termination-notices/).  Prefer to use \`addAutoScalingGroupCapacity\` if possible.
+
+> [https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html](https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html)
 
 ###### \`AutoScalingGroup\`<sup>Required</sup> <a name=\\"AutoScalingGroup\\" id=\\"monocdk.aws_eks.Cluster.connectAutoScalingGroupCapacity.parameter.autoScalingGroup\\"></a>
 
@@ -17826,6 +18108,8 @@ options for adding auto scaling groups, like customizing the bootstrap script.
 \`\`\`csharp
 private GetServiceLoadBalancerAddress(string ServiceName, ServiceLoadBalancerAddressOptions Options = null)
 \`\`\`
+
+Fetch the load balancer address of a service of type 'LoadBalancer'.
 
 ###### \`ServiceName\`<sup>Required</sup> <a name=\\"ServiceName\\" id=\\"monocdk.aws_eks.Cluster.getServiceLoadBalancerAddress.parameter.serviceName\\"></a>
 
@@ -17858,6 +18142,8 @@ using Amazon.CDK;
 
 Cluster.FromClusterAttributes(Construct Scope, string Id, ClusterAttributes Attrs);
 \`\`\`
+
+Import an existing cluster.
 
 ###### \`Scope\`<sup>Required</sup> <a name=\\"Scope\\" id=\\"monocdk.aws_eks.Cluster.fromClusterAttributes.parameter.scope\\"></a>
 
@@ -18682,6 +18968,8 @@ using Amazon.CDK;
 Nodegroup.FromNodegroupName(Construct Scope, string Id, string NodegroupName);
 \`\`\`
 
+Import the Nodegroup from attributes.
+
 ###### \`Scope\`<sup>Required</sup> <a name=\\"Scope\\" id=\\"monocdk.aws_eks.Nodegroup.fromNodegroupName.parameter.scope\\"></a>
 
 - *Type:* Constructs.Construct
@@ -18867,6 +19155,8 @@ new ServiceAccount(Construct Scope, string Id, ServiceAccountProps Props);
 private AddToPolicy(PolicyStatement Statement)
 \`\`\`
 
+Add to the policy of this principal.
+
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"monocdk.aws_eks.ServiceAccount.addToPolicy.parameter.statement\\"></a>
 
 - *Type:* Amazon.CDK.aws_iam.PolicyStatement
@@ -18878,6 +19168,8 @@ private AddToPolicy(PolicyStatement Statement)
 \`\`\`csharp
 private AddToPrincipalPolicy(PolicyStatement Statement)
 \`\`\`
+
+Add to the policy of this principal.
 
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"monocdk.aws_eks.ServiceAccount.addToPrincipalPolicy.parameter.statement\\"></a>
 
@@ -24462,6 +24754,8 @@ new EksOptimizedImage(EksOptimizedImageProps Props = null);
 private GetImage(Construct Scope)
 \`\`\`
 
+Return the correct image.
+
 ###### \`Scope\`<sup>Required</sup> <a name=\\"Scope\\" id=\\"monocdk.aws_eks.EksOptimizedImage.getImage.parameter.scope\\"></a>
 
 - *Type:* Amazon.CDK.Construct
@@ -24488,6 +24782,10 @@ Endpoint access characteristics.
 \`\`\`csharp
 private OnlyFrom(string Cidr)
 \`\`\`
+
+Restrict public access to specific CIDR blocks.
+
+If public access is disabled, this method will result in an error.
 
 ###### \`Cidr\`<sup>Required</sup> <a name=\\"Cidr\\" id=\\"monocdk.aws_eks.EndpointAccess.onlyFrom.parameter.cidr\\"></a>
 
@@ -24571,6 +24869,8 @@ using Amazon.CDK;
 
 KubernetesVersion.Of(string Version);
 \`\`\`
+
+Custom cluster version.
 
 ###### \`Version\`<sup>Required</sup> <a name=\\"Version\\" id=\\"monocdk.aws_eks.KubernetesVersion.of.parameter.version\\"></a>
 
@@ -24712,6 +25012,8 @@ An EKS cluster.
 private AddCdk8sChart(string Id, Construct Chart)
 \`\`\`
 
+Defines a CDK8s chart in this cluster.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.ICluster.addCdk8sChart.parameter.id\\"></a>
 
 - *Type:* string
@@ -24733,6 +25035,8 @@ the cdk8s chart.
 \`\`\`csharp
 private AddHelmChart(string Id, HelmChartOptions Options)
 \`\`\`
+
+Defines a Helm chart in this cluster.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.ICluster.addHelmChart.parameter.id\\"></a>
 
@@ -24756,6 +25060,10 @@ options of this chart.
 private AddManifest(string Id, System.Collections.Generic.IDictionary<string, object> Manifest)
 \`\`\`
 
+Defines a Kubernetes resource in this cluster.
+
+The manifest will be applied/deleted using kubectl as needed.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.ICluster.addManifest.parameter.id\\"></a>
 
 - *Type:* string
@@ -24777,6 +25085,8 @@ a list of Kubernetes resource specifications.
 \`\`\`csharp
 private AddServiceAccount(string Id, ServiceAccountOptions Options = null)
 \`\`\`
+
+Creates a new service account with corresponding IAM Role (IRSA).
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"monocdk.aws_eks.ICluster.addServiceAccount.parameter.id\\"></a>
 
@@ -25579,6 +25889,8 @@ scoped id of the resource.
 public inspect(TreeInspector inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* software.amazon.awscdk.core.TreeInspector
@@ -25752,6 +26064,8 @@ scoped id of the resource.
 public inspect(TreeInspector inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
 
 - *Type:* software.amazon.awscdk.core.TreeInspector
@@ -25880,6 +26194,8 @@ scoped id of the resource.
 \`\`\`java
 public inspect(TreeInspector inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
 
@@ -26081,6 +26397,8 @@ scoped id of the resource.
 \`\`\`java
 public inspect(TreeInspector inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
 
@@ -26362,6 +26680,10 @@ Name for this repository.
 public addLifecycleRule(LifecycleRule rule)
 \`\`\`
 
+Add a life cycle rule to the repository.
+
+Life cycle rules automatically expire images from the repository that match certain conditions.
+
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.rule\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-ecr.LifecycleRule\\">LifecycleRule</a>
@@ -26373,6 +26695,8 @@ public addLifecycleRule(LifecycleRule rule)
 \`\`\`java
 public addToResourcePolicy(PolicyStatement statement)
 \`\`\`
+
+Add a policy statement to the repository's resource policy.
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
 
@@ -26398,6 +26722,8 @@ import software.amazon.awscdk.services.ecr.Repository;
 
 Repository.arnForLocalRepository(java.lang.String repositoryName, IConstruct scope),Repository.arnForLocalRepository(java.lang.String repositoryName, IConstruct scope, java.lang.String account)
 \`\`\`
+
+Returns an ECR ARN for a repository that resides in the same account/region as the current stack.
 
 ###### \`repositoryName\`<sup>Required</sup> <a name=\\"repositoryName\\" id=\\"@aws-cdk/aws-ecr.Repository.arnForLocalRepository.parameter.repositoryName\\"></a>
 
@@ -26450,6 +26776,8 @@ import software.amazon.awscdk.services.ecr.Repository;
 
 Repository.fromRepositoryAttributes(Construct scope, java.lang.String id, RepositoryAttributes attrs)
 \`\`\`
+
+Import a repository.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.Repository.fromRepositoryAttributes.parameter.scope\\"></a>
 
@@ -26636,6 +26964,8 @@ The AWS region this resource belongs to.
 public addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.PolicyStatement
@@ -26647,6 +26977,8 @@ public addToResourcePolicy(PolicyStatement statement)
 \`\`\`java
 public grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
 
@@ -26666,6 +26998,8 @@ public grant(IGrantable grantee, java.lang.String actions)
 public grantPull(IGrantable grantee)
 \`\`\`
 
+Grant the given identity permissions to use the images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.IGrantable
@@ -26677,6 +27011,8 @@ public grantPull(IGrantable grantee)
 \`\`\`java
 public grantPullPush(IGrantable grantee)
 \`\`\`
+
+Grant the given identity permissions to pull and push images to this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
 
@@ -26690,6 +27026,10 @@ public grantPullPush(IGrantable grantee)
 public onCloudTrailEvent(java.lang.String id)
 public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -26714,6 +27054,10 @@ public onCloudTrailImagePushed(java.lang.String id)
 public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -26737,6 +27081,10 @@ public onEvent(java.lang.String id)
 public onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -26755,6 +27103,8 @@ public onEvent(java.lang.String id, OnEventOptions options)
 public onImageScanCompleted(java.lang.String id)
 public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
 
@@ -26779,6 +27129,10 @@ public repositoryUriForDigest()
 public repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* java.lang.String
@@ -26793,6 +27147,10 @@ Optional image digest.
 public repositoryUriForTag()
 public repositoryUriForTag(java.lang.String tag)
 \`\`\`
+
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -27828,6 +28186,8 @@ import software.amazon.awscdk.services.ecr.AuthorizationToken;
 AuthorizationToken.grantRead(IGrantable grantee)
 \`\`\`
 
+Grant access to retrieve an authorization token.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.IGrantable
@@ -27858,6 +28218,8 @@ import software.amazon.awscdk.services.ecr.PublicGalleryAuthorizationToken;
 
 PublicGalleryAuthorizationToken.grantRead(IGrantable grantee)
 \`\`\`
+
+Grant access to retrieve an authorization token.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.PublicGalleryAuthorizationToken.grantRead.parameter.grantee\\"></a>
 
@@ -27900,6 +28262,8 @@ Represents an ECR repository.
 public addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.PolicyStatement
@@ -27911,6 +28275,8 @@ public addToResourcePolicy(PolicyStatement statement)
 \`\`\`java
 public grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
 
@@ -27930,6 +28296,8 @@ public grant(IGrantable grantee, java.lang.String actions)
 public grantPull(IGrantable grantee)
 \`\`\`
 
+Grant the given identity permissions to pull images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.IGrantable
@@ -27941,6 +28309,8 @@ public grantPull(IGrantable grantee)
 \`\`\`java
 public grantPullPush(IGrantable grantee)
 \`\`\`
+
+Grant the given identity permissions to pull and push images to this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
 
@@ -27954,6 +28324,10 @@ public grantPullPush(IGrantable grantee)
 public onCloudTrailEvent(java.lang.String id)
 public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -27978,6 +28352,10 @@ public onCloudTrailImagePushed(java.lang.String id)
 public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -28001,6 +28379,10 @@ public onEvent(java.lang.String id)
 public onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -28019,6 +28401,8 @@ public onEvent(java.lang.String id, OnEventOptions options)
 public onImageScanCompleted(java.lang.String id)
 public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
 
@@ -28043,6 +28427,10 @@ public repositoryUriForDigest()
 public repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* java.lang.String
@@ -28057,6 +28445,10 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 public repositoryUriForTag()
 public repositoryUriForTag(java.lang.String tag)
 \`\`\`
+
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -28425,6 +28817,8 @@ scoped id of the resource.
 public inspect(TreeInspector inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* software.amazon.awscdk.core.TreeInspector
@@ -28598,6 +28992,8 @@ scoped id of the resource.
 public inspect(TreeInspector inspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
 
 - *Type:* software.amazon.awscdk.core.TreeInspector
@@ -28726,6 +29122,8 @@ scoped id of the resource.
 \`\`\`java
 public inspect(TreeInspector inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
 
@@ -28927,6 +29325,8 @@ scoped id of the resource.
 \`\`\`java
 public inspect(TreeInspector inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
 
@@ -29208,6 +29608,10 @@ Name for this repository.
 public addLifecycleRule(LifecycleRule rule)
 \`\`\`
 
+Add a life cycle rule to the repository.
+
+Life cycle rules automatically expire images from the repository that match certain conditions.
+
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.rule\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-ecr.LifecycleRule\\">LifecycleRule</a>
@@ -29219,6 +29623,8 @@ public addLifecycleRule(LifecycleRule rule)
 \`\`\`java
 public addToResourcePolicy(PolicyStatement statement)
 \`\`\`
+
+Add a policy statement to the repository's resource policy.
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
 
@@ -29244,6 +29650,8 @@ import software.amazon.awscdk.services.ecr.Repository;
 
 Repository.arnForLocalRepository(java.lang.String repositoryName, IConstruct scope),Repository.arnForLocalRepository(java.lang.String repositoryName, IConstruct scope, java.lang.String account)
 \`\`\`
+
+Returns an ECR ARN for a repository that resides in the same account/region as the current stack.
 
 ###### \`repositoryName\`<sup>Required</sup> <a name=\\"repositoryName\\" id=\\"@aws-cdk/aws-ecr.Repository.arnForLocalRepository.parameter.repositoryName\\"></a>
 
@@ -29296,6 +29704,8 @@ import software.amazon.awscdk.services.ecr.Repository;
 
 Repository.fromRepositoryAttributes(Construct scope, java.lang.String id, RepositoryAttributes attrs)
 \`\`\`
+
+Import a repository.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.Repository.fromRepositoryAttributes.parameter.scope\\"></a>
 
@@ -29482,6 +29892,8 @@ The AWS region this resource belongs to.
 public addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.PolicyStatement
@@ -29493,6 +29905,8 @@ public addToResourcePolicy(PolicyStatement statement)
 \`\`\`java
 public grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
 
@@ -29512,6 +29926,8 @@ public grant(IGrantable grantee, java.lang.String actions)
 public grantPull(IGrantable grantee)
 \`\`\`
 
+Grant the given identity permissions to use the images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.IGrantable
@@ -29523,6 +29939,8 @@ public grantPull(IGrantable grantee)
 \`\`\`java
 public grantPullPush(IGrantable grantee)
 \`\`\`
+
+Grant the given identity permissions to pull and push images to this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
 
@@ -29536,6 +29954,10 @@ public grantPullPush(IGrantable grantee)
 public onCloudTrailEvent(java.lang.String id)
 public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -29560,6 +29982,10 @@ public onCloudTrailImagePushed(java.lang.String id)
 public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -29583,6 +30009,10 @@ public onEvent(java.lang.String id)
 public onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -29601,6 +30031,8 @@ public onEvent(java.lang.String id, OnEventOptions options)
 public onImageScanCompleted(java.lang.String id)
 public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
 
@@ -29625,6 +30057,10 @@ public repositoryUriForDigest()
 public repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* java.lang.String
@@ -29639,6 +30075,10 @@ Optional image digest.
 public repositoryUriForTag()
 public repositoryUriForTag(java.lang.String tag)
 \`\`\`
+
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -30674,6 +31114,8 @@ import software.amazon.awscdk.services.ecr.AuthorizationToken;
 AuthorizationToken.grantRead(IGrantable grantee)
 \`\`\`
 
+Grant access to retrieve an authorization token.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.IGrantable
@@ -30704,6 +31146,8 @@ import software.amazon.awscdk.services.ecr.PublicGalleryAuthorizationToken;
 
 PublicGalleryAuthorizationToken.grantRead(IGrantable grantee)
 \`\`\`
+
+Grant access to retrieve an authorization token.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.PublicGalleryAuthorizationToken.grantRead.parameter.grantee\\"></a>
 
@@ -30746,6 +31190,8 @@ Represents an ECR repository.
 public addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.PolicyStatement
@@ -30757,6 +31203,8 @@ public addToResourcePolicy(PolicyStatement statement)
 \`\`\`java
 public grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
 
@@ -30776,6 +31224,8 @@ public grant(IGrantable grantee, java.lang.String actions)
 public grantPull(IGrantable grantee)
 \`\`\`
 
+Grant the given identity permissions to pull images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.IGrantable
@@ -30787,6 +31237,8 @@ public grantPull(IGrantable grantee)
 \`\`\`java
 public grantPullPush(IGrantable grantee)
 \`\`\`
+
+Grant the given identity permissions to pull and push images to this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
 
@@ -30800,6 +31252,10 @@ public grantPullPush(IGrantable grantee)
 public onCloudTrailEvent(java.lang.String id)
 public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -30824,6 +31280,10 @@ public onCloudTrailImagePushed(java.lang.String id)
 public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -30847,6 +31307,10 @@ public onEvent(java.lang.String id)
 public onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -30865,6 +31329,8 @@ public onEvent(java.lang.String id, OnEventOptions options)
 public onImageScanCompleted(java.lang.String id)
 public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
 
@@ -30889,6 +31355,10 @@ public repositoryUriForDigest()
 public repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* java.lang.String
@@ -30903,6 +31373,10 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 public repositoryUriForTag()
 public repositoryUriForTag(java.lang.String tag)
 \`\`\`
+
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -32342,6 +32816,8 @@ The EKS cluster to apply this configuration to.
 public addAccount(java.lang.String accountId)
 \`\`\`
 
+Additional AWS account to add to the aws-auth configmap.
+
 ###### \`accountId\`<sup>Required</sup> <a name=\\"accountId\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addAccount.parameter.accountId\\"></a>
 
 - *Type:* java.lang.String
@@ -32356,6 +32832,8 @@ account number.
 public addMastersRole(IRole role)
 public addMastersRole(IRole role, java.lang.String username)
 \`\`\`
+
+Adds the specified IAM role to the \`system:masters\` RBAC group, which means that anyone that can assume it will be able to administer this Kubernetes system.
 
 ###### \`role\`<sup>Required</sup> <a name=\\"role\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addMastersRole.parameter.role\\"></a>
 
@@ -32379,6 +32857,8 @@ Optional user (defaults to the role ARN).
 public addRoleMapping(IRole role, AwsAuthMapping mapping)
 \`\`\`
 
+Adds a mapping between an IAM role to a Kubernetes user and groups.
+
 ###### \`role\`<sup>Required</sup> <a name=\\"role\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addRoleMapping.parameter.role\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.IRole
@@ -32400,6 +32880,8 @@ Mapping to k8s user name and groups.
 \`\`\`java
 public addUserMapping(IUser user, AwsAuthMapping mapping)
 \`\`\`
+
+Adds a mapping between an IAM user to a Kubernetes user and groups.
 
 ###### \`user\`<sup>Required</sup> <a name=\\"user\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addUserMapping.parameter.user\\"></a>
 
@@ -32545,6 +33027,8 @@ scoped id of the resource.
 \`\`\`java
 public inspect(TreeInspector inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnAddon.inspect.parameter.inspector\\"></a>
 
@@ -32812,6 +33296,8 @@ scoped id of the resource.
 \`\`\`java
 public inspect(TreeInspector inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnCluster.inspect.parameter.inspector\\"></a>
 
@@ -33132,6 +33618,8 @@ scoped id of the resource.
 \`\`\`java
 public inspect(TreeInspector inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnFargateProfile.inspect.parameter.inspector\\"></a>
 
@@ -33533,6 +34021,8 @@ scoped id of the resource.
 \`\`\`java
 public inspect(TreeInspector inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnNodegroup.inspect.parameter.inspector\\"></a>
 
@@ -34181,6 +34671,10 @@ The default capacity type for the cluster.
 public addAutoScalingGroupCapacity(java.lang.String id, AutoScalingGroupCapacityOptions options)
 \`\`\`
 
+Add nodes to this EKS cluster.
+
+The nodes will automatically be configured with the right VPC and AMI for the instance type and Kubernetes version.  Note that if you specify \`updateType: RollingUpdate\` or \`updateType: ReplacingUpdate\`, your nodes might be replaced at deploy time without notice in case the recommended AMI for your machine image type has been updated by AWS. The default behavior for \`updateType\` is \`None\`, which means only new instances will be launched using the new AMI.  Spot instances will be labeled \`lifecycle=Ec2Spot\` and tainted with \`PreferNoSchedule\`. In addition, the [spot interrupt handler](https://github.com/awslabs/ec2-spot-labs/tree/master/ec2-spot-eks-solution/spot-termination-handler) daemon will be installed on all spot instances to handle [EC2 Spot Instance Termination Notices](https://aws.amazon.com/blogs/aws/new-ec2-spot-instance-termination-notices/).
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addAutoScalingGroupCapacity.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -34198,6 +34692,8 @@ public addAutoScalingGroupCapacity(java.lang.String id, AutoScalingGroupCapacity
 \`\`\`java
 public addCdk8sChart(java.lang.String id, Construct chart)
 \`\`\`
+
+Defines a CDK8s chart in this cluster.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addCdk8sChart.parameter.id\\"></a>
 
@@ -34221,6 +34717,10 @@ the cdk8s chart.
 public addFargateProfile(java.lang.String id, FargateProfileOptions options)
 \`\`\`
 
+Adds a Fargate profile to this cluster.
+
+> [https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html](https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html)
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addFargateProfile.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -34243,6 +34743,8 @@ profile options.
 public addHelmChart(java.lang.String id, HelmChartOptions options)
 \`\`\`
 
+Defines a Helm chart in this cluster.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addHelmChart.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -34264,6 +34766,10 @@ options of this chart.
 \`\`\`java
 public addManifest(java.lang.String id, java.util.Map<java.lang.String, java.lang.Object> manifest)
 \`\`\`
+
+Defines a Kubernetes resource in this cluster.
+
+The manifest will be applied/deleted using kubectl as needed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addManifest.parameter.id\\"></a>
 
@@ -34288,6 +34794,12 @@ public addNodegroupCapacity(java.lang.String id)
 public addNodegroupCapacity(java.lang.String id, NodegroupOptions options)
 \`\`\`
 
+Add managed nodegroup to this Amazon EKS cluster.
+
+This method will create a new managed nodegroup and add into the capacity.
+
+> [https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html)
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addNodegroupCapacity.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -34311,6 +34823,8 @@ public addServiceAccount(java.lang.String id)
 public addServiceAccount(java.lang.String id, ServiceAccountOptions options)
 \`\`\`
 
+Creates a new service account with corresponding IAM Role (IRSA).
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addServiceAccount.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -34328,6 +34842,12 @@ public addServiceAccount(java.lang.String id, ServiceAccountOptions options)
 \`\`\`java
 public connectAutoScalingGroupCapacity(AutoScalingGroup autoScalingGroup, AutoScalingGroupOptions options)
 \`\`\`
+
+Connect capacity in the form of an existing AutoScalingGroup to the EKS cluster.
+
+The AutoScalingGroup must be running an EKS-optimized AMI containing the /etc/eks/bootstrap.sh script. This method will configure Security Groups, add the right policies to the instance role, apply the right tags, and add the required user data to the instance's launch configuration.  Spot instances will be labeled \`lifecycle=Ec2Spot\` and tainted with \`PreferNoSchedule\`. If kubectl is enabled, the [spot interrupt handler](https://github.com/awslabs/ec2-spot-labs/tree/master/ec2-spot-eks-solution/spot-termination-handler) daemon will be installed on all spot instances to handle [EC2 Spot Instance Termination Notices](https://aws.amazon.com/blogs/aws/new-ec2-spot-instance-termination-notices/).  Prefer to use \`addAutoScalingGroupCapacity\` if possible.
+
+> [https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html](https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html)
 
 ###### \`autoScalingGroup\`<sup>Required</sup> <a name=\\"autoScalingGroup\\" id=\\"aws-cdk-lib.aws_eks.Cluster.connectAutoScalingGroupCapacity.parameter.autoScalingGroup\\"></a>
 
@@ -34351,6 +34871,8 @@ options for adding auto scaling groups, like customizing the bootstrap script.
 public getServiceLoadBalancerAddress(java.lang.String serviceName)
 public getServiceLoadBalancerAddress(java.lang.String serviceName, ServiceLoadBalancerAddressOptions options)
 \`\`\`
+
+Fetch the load balancer address of a service of type 'LoadBalancer'.
 
 ###### \`serviceName\`<sup>Required</sup> <a name=\\"serviceName\\" id=\\"aws-cdk-lib.aws_eks.Cluster.getServiceLoadBalancerAddress.parameter.serviceName\\"></a>
 
@@ -34383,6 +34905,8 @@ import software.amazon.awscdk.services.eks.Cluster;
 
 Cluster.fromClusterAttributes(Construct scope, java.lang.String id, ClusterAttributes attrs)
 \`\`\`
+
+Import an existing cluster.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"aws-cdk-lib.aws_eks.Cluster.fromClusterAttributes.parameter.scope\\"></a>
 
@@ -35993,6 +36517,8 @@ import software.amazon.awscdk.services.eks.Nodegroup;
 Nodegroup.fromNodegroupName(Construct scope, java.lang.String id, java.lang.String nodegroupName)
 \`\`\`
 
+Import the Nodegroup from attributes.
+
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"aws-cdk-lib.aws_eks.Nodegroup.fromNodegroupName.parameter.scope\\"></a>
 
 - *Type:* software.constructs.Construct
@@ -36206,6 +36732,8 @@ The cluster to apply the patch to.
 \`\`\`java
 public addToPrincipalPolicy(PolicyStatement statement)
 \`\`\`
+
+Add to the policy of this principal.
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"aws-cdk-lib.aws_eks.ServiceAccount.addToPrincipalPolicy.parameter.statement\\"></a>
 
@@ -41684,6 +42212,8 @@ What instance type to retrieve the image for (standard or GPU-optimized).
 public getImage(Construct scope)
 \`\`\`
 
+Return the correct image.
+
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"aws-cdk-lib.aws_eks.EksOptimizedImage.getImage.parameter.scope\\"></a>
 
 - *Type:* software.constructs.Construct
@@ -41710,6 +42240,10 @@ Endpoint access characteristics.
 \`\`\`java
 public onlyFrom(java.lang.String cidr)
 \`\`\`
+
+Restrict public access to specific CIDR blocks.
+
+If public access is disabled, this method will result in an error.
 
 ###### \`cidr\`<sup>Required</sup> <a name=\\"cidr\\" id=\\"aws-cdk-lib.aws_eks.EndpointAccess.onlyFrom.parameter.cidr\\"></a>
 
@@ -41793,6 +42327,8 @@ import software.amazon.awscdk.services.eks.KubernetesVersion;
 
 KubernetesVersion.of(java.lang.String version)
 \`\`\`
+
+Custom cluster version.
 
 ###### \`version\`<sup>Required</sup> <a name=\\"version\\" id=\\"aws-cdk-lib.aws_eks.KubernetesVersion.of.parameter.version\\"></a>
 
@@ -41934,6 +42470,8 @@ An EKS cluster.
 public addCdk8sChart(java.lang.String id, Construct chart)
 \`\`\`
 
+Defines a CDK8s chart in this cluster.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addCdk8sChart.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -41955,6 +42493,8 @@ the cdk8s chart.
 \`\`\`java
 public addHelmChart(java.lang.String id, HelmChartOptions options)
 \`\`\`
+
+Defines a Helm chart in this cluster.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addHelmChart.parameter.id\\"></a>
 
@@ -41978,6 +42518,10 @@ options of this chart.
 public addManifest(java.lang.String id, java.util.Map<java.lang.String, java.lang.Object> manifest)
 \`\`\`
 
+Defines a Kubernetes resource in this cluster.
+
+The manifest will be applied/deleted using kubectl as needed.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addManifest.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -42000,6 +42544,8 @@ a list of Kubernetes resource specifications.
 public addServiceAccount(java.lang.String id)
 public addServiceAccount(java.lang.String id, ServiceAccountOptions options)
 \`\`\`
+
+Creates a new service account with corresponding IAM Role (IRSA).
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addServiceAccount.parameter.id\\"></a>
 
@@ -43873,6 +44419,8 @@ The EKS cluster to apply this configuration to.
 public addAccount(java.lang.String accountId)
 \`\`\`
 
+Additional AWS account to add to the aws-auth configmap.
+
 ###### \`accountId\`<sup>Required</sup> <a name=\\"accountId\\" id=\\"monocdk.aws_eks.AwsAuth.addAccount.parameter.accountId\\"></a>
 
 - *Type:* java.lang.String
@@ -43887,6 +44435,8 @@ account number.
 public addMastersRole(IRole role)
 public addMastersRole(IRole role, java.lang.String username)
 \`\`\`
+
+Adds the specified IAM role to the \`system:masters\` RBAC group, which means that anyone that can assume it will be able to administer this Kubernetes system.
 
 ###### \`role\`<sup>Required</sup> <a name=\\"role\\" id=\\"monocdk.aws_eks.AwsAuth.addMastersRole.parameter.role\\"></a>
 
@@ -43910,6 +44460,8 @@ Optional user (defaults to the role ARN).
 public addRoleMapping(IRole role, AwsAuthMapping mapping)
 \`\`\`
 
+Adds a mapping between an IAM role to a Kubernetes user and groups.
+
 ###### \`role\`<sup>Required</sup> <a name=\\"role\\" id=\\"monocdk.aws_eks.AwsAuth.addRoleMapping.parameter.role\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.IRole
@@ -43931,6 +44483,8 @@ Mapping to k8s user name and groups.
 \`\`\`java
 public addUserMapping(IUser user, AwsAuthMapping mapping)
 \`\`\`
+
+Adds a mapping between an IAM user to a Kubernetes user and groups.
 
 ###### \`user\`<sup>Required</sup> <a name=\\"user\\" id=\\"monocdk.aws_eks.AwsAuth.addUserMapping.parameter.user\\"></a>
 
@@ -44076,6 +44630,8 @@ scoped id of the resource.
 \`\`\`java
 public inspect(TreeInspector inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"monocdk.aws_eks.CfnAddon.inspect.parameter.inspector\\"></a>
 
@@ -44343,6 +44899,8 @@ scoped id of the resource.
 \`\`\`java
 public inspect(TreeInspector inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"monocdk.aws_eks.CfnCluster.inspect.parameter.inspector\\"></a>
 
@@ -44663,6 +45221,8 @@ scoped id of the resource.
 \`\`\`java
 public inspect(TreeInspector inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"monocdk.aws_eks.CfnFargateProfile.inspect.parameter.inspector\\"></a>
 
@@ -45064,6 +45624,8 @@ scoped id of the resource.
 \`\`\`java
 public inspect(TreeInspector inspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"monocdk.aws_eks.CfnNodegroup.inspect.parameter.inspector\\"></a>
 
@@ -45712,6 +46274,10 @@ The default capacity type for the cluster.
 public addAutoScalingGroupCapacity(java.lang.String id, AutoScalingGroupCapacityOptions options)
 \`\`\`
 
+Add nodes to this EKS cluster.
+
+The nodes will automatically be configured with the right VPC and AMI for the instance type and Kubernetes version.  Note that if you specify \`updateType: RollingUpdate\` or \`updateType: ReplacingUpdate\`, your nodes might be replaced at deploy time without notice in case the recommended AMI for your machine image type has been updated by AWS. The default behavior for \`updateType\` is \`None\`, which means only new instances will be launched using the new AMI.  Spot instances will be labeled \`lifecycle=Ec2Spot\` and tainted with \`PreferNoSchedule\`. In addition, the [spot interrupt handler](https://github.com/awslabs/ec2-spot-labs/tree/master/ec2-spot-eks-solution/spot-termination-handler) daemon will be installed on all spot instances to handle [EC2 Spot Instance Termination Notices](https://aws.amazon.com/blogs/aws/new-ec2-spot-instance-termination-notices/).
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.Cluster.addAutoScalingGroupCapacity.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -45729,6 +46295,8 @@ public addAutoScalingGroupCapacity(java.lang.String id, AutoScalingGroupCapacity
 \`\`\`java
 public addCdk8sChart(java.lang.String id, Construct chart)
 \`\`\`
+
+Defines a CDK8s chart in this cluster.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.Cluster.addCdk8sChart.parameter.id\\"></a>
 
@@ -45752,6 +46320,10 @@ the cdk8s chart.
 public addFargateProfile(java.lang.String id, FargateProfileOptions options)
 \`\`\`
 
+Adds a Fargate profile to this cluster.
+
+> [https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html](https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html)
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.Cluster.addFargateProfile.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -45774,6 +46346,8 @@ profile options.
 public addHelmChart(java.lang.String id, HelmChartOptions options)
 \`\`\`
 
+Defines a Helm chart in this cluster.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.Cluster.addHelmChart.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -45795,6 +46369,10 @@ options of this chart.
 \`\`\`java
 public addManifest(java.lang.String id, java.util.Map<java.lang.String, java.lang.Object> manifest)
 \`\`\`
+
+Defines a Kubernetes resource in this cluster.
+
+The manifest will be applied/deleted using kubectl as needed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.Cluster.addManifest.parameter.id\\"></a>
 
@@ -45819,6 +46397,12 @@ public addNodegroupCapacity(java.lang.String id)
 public addNodegroupCapacity(java.lang.String id, NodegroupOptions options)
 \`\`\`
 
+Add managed nodegroup to this Amazon EKS cluster.
+
+This method will create a new managed nodegroup and add into the capacity.
+
+> [https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html)
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.Cluster.addNodegroupCapacity.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -45842,6 +46426,8 @@ public addServiceAccount(java.lang.String id)
 public addServiceAccount(java.lang.String id, ServiceAccountOptions options)
 \`\`\`
 
+Creates a new service account with corresponding IAM Role (IRSA).
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.Cluster.addServiceAccount.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -45859,6 +46445,12 @@ public addServiceAccount(java.lang.String id, ServiceAccountOptions options)
 \`\`\`java
 public connectAutoScalingGroupCapacity(AutoScalingGroup autoScalingGroup, AutoScalingGroupOptions options)
 \`\`\`
+
+Connect capacity in the form of an existing AutoScalingGroup to the EKS cluster.
+
+The AutoScalingGroup must be running an EKS-optimized AMI containing the /etc/eks/bootstrap.sh script. This method will configure Security Groups, add the right policies to the instance role, apply the right tags, and add the required user data to the instance's launch configuration.  Spot instances will be labeled \`lifecycle=Ec2Spot\` and tainted with \`PreferNoSchedule\`. If kubectl is enabled, the [spot interrupt handler](https://github.com/awslabs/ec2-spot-labs/tree/master/ec2-spot-eks-solution/spot-termination-handler) daemon will be installed on all spot instances to handle [EC2 Spot Instance Termination Notices](https://aws.amazon.com/blogs/aws/new-ec2-spot-instance-termination-notices/).  Prefer to use \`addAutoScalingGroupCapacity\` if possible.
+
+> [https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html](https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html)
 
 ###### \`autoScalingGroup\`<sup>Required</sup> <a name=\\"autoScalingGroup\\" id=\\"monocdk.aws_eks.Cluster.connectAutoScalingGroupCapacity.parameter.autoScalingGroup\\"></a>
 
@@ -45882,6 +46474,8 @@ options for adding auto scaling groups, like customizing the bootstrap script.
 public getServiceLoadBalancerAddress(java.lang.String serviceName)
 public getServiceLoadBalancerAddress(java.lang.String serviceName, ServiceLoadBalancerAddressOptions options)
 \`\`\`
+
+Fetch the load balancer address of a service of type 'LoadBalancer'.
 
 ###### \`serviceName\`<sup>Required</sup> <a name=\\"serviceName\\" id=\\"monocdk.aws_eks.Cluster.getServiceLoadBalancerAddress.parameter.serviceName\\"></a>
 
@@ -45914,6 +46508,8 @@ import software.amazon.awscdk.services.eks.Cluster;
 
 Cluster.fromClusterAttributes(Construct scope, java.lang.String id, ClusterAttributes attrs)
 \`\`\`
+
+Import an existing cluster.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"monocdk.aws_eks.Cluster.fromClusterAttributes.parameter.scope\\"></a>
 
@@ -47539,6 +48135,8 @@ import software.amazon.awscdk.services.eks.Nodegroup;
 Nodegroup.fromNodegroupName(Construct scope, java.lang.String id, java.lang.String nodegroupName)
 \`\`\`
 
+Import the Nodegroup from attributes.
+
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"monocdk.aws_eks.Nodegroup.fromNodegroupName.parameter.scope\\"></a>
 
 - *Type:* software.constructs.Construct
@@ -47754,6 +48352,8 @@ The cluster to apply the patch to.
 public addToPolicy(PolicyStatement statement)
 \`\`\`
 
+Add to the policy of this principal.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"monocdk.aws_eks.ServiceAccount.addToPolicy.parameter.statement\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.PolicyStatement
@@ -47765,6 +48365,8 @@ public addToPolicy(PolicyStatement statement)
 \`\`\`java
 public addToPrincipalPolicy(PolicyStatement statement)
 \`\`\`
+
+Add to the policy of this principal.
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"monocdk.aws_eks.ServiceAccount.addToPrincipalPolicy.parameter.statement\\"></a>
 
@@ -53391,6 +53993,8 @@ What instance type to retrieve the image for (standard or GPU-optimized).
 public getImage(Construct scope)
 \`\`\`
 
+Return the correct image.
+
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"monocdk.aws_eks.EksOptimizedImage.getImage.parameter.scope\\"></a>
 
 - *Type:* software.amazon.awscdk.core.Construct
@@ -53417,6 +54021,10 @@ Endpoint access characteristics.
 \`\`\`java
 public onlyFrom(java.lang.String cidr)
 \`\`\`
+
+Restrict public access to specific CIDR blocks.
+
+If public access is disabled, this method will result in an error.
 
 ###### \`cidr\`<sup>Required</sup> <a name=\\"cidr\\" id=\\"monocdk.aws_eks.EndpointAccess.onlyFrom.parameter.cidr\\"></a>
 
@@ -53500,6 +54108,8 @@ import software.amazon.awscdk.services.eks.KubernetesVersion;
 
 KubernetesVersion.of(java.lang.String version)
 \`\`\`
+
+Custom cluster version.
 
 ###### \`version\`<sup>Required</sup> <a name=\\"version\\" id=\\"monocdk.aws_eks.KubernetesVersion.of.parameter.version\\"></a>
 
@@ -53641,6 +54251,8 @@ An EKS cluster.
 public addCdk8sChart(java.lang.String id, Construct chart)
 \`\`\`
 
+Defines a CDK8s chart in this cluster.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.ICluster.addCdk8sChart.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -53662,6 +54274,8 @@ the cdk8s chart.
 \`\`\`java
 public addHelmChart(java.lang.String id, HelmChartOptions options)
 \`\`\`
+
+Defines a Helm chart in this cluster.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.ICluster.addHelmChart.parameter.id\\"></a>
 
@@ -53685,6 +54299,10 @@ options of this chart.
 public addManifest(java.lang.String id, java.util.Map<java.lang.String, java.lang.Object> manifest)
 \`\`\`
 
+Defines a Kubernetes resource in this cluster.
+
+The manifest will be applied/deleted using kubectl as needed.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.ICluster.addManifest.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -53707,6 +54325,8 @@ a list of Kubernetes resource specifications.
 public addServiceAccount(java.lang.String id)
 public addServiceAccount(java.lang.String id, ServiceAccountOptions options)
 \`\`\`
+
+Creates a new service account with corresponding IAM Role (IRSA).
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"monocdk.aws_eks.ICluster.addServiceAccount.parameter.id\\"></a>
 
@@ -59499,6 +60119,8 @@ def inspect(
 )
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* aws_cdk.core.TreeInspector
@@ -59676,6 +60298,8 @@ def inspect(
 )
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
 
 - *Type:* aws_cdk.core.TreeInspector
@@ -59807,6 +60431,8 @@ def inspect(
   inspector: TreeInspector
 )
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
 
@@ -60011,6 +60637,8 @@ def inspect(
   inspector: TreeInspector
 )
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
 
@@ -60301,6 +60929,10 @@ def add_lifecycle_rule(
 )
 \`\`\`
 
+Add a life cycle rule to the repository.
+
+Life cycle rules automatically expire images from the repository that match certain conditions.
+
 ###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.description\\"></a>
 
 - *Type:* str
@@ -60370,6 +61002,8 @@ def add_to_resource_policy(
 )
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* aws_cdk.aws_iam.PolicyStatement
@@ -60398,6 +61032,8 @@ aws_cdk.aws_ecr.Repository.arn_for_local_repository(
   account: str = None
 )
 \`\`\`
+
+Returns an ECR ARN for a repository that resides in the same account/region as the current stack.
 
 ###### \`repository_name\`<sup>Required</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.Repository.arnForLocalRepository.parameter.repositoryName\\"></a>
 
@@ -60459,6 +61095,8 @@ aws_cdk.aws_ecr.Repository.from_repository_attributes(
   repository_name: str
 )
 \`\`\`
+
+Import a repository.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.Repository.fromRepositoryAttributes.parameter.scope\\"></a>
 
@@ -60659,6 +61297,8 @@ def add_to_resource_policy(
 )
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* aws_cdk.aws_iam.PolicyStatement
@@ -60673,6 +61313,8 @@ def grant(
   actions: str
 )
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
 
@@ -60694,6 +61336,8 @@ def grant_pull(
 )
 \`\`\`
 
+Grant the given identity permissions to use the images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
 
 - *Type:* aws_cdk.aws_iam.IGrantable
@@ -60707,6 +61351,8 @@ def grant_pull_push(
   grantee: IGrantable
 )
 \`\`\`
+
+Grant the given identity permissions to pull and push images to this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
 
@@ -60725,6 +61371,10 @@ def on_cloud_trail_event(
   target: IRuleTarget = None
 )
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -60786,6 +61436,10 @@ def on_cloud_trail_image_pushed(
   image_tag: str = None
 )
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
 
@@ -60856,6 +61510,10 @@ def on_event(
 )
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
 
 - *Type:* str
@@ -60914,6 +61572,8 @@ def on_image_scan_completed(
   image_tags: typing.List[str] = None
 )
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
 
@@ -60982,6 +61642,10 @@ def repository_uri_for_digest(
 )
 \`\`\`
 
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* str
@@ -60997,6 +61661,10 @@ def repository_uri_for_tag(
   tag: str = None
 )
 \`\`\`
+
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -62028,6 +62696,8 @@ aws_cdk.aws_ecr.AuthorizationToken.grant_read(
 )
 \`\`\`
 
+Grant access to retrieve an authorization token.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
 - *Type:* aws_cdk.aws_iam.IGrantable
@@ -62060,6 +62730,8 @@ aws_cdk.aws_ecr.PublicGalleryAuthorizationToken.grant_read(
   grantee: IGrantable
 )
 \`\`\`
+
+Grant access to retrieve an authorization token.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.PublicGalleryAuthorizationToken.grantRead.parameter.grantee\\"></a>
 
@@ -62104,6 +62776,8 @@ def add_to_resource_policy(
 )
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* aws_cdk.aws_iam.PolicyStatement
@@ -62118,6 +62792,8 @@ def grant(
   actions: str
 )
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
 
@@ -62139,6 +62815,8 @@ def grant_pull(
 )
 \`\`\`
 
+Grant the given identity permissions to pull images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* aws_cdk.aws_iam.IGrantable
@@ -62152,6 +62830,8 @@ def grant_pull_push(
   grantee: IGrantable
 )
 \`\`\`
+
+Grant the given identity permissions to pull and push images to this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
 
@@ -62170,6 +62850,10 @@ def on_cloud_trail_event(
   target: IRuleTarget = None
 )
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -62231,6 +62915,10 @@ def on_cloud_trail_image_pushed(
   image_tag: str = None
 )
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
@@ -62301,6 +62989,10 @@ def on_event(
 )
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* str
@@ -62359,6 +63051,8 @@ def on_image_scan_completed(
   image_tags: typing.List[str] = None
 )
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
 
@@ -62427,6 +63121,10 @@ def repository_uri_for_digest(
 )
 \`\`\`
 
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* str
@@ -62442,6 +63140,10 @@ def repository_uri_for_tag(
   tag: str = None
 )
 \`\`\`
+
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -62814,6 +63516,8 @@ def inspect(
 )
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* aws_cdk.core.TreeInspector
@@ -62991,6 +63695,8 @@ def inspect(
 )
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
 
 - *Type:* aws_cdk.core.TreeInspector
@@ -63122,6 +63828,8 @@ def inspect(
   inspector: TreeInspector
 )
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
 
@@ -63326,6 +64034,8 @@ def inspect(
   inspector: TreeInspector
 )
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
 
@@ -63616,6 +64326,10 @@ def add_lifecycle_rule(
 )
 \`\`\`
 
+Add a life cycle rule to the repository.
+
+Life cycle rules automatically expire images from the repository that match certain conditions.
+
 ###### \`description\`<sup>Optional</sup> <a name=\\"description\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.description\\"></a>
 
 - *Type:* str
@@ -63685,6 +64399,8 @@ def add_to_resource_policy(
 )
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* aws_cdk.aws_iam.PolicyStatement
@@ -63713,6 +64429,8 @@ aws_cdk.aws_ecr.Repository.arn_for_local_repository(
   account: str = None
 )
 \`\`\`
+
+Returns an ECR ARN for a repository that resides in the same account/region as the current stack.
 
 ###### \`repository_name\`<sup>Required</sup> <a name=\\"repository_name\\" id=\\"@aws-cdk/aws-ecr.Repository.arnForLocalRepository.parameter.repositoryName\\"></a>
 
@@ -63774,6 +64492,8 @@ aws_cdk.aws_ecr.Repository.from_repository_attributes(
   repository_name: str
 )
 \`\`\`
+
+Import a repository.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.Repository.fromRepositoryAttributes.parameter.scope\\"></a>
 
@@ -63974,6 +64694,8 @@ def add_to_resource_policy(
 )
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* aws_cdk.aws_iam.PolicyStatement
@@ -63988,6 +64710,8 @@ def grant(
   actions: str
 )
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
 
@@ -64009,6 +64733,8 @@ def grant_pull(
 )
 \`\`\`
 
+Grant the given identity permissions to use the images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
 
 - *Type:* aws_cdk.aws_iam.IGrantable
@@ -64022,6 +64748,8 @@ def grant_pull_push(
   grantee: IGrantable
 )
 \`\`\`
+
+Grant the given identity permissions to pull and push images to this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
 
@@ -64040,6 +64768,10 @@ def on_cloud_trail_event(
   target: IRuleTarget = None
 )
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -64101,6 +64833,10 @@ def on_cloud_trail_image_pushed(
   image_tag: str = None
 )
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
 
@@ -64171,6 +64907,10 @@ def on_event(
 )
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
 
 - *Type:* str
@@ -64229,6 +64969,8 @@ def on_image_scan_completed(
   image_tags: typing.List[str] = None
 )
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
 
@@ -64297,6 +65039,10 @@ def repository_uri_for_digest(
 )
 \`\`\`
 
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* str
@@ -64312,6 +65058,10 @@ def repository_uri_for_tag(
   tag: str = None
 )
 \`\`\`
+
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -65343,6 +66093,8 @@ aws_cdk.aws_ecr.AuthorizationToken.grant_read(
 )
 \`\`\`
 
+Grant access to retrieve an authorization token.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
 - *Type:* aws_cdk.aws_iam.IGrantable
@@ -65375,6 +66127,8 @@ aws_cdk.aws_ecr.PublicGalleryAuthorizationToken.grant_read(
   grantee: IGrantable
 )
 \`\`\`
+
+Grant access to retrieve an authorization token.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.PublicGalleryAuthorizationToken.grantRead.parameter.grantee\\"></a>
 
@@ -65419,6 +66173,8 @@ def add_to_resource_policy(
 )
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* aws_cdk.aws_iam.PolicyStatement
@@ -65433,6 +66189,8 @@ def grant(
   actions: str
 )
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
 
@@ -65454,6 +66212,8 @@ def grant_pull(
 )
 \`\`\`
 
+Grant the given identity permissions to pull images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* aws_cdk.aws_iam.IGrantable
@@ -65467,6 +66227,8 @@ def grant_pull_push(
   grantee: IGrantable
 )
 \`\`\`
+
+Grant the given identity permissions to pull and push images to this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
 
@@ -65485,6 +66247,10 @@ def on_cloud_trail_event(
   target: IRuleTarget = None
 )
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -65546,6 +66312,10 @@ def on_cloud_trail_image_pushed(
   image_tag: str = None
 )
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
@@ -65616,6 +66386,10 @@ def on_event(
 )
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* str
@@ -65674,6 +66448,8 @@ def on_image_scan_completed(
   image_tags: typing.List[str] = None
 )
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
 
@@ -65742,6 +66518,10 @@ def repository_uri_for_digest(
 )
 \`\`\`
 
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* str
@@ -65757,6 +66537,10 @@ def repository_uri_for_tag(
   tag: str = None
 )
 \`\`\`
+
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -67200,6 +67984,8 @@ def add_account(
 )
 \`\`\`
 
+Additional AWS account to add to the aws-auth configmap.
+
 ###### \`account_id\`<sup>Required</sup> <a name=\\"account_id\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addAccount.parameter.accountId\\"></a>
 
 - *Type:* str
@@ -67216,6 +68002,8 @@ def add_masters_role(
   username: str = None
 )
 \`\`\`
+
+Adds the specified IAM role to the \`system:masters\` RBAC group, which means that anyone that can assume it will be able to administer this Kubernetes system.
 
 ###### \`role\`<sup>Required</sup> <a name=\\"role\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addMastersRole.parameter.role\\"></a>
 
@@ -67242,6 +68030,8 @@ def add_role_mapping(
   username: str = None
 )
 \`\`\`
+
+Adds a mapping between an IAM role to a Kubernetes user and groups.
 
 ###### \`role\`<sup>Required</sup> <a name=\\"role\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addRoleMapping.parameter.role\\"></a>
 
@@ -67279,6 +68069,8 @@ def add_user_mapping(
   username: str = None
 )
 \`\`\`
+
+Adds a mapping between an IAM user to a Kubernetes user and groups.
 
 ###### \`user\`<sup>Required</sup> <a name=\\"user\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addUserMapping.parameter.user\\"></a>
 
@@ -67439,6 +68231,8 @@ def inspect(
   inspector: TreeInspector
 )
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnAddon.inspect.parameter.inspector\\"></a>
 
@@ -67706,6 +68500,8 @@ def inspect(
   inspector: TreeInspector
 )
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnCluster.inspect.parameter.inspector\\"></a>
 
@@ -68028,6 +68824,8 @@ def inspect(
   inspector: TreeInspector
 )
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnFargateProfile.inspect.parameter.inspector\\"></a>
 
@@ -68427,6 +69225,8 @@ def inspect(
   inspector: TreeInspector
 )
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnNodegroup.inspect.parameter.inspector\\"></a>
 
@@ -69105,6 +69905,10 @@ def add_auto_scaling_group_capacity(
 )
 \`\`\`
 
+Add nodes to this EKS cluster.
+
+The nodes will automatically be configured with the right VPC and AMI for the instance type and Kubernetes version.  Note that if you specify \`updateType: RollingUpdate\` or \`updateType: ReplacingUpdate\`, your nodes might be replaced at deploy time without notice in case the recommended AMI for your machine image type has been updated by AWS. The default behavior for \`updateType\` is \`None\`, which means only new instances will be launched using the new AMI.  Spot instances will be labeled \`lifecycle=Ec2Spot\` and tainted with \`PreferNoSchedule\`. In addition, the [spot interrupt handler](https://github.com/awslabs/ec2-spot-labs/tree/master/ec2-spot-eks-solution/spot-termination-handler) daemon will be installed on all spot instances to handle [EC2 Spot Instance Termination Notices](https://aws.amazon.com/blogs/aws/new-ec2-spot-instance-termination-notices/).
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addAutoScalingGroupCapacity.parameter.id\\"></a>
 
 - *Type:* str
@@ -69391,6 +70195,8 @@ def add_cdk8s_chart(
 )
 \`\`\`
 
+Defines a CDK8s chart in this cluster.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addCdk8sChart.parameter.id\\"></a>
 
 - *Type:* str
@@ -69419,6 +70225,10 @@ def add_fargate_profile(
   vpc: IVpc = None
 )
 \`\`\`
+
+Adds a Fargate profile to this cluster.
+
+> [https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html](https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html)
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addFargateProfile.parameter.id\\"></a>
 
@@ -69498,6 +70308,8 @@ def add_helm_chart(
   wait: bool = None
 )
 \`\`\`
+
+Defines a Helm chart in this cluster.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addHelmChart.parameter.id\\"></a>
 
@@ -69600,6 +70412,10 @@ def add_manifest(
 )
 \`\`\`
 
+Defines a Kubernetes resource in this cluster.
+
+The manifest will be applied/deleted using kubectl as needed.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addManifest.parameter.id\\"></a>
 
 - *Type:* str
@@ -69639,6 +70455,12 @@ def add_nodegroup_capacity(
   tags: typing.Mapping[str] = None
 )
 \`\`\`
+
+Add managed nodegroup to this Amazon EKS cluster.
+
+This method will create a new managed nodegroup and add into the capacity.
+
+> [https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html)
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addNodegroupCapacity.parameter.id\\"></a>
 
@@ -69822,6 +70644,8 @@ def add_service_account(
 )
 \`\`\`
 
+Creates a new service account with corresponding IAM Role (IRSA).
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addServiceAccount.parameter.id\\"></a>
 
 - *Type:* str
@@ -69858,6 +70682,12 @@ def connect_auto_scaling_group_capacity(
   spot_interrupt_handler: bool = None
 )
 \`\`\`
+
+Connect capacity in the form of an existing AutoScalingGroup to the EKS cluster.
+
+The AutoScalingGroup must be running an EKS-optimized AMI containing the /etc/eks/bootstrap.sh script. This method will configure Security Groups, add the right policies to the instance role, apply the right tags, and add the required user data to the instance's launch configuration.  Spot instances will be labeled \`lifecycle=Ec2Spot\` and tainted with \`PreferNoSchedule\`. If kubectl is enabled, the [spot interrupt handler](https://github.com/awslabs/ec2-spot-labs/tree/master/ec2-spot-eks-solution/spot-termination-handler) daemon will be installed on all spot instances to handle [EC2 Spot Instance Termination Notices](https://aws.amazon.com/blogs/aws/new-ec2-spot-instance-termination-notices/).  Prefer to use \`addAutoScalingGroupCapacity\` if possible.
+
+> [https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html](https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html)
 
 ###### \`auto_scaling_group\`<sup>Required</sup> <a name=\\"auto_scaling_group\\" id=\\"aws-cdk-lib.aws_eks.Cluster.connectAutoScalingGroupCapacity.parameter.autoScalingGroup\\"></a>
 
@@ -69928,6 +70758,8 @@ def get_service_load_balancer_address(
 )
 \`\`\`
 
+Fetch the load balancer address of a service of type 'LoadBalancer'.
+
 ###### \`service_name\`<sup>Required</sup> <a name=\\"service_name\\" id=\\"aws-cdk-lib.aws_eks.Cluster.getServiceLoadBalancerAddress.parameter.serviceName\\"></a>
 
 - *Type:* str
@@ -69987,6 +70819,8 @@ aws_eks.Cluster.from_cluster_attributes(
   vpc: IVpc = None
 )
 \`\`\`
+
+Import an existing cluster.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"aws-cdk-lib.aws_eks.Cluster.fromClusterAttributes.parameter.scope\\"></a>
 
@@ -71751,6 +72585,8 @@ aws_eks.Nodegroup.from_nodegroup_name(
 )
 \`\`\`
 
+Import the Nodegroup from attributes.
+
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"aws-cdk-lib.aws_eks.Nodegroup.fromNodegroupName.parameter.scope\\"></a>
 
 - *Type:* constructs.Construct
@@ -71970,6 +72806,8 @@ def add_to_principal_policy(
   statement: PolicyStatement
 )
 \`\`\`
+
+Add to the policy of this principal.
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"aws-cdk-lib.aws_eks.ServiceAccount.addToPrincipalPolicy.parameter.statement\\"></a>
 
@@ -77435,6 +78273,8 @@ def get_image(
 )
 \`\`\`
 
+Return the correct image.
+
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"aws-cdk-lib.aws_eks.EksOptimizedImage.getImage.parameter.scope\\"></a>
 
 - *Type:* constructs.Construct
@@ -77463,6 +78303,10 @@ def only_from(
   cidr: str
 )
 \`\`\`
+
+Restrict public access to specific CIDR blocks.
+
+If public access is disabled, this method will result in an error.
 
 ###### \`cidr\`<sup>Required</sup> <a name=\\"cidr\\" id=\\"aws-cdk-lib.aws_eks.EndpointAccess.onlyFrom.parameter.cidr\\"></a>
 
@@ -77548,6 +78392,8 @@ aws_eks.KubernetesVersion.of(
   version: str
 )
 \`\`\`
+
+Custom cluster version.
 
 ###### \`version\`<sup>Required</sup> <a name=\\"version\\" id=\\"aws-cdk-lib.aws_eks.KubernetesVersion.of.parameter.version\\"></a>
 
@@ -77692,6 +78538,8 @@ def add_cdk8s_chart(
 )
 \`\`\`
 
+Defines a CDK8s chart in this cluster.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addCdk8sChart.parameter.id\\"></a>
 
 - *Type:* str
@@ -77724,6 +78572,8 @@ def add_helm_chart(
   wait: bool = None
 )
 \`\`\`
+
+Defines a Helm chart in this cluster.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addHelmChart.parameter.id\\"></a>
 
@@ -77826,6 +78676,10 @@ def add_manifest(
 )
 \`\`\`
 
+Defines a Kubernetes resource in this cluster.
+
+The manifest will be applied/deleted using kubectl as needed.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addManifest.parameter.id\\"></a>
 
 - *Type:* str
@@ -77851,6 +78705,8 @@ def add_service_account(
   namespace: str = None
 )
 \`\`\`
+
+Creates a new service account with corresponding IAM Role (IRSA).
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addServiceAccount.parameter.id\\"></a>
 
@@ -78619,6 +79475,8 @@ resource properties.
 public inspect(inspector: TreeInspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* @aws-cdk/core.TreeInspector
@@ -78788,6 +79646,8 @@ resource properties.
 public inspect(inspector: TreeInspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
 
 - *Type:* @aws-cdk/core.TreeInspector
@@ -78912,6 +79772,8 @@ resource properties.
 public inspect(inspector: TreeInspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
 
 - *Type:* @aws-cdk/core.TreeInspector
@@ -79035,6 +79897,8 @@ resource properties.
 \`\`\`typescript
 public inspect(inspector: TreeInspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
 
@@ -79252,6 +80116,10 @@ new Repository(scope: Construct, id: string, props?: RepositoryProps)
 public addLifecycleRule(rule: LifecycleRule)
 \`\`\`
 
+Add a life cycle rule to the repository.
+
+Life cycle rules automatically expire images from the repository that match certain conditions.
+
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.rule\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-ecr.LifecycleRule\\">LifecycleRule</a>
@@ -79263,6 +80131,8 @@ public addLifecycleRule(rule: LifecycleRule)
 \`\`\`typescript
 public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`
+
+Add a policy statement to the repository's resource policy.
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
 
@@ -79288,6 +80158,8 @@ import { Repository } from '@aws-cdk/aws-ecr'
 
 Repository.arnForLocalRepository(repositoryName: string, scope: IConstruct, account?: string)
 \`\`\`
+
+Returns an ECR ARN for a repository that resides in the same account/region as the current stack.
 
 ###### \`repositoryName\`<sup>Required</sup> <a name=\\"repositoryName\\" id=\\"@aws-cdk/aws-ecr.Repository.arnForLocalRepository.parameter.repositoryName\\"></a>
 
@@ -79340,6 +80212,8 @@ import { Repository } from '@aws-cdk/aws-ecr'
 
 Repository.fromRepositoryAttributes(scope: Construct, id: string, attrs: RepositoryAttributes)
 \`\`\`
+
+Import a repository.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.Repository.fromRepositoryAttributes.parameter.scope\\"></a>
 
@@ -79484,6 +80358,8 @@ new RepositoryBase(scope: Construct, id: string, props?: ResourceProps)
 public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* @aws-cdk/aws-iam.PolicyStatement
@@ -79495,6 +80371,8 @@ public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`typescript
 public grant(grantee: IGrantable, actions: string)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
 
@@ -79514,6 +80392,8 @@ public grant(grantee: IGrantable, actions: string)
 public grantPull(grantee: IGrantable)
 \`\`\`
 
+Grant the given identity permissions to use the images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
 
 - *Type:* @aws-cdk/aws-iam.IGrantable
@@ -79526,6 +80406,8 @@ public grantPull(grantee: IGrantable)
 public grantPullPush(grantee: IGrantable)
 \`\`\`
 
+Grant the given identity permissions to pull and push images to this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* @aws-cdk/aws-iam.IGrantable
@@ -79537,6 +80419,10 @@ public grantPullPush(grantee: IGrantable)
 \`\`\`typescript
 public onCloudTrailEvent(id: string, options?: OnEventOptions)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -79560,6 +80446,10 @@ Options for adding the rule.
 public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* string
@@ -79582,6 +80472,10 @@ Options for adding the rule.
 public onEvent(id: string, options?: OnEventOptions)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
 
 - *Type:* string
@@ -79599,6 +80493,8 @@ public onEvent(id: string, options?: OnEventOptions)
 \`\`\`typescript
 public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
 
@@ -79622,6 +80518,10 @@ Options for adding the rule.
 public repositoryUriForDigest(digest?: string)
 \`\`\`
 
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* string
@@ -79635,6 +80535,10 @@ Optional image digest.
 \`\`\`typescript
 public repositoryUriForTag(tag?: string)
 \`\`\`
+
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -80608,6 +81512,8 @@ import { AuthorizationToken } from '@aws-cdk/aws-ecr'
 AuthorizationToken.grantRead(grantee: IGrantable)
 \`\`\`
 
+Grant access to retrieve an authorization token.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
 - *Type:* @aws-cdk/aws-iam.IGrantable
@@ -80638,6 +81544,8 @@ import { PublicGalleryAuthorizationToken } from '@aws-cdk/aws-ecr'
 
 PublicGalleryAuthorizationToken.grantRead(grantee: IGrantable)
 \`\`\`
+
+Grant access to retrieve an authorization token.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.PublicGalleryAuthorizationToken.grantRead.parameter.grantee\\"></a>
 
@@ -80680,6 +81588,8 @@ Represents an ECR repository.
 public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* @aws-cdk/aws-iam.PolicyStatement
@@ -80691,6 +81601,8 @@ public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`typescript
 public grant(grantee: IGrantable, actions: string)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
 
@@ -80710,6 +81622,8 @@ public grant(grantee: IGrantable, actions: string)
 public grantPull(grantee: IGrantable)
 \`\`\`
 
+Grant the given identity permissions to pull images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* @aws-cdk/aws-iam.IGrantable
@@ -80722,6 +81636,8 @@ public grantPull(grantee: IGrantable)
 public grantPullPush(grantee: IGrantable)
 \`\`\`
 
+Grant the given identity permissions to pull and push images to this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* @aws-cdk/aws-iam.IGrantable
@@ -80733,6 +81649,10 @@ public grantPullPush(grantee: IGrantable)
 \`\`\`typescript
 public onCloudTrailEvent(id: string, options?: OnEventOptions)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -80756,6 +81676,10 @@ Options for adding the rule.
 public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* string
@@ -80778,6 +81702,10 @@ Options for adding the rule.
 public onEvent(id: string, options?: OnEventOptions)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* string
@@ -80795,6 +81723,8 @@ public onEvent(id: string, options?: OnEventOptions)
 \`\`\`typescript
 public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
 
@@ -80818,6 +81748,10 @@ Options for adding the rule.
 public repositoryUriForDigest(digest?: string)
 \`\`\`
 
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* string
@@ -80831,6 +81765,10 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 \`\`\`typescript
 public repositoryUriForTag(tag?: string)
 \`\`\`
+
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -81155,6 +82093,8 @@ resource properties.
 public inspect(inspector: TreeInspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
 - *Type:* @aws-cdk/core.TreeInspector
@@ -81324,6 +82264,8 @@ resource properties.
 public inspect(inspector: TreeInspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRegistryPolicy.inspect.parameter.inspector\\"></a>
 
 - *Type:* @aws-cdk/core.TreeInspector
@@ -81448,6 +82390,8 @@ resource properties.
 public inspect(inspector: TreeInspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnReplicationConfiguration.inspect.parameter.inspector\\"></a>
 
 - *Type:* @aws-cdk/core.TreeInspector
@@ -81571,6 +82515,8 @@ resource properties.
 \`\`\`typescript
 public inspect(inspector: TreeInspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnRepository.inspect.parameter.inspector\\"></a>
 
@@ -81788,6 +82734,10 @@ new Repository(scope: Construct, id: string, props?: RepositoryProps)
 public addLifecycleRule(rule: LifecycleRule)
 \`\`\`
 
+Add a life cycle rule to the repository.
+
+Life cycle rules automatically expire images from the repository that match certain conditions.
+
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"@aws-cdk/aws-ecr.Repository.addLifecycleRule.parameter.rule\\"></a>
 
 - *Type:* <a href=\\"#@aws-cdk/aws-ecr.LifecycleRule\\">LifecycleRule</a>
@@ -81799,6 +82749,8 @@ public addLifecycleRule(rule: LifecycleRule)
 \`\`\`typescript
 public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`
+
+Add a policy statement to the repository's resource policy.
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.Repository.addToResourcePolicy.parameter.statement\\"></a>
 
@@ -81824,6 +82776,8 @@ import { Repository } from '@aws-cdk/aws-ecr'
 
 Repository.arnForLocalRepository(repositoryName: string, scope: IConstruct, account?: string)
 \`\`\`
+
+Returns an ECR ARN for a repository that resides in the same account/region as the current stack.
 
 ###### \`repositoryName\`<sup>Required</sup> <a name=\\"repositoryName\\" id=\\"@aws-cdk/aws-ecr.Repository.arnForLocalRepository.parameter.repositoryName\\"></a>
 
@@ -81876,6 +82830,8 @@ import { Repository } from '@aws-cdk/aws-ecr'
 
 Repository.fromRepositoryAttributes(scope: Construct, id: string, attrs: RepositoryAttributes)
 \`\`\`
+
+Import a repository.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.Repository.fromRepositoryAttributes.parameter.scope\\"></a>
 
@@ -82020,6 +82976,8 @@ new RepositoryBase(scope: Construct, id: string, props?: ResourceProps)
 public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* @aws-cdk/aws-iam.PolicyStatement
@@ -82031,6 +82989,8 @@ public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`typescript
 public grant(grantee: IGrantable, actions: string)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.grantee\\"></a>
 
@@ -82050,6 +83010,8 @@ public grant(grantee: IGrantable, actions: string)
 public grantPull(grantee: IGrantable)
 \`\`\`
 
+Grant the given identity permissions to use the images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPull.parameter.grantee\\"></a>
 
 - *Type:* @aws-cdk/aws-iam.IGrantable
@@ -82062,6 +83024,8 @@ public grantPull(grantee: IGrantable)
 public grantPullPush(grantee: IGrantable)
 \`\`\`
 
+Grant the given identity permissions to pull and push images to this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* @aws-cdk/aws-iam.IGrantable
@@ -82073,6 +83037,10 @@ public grantPullPush(grantee: IGrantable)
 \`\`\`typescript
 public onCloudTrailEvent(id: string, options?: OnEventOptions)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -82096,6 +83064,10 @@ Options for adding the rule.
 public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* string
@@ -82118,6 +83090,10 @@ Options for adding the rule.
 public onEvent(id: string, options?: OnEventOptions)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onEvent.parameter.id\\"></a>
 
 - *Type:* string
@@ -82135,6 +83111,8 @@ public onEvent(id: string, options?: OnEventOptions)
 \`\`\`typescript
 public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when an image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.onImageScanCompleted.parameter.id\\"></a>
 
@@ -82158,6 +83136,10 @@ Options for adding the rule.
 public repositoryUriForDigest(digest?: string)
 \`\`\`
 
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* string
@@ -82171,6 +83153,10 @@ Optional image digest.
 \`\`\`typescript
 public repositoryUriForTag(tag?: string)
 \`\`\`
+
+Returns the URL of the repository. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.RepositoryBase.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -83144,6 +84130,8 @@ import { AuthorizationToken } from '@aws-cdk/aws-ecr'
 AuthorizationToken.grantRead(grantee: IGrantable)
 \`\`\`
 
+Grant access to retrieve an authorization token.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
 - *Type:* @aws-cdk/aws-iam.IGrantable
@@ -83174,6 +84162,8 @@ import { PublicGalleryAuthorizationToken } from '@aws-cdk/aws-ecr'
 
 PublicGalleryAuthorizationToken.grantRead(grantee: IGrantable)
 \`\`\`
+
+Grant access to retrieve an authorization token.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.PublicGalleryAuthorizationToken.grantRead.parameter.grantee\\"></a>
 
@@ -83216,6 +84206,8 @@ Represents an ECR repository.
 public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`
 
+Add a policy statement to the repository's resource policy.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
 - *Type:* @aws-cdk/aws-iam.PolicyStatement
@@ -83227,6 +84219,8 @@ public addToResourcePolicy(statement: PolicyStatement)
 \`\`\`typescript
 public grant(grantee: IGrantable, actions: string)
 \`\`\`
+
+Grant the given principal identity permissions to perform the actions on this repository.
 
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
 
@@ -83246,6 +84240,8 @@ public grant(grantee: IGrantable, actions: string)
 public grantPull(grantee: IGrantable)
 \`\`\`
 
+Grant the given identity permissions to pull images in this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
 
 - *Type:* @aws-cdk/aws-iam.IGrantable
@@ -83258,6 +84254,8 @@ public grantPull(grantee: IGrantable)
 public grantPullPush(grantee: IGrantable)
 \`\`\`
 
+Grant the given identity permissions to pull and push images to this repository.
+
 ###### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
 
 - *Type:* @aws-cdk/aws-iam.IGrantable
@@ -83269,6 +84267,10 @@ public grantPullPush(grantee: IGrantable)
 \`\`\`typescript
 public onCloudTrailEvent(id: string, options?: OnEventOptions)
 \`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -83292,6 +84294,10 @@ Options for adding the rule.
 public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
 \`\`\`
 
+Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
 - *Type:* string
@@ -83314,6 +84320,10 @@ Options for adding the rule.
 public onEvent(id: string, options?: OnEventOptions)
 \`\`\`
 
+Defines a CloudWatch event rule which triggers for repository events.
+
+Use \`rule.addEventPattern(pattern)\` to specify a filter.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
 - *Type:* string
@@ -83331,6 +84341,8 @@ public onEvent(id: string, options?: OnEventOptions)
 \`\`\`typescript
 public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
 \`\`\`
+
+Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id\\"></a>
 
@@ -83354,6 +84366,10 @@ Options for adding the rule.
 public repositoryUriForDigest(digest?: string)
 \`\`\`
 
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[@DIGEST]
+
 ###### \`digest\`<sup>Optional</sup> <a name=\\"digest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest\\"></a>
 
 - *Type:* string
@@ -83367,6 +84383,10 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 \`\`\`typescript
 public repositoryUriForTag(tag?: string)
 \`\`\`
+
+Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
+
+ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY[:TAG]
 
 ###### \`tag\`<sup>Optional</sup> <a name=\\"tag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag\\"></a>
 
@@ -84800,6 +85820,8 @@ new aws_eks.AwsAuth(scope: Construct, id: string, props: AwsAuthProps)
 public addAccount(accountId: string)
 \`\`\`
 
+Additional AWS account to add to the aws-auth configmap.
+
 ###### \`accountId\`<sup>Required</sup> <a name=\\"accountId\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addAccount.parameter.accountId\\"></a>
 
 - *Type:* string
@@ -84813,6 +85835,8 @@ account number.
 \`\`\`typescript
 public addMastersRole(role: IRole, username?: string)
 \`\`\`
+
+Adds the specified IAM role to the \`system:masters\` RBAC group, which means that anyone that can assume it will be able to administer this Kubernetes system.
 
 ###### \`role\`<sup>Required</sup> <a name=\\"role\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addMastersRole.parameter.role\\"></a>
 
@@ -84836,6 +85860,8 @@ Optional user (defaults to the role ARN).
 public addRoleMapping(role: IRole, mapping: AwsAuthMapping)
 \`\`\`
 
+Adds a mapping between an IAM role to a Kubernetes user and groups.
+
 ###### \`role\`<sup>Required</sup> <a name=\\"role\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addRoleMapping.parameter.role\\"></a>
 
 - *Type:* aws-cdk-lib.aws_iam.IRole
@@ -84857,6 +85883,8 @@ Mapping to k8s user name and groups.
 \`\`\`typescript
 public addUserMapping(user: IUser, mapping: AwsAuthMapping)
 \`\`\`
+
+Adds a mapping between an IAM user to a Kubernetes user and groups.
 
 ###### \`user\`<sup>Required</sup> <a name=\\"user\\" id=\\"aws-cdk-lib.aws_eks.AwsAuth.addUserMapping.parameter.user\\"></a>
 
@@ -84938,6 +85966,8 @@ resource properties.
 \`\`\`typescript
 public inspect(inspector: TreeInspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnAddon.inspect.parameter.inspector\\"></a>
 
@@ -85137,6 +86167,8 @@ resource properties.
 \`\`\`typescript
 public inspect(inspector: TreeInspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnCluster.inspect.parameter.inspector\\"></a>
 
@@ -85392,6 +86424,8 @@ resource properties.
 public inspect(inspector: TreeInspector)
 \`\`\`
 
+Examines the CloudFormation resource and discloses attributes.
+
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnFargateProfile.inspect.parameter.inspector\\"></a>
 
 - *Type:* aws-cdk-lib.TreeInspector
@@ -85590,6 +86624,8 @@ resource properties.
 \`\`\`typescript
 public inspect(inspector: TreeInspector)
 \`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
 
 ###### \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"aws-cdk-lib.aws_eks.CfnNodegroup.inspect.parameter.inspector\\"></a>
 
@@ -85985,6 +87021,10 @@ properties in the IClusterProps interface.
 public addAutoScalingGroupCapacity(id: string, options: AutoScalingGroupCapacityOptions)
 \`\`\`
 
+Add nodes to this EKS cluster.
+
+The nodes will automatically be configured with the right VPC and AMI for the instance type and Kubernetes version.  Note that if you specify \`updateType: RollingUpdate\` or \`updateType: ReplacingUpdate\`, your nodes might be replaced at deploy time without notice in case the recommended AMI for your machine image type has been updated by AWS. The default behavior for \`updateType\` is \`None\`, which means only new instances will be launched using the new AMI.  Spot instances will be labeled \`lifecycle=Ec2Spot\` and tainted with \`PreferNoSchedule\`. In addition, the [spot interrupt handler](https://github.com/awslabs/ec2-spot-labs/tree/master/ec2-spot-eks-solution/spot-termination-handler) daemon will be installed on all spot instances to handle [EC2 Spot Instance Termination Notices](https://aws.amazon.com/blogs/aws/new-ec2-spot-instance-termination-notices/).
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addAutoScalingGroupCapacity.parameter.id\\"></a>
 
 - *Type:* string
@@ -86002,6 +87042,8 @@ public addAutoScalingGroupCapacity(id: string, options: AutoScalingGroupCapacity
 \`\`\`typescript
 public addCdk8sChart(id: string, chart: Construct)
 \`\`\`
+
+Defines a CDK8s chart in this cluster.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addCdk8sChart.parameter.id\\"></a>
 
@@ -86025,6 +87067,10 @@ the cdk8s chart.
 public addFargateProfile(id: string, options: FargateProfileOptions)
 \`\`\`
 
+Adds a Fargate profile to this cluster.
+
+> [https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html](https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html)
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addFargateProfile.parameter.id\\"></a>
 
 - *Type:* string
@@ -86046,6 +87092,8 @@ profile options.
 \`\`\`typescript
 public addHelmChart(id: string, options: HelmChartOptions)
 \`\`\`
+
+Defines a Helm chart in this cluster.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addHelmChart.parameter.id\\"></a>
 
@@ -86069,6 +87117,10 @@ options of this chart.
 public addManifest(id: string, manifest: {[ key: string ]: any})
 \`\`\`
 
+Defines a Kubernetes resource in this cluster.
+
+The manifest will be applied/deleted using kubectl as needed.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addManifest.parameter.id\\"></a>
 
 - *Type:* string
@@ -86090,6 +87142,12 @@ a list of Kubernetes resource specifications.
 \`\`\`typescript
 public addNodegroupCapacity(id: string, options?: NodegroupOptions)
 \`\`\`
+
+Add managed nodegroup to this Amazon EKS cluster.
+
+This method will create a new managed nodegroup and add into the capacity.
+
+> [https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html)
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addNodegroupCapacity.parameter.id\\"></a>
 
@@ -86113,6 +87171,8 @@ options for creating a new nodegroup.
 public addServiceAccount(id: string, options?: ServiceAccountOptions)
 \`\`\`
 
+Creates a new service account with corresponding IAM Role (IRSA).
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.Cluster.addServiceAccount.parameter.id\\"></a>
 
 - *Type:* string
@@ -86130,6 +87190,12 @@ public addServiceAccount(id: string, options?: ServiceAccountOptions)
 \`\`\`typescript
 public connectAutoScalingGroupCapacity(autoScalingGroup: AutoScalingGroup, options: AutoScalingGroupOptions)
 \`\`\`
+
+Connect capacity in the form of an existing AutoScalingGroup to the EKS cluster.
+
+The AutoScalingGroup must be running an EKS-optimized AMI containing the /etc/eks/bootstrap.sh script. This method will configure Security Groups, add the right policies to the instance role, apply the right tags, and add the required user data to the instance's launch configuration.  Spot instances will be labeled \`lifecycle=Ec2Spot\` and tainted with \`PreferNoSchedule\`. If kubectl is enabled, the [spot interrupt handler](https://github.com/awslabs/ec2-spot-labs/tree/master/ec2-spot-eks-solution/spot-termination-handler) daemon will be installed on all spot instances to handle [EC2 Spot Instance Termination Notices](https://aws.amazon.com/blogs/aws/new-ec2-spot-instance-termination-notices/).  Prefer to use \`addAutoScalingGroupCapacity\` if possible.
+
+> [https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html](https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html)
 
 ###### \`autoScalingGroup\`<sup>Required</sup> <a name=\\"autoScalingGroup\\" id=\\"aws-cdk-lib.aws_eks.Cluster.connectAutoScalingGroupCapacity.parameter.autoScalingGroup\\"></a>
 
@@ -86152,6 +87218,8 @@ options for adding auto scaling groups, like customizing the bootstrap script.
 \`\`\`typescript
 public getServiceLoadBalancerAddress(serviceName: string, options?: ServiceLoadBalancerAddressOptions)
 \`\`\`
+
+Fetch the load balancer address of a service of type 'LoadBalancer'.
 
 ###### \`serviceName\`<sup>Required</sup> <a name=\\"serviceName\\" id=\\"aws-cdk-lib.aws_eks.Cluster.getServiceLoadBalancerAddress.parameter.serviceName\\"></a>
 
@@ -86184,6 +87252,8 @@ import { aws_eks } from 'aws-cdk-lib'
 
 aws_eks.Cluster.fromClusterAttributes(scope: Construct, id: string, attrs: ClusterAttributes)
 \`\`\`
+
+Import an existing cluster.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"aws-cdk-lib.aws_eks.Cluster.fromClusterAttributes.parameter.scope\\"></a>
 
@@ -87008,6 +88078,8 @@ import { aws_eks } from 'aws-cdk-lib'
 aws_eks.Nodegroup.fromNodegroupName(scope: Construct, id: string, nodegroupName: string)
 \`\`\`
 
+Import the Nodegroup from attributes.
+
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"aws-cdk-lib.aws_eks.Nodegroup.fromNodegroupName.parameter.scope\\"></a>
 
 - *Type:* constructs.Construct
@@ -87191,6 +88263,8 @@ new aws_eks.ServiceAccount(scope: Construct, id: string, props: ServiceAccountPr
 \`\`\`typescript
 public addToPrincipalPolicy(statement: PolicyStatement)
 \`\`\`
+
+Add to the policy of this principal.
 
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"aws-cdk-lib.aws_eks.ServiceAccount.addToPrincipalPolicy.parameter.statement\\"></a>
 
@@ -92305,6 +93379,8 @@ new aws_eks.EksOptimizedImage(props?: EksOptimizedImageProps)
 public getImage(scope: Construct)
 \`\`\`
 
+Return the correct image.
+
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"aws-cdk-lib.aws_eks.EksOptimizedImage.getImage.parameter.scope\\"></a>
 
 - *Type:* constructs.Construct
@@ -92331,6 +93407,10 @@ Endpoint access characteristics.
 \`\`\`typescript
 public onlyFrom(cidr: string)
 \`\`\`
+
+Restrict public access to specific CIDR blocks.
+
+If public access is disabled, this method will result in an error.
 
 ###### \`cidr\`<sup>Required</sup> <a name=\\"cidr\\" id=\\"aws-cdk-lib.aws_eks.EndpointAccess.onlyFrom.parameter.cidr\\"></a>
 
@@ -92414,6 +93494,8 @@ import { aws_eks } from 'aws-cdk-lib'
 
 aws_eks.KubernetesVersion.of(version: string)
 \`\`\`
+
+Custom cluster version.
 
 ###### \`version\`<sup>Required</sup> <a name=\\"version\\" id=\\"aws-cdk-lib.aws_eks.KubernetesVersion.of.parameter.version\\"></a>
 
@@ -92555,6 +93637,8 @@ An EKS cluster.
 public addCdk8sChart(id: string, chart: Construct)
 \`\`\`
 
+Defines a CDK8s chart in this cluster.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addCdk8sChart.parameter.id\\"></a>
 
 - *Type:* string
@@ -92576,6 +93660,8 @@ the cdk8s chart.
 \`\`\`typescript
 public addHelmChart(id: string, options: HelmChartOptions)
 \`\`\`
+
+Defines a Helm chart in this cluster.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addHelmChart.parameter.id\\"></a>
 
@@ -92599,6 +93685,10 @@ options of this chart.
 public addManifest(id: string, manifest: {[ key: string ]: any})
 \`\`\`
 
+Defines a Kubernetes resource in this cluster.
+
+The manifest will be applied/deleted using kubectl as needed.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addManifest.parameter.id\\"></a>
 
 - *Type:* string
@@ -92620,6 +93710,8 @@ a list of Kubernetes resource specifications.
 \`\`\`typescript
 public addServiceAccount(id: string, options?: ServiceAccountOptions)
 \`\`\`
+
+Creates a new service account with corresponding IAM Role (IRSA).
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"aws-cdk-lib.aws_eks.ICluster.addServiceAccount.parameter.id\\"></a>
 
