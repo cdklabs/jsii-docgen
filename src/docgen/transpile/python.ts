@@ -52,7 +52,7 @@ const formatInvocation = (
 
 const formatSignature = (name: string, inputs: string[], returns?: string) => {
   const def = 'def ';
-  return `${def}${name}${formatArguments(inputs)}${returns ? ' -> ' + returns : ''}`;
+  return `${def}${name}${formatArguments(inputs)} -> ${returns || 'None'}`;
 };
 
 /**
