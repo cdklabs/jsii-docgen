@@ -51,6 +51,8 @@ new EdgeFunction(Construct Scope, string Id, EdgeFunctionProps Props);
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.toString\\">ToString</a></code> | Returns a string representation of this construct. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy\\">ApplyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addAlias\\">AddAlias</a></code> | Defines an alias for this version. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSource\\">AddEventSource</a></code> | Adds an event source to this function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSourceMapping\\">AddEventSourceMapping</a></code> | Adds an event source that maps to this AWS Lambda function. |
@@ -66,11 +68,37 @@ new EdgeFunction(Construct Scope, string Id, EdgeFunctionProps Props);
 
 ---
 
+##### \`ToString\` <a name=\\"ToString\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.toString\\"></a>
+
+\`\`\`csharp
+private string ToString()
+\`\`\`
+
+Returns a string representation of this construct.
+
+##### \`ApplyRemovalPolicy\` <a name=\\"ApplyRemovalPolicy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy\\"></a>
+
+\`\`\`csharp
+private void ApplyRemovalPolicy(RemovalPolicy Policy)
+\`\`\`
+
+Apply the given removal policy to this resource.
+
+The Removal Policy controls what happens to this resource when it stops being managed by CloudFormation, either because you've removed it from the CDK application or because you've made a change that requires the resource to be replaced.  The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
+
+###### \`Policy\`<sup>Required</sup> <a name=\\"Policy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy.parameter.policy\\"></a>
+
+- *Type:* Amazon.CDK.RemovalPolicy
+
+---
+
 ##### \`AddAlias\` <a name=\\"AddAlias\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addAlias\\"></a>
 
 \`\`\`csharp
 private Alias AddAlias(string AliasName, AliasOptions Options = null)
 \`\`\`
+
+Defines an alias for this version.
 
 ###### \`AliasName\`<sup>Required</sup> <a name=\\"AliasName\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addAlias.parameter.aliasName\\"></a>
 
@@ -90,6 +118,8 @@ private Alias AddAlias(string AliasName, AliasOptions Options = null)
 private void AddEventSource(IEventSource Source)
 \`\`\`
 
+Adds an event source to this function.
+
 ###### \`Source\`<sup>Required</sup> <a name=\\"Source\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSource.parameter.source\\"></a>
 
 - *Type:* Amazon.CDK.AWS.Lambda.IEventSource
@@ -101,6 +131,8 @@ private void AddEventSource(IEventSource Source)
 \`\`\`csharp
 private EventSourceMapping AddEventSourceMapping(string Id, EventSourceMappingOptions Options)
 \`\`\`
+
+Adds an event source that maps to this AWS Lambda function.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSourceMapping.parameter.id\\"></a>
 
@@ -120,6 +152,8 @@ private EventSourceMapping AddEventSourceMapping(string Id, EventSourceMappingOp
 private void AddPermission(string Id, Permission Permission)
 \`\`\`
 
+Adds a permission to the Lambda resource policy.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addPermission.parameter.id\\"></a>
 
 - *Type:* string
@@ -138,6 +172,8 @@ private void AddPermission(string Id, Permission Permission)
 private void AddToRolePolicy(PolicyStatement Statement)
 \`\`\`
 
+Adds a statement to the IAM role assumed by the instance.
+
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addToRolePolicy.parameter.statement\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.PolicyStatement
@@ -149,6 +185,8 @@ private void AddToRolePolicy(PolicyStatement Statement)
 \`\`\`csharp
 private void ConfigureAsyncInvoke(EventInvokeConfigOptions Options)
 \`\`\`
+
+Configures options for asynchronous invocation.
 
 ###### \`Options\`<sup>Required</sup> <a name=\\"Options\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.configureAsyncInvoke.parameter.options\\"></a>
 
@@ -162,6 +200,8 @@ private void ConfigureAsyncInvoke(EventInvokeConfigOptions Options)
 private Grant GrantInvoke(IGrantable Identity)
 \`\`\`
 
+Grant the given identity permissions to invoke this Lambda.
+
 ###### \`Identity\`<sup>Required</sup> <a name=\\"Identity\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.grantInvoke.parameter.identity\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.IGrantable
@@ -173,6 +213,10 @@ private Grant GrantInvoke(IGrantable Identity)
 \`\`\`csharp
 private Metric Metric(string MetricName, MetricOptions Props = null)
 \`\`\`
+
+Return the given named metric for this Lambda Return the given named metric for this Function.
+
+Return the given named metric for this Lambda Return the given named metric for this Function.
 
 ###### \`MetricName\`<sup>Required</sup> <a name=\\"MetricName\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metric.parameter.metricName\\"></a>
 
@@ -192,6 +236,10 @@ private Metric Metric(string MetricName, MetricOptions Props = null)
 private Metric MetricDuration(MetricOptions Props = null)
 \`\`\`
 
+Metric for the Duration of this Lambda How long execution of this Lambda takes.
+
+Average over 5 minutes Metric for the Duration of this Lambda How long execution of this Lambda takes.  Average over 5 minutes
+
 ###### \`Props\`<sup>Optional</sup> <a name=\\"Props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricDuration.parameter.props\\"></a>
 
 - *Type:* Amazon.CDK.AWS.CloudWatch.MetricOptions
@@ -203,6 +251,10 @@ private Metric MetricDuration(MetricOptions Props = null)
 \`\`\`csharp
 private Metric MetricErrors(MetricOptions Props = null)
 \`\`\`
+
+How many invocations of this Lambda fail.
+
+Sum over 5 minutes
 
 ###### \`Props\`<sup>Optional</sup> <a name=\\"Props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricErrors.parameter.props\\"></a>
 
@@ -216,6 +268,10 @@ private Metric MetricErrors(MetricOptions Props = null)
 private Metric MetricInvocations(MetricOptions Props = null)
 \`\`\`
 
+Metric for the number of invocations of this Lambda How often this Lambda is invoked.
+
+Sum over 5 minutes Metric for the number of invocations of this Lambda How often this Lambda is invoked.  Sum over 5 minutes
+
 ###### \`Props\`<sup>Optional</sup> <a name=\\"Props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricInvocations.parameter.props\\"></a>
 
 - *Type:* Amazon.CDK.AWS.CloudWatch.MetricOptions
@@ -228,17 +284,64 @@ private Metric MetricInvocations(MetricOptions Props = null)
 private Metric MetricThrottles(MetricOptions Props = null)
 \`\`\`
 
+Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.
+
+Sum over 5 minutes Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.  Sum over 5 minutes
+
 ###### \`Props\`<sup>Optional</sup> <a name=\\"Props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricThrottles.parameter.props\\"></a>
 
 - *Type:* Amazon.CDK.AWS.CloudWatch.MetricOptions
 
 ---
 
+#### Static Functions <a name=\\"Static Functions\\" id=\\"Static Functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isConstruct\\">IsConstruct</a></code> | Return whether the given object is a Construct. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isResource\\">IsResource</a></code> | Check whether the given construct is a Resource. |
+
+---
+
+##### \`IsConstruct\` <a name=\\"IsConstruct\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isConstruct\\"></a>
+
+\`\`\`csharp
+using Amazon.CDK.AWS.CloudFront;
+
+EdgeFunction.IsConstruct(object X);
+\`\`\`
+
+Return whether the given object is a Construct.
+
+###### \`X\`<sup>Required</sup> <a name=\\"X\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isConstruct.parameter.x\\"></a>
+
+- *Type:* object
+
+---
+
+##### \`IsResource\` <a name=\\"IsResource\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isResource\\"></a>
+
+\`\`\`csharp
+using Amazon.CDK.AWS.CloudFront;
+
+EdgeFunction.IsResource(IConstruct Construct);
+\`\`\`
+
+Check whether the given construct is a Resource.
+
+###### \`Construct\`<sup>Required</sup> <a name=\\"Construct\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isResource.parameter.construct\\"></a>
+
+- *Type:* Amazon.CDK.IConstruct
+
+---
 
 #### Properties <a name=\\"Properties\\" id=\\"Properties\\"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.node\\">Node</a></code> | <code>Amazon.CDK.ConstructNode</code> | The construct tree node associated with this construct. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.env\\">Env</a></code> | <code>Amazon.CDK.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.stack\\">Stack</a></code> | <code>Amazon.CDK.Stack</code> | The stack in which this resource is defined. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.connections\\">Connections</a></code> | <code>Amazon.CDK.AWS.EC2.Connections</code> | Not supported. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.currentVersion\\">CurrentVersion</a></code> | <code>Amazon.CDK.AWS.Lambda.IVersion</code> | Convenience method to make \`EdgeFunction\` conform to the same interface as \`Function\`. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.edgeArn\\">EdgeArn</a></code> | <code>string</code> | The ARN of the version for Lambda@Edge. |
@@ -251,6 +354,44 @@ private Metric MetricThrottles(MetricOptions Props = null)
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.permissionsNode\\">PermissionsNode</a></code> | <code>Amazon.CDK.ConstructNode</code> | The construct node where permissions are attached. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.version\\">Version</a></code> | <code>string</code> | The most recently deployed version of this function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.role\\">Role</a></code> | <code>Amazon.CDK.AWS.IAM.IRole</code> | The IAM role associated with this function. |
+
+---
+
+##### \`Node\`<sup>Required</sup> <a name=\\"Node\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.node\\"></a>
+
+\`\`\`csharp
+public ConstructNode Node { get; }
+\`\`\`
+
+- *Type:* Amazon.CDK.ConstructNode
+
+The construct tree node associated with this construct.
+
+---
+
+##### \`Env\`<sup>Required</sup> <a name=\\"Env\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.env\\"></a>
+
+\`\`\`csharp
+public ResourceEnvironment Env { get; }
+\`\`\`
+
+- *Type:* Amazon.CDK.ResourceEnvironment
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
+
+---
+
+##### \`Stack\`<sup>Required</sup> <a name=\\"Stack\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.stack\\"></a>
+
+\`\`\`csharp
+public Stack Stack { get; }
+\`\`\`
+
+- *Type:* Amazon.CDK.Stack
+
+The stack in which this resource is defined.
 
 ---
 
@@ -1567,6 +1708,8 @@ The stack ID of Lambda@Edge function.
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.toString\\">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy\\">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addAlias\\">addAlias</a></code> | Defines an alias for this version. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSource\\">addEventSource</a></code> | Adds an event source to this function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSourceMapping\\">addEventSourceMapping</a></code> | Adds an event source that maps to this AWS Lambda function. |
@@ -1582,12 +1725,38 @@ The stack ID of Lambda@Edge function.
 
 ---
 
+##### \`toString\` <a name=\\"toString\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.toString\\"></a>
+
+\`\`\`java
+public java.lang.String toString()
+\`\`\`
+
+Returns a string representation of this construct.
+
+##### \`applyRemovalPolicy\` <a name=\\"applyRemovalPolicy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy\\"></a>
+
+\`\`\`java
+public void applyRemovalPolicy(RemovalPolicy policy)
+\`\`\`
+
+Apply the given removal policy to this resource.
+
+The Removal Policy controls what happens to this resource when it stops being managed by CloudFormation, either because you've removed it from the CDK application or because you've made a change that requires the resource to be replaced.  The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
+
+###### \`policy\`<sup>Required</sup> <a name=\\"policy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy.parameter.policy\\"></a>
+
+- *Type:* software.amazon.awscdk.core.RemovalPolicy
+
+---
+
 ##### \`addAlias\` <a name=\\"addAlias\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addAlias\\"></a>
 
 \`\`\`java
 public Alias addAlias(java.lang.String aliasName)
 public Alias addAlias(java.lang.String aliasName, AliasOptions options)
 \`\`\`
+
+Defines an alias for this version.
 
 ###### \`aliasName\`<sup>Required</sup> <a name=\\"aliasName\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addAlias.parameter.aliasName\\"></a>
 
@@ -1607,6 +1776,8 @@ public Alias addAlias(java.lang.String aliasName, AliasOptions options)
 public void addEventSource(IEventSource source)
 \`\`\`
 
+Adds an event source to this function.
+
 ###### \`source\`<sup>Required</sup> <a name=\\"source\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSource.parameter.source\\"></a>
 
 - *Type:* software.amazon.awscdk.services.lambda.IEventSource
@@ -1618,6 +1789,8 @@ public void addEventSource(IEventSource source)
 \`\`\`java
 public EventSourceMapping addEventSourceMapping(java.lang.String id, EventSourceMappingOptions options)
 \`\`\`
+
+Adds an event source that maps to this AWS Lambda function.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSourceMapping.parameter.id\\"></a>
 
@@ -1637,6 +1810,8 @@ public EventSourceMapping addEventSourceMapping(java.lang.String id, EventSource
 public void addPermission(java.lang.String id, Permission permission)
 \`\`\`
 
+Adds a permission to the Lambda resource policy.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addPermission.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -1655,6 +1830,8 @@ public void addPermission(java.lang.String id, Permission permission)
 public void addToRolePolicy(PolicyStatement statement)
 \`\`\`
 
+Adds a statement to the IAM role assumed by the instance.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addToRolePolicy.parameter.statement\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.PolicyStatement
@@ -1666,6 +1843,8 @@ public void addToRolePolicy(PolicyStatement statement)
 \`\`\`java
 public void configureAsyncInvoke(EventInvokeConfigOptions options)
 \`\`\`
+
+Configures options for asynchronous invocation.
 
 ###### \`options\`<sup>Required</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.configureAsyncInvoke.parameter.options\\"></a>
 
@@ -1679,6 +1858,8 @@ public void configureAsyncInvoke(EventInvokeConfigOptions options)
 public Grant grantInvoke(IGrantable identity)
 \`\`\`
 
+Grant the given identity permissions to invoke this Lambda.
+
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.grantInvoke.parameter.identity\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.IGrantable
@@ -1691,6 +1872,10 @@ public Grant grantInvoke(IGrantable identity)
 public Metric metric(java.lang.String metricName)
 public Metric metric(java.lang.String metricName, MetricOptions props)
 \`\`\`
+
+Return the given named metric for this Lambda Return the given named metric for this Function.
+
+Return the given named metric for this Lambda Return the given named metric for this Function.
 
 ###### \`metricName\`<sup>Required</sup> <a name=\\"metricName\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metric.parameter.metricName\\"></a>
 
@@ -1711,6 +1896,10 @@ public Metric metricDuration()
 public Metric metricDuration(MetricOptions props)
 \`\`\`
 
+Metric for the Duration of this Lambda How long execution of this Lambda takes.
+
+Average over 5 minutes Metric for the Duration of this Lambda How long execution of this Lambda takes.  Average over 5 minutes
+
 ###### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricDuration.parameter.props\\"></a>
 
 - *Type:* software.amazon.awscdk.services.cloudwatch.MetricOptions
@@ -1723,6 +1912,10 @@ public Metric metricDuration(MetricOptions props)
 public Metric metricErrors()
 public Metric metricErrors(MetricOptions props)
 \`\`\`
+
+How many invocations of this Lambda fail.
+
+Sum over 5 minutes
 
 ###### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricErrors.parameter.props\\"></a>
 
@@ -1737,6 +1930,10 @@ public Metric metricInvocations()
 public Metric metricInvocations(MetricOptions props)
 \`\`\`
 
+Metric for the number of invocations of this Lambda How often this Lambda is invoked.
+
+Sum over 5 minutes Metric for the number of invocations of this Lambda How often this Lambda is invoked.  Sum over 5 minutes
+
 ###### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricInvocations.parameter.props\\"></a>
 
 - *Type:* software.amazon.awscdk.services.cloudwatch.MetricOptions
@@ -1750,17 +1947,64 @@ public Metric metricThrottles()
 public Metric metricThrottles(MetricOptions props)
 \`\`\`
 
+Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.
+
+Sum over 5 minutes Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.  Sum over 5 minutes
+
 ###### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricThrottles.parameter.props\\"></a>
 
 - *Type:* software.amazon.awscdk.services.cloudwatch.MetricOptions
 
 ---
 
+#### Static Functions <a name=\\"Static Functions\\" id=\\"Static Functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isConstruct\\">isConstruct</a></code> | Return whether the given object is a Construct. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isResource\\">isResource</a></code> | Check whether the given construct is a Resource. |
+
+---
+
+##### \`isConstruct\` <a name=\\"isConstruct\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isConstruct\\"></a>
+
+\`\`\`java
+import software.amazon.awscdk.services.cloudfront.experimental.EdgeFunction;
+
+EdgeFunction.isConstruct(java.lang.Object x)
+\`\`\`
+
+Return whether the given object is a Construct.
+
+###### \`x\`<sup>Required</sup> <a name=\\"x\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isConstruct.parameter.x\\"></a>
+
+- *Type:* java.lang.Object
+
+---
+
+##### \`isResource\` <a name=\\"isResource\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isResource\\"></a>
+
+\`\`\`java
+import software.amazon.awscdk.services.cloudfront.experimental.EdgeFunction;
+
+EdgeFunction.isResource(IConstruct construct)
+\`\`\`
+
+Check whether the given construct is a Resource.
+
+###### \`construct\`<sup>Required</sup> <a name=\\"construct\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isResource.parameter.construct\\"></a>
+
+- *Type:* software.amazon.awscdk.core.IConstruct
+
+---
 
 #### Properties <a name=\\"Properties\\" id=\\"Properties\\"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.node\\">node</a></code> | <code>software.amazon.awscdk.core.ConstructNode</code> | The construct tree node associated with this construct. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.env\\">env</a></code> | <code>software.amazon.awscdk.core.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.stack\\">stack</a></code> | <code>software.amazon.awscdk.core.Stack</code> | The stack in which this resource is defined. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.connections\\">connections</a></code> | <code>software.amazon.awscdk.services.ec2.Connections</code> | Not supported. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.currentVersion\\">currentVersion</a></code> | <code>software.amazon.awscdk.services.lambda.IVersion</code> | Convenience method to make \`EdgeFunction\` conform to the same interface as \`Function\`. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.edgeArn\\">edgeArn</a></code> | <code>java.lang.String</code> | The ARN of the version for Lambda@Edge. |
@@ -1773,6 +2017,44 @@ public Metric metricThrottles(MetricOptions props)
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.permissionsNode\\">permissionsNode</a></code> | <code>software.amazon.awscdk.core.ConstructNode</code> | The construct node where permissions are attached. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.version\\">version</a></code> | <code>java.lang.String</code> | The most recently deployed version of this function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.role\\">role</a></code> | <code>software.amazon.awscdk.services.iam.IRole</code> | The IAM role associated with this function. |
+
+---
+
+##### \`node\`<sup>Required</sup> <a name=\\"node\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.node\\"></a>
+
+\`\`\`java
+public ConstructNode getNode();
+\`\`\`
+
+- *Type:* software.amazon.awscdk.core.ConstructNode
+
+The construct tree node associated with this construct.
+
+---
+
+##### \`env\`<sup>Required</sup> <a name=\\"env\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.env\\"></a>
+
+\`\`\`java
+public ResourceEnvironment getEnv();
+\`\`\`
+
+- *Type:* software.amazon.awscdk.core.ResourceEnvironment
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
+
+---
+
+##### \`stack\`<sup>Required</sup> <a name=\\"stack\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.stack\\"></a>
+
+\`\`\`java
+public Stack getStack();
+\`\`\`
+
+- *Type:* software.amazon.awscdk.core.Stack
+
+The stack in which this resource is defined.
 
 ---
 
@@ -3091,6 +3373,8 @@ The stack ID of Lambda@Edge function.
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.toString\\">to_string</a></code> | Returns a string representation of this construct. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy\\">apply_removal_policy</a></code> | Apply the given removal policy to this resource. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addAlias\\">add_alias</a></code> | Defines an alias for this version. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSource\\">add_event_source</a></code> | Adds an event source to this function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSourceMapping\\">add_event_source_mapping</a></code> | Adds an event source that maps to this AWS Lambda function. |
@@ -3103,6 +3387,32 @@ The stack ID of Lambda@Edge function.
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricErrors\\">metric_errors</a></code> | How many invocations of this Lambda fail. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricInvocations\\">metric_invocations</a></code> | Metric for the number of invocations of this Lambda How often this Lambda is invoked. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricThrottles\\">metric_throttles</a></code> | Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled. |
+
+---
+
+##### \`to_string\` <a name=\\"to_string\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.toString\\"></a>
+
+\`\`\`python
+def to_string() -> str
+\`\`\`
+
+Returns a string representation of this construct.
+
+##### \`apply_removal_policy\` <a name=\\"apply_removal_policy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy\\"></a>
+
+\`\`\`python
+def apply_removal_policy(
+  policy: RemovalPolicy
+) -> None
+\`\`\`
+
+Apply the given removal policy to this resource.
+
+The Removal Policy controls what happens to this resource when it stops being managed by CloudFormation, either because you've removed it from the CDK application or because you've made a change that requires the resource to be replaced.  The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
+
+###### \`policy\`<sup>Required</sup> <a name=\\"policy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy.parameter.policy\\"></a>
+
+- *Type:* aws_cdk.core.RemovalPolicy
 
 ---
 
@@ -3120,6 +3430,8 @@ def add_alias(
   provisioned_concurrent_executions: typing.Union[int, float] = None
 ) -> Alias
 \`\`\`
+
+Defines an alias for this version.
 
 ###### \`alias_name\`<sup>Required</sup> <a name=\\"alias_name\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addAlias.parameter.aliasName\\"></a>
 
@@ -3204,6 +3516,8 @@ def add_event_source(
 ) -> None
 \`\`\`
 
+Adds an event source to this function.
+
 ###### \`source\`<sup>Required</sup> <a name=\\"source\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSource.parameter.source\\"></a>
 
 - *Type:* aws_cdk.aws_lambda.IEventSource
@@ -3232,6 +3546,8 @@ def add_event_source_mapping(
   tumbling_window: Duration = None
 ) -> EventSourceMapping
 \`\`\`
+
+Adds an event source that maps to this AWS Lambda function.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSourceMapping.parameter.id\\"></a>
 
@@ -3414,6 +3730,8 @@ def add_permission(
 ) -> None
 \`\`\`
 
+Adds a permission to the Lambda resource policy.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addPermission.parameter.id\\"></a>
 
 - *Type:* str
@@ -3489,6 +3807,8 @@ def add_to_role_policy(
 ) -> None
 \`\`\`
 
+Adds a statement to the IAM role assumed by the instance.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addToRolePolicy.parameter.statement\\"></a>
 
 - *Type:* aws_cdk.aws_iam.PolicyStatement
@@ -3505,6 +3825,8 @@ def configure_async_invoke(
   retry_attempts: typing.Union[int, float] = None
 ) -> None
 \`\`\`
+
+Configures options for asynchronous invocation.
 
 ###### \`max_event_age\`<sup>Optional</sup> <a name=\\"max_event_age\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.configureAsyncInvoke.parameter.maxEventAge\\"></a>
 
@@ -3554,6 +3876,8 @@ def grant_invoke(
 ) -> Grant
 \`\`\`
 
+Grant the given identity permissions to invoke this Lambda.
+
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.grantInvoke.parameter.identity\\"></a>
 
 - *Type:* aws_cdk.aws_iam.IGrantable
@@ -3576,6 +3900,10 @@ def metric(
   unit: Unit = None
 ) -> Metric
 \`\`\`
+
+Return the given named metric for this Lambda Return the given named metric for this Function.
+
+Return the given named metric for this Lambda Return the given named metric for this Function.
 
 ###### \`metric_name\`<sup>Required</sup> <a name=\\"metric_name\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metric.parameter.metricName\\"></a>
 
@@ -3686,6 +4014,10 @@ def metric_duration(
 ) -> Metric
 \`\`\`
 
+Metric for the Duration of this Lambda How long execution of this Lambda takes.
+
+Average over 5 minutes Metric for the Duration of this Lambda How long execution of this Lambda takes.  Average over 5 minutes
+
 ###### \`account\`<sup>Optional</sup> <a name=\\"account\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricDuration.parameter.account\\"></a>
 
 - *Type:* str
@@ -3788,6 +4120,10 @@ def metric_errors(
   unit: Unit = None
 ) -> Metric
 \`\`\`
+
+How many invocations of this Lambda fail.
+
+Sum over 5 minutes
 
 ###### \`account\`<sup>Optional</sup> <a name=\\"account\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricErrors.parameter.account\\"></a>
 
@@ -3892,6 +4228,10 @@ def metric_invocations(
 ) -> Metric
 \`\`\`
 
+Metric for the number of invocations of this Lambda How often this Lambda is invoked.
+
+Sum over 5 minutes Metric for the number of invocations of this Lambda How often this Lambda is invoked.  Sum over 5 minutes
+
 ###### \`account\`<sup>Optional</sup> <a name=\\"account\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricInvocations.parameter.account\\"></a>
 
 - *Type:* str
@@ -3995,6 +4335,10 @@ def metric_throttles(
 ) -> Metric
 \`\`\`
 
+Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.
+
+Sum over 5 minutes Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.  Sum over 5 minutes
+
 ###### \`account\`<sup>Optional</sup> <a name=\\"account\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricThrottles.parameter.account\\"></a>
 
 - *Type:* str
@@ -4082,11 +4426,58 @@ Only refer to datums emitted to the metric stream with the given unit and ignore
 
 ---
 
+#### Static Functions <a name=\\"Static Functions\\" id=\\"Static Functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isConstruct\\">is_construct</a></code> | Return whether the given object is a Construct. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isResource\\">is_resource</a></code> | Check whether the given construct is a Resource. |
+
+---
+
+##### \`is_construct\` <a name=\\"is_construct\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isConstruct\\"></a>
+
+\`\`\`python
+from aws_cdk import aws_cloudfront
+
+experimental.EdgeFunction.is_construct(
+  x: typing.Any
+)
+\`\`\`
+
+Return whether the given object is a Construct.
+
+###### \`x\`<sup>Required</sup> <a name=\\"x\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isConstruct.parameter.x\\"></a>
+
+- *Type:* typing.Any
+
+---
+
+##### \`is_resource\` <a name=\\"is_resource\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isResource\\"></a>
+
+\`\`\`python
+from aws_cdk import aws_cloudfront
+
+experimental.EdgeFunction.is_resource(
+  construct: IConstruct
+)
+\`\`\`
+
+Check whether the given construct is a Resource.
+
+###### \`construct\`<sup>Required</sup> <a name=\\"construct\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isResource.parameter.construct\\"></a>
+
+- *Type:* aws_cdk.core.IConstruct
+
+---
 
 #### Properties <a name=\\"Properties\\" id=\\"Properties\\"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.node\\">node</a></code> | <code>aws_cdk.core.ConstructNode</code> | The construct tree node associated with this construct. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.env\\">env</a></code> | <code>aws_cdk.core.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.stack\\">stack</a></code> | <code>aws_cdk.core.Stack</code> | The stack in which this resource is defined. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.connections\\">connections</a></code> | <code>aws_cdk.aws_ec2.Connections</code> | Not supported. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.currentVersion\\">current_version</a></code> | <code>aws_cdk.aws_lambda.IVersion</code> | Convenience method to make \`EdgeFunction\` conform to the same interface as \`Function\`. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.edgeArn\\">edge_arn</a></code> | <code>str</code> | The ARN of the version for Lambda@Edge. |
@@ -4099,6 +4490,44 @@ Only refer to datums emitted to the metric stream with the given unit and ignore
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.permissionsNode\\">permissions_node</a></code> | <code>aws_cdk.core.ConstructNode</code> | The construct node where permissions are attached. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.version\\">version</a></code> | <code>str</code> | The most recently deployed version of this function. |
 | <code><a href=\\"#@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.role\\">role</a></code> | <code>aws_cdk.aws_iam.IRole</code> | The IAM role associated with this function. |
+
+---
+
+##### \`node\`<sup>Required</sup> <a name=\\"node\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.node\\"></a>
+
+\`\`\`python
+node: ConstructNode
+\`\`\`
+
+- *Type:* aws_cdk.core.ConstructNode
+
+The construct tree node associated with this construct.
+
+---
+
+##### \`env\`<sup>Required</sup> <a name=\\"env\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.env\\"></a>
+
+\`\`\`python
+env: ResourceEnvironment
+\`\`\`
+
+- *Type:* aws_cdk.core.ResourceEnvironment
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
+
+---
+
+##### \`stack\`<sup>Required</sup> <a name=\\"stack\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.property.stack\\"></a>
+
+\`\`\`python
+stack: Stack
+\`\`\`
+
+- *Type:* aws_cdk.core.Stack
+
+The stack in which this resource is defined.
 
 ---
 
