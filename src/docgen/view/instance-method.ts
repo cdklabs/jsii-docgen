@@ -20,7 +20,7 @@ export class InstanceMethod {
     return {
       fqn: `${this.transpiled.parentType.fqn}.${this.transpiled.name}`,
       displayName: this.transpiled.name,
-      id: `${this.method.definingType.fqn}.${this.method.name}`,
+      id: `${this.method.parentType.fqn}.${this.method.name}`,
       parameters: this.parameters.map((p) => p.toJson()),
       docs: extractDocs(this.method.docs),
       usage: this.transpiled.signatures.join('\n'),
