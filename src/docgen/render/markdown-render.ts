@@ -229,7 +229,12 @@ export class MarkdownRenderer {
     }
 
     const initializer = new MarkdownDocument({
-      id: `${struct.id}.Initializer`,
+      id: this.anchorFormatter({
+        id: `${struct.id}.Initializer`,
+        displayName: 'Initializer',
+        fqn: `${struct.fqn}.Initializer`,
+        ...this.metadata,
+      }),
       header: { title: 'Initializer' },
     });
 
@@ -613,6 +618,10 @@ export class MarkdownRenderer {
       md.section(this.visitParameter(param));
     }
 
+    if (method.docs) {
+      md.docs(method.docs);
+    }
+
     return md;
   }
 
@@ -635,6 +644,10 @@ export class MarkdownRenderer {
 
     if (method.usage) {
       md.code(this.language.toString(), method.usage);
+    }
+
+    if (method.docs) {
+      md.docs(method.docs);
     }
 
     for (const param of method.parameters) {

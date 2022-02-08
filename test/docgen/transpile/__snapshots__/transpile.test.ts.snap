@@ -74,11 +74,17 @@ new EdgeFunction(Construct Scope, string Id, EdgeFunctionProps Props);
 private ToString()
 \`\`\`
 
+Returns a string representation of this construct.
+
 ##### \`ApplyRemovalPolicy\` <a name=\\"ApplyRemovalPolicy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy\\"></a>
 
 \`\`\`csharp
 private ApplyRemovalPolicy(RemovalPolicy Policy)
 \`\`\`
+
+Apply the given removal policy to this resource.
+
+The Removal Policy controls what happens to this resource when it stops being managed by CloudFormation, either because you've removed it from the CDK application or because you've made a change that requires the resource to be replaced.  The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 
 ###### \`Policy\`<sup>Required</sup> <a name=\\"Policy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy.parameter.policy\\"></a>
 
@@ -91,6 +97,8 @@ private ApplyRemovalPolicy(RemovalPolicy Policy)
 \`\`\`csharp
 private AddAlias(string AliasName, AliasOptions Options = null)
 \`\`\`
+
+Defines an alias for this version.
 
 ###### \`AliasName\`<sup>Required</sup> <a name=\\"AliasName\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addAlias.parameter.aliasName\\"></a>
 
@@ -110,6 +118,8 @@ private AddAlias(string AliasName, AliasOptions Options = null)
 private AddEventSource(IEventSource Source)
 \`\`\`
 
+Adds an event source to this function.
+
 ###### \`Source\`<sup>Required</sup> <a name=\\"Source\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSource.parameter.source\\"></a>
 
 - *Type:* Amazon.CDK.AWS.Lambda.IEventSource
@@ -121,6 +131,8 @@ private AddEventSource(IEventSource Source)
 \`\`\`csharp
 private AddEventSourceMapping(string Id, EventSourceMappingOptions Options)
 \`\`\`
+
+Adds an event source that maps to this AWS Lambda function.
 
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSourceMapping.parameter.id\\"></a>
 
@@ -140,6 +152,8 @@ private AddEventSourceMapping(string Id, EventSourceMappingOptions Options)
 private AddPermission(string Id, Permission Permission)
 \`\`\`
 
+Adds a permission to the Lambda resource policy.
+
 ###### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addPermission.parameter.id\\"></a>
 
 - *Type:* string
@@ -158,6 +172,8 @@ private AddPermission(string Id, Permission Permission)
 private AddToRolePolicy(PolicyStatement Statement)
 \`\`\`
 
+Adds a statement to the IAM role assumed by the instance.
+
 ###### \`Statement\`<sup>Required</sup> <a name=\\"Statement\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addToRolePolicy.parameter.statement\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.PolicyStatement
@@ -169,6 +185,8 @@ private AddToRolePolicy(PolicyStatement Statement)
 \`\`\`csharp
 private ConfigureAsyncInvoke(EventInvokeConfigOptions Options)
 \`\`\`
+
+Configures options for asynchronous invocation.
 
 ###### \`Options\`<sup>Required</sup> <a name=\\"Options\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.configureAsyncInvoke.parameter.options\\"></a>
 
@@ -182,6 +200,8 @@ private ConfigureAsyncInvoke(EventInvokeConfigOptions Options)
 private GrantInvoke(IGrantable Identity)
 \`\`\`
 
+Grant the given identity permissions to invoke this Lambda.
+
 ###### \`Identity\`<sup>Required</sup> <a name=\\"Identity\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.grantInvoke.parameter.identity\\"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.IGrantable
@@ -193,6 +213,10 @@ private GrantInvoke(IGrantable Identity)
 \`\`\`csharp
 private Metric(string MetricName, MetricOptions Props = null)
 \`\`\`
+
+Return the given named metric for this Lambda Return the given named metric for this Function.
+
+Return the given named metric for this Lambda Return the given named metric for this Function.
 
 ###### \`MetricName\`<sup>Required</sup> <a name=\\"MetricName\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metric.parameter.metricName\\"></a>
 
@@ -212,6 +236,10 @@ private Metric(string MetricName, MetricOptions Props = null)
 private MetricDuration(MetricOptions Props = null)
 \`\`\`
 
+Metric for the Duration of this Lambda How long execution of this Lambda takes.
+
+Average over 5 minutes Metric for the Duration of this Lambda How long execution of this Lambda takes.  Average over 5 minutes
+
 ###### \`Props\`<sup>Optional</sup> <a name=\\"Props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricDuration.parameter.props\\"></a>
 
 - *Type:* Amazon.CDK.AWS.CloudWatch.MetricOptions
@@ -223,6 +251,10 @@ private MetricDuration(MetricOptions Props = null)
 \`\`\`csharp
 private MetricErrors(MetricOptions Props = null)
 \`\`\`
+
+How many invocations of this Lambda fail.
+
+Sum over 5 minutes
 
 ###### \`Props\`<sup>Optional</sup> <a name=\\"Props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricErrors.parameter.props\\"></a>
 
@@ -236,6 +268,10 @@ private MetricErrors(MetricOptions Props = null)
 private MetricInvocations(MetricOptions Props = null)
 \`\`\`
 
+Metric for the number of invocations of this Lambda How often this Lambda is invoked.
+
+Sum over 5 minutes Metric for the number of invocations of this Lambda How often this Lambda is invoked.  Sum over 5 minutes
+
 ###### \`Props\`<sup>Optional</sup> <a name=\\"Props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricInvocations.parameter.props\\"></a>
 
 - *Type:* Amazon.CDK.AWS.CloudWatch.MetricOptions
@@ -247,6 +283,10 @@ private MetricInvocations(MetricOptions Props = null)
 \`\`\`csharp
 private MetricThrottles(MetricOptions Props = null)
 \`\`\`
+
+Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.
+
+Sum over 5 minutes Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.  Sum over 5 minutes
 
 ###### \`Props\`<sup>Optional</sup> <a name=\\"Props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricThrottles.parameter.props\\"></a>
 
@@ -271,6 +311,8 @@ using Amazon.CDK.AWS.CloudFront;
 EdgeFunction.IsConstruct(object X);
 \`\`\`
 
+Return whether the given object is a Construct.
+
 ###### \`X\`<sup>Required</sup> <a name=\\"X\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isConstruct.parameter.x\\"></a>
 
 - *Type:* object
@@ -284,6 +326,8 @@ using Amazon.CDK.AWS.CloudFront;
 
 EdgeFunction.IsResource(IConstruct Construct);
 \`\`\`
+
+Check whether the given construct is a Resource.
 
 ###### \`Construct\`<sup>Required</sup> <a name=\\"Construct\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isResource.parameter.construct\\"></a>
 
@@ -1687,11 +1731,17 @@ The stack ID of Lambda@Edge function.
 public toString()
 \`\`\`
 
+Returns a string representation of this construct.
+
 ##### \`applyRemovalPolicy\` <a name=\\"applyRemovalPolicy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy\\"></a>
 
 \`\`\`java
 public applyRemovalPolicy(RemovalPolicy policy)
 \`\`\`
+
+Apply the given removal policy to this resource.
+
+The Removal Policy controls what happens to this resource when it stops being managed by CloudFormation, either because you've removed it from the CDK application or because you've made a change that requires the resource to be replaced.  The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 
 ###### \`policy\`<sup>Required</sup> <a name=\\"policy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy.parameter.policy\\"></a>
 
@@ -1705,6 +1755,8 @@ public applyRemovalPolicy(RemovalPolicy policy)
 public addAlias(java.lang.String aliasName)
 public addAlias(java.lang.String aliasName, AliasOptions options)
 \`\`\`
+
+Defines an alias for this version.
 
 ###### \`aliasName\`<sup>Required</sup> <a name=\\"aliasName\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addAlias.parameter.aliasName\\"></a>
 
@@ -1724,6 +1776,8 @@ public addAlias(java.lang.String aliasName, AliasOptions options)
 public addEventSource(IEventSource source)
 \`\`\`
 
+Adds an event source to this function.
+
 ###### \`source\`<sup>Required</sup> <a name=\\"source\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSource.parameter.source\\"></a>
 
 - *Type:* software.amazon.awscdk.services.lambda.IEventSource
@@ -1735,6 +1789,8 @@ public addEventSource(IEventSource source)
 \`\`\`java
 public addEventSourceMapping(java.lang.String id, EventSourceMappingOptions options)
 \`\`\`
+
+Adds an event source that maps to this AWS Lambda function.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSourceMapping.parameter.id\\"></a>
 
@@ -1754,6 +1810,8 @@ public addEventSourceMapping(java.lang.String id, EventSourceMappingOptions opti
 public addPermission(java.lang.String id, Permission permission)
 \`\`\`
 
+Adds a permission to the Lambda resource policy.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addPermission.parameter.id\\"></a>
 
 - *Type:* java.lang.String
@@ -1772,6 +1830,8 @@ public addPermission(java.lang.String id, Permission permission)
 public addToRolePolicy(PolicyStatement statement)
 \`\`\`
 
+Adds a statement to the IAM role assumed by the instance.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addToRolePolicy.parameter.statement\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.PolicyStatement
@@ -1783,6 +1843,8 @@ public addToRolePolicy(PolicyStatement statement)
 \`\`\`java
 public configureAsyncInvoke(EventInvokeConfigOptions options)
 \`\`\`
+
+Configures options for asynchronous invocation.
 
 ###### \`options\`<sup>Required</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.configureAsyncInvoke.parameter.options\\"></a>
 
@@ -1796,6 +1858,8 @@ public configureAsyncInvoke(EventInvokeConfigOptions options)
 public grantInvoke(IGrantable identity)
 \`\`\`
 
+Grant the given identity permissions to invoke this Lambda.
+
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.grantInvoke.parameter.identity\\"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.IGrantable
@@ -1808,6 +1872,10 @@ public grantInvoke(IGrantable identity)
 public metric(java.lang.String metricName)
 public metric(java.lang.String metricName, MetricOptions props)
 \`\`\`
+
+Return the given named metric for this Lambda Return the given named metric for this Function.
+
+Return the given named metric for this Lambda Return the given named metric for this Function.
 
 ###### \`metricName\`<sup>Required</sup> <a name=\\"metricName\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metric.parameter.metricName\\"></a>
 
@@ -1828,6 +1896,10 @@ public metricDuration()
 public metricDuration(MetricOptions props)
 \`\`\`
 
+Metric for the Duration of this Lambda How long execution of this Lambda takes.
+
+Average over 5 minutes Metric for the Duration of this Lambda How long execution of this Lambda takes.  Average over 5 minutes
+
 ###### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricDuration.parameter.props\\"></a>
 
 - *Type:* software.amazon.awscdk.services.cloudwatch.MetricOptions
@@ -1840,6 +1912,10 @@ public metricDuration(MetricOptions props)
 public metricErrors()
 public metricErrors(MetricOptions props)
 \`\`\`
+
+How many invocations of this Lambda fail.
+
+Sum over 5 minutes
 
 ###### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricErrors.parameter.props\\"></a>
 
@@ -1854,6 +1930,10 @@ public metricInvocations()
 public metricInvocations(MetricOptions props)
 \`\`\`
 
+Metric for the number of invocations of this Lambda How often this Lambda is invoked.
+
+Sum over 5 minutes Metric for the number of invocations of this Lambda How often this Lambda is invoked.  Sum over 5 minutes
+
 ###### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricInvocations.parameter.props\\"></a>
 
 - *Type:* software.amazon.awscdk.services.cloudwatch.MetricOptions
@@ -1866,6 +1946,10 @@ public metricInvocations(MetricOptions props)
 public metricThrottles()
 public metricThrottles(MetricOptions props)
 \`\`\`
+
+Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.
+
+Sum over 5 minutes Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.  Sum over 5 minutes
 
 ###### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricThrottles.parameter.props\\"></a>
 
@@ -1890,6 +1974,8 @@ import software.amazon.awscdk.services.cloudfront.experimental.EdgeFunction;
 EdgeFunction.isConstruct(java.lang.Object x)
 \`\`\`
 
+Return whether the given object is a Construct.
+
 ###### \`x\`<sup>Required</sup> <a name=\\"x\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isConstruct.parameter.x\\"></a>
 
 - *Type:* java.lang.Object
@@ -1903,6 +1989,8 @@ import software.amazon.awscdk.services.cloudfront.experimental.EdgeFunction;
 
 EdgeFunction.isResource(IConstruct construct)
 \`\`\`
+
+Check whether the given construct is a Resource.
 
 ###### \`construct\`<sup>Required</sup> <a name=\\"construct\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isResource.parameter.construct\\"></a>
 
@@ -3308,6 +3396,8 @@ The stack ID of Lambda@Edge function.
 def to_string()
 \`\`\`
 
+Returns a string representation of this construct.
+
 ##### \`apply_removal_policy\` <a name=\\"apply_removal_policy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy\\"></a>
 
 \`\`\`python
@@ -3315,6 +3405,10 @@ def apply_removal_policy(
   policy: RemovalPolicy
 )
 \`\`\`
+
+Apply the given removal policy to this resource.
+
+The Removal Policy controls what happens to this resource when it stops being managed by CloudFormation, either because you've removed it from the CDK application or because you've made a change that requires the resource to be replaced.  The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 
 ###### \`policy\`<sup>Required</sup> <a name=\\"policy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy.parameter.policy\\"></a>
 
@@ -3336,6 +3430,8 @@ def add_alias(
   provisioned_concurrent_executions: typing.Union[int, float] = None
 )
 \`\`\`
+
+Defines an alias for this version.
 
 ###### \`alias_name\`<sup>Required</sup> <a name=\\"alias_name\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addAlias.parameter.aliasName\\"></a>
 
@@ -3420,6 +3516,8 @@ def add_event_source(
 )
 \`\`\`
 
+Adds an event source to this function.
+
 ###### \`source\`<sup>Required</sup> <a name=\\"source\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSource.parameter.source\\"></a>
 
 - *Type:* aws_cdk.aws_lambda.IEventSource
@@ -3448,6 +3546,8 @@ def add_event_source_mapping(
   tumbling_window: Duration = None
 )
 \`\`\`
+
+Adds an event source that maps to this AWS Lambda function.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSourceMapping.parameter.id\\"></a>
 
@@ -3630,6 +3730,8 @@ def add_permission(
 )
 \`\`\`
 
+Adds a permission to the Lambda resource policy.
+
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addPermission.parameter.id\\"></a>
 
 - *Type:* str
@@ -3705,6 +3807,8 @@ def add_to_role_policy(
 )
 \`\`\`
 
+Adds a statement to the IAM role assumed by the instance.
+
 ###### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addToRolePolicy.parameter.statement\\"></a>
 
 - *Type:* aws_cdk.aws_iam.PolicyStatement
@@ -3721,6 +3825,8 @@ def configure_async_invoke(
   retry_attempts: typing.Union[int, float] = None
 )
 \`\`\`
+
+Configures options for asynchronous invocation.
 
 ###### \`max_event_age\`<sup>Optional</sup> <a name=\\"max_event_age\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.configureAsyncInvoke.parameter.maxEventAge\\"></a>
 
@@ -3770,6 +3876,8 @@ def grant_invoke(
 )
 \`\`\`
 
+Grant the given identity permissions to invoke this Lambda.
+
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.grantInvoke.parameter.identity\\"></a>
 
 - *Type:* aws_cdk.aws_iam.IGrantable
@@ -3792,6 +3900,10 @@ def metric(
   unit: Unit = None
 )
 \`\`\`
+
+Return the given named metric for this Lambda Return the given named metric for this Function.
+
+Return the given named metric for this Lambda Return the given named metric for this Function.
 
 ###### \`metric_name\`<sup>Required</sup> <a name=\\"metric_name\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metric.parameter.metricName\\"></a>
 
@@ -3902,6 +4014,10 @@ def metric_duration(
 )
 \`\`\`
 
+Metric for the Duration of this Lambda How long execution of this Lambda takes.
+
+Average over 5 minutes Metric for the Duration of this Lambda How long execution of this Lambda takes.  Average over 5 minutes
+
 ###### \`account\`<sup>Optional</sup> <a name=\\"account\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricDuration.parameter.account\\"></a>
 
 - *Type:* str
@@ -4004,6 +4120,10 @@ def metric_errors(
   unit: Unit = None
 )
 \`\`\`
+
+How many invocations of this Lambda fail.
+
+Sum over 5 minutes
 
 ###### \`account\`<sup>Optional</sup> <a name=\\"account\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricErrors.parameter.account\\"></a>
 
@@ -4108,6 +4228,10 @@ def metric_invocations(
 )
 \`\`\`
 
+Metric for the number of invocations of this Lambda How often this Lambda is invoked.
+
+Sum over 5 minutes Metric for the number of invocations of this Lambda How often this Lambda is invoked.  Sum over 5 minutes
+
 ###### \`account\`<sup>Optional</sup> <a name=\\"account\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricInvocations.parameter.account\\"></a>
 
 - *Type:* str
@@ -4210,6 +4334,10 @@ def metric_throttles(
   unit: Unit = None
 )
 \`\`\`
+
+Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.
+
+Sum over 5 minutes Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.  Sum over 5 minutes
 
 ###### \`account\`<sup>Optional</sup> <a name=\\"account\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricThrottles.parameter.account\\"></a>
 
@@ -4317,6 +4445,8 @@ experimental.EdgeFunction.is_construct(
 )
 \`\`\`
 
+Return whether the given object is a Construct.
+
 ###### \`x\`<sup>Required</sup> <a name=\\"x\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isConstruct.parameter.x\\"></a>
 
 - *Type:* typing.Any
@@ -4332,6 +4462,8 @@ experimental.EdgeFunction.is_resource(
   construct: IConstruct
 )
 \`\`\`
+
+Check whether the given construct is a Resource.
 
 ###### \`construct\`<sup>Required</sup> <a name=\\"construct\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isResource.parameter.construct\\"></a>
 
