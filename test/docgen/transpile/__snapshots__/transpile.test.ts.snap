@@ -71,7 +71,7 @@ new EdgeFunction(Construct Scope, string Id, EdgeFunctionProps Props);
 ##### \`ToString\` <a name=\\"ToString\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.toString\\"></a>
 
 \`\`\`csharp
-private ToString()
+private string ToString()
 \`\`\`
 
 Returns a string representation of this construct.
@@ -79,7 +79,7 @@ Returns a string representation of this construct.
 ##### \`ApplyRemovalPolicy\` <a name=\\"ApplyRemovalPolicy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy\\"></a>
 
 \`\`\`csharp
-private ApplyRemovalPolicy(RemovalPolicy Policy)
+private void ApplyRemovalPolicy(RemovalPolicy Policy)
 \`\`\`
 
 Apply the given removal policy to this resource.
@@ -95,7 +95,7 @@ The Removal Policy controls what happens to this resource when it stops being ma
 ##### \`AddAlias\` <a name=\\"AddAlias\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addAlias\\"></a>
 
 \`\`\`csharp
-private AddAlias(string AliasName, AliasOptions Options = null)
+private Alias AddAlias(string AliasName, AliasOptions Options = null)
 \`\`\`
 
 Defines an alias for this version.
@@ -115,7 +115,7 @@ Defines an alias for this version.
 ##### \`AddEventSource\` <a name=\\"AddEventSource\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSource\\"></a>
 
 \`\`\`csharp
-private AddEventSource(IEventSource Source)
+private void AddEventSource(IEventSource Source)
 \`\`\`
 
 Adds an event source to this function.
@@ -129,7 +129,7 @@ Adds an event source to this function.
 ##### \`AddEventSourceMapping\` <a name=\\"AddEventSourceMapping\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSourceMapping\\"></a>
 
 \`\`\`csharp
-private AddEventSourceMapping(string Id, EventSourceMappingOptions Options)
+private EventSourceMapping AddEventSourceMapping(string Id, EventSourceMappingOptions Options)
 \`\`\`
 
 Adds an event source that maps to this AWS Lambda function.
@@ -149,7 +149,7 @@ Adds an event source that maps to this AWS Lambda function.
 ##### \`AddPermission\` <a name=\\"AddPermission\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addPermission\\"></a>
 
 \`\`\`csharp
-private AddPermission(string Id, Permission Permission)
+private void AddPermission(string Id, Permission Permission)
 \`\`\`
 
 Adds a permission to the Lambda resource policy.
@@ -169,7 +169,7 @@ Adds a permission to the Lambda resource policy.
 ##### \`AddToRolePolicy\` <a name=\\"AddToRolePolicy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addToRolePolicy\\"></a>
 
 \`\`\`csharp
-private AddToRolePolicy(PolicyStatement Statement)
+private void AddToRolePolicy(PolicyStatement Statement)
 \`\`\`
 
 Adds a statement to the IAM role assumed by the instance.
@@ -183,7 +183,7 @@ Adds a statement to the IAM role assumed by the instance.
 ##### \`ConfigureAsyncInvoke\` <a name=\\"ConfigureAsyncInvoke\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.configureAsyncInvoke\\"></a>
 
 \`\`\`csharp
-private ConfigureAsyncInvoke(EventInvokeConfigOptions Options)
+private void ConfigureAsyncInvoke(EventInvokeConfigOptions Options)
 \`\`\`
 
 Configures options for asynchronous invocation.
@@ -197,7 +197,7 @@ Configures options for asynchronous invocation.
 ##### \`GrantInvoke\` <a name=\\"GrantInvoke\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.grantInvoke\\"></a>
 
 \`\`\`csharp
-private GrantInvoke(IGrantable Identity)
+private Grant GrantInvoke(IGrantable Identity)
 \`\`\`
 
 Grant the given identity permissions to invoke this Lambda.
@@ -211,7 +211,7 @@ Grant the given identity permissions to invoke this Lambda.
 ##### \`Metric\` <a name=\\"Metric\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metric\\"></a>
 
 \`\`\`csharp
-private Metric(string MetricName, MetricOptions Props = null)
+private Metric Metric(string MetricName, MetricOptions Props = null)
 \`\`\`
 
 Return the given named metric for this Lambda Return the given named metric for this Function.
@@ -233,7 +233,7 @@ Return the given named metric for this Lambda Return the given named metric for 
 ##### \`MetricDuration\` <a name=\\"MetricDuration\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricDuration\\"></a>
 
 \`\`\`csharp
-private MetricDuration(MetricOptions Props = null)
+private Metric MetricDuration(MetricOptions Props = null)
 \`\`\`
 
 Metric for the Duration of this Lambda How long execution of this Lambda takes.
@@ -249,7 +249,7 @@ Average over 5 minutes Metric for the Duration of this Lambda How long execution
 ##### \`MetricErrors\` <a name=\\"MetricErrors\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricErrors\\"></a>
 
 \`\`\`csharp
-private MetricErrors(MetricOptions Props = null)
+private Metric MetricErrors(MetricOptions Props = null)
 \`\`\`
 
 How many invocations of this Lambda fail.
@@ -265,7 +265,7 @@ Sum over 5 minutes
 ##### \`MetricInvocations\` <a name=\\"MetricInvocations\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricInvocations\\"></a>
 
 \`\`\`csharp
-private MetricInvocations(MetricOptions Props = null)
+private Metric MetricInvocations(MetricOptions Props = null)
 \`\`\`
 
 Metric for the number of invocations of this Lambda How often this Lambda is invoked.
@@ -281,7 +281,7 @@ Sum over 5 minutes Metric for the number of invocations of this Lambda How often
 ##### \`MetricThrottles\` <a name=\\"MetricThrottles\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricThrottles\\"></a>
 
 \`\`\`csharp
-private MetricThrottles(MetricOptions Props = null)
+private Metric MetricThrottles(MetricOptions Props = null)
 \`\`\`
 
 Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.
@@ -1728,7 +1728,7 @@ The stack ID of Lambda@Edge function.
 ##### \`toString\` <a name=\\"toString\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.toString\\"></a>
 
 \`\`\`java
-public toString()
+public java.lang.String toString()
 \`\`\`
 
 Returns a string representation of this construct.
@@ -1736,7 +1736,7 @@ Returns a string representation of this construct.
 ##### \`applyRemovalPolicy\` <a name=\\"applyRemovalPolicy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy\\"></a>
 
 \`\`\`java
-public applyRemovalPolicy(RemovalPolicy policy)
+public void applyRemovalPolicy(RemovalPolicy policy)
 \`\`\`
 
 Apply the given removal policy to this resource.
@@ -1752,8 +1752,8 @@ The Removal Policy controls what happens to this resource when it stops being ma
 ##### \`addAlias\` <a name=\\"addAlias\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addAlias\\"></a>
 
 \`\`\`java
-public addAlias(java.lang.String aliasName)
-public addAlias(java.lang.String aliasName, AliasOptions options)
+public Alias addAlias(java.lang.String aliasName)
+public Alias addAlias(java.lang.String aliasName, AliasOptions options)
 \`\`\`
 
 Defines an alias for this version.
@@ -1773,7 +1773,7 @@ Defines an alias for this version.
 ##### \`addEventSource\` <a name=\\"addEventSource\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSource\\"></a>
 
 \`\`\`java
-public addEventSource(IEventSource source)
+public void addEventSource(IEventSource source)
 \`\`\`
 
 Adds an event source to this function.
@@ -1787,7 +1787,7 @@ Adds an event source to this function.
 ##### \`addEventSourceMapping\` <a name=\\"addEventSourceMapping\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addEventSourceMapping\\"></a>
 
 \`\`\`java
-public addEventSourceMapping(java.lang.String id, EventSourceMappingOptions options)
+public EventSourceMapping addEventSourceMapping(java.lang.String id, EventSourceMappingOptions options)
 \`\`\`
 
 Adds an event source that maps to this AWS Lambda function.
@@ -1807,7 +1807,7 @@ Adds an event source that maps to this AWS Lambda function.
 ##### \`addPermission\` <a name=\\"addPermission\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addPermission\\"></a>
 
 \`\`\`java
-public addPermission(java.lang.String id, Permission permission)
+public void addPermission(java.lang.String id, Permission permission)
 \`\`\`
 
 Adds a permission to the Lambda resource policy.
@@ -1827,7 +1827,7 @@ Adds a permission to the Lambda resource policy.
 ##### \`addToRolePolicy\` <a name=\\"addToRolePolicy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.addToRolePolicy\\"></a>
 
 \`\`\`java
-public addToRolePolicy(PolicyStatement statement)
+public void addToRolePolicy(PolicyStatement statement)
 \`\`\`
 
 Adds a statement to the IAM role assumed by the instance.
@@ -1841,7 +1841,7 @@ Adds a statement to the IAM role assumed by the instance.
 ##### \`configureAsyncInvoke\` <a name=\\"configureAsyncInvoke\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.configureAsyncInvoke\\"></a>
 
 \`\`\`java
-public configureAsyncInvoke(EventInvokeConfigOptions options)
+public void configureAsyncInvoke(EventInvokeConfigOptions options)
 \`\`\`
 
 Configures options for asynchronous invocation.
@@ -1855,7 +1855,7 @@ Configures options for asynchronous invocation.
 ##### \`grantInvoke\` <a name=\\"grantInvoke\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.grantInvoke\\"></a>
 
 \`\`\`java
-public grantInvoke(IGrantable identity)
+public Grant grantInvoke(IGrantable identity)
 \`\`\`
 
 Grant the given identity permissions to invoke this Lambda.
@@ -1869,8 +1869,8 @@ Grant the given identity permissions to invoke this Lambda.
 ##### \`metric\` <a name=\\"metric\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metric\\"></a>
 
 \`\`\`java
-public metric(java.lang.String metricName)
-public metric(java.lang.String metricName, MetricOptions props)
+public Metric metric(java.lang.String metricName)
+public Metric metric(java.lang.String metricName, MetricOptions props)
 \`\`\`
 
 Return the given named metric for this Lambda Return the given named metric for this Function.
@@ -1892,8 +1892,8 @@ Return the given named metric for this Lambda Return the given named metric for 
 ##### \`metricDuration\` <a name=\\"metricDuration\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricDuration\\"></a>
 
 \`\`\`java
-public metricDuration()
-public metricDuration(MetricOptions props)
+public Metric metricDuration()
+public Metric metricDuration(MetricOptions props)
 \`\`\`
 
 Metric for the Duration of this Lambda How long execution of this Lambda takes.
@@ -1909,8 +1909,8 @@ Average over 5 minutes Metric for the Duration of this Lambda How long execution
 ##### \`metricErrors\` <a name=\\"metricErrors\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricErrors\\"></a>
 
 \`\`\`java
-public metricErrors()
-public metricErrors(MetricOptions props)
+public Metric metricErrors()
+public Metric metricErrors(MetricOptions props)
 \`\`\`
 
 How many invocations of this Lambda fail.
@@ -1926,8 +1926,8 @@ Sum over 5 minutes
 ##### \`metricInvocations\` <a name=\\"metricInvocations\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricInvocations\\"></a>
 
 \`\`\`java
-public metricInvocations()
-public metricInvocations(MetricOptions props)
+public Metric metricInvocations()
+public Metric metricInvocations(MetricOptions props)
 \`\`\`
 
 Metric for the number of invocations of this Lambda How often this Lambda is invoked.
@@ -1943,8 +1943,8 @@ Sum over 5 minutes Metric for the number of invocations of this Lambda How often
 ##### \`metricThrottles\` <a name=\\"metricThrottles\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricThrottles\\"></a>
 
 \`\`\`java
-public metricThrottles()
-public metricThrottles(MetricOptions props)
+public Metric metricThrottles()
+public Metric metricThrottles(MetricOptions props)
 \`\`\`
 
 Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.
@@ -3393,7 +3393,7 @@ The stack ID of Lambda@Edge function.
 ##### \`to_string\` <a name=\\"to_string\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.toString\\"></a>
 
 \`\`\`python
-def to_string()
+def to_string() -> str
 \`\`\`
 
 Returns a string representation of this construct.
@@ -3403,7 +3403,7 @@ Returns a string representation of this construct.
 \`\`\`python
 def apply_removal_policy(
   policy: RemovalPolicy
-)
+) -> None
 \`\`\`
 
 Apply the given removal policy to this resource.
@@ -3428,7 +3428,7 @@ def add_alias(
   additional_versions: typing.List[VersionWeight] = None,
   description: str = None,
   provisioned_concurrent_executions: typing.Union[int, float] = None
-)
+) -> Alias
 \`\`\`
 
 Defines an alias for this version.
@@ -3513,7 +3513,7 @@ Specifies a provisioned concurrency configuration for a function's alias.
 \`\`\`python
 def add_event_source(
   source: IEventSource
-)
+) -> None
 \`\`\`
 
 Adds an event source to this function.
@@ -3544,7 +3544,7 @@ def add_event_source_mapping(
   source_access_configurations: typing.List[SourceAccessConfiguration] = None,
   starting_position: StartingPosition = None,
   tumbling_window: Duration = None
-)
+) -> EventSourceMapping
 \`\`\`
 
 Adds an event source that maps to this AWS Lambda function.
@@ -3727,7 +3727,7 @@ def add_permission(
   scope: Construct = None,
   source_account: str = None,
   source_arn: str = None
-)
+) -> None
 \`\`\`
 
 Adds a permission to the Lambda resource policy.
@@ -3804,7 +3804,7 @@ When granting Amazon Simple Storage Service (Amazon S3) permission to invoke you
 \`\`\`python
 def add_to_role_policy(
   statement: PolicyStatement
-)
+) -> None
 \`\`\`
 
 Adds a statement to the IAM role assumed by the instance.
@@ -3823,7 +3823,7 @@ def configure_async_invoke(
   on_failure: IDestination = None,
   on_success: IDestination = None,
   retry_attempts: typing.Union[int, float] = None
-)
+) -> None
 \`\`\`
 
 Configures options for asynchronous invocation.
@@ -3873,7 +3873,7 @@ Minimum: 0 Maximum: 2
 \`\`\`python
 def grant_invoke(
   identity: IGrantable
-)
+) -> Grant
 \`\`\`
 
 Grant the given identity permissions to invoke this Lambda.
@@ -3898,7 +3898,7 @@ def metric(
   region: str = None,
   statistic: str = None,
   unit: Unit = None
-)
+) -> Metric
 \`\`\`
 
 Return the given named metric for this Lambda Return the given named metric for this Function.
@@ -4011,7 +4011,7 @@ def metric_duration(
   region: str = None,
   statistic: str = None,
   unit: Unit = None
-)
+) -> Metric
 \`\`\`
 
 Metric for the Duration of this Lambda How long execution of this Lambda takes.
@@ -4118,7 +4118,7 @@ def metric_errors(
   region: str = None,
   statistic: str = None,
   unit: Unit = None
-)
+) -> Metric
 \`\`\`
 
 How many invocations of this Lambda fail.
@@ -4225,7 +4225,7 @@ def metric_invocations(
   region: str = None,
   statistic: str = None,
   unit: Unit = None
-)
+) -> Metric
 \`\`\`
 
 Metric for the number of invocations of this Lambda How often this Lambda is invoked.
@@ -4332,7 +4332,7 @@ def metric_throttles(
   region: str = None,
   statistic: str = None,
   unit: Unit = None
-)
+) -> Metric
 \`\`\`
 
 Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.

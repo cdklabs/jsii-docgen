@@ -128,8 +128,18 @@ export class JavaTranspile extends transpile.TranspileBase {
       return [...requiredParams, ...optionals].map((p) => this.formatParameter(this.parameter(p)));
     });
 
+    let returnType: transpile.TranspiledTypeReference | undefined;
+    if (reflect.Initializer.isInitializer(callable)) {
+      returnType = this.typeReference(callable.parentType.reference);
+    } else if (reflect.Method.isMethod(callable)) {
+      returnType = this.typeReference(callable.returns.type);
+    }
+    const returns = returnType?.toString({
+      typeFormatter: (t) => t.name,
+    });
+
     const signatures = inputLists.map((inputs) => {
-      return this.formatSignature(name, inputs);
+      return this.formatSignature(name, inputs, returns);
     });
 
     let invocations;
@@ -147,7 +157,7 @@ export class JavaTranspile extends transpile.TranspileBase {
         parameters.push(parameter);
       }
     } else {
-      invocations = callable.kind === reflect.MemberKind.Initializer
+      invocations = reflect.Initializer.isInitializer(callable)
         // render with `new Class` syntax (showing all constructor overloads)
         ? inputLists.map((inputs) => this.formatClassInitialization(type, inputs))
         // render invocation as method calls (showing all method overloads)
@@ -248,6 +258,10 @@ export class JavaTranspile extends transpile.TranspileBase {
     return 'java.lang.Object';
   }
 
+  public void(): string {
+    return 'void';
+  }
+
   public str(): string {
     return 'java.lang.String';
   }
@@ -323,8 +337,8 @@ export class JavaTranspile extends transpile.TranspileBase {
   };
 
 
-  private formatSignature(name: string, inputs: string[]) {
-    return `public ${name}(${this.formatInputs(inputs)})`;
+  private formatSignature(name: string, inputs: string[], returns?: string) {
+    return `public ${returns ? returns + ' ' : ''}${name}(${this.formatInputs(inputs)})`;
   };
 
   private formatBuilderMethod(

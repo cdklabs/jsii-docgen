@@ -58,7 +58,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
 
   public callable(callable: reflect.Callable): transpile.TranspiledCallable {
     const type = this.type(callable.parentType);
-    const isInitializer = callable.kind === reflect.MemberKind.Initializer;
+    const isInitializer = reflect.Initializer.isInitializer(callable);
     const name = isInitializer
       ? type.name
       : Case.pascal(callable.name);
@@ -66,7 +66,18 @@ export class CSharpTranspile extends transpile.TranspileBase {
     const parameters = callable.parameters.sort(this.optionalityCompare);
     const paramsFormatted = parameters.map(p => this.formatFnParam(this.parameter(p))).join(', ');
     const prefix = isInitializer || callable.protected ? 'protected' : 'private';
-    const signatures = [`${prefix} ${name}(${paramsFormatted})`];
+
+    let returnType: transpile.TranspiledTypeReference | undefined;
+    if (reflect.Initializer.isInitializer(callable)) {
+      returnType = this.typeReference(callable.parentType.reference);
+    } else if (reflect.Method.isMethod(callable)) {
+      returnType = this.typeReference(callable.returns.type);
+    }
+    const returns = returnType?.toString({
+      typeFormatter: (t) => t.name,
+    });
+
+    const signatures = [`${prefix} ${returns ? returns + ' ' : ''}${name}(${paramsFormatted})`];
     const invocations = [isInitializer
       ? `new ${name}(${paramsFormatted});`
       : `${type.name}.${name}(${paramsFormatted});`];
@@ -165,6 +176,10 @@ export class CSharpTranspile extends transpile.TranspileBase {
 
   public any(): string {
     return 'object';
+  }
+
+  public void(): string {
+    return 'void';
   }
 
   public str(): string {

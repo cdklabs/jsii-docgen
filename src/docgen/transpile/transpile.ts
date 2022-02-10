@@ -135,6 +135,10 @@ export interface TranspiledCallable {
    * The jsii parameters this callable accepts.
    */
   readonly parameters: reflect.Parameter[];
+  /**
+   * The (transpiled) return type - this is undefined if void or initializer.
+   */
+  readonly returnType?: TranspiledTypeReference;
 }
 
 /**
@@ -288,6 +292,25 @@ export class TranspiledTypeReference {
     return new TranspiledTypeReference(transpile, ref, undefined, true);
   }
   /**
+   * Create a type reference that represents the void (return) type.
+   */
+  public static void(
+    transpile: Transpile,
+    ref: reflect.TypeReference,
+  ): TranspiledTypeReference {
+    return new TranspiledTypeReference(
+      transpile,
+      ref,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      true,
+    );
+  }
+  /**
    * Create a type reference that reprenets a concrete type.
    */
   public static type(
@@ -391,6 +414,10 @@ export class TranspiledTypeReference {
      * Union of ref.
      */
     private readonly unionOfTypes?: TranspiledTypeReference[],
+    /**
+     * 'Void' type ref.
+     */
+    private readonly isVoid?: boolean,
   ) {}
 
   public toString(options?: TranspiledTypeReferenceToStringOptions): string {
@@ -416,6 +443,9 @@ export class TranspiledTypeReference {
     if (this.unionOfTypes) {
       const refs = this.unionOfTypes.map((t) => t.toString(options));
       return this.transpile.unionOf(refs);
+    }
+    if (this.isVoid) {
+      return sFormatter(this.transpile.void());
     }
     throw new Error(`Invalid type reference: ${this.ref.toString()}`);
   }
@@ -649,6 +679,11 @@ export interface Transpile {
   any(): string;
 
   /**
+   * How the 'void' (return) type is represented in the target language.
+   */
+  void(): string;
+
+  /**
    * How the 'string' type is represented in the target language.
    */
   str(): string;
@@ -740,6 +775,10 @@ export abstract class TranspileBase implements Transpile {
           throw new Error(`Unsupported primitive type '${ref.primitive}'`);
       }
       return TranspiledTypeReference.primitive(this, ref, transpiled);
+    }
+
+    if (ref.void) {
+      return TranspiledTypeReference.void(this, ref);
     }
 
     throw new Error(`Unsupported type: ${ref.toString()}`);

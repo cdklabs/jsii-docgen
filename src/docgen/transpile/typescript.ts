@@ -46,8 +46,8 @@ const formatImport = (type: transpile.TranspiledType) => {
   }
 };
 
-const formatSignature = (name: string, inputs: string[]) => {
-  return `public ${name}(${formatArguments(inputs)})`;
+const formatSignature = (name: string, inputs: string[], returns?: string) => {
+  return `public ${name}(${formatArguments(inputs)})${returns ? ': ' + returns : ''}`;
 };
 
 /**
@@ -76,6 +76,10 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
 
   public any(): string {
     return 'any';
+  }
+
+  public void(): string {
+    return 'void';
   }
 
   public boolean(): string {
@@ -159,18 +163,28 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
     const name = callable.name;
     const inputs = parameters.map((p) => this.formatParameters(this.parameter(p)));
 
-    const invocation =
-      callable.kind === reflect.MemberKind.Initializer
-        ? formatClassInitialization(type, inputs)
-        : formatInvocation(type, inputs, name);
+    const invocation = reflect.Initializer.isInitializer(callable)
+      ? formatClassInitialization(type, inputs)
+      : formatInvocation(type, inputs, name);
+
+    let returnType: transpile.TranspiledTypeReference | undefined;
+    if (reflect.Initializer.isInitializer(callable)) {
+      returnType = this.typeReference(callable.parentType.reference);
+    } else if (reflect.Method.isMethod(callable)) {
+      returnType = this.typeReference(callable.returns.type);
+    }
+    const returns = returnType?.toString({
+      typeFormatter: (t) => t.name,
+    });
 
     return {
       name,
       parentType: type,
       import: formatImport(type),
       parameters,
-      signatures: [formatSignature(name, inputs)],
+      signatures: [formatSignature(name, inputs, returns)],
       invocations: [invocation],
+      returnType,
     };
   }
 

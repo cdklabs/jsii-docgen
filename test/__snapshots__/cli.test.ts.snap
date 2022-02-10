@@ -76,7 +76,7 @@ new submod1.GoodbyeBucket(scope: Construct, id: string, props?: BucketProps)
 ##### \`toString\` <a name=\\"toString\\" id=\\"construct-library.submod1.GoodbyeBucket.toString\\"></a>
 
 \`\`\`typescript
-public toString()
+public toString(): string
 \`\`\`
 
 Returns a string representation of this construct.
@@ -84,7 +84,7 @@ Returns a string representation of this construct.
 ##### \`applyRemovalPolicy\` <a name=\\"applyRemovalPolicy\\" id=\\"construct-library.submod1.GoodbyeBucket.applyRemovalPolicy\\"></a>
 
 \`\`\`typescript
-public applyRemovalPolicy(policy: RemovalPolicy)
+public applyRemovalPolicy(policy: RemovalPolicy): void
 \`\`\`
 
 Apply the given removal policy to this resource.
@@ -100,7 +100,7 @@ The Removal Policy controls what happens to this resource when it stops being ma
 ##### \`addEventNotification\` <a name=\\"addEventNotification\\" id=\\"construct-library.submod1.GoodbyeBucket.addEventNotification\\"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter)
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -136,7 +136,7 @@ Each filter must include a \`prefix\` and/or \`suffix\` that will be matched aga
 ##### \`addObjectCreatedNotification\` <a name=\\"addObjectCreatedNotification\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification\\"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter)
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -162,7 +162,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name=\\"addObjectRemovedNotification\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification\\"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter)
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -188,7 +188,7 @@ Filters (see onEvent).
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"construct-library.submod1.GoodbyeBucket.addToResourcePolicy\\"></a>
 
 \`\`\`typescript
-public addToResourcePolicy(permission: PolicyStatement)
+public addToResourcePolicy(permission: PolicyStatement): AddToResourcePolicyResult
 \`\`\`
 
 Adds a statement to the resource policy for a principal (i.e. account/role/service) to perform actions on this bucket and/or its contents. Use \`bucketArn\` and \`arnForObjects(keys)\` to obtain ARNs for this bucket or objects.
@@ -206,7 +206,7 @@ the policy statement to be added to the bucket's policy.
 ##### \`arnForObjects\` <a name=\\"arnForObjects\\" id=\\"construct-library.submod1.GoodbyeBucket.arnForObjects\\"></a>
 
 \`\`\`typescript
-public arnForObjects(keyPattern: string)
+public arnForObjects(keyPattern: string): string
 \`\`\`
 
 Returns an ARN that represents all objects within the bucket that match the key pattern specified.
@@ -222,7 +222,7 @@ To represent all keys, specify \`\`\\"*\\"\`\`.  If you need to specify a keyPat
 ##### \`grantDelete\` <a name=\\"grantDelete\\" id=\\"construct-library.submod1.GoodbyeBucket.grantDelete\\"></a>
 
 \`\`\`typescript
-public grantDelete(identity: IGrantable, objectsKeyPattern?: any)
+public grantDelete(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grants s3:DeleteObject* permission to an IAM principal for objects in this bucket.
@@ -246,7 +246,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name=\\"grantPublicAccess\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPublicAccess\\"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string)
+public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -274,7 +274,7 @@ the prefix of S3 object keys (e.g. \`home/*\`). Default is \\"*\\".
 ##### \`grantPut\` <a name=\\"grantPut\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPut\\"></a>
 
 \`\`\`typescript
-public grantPut(identity: IGrantable, objectsKeyPattern?: any)
+public grantPut(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grants s3:PutObject* and s3:Abort* permissions for this bucket to an IAM principal.
@@ -300,7 +300,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPutAcl\` <a name=\\"grantPutAcl\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPutAcl\\"></a>
 
 \`\`\`typescript
-public grantPutAcl(identity: IGrantable, objectsKeyPattern?: string)
+public grantPutAcl(identity: IGrantable, objectsKeyPattern?: string): Grant
 \`\`\`
 
 Grant the given IAM identity permissions to modify the ACLs of objects in the given Bucket.
@@ -322,7 +322,7 @@ If your application has the '@aws-cdk/aws-s3:grantWriteWithoutAcl' feature flag 
 ##### \`grantRead\` <a name=\\"grantRead\\" id=\\"construct-library.submod1.GoodbyeBucket.grantRead\\"></a>
 
 \`\`\`typescript
-public grantRead(identity: IGrantable, objectsKeyPattern?: any)
+public grantRead(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grant read permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
@@ -348,7 +348,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantReadWrite\` <a name=\\"grantReadWrite\\" id=\\"construct-library.submod1.GoodbyeBucket.grantReadWrite\\"></a>
 
 \`\`\`typescript
-public grantReadWrite(identity: IGrantable, objectsKeyPattern?: any)
+public grantReadWrite(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grants read/write permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
@@ -370,7 +370,7 @@ If an encryption key is used, permission to use the key for encrypt/decrypt will
 ##### \`grantWrite\` <a name=\\"grantWrite\\" id=\\"construct-library.submod1.GoodbyeBucket.grantWrite\\"></a>
 
 \`\`\`typescript
-public grantWrite(identity: IGrantable, objectsKeyPattern?: any)
+public grantWrite(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grant write permissions to this bucket to an IAM principal.
@@ -392,7 +392,7 @@ If encryption is used, permission to use the key to encrypt the contents of writ
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailEvent\\"></a>
 
 \`\`\`typescript
-public onCloudTrailEvent(id: string, options?: OnCloudTrailBucketEventOptions)
+public onCloudTrailEvent(id: string, options?: OnCloudTrailBucketEventOptions): Rule
 \`\`\`
 
 Define a CloudWatch event that triggers when something happens to this repository.
@@ -418,7 +418,7 @@ Options for adding the rule.
 ##### \`onCloudTrailPutObject\` <a name=\\"onCloudTrailPutObject\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailPutObject\\"></a>
 
 \`\`\`typescript
-public onCloudTrailPutObject(id: string, options?: OnCloudTrailBucketEventOptions)
+public onCloudTrailPutObject(id: string, options?: OnCloudTrailBucketEventOptions): Rule
 \`\`\`
 
 Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call.
@@ -444,7 +444,7 @@ Options for adding the rule.
 ##### \`onCloudTrailWriteObject\` <a name=\\"onCloudTrailWriteObject\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailWriteObject\\"></a>
 
 \`\`\`typescript
-public onCloudTrailWriteObject(id: string, options?: OnCloudTrailBucketEventOptions)
+public onCloudTrailWriteObject(id: string, options?: OnCloudTrailBucketEventOptions): Rule
 \`\`\`
 
 Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to.
@@ -470,7 +470,7 @@ Options for adding the rule.
 ##### \`s3UrlForObject\` <a name=\\"s3UrlForObject\\" id=\\"construct-library.submod1.GoodbyeBucket.s3UrlForObject\\"></a>
 
 \`\`\`typescript
-public s3UrlForObject(key?: string)
+public s3UrlForObject(key?: string): string
 \`\`\`
 
 The S3 URL of an S3 object. For example:.
@@ -490,7 +490,7 @@ If not specified, the S3 URL of the bucket is returned.
 ##### \`urlForObject\` <a name=\\"urlForObject\\" id=\\"construct-library.submod1.GoodbyeBucket.urlForObject\\"></a>
 
 \`\`\`typescript
-public urlForObject(key?: string)
+public urlForObject(key?: string): string
 \`\`\`
 
 The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:.
@@ -510,7 +510,7 @@ If not specified, the URL of the bucket is returned.
 ##### \`virtualHostedUrlForObject\` <a name=\\"virtualHostedUrlForObject\\" id=\\"construct-library.submod1.GoodbyeBucket.virtualHostedUrlForObject\\"></a>
 
 \`\`\`typescript
-public virtualHostedUrlForObject(key?: string, options?: VirtualHostedStyleUrlOptions)
+public virtualHostedUrlForObject(key?: string, options?: VirtualHostedStyleUrlOptions): string
 \`\`\`
 
 The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:.
@@ -538,7 +538,7 @@ Options for generating URL.
 ##### \`addCorsRule\` <a name=\\"addCorsRule\\" id=\\"construct-library.submod1.GoodbyeBucket.addCorsRule\\"></a>
 
 \`\`\`typescript
-public addCorsRule(rule: CorsRule)
+public addCorsRule(rule: CorsRule): void
 \`\`\`
 
 Adds a cross-origin access configuration for objects in an Amazon S3 bucket.
@@ -554,7 +554,7 @@ The CORS configuration rule to add.
 ##### \`addInventory\` <a name=\\"addInventory\\" id=\\"construct-library.submod1.GoodbyeBucket.addInventory\\"></a>
 
 \`\`\`typescript
-public addInventory(inventory: Inventory)
+public addInventory(inventory: Inventory): void
 \`\`\`
 
 Add an inventory configuration.
@@ -570,7 +570,7 @@ configuration to add.
 ##### \`addLifecycleRule\` <a name=\\"addLifecycleRule\\" id=\\"construct-library.submod1.GoodbyeBucket.addLifecycleRule\\"></a>
 
 \`\`\`typescript
-public addLifecycleRule(rule: LifecycleRule)
+public addLifecycleRule(rule: LifecycleRule): void
 \`\`\`
 
 Add a lifecycle rule to the bucket.
@@ -586,7 +586,7 @@ The rule to add.
 ##### \`addMetric\` <a name=\\"addMetric\\" id=\\"construct-library.submod1.GoodbyeBucket.addMetric\\"></a>
 
 \`\`\`typescript
-public addMetric(metric: BucketMetrics)
+public addMetric(metric: BucketMetrics): void
 \`\`\`
 
 Adds a metrics configuration for the CloudWatch request metrics from the bucket.
@@ -602,7 +602,7 @@ The metric configuration to add.
 ##### \`goodbye\` <a name=\\"goodbye\\" id=\\"construct-library.submod1.GoodbyeBucket.goodbye\\"></a>
 
 \`\`\`typescript
-public goodbye()
+public goodbye(): void
 \`\`\`
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"Static Functions\\"></a>
@@ -1008,7 +1008,7 @@ new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 ##### \`toString\` <a name=\\"toString\\" id=\\"construct-library.GreeterBucket.toString\\"></a>
 
 \`\`\`typescript
-public toString()
+public toString(): string
 \`\`\`
 
 Returns a string representation of this construct.
@@ -1016,7 +1016,7 @@ Returns a string representation of this construct.
 ##### \`applyRemovalPolicy\` <a name=\\"applyRemovalPolicy\\" id=\\"construct-library.GreeterBucket.applyRemovalPolicy\\"></a>
 
 \`\`\`typescript
-public applyRemovalPolicy(policy: RemovalPolicy)
+public applyRemovalPolicy(policy: RemovalPolicy): void
 \`\`\`
 
 Apply the given removal policy to this resource.
@@ -1032,7 +1032,7 @@ The Removal Policy controls what happens to this resource when it stops being ma
 ##### \`addEventNotification\` <a name=\\"addEventNotification\\" id=\\"construct-library.GreeterBucket.addEventNotification\\"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter)
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -1068,7 +1068,7 @@ Each filter must include a \`prefix\` and/or \`suffix\` that will be matched aga
 ##### \`addObjectCreatedNotification\` <a name=\\"addObjectCreatedNotification\\" id=\\"construct-library.GreeterBucket.addObjectCreatedNotification\\"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter)
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -1094,7 +1094,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name=\\"addObjectRemovedNotification\\" id=\\"construct-library.GreeterBucket.addObjectRemovedNotification\\"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter)
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -1120,7 +1120,7 @@ Filters (see onEvent).
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"construct-library.GreeterBucket.addToResourcePolicy\\"></a>
 
 \`\`\`typescript
-public addToResourcePolicy(permission: PolicyStatement)
+public addToResourcePolicy(permission: PolicyStatement): AddToResourcePolicyResult
 \`\`\`
 
 Adds a statement to the resource policy for a principal (i.e. account/role/service) to perform actions on this bucket and/or its contents. Use \`bucketArn\` and \`arnForObjects(keys)\` to obtain ARNs for this bucket or objects.
@@ -1138,7 +1138,7 @@ the policy statement to be added to the bucket's policy.
 ##### \`arnForObjects\` <a name=\\"arnForObjects\\" id=\\"construct-library.GreeterBucket.arnForObjects\\"></a>
 
 \`\`\`typescript
-public arnForObjects(keyPattern: string)
+public arnForObjects(keyPattern: string): string
 \`\`\`
 
 Returns an ARN that represents all objects within the bucket that match the key pattern specified.
@@ -1154,7 +1154,7 @@ To represent all keys, specify \`\`\\"*\\"\`\`.  If you need to specify a keyPat
 ##### \`grantDelete\` <a name=\\"grantDelete\\" id=\\"construct-library.GreeterBucket.grantDelete\\"></a>
 
 \`\`\`typescript
-public grantDelete(identity: IGrantable, objectsKeyPattern?: any)
+public grantDelete(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grants s3:DeleteObject* permission to an IAM principal for objects in this bucket.
@@ -1178,7 +1178,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name=\\"grantPublicAccess\\" id=\\"construct-library.GreeterBucket.grantPublicAccess\\"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string)
+public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -1206,7 +1206,7 @@ the prefix of S3 object keys (e.g. \`home/*\`). Default is \\"*\\".
 ##### \`grantPut\` <a name=\\"grantPut\\" id=\\"construct-library.GreeterBucket.grantPut\\"></a>
 
 \`\`\`typescript
-public grantPut(identity: IGrantable, objectsKeyPattern?: any)
+public grantPut(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grants s3:PutObject* and s3:Abort* permissions for this bucket to an IAM principal.
@@ -1232,7 +1232,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPutAcl\` <a name=\\"grantPutAcl\\" id=\\"construct-library.GreeterBucket.grantPutAcl\\"></a>
 
 \`\`\`typescript
-public grantPutAcl(identity: IGrantable, objectsKeyPattern?: string)
+public grantPutAcl(identity: IGrantable, objectsKeyPattern?: string): Grant
 \`\`\`
 
 Grant the given IAM identity permissions to modify the ACLs of objects in the given Bucket.
@@ -1254,7 +1254,7 @@ If your application has the '@aws-cdk/aws-s3:grantWriteWithoutAcl' feature flag 
 ##### \`grantRead\` <a name=\\"grantRead\\" id=\\"construct-library.GreeterBucket.grantRead\\"></a>
 
 \`\`\`typescript
-public grantRead(identity: IGrantable, objectsKeyPattern?: any)
+public grantRead(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grant read permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
@@ -1280,7 +1280,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantReadWrite\` <a name=\\"grantReadWrite\\" id=\\"construct-library.GreeterBucket.grantReadWrite\\"></a>
 
 \`\`\`typescript
-public grantReadWrite(identity: IGrantable, objectsKeyPattern?: any)
+public grantReadWrite(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grants read/write permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
@@ -1302,7 +1302,7 @@ If an encryption key is used, permission to use the key for encrypt/decrypt will
 ##### \`grantWrite\` <a name=\\"grantWrite\\" id=\\"construct-library.GreeterBucket.grantWrite\\"></a>
 
 \`\`\`typescript
-public grantWrite(identity: IGrantable, objectsKeyPattern?: any)
+public grantWrite(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grant write permissions to this bucket to an IAM principal.
@@ -1324,7 +1324,7 @@ If encryption is used, permission to use the key to encrypt the contents of writ
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"construct-library.GreeterBucket.onCloudTrailEvent\\"></a>
 
 \`\`\`typescript
-public onCloudTrailEvent(id: string, options?: OnCloudTrailBucketEventOptions)
+public onCloudTrailEvent(id: string, options?: OnCloudTrailBucketEventOptions): Rule
 \`\`\`
 
 Define a CloudWatch event that triggers when something happens to this repository.
@@ -1350,7 +1350,7 @@ Options for adding the rule.
 ##### \`onCloudTrailPutObject\` <a name=\\"onCloudTrailPutObject\\" id=\\"construct-library.GreeterBucket.onCloudTrailPutObject\\"></a>
 
 \`\`\`typescript
-public onCloudTrailPutObject(id: string, options?: OnCloudTrailBucketEventOptions)
+public onCloudTrailPutObject(id: string, options?: OnCloudTrailBucketEventOptions): Rule
 \`\`\`
 
 Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call.
@@ -1376,7 +1376,7 @@ Options for adding the rule.
 ##### \`onCloudTrailWriteObject\` <a name=\\"onCloudTrailWriteObject\\" id=\\"construct-library.GreeterBucket.onCloudTrailWriteObject\\"></a>
 
 \`\`\`typescript
-public onCloudTrailWriteObject(id: string, options?: OnCloudTrailBucketEventOptions)
+public onCloudTrailWriteObject(id: string, options?: OnCloudTrailBucketEventOptions): Rule
 \`\`\`
 
 Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to.
@@ -1402,7 +1402,7 @@ Options for adding the rule.
 ##### \`s3UrlForObject\` <a name=\\"s3UrlForObject\\" id=\\"construct-library.GreeterBucket.s3UrlForObject\\"></a>
 
 \`\`\`typescript
-public s3UrlForObject(key?: string)
+public s3UrlForObject(key?: string): string
 \`\`\`
 
 The S3 URL of an S3 object. For example:.
@@ -1422,7 +1422,7 @@ If not specified, the S3 URL of the bucket is returned.
 ##### \`urlForObject\` <a name=\\"urlForObject\\" id=\\"construct-library.GreeterBucket.urlForObject\\"></a>
 
 \`\`\`typescript
-public urlForObject(key?: string)
+public urlForObject(key?: string): string
 \`\`\`
 
 The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:.
@@ -1442,7 +1442,7 @@ If not specified, the URL of the bucket is returned.
 ##### \`virtualHostedUrlForObject\` <a name=\\"virtualHostedUrlForObject\\" id=\\"construct-library.GreeterBucket.virtualHostedUrlForObject\\"></a>
 
 \`\`\`typescript
-public virtualHostedUrlForObject(key?: string, options?: VirtualHostedStyleUrlOptions)
+public virtualHostedUrlForObject(key?: string, options?: VirtualHostedStyleUrlOptions): string
 \`\`\`
 
 The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:.
@@ -1470,7 +1470,7 @@ Options for generating URL.
 ##### \`addCorsRule\` <a name=\\"addCorsRule\\" id=\\"construct-library.GreeterBucket.addCorsRule\\"></a>
 
 \`\`\`typescript
-public addCorsRule(rule: CorsRule)
+public addCorsRule(rule: CorsRule): void
 \`\`\`
 
 Adds a cross-origin access configuration for objects in an Amazon S3 bucket.
@@ -1486,7 +1486,7 @@ The CORS configuration rule to add.
 ##### \`addInventory\` <a name=\\"addInventory\\" id=\\"construct-library.GreeterBucket.addInventory\\"></a>
 
 \`\`\`typescript
-public addInventory(inventory: Inventory)
+public addInventory(inventory: Inventory): void
 \`\`\`
 
 Add an inventory configuration.
@@ -1502,7 +1502,7 @@ configuration to add.
 ##### \`addLifecycleRule\` <a name=\\"addLifecycleRule\\" id=\\"construct-library.GreeterBucket.addLifecycleRule\\"></a>
 
 \`\`\`typescript
-public addLifecycleRule(rule: LifecycleRule)
+public addLifecycleRule(rule: LifecycleRule): void
 \`\`\`
 
 Add a lifecycle rule to the bucket.
@@ -1518,7 +1518,7 @@ The rule to add.
 ##### \`addMetric\` <a name=\\"addMetric\\" id=\\"construct-library.GreeterBucket.addMetric\\"></a>
 
 \`\`\`typescript
-public addMetric(metric: BucketMetrics)
+public addMetric(metric: BucketMetrics): void
 \`\`\`
 
 Adds a metrics configuration for the CloudWatch request metrics from the bucket.
@@ -1534,7 +1534,7 @@ The metric configuration to add.
 ##### \`greet\` <a name=\\"greet\\" id=\\"construct-library.GreeterBucket.greet\\"></a>
 
 \`\`\`typescript
-public greet()
+public greet(): void
 \`\`\`
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"Static Functions\\"></a>
@@ -2217,7 +2217,7 @@ Rules that define when a redirect is applied and the redirect behavior.
 ##### \`to_string\` <a name=\\"to_string\\" id=\\"construct-library.submod1.GoodbyeBucket.toString\\"></a>
 
 \`\`\`python
-def to_string()
+def to_string() -> str
 \`\`\`
 
 Returns a string representation of this construct.
@@ -2227,7 +2227,7 @@ Returns a string representation of this construct.
 \`\`\`python
 def apply_removal_policy(
   policy: RemovalPolicy
-)
+) -> None
 \`\`\`
 
 Apply the given removal policy to this resource.
@@ -2248,7 +2248,7 @@ def add_event_notification(
   dest: IBucketNotificationDestination,
   prefix: str = None,
   suffix: str = None
-)
+) -> None
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -2294,7 +2294,7 @@ def add_object_created_notification(
   dest: IBucketNotificationDestination,
   prefix: str = None,
   suffix: str = None
-)
+) -> None
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -2332,7 +2332,7 @@ def add_object_removed_notification(
   dest: IBucketNotificationDestination,
   prefix: str = None,
   suffix: str = None
-)
+) -> None
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -2368,7 +2368,7 @@ S3 keys must have the specified suffix.
 \`\`\`python
 def add_to_resource_policy(
   permission: PolicyStatement
-)
+) -> AddToResourcePolicyResult
 \`\`\`
 
 Adds a statement to the resource policy for a principal (i.e. account/role/service) to perform actions on this bucket and/or its contents. Use \`bucketArn\` and \`arnForObjects(keys)\` to obtain ARNs for this bucket or objects.
@@ -2388,7 +2388,7 @@ the policy statement to be added to the bucket's policy.
 \`\`\`python
 def arn_for_objects(
   key_pattern: str
-)
+) -> str
 \`\`\`
 
 Returns an ARN that represents all objects within the bucket that match the key pattern specified.
@@ -2407,7 +2407,7 @@ To represent all keys, specify \`\`\\"*\\"\`\`.  If you need to specify a keyPat
 def grant_delete(
   identity: IGrantable,
   objects_key_pattern: typing.Any = None
-)
+) -> Grant
 \`\`\`
 
 Grants s3:DeleteObject* permission to an IAM principal for objects in this bucket.
@@ -2434,7 +2434,7 @@ Restrict the permission to a certain key pattern (default '*').
 def grant_public_access(
   allowed_actions: str,
   key_prefix: str = None
-)
+) -> Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -2465,7 +2465,7 @@ the prefix of S3 object keys (e.g. \`home/*\`). Default is \\"*\\".
 def grant_put(
   identity: IGrantable,
   objects_key_pattern: typing.Any = None
-)
+) -> Grant
 \`\`\`
 
 Grants s3:PutObject* and s3:Abort* permissions for this bucket to an IAM principal.
@@ -2494,7 +2494,7 @@ Restrict the permission to a certain key pattern (default '*').
 def grant_put_acl(
   identity: IGrantable,
   objects_key_pattern: str = None
-)
+) -> Grant
 \`\`\`
 
 Grant the given IAM identity permissions to modify the ACLs of objects in the given Bucket.
@@ -2519,7 +2519,7 @@ If your application has the '@aws-cdk/aws-s3:grantWriteWithoutAcl' feature flag 
 def grant_read(
   identity: IGrantable,
   objects_key_pattern: typing.Any = None
-)
+) -> Grant
 \`\`\`
 
 Grant read permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
@@ -2548,7 +2548,7 @@ Restrict the permission to a certain key pattern (default '*').
 def grant_read_write(
   identity: IGrantable,
   objects_key_pattern: typing.Any = None
-)
+) -> Grant
 \`\`\`
 
 Grants read/write permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
@@ -2573,7 +2573,7 @@ If an encryption key is used, permission to use the key for encrypt/decrypt will
 def grant_write(
   identity: IGrantable,
   objects_key_pattern: typing.Any = None
-)
+) -> Grant
 \`\`\`
 
 Grant write permissions to this bucket to an IAM principal.
@@ -2602,7 +2602,7 @@ def on_cloud_trail_event(
   rule_name: str = None,
   target: IRuleTarget = None,
   paths: typing.List[str] = None
-)
+) -> Rule
 \`\`\`
 
 Define a CloudWatch event that triggers when something happens to this repository.
@@ -2676,7 +2676,7 @@ def on_cloud_trail_put_object(
   rule_name: str = None,
   target: IRuleTarget = None,
   paths: typing.List[str] = None
-)
+) -> Rule
 \`\`\`
 
 Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call.
@@ -2750,7 +2750,7 @@ def on_cloud_trail_write_object(
   rule_name: str = None,
   target: IRuleTarget = None,
   paths: typing.List[str] = None
-)
+) -> Rule
 \`\`\`
 
 Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to.
@@ -2819,7 +2819,7 @@ Only watch changes to these object paths.
 \`\`\`python
 def s3_url_for_object(
   key: str = None
-)
+) -> str
 \`\`\`
 
 The S3 URL of an S3 object. For example:.
@@ -2841,7 +2841,7 @@ If not specified, the S3 URL of the bucket is returned.
 \`\`\`python
 def url_for_object(
   key: str = None
-)
+) -> str
 \`\`\`
 
 The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:.
@@ -2864,7 +2864,7 @@ If not specified, the URL of the bucket is returned.
 def virtual_hosted_url_for_object(
   key: str = None,
   regional: bool = None
-)
+) -> str
 \`\`\`
 
 The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:.
@@ -2900,7 +2900,7 @@ def add_cors_rule(
   exposed_headers: typing.List[str] = None,
   id: str = None,
   max_age: typing.Union[int, float] = None
-)
+) -> None
 \`\`\`
 
 Adds a cross-origin access configuration for objects in an Amazon S3 bucket.
@@ -2969,7 +2969,7 @@ def add_inventory(
   inventory_id: str = None,
   objects_prefix: str = None,
   optional_fields: typing.List[str] = None
-)
+) -> None
 \`\`\`
 
 Add an inventory configuration.
@@ -3060,7 +3060,7 @@ def add_lifecycle_rule(
   prefix: str = None,
   tag_filters: typing.Mapping[typing.Any] = None,
   transitions: typing.List[Transition] = None
-)
+) -> None
 \`\`\`
 
 Add a lifecycle rule to the bucket.
@@ -3185,7 +3185,7 @@ def add_metric(
   id: str,
   prefix: str = None,
   tag_filters: typing.Mapping[typing.Any] = None
-)
+) -> None
 \`\`\`
 
 Adds a metrics configuration for the CloudWatch request metrics from the bucket.
@@ -3219,7 +3219,7 @@ The metrics configuration includes only objects that meet the filter's criteria.
 ##### \`goodbye\` <a name=\\"goodbye\\" id=\\"construct-library.submod1.GoodbyeBucket.goodbye\\"></a>
 
 \`\`\`python
-def goodbye()
+def goodbye() -> None
 \`\`\`
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"Static Functions\\"></a>
@@ -4007,7 +4007,7 @@ Rules that define when a redirect is applied and the redirect behavior.
 ##### \`to_string\` <a name=\\"to_string\\" id=\\"construct-library.GreeterBucket.toString\\"></a>
 
 \`\`\`python
-def to_string()
+def to_string() -> str
 \`\`\`
 
 Returns a string representation of this construct.
@@ -4017,7 +4017,7 @@ Returns a string representation of this construct.
 \`\`\`python
 def apply_removal_policy(
   policy: RemovalPolicy
-)
+) -> None
 \`\`\`
 
 Apply the given removal policy to this resource.
@@ -4038,7 +4038,7 @@ def add_event_notification(
   dest: IBucketNotificationDestination,
   prefix: str = None,
   suffix: str = None
-)
+) -> None
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -4084,7 +4084,7 @@ def add_object_created_notification(
   dest: IBucketNotificationDestination,
   prefix: str = None,
   suffix: str = None
-)
+) -> None
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -4122,7 +4122,7 @@ def add_object_removed_notification(
   dest: IBucketNotificationDestination,
   prefix: str = None,
   suffix: str = None
-)
+) -> None
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -4158,7 +4158,7 @@ S3 keys must have the specified suffix.
 \`\`\`python
 def add_to_resource_policy(
   permission: PolicyStatement
-)
+) -> AddToResourcePolicyResult
 \`\`\`
 
 Adds a statement to the resource policy for a principal (i.e. account/role/service) to perform actions on this bucket and/or its contents. Use \`bucketArn\` and \`arnForObjects(keys)\` to obtain ARNs for this bucket or objects.
@@ -4178,7 +4178,7 @@ the policy statement to be added to the bucket's policy.
 \`\`\`python
 def arn_for_objects(
   key_pattern: str
-)
+) -> str
 \`\`\`
 
 Returns an ARN that represents all objects within the bucket that match the key pattern specified.
@@ -4197,7 +4197,7 @@ To represent all keys, specify \`\`\\"*\\"\`\`.  If you need to specify a keyPat
 def grant_delete(
   identity: IGrantable,
   objects_key_pattern: typing.Any = None
-)
+) -> Grant
 \`\`\`
 
 Grants s3:DeleteObject* permission to an IAM principal for objects in this bucket.
@@ -4224,7 +4224,7 @@ Restrict the permission to a certain key pattern (default '*').
 def grant_public_access(
   allowed_actions: str,
   key_prefix: str = None
-)
+) -> Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -4255,7 +4255,7 @@ the prefix of S3 object keys (e.g. \`home/*\`). Default is \\"*\\".
 def grant_put(
   identity: IGrantable,
   objects_key_pattern: typing.Any = None
-)
+) -> Grant
 \`\`\`
 
 Grants s3:PutObject* and s3:Abort* permissions for this bucket to an IAM principal.
@@ -4284,7 +4284,7 @@ Restrict the permission to a certain key pattern (default '*').
 def grant_put_acl(
   identity: IGrantable,
   objects_key_pattern: str = None
-)
+) -> Grant
 \`\`\`
 
 Grant the given IAM identity permissions to modify the ACLs of objects in the given Bucket.
@@ -4309,7 +4309,7 @@ If your application has the '@aws-cdk/aws-s3:grantWriteWithoutAcl' feature flag 
 def grant_read(
   identity: IGrantable,
   objects_key_pattern: typing.Any = None
-)
+) -> Grant
 \`\`\`
 
 Grant read permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
@@ -4338,7 +4338,7 @@ Restrict the permission to a certain key pattern (default '*').
 def grant_read_write(
   identity: IGrantable,
   objects_key_pattern: typing.Any = None
-)
+) -> Grant
 \`\`\`
 
 Grants read/write permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
@@ -4363,7 +4363,7 @@ If an encryption key is used, permission to use the key for encrypt/decrypt will
 def grant_write(
   identity: IGrantable,
   objects_key_pattern: typing.Any = None
-)
+) -> Grant
 \`\`\`
 
 Grant write permissions to this bucket to an IAM principal.
@@ -4392,7 +4392,7 @@ def on_cloud_trail_event(
   rule_name: str = None,
   target: IRuleTarget = None,
   paths: typing.List[str] = None
-)
+) -> Rule
 \`\`\`
 
 Define a CloudWatch event that triggers when something happens to this repository.
@@ -4466,7 +4466,7 @@ def on_cloud_trail_put_object(
   rule_name: str = None,
   target: IRuleTarget = None,
   paths: typing.List[str] = None
-)
+) -> Rule
 \`\`\`
 
 Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call.
@@ -4540,7 +4540,7 @@ def on_cloud_trail_write_object(
   rule_name: str = None,
   target: IRuleTarget = None,
   paths: typing.List[str] = None
-)
+) -> Rule
 \`\`\`
 
 Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to.
@@ -4609,7 +4609,7 @@ Only watch changes to these object paths.
 \`\`\`python
 def s3_url_for_object(
   key: str = None
-)
+) -> str
 \`\`\`
 
 The S3 URL of an S3 object. For example:.
@@ -4631,7 +4631,7 @@ If not specified, the S3 URL of the bucket is returned.
 \`\`\`python
 def url_for_object(
   key: str = None
-)
+) -> str
 \`\`\`
 
 The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:.
@@ -4654,7 +4654,7 @@ If not specified, the URL of the bucket is returned.
 def virtual_hosted_url_for_object(
   key: str = None,
   regional: bool = None
-)
+) -> str
 \`\`\`
 
 The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:.
@@ -4690,7 +4690,7 @@ def add_cors_rule(
   exposed_headers: typing.List[str] = None,
   id: str = None,
   max_age: typing.Union[int, float] = None
-)
+) -> None
 \`\`\`
 
 Adds a cross-origin access configuration for objects in an Amazon S3 bucket.
@@ -4759,7 +4759,7 @@ def add_inventory(
   inventory_id: str = None,
   objects_prefix: str = None,
   optional_fields: typing.List[str] = None
-)
+) -> None
 \`\`\`
 
 Add an inventory configuration.
@@ -4850,7 +4850,7 @@ def add_lifecycle_rule(
   prefix: str = None,
   tag_filters: typing.Mapping[typing.Any] = None,
   transitions: typing.List[Transition] = None
-)
+) -> None
 \`\`\`
 
 Add a lifecycle rule to the bucket.
@@ -4975,7 +4975,7 @@ def add_metric(
   id: str,
   prefix: str = None,
   tag_filters: typing.Mapping[typing.Any] = None
-)
+) -> None
 \`\`\`
 
 Adds a metrics configuration for the CloudWatch request metrics from the bucket.
@@ -5009,7 +5009,7 @@ The metrics configuration includes only objects that meet the filter's criteria.
 ##### \`greet\` <a name=\\"greet\\" id=\\"construct-library.GreeterBucket.greet\\"></a>
 
 \`\`\`python
-def greet()
+def greet() -> None
 \`\`\`
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"Static Functions\\"></a>
@@ -5542,7 +5542,7 @@ new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 ##### \`toString\` <a name=\\"toString\\" id=\\"construct-library.GreeterBucket.toString\\"></a>
 
 \`\`\`typescript
-public toString()
+public toString(): string
 \`\`\`
 
 Returns a string representation of this construct.
@@ -5550,7 +5550,7 @@ Returns a string representation of this construct.
 ##### \`applyRemovalPolicy\` <a name=\\"applyRemovalPolicy\\" id=\\"construct-library.GreeterBucket.applyRemovalPolicy\\"></a>
 
 \`\`\`typescript
-public applyRemovalPolicy(policy: RemovalPolicy)
+public applyRemovalPolicy(policy: RemovalPolicy): void
 \`\`\`
 
 Apply the given removal policy to this resource.
@@ -5566,7 +5566,7 @@ The Removal Policy controls what happens to this resource when it stops being ma
 ##### \`addEventNotification\` <a name=\\"addEventNotification\\" id=\\"construct-library.GreeterBucket.addEventNotification\\"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter)
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -5602,7 +5602,7 @@ Each filter must include a \`prefix\` and/or \`suffix\` that will be matched aga
 ##### \`addObjectCreatedNotification\` <a name=\\"addObjectCreatedNotification\\" id=\\"construct-library.GreeterBucket.addObjectCreatedNotification\\"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter)
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -5628,7 +5628,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name=\\"addObjectRemovedNotification\\" id=\\"construct-library.GreeterBucket.addObjectRemovedNotification\\"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter)
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -5654,7 +5654,7 @@ Filters (see onEvent).
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"construct-library.GreeterBucket.addToResourcePolicy\\"></a>
 
 \`\`\`typescript
-public addToResourcePolicy(permission: PolicyStatement)
+public addToResourcePolicy(permission: PolicyStatement): AddToResourcePolicyResult
 \`\`\`
 
 Adds a statement to the resource policy for a principal (i.e. account/role/service) to perform actions on this bucket and/or its contents. Use \`bucketArn\` and \`arnForObjects(keys)\` to obtain ARNs for this bucket or objects.
@@ -5672,7 +5672,7 @@ the policy statement to be added to the bucket's policy.
 ##### \`arnForObjects\` <a name=\\"arnForObjects\\" id=\\"construct-library.GreeterBucket.arnForObjects\\"></a>
 
 \`\`\`typescript
-public arnForObjects(keyPattern: string)
+public arnForObjects(keyPattern: string): string
 \`\`\`
 
 Returns an ARN that represents all objects within the bucket that match the key pattern specified.
@@ -5688,7 +5688,7 @@ To represent all keys, specify \`\`\\"*\\"\`\`.  If you need to specify a keyPat
 ##### \`grantDelete\` <a name=\\"grantDelete\\" id=\\"construct-library.GreeterBucket.grantDelete\\"></a>
 
 \`\`\`typescript
-public grantDelete(identity: IGrantable, objectsKeyPattern?: any)
+public grantDelete(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grants s3:DeleteObject* permission to an IAM principal for objects in this bucket.
@@ -5712,7 +5712,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name=\\"grantPublicAccess\\" id=\\"construct-library.GreeterBucket.grantPublicAccess\\"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string)
+public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -5740,7 +5740,7 @@ the prefix of S3 object keys (e.g. \`home/*\`). Default is \\"*\\".
 ##### \`grantPut\` <a name=\\"grantPut\\" id=\\"construct-library.GreeterBucket.grantPut\\"></a>
 
 \`\`\`typescript
-public grantPut(identity: IGrantable, objectsKeyPattern?: any)
+public grantPut(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grants s3:PutObject* and s3:Abort* permissions for this bucket to an IAM principal.
@@ -5766,7 +5766,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPutAcl\` <a name=\\"grantPutAcl\\" id=\\"construct-library.GreeterBucket.grantPutAcl\\"></a>
 
 \`\`\`typescript
-public grantPutAcl(identity: IGrantable, objectsKeyPattern?: string)
+public grantPutAcl(identity: IGrantable, objectsKeyPattern?: string): Grant
 \`\`\`
 
 Grant the given IAM identity permissions to modify the ACLs of objects in the given Bucket.
@@ -5788,7 +5788,7 @@ If your application has the '@aws-cdk/aws-s3:grantWriteWithoutAcl' feature flag 
 ##### \`grantRead\` <a name=\\"grantRead\\" id=\\"construct-library.GreeterBucket.grantRead\\"></a>
 
 \`\`\`typescript
-public grantRead(identity: IGrantable, objectsKeyPattern?: any)
+public grantRead(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grant read permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
@@ -5814,7 +5814,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantReadWrite\` <a name=\\"grantReadWrite\\" id=\\"construct-library.GreeterBucket.grantReadWrite\\"></a>
 
 \`\`\`typescript
-public grantReadWrite(identity: IGrantable, objectsKeyPattern?: any)
+public grantReadWrite(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grants read/write permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
@@ -5836,7 +5836,7 @@ If an encryption key is used, permission to use the key for encrypt/decrypt will
 ##### \`grantWrite\` <a name=\\"grantWrite\\" id=\\"construct-library.GreeterBucket.grantWrite\\"></a>
 
 \`\`\`typescript
-public grantWrite(identity: IGrantable, objectsKeyPattern?: any)
+public grantWrite(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grant write permissions to this bucket to an IAM principal.
@@ -5858,7 +5858,7 @@ If encryption is used, permission to use the key to encrypt the contents of writ
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"construct-library.GreeterBucket.onCloudTrailEvent\\"></a>
 
 \`\`\`typescript
-public onCloudTrailEvent(id: string, options?: OnCloudTrailBucketEventOptions)
+public onCloudTrailEvent(id: string, options?: OnCloudTrailBucketEventOptions): Rule
 \`\`\`
 
 Define a CloudWatch event that triggers when something happens to this repository.
@@ -5884,7 +5884,7 @@ Options for adding the rule.
 ##### \`onCloudTrailPutObject\` <a name=\\"onCloudTrailPutObject\\" id=\\"construct-library.GreeterBucket.onCloudTrailPutObject\\"></a>
 
 \`\`\`typescript
-public onCloudTrailPutObject(id: string, options?: OnCloudTrailBucketEventOptions)
+public onCloudTrailPutObject(id: string, options?: OnCloudTrailBucketEventOptions): Rule
 \`\`\`
 
 Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call.
@@ -5910,7 +5910,7 @@ Options for adding the rule.
 ##### \`onCloudTrailWriteObject\` <a name=\\"onCloudTrailWriteObject\\" id=\\"construct-library.GreeterBucket.onCloudTrailWriteObject\\"></a>
 
 \`\`\`typescript
-public onCloudTrailWriteObject(id: string, options?: OnCloudTrailBucketEventOptions)
+public onCloudTrailWriteObject(id: string, options?: OnCloudTrailBucketEventOptions): Rule
 \`\`\`
 
 Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to.
@@ -5936,7 +5936,7 @@ Options for adding the rule.
 ##### \`s3UrlForObject\` <a name=\\"s3UrlForObject\\" id=\\"construct-library.GreeterBucket.s3UrlForObject\\"></a>
 
 \`\`\`typescript
-public s3UrlForObject(key?: string)
+public s3UrlForObject(key?: string): string
 \`\`\`
 
 The S3 URL of an S3 object. For example:.
@@ -5956,7 +5956,7 @@ If not specified, the S3 URL of the bucket is returned.
 ##### \`urlForObject\` <a name=\\"urlForObject\\" id=\\"construct-library.GreeterBucket.urlForObject\\"></a>
 
 \`\`\`typescript
-public urlForObject(key?: string)
+public urlForObject(key?: string): string
 \`\`\`
 
 The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:.
@@ -5976,7 +5976,7 @@ If not specified, the URL of the bucket is returned.
 ##### \`virtualHostedUrlForObject\` <a name=\\"virtualHostedUrlForObject\\" id=\\"construct-library.GreeterBucket.virtualHostedUrlForObject\\"></a>
 
 \`\`\`typescript
-public virtualHostedUrlForObject(key?: string, options?: VirtualHostedStyleUrlOptions)
+public virtualHostedUrlForObject(key?: string, options?: VirtualHostedStyleUrlOptions): string
 \`\`\`
 
 The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:.
@@ -6004,7 +6004,7 @@ Options for generating URL.
 ##### \`addCorsRule\` <a name=\\"addCorsRule\\" id=\\"construct-library.GreeterBucket.addCorsRule\\"></a>
 
 \`\`\`typescript
-public addCorsRule(rule: CorsRule)
+public addCorsRule(rule: CorsRule): void
 \`\`\`
 
 Adds a cross-origin access configuration for objects in an Amazon S3 bucket.
@@ -6020,7 +6020,7 @@ The CORS configuration rule to add.
 ##### \`addInventory\` <a name=\\"addInventory\\" id=\\"construct-library.GreeterBucket.addInventory\\"></a>
 
 \`\`\`typescript
-public addInventory(inventory: Inventory)
+public addInventory(inventory: Inventory): void
 \`\`\`
 
 Add an inventory configuration.
@@ -6036,7 +6036,7 @@ configuration to add.
 ##### \`addLifecycleRule\` <a name=\\"addLifecycleRule\\" id=\\"construct-library.GreeterBucket.addLifecycleRule\\"></a>
 
 \`\`\`typescript
-public addLifecycleRule(rule: LifecycleRule)
+public addLifecycleRule(rule: LifecycleRule): void
 \`\`\`
 
 Add a lifecycle rule to the bucket.
@@ -6052,7 +6052,7 @@ The rule to add.
 ##### \`addMetric\` <a name=\\"addMetric\\" id=\\"construct-library.GreeterBucket.addMetric\\"></a>
 
 \`\`\`typescript
-public addMetric(metric: BucketMetrics)
+public addMetric(metric: BucketMetrics): void
 \`\`\`
 
 Adds a metrics configuration for the CloudWatch request metrics from the bucket.
@@ -6068,7 +6068,7 @@ The metric configuration to add.
 ##### \`greet\` <a name=\\"greet\\" id=\\"construct-library.GreeterBucket.greet\\"></a>
 
 \`\`\`typescript
-public greet()
+public greet(): void
 \`\`\`
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"Static Functions\\"></a>
@@ -6485,7 +6485,7 @@ new submod1.GoodbyeBucket(scope: Construct, id: string, props?: BucketProps)
 ##### \`toString\` <a name=\\"toString\\" id=\\"construct-library.submod1.GoodbyeBucket.toString\\"></a>
 
 \`\`\`typescript
-public toString()
+public toString(): string
 \`\`\`
 
 Returns a string representation of this construct.
@@ -6493,7 +6493,7 @@ Returns a string representation of this construct.
 ##### \`applyRemovalPolicy\` <a name=\\"applyRemovalPolicy\\" id=\\"construct-library.submod1.GoodbyeBucket.applyRemovalPolicy\\"></a>
 
 \`\`\`typescript
-public applyRemovalPolicy(policy: RemovalPolicy)
+public applyRemovalPolicy(policy: RemovalPolicy): void
 \`\`\`
 
 Apply the given removal policy to this resource.
@@ -6509,7 +6509,7 @@ The Removal Policy controls what happens to this resource when it stops being ma
 ##### \`addEventNotification\` <a name=\\"addEventNotification\\" id=\\"construct-library.submod1.GoodbyeBucket.addEventNotification\\"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter)
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -6545,7 +6545,7 @@ Each filter must include a \`prefix\` and/or \`suffix\` that will be matched aga
 ##### \`addObjectCreatedNotification\` <a name=\\"addObjectCreatedNotification\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification\\"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter)
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -6571,7 +6571,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name=\\"addObjectRemovedNotification\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification\\"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter)
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -6597,7 +6597,7 @@ Filters (see onEvent).
 ##### \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"construct-library.submod1.GoodbyeBucket.addToResourcePolicy\\"></a>
 
 \`\`\`typescript
-public addToResourcePolicy(permission: PolicyStatement)
+public addToResourcePolicy(permission: PolicyStatement): AddToResourcePolicyResult
 \`\`\`
 
 Adds a statement to the resource policy for a principal (i.e. account/role/service) to perform actions on this bucket and/or its contents. Use \`bucketArn\` and \`arnForObjects(keys)\` to obtain ARNs for this bucket or objects.
@@ -6615,7 +6615,7 @@ the policy statement to be added to the bucket's policy.
 ##### \`arnForObjects\` <a name=\\"arnForObjects\\" id=\\"construct-library.submod1.GoodbyeBucket.arnForObjects\\"></a>
 
 \`\`\`typescript
-public arnForObjects(keyPattern: string)
+public arnForObjects(keyPattern: string): string
 \`\`\`
 
 Returns an ARN that represents all objects within the bucket that match the key pattern specified.
@@ -6631,7 +6631,7 @@ To represent all keys, specify \`\`\\"*\\"\`\`.  If you need to specify a keyPat
 ##### \`grantDelete\` <a name=\\"grantDelete\\" id=\\"construct-library.submod1.GoodbyeBucket.grantDelete\\"></a>
 
 \`\`\`typescript
-public grantDelete(identity: IGrantable, objectsKeyPattern?: any)
+public grantDelete(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grants s3:DeleteObject* permission to an IAM principal for objects in this bucket.
@@ -6655,7 +6655,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name=\\"grantPublicAccess\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPublicAccess\\"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string)
+public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -6683,7 +6683,7 @@ the prefix of S3 object keys (e.g. \`home/*\`). Default is \\"*\\".
 ##### \`grantPut\` <a name=\\"grantPut\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPut\\"></a>
 
 \`\`\`typescript
-public grantPut(identity: IGrantable, objectsKeyPattern?: any)
+public grantPut(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grants s3:PutObject* and s3:Abort* permissions for this bucket to an IAM principal.
@@ -6709,7 +6709,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPutAcl\` <a name=\\"grantPutAcl\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPutAcl\\"></a>
 
 \`\`\`typescript
-public grantPutAcl(identity: IGrantable, objectsKeyPattern?: string)
+public grantPutAcl(identity: IGrantable, objectsKeyPattern?: string): Grant
 \`\`\`
 
 Grant the given IAM identity permissions to modify the ACLs of objects in the given Bucket.
@@ -6731,7 +6731,7 @@ If your application has the '@aws-cdk/aws-s3:grantWriteWithoutAcl' feature flag 
 ##### \`grantRead\` <a name=\\"grantRead\\" id=\\"construct-library.submod1.GoodbyeBucket.grantRead\\"></a>
 
 \`\`\`typescript
-public grantRead(identity: IGrantable, objectsKeyPattern?: any)
+public grantRead(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grant read permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
@@ -6757,7 +6757,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantReadWrite\` <a name=\\"grantReadWrite\\" id=\\"construct-library.submod1.GoodbyeBucket.grantReadWrite\\"></a>
 
 \`\`\`typescript
-public grantReadWrite(identity: IGrantable, objectsKeyPattern?: any)
+public grantReadWrite(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grants read/write permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
@@ -6779,7 +6779,7 @@ If an encryption key is used, permission to use the key for encrypt/decrypt will
 ##### \`grantWrite\` <a name=\\"grantWrite\\" id=\\"construct-library.submod1.GoodbyeBucket.grantWrite\\"></a>
 
 \`\`\`typescript
-public grantWrite(identity: IGrantable, objectsKeyPattern?: any)
+public grantWrite(identity: IGrantable, objectsKeyPattern?: any): Grant
 \`\`\`
 
 Grant write permissions to this bucket to an IAM principal.
@@ -6801,7 +6801,7 @@ If encryption is used, permission to use the key to encrypt the contents of writ
 ##### \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailEvent\\"></a>
 
 \`\`\`typescript
-public onCloudTrailEvent(id: string, options?: OnCloudTrailBucketEventOptions)
+public onCloudTrailEvent(id: string, options?: OnCloudTrailBucketEventOptions): Rule
 \`\`\`
 
 Define a CloudWatch event that triggers when something happens to this repository.
@@ -6827,7 +6827,7 @@ Options for adding the rule.
 ##### \`onCloudTrailPutObject\` <a name=\\"onCloudTrailPutObject\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailPutObject\\"></a>
 
 \`\`\`typescript
-public onCloudTrailPutObject(id: string, options?: OnCloudTrailBucketEventOptions)
+public onCloudTrailPutObject(id: string, options?: OnCloudTrailBucketEventOptions): Rule
 \`\`\`
 
 Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call.
@@ -6853,7 +6853,7 @@ Options for adding the rule.
 ##### \`onCloudTrailWriteObject\` <a name=\\"onCloudTrailWriteObject\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailWriteObject\\"></a>
 
 \`\`\`typescript
-public onCloudTrailWriteObject(id: string, options?: OnCloudTrailBucketEventOptions)
+public onCloudTrailWriteObject(id: string, options?: OnCloudTrailBucketEventOptions): Rule
 \`\`\`
 
 Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to.
@@ -6879,7 +6879,7 @@ Options for adding the rule.
 ##### \`s3UrlForObject\` <a name=\\"s3UrlForObject\\" id=\\"construct-library.submod1.GoodbyeBucket.s3UrlForObject\\"></a>
 
 \`\`\`typescript
-public s3UrlForObject(key?: string)
+public s3UrlForObject(key?: string): string
 \`\`\`
 
 The S3 URL of an S3 object. For example:.
@@ -6899,7 +6899,7 @@ If not specified, the S3 URL of the bucket is returned.
 ##### \`urlForObject\` <a name=\\"urlForObject\\" id=\\"construct-library.submod1.GoodbyeBucket.urlForObject\\"></a>
 
 \`\`\`typescript
-public urlForObject(key?: string)
+public urlForObject(key?: string): string
 \`\`\`
 
 The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:.
@@ -6919,7 +6919,7 @@ If not specified, the URL of the bucket is returned.
 ##### \`virtualHostedUrlForObject\` <a name=\\"virtualHostedUrlForObject\\" id=\\"construct-library.submod1.GoodbyeBucket.virtualHostedUrlForObject\\"></a>
 
 \`\`\`typescript
-public virtualHostedUrlForObject(key?: string, options?: VirtualHostedStyleUrlOptions)
+public virtualHostedUrlForObject(key?: string, options?: VirtualHostedStyleUrlOptions): string
 \`\`\`
 
 The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:.
@@ -6947,7 +6947,7 @@ Options for generating URL.
 ##### \`addCorsRule\` <a name=\\"addCorsRule\\" id=\\"construct-library.submod1.GoodbyeBucket.addCorsRule\\"></a>
 
 \`\`\`typescript
-public addCorsRule(rule: CorsRule)
+public addCorsRule(rule: CorsRule): void
 \`\`\`
 
 Adds a cross-origin access configuration for objects in an Amazon S3 bucket.
@@ -6963,7 +6963,7 @@ The CORS configuration rule to add.
 ##### \`addInventory\` <a name=\\"addInventory\\" id=\\"construct-library.submod1.GoodbyeBucket.addInventory\\"></a>
 
 \`\`\`typescript
-public addInventory(inventory: Inventory)
+public addInventory(inventory: Inventory): void
 \`\`\`
 
 Add an inventory configuration.
@@ -6979,7 +6979,7 @@ configuration to add.
 ##### \`addLifecycleRule\` <a name=\\"addLifecycleRule\\" id=\\"construct-library.submod1.GoodbyeBucket.addLifecycleRule\\"></a>
 
 \`\`\`typescript
-public addLifecycleRule(rule: LifecycleRule)
+public addLifecycleRule(rule: LifecycleRule): void
 \`\`\`
 
 Add a lifecycle rule to the bucket.
@@ -6995,7 +6995,7 @@ The rule to add.
 ##### \`addMetric\` <a name=\\"addMetric\\" id=\\"construct-library.submod1.GoodbyeBucket.addMetric\\"></a>
 
 \`\`\`typescript
-public addMetric(metric: BucketMetrics)
+public addMetric(metric: BucketMetrics): void
 \`\`\`
 
 Adds a metrics configuration for the CloudWatch request metrics from the bucket.
@@ -7011,7 +7011,7 @@ The metric configuration to add.
 ##### \`goodbye\` <a name=\\"goodbye\\" id=\\"construct-library.submod1.GoodbyeBucket.goodbye\\"></a>
 
 \`\`\`typescript
-public goodbye()
+public goodbye(): void
 \`\`\`
 
 #### Static Functions <a name=\\"Static Functions\\" id=\\"Static Functions\\"></a>

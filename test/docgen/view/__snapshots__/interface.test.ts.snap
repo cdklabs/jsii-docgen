@@ -61,7 +61,7 @@ Object {
           },
         },
       ],
-      "usage": "private AddToResourcePolicy(PolicyStatement Statement)",
+      "usage": "private AddToResourcePolicyResult AddToResourcePolicy(PolicyStatement Statement)",
     },
     Object {
       "displayName": "Grant",
@@ -103,7 +103,7 @@ Object {
           },
         },
       ],
-      "usage": "private Grant(IGrantable Grantee, string Actions)",
+      "usage": "private Grant Grant(IGrantable Grantee, string Actions)",
     },
     Object {
       "displayName": "GrantPull",
@@ -134,7 +134,7 @@ Object {
           },
         },
       ],
-      "usage": "private GrantPull(IGrantable Grantee)",
+      "usage": "private Grant GrantPull(IGrantable Grantee)",
     },
     Object {
       "displayName": "GrantPullPush",
@@ -165,7 +165,7 @@ Object {
           },
         },
       ],
-      "usage": "private GrantPullPush(IGrantable Grantee)",
+      "usage": "private Grant GrantPullPush(IGrantable Grantee)",
     },
     Object {
       "displayName": "OnCloudTrailEvent",
@@ -213,7 +213,7 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "usage": "private OnCloudTrailEvent(string Id, OnEventOptions Options = null)",
+      "usage": "private Rule OnCloudTrailEvent(string Id, OnEventOptions Options = null)",
     },
     Object {
       "displayName": "OnCloudTrailImagePushed",
@@ -261,7 +261,7 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "usage": "private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)",
+      "usage": "private Rule OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)",
     },
     Object {
       "displayName": "OnEvent",
@@ -305,7 +305,7 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "usage": "private OnEvent(string Id, OnEventOptions Options = null)",
+      "usage": "private Rule OnEvent(string Id, OnEventOptions Options = null)",
     },
     Object {
       "displayName": "OnImageScanCompleted",
@@ -351,7 +351,7 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "usage": "private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)",
+      "usage": "private Rule OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)",
     },
     Object {
       "displayName": "RepositoryUriForDigest",
@@ -376,7 +376,7 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "usage": "private RepositoryUriForDigest(string Digest = null)",
+      "usage": "private string RepositoryUriForDigest(string Digest = null)",
     },
     Object {
       "displayName": "RepositoryUriForTag",
@@ -401,7 +401,7 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "usage": "private RepositoryUriForTag(string Tag = null)",
+      "usage": "private string RepositoryUriForTag(string Tag = null)",
     },
   ],
   "interfaces": Array [
@@ -565,7 +565,7 @@ Represents an ECR repository.
 ## \`AddToResourcePolicy\` <a name=\\"AddToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy\\"></a>
 
 \`\`\`csharp
-private AddToResourcePolicy(PolicyStatement Statement)
+private AddToResourcePolicyResult AddToResourcePolicy(PolicyStatement Statement)
 \`\`\`
 
 Add a policy statement to the repository's resource policy.
@@ -579,7 +579,7 @@ Add a policy statement to the repository's resource policy.
 ## \`Grant\` <a name=\\"Grant\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant\\"></a>
 
 \`\`\`csharp
-private Grant(IGrantable Grantee, string Actions)
+private Grant Grant(IGrantable Grantee, string Actions)
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -599,7 +599,7 @@ Grant the given principal identity permissions to perform the actions on this re
 ## \`GrantPull\` <a name=\\"GrantPull\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull\\"></a>
 
 \`\`\`csharp
-private GrantPull(IGrantable Grantee)
+private Grant GrantPull(IGrantable Grantee)
 \`\`\`
 
 Grant the given identity permissions to pull images in this repository.
@@ -613,7 +613,7 @@ Grant the given identity permissions to pull images in this repository.
 ## \`GrantPullPush\` <a name=\\"GrantPullPush\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush\\"></a>
 
 \`\`\`csharp
-private GrantPullPush(IGrantable Grantee)
+private Grant GrantPullPush(IGrantable Grantee)
 \`\`\`
 
 Grant the given identity permissions to pull and push images to this repository.
@@ -627,7 +627,7 @@ Grant the given identity permissions to pull and push images to this repository.
 ## \`OnCloudTrailEvent\` <a name=\\"OnCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent\\"></a>
 
 \`\`\`csharp
-private OnCloudTrailEvent(string Id, OnEventOptions Options = null)
+private Rule OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
 Define a CloudWatch event that triggers when something happens to this repository.
@@ -653,7 +653,7 @@ Options for adding the rule.
 ## \`OnCloudTrailImagePushed\` <a name=\\"OnCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed\\"></a>
 
 \`\`\`csharp
-private OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
+private Rule OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)
 \`\`\`
 
 Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
@@ -679,7 +679,7 @@ Options for adding the rule.
 ## \`OnEvent\` <a name=\\"OnEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent\\"></a>
 
 \`\`\`csharp
-private OnEvent(string Id, OnEventOptions Options = null)
+private Rule OnEvent(string Id, OnEventOptions Options = null)
 \`\`\`
 
 Defines a CloudWatch event rule which triggers for repository events.
@@ -701,7 +701,7 @@ Use \`rule.addEventPattern(pattern)\` to specify a filter.
 ## \`OnImageScanCompleted\` <a name=\\"OnImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted\\"></a>
 
 \`\`\`csharp
-private OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
+private Rule OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)
 \`\`\`
 
 Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
@@ -725,7 +725,7 @@ Options for adding the rule.
 ## \`RepositoryUriForDigest\` <a name=\\"RepositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest\\"></a>
 
 \`\`\`csharp
-private RepositoryUriForDigest(string Digest = null)
+private string RepositoryUriForDigest(string Digest = null)
 \`\`\`
 
 Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
@@ -743,7 +743,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ## \`RepositoryUriForTag\` <a name=\\"RepositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag\\"></a>
 
 \`\`\`csharp
-private RepositoryUriForTag(string Tag = null)
+private string RepositoryUriForTag(string Tag = null)
 \`\`\`
 
 Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
@@ -910,7 +910,7 @@ Object {
           },
         },
       ],
-      "usage": "public addToResourcePolicy(PolicyStatement statement)",
+      "usage": "public AddToResourcePolicyResult addToResourcePolicy(PolicyStatement statement)",
     },
     Object {
       "displayName": "grant",
@@ -952,7 +952,7 @@ Object {
           },
         },
       ],
-      "usage": "public grant(IGrantable grantee, java.lang.String actions)",
+      "usage": "public Grant grant(IGrantable grantee, java.lang.String actions)",
     },
     Object {
       "displayName": "grantPull",
@@ -983,7 +983,7 @@ Object {
           },
         },
       ],
-      "usage": "public grantPull(IGrantable grantee)",
+      "usage": "public Grant grantPull(IGrantable grantee)",
     },
     Object {
       "displayName": "grantPullPush",
@@ -1014,7 +1014,7 @@ Object {
           },
         },
       ],
-      "usage": "public grantPullPush(IGrantable grantee)",
+      "usage": "public Grant grantPullPush(IGrantable grantee)",
     },
     Object {
       "displayName": "onCloudTrailEvent",
@@ -1062,8 +1062,8 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "usage": "public onCloudTrailEvent(java.lang.String id)
-public onCloudTrailEvent(java.lang.String id, OnEventOptions options)",
+      "usage": "public Rule onCloudTrailEvent(java.lang.String id)
+public Rule onCloudTrailEvent(java.lang.String id, OnEventOptions options)",
     },
     Object {
       "displayName": "onCloudTrailImagePushed",
@@ -1111,8 +1111,8 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "usage": "public onCloudTrailImagePushed(java.lang.String id)
-public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)",
+      "usage": "public Rule onCloudTrailImagePushed(java.lang.String id)
+public Rule onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)",
     },
     Object {
       "displayName": "onEvent",
@@ -1156,8 +1156,8 @@ public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptio
           },
         },
       ],
-      "usage": "public onEvent(java.lang.String id)
-public onEvent(java.lang.String id, OnEventOptions options)",
+      "usage": "public Rule onEvent(java.lang.String id)
+public Rule onEvent(java.lang.String id, OnEventOptions options)",
     },
     Object {
       "displayName": "onImageScanCompleted",
@@ -1203,8 +1203,8 @@ public onEvent(java.lang.String id, OnEventOptions options)",
           },
         },
       ],
-      "usage": "public onImageScanCompleted(java.lang.String id)
-public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)",
+      "usage": "public Rule onImageScanCompleted(java.lang.String id)
+public Rule onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)",
     },
     Object {
       "displayName": "repositoryUriForDigest",
@@ -1229,8 +1229,8 @@ public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions opt
           },
         },
       ],
-      "usage": "public repositoryUriForDigest()
-public repositoryUriForDigest(java.lang.String digest)",
+      "usage": "public java.lang.String repositoryUriForDigest()
+public java.lang.String repositoryUriForDigest(java.lang.String digest)",
     },
     Object {
       "displayName": "repositoryUriForTag",
@@ -1255,8 +1255,8 @@ public repositoryUriForDigest(java.lang.String digest)",
           },
         },
       ],
-      "usage": "public repositoryUriForTag()
-public repositoryUriForTag(java.lang.String tag)",
+      "usage": "public java.lang.String repositoryUriForTag()
+public java.lang.String repositoryUriForTag(java.lang.String tag)",
     },
   ],
   "interfaces": Array [
@@ -1420,7 +1420,7 @@ Represents an ECR repository.
 ## \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy\\"></a>
 
 \`\`\`java
-public addToResourcePolicy(PolicyStatement statement)
+public AddToResourcePolicyResult addToResourcePolicy(PolicyStatement statement)
 \`\`\`
 
 Add a policy statement to the repository's resource policy.
@@ -1434,7 +1434,7 @@ Add a policy statement to the repository's resource policy.
 ## \`grant\` <a name=\\"grant\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant\\"></a>
 
 \`\`\`java
-public grant(IGrantable grantee, java.lang.String actions)
+public Grant grant(IGrantable grantee, java.lang.String actions)
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -1454,7 +1454,7 @@ Grant the given principal identity permissions to perform the actions on this re
 ## \`grantPull\` <a name=\\"grantPull\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull\\"></a>
 
 \`\`\`java
-public grantPull(IGrantable grantee)
+public Grant grantPull(IGrantable grantee)
 \`\`\`
 
 Grant the given identity permissions to pull images in this repository.
@@ -1468,7 +1468,7 @@ Grant the given identity permissions to pull images in this repository.
 ## \`grantPullPush\` <a name=\\"grantPullPush\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush\\"></a>
 
 \`\`\`java
-public grantPullPush(IGrantable grantee)
+public Grant grantPullPush(IGrantable grantee)
 \`\`\`
 
 Grant the given identity permissions to pull and push images to this repository.
@@ -1482,8 +1482,8 @@ Grant the given identity permissions to pull and push images to this repository.
 ## \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent\\"></a>
 
 \`\`\`java
-public onCloudTrailEvent(java.lang.String id)
-public onCloudTrailEvent(java.lang.String id, OnEventOptions options)
+public Rule onCloudTrailEvent(java.lang.String id)
+public Rule onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 Define a CloudWatch event that triggers when something happens to this repository.
@@ -1509,8 +1509,8 @@ Options for adding the rule.
 ## \`onCloudTrailImagePushed\` <a name=\\"onCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed\\"></a>
 
 \`\`\`java
-public onCloudTrailImagePushed(java.lang.String id)
-public onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
+public Rule onCloudTrailImagePushed(java.lang.String id)
+public Rule onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)
 \`\`\`
 
 Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
@@ -1536,8 +1536,8 @@ Options for adding the rule.
 ## \`onEvent\` <a name=\\"onEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent\\"></a>
 
 \`\`\`java
-public onEvent(java.lang.String id)
-public onEvent(java.lang.String id, OnEventOptions options)
+public Rule onEvent(java.lang.String id)
+public Rule onEvent(java.lang.String id, OnEventOptions options)
 \`\`\`
 
 Defines a CloudWatch event rule which triggers for repository events.
@@ -1559,8 +1559,8 @@ Use \`rule.addEventPattern(pattern)\` to specify a filter.
 ## \`onImageScanCompleted\` <a name=\\"onImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted\\"></a>
 
 \`\`\`java
-public onImageScanCompleted(java.lang.String id)
-public onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
+public Rule onImageScanCompleted(java.lang.String id)
+public Rule onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)
 \`\`\`
 
 Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
@@ -1584,8 +1584,8 @@ Options for adding the rule.
 ## \`repositoryUriForDigest\` <a name=\\"repositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest\\"></a>
 
 \`\`\`java
-public repositoryUriForDigest()
-public repositoryUriForDigest(java.lang.String digest)
+public java.lang.String repositoryUriForDigest()
+public java.lang.String repositoryUriForDigest(java.lang.String digest)
 \`\`\`
 
 Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
@@ -1603,8 +1603,8 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ## \`repositoryUriForTag\` <a name=\\"repositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag\\"></a>
 
 \`\`\`java
-public repositoryUriForTag()
-public repositoryUriForTag(java.lang.String tag)
+public java.lang.String repositoryUriForTag()
+public java.lang.String repositoryUriForTag(java.lang.String tag)
 \`\`\`
 
 Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
@@ -1773,7 +1773,7 @@ Object {
       ],
       "usage": "def add_to_resource_policy(
   statement: PolicyStatement
-)",
+) -> AddToResourcePolicyResult",
     },
     Object {
       "displayName": "grant",
@@ -1818,7 +1818,7 @@ Object {
       "usage": "def grant(
   grantee: IGrantable,
   actions: str
-)",
+) -> Grant",
     },
     Object {
       "displayName": "grant_pull",
@@ -1851,7 +1851,7 @@ Object {
       ],
       "usage": "def grant_pull(
   grantee: IGrantable
-)",
+) -> Grant",
     },
     Object {
       "displayName": "grant_pull_push",
@@ -1884,7 +1884,7 @@ Object {
       ],
       "usage": "def grant_pull_push(
   grantee: IGrantable
-)",
+) -> Grant",
     },
     Object {
       "displayName": "on_cloud_trail_event",
@@ -1992,7 +1992,7 @@ on top of that filtering.",
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)",
+) -> Rule",
     },
     Object {
       "displayName": "on_cloud_trail_image_pushed",
@@ -2114,7 +2114,7 @@ on top of that filtering.",
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tag: str = None
-)",
+) -> Rule",
     },
     Object {
       "displayName": "on_event",
@@ -2220,7 +2220,7 @@ on top of that filtering.",
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)",
+) -> Rule",
     },
     Object {
       "displayName": "on_image_scan_completed",
@@ -2346,7 +2346,7 @@ on top of that filtering.",
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tags: typing.List[str] = None
-)",
+) -> Rule",
     },
     Object {
       "displayName": "repository_uri_for_digest",
@@ -2373,7 +2373,7 @@ on top of that filtering.",
       ],
       "usage": "def repository_uri_for_digest(
   digest: str = None
-)",
+) -> str",
     },
     Object {
       "displayName": "repository_uri_for_tag",
@@ -2400,7 +2400,7 @@ on top of that filtering.",
       ],
       "usage": "def repository_uri_for_tag(
   tag: str = None
-)",
+) -> str",
     },
   ],
   "interfaces": Array [
@@ -2566,7 +2566,7 @@ Represents an ECR repository.
 \`\`\`python
 def add_to_resource_policy(
   statement: PolicyStatement
-)
+) -> AddToResourcePolicyResult
 \`\`\`
 
 Add a policy statement to the repository's resource policy.
@@ -2583,7 +2583,7 @@ Add a policy statement to the repository's resource policy.
 def grant(
   grantee: IGrantable,
   actions: str
-)
+) -> Grant
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -2605,7 +2605,7 @@ Grant the given principal identity permissions to perform the actions on this re
 \`\`\`python
 def grant_pull(
   grantee: IGrantable
-)
+) -> Grant
 \`\`\`
 
 Grant the given identity permissions to pull images in this repository.
@@ -2621,7 +2621,7 @@ Grant the given identity permissions to pull images in this repository.
 \`\`\`python
 def grant_pull_push(
   grantee: IGrantable
-)
+) -> Grant
 \`\`\`
 
 Grant the given identity permissions to pull and push images to this repository.
@@ -2641,7 +2641,7 @@ def on_cloud_trail_event(
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)
+) -> Rule
 \`\`\`
 
 Define a CloudWatch event that triggers when something happens to this repository.
@@ -2706,7 +2706,7 @@ def on_cloud_trail_image_pushed(
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tag: str = None
-)
+) -> Rule
 \`\`\`
 
 Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
@@ -2779,7 +2779,7 @@ def on_event(
   event_pattern: EventPattern = None,
   rule_name: str = None,
   target: IRuleTarget = None
-)
+) -> Rule
 \`\`\`
 
 Defines a CloudWatch event rule which triggers for repository events.
@@ -2842,7 +2842,7 @@ def on_image_scan_completed(
   rule_name: str = None,
   target: IRuleTarget = None,
   image_tags: typing.List[str] = None
-)
+) -> Rule
 \`\`\`
 
 Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
@@ -2911,7 +2911,7 @@ Leave it undefined to watch the full repository.
 \`\`\`python
 def repository_uri_for_digest(
   digest: str = None
-)
+) -> str
 \`\`\`
 
 Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
@@ -2931,7 +2931,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 \`\`\`python
 def repository_uri_for_tag(
   tag: str = None
-)
+) -> str
 \`\`\`
 
 Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
@@ -3098,7 +3098,7 @@ Object {
           },
         },
       ],
-      "usage": "public addToResourcePolicy(statement: PolicyStatement)",
+      "usage": "public addToResourcePolicy(statement: PolicyStatement): AddToResourcePolicyResult",
     },
     Object {
       "displayName": "grant",
@@ -3140,7 +3140,7 @@ Object {
           },
         },
       ],
-      "usage": "public grant(grantee: IGrantable, actions: string)",
+      "usage": "public grant(grantee: IGrantable, actions: string): Grant",
     },
     Object {
       "displayName": "grantPull",
@@ -3171,7 +3171,7 @@ Object {
           },
         },
       ],
-      "usage": "public grantPull(grantee: IGrantable)",
+      "usage": "public grantPull(grantee: IGrantable): Grant",
     },
     Object {
       "displayName": "grantPullPush",
@@ -3202,7 +3202,7 @@ Object {
           },
         },
       ],
-      "usage": "public grantPullPush(grantee: IGrantable)",
+      "usage": "public grantPullPush(grantee: IGrantable): Grant",
     },
     Object {
       "displayName": "onCloudTrailEvent",
@@ -3250,7 +3250,7 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "usage": "public onCloudTrailEvent(id: string, options?: OnEventOptions)",
+      "usage": "public onCloudTrailEvent(id: string, options?: OnEventOptions): Rule",
     },
     Object {
       "displayName": "onCloudTrailImagePushed",
@@ -3298,7 +3298,7 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "usage": "public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)",
+      "usage": "public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions): Rule",
     },
     Object {
       "displayName": "onEvent",
@@ -3342,7 +3342,7 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "usage": "public onEvent(id: string, options?: OnEventOptions)",
+      "usage": "public onEvent(id: string, options?: OnEventOptions): Rule",
     },
     Object {
       "displayName": "onImageScanCompleted",
@@ -3388,7 +3388,7 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "usage": "public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)",
+      "usage": "public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions): Rule",
     },
     Object {
       "displayName": "repositoryUriForDigest",
@@ -3413,7 +3413,7 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "usage": "public repositoryUriForDigest(digest?: string)",
+      "usage": "public repositoryUriForDigest(digest?: string): string",
     },
     Object {
       "displayName": "repositoryUriForTag",
@@ -3438,7 +3438,7 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "usage": "public repositoryUriForTag(tag?: string)",
+      "usage": "public repositoryUriForTag(tag?: string): string",
     },
   ],
   "interfaces": Array [
@@ -3602,7 +3602,7 @@ Represents an ECR repository.
 ## \`addToResourcePolicy\` <a name=\\"addToResourcePolicy\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy\\"></a>
 
 \`\`\`typescript
-public addToResourcePolicy(statement: PolicyStatement)
+public addToResourcePolicy(statement: PolicyStatement): AddToResourcePolicyResult
 \`\`\`
 
 Add a policy statement to the repository's resource policy.
@@ -3616,7 +3616,7 @@ Add a policy statement to the repository's resource policy.
 ## \`grant\` <a name=\\"grant\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant\\"></a>
 
 \`\`\`typescript
-public grant(grantee: IGrantable, actions: string)
+public grant(grantee: IGrantable, actions: string): Grant
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -3636,7 +3636,7 @@ Grant the given principal identity permissions to perform the actions on this re
 ## \`grantPull\` <a name=\\"grantPull\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull\\"></a>
 
 \`\`\`typescript
-public grantPull(grantee: IGrantable)
+public grantPull(grantee: IGrantable): Grant
 \`\`\`
 
 Grant the given identity permissions to pull images in this repository.
@@ -3650,7 +3650,7 @@ Grant the given identity permissions to pull images in this repository.
 ## \`grantPullPush\` <a name=\\"grantPullPush\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush\\"></a>
 
 \`\`\`typescript
-public grantPullPush(grantee: IGrantable)
+public grantPullPush(grantee: IGrantable): Grant
 \`\`\`
 
 Grant the given identity permissions to pull and push images to this repository.
@@ -3664,7 +3664,7 @@ Grant the given identity permissions to pull and push images to this repository.
 ## \`onCloudTrailEvent\` <a name=\\"onCloudTrailEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent\\"></a>
 
 \`\`\`typescript
-public onCloudTrailEvent(id: string, options?: OnEventOptions)
+public onCloudTrailEvent(id: string, options?: OnEventOptions): Rule
 \`\`\`
 
 Define a CloudWatch event that triggers when something happens to this repository.
@@ -3690,7 +3690,7 @@ Options for adding the rule.
 ## \`onCloudTrailImagePushed\` <a name=\\"onCloudTrailImagePushed\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed\\"></a>
 
 \`\`\`typescript
-public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions)
+public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions): Rule
 \`\`\`
 
 Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
@@ -3716,7 +3716,7 @@ Options for adding the rule.
 ## \`onEvent\` <a name=\\"onEvent\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent\\"></a>
 
 \`\`\`typescript
-public onEvent(id: string, options?: OnEventOptions)
+public onEvent(id: string, options?: OnEventOptions): Rule
 \`\`\`
 
 Defines a CloudWatch event rule which triggers for repository events.
@@ -3738,7 +3738,7 @@ Use \`rule.addEventPattern(pattern)\` to specify a filter.
 ## \`onImageScanCompleted\` <a name=\\"onImageScanCompleted\\" id=\\"@aws-cdk/aws-ecr.IRepository.onImageScanCompleted\\"></a>
 
 \`\`\`typescript
-public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions)
+public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions): Rule
 \`\`\`
 
 Defines an AWS CloudWatch event rule that can trigger a target when the image scan is completed.
@@ -3762,7 +3762,7 @@ Options for adding the rule.
 ## \`repositoryUriForDigest\` <a name=\\"repositoryUriForDigest\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest\\"></a>
 
 \`\`\`typescript
-public repositoryUriForDigest(digest?: string)
+public repositoryUriForDigest(digest?: string): string
 \`\`\`
 
 Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
@@ -3780,7 +3780,7 @@ Image digest to use (tools usually default to the image with the \\"latest\\" ta
 ## \`repositoryUriForTag\` <a name=\\"repositoryUriForTag\\" id=\\"@aws-cdk/aws-ecr.IRepository.repositoryUriForTag\\"></a>
 
 \`\`\`typescript
-public repositoryUriForTag(tag?: string)
+public repositoryUriForTag(tag?: string): string
 \`\`\`
 
 Returns the URI of the repository for a certain tag. Can be used in \`docker push/pull\`.
