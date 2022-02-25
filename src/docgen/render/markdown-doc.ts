@@ -1,3 +1,4 @@
+import { Language } from '../..';
 import { DocsSchema } from '../schema';
 
 /**
@@ -101,7 +102,7 @@ export class MarkdownDocument {
   /**
    * Render a docs element into the markdown.
    */
-  public docs(docs: DocsSchema) {
+  public docs(docs: DocsSchema, language: Language) {
     if (docs.summary) {
       this.lines(MarkdownDocument.sanitize(docs.summary));
       this.lines('');
@@ -115,6 +116,18 @@ export class MarkdownDocument {
       for (const link of docs.links) {
         this.quote(`[${link}](${link})`);
       }
+    }
+
+    if (docs.example) {
+      const example = new MarkdownDocument({
+        id: `${this.options.id}.example`,
+        header: {
+          title: 'Example',
+        },
+      });
+      example.code(language.toString(), docs.example);
+      example.lines('');
+      this.section(example);
     }
   }
 

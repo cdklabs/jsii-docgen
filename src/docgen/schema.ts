@@ -447,6 +447,12 @@ export interface DocsSchema {
   readonly links?: string[];
 
   /**
+   * Code snippet showing example usage of an API item, that has been provided
+   * by the construct library authors.
+   */
+  readonly example?: string;
+
+  /**
    * Whether or not it is deprecated.
    */
   readonly deprecated?: boolean;
@@ -499,6 +505,7 @@ export function extractDocs(docs: reflect.Docs): DocsSchema {
     // ignore defaults and empty strings to save space
     summary: docs.summary.length > 0 ? docs.summary : undefined,
     remarks: docs.remarks.length > 0 ? docs.remarks : undefined,
+    example: docs.example.length > 0 ? docs.example : undefined,
     links: links.length > 0 ? links : undefined,
     deprecated: docs.deprecated === true ? true : undefined,
     deprecationReason: docs.deprecationReason,
