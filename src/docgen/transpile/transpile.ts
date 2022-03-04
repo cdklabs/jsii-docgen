@@ -26,6 +26,12 @@ export class Language {
   public static readonly CSHARP = new Language('csharp', 'dotnet');
 
   /**
+   *
+   * Go
+   */
+  public static readonly GO = new Language('go');
+
+  /**
    * Transform a literal string to the `Language` object.
    *
    * Throws an `UnsupportedLanguageError` if the language is not supported.
@@ -44,13 +50,16 @@ export class Language {
       case Language.CSHARP.name:
       case Language.CSHARP.targetName:
         return Language.CSHARP;
+      case Language.GO.name:
+      case Language.GO.targetName:
+        return Language.GO;
       default:
         throw new UnsupportedLanguageError(lang, Language.values());
     }
   }
 
   public static values() {
-    return [Language.TYPESCRIPT, Language.PYTHON, Language.JAVA, Language.CSHARP];
+    return [Language.TYPESCRIPT, Language.PYTHON, Language.JAVA, Language.CSHARP, Language.GO];
   }
 
   private constructor(public readonly name: string, public readonly targetName = name) {}

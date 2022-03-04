@@ -6248,6 +6248,982 @@ Rule applies to untagged images.
 "
 `;
 
+exports[`complex link formatter go snapshot 1`] = `
+"# Constructs
+
+> Software-defined persistent state
+
+![Release](https://github.com/aws/constructs/workflows/Release/badge.svg)
+[![npm version](https://badge.fury.io/js/constructs.svg)](https://badge.fury.io/js/constructs)
+[![PyPI version](https://badge.fury.io/py/constructs.svg)](https://badge.fury.io/py/constructs)
+[![NuGet version](https://badge.fury.io/nu/Constructs.svg)](https://badge.fury.io/nu/Constructs)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/software.constructs/constructs/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/software.constructs/constructs)
+
+## What are constructs?
+
+Constructs are classes which define a \\"piece of system state\\". Constructs can be composed together to form higher-level building blocks which represent more complex state.
+
+Constructs are often used to represent the _desired state_ of cloud applications. For example, in the AWS CDK, which is used to define the desired state for AWS infrastructure using CloudFormation, the lowest-level construct represents a _resource definition_ in a CloudFormation template. These resources are composed to represent higher-level logical units of a cloud application, etc.
+
+## Contributing
+
+This project has adopted the [Amazon Open Source Code of
+Conduct](https://aws.github.io/code-of-conduct).
+
+We welcome community contributions and pull requests. See our [contribution
+guide](./CONTRIBUTING.md) for more information on how to report issues, set up a
+development environment and submit code.
+
+## License
+
+This project is distributed under the [Apache License, Version 2.0](./LICENSE).
+
+# API Reference <a name=\\"API Reference\\" id=\\"api-reference\\"></a>
+
+## Constructs <a name=\\"Constructs\\" id=\\"Constructs\\"></a>
+
+### Construct <a name=\\"Construct\\" id=\\"Construct\\"></a>
+
+- *Implements:* <a href=\\"/packages/constructs/v/10.0.78/api/IConstruct?lang=python\\">IConstruct</a>
+
+Represents the building block of the construct graph.
+
+All constructs besides the root construct must be created within the scope of another construct.
+
+#### Initializers <a name=\\"Initializers\\" id=\\"Construct.Initializer\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+constructs.NewConstruct(scope Construct, id *string);
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Construct.Initializer.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/constructs/v/99.99.99/api/Construct?lang=python\\">Construct</a></code> | The scope in which to define this construct. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Construct.Initializer.parameter.id?lang=python\\">id</a></code> | <code>*string</code> | The scoped construct ID. |
+
+---
+
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Construct.Initializer.parameter.scope\\"></a>
+
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/Construct?lang=python\\">Construct</a>
+
+The scope in which to define this construct.
+
+---
+
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"Construct.Initializer.parameter.id\\"></a>
+
+- *Type:* *string
+
+The scoped construct ID.
+
+Must be unique amongst siblings. If the ID includes a path separator (\`/\`), then it will be replaced by double dash \`--\`.
+
+---
+
+#### Methods <a name=\\"Methods\\" id=\\"Methods\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Construct.toString?lang=python\\">ToString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### \`ToString\` <a name=\\"ToString\\" id=\\"Construct.toString\\"></a>
+
+\`\`\`go
+func ToString() *string
+\`\`\`
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name=\\"Static Functions\\" id=\\"Static Functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Construct.isConstruct?lang=python\\">IsConstruct</a></code> | Checks if \`x\` is a construct. |
+
+---
+
+##### ~~\`IsConstruct\`~~ <a name=\\"IsConstruct\\" id=\\"Construct.isConstruct\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+constructs.Construct_IsConstruct(x interface{});
+\`\`\`
+
+Checks if \`x\` is a construct.
+
+###### \`x\`<sup>Required</sup> <a name=\\"x\\" id=\\"Construct.isConstruct.parameter.x\\"></a>
+
+- *Type:* interface{}
+
+Any object.
+
+---
+
+#### Properties <a name=\\"Properties\\" id=\\"Properties\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Construct.property.node?lang=python\\">Node</a></code> | <code><a href=\\"/packages/constructs/v/99.99.99/api/Node?lang=python\\">Node</a></code> | The tree node. |
+
+---
+
+##### \`Node\`<sup>Required</sup> <a name=\\"Node\\" id=\\"Construct.property.node\\"></a>
+
+\`\`\`go
+func Node() Node
+\`\`\`
+
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/Node?lang=python\\">Node</a>
+
+The tree node.
+
+---
+
+
+## Structs <a name=\\"Structs\\" id=\\"Structs\\"></a>
+
+### MetadataEntry <a name=\\"MetadataEntry\\" id=\\"MetadataEntry\\"></a>
+
+An entry in the construct metadata table.
+
+#### Initializer <a name=\\"Initializer\\" id=\\"MetadataEntry.Initializer\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+&constructs.MetadataEntry {
+	Data: interface{},
+	Type: *string,
+	Trace: []*string,
+}
+\`\`\`
+
+#### Properties <a name=\\"Properties\\" id=\\"Properties\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/MetadataEntry.property.data?lang=python\\">Data</a></code> | <code>interface{}</code> | The data. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/MetadataEntry.property.type?lang=python\\">Type</a></code> | <code>*string</code> | The metadata entry type. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/MetadataEntry.property.trace?lang=python\\">Trace</a></code> | <code>[]*string</code> | Stack trace at the point of adding the metadata. |
+
+---
+
+##### \`Data\`<sup>Required</sup> <a name=\\"Data\\" id=\\"MetadataEntry.property.data\\"></a>
+
+\`\`\`go
+func Data() interface{}
+\`\`\`
+
+- *Type:* interface{}
+
+The data.
+
+---
+
+##### \`Type\`<sup>Required</sup> <a name=\\"Type\\" id=\\"MetadataEntry.property.type\\"></a>
+
+\`\`\`go
+func Type() *string
+\`\`\`
+
+- *Type:* *string
+
+The metadata entry type.
+
+---
+
+##### \`Trace\`<sup>Optional</sup> <a name=\\"Trace\\" id=\\"MetadataEntry.property.trace\\"></a>
+
+\`\`\`go
+func Trace() []*string
+\`\`\`
+
+- *Type:* []*string
+- *Default:* no trace information
+
+Stack trace at the point of adding the metadata.
+
+Only available if \`addMetadata()\` is called with \`stackTrace: true\`.
+
+---
+
+### MetadataOptions <a name=\\"MetadataOptions\\" id=\\"MetadataOptions\\"></a>
+
+Options for \`construct.addMetadata()\`.
+
+#### Initializer <a name=\\"Initializer\\" id=\\"MetadataOptions.Initializer\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+&constructs.MetadataOptions {
+	StackTrace: *bool,
+	TraceFromFunction: interface{},
+}
+\`\`\`
+
+#### Properties <a name=\\"Properties\\" id=\\"Properties\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/MetadataOptions.property.stackTrace?lang=python\\">StackTrace</a></code> | <code>*bool</code> | Include stack trace with metadata entry. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/MetadataOptions.property.traceFromFunction?lang=python\\">TraceFromFunction</a></code> | <code>interface{}</code> | A JavaScript function to begin tracing from. |
+
+---
+
+##### \`StackTrace\`<sup>Optional</sup> <a name=\\"StackTrace\\" id=\\"MetadataOptions.property.stackTrace\\"></a>
+
+\`\`\`go
+func StackTrace() *bool
+\`\`\`
+
+- *Type:* *bool
+- *Default:* false
+
+Include stack trace with metadata entry.
+
+---
+
+##### \`TraceFromFunction\`<sup>Optional</sup> <a name=\\"TraceFromFunction\\" id=\\"MetadataOptions.property.traceFromFunction\\"></a>
+
+\`\`\`go
+func TraceFromFunction() interface{}
+\`\`\`
+
+- *Type:* interface{}
+- *Default:* addMetadata()
+
+A JavaScript function to begin tracing from.
+
+This option is ignored unless \`stackTrace\` is \`true\`.
+
+---
+
+## Classes <a name=\\"Classes\\" id=\\"Classes\\"></a>
+
+### Dependable <a name=\\"Dependable\\" id=\\"Dependable\\"></a>
+
+Trait for IDependable.
+
+Traits are interfaces that are privately implemented by objects. Instead of showing up in the public interface of a class, they need to be queried explicitly. This is used to implement certain framework features that are not intended to be used by Construct consumers, and so should be hidden from accidental use.
+
+#### Initializers <a name=\\"Initializers\\" id=\\"Dependable.Initializer\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+constructs.NewDependable();
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+
+#### Static Functions <a name=\\"Static Functions\\" id=\\"Static Functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Dependable.get?lang=python\\">Get</a></code> | Return the matching Dependable for the given class instance. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Dependable.implement?lang=python\\">Implement</a></code> | Turn any object into an IDependable. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Dependable.of?lang=python\\">Of</a></code> | Return the matching Dependable for the given class instance. |
+
+---
+
+##### ~~\`Get\`~~ <a name=\\"Get\\" id=\\"Dependable.get\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+constructs.Dependable_Get(instance IDependable);
+\`\`\`
+
+Return the matching Dependable for the given class instance.
+
+###### \`instance\`<sup>Required</sup> <a name=\\"instance\\" id=\\"Dependable.get.parameter.instance\\"></a>
+
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/IDependable?lang=python\\">IDependable</a>
+
+---
+
+##### \`Implement\` <a name=\\"Implement\\" id=\\"Dependable.implement\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+constructs.Dependable_Implement(instance IDependable, trait Dependable);
+\`\`\`
+
+Turn any object into an IDependable.
+
+###### \`instance\`<sup>Required</sup> <a name=\\"instance\\" id=\\"Dependable.implement.parameter.instance\\"></a>
+
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/IDependable?lang=python\\">IDependable</a>
+
+---
+
+###### \`trait\`<sup>Required</sup> <a name=\\"trait\\" id=\\"Dependable.implement.parameter.trait\\"></a>
+
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/Dependable?lang=python\\">Dependable</a>
+
+---
+
+##### \`Of\` <a name=\\"Of\\" id=\\"Dependable.of\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+constructs.Dependable_Of(instance IDependable);
+\`\`\`
+
+Return the matching Dependable for the given class instance.
+
+###### \`instance\`<sup>Required</sup> <a name=\\"instance\\" id=\\"Dependable.of.parameter.instance\\"></a>
+
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/IDependable?lang=python\\">IDependable</a>
+
+---
+
+#### Properties <a name=\\"Properties\\" id=\\"Properties\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Dependable.property.dependencyRoots?lang=python\\">DependencyRoots</a></code> | <code>[]<a href=\\"/packages/constructs/v/99.99.99/api/IConstruct?lang=python\\">IConstruct</a></code> | The set of constructs that form the root of this dependable. |
+
+---
+
+##### \`DependencyRoots\`<sup>Required</sup> <a name=\\"DependencyRoots\\" id=\\"Dependable.property.dependencyRoots\\"></a>
+
+\`\`\`go
+func DependencyRoots() []IConstruct
+\`\`\`
+
+- *Type:* []<a href=\\"/packages/constructs/v/99.99.99/api/IConstruct?lang=python\\">IConstruct</a>
+
+The set of constructs that form the root of this dependable.
+
+All resources under all returned constructs are included in the ordering dependency.
+
+---
+
+
+### DependencyGroup <a name=\\"DependencyGroup\\" id=\\"DependencyGroup\\"></a>
+
+- *Implements:* <a href=\\"/packages/constructs/v/10.0.78/api/IDependable?lang=python\\">IDependable</a>
+
+A set of constructs to be used as a dependable.
+
+This class can be used when a set of constructs which are disjoint in the construct tree needs to be combined to be used as a single dependable.
+
+#### Initializers <a name=\\"Initializers\\" id=\\"DependencyGroup.Initializer\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+constructs.NewDependencyGroup(deps IDependable);
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/DependencyGroup.Initializer.parameter.deps?lang=python\\">deps</a></code> | <code><a href=\\"/packages/constructs/v/99.99.99/api/IDependable?lang=python\\">IDependable</a></code> | *No description.* |
+
+---
+
+##### \`deps\`<sup>Required</sup> <a name=\\"deps\\" id=\\"DependencyGroup.Initializer.parameter.deps\\"></a>
+
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/IDependable?lang=python\\">IDependable</a>
+
+---
+
+#### Methods <a name=\\"Methods\\" id=\\"Methods\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/DependencyGroup.add?lang=python\\">Add</a></code> | Add a construct to the dependency roots. |
+
+---
+
+##### \`Add\` <a name=\\"Add\\" id=\\"DependencyGroup.add\\"></a>
+
+\`\`\`go
+func Add(scopes IDependable)
+\`\`\`
+
+Add a construct to the dependency roots.
+
+###### \`scopes\`<sup>Required</sup> <a name=\\"scopes\\" id=\\"DependencyGroup.add.parameter.scopes\\"></a>
+
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/IDependable?lang=python\\">IDependable</a>
+
+---
+
+
+
+
+### Node <a name=\\"Node\\" id=\\"Node\\"></a>
+
+Represents the construct node in the scope tree.
+
+#### Initializers <a name=\\"Initializers\\" id=\\"Node.Initializer\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+constructs.NewNode(host Construct, scope IConstruct, id *string);
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.Initializer.parameter.host?lang=python\\">host</a></code> | <code><a href=\\"/packages/constructs/v/99.99.99/api/Construct?lang=python\\">Construct</a></code> | *No description.* |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.Initializer.parameter.scope?lang=python\\">scope</a></code> | <code><a href=\\"/packages/constructs/v/99.99.99/api/IConstruct?lang=python\\">IConstruct</a></code> | *No description.* |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.Initializer.parameter.id?lang=python\\">id</a></code> | <code>*string</code> | *No description.* |
+
+---
+
+##### \`host\`<sup>Required</sup> <a name=\\"host\\" id=\\"Node.Initializer.parameter.host\\"></a>
+
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/Construct?lang=python\\">Construct</a>
+
+---
+
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"Node.Initializer.parameter.scope\\"></a>
+
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/IConstruct?lang=python\\">IConstruct</a>
+
+---
+
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"Node.Initializer.parameter.id\\"></a>
+
+- *Type:* *string
+
+---
+
+#### Methods <a name=\\"Methods\\" id=\\"Methods\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.addDependency?lang=python\\">AddDependency</a></code> | Add an ordering dependency on another construct. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.addMetadata?lang=python\\">AddMetadata</a></code> | Adds a metadata entry to this construct. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.addValidation?lang=python\\">AddValidation</a></code> | Adds a validation to this construct. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.findAll?lang=python\\">FindAll</a></code> | Return this construct and all of its children in the given order. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.findChild?lang=python\\">FindChild</a></code> | Return a direct child by id. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.lock?lang=python\\">Lock</a></code> | Locks this construct from allowing more children to be added. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.setContext?lang=python\\">SetContext</a></code> | This can be used to set contextual values. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.tryFindChild?lang=python\\">TryFindChild</a></code> | Return a direct child by id, or undefined. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.tryGetContext?lang=python\\">TryGetContext</a></code> | Retrieves a value from tree context. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.tryRemoveChild?lang=python\\">TryRemoveChild</a></code> | Remove the child with the given name, if present. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.validate?lang=python\\">Validate</a></code> | Validates this construct. |
+
+---
+
+##### \`AddDependency\` <a name=\\"AddDependency\\" id=\\"Node.addDependency\\"></a>
+
+\`\`\`go
+func AddDependency(deps IDependable)
+\`\`\`
+
+Add an ordering dependency on another construct.
+
+An \`IDependable\`
+
+###### \`deps\`<sup>Required</sup> <a name=\\"deps\\" id=\\"Node.addDependency.parameter.deps\\"></a>
+
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/IDependable?lang=python\\">IDependable</a>
+
+---
+
+##### \`AddMetadata\` <a name=\\"AddMetadata\\" id=\\"Node.addMetadata\\"></a>
+
+\`\`\`go
+func AddMetadata(type *string, data interface{}, options MetadataOptions)
+\`\`\`
+
+Adds a metadata entry to this construct.
+
+Entries are arbitrary values and will also include a stack trace to allow tracing back to the code location for when the entry was added. It can be used, for example, to include source mapping in CloudFormation templates to improve diagnostics.
+
+###### \`type\`<sup>Required</sup> <a name=\\"type\\" id=\\"Node.addMetadata.parameter.type\\"></a>
+
+- *Type:* *string
+
+a string denoting the type of metadata.
+
+---
+
+###### \`data\`<sup>Required</sup> <a name=\\"data\\" id=\\"Node.addMetadata.parameter.data\\"></a>
+
+- *Type:* interface{}
+
+the value of the metadata (can be a Token).
+
+If null/undefined, metadata will not be added.
+
+---
+
+###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"Node.addMetadata.parameter.options\\"></a>
+
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/MetadataOptions?lang=python\\">MetadataOptions</a>
+
+options.
+
+---
+
+##### \`AddValidation\` <a name=\\"AddValidation\\" id=\\"Node.addValidation\\"></a>
+
+\`\`\`go
+func AddValidation(validation IValidation)
+\`\`\`
+
+Adds a validation to this construct.
+
+When \`node.validate()\` is called, the \`validate()\` method will be called on all validations and all errors will be returned.
+
+###### \`validation\`<sup>Required</sup> <a name=\\"validation\\" id=\\"Node.addValidation.parameter.validation\\"></a>
+
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/IValidation?lang=python\\">IValidation</a>
+
+The validation object.
+
+---
+
+##### \`FindAll\` <a name=\\"FindAll\\" id=\\"Node.findAll\\"></a>
+
+\`\`\`go
+func FindAll(order ConstructOrder) []IConstruct
+\`\`\`
+
+Return this construct and all of its children in the given order.
+
+###### \`order\`<sup>Optional</sup> <a name=\\"order\\" id=\\"Node.findAll.parameter.order\\"></a>
+
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/ConstructOrder?lang=python\\">ConstructOrder</a>
+
+---
+
+##### \`FindChild\` <a name=\\"FindChild\\" id=\\"Node.findChild\\"></a>
+
+\`\`\`go
+func FindChild(id *string) IConstruct
+\`\`\`
+
+Return a direct child by id.
+
+Throws an error if the child is not found.
+
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"Node.findChild.parameter.id\\"></a>
+
+- *Type:* *string
+
+Identifier of direct child.
+
+---
+
+##### \`Lock\` <a name=\\"Lock\\" id=\\"Node.lock\\"></a>
+
+\`\`\`go
+func Lock()
+\`\`\`
+
+Locks this construct from allowing more children to be added.
+
+After this call, no more children can be added to this construct or to any children.
+
+##### \`SetContext\` <a name=\\"SetContext\\" id=\\"Node.setContext\\"></a>
+
+\`\`\`go
+func SetContext(key *string, value interface{})
+\`\`\`
+
+This can be used to set contextual values.
+
+Context must be set before any children are added, since children may consult context info during construction. If the key already exists, it will be overridden.
+
+###### \`key\`<sup>Required</sup> <a name=\\"key\\" id=\\"Node.setContext.parameter.key\\"></a>
+
+- *Type:* *string
+
+The context key.
+
+---
+
+###### \`value\`<sup>Required</sup> <a name=\\"value\\" id=\\"Node.setContext.parameter.value\\"></a>
+
+- *Type:* interface{}
+
+The context value.
+
+---
+
+##### \`TryFindChild\` <a name=\\"TryFindChild\\" id=\\"Node.tryFindChild\\"></a>
+
+\`\`\`go
+func TryFindChild(id *string) IConstruct
+\`\`\`
+
+Return a direct child by id, or undefined.
+
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"Node.tryFindChild.parameter.id\\"></a>
+
+- *Type:* *string
+
+Identifier of direct child.
+
+---
+
+##### \`TryGetContext\` <a name=\\"TryGetContext\\" id=\\"Node.tryGetContext\\"></a>
+
+\`\`\`go
+func TryGetContext(key *string) interface{}
+\`\`\`
+
+Retrieves a value from tree context.
+
+Context is usually initialized at the root, but can be overridden at any point in the tree.
+
+###### \`key\`<sup>Required</sup> <a name=\\"key\\" id=\\"Node.tryGetContext.parameter.key\\"></a>
+
+- *Type:* *string
+
+The context key.
+
+---
+
+##### \`TryRemoveChild\` <a name=\\"TryRemoveChild\\" id=\\"Node.tryRemoveChild\\"></a>
+
+\`\`\`go
+func TryRemoveChild(childName *string) *bool
+\`\`\`
+
+Remove the child with the given name, if present.
+
+###### \`childName\`<sup>Required</sup> <a name=\\"childName\\" id=\\"Node.tryRemoveChild.parameter.childName\\"></a>
+
+- *Type:* *string
+
+---
+
+##### \`Validate\` <a name=\\"Validate\\" id=\\"Node.validate\\"></a>
+
+\`\`\`go
+func Validate() []*string
+\`\`\`
+
+Validates this construct.
+
+Invokes the \`validate()\` method on all validations added through \`addValidation()\`.
+
+#### Static Functions <a name=\\"Static Functions\\" id=\\"Static Functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.of?lang=python\\">Of</a></code> | Returns the node associated with a construct. |
+
+---
+
+##### ~~\`Of\`~~ <a name=\\"Of\\" id=\\"Node.of\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+constructs.Node_Of(construct IConstruct);
+\`\`\`
+
+Returns the node associated with a construct.
+
+###### \`construct\`<sup>Required</sup> <a name=\\"construct\\" id=\\"Node.of.parameter.construct\\"></a>
+
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/IConstruct?lang=python\\">IConstruct</a>
+
+the construct.
+
+---
+
+#### Properties <a name=\\"Properties\\" id=\\"Properties\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.property.addr?lang=python\\">Addr</a></code> | <code>*string</code> | Returns an opaque tree-unique address for this construct. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.property.children?lang=python\\">Children</a></code> | <code>[]<a href=\\"/packages/constructs/v/99.99.99/api/IConstruct?lang=python\\">IConstruct</a></code> | All direct children of this construct. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.property.dependencies?lang=python\\">Dependencies</a></code> | <code>[]<a href=\\"/packages/constructs/v/99.99.99/api/IConstruct?lang=python\\">IConstruct</a></code> | Return all dependencies registered on this node (non-recursive). |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.property.id?lang=python\\">Id</a></code> | <code>*string</code> | The id of this construct within the current scope. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.property.locked?lang=python\\">Locked</a></code> | <code>*bool</code> | Returns true if this construct or the scopes in which it is defined are locked. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.property.metadata?lang=python\\">Metadata</a></code> | <code>[]<a href=\\"/packages/constructs/v/99.99.99/api/MetadataEntry?lang=python\\">MetadataEntry</a></code> | An immutable array of metadata objects associated with this construct. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.property.path?lang=python\\">Path</a></code> | <code>*string</code> | The full, absolute path of this construct in the tree. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.property.root?lang=python\\">Root</a></code> | <code><a href=\\"/packages/constructs/v/99.99.99/api/IConstruct?lang=python\\">IConstruct</a></code> | Returns the root of the construct tree. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.property.scopes?lang=python\\">Scopes</a></code> | <code>[]<a href=\\"/packages/constructs/v/99.99.99/api/IConstruct?lang=python\\">IConstruct</a></code> | All parent scopes of this construct. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.property.scope?lang=python\\">Scope</a></code> | <code><a href=\\"/packages/constructs/v/99.99.99/api/IConstruct?lang=python\\">IConstruct</a></code> | Returns the scope in which this construct is defined. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.property.defaultChild?lang=python\\">DefaultChild</a></code> | <code><a href=\\"/packages/constructs/v/99.99.99/api/IConstruct?lang=python\\">IConstruct</a></code> | Returns the child construct that has the id \`Default\` or \`Resource\\"\`. |
+
+---
+
+##### \`Addr\`<sup>Required</sup> <a name=\\"Addr\\" id=\\"Node.property.addr\\"></a>
+
+\`\`\`go
+func Addr() *string
+\`\`\`
+
+- *Type:* *string
+
+Returns an opaque tree-unique address for this construct.
+
+Addresses are 42 characters hexadecimal strings. They begin with \\"c8\\" followed by 40 lowercase hexadecimal characters (0-9a-f).  Addresses are calculated using a SHA-1 of the components of the construct path.  To enable refactorings of construct trees, constructs with the ID \`Default\` will be excluded from the calculation. In those cases constructs in the same tree may have the same addreess.
+
+---
+
+##### \`Children\`<sup>Required</sup> <a name=\\"Children\\" id=\\"Node.property.children\\"></a>
+
+\`\`\`go
+func Children() []IConstruct
+\`\`\`
+
+- *Type:* []<a href=\\"/packages/constructs/v/99.99.99/api/IConstruct?lang=python\\">IConstruct</a>
+
+All direct children of this construct.
+
+---
+
+##### \`Dependencies\`<sup>Required</sup> <a name=\\"Dependencies\\" id=\\"Node.property.dependencies\\"></a>
+
+\`\`\`go
+func Dependencies() []IConstruct
+\`\`\`
+
+- *Type:* []<a href=\\"/packages/constructs/v/99.99.99/api/IConstruct?lang=python\\">IConstruct</a>
+
+Return all dependencies registered on this node (non-recursive).
+
+---
+
+##### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"Node.property.id\\"></a>
+
+\`\`\`go
+func Id() *string
+\`\`\`
+
+- *Type:* *string
+
+The id of this construct within the current scope.
+
+This is a a scope-unique id. To obtain an app-unique id for this construct, use \`addr\`.
+
+---
+
+##### \`Locked\`<sup>Required</sup> <a name=\\"Locked\\" id=\\"Node.property.locked\\"></a>
+
+\`\`\`go
+func Locked() *bool
+\`\`\`
+
+- *Type:* *bool
+
+Returns true if this construct or the scopes in which it is defined are locked.
+
+---
+
+##### \`Metadata\`<sup>Required</sup> <a name=\\"Metadata\\" id=\\"Node.property.metadata\\"></a>
+
+\`\`\`go
+func Metadata() []MetadataEntry
+\`\`\`
+
+- *Type:* []<a href=\\"/packages/constructs/v/99.99.99/api/MetadataEntry?lang=python\\">MetadataEntry</a>
+
+An immutable array of metadata objects associated with this construct.
+
+This can be used, for example, to implement support for deprecation notices, source mapping, etc.
+
+---
+
+##### \`Path\`<sup>Required</sup> <a name=\\"Path\\" id=\\"Node.property.path\\"></a>
+
+\`\`\`go
+func Path() *string
+\`\`\`
+
+- *Type:* *string
+
+The full, absolute path of this construct in the tree.
+
+Components are separated by '/'.
+
+---
+
+##### \`Root\`<sup>Required</sup> <a name=\\"Root\\" id=\\"Node.property.root\\"></a>
+
+\`\`\`go
+func Root() IConstruct
+\`\`\`
+
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/IConstruct?lang=python\\">IConstruct</a>
+
+Returns the root of the construct tree.
+
+---
+
+##### \`Scopes\`<sup>Required</sup> <a name=\\"Scopes\\" id=\\"Node.property.scopes\\"></a>
+
+\`\`\`go
+func Scopes() []IConstruct
+\`\`\`
+
+- *Type:* []<a href=\\"/packages/constructs/v/99.99.99/api/IConstruct?lang=python\\">IConstruct</a>
+
+All parent scopes of this construct.
+
+---
+
+##### \`Scope\`<sup>Optional</sup> <a name=\\"Scope\\" id=\\"Node.property.scope\\"></a>
+
+\`\`\`go
+func Scope() IConstruct
+\`\`\`
+
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/IConstruct?lang=python\\">IConstruct</a>
+
+Returns the scope in which this construct is defined.
+
+The value is \`undefined\` at the root of the construct scope tree.
+
+---
+
+##### \`DefaultChild\`<sup>Optional</sup> <a name=\\"DefaultChild\\" id=\\"Node.property.defaultChild\\"></a>
+
+\`\`\`go
+func DefaultChild() IConstruct
+\`\`\`
+
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/IConstruct?lang=python\\">IConstruct</a>
+
+Returns the child construct that has the id \`Default\` or \`Resource\\"\`.
+
+This is usually the construct that provides the bulk of the underlying functionality. Useful for modifications of the underlying construct that are not available at the higher levels. Override the defaultChild property.  This should only be used in the cases where the correct default child is not named 'Resource' or 'Default' as it should be.  If you set this to undefined, the default behavior of finding the child named 'Resource' or 'Default' will be used.
+
+---
+
+#### Constants <a name=\\"Constants\\" id=\\"Constants\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/Node.property.PATH_SEP?lang=python\\">PathSep</a></code> | <code>*string</code> | Separator used to delimit construct path components. |
+
+---
+
+##### \`PathSep\`<sup>Required</sup> <a name=\\"PathSep\\" id=\\"Node.property.PATH_SEP\\"></a>
+
+\`\`\`go
+func PathSep() *string
+\`\`\`
+
+- *Type:* *string
+
+Separator used to delimit construct path components.
+
+---
+
+## Protocols <a name=\\"Protocols\\" id=\\"Protocols\\"></a>
+
+### IConstruct <a name=\\"IConstruct\\" id=\\"IConstruct\\"></a>
+
+- *Extends:* <a href=\\"/packages/constructs/v/10.0.78/api/IDependable?lang=python\\">IDependable</a>
+
+- *Implemented By:* <a href=\\"/packages/constructs/v/10.0.78/api/Construct?lang=python\\">Construct</a>, <a href=\\"/packages/constructs/v/10.0.78/api/IConstruct?lang=python\\">IConstruct</a>
+
+Represents a construct.
+
+
+#### Properties <a name=\\"Properties\\" id=\\"Properties\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/IConstruct.property.node?lang=python\\">Node</a></code> | <code><a href=\\"/packages/constructs/v/99.99.99/api/Node?lang=python\\">Node</a></code> | The tree node. |
+
+---
+
+##### \`Node\`<sup>Required</sup> <a name=\\"Node\\" id=\\"IConstruct.property.node\\"></a>
+
+\`\`\`go
+func Node() Node
+\`\`\`
+
+- *Type:* <a href=\\"/packages/constructs/v/99.99.99/api/Node?lang=python\\">Node</a>
+
+The tree node.
+
+---
+
+### IDependable <a name=\\"IDependable\\" id=\\"IDependable\\"></a>
+
+- *Implemented By:* <a href=\\"/packages/constructs/v/10.0.78/api/Construct?lang=python\\">Construct</a>, <a href=\\"/packages/constructs/v/10.0.78/api/DependencyGroup?lang=python\\">DependencyGroup</a>, <a href=\\"/packages/constructs/v/10.0.78/api/IConstruct?lang=python\\">IConstruct</a>, <a href=\\"/packages/constructs/v/10.0.78/api/IDependable?lang=python\\">IDependable</a>
+
+Trait marker for classes that can be depended upon.
+
+The presence of this interface indicates that an object has an \`IDependableTrait\` implementation.  This interface can be used to take an (ordering) dependency on a set of constructs. An ordering dependency implies that the resources represented by those constructs are deployed before the resources depending ON them are deployed.
+
+
+
+### IValidation <a name=\\"IValidation\\" id=\\"IValidation\\"></a>
+
+- *Implemented By:* <a href=\\"/packages/constructs/v/10.0.78/api/IValidation?lang=python\\">IValidation</a>
+
+Implement this interface in order for the construct to be able to validate itself.
+
+Implement this interface in order for the construct to be able to validate itself.
+
+#### Methods <a name=\\"Methods\\" id=\\"Methods\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/IValidation.validate?lang=python\\">Validate</a></code> | Validate the current construct. |
+
+---
+
+##### \`Validate\` <a name=\\"Validate\\" id=\\"IValidation.validate\\"></a>
+
+\`\`\`go
+func Validate() []*string
+\`\`\`
+
+Validate the current construct.
+
+This method can be implemented by derived constructs in order to perform validation logic. It is called on all constructs before synthesis. Validate the current construct.  This method can be implemented by derived constructs in order to perform validation logic. It is called on all constructs before synthesis.
+
+
+## Enums <a name=\\"Enums\\" id=\\"Enums\\"></a>
+
+### ConstructOrder <a name=\\"ConstructOrder\\" id=\\"ConstructOrder\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/ConstructOrder.PREORDER?lang=python\\">PREORDER</a></code> | Depth-first, pre-order. |
+| <code><a href=\\"/packages/constructs/v/10.0.78/api/ConstructOrder.POSTORDER?lang=python\\">POSTORDER</a></code> | Depth-first, post-order (leaf nodes first). |
+
+---
+
+In what order to return constructs.
+
+#### \`PREORDER\` <a name=\\"PREORDER\\" id=\\"ConstructOrder.PREORDER\\"></a>
+
+Depth-first, pre-order.
+
+---
+
+
+#### \`POSTORDER\` <a name=\\"POSTORDER\\" id=\\"ConstructOrder.POSTORDER\\"></a>
+
+Depth-first, post-order (leaf nodes first).
+
+---
+
+"
+`;
+
 exports[`complex link formatter java snapshot 1`] = `
 "# Amazon ECR Construct Library
 
@@ -26064,6 +27040,982 @@ Rule applies to tagged images.
 #### \`UNTAGGED\` <a name=\\"UNTAGGED\\" id=\\"@aws-cdk/aws-ecr.TagStatus.UNTAGGED\\"></a>
 
 Rule applies to untagged images.
+
+---
+
+"
+`;
+
+exports[`simple link formatter go snapshot 1`] = `
+"# Constructs
+
+> Software-defined persistent state
+
+![Release](https://github.com/aws/constructs/workflows/Release/badge.svg)
+[![npm version](https://badge.fury.io/js/constructs.svg)](https://badge.fury.io/js/constructs)
+[![PyPI version](https://badge.fury.io/py/constructs.svg)](https://badge.fury.io/py/constructs)
+[![NuGet version](https://badge.fury.io/nu/Constructs.svg)](https://badge.fury.io/nu/Constructs)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/software.constructs/constructs/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/software.constructs/constructs)
+
+## What are constructs?
+
+Constructs are classes which define a \\"piece of system state\\". Constructs can be composed together to form higher-level building blocks which represent more complex state.
+
+Constructs are often used to represent the _desired state_ of cloud applications. For example, in the AWS CDK, which is used to define the desired state for AWS infrastructure using CloudFormation, the lowest-level construct represents a _resource definition_ in a CloudFormation template. These resources are composed to represent higher-level logical units of a cloud application, etc.
+
+## Contributing
+
+This project has adopted the [Amazon Open Source Code of
+Conduct](https://aws.github.io/code-of-conduct).
+
+We welcome community contributions and pull requests. See our [contribution
+guide](./CONTRIBUTING.md) for more information on how to report issues, set up a
+development environment and submit code.
+
+## License
+
+This project is distributed under the [Apache License, Version 2.0](./LICENSE).
+
+# API Reference <a name=\\"API Reference\\" id=\\"api-reference\\"></a>
+
+## Constructs <a name=\\"Constructs\\" id=\\"Constructs\\"></a>
+
+### Construct <a name=\\"Construct\\" id=\\"constructs.Construct\\"></a>
+
+- *Implements:* <a href=\\"#custom-constructs.IConstruct\\">IConstruct</a>
+
+Represents the building block of the construct graph.
+
+All constructs besides the root construct must be created within the scope of another construct.
+
+#### Initializers <a name=\\"Initializers\\" id=\\"constructs.Construct.Initializer\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+constructs.NewConstruct(scope Construct, id *string);
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#custom-constructs.Construct.Initializer.parameter.scope\\">scope</a></code> | <code><a href=\\"#custom-constructs.Construct\\">Construct</a></code> | The scope in which to define this construct. |
+| <code><a href=\\"#custom-constructs.Construct.Initializer.parameter.id\\">id</a></code> | <code>*string</code> | The scoped construct ID. |
+
+---
+
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"constructs.Construct.Initializer.parameter.scope\\"></a>
+
+- *Type:* <a href=\\"#custom-constructs.Construct\\">Construct</a>
+
+The scope in which to define this construct.
+
+---
+
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"constructs.Construct.Initializer.parameter.id\\"></a>
+
+- *Type:* *string
+
+The scoped construct ID.
+
+Must be unique amongst siblings. If the ID includes a path separator (\`/\`), then it will be replaced by double dash \`--\`.
+
+---
+
+#### Methods <a name=\\"Methods\\" id=\\"Methods\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#custom-constructs.Construct.toString\\">ToString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### \`ToString\` <a name=\\"ToString\\" id=\\"constructs.Construct.toString\\"></a>
+
+\`\`\`go
+func ToString() *string
+\`\`\`
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name=\\"Static Functions\\" id=\\"Static Functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#custom-constructs.Construct.isConstruct\\">IsConstruct</a></code> | Checks if \`x\` is a construct. |
+
+---
+
+##### ~~\`IsConstruct\`~~ <a name=\\"IsConstruct\\" id=\\"constructs.Construct.isConstruct\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+constructs.Construct_IsConstruct(x interface{});
+\`\`\`
+
+Checks if \`x\` is a construct.
+
+###### \`x\`<sup>Required</sup> <a name=\\"x\\" id=\\"constructs.Construct.isConstruct.parameter.x\\"></a>
+
+- *Type:* interface{}
+
+Any object.
+
+---
+
+#### Properties <a name=\\"Properties\\" id=\\"Properties\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#custom-constructs.Construct.property.node\\">Node</a></code> | <code><a href=\\"#custom-constructs.Node\\">Node</a></code> | The tree node. |
+
+---
+
+##### \`Node\`<sup>Required</sup> <a name=\\"Node\\" id=\\"constructs.Construct.property.node\\"></a>
+
+\`\`\`go
+func Node() Node
+\`\`\`
+
+- *Type:* <a href=\\"#custom-constructs.Node\\">Node</a>
+
+The tree node.
+
+---
+
+
+## Structs <a name=\\"Structs\\" id=\\"Structs\\"></a>
+
+### MetadataEntry <a name=\\"MetadataEntry\\" id=\\"constructs.MetadataEntry\\"></a>
+
+An entry in the construct metadata table.
+
+#### Initializer <a name=\\"Initializer\\" id=\\"constructs.MetadataEntry.Initializer\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+&constructs.MetadataEntry {
+	Data: interface{},
+	Type: *string,
+	Trace: []*string,
+}
+\`\`\`
+
+#### Properties <a name=\\"Properties\\" id=\\"Properties\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#custom-constructs.MetadataEntry.property.data\\">Data</a></code> | <code>interface{}</code> | The data. |
+| <code><a href=\\"#custom-constructs.MetadataEntry.property.type\\">Type</a></code> | <code>*string</code> | The metadata entry type. |
+| <code><a href=\\"#custom-constructs.MetadataEntry.property.trace\\">Trace</a></code> | <code>[]*string</code> | Stack trace at the point of adding the metadata. |
+
+---
+
+##### \`Data\`<sup>Required</sup> <a name=\\"Data\\" id=\\"constructs.MetadataEntry.property.data\\"></a>
+
+\`\`\`go
+func Data() interface{}
+\`\`\`
+
+- *Type:* interface{}
+
+The data.
+
+---
+
+##### \`Type\`<sup>Required</sup> <a name=\\"Type\\" id=\\"constructs.MetadataEntry.property.type\\"></a>
+
+\`\`\`go
+func Type() *string
+\`\`\`
+
+- *Type:* *string
+
+The metadata entry type.
+
+---
+
+##### \`Trace\`<sup>Optional</sup> <a name=\\"Trace\\" id=\\"constructs.MetadataEntry.property.trace\\"></a>
+
+\`\`\`go
+func Trace() []*string
+\`\`\`
+
+- *Type:* []*string
+- *Default:* no trace information
+
+Stack trace at the point of adding the metadata.
+
+Only available if \`addMetadata()\` is called with \`stackTrace: true\`.
+
+---
+
+### MetadataOptions <a name=\\"MetadataOptions\\" id=\\"constructs.MetadataOptions\\"></a>
+
+Options for \`construct.addMetadata()\`.
+
+#### Initializer <a name=\\"Initializer\\" id=\\"constructs.MetadataOptions.Initializer\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+&constructs.MetadataOptions {
+	StackTrace: *bool,
+	TraceFromFunction: interface{},
+}
+\`\`\`
+
+#### Properties <a name=\\"Properties\\" id=\\"Properties\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#custom-constructs.MetadataOptions.property.stackTrace\\">StackTrace</a></code> | <code>*bool</code> | Include stack trace with metadata entry. |
+| <code><a href=\\"#custom-constructs.MetadataOptions.property.traceFromFunction\\">TraceFromFunction</a></code> | <code>interface{}</code> | A JavaScript function to begin tracing from. |
+
+---
+
+##### \`StackTrace\`<sup>Optional</sup> <a name=\\"StackTrace\\" id=\\"constructs.MetadataOptions.property.stackTrace\\"></a>
+
+\`\`\`go
+func StackTrace() *bool
+\`\`\`
+
+- *Type:* *bool
+- *Default:* false
+
+Include stack trace with metadata entry.
+
+---
+
+##### \`TraceFromFunction\`<sup>Optional</sup> <a name=\\"TraceFromFunction\\" id=\\"constructs.MetadataOptions.property.traceFromFunction\\"></a>
+
+\`\`\`go
+func TraceFromFunction() interface{}
+\`\`\`
+
+- *Type:* interface{}
+- *Default:* addMetadata()
+
+A JavaScript function to begin tracing from.
+
+This option is ignored unless \`stackTrace\` is \`true\`.
+
+---
+
+## Classes <a name=\\"Classes\\" id=\\"Classes\\"></a>
+
+### Dependable <a name=\\"Dependable\\" id=\\"constructs.Dependable\\"></a>
+
+Trait for IDependable.
+
+Traits are interfaces that are privately implemented by objects. Instead of showing up in the public interface of a class, they need to be queried explicitly. This is used to implement certain framework features that are not intended to be used by Construct consumers, and so should be hidden from accidental use.
+
+#### Initializers <a name=\\"Initializers\\" id=\\"constructs.Dependable.Initializer\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+constructs.NewDependable();
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+
+#### Static Functions <a name=\\"Static Functions\\" id=\\"Static Functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#custom-constructs.Dependable.get\\">Get</a></code> | Return the matching Dependable for the given class instance. |
+| <code><a href=\\"#custom-constructs.Dependable.implement\\">Implement</a></code> | Turn any object into an IDependable. |
+| <code><a href=\\"#custom-constructs.Dependable.of\\">Of</a></code> | Return the matching Dependable for the given class instance. |
+
+---
+
+##### ~~\`Get\`~~ <a name=\\"Get\\" id=\\"constructs.Dependable.get\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+constructs.Dependable_Get(instance IDependable);
+\`\`\`
+
+Return the matching Dependable for the given class instance.
+
+###### \`instance\`<sup>Required</sup> <a name=\\"instance\\" id=\\"constructs.Dependable.get.parameter.instance\\"></a>
+
+- *Type:* <a href=\\"#custom-constructs.IDependable\\">IDependable</a>
+
+---
+
+##### \`Implement\` <a name=\\"Implement\\" id=\\"constructs.Dependable.implement\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+constructs.Dependable_Implement(instance IDependable, trait Dependable);
+\`\`\`
+
+Turn any object into an IDependable.
+
+###### \`instance\`<sup>Required</sup> <a name=\\"instance\\" id=\\"constructs.Dependable.implement.parameter.instance\\"></a>
+
+- *Type:* <a href=\\"#custom-constructs.IDependable\\">IDependable</a>
+
+---
+
+###### \`trait\`<sup>Required</sup> <a name=\\"trait\\" id=\\"constructs.Dependable.implement.parameter.trait\\"></a>
+
+- *Type:* <a href=\\"#custom-constructs.Dependable\\">Dependable</a>
+
+---
+
+##### \`Of\` <a name=\\"Of\\" id=\\"constructs.Dependable.of\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+constructs.Dependable_Of(instance IDependable);
+\`\`\`
+
+Return the matching Dependable for the given class instance.
+
+###### \`instance\`<sup>Required</sup> <a name=\\"instance\\" id=\\"constructs.Dependable.of.parameter.instance\\"></a>
+
+- *Type:* <a href=\\"#custom-constructs.IDependable\\">IDependable</a>
+
+---
+
+#### Properties <a name=\\"Properties\\" id=\\"Properties\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#custom-constructs.Dependable.property.dependencyRoots\\">DependencyRoots</a></code> | <code>[]<a href=\\"#custom-constructs.IConstruct\\">IConstruct</a></code> | The set of constructs that form the root of this dependable. |
+
+---
+
+##### \`DependencyRoots\`<sup>Required</sup> <a name=\\"DependencyRoots\\" id=\\"constructs.Dependable.property.dependencyRoots\\"></a>
+
+\`\`\`go
+func DependencyRoots() []IConstruct
+\`\`\`
+
+- *Type:* []<a href=\\"#custom-constructs.IConstruct\\">IConstruct</a>
+
+The set of constructs that form the root of this dependable.
+
+All resources under all returned constructs are included in the ordering dependency.
+
+---
+
+
+### DependencyGroup <a name=\\"DependencyGroup\\" id=\\"constructs.DependencyGroup\\"></a>
+
+- *Implements:* <a href=\\"#custom-constructs.IDependable\\">IDependable</a>
+
+A set of constructs to be used as a dependable.
+
+This class can be used when a set of constructs which are disjoint in the construct tree needs to be combined to be used as a single dependable.
+
+#### Initializers <a name=\\"Initializers\\" id=\\"constructs.DependencyGroup.Initializer\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+constructs.NewDependencyGroup(deps IDependable);
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#custom-constructs.DependencyGroup.Initializer.parameter.deps\\">deps</a></code> | <code><a href=\\"#custom-constructs.IDependable\\">IDependable</a></code> | *No description.* |
+
+---
+
+##### \`deps\`<sup>Required</sup> <a name=\\"deps\\" id=\\"constructs.DependencyGroup.Initializer.parameter.deps\\"></a>
+
+- *Type:* <a href=\\"#custom-constructs.IDependable\\">IDependable</a>
+
+---
+
+#### Methods <a name=\\"Methods\\" id=\\"Methods\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#custom-constructs.DependencyGroup.add\\">Add</a></code> | Add a construct to the dependency roots. |
+
+---
+
+##### \`Add\` <a name=\\"Add\\" id=\\"constructs.DependencyGroup.add\\"></a>
+
+\`\`\`go
+func Add(scopes IDependable)
+\`\`\`
+
+Add a construct to the dependency roots.
+
+###### \`scopes\`<sup>Required</sup> <a name=\\"scopes\\" id=\\"constructs.DependencyGroup.add.parameter.scopes\\"></a>
+
+- *Type:* <a href=\\"#custom-constructs.IDependable\\">IDependable</a>
+
+---
+
+
+
+
+### Node <a name=\\"Node\\" id=\\"constructs.Node\\"></a>
+
+Represents the construct node in the scope tree.
+
+#### Initializers <a name=\\"Initializers\\" id=\\"constructs.Node.Initializer\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+constructs.NewNode(host Construct, scope IConstruct, id *string);
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#custom-constructs.Node.Initializer.parameter.host\\">host</a></code> | <code><a href=\\"#custom-constructs.Construct\\">Construct</a></code> | *No description.* |
+| <code><a href=\\"#custom-constructs.Node.Initializer.parameter.scope\\">scope</a></code> | <code><a href=\\"#custom-constructs.IConstruct\\">IConstruct</a></code> | *No description.* |
+| <code><a href=\\"#custom-constructs.Node.Initializer.parameter.id\\">id</a></code> | <code>*string</code> | *No description.* |
+
+---
+
+##### \`host\`<sup>Required</sup> <a name=\\"host\\" id=\\"constructs.Node.Initializer.parameter.host\\"></a>
+
+- *Type:* <a href=\\"#custom-constructs.Construct\\">Construct</a>
+
+---
+
+##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"constructs.Node.Initializer.parameter.scope\\"></a>
+
+- *Type:* <a href=\\"#custom-constructs.IConstruct\\">IConstruct</a>
+
+---
+
+##### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"constructs.Node.Initializer.parameter.id\\"></a>
+
+- *Type:* *string
+
+---
+
+#### Methods <a name=\\"Methods\\" id=\\"Methods\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#custom-constructs.Node.addDependency\\">AddDependency</a></code> | Add an ordering dependency on another construct. |
+| <code><a href=\\"#custom-constructs.Node.addMetadata\\">AddMetadata</a></code> | Adds a metadata entry to this construct. |
+| <code><a href=\\"#custom-constructs.Node.addValidation\\">AddValidation</a></code> | Adds a validation to this construct. |
+| <code><a href=\\"#custom-constructs.Node.findAll\\">FindAll</a></code> | Return this construct and all of its children in the given order. |
+| <code><a href=\\"#custom-constructs.Node.findChild\\">FindChild</a></code> | Return a direct child by id. |
+| <code><a href=\\"#custom-constructs.Node.lock\\">Lock</a></code> | Locks this construct from allowing more children to be added. |
+| <code><a href=\\"#custom-constructs.Node.setContext\\">SetContext</a></code> | This can be used to set contextual values. |
+| <code><a href=\\"#custom-constructs.Node.tryFindChild\\">TryFindChild</a></code> | Return a direct child by id, or undefined. |
+| <code><a href=\\"#custom-constructs.Node.tryGetContext\\">TryGetContext</a></code> | Retrieves a value from tree context. |
+| <code><a href=\\"#custom-constructs.Node.tryRemoveChild\\">TryRemoveChild</a></code> | Remove the child with the given name, if present. |
+| <code><a href=\\"#custom-constructs.Node.validate\\">Validate</a></code> | Validates this construct. |
+
+---
+
+##### \`AddDependency\` <a name=\\"AddDependency\\" id=\\"constructs.Node.addDependency\\"></a>
+
+\`\`\`go
+func AddDependency(deps IDependable)
+\`\`\`
+
+Add an ordering dependency on another construct.
+
+An \`IDependable\`
+
+###### \`deps\`<sup>Required</sup> <a name=\\"deps\\" id=\\"constructs.Node.addDependency.parameter.deps\\"></a>
+
+- *Type:* <a href=\\"#custom-constructs.IDependable\\">IDependable</a>
+
+---
+
+##### \`AddMetadata\` <a name=\\"AddMetadata\\" id=\\"constructs.Node.addMetadata\\"></a>
+
+\`\`\`go
+func AddMetadata(type *string, data interface{}, options MetadataOptions)
+\`\`\`
+
+Adds a metadata entry to this construct.
+
+Entries are arbitrary values and will also include a stack trace to allow tracing back to the code location for when the entry was added. It can be used, for example, to include source mapping in CloudFormation templates to improve diagnostics.
+
+###### \`type\`<sup>Required</sup> <a name=\\"type\\" id=\\"constructs.Node.addMetadata.parameter.type\\"></a>
+
+- *Type:* *string
+
+a string denoting the type of metadata.
+
+---
+
+###### \`data\`<sup>Required</sup> <a name=\\"data\\" id=\\"constructs.Node.addMetadata.parameter.data\\"></a>
+
+- *Type:* interface{}
+
+the value of the metadata (can be a Token).
+
+If null/undefined, metadata will not be added.
+
+---
+
+###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"constructs.Node.addMetadata.parameter.options\\"></a>
+
+- *Type:* <a href=\\"#custom-constructs.MetadataOptions\\">MetadataOptions</a>
+
+options.
+
+---
+
+##### \`AddValidation\` <a name=\\"AddValidation\\" id=\\"constructs.Node.addValidation\\"></a>
+
+\`\`\`go
+func AddValidation(validation IValidation)
+\`\`\`
+
+Adds a validation to this construct.
+
+When \`node.validate()\` is called, the \`validate()\` method will be called on all validations and all errors will be returned.
+
+###### \`validation\`<sup>Required</sup> <a name=\\"validation\\" id=\\"constructs.Node.addValidation.parameter.validation\\"></a>
+
+- *Type:* <a href=\\"#custom-constructs.IValidation\\">IValidation</a>
+
+The validation object.
+
+---
+
+##### \`FindAll\` <a name=\\"FindAll\\" id=\\"constructs.Node.findAll\\"></a>
+
+\`\`\`go
+func FindAll(order ConstructOrder) []IConstruct
+\`\`\`
+
+Return this construct and all of its children in the given order.
+
+###### \`order\`<sup>Optional</sup> <a name=\\"order\\" id=\\"constructs.Node.findAll.parameter.order\\"></a>
+
+- *Type:* <a href=\\"#custom-constructs.ConstructOrder\\">ConstructOrder</a>
+
+---
+
+##### \`FindChild\` <a name=\\"FindChild\\" id=\\"constructs.Node.findChild\\"></a>
+
+\`\`\`go
+func FindChild(id *string) IConstruct
+\`\`\`
+
+Return a direct child by id.
+
+Throws an error if the child is not found.
+
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"constructs.Node.findChild.parameter.id\\"></a>
+
+- *Type:* *string
+
+Identifier of direct child.
+
+---
+
+##### \`Lock\` <a name=\\"Lock\\" id=\\"constructs.Node.lock\\"></a>
+
+\`\`\`go
+func Lock()
+\`\`\`
+
+Locks this construct from allowing more children to be added.
+
+After this call, no more children can be added to this construct or to any children.
+
+##### \`SetContext\` <a name=\\"SetContext\\" id=\\"constructs.Node.setContext\\"></a>
+
+\`\`\`go
+func SetContext(key *string, value interface{})
+\`\`\`
+
+This can be used to set contextual values.
+
+Context must be set before any children are added, since children may consult context info during construction. If the key already exists, it will be overridden.
+
+###### \`key\`<sup>Required</sup> <a name=\\"key\\" id=\\"constructs.Node.setContext.parameter.key\\"></a>
+
+- *Type:* *string
+
+The context key.
+
+---
+
+###### \`value\`<sup>Required</sup> <a name=\\"value\\" id=\\"constructs.Node.setContext.parameter.value\\"></a>
+
+- *Type:* interface{}
+
+The context value.
+
+---
+
+##### \`TryFindChild\` <a name=\\"TryFindChild\\" id=\\"constructs.Node.tryFindChild\\"></a>
+
+\`\`\`go
+func TryFindChild(id *string) IConstruct
+\`\`\`
+
+Return a direct child by id, or undefined.
+
+###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"constructs.Node.tryFindChild.parameter.id\\"></a>
+
+- *Type:* *string
+
+Identifier of direct child.
+
+---
+
+##### \`TryGetContext\` <a name=\\"TryGetContext\\" id=\\"constructs.Node.tryGetContext\\"></a>
+
+\`\`\`go
+func TryGetContext(key *string) interface{}
+\`\`\`
+
+Retrieves a value from tree context.
+
+Context is usually initialized at the root, but can be overridden at any point in the tree.
+
+###### \`key\`<sup>Required</sup> <a name=\\"key\\" id=\\"constructs.Node.tryGetContext.parameter.key\\"></a>
+
+- *Type:* *string
+
+The context key.
+
+---
+
+##### \`TryRemoveChild\` <a name=\\"TryRemoveChild\\" id=\\"constructs.Node.tryRemoveChild\\"></a>
+
+\`\`\`go
+func TryRemoveChild(childName *string) *bool
+\`\`\`
+
+Remove the child with the given name, if present.
+
+###### \`childName\`<sup>Required</sup> <a name=\\"childName\\" id=\\"constructs.Node.tryRemoveChild.parameter.childName\\"></a>
+
+- *Type:* *string
+
+---
+
+##### \`Validate\` <a name=\\"Validate\\" id=\\"constructs.Node.validate\\"></a>
+
+\`\`\`go
+func Validate() []*string
+\`\`\`
+
+Validates this construct.
+
+Invokes the \`validate()\` method on all validations added through \`addValidation()\`.
+
+#### Static Functions <a name=\\"Static Functions\\" id=\\"Static Functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#custom-constructs.Node.of\\">Of</a></code> | Returns the node associated with a construct. |
+
+---
+
+##### ~~\`Of\`~~ <a name=\\"Of\\" id=\\"constructs.Node.of\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/constructs-go/constructs/v10\\"
+
+constructs.Node_Of(construct IConstruct);
+\`\`\`
+
+Returns the node associated with a construct.
+
+###### \`construct\`<sup>Required</sup> <a name=\\"construct\\" id=\\"constructs.Node.of.parameter.construct\\"></a>
+
+- *Type:* <a href=\\"#custom-constructs.IConstruct\\">IConstruct</a>
+
+the construct.
+
+---
+
+#### Properties <a name=\\"Properties\\" id=\\"Properties\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#custom-constructs.Node.property.addr\\">Addr</a></code> | <code>*string</code> | Returns an opaque tree-unique address for this construct. |
+| <code><a href=\\"#custom-constructs.Node.property.children\\">Children</a></code> | <code>[]<a href=\\"#custom-constructs.IConstruct\\">IConstruct</a></code> | All direct children of this construct. |
+| <code><a href=\\"#custom-constructs.Node.property.dependencies\\">Dependencies</a></code> | <code>[]<a href=\\"#custom-constructs.IConstruct\\">IConstruct</a></code> | Return all dependencies registered on this node (non-recursive). |
+| <code><a href=\\"#custom-constructs.Node.property.id\\">Id</a></code> | <code>*string</code> | The id of this construct within the current scope. |
+| <code><a href=\\"#custom-constructs.Node.property.locked\\">Locked</a></code> | <code>*bool</code> | Returns true if this construct or the scopes in which it is defined are locked. |
+| <code><a href=\\"#custom-constructs.Node.property.metadata\\">Metadata</a></code> | <code>[]<a href=\\"#custom-constructs.MetadataEntry\\">MetadataEntry</a></code> | An immutable array of metadata objects associated with this construct. |
+| <code><a href=\\"#custom-constructs.Node.property.path\\">Path</a></code> | <code>*string</code> | The full, absolute path of this construct in the tree. |
+| <code><a href=\\"#custom-constructs.Node.property.root\\">Root</a></code> | <code><a href=\\"#custom-constructs.IConstruct\\">IConstruct</a></code> | Returns the root of the construct tree. |
+| <code><a href=\\"#custom-constructs.Node.property.scopes\\">Scopes</a></code> | <code>[]<a href=\\"#custom-constructs.IConstruct\\">IConstruct</a></code> | All parent scopes of this construct. |
+| <code><a href=\\"#custom-constructs.Node.property.scope\\">Scope</a></code> | <code><a href=\\"#custom-constructs.IConstruct\\">IConstruct</a></code> | Returns the scope in which this construct is defined. |
+| <code><a href=\\"#custom-constructs.Node.property.defaultChild\\">DefaultChild</a></code> | <code><a href=\\"#custom-constructs.IConstruct\\">IConstruct</a></code> | Returns the child construct that has the id \`Default\` or \`Resource\\"\`. |
+
+---
+
+##### \`Addr\`<sup>Required</sup> <a name=\\"Addr\\" id=\\"constructs.Node.property.addr\\"></a>
+
+\`\`\`go
+func Addr() *string
+\`\`\`
+
+- *Type:* *string
+
+Returns an opaque tree-unique address for this construct.
+
+Addresses are 42 characters hexadecimal strings. They begin with \\"c8\\" followed by 40 lowercase hexadecimal characters (0-9a-f).  Addresses are calculated using a SHA-1 of the components of the construct path.  To enable refactorings of construct trees, constructs with the ID \`Default\` will be excluded from the calculation. In those cases constructs in the same tree may have the same addreess.
+
+---
+
+##### \`Children\`<sup>Required</sup> <a name=\\"Children\\" id=\\"constructs.Node.property.children\\"></a>
+
+\`\`\`go
+func Children() []IConstruct
+\`\`\`
+
+- *Type:* []<a href=\\"#custom-constructs.IConstruct\\">IConstruct</a>
+
+All direct children of this construct.
+
+---
+
+##### \`Dependencies\`<sup>Required</sup> <a name=\\"Dependencies\\" id=\\"constructs.Node.property.dependencies\\"></a>
+
+\`\`\`go
+func Dependencies() []IConstruct
+\`\`\`
+
+- *Type:* []<a href=\\"#custom-constructs.IConstruct\\">IConstruct</a>
+
+Return all dependencies registered on this node (non-recursive).
+
+---
+
+##### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"constructs.Node.property.id\\"></a>
+
+\`\`\`go
+func Id() *string
+\`\`\`
+
+- *Type:* *string
+
+The id of this construct within the current scope.
+
+This is a a scope-unique id. To obtain an app-unique id for this construct, use \`addr\`.
+
+---
+
+##### \`Locked\`<sup>Required</sup> <a name=\\"Locked\\" id=\\"constructs.Node.property.locked\\"></a>
+
+\`\`\`go
+func Locked() *bool
+\`\`\`
+
+- *Type:* *bool
+
+Returns true if this construct or the scopes in which it is defined are locked.
+
+---
+
+##### \`Metadata\`<sup>Required</sup> <a name=\\"Metadata\\" id=\\"constructs.Node.property.metadata\\"></a>
+
+\`\`\`go
+func Metadata() []MetadataEntry
+\`\`\`
+
+- *Type:* []<a href=\\"#custom-constructs.MetadataEntry\\">MetadataEntry</a>
+
+An immutable array of metadata objects associated with this construct.
+
+This can be used, for example, to implement support for deprecation notices, source mapping, etc.
+
+---
+
+##### \`Path\`<sup>Required</sup> <a name=\\"Path\\" id=\\"constructs.Node.property.path\\"></a>
+
+\`\`\`go
+func Path() *string
+\`\`\`
+
+- *Type:* *string
+
+The full, absolute path of this construct in the tree.
+
+Components are separated by '/'.
+
+---
+
+##### \`Root\`<sup>Required</sup> <a name=\\"Root\\" id=\\"constructs.Node.property.root\\"></a>
+
+\`\`\`go
+func Root() IConstruct
+\`\`\`
+
+- *Type:* <a href=\\"#custom-constructs.IConstruct\\">IConstruct</a>
+
+Returns the root of the construct tree.
+
+---
+
+##### \`Scopes\`<sup>Required</sup> <a name=\\"Scopes\\" id=\\"constructs.Node.property.scopes\\"></a>
+
+\`\`\`go
+func Scopes() []IConstruct
+\`\`\`
+
+- *Type:* []<a href=\\"#custom-constructs.IConstruct\\">IConstruct</a>
+
+All parent scopes of this construct.
+
+---
+
+##### \`Scope\`<sup>Optional</sup> <a name=\\"Scope\\" id=\\"constructs.Node.property.scope\\"></a>
+
+\`\`\`go
+func Scope() IConstruct
+\`\`\`
+
+- *Type:* <a href=\\"#custom-constructs.IConstruct\\">IConstruct</a>
+
+Returns the scope in which this construct is defined.
+
+The value is \`undefined\` at the root of the construct scope tree.
+
+---
+
+##### \`DefaultChild\`<sup>Optional</sup> <a name=\\"DefaultChild\\" id=\\"constructs.Node.property.defaultChild\\"></a>
+
+\`\`\`go
+func DefaultChild() IConstruct
+\`\`\`
+
+- *Type:* <a href=\\"#custom-constructs.IConstruct\\">IConstruct</a>
+
+Returns the child construct that has the id \`Default\` or \`Resource\\"\`.
+
+This is usually the construct that provides the bulk of the underlying functionality. Useful for modifications of the underlying construct that are not available at the higher levels. Override the defaultChild property.  This should only be used in the cases where the correct default child is not named 'Resource' or 'Default' as it should be.  If you set this to undefined, the default behavior of finding the child named 'Resource' or 'Default' will be used.
+
+---
+
+#### Constants <a name=\\"Constants\\" id=\\"Constants\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#custom-constructs.Node.property.PATH_SEP\\">PathSep</a></code> | <code>*string</code> | Separator used to delimit construct path components. |
+
+---
+
+##### \`PathSep\`<sup>Required</sup> <a name=\\"PathSep\\" id=\\"constructs.Node.property.PATH_SEP\\"></a>
+
+\`\`\`go
+func PathSep() *string
+\`\`\`
+
+- *Type:* *string
+
+Separator used to delimit construct path components.
+
+---
+
+## Protocols <a name=\\"Protocols\\" id=\\"Protocols\\"></a>
+
+### IConstruct <a name=\\"IConstruct\\" id=\\"constructs.IConstruct\\"></a>
+
+- *Extends:* <a href=\\"#custom-constructs.IDependable\\">IDependable</a>
+
+- *Implemented By:* <a href=\\"#custom-constructs.Construct\\">Construct</a>, <a href=\\"#custom-constructs.IConstruct\\">IConstruct</a>
+
+Represents a construct.
+
+
+#### Properties <a name=\\"Properties\\" id=\\"Properties\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#custom-constructs.IConstruct.property.node\\">Node</a></code> | <code><a href=\\"#custom-constructs.Node\\">Node</a></code> | The tree node. |
+
+---
+
+##### \`Node\`<sup>Required</sup> <a name=\\"Node\\" id=\\"constructs.IConstruct.property.node\\"></a>
+
+\`\`\`go
+func Node() Node
+\`\`\`
+
+- *Type:* <a href=\\"#custom-constructs.Node\\">Node</a>
+
+The tree node.
+
+---
+
+### IDependable <a name=\\"IDependable\\" id=\\"constructs.IDependable\\"></a>
+
+- *Implemented By:* <a href=\\"#custom-constructs.Construct\\">Construct</a>, <a href=\\"#custom-constructs.DependencyGroup\\">DependencyGroup</a>, <a href=\\"#custom-constructs.IConstruct\\">IConstruct</a>, <a href=\\"#custom-constructs.IDependable\\">IDependable</a>
+
+Trait marker for classes that can be depended upon.
+
+The presence of this interface indicates that an object has an \`IDependableTrait\` implementation.  This interface can be used to take an (ordering) dependency on a set of constructs. An ordering dependency implies that the resources represented by those constructs are deployed before the resources depending ON them are deployed.
+
+
+
+### IValidation <a name=\\"IValidation\\" id=\\"constructs.IValidation\\"></a>
+
+- *Implemented By:* <a href=\\"#custom-constructs.IValidation\\">IValidation</a>
+
+Implement this interface in order for the construct to be able to validate itself.
+
+Implement this interface in order for the construct to be able to validate itself.
+
+#### Methods <a name=\\"Methods\\" id=\\"Methods\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#custom-constructs.IValidation.validate\\">Validate</a></code> | Validate the current construct. |
+
+---
+
+##### \`Validate\` <a name=\\"Validate\\" id=\\"constructs.IValidation.validate\\"></a>
+
+\`\`\`go
+func Validate() []*string
+\`\`\`
+
+Validate the current construct.
+
+This method can be implemented by derived constructs in order to perform validation logic. It is called on all constructs before synthesis. Validate the current construct.  This method can be implemented by derived constructs in order to perform validation logic. It is called on all constructs before synthesis.
+
+
+## Enums <a name=\\"Enums\\" id=\\"Enums\\"></a>
+
+### ConstructOrder <a name=\\"ConstructOrder\\" id=\\"constructs.ConstructOrder\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#custom-constructs.ConstructOrder.PREORDER\\">PREORDER</a></code> | Depth-first, pre-order. |
+| <code><a href=\\"#custom-constructs.ConstructOrder.POSTORDER\\">POSTORDER</a></code> | Depth-first, post-order (leaf nodes first). |
+
+---
+
+In what order to return constructs.
+
+#### \`PREORDER\` <a name=\\"PREORDER\\" id=\\"constructs.ConstructOrder.PREORDER\\"></a>
+
+Depth-first, pre-order.
+
+---
+
+
+#### \`POSTORDER\` <a name=\\"POSTORDER\\" id=\\"constructs.ConstructOrder.POSTORDER\\"></a>
+
+Depth-first, post-order (leaf nodes first).
 
 ---
 

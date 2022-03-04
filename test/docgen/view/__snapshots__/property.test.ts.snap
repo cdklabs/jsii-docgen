@@ -37,6 +37,43 @@ public object RepositoryCatalogData { get; set; }
 "
 `;
 
+exports[`go snapshot 1`] = `
+Object {
+  "default": undefined,
+  "displayName": "RepositoryCatalogData",
+  "docs": Object {
+    "links": Array [
+      "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata",
+    ],
+    "summary": "\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.",
+  },
+  "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.CfnPublicRepositoryProps.property.RepositoryCatalogData",
+  "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData",
+  "optional": true,
+  "type": Object {
+    "formattingPattern": "interface{}",
+  },
+  "usage": "func RepositoryCatalogData() interface{}",
+}
+`;
+
+exports[`go snapshot 2`] = `
+" \`RepositoryCatalogData\`<sup>Optional</sup> <a name=\\"RepositoryCatalogData\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
+
+\`\`\`go
+func RepositoryCatalogData() interface{}
+\`\`\`
+
+- *Type:* interface{}
+
+\`AWS::ECR::PublicRepository.RepositoryCatalogData\`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata)
+
+---
+"
+`;
+
 exports[`java snapshot 1`] = `
 Object {
   "default": undefined,
