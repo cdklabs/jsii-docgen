@@ -548,7 +548,7 @@
     chalk "^4.1.2"
     semver "^7.3.5"
 
-"@jsii/spec@1.55.0", "@jsii/spec@^1.54.0", "@jsii/spec@^1.55.0":
+"@jsii/spec@1.55.0", "@jsii/spec@^1.55.0":
   version "1.55.0"
   resolved "https://registry.yarnpkg.com/@jsii/spec/-/spec-1.55.0.tgz#c0838b3f401eca0849c359bf2b62ef7b2b39202b"
   integrity sha512-MsmAmi9+2s8p5jSypYFDTufkO2iAUWK7Ngq+btGDM6bMyQgqInMKNQcPcZAgWuwUCOU0ne/oYMVIbCR2njjAGA==
@@ -3687,7 +3687,7 @@ jsesc@^2.5.1:
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-2.5.2.tgz#80564d2e483dacf6e8ef209650a67df3f0c283a4"
   integrity sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==
 
-jsii-reflect@^1.54.0:
+jsii-reflect@^1.55.0:
   version "1.55.0"
   resolved "https://registry.yarnpkg.com/jsii-reflect/-/jsii-reflect-1.55.0.tgz#0f9dadf1092a33970d9bdfa327a2580a27da1390"
   integrity sha512-PLrRTqkE0FJ9locNabIOnmXh/fX+JaKhWD9ktPmYmZzPyPL7pfHGUUnFJhtk+0yXZ9vwg/Bp5qr/l3HH2Bq+uA==
@@ -4734,10 +4734,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.52.58:
-  version "0.52.66"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.52.66.tgz#6bce602f08e3d9f7a6999a81c0deaf5dd9998940"
-  integrity sha512-RShwCNw4FMNRdaylmEj1tf1UyVXzMHT/ORvmHVT0LJizSh2LfWGayp1SshWT18mJ8EaVCsvDrm/k8OySxpgIOA==
+projen@^0.52.65:
+  version "0.52.65"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.52.65.tgz#68e474fad885cd6fb776ece7fe54f90ae016df42"
+  integrity sha512-kf8SUyJwz4W6ByAsE3ys3GTOKkBAaQzkhKjx/M+p4NZ+68zu8LmlUpmZmiqDTwgywdhB1MJQSdEzYBWK0hPulg==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
