@@ -210,7 +210,7 @@ export class Documentation {
       throw new Error(`Assembly ${assemblyFqn} does not have any targets defined`);
     }
 
-    const isSupported = language === Language.TYPESCRIPT || assembly.targets[language.targetName];
+    const isSupported = language === Language.TYPESCRIPT || language.isValidConfiguration(assembly.targets[language.targetName]);
 
     if (!isSupported) {
       throw new LanguageNotSupportedError(`Laguage ${language} is not supported for package ${assemblyFqn}`);
