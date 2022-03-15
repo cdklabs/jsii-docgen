@@ -102,7 +102,7 @@ export class MarkdownDocument {
   /**
    * Render a docs element into the markdown.
    */
-  public docs(docs: DocsSchema, language: Language) {
+  public docs(docs: DocsSchema, language?: Language) {
     if (docs.summary) {
       this.lines(MarkdownDocument.sanitize(docs.summary));
       this.lines('');
@@ -119,6 +119,9 @@ export class MarkdownDocument {
     }
 
     if (docs.example) {
+      if (!language) {
+        throw new Error('language must be provided if docs.example has been specified');
+      }
       const example = new MarkdownDocument({
         id: `${this.options.id}.example`,
         header: {
