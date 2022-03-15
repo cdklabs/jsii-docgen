@@ -6192,7 +6192,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 The tag mutability setting for your repository.
 
-#### Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -6219,7 +6219,7 @@ all image tags within the repository will be immutable which will prevent them f
 
 Select images based on tags.
 
-#### Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -11092,7 +11092,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 The tag mutability setting for your repository.
 
-#### Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -11119,7 +11119,7 @@ all image tags within the repository will be immutable which will prevent them f
 
 Select images based on tags.
 
-#### Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -16818,7 +16818,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 The tag mutability setting for your repository.
 
-#### Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -16845,7 +16845,7 @@ all image tags within the repository will be immutable which will prevent them f
 
 Select images based on tags.
 
-#### Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -21394,7 +21394,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 The tag mutability setting for your repository.
 
-#### Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -21421,7 +21421,7 @@ all image tags within the repository will be immutable which will prevent them f
 
 Select images based on tags.
 
-#### Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -26030,7 +26030,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 The tag mutability setting for your repository.
 
-#### Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -26057,7 +26057,7 @@ all image tags within the repository will be immutable which will prevent them f
 
 Select images based on tags.
 
-#### Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -30930,7 +30930,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 The tag mutability setting for your repository.
 
-#### Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -30957,7 +30957,7 @@ all image tags within the repository will be immutable which will prevent them f
 
 Select images based on tags.
 
-#### Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -36656,7 +36656,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 The tag mutability setting for your repository.
 
-#### Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -36683,7 +36683,7 @@ all image tags within the repository will be immutable which will prevent them f
 
 Select images based on tags.
 
-#### Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -41232,7 +41232,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 The tag mutability setting for your repository.
 
-#### Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -41259,7 +41259,7 @@ all image tags within the repository will be immutable which will prevent them f
 
 Select images based on tags.
 
-#### Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |

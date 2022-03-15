@@ -34,7 +34,7 @@ exports[`csharp snapshot 2`] = `
 
 The tag mutability setting for your repository.
 
-# Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+# Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -93,7 +93,7 @@ exports[`java snapshot 2`] = `
 
 The tag mutability setting for your repository.
 
-# Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+# Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -152,7 +152,7 @@ exports[`python snapshot 2`] = `
 
 The tag mutability setting for your repository.
 
-# Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+# Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -211,7 +211,7 @@ exports[`typescript snapshot 2`] = `
 
 The tag mutability setting for your repository.
 
-# Enum Members <a name=\\"Enum Members\\" id=\\"Enum Members\\"></a>
+# Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
