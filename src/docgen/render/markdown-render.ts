@@ -353,7 +353,7 @@ export class MarkdownRenderer {
       return MarkdownDocument.EMPTY;
     }
 
-    const md = new MarkdownDocument({ header: { title: 'Enum Members' } });
+    const md = new MarkdownDocument({ header: { title: 'Members' } });
 
     md.table(this.createTable(enus));
     md.split();
