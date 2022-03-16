@@ -6190,6 +6190,10 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### TagMutability <a name=\\"TagMutability\\" id=\\"TagMutability\\"></a>
 
+The tag mutability setting for your repository.
+
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
+
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/TagMutability.MUTABLE?lang=python\\">MUTABLE</a></code> | allow image tags to be overwritten. |
@@ -6197,16 +6201,14 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ---
 
-The tag mutability setting for your repository.
-
-#### \`MUTABLE\` <a name=\\"MUTABLE\\" id=\\"TagMutability.MUTABLE\\"></a>
+##### \`MUTABLE\` <a name=\\"MUTABLE\\" id=\\"TagMutability.MUTABLE\\"></a>
 
 allow image tags to be overwritten.
 
 ---
 
 
-#### \`IMMUTABLE\` <a name=\\"IMMUTABLE\\" id=\\"TagMutability.IMMUTABLE\\"></a>
+##### \`IMMUTABLE\` <a name=\\"IMMUTABLE\\" id=\\"TagMutability.IMMUTABLE\\"></a>
 
 all image tags within the repository will be immutable which will prevent them from being overwritten.
 
@@ -6214,6 +6216,10 @@ all image tags within the repository will be immutable which will prevent them f
 
 
 ### TagStatus <a name=\\"TagStatus\\" id=\\"TagStatus\\"></a>
+
+Select images based on tags.
+
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -6223,23 +6229,21 @@ all image tags within the repository will be immutable which will prevent them f
 
 ---
 
-Select images based on tags.
-
-#### \`ANY\` <a name=\\"ANY\\" id=\\"TagStatus.ANY\\"></a>
+##### \`ANY\` <a name=\\"ANY\\" id=\\"TagStatus.ANY\\"></a>
 
 Rule applies to all images.
 
 ---
 
 
-#### \`TAGGED\` <a name=\\"TAGGED\\" id=\\"TagStatus.TAGGED\\"></a>
+##### \`TAGGED\` <a name=\\"TAGGED\\" id=\\"TagStatus.TAGGED\\"></a>
 
 Rule applies to tagged images.
 
 ---
 
 
-#### \`UNTAGGED\` <a name=\\"UNTAGGED\\" id=\\"TagStatus.UNTAGGED\\"></a>
+##### \`UNTAGGED\` <a name=\\"UNTAGGED\\" id=\\"TagStatus.UNTAGGED\\"></a>
 
 Rule applies to untagged images.
 
@@ -11086,6 +11090,10 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### TagMutability <a name=\\"TagMutability\\" id=\\"TagMutability\\"></a>
 
+The tag mutability setting for your repository.
+
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
+
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/TagMutability.MUTABLE?lang=python\\">MUTABLE</a></code> | allow image tags to be overwritten. |
@@ -11093,16 +11101,14 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ---
 
-The tag mutability setting for your repository.
-
-#### \`MUTABLE\` <a name=\\"MUTABLE\\" id=\\"TagMutability.MUTABLE\\"></a>
+##### \`MUTABLE\` <a name=\\"MUTABLE\\" id=\\"TagMutability.MUTABLE\\"></a>
 
 allow image tags to be overwritten.
 
 ---
 
 
-#### \`IMMUTABLE\` <a name=\\"IMMUTABLE\\" id=\\"TagMutability.IMMUTABLE\\"></a>
+##### \`IMMUTABLE\` <a name=\\"IMMUTABLE\\" id=\\"TagMutability.IMMUTABLE\\"></a>
 
 all image tags within the repository will be immutable which will prevent them from being overwritten.
 
@@ -11110,6 +11116,10 @@ all image tags within the repository will be immutable which will prevent them f
 
 
 ### TagStatus <a name=\\"TagStatus\\" id=\\"TagStatus\\"></a>
+
+Select images based on tags.
+
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -11119,23 +11129,21 @@ all image tags within the repository will be immutable which will prevent them f
 
 ---
 
-Select images based on tags.
-
-#### \`ANY\` <a name=\\"ANY\\" id=\\"TagStatus.ANY\\"></a>
+##### \`ANY\` <a name=\\"ANY\\" id=\\"TagStatus.ANY\\"></a>
 
 Rule applies to all images.
 
 ---
 
 
-#### \`TAGGED\` <a name=\\"TAGGED\\" id=\\"TagStatus.TAGGED\\"></a>
+##### \`TAGGED\` <a name=\\"TAGGED\\" id=\\"TagStatus.TAGGED\\"></a>
 
 Rule applies to tagged images.
 
 ---
 
 
-#### \`UNTAGGED\` <a name=\\"UNTAGGED\\" id=\\"TagStatus.UNTAGGED\\"></a>
+##### \`UNTAGGED\` <a name=\\"UNTAGGED\\" id=\\"TagStatus.UNTAGGED\\"></a>
 
 Rule applies to untagged images.
 
@@ -16808,6 +16816,10 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### TagMutability <a name=\\"TagMutability\\" id=\\"TagMutability\\"></a>
 
+The tag mutability setting for your repository.
+
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
+
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/TagMutability.MUTABLE?lang=python\\">MUTABLE</a></code> | allow image tags to be overwritten. |
@@ -16815,16 +16827,14 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ---
 
-The tag mutability setting for your repository.
-
-#### \`MUTABLE\` <a name=\\"MUTABLE\\" id=\\"TagMutability.MUTABLE\\"></a>
+##### \`MUTABLE\` <a name=\\"MUTABLE\\" id=\\"TagMutability.MUTABLE\\"></a>
 
 allow image tags to be overwritten.
 
 ---
 
 
-#### \`IMMUTABLE\` <a name=\\"IMMUTABLE\\" id=\\"TagMutability.IMMUTABLE\\"></a>
+##### \`IMMUTABLE\` <a name=\\"IMMUTABLE\\" id=\\"TagMutability.IMMUTABLE\\"></a>
 
 all image tags within the repository will be immutable which will prevent them from being overwritten.
 
@@ -16832,6 +16842,10 @@ all image tags within the repository will be immutable which will prevent them f
 
 
 ### TagStatus <a name=\\"TagStatus\\" id=\\"TagStatus\\"></a>
+
+Select images based on tags.
+
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -16841,23 +16855,21 @@ all image tags within the repository will be immutable which will prevent them f
 
 ---
 
-Select images based on tags.
-
-#### \`ANY\` <a name=\\"ANY\\" id=\\"TagStatus.ANY\\"></a>
+##### \`ANY\` <a name=\\"ANY\\" id=\\"TagStatus.ANY\\"></a>
 
 Rule applies to all images.
 
 ---
 
 
-#### \`TAGGED\` <a name=\\"TAGGED\\" id=\\"TagStatus.TAGGED\\"></a>
+##### \`TAGGED\` <a name=\\"TAGGED\\" id=\\"TagStatus.TAGGED\\"></a>
 
 Rule applies to tagged images.
 
 ---
 
 
-#### \`UNTAGGED\` <a name=\\"UNTAGGED\\" id=\\"TagStatus.UNTAGGED\\"></a>
+##### \`UNTAGGED\` <a name=\\"UNTAGGED\\" id=\\"TagStatus.UNTAGGED\\"></a>
 
 Rule applies to untagged images.
 
@@ -21380,6 +21392,10 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### TagMutability <a name=\\"TagMutability\\" id=\\"TagMutability\\"></a>
 
+The tag mutability setting for your repository.
+
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
+
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href=\\"/packages/@aws-cdk/aws-ecr/v/1.106.0/api/TagMutability.MUTABLE?lang=python\\">MUTABLE</a></code> | allow image tags to be overwritten. |
@@ -21387,16 +21403,14 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ---
 
-The tag mutability setting for your repository.
-
-#### \`MUTABLE\` <a name=\\"MUTABLE\\" id=\\"TagMutability.MUTABLE\\"></a>
+##### \`MUTABLE\` <a name=\\"MUTABLE\\" id=\\"TagMutability.MUTABLE\\"></a>
 
 allow image tags to be overwritten.
 
 ---
 
 
-#### \`IMMUTABLE\` <a name=\\"IMMUTABLE\\" id=\\"TagMutability.IMMUTABLE\\"></a>
+##### \`IMMUTABLE\` <a name=\\"IMMUTABLE\\" id=\\"TagMutability.IMMUTABLE\\"></a>
 
 all image tags within the repository will be immutable which will prevent them from being overwritten.
 
@@ -21404,6 +21418,10 @@ all image tags within the repository will be immutable which will prevent them f
 
 
 ### TagStatus <a name=\\"TagStatus\\" id=\\"TagStatus\\"></a>
+
+Select images based on tags.
+
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -21413,23 +21431,21 @@ all image tags within the repository will be immutable which will prevent them f
 
 ---
 
-Select images based on tags.
-
-#### \`ANY\` <a name=\\"ANY\\" id=\\"TagStatus.ANY\\"></a>
+##### \`ANY\` <a name=\\"ANY\\" id=\\"TagStatus.ANY\\"></a>
 
 Rule applies to all images.
 
 ---
 
 
-#### \`TAGGED\` <a name=\\"TAGGED\\" id=\\"TagStatus.TAGGED\\"></a>
+##### \`TAGGED\` <a name=\\"TAGGED\\" id=\\"TagStatus.TAGGED\\"></a>
 
 Rule applies to tagged images.
 
 ---
 
 
-#### \`UNTAGGED\` <a name=\\"UNTAGGED\\" id=\\"TagStatus.UNTAGGED\\"></a>
+##### \`UNTAGGED\` <a name=\\"UNTAGGED\\" id=\\"TagStatus.UNTAGGED\\"></a>
 
 Rule applies to untagged images.
 
@@ -26012,6 +26028,10 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### TagMutability <a name=\\"TagMutability\\" id=\\"@aws-cdk/aws-ecr.TagMutability\\"></a>
 
+The tag mutability setting for your repository.
+
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
+
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href=\\"#custom-@aws-cdk/aws-ecr.TagMutability.MUTABLE\\">MUTABLE</a></code> | allow image tags to be overwritten. |
@@ -26019,16 +26039,14 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ---
 
-The tag mutability setting for your repository.
-
-#### \`MUTABLE\` <a name=\\"MUTABLE\\" id=\\"@aws-cdk/aws-ecr.TagMutability.MUTABLE\\"></a>
+##### \`MUTABLE\` <a name=\\"MUTABLE\\" id=\\"@aws-cdk/aws-ecr.TagMutability.MUTABLE\\"></a>
 
 allow image tags to be overwritten.
 
 ---
 
 
-#### \`IMMUTABLE\` <a name=\\"IMMUTABLE\\" id=\\"@aws-cdk/aws-ecr.TagMutability.IMMUTABLE\\"></a>
+##### \`IMMUTABLE\` <a name=\\"IMMUTABLE\\" id=\\"@aws-cdk/aws-ecr.TagMutability.IMMUTABLE\\"></a>
 
 all image tags within the repository will be immutable which will prevent them from being overwritten.
 
@@ -26036,6 +26054,10 @@ all image tags within the repository will be immutable which will prevent them f
 
 
 ### TagStatus <a name=\\"TagStatus\\" id=\\"@aws-cdk/aws-ecr.TagStatus\\"></a>
+
+Select images based on tags.
+
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -26045,23 +26067,21 @@ all image tags within the repository will be immutable which will prevent them f
 
 ---
 
-Select images based on tags.
-
-#### \`ANY\` <a name=\\"ANY\\" id=\\"@aws-cdk/aws-ecr.TagStatus.ANY\\"></a>
+##### \`ANY\` <a name=\\"ANY\\" id=\\"@aws-cdk/aws-ecr.TagStatus.ANY\\"></a>
 
 Rule applies to all images.
 
 ---
 
 
-#### \`TAGGED\` <a name=\\"TAGGED\\" id=\\"@aws-cdk/aws-ecr.TagStatus.TAGGED\\"></a>
+##### \`TAGGED\` <a name=\\"TAGGED\\" id=\\"@aws-cdk/aws-ecr.TagStatus.TAGGED\\"></a>
 
 Rule applies to tagged images.
 
 ---
 
 
-#### \`UNTAGGED\` <a name=\\"UNTAGGED\\" id=\\"@aws-cdk/aws-ecr.TagStatus.UNTAGGED\\"></a>
+##### \`UNTAGGED\` <a name=\\"UNTAGGED\\" id=\\"@aws-cdk/aws-ecr.TagStatus.UNTAGGED\\"></a>
 
 Rule applies to untagged images.
 
@@ -30908,6 +30928,10 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### TagMutability <a name=\\"TagMutability\\" id=\\"@aws-cdk/aws-ecr.TagMutability\\"></a>
 
+The tag mutability setting for your repository.
+
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
+
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href=\\"#custom-@aws-cdk/aws-ecr.TagMutability.MUTABLE\\">MUTABLE</a></code> | allow image tags to be overwritten. |
@@ -30915,16 +30939,14 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ---
 
-The tag mutability setting for your repository.
-
-#### \`MUTABLE\` <a name=\\"MUTABLE\\" id=\\"@aws-cdk/aws-ecr.TagMutability.MUTABLE\\"></a>
+##### \`MUTABLE\` <a name=\\"MUTABLE\\" id=\\"@aws-cdk/aws-ecr.TagMutability.MUTABLE\\"></a>
 
 allow image tags to be overwritten.
 
 ---
 
 
-#### \`IMMUTABLE\` <a name=\\"IMMUTABLE\\" id=\\"@aws-cdk/aws-ecr.TagMutability.IMMUTABLE\\"></a>
+##### \`IMMUTABLE\` <a name=\\"IMMUTABLE\\" id=\\"@aws-cdk/aws-ecr.TagMutability.IMMUTABLE\\"></a>
 
 all image tags within the repository will be immutable which will prevent them from being overwritten.
 
@@ -30932,6 +30954,10 @@ all image tags within the repository will be immutable which will prevent them f
 
 
 ### TagStatus <a name=\\"TagStatus\\" id=\\"@aws-cdk/aws-ecr.TagStatus\\"></a>
+
+Select images based on tags.
+
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -30941,23 +30967,21 @@ all image tags within the repository will be immutable which will prevent them f
 
 ---
 
-Select images based on tags.
-
-#### \`ANY\` <a name=\\"ANY\\" id=\\"@aws-cdk/aws-ecr.TagStatus.ANY\\"></a>
+##### \`ANY\` <a name=\\"ANY\\" id=\\"@aws-cdk/aws-ecr.TagStatus.ANY\\"></a>
 
 Rule applies to all images.
 
 ---
 
 
-#### \`TAGGED\` <a name=\\"TAGGED\\" id=\\"@aws-cdk/aws-ecr.TagStatus.TAGGED\\"></a>
+##### \`TAGGED\` <a name=\\"TAGGED\\" id=\\"@aws-cdk/aws-ecr.TagStatus.TAGGED\\"></a>
 
 Rule applies to tagged images.
 
 ---
 
 
-#### \`UNTAGGED\` <a name=\\"UNTAGGED\\" id=\\"@aws-cdk/aws-ecr.TagStatus.UNTAGGED\\"></a>
+##### \`UNTAGGED\` <a name=\\"UNTAGGED\\" id=\\"@aws-cdk/aws-ecr.TagStatus.UNTAGGED\\"></a>
 
 Rule applies to untagged images.
 
@@ -36630,6 +36654,10 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### TagMutability <a name=\\"TagMutability\\" id=\\"@aws-cdk/aws-ecr.TagMutability\\"></a>
 
+The tag mutability setting for your repository.
+
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
+
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href=\\"#custom-@aws-cdk/aws-ecr.TagMutability.MUTABLE\\">MUTABLE</a></code> | allow image tags to be overwritten. |
@@ -36637,16 +36665,14 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ---
 
-The tag mutability setting for your repository.
-
-#### \`MUTABLE\` <a name=\\"MUTABLE\\" id=\\"@aws-cdk/aws-ecr.TagMutability.MUTABLE\\"></a>
+##### \`MUTABLE\` <a name=\\"MUTABLE\\" id=\\"@aws-cdk/aws-ecr.TagMutability.MUTABLE\\"></a>
 
 allow image tags to be overwritten.
 
 ---
 
 
-#### \`IMMUTABLE\` <a name=\\"IMMUTABLE\\" id=\\"@aws-cdk/aws-ecr.TagMutability.IMMUTABLE\\"></a>
+##### \`IMMUTABLE\` <a name=\\"IMMUTABLE\\" id=\\"@aws-cdk/aws-ecr.TagMutability.IMMUTABLE\\"></a>
 
 all image tags within the repository will be immutable which will prevent them from being overwritten.
 
@@ -36654,6 +36680,10 @@ all image tags within the repository will be immutable which will prevent them f
 
 
 ### TagStatus <a name=\\"TagStatus\\" id=\\"@aws-cdk/aws-ecr.TagStatus\\"></a>
+
+Select images based on tags.
+
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -36663,23 +36693,21 @@ all image tags within the repository will be immutable which will prevent them f
 
 ---
 
-Select images based on tags.
-
-#### \`ANY\` <a name=\\"ANY\\" id=\\"@aws-cdk/aws-ecr.TagStatus.ANY\\"></a>
+##### \`ANY\` <a name=\\"ANY\\" id=\\"@aws-cdk/aws-ecr.TagStatus.ANY\\"></a>
 
 Rule applies to all images.
 
 ---
 
 
-#### \`TAGGED\` <a name=\\"TAGGED\\" id=\\"@aws-cdk/aws-ecr.TagStatus.TAGGED\\"></a>
+##### \`TAGGED\` <a name=\\"TAGGED\\" id=\\"@aws-cdk/aws-ecr.TagStatus.TAGGED\\"></a>
 
 Rule applies to tagged images.
 
 ---
 
 
-#### \`UNTAGGED\` <a name=\\"UNTAGGED\\" id=\\"@aws-cdk/aws-ecr.TagStatus.UNTAGGED\\"></a>
+##### \`UNTAGGED\` <a name=\\"UNTAGGED\\" id=\\"@aws-cdk/aws-ecr.TagStatus.UNTAGGED\\"></a>
 
 Rule applies to untagged images.
 
@@ -41202,6 +41230,10 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### TagMutability <a name=\\"TagMutability\\" id=\\"@aws-cdk/aws-ecr.TagMutability\\"></a>
 
+The tag mutability setting for your repository.
+
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
+
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href=\\"#custom-@aws-cdk/aws-ecr.TagMutability.MUTABLE\\">MUTABLE</a></code> | allow image tags to be overwritten. |
@@ -41209,16 +41241,14 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ---
 
-The tag mutability setting for your repository.
-
-#### \`MUTABLE\` <a name=\\"MUTABLE\\" id=\\"@aws-cdk/aws-ecr.TagMutability.MUTABLE\\"></a>
+##### \`MUTABLE\` <a name=\\"MUTABLE\\" id=\\"@aws-cdk/aws-ecr.TagMutability.MUTABLE\\"></a>
 
 allow image tags to be overwritten.
 
 ---
 
 
-#### \`IMMUTABLE\` <a name=\\"IMMUTABLE\\" id=\\"@aws-cdk/aws-ecr.TagMutability.IMMUTABLE\\"></a>
+##### \`IMMUTABLE\` <a name=\\"IMMUTABLE\\" id=\\"@aws-cdk/aws-ecr.TagMutability.IMMUTABLE\\"></a>
 
 all image tags within the repository will be immutable which will prevent them from being overwritten.
 
@@ -41226,6 +41256,10 @@ all image tags within the repository will be immutable which will prevent them f
 
 
 ### TagStatus <a name=\\"TagStatus\\" id=\\"@aws-cdk/aws-ecr.TagStatus\\"></a>
+
+Select images based on tags.
+
+#### Members <a name=\\"Members\\" id=\\"Members\\"></a>
 
 | **Name** | **Description** |
 | --- | --- |
@@ -41235,23 +41269,21 @@ all image tags within the repository will be immutable which will prevent them f
 
 ---
 
-Select images based on tags.
-
-#### \`ANY\` <a name=\\"ANY\\" id=\\"@aws-cdk/aws-ecr.TagStatus.ANY\\"></a>
+##### \`ANY\` <a name=\\"ANY\\" id=\\"@aws-cdk/aws-ecr.TagStatus.ANY\\"></a>
 
 Rule applies to all images.
 
 ---
 
 
-#### \`TAGGED\` <a name=\\"TAGGED\\" id=\\"@aws-cdk/aws-ecr.TagStatus.TAGGED\\"></a>
+##### \`TAGGED\` <a name=\\"TAGGED\\" id=\\"@aws-cdk/aws-ecr.TagStatus.TAGGED\\"></a>
 
 Rule applies to tagged images.
 
 ---
 
 
-#### \`UNTAGGED\` <a name=\\"UNTAGGED\\" id=\\"@aws-cdk/aws-ecr.TagStatus.UNTAGGED\\"></a>
+##### \`UNTAGGED\` <a name=\\"UNTAGGED\\" id=\\"@aws-cdk/aws-ecr.TagStatus.UNTAGGED\\"></a>
 
 Rule applies to untagged images.
 
