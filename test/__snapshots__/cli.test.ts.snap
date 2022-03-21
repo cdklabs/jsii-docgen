@@ -107,7 +107,7 @@ Adds a bucket notification event destination.
 
 > [https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html)
 
-###### Example <a name=\\"Example\\" id=\\"construct-library.submod1.GoodbyeBucket.addEventNotification.example\\"></a>
+*Example*
 
 \`\`\`typescript
    declare const myLambda: lambda.Function;
@@ -1048,7 +1048,7 @@ Adds a bucket notification event destination.
 
 > [https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html)
 
-###### Example <a name=\\"Example\\" id=\\"construct-library.GreeterBucket.addEventNotification.example\\"></a>
+*Example*
 
 \`\`\`typescript
    declare const myLambda: lambda.Function;
@@ -2273,7 +2273,7 @@ Adds a bucket notification event destination.
 
 > [https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html)
 
-###### Example <a name=\\"Example\\" id=\\"construct-library.submod1.GoodbyeBucket.addEventNotification.example\\"></a>
+*Example*
 
 \`\`\`python
    declare const myLambda: lambda.Function;
@@ -4072,7 +4072,7 @@ Adds a bucket notification event destination.
 
 > [https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html)
 
-###### Example <a name=\\"Example\\" id=\\"construct-library.GreeterBucket.addEventNotification.example\\"></a>
+*Example*
 
 \`\`\`python
    declare const myLambda: lambda.Function;
@@ -5609,7 +5609,7 @@ Adds a bucket notification event destination.
 
 > [https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html)
 
-###### Example <a name=\\"Example\\" id=\\"construct-library.GreeterBucket.addEventNotification.example\\"></a>
+*Example*
 
 \`\`\`typescript
    declare const myLambda: lambda.Function;
@@ -6561,7 +6561,7 @@ Adds a bucket notification event destination.
 
 > [https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html)
 
-###### Example <a name=\\"Example\\" id=\\"construct-library.submod1.GoodbyeBucket.addEventNotification.example\\"></a>
+*Example*
 
 \`\`\`typescript
    declare const myLambda: lambda.Function;
