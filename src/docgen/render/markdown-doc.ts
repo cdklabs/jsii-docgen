@@ -70,9 +70,14 @@ export class MarkdownDocument {
       sanitized = sanitized.substring(1, line.length).trim();
     }
 
-    sanitized = sanitized.replace(/\n/g, ' ');
-
     return sanitized;
+  }
+
+  /**
+   * Remove newlines from markdown.
+   */
+  public static removeNewlines(line: string): string {
+    return line.replace(/\n/g, ' ');
   }
 
   public static bold(text: string): string {
