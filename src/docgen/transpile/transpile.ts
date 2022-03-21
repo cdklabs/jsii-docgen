@@ -8,28 +8,28 @@ export class Language {
   /**
    * TypeScript.
    */
-  public static readonly TYPESCRIPT = new Language('typescript');
+  public static readonly TYPESCRIPT = new Language({ name: 'typescript', validator: () => true });
 
   /**
    * Python.
    */
-  public static readonly PYTHON = new Language('python');
+  public static readonly PYTHON = new Language({ name: 'python', validator: validatePythonConfig });
 
   /**
    * Java.
    */
-  public static readonly JAVA = new Language('java');
+  public static readonly JAVA = new Language({ name: 'java', validator: validateJavaConfig });
 
   /**
    * C#
    */
-  public static readonly CSHARP = new Language('csharp', 'dotnet');
+  public static readonly CSHARP = new Language({ name: 'csharp', targetName: 'dotnet', validator: validateDotNetConfig });
 
   /**
    *
    * Go
    */
-  public static readonly GO = new Language('go');
+  public static readonly GO = new Language({ name: 'go', targetName: 'go', validator: validateGoConfig });
 
   /**
    * Transform a literal string to the `Language` object.
@@ -62,12 +62,55 @@ export class Language {
     return [Language.TYPESCRIPT, Language.PYTHON, Language.JAVA, Language.CSHARP, Language.GO];
   }
 
-  private constructor(public readonly name: string, public readonly targetName = name) {}
+  public readonly name: string;
+  public readonly targetName: string;
+  private readonly validator: (config: Record<string, unknown>) => boolean;
+
+  private constructor(
+    { name, targetName = name, validator }: {
+      name: string;
+      targetName?: string;
+      validator: (config: Record<string, unknown>) => boolean;
+    },
+  ) {
+    this.name = name;
+    this.targetName = targetName;
+    this.validator = validator;
+  }
+
+  public isValidConfiguration(config: Record<string, unknown> | undefined): boolean {
+    // TypeScript does not need configuration, all other languages do
+    if (config == null) {
+      return this === Language.TYPESCRIPT;
+    }
+
+    return this.validator(config);
+  }
 
   public toString() {
     return this.name;
   }
 
+}
+
+function validateDotNetConfig(config: Record<string, any>): boolean {
+  // See: https://aws.github.io/jsii/user-guides/lib-author/configuration/targets/dotnet/
+  return typeof config.namespace === 'string' && typeof config.packageId === 'string';
+}
+
+function validateJavaConfig(config: Record<string, any>): boolean {
+  // See: https://aws.github.io/jsii/user-guides/lib-author/configuration/targets/java/
+  return typeof config.package === 'string' && typeof config.maven?.groupId === 'string' && typeof config.maven?.artifactId === 'string';
+}
+
+function validatePythonConfig(config: Record<string, any>): boolean {
+  // See: https://aws.github.io/jsii/user-guides/lib-author/configuration/targets/python/
+  return typeof config.module === 'string' && typeof config.distName === 'string';
+}
+
+function validateGoConfig(config: Record<string, any>): boolean {
+  // See: https://aws.github.io/jsii/user-guides/lib-author/configuration/targets/go/
+  return typeof config.moduleName === 'string';
 }
 
 export class UnsupportedLanguageError extends Error {

@@ -8,18 +8,34 @@ describe('language', () => {
 
   test('typescript is supported', () => {
     expect(Language.fromString('typescript')).toEqual(Language.TYPESCRIPT);
+    // Allows undefined configuration
+    expect(Language.TYPESCRIPT.isValidConfiguration(undefined)).toBeTruthy();
+    // Allows random configuration
+    expect(Language.TYPESCRIPT.isValidConfiguration({ foo: 'bar' })).toBeTruthy();
   });
 
   test('python is supported', () => {
     expect(Language.fromString('python')).toEqual(Language.PYTHON);
+    // Disallows undefined configuration
+    expect(Language.PYTHON.isValidConfiguration(undefined)).toBeFalsy();
+    // Allows valid configuration
+    expect(Language.PYTHON.isValidConfiguration({ distName: 'bar', module: 'foo' })).toBeTruthy();
   });
 
   test('java is supported', () => {
     expect(Language.fromString('java')).toEqual(Language.JAVA);
+    // Disallows undefined configuration
+    expect(Language.JAVA.isValidConfiguration(undefined)).toBeFalsy();
+    // Allows valid configuration
+    expect(Language.JAVA.isValidConfiguration({ package: 'com.acme.package', maven: { groupId: 'group', artifactId: 'artifact' } })).toBeTruthy();
   });
 
   test('csharp is supported', () => {
     expect(Language.fromString('csharp')).toEqual(Language.CSHARP);
+    // Disallows undefined configuration
+    expect(Language.CSHARP.isValidConfiguration(undefined)).toBeFalsy();
+    // Allows valid configuration
+    expect(Language.CSHARP.isValidConfiguration({ namespace: 'Com.Acme.Package', packageId: 'AcmePackage' })).toBeTruthy();
   });
 
   test('go is supported', () => {

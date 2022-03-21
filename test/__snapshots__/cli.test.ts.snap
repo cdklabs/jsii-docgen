@@ -107,6 +107,15 @@ Adds a bucket notification event destination.
 
 > [https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html)
 
+*Example*
+
+\`\`\`typescript
+   declare const myLambda: lambda.Function;
+   const bucket = new s3.Bucket(this, 'MyBucket');
+   bucket.addEventNotification(s3.EventType.OBJECT_CREATED, new s3n.LambdaDestination(myLambda), {prefix: 'home/myusername/*'});
+\`\`\`
+
+
 ###### \`event\`<sup>Required</sup> <a name=\\"event\\" id=\\"construct-library.submod1.GoodbyeBucket.addEventNotification.parameter.event\\"></a>
 
 - *Type:* @aws-cdk/aws-s3.EventType
@@ -1038,6 +1047,15 @@ public addEventNotification(event: EventType, dest: IBucketNotificationDestinati
 Adds a bucket notification event destination.
 
 > [https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html)
+
+*Example*
+
+\`\`\`typescript
+   declare const myLambda: lambda.Function;
+   const bucket = new s3.Bucket(this, 'MyBucket');
+   bucket.addEventNotification(s3.EventType.OBJECT_CREATED, new s3n.LambdaDestination(myLambda), {prefix: 'home/myusername/*'});
+\`\`\`
+
 
 ###### \`event\`<sup>Required</sup> <a name=\\"event\\" id=\\"construct-library.GreeterBucket.addEventNotification.parameter.event\\"></a>
 
@@ -2254,6 +2272,15 @@ def add_event_notification(
 Adds a bucket notification event destination.
 
 > [https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html)
+
+*Example*
+
+\`\`\`python
+   declare const myLambda: lambda.Function;
+   const bucket = new s3.Bucket(this, 'MyBucket');
+   bucket.addEventNotification(s3.EventType.OBJECT_CREATED, new s3n.LambdaDestination(myLambda), {prefix: 'home/myusername/*'});
+\`\`\`
+
 
 ###### \`event\`<sup>Required</sup> <a name=\\"event\\" id=\\"construct-library.submod1.GoodbyeBucket.addEventNotification.parameter.event\\"></a>
 
@@ -4045,6 +4072,15 @@ Adds a bucket notification event destination.
 
 > [https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html)
 
+*Example*
+
+\`\`\`python
+   declare const myLambda: lambda.Function;
+   const bucket = new s3.Bucket(this, 'MyBucket');
+   bucket.addEventNotification(s3.EventType.OBJECT_CREATED, new s3n.LambdaDestination(myLambda), {prefix: 'home/myusername/*'});
+\`\`\`
+
+
 ###### \`event\`<sup>Required</sup> <a name=\\"event\\" id=\\"construct-library.GreeterBucket.addEventNotification.parameter.event\\"></a>
 
 - *Type:* aws_cdk.aws_s3.EventType
@@ -5573,6 +5609,15 @@ Adds a bucket notification event destination.
 
 > [https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html)
 
+*Example*
+
+\`\`\`typescript
+   declare const myLambda: lambda.Function;
+   const bucket = new s3.Bucket(this, 'MyBucket');
+   bucket.addEventNotification(s3.EventType.OBJECT_CREATED, new s3n.LambdaDestination(myLambda), {prefix: 'home/myusername/*'});
+\`\`\`
+
+
 ###### \`event\`<sup>Required</sup> <a name=\\"event\\" id=\\"construct-library.GreeterBucket.addEventNotification.parameter.event\\"></a>
 
 - *Type:* @aws-cdk/aws-s3.EventType
@@ -6515,6 +6560,15 @@ public addEventNotification(event: EventType, dest: IBucketNotificationDestinati
 Adds a bucket notification event destination.
 
 > [https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html)
+
+*Example*
+
+\`\`\`typescript
+   declare const myLambda: lambda.Function;
+   const bucket = new s3.Bucket(this, 'MyBucket');
+   bucket.addEventNotification(s3.EventType.OBJECT_CREATED, new s3n.LambdaDestination(myLambda), {prefix: 'home/myusername/*'});
+\`\`\`
+
 
 ###### \`event\`<sup>Required</sup> <a name=\\"event\\" id=\\"construct-library.submod1.GoodbyeBucket.addEventNotification.parameter.event\\"></a>
 

@@ -225,7 +225,7 @@ export class MarkdownRenderer {
     });
 
     if (struct.docs) {
-      md.docs(struct.docs);
+      md.docs(struct.docs, this.language);
     }
 
     const initializer = new MarkdownDocument({
@@ -270,7 +270,7 @@ export class MarkdownRenderer {
     }
 
     if (klass.docs) {
-      md.docs(klass.docs);
+      md.docs(klass.docs, this.language);
     }
 
     if (klass.initializer) {
@@ -316,7 +316,7 @@ export class MarkdownRenderer {
     }
 
     if (iface.docs) {
-      md.docs(iface.docs);
+      md.docs(iface.docs, this.language);
     }
 
     md.section(this.visitInstanceMethods(iface.instanceMethods));
@@ -337,17 +337,30 @@ export class MarkdownRenderer {
       header: { title: enu.displayName },
     });
 
-    md.table(this.createTable(enu.members));
+    if (enu.docs) {
+      md.docs(enu.docs, this.language);
+    }
+
+    md.section(this.visitEnumMembers(enu.members));
+
+    return md;
+  }
+
+  public visitEnumMembers(
+    enus: EnumMemberSchema[],
+  ): MarkdownDocument {
+    if (enus.length === 0) {
+      return MarkdownDocument.EMPTY;
+    }
+
+    const md = new MarkdownDocument({ header: { title: 'Members' } });
+
+    md.table(this.createTable(enus));
     md.split();
 
-    if (enu.docs) {
-      md.docs(enu.docs);
+    for (const enu of enus) {
+      md.section(this.visitEnumMember(enu));
     }
-
-    for (const em of enu.members) {
-      md.section(this.visitEnumMember(em));
-    }
-
     return md;
   }
 
@@ -479,7 +492,7 @@ export class MarkdownRenderer {
     }
 
     if (em.docs) {
-      md.docs(em.docs);
+      md.docs(em.docs, this.language);
     }
 
     md.split();
@@ -535,7 +548,7 @@ export class MarkdownRenderer {
     md.lines('');
 
     if (prop.docs) {
-      md.docs(prop.docs);
+      md.docs(prop.docs, this.language);
     }
 
     md.split();
@@ -585,7 +598,7 @@ export class MarkdownRenderer {
     md.lines('');
 
     if (parameter.docs) {
-      md.docs(parameter.docs);
+      md.docs(parameter.docs, this.language);
     }
 
     md.split();
@@ -614,12 +627,12 @@ export class MarkdownRenderer {
       md.code(this.language.toString(), method.usage);
     }
 
-    for (const param of method.parameters) {
-      md.section(this.visitParameter(param));
+    if (method.docs) {
+      md.docs(method.docs, this.language);
     }
 
-    if (method.docs) {
-      md.docs(method.docs);
+    for (const param of method.parameters) {
+      md.section(this.visitParameter(param));
     }
 
     return md;
@@ -647,7 +660,7 @@ export class MarkdownRenderer {
     }
 
     if (method.docs) {
-      md.docs(method.docs);
+      md.docs(method.docs, this.language);
     }
 
     for (const param of method.parameters) {

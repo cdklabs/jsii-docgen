@@ -1,3 +1,4 @@
+import { Language } from '../..';
 import { DocsSchema } from '../schema';
 
 /**
@@ -101,7 +102,7 @@ export class MarkdownDocument {
   /**
    * Render a docs element into the markdown.
    */
-  public docs(docs: DocsSchema) {
+  public docs(docs: DocsSchema, language?: Language) {
     if (docs.summary) {
       this.lines(MarkdownDocument.sanitize(docs.summary));
       this.lines('');
@@ -115,6 +116,19 @@ export class MarkdownDocument {
       for (const link of docs.links) {
         this.quote(`[${link}](${link})`);
       }
+    }
+
+    if (docs.example) {
+      if (!language) {
+        throw new Error('language must be provided if docs.example has been specified');
+      }
+      const example = new MarkdownDocument({
+        id: `${this.options.id}.example`,
+      });
+      example.lines(MarkdownDocument.italic('Example'), '');
+      example.code(language.toString(), docs.example);
+      example.lines('');
+      this.section(example);
     }
   }
 
@@ -158,15 +172,16 @@ export class MarkdownDocument {
   }
 
   public render(headerSize: number = 0): string {
-    if (headerSize > 6) {
-      // headers are mapped to `h1-h6` html elements.
-      // passed that, markdown just renders `#` signs.
-      // lets see if and when we'll hit this limit.
-      throw new Error('Unable to render markdown. Header limit (6) reached.');
-    }
-
     const content: string[] = [];
+
     if (this.header) {
+      if (headerSize > 6) {
+        // headers are mapped to `h1-h6` html elements.
+        // passed that, markdown just renders `#` signs.
+        // lets see if and when we'll hit this limit.
+        throw new Error('Unable to render markdown. Header limit (6) reached.');
+      }
+
       const heading = `${'#'.repeat(headerSize)} ${this.header}`;
 
       // temporary hack to avoid breaking Construct Hub
