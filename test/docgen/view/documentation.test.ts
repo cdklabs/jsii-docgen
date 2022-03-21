@@ -204,3 +204,11 @@ test('performance on large modules', async () => {
   // the assertion here is simply finishing the rendering in time.
   await docs.toMarkdown({ language: Language.PYTHON, submodule: 'wafv2' });
 });
+
+test('does not reach headerSize limit for modules with method param examples', async () => {
+  // this module includes @example information for a method parameter
+  // at @aws-cdk/aws-apigateway.ProxyResource.addMethod.parameter.requestModels
+  const docs = await Documentation.forPackage('@aws-cdk/aws-apigateway@1.47.0');
+  // the assertion here is simply that the rendering succeeds
+  await docs.toMarkdown({ language: Language.PYTHON });
+});
