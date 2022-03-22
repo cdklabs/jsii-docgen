@@ -40,6 +40,10 @@ describe('language', () => {
 
   test('go is supported', () => {
     expect(Language.fromString('go')).toEqual(Language.GO);
+    // Disallows undefined configuration
+    expect(Language.GO.isValidConfiguration(undefined)).toBeFalsy();
+    // Allows valid configuration
+    expect(Language.GO.isValidConfiguration({ moduleName: 'github.com/acme/package' })).toBeTruthy();
   });
 
   test('throw error on unsupported language', () => {
