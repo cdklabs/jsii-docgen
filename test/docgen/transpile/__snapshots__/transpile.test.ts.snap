@@ -11,7 +11,11 @@ exports[`submodules without an explicit name csharp 1`] = `
 
 A Lambda@Edge function.
 
-Convenience resource for requesting a Lambda function in the 'us-east-1' region for use with Lambda@Edge. Implements several restrictions enforced by Lambda@Edge.  Note that this construct requires that the 'us-east-1' region has been bootstrapped. See https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html or 'cdk bootstrap --help' for options.
+Convenience resource for requesting a Lambda function in the 'us-east-1' region for use with Lambda@Edge.
+Implements several restrictions enforced by Lambda@Edge.
+
+Note that this construct requires that the 'us-east-1' region has been bootstrapped.
+See https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html or 'cdk bootstrap --help' for options.
 
 #### Initializers <a name=\\"Initializers\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.Initializer\\"></a>
 
@@ -84,7 +88,13 @@ private void ApplyRemovalPolicy(RemovalPolicy Policy)
 
 Apply the given removal policy to this resource.
 
-The Removal Policy controls what happens to this resource when it stops being managed by CloudFormation, either because you've removed it from the CDK application or because you've made a change that requires the resource to be replaced.  The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS
+account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 
 ###### \`Policy\`<sup>Required</sup> <a name=\\"Policy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy.parameter.policy\\"></a>
 
@@ -238,7 +248,10 @@ private Metric MetricDuration(MetricOptions Props = null)
 
 Metric for the Duration of this Lambda How long execution of this Lambda takes.
 
-Average over 5 minutes Metric for the Duration of this Lambda How long execution of this Lambda takes.  Average over 5 minutes
+Average over 5 minutes
+Metric for the Duration of this Lambda How long execution of this Lambda takes.
+
+Average over 5 minutes
 
 ###### \`Props\`<sup>Optional</sup> <a name=\\"Props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricDuration.parameter.props\\"></a>
 
@@ -270,7 +283,10 @@ private Metric MetricInvocations(MetricOptions Props = null)
 
 Metric for the number of invocations of this Lambda How often this Lambda is invoked.
 
-Sum over 5 minutes Metric for the number of invocations of this Lambda How often this Lambda is invoked.  Sum over 5 minutes
+Sum over 5 minutes
+Metric for the number of invocations of this Lambda How often this Lambda is invoked.
+
+Sum over 5 minutes
 
 ###### \`Props\`<sup>Optional</sup> <a name=\\"Props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricInvocations.parameter.props\\"></a>
 
@@ -286,7 +302,10 @@ private Metric MetricThrottles(MetricOptions Props = null)
 
 Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.
 
-Sum over 5 minutes Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.  Sum over 5 minutes
+Sum over 5 minutes
+Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.
+
+Sum over 5 minutes
 
 ###### \`Props\`<sup>Optional</sup> <a name=\\"Props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricThrottles.parameter.props\\"></a>
 
@@ -379,7 +398,12 @@ public ResourceEnvironment Env { get; }
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
 
 ---
 
@@ -505,7 +529,12 @@ public IVersion LatestVersion { get; }
 
 The \`$LATEST\` version of this function.
 
-Note that this is reference to a non-specific AWS Lambda version, which means the function this version refers to can return different results in different invocations.  To obtain a reference to an explicit version which references the current function configuration, use \`lambdaFunction.currentVersion\` instead.
+Note that this is reference to a non-specific AWS Lambda version, which
+means the function this version refers to can return different results in
+different invocations.
+
+To obtain a reference to an explicit version which references the current
+function configuration, use \`lambdaFunction.currentVersion\` instead.
 
 ---
 
@@ -655,7 +684,8 @@ public Duration MaxEventAge { get; set; }
 
 The maximum age of a request that Lambda sends to a function for processing.
 
-Minimum: 60 seconds Maximum: 6 hours
+Minimum: 60 seconds
+Maximum: 6 hours
 
 ---
 
@@ -696,7 +726,8 @@ public double RetryAttempts { get; set; }
 
 The maximum number of times to retry when the function returns an error.
 
-Minimum: 0 Maximum: 2
+Minimum: 0
+Maximum: 2
 
 ---
 
@@ -711,7 +742,8 @@ public bool AllowAllOutbound { get; set; }
 
 Whether to allow the Lambda to send all network traffic.
 
-If set to false, you must individually add traffic rules to allow the Lambda to connect to network targets.
+If set to false, you must individually add traffic rules to allow the
+Lambda to connect to network targets.
 
 ---
 
@@ -795,7 +827,8 @@ public bool DeadLetterQueueEnabled { get; set; }
 
 Enabled DLQ.
 
-If \`deadLetterQueue\` is undefined, an SQS queue with default options will be defined for your Function.
+If \`deadLetterQueue\` is undefined,
+an SQS queue with default options will be defined for your Function.
 
 ---
 
@@ -823,7 +856,9 @@ public System.Collections.Generic.IDictionary<string, string> Environment { get;
 
 Key-value pairs that Lambda caches and makes available for your Lambda functions.
 
-Use environment variables to apply configuration changes, such as test and production environment configurations, without changing your Lambda function source code.
+Use environment variables to apply configuration changes, such
+as test and production environment configurations, without changing your
+Lambda function source code.
 
 ---
 
@@ -922,7 +957,9 @@ public ILayerVersion[] Layers { get; set; }
 
 A list of layers to add to the function's execution environment.
 
-You can configure your Lambda function to pull in additional code during initialization in the form of layers. Layers are packages of libraries or other dependencies that can be used by multiple functions.
+You can configure your Lambda function to pull in
+additional code during initialization in the form of layers. Layers are packages of libraries or other dependencies
+that can be used by multiple functions.
 
 ---
 
@@ -937,7 +974,9 @@ public RetentionDays LogRetention { get; set; }
 
 The number of days log events are kept in CloudWatch Logs.
 
-When updating this property, unsetting it doesn't remove the log retention policy. To remove the retention policy, set the value to \`INFINITE\`.
+When updating
+this property, unsetting it doesn't remove the log retention policy. To
+remove the retention policy, set the value to \`INFINITE\`.
 
 ---
 
@@ -980,7 +1019,9 @@ public double MemorySize { get; set; }
 
 The amount of memory, in MB, that is allocated to your Lambda function.
 
-Lambda uses this value to proportionally allocate the amount of CPU power. For more information, see Resource Model in the AWS Lambda Developer Guide.
+Lambda uses this value to proportionally allocate the amount of CPU
+power. For more information, see Resource Model in the AWS Lambda
+Developer Guide.
 
 ---
 
@@ -1040,7 +1081,15 @@ public IRole Role { get; set; }
 
 Lambda execution role.
 
-This is the role that will be assumed by the function upon execution. It controls the permissions that the function will have. The Role must be assumable by the 'lambda.amazonaws.com' service principal.  The default Role automatically has permissions granted for Lambda execution. If you provide a Role, you must add the relevant AWS managed policies yourself.  The relevant managed policies are \\"service-role/AWSLambdaBasicExecutionRole\\" and \\"service-role/AWSLambdaVPCAccessExecutionRole\\".
+This is the role that will be assumed by the function upon execution.
+It controls the permissions that the function will have. The Role must
+be assumable by the 'lambda.amazonaws.com' service principal.
+
+The default Role automatically has permissions granted for Lambda execution. If you
+provide a Role, you must add the relevant AWS managed policies yourself.
+
+The relevant managed policies are \\"service-role/AWSLambdaBasicExecutionRole\\" and
+\\"service-role/AWSLambdaVPCAccessExecutionRole\\".
 
 ---
 
@@ -1057,7 +1106,10 @@ public ISecurityGroup SecurityGroup { get; set; }
 
 What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead.
 
-Only used if 'vpc' is supplied.  Use securityGroups property instead. Function constructor will throw an error if both are specified.
+Only used if 'vpc' is supplied.
+
+Use securityGroups property instead.
+Function constructor will throw an error if both are specified.
 
 ---
 
@@ -1087,7 +1139,8 @@ public Duration Timeout { get; set; }
 
 The function execution time (in seconds) after which Lambda terminates the function.
 
-Because the execution time affects cost, set this value based on the function's expected execution time.
+Because the execution time affects cost, set this value
+based on the function's expected execution time.
 
 ---
 
@@ -1130,7 +1183,8 @@ public SubnetSelection VpcSubnets { get; set; }
 
 Where to place the network interfaces within the VPC.
 
-Only used if 'vpc' is supplied. Note: internet access for Lambdas requires a NAT gateway, so picking Public subnets is not allowed.
+Only used if 'vpc' is supplied. Note: internet access for Lambdas
+requires a NAT gateway, so picking Public subnets is not allowed.
 
 ---
 
@@ -1144,7 +1198,9 @@ public Code Code { get; set; }
 
 The source code of your Lambda function.
 
-You can point to a file in an Amazon Simple Storage Service (Amazon S3) bucket or specify your source code as inline text.
+You can point to a file in an
+Amazon Simple Storage Service (Amazon S3) bucket or specify your source
+code as inline text.
 
 ---
 
@@ -1158,7 +1214,15 @@ public string Handler { get; set; }
 
 The name of the method within your code that Lambda calls to execute your function.
 
-The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-features.html#gettingstarted-features-programmingmodel.  Use \`Handler.FROM_IMAGE\` when defining a function from a Docker image.  NOTE: If you specify your source code as inline text by specifying the ZipFile property within the Code property, specify index.function_name as the handler.
+The format includes the file name. It can also include
+namespaces and other qualifiers, depending on the runtime.
+For more information, see https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-features.html#gettingstarted-features-programmingmodel.
+
+Use \`Handler.FROM_IMAGE\` when defining a function from a Docker image.
+
+NOTE: If you specify your source code as inline text by specifying the
+ZipFile property within the Code property, specify index.function_name as
+the handler.
 
 ---
 
@@ -1172,7 +1236,10 @@ public Runtime Runtime { get; set; }
 
 The runtime environment for the Lambda function that you are uploading.
 
-For valid values, see the Runtime property in the AWS Lambda Developer Guide.  Use \`Runtime.FROM_IMAGE\` when when defining a function from a Docker image.
+For valid values, see the Runtime property in the AWS Lambda Developer
+Guide.
+
+Use \`Runtime.FROM_IMAGE\` when when defining a function from a Docker image.
 
 ---
 
@@ -1317,7 +1384,10 @@ regioninfo.Default_ServicePrincipal(service *string, region *string, urlSuffix *
 
 Computes a \\"standard\\" AWS Service principal for a given service, region and suffix.
 
-This is useful for example when you need to compute a service principal name, but you do not have a synthesize-time region literal available (so all you have is \`{ \\"Ref\\": \\"AWS::Region\\" }\`). This way you get the same defaulting behavior that is normally used for built-in data.
+This is useful for example when
+you need to compute a service principal name, but you do not have a synthesize-time region literal available (so
+all you have is \`{ \\"Ref\\": \\"AWS::Region\\" }\`). This way you get the same defaulting behavior that is normally used
+for built-in data.
 
 ###### \`service\`<sup>Required</sup> <a name=\\"service\\" id=\\"aws-cdk-lib.region_info.Default.servicePrincipal.parameter.service\\"></a>
 
@@ -1442,7 +1512,8 @@ regioninfo.Fact_RequireFact(region *string, name *string);
 
 Retrieve a fact from the Fact database.
 
-(retrieval will fail if the specified region or fact name does not exist.)
+(retrieval will fail if the specified region or
+fact name does not exist.)
 
 ###### \`region\`<sup>Required</sup> <a name=\\"region\\" id=\\"aws-cdk-lib.region_info.Fact.requireFact.parameter.region\\"></a>
 
@@ -1596,7 +1667,8 @@ func CdkMetadataResourceAvailable() *string
 
 Whether the AWS::CDK::Metadata CloudFormation Resource is available in-region or not.
 
-The value is a boolean modelled as \`YES\` or \`NO\`.
+The value is a boolean
+modelled as \`YES\` or \`NO\`.
 
 ---
 
@@ -1977,7 +2049,11 @@ exports[`submodules without an explicit name java 1`] = `
 
 A Lambda@Edge function.
 
-Convenience resource for requesting a Lambda function in the 'us-east-1' region for use with Lambda@Edge. Implements several restrictions enforced by Lambda@Edge.  Note that this construct requires that the 'us-east-1' region has been bootstrapped. See https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html or 'cdk bootstrap --help' for options.
+Convenience resource for requesting a Lambda function in the 'us-east-1' region for use with Lambda@Edge.
+Implements several restrictions enforced by Lambda@Edge.
+
+Note that this construct requires that the 'us-east-1' region has been bootstrapped.
+See https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html or 'cdk bootstrap --help' for options.
 
 #### Initializers <a name=\\"Initializers\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.Initializer\\"></a>
 
@@ -2090,7 +2166,8 @@ EdgeFunction.Builder.create(Construct scope, java.lang.String id)
 
 The maximum age of a request that Lambda sends to a function for processing.
 
-Minimum: 60 seconds Maximum: 6 hours
+Minimum: 60 seconds
+Maximum: 6 hours
 
 ---
 
@@ -2119,7 +2196,8 @@ The destination for successful invocations.
 
 The maximum number of times to retry when the function returns an error.
 
-Minimum: 0 Maximum: 2
+Minimum: 0
+Maximum: 2
 
 ---
 
@@ -2130,7 +2208,8 @@ Minimum: 0 Maximum: 2
 
 Whether to allow the Lambda to send all network traffic.
 
-If set to false, you must individually add traffic rules to allow the Lambda to connect to network targets.
+If set to false, you must individually add traffic rules to allow the
+Lambda to connect to network targets.
 
 ---
 
@@ -2190,7 +2269,8 @@ The SQS queue to use if DLQ is enabled.
 
 Enabled DLQ.
 
-If \`deadLetterQueue\` is undefined, an SQS queue with default options will be defined for your Function.
+If \`deadLetterQueue\` is undefined,
+an SQS queue with default options will be defined for your Function.
 
 ---
 
@@ -2210,7 +2290,9 @@ A description of the function.
 
 Key-value pairs that Lambda caches and makes available for your Lambda functions.
 
-Use environment variables to apply configuration changes, such as test and production environment configurations, without changing your Lambda function source code.
+Use environment variables to apply configuration changes, such
+as test and production environment configurations, without changing your
+Lambda function source code.
 
 ---
 
@@ -2281,7 +2363,9 @@ Specify the version of CloudWatch Lambda insights to use for monitoring.
 
 A list of layers to add to the function's execution environment.
 
-You can configure your Lambda function to pull in additional code during initialization in the form of layers. Layers are packages of libraries or other dependencies that can be used by multiple functions.
+You can configure your Lambda function to pull in
+additional code during initialization in the form of layers. Layers are packages of libraries or other dependencies
+that can be used by multiple functions.
 
 ---
 
@@ -2292,7 +2376,9 @@ You can configure your Lambda function to pull in additional code during initial
 
 The number of days log events are kept in CloudWatch Logs.
 
-When updating this property, unsetting it doesn't remove the log retention policy. To remove the retention policy, set the value to \`INFINITE\`.
+When updating
+this property, unsetting it doesn't remove the log retention policy. To
+remove the retention policy, set the value to \`INFINITE\`.
 
 ---
 
@@ -2323,7 +2409,9 @@ The IAM role for the Lambda function associated with the custom resource that se
 
 The amount of memory, in MB, that is allocated to your Lambda function.
 
-Lambda uses this value to proportionally allocate the amount of CPU power. For more information, see Resource Model in the AWS Lambda Developer Guide.
+Lambda uses this value to proportionally allocate the amount of CPU
+power. For more information, see Resource Model in the AWS Lambda
+Developer Guide.
 
 ---
 
@@ -2367,7 +2455,15 @@ The maximum of concurrent executions you want to reserve for the function.
 
 Lambda execution role.
 
-This is the role that will be assumed by the function upon execution. It controls the permissions that the function will have. The Role must be assumable by the 'lambda.amazonaws.com' service principal.  The default Role automatically has permissions granted for Lambda execution. If you provide a Role, you must add the relevant AWS managed policies yourself.  The relevant managed policies are \\"service-role/AWSLambdaBasicExecutionRole\\" and \\"service-role/AWSLambdaVPCAccessExecutionRole\\".
+This is the role that will be assumed by the function upon execution.
+It controls the permissions that the function will have. The Role must
+be assumable by the 'lambda.amazonaws.com' service principal.
+
+The default Role automatically has permissions granted for Lambda execution. If you
+provide a Role, you must add the relevant AWS managed policies yourself.
+
+The relevant managed policies are \\"service-role/AWSLambdaBasicExecutionRole\\" and
+\\"service-role/AWSLambdaVPCAccessExecutionRole\\".
 
 ---
 
@@ -2380,7 +2476,10 @@ This is the role that will be assumed by the function upon execution. It control
 
 What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead.
 
-Only used if 'vpc' is supplied.  Use securityGroups property instead. Function constructor will throw an error if both are specified.
+Only used if 'vpc' is supplied.
+
+Use securityGroups property instead.
+Function constructor will throw an error if both are specified.
 
 ---
 
@@ -2402,7 +2501,8 @@ Only used if 'vpc' is supplied.
 
 The function execution time (in seconds) after which Lambda terminates the function.
 
-Because the execution time affects cost, set this value based on the function's expected execution time.
+Because the execution time affects cost, set this value
+based on the function's expected execution time.
 
 ---
 
@@ -2433,7 +2533,8 @@ Specify this if the Lambda function needs to access resources in a VPC.
 
 Where to place the network interfaces within the VPC.
 
-Only used if 'vpc' is supplied. Note: internet access for Lambdas requires a NAT gateway, so picking Public subnets is not allowed.
+Only used if 'vpc' is supplied. Note: internet access for Lambdas
+requires a NAT gateway, so picking Public subnets is not allowed.
 
 ---
 
@@ -2443,7 +2544,9 @@ Only used if 'vpc' is supplied. Note: internet access for Lambdas requires a NAT
 
 The source code of your Lambda function.
 
-You can point to a file in an Amazon Simple Storage Service (Amazon S3) bucket or specify your source code as inline text.
+You can point to a file in an
+Amazon Simple Storage Service (Amazon S3) bucket or specify your source
+code as inline text.
 
 ---
 
@@ -2453,7 +2556,15 @@ You can point to a file in an Amazon Simple Storage Service (Amazon S3) bucket o
 
 The name of the method within your code that Lambda calls to execute your function.
 
-The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-features.html#gettingstarted-features-programmingmodel.  Use \`Handler.FROM_IMAGE\` when defining a function from a Docker image.  NOTE: If you specify your source code as inline text by specifying the ZipFile property within the Code property, specify index.function_name as the handler.
+The format includes the file name. It can also include
+namespaces and other qualifiers, depending on the runtime.
+For more information, see https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-features.html#gettingstarted-features-programmingmodel.
+
+Use \`Handler.FROM_IMAGE\` when defining a function from a Docker image.
+
+NOTE: If you specify your source code as inline text by specifying the
+ZipFile property within the Code property, specify index.function_name as
+the handler.
 
 ---
 
@@ -2463,7 +2574,10 @@ The format includes the file name. It can also include namespaces and other qual
 
 The runtime environment for the Lambda function that you are uploading.
 
-For valid values, see the Runtime property in the AWS Lambda Developer Guide.  Use \`Runtime.FROM_IMAGE\` when when defining a function from a Docker image.
+For valid values, see the Runtime property in the AWS Lambda Developer
+Guide.
+
+Use \`Runtime.FROM_IMAGE\` when when defining a function from a Docker image.
 
 ---
 
@@ -2513,7 +2627,13 @@ public void applyRemovalPolicy(RemovalPolicy policy)
 
 Apply the given removal policy to this resource.
 
-The Removal Policy controls what happens to this resource when it stops being managed by CloudFormation, either because you've removed it from the CDK application or because you've made a change that requires the resource to be replaced.  The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS
+account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 
 ###### \`policy\`<sup>Required</sup> <a name=\\"policy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy.parameter.policy\\"></a>
 
@@ -2670,7 +2790,10 @@ public Metric metricDuration(MetricOptions props)
 
 Metric for the Duration of this Lambda How long execution of this Lambda takes.
 
-Average over 5 minutes Metric for the Duration of this Lambda How long execution of this Lambda takes.  Average over 5 minutes
+Average over 5 minutes
+Metric for the Duration of this Lambda How long execution of this Lambda takes.
+
+Average over 5 minutes
 
 ###### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricDuration.parameter.props\\"></a>
 
@@ -2704,7 +2827,10 @@ public Metric metricInvocations(MetricOptions props)
 
 Metric for the number of invocations of this Lambda How often this Lambda is invoked.
 
-Sum over 5 minutes Metric for the number of invocations of this Lambda How often this Lambda is invoked.  Sum over 5 minutes
+Sum over 5 minutes
+Metric for the number of invocations of this Lambda How often this Lambda is invoked.
+
+Sum over 5 minutes
 
 ###### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricInvocations.parameter.props\\"></a>
 
@@ -2721,7 +2847,10 @@ public Metric metricThrottles(MetricOptions props)
 
 Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.
 
-Sum over 5 minutes Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.  Sum over 5 minutes
+Sum over 5 minutes
+Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.
+
+Sum over 5 minutes
 
 ###### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricThrottles.parameter.props\\"></a>
 
@@ -2814,7 +2943,12 @@ public ResourceEnvironment getEnv();
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
 
 ---
 
@@ -2940,7 +3074,12 @@ public IVersion getLatestVersion();
 
 The \`$LATEST\` version of this function.
 
-Note that this is reference to a non-specific AWS Lambda version, which means the function this version refers to can return different results in different invocations.  To obtain a reference to an explicit version which references the current function configuration, use \`lambdaFunction.currentVersion\` instead.
+Note that this is reference to a non-specific AWS Lambda version, which
+means the function this version refers to can return different results in
+different invocations.
+
+To obtain a reference to an explicit version which references the current
+function configuration, use \`lambdaFunction.currentVersion\` instead.
 
 ---
 
@@ -3090,7 +3229,8 @@ public Duration getMaxEventAge();
 
 The maximum age of a request that Lambda sends to a function for processing.
 
-Minimum: 60 seconds Maximum: 6 hours
+Minimum: 60 seconds
+Maximum: 6 hours
 
 ---
 
@@ -3131,7 +3271,8 @@ public java.lang.Number getRetryAttempts();
 
 The maximum number of times to retry when the function returns an error.
 
-Minimum: 0 Maximum: 2
+Minimum: 0
+Maximum: 2
 
 ---
 
@@ -3146,7 +3287,8 @@ public java.lang.Boolean getAllowAllOutbound();
 
 Whether to allow the Lambda to send all network traffic.
 
-If set to false, you must individually add traffic rules to allow the Lambda to connect to network targets.
+If set to false, you must individually add traffic rules to allow the
+Lambda to connect to network targets.
 
 ---
 
@@ -3230,7 +3372,8 @@ public java.lang.Boolean getDeadLetterQueueEnabled();
 
 Enabled DLQ.
 
-If \`deadLetterQueue\` is undefined, an SQS queue with default options will be defined for your Function.
+If \`deadLetterQueue\` is undefined,
+an SQS queue with default options will be defined for your Function.
 
 ---
 
@@ -3258,7 +3401,9 @@ public java.util.Map<java.lang.String, java.lang.String> getEnvironment();
 
 Key-value pairs that Lambda caches and makes available for your Lambda functions.
 
-Use environment variables to apply configuration changes, such as test and production environment configurations, without changing your Lambda function source code.
+Use environment variables to apply configuration changes, such
+as test and production environment configurations, without changing your
+Lambda function source code.
 
 ---
 
@@ -3357,7 +3502,9 @@ public java.util.List<ILayerVersion> getLayers();
 
 A list of layers to add to the function's execution environment.
 
-You can configure your Lambda function to pull in additional code during initialization in the form of layers. Layers are packages of libraries or other dependencies that can be used by multiple functions.
+You can configure your Lambda function to pull in
+additional code during initialization in the form of layers. Layers are packages of libraries or other dependencies
+that can be used by multiple functions.
 
 ---
 
@@ -3372,7 +3519,9 @@ public RetentionDays getLogRetention();
 
 The number of days log events are kept in CloudWatch Logs.
 
-When updating this property, unsetting it doesn't remove the log retention policy. To remove the retention policy, set the value to \`INFINITE\`.
+When updating
+this property, unsetting it doesn't remove the log retention policy. To
+remove the retention policy, set the value to \`INFINITE\`.
 
 ---
 
@@ -3415,7 +3564,9 @@ public java.lang.Number getMemorySize();
 
 The amount of memory, in MB, that is allocated to your Lambda function.
 
-Lambda uses this value to proportionally allocate the amount of CPU power. For more information, see Resource Model in the AWS Lambda Developer Guide.
+Lambda uses this value to proportionally allocate the amount of CPU
+power. For more information, see Resource Model in the AWS Lambda
+Developer Guide.
 
 ---
 
@@ -3475,7 +3626,15 @@ public IRole getRole();
 
 Lambda execution role.
 
-This is the role that will be assumed by the function upon execution. It controls the permissions that the function will have. The Role must be assumable by the 'lambda.amazonaws.com' service principal.  The default Role automatically has permissions granted for Lambda execution. If you provide a Role, you must add the relevant AWS managed policies yourself.  The relevant managed policies are \\"service-role/AWSLambdaBasicExecutionRole\\" and \\"service-role/AWSLambdaVPCAccessExecutionRole\\".
+This is the role that will be assumed by the function upon execution.
+It controls the permissions that the function will have. The Role must
+be assumable by the 'lambda.amazonaws.com' service principal.
+
+The default Role automatically has permissions granted for Lambda execution. If you
+provide a Role, you must add the relevant AWS managed policies yourself.
+
+The relevant managed policies are \\"service-role/AWSLambdaBasicExecutionRole\\" and
+\\"service-role/AWSLambdaVPCAccessExecutionRole\\".
 
 ---
 
@@ -3492,7 +3651,10 @@ public ISecurityGroup getSecurityGroup();
 
 What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead.
 
-Only used if 'vpc' is supplied.  Use securityGroups property instead. Function constructor will throw an error if both are specified.
+Only used if 'vpc' is supplied.
+
+Use securityGroups property instead.
+Function constructor will throw an error if both are specified.
 
 ---
 
@@ -3522,7 +3684,8 @@ public Duration getTimeout();
 
 The function execution time (in seconds) after which Lambda terminates the function.
 
-Because the execution time affects cost, set this value based on the function's expected execution time.
+Because the execution time affects cost, set this value
+based on the function's expected execution time.
 
 ---
 
@@ -3565,7 +3728,8 @@ public SubnetSelection getVpcSubnets();
 
 Where to place the network interfaces within the VPC.
 
-Only used if 'vpc' is supplied. Note: internet access for Lambdas requires a NAT gateway, so picking Public subnets is not allowed.
+Only used if 'vpc' is supplied. Note: internet access for Lambdas
+requires a NAT gateway, so picking Public subnets is not allowed.
 
 ---
 
@@ -3579,7 +3743,9 @@ public Code getCode();
 
 The source code of your Lambda function.
 
-You can point to a file in an Amazon Simple Storage Service (Amazon S3) bucket or specify your source code as inline text.
+You can point to a file in an
+Amazon Simple Storage Service (Amazon S3) bucket or specify your source
+code as inline text.
 
 ---
 
@@ -3593,7 +3759,15 @@ public java.lang.String getHandler();
 
 The name of the method within your code that Lambda calls to execute your function.
 
-The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-features.html#gettingstarted-features-programmingmodel.  Use \`Handler.FROM_IMAGE\` when defining a function from a Docker image.  NOTE: If you specify your source code as inline text by specifying the ZipFile property within the Code property, specify index.function_name as the handler.
+The format includes the file name. It can also include
+namespaces and other qualifiers, depending on the runtime.
+For more information, see https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-features.html#gettingstarted-features-programmingmodel.
+
+Use \`Handler.FROM_IMAGE\` when defining a function from a Docker image.
+
+NOTE: If you specify your source code as inline text by specifying the
+ZipFile property within the Code property, specify index.function_name as
+the handler.
 
 ---
 
@@ -3607,7 +3781,10 @@ public Runtime getRuntime();
 
 The runtime environment for the Lambda function that you are uploading.
 
-For valid values, see the Runtime property in the AWS Lambda Developer Guide.  Use \`Runtime.FROM_IMAGE\` when when defining a function from a Docker image.
+For valid values, see the Runtime property in the AWS Lambda Developer
+Guide.
+
+Use \`Runtime.FROM_IMAGE\` when when defining a function from a Docker image.
 
 ---
 
@@ -3640,7 +3817,11 @@ exports[`submodules without an explicit name python 1`] = `
 
 A Lambda@Edge function.
 
-Convenience resource for requesting a Lambda function in the 'us-east-1' region for use with Lambda@Edge. Implements several restrictions enforced by Lambda@Edge.  Note that this construct requires that the 'us-east-1' region has been bootstrapped. See https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html or 'cdk bootstrap --help' for options.
+Convenience resource for requesting a Lambda function in the 'us-east-1' region for use with Lambda@Edge.
+Implements several restrictions enforced by Lambda@Edge.
+
+Note that this construct requires that the 'us-east-1' region has been bootstrapped.
+See https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html or 'cdk bootstrap --help' for options.
 
 #### Initializers <a name=\\"Initializers\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.Initializer\\"></a>
 
@@ -3755,7 +3936,8 @@ experimental.EdgeFunction(
 
 The maximum age of a request that Lambda sends to a function for processing.
 
-Minimum: 60 seconds Maximum: 6 hours
+Minimum: 60 seconds
+Maximum: 6 hours
 
 ---
 
@@ -3784,7 +3966,8 @@ The destination for successful invocations.
 
 The maximum number of times to retry when the function returns an error.
 
-Minimum: 0 Maximum: 2
+Minimum: 0
+Maximum: 2
 
 ---
 
@@ -3795,7 +3978,8 @@ Minimum: 0 Maximum: 2
 
 Whether to allow the Lambda to send all network traffic.
 
-If set to false, you must individually add traffic rules to allow the Lambda to connect to network targets.
+If set to false, you must individually add traffic rules to allow the
+Lambda to connect to network targets.
 
 ---
 
@@ -3855,7 +4039,8 @@ The SQS queue to use if DLQ is enabled.
 
 Enabled DLQ.
 
-If \`deadLetterQueue\` is undefined, an SQS queue with default options will be defined for your Function.
+If \`deadLetterQueue\` is undefined,
+an SQS queue with default options will be defined for your Function.
 
 ---
 
@@ -3875,7 +4060,9 @@ A description of the function.
 
 Key-value pairs that Lambda caches and makes available for your Lambda functions.
 
-Use environment variables to apply configuration changes, such as test and production environment configurations, without changing your Lambda function source code.
+Use environment variables to apply configuration changes, such
+as test and production environment configurations, without changing your
+Lambda function source code.
 
 ---
 
@@ -3946,7 +4133,9 @@ Specify the version of CloudWatch Lambda insights to use for monitoring.
 
 A list of layers to add to the function's execution environment.
 
-You can configure your Lambda function to pull in additional code during initialization in the form of layers. Layers are packages of libraries or other dependencies that can be used by multiple functions.
+You can configure your Lambda function to pull in
+additional code during initialization in the form of layers. Layers are packages of libraries or other dependencies
+that can be used by multiple functions.
 
 ---
 
@@ -3957,7 +4146,9 @@ You can configure your Lambda function to pull in additional code during initial
 
 The number of days log events are kept in CloudWatch Logs.
 
-When updating this property, unsetting it doesn't remove the log retention policy. To remove the retention policy, set the value to \`INFINITE\`.
+When updating
+this property, unsetting it doesn't remove the log retention policy. To
+remove the retention policy, set the value to \`INFINITE\`.
 
 ---
 
@@ -3988,7 +4179,9 @@ The IAM role for the Lambda function associated with the custom resource that se
 
 The amount of memory, in MB, that is allocated to your Lambda function.
 
-Lambda uses this value to proportionally allocate the amount of CPU power. For more information, see Resource Model in the AWS Lambda Developer Guide.
+Lambda uses this value to proportionally allocate the amount of CPU
+power. For more information, see Resource Model in the AWS Lambda
+Developer Guide.
 
 ---
 
@@ -4032,7 +4225,15 @@ The maximum of concurrent executions you want to reserve for the function.
 
 Lambda execution role.
 
-This is the role that will be assumed by the function upon execution. It controls the permissions that the function will have. The Role must be assumable by the 'lambda.amazonaws.com' service principal.  The default Role automatically has permissions granted for Lambda execution. If you provide a Role, you must add the relevant AWS managed policies yourself.  The relevant managed policies are \\"service-role/AWSLambdaBasicExecutionRole\\" and \\"service-role/AWSLambdaVPCAccessExecutionRole\\".
+This is the role that will be assumed by the function upon execution.
+It controls the permissions that the function will have. The Role must
+be assumable by the 'lambda.amazonaws.com' service principal.
+
+The default Role automatically has permissions granted for Lambda execution. If you
+provide a Role, you must add the relevant AWS managed policies yourself.
+
+The relevant managed policies are \\"service-role/AWSLambdaBasicExecutionRole\\" and
+\\"service-role/AWSLambdaVPCAccessExecutionRole\\".
 
 ---
 
@@ -4045,7 +4246,10 @@ This is the role that will be assumed by the function upon execution. It control
 
 What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead.
 
-Only used if 'vpc' is supplied.  Use securityGroups property instead. Function constructor will throw an error if both are specified.
+Only used if 'vpc' is supplied.
+
+Use securityGroups property instead.
+Function constructor will throw an error if both are specified.
 
 ---
 
@@ -4067,7 +4271,8 @@ Only used if 'vpc' is supplied.
 
 The function execution time (in seconds) after which Lambda terminates the function.
 
-Because the execution time affects cost, set this value based on the function's expected execution time.
+Because the execution time affects cost, set this value
+based on the function's expected execution time.
 
 ---
 
@@ -4098,7 +4303,8 @@ Specify this if the Lambda function needs to access resources in a VPC.
 
 Where to place the network interfaces within the VPC.
 
-Only used if 'vpc' is supplied. Note: internet access for Lambdas requires a NAT gateway, so picking Public subnets is not allowed.
+Only used if 'vpc' is supplied. Note: internet access for Lambdas
+requires a NAT gateway, so picking Public subnets is not allowed.
 
 ---
 
@@ -4108,7 +4314,9 @@ Only used if 'vpc' is supplied. Note: internet access for Lambdas requires a NAT
 
 The source code of your Lambda function.
 
-You can point to a file in an Amazon Simple Storage Service (Amazon S3) bucket or specify your source code as inline text.
+You can point to a file in an
+Amazon Simple Storage Service (Amazon S3) bucket or specify your source
+code as inline text.
 
 ---
 
@@ -4118,7 +4326,15 @@ You can point to a file in an Amazon Simple Storage Service (Amazon S3) bucket o
 
 The name of the method within your code that Lambda calls to execute your function.
 
-The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-features.html#gettingstarted-features-programmingmodel.  Use \`Handler.FROM_IMAGE\` when defining a function from a Docker image.  NOTE: If you specify your source code as inline text by specifying the ZipFile property within the Code property, specify index.function_name as the handler.
+The format includes the file name. It can also include
+namespaces and other qualifiers, depending on the runtime.
+For more information, see https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-features.html#gettingstarted-features-programmingmodel.
+
+Use \`Handler.FROM_IMAGE\` when defining a function from a Docker image.
+
+NOTE: If you specify your source code as inline text by specifying the
+ZipFile property within the Code property, specify index.function_name as
+the handler.
 
 ---
 
@@ -4128,7 +4344,10 @@ The format includes the file name. It can also include namespaces and other qual
 
 The runtime environment for the Lambda function that you are uploading.
 
-For valid values, see the Runtime property in the AWS Lambda Developer Guide.  Use \`Runtime.FROM_IMAGE\` when when defining a function from a Docker image.
+For valid values, see the Runtime property in the AWS Lambda Developer
+Guide.
+
+Use \`Runtime.FROM_IMAGE\` when when defining a function from a Docker image.
 
 ---
 
@@ -4180,7 +4399,13 @@ def apply_removal_policy(
 
 Apply the given removal policy to this resource.
 
-The Removal Policy controls what happens to this resource when it stops being managed by CloudFormation, either because you've removed it from the CDK application or because you've made a change that requires the resource to be replaced.  The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS
+account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 
 ###### \`policy\`<sup>Required</sup> <a name=\\"policy\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.applyRemovalPolicy.parameter.policy\\"></a>
 
@@ -4218,7 +4443,8 @@ Defines an alias for this version.
 
 The maximum age of a request that Lambda sends to a function for processing.
 
-Minimum: 60 seconds Maximum: 6 hours
+Minimum: 60 seconds
+Maximum: 6 hours
 
 ---
 
@@ -4247,7 +4473,8 @@ The destination for successful invocations.
 
 The maximum number of times to retry when the function returns an error.
 
-Minimum: 0 Maximum: 2
+Minimum: 0
+Maximum: 2
 
 ---
 
@@ -4258,7 +4485,17 @@ Minimum: 0 Maximum: 2
 
 Additional versions with individual weights this alias points to.
 
-Individual additional version weights specified here should add up to (less than) one. All remaining weight is routed to the default version.  For example, the config is      version: \\"1\\"     additionalVersions: [{ version: \\"2\\", weight: 0.05 }]  Then 5% of traffic will be routed to function version 2, while the remaining 95% of traffic will be routed to function version 1.
+Individual additional version weights specified here should add up to
+(less than) one. All remaining weight is routed to the default
+version.
+
+For example, the config is
+
+    version: \\"1\\"
+    additionalVersions: [{ version: \\"2\\", weight: 0.05 }]
+
+Then 5% of traffic will be routed to function version 2, while
+the remaining 95% of traffic will be routed to function version 1.
 
 ---
 
@@ -4334,7 +4571,10 @@ Adds an event source that maps to this AWS Lambda function.
 
 The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your function.
 
-Your function receives an event with all the retrieved records.  Valid Range: Minimum value of 1. Maximum value of 10000.
+Your function receives an
+event with all the retrieved records.
+
+Valid Range: Minimum value of 1. Maximum value of 10000.
 
 ---
 
@@ -4363,7 +4603,8 @@ Set to false to disable the event source upon creation.
 
 The Amazon Resource Name (ARN) of the event source.
 
-Any record added to this stream can invoke the Lambda function.
+Any record added to
+this stream can invoke the Lambda function.
 
 ---
 
@@ -4405,7 +4646,9 @@ Maximum of Duration.minutes(5)
 
 The maximum age of a record that Lambda sends to a function for processing.
 
-Valid Range: * Minimum value of 60 seconds * Maximum value of 7 days
+Valid Range:
+* Minimum value of 60 seconds
+* Maximum value of 7 days
 
 ---
 
@@ -4425,7 +4668,9 @@ An Amazon SQS queue or Amazon SNS topic destination for discarded records.
 
 The number of batches to process from each shard concurrently.
 
-Valid Range: * Minimum value of 1 * Maximum value of 10
+Valid Range:
+* Minimum value of 1
+* Maximum value of 10
 
 ---
 
@@ -4447,7 +4692,12 @@ Allow functions to return partially successful responses for a batch of records.
 
 The maximum number of times to retry when the function returns an error.
 
-Set to \`undefined\` if you want lambda to keep retrying infinitely or until the record expires.  Valid Range: * Minimum value of 0 * Maximum value of 10000
+Set to \`undefined\` if you want lambda to keep retrying infinitely or until
+the record expires.
+
+Valid Range:
+* Minimum value of 0
+* Maximum value of 10000
 
 ---
 
@@ -4516,7 +4766,13 @@ Adds a permission to the Lambda resource policy.
 
 The entity for which you are granting permission to invoke the Lambda function.
 
-This entity can be any valid AWS service principal, such as s3.amazonaws.com or sns.amazonaws.com, or, if you are granting cross-account permission, an AWS account ID. For example, you might want to allow a custom application in another AWS account to push events to Lambda by invoking your function.  The principal can be either an AccountPrincipal or a ServicePrincipal.
+This entity can be any valid AWS service principal, such as
+s3.amazonaws.com or sns.amazonaws.com, or, if you are granting
+cross-account permission, an AWS account ID. For example, you might want
+to allow a custom application in another AWS account to push events to
+Lambda by invoking your function.
+
+The principal can be either an AccountPrincipal or a ServicePrincipal.
 
 ---
 
@@ -4527,7 +4783,11 @@ This entity can be any valid AWS service principal, such as s3.amazonaws.com or 
 
 The Lambda actions that you want to allow in this statement.
 
-For example, you can specify lambda:CreateFunction to specify a certain action, or use a wildcard (\`\`lambda:*\`\`) to grant permission to all Lambda actions. For a list of actions, see Actions and Condition Context Keys for AWS Lambda in the IAM User Guide.
+For example,
+you can specify lambda:CreateFunction to specify a certain action, or use
+a wildcard (\`\`lambda:*\`\`) to grant permission to all Lambda actions. For a
+list of actions, see Actions and Condition Context Keys for AWS Lambda in
+the IAM User Guide.
 
 ---
 
@@ -4547,7 +4807,10 @@ A unique token that must be supplied by the principal invoking the function.
 
 The scope to which the permission constructs be attached.
 
-The default is the Lambda function construct itself, but this would need to be different in cases such as cross-stack references where the Permissions would need to sit closer to the consumer of this permission (i.e., the caller).
+The default is
+the Lambda function construct itself, but this would need to be different
+in cases such as cross-stack references where the Permissions would need
+to sit closer to the consumer of this permission (i.e., the caller).
 
 ---
 
@@ -4557,7 +4820,10 @@ The default is the Lambda function construct itself, but this would need to be d
 
 The AWS account ID (without hyphens) of the source owner.
 
-For example, if you specify an S3 bucket in the SourceArn property, this value is the bucket owner's account ID. You can use this property to ensure that all source principals are owned by a specific account.
+For example, if
+you specify an S3 bucket in the SourceArn property, this value is the
+bucket owner's account ID. You can use this property to ensure that all
+source principals are owned by a specific account.
 
 ---
 
@@ -4567,7 +4833,12 @@ For example, if you specify an S3 bucket in the SourceArn property, this value i
 
 The ARN of a resource that is invoking your function.
 
-When granting Amazon Simple Storage Service (Amazon S3) permission to invoke your function, specify this property with the bucket ARN as its value. This ensures that events generated only from the specified bucket, not just any bucket from any AWS account that creates a mapping to your function, can invoke the function.
+When granting
+Amazon Simple Storage Service (Amazon S3) permission to invoke your
+function, specify this property with the bucket ARN as its value. This
+ensures that events generated only from the specified bucket, not just
+any bucket from any AWS account that creates a mapping to your function,
+can invoke the function.
 
 ---
 
@@ -4607,7 +4878,8 @@ Configures options for asynchronous invocation.
 
 The maximum age of a request that Lambda sends to a function for processing.
 
-Minimum: 60 seconds Maximum: 6 hours
+Minimum: 60 seconds
+Maximum: 6 hours
 
 ---
 
@@ -4636,7 +4908,8 @@ The destination for successful invocations.
 
 The maximum number of times to retry when the function returns an error.
 
-Minimum: 0 Maximum: 2
+Minimum: 0
+Maximum: 2
 
 ---
 
@@ -4755,7 +5028,14 @@ Region which this metric comes from.
 
 What function to use for aggregating.
 
-Can be one of the following:  - \\"Minimum\\" | \\"min\\" - \\"Maximum\\" | \\"max\\" - \\"Average\\" | \\"avg\\" - \\"Sum\\" | \\"sum\\" - \\"SampleCount | \\"n\\" - \\"pNN.NN\\"
+Can be one of the following:
+
+- \\"Minimum\\" | \\"min\\"
+- \\"Maximum\\" | \\"max\\"
+- \\"Average\\" | \\"avg\\"
+- \\"Sum\\" | \\"sum\\"
+- \\"SampleCount | \\"n\\"
+- \\"pNN.NN\\"
 
 ---
 
@@ -4766,7 +5046,14 @@ Can be one of the following:  - \\"Minimum\\" | \\"min\\" - \\"Maximum\\" | \\"m
 
 Unit used to filter the metric stream.
 
-Only refer to datums emitted to the metric stream with the given unit and ignore all others. Only useful when datums are being emitted to the same metric stream under different units.  The default is to use all matric datums in the stream, regardless of unit, which is recommended in nearly all cases.  CloudWatch does not honor this property for graphs.
+Only refer to datums emitted to the metric stream with the given unit and
+ignore all others. Only useful when datums are being emitted to the same
+metric stream under different units.
+
+The default is to use all matric datums in the stream, regardless of unit,
+which is recommended in nearly all cases.
+
+CloudWatch does not honor this property for graphs.
 
 ---
 
@@ -4788,7 +5075,10 @@ def metric_duration(
 
 Metric for the Duration of this Lambda How long execution of this Lambda takes.
 
-Average over 5 minutes Metric for the Duration of this Lambda How long execution of this Lambda takes.  Average over 5 minutes
+Average over 5 minutes
+Metric for the Duration of this Lambda How long execution of this Lambda takes.
+
+Average over 5 minutes
 
 ###### \`account\`<sup>Optional</sup> <a name=\\"account\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricDuration.parameter.account\\"></a>
 
@@ -4862,7 +5152,14 @@ Region which this metric comes from.
 
 What function to use for aggregating.
 
-Can be one of the following:  - \\"Minimum\\" | \\"min\\" - \\"Maximum\\" | \\"max\\" - \\"Average\\" | \\"avg\\" - \\"Sum\\" | \\"sum\\" - \\"SampleCount | \\"n\\" - \\"pNN.NN\\"
+Can be one of the following:
+
+- \\"Minimum\\" | \\"min\\"
+- \\"Maximum\\" | \\"max\\"
+- \\"Average\\" | \\"avg\\"
+- \\"Sum\\" | \\"sum\\"
+- \\"SampleCount | \\"n\\"
+- \\"pNN.NN\\"
 
 ---
 
@@ -4873,7 +5170,14 @@ Can be one of the following:  - \\"Minimum\\" | \\"min\\" - \\"Maximum\\" | \\"m
 
 Unit used to filter the metric stream.
 
-Only refer to datums emitted to the metric stream with the given unit and ignore all others. Only useful when datums are being emitted to the same metric stream under different units.  The default is to use all matric datums in the stream, regardless of unit, which is recommended in nearly all cases.  CloudWatch does not honor this property for graphs.
+Only refer to datums emitted to the metric stream with the given unit and
+ignore all others. Only useful when datums are being emitted to the same
+metric stream under different units.
+
+The default is to use all matric datums in the stream, regardless of unit,
+which is recommended in nearly all cases.
+
+CloudWatch does not honor this property for graphs.
 
 ---
 
@@ -4969,7 +5273,14 @@ Region which this metric comes from.
 
 What function to use for aggregating.
 
-Can be one of the following:  - \\"Minimum\\" | \\"min\\" - \\"Maximum\\" | \\"max\\" - \\"Average\\" | \\"avg\\" - \\"Sum\\" | \\"sum\\" - \\"SampleCount | \\"n\\" - \\"pNN.NN\\"
+Can be one of the following:
+
+- \\"Minimum\\" | \\"min\\"
+- \\"Maximum\\" | \\"max\\"
+- \\"Average\\" | \\"avg\\"
+- \\"Sum\\" | \\"sum\\"
+- \\"SampleCount | \\"n\\"
+- \\"pNN.NN\\"
 
 ---
 
@@ -4980,7 +5291,14 @@ Can be one of the following:  - \\"Minimum\\" | \\"min\\" - \\"Maximum\\" | \\"m
 
 Unit used to filter the metric stream.
 
-Only refer to datums emitted to the metric stream with the given unit and ignore all others. Only useful when datums are being emitted to the same metric stream under different units.  The default is to use all matric datums in the stream, regardless of unit, which is recommended in nearly all cases.  CloudWatch does not honor this property for graphs.
+Only refer to datums emitted to the metric stream with the given unit and
+ignore all others. Only useful when datums are being emitted to the same
+metric stream under different units.
+
+The default is to use all matric datums in the stream, regardless of unit,
+which is recommended in nearly all cases.
+
+CloudWatch does not honor this property for graphs.
 
 ---
 
@@ -5002,7 +5320,10 @@ def metric_invocations(
 
 Metric for the number of invocations of this Lambda How often this Lambda is invoked.
 
-Sum over 5 minutes Metric for the number of invocations of this Lambda How often this Lambda is invoked.  Sum over 5 minutes
+Sum over 5 minutes
+Metric for the number of invocations of this Lambda How often this Lambda is invoked.
+
+Sum over 5 minutes
 
 ###### \`account\`<sup>Optional</sup> <a name=\\"account\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricInvocations.parameter.account\\"></a>
 
@@ -5076,7 +5397,14 @@ Region which this metric comes from.
 
 What function to use for aggregating.
 
-Can be one of the following:  - \\"Minimum\\" | \\"min\\" - \\"Maximum\\" | \\"max\\" - \\"Average\\" | \\"avg\\" - \\"Sum\\" | \\"sum\\" - \\"SampleCount | \\"n\\" - \\"pNN.NN\\"
+Can be one of the following:
+
+- \\"Minimum\\" | \\"min\\"
+- \\"Maximum\\" | \\"max\\"
+- \\"Average\\" | \\"avg\\"
+- \\"Sum\\" | \\"sum\\"
+- \\"SampleCount | \\"n\\"
+- \\"pNN.NN\\"
 
 ---
 
@@ -5087,7 +5415,14 @@ Can be one of the following:  - \\"Minimum\\" | \\"min\\" - \\"Maximum\\" | \\"m
 
 Unit used to filter the metric stream.
 
-Only refer to datums emitted to the metric stream with the given unit and ignore all others. Only useful when datums are being emitted to the same metric stream under different units.  The default is to use all matric datums in the stream, regardless of unit, which is recommended in nearly all cases.  CloudWatch does not honor this property for graphs.
+Only refer to datums emitted to the metric stream with the given unit and
+ignore all others. Only useful when datums are being emitted to the same
+metric stream under different units.
+
+The default is to use all matric datums in the stream, regardless of unit,
+which is recommended in nearly all cases.
+
+CloudWatch does not honor this property for graphs.
 
 ---
 
@@ -5109,7 +5444,10 @@ def metric_throttles(
 
 Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.
 
-Sum over 5 minutes Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.  Sum over 5 minutes
+Sum over 5 minutes
+Metric for the number of throttled invocations of this Lambda How often this Lambda is throttled.
+
+Sum over 5 minutes
 
 ###### \`account\`<sup>Optional</sup> <a name=\\"account\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.metricThrottles.parameter.account\\"></a>
 
@@ -5183,7 +5521,14 @@ Region which this metric comes from.
 
 What function to use for aggregating.
 
-Can be one of the following:  - \\"Minimum\\" | \\"min\\" - \\"Maximum\\" | \\"max\\" - \\"Average\\" | \\"avg\\" - \\"Sum\\" | \\"sum\\" - \\"SampleCount | \\"n\\" - \\"pNN.NN\\"
+Can be one of the following:
+
+- \\"Minimum\\" | \\"min\\"
+- \\"Maximum\\" | \\"max\\"
+- \\"Average\\" | \\"avg\\"
+- \\"Sum\\" | \\"sum\\"
+- \\"SampleCount | \\"n\\"
+- \\"pNN.NN\\"
 
 ---
 
@@ -5194,7 +5539,14 @@ Can be one of the following:  - \\"Minimum\\" | \\"min\\" - \\"Maximum\\" | \\"m
 
 Unit used to filter the metric stream.
 
-Only refer to datums emitted to the metric stream with the given unit and ignore all others. Only useful when datums are being emitted to the same metric stream under different units.  The default is to use all matric datums in the stream, regardless of unit, which is recommended in nearly all cases.  CloudWatch does not honor this property for graphs.
+Only refer to datums emitted to the metric stream with the given unit and
+ignore all others. Only useful when datums are being emitted to the same
+metric stream under different units.
+
+The default is to use all matric datums in the stream, regardless of unit,
+which is recommended in nearly all cases.
+
+CloudWatch does not honor this property for graphs.
 
 ---
 
@@ -5287,7 +5639,12 @@ env: ResourceEnvironment
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
 
 ---
 
@@ -5413,7 +5770,12 @@ latest_version: IVersion
 
 The \`$LATEST\` version of this function.
 
-Note that this is reference to a non-specific AWS Lambda version, which means the function this version refers to can return different results in different invocations.  To obtain a reference to an explicit version which references the current function configuration, use \`lambdaFunction.currentVersion\` instead.
+Note that this is reference to a non-specific AWS Lambda version, which
+means the function this version refers to can return different results in
+different invocations.
+
+To obtain a reference to an explicit version which references the current
+function configuration, use \`lambdaFunction.currentVersion\` instead.
 
 ---
 
@@ -5563,7 +5925,8 @@ max_event_age: Duration
 
 The maximum age of a request that Lambda sends to a function for processing.
 
-Minimum: 60 seconds Maximum: 6 hours
+Minimum: 60 seconds
+Maximum: 6 hours
 
 ---
 
@@ -5604,7 +5967,8 @@ retry_attempts: typing.Union[int, float]
 
 The maximum number of times to retry when the function returns an error.
 
-Minimum: 0 Maximum: 2
+Minimum: 0
+Maximum: 2
 
 ---
 
@@ -5619,7 +5983,8 @@ allow_all_outbound: bool
 
 Whether to allow the Lambda to send all network traffic.
 
-If set to false, you must individually add traffic rules to allow the Lambda to connect to network targets.
+If set to false, you must individually add traffic rules to allow the
+Lambda to connect to network targets.
 
 ---
 
@@ -5703,7 +6068,8 @@ dead_letter_queue_enabled: bool
 
 Enabled DLQ.
 
-If \`deadLetterQueue\` is undefined, an SQS queue with default options will be defined for your Function.
+If \`deadLetterQueue\` is undefined,
+an SQS queue with default options will be defined for your Function.
 
 ---
 
@@ -5731,7 +6097,9 @@ environment: typing.Mapping[str]
 
 Key-value pairs that Lambda caches and makes available for your Lambda functions.
 
-Use environment variables to apply configuration changes, such as test and production environment configurations, without changing your Lambda function source code.
+Use environment variables to apply configuration changes, such
+as test and production environment configurations, without changing your
+Lambda function source code.
 
 ---
 
@@ -5830,7 +6198,9 @@ layers: typing.List[ILayerVersion]
 
 A list of layers to add to the function's execution environment.
 
-You can configure your Lambda function to pull in additional code during initialization in the form of layers. Layers are packages of libraries or other dependencies that can be used by multiple functions.
+You can configure your Lambda function to pull in
+additional code during initialization in the form of layers. Layers are packages of libraries or other dependencies
+that can be used by multiple functions.
 
 ---
 
@@ -5845,7 +6215,9 @@ log_retention: RetentionDays
 
 The number of days log events are kept in CloudWatch Logs.
 
-When updating this property, unsetting it doesn't remove the log retention policy. To remove the retention policy, set the value to \`INFINITE\`.
+When updating
+this property, unsetting it doesn't remove the log retention policy. To
+remove the retention policy, set the value to \`INFINITE\`.
 
 ---
 
@@ -5888,7 +6260,9 @@ memory_size: typing.Union[int, float]
 
 The amount of memory, in MB, that is allocated to your Lambda function.
 
-Lambda uses this value to proportionally allocate the amount of CPU power. For more information, see Resource Model in the AWS Lambda Developer Guide.
+Lambda uses this value to proportionally allocate the amount of CPU
+power. For more information, see Resource Model in the AWS Lambda
+Developer Guide.
 
 ---
 
@@ -5948,7 +6322,15 @@ role: IRole
 
 Lambda execution role.
 
-This is the role that will be assumed by the function upon execution. It controls the permissions that the function will have. The Role must be assumable by the 'lambda.amazonaws.com' service principal.  The default Role automatically has permissions granted for Lambda execution. If you provide a Role, you must add the relevant AWS managed policies yourself.  The relevant managed policies are \\"service-role/AWSLambdaBasicExecutionRole\\" and \\"service-role/AWSLambdaVPCAccessExecutionRole\\".
+This is the role that will be assumed by the function upon execution.
+It controls the permissions that the function will have. The Role must
+be assumable by the 'lambda.amazonaws.com' service principal.
+
+The default Role automatically has permissions granted for Lambda execution. If you
+provide a Role, you must add the relevant AWS managed policies yourself.
+
+The relevant managed policies are \\"service-role/AWSLambdaBasicExecutionRole\\" and
+\\"service-role/AWSLambdaVPCAccessExecutionRole\\".
 
 ---
 
@@ -5965,7 +6347,10 @@ security_group: ISecurityGroup
 
 What security group to associate with the Lambda's network interfaces. This property is being deprecated, consider using securityGroups instead.
 
-Only used if 'vpc' is supplied.  Use securityGroups property instead. Function constructor will throw an error if both are specified.
+Only used if 'vpc' is supplied.
+
+Use securityGroups property instead.
+Function constructor will throw an error if both are specified.
 
 ---
 
@@ -5995,7 +6380,8 @@ timeout: Duration
 
 The function execution time (in seconds) after which Lambda terminates the function.
 
-Because the execution time affects cost, set this value based on the function's expected execution time.
+Because the execution time affects cost, set this value
+based on the function's expected execution time.
 
 ---
 
@@ -6038,7 +6424,8 @@ vpc_subnets: SubnetSelection
 
 Where to place the network interfaces within the VPC.
 
-Only used if 'vpc' is supplied. Note: internet access for Lambdas requires a NAT gateway, so picking Public subnets is not allowed.
+Only used if 'vpc' is supplied. Note: internet access for Lambdas
+requires a NAT gateway, so picking Public subnets is not allowed.
 
 ---
 
@@ -6052,7 +6439,9 @@ code: Code
 
 The source code of your Lambda function.
 
-You can point to a file in an Amazon Simple Storage Service (Amazon S3) bucket or specify your source code as inline text.
+You can point to a file in an
+Amazon Simple Storage Service (Amazon S3) bucket or specify your source
+code as inline text.
 
 ---
 
@@ -6066,7 +6455,15 @@ handler: str
 
 The name of the method within your code that Lambda calls to execute your function.
 
-The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-features.html#gettingstarted-features-programmingmodel.  Use \`Handler.FROM_IMAGE\` when defining a function from a Docker image.  NOTE: If you specify your source code as inline text by specifying the ZipFile property within the Code property, specify index.function_name as the handler.
+The format includes the file name. It can also include
+namespaces and other qualifiers, depending on the runtime.
+For more information, see https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-features.html#gettingstarted-features-programmingmodel.
+
+Use \`Handler.FROM_IMAGE\` when defining a function from a Docker image.
+
+NOTE: If you specify your source code as inline text by specifying the
+ZipFile property within the Code property, specify index.function_name as
+the handler.
 
 ---
 
@@ -6080,7 +6477,10 @@ runtime: Runtime
 
 The runtime environment for the Lambda function that you are uploading.
 
-For valid values, see the Runtime property in the AWS Lambda Developer Guide.  Use \`Runtime.FROM_IMAGE\` when when defining a function from a Docker image.
+For valid values, see the Runtime property in the AWS Lambda Developer
+Guide.
+
+Use \`Runtime.FROM_IMAGE\` when when defining a function from a Docker image.
 
 ---
 

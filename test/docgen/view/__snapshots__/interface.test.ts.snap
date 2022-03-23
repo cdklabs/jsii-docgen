@@ -632,7 +632,8 @@ private Rule OnCloudTrailEvent(string Id, OnEventOptions Options = null)
 
 Define a CloudWatch event that triggers when something happens to this repository.
 
-Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -658,7 +659,8 @@ private Rule OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions O
 
 Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
 
-Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
@@ -684,7 +686,8 @@ private Rule OnEvent(string Id, OnEventOptions Options = null)
 
 Defines a CloudWatch event rule which triggers for repository events.
 
-Use \`rule.addEventPattern(pattern)\` to specify a filter.
+Use
+\`rule.addEventPattern(pattern)\` to specify a filter.
 
 ### \`Id\`<sup>Required</sup> <a name=\\"Id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
@@ -793,7 +796,12 @@ public ResourceEnvironment Env { get; }
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
 
 ---
 
@@ -1481,7 +1489,8 @@ func OnCloudTrailEvent(id *string, options OnEventOptions) Rule
 
 Define a CloudWatch event that triggers when something happens to this repository.
 
-Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -1507,7 +1516,8 @@ func OnCloudTrailImagePushed(id *string, options OnCloudTrailImagePushedOptions)
 
 Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
 
-Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
@@ -1533,7 +1543,8 @@ func OnEvent(id *string, options OnEventOptions) Rule
 
 Defines a CloudWatch event rule which triggers for repository events.
 
-Use \`rule.addEventPattern(pattern)\` to specify a filter.
+Use
+\`rule.addEventPattern(pattern)\` to specify a filter.
 
 ### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
@@ -1642,7 +1653,12 @@ func Env() ResourceEnvironment
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
 
 ---
 
@@ -2337,7 +2353,8 @@ public Rule onCloudTrailEvent(java.lang.String id, OnEventOptions options)
 
 Define a CloudWatch event that triggers when something happens to this repository.
 
-Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -2364,7 +2381,8 @@ public Rule onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushed
 
 Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
 
-Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
@@ -2391,7 +2409,8 @@ public Rule onEvent(java.lang.String id, OnEventOptions options)
 
 Defines a CloudWatch event rule which triggers for repository events.
 
-Use \`rule.addEventPattern(pattern)\` to specify a filter.
+Use
+\`rule.addEventPattern(pattern)\` to specify a filter.
 
 ### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
@@ -2503,7 +2522,12 @@ public ResourceEnvironment getEnv();
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
 
 ---
 
@@ -3495,7 +3519,8 @@ def on_cloud_trail_event(
 
 Define a CloudWatch event that triggers when something happens to this repository.
 
-Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -3521,7 +3546,9 @@ A description of the rule's purpose.
 
 Additional restrictions for the event to route to the specified target.
 
-The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
+The method that generates the rule probably imposes some type of event
+filtering. The filtering implied by what you pass here is added
+on top of that filtering.
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
@@ -3560,7 +3587,8 @@ def on_cloud_trail_image_pushed(
 
 Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
 
-Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
@@ -3586,7 +3614,9 @@ A description of the rule's purpose.
 
 Additional restrictions for the event to route to the specified target.
 
-The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
+The method that generates the rule probably imposes some type of event
+filtering. The filtering implied by what you pass here is added
+on top of that filtering.
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
@@ -3633,7 +3663,8 @@ def on_event(
 
 Defines a CloudWatch event rule which triggers for repository events.
 
-Use \`rule.addEventPattern(pattern)\` to specify a filter.
+Use
+\`rule.addEventPattern(pattern)\` to specify a filter.
 
 ### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
@@ -3657,7 +3688,9 @@ A description of the rule's purpose.
 
 Additional restrictions for the event to route to the specified target.
 
-The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
+The method that generates the rule probably imposes some type of event
+filtering. The filtering implied by what you pass here is added
+on top of that filtering.
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
@@ -3720,7 +3753,9 @@ A description of the rule's purpose.
 
 Additional restrictions for the event to route to the specified target.
 
-The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
+The method that generates the rule probably imposes some type of event
+filtering. The filtering implied by what you pass here is added
+on top of that filtering.
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
@@ -3830,7 +3865,12 @@ env: ResourceEnvironment
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
 
 ---
 
@@ -4518,7 +4558,8 @@ public onCloudTrailEvent(id: string, options?: OnEventOptions): Rule
 
 Define a CloudWatch event that triggers when something happens to this repository.
 
-Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -4544,7 +4585,8 @@ public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOpti
 
 Defines an AWS CloudWatch event rule that can trigger a target when an image is pushed to this repository.
 
-Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id\\"></a>
 
@@ -4570,7 +4612,8 @@ public onEvent(id: string, options?: OnEventOptions): Rule
 
 Defines a CloudWatch event rule which triggers for repository events.
 
-Use \`rule.addEventPattern(pattern)\` to specify a filter.
+Use
+\`rule.addEventPattern(pattern)\` to specify a filter.
 
 ### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id\\"></a>
 
@@ -4679,7 +4722,12 @@ public readonly env: ResourceEnvironment;
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
 
 ---
 

@@ -42,3 +42,13 @@ test('newlines in "defaults" are removed', () => {
   expect(markdown).toMatchSnapshot();
   expect(markdown).toContain('default option with a newline');
 });
+
+test('newlines in any other than "defaults" are not removed', () => {
+  const transpile = new TypeScriptTranspile();
+  const reflectParameter = findParameter();
+  reflectParameter.spec.docs = { remarks: 'remarks\nwith a newline' };
+  const docgenParameter = new Parameter(transpile, reflectParameter).toJson();
+  const renderer = new MarkdownRenderer({ language: Language.TYPESCRIPT, ...metadata });
+  const markdown = renderer.visitParameter(docgenParameter).render();
+  expect(markdown).toContain('remarks\nwith a newline');
+});

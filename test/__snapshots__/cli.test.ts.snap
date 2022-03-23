@@ -89,7 +89,13 @@ public applyRemovalPolicy(policy: RemovalPolicy): void
 
 Apply the given removal policy to this resource.
 
-The Removal Policy controls what happens to this resource when it stops being managed by CloudFormation, either because you've removed it from the CDK application or because you've made a change that requires the resource to be replaced.  The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS
+account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 
 ###### \`policy\`<sup>Required</sup> <a name=\\"policy\\" id=\\"construct-library.submod1.GoodbyeBucket.applyRemovalPolicy.parameter.policy\\"></a>
 
@@ -138,7 +144,9 @@ The notification destination (Lambda, SNS Topic or SQS Queue).
 
 S3 object key filter rules to determine which objects trigger this event.
 
-Each filter must include a \`prefix\` and/or \`suffix\` that will be matched against the s3 object key. Refer to the S3 Developer Guide for details about allowed filter rules.
+Each filter must include a \`prefix\` and/or \`suffix\`
+that will be matched against the s3 object key. Refer to the S3 Developer Guide
+for details about allowed filter rules.
 
 ---
 
@@ -150,7 +158,8 @@ public addObjectCreatedNotification(dest: IBucketNotificationDestination, filter
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
 
-This is identical to calling \`onEvent(EventType.OBJECT_CREATED)\`.
+This is identical to calling
+\`onEvent(EventType.OBJECT_CREATED)\`.
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification.parameter.dest\\"></a>
 
@@ -176,7 +185,8 @@ public addObjectRemovedNotification(dest: IBucketNotificationDestination, filter
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
 
-This is identical to calling \`onEvent(EventType.OBJECT_REMOVED)\`.
+This is identical to calling
+\`onEvent(EventType.OBJECT_REMOVED)\`.
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification.parameter.dest\\"></a>
 
@@ -202,7 +212,11 @@ public addToResourcePolicy(permission: PolicyStatement): AddToResourcePolicyResu
 
 Adds a statement to the resource policy for a principal (i.e. account/role/service) to perform actions on this bucket and/or its contents. Use \`bucketArn\` and \`arnForObjects(keys)\` to obtain ARNs for this bucket or objects.
 
-Note that the policy statement may or may not be added to the policy. For example, when an \`IBucket\` is created from an existing bucket, it's not possible to tell whether the bucket already has a policy attached, let alone to re-use that policy to add more statements to it. So it's safest to do nothing in these cases.
+Note that the policy statement may or may not be added to the policy.
+For example, when an \`IBucket\` is created from an existing bucket,
+it's not possible to tell whether the bucket already has a policy
+attached, let alone to re-use that policy to add more statements to it.
+So it's safest to do nothing in these cases.
 
 ###### \`permission\`<sup>Required</sup> <a name=\\"permission\\" id=\\"construct-library.submod1.GoodbyeBucket.addToResourcePolicy.parameter.permission\\"></a>
 
@@ -220,7 +234,11 @@ public arnForObjects(keyPattern: string): string
 
 Returns an ARN that represents all objects within the bucket that match the key pattern specified.
 
-To represent all keys, specify \`\`\\"*\\"\`\`.  If you need to specify a keyPattern with multiple components, concatenate them into a single string, e.g.:     arnForObjects(\`home/\${team}/\${user}/*\`)
+To represent all keys, specify \`\`\\"*\\"\`\`.
+
+If you need to specify a keyPattern with multiple components, concatenate them into a single string, e.g.:
+
+   arnForObjects(\`home/\${team}/\${user}/*\`)
 
 ###### \`keyPattern\`<sup>Required</sup> <a name=\\"keyPattern\\" id=\\"construct-library.submod1.GoodbyeBucket.arnForObjects.parameter.keyPattern\\"></a>
 
@@ -260,7 +278,24 @@ public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
 
 Allows unrestricted access to objects from this bucket.
 
-IMPORTANT: This permission allows anyone to perform actions on S3 objects in this bucket, which is useful for when you configure your bucket as a website and want everyone to be able to read objects in the bucket without needing to authenticate.  Without arguments, this method will grant read (\\"s3:GetObject\\") access to all objects (\\"*\\") in the bucket.  The method returns the \`iam.Grant\` object, which can then be modified as needed. For example, you can add a condition that will restrict access only to an IPv4 range like this:       const grant = bucket.grantPublicAccess();      grant.resourceStatement!.addCondition(‘IpAddress’, { “aws:SourceIp”: “54.240.143.0/24” });  Note that if this \`IBucket\` refers to an existing bucket, possibly not managed by CloudFormation, this method will have no effect, since it's impossible to modify the policy of an existing bucket.
+IMPORTANT: This permission allows anyone to perform actions on S3 objects
+in this bucket, which is useful for when you configure your bucket as a
+website and want everyone to be able to read objects in the bucket without
+needing to authenticate.
+
+Without arguments, this method will grant read (\\"s3:GetObject\\") access to
+all objects (\\"*\\") in the bucket.
+
+The method returns the \`iam.Grant\` object, which can then be modified
+as needed. For example, you can add a condition that will restrict access only
+to an IPv4 range like this:
+
+     const grant = bucket.grantPublicAccess();
+     grant.resourceStatement!.addCondition(‘IpAddress’, { “aws:SourceIp”: “54.240.143.0/24” });
+
+Note that if this \`IBucket\` refers to an existing bucket, possibly not
+managed by CloudFormation, this method will have no effect, since it's
+impossible to modify the policy of an existing bucket.
 
 ###### \`allowedActions\`<sup>Required</sup> <a name=\\"allowedActions\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPublicAccess.parameter.allowedActions\\"></a>
 
@@ -288,7 +323,8 @@ public grantPut(identity: IGrantable, objectsKeyPattern?: any): Grant
 
 Grants s3:PutObject* and s3:Abort* permissions for this bucket to an IAM principal.
 
-If encryption is used, permission to use the key to encrypt the contents of written files will also be granted to the same principal.
+If encryption is used, permission to use the key to encrypt the contents
+of written files will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPut.parameter.identity\\"></a>
 
@@ -314,7 +350,9 @@ public grantPutAcl(identity: IGrantable, objectsKeyPattern?: string): Grant
 
 Grant the given IAM identity permissions to modify the ACLs of objects in the given Bucket.
 
-If your application has the '@aws-cdk/aws-s3:grantWriteWithoutAcl' feature flag set, calling {@link grantWrite} or {@link grantReadWrite} no longer grants permissions to modify the ACLs of the objects; in this case, if you need to modify object ACLs, call this method explicitly.
+If your application has the '@aws-cdk/aws-s3:grantWriteWithoutAcl' feature flag set,
+calling {@link grantWrite} or {@link grantReadWrite} no longer grants permissions to modify the ACLs of the objects;
+in this case, if you need to modify object ACLs, call this method explicitly.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPutAcl.parameter.identity\\"></a>
 
@@ -336,7 +374,8 @@ public grantRead(identity: IGrantable, objectsKeyPattern?: any): Grant
 
 Grant read permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
 
-If encryption is used, permission to use the key to decrypt the contents of the bucket will also be granted to the same principal.
+If encryption is used, permission to use the key to decrypt the contents
+of the bucket will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantRead.parameter.identity\\"></a>
 
@@ -362,7 +401,16 @@ public grantReadWrite(identity: IGrantable, objectsKeyPattern?: any): Grant
 
 Grants read/write permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
 
-If an encryption key is used, permission to use the key for encrypt/decrypt will also be granted.  Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`, which could be used to grant read/write object access to IAM principals in other accounts. If you want to get rid of that behavior, update your CDK version to 1.85.0 or later, and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\` in the \`context\` key of your cdk.json file. If you've already updated, but still need the principal to have permissions to modify the ACLs, use the {@link grantPutAcl} method.
+If an encryption key is used, permission to use the key for
+encrypt/decrypt will also be granted.
+
+Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`,
+which could be used to grant read/write object access to IAM principals in other accounts.
+If you want to get rid of that behavior, update your CDK version to 1.85.0 or later,
+and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\`
+in the \`context\` key of your cdk.json file.
+If you've already updated, but still need the principal to have permissions to modify the ACLs,
+use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantReadWrite.parameter.identity\\"></a>
 
@@ -384,7 +432,16 @@ public grantWrite(identity: IGrantable, objectsKeyPattern?: any): Grant
 
 Grant write permissions to this bucket to an IAM principal.
 
-If encryption is used, permission to use the key to encrypt the contents of written files will also be granted to the same principal.  Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`, which could be used to grant read/write object access to IAM principals in other accounts. If you want to get rid of that behavior, update your CDK version to 1.85.0 or later, and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\` in the \`context\` key of your cdk.json file. If you've already updated, but still need the principal to have permissions to modify the ACLs, use the {@link grantPutAcl} method.
+If encryption is used, permission to use the key to encrypt the contents
+of written files will also be granted to the same principal.
+
+Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`,
+which could be used to grant read/write object access to IAM principals in other accounts.
+If you want to get rid of that behavior, update your CDK version to 1.85.0 or later,
+and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\`
+in the \`context\` key of your cdk.json file.
+If you've already updated, but still need the principal to have permissions to modify the ACLs,
+use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantWrite.parameter.identity\\"></a>
 
@@ -406,7 +463,8 @@ public onCloudTrailEvent(id: string, options?: OnCloudTrailBucketEventOptions): 
 
 Define a CloudWatch event that triggers when something happens to this repository.
 
-Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -432,7 +490,12 @@ public onCloudTrailPutObject(id: string, options?: OnCloudTrailBucketEventOption
 
 Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call.
 
-Note that some tools like \`aws s3 cp\` will automatically use either PutObject or the multipart upload API depending on the file size, so using \`onCloudTrailWriteObject\` may be preferable.  Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Note that some tools like \`aws s3 cp\` will automatically use either
+PutObject or the multipart upload API depending on the file size,
+so using \`onCloudTrailWriteObject\` may be preferable.
+
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailPutObject.parameter.id\\"></a>
 
@@ -458,7 +521,15 @@ public onCloudTrailWriteObject(id: string, options?: OnCloudTrailBucketEventOpti
 
 Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to.
 
-This includes the events PutObject, CopyObject, and CompleteMultipartUpload.  Note that some tools like \`aws s3 cp\` will automatically use either PutObject or the multipart upload API depending on the file size, so using this method may be preferable to \`onCloudTrailPutObject\`.  Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+This includes
+the events PutObject, CopyObject, and CompleteMultipartUpload.
+
+Note that some tools like \`aws s3 cp\` will automatically use either
+PutObject or the multipart upload API depending on the file size,
+so using this method may be preferable to \`onCloudTrailPutObject\`.
+
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailWriteObject.parameter.id\\"></a>
 
@@ -484,7 +555,8 @@ public s3UrlForObject(key?: string): string
 
 The S3 URL of an S3 object. For example:.
 
-\`s3://onlybucket\` - \`s3://bucket/key\`
+\`s3://onlybucket\`
+- \`s3://bucket/key\`
 
 ###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.submod1.GoodbyeBucket.s3UrlForObject.parameter.key\\"></a>
 
@@ -492,7 +564,8 @@ The S3 URL of an S3 object. For example:.
 
 The S3 key of the object.
 
-If not specified, the S3 URL of the bucket is returned.
+If not specified, the S3 URL of the
+bucket is returned.
 
 ---
 
@@ -504,7 +577,9 @@ public urlForObject(key?: string): string
 
 The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:.
 
-\`https://s3.us-west-1.amazonaws.com/onlybucket\` - \`https://s3.us-west-1.amazonaws.com/bucket/key\` - \`https://s3.cn-north-1.amazonaws.com.cn/china-bucket/mykey\`
+\`https://s3.us-west-1.amazonaws.com/onlybucket\`
+- \`https://s3.us-west-1.amazonaws.com/bucket/key\`
+- \`https://s3.cn-north-1.amazonaws.com.cn/china-bucket/mykey\`
 
 ###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.submod1.GoodbyeBucket.urlForObject.parameter.key\\"></a>
 
@@ -512,7 +587,8 @@ The https URL of an S3 object. Specify \`regional: false\` at the options for no
 
 The S3 key of the object.
 
-If not specified, the URL of the bucket is returned.
+If not specified, the URL of the
+bucket is returned.
 
 ---
 
@@ -524,7 +600,10 @@ public virtualHostedUrlForObject(key?: string, options?: VirtualHostedStyleUrlOp
 
 The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:.
 
-\`https://only-bucket.s3.us-west-1.amazonaws.com\` - \`https://bucket.s3.us-west-1.amazonaws.com/key\` - \`https://bucket.s3.amazonaws.com/key\` - \`https://china-bucket.s3.cn-north-1.amazonaws.com.cn/mykey\`
+\`https://only-bucket.s3.us-west-1.amazonaws.com\`
+- \`https://bucket.s3.us-west-1.amazonaws.com/key\`
+- \`https://bucket.s3.amazonaws.com/key\`
+- \`https://china-bucket.s3.cn-north-1.amazonaws.com.cn/mykey\`
 
 ###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.submod1.GoodbyeBucket.virtualHostedUrlForObject.parameter.key\\"></a>
 
@@ -532,7 +611,8 @@ The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the
 
 The S3 key of the object.
 
-If not specified, the URL of the bucket is returned.
+If not specified, the URL of the
+bucket is returned.
 
 ---
 
@@ -717,7 +797,8 @@ The construct's name.
 
 A \`BucketAttributes\` object.
 
-Can be obtained from a call to \`bucket.export()\` or manually created.
+Can be obtained from a call to
+\`bucket.export()\` or manually created.
 
 ---
 
@@ -807,7 +888,12 @@ public readonly env: ResourceEnvironment;
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
 
 ---
 
@@ -941,7 +1027,8 @@ public readonly policy: BucketPolicy;
 
 The resource policy associated with this bucket.
 
-If \`autoCreatePolicy\` is true, a \`BucketPolicy\` will be created upon the first call to addToResourcePolicy(s).
+If \`autoCreatePolicy\` is true, a \`BucketPolicy\` will be created upon the
+first call to addToResourcePolicy(s).
 
 ---
 
@@ -1030,7 +1117,13 @@ public applyRemovalPolicy(policy: RemovalPolicy): void
 
 Apply the given removal policy to this resource.
 
-The Removal Policy controls what happens to this resource when it stops being managed by CloudFormation, either because you've removed it from the CDK application or because you've made a change that requires the resource to be replaced.  The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS
+account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 
 ###### \`policy\`<sup>Required</sup> <a name=\\"policy\\" id=\\"construct-library.GreeterBucket.applyRemovalPolicy.parameter.policy\\"></a>
 
@@ -1079,7 +1172,9 @@ The notification destination (Lambda, SNS Topic or SQS Queue).
 
 S3 object key filter rules to determine which objects trigger this event.
 
-Each filter must include a \`prefix\` and/or \`suffix\` that will be matched against the s3 object key. Refer to the S3 Developer Guide for details about allowed filter rules.
+Each filter must include a \`prefix\` and/or \`suffix\`
+that will be matched against the s3 object key. Refer to the S3 Developer Guide
+for details about allowed filter rules.
 
 ---
 
@@ -1091,7 +1186,8 @@ public addObjectCreatedNotification(dest: IBucketNotificationDestination, filter
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
 
-This is identical to calling \`onEvent(EventType.OBJECT_CREATED)\`.
+This is identical to calling
+\`onEvent(EventType.OBJECT_CREATED)\`.
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.GreeterBucket.addObjectCreatedNotification.parameter.dest\\"></a>
 
@@ -1117,7 +1213,8 @@ public addObjectRemovedNotification(dest: IBucketNotificationDestination, filter
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
 
-This is identical to calling \`onEvent(EventType.OBJECT_REMOVED)\`.
+This is identical to calling
+\`onEvent(EventType.OBJECT_REMOVED)\`.
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.GreeterBucket.addObjectRemovedNotification.parameter.dest\\"></a>
 
@@ -1143,7 +1240,11 @@ public addToResourcePolicy(permission: PolicyStatement): AddToResourcePolicyResu
 
 Adds a statement to the resource policy for a principal (i.e. account/role/service) to perform actions on this bucket and/or its contents. Use \`bucketArn\` and \`arnForObjects(keys)\` to obtain ARNs for this bucket or objects.
 
-Note that the policy statement may or may not be added to the policy. For example, when an \`IBucket\` is created from an existing bucket, it's not possible to tell whether the bucket already has a policy attached, let alone to re-use that policy to add more statements to it. So it's safest to do nothing in these cases.
+Note that the policy statement may or may not be added to the policy.
+For example, when an \`IBucket\` is created from an existing bucket,
+it's not possible to tell whether the bucket already has a policy
+attached, let alone to re-use that policy to add more statements to it.
+So it's safest to do nothing in these cases.
 
 ###### \`permission\`<sup>Required</sup> <a name=\\"permission\\" id=\\"construct-library.GreeterBucket.addToResourcePolicy.parameter.permission\\"></a>
 
@@ -1161,7 +1262,11 @@ public arnForObjects(keyPattern: string): string
 
 Returns an ARN that represents all objects within the bucket that match the key pattern specified.
 
-To represent all keys, specify \`\`\\"*\\"\`\`.  If you need to specify a keyPattern with multiple components, concatenate them into a single string, e.g.:     arnForObjects(\`home/\${team}/\${user}/*\`)
+To represent all keys, specify \`\`\\"*\\"\`\`.
+
+If you need to specify a keyPattern with multiple components, concatenate them into a single string, e.g.:
+
+   arnForObjects(\`home/\${team}/\${user}/*\`)
 
 ###### \`keyPattern\`<sup>Required</sup> <a name=\\"keyPattern\\" id=\\"construct-library.GreeterBucket.arnForObjects.parameter.keyPattern\\"></a>
 
@@ -1201,7 +1306,24 @@ public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
 
 Allows unrestricted access to objects from this bucket.
 
-IMPORTANT: This permission allows anyone to perform actions on S3 objects in this bucket, which is useful for when you configure your bucket as a website and want everyone to be able to read objects in the bucket without needing to authenticate.  Without arguments, this method will grant read (\\"s3:GetObject\\") access to all objects (\\"*\\") in the bucket.  The method returns the \`iam.Grant\` object, which can then be modified as needed. For example, you can add a condition that will restrict access only to an IPv4 range like this:       const grant = bucket.grantPublicAccess();      grant.resourceStatement!.addCondition(‘IpAddress’, { “aws:SourceIp”: “54.240.143.0/24” });  Note that if this \`IBucket\` refers to an existing bucket, possibly not managed by CloudFormation, this method will have no effect, since it's impossible to modify the policy of an existing bucket.
+IMPORTANT: This permission allows anyone to perform actions on S3 objects
+in this bucket, which is useful for when you configure your bucket as a
+website and want everyone to be able to read objects in the bucket without
+needing to authenticate.
+
+Without arguments, this method will grant read (\\"s3:GetObject\\") access to
+all objects (\\"*\\") in the bucket.
+
+The method returns the \`iam.Grant\` object, which can then be modified
+as needed. For example, you can add a condition that will restrict access only
+to an IPv4 range like this:
+
+     const grant = bucket.grantPublicAccess();
+     grant.resourceStatement!.addCondition(‘IpAddress’, { “aws:SourceIp”: “54.240.143.0/24” });
+
+Note that if this \`IBucket\` refers to an existing bucket, possibly not
+managed by CloudFormation, this method will have no effect, since it's
+impossible to modify the policy of an existing bucket.
 
 ###### \`allowedActions\`<sup>Required</sup> <a name=\\"allowedActions\\" id=\\"construct-library.GreeterBucket.grantPublicAccess.parameter.allowedActions\\"></a>
 
@@ -1229,7 +1351,8 @@ public grantPut(identity: IGrantable, objectsKeyPattern?: any): Grant
 
 Grants s3:PutObject* and s3:Abort* permissions for this bucket to an IAM principal.
 
-If encryption is used, permission to use the key to encrypt the contents of written files will also be granted to the same principal.
+If encryption is used, permission to use the key to encrypt the contents
+of written files will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantPut.parameter.identity\\"></a>
 
@@ -1255,7 +1378,9 @@ public grantPutAcl(identity: IGrantable, objectsKeyPattern?: string): Grant
 
 Grant the given IAM identity permissions to modify the ACLs of objects in the given Bucket.
 
-If your application has the '@aws-cdk/aws-s3:grantWriteWithoutAcl' feature flag set, calling {@link grantWrite} or {@link grantReadWrite} no longer grants permissions to modify the ACLs of the objects; in this case, if you need to modify object ACLs, call this method explicitly.
+If your application has the '@aws-cdk/aws-s3:grantWriteWithoutAcl' feature flag set,
+calling {@link grantWrite} or {@link grantReadWrite} no longer grants permissions to modify the ACLs of the objects;
+in this case, if you need to modify object ACLs, call this method explicitly.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantPutAcl.parameter.identity\\"></a>
 
@@ -1277,7 +1402,8 @@ public grantRead(identity: IGrantable, objectsKeyPattern?: any): Grant
 
 Grant read permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
 
-If encryption is used, permission to use the key to decrypt the contents of the bucket will also be granted to the same principal.
+If encryption is used, permission to use the key to decrypt the contents
+of the bucket will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantRead.parameter.identity\\"></a>
 
@@ -1303,7 +1429,16 @@ public grantReadWrite(identity: IGrantable, objectsKeyPattern?: any): Grant
 
 Grants read/write permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
 
-If an encryption key is used, permission to use the key for encrypt/decrypt will also be granted.  Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`, which could be used to grant read/write object access to IAM principals in other accounts. If you want to get rid of that behavior, update your CDK version to 1.85.0 or later, and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\` in the \`context\` key of your cdk.json file. If you've already updated, but still need the principal to have permissions to modify the ACLs, use the {@link grantPutAcl} method.
+If an encryption key is used, permission to use the key for
+encrypt/decrypt will also be granted.
+
+Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`,
+which could be used to grant read/write object access to IAM principals in other accounts.
+If you want to get rid of that behavior, update your CDK version to 1.85.0 or later,
+and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\`
+in the \`context\` key of your cdk.json file.
+If you've already updated, but still need the principal to have permissions to modify the ACLs,
+use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantReadWrite.parameter.identity\\"></a>
 
@@ -1325,7 +1460,16 @@ public grantWrite(identity: IGrantable, objectsKeyPattern?: any): Grant
 
 Grant write permissions to this bucket to an IAM principal.
 
-If encryption is used, permission to use the key to encrypt the contents of written files will also be granted to the same principal.  Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`, which could be used to grant read/write object access to IAM principals in other accounts. If you want to get rid of that behavior, update your CDK version to 1.85.0 or later, and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\` in the \`context\` key of your cdk.json file. If you've already updated, but still need the principal to have permissions to modify the ACLs, use the {@link grantPutAcl} method.
+If encryption is used, permission to use the key to encrypt the contents
+of written files will also be granted to the same principal.
+
+Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`,
+which could be used to grant read/write object access to IAM principals in other accounts.
+If you want to get rid of that behavior, update your CDK version to 1.85.0 or later,
+and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\`
+in the \`context\` key of your cdk.json file.
+If you've already updated, but still need the principal to have permissions to modify the ACLs,
+use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantWrite.parameter.identity\\"></a>
 
@@ -1347,7 +1491,8 @@ public onCloudTrailEvent(id: string, options?: OnCloudTrailBucketEventOptions): 
 
 Define a CloudWatch event that triggers when something happens to this repository.
 
-Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.GreeterBucket.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -1373,7 +1518,12 @@ public onCloudTrailPutObject(id: string, options?: OnCloudTrailBucketEventOption
 
 Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call.
 
-Note that some tools like \`aws s3 cp\` will automatically use either PutObject or the multipart upload API depending on the file size, so using \`onCloudTrailWriteObject\` may be preferable.  Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Note that some tools like \`aws s3 cp\` will automatically use either
+PutObject or the multipart upload API depending on the file size,
+so using \`onCloudTrailWriteObject\` may be preferable.
+
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.GreeterBucket.onCloudTrailPutObject.parameter.id\\"></a>
 
@@ -1399,7 +1549,15 @@ public onCloudTrailWriteObject(id: string, options?: OnCloudTrailBucketEventOpti
 
 Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to.
 
-This includes the events PutObject, CopyObject, and CompleteMultipartUpload.  Note that some tools like \`aws s3 cp\` will automatically use either PutObject or the multipart upload API depending on the file size, so using this method may be preferable to \`onCloudTrailPutObject\`.  Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+This includes
+the events PutObject, CopyObject, and CompleteMultipartUpload.
+
+Note that some tools like \`aws s3 cp\` will automatically use either
+PutObject or the multipart upload API depending on the file size,
+so using this method may be preferable to \`onCloudTrailPutObject\`.
+
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.GreeterBucket.onCloudTrailWriteObject.parameter.id\\"></a>
 
@@ -1425,7 +1583,8 @@ public s3UrlForObject(key?: string): string
 
 The S3 URL of an S3 object. For example:.
 
-\`s3://onlybucket\` - \`s3://bucket/key\`
+\`s3://onlybucket\`
+- \`s3://bucket/key\`
 
 ###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.GreeterBucket.s3UrlForObject.parameter.key\\"></a>
 
@@ -1433,7 +1592,8 @@ The S3 URL of an S3 object. For example:.
 
 The S3 key of the object.
 
-If not specified, the S3 URL of the bucket is returned.
+If not specified, the S3 URL of the
+bucket is returned.
 
 ---
 
@@ -1445,7 +1605,9 @@ public urlForObject(key?: string): string
 
 The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:.
 
-\`https://s3.us-west-1.amazonaws.com/onlybucket\` - \`https://s3.us-west-1.amazonaws.com/bucket/key\` - \`https://s3.cn-north-1.amazonaws.com.cn/china-bucket/mykey\`
+\`https://s3.us-west-1.amazonaws.com/onlybucket\`
+- \`https://s3.us-west-1.amazonaws.com/bucket/key\`
+- \`https://s3.cn-north-1.amazonaws.com.cn/china-bucket/mykey\`
 
 ###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.GreeterBucket.urlForObject.parameter.key\\"></a>
 
@@ -1453,7 +1615,8 @@ The https URL of an S3 object. Specify \`regional: false\` at the options for no
 
 The S3 key of the object.
 
-If not specified, the URL of the bucket is returned.
+If not specified, the URL of the
+bucket is returned.
 
 ---
 
@@ -1465,7 +1628,10 @@ public virtualHostedUrlForObject(key?: string, options?: VirtualHostedStyleUrlOp
 
 The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:.
 
-\`https://only-bucket.s3.us-west-1.amazonaws.com\` - \`https://bucket.s3.us-west-1.amazonaws.com/key\` - \`https://bucket.s3.amazonaws.com/key\` - \`https://china-bucket.s3.cn-north-1.amazonaws.com.cn/mykey\`
+\`https://only-bucket.s3.us-west-1.amazonaws.com\`
+- \`https://bucket.s3.us-west-1.amazonaws.com/key\`
+- \`https://bucket.s3.amazonaws.com/key\`
+- \`https://china-bucket.s3.cn-north-1.amazonaws.com.cn/mykey\`
 
 ###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.GreeterBucket.virtualHostedUrlForObject.parameter.key\\"></a>
 
@@ -1473,7 +1639,8 @@ The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the
 
 The S3 key of the object.
 
-If not specified, the URL of the bucket is returned.
+If not specified, the URL of the
+bucket is returned.
 
 ---
 
@@ -1658,7 +1825,8 @@ The construct's name.
 
 A \`BucketAttributes\` object.
 
-Can be obtained from a call to \`bucket.export()\` or manually created.
+Can be obtained from a call to
+\`bucket.export()\` or manually created.
 
 ---
 
@@ -1748,7 +1916,12 @@ public readonly env: ResourceEnvironment;
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
 
 ---
 
@@ -1882,7 +2055,8 @@ public readonly policy: BucketPolicy;
 
 The resource policy associated with this bucket.
 
-If \`autoCreatePolicy\` is true, a \`BucketPolicy\` will be created upon the first call to addToResourcePolicy(s).
+If \`autoCreatePolicy\` is true, a \`BucketPolicy\` will be created upon the
+first call to addToResourcePolicy(s).
 
 ---
 
@@ -1990,7 +2164,12 @@ Specifies a canned ACL that grants predefined permissions to the bucket.
 
 Whether all objects should be automatically deleted when the bucket is removed from the stack or when the stack is deleted.
 
-Requires the \`removalPolicy\` to be set to \`RemovalPolicy.DESTROY\`.  **Warning** if you have deployed a bucket with \`autoDeleteObjects: true\`, switching this to \`false\` in a CDK version *before* \`1.126.0\` will lead to all objects in the bucket being deleted. Be sure to update your bucket resources by deploying with CDK version \`1.126.0\` or later **before** switching this value to \`false\`.
+Requires the \`removalPolicy\` to be set to \`RemovalPolicy.DESTROY\`.
+
+**Warning** if you have deployed a bucket with \`autoDeleteObjects: true\`,
+switching this to \`false\` in a CDK version *before* \`1.126.0\` will lead to
+all objects in the bucket being deleted. Be sure to update your bucket resources
+by deploying with CDK version \`1.126.0\` or later **before** switching this value to \`false\`.
 
 ---
 
@@ -2043,7 +2222,8 @@ The CORS configuration of this bucket.
 
 The kind of server-side encryption to apply to this bucket.
 
-If you choose KMS, you can specify a KMS key via \`encryptionKey\`. If encryption key is not specified, a key will automatically be created.
+If you choose KMS, you can specify a KMS key via \`encryptionKey\`. If
+encryption key is not specified, a key will automatically be created.
 
 ---
 
@@ -2054,7 +2234,9 @@ If you choose KMS, you can specify a KMS key via \`encryptionKey\`. If encryptio
 
 External KMS key to use for bucket encryption.
 
-The 'encryption' property must be either not specified or set to \\"Kms\\". An error will be emitted if encryption is set to \\"Unencrypted\\" or \\"Managed\\".
+The 'encryption' property must be either not specified or set to \\"Kms\\".
+An error will be emitted if encryption is set to \\"Unencrypted\\" or
+\\"Managed\\".
 
 ---
 
@@ -2250,7 +2432,13 @@ def apply_removal_policy(
 
 Apply the given removal policy to this resource.
 
-The Removal Policy controls what happens to this resource when it stops being managed by CloudFormation, either because you've removed it from the CDK application or because you've made a change that requires the resource to be replaced.  The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS
+account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 
 ###### \`policy\`<sup>Required</sup> <a name=\\"policy\\" id=\\"construct-library.submod1.GoodbyeBucket.applyRemovalPolicy.parameter.policy\\"></a>
 
@@ -2326,7 +2514,8 @@ def add_object_created_notification(
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
 
-This is identical to calling \`onEvent(EventType.OBJECT_CREATED)\`.
+This is identical to calling
+\`onEvent(EventType.OBJECT_CREATED)\`.
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification.parameter.dest\\"></a>
 
@@ -2364,7 +2553,8 @@ def add_object_removed_notification(
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
 
-This is identical to calling \`onEvent(EventType.OBJECT_REMOVED)\`.
+This is identical to calling
+\`onEvent(EventType.OBJECT_REMOVED)\`.
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification.parameter.dest\\"></a>
 
@@ -2400,7 +2590,11 @@ def add_to_resource_policy(
 
 Adds a statement to the resource policy for a principal (i.e. account/role/service) to perform actions on this bucket and/or its contents. Use \`bucketArn\` and \`arnForObjects(keys)\` to obtain ARNs for this bucket or objects.
 
-Note that the policy statement may or may not be added to the policy. For example, when an \`IBucket\` is created from an existing bucket, it's not possible to tell whether the bucket already has a policy attached, let alone to re-use that policy to add more statements to it. So it's safest to do nothing in these cases.
+Note that the policy statement may or may not be added to the policy.
+For example, when an \`IBucket\` is created from an existing bucket,
+it's not possible to tell whether the bucket already has a policy
+attached, let alone to re-use that policy to add more statements to it.
+So it's safest to do nothing in these cases.
 
 ###### \`permission\`<sup>Required</sup> <a name=\\"permission\\" id=\\"construct-library.submod1.GoodbyeBucket.addToResourcePolicy.parameter.permission\\"></a>
 
@@ -2420,7 +2614,11 @@ def arn_for_objects(
 
 Returns an ARN that represents all objects within the bucket that match the key pattern specified.
 
-To represent all keys, specify \`\`\\"*\\"\`\`.  If you need to specify a keyPattern with multiple components, concatenate them into a single string, e.g.:     arnForObjects(\`home/\${team}/\${user}/*\`)
+To represent all keys, specify \`\`\\"*\\"\`\`.
+
+If you need to specify a keyPattern with multiple components, concatenate them into a single string, e.g.:
+
+   arnForObjects(\`home/\${team}/\${user}/*\`)
 
 ###### \`key_pattern\`<sup>Required</sup> <a name=\\"key_pattern\\" id=\\"construct-library.submod1.GoodbyeBucket.arnForObjects.parameter.keyPattern\\"></a>
 
@@ -2466,7 +2664,24 @@ def grant_public_access(
 
 Allows unrestricted access to objects from this bucket.
 
-IMPORTANT: This permission allows anyone to perform actions on S3 objects in this bucket, which is useful for when you configure your bucket as a website and want everyone to be able to read objects in the bucket without needing to authenticate.  Without arguments, this method will grant read (\\"s3:GetObject\\") access to all objects (\\"*\\") in the bucket.  The method returns the \`iam.Grant\` object, which can then be modified as needed. For example, you can add a condition that will restrict access only to an IPv4 range like this:       const grant = bucket.grantPublicAccess();      grant.resourceStatement!.addCondition(‘IpAddress’, { “aws:SourceIp”: “54.240.143.0/24” });  Note that if this \`IBucket\` refers to an existing bucket, possibly not managed by CloudFormation, this method will have no effect, since it's impossible to modify the policy of an existing bucket.
+IMPORTANT: This permission allows anyone to perform actions on S3 objects
+in this bucket, which is useful for when you configure your bucket as a
+website and want everyone to be able to read objects in the bucket without
+needing to authenticate.
+
+Without arguments, this method will grant read (\\"s3:GetObject\\") access to
+all objects (\\"*\\") in the bucket.
+
+The method returns the \`iam.Grant\` object, which can then be modified
+as needed. For example, you can add a condition that will restrict access only
+to an IPv4 range like this:
+
+     const grant = bucket.grantPublicAccess();
+     grant.resourceStatement!.addCondition(‘IpAddress’, { “aws:SourceIp”: “54.240.143.0/24” });
+
+Note that if this \`IBucket\` refers to an existing bucket, possibly not
+managed by CloudFormation, this method will have no effect, since it's
+impossible to modify the policy of an existing bucket.
 
 ###### \`allowed_actions\`<sup>Required</sup> <a name=\\"allowed_actions\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPublicAccess.parameter.allowedActions\\"></a>
 
@@ -2497,7 +2712,8 @@ def grant_put(
 
 Grants s3:PutObject* and s3:Abort* permissions for this bucket to an IAM principal.
 
-If encryption is used, permission to use the key to encrypt the contents of written files will also be granted to the same principal.
+If encryption is used, permission to use the key to encrypt the contents
+of written files will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPut.parameter.identity\\"></a>
 
@@ -2526,7 +2742,9 @@ def grant_put_acl(
 
 Grant the given IAM identity permissions to modify the ACLs of objects in the given Bucket.
 
-If your application has the '@aws-cdk/aws-s3:grantWriteWithoutAcl' feature flag set, calling {@link grantWrite} or {@link grantReadWrite} no longer grants permissions to modify the ACLs of the objects; in this case, if you need to modify object ACLs, call this method explicitly.
+If your application has the '@aws-cdk/aws-s3:grantWriteWithoutAcl' feature flag set,
+calling {@link grantWrite} or {@link grantReadWrite} no longer grants permissions to modify the ACLs of the objects;
+in this case, if you need to modify object ACLs, call this method explicitly.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPutAcl.parameter.identity\\"></a>
 
@@ -2551,7 +2769,8 @@ def grant_read(
 
 Grant read permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
 
-If encryption is used, permission to use the key to decrypt the contents of the bucket will also be granted to the same principal.
+If encryption is used, permission to use the key to decrypt the contents
+of the bucket will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantRead.parameter.identity\\"></a>
 
@@ -2580,7 +2799,16 @@ def grant_read_write(
 
 Grants read/write permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
 
-If an encryption key is used, permission to use the key for encrypt/decrypt will also be granted.  Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`, which could be used to grant read/write object access to IAM principals in other accounts. If you want to get rid of that behavior, update your CDK version to 1.85.0 or later, and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\` in the \`context\` key of your cdk.json file. If you've already updated, but still need the principal to have permissions to modify the ACLs, use the {@link grantPutAcl} method.
+If an encryption key is used, permission to use the key for
+encrypt/decrypt will also be granted.
+
+Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`,
+which could be used to grant read/write object access to IAM principals in other accounts.
+If you want to get rid of that behavior, update your CDK version to 1.85.0 or later,
+and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\`
+in the \`context\` key of your cdk.json file.
+If you've already updated, but still need the principal to have permissions to modify the ACLs,
+use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantReadWrite.parameter.identity\\"></a>
 
@@ -2605,7 +2833,16 @@ def grant_write(
 
 Grant write permissions to this bucket to an IAM principal.
 
-If encryption is used, permission to use the key to encrypt the contents of written files will also be granted to the same principal.  Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`, which could be used to grant read/write object access to IAM principals in other accounts. If you want to get rid of that behavior, update your CDK version to 1.85.0 or later, and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\` in the \`context\` key of your cdk.json file. If you've already updated, but still need the principal to have permissions to modify the ACLs, use the {@link grantPutAcl} method.
+If encryption is used, permission to use the key to encrypt the contents
+of written files will also be granted to the same principal.
+
+Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`,
+which could be used to grant read/write object access to IAM principals in other accounts.
+If you want to get rid of that behavior, update your CDK version to 1.85.0 or later,
+and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\`
+in the \`context\` key of your cdk.json file.
+If you've already updated, but still need the principal to have permissions to modify the ACLs,
+use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantWrite.parameter.identity\\"></a>
 
@@ -2634,7 +2871,8 @@ def on_cloud_trail_event(
 
 Define a CloudWatch event that triggers when something happens to this repository.
 
-Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -2660,7 +2898,9 @@ A description of the rule's purpose.
 
 Additional restrictions for the event to route to the specified target.
 
-The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
+The method that generates the rule probably imposes some type of event
+filtering. The filtering implied by what you pass here is added
+on top of that filtering.
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
@@ -2708,7 +2948,12 @@ def on_cloud_trail_put_object(
 
 Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call.
 
-Note that some tools like \`aws s3 cp\` will automatically use either PutObject or the multipart upload API depending on the file size, so using \`onCloudTrailWriteObject\` may be preferable.  Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Note that some tools like \`aws s3 cp\` will automatically use either
+PutObject or the multipart upload API depending on the file size,
+so using \`onCloudTrailWriteObject\` may be preferable.
+
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailPutObject.parameter.id\\"></a>
 
@@ -2734,7 +2979,9 @@ A description of the rule's purpose.
 
 Additional restrictions for the event to route to the specified target.
 
-The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
+The method that generates the rule probably imposes some type of event
+filtering. The filtering implied by what you pass here is added
+on top of that filtering.
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
@@ -2782,7 +3029,15 @@ def on_cloud_trail_write_object(
 
 Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to.
 
-This includes the events PutObject, CopyObject, and CompleteMultipartUpload.  Note that some tools like \`aws s3 cp\` will automatically use either PutObject or the multipart upload API depending on the file size, so using this method may be preferable to \`onCloudTrailPutObject\`.  Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+This includes
+the events PutObject, CopyObject, and CompleteMultipartUpload.
+
+Note that some tools like \`aws s3 cp\` will automatically use either
+PutObject or the multipart upload API depending on the file size,
+so using this method may be preferable to \`onCloudTrailPutObject\`.
+
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailWriteObject.parameter.id\\"></a>
 
@@ -2808,7 +3063,9 @@ A description of the rule's purpose.
 
 Additional restrictions for the event to route to the specified target.
 
-The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
+The method that generates the rule probably imposes some type of event
+filtering. The filtering implied by what you pass here is added
+on top of that filtering.
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
@@ -2851,7 +3108,8 @@ def s3_url_for_object(
 
 The S3 URL of an S3 object. For example:.
 
-\`s3://onlybucket\` - \`s3://bucket/key\`
+\`s3://onlybucket\`
+- \`s3://bucket/key\`
 
 ###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.submod1.GoodbyeBucket.s3UrlForObject.parameter.key\\"></a>
 
@@ -2859,7 +3117,8 @@ The S3 URL of an S3 object. For example:.
 
 The S3 key of the object.
 
-If not specified, the S3 URL of the bucket is returned.
+If not specified, the S3 URL of the
+bucket is returned.
 
 ---
 
@@ -2873,7 +3132,9 @@ def url_for_object(
 
 The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:.
 
-\`https://s3.us-west-1.amazonaws.com/onlybucket\` - \`https://s3.us-west-1.amazonaws.com/bucket/key\` - \`https://s3.cn-north-1.amazonaws.com.cn/china-bucket/mykey\`
+\`https://s3.us-west-1.amazonaws.com/onlybucket\`
+- \`https://s3.us-west-1.amazonaws.com/bucket/key\`
+- \`https://s3.cn-north-1.amazonaws.com.cn/china-bucket/mykey\`
 
 ###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.submod1.GoodbyeBucket.urlForObject.parameter.key\\"></a>
 
@@ -2881,7 +3142,8 @@ The https URL of an S3 object. Specify \`regional: false\` at the options for no
 
 The S3 key of the object.
 
-If not specified, the URL of the bucket is returned.
+If not specified, the URL of the
+bucket is returned.
 
 ---
 
@@ -2896,7 +3158,10 @@ def virtual_hosted_url_for_object(
 
 The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:.
 
-\`https://only-bucket.s3.us-west-1.amazonaws.com\` - \`https://bucket.s3.us-west-1.amazonaws.com/key\` - \`https://bucket.s3.amazonaws.com/key\` - \`https://china-bucket.s3.cn-north-1.amazonaws.com.cn/mykey\`
+\`https://only-bucket.s3.us-west-1.amazonaws.com\`
+- \`https://bucket.s3.us-west-1.amazonaws.com/key\`
+- \`https://bucket.s3.amazonaws.com/key\`
+- \`https://china-bucket.s3.cn-north-1.amazonaws.com.cn/mykey\`
 
 ###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.submod1.GoodbyeBucket.virtualHostedUrlForObject.parameter.key\\"></a>
 
@@ -2904,7 +3169,8 @@ The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the
 
 The S3 key of the object.
 
-If not specified, the URL of the bucket is returned.
+If not specified, the URL of the
+bucket is returned.
 
 ---
 
@@ -3099,7 +3365,10 @@ Add a lifecycle rule to the bucket.
 
 Specifies a lifecycle rule that aborts incomplete multipart uploads to an Amazon S3 bucket.
 
-The AbortIncompleteMultipartUpload property type creates a lifecycle rule that aborts incomplete multipart uploads to an Amazon S3 bucket. When Amazon S3 aborts a multipart upload, it deletes all parts associated with the multipart upload.
+The AbortIncompleteMultipartUpload property type creates a lifecycle
+rule that aborts incomplete multipart uploads to an Amazon S3 bucket.
+When Amazon S3 aborts a multipart upload, it deletes all parts
+associated with the multipart upload.
 
 ---
 
@@ -3119,7 +3388,9 @@ Whether this rule is enabled.
 
 Indicates the number of days after creation when objects are deleted from Amazon S3 and Amazon Glacier.
 
-If you specify an expiration and transition time, you must use the same time unit for both properties (either in days or by date). The expiration time must also be later than the transition time.
+If you specify an expiration and transition time, you must use the same
+time unit for both properties (either in days or by date). The
+expiration time must also be later than the transition time.
 
 ---
 
@@ -3130,7 +3401,11 @@ If you specify an expiration and transition time, you must use the same time uni
 
 Indicates when objects are deleted from Amazon S3 and Amazon Glacier.
 
-The date value must be in ISO 8601 format. The time is always midnight UTC.  If you specify an expiration and transition time, you must use the same time unit for both properties (either in days or by date). The expiration time must also be later than the transition time.
+The date value must be in ISO 8601 format. The time is always midnight UTC.
+
+If you specify an expiration and transition time, you must use the same
+time unit for both properties (either in days or by date). The
+expiration time must also be later than the transition time.
 
 ---
 
@@ -3162,7 +3437,12 @@ The value cannot be more than 255 characters.
 
 Time between when a new version of the object is uploaded to the bucket and when old versions of the object expire.
 
-For buckets with versioning enabled (or suspended), specifies the time, in days, between when a new version of the object is uploaded to the bucket and when old versions of the object expire. When object versions expire, Amazon S3 permanently deletes them. If you specify a transition and expiration time, the expiration time must be later than the transition time.
+For buckets with versioning enabled (or suspended), specifies the time,
+in days, between when a new version of the object is uploaded to the
+bucket and when old versions of the object expire. When object versions
+expire, Amazon S3 permanently deletes them. If you specify a transition
+and expiration time, the expiration time must be later than the
+transition time.
 
 ---
 
@@ -3172,7 +3452,10 @@ For buckets with versioning enabled (or suspended), specifies the time, in days,
 
 One or more transition rules that specify when non-current objects transition to a specified storage class.
 
-Only for for buckets with versioning enabled (or suspended).  If you specify a transition and expiration time, the expiration time must be later than the transition time.
+Only for for buckets with versioning enabled (or suspended).
+
+If you specify a transition and expiration time, the expiration time
+must be later than the transition time.
 
 ---
 
@@ -3201,7 +3484,9 @@ The TagFilter property type specifies tags to use to identify a subset of object
 
 One or more transition rules that specify when an object transitions to a specified storage class.
 
-If you specify an expiration and transition time, you must use the same time unit for both properties (either in days or by date). The expiration time must also be later than the transition time.
+If you specify an expiration and transition time, you must use the same
+time unit for both properties (either in days or by date). The
+expiration time must also be later than the transition time.
 
 ---
 
@@ -3383,7 +3668,8 @@ The account this existing bucket belongs to.
 
 The ARN of the bucket.
 
-At least one of bucketArn or bucketName must be defined in order to initialize a bucket ref.
+At least one of bucketArn or bucketName must be
+defined in order to initialize a bucket ref.
 
 ---
 
@@ -3410,7 +3696,10 @@ The IPv6 DNS name of the specified bucket.
 
 The name of the bucket.
 
-If the underlying value of ARN is a string, the name will be parsed from the ARN. Otherwise, the name is optional, but some features that require the bucket name such as auto-creating a bucket policy, won't work.
+If the underlying value of ARN is a string, the
+name will be parsed from the ARN. Otherwise, the name is optional, but
+some features that require the bucket name such as auto-creating a bucket
+policy, won't work.
 
 ---
 
@@ -3429,7 +3718,8 @@ The regional domain name of the specified bucket.
 
 The format of the website URL of the bucket.
 
-This should be true for regions launched since 2014.
+This should be true for
+regions launched since 2014.
 
 ---
 
@@ -3558,7 +3848,12 @@ env: ResourceEnvironment
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
 
 ---
 
@@ -3692,7 +3987,8 @@ policy: BucketPolicy
 
 The resource policy associated with this bucket.
 
-If \`autoCreatePolicy\` is true, a \`BucketPolicy\` will be created upon the first call to addToResourcePolicy(s).
+If \`autoCreatePolicy\` is true, a \`BucketPolicy\` will be created upon the
+first call to addToResourcePolicy(s).
 
 ---
 
@@ -3789,7 +4085,12 @@ Specifies a canned ACL that grants predefined permissions to the bucket.
 
 Whether all objects should be automatically deleted when the bucket is removed from the stack or when the stack is deleted.
 
-Requires the \`removalPolicy\` to be set to \`RemovalPolicy.DESTROY\`.  **Warning** if you have deployed a bucket with \`autoDeleteObjects: true\`, switching this to \`false\` in a CDK version *before* \`1.126.0\` will lead to all objects in the bucket being deleted. Be sure to update your bucket resources by deploying with CDK version \`1.126.0\` or later **before** switching this value to \`false\`.
+Requires the \`removalPolicy\` to be set to \`RemovalPolicy.DESTROY\`.
+
+**Warning** if you have deployed a bucket with \`autoDeleteObjects: true\`,
+switching this to \`false\` in a CDK version *before* \`1.126.0\` will lead to
+all objects in the bucket being deleted. Be sure to update your bucket resources
+by deploying with CDK version \`1.126.0\` or later **before** switching this value to \`false\`.
 
 ---
 
@@ -3842,7 +4143,8 @@ The CORS configuration of this bucket.
 
 The kind of server-side encryption to apply to this bucket.
 
-If you choose KMS, you can specify a KMS key via \`encryptionKey\`. If encryption key is not specified, a key will automatically be created.
+If you choose KMS, you can specify a KMS key via \`encryptionKey\`. If
+encryption key is not specified, a key will automatically be created.
 
 ---
 
@@ -3853,7 +4155,9 @@ If you choose KMS, you can specify a KMS key via \`encryptionKey\`. If encryptio
 
 External KMS key to use for bucket encryption.
 
-The 'encryption' property must be either not specified or set to \\"Kms\\". An error will be emitted if encryption is set to \\"Unencrypted\\" or \\"Managed\\".
+The 'encryption' property must be either not specified or set to \\"Kms\\".
+An error will be emitted if encryption is set to \\"Unencrypted\\" or
+\\"Managed\\".
 
 ---
 
@@ -4049,7 +4353,13 @@ def apply_removal_policy(
 
 Apply the given removal policy to this resource.
 
-The Removal Policy controls what happens to this resource when it stops being managed by CloudFormation, either because you've removed it from the CDK application or because you've made a change that requires the resource to be replaced.  The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS
+account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 
 ###### \`policy\`<sup>Required</sup> <a name=\\"policy\\" id=\\"construct-library.GreeterBucket.applyRemovalPolicy.parameter.policy\\"></a>
 
@@ -4125,7 +4435,8 @@ def add_object_created_notification(
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
 
-This is identical to calling \`onEvent(EventType.OBJECT_CREATED)\`.
+This is identical to calling
+\`onEvent(EventType.OBJECT_CREATED)\`.
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.GreeterBucket.addObjectCreatedNotification.parameter.dest\\"></a>
 
@@ -4163,7 +4474,8 @@ def add_object_removed_notification(
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
 
-This is identical to calling \`onEvent(EventType.OBJECT_REMOVED)\`.
+This is identical to calling
+\`onEvent(EventType.OBJECT_REMOVED)\`.
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.GreeterBucket.addObjectRemovedNotification.parameter.dest\\"></a>
 
@@ -4199,7 +4511,11 @@ def add_to_resource_policy(
 
 Adds a statement to the resource policy for a principal (i.e. account/role/service) to perform actions on this bucket and/or its contents. Use \`bucketArn\` and \`arnForObjects(keys)\` to obtain ARNs for this bucket or objects.
 
-Note that the policy statement may or may not be added to the policy. For example, when an \`IBucket\` is created from an existing bucket, it's not possible to tell whether the bucket already has a policy attached, let alone to re-use that policy to add more statements to it. So it's safest to do nothing in these cases.
+Note that the policy statement may or may not be added to the policy.
+For example, when an \`IBucket\` is created from an existing bucket,
+it's not possible to tell whether the bucket already has a policy
+attached, let alone to re-use that policy to add more statements to it.
+So it's safest to do nothing in these cases.
 
 ###### \`permission\`<sup>Required</sup> <a name=\\"permission\\" id=\\"construct-library.GreeterBucket.addToResourcePolicy.parameter.permission\\"></a>
 
@@ -4219,7 +4535,11 @@ def arn_for_objects(
 
 Returns an ARN that represents all objects within the bucket that match the key pattern specified.
 
-To represent all keys, specify \`\`\\"*\\"\`\`.  If you need to specify a keyPattern with multiple components, concatenate them into a single string, e.g.:     arnForObjects(\`home/\${team}/\${user}/*\`)
+To represent all keys, specify \`\`\\"*\\"\`\`.
+
+If you need to specify a keyPattern with multiple components, concatenate them into a single string, e.g.:
+
+   arnForObjects(\`home/\${team}/\${user}/*\`)
 
 ###### \`key_pattern\`<sup>Required</sup> <a name=\\"key_pattern\\" id=\\"construct-library.GreeterBucket.arnForObjects.parameter.keyPattern\\"></a>
 
@@ -4265,7 +4585,24 @@ def grant_public_access(
 
 Allows unrestricted access to objects from this bucket.
 
-IMPORTANT: This permission allows anyone to perform actions on S3 objects in this bucket, which is useful for when you configure your bucket as a website and want everyone to be able to read objects in the bucket without needing to authenticate.  Without arguments, this method will grant read (\\"s3:GetObject\\") access to all objects (\\"*\\") in the bucket.  The method returns the \`iam.Grant\` object, which can then be modified as needed. For example, you can add a condition that will restrict access only to an IPv4 range like this:       const grant = bucket.grantPublicAccess();      grant.resourceStatement!.addCondition(‘IpAddress’, { “aws:SourceIp”: “54.240.143.0/24” });  Note that if this \`IBucket\` refers to an existing bucket, possibly not managed by CloudFormation, this method will have no effect, since it's impossible to modify the policy of an existing bucket.
+IMPORTANT: This permission allows anyone to perform actions on S3 objects
+in this bucket, which is useful for when you configure your bucket as a
+website and want everyone to be able to read objects in the bucket without
+needing to authenticate.
+
+Without arguments, this method will grant read (\\"s3:GetObject\\") access to
+all objects (\\"*\\") in the bucket.
+
+The method returns the \`iam.Grant\` object, which can then be modified
+as needed. For example, you can add a condition that will restrict access only
+to an IPv4 range like this:
+
+     const grant = bucket.grantPublicAccess();
+     grant.resourceStatement!.addCondition(‘IpAddress’, { “aws:SourceIp”: “54.240.143.0/24” });
+
+Note that if this \`IBucket\` refers to an existing bucket, possibly not
+managed by CloudFormation, this method will have no effect, since it's
+impossible to modify the policy of an existing bucket.
 
 ###### \`allowed_actions\`<sup>Required</sup> <a name=\\"allowed_actions\\" id=\\"construct-library.GreeterBucket.grantPublicAccess.parameter.allowedActions\\"></a>
 
@@ -4296,7 +4633,8 @@ def grant_put(
 
 Grants s3:PutObject* and s3:Abort* permissions for this bucket to an IAM principal.
 
-If encryption is used, permission to use the key to encrypt the contents of written files will also be granted to the same principal.
+If encryption is used, permission to use the key to encrypt the contents
+of written files will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantPut.parameter.identity\\"></a>
 
@@ -4325,7 +4663,9 @@ def grant_put_acl(
 
 Grant the given IAM identity permissions to modify the ACLs of objects in the given Bucket.
 
-If your application has the '@aws-cdk/aws-s3:grantWriteWithoutAcl' feature flag set, calling {@link grantWrite} or {@link grantReadWrite} no longer grants permissions to modify the ACLs of the objects; in this case, if you need to modify object ACLs, call this method explicitly.
+If your application has the '@aws-cdk/aws-s3:grantWriteWithoutAcl' feature flag set,
+calling {@link grantWrite} or {@link grantReadWrite} no longer grants permissions to modify the ACLs of the objects;
+in this case, if you need to modify object ACLs, call this method explicitly.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantPutAcl.parameter.identity\\"></a>
 
@@ -4350,7 +4690,8 @@ def grant_read(
 
 Grant read permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
 
-If encryption is used, permission to use the key to decrypt the contents of the bucket will also be granted to the same principal.
+If encryption is used, permission to use the key to decrypt the contents
+of the bucket will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantRead.parameter.identity\\"></a>
 
@@ -4379,7 +4720,16 @@ def grant_read_write(
 
 Grants read/write permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
 
-If an encryption key is used, permission to use the key for encrypt/decrypt will also be granted.  Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`, which could be used to grant read/write object access to IAM principals in other accounts. If you want to get rid of that behavior, update your CDK version to 1.85.0 or later, and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\` in the \`context\` key of your cdk.json file. If you've already updated, but still need the principal to have permissions to modify the ACLs, use the {@link grantPutAcl} method.
+If an encryption key is used, permission to use the key for
+encrypt/decrypt will also be granted.
+
+Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`,
+which could be used to grant read/write object access to IAM principals in other accounts.
+If you want to get rid of that behavior, update your CDK version to 1.85.0 or later,
+and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\`
+in the \`context\` key of your cdk.json file.
+If you've already updated, but still need the principal to have permissions to modify the ACLs,
+use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantReadWrite.parameter.identity\\"></a>
 
@@ -4404,7 +4754,16 @@ def grant_write(
 
 Grant write permissions to this bucket to an IAM principal.
 
-If encryption is used, permission to use the key to encrypt the contents of written files will also be granted to the same principal.  Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`, which could be used to grant read/write object access to IAM principals in other accounts. If you want to get rid of that behavior, update your CDK version to 1.85.0 or later, and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\` in the \`context\` key of your cdk.json file. If you've already updated, but still need the principal to have permissions to modify the ACLs, use the {@link grantPutAcl} method.
+If encryption is used, permission to use the key to encrypt the contents
+of written files will also be granted to the same principal.
+
+Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`,
+which could be used to grant read/write object access to IAM principals in other accounts.
+If you want to get rid of that behavior, update your CDK version to 1.85.0 or later,
+and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\`
+in the \`context\` key of your cdk.json file.
+If you've already updated, but still need the principal to have permissions to modify the ACLs,
+use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantWrite.parameter.identity\\"></a>
 
@@ -4433,7 +4792,8 @@ def on_cloud_trail_event(
 
 Define a CloudWatch event that triggers when something happens to this repository.
 
-Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.GreeterBucket.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -4459,7 +4819,9 @@ A description of the rule's purpose.
 
 Additional restrictions for the event to route to the specified target.
 
-The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
+The method that generates the rule probably imposes some type of event
+filtering. The filtering implied by what you pass here is added
+on top of that filtering.
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
@@ -4507,7 +4869,12 @@ def on_cloud_trail_put_object(
 
 Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call.
 
-Note that some tools like \`aws s3 cp\` will automatically use either PutObject or the multipart upload API depending on the file size, so using \`onCloudTrailWriteObject\` may be preferable.  Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Note that some tools like \`aws s3 cp\` will automatically use either
+PutObject or the multipart upload API depending on the file size,
+so using \`onCloudTrailWriteObject\` may be preferable.
+
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.GreeterBucket.onCloudTrailPutObject.parameter.id\\"></a>
 
@@ -4533,7 +4900,9 @@ A description of the rule's purpose.
 
 Additional restrictions for the event to route to the specified target.
 
-The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
+The method that generates the rule probably imposes some type of event
+filtering. The filtering implied by what you pass here is added
+on top of that filtering.
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
@@ -4581,7 +4950,15 @@ def on_cloud_trail_write_object(
 
 Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to.
 
-This includes the events PutObject, CopyObject, and CompleteMultipartUpload.  Note that some tools like \`aws s3 cp\` will automatically use either PutObject or the multipart upload API depending on the file size, so using this method may be preferable to \`onCloudTrailPutObject\`.  Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+This includes
+the events PutObject, CopyObject, and CompleteMultipartUpload.
+
+Note that some tools like \`aws s3 cp\` will automatically use either
+PutObject or the multipart upload API depending on the file size,
+so using this method may be preferable to \`onCloudTrailPutObject\`.
+
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.GreeterBucket.onCloudTrailWriteObject.parameter.id\\"></a>
 
@@ -4607,7 +4984,9 @@ A description of the rule's purpose.
 
 Additional restrictions for the event to route to the specified target.
 
-The method that generates the rule probably imposes some type of event filtering. The filtering implied by what you pass here is added on top of that filtering.
+The method that generates the rule probably imposes some type of event
+filtering. The filtering implied by what you pass here is added
+on top of that filtering.
 
 > [https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)
 
@@ -4650,7 +5029,8 @@ def s3_url_for_object(
 
 The S3 URL of an S3 object. For example:.
 
-\`s3://onlybucket\` - \`s3://bucket/key\`
+\`s3://onlybucket\`
+- \`s3://bucket/key\`
 
 ###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.GreeterBucket.s3UrlForObject.parameter.key\\"></a>
 
@@ -4658,7 +5038,8 @@ The S3 URL of an S3 object. For example:.
 
 The S3 key of the object.
 
-If not specified, the S3 URL of the bucket is returned.
+If not specified, the S3 URL of the
+bucket is returned.
 
 ---
 
@@ -4672,7 +5053,9 @@ def url_for_object(
 
 The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:.
 
-\`https://s3.us-west-1.amazonaws.com/onlybucket\` - \`https://s3.us-west-1.amazonaws.com/bucket/key\` - \`https://s3.cn-north-1.amazonaws.com.cn/china-bucket/mykey\`
+\`https://s3.us-west-1.amazonaws.com/onlybucket\`
+- \`https://s3.us-west-1.amazonaws.com/bucket/key\`
+- \`https://s3.cn-north-1.amazonaws.com.cn/china-bucket/mykey\`
 
 ###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.GreeterBucket.urlForObject.parameter.key\\"></a>
 
@@ -4680,7 +5063,8 @@ The https URL of an S3 object. Specify \`regional: false\` at the options for no
 
 The S3 key of the object.
 
-If not specified, the URL of the bucket is returned.
+If not specified, the URL of the
+bucket is returned.
 
 ---
 
@@ -4695,7 +5079,10 @@ def virtual_hosted_url_for_object(
 
 The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:.
 
-\`https://only-bucket.s3.us-west-1.amazonaws.com\` - \`https://bucket.s3.us-west-1.amazonaws.com/key\` - \`https://bucket.s3.amazonaws.com/key\` - \`https://china-bucket.s3.cn-north-1.amazonaws.com.cn/mykey\`
+\`https://only-bucket.s3.us-west-1.amazonaws.com\`
+- \`https://bucket.s3.us-west-1.amazonaws.com/key\`
+- \`https://bucket.s3.amazonaws.com/key\`
+- \`https://china-bucket.s3.cn-north-1.amazonaws.com.cn/mykey\`
 
 ###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.GreeterBucket.virtualHostedUrlForObject.parameter.key\\"></a>
 
@@ -4703,7 +5090,8 @@ The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the
 
 The S3 key of the object.
 
-If not specified, the URL of the bucket is returned.
+If not specified, the URL of the
+bucket is returned.
 
 ---
 
@@ -4898,7 +5286,10 @@ Add a lifecycle rule to the bucket.
 
 Specifies a lifecycle rule that aborts incomplete multipart uploads to an Amazon S3 bucket.
 
-The AbortIncompleteMultipartUpload property type creates a lifecycle rule that aborts incomplete multipart uploads to an Amazon S3 bucket. When Amazon S3 aborts a multipart upload, it deletes all parts associated with the multipart upload.
+The AbortIncompleteMultipartUpload property type creates a lifecycle
+rule that aborts incomplete multipart uploads to an Amazon S3 bucket.
+When Amazon S3 aborts a multipart upload, it deletes all parts
+associated with the multipart upload.
 
 ---
 
@@ -4918,7 +5309,9 @@ Whether this rule is enabled.
 
 Indicates the number of days after creation when objects are deleted from Amazon S3 and Amazon Glacier.
 
-If you specify an expiration and transition time, you must use the same time unit for both properties (either in days or by date). The expiration time must also be later than the transition time.
+If you specify an expiration and transition time, you must use the same
+time unit for both properties (either in days or by date). The
+expiration time must also be later than the transition time.
 
 ---
 
@@ -4929,7 +5322,11 @@ If you specify an expiration and transition time, you must use the same time uni
 
 Indicates when objects are deleted from Amazon S3 and Amazon Glacier.
 
-The date value must be in ISO 8601 format. The time is always midnight UTC.  If you specify an expiration and transition time, you must use the same time unit for both properties (either in days or by date). The expiration time must also be later than the transition time.
+The date value must be in ISO 8601 format. The time is always midnight UTC.
+
+If you specify an expiration and transition time, you must use the same
+time unit for both properties (either in days or by date). The
+expiration time must also be later than the transition time.
 
 ---
 
@@ -4961,7 +5358,12 @@ The value cannot be more than 255 characters.
 
 Time between when a new version of the object is uploaded to the bucket and when old versions of the object expire.
 
-For buckets with versioning enabled (or suspended), specifies the time, in days, between when a new version of the object is uploaded to the bucket and when old versions of the object expire. When object versions expire, Amazon S3 permanently deletes them. If you specify a transition and expiration time, the expiration time must be later than the transition time.
+For buckets with versioning enabled (or suspended), specifies the time,
+in days, between when a new version of the object is uploaded to the
+bucket and when old versions of the object expire. When object versions
+expire, Amazon S3 permanently deletes them. If you specify a transition
+and expiration time, the expiration time must be later than the
+transition time.
 
 ---
 
@@ -4971,7 +5373,10 @@ For buckets with versioning enabled (or suspended), specifies the time, in days,
 
 One or more transition rules that specify when non-current objects transition to a specified storage class.
 
-Only for for buckets with versioning enabled (or suspended).  If you specify a transition and expiration time, the expiration time must be later than the transition time.
+Only for for buckets with versioning enabled (or suspended).
+
+If you specify a transition and expiration time, the expiration time
+must be later than the transition time.
 
 ---
 
@@ -5000,7 +5405,9 @@ The TagFilter property type specifies tags to use to identify a subset of object
 
 One or more transition rules that specify when an object transitions to a specified storage class.
 
-If you specify an expiration and transition time, you must use the same time unit for both properties (either in days or by date). The expiration time must also be later than the transition time.
+If you specify an expiration and transition time, you must use the same
+time unit for both properties (either in days or by date). The
+expiration time must also be later than the transition time.
 
 ---
 
@@ -5182,7 +5589,8 @@ The account this existing bucket belongs to.
 
 The ARN of the bucket.
 
-At least one of bucketArn or bucketName must be defined in order to initialize a bucket ref.
+At least one of bucketArn or bucketName must be
+defined in order to initialize a bucket ref.
 
 ---
 
@@ -5209,7 +5617,10 @@ The IPv6 DNS name of the specified bucket.
 
 The name of the bucket.
 
-If the underlying value of ARN is a string, the name will be parsed from the ARN. Otherwise, the name is optional, but some features that require the bucket name such as auto-creating a bucket policy, won't work.
+If the underlying value of ARN is a string, the
+name will be parsed from the ARN. Otherwise, the name is optional, but
+some features that require the bucket name such as auto-creating a bucket
+policy, won't work.
 
 ---
 
@@ -5228,7 +5639,8 @@ The regional domain name of the specified bucket.
 
 The format of the website URL of the bucket.
 
-This should be true for regions launched since 2014.
+This should be true for
+regions launched since 2014.
 
 ---
 
@@ -5357,7 +5769,12 @@ env: ResourceEnvironment
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
 
 ---
 
@@ -5491,7 +5908,8 @@ policy: BucketPolicy
 
 The resource policy associated with this bucket.
 
-If \`autoCreatePolicy\` is true, a \`BucketPolicy\` will be created upon the first call to addToResourcePolicy(s).
+If \`autoCreatePolicy\` is true, a \`BucketPolicy\` will be created upon the
+first call to addToResourcePolicy(s).
 
 ---
 
@@ -5591,7 +6009,13 @@ public applyRemovalPolicy(policy: RemovalPolicy): void
 
 Apply the given removal policy to this resource.
 
-The Removal Policy controls what happens to this resource when it stops being managed by CloudFormation, either because you've removed it from the CDK application or because you've made a change that requires the resource to be replaced.  The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS
+account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 
 ###### \`policy\`<sup>Required</sup> <a name=\\"policy\\" id=\\"construct-library.GreeterBucket.applyRemovalPolicy.parameter.policy\\"></a>
 
@@ -5640,7 +6064,9 @@ The notification destination (Lambda, SNS Topic or SQS Queue).
 
 S3 object key filter rules to determine which objects trigger this event.
 
-Each filter must include a \`prefix\` and/or \`suffix\` that will be matched against the s3 object key. Refer to the S3 Developer Guide for details about allowed filter rules.
+Each filter must include a \`prefix\` and/or \`suffix\`
+that will be matched against the s3 object key. Refer to the S3 Developer Guide
+for details about allowed filter rules.
 
 ---
 
@@ -5652,7 +6078,8 @@ public addObjectCreatedNotification(dest: IBucketNotificationDestination, filter
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
 
-This is identical to calling \`onEvent(EventType.OBJECT_CREATED)\`.
+This is identical to calling
+\`onEvent(EventType.OBJECT_CREATED)\`.
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.GreeterBucket.addObjectCreatedNotification.parameter.dest\\"></a>
 
@@ -5678,7 +6105,8 @@ public addObjectRemovedNotification(dest: IBucketNotificationDestination, filter
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
 
-This is identical to calling \`onEvent(EventType.OBJECT_REMOVED)\`.
+This is identical to calling
+\`onEvent(EventType.OBJECT_REMOVED)\`.
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.GreeterBucket.addObjectRemovedNotification.parameter.dest\\"></a>
 
@@ -5704,7 +6132,11 @@ public addToResourcePolicy(permission: PolicyStatement): AddToResourcePolicyResu
 
 Adds a statement to the resource policy for a principal (i.e. account/role/service) to perform actions on this bucket and/or its contents. Use \`bucketArn\` and \`arnForObjects(keys)\` to obtain ARNs for this bucket or objects.
 
-Note that the policy statement may or may not be added to the policy. For example, when an \`IBucket\` is created from an existing bucket, it's not possible to tell whether the bucket already has a policy attached, let alone to re-use that policy to add more statements to it. So it's safest to do nothing in these cases.
+Note that the policy statement may or may not be added to the policy.
+For example, when an \`IBucket\` is created from an existing bucket,
+it's not possible to tell whether the bucket already has a policy
+attached, let alone to re-use that policy to add more statements to it.
+So it's safest to do nothing in these cases.
 
 ###### \`permission\`<sup>Required</sup> <a name=\\"permission\\" id=\\"construct-library.GreeterBucket.addToResourcePolicy.parameter.permission\\"></a>
 
@@ -5722,7 +6154,11 @@ public arnForObjects(keyPattern: string): string
 
 Returns an ARN that represents all objects within the bucket that match the key pattern specified.
 
-To represent all keys, specify \`\`\\"*\\"\`\`.  If you need to specify a keyPattern with multiple components, concatenate them into a single string, e.g.:     arnForObjects(\`home/\${team}/\${user}/*\`)
+To represent all keys, specify \`\`\\"*\\"\`\`.
+
+If you need to specify a keyPattern with multiple components, concatenate them into a single string, e.g.:
+
+   arnForObjects(\`home/\${team}/\${user}/*\`)
 
 ###### \`keyPattern\`<sup>Required</sup> <a name=\\"keyPattern\\" id=\\"construct-library.GreeterBucket.arnForObjects.parameter.keyPattern\\"></a>
 
@@ -5762,7 +6198,24 @@ public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
 
 Allows unrestricted access to objects from this bucket.
 
-IMPORTANT: This permission allows anyone to perform actions on S3 objects in this bucket, which is useful for when you configure your bucket as a website and want everyone to be able to read objects in the bucket without needing to authenticate.  Without arguments, this method will grant read (\\"s3:GetObject\\") access to all objects (\\"*\\") in the bucket.  The method returns the \`iam.Grant\` object, which can then be modified as needed. For example, you can add a condition that will restrict access only to an IPv4 range like this:       const grant = bucket.grantPublicAccess();      grant.resourceStatement!.addCondition(‘IpAddress’, { “aws:SourceIp”: “54.240.143.0/24” });  Note that if this \`IBucket\` refers to an existing bucket, possibly not managed by CloudFormation, this method will have no effect, since it's impossible to modify the policy of an existing bucket.
+IMPORTANT: This permission allows anyone to perform actions on S3 objects
+in this bucket, which is useful for when you configure your bucket as a
+website and want everyone to be able to read objects in the bucket without
+needing to authenticate.
+
+Without arguments, this method will grant read (\\"s3:GetObject\\") access to
+all objects (\\"*\\") in the bucket.
+
+The method returns the \`iam.Grant\` object, which can then be modified
+as needed. For example, you can add a condition that will restrict access only
+to an IPv4 range like this:
+
+     const grant = bucket.grantPublicAccess();
+     grant.resourceStatement!.addCondition(‘IpAddress’, { “aws:SourceIp”: “54.240.143.0/24” });
+
+Note that if this \`IBucket\` refers to an existing bucket, possibly not
+managed by CloudFormation, this method will have no effect, since it's
+impossible to modify the policy of an existing bucket.
 
 ###### \`allowedActions\`<sup>Required</sup> <a name=\\"allowedActions\\" id=\\"construct-library.GreeterBucket.grantPublicAccess.parameter.allowedActions\\"></a>
 
@@ -5790,7 +6243,8 @@ public grantPut(identity: IGrantable, objectsKeyPattern?: any): Grant
 
 Grants s3:PutObject* and s3:Abort* permissions for this bucket to an IAM principal.
 
-If encryption is used, permission to use the key to encrypt the contents of written files will also be granted to the same principal.
+If encryption is used, permission to use the key to encrypt the contents
+of written files will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantPut.parameter.identity\\"></a>
 
@@ -5816,7 +6270,9 @@ public grantPutAcl(identity: IGrantable, objectsKeyPattern?: string): Grant
 
 Grant the given IAM identity permissions to modify the ACLs of objects in the given Bucket.
 
-If your application has the '@aws-cdk/aws-s3:grantWriteWithoutAcl' feature flag set, calling {@link grantWrite} or {@link grantReadWrite} no longer grants permissions to modify the ACLs of the objects; in this case, if you need to modify object ACLs, call this method explicitly.
+If your application has the '@aws-cdk/aws-s3:grantWriteWithoutAcl' feature flag set,
+calling {@link grantWrite} or {@link grantReadWrite} no longer grants permissions to modify the ACLs of the objects;
+in this case, if you need to modify object ACLs, call this method explicitly.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantPutAcl.parameter.identity\\"></a>
 
@@ -5838,7 +6294,8 @@ public grantRead(identity: IGrantable, objectsKeyPattern?: any): Grant
 
 Grant read permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
 
-If encryption is used, permission to use the key to decrypt the contents of the bucket will also be granted to the same principal.
+If encryption is used, permission to use the key to decrypt the contents
+of the bucket will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantRead.parameter.identity\\"></a>
 
@@ -5864,7 +6321,16 @@ public grantReadWrite(identity: IGrantable, objectsKeyPattern?: any): Grant
 
 Grants read/write permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
 
-If an encryption key is used, permission to use the key for encrypt/decrypt will also be granted.  Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`, which could be used to grant read/write object access to IAM principals in other accounts. If you want to get rid of that behavior, update your CDK version to 1.85.0 or later, and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\` in the \`context\` key of your cdk.json file. If you've already updated, but still need the principal to have permissions to modify the ACLs, use the {@link grantPutAcl} method.
+If an encryption key is used, permission to use the key for
+encrypt/decrypt will also be granted.
+
+Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`,
+which could be used to grant read/write object access to IAM principals in other accounts.
+If you want to get rid of that behavior, update your CDK version to 1.85.0 or later,
+and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\`
+in the \`context\` key of your cdk.json file.
+If you've already updated, but still need the principal to have permissions to modify the ACLs,
+use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantReadWrite.parameter.identity\\"></a>
 
@@ -5886,7 +6352,16 @@ public grantWrite(identity: IGrantable, objectsKeyPattern?: any): Grant
 
 Grant write permissions to this bucket to an IAM principal.
 
-If encryption is used, permission to use the key to encrypt the contents of written files will also be granted to the same principal.  Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`, which could be used to grant read/write object access to IAM principals in other accounts. If you want to get rid of that behavior, update your CDK version to 1.85.0 or later, and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\` in the \`context\` key of your cdk.json file. If you've already updated, but still need the principal to have permissions to modify the ACLs, use the {@link grantPutAcl} method.
+If encryption is used, permission to use the key to encrypt the contents
+of written files will also be granted to the same principal.
+
+Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`,
+which could be used to grant read/write object access to IAM principals in other accounts.
+If you want to get rid of that behavior, update your CDK version to 1.85.0 or later,
+and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\`
+in the \`context\` key of your cdk.json file.
+If you've already updated, but still need the principal to have permissions to modify the ACLs,
+use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantWrite.parameter.identity\\"></a>
 
@@ -5908,7 +6383,8 @@ public onCloudTrailEvent(id: string, options?: OnCloudTrailBucketEventOptions): 
 
 Define a CloudWatch event that triggers when something happens to this repository.
 
-Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.GreeterBucket.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -5934,7 +6410,12 @@ public onCloudTrailPutObject(id: string, options?: OnCloudTrailBucketEventOption
 
 Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call.
 
-Note that some tools like \`aws s3 cp\` will automatically use either PutObject or the multipart upload API depending on the file size, so using \`onCloudTrailWriteObject\` may be preferable.  Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Note that some tools like \`aws s3 cp\` will automatically use either
+PutObject or the multipart upload API depending on the file size,
+so using \`onCloudTrailWriteObject\` may be preferable.
+
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.GreeterBucket.onCloudTrailPutObject.parameter.id\\"></a>
 
@@ -5960,7 +6441,15 @@ public onCloudTrailWriteObject(id: string, options?: OnCloudTrailBucketEventOpti
 
 Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to.
 
-This includes the events PutObject, CopyObject, and CompleteMultipartUpload.  Note that some tools like \`aws s3 cp\` will automatically use either PutObject or the multipart upload API depending on the file size, so using this method may be preferable to \`onCloudTrailPutObject\`.  Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+This includes
+the events PutObject, CopyObject, and CompleteMultipartUpload.
+
+Note that some tools like \`aws s3 cp\` will automatically use either
+PutObject or the multipart upload API depending on the file size,
+so using this method may be preferable to \`onCloudTrailPutObject\`.
+
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.GreeterBucket.onCloudTrailWriteObject.parameter.id\\"></a>
 
@@ -5986,7 +6475,8 @@ public s3UrlForObject(key?: string): string
 
 The S3 URL of an S3 object. For example:.
 
-\`s3://onlybucket\` - \`s3://bucket/key\`
+\`s3://onlybucket\`
+- \`s3://bucket/key\`
 
 ###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.GreeterBucket.s3UrlForObject.parameter.key\\"></a>
 
@@ -5994,7 +6484,8 @@ The S3 URL of an S3 object. For example:.
 
 The S3 key of the object.
 
-If not specified, the S3 URL of the bucket is returned.
+If not specified, the S3 URL of the
+bucket is returned.
 
 ---
 
@@ -6006,7 +6497,9 @@ public urlForObject(key?: string): string
 
 The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:.
 
-\`https://s3.us-west-1.amazonaws.com/onlybucket\` - \`https://s3.us-west-1.amazonaws.com/bucket/key\` - \`https://s3.cn-north-1.amazonaws.com.cn/china-bucket/mykey\`
+\`https://s3.us-west-1.amazonaws.com/onlybucket\`
+- \`https://s3.us-west-1.amazonaws.com/bucket/key\`
+- \`https://s3.cn-north-1.amazonaws.com.cn/china-bucket/mykey\`
 
 ###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.GreeterBucket.urlForObject.parameter.key\\"></a>
 
@@ -6014,7 +6507,8 @@ The https URL of an S3 object. Specify \`regional: false\` at the options for no
 
 The S3 key of the object.
 
-If not specified, the URL of the bucket is returned.
+If not specified, the URL of the
+bucket is returned.
 
 ---
 
@@ -6026,7 +6520,10 @@ public virtualHostedUrlForObject(key?: string, options?: VirtualHostedStyleUrlOp
 
 The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:.
 
-\`https://only-bucket.s3.us-west-1.amazonaws.com\` - \`https://bucket.s3.us-west-1.amazonaws.com/key\` - \`https://bucket.s3.amazonaws.com/key\` - \`https://china-bucket.s3.cn-north-1.amazonaws.com.cn/mykey\`
+\`https://only-bucket.s3.us-west-1.amazonaws.com\`
+- \`https://bucket.s3.us-west-1.amazonaws.com/key\`
+- \`https://bucket.s3.amazonaws.com/key\`
+- \`https://china-bucket.s3.cn-north-1.amazonaws.com.cn/mykey\`
 
 ###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.GreeterBucket.virtualHostedUrlForObject.parameter.key\\"></a>
 
@@ -6034,7 +6531,8 @@ The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the
 
 The S3 key of the object.
 
-If not specified, the URL of the bucket is returned.
+If not specified, the URL of the
+bucket is returned.
 
 ---
 
@@ -6219,7 +6717,8 @@ The construct's name.
 
 A \`BucketAttributes\` object.
 
-Can be obtained from a call to \`bucket.export()\` or manually created.
+Can be obtained from a call to
+\`bucket.export()\` or manually created.
 
 ---
 
@@ -6309,7 +6808,12 @@ public readonly env: ResourceEnvironment;
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
 
 ---
 
@@ -6443,7 +6947,8 @@ public readonly policy: BucketPolicy;
 
 The resource policy associated with this bucket.
 
-If \`autoCreatePolicy\` is true, a \`BucketPolicy\` will be created upon the first call to addToResourcePolicy(s).
+If \`autoCreatePolicy\` is true, a \`BucketPolicy\` will be created upon the
+first call to addToResourcePolicy(s).
 
 ---
 
@@ -6543,7 +7048,13 @@ public applyRemovalPolicy(policy: RemovalPolicy): void
 
 Apply the given removal policy to this resource.
 
-The Removal Policy controls what happens to this resource when it stops being managed by CloudFormation, either because you've removed it from the CDK application or because you've made a change that requires the resource to be replaced.  The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS
+account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 
 ###### \`policy\`<sup>Required</sup> <a name=\\"policy\\" id=\\"construct-library.submod1.GoodbyeBucket.applyRemovalPolicy.parameter.policy\\"></a>
 
@@ -6592,7 +7103,9 @@ The notification destination (Lambda, SNS Topic or SQS Queue).
 
 S3 object key filter rules to determine which objects trigger this event.
 
-Each filter must include a \`prefix\` and/or \`suffix\` that will be matched against the s3 object key. Refer to the S3 Developer Guide for details about allowed filter rules.
+Each filter must include a \`prefix\` and/or \`suffix\`
+that will be matched against the s3 object key. Refer to the S3 Developer Guide
+for details about allowed filter rules.
 
 ---
 
@@ -6604,7 +7117,8 @@ public addObjectCreatedNotification(dest: IBucketNotificationDestination, filter
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
 
-This is identical to calling \`onEvent(EventType.OBJECT_CREATED)\`.
+This is identical to calling
+\`onEvent(EventType.OBJECT_CREATED)\`.
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification.parameter.dest\\"></a>
 
@@ -6630,7 +7144,8 @@ public addObjectRemovedNotification(dest: IBucketNotificationDestination, filter
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
 
-This is identical to calling \`onEvent(EventType.OBJECT_REMOVED)\`.
+This is identical to calling
+\`onEvent(EventType.OBJECT_REMOVED)\`.
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification.parameter.dest\\"></a>
 
@@ -6656,7 +7171,11 @@ public addToResourcePolicy(permission: PolicyStatement): AddToResourcePolicyResu
 
 Adds a statement to the resource policy for a principal (i.e. account/role/service) to perform actions on this bucket and/or its contents. Use \`bucketArn\` and \`arnForObjects(keys)\` to obtain ARNs for this bucket or objects.
 
-Note that the policy statement may or may not be added to the policy. For example, when an \`IBucket\` is created from an existing bucket, it's not possible to tell whether the bucket already has a policy attached, let alone to re-use that policy to add more statements to it. So it's safest to do nothing in these cases.
+Note that the policy statement may or may not be added to the policy.
+For example, when an \`IBucket\` is created from an existing bucket,
+it's not possible to tell whether the bucket already has a policy
+attached, let alone to re-use that policy to add more statements to it.
+So it's safest to do nothing in these cases.
 
 ###### \`permission\`<sup>Required</sup> <a name=\\"permission\\" id=\\"construct-library.submod1.GoodbyeBucket.addToResourcePolicy.parameter.permission\\"></a>
 
@@ -6674,7 +7193,11 @@ public arnForObjects(keyPattern: string): string
 
 Returns an ARN that represents all objects within the bucket that match the key pattern specified.
 
-To represent all keys, specify \`\`\\"*\\"\`\`.  If you need to specify a keyPattern with multiple components, concatenate them into a single string, e.g.:     arnForObjects(\`home/\${team}/\${user}/*\`)
+To represent all keys, specify \`\`\\"*\\"\`\`.
+
+If you need to specify a keyPattern with multiple components, concatenate them into a single string, e.g.:
+
+   arnForObjects(\`home/\${team}/\${user}/*\`)
 
 ###### \`keyPattern\`<sup>Required</sup> <a name=\\"keyPattern\\" id=\\"construct-library.submod1.GoodbyeBucket.arnForObjects.parameter.keyPattern\\"></a>
 
@@ -6714,7 +7237,24 @@ public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
 
 Allows unrestricted access to objects from this bucket.
 
-IMPORTANT: This permission allows anyone to perform actions on S3 objects in this bucket, which is useful for when you configure your bucket as a website and want everyone to be able to read objects in the bucket without needing to authenticate.  Without arguments, this method will grant read (\\"s3:GetObject\\") access to all objects (\\"*\\") in the bucket.  The method returns the \`iam.Grant\` object, which can then be modified as needed. For example, you can add a condition that will restrict access only to an IPv4 range like this:       const grant = bucket.grantPublicAccess();      grant.resourceStatement!.addCondition(‘IpAddress’, { “aws:SourceIp”: “54.240.143.0/24” });  Note that if this \`IBucket\` refers to an existing bucket, possibly not managed by CloudFormation, this method will have no effect, since it's impossible to modify the policy of an existing bucket.
+IMPORTANT: This permission allows anyone to perform actions on S3 objects
+in this bucket, which is useful for when you configure your bucket as a
+website and want everyone to be able to read objects in the bucket without
+needing to authenticate.
+
+Without arguments, this method will grant read (\\"s3:GetObject\\") access to
+all objects (\\"*\\") in the bucket.
+
+The method returns the \`iam.Grant\` object, which can then be modified
+as needed. For example, you can add a condition that will restrict access only
+to an IPv4 range like this:
+
+     const grant = bucket.grantPublicAccess();
+     grant.resourceStatement!.addCondition(‘IpAddress’, { “aws:SourceIp”: “54.240.143.0/24” });
+
+Note that if this \`IBucket\` refers to an existing bucket, possibly not
+managed by CloudFormation, this method will have no effect, since it's
+impossible to modify the policy of an existing bucket.
 
 ###### \`allowedActions\`<sup>Required</sup> <a name=\\"allowedActions\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPublicAccess.parameter.allowedActions\\"></a>
 
@@ -6742,7 +7282,8 @@ public grantPut(identity: IGrantable, objectsKeyPattern?: any): Grant
 
 Grants s3:PutObject* and s3:Abort* permissions for this bucket to an IAM principal.
 
-If encryption is used, permission to use the key to encrypt the contents of written files will also be granted to the same principal.
+If encryption is used, permission to use the key to encrypt the contents
+of written files will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPut.parameter.identity\\"></a>
 
@@ -6768,7 +7309,9 @@ public grantPutAcl(identity: IGrantable, objectsKeyPattern?: string): Grant
 
 Grant the given IAM identity permissions to modify the ACLs of objects in the given Bucket.
 
-If your application has the '@aws-cdk/aws-s3:grantWriteWithoutAcl' feature flag set, calling {@link grantWrite} or {@link grantReadWrite} no longer grants permissions to modify the ACLs of the objects; in this case, if you need to modify object ACLs, call this method explicitly.
+If your application has the '@aws-cdk/aws-s3:grantWriteWithoutAcl' feature flag set,
+calling {@link grantWrite} or {@link grantReadWrite} no longer grants permissions to modify the ACLs of the objects;
+in this case, if you need to modify object ACLs, call this method explicitly.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPutAcl.parameter.identity\\"></a>
 
@@ -6790,7 +7333,8 @@ public grantRead(identity: IGrantable, objectsKeyPattern?: any): Grant
 
 Grant read permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
 
-If encryption is used, permission to use the key to decrypt the contents of the bucket will also be granted to the same principal.
+If encryption is used, permission to use the key to decrypt the contents
+of the bucket will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantRead.parameter.identity\\"></a>
 
@@ -6816,7 +7360,16 @@ public grantReadWrite(identity: IGrantable, objectsKeyPattern?: any): Grant
 
 Grants read/write permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
 
-If an encryption key is used, permission to use the key for encrypt/decrypt will also be granted.  Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`, which could be used to grant read/write object access to IAM principals in other accounts. If you want to get rid of that behavior, update your CDK version to 1.85.0 or later, and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\` in the \`context\` key of your cdk.json file. If you've already updated, but still need the principal to have permissions to modify the ACLs, use the {@link grantPutAcl} method.
+If an encryption key is used, permission to use the key for
+encrypt/decrypt will also be granted.
+
+Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`,
+which could be used to grant read/write object access to IAM principals in other accounts.
+If you want to get rid of that behavior, update your CDK version to 1.85.0 or later,
+and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\`
+in the \`context\` key of your cdk.json file.
+If you've already updated, but still need the principal to have permissions to modify the ACLs,
+use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantReadWrite.parameter.identity\\"></a>
 
@@ -6838,7 +7391,16 @@ public grantWrite(identity: IGrantable, objectsKeyPattern?: any): Grant
 
 Grant write permissions to this bucket to an IAM principal.
 
-If encryption is used, permission to use the key to encrypt the contents of written files will also be granted to the same principal.  Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`, which could be used to grant read/write object access to IAM principals in other accounts. If you want to get rid of that behavior, update your CDK version to 1.85.0 or later, and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\` in the \`context\` key of your cdk.json file. If you've already updated, but still need the principal to have permissions to modify the ACLs, use the {@link grantPutAcl} method.
+If encryption is used, permission to use the key to encrypt the contents
+of written files will also be granted to the same principal.
+
+Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`,
+which could be used to grant read/write object access to IAM principals in other accounts.
+If you want to get rid of that behavior, update your CDK version to 1.85.0 or later,
+and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\`
+in the \`context\` key of your cdk.json file.
+If you've already updated, but still need the principal to have permissions to modify the ACLs,
+use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantWrite.parameter.identity\\"></a>
 
@@ -6860,7 +7422,8 @@ public onCloudTrailEvent(id: string, options?: OnCloudTrailBucketEventOptions): 
 
 Define a CloudWatch event that triggers when something happens to this repository.
 
-Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailEvent.parameter.id\\"></a>
 
@@ -6886,7 +7449,12 @@ public onCloudTrailPutObject(id: string, options?: OnCloudTrailBucketEventOption
 
 Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call.
 
-Note that some tools like \`aws s3 cp\` will automatically use either PutObject or the multipart upload API depending on the file size, so using \`onCloudTrailWriteObject\` may be preferable.  Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+Note that some tools like \`aws s3 cp\` will automatically use either
+PutObject or the multipart upload API depending on the file size,
+so using \`onCloudTrailWriteObject\` may be preferable.
+
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailPutObject.parameter.id\\"></a>
 
@@ -6912,7 +7480,15 @@ public onCloudTrailWriteObject(id: string, options?: OnCloudTrailBucketEventOpti
 
 Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to.
 
-This includes the events PutObject, CopyObject, and CompleteMultipartUpload.  Note that some tools like \`aws s3 cp\` will automatically use either PutObject or the multipart upload API depending on the file size, so using this method may be preferable to \`onCloudTrailPutObject\`.  Requires that there exists at least one CloudTrail Trail in your account that captures the event. This method will not create the Trail.
+This includes
+the events PutObject, CopyObject, and CompleteMultipartUpload.
+
+Note that some tools like \`aws s3 cp\` will automatically use either
+PutObject or the multipart upload API depending on the file size,
+so using this method may be preferable to \`onCloudTrailPutObject\`.
+
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
 
 ###### \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailWriteObject.parameter.id\\"></a>
 
@@ -6938,7 +7514,8 @@ public s3UrlForObject(key?: string): string
 
 The S3 URL of an S3 object. For example:.
 
-\`s3://onlybucket\` - \`s3://bucket/key\`
+\`s3://onlybucket\`
+- \`s3://bucket/key\`
 
 ###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.submod1.GoodbyeBucket.s3UrlForObject.parameter.key\\"></a>
 
@@ -6946,7 +7523,8 @@ The S3 URL of an S3 object. For example:.
 
 The S3 key of the object.
 
-If not specified, the S3 URL of the bucket is returned.
+If not specified, the S3 URL of the
+bucket is returned.
 
 ---
 
@@ -6958,7 +7536,9 @@ public urlForObject(key?: string): string
 
 The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:.
 
-\`https://s3.us-west-1.amazonaws.com/onlybucket\` - \`https://s3.us-west-1.amazonaws.com/bucket/key\` - \`https://s3.cn-north-1.amazonaws.com.cn/china-bucket/mykey\`
+\`https://s3.us-west-1.amazonaws.com/onlybucket\`
+- \`https://s3.us-west-1.amazonaws.com/bucket/key\`
+- \`https://s3.cn-north-1.amazonaws.com.cn/china-bucket/mykey\`
 
 ###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.submod1.GoodbyeBucket.urlForObject.parameter.key\\"></a>
 
@@ -6966,7 +7546,8 @@ The https URL of an S3 object. Specify \`regional: false\` at the options for no
 
 The S3 key of the object.
 
-If not specified, the URL of the bucket is returned.
+If not specified, the URL of the
+bucket is returned.
 
 ---
 
@@ -6978,7 +7559,10 @@ public virtualHostedUrlForObject(key?: string, options?: VirtualHostedStyleUrlOp
 
 The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:.
 
-\`https://only-bucket.s3.us-west-1.amazonaws.com\` - \`https://bucket.s3.us-west-1.amazonaws.com/key\` - \`https://bucket.s3.amazonaws.com/key\` - \`https://china-bucket.s3.cn-north-1.amazonaws.com.cn/mykey\`
+\`https://only-bucket.s3.us-west-1.amazonaws.com\`
+- \`https://bucket.s3.us-west-1.amazonaws.com/key\`
+- \`https://bucket.s3.amazonaws.com/key\`
+- \`https://china-bucket.s3.cn-north-1.amazonaws.com.cn/mykey\`
 
 ###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.submod1.GoodbyeBucket.virtualHostedUrlForObject.parameter.key\\"></a>
 
@@ -6986,7 +7570,8 @@ The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the
 
 The S3 key of the object.
 
-If not specified, the URL of the bucket is returned.
+If not specified, the URL of the
+bucket is returned.
 
 ---
 
@@ -7171,7 +7756,8 @@ The construct's name.
 
 A \`BucketAttributes\` object.
 
-Can be obtained from a call to \`bucket.export()\` or manually created.
+Can be obtained from a call to
+\`bucket.export()\` or manually created.
 
 ---
 
@@ -7261,7 +7847,12 @@ public readonly env: ResourceEnvironment;
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK (generally, those created by creating new class instances like Role, Bucket, etc.), this is always the same as the environment of the stack they belong to; however, for imported resources (those obtained from static methods like fromRoleArn, fromBucketName, etc.), that might be different than the stack they were imported into.
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
 
 ---
 
@@ -7395,7 +7986,8 @@ public readonly policy: BucketPolicy;
 
 The resource policy associated with this bucket.
 
-If \`autoCreatePolicy\` is true, a \`BucketPolicy\` will be created upon the first call to addToResourcePolicy(s).
+If \`autoCreatePolicy\` is true, a \`BucketPolicy\` will be created upon the
+first call to addToResourcePolicy(s).
 
 ---
 
