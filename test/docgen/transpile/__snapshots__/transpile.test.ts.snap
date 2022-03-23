@@ -1379,7 +1379,7 @@ Provides default values for certain regional information points.
 \`\`\`go
 import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
 
-regioninfo.Default_ServicePrincipal(service *string, region *string, urlSuffix *string);
+regioninfo.Default_ServicePrincipal(service *string, region *string, urlSuffix *string) *string
 \`\`\`
 
 Computes a \\"standard\\" AWS Service principal for a given service, region and suffix.
@@ -1455,7 +1455,7 @@ A database of regional information.
 \`\`\`go
 import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
 
-regioninfo.Fact_Find(region *string, name *string);
+regioninfo.Fact_Find(region *string, name *string) *string
 \`\`\`
 
 Retrieves a fact from this Fact database.
@@ -1481,7 +1481,7 @@ the name of the fact being looked up (see the \`FactName\` class for details).
 \`\`\`go
 import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
 
-regioninfo.Fact_Register(fact IFact, allowReplacing *bool);
+regioninfo.Fact_Register(fact IFact, allowReplacing *bool)
 \`\`\`
 
 Registers a new fact in this Fact database.
@@ -1507,7 +1507,7 @@ whether new facts can replace existing facts or not.
 \`\`\`go
 import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
 
-regioninfo.Fact_RequireFact(region *string, name *string);
+regioninfo.Fact_RequireFact(region *string, name *string) *string
 \`\`\`
 
 Retrieve a fact from the Fact database.
@@ -1536,7 +1536,7 @@ the name of the fact being looked up (see the \`FactName\` class for details).
 \`\`\`go
 import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
 
-regioninfo.Fact_Unregister(region *string, name *string, value *string);
+regioninfo.Fact_Unregister(region *string, name *string, value *string)
 \`\`\`
 
 Removes a fact from the database.
@@ -1569,17 +1569,17 @@ the value that should be removed (removal will fail if the value is specified, b
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#aws-cdk-lib.region_info.Fact.property.regions\\">Regions</a></code> | <code>[]*string</code> | *No description.* |
+| <code><a href=\\"#aws-cdk-lib.region_info.Fact.property.regions\\">Regions</a></code> | <code>*[]*string</code> | *No description.* |
 
 ---
 
 ##### \`Regions\`<sup>Required</sup> <a name=\\"Regions\\" id=\\"aws-cdk-lib.region_info.Fact.property.regions\\"></a>
 
 \`\`\`go
-func Regions() []*string
+func Regions() *[]*string
 \`\`\`
 
-- *Type:* []*string
+- *Type:* *[]*string
 
 ---
 
@@ -1593,7 +1593,7 @@ All standardized fact names.
 \`\`\`go
 import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
 
-regioninfo.NewFactName();
+regioninfo.NewFactName() FactName
 \`\`\`
 
 | **Name** | **Type** | **Description** |
@@ -1615,7 +1615,7 @@ regioninfo.NewFactName();
 \`\`\`go
 import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
 
-regioninfo.FactName_ServicePrincipal(service *string);
+regioninfo.FactName_ServicePrincipal(service *string) *string
 \`\`\`
 
 The name of the regional service principal for a given service.
@@ -1798,7 +1798,7 @@ the service name (e.g: s3.amazonaws.com).
 \`\`\`go
 import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
 
-regioninfo.RegionInfo_Get(name *string);
+regioninfo.RegionInfo_Get(name *string) RegionInfo
 \`\`\`
 
 Obtain region info for a given region name.
@@ -1816,7 +1816,7 @@ the name of the region (e.g: us-east-1).
 \`\`\`go
 import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
 
-regioninfo.RegionInfo_RegionMap(factName *string);
+regioninfo.RegionInfo_RegionMap(factName *string) *map[string]*string
 \`\`\`
 
 Retrieves a collection of all fact values for all regions that fact is defined in.
@@ -1835,7 +1835,7 @@ For a list of common fact names, see the FactName class
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#aws-cdk-lib.region_info.RegionInfo.property.regions\\">Regions</a></code> | <code>[]<a href=\\"#aws-cdk-lib.region_info.RegionInfo\\">RegionInfo</a></code> | *No description.* |
+| <code><a href=\\"#aws-cdk-lib.region_info.RegionInfo.property.regions\\">Regions</a></code> | <code>*[]<a href=\\"#aws-cdk-lib.region_info.RegionInfo\\">RegionInfo</a></code> | *No description.* |
 | <code><a href=\\"#aws-cdk-lib.region_info.RegionInfo.property.cdkMetadataResourceAvailable\\">CdkMetadataResourceAvailable</a></code> | <code>*bool</code> | Whether the \`AWS::CDK::Metadata\` CloudFormation Resource is available in this region or not. |
 | <code><a href=\\"#aws-cdk-lib.region_info.RegionInfo.property.name\\">Name</a></code> | <code>*string</code> | *No description.* |
 | <code><a href=\\"#aws-cdk-lib.region_info.RegionInfo.property.appMeshRepositoryAccount\\">AppMeshRepositoryAccount</a></code> | <code>*string</code> | The ID of the AWS account that owns the public ECR repository that contains the AWS App Mesh Envoy Proxy images in a given region. |
@@ -1852,10 +1852,10 @@ For a list of common fact names, see the FactName class
 ##### \`Regions\`<sup>Required</sup> <a name=\\"Regions\\" id=\\"aws-cdk-lib.region_info.RegionInfo.property.regions\\"></a>
 
 \`\`\`go
-func Regions() []RegionInfo
+func Regions() *[]RegionInfo
 \`\`\`
 
-- *Type:* []<a href=\\"#aws-cdk-lib.region_info.RegionInfo\\">RegionInfo</a>
+- *Type:* *[]<a href=\\"#aws-cdk-lib.region_info.RegionInfo\\">RegionInfo</a>
 
 ---
 

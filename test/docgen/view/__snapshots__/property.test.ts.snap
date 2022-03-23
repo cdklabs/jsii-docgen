@@ -53,7 +53,7 @@ Object {
   "type": Object {
     "formattingPattern": "interface{}",
   },
-  "usage": "func RepositoryCatalogData() interface{}",
+  "usage": "RepositoryCatalogData interface{}",
 }
 `;
 
@@ -61,7 +61,7 @@ exports[`go snapshot 2`] = `
 " \`RepositoryCatalogData\`<sup>Optional</sup> <a name=\\"RepositoryCatalogData\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\"></a>
 
 \`\`\`go
-func RepositoryCatalogData() interface{}
+RepositoryCatalogData interface{}
 \`\`\`
 
 - *Type:* interface{}

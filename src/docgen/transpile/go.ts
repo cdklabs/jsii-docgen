@@ -82,8 +82,8 @@ export class GoTranspile extends transpile.TranspileBase {
 
     const signatures = [`func ${isInitializer ? 'New' : ''}${name}(${paramsFormatted})${returns ? ` ${returns}` : ''}`];
     const invocations = [isInitializer
-      ? `${moduleName}.New${name}(${paramsFormatted});`
-      : `${moduleName}.${type.name}${isStatic ? '_' : '.'}${name}(${paramsFormatted});`];
+      ? `${moduleName}.New${name}(${paramsFormatted})${returns ? ` ${returns}` : ''}`
+      : `${moduleName}.${type.name}${isStatic ? '_' : '.'}${name}(${paramsFormatted})${returns ? ` ${returns}` : ''}`];
 
     return {
       name,
@@ -166,11 +166,11 @@ export class GoTranspile extends transpile.TranspileBase {
   }
 
   public listOf(type: string): string {
-    return `[]${type}`;
+    return `*[]${type}`;
   }
 
   public mapOf(type: string): string {
-    return `map[string]${type}`;
+    return `*map[string]${type}`;
   }
 
   public any(): string {
@@ -237,13 +237,13 @@ export class GoTranspile extends transpile.TranspileBase {
   private formatProperty(
     name: string,
     typeReference: transpile.TranspiledTypeReference,
-    _property: reflect.Property,
+    property: reflect.Property,
   ): string {
     const tf = typeReference.toString({
       typeFormatter: (t) => t.name,
     });
 
-    return `func ${name}() ${tf}`;
+    return property.parentType.isDataType() ? `${name} ${tf}` : `func ${name}() ${tf}`;
   }
 
   private moduleName(type: transpile.TranspiledType): string {

@@ -87,7 +87,7 @@ Object {
   ],
   "usage": "import \\"github.com/aws/aws-cdk-go/awscdkawsecr\\"
 
-awscdkawsecr.AuthorizationToken_GrantRead(grantee IGrantable);",
+awscdkawsecr.AuthorizationToken_GrantRead(grantee IGrantable)",
 }
 `;
 
@@ -97,7 +97,7 @@ exports[`go snapshot 2`] = `
 \`\`\`go
 import \\"github.com/aws/aws-cdk-go/awscdkawsecr\\"
 
-awscdkawsecr.AuthorizationToken_GrantRead(grantee IGrantable);
+awscdkawsecr.AuthorizationToken_GrantRead(grantee IGrantable)
 \`\`\`
 
 Grant access to retrieve an authorization token.
