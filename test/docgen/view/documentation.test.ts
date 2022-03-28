@@ -175,6 +175,36 @@ describe('csharp', () => {
   });
 });
 
+describe('go', () => {
+  test('for package', async () => {
+    const docs = await Documentation.forPackage('constructs@10.0.78');
+    try {
+      const markdown = await docs.toMarkdown({ language: Language.GO });
+      expect(markdown.render()).toMatchSnapshot();
+    } finally {
+      await docs.cleanup();
+    }
+  });
+
+  test('snapshot - root module', async () => {
+    const docs = await Documentation.forAssembly('constructs', Assemblies.AWSCDK_1_106_0);
+    const markdown = await docs.toMarkdown({ language: Language.GO });
+    expect(markdown.render()).toMatchSnapshot();
+  });
+
+  test('snapshot - submodules', async () => {
+    const docs = await Documentation.forAssembly('aws-cdk-lib', Assemblies.AWSCDK_1_106_0);
+    const markdown = await docs.toMarkdown({ language: Language.GO, submodule: 'aws_eks' });
+    expect(markdown.render()).toMatchSnapshot();
+  });
+
+  test('snapshot - submodules 2', async () => {
+    const docs = await Documentation.forAssembly('monocdk', Assemblies.AWSCDK_1_106_0);
+    const markdown = await docs.toMarkdown({ language: Language.GO, submodule: 'aws_eks' });
+    expect(markdown.render()).toMatchSnapshot();
+  });
+});
+
 test('throws uninstallable error on dependency conflict', async () => {
   // this package decalres a fixed peerDependency on constructs, which conflicts with its other dependencies
   return expect(Documentation.forPackage('cdk8s-mongo-sts@0.0.5')).rejects.toThrowError(UnInstallablePackageError);

@@ -113,6 +113,119 @@ resource properties.
 "
 `;
 
+exports[`go snapshot 1`] = `
+Object {
+  "displayName": "Initializer",
+  "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.CfnPublicRepository.Initializer",
+  "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer",
+  "parameters": Array [
+    Object {
+      "default": undefined,
+      "displayName": "scope",
+      "docs": Object {
+        "summary": "- scope in which this resource is defined.",
+      },
+      "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.CfnPublicRepository.Initializer.parameter.scope",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope",
+      "optional": undefined,
+      "type": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Construct",
+            "fqn": "github.com/aws/aws-cdk-go/awscdk/awscdkcore.Construct",
+            "id": "@aws-cdk/core.Construct",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
+    },
+    Object {
+      "default": undefined,
+      "displayName": "id",
+      "docs": Object {
+        "summary": "- scoped id of the resource.",
+      },
+      "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.CfnPublicRepository.Initializer.parameter.id",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id",
+      "optional": undefined,
+      "type": Object {
+        "formattingPattern": "*string",
+      },
+    },
+    Object {
+      "default": undefined,
+      "displayName": "props",
+      "docs": Object {
+        "summary": "- resource properties.",
+      },
+      "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.CfnPublicRepository.Initializer.parameter.props",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.props",
+      "optional": true,
+      "type": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "CfnPublicRepositoryProps",
+            "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.CfnPublicRepositoryProps",
+            "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+            "packageName": "@aws-cdk/aws-ecr",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
+    },
+  ],
+  "usage": "import \\"github.com/aws/aws-cdk-go/awscdkawsecr\\"
+
+awscdkawsecr.NewCfnPublicRepository(scope Construct, id *string, props CfnPublicRepositoryProps) CfnPublicRepository",
+}
+`;
+
+exports[`go snapshot 2`] = `
+" Initializers <a name=\\"Initializers\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/aws-cdk-go/awscdkawsecr\\"
+
+awscdkawsecr.NewCfnPublicRepository(scope Construct, id *string, props CfnPublicRepositoryProps) CfnPublicRepository
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope\\">scope</a></code> | <code>github.com/aws/aws-cdk-go/awscdk/awscdkcore.Construct</code> | - scope in which this resource is defined. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id\\">id</a></code> | <code>*string</code> | - scoped id of the resource. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.props\\">props</a></code> | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps\\">CfnPublicRepositoryProps</a></code> | - resource properties. |
+
+---
+
+# \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope\\"></a>
+
+- *Type:* github.com/aws/aws-cdk-go/awscdk/awscdkcore.Construct
+
+scope in which this resource is defined.
+
+---
+
+# \`id\`<sup>Required</sup> <a name=\\"id\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id\\"></a>
+
+- *Type:* *string
+
+scoped id of the resource.
+
+---
+
+# \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.props\\"></a>
+
+- *Type:* <a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps\\">CfnPublicRepositoryProps</a>
+
+resource properties.
+
+---
+"
+`;
+
 exports[`java snapshot 1`] = `
 Object {
   "displayName": "Initializer",

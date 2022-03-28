@@ -5,7 +5,7 @@ jest.setTimeout(60 * 1000);
 
 describe('simple link formatter', () => {
   test.each(Language.values())('%s snapshot', async (language) => {
-    const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0');
+    const docs = await Documentation.forPackage(language === Language.GO ? 'constructs@10.0.78' : '@aws-cdk/aws-ecr@1.106.0');
     try {
       const markdown = await docs.toMarkdown({
         language,
@@ -20,7 +20,7 @@ describe('simple link formatter', () => {
 
 describe('complex link formatter', () => {
   test.each(Language.values())('%s snapshot', async (language) => {
-    const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0');
+    const docs = await Documentation.forPackage(language === Language.GO ? 'constructs@10.0.78' : '@aws-cdk/aws-ecr@1.106.0');
     try {
       const markdown = await docs.toMarkdown({
         language,

@@ -11,6 +11,7 @@ import { MarkdownDocument } from '../render/markdown-doc';
 import { MarkdownFormattingOptions, MarkdownRenderer } from '../render/markdown-render';
 import { Schema, CURRENT_SCHEMA_VERSION, submodulePath } from '../schema';
 import { CSharpTranspile } from '../transpile/csharp';
+import { GoTranspile } from '../transpile/go';
 import { JavaTranspile } from '../transpile/java';
 import { PythonTranspile } from '../transpile/python';
 import { Transpile, Language } from '../transpile/transpile';
@@ -356,6 +357,10 @@ export const LANGUAGE_SPECIFIC = {
   [Language.CSHARP.toString()]: {
     transpile: new CSharpTranspile(),
     rosettaTarget: TargetLanguage.CSHARP,
+  },
+  [Language.GO.toString()]: {
+    transpile: new GoTranspile(),
+    rosettaTarget: TargetLanguage.GO,
   },
 };
 

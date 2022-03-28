@@ -38,6 +38,14 @@ describe('language', () => {
     expect(Language.CSHARP.isValidConfiguration({ namespace: 'Com.Acme.Package', packageId: 'AcmePackage' })).toBeTruthy();
   });
 
+  test('go is supported', () => {
+    expect(Language.fromString('go')).toEqual(Language.GO);
+    // Disallows undefined configuration
+    expect(Language.GO.isValidConfiguration(undefined)).toBeFalsy();
+    // Allows valid configuration
+    expect(Language.GO.isValidConfiguration({ moduleName: 'github.com/acme/package' })).toBeTruthy();
+  });
+
   test('throw error on unsupported language', () => {
     expect(() => Language.fromString('unsupported')).toThrowError(/Unsupported language: unsupported. Supported languages are/);
   });
@@ -65,6 +73,13 @@ describe('submodules without an explicit name', () => {
   test('csharp', async () => {
     const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.AWSCDK_1_126_0);
     const markdown = await docs.toMarkdown({ language: Language.CSHARP, submodule: 'experimental' });
+    expect(markdown.render()).toMatchSnapshot();
+  });
+
+  test('go', async () => {
+    // NOTE: @aws-cdk/aws-cloudfront 1.126.0 does not support Go, so we use region_info from aws-cdk-lib instead, which does.
+    const docs = await Documentation.forAssembly('aws-cdk-lib', Assemblies.AWSCDK_1_106_0);
+    const markdown = await docs.toMarkdown({ language: Language.GO, submodule: 'region_info' });
     expect(markdown.render()).toMatchSnapshot();
   });
 });
