@@ -45,7 +45,7 @@ Object {
     "types": Array [
       Object {
         "displayName": "IGrantable",
-        "fqn": "undefined/awscdkawsiam.IGrantable",
+        "fqn": "github.com/aws/aws-cdk-go/awscdk/awsiam/awscdkawsiam.IGrantable",
         "id": "@aws-cdk/aws-iam.IGrantable",
         "packageName": "@aws-cdk/aws-iam",
         "packageVersion": "99.99.99",
@@ -58,7 +58,7 @@ Object {
 exports[`go snapshot 2`] = `
 " \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
-- *Type:* undefined/awscdkawsiam.IGrantable
+- *Type:* github.com/aws/aws-cdk-go/awscdk/awsiam/awscdkawsiam.IGrantable
 
 ---
 "

@@ -133,7 +133,7 @@ Object {
         "types": Array [
           Object {
             "displayName": "Construct",
-            "fqn": "undefined/awscdkcore.Construct",
+            "fqn": "github.com/aws/aws-cdk-go/awscdk/awscdkcore.Construct",
             "id": "@aws-cdk/core.Construct",
             "packageName": "@aws-cdk/core",
             "packageVersion": "99.99.99",
@@ -194,7 +194,7 @@ awscdkawsecr.NewCfnPublicRepository(scope Construct, id *string, props CfnPublic
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope\\">scope</a></code> | <code>undefined/awscdkcore.Construct</code> | - scope in which this resource is defined. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope\\">scope</a></code> | <code>github.com/aws/aws-cdk-go/awscdk/awscdkcore.Construct</code> | - scope in which this resource is defined. |
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id\\">id</a></code> | <code>*string</code> | - scoped id of the resource. |
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.props\\">props</a></code> | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps\\">CfnPublicRepositoryProps</a></code> | - resource properties. |
 
@@ -202,7 +202,7 @@ awscdkawsecr.NewCfnPublicRepository(scope Construct, id *string, props CfnPublic
 
 # \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope\\"></a>
 
-- *Type:* undefined/awscdkcore.Construct
+- *Type:* github.com/aws/aws-cdk-go/awscdk/awscdkcore.Construct
 
 scope in which this resource is defined.
 

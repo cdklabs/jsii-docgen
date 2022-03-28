@@ -278,7 +278,7 @@ Object {
             "types": Array [
               Object {
                 "displayName": "CfnTag",
-                "fqn": "undefined/awscdkcore.CfnTag",
+                "fqn": "github.com/aws/aws-cdk-go/awscdk/awscdkcore.CfnTag",
                 "id": "@aws-cdk/core.CfnTag",
                 "packageName": "@aws-cdk/core",
                 "packageVersion": "99.99.99",
@@ -296,7 +296,7 @@ Object {
 	RepositoryCatalogData: interface{},
 	RepositoryName: *string,
 	RepositoryPolicyText: interface{},
-	Tags: *[]undefined/awscdkcore.CfnTag,
+	Tags: *[]github.com/aws/aws-cdk-go/awscdk/awscdkcore.CfnTag,
 }",
 }
 `;
@@ -317,7 +317,7 @@ import \\"github.com/aws/aws-cdk-go/awscdkawsecr\\"
 	RepositoryCatalogData: interface{},
 	RepositoryName: *string,
 	RepositoryPolicyText: interface{},
-	Tags: *[]undefined/awscdkcore.CfnTag,
+	Tags: *[]github.com/aws/aws-cdk-go/awscdk/awscdkcore.CfnTag,
 }
 \`\`\`
 
@@ -328,7 +328,7 @@ import \\"github.com/aws/aws-cdk-go/awscdkawsecr\\"
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryCatalogData\\">RepositoryCatalogData</a></code> | <code>interface{}</code> | \`AWS::ECR::PublicRepository.RepositoryCatalogData\`. |
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryName\\">RepositoryName</a></code> | <code>*string</code> | \`AWS::ECR::PublicRepository.RepositoryName\`. |
 | <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.repositoryPolicyText\\">RepositoryPolicyText</a></code> | <code>interface{}</code> | \`AWS::ECR::PublicRepository.RepositoryPolicyText\`. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\">Tags</a></code> | <code>*[]undefined/awscdkcore.CfnTag</code> | \`AWS::ECR::PublicRepository.Tags\`. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.CfnPublicRepositoryProps.property.tags\\">Tags</a></code> | <code>*[]github.com/aws/aws-cdk-go/awscdk/awscdkcore.CfnTag</code> | \`AWS::ECR::PublicRepository.Tags\`. |
 
 ---
 
@@ -380,7 +380,7 @@ RepositoryPolicyText interface{}
 Tags *[]CfnTag
 \`\`\`
 
-- *Type:* *[]undefined/awscdkcore.CfnTag
+- *Type:* *[]github.com/aws/aws-cdk-go/awscdk/awscdkcore.CfnTag
 
 \`AWS::ECR::PublicRepository.Tags\`.
 

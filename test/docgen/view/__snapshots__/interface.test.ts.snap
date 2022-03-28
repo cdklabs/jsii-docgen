@@ -909,7 +909,7 @@ Object {
             "types": Array [
               Object {
                 "displayName": "PolicyStatement",
-                "fqn": "undefined/awscdkawsiam.PolicyStatement",
+                "fqn": "github.com/aws/aws-cdk-go/awscdk/awsiam/awscdkawsiam.PolicyStatement",
                 "id": "@aws-cdk/aws-iam.PolicyStatement",
                 "packageName": "@aws-cdk/aws-iam",
                 "packageVersion": "99.99.99",
@@ -940,7 +940,7 @@ Object {
             "types": Array [
               Object {
                 "displayName": "IGrantable",
-                "fqn": "undefined/awscdkawsiam.IGrantable",
+                "fqn": "github.com/aws/aws-cdk-go/awscdk/awsiam/awscdkawsiam.IGrantable",
                 "id": "@aws-cdk/aws-iam.IGrantable",
                 "packageName": "@aws-cdk/aws-iam",
                 "packageVersion": "99.99.99",
@@ -982,7 +982,7 @@ Object {
             "types": Array [
               Object {
                 "displayName": "IGrantable",
-                "fqn": "undefined/awscdkawsiam.IGrantable",
+                "fqn": "github.com/aws/aws-cdk-go/awscdk/awsiam/awscdkawsiam.IGrantable",
                 "id": "@aws-cdk/aws-iam.IGrantable",
                 "packageName": "@aws-cdk/aws-iam",
                 "packageVersion": "99.99.99",
@@ -1013,7 +1013,7 @@ Object {
             "types": Array [
               Object {
                 "displayName": "IGrantable",
-                "fqn": "undefined/awscdkawsiam.IGrantable",
+                "fqn": "github.com/aws/aws-cdk-go/awscdk/awsiam/awscdkawsiam.IGrantable",
                 "id": "@aws-cdk/aws-iam.IGrantable",
                 "packageName": "@aws-cdk/aws-iam",
                 "packageVersion": "99.99.99",
@@ -1061,7 +1061,7 @@ that captures the event. This method will not create the Trail.",
             "types": Array [
               Object {
                 "displayName": "OnEventOptions",
-                "fqn": "undefined/awscdkawsevents.OnEventOptions",
+                "fqn": "github.com/aws/aws-cdk-go/awscdkawsevents/awscdkawsevents.OnEventOptions",
                 "id": "@aws-cdk/aws-events.OnEventOptions",
                 "packageName": "@aws-cdk/aws-events",
                 "packageVersion": "99.99.99",
@@ -1153,7 +1153,7 @@ that captures the event. This method will not create the Trail.",
             "types": Array [
               Object {
                 "displayName": "OnEventOptions",
-                "fqn": "undefined/awscdkawsevents.OnEventOptions",
+                "fqn": "github.com/aws/aws-cdk-go/awscdkawsevents/awscdkawsevents.OnEventOptions",
                 "id": "@aws-cdk/aws-events.OnEventOptions",
                 "packageName": "@aws-cdk/aws-events",
                 "packageVersion": "99.99.99",
@@ -1264,7 +1264,7 @@ that captures the event. This method will not create the Trail.",
   "interfaces": Array [
     Object {
       "displayName": "IResource",
-      "fqn": "undefined/awscdkcore.IResource",
+      "fqn": "github.com/aws/aws-cdk-go/awscdk/awscdkcore.IResource",
       "id": "@aws-cdk/core.IResource",
       "packageName": "@aws-cdk/core",
       "packageVersion": "1.106.0",
@@ -1285,7 +1285,7 @@ that captures the event. This method will not create the Trail.",
         "types": Array [
           Object {
             "displayName": "ConstructNode",
-            "fqn": "undefined/awscdkcore.ConstructNode",
+            "fqn": "github.com/aws/aws-cdk-go/awscdk/awscdkcore.ConstructNode",
             "id": "@aws-cdk/core.ConstructNode",
             "packageName": "@aws-cdk/core",
             "packageVersion": "99.99.99",
@@ -1314,7 +1314,7 @@ that might be different than the stack they were imported into.",
         "types": Array [
           Object {
             "displayName": "ResourceEnvironment",
-            "fqn": "undefined/awscdkcore.ResourceEnvironment",
+            "fqn": "github.com/aws/aws-cdk-go/awscdk/awscdkcore.ResourceEnvironment",
             "id": "@aws-cdk/core.ResourceEnvironment",
             "packageName": "@aws-cdk/core",
             "packageVersion": "99.99.99",
@@ -1337,7 +1337,7 @@ that might be different than the stack they were imported into.",
         "types": Array [
           Object {
             "displayName": "Stack",
-            "fqn": "undefined/awscdkcore.Stack",
+            "fqn": "github.com/aws/aws-cdk-go/awscdk/awscdkcore.Stack",
             "id": "@aws-cdk/core.Stack",
             "packageName": "@aws-cdk/core",
             "packageVersion": "99.99.99",
@@ -1396,7 +1396,7 @@ that might be different than the stack they were imported into.",
 exports[`go snapshot 2`] = `
 " IRepository <a name=\\"IRepository\\" id=\\"@aws-cdk/aws-ecr.IRepository\\"></a>
 
-- *Extends:* undefined/awscdkcore.IResource
+- *Extends:* github.com/aws/aws-cdk-go/awscdk/awscdkcore.IResource
 
 - *Implemented By:* <a href=\\"#@aws-cdk/aws-ecr.Repository\\">Repository</a>, <a href=\\"#@aws-cdk/aws-ecr.RepositoryBase\\">RepositoryBase</a>, <a href=\\"#@aws-cdk/aws-ecr.IRepository\\">IRepository</a>
 
@@ -1429,7 +1429,7 @@ Add a policy statement to the repository's resource policy.
 
 ### \`statement\`<sup>Required</sup> <a name=\\"statement\\" id=\\"@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement\\"></a>
 
-- *Type:* undefined/awscdkawsiam.PolicyStatement
+- *Type:* github.com/aws/aws-cdk-go/awscdk/awsiam/awscdkawsiam.PolicyStatement
 
 ---
 
@@ -1443,7 +1443,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee\\"></a>
 
-- *Type:* undefined/awscdkawsiam.IGrantable
+- *Type:* github.com/aws/aws-cdk-go/awscdk/awsiam/awscdkawsiam.IGrantable
 
 ---
 
@@ -1463,7 +1463,7 @@ Grant the given identity permissions to pull images in this repository.
 
 ### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee\\"></a>
 
-- *Type:* undefined/awscdkawsiam.IGrantable
+- *Type:* github.com/aws/aws-cdk-go/awscdk/awsiam/awscdkawsiam.IGrantable
 
 ---
 
@@ -1477,7 +1477,7 @@ Grant the given identity permissions to pull and push images to this repository.
 
 ### \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee\\"></a>
 
-- *Type:* undefined/awscdkawsiam.IGrantable
+- *Type:* github.com/aws/aws-cdk-go/awscdk/awsiam/awscdkawsiam.IGrantable
 
 ---
 
@@ -1502,7 +1502,7 @@ The id of the rule.
 
 ### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.options\\"></a>
 
-- *Type:* undefined/awscdkawsevents.OnEventOptions
+- *Type:* github.com/aws/aws-cdk-go/awscdkawsevents/awscdkawsevents.OnEventOptions
 
 Options for adding the rule.
 
@@ -1554,7 +1554,7 @@ Use
 
 ### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"@aws-cdk/aws-ecr.IRepository.onEvent.parameter.options\\"></a>
 
-- *Type:* undefined/awscdkawsevents.OnEventOptions
+- *Type:* github.com/aws/aws-cdk-go/awscdkawsevents/awscdkawsevents.OnEventOptions
 
 ---
 
@@ -1622,9 +1622,9 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-ecr.IRepository.property.node\\">Node</a></code> | <code>undefined/awscdkcore.ConstructNode</code> | The construct tree node for this construct. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.IRepository.property.env\\">Env</a></code> | <code>undefined/awscdkcore.ResourceEnvironment</code> | The environment this resource belongs to. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.IRepository.property.stack\\">Stack</a></code> | <code>undefined/awscdkcore.Stack</code> | The stack in which this resource is defined. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.IRepository.property.node\\">Node</a></code> | <code>github.com/aws/aws-cdk-go/awscdk/awscdkcore.ConstructNode</code> | The construct tree node for this construct. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.IRepository.property.env\\">Env</a></code> | <code>github.com/aws/aws-cdk-go/awscdk/awscdkcore.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href=\\"#@aws-cdk/aws-ecr.IRepository.property.stack\\">Stack</a></code> | <code>github.com/aws/aws-cdk-go/awscdk/awscdkcore.Stack</code> | The stack in which this resource is defined. |
 | <code><a href=\\"#@aws-cdk/aws-ecr.IRepository.property.repositoryArn\\">RepositoryArn</a></code> | <code>*string</code> | The ARN of the repository. |
 | <code><a href=\\"#@aws-cdk/aws-ecr.IRepository.property.repositoryName\\">RepositoryName</a></code> | <code>*string</code> | The name of the repository. |
 | <code><a href=\\"#@aws-cdk/aws-ecr.IRepository.property.repositoryUri\\">RepositoryUri</a></code> | <code>*string</code> | The URI of this repository (represents the latest image):. |
@@ -1637,7 +1637,7 @@ Image tag to use (tools usually default to \\"latest\\" if omitted).
 func Node() ConstructNode
 \`\`\`
 
-- *Type:* undefined/awscdkcore.ConstructNode
+- *Type:* github.com/aws/aws-cdk-go/awscdk/awscdkcore.ConstructNode
 
 The construct tree node for this construct.
 
@@ -1649,7 +1649,7 @@ The construct tree node for this construct.
 func Env() ResourceEnvironment
 \`\`\`
 
-- *Type:* undefined/awscdkcore.ResourceEnvironment
+- *Type:* github.com/aws/aws-cdk-go/awscdk/awscdkcore.ResourceEnvironment
 
 The environment this resource belongs to.
 
@@ -1668,7 +1668,7 @@ that might be different than the stack they were imported into.
 func Stack() Stack
 \`\`\`
 
-- *Type:* undefined/awscdkcore.Stack
+- *Type:* github.com/aws/aws-cdk-go/awscdk/awscdkcore.Stack
 
 The stack in which this resource is defined.
 

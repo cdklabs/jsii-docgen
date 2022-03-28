@@ -78,7 +78,7 @@ Object {
         "types": Array [
           Object {
             "displayName": "TreeInspector",
-            "fqn": "undefined/awscdkcore.TreeInspector",
+            "fqn": "github.com/aws/aws-cdk-go/awscdk/awscdkcore.TreeInspector",
             "id": "@aws-cdk/core.TreeInspector",
             "packageName": "@aws-cdk/core",
             "packageVersion": "99.99.99",
@@ -102,7 +102,7 @@ Examines the CloudFormation resource and discloses attributes.
 
 # \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
-- *Type:* undefined/awscdkcore.TreeInspector
+- *Type:* github.com/aws/aws-cdk-go/awscdk/awscdkcore.TreeInspector
 
 tree inspector to collect and process attributes.
 

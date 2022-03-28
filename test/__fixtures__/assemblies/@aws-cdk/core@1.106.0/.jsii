@@ -166,6 +166,9 @@
       "namespace": "Amazon.CDK",
       "packageId": "Amazon.CDK"
     },
+    "go": {
+      "moduleName": "github.com/aws/aws-cdk-go/awscdk"
+    },
     "java": {
       "maven": {
         "artifactId": "core",
