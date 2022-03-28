@@ -15,6 +15,9 @@ export class GoTranspile extends transpile.TranspileBase {
         ? `${parent.name}/${parent.submodule}`
         : parent.name;
 
+      // `packageName` can be specified explicitly in configuration or
+      // auto-generated from node package name.
+      // Example: @aws-cdk/aws-ecr -> awscdkawsecr
       const packageName = moduleLike.targets?.go?.packageName
         ?? moduleLike.name.toLowerCase().replace(/[^a-z0-9]/g, '');
 
@@ -22,11 +25,19 @@ export class GoTranspile extends transpile.TranspileBase {
     } else {
       // This is the root module
       const moduleName = moduleLike.targets?.go?.moduleName;
+
+      // moduleName is required configuration for Go enabled packages
+      // Validation in `Documentation` class prevents this
+      if (!moduleName) {
+        throw new Error('"jsii.targets.go.moduleName" is a required field for Go enabled JSII modules');
+      }
+
       const packageName = moduleLike.targets?.go?.packageName
         ?? (moduleLike as reflect.Assembly).name.toLowerCase().replace(/[^a-z0-9]/g, '');
       const version = Number.parseInt((moduleLike as reflect.Assembly).version.split('.')[0]);
       const versionSegment = version >= 2 ? `/v${version}` : '';
 
+      // Example: github.com/aws/constructs-go/constructs/v10
       const name = `${moduleName}/${packageName}${versionSegment}`;
 
       return { name };
@@ -67,7 +78,7 @@ export class GoTranspile extends transpile.TranspileBase {
     const paramsFormatted = parameters.map(p => this.formatFnParam(this.parameter(p))).join(', ');
 
     let returnType: transpile.TranspiledTypeReference | undefined;
-    if (reflect.Initializer.isInitializer(callable)) {
+    if (isInitializer) {
       returnType = this.typeReference(callable.parentType.reference);
     } else if (reflect.Method.isMethod(callable)) {
       returnType = this.typeReference(callable.returns.type);
@@ -78,12 +89,12 @@ export class GoTranspile extends transpile.TranspileBase {
 
     const isStatic = reflect.Method.isMethod(callable) && callable.static;
 
-    const moduleName = this.moduleName(type);
+    const packageName = this.packageName(type);
 
     const signatures = [`func ${isInitializer ? 'New' : ''}${name}(${paramsFormatted})${returns ? ` ${returns}` : ''}`];
     const invocations = [isInitializer
-      ? `${moduleName}.New${name}(${paramsFormatted})${returns ? ` ${returns}` : ''}`
-      : `${moduleName}.${type.name}${isStatic ? '_' : '.'}${name}(${paramsFormatted})${returns ? ` ${returns}` : ''}`];
+      ? `${packageName}.New${name}(${paramsFormatted})${returns ? ` ${returns}` : ''}`
+      : `${packageName}.${type.name}${isStatic ? '_' : '.'}${name}(${paramsFormatted})${returns ? ` ${returns}` : ''}`];
 
     return {
       name,
@@ -208,10 +219,7 @@ export class GoTranspile extends transpile.TranspileBase {
   private formatFnParam(
     transpiled: transpile.TranspiledParameter | transpile.TranspiledProperty,
   ): string {
-    const tf = transpiled.typeReference.toString({
-      typeFormatter: (t) => t.name,
-    });
-    return `${transpiled.name} ${tf}`;
+    return this.formatParameter(transpiled.name, transpiled.typeReference);
   }
 
   private formatImport(type: transpile.TranspiledType): string {
@@ -228,7 +236,7 @@ export class GoTranspile extends transpile.TranspileBase {
 
   private formatStructBuilder(type: transpile.TranspiledType, properties: string[]): string {
     return [
-      `&${this.moduleName(type)}.${type.name} {`,
+      `&${this.packageName(type)}.${type.name} {`,
       properties.join('\n'),
       '}',
     ].join('\n');
@@ -246,7 +254,7 @@ export class GoTranspile extends transpile.TranspileBase {
     return property.parentType.isDataType() ? `${name} ${tf}` : `func ${name}() ${tf}`;
   }
 
-  private moduleName(type: transpile.TranspiledType): string {
+  private packageName(type: transpile.TranspiledType): string {
     return type.submodule ??
       type.module.split('/').slice(/\/v\d+$/.test(type.module) ? -2 : -1)[0];
   }

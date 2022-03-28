@@ -77,7 +77,7 @@ describe('submodules without an explicit name', () => {
   });
 
   test('go', async () => {
-    // NOTE: @aws-cdk/aws-cloudfront 1.126.0 does not support Go, so we use constructs instead, which does.
+    // NOTE: @aws-cdk/aws-cloudfront 1.126.0 does not support Go, so we use region_info from aws-cdk-lib instead, which does.
     const docs = await Documentation.forAssembly('aws-cdk-lib', Assemblies.AWSCDK_1_106_0);
     const markdown = await docs.toMarkdown({ language: Language.GO, submodule: 'region_info' });
     expect(markdown.render()).toMatchSnapshot();
