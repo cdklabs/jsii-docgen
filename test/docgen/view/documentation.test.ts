@@ -2,7 +2,7 @@ import * as child from 'child_process';
 import * as os from 'os';
 import * as path from 'path';
 import * as fs from 'fs-extra';
-import { Language, Documentation, UnInstallablePackageError, CorruptedAssemblyError } from '../../../src';
+import { Language, Documentation, UnInstallablePackageError, CorruptedAssemblyError, LanguageNotSupportedError } from '../../../src';
 import { extractPackageName } from '../../../src/docgen/view/documentation';
 import { Assemblies } from '../assemblies';
 
@@ -227,6 +227,13 @@ test('throws corrupt assembly 2', async () => {
   // this package had a peerDependency which underwent a breaking change in a minor version (cdktf.ComplexObject interface was removed)
   await expect(docs.toMarkdown({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
   await expect(docs.toJson({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
+});
+
+test('throws unsupported language', async () => {
+  // package doesn't support Go and should throw with corresponding error
+  const docs = await Documentation.forPackage('@aws-cdk/pipelines@v1.144.0');
+  await expect(docs.toMarkdown({ language: Language.GO })).rejects.toThrowError(LanguageNotSupportedError);
+  await expect(docs.toJson({ language: Language.GO })).rejects.toThrowError(LanguageNotSupportedError);
 });
 
 test('performance on large modules', async () => {
