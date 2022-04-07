@@ -3,7 +3,7 @@ import * as path from 'path';
 import * as fs from 'fs-extra';
 import * as glob from 'glob-promise';
 import * as reflect from 'jsii-reflect';
-import { TargetLanguage } from 'jsii-rosetta';
+import { TargetLanguage, UnknownSnippetMode } from 'jsii-rosetta';
 import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
 import { CorruptedAssemblyError, LanguageNotSupportedError } from '../..';
 import { Json } from '../render/json';
@@ -328,7 +328,7 @@ export class Documentation {
         const spec = JSON.parse(await fs.readFile(dotJsii, 'utf-8'));
         if (language && spec.name === this.assemblyName) {
           const packageDir = path.dirname(dotJsii);
-          await transliterateAssembly([packageDir], [language], { loose: options.loose });
+          await transliterateAssembly([packageDir], [language], { loose: options.loose, unknownSnippets: UnknownSnippetMode.TRANSLATE });
           dotJsii = path.join(packageDir, `.jsii.${language}`);
         }
         await ts.load(dotJsii, { validate: options.validate });
