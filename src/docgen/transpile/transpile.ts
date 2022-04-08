@@ -26,6 +26,12 @@ export class Language {
   public static readonly CSHARP = new Language({ name: 'csharp', targetName: 'dotnet', validator: validateDotNetConfig });
 
   /**
+   *
+   * Go
+   */
+  public static readonly GO = new Language({ name: 'go', targetName: 'go', validator: validateGoConfig });
+
+  /**
    * Transform a literal string to the `Language` object.
    *
    * Throws an `UnsupportedLanguageError` if the language is not supported.
@@ -44,13 +50,16 @@ export class Language {
       case Language.CSHARP.name:
       case Language.CSHARP.targetName:
         return Language.CSHARP;
+      case Language.GO.name:
+      case Language.GO.targetName:
+        return Language.GO;
       default:
         throw new UnsupportedLanguageError(lang, Language.values());
     }
   }
 
   public static values() {
-    return [Language.TYPESCRIPT, Language.PYTHON, Language.JAVA, Language.CSHARP];
+    return [Language.TYPESCRIPT, Language.PYTHON, Language.JAVA, Language.CSHARP, Language.GO];
   }
 
   public readonly name: string;
@@ -97,6 +106,11 @@ function validateJavaConfig(config: Record<string, any>): boolean {
 function validatePythonConfig(config: Record<string, any>): boolean {
   // See: https://aws.github.io/jsii/user-guides/lib-author/configuration/targets/python/
   return typeof config.module === 'string' && typeof config.distName === 'string';
+}
+
+function validateGoConfig(config: Record<string, any>): boolean {
+  // See: https://aws.github.io/jsii/user-guides/lib-author/configuration/targets/go/
+  return typeof config.moduleName === 'string';
 }
 
 export class UnsupportedLanguageError extends Error {

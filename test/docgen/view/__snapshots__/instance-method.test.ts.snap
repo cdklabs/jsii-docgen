@@ -55,6 +55,61 @@ tree inspector to collect and process attributes.
 "
 `;
 
+exports[`go snapshot 1`] = `
+Object {
+  "displayName": "Inspect",
+  "docs": Object {
+    "summary": "Examines the CloudFormation resource and discloses attributes.",
+  },
+  "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.CfnPublicRepository.Inspect",
+  "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect",
+  "parameters": Array [
+    Object {
+      "default": undefined,
+      "displayName": "inspector",
+      "docs": Object {
+        "summary": "- tree inspector to collect and process attributes.",
+      },
+      "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.CfnPublicRepository.Inspect.parameter.inspector",
+      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
+      "optional": undefined,
+      "type": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "TreeInspector",
+            "fqn": "github.com/aws/aws-cdk-go/awscdk/awscdkcore.TreeInspector",
+            "id": "@aws-cdk/core.TreeInspector",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
+    },
+  ],
+  "usage": "func Inspect(inspector TreeInspector)",
+}
+`;
+
+exports[`go snapshot 2`] = `
+" \`Inspect\` <a name=\\"Inspect\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect\\"></a>
+
+\`\`\`go
+func Inspect(inspector TreeInspector)
+\`\`\`
+
+Examines the CloudFormation resource and discloses attributes.
+
+# \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
+
+- *Type:* github.com/aws/aws-cdk-go/awscdk/awscdkcore.TreeInspector
+
+tree inspector to collect and process attributes.
+
+---
+"
+`;
+
 exports[`java snapshot 1`] = `
 Object {
   "displayName": "inspect",

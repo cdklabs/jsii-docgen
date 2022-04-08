@@ -11,6 +11,7 @@ import { MarkdownDocument } from '../render/markdown-doc';
 import { MarkdownFormattingOptions, MarkdownRenderer } from '../render/markdown-render';
 import { Schema, CURRENT_SCHEMA_VERSION, submodulePath } from '../schema';
 import { CSharpTranspile } from '../transpile/csharp';
+import { GoTranspile } from '../transpile/go';
 import { JavaTranspile } from '../transpile/java';
 import { PythonTranspile } from '../transpile/python';
 import { Transpile, Language } from '../transpile/transpile';
@@ -196,24 +197,25 @@ export class Documentation {
     const validate = options.validate ?? false;
     const allSubmodules = options.allSubmodules ?? false;
 
+
+    // Get the TS assembly first to check what languages are supported before calling rosetta
+    const tsAssembly = await this.createAssembly(undefined, { loose, validate });
+    const isSupported = language === Language.TYPESCRIPT || language.isValidConfiguration(tsAssembly?.targets?.[language.targetName]);
+    const assemblyFqn = `${tsAssembly.name}@${tsAssembly.version}`;
+
+    if (!isSupported) {
+      throw new LanguageNotSupportedError(`Laguage ${language} is not supported for package ${assemblyFqn}`);
+    }
+
     if (allSubmodules && options?.submodule) {
       throw new Error('Cannot call toJson with allSubmodules and a specific submodule both selected.');
     }
 
     const { assembly, transpile } = await this.languageSpecific(language, { loose, validate });
-
-    const assemblyFqn = `${assembly.name}@${assembly.version}`;
-
     const targets = assembly.targets;
 
     if (!targets) {
       throw new Error(`Assembly ${assemblyFqn} does not have any targets defined`);
-    }
-
-    const isSupported = language === Language.TYPESCRIPT || language.isValidConfiguration(assembly.targets[language.targetName]);
-
-    if (!isSupported) {
-      throw new LanguageNotSupportedError(`Laguage ${language} is not supported for package ${assemblyFqn}`);
     }
 
     const submodule = options?.submodule ? this.findSubmodule(assembly, options.submodule) : undefined;
@@ -356,6 +358,10 @@ export const LANGUAGE_SPECIFIC = {
   [Language.CSHARP.toString()]: {
     transpile: new CSharpTranspile(),
     rosettaTarget: TargetLanguage.CSHARP,
+  },
+  [Language.GO.toString()]: {
+    transpile: new GoTranspile(),
+    rosettaTarget: TargetLanguage.GO,
   },
 };
 

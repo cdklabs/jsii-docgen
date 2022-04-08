@@ -1261,6 +1261,783 @@ The stack ID of Lambda@Edge function.
 "
 `;
 
+exports[`submodules without an explicit name go 1`] = `
+"# AWS Region-Specific Information Directory
+<!--BEGIN STABILITY BANNER-->
+
+---
+
+![cdk-constructs: Stable](https://img.shields.io/badge/cdk--constructs-stable-success.svg?style=for-the-badge)
+
+---
+
+<!--END STABILITY BANNER-->
+
+## Usage
+
+Some information used in CDK Applications differs from one AWS region to
+another, such as service principals used in IAM policies, S3 static website
+endpoints, ...
+
+### The \`RegionInfo\` class
+
+The library offers a simple interface to obtain region specific information in
+the form of the \`RegionInfo\` class. This is the preferred way to interact with
+the regional information database:
+
+\`\`\`ts
+import { RegionInfo } from 'aws-cdk-lib/region-info';
+
+// Get the information for \\"eu-west-1\\":
+const region = RegionInfo.get('eu-west-1');
+
+// Access attributes:
+region.s3StaticWebsiteEndpoint; // s3-website-eu-west-1.amazonaws.com
+region.servicePrincipal('logs.amazonaws.com'); // logs.eu-west-1.amazonaws.com
+\`\`\`
+
+The \`RegionInfo\` layer is built on top of the Low-Level API, which is described
+below and can be used to register additional data, including user-defined facts
+that are not available through the \`RegionInfo\` interface.
+
+### Low-Level API
+
+This library offers a primitive database of such information so that CDK
+constructs can easily access regional information. The \`FactName\` class provides
+a list of known fact names, which can then be used with the \`RegionInfo\` to
+retrieve a particular value:
+
+\`\`\`ts
+import { region_info as regionInfo } from 'aws-cdk-lib';
+
+const codeDeployPrincipal = regionInfo.Fact.find('us-east-1', regionInfo.FactName.servicePrincipal('codedeploy.amazonaws.com'));
+// => codedeploy.us-east-1.amazonaws.com
+
+const staticWebsite = regionInfo.Fact.find('ap-northeast-1', regionInfo.FactName.S3_STATIC_WEBSITE_ENDPOINT);
+// => s3-website-ap-northeast-1.amazonaws.com
+\`\`\`
+
+## Supplying new or missing information
+
+As new regions are released, it might happen that a particular fact you need is
+missing from the library. In such cases, the \`Fact.register\` method can be used
+to inject FactName into the database:
+
+\`\`\`ts
+regionInfo.Fact.register({
+  region: 'bermuda-triangle-1',
+  name: regionInfo.FactName.servicePrincipal('s3.amazonaws.com'),
+  value: 's3-website.bermuda-triangle-1.nowhere.com',
+});
+\`\`\`
+
+## Overriding incorrect information
+
+In the event information provided by the library is incorrect, it can be
+overridden using the same \`Fact.register\` method demonstrated above, simply
+adding an extra boolean argument:
+
+\`\`\`ts
+regionInfo.Fact.register({
+  region: 'us-east-1',
+  name: regionInfo.FactName.servicePrincipal('service.amazonaws.com'),
+  value: 'the-correct-principal.amazonaws.com',
+}, true /* Allow overriding information */);
+\`\`\`
+
+If you happen to have stumbled upon incorrect data built into this library, it
+is always a good idea to report your findings in a [GitHub issue], so we can fix
+it for everyone else!
+
+[GitHub issue]: https://github.com/aws/aws-cdk/issues
+
+---
+
+This module is part of the [AWS Cloud Development Kit](https://github.com/aws/aws-cdk) project.
+
+# API Reference <a name=\\"API Reference\\" id=\\"api-reference\\"></a>
+
+
+
+## Classes <a name=\\"Classes\\" id=\\"Classes\\"></a>
+
+### Default <a name=\\"Default\\" id=\\"aws-cdk-lib.region_info.Default\\"></a>
+
+Provides default values for certain regional information points.
+
+
+#### Static Functions <a name=\\"Static Functions\\" id=\\"Static Functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#aws-cdk-lib.region_info.Default.servicePrincipal\\">ServicePrincipal</a></code> | Computes a \\"standard\\" AWS Service principal for a given service, region and suffix. |
+
+---
+
+##### \`ServicePrincipal\` <a name=\\"ServicePrincipal\\" id=\\"aws-cdk-lib.region_info.Default.servicePrincipal\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
+
+regioninfo.Default_ServicePrincipal(service *string, region *string, urlSuffix *string) *string
+\`\`\`
+
+Computes a \\"standard\\" AWS Service principal for a given service, region and suffix.
+
+This is useful for example when
+you need to compute a service principal name, but you do not have a synthesize-time region literal available (so
+all you have is \`{ \\"Ref\\": \\"AWS::Region\\" }\`). This way you get the same defaulting behavior that is normally used
+for built-in data.
+
+###### \`service\`<sup>Required</sup> <a name=\\"service\\" id=\\"aws-cdk-lib.region_info.Default.servicePrincipal.parameter.service\\"></a>
+
+- *Type:* *string
+
+the name of the service (s3, s3.amazonaws.com, ...).
+
+---
+
+###### \`region\`<sup>Required</sup> <a name=\\"region\\" id=\\"aws-cdk-lib.region_info.Default.servicePrincipal.parameter.region\\"></a>
+
+- *Type:* *string
+
+the region in which the service principal is needed.
+
+---
+
+###### \`urlSuffix\`<sup>Required</sup> <a name=\\"urlSuffix\\" id=\\"aws-cdk-lib.region_info.Default.servicePrincipal.parameter.urlSuffix\\"></a>
+
+- *Type:* *string
+
+the URL suffix for the partition in which the region is located.
+
+---
+
+
+#### Constants <a name=\\"Constants\\" id=\\"Constants\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#aws-cdk-lib.region_info.Default.property.VPC_ENDPOINT_SERVICE_NAME_PREFIX\\">VpcEndpointServiceNamePrefix</a></code> | <code>*string</code> | The default value for a VPC Endpoint Service name prefix, useful if you do not have a synthesize-time region literal available (all you have is \`{ \\"Ref\\": \\"AWS::Region\\" }\`). |
+
+---
+
+##### \`VpcEndpointServiceNamePrefix\`<sup>Required</sup> <a name=\\"VpcEndpointServiceNamePrefix\\" id=\\"aws-cdk-lib.region_info.Default.property.VPC_ENDPOINT_SERVICE_NAME_PREFIX\\"></a>
+
+\`\`\`go
+func VpcEndpointServiceNamePrefix() *string
+\`\`\`
+
+- *Type:* *string
+
+The default value for a VPC Endpoint Service name prefix, useful if you do not have a synthesize-time region literal available (all you have is \`{ \\"Ref\\": \\"AWS::Region\\" }\`).
+
+---
+
+### Fact <a name=\\"Fact\\" id=\\"aws-cdk-lib.region_info.Fact\\"></a>
+
+A database of regional information.
+
+
+#### Static Functions <a name=\\"Static Functions\\" id=\\"Static Functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#aws-cdk-lib.region_info.Fact.find\\">Find</a></code> | Retrieves a fact from this Fact database. |
+| <code><a href=\\"#aws-cdk-lib.region_info.Fact.register\\">Register</a></code> | Registers a new fact in this Fact database. |
+| <code><a href=\\"#aws-cdk-lib.region_info.Fact.requireFact\\">RequireFact</a></code> | Retrieve a fact from the Fact database. |
+| <code><a href=\\"#aws-cdk-lib.region_info.Fact.unregister\\">Unregister</a></code> | Removes a fact from the database. |
+
+---
+
+##### \`Find\` <a name=\\"Find\\" id=\\"aws-cdk-lib.region_info.Fact.find\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
+
+regioninfo.Fact_Find(region *string, name *string) *string
+\`\`\`
+
+Retrieves a fact from this Fact database.
+
+###### \`region\`<sup>Required</sup> <a name=\\"region\\" id=\\"aws-cdk-lib.region_info.Fact.find.parameter.region\\"></a>
+
+- *Type:* *string
+
+the name of the region (e.g: \`us-east-1\`).
+
+---
+
+###### \`name\`<sup>Required</sup> <a name=\\"name\\" id=\\"aws-cdk-lib.region_info.Fact.find.parameter.name\\"></a>
+
+- *Type:* *string
+
+the name of the fact being looked up (see the \`FactName\` class for details).
+
+---
+
+##### \`Register\` <a name=\\"Register\\" id=\\"aws-cdk-lib.region_info.Fact.register\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
+
+regioninfo.Fact_Register(fact IFact, allowReplacing *bool)
+\`\`\`
+
+Registers a new fact in this Fact database.
+
+###### \`fact\`<sup>Required</sup> <a name=\\"fact\\" id=\\"aws-cdk-lib.region_info.Fact.register.parameter.fact\\"></a>
+
+- *Type:* <a href=\\"#aws-cdk-lib.region_info.IFact\\">IFact</a>
+
+the new fact to be registered.
+
+---
+
+###### \`allowReplacing\`<sup>Optional</sup> <a name=\\"allowReplacing\\" id=\\"aws-cdk-lib.region_info.Fact.register.parameter.allowReplacing\\"></a>
+
+- *Type:* *bool
+
+whether new facts can replace existing facts or not.
+
+---
+
+##### \`RequireFact\` <a name=\\"RequireFact\\" id=\\"aws-cdk-lib.region_info.Fact.requireFact\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
+
+regioninfo.Fact_RequireFact(region *string, name *string) *string
+\`\`\`
+
+Retrieve a fact from the Fact database.
+
+(retrieval will fail if the specified region or
+fact name does not exist.)
+
+###### \`region\`<sup>Required</sup> <a name=\\"region\\" id=\\"aws-cdk-lib.region_info.Fact.requireFact.parameter.region\\"></a>
+
+- *Type:* *string
+
+the name of the region (e.g: \`us-east-1\`).
+
+---
+
+###### \`name\`<sup>Required</sup> <a name=\\"name\\" id=\\"aws-cdk-lib.region_info.Fact.requireFact.parameter.name\\"></a>
+
+- *Type:* *string
+
+the name of the fact being looked up (see the \`FactName\` class for details).
+
+---
+
+##### \`Unregister\` <a name=\\"Unregister\\" id=\\"aws-cdk-lib.region_info.Fact.unregister\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
+
+regioninfo.Fact_Unregister(region *string, name *string, value *string)
+\`\`\`
+
+Removes a fact from the database.
+
+###### \`region\`<sup>Required</sup> <a name=\\"region\\" id=\\"aws-cdk-lib.region_info.Fact.unregister.parameter.region\\"></a>
+
+- *Type:* *string
+
+the region for which the fact is to be removed.
+
+---
+
+###### \`name\`<sup>Required</sup> <a name=\\"name\\" id=\\"aws-cdk-lib.region_info.Fact.unregister.parameter.name\\"></a>
+
+- *Type:* *string
+
+the name of the fact to remove.
+
+---
+
+###### \`value\`<sup>Optional</sup> <a name=\\"value\\" id=\\"aws-cdk-lib.region_info.Fact.unregister.parameter.value\\"></a>
+
+- *Type:* *string
+
+the value that should be removed (removal will fail if the value is specified, but does not match the current stored value).
+
+---
+
+#### Properties <a name=\\"Properties\\" id=\\"Properties\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#aws-cdk-lib.region_info.Fact.property.regions\\">Regions</a></code> | <code>*[]*string</code> | *No description.* |
+
+---
+
+##### \`Regions\`<sup>Required</sup> <a name=\\"Regions\\" id=\\"aws-cdk-lib.region_info.Fact.property.regions\\"></a>
+
+\`\`\`go
+func Regions() *[]*string
+\`\`\`
+
+- *Type:* *[]*string
+
+---
+
+
+### FactName <a name=\\"FactName\\" id=\\"aws-cdk-lib.region_info.FactName\\"></a>
+
+All standardized fact names.
+
+#### Initializers <a name=\\"Initializers\\" id=\\"aws-cdk-lib.region_info.FactName.Initializer\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
+
+regioninfo.NewFactName() FactName
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+
+#### Static Functions <a name=\\"Static Functions\\" id=\\"Static Functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#aws-cdk-lib.region_info.FactName.servicePrincipal\\">ServicePrincipal</a></code> | The name of the regional service principal for a given service. |
+
+---
+
+##### \`ServicePrincipal\` <a name=\\"ServicePrincipal\\" id=\\"aws-cdk-lib.region_info.FactName.servicePrincipal\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
+
+regioninfo.FactName_ServicePrincipal(service *string) *string
+\`\`\`
+
+The name of the regional service principal for a given service.
+
+###### \`service\`<sup>Required</sup> <a name=\\"service\\" id=\\"aws-cdk-lib.region_info.FactName.servicePrincipal.parameter.service\\"></a>
+
+- *Type:* *string
+
+the service name, either simple (e.g: \`s3\`, \`codedeploy\`) or qualified (e.g: \`s3.amazonaws.com\`). The \`.amazonaws.com\` and \`.amazonaws.com.cn\` domains are stripped from service names, so they are canonicalized in that respect.
+
+---
+
+
+#### Constants <a name=\\"Constants\\" id=\\"Constants\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#aws-cdk-lib.region_info.FactName.property.APPMESH_ECR_ACCOUNT\\">AppmeshEcrAccount</a></code> | <code>*string</code> | The ID of the AWS account that owns the public ECR repository that contains the AWS App Mesh Envoy Proxy images in a given region. |
+| <code><a href=\\"#aws-cdk-lib.region_info.FactName.property.CDK_METADATA_RESOURCE_AVAILABLE\\">CdkMetadataResourceAvailable</a></code> | <code>*string</code> | Whether the AWS::CDK::Metadata CloudFormation Resource is available in-region or not. |
+| <code><a href=\\"#aws-cdk-lib.region_info.FactName.property.DLC_REPOSITORY_ACCOUNT\\">DlcRepositoryAccount</a></code> | <code>*string</code> | The ID of the AWS account that owns the public ECR repository that contains the AWS Deep Learning Containers images in a given region. |
+| <code><a href=\\"#aws-cdk-lib.region_info.FactName.property.DOMAIN_SUFFIX\\">DomainSuffix</a></code> | <code>*string</code> | The domain suffix for a region (e.g: 'amazonaws.com\`). |
+| <code><a href=\\"#aws-cdk-lib.region_info.FactName.property.ELBV2_ACCOUNT\\">Elbv2Account</a></code> | <code>*string</code> | The account for ELBv2 in this region. |
+| <code><a href=\\"#aws-cdk-lib.region_info.FactName.property.PARTITION\\">Partition</a></code> | <code>*string</code> | The name of the partition for a region (e.g: 'aws', 'aws-cn', ...). |
+| <code><a href=\\"#aws-cdk-lib.region_info.FactName.property.S3_STATIC_WEBSITE_ENDPOINT\\">S3StaticWebsiteEndpoint</a></code> | <code>*string</code> | The endpoint used for hosting S3 static websites. |
+| <code><a href=\\"#aws-cdk-lib.region_info.FactName.property.S3_STATIC_WEBSITE_ZONE_53_HOSTED_ZONE_ID\\">S3StaticWebsiteZone53HostedZoneId</a></code> | <code>*string</code> | The endpoint used for aliasing S3 static websites in Route 53. |
+| <code><a href=\\"#aws-cdk-lib.region_info.FactName.property.VPC_ENDPOINT_SERVICE_NAME_PREFIX\\">VpcEndpointServiceNamePrefix</a></code> | <code>*string</code> | The prefix for VPC Endpoint Service names, cn.com.amazonaws.vpce for China regions, com.amazonaws.vpce otherwise. |
+
+---
+
+##### \`AppmeshEcrAccount\`<sup>Required</sup> <a name=\\"AppmeshEcrAccount\\" id=\\"aws-cdk-lib.region_info.FactName.property.APPMESH_ECR_ACCOUNT\\"></a>
+
+\`\`\`go
+func AppmeshEcrAccount() *string
+\`\`\`
+
+- *Type:* *string
+
+The ID of the AWS account that owns the public ECR repository that contains the AWS App Mesh Envoy Proxy images in a given region.
+
+---
+
+##### \`CdkMetadataResourceAvailable\`<sup>Required</sup> <a name=\\"CdkMetadataResourceAvailable\\" id=\\"aws-cdk-lib.region_info.FactName.property.CDK_METADATA_RESOURCE_AVAILABLE\\"></a>
+
+\`\`\`go
+func CdkMetadataResourceAvailable() *string
+\`\`\`
+
+- *Type:* *string
+
+Whether the AWS::CDK::Metadata CloudFormation Resource is available in-region or not.
+
+The value is a boolean
+modelled as \`YES\` or \`NO\`.
+
+---
+
+##### \`DlcRepositoryAccount\`<sup>Required</sup> <a name=\\"DlcRepositoryAccount\\" id=\\"aws-cdk-lib.region_info.FactName.property.DLC_REPOSITORY_ACCOUNT\\"></a>
+
+\`\`\`go
+func DlcRepositoryAccount() *string
+\`\`\`
+
+- *Type:* *string
+
+The ID of the AWS account that owns the public ECR repository that contains the AWS Deep Learning Containers images in a given region.
+
+---
+
+##### \`DomainSuffix\`<sup>Required</sup> <a name=\\"DomainSuffix\\" id=\\"aws-cdk-lib.region_info.FactName.property.DOMAIN_SUFFIX\\"></a>
+
+\`\`\`go
+func DomainSuffix() *string
+\`\`\`
+
+- *Type:* *string
+
+The domain suffix for a region (e.g: 'amazonaws.com\`).
+
+---
+
+##### \`Elbv2Account\`<sup>Required</sup> <a name=\\"Elbv2Account\\" id=\\"aws-cdk-lib.region_info.FactName.property.ELBV2_ACCOUNT\\"></a>
+
+\`\`\`go
+func Elbv2Account() *string
+\`\`\`
+
+- *Type:* *string
+
+The account for ELBv2 in this region.
+
+---
+
+##### \`Partition\`<sup>Required</sup> <a name=\\"Partition\\" id=\\"aws-cdk-lib.region_info.FactName.property.PARTITION\\"></a>
+
+\`\`\`go
+func Partition() *string
+\`\`\`
+
+- *Type:* *string
+
+The name of the partition for a region (e.g: 'aws', 'aws-cn', ...).
+
+---
+
+##### \`S3StaticWebsiteEndpoint\`<sup>Required</sup> <a name=\\"S3StaticWebsiteEndpoint\\" id=\\"aws-cdk-lib.region_info.FactName.property.S3_STATIC_WEBSITE_ENDPOINT\\"></a>
+
+\`\`\`go
+func S3StaticWebsiteEndpoint() *string
+\`\`\`
+
+- *Type:* *string
+
+The endpoint used for hosting S3 static websites.
+
+---
+
+##### \`S3StaticWebsiteZone53HostedZoneId\`<sup>Required</sup> <a name=\\"S3StaticWebsiteZone53HostedZoneId\\" id=\\"aws-cdk-lib.region_info.FactName.property.S3_STATIC_WEBSITE_ZONE_53_HOSTED_ZONE_ID\\"></a>
+
+\`\`\`go
+func S3StaticWebsiteZone53HostedZoneId() *string
+\`\`\`
+
+- *Type:* *string
+
+The endpoint used for aliasing S3 static websites in Route 53.
+
+---
+
+##### \`VpcEndpointServiceNamePrefix\`<sup>Required</sup> <a name=\\"VpcEndpointServiceNamePrefix\\" id=\\"aws-cdk-lib.region_info.FactName.property.VPC_ENDPOINT_SERVICE_NAME_PREFIX\\"></a>
+
+\`\`\`go
+func VpcEndpointServiceNamePrefix() *string
+\`\`\`
+
+- *Type:* *string
+
+The prefix for VPC Endpoint Service names, cn.com.amazonaws.vpce for China regions, com.amazonaws.vpce otherwise.
+
+---
+
+### RegionInfo <a name=\\"RegionInfo\\" id=\\"aws-cdk-lib.region_info.RegionInfo\\"></a>
+
+Information pertaining to an AWS region.
+
+#### Methods <a name=\\"Methods\\" id=\\"Methods\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#aws-cdk-lib.region_info.RegionInfo.servicePrincipal\\">ServicePrincipal</a></code> | The name of the service principal for a given service in this region. |
+
+---
+
+##### \`ServicePrincipal\` <a name=\\"ServicePrincipal\\" id=\\"aws-cdk-lib.region_info.RegionInfo.servicePrincipal\\"></a>
+
+\`\`\`go
+func ServicePrincipal(service *string) *string
+\`\`\`
+
+The name of the service principal for a given service in this region.
+
+###### \`service\`<sup>Required</sup> <a name=\\"service\\" id=\\"aws-cdk-lib.region_info.RegionInfo.servicePrincipal.parameter.service\\"></a>
+
+- *Type:* *string
+
+the service name (e.g: s3.amazonaws.com).
+
+---
+
+#### Static Functions <a name=\\"Static Functions\\" id=\\"Static Functions\\"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href=\\"#aws-cdk-lib.region_info.RegionInfo.get\\">Get</a></code> | Obtain region info for a given region name. |
+| <code><a href=\\"#aws-cdk-lib.region_info.RegionInfo.regionMap\\">RegionMap</a></code> | Retrieves a collection of all fact values for all regions that fact is defined in. |
+
+---
+
+##### \`Get\` <a name=\\"Get\\" id=\\"aws-cdk-lib.region_info.RegionInfo.get\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
+
+regioninfo.RegionInfo_Get(name *string) RegionInfo
+\`\`\`
+
+Obtain region info for a given region name.
+
+###### \`name\`<sup>Required</sup> <a name=\\"name\\" id=\\"aws-cdk-lib.region_info.RegionInfo.get.parameter.name\\"></a>
+
+- *Type:* *string
+
+the name of the region (e.g: us-east-1).
+
+---
+
+##### \`RegionMap\` <a name=\\"RegionMap\\" id=\\"aws-cdk-lib.region_info.RegionInfo.regionMap\\"></a>
+
+\`\`\`go
+import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
+
+regioninfo.RegionInfo_RegionMap(factName *string) *map[string]*string
+\`\`\`
+
+Retrieves a collection of all fact values for all regions that fact is defined in.
+
+###### \`factName\`<sup>Required</sup> <a name=\\"factName\\" id=\\"aws-cdk-lib.region_info.RegionInfo.regionMap.parameter.factName\\"></a>
+
+- *Type:* *string
+
+the name of the fact to retrieve values for.
+
+For a list of common fact names, see the FactName class
+
+---
+
+#### Properties <a name=\\"Properties\\" id=\\"Properties\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#aws-cdk-lib.region_info.RegionInfo.property.regions\\">Regions</a></code> | <code>*[]<a href=\\"#aws-cdk-lib.region_info.RegionInfo\\">RegionInfo</a></code> | *No description.* |
+| <code><a href=\\"#aws-cdk-lib.region_info.RegionInfo.property.cdkMetadataResourceAvailable\\">CdkMetadataResourceAvailable</a></code> | <code>*bool</code> | Whether the \`AWS::CDK::Metadata\` CloudFormation Resource is available in this region or not. |
+| <code><a href=\\"#aws-cdk-lib.region_info.RegionInfo.property.name\\">Name</a></code> | <code>*string</code> | *No description.* |
+| <code><a href=\\"#aws-cdk-lib.region_info.RegionInfo.property.appMeshRepositoryAccount\\">AppMeshRepositoryAccount</a></code> | <code>*string</code> | The ID of the AWS account that owns the public ECR repository that contains the AWS App Mesh Envoy Proxy images in a given region. |
+| <code><a href=\\"#aws-cdk-lib.region_info.RegionInfo.property.dlcRepositoryAccount\\">DlcRepositoryAccount</a></code> | <code>*string</code> | The ID of the AWS account that owns the public ECR repository containing the AWS Deep Learning Containers images in this region. |
+| <code><a href=\\"#aws-cdk-lib.region_info.RegionInfo.property.domainSuffix\\">DomainSuffix</a></code> | <code>*string</code> | The domain name suffix (e.g: amazonaws.com) for this region. |
+| <code><a href=\\"#aws-cdk-lib.region_info.RegionInfo.property.elbv2Account\\">Elbv2Account</a></code> | <code>*string</code> | The account ID for ELBv2 in this region. |
+| <code><a href=\\"#aws-cdk-lib.region_info.RegionInfo.property.partition\\">Partition</a></code> | <code>*string</code> | The name of the ARN partition for this region (e.g: aws). |
+| <code><a href=\\"#aws-cdk-lib.region_info.RegionInfo.property.s3StaticWebsiteEndpoint\\">S3StaticWebsiteEndpoint</a></code> | <code>*string</code> | The endpoint used by S3 static website hosting in this region (e.g: s3-static-website-us-east-1.amazonaws.com). |
+| <code><a href=\\"#aws-cdk-lib.region_info.RegionInfo.property.s3StaticWebsiteHostedZoneId\\">S3StaticWebsiteHostedZoneId</a></code> | <code>*string</code> | The hosted zone ID used by Route 53 to alias a S3 static website in this region (e.g: Z2O1EMRO9K5GLX). |
+| <code><a href=\\"#aws-cdk-lib.region_info.RegionInfo.property.vpcEndpointServiceNamePrefix\\">VpcEndpointServiceNamePrefix</a></code> | <code>*string</code> | The prefix for VPC Endpoint Service names, cn.com.amazonaws.vpce for China regions, com.amazonaws.vpce otherwise. |
+
+---
+
+##### \`Regions\`<sup>Required</sup> <a name=\\"Regions\\" id=\\"aws-cdk-lib.region_info.RegionInfo.property.regions\\"></a>
+
+\`\`\`go
+func Regions() *[]RegionInfo
+\`\`\`
+
+- *Type:* *[]<a href=\\"#aws-cdk-lib.region_info.RegionInfo\\">RegionInfo</a>
+
+---
+
+##### \`CdkMetadataResourceAvailable\`<sup>Required</sup> <a name=\\"CdkMetadataResourceAvailable\\" id=\\"aws-cdk-lib.region_info.RegionInfo.property.cdkMetadataResourceAvailable\\"></a>
+
+\`\`\`go
+func CdkMetadataResourceAvailable() *bool
+\`\`\`
+
+- *Type:* *bool
+
+Whether the \`AWS::CDK::Metadata\` CloudFormation Resource is available in this region or not.
+
+---
+
+##### \`Name\`<sup>Required</sup> <a name=\\"Name\\" id=\\"aws-cdk-lib.region_info.RegionInfo.property.name\\"></a>
+
+\`\`\`go
+func Name() *string
+\`\`\`
+
+- *Type:* *string
+
+---
+
+##### \`AppMeshRepositoryAccount\`<sup>Optional</sup> <a name=\\"AppMeshRepositoryAccount\\" id=\\"aws-cdk-lib.region_info.RegionInfo.property.appMeshRepositoryAccount\\"></a>
+
+\`\`\`go
+func AppMeshRepositoryAccount() *string
+\`\`\`
+
+- *Type:* *string
+
+The ID of the AWS account that owns the public ECR repository that contains the AWS App Mesh Envoy Proxy images in a given region.
+
+---
+
+##### \`DlcRepositoryAccount\`<sup>Optional</sup> <a name=\\"DlcRepositoryAccount\\" id=\\"aws-cdk-lib.region_info.RegionInfo.property.dlcRepositoryAccount\\"></a>
+
+\`\`\`go
+func DlcRepositoryAccount() *string
+\`\`\`
+
+- *Type:* *string
+
+The ID of the AWS account that owns the public ECR repository containing the AWS Deep Learning Containers images in this region.
+
+---
+
+##### \`DomainSuffix\`<sup>Optional</sup> <a name=\\"DomainSuffix\\" id=\\"aws-cdk-lib.region_info.RegionInfo.property.domainSuffix\\"></a>
+
+\`\`\`go
+func DomainSuffix() *string
+\`\`\`
+
+- *Type:* *string
+
+The domain name suffix (e.g: amazonaws.com) for this region.
+
+---
+
+##### \`Elbv2Account\`<sup>Optional</sup> <a name=\\"Elbv2Account\\" id=\\"aws-cdk-lib.region_info.RegionInfo.property.elbv2Account\\"></a>
+
+\`\`\`go
+func Elbv2Account() *string
+\`\`\`
+
+- *Type:* *string
+
+The account ID for ELBv2 in this region.
+
+---
+
+##### \`Partition\`<sup>Optional</sup> <a name=\\"Partition\\" id=\\"aws-cdk-lib.region_info.RegionInfo.property.partition\\"></a>
+
+\`\`\`go
+func Partition() *string
+\`\`\`
+
+- *Type:* *string
+
+The name of the ARN partition for this region (e.g: aws).
+
+---
+
+##### \`S3StaticWebsiteEndpoint\`<sup>Optional</sup> <a name=\\"S3StaticWebsiteEndpoint\\" id=\\"aws-cdk-lib.region_info.RegionInfo.property.s3StaticWebsiteEndpoint\\"></a>
+
+\`\`\`go
+func S3StaticWebsiteEndpoint() *string
+\`\`\`
+
+- *Type:* *string
+
+The endpoint used by S3 static website hosting in this region (e.g: s3-static-website-us-east-1.amazonaws.com).
+
+---
+
+##### \`S3StaticWebsiteHostedZoneId\`<sup>Optional</sup> <a name=\\"S3StaticWebsiteHostedZoneId\\" id=\\"aws-cdk-lib.region_info.RegionInfo.property.s3StaticWebsiteHostedZoneId\\"></a>
+
+\`\`\`go
+func S3StaticWebsiteHostedZoneId() *string
+\`\`\`
+
+- *Type:* *string
+
+The hosted zone ID used by Route 53 to alias a S3 static website in this region (e.g: Z2O1EMRO9K5GLX).
+
+---
+
+##### \`VpcEndpointServiceNamePrefix\`<sup>Optional</sup> <a name=\\"VpcEndpointServiceNamePrefix\\" id=\\"aws-cdk-lib.region_info.RegionInfo.property.vpcEndpointServiceNamePrefix\\"></a>
+
+\`\`\`go
+func VpcEndpointServiceNamePrefix() *string
+\`\`\`
+
+- *Type:* *string
+
+The prefix for VPC Endpoint Service names, cn.com.amazonaws.vpce for China regions, com.amazonaws.vpce otherwise.
+
+---
+
+
+## Protocols <a name=\\"Protocols\\" id=\\"Protocols\\"></a>
+
+### IFact <a name=\\"IFact\\" id=\\"aws-cdk-lib.region_info.IFact\\"></a>
+
+- *Implemented By:* <a href=\\"#aws-cdk-lib.region_info.IFact\\">IFact</a>
+
+A fact that can be registered about a particular region.
+
+
+#### Properties <a name=\\"Properties\\" id=\\"Properties\\"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href=\\"#aws-cdk-lib.region_info.IFact.property.name\\">Name</a></code> | <code>*string</code> | The name of this fact. |
+| <code><a href=\\"#aws-cdk-lib.region_info.IFact.property.region\\">Region</a></code> | <code>*string</code> | The region for which this fact applies. |
+| <code><a href=\\"#aws-cdk-lib.region_info.IFact.property.value\\">Value</a></code> | <code>*string</code> | The value of this fact. |
+
+---
+
+##### \`Name\`<sup>Required</sup> <a name=\\"Name\\" id=\\"aws-cdk-lib.region_info.IFact.property.name\\"></a>
+
+\`\`\`go
+func Name() *string
+\`\`\`
+
+- *Type:* *string
+
+The name of this fact.
+
+Standardized values are provided by the \`Facts\` class.
+
+---
+
+##### \`Region\`<sup>Required</sup> <a name=\\"Region\\" id=\\"aws-cdk-lib.region_info.IFact.property.region\\"></a>
+
+\`\`\`go
+func Region() *string
+\`\`\`
+
+- *Type:* *string
+
+The region for which this fact applies.
+
+---
+
+##### \`Value\`<sup>Optional</sup> <a name=\\"Value\\" id=\\"aws-cdk-lib.region_info.IFact.property.value\\"></a>
+
+\`\`\`go
+func Value() *string
+\`\`\`
+
+- *Type:* *string
+
+The value of this fact.
+
+---
+
+"
+`;
+
 exports[`submodules without an explicit name java 1`] = `
 "# API Reference <a name=\\"API Reference\\" id=\\"api-reference\\"></a>
 

@@ -2,7 +2,7 @@ import * as child from 'child_process';
 import * as os from 'os';
 import * as path from 'path';
 import * as fs from 'fs-extra';
-import { Language, Documentation, UnInstallablePackageError, CorruptedAssemblyError } from '../../../src';
+import { Language, Documentation, UnInstallablePackageError, CorruptedAssemblyError, LanguageNotSupportedError } from '../../../src';
 import { extractPackageName } from '../../../src/docgen/view/documentation';
 import { Assemblies } from '../assemblies';
 
@@ -175,6 +175,36 @@ describe('csharp', () => {
   });
 });
 
+describe('go', () => {
+  test('for package', async () => {
+    const docs = await Documentation.forPackage('constructs@10.0.78');
+    try {
+      const markdown = await docs.toMarkdown({ language: Language.GO });
+      expect(markdown.render()).toMatchSnapshot();
+    } finally {
+      await docs.cleanup();
+    }
+  });
+
+  test('snapshot - root module', async () => {
+    const docs = await Documentation.forAssembly('constructs', Assemblies.AWSCDK_1_106_0);
+    const markdown = await docs.toMarkdown({ language: Language.GO });
+    expect(markdown.render()).toMatchSnapshot();
+  });
+
+  test('snapshot - submodules', async () => {
+    const docs = await Documentation.forAssembly('aws-cdk-lib', Assemblies.AWSCDK_1_106_0);
+    const markdown = await docs.toMarkdown({ language: Language.GO, submodule: 'aws_eks' });
+    expect(markdown.render()).toMatchSnapshot();
+  });
+
+  test('snapshot - submodules 2', async () => {
+    const docs = await Documentation.forAssembly('monocdk', Assemblies.AWSCDK_1_106_0);
+    const markdown = await docs.toMarkdown({ language: Language.GO, submodule: 'aws_eks' });
+    expect(markdown.render()).toMatchSnapshot();
+  });
+});
+
 test('throws uninstallable error on dependency conflict', async () => {
   // this package decalres a fixed peerDependency on constructs, which conflicts with its other dependencies
   return expect(Documentation.forPackage('cdk8s-mongo-sts@0.0.5')).rejects.toThrowError(UnInstallablePackageError);
@@ -197,6 +227,13 @@ test('throws corrupt assembly 2', async () => {
   // this package had a peerDependency which underwent a breaking change in a minor version (cdktf.ComplexObject interface was removed)
   await expect(docs.toMarkdown({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
   await expect(docs.toJson({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
+});
+
+test('throws unsupported language', async () => {
+  // package doesn't support Go and should throw with corresponding error
+  const docs = await Documentation.forPackage('@aws-cdk/pipelines@v1.144.0');
+  await expect(docs.toMarkdown({ language: Language.GO })).rejects.toThrowError(LanguageNotSupportedError);
+  await expect(docs.toJson({ language: Language.GO })).rejects.toThrowError(LanguageNotSupportedError);
 });
 
 test('performance on large modules', async () => {
