@@ -229,9 +229,15 @@ test('throws corrupt assembly 2', async () => {
   await expect(docs.toJson({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
 });
 
-test('throws unsupported language', async () => {
+test('throws unsupported language with invalid config', async () => {
   // package doesn't support Go and should throw with corresponding error
   const docs = await Documentation.forPackage('@aws-cdk/pipelines@v1.144.0');
+  await expect(docs.toMarkdown({ language: Language.GO })).rejects.toThrowError(LanguageNotSupportedError);
+  await expect(docs.toJson({ language: Language.GO })).rejects.toThrowError(LanguageNotSupportedError);
+});
+
+test('throws unsupported language when tablet was generated before rosetta supported go', async () => {
+  const docs = await Documentation.forPackage('aws-cdk-lib@2.16.0');
   await expect(docs.toMarkdown({ language: Language.GO })).rejects.toThrowError(LanguageNotSupportedError);
   await expect(docs.toJson({ language: Language.GO })).rejects.toThrowError(LanguageNotSupportedError);
 });
