@@ -143,13 +143,13 @@ export class Npm {
 
 interface CommandResult<T> {
   readonly command: string;
-  readonly exitCode?: number;
-  readonly signal?: NodeJS.Signals;
+  readonly exitCode: number | null;
+  readonly signal: NodeJS.Signals | null;
   readonly stdout: T;
 }
 interface SuccessfulCommandResult<T> extends CommandResult<T> {
   readonly exitCode: 0;
-  readonly signal: undefined;
+  readonly signal: null;
 }
 
 /**
@@ -201,7 +201,7 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
  * this process results in an error, returns an object that contains the error
  * and the raw chunks.
  */
-function chunksToObject(chunks: readonly Buffer[], encoding = 'utf-8'): ResponseObject {
+function chunksToObject(chunks: readonly Buffer[], encoding: BufferEncoding = 'utf-8'): ResponseObject {
   const raw = Buffer.concat(chunks).toString(encoding);
   try {
     // npm will sometimes print non json log lines even though --json was requested.
