@@ -20,6 +20,9 @@
           "namespace": "Amazon.CDK.CloudAssembly.Schema",
           "packageId": "Amazon.CDK.CloudAssembly.Schema"
         },
+        "go": {
+          "moduleName": "github.com/aws/aws-cdk-go/awscdk/cloudassemblyschema"
+        },
         "java": {
           "maven": {
             "artifactId": "cdk-cloud-assembly-schema",
@@ -46,6 +49,9 @@
           "iconUrl": "https://raw.githubusercontent.com/aws/aws-cdk/master/logo/default-256-dark.png",
           "namespace": "Amazon.CDK",
           "packageId": "Amazon.CDK"
+        },
+        "go": {
+          "moduleName": "github.com/aws/aws-cdk-go/awscdk/core"
         },
         "java": {
           "maven": {
@@ -74,6 +80,9 @@
           "namespace": "Amazon.CDK.CXAPI",
           "packageId": "Amazon.CDK.CXAPI"
         },
+        "go": {
+          "moduleName": "github.com/aws/aws-cdk-go/awscdk/cxapi"
+        },
         "java": {
           "maven": {
             "artifactId": "cdk-cx-api",
@@ -100,6 +109,9 @@
           "iconUrl": "https://raw.githubusercontent.com/aws/aws-cdk/master/logo/default-256-dark.png",
           "namespace": "Amazon.CDK.RegionInfo",
           "packageId": "Amazon.CDK.RegionInfo"
+        },
+        "go": {
+          "moduleName": "github.com/aws/aws-cdk-go/awscdk/regioninfo"
         },
         "java": {
           "maven": {
@@ -185,6 +197,9 @@
       "iconUrl": "https://raw.githubusercontent.com/aws/aws-cdk/master/logo/default-256-dark.png",
       "namespace": "Amazon.CDK.AWS.IAM",
       "packageId": "Amazon.CDK.AWS.IAM"
+    },
+    "go": {
+      "moduleName": "github.com/aws/aws-cdk-go/awscdk/awsiam"
     },
     "java": {
       "maven": {

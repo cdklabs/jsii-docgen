@@ -208,7 +208,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
 
   private formatImport(type: transpile.TranspiledType): string {
     return `using ${type.module};`;
-  };
+  }
 
   private formatFnParam(
     transpiled: transpile.TranspiledParameter | transpile.TranspiledProperty,

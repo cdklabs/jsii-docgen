@@ -173,7 +173,7 @@
       "description": "Run tests",
       "steps": [
         {
-          "exec": "jest --passWithNoTests --all --updateSnapshot"
+          "exec": "jest --passWithNoTests --all --updateSnapshot --coverageProvider=v8"
         },
         {
           "spawn": "eslint"
@@ -221,6 +221,9 @@
         "CI": "0"
       },
       "steps": [
+        {
+          "exec": "yarn upgrade npm-check-updates"
+        },
         {
           "exec": "npm-check-updates --dep dev --upgrade --target=minor"
         },

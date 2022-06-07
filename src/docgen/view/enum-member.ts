@@ -11,7 +11,7 @@ export class EnumMember {
   public toJson(): EnumMemberSchema {
     return {
       id: `${this.em.enumType.fqn}.${this.em.name}`,
-      displayName: this.em.name,
+      displayName: this.transpiled.name,
       fqn: this.transpiled.fqn,
       docs: extractDocs(this.em.docs),
     };

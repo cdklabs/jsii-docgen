@@ -539,7 +539,8 @@ export class MarkdownRenderer {
     };
 
     if (prop.default) {
-      metadata.Default = MarkdownDocument.sanitize(prop.default);
+      const sanitized = MarkdownDocument.sanitize(prop.default);
+      metadata.Default = MarkdownDocument.removeNewlines(sanitized);
     }
 
     for (const [key, value] of Object.entries(metadata)) {
@@ -589,7 +590,8 @@ export class MarkdownRenderer {
     };
 
     if (parameter.default) {
-      metadata.Default = MarkdownDocument.sanitize(parameter.default);
+      const sanitized = MarkdownDocument.sanitize(parameter.default);
+      metadata.Default = MarkdownDocument.removeNewlines(sanitized);
     }
 
     for (const [key, value] of Object.entries(metadata)) {
