@@ -1,5 +1,6 @@
 import * as os from 'os';
 import * as path from 'path';
+import { loadAssemblyFromFile, SPEC_FILE_NAME } from '@jsii/spec';
 import * as fs from 'fs-extra';
 import * as glob from 'glob-promise';
 import * as reflect from 'jsii-reflect';
@@ -320,13 +321,13 @@ export class Documentation {
       await fs.copy(this.assembliesDir, workdir);
 
       const ts = new reflect.TypeSystem();
-      for (let dotJsii of await glob.promise(`${workdir}/**/.jsii`)) {
+      for (let dotJsii of await glob.promise(`${workdir}/**/${SPEC_FILE_NAME}`)) {
         // we only transliterate the top level assembly and not the entire type-system.
         // note that the only reason to translate dependant assemblies is to show code examples
         // for expanded python arguments - which we don't to right now anyway.
         // we don't want to make any assumption of the directory structure, so this is the most
         // robuse way to detect the root assembly.
-        const spec = JSON.parse(await fs.readFile(dotJsii, 'utf-8'));
+        const spec = loadAssemblyFromFile(dotJsii);
         if (language && spec.name === this.assemblyName) {
           const packageDir = path.dirname(dotJsii);
           try {
@@ -334,7 +335,7 @@ export class Documentation {
           } catch (e) {
             throw new LanguageNotSupportedError(`Laguage ${language} is not supported for package ${this.assemblyFqn}`);
           }
-          dotJsii = path.join(packageDir, `.jsii.${language}`);
+          dotJsii = path.join(packageDir, `${SPEC_FILE_NAME}.${language}`);
         }
         await ts.load(dotJsii, { validate: options.validate });
       }
