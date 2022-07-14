@@ -26,17 +26,18 @@ This AWS Solutions Construct implements an AWS Lambda function connected to an A
 
 Here is a minimal deployable pattern definition in Typescript:
 
-\`\`\`typescript
-import { LambdaToSqs, LambdaToSqsProps } from \\"@aws-solutions-constructs/aws-lambda-sqs\\";
+\`\`\`java
+// Example automatically generated from non-compiling source. May contain errors.
+import software.amazon.awsconstructs.services.lambdasqs.LambdaToSqs;
+import software.amazon.awsconstructs.services.lambdasqs.LambdaToSqsProps;
 
-new LambdaToSqs(this, 'LambdaToSqsPattern', {
-    lambdaFunctionProps: {
-        runtime: lambda.Runtime.NODEJS_12_X,
-        handler: 'index.handler',
-        code: lambda.Code.fromAsset(\`\${__dirname}/lambda\`)
-    }
-});
-
+LambdaToSqs.Builder.create(this, \\"LambdaToSqsPattern\\")
+        .lambdaFunctionProps(FunctionProps.builder()
+                .runtime(lambda.getRuntime().getNODEJS_12_X())
+                .handler(\\"index.handler\\")
+                .code(lambda.Code.fromAsset(String.format(\\"%s/lambda\\", __dirname)))
+                .build())
+        .build();
 \`\`\`
 
 ## Initializer
@@ -624,17 +625,18 @@ This AWS Solutions Construct implements an AWS Lambda function connected to an A
 
 Here is a minimal deployable pattern definition in Typescript:
 
-\`\`\`typescript
-import { LambdaToSqs, LambdaToSqsProps } from \\"@aws-solutions-constructs/aws-lambda-sqs\\";
+\`\`\`python
+# Example automatically generated from non-compiling source. May contain errors.
+from aws_cdk.aws_lambda import FunctionProps
+from aws_solutions_constructs.aws_lambda_sqs import LambdaToSqs, LambdaToSqsProps
 
-new LambdaToSqs(this, 'LambdaToSqsPattern', {
-    lambdaFunctionProps: {
-        runtime: lambda.Runtime.NODEJS_12_X,
-        handler: 'index.handler',
-        code: lambda.Code.fromAsset(\`\${__dirname}/lambda\`)
-    }
-});
-
+LambdaToSqs(self, \\"LambdaToSqsPattern\\",
+    lambda_function_props=FunctionProps(
+        runtime=lambda_.Runtime.NODEJS_12_X,
+        handler=\\"index.handler\\",
+        code=lambda_.Code.from_asset(f\\"{__dirname}/lambda\\")
+    )
+)
 \`\`\`
 
 ## Initializer
