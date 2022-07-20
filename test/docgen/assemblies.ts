@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import * as spec from '@jsii/spec';
+import { SPEC_FILE_NAME, loadAssemblyFromFile } from '@jsii/spec';
 import * as reflect from 'jsii-reflect';
 
 /**
@@ -42,8 +42,8 @@ export class Assemblies {
     if (stat.isDirectory()) {
       fs.readdirSync(p).forEach((f) => this.addAssemblies(path.join(p, f)));
     } else {
-      if (p.endsWith('.jsii')) {
-        const assembly = JSON.parse(fs.readFileSync(p, { encoding: 'utf8' })) as spec.Assembly;
+      if (p.endsWith(SPEC_FILE_NAME)) {
+        const assembly = loadAssemblyFromFile(p);
         this.ts.addAssembly(new reflect.Assembly(this.ts, assembly));
       }
     }
