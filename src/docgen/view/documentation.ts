@@ -332,7 +332,7 @@ export class Documentation {
           const packageDir = path.dirname(dotJsii);
           try {
             await transliterateAssembly([packageDir], [language], { loose: options.loose, unknownSnippets: UnknownSnippetMode.FAIL });
-          } catch (e) {
+          } catch (e: any) {
             throw new LanguageNotSupportedError(`Laguage ${language} is not supported for package ${this.assemblyFqn} (cause: ${e.message})`);
           }
           dotJsii = path.join(packageDir, `${SPEC_FILE_NAME}.${language}`);
