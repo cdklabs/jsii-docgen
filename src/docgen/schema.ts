@@ -521,7 +521,7 @@ export function submodulePath(module?: reflect.Submodule): string | undefined {
   return path.length > 0 ? path : undefined;
 }
 
-export function filterUndefined<T>(obj: T): T {
+export function filterUndefined<T extends object>(obj: T): T {
   const ret: any = {};
   for (const [k, v] of Object.entries(obj)) {
     if (v !== undefined) {
