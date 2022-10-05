@@ -48,7 +48,7 @@
     "jest-junit": "^13",
     "json-schema": "^0.4.0",
     "npm-check-updates": "^15",
-    "projen": "^0.63.4",
+    "projen": "^0.63.5",
     "standard-version": "^9",
     "ts-jest": "^27",
     "typescript": "~4.8.4"
@@ -61,7 +61,7 @@
     "glob-promise": "^3.4.0",
     "jsii-reflect": "^1.69.0",
     "jsii-rosetta": "^1.69.0",
-    "semver": "^7.3.7",
+    "semver": "^7.3.8",
     "yargs": "^16.2.0"
   },
   "engines": {
