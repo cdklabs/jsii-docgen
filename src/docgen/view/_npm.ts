@@ -185,9 +185,8 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
   }
 
   switch (code) {
-    case 'ERESOLVE':
-      // dependency resolution problem requires a manual
-      // intervention (most likely...)
+    case 'ERESOLVE': // dependency resolution problem requires a manual intervention (most likely...)
+    case 'EOVERRIDE': // Package contains some version overrides that conflict.
       throw new UnInstallablePackageError(message);
     default:
       throw new NpmError(message, stdout, code);
