@@ -63,6 +63,7 @@ new submod1.GoodbyeBucket(scope: Construct, id: string, props?: BucketProps)
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.onCloudTrailPutObject\\">onCloudTrailPutObject</a></code> | Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.onCloudTrailWriteObject\\">onCloudTrailWriteObject</a></code> | Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.s3UrlForObject\\">s3UrlForObject</a></code> | The S3 URL of an S3 object. For example:. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.transferAccelerationUrlForObject\\">transferAccelerationUrlForObject</a></code> | The https Transfer Acceleration URL of an S3 object. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.urlForObject\\">urlForObject</a></code> | The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.virtualHostedUrlForObject\\">virtualHostedUrlForObject</a></code> | The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.addCorsRule\\">addCorsRule</a></code> | Adds a cross-origin access configuration for objects in an Amazon S3 bucket. |
@@ -566,6 +567,39 @@ The S3 key of the object.
 
 If not specified, the S3 URL of the
 bucket is returned.
+
+---
+
+##### \`transferAccelerationUrlForObject\` <a name=\\"transferAccelerationUrlForObject\\" id=\\"construct-library.submod1.GoodbyeBucket.transferAccelerationUrlForObject\\"></a>
+
+\`\`\`typescript
+public transferAccelerationUrlForObject(key?: string, options?: TransferAccelerationUrlOptions): string
+\`\`\`
+
+The https Transfer Acceleration URL of an S3 object.
+
+Specify \`dualStack: true\` at the options
+for dual-stack endpoint (connect to the bucket over IPv6). For example:
+
+- \`https://bucket.s3-accelerate.amazonaws.com\`
+- \`https://bucket.s3-accelerate.amazonaws.com/key\`
+
+###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.submod1.GoodbyeBucket.transferAccelerationUrlForObject.parameter.key\\"></a>
+
+- *Type:* string
+
+The S3 key of the object.
+
+If not specified, the URL of the
+bucket is returned.
+
+---
+
+###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.submod1.GoodbyeBucket.transferAccelerationUrlForObject.parameter.options\\"></a>
+
+- *Type:* @aws-cdk/aws-s3.TransferAccelerationUrlOptions
+
+Options for generating URL.
 
 ---
 
@@ -1091,6 +1125,7 @@ new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 | <code><a href=\\"#construct-library.GreeterBucket.onCloudTrailPutObject\\">onCloudTrailPutObject</a></code> | Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call. |
 | <code><a href=\\"#construct-library.GreeterBucket.onCloudTrailWriteObject\\">onCloudTrailWriteObject</a></code> | Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to. |
 | <code><a href=\\"#construct-library.GreeterBucket.s3UrlForObject\\">s3UrlForObject</a></code> | The S3 URL of an S3 object. For example:. |
+| <code><a href=\\"#construct-library.GreeterBucket.transferAccelerationUrlForObject\\">transferAccelerationUrlForObject</a></code> | The https Transfer Acceleration URL of an S3 object. |
 | <code><a href=\\"#construct-library.GreeterBucket.urlForObject\\">urlForObject</a></code> | The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:. |
 | <code><a href=\\"#construct-library.GreeterBucket.virtualHostedUrlForObject\\">virtualHostedUrlForObject</a></code> | The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:. |
 | <code><a href=\\"#construct-library.GreeterBucket.addCorsRule\\">addCorsRule</a></code> | Adds a cross-origin access configuration for objects in an Amazon S3 bucket. |
@@ -1597,6 +1632,39 @@ bucket is returned.
 
 ---
 
+##### \`transferAccelerationUrlForObject\` <a name=\\"transferAccelerationUrlForObject\\" id=\\"construct-library.GreeterBucket.transferAccelerationUrlForObject\\"></a>
+
+\`\`\`typescript
+public transferAccelerationUrlForObject(key?: string, options?: TransferAccelerationUrlOptions): string
+\`\`\`
+
+The https Transfer Acceleration URL of an S3 object.
+
+Specify \`dualStack: true\` at the options
+for dual-stack endpoint (connect to the bucket over IPv6). For example:
+
+- \`https://bucket.s3-accelerate.amazonaws.com\`
+- \`https://bucket.s3-accelerate.amazonaws.com/key\`
+
+###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.GreeterBucket.transferAccelerationUrlForObject.parameter.key\\"></a>
+
+- *Type:* string
+
+The S3 key of the object.
+
+If not specified, the URL of the
+bucket is returned.
+
+---
+
+###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.GreeterBucket.transferAccelerationUrlForObject.parameter.options\\"></a>
+
+- *Type:* @aws-cdk/aws-s3.TransferAccelerationUrlOptions
+
+Options for generating URL.
+
+---
+
 ##### \`urlForObject\` <a name=\\"urlForObject\\" id=\\"construct-library.GreeterBucket.urlForObject\\"></a>
 
 \`\`\`typescript
@@ -2091,14 +2159,18 @@ submod1.GoodbyeBucket(
   encryption: BucketEncryption = None,
   encryption_key: IKey = None,
   enforce_ss_l: bool = None,
+  event_bridge_enabled: bool = None,
+  intelligent_tiering_configurations: typing.List[IntelligentTieringConfiguration] = None,
   inventories: typing.List[Inventory] = None,
   lifecycle_rules: typing.List[LifecycleRule] = None,
   metrics: typing.List[BucketMetrics] = None,
+  notifications_handler_role: IRole = None,
   object_ownership: ObjectOwnership = None,
   public_read_access: bool = None,
   removal_policy: RemovalPolicy = None,
   server_access_logs_bucket: IBucket = None,
   server_access_logs_prefix: str = None,
+  transfer_acceleration: bool = None,
   versioned: bool = None,
   website_error_document: str = None,
   website_index_document: str = None,
@@ -2120,14 +2192,18 @@ submod1.GoodbyeBucket(
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.encryption\\">encryption</a></code> | <code>aws_cdk.aws_s3.BucketEncryption</code> | The kind of server-side encryption to apply to this bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.encryptionKey\\">encryption_key</a></code> | <code>aws_cdk.aws_kms.IKey</code> | External KMS key to use for bucket encryption. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.enforceSSL\\">enforce_ss_l</a></code> | <code>bool</code> | Enforces SSL for requests. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.eventBridgeEnabled\\">event_bridge_enabled</a></code> | <code>bool</code> | Whether this bucket should send notifications to Amazon EventBridge or not. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.intelligentTieringConfigurations\\">intelligent_tiering_configurations</a></code> | <code>typing.List[aws_cdk.aws_s3.IntelligentTieringConfiguration]</code> | Inteligent Tiering Configurations. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.inventories\\">inventories</a></code> | <code>typing.List[aws_cdk.aws_s3.Inventory]</code> | The inventory configuration of the bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.lifecycleRules\\">lifecycle_rules</a></code> | <code>typing.List[aws_cdk.aws_s3.LifecycleRule]</code> | Rules that define how Amazon S3 manages objects during their lifetime. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.metrics\\">metrics</a></code> | <code>typing.List[aws_cdk.aws_s3.BucketMetrics]</code> | The metrics configuration of this bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.notificationsHandlerRole\\">notifications_handler_role</a></code> | <code>aws_cdk.aws_iam.IRole</code> | The role to be used by the notifications handler. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.objectOwnership\\">object_ownership</a></code> | <code>aws_cdk.aws_s3.ObjectOwnership</code> | The objectOwnership of the bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.publicReadAccess\\">public_read_access</a></code> | <code>bool</code> | Grants public read access to all objects in the bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.removalPolicy\\">removal_policy</a></code> | <code>aws_cdk.core.RemovalPolicy</code> | Policy to apply when the bucket is removed from this stack. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.serverAccessLogsBucket\\">server_access_logs_bucket</a></code> | <code>aws_cdk.aws_s3.IBucket</code> | Destination bucket for the server access logs. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.serverAccessLogsPrefix\\">server_access_logs_prefix</a></code> | <code>str</code> | Optional log file prefix to use for the bucket's access logs. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.transferAcceleration\\">transfer_acceleration</a></code> | <code>bool</code> | Whether this bucket should have transfer acceleration turned on or not. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.versioned\\">versioned</a></code> | <code>bool</code> | Whether this bucket should have versioning turned on or not. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.websiteErrorDocument\\">website_error_document</a></code> | <code>str</code> | The name of the error document (e.g. \\"404.html\\") for the website. \`websiteIndexDocument\` must also be set if this is set. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.websiteIndexDocument\\">website_index_document</a></code> | <code>str</code> | The name of the index document (e.g. \\"index.html\\") for the website. Enables static website hosting for this bucket. |
@@ -2253,6 +2329,26 @@ S3.5 of the AWS Foundational Security Best Practices Regarding S3.
 
 ---
 
+##### \`event_bridge_enabled\`<sup>Optional</sup> <a name=\\"event_bridge_enabled\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.eventBridgeEnabled\\"></a>
+
+- *Type:* bool
+- *Default:* false
+
+Whether this bucket should send notifications to Amazon EventBridge or not.
+
+---
+
+##### \`intelligent_tiering_configurations\`<sup>Optional</sup> <a name=\\"intelligent_tiering_configurations\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.intelligentTieringConfigurations\\"></a>
+
+- *Type:* typing.List[aws_cdk.aws_s3.IntelligentTieringConfiguration]
+- *Default:* No Intelligent Tiiering Configurations.
+
+Inteligent Tiering Configurations.
+
+> [https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering.html](https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering.html)
+
+---
+
 ##### \`inventories\`<sup>Optional</sup> <a name=\\"inventories\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.inventories\\"></a>
 
 - *Type:* typing.List[aws_cdk.aws_s3.Inventory]
@@ -2281,6 +2377,15 @@ Rules that define how Amazon S3 manages objects during their lifetime.
 The metrics configuration of this bucket.
 
 > [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html)
+
+---
+
+##### \`notifications_handler_role\`<sup>Optional</sup> <a name=\\"notifications_handler_role\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.notificationsHandlerRole\\"></a>
+
+- *Type:* aws_cdk.aws_iam.IRole
+- *Default:* a new role will be created.
+
+The role to be used by the notifications handler.
 
 ---
 
@@ -2332,6 +2437,15 @@ Destination bucket for the server access logs.
 Optional log file prefix to use for the bucket's access logs.
 
 If defined without \\"serverAccessLogsBucket\\", enables access logs to current bucket with this prefix.
+
+---
+
+##### \`transfer_acceleration\`<sup>Optional</sup> <a name=\\"transfer_acceleration\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.transferAcceleration\\"></a>
+
+- *Type:* bool
+- *Default:* false
+
+Whether this bucket should have transfer acceleration turned on or not.
 
 ---
 
@@ -2404,6 +2518,7 @@ Rules that define when a redirect is applied and the redirect behavior.
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.onCloudTrailPutObject\\">on_cloud_trail_put_object</a></code> | Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.onCloudTrailWriteObject\\">on_cloud_trail_write_object</a></code> | Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.s3UrlForObject\\">s3_url_for_object</a></code> | The S3 URL of an S3 object. For example:. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.transferAccelerationUrlForObject\\">transfer_acceleration_url_for_object</a></code> | The https Transfer Acceleration URL of an S3 object. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.urlForObject\\">url_for_object</a></code> | The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.virtualHostedUrlForObject\\">virtual_hosted_url_for_object</a></code> | The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.addCorsRule\\">add_cors_rule</a></code> | Adds a cross-origin access configuration for objects in an Amazon S3 bucket. |
@@ -3122,6 +3237,43 @@ bucket is returned.
 
 ---
 
+##### \`transfer_acceleration_url_for_object\` <a name=\\"transfer_acceleration_url_for_object\\" id=\\"construct-library.submod1.GoodbyeBucket.transferAccelerationUrlForObject\\"></a>
+
+\`\`\`python
+def transfer_acceleration_url_for_object(
+  key: str = None,
+  dual_stack: bool = None
+) -> str
+\`\`\`
+
+The https Transfer Acceleration URL of an S3 object.
+
+Specify \`dualStack: true\` at the options
+for dual-stack endpoint (connect to the bucket over IPv6). For example:
+
+- \`https://bucket.s3-accelerate.amazonaws.com\`
+- \`https://bucket.s3-accelerate.amazonaws.com/key\`
+
+###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.submod1.GoodbyeBucket.transferAccelerationUrlForObject.parameter.key\\"></a>
+
+- *Type:* str
+
+The S3 key of the object.
+
+If not specified, the URL of the
+bucket is returned.
+
+---
+
+###### \`dual_stack\`<sup>Optional</sup> <a name=\\"dual_stack\\" id=\\"construct-library.submod1.GoodbyeBucket.transferAccelerationUrlForObject.parameter.dualStack\\"></a>
+
+- *Type:* bool
+- *Default:* false
+
+Dual-stack support to connect to the bucket over IPv6.
+
+---
+
 ##### \`url_for_object\` <a name=\\"url_for_object\\" id=\\"construct-library.submod1.GoodbyeBucket.urlForObject\\"></a>
 
 \`\`\`python
@@ -3187,9 +3339,9 @@ Specifies the URL includes the region.
 
 \`\`\`python
 def add_cors_rule(
-  allowed_headers: typing.List[str] = None,
   allowed_methods: typing.List[HttpMethods],
   allowed_origins: typing.List[str],
+  allowed_headers: typing.List[str] = None,
   exposed_headers: typing.List[str] = None,
   id: str = None,
   max_age: typing.Union[int, float] = None
@@ -3197,15 +3349,6 @@ def add_cors_rule(
 \`\`\`
 
 Adds a cross-origin access configuration for objects in an Amazon S3 bucket.
-
-###### \`allowed_headers\`<sup>Optional</sup> <a name=\\"allowed_headers\\" id=\\"construct-library.submod1.GoodbyeBucket.addCorsRule.parameter.allowedHeaders\\"></a>
-
-- *Type:* typing.List[str]
-- *Default:* No headers allowed.
-
-Headers that are specified in the Access-Control-Request-Headers header.
-
----
 
 ###### \`allowed_methods\`<sup>Required</sup> <a name=\\"allowed_methods\\" id=\\"construct-library.submod1.GoodbyeBucket.addCorsRule.parameter.allowedMethods\\"></a>
 
@@ -3220,6 +3363,15 @@ An HTTP method that you allow the origin to execute.
 - *Type:* typing.List[str]
 
 One or more origins you want customers to be able to access the bucket from.
+
+---
+
+###### \`allowed_headers\`<sup>Optional</sup> <a name=\\"allowed_headers\\" id=\\"construct-library.submod1.GoodbyeBucket.addCorsRule.parameter.allowedHeaders\\"></a>
+
+- *Type:* typing.List[str]
+- *Default:* No headers allowed.
+
+Headers that are specified in the Access-Control-Request-Headers header.
 
 ---
 
@@ -3349,7 +3501,10 @@ def add_lifecycle_rule(
   expired_object_delete_marker: bool = None,
   id: str = None,
   noncurrent_version_expiration: Duration = None,
+  noncurrent_versions_to_retain: typing.Union[int, float] = None,
   noncurrent_version_transitions: typing.List[NoncurrentVersionTransition] = None,
+  object_size_greater_than: typing.Union[int, float] = None,
+  object_size_less_than: typing.Union[int, float] = None,
   prefix: str = None,
   tag_filters: typing.Mapping[typing.Any] = None,
   transitions: typing.List[Transition] = None
@@ -3446,6 +3601,18 @@ transition time.
 
 ---
 
+###### \`noncurrent_versions_to_retain\`<sup>Optional</sup> <a name=\\"noncurrent_versions_to_retain\\" id=\\"construct-library.submod1.GoodbyeBucket.addLifecycleRule.parameter.noncurrentVersionsToRetain\\"></a>
+
+- *Type:* typing.Union[int, float]
+- *Default:* No noncurrent versions to retain
+
+Indicates a maximum number of noncurrent versions to retain.
+
+If there are this many more noncurrent versions,
+Amazon S3 permanently deletes them.
+
+---
+
 ###### \`noncurrent_version_transitions\`<sup>Optional</sup> <a name=\\"noncurrent_version_transitions\\" id=\\"construct-library.submod1.GoodbyeBucket.addLifecycleRule.parameter.noncurrentVersionTransitions\\"></a>
 
 - *Type:* typing.List[aws_cdk.aws_s3.NoncurrentVersionTransition]
@@ -3456,6 +3623,24 @@ Only for for buckets with versioning enabled (or suspended).
 
 If you specify a transition and expiration time, the expiration time
 must be later than the transition time.
+
+---
+
+###### \`object_size_greater_than\`<sup>Optional</sup> <a name=\\"object_size_greater_than\\" id=\\"construct-library.submod1.GoodbyeBucket.addLifecycleRule.parameter.objectSizeGreaterThan\\"></a>
+
+- *Type:* typing.Union[int, float]
+- *Default:* No rule
+
+Specifies the minimum object size in bytes for this rule to apply to.
+
+---
+
+###### \`object_size_less_than\`<sup>Optional</sup> <a name=\\"object_size_less_than\\" id=\\"construct-library.submod1.GoodbyeBucket.addLifecycleRule.parameter.objectSizeLessThan\\"></a>
+
+- *Type:* typing.Union[int, float]
+- *Default:* No rule
+
+Specifies the maximum object size in bytes for this rule to apply to.
 
 ---
 
@@ -3631,6 +3816,7 @@ submod1.GoodbyeBucket.from_bucket_attributes(
   bucket_website_url: str = None,
   encryption_key: IKey = None,
   is_website: bool = None,
+  notifications_handler_role: IRole = None,
   region: str = None
 )
 \`\`\`
@@ -3744,6 +3930,15 @@ The website URL of the bucket (if static web hosting is enabled).
 - *Default:* false
 
 If this bucket has been configured for static website hosting.
+
+---
+
+###### \`notifications_handler_role\`<sup>Optional</sup> <a name=\\"notifications_handler_role\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketAttributes.parameter.notificationsHandlerRole\\"></a>
+
+- *Type:* aws_cdk.aws_iam.IRole
+- *Default:* a new role will be created.
+
+The role to be used by the notifications handler.
 
 ---
 
@@ -4012,14 +4207,18 @@ construct_library.GreeterBucket(
   encryption: BucketEncryption = None,
   encryption_key: IKey = None,
   enforce_ss_l: bool = None,
+  event_bridge_enabled: bool = None,
+  intelligent_tiering_configurations: typing.List[IntelligentTieringConfiguration] = None,
   inventories: typing.List[Inventory] = None,
   lifecycle_rules: typing.List[LifecycleRule] = None,
   metrics: typing.List[BucketMetrics] = None,
+  notifications_handler_role: IRole = None,
   object_ownership: ObjectOwnership = None,
   public_read_access: bool = None,
   removal_policy: RemovalPolicy = None,
   server_access_logs_bucket: IBucket = None,
   server_access_logs_prefix: str = None,
+  transfer_acceleration: bool = None,
   versioned: bool = None,
   website_error_document: str = None,
   website_index_document: str = None,
@@ -4041,14 +4240,18 @@ construct_library.GreeterBucket(
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.encryption\\">encryption</a></code> | <code>aws_cdk.aws_s3.BucketEncryption</code> | The kind of server-side encryption to apply to this bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.encryptionKey\\">encryption_key</a></code> | <code>aws_cdk.aws_kms.IKey</code> | External KMS key to use for bucket encryption. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.enforceSSL\\">enforce_ss_l</a></code> | <code>bool</code> | Enforces SSL for requests. |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.eventBridgeEnabled\\">event_bridge_enabled</a></code> | <code>bool</code> | Whether this bucket should send notifications to Amazon EventBridge or not. |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.intelligentTieringConfigurations\\">intelligent_tiering_configurations</a></code> | <code>typing.List[aws_cdk.aws_s3.IntelligentTieringConfiguration]</code> | Inteligent Tiering Configurations. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.inventories\\">inventories</a></code> | <code>typing.List[aws_cdk.aws_s3.Inventory]</code> | The inventory configuration of the bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.lifecycleRules\\">lifecycle_rules</a></code> | <code>typing.List[aws_cdk.aws_s3.LifecycleRule]</code> | Rules that define how Amazon S3 manages objects during their lifetime. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.metrics\\">metrics</a></code> | <code>typing.List[aws_cdk.aws_s3.BucketMetrics]</code> | The metrics configuration of this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.notificationsHandlerRole\\">notifications_handler_role</a></code> | <code>aws_cdk.aws_iam.IRole</code> | The role to be used by the notifications handler. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.objectOwnership\\">object_ownership</a></code> | <code>aws_cdk.aws_s3.ObjectOwnership</code> | The objectOwnership of the bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.publicReadAccess\\">public_read_access</a></code> | <code>bool</code> | Grants public read access to all objects in the bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.removalPolicy\\">removal_policy</a></code> | <code>aws_cdk.core.RemovalPolicy</code> | Policy to apply when the bucket is removed from this stack. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.serverAccessLogsBucket\\">server_access_logs_bucket</a></code> | <code>aws_cdk.aws_s3.IBucket</code> | Destination bucket for the server access logs. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.serverAccessLogsPrefix\\">server_access_logs_prefix</a></code> | <code>str</code> | Optional log file prefix to use for the bucket's access logs. |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.transferAcceleration\\">transfer_acceleration</a></code> | <code>bool</code> | Whether this bucket should have transfer acceleration turned on or not. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.versioned\\">versioned</a></code> | <code>bool</code> | Whether this bucket should have versioning turned on or not. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.websiteErrorDocument\\">website_error_document</a></code> | <code>str</code> | The name of the error document (e.g. \\"404.html\\") for the website. \`websiteIndexDocument\` must also be set if this is set. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.websiteIndexDocument\\">website_index_document</a></code> | <code>str</code> | The name of the index document (e.g. \\"index.html\\") for the website. Enables static website hosting for this bucket. |
@@ -4174,6 +4377,26 @@ S3.5 of the AWS Foundational Security Best Practices Regarding S3.
 
 ---
 
+##### \`event_bridge_enabled\`<sup>Optional</sup> <a name=\\"event_bridge_enabled\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.eventBridgeEnabled\\"></a>
+
+- *Type:* bool
+- *Default:* false
+
+Whether this bucket should send notifications to Amazon EventBridge or not.
+
+---
+
+##### \`intelligent_tiering_configurations\`<sup>Optional</sup> <a name=\\"intelligent_tiering_configurations\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.intelligentTieringConfigurations\\"></a>
+
+- *Type:* typing.List[aws_cdk.aws_s3.IntelligentTieringConfiguration]
+- *Default:* No Intelligent Tiiering Configurations.
+
+Inteligent Tiering Configurations.
+
+> [https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering.html](https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering.html)
+
+---
+
 ##### \`inventories\`<sup>Optional</sup> <a name=\\"inventories\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.inventories\\"></a>
 
 - *Type:* typing.List[aws_cdk.aws_s3.Inventory]
@@ -4202,6 +4425,15 @@ Rules that define how Amazon S3 manages objects during their lifetime.
 The metrics configuration of this bucket.
 
 > [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html)
+
+---
+
+##### \`notifications_handler_role\`<sup>Optional</sup> <a name=\\"notifications_handler_role\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.notificationsHandlerRole\\"></a>
+
+- *Type:* aws_cdk.aws_iam.IRole
+- *Default:* a new role will be created.
+
+The role to be used by the notifications handler.
 
 ---
 
@@ -4253,6 +4485,15 @@ Destination bucket for the server access logs.
 Optional log file prefix to use for the bucket's access logs.
 
 If defined without \\"serverAccessLogsBucket\\", enables access logs to current bucket with this prefix.
+
+---
+
+##### \`transfer_acceleration\`<sup>Optional</sup> <a name=\\"transfer_acceleration\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.transferAcceleration\\"></a>
+
+- *Type:* bool
+- *Default:* false
+
+Whether this bucket should have transfer acceleration turned on or not.
 
 ---
 
@@ -4325,6 +4566,7 @@ Rules that define when a redirect is applied and the redirect behavior.
 | <code><a href=\\"#construct-library.GreeterBucket.onCloudTrailPutObject\\">on_cloud_trail_put_object</a></code> | Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call. |
 | <code><a href=\\"#construct-library.GreeterBucket.onCloudTrailWriteObject\\">on_cloud_trail_write_object</a></code> | Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to. |
 | <code><a href=\\"#construct-library.GreeterBucket.s3UrlForObject\\">s3_url_for_object</a></code> | The S3 URL of an S3 object. For example:. |
+| <code><a href=\\"#construct-library.GreeterBucket.transferAccelerationUrlForObject\\">transfer_acceleration_url_for_object</a></code> | The https Transfer Acceleration URL of an S3 object. |
 | <code><a href=\\"#construct-library.GreeterBucket.urlForObject\\">url_for_object</a></code> | The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:. |
 | <code><a href=\\"#construct-library.GreeterBucket.virtualHostedUrlForObject\\">virtual_hosted_url_for_object</a></code> | The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:. |
 | <code><a href=\\"#construct-library.GreeterBucket.addCorsRule\\">add_cors_rule</a></code> | Adds a cross-origin access configuration for objects in an Amazon S3 bucket. |
@@ -5043,6 +5285,43 @@ bucket is returned.
 
 ---
 
+##### \`transfer_acceleration_url_for_object\` <a name=\\"transfer_acceleration_url_for_object\\" id=\\"construct-library.GreeterBucket.transferAccelerationUrlForObject\\"></a>
+
+\`\`\`python
+def transfer_acceleration_url_for_object(
+  key: str = None,
+  dual_stack: bool = None
+) -> str
+\`\`\`
+
+The https Transfer Acceleration URL of an S3 object.
+
+Specify \`dualStack: true\` at the options
+for dual-stack endpoint (connect to the bucket over IPv6). For example:
+
+- \`https://bucket.s3-accelerate.amazonaws.com\`
+- \`https://bucket.s3-accelerate.amazonaws.com/key\`
+
+###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.GreeterBucket.transferAccelerationUrlForObject.parameter.key\\"></a>
+
+- *Type:* str
+
+The S3 key of the object.
+
+If not specified, the URL of the
+bucket is returned.
+
+---
+
+###### \`dual_stack\`<sup>Optional</sup> <a name=\\"dual_stack\\" id=\\"construct-library.GreeterBucket.transferAccelerationUrlForObject.parameter.dualStack\\"></a>
+
+- *Type:* bool
+- *Default:* false
+
+Dual-stack support to connect to the bucket over IPv6.
+
+---
+
 ##### \`url_for_object\` <a name=\\"url_for_object\\" id=\\"construct-library.GreeterBucket.urlForObject\\"></a>
 
 \`\`\`python
@@ -5108,9 +5387,9 @@ Specifies the URL includes the region.
 
 \`\`\`python
 def add_cors_rule(
-  allowed_headers: typing.List[str] = None,
   allowed_methods: typing.List[HttpMethods],
   allowed_origins: typing.List[str],
+  allowed_headers: typing.List[str] = None,
   exposed_headers: typing.List[str] = None,
   id: str = None,
   max_age: typing.Union[int, float] = None
@@ -5118,15 +5397,6 @@ def add_cors_rule(
 \`\`\`
 
 Adds a cross-origin access configuration for objects in an Amazon S3 bucket.
-
-###### \`allowed_headers\`<sup>Optional</sup> <a name=\\"allowed_headers\\" id=\\"construct-library.GreeterBucket.addCorsRule.parameter.allowedHeaders\\"></a>
-
-- *Type:* typing.List[str]
-- *Default:* No headers allowed.
-
-Headers that are specified in the Access-Control-Request-Headers header.
-
----
 
 ###### \`allowed_methods\`<sup>Required</sup> <a name=\\"allowed_methods\\" id=\\"construct-library.GreeterBucket.addCorsRule.parameter.allowedMethods\\"></a>
 
@@ -5141,6 +5411,15 @@ An HTTP method that you allow the origin to execute.
 - *Type:* typing.List[str]
 
 One or more origins you want customers to be able to access the bucket from.
+
+---
+
+###### \`allowed_headers\`<sup>Optional</sup> <a name=\\"allowed_headers\\" id=\\"construct-library.GreeterBucket.addCorsRule.parameter.allowedHeaders\\"></a>
+
+- *Type:* typing.List[str]
+- *Default:* No headers allowed.
+
+Headers that are specified in the Access-Control-Request-Headers header.
 
 ---
 
@@ -5270,7 +5549,10 @@ def add_lifecycle_rule(
   expired_object_delete_marker: bool = None,
   id: str = None,
   noncurrent_version_expiration: Duration = None,
+  noncurrent_versions_to_retain: typing.Union[int, float] = None,
   noncurrent_version_transitions: typing.List[NoncurrentVersionTransition] = None,
+  object_size_greater_than: typing.Union[int, float] = None,
+  object_size_less_than: typing.Union[int, float] = None,
   prefix: str = None,
   tag_filters: typing.Mapping[typing.Any] = None,
   transitions: typing.List[Transition] = None
@@ -5367,6 +5649,18 @@ transition time.
 
 ---
 
+###### \`noncurrent_versions_to_retain\`<sup>Optional</sup> <a name=\\"noncurrent_versions_to_retain\\" id=\\"construct-library.GreeterBucket.addLifecycleRule.parameter.noncurrentVersionsToRetain\\"></a>
+
+- *Type:* typing.Union[int, float]
+- *Default:* No noncurrent versions to retain
+
+Indicates a maximum number of noncurrent versions to retain.
+
+If there are this many more noncurrent versions,
+Amazon S3 permanently deletes them.
+
+---
+
 ###### \`noncurrent_version_transitions\`<sup>Optional</sup> <a name=\\"noncurrent_version_transitions\\" id=\\"construct-library.GreeterBucket.addLifecycleRule.parameter.noncurrentVersionTransitions\\"></a>
 
 - *Type:* typing.List[aws_cdk.aws_s3.NoncurrentVersionTransition]
@@ -5377,6 +5671,24 @@ Only for for buckets with versioning enabled (or suspended).
 
 If you specify a transition and expiration time, the expiration time
 must be later than the transition time.
+
+---
+
+###### \`object_size_greater_than\`<sup>Optional</sup> <a name=\\"object_size_greater_than\\" id=\\"construct-library.GreeterBucket.addLifecycleRule.parameter.objectSizeGreaterThan\\"></a>
+
+- *Type:* typing.Union[int, float]
+- *Default:* No rule
+
+Specifies the minimum object size in bytes for this rule to apply to.
+
+---
+
+###### \`object_size_less_than\`<sup>Optional</sup> <a name=\\"object_size_less_than\\" id=\\"construct-library.GreeterBucket.addLifecycleRule.parameter.objectSizeLessThan\\"></a>
+
+- *Type:* typing.Union[int, float]
+- *Default:* No rule
+
+Specifies the maximum object size in bytes for this rule to apply to.
 
 ---
 
@@ -5552,6 +5864,7 @@ construct_library.GreeterBucket.from_bucket_attributes(
   bucket_website_url: str = None,
   encryption_key: IKey = None,
   is_website: bool = None,
+  notifications_handler_role: IRole = None,
   region: str = None
 )
 \`\`\`
@@ -5665,6 +5978,15 @@ The website URL of the bucket (if static web hosting is enabled).
 - *Default:* false
 
 If this bucket has been configured for static website hosting.
+
+---
+
+###### \`notifications_handler_role\`<sup>Optional</sup> <a name=\\"notifications_handler_role\\" id=\\"construct-library.GreeterBucket.fromBucketAttributes.parameter.notificationsHandlerRole\\"></a>
+
+- *Type:* aws_cdk.aws_iam.IRole
+- *Default:* a new role will be created.
+
+The role to be used by the notifications handler.
 
 ---
 
@@ -5983,6 +6305,7 @@ new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 | <code><a href=\\"#construct-library.GreeterBucket.onCloudTrailPutObject\\">onCloudTrailPutObject</a></code> | Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call. |
 | <code><a href=\\"#construct-library.GreeterBucket.onCloudTrailWriteObject\\">onCloudTrailWriteObject</a></code> | Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to. |
 | <code><a href=\\"#construct-library.GreeterBucket.s3UrlForObject\\">s3UrlForObject</a></code> | The S3 URL of an S3 object. For example:. |
+| <code><a href=\\"#construct-library.GreeterBucket.transferAccelerationUrlForObject\\">transferAccelerationUrlForObject</a></code> | The https Transfer Acceleration URL of an S3 object. |
 | <code><a href=\\"#construct-library.GreeterBucket.urlForObject\\">urlForObject</a></code> | The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:. |
 | <code><a href=\\"#construct-library.GreeterBucket.virtualHostedUrlForObject\\">virtualHostedUrlForObject</a></code> | The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:. |
 | <code><a href=\\"#construct-library.GreeterBucket.addCorsRule\\">addCorsRule</a></code> | Adds a cross-origin access configuration for objects in an Amazon S3 bucket. |
@@ -6486,6 +6809,39 @@ The S3 key of the object.
 
 If not specified, the S3 URL of the
 bucket is returned.
+
+---
+
+##### \`transferAccelerationUrlForObject\` <a name=\\"transferAccelerationUrlForObject\\" id=\\"construct-library.GreeterBucket.transferAccelerationUrlForObject\\"></a>
+
+\`\`\`typescript
+public transferAccelerationUrlForObject(key?: string, options?: TransferAccelerationUrlOptions): string
+\`\`\`
+
+The https Transfer Acceleration URL of an S3 object.
+
+Specify \`dualStack: true\` at the options
+for dual-stack endpoint (connect to the bucket over IPv6). For example:
+
+- \`https://bucket.s3-accelerate.amazonaws.com\`
+- \`https://bucket.s3-accelerate.amazonaws.com/key\`
+
+###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.GreeterBucket.transferAccelerationUrlForObject.parameter.key\\"></a>
+
+- *Type:* string
+
+The S3 key of the object.
+
+If not specified, the URL of the
+bucket is returned.
+
+---
+
+###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.GreeterBucket.transferAccelerationUrlForObject.parameter.options\\"></a>
+
+- *Type:* @aws-cdk/aws-s3.TransferAccelerationUrlOptions
+
+Options for generating URL.
 
 ---
 
@@ -7022,6 +7378,7 @@ new submod1.GoodbyeBucket(scope: Construct, id: string, props?: BucketProps)
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.onCloudTrailPutObject\\">onCloudTrailPutObject</a></code> | Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.onCloudTrailWriteObject\\">onCloudTrailWriteObject</a></code> | Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.s3UrlForObject\\">s3UrlForObject</a></code> | The S3 URL of an S3 object. For example:. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.transferAccelerationUrlForObject\\">transferAccelerationUrlForObject</a></code> | The https Transfer Acceleration URL of an S3 object. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.urlForObject\\">urlForObject</a></code> | The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.virtualHostedUrlForObject\\">virtualHostedUrlForObject</a></code> | The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.addCorsRule\\">addCorsRule</a></code> | Adds a cross-origin access configuration for objects in an Amazon S3 bucket. |
@@ -7525,6 +7882,39 @@ The S3 key of the object.
 
 If not specified, the S3 URL of the
 bucket is returned.
+
+---
+
+##### \`transferAccelerationUrlForObject\` <a name=\\"transferAccelerationUrlForObject\\" id=\\"construct-library.submod1.GoodbyeBucket.transferAccelerationUrlForObject\\"></a>
+
+\`\`\`typescript
+public transferAccelerationUrlForObject(key?: string, options?: TransferAccelerationUrlOptions): string
+\`\`\`
+
+The https Transfer Acceleration URL of an S3 object.
+
+Specify \`dualStack: true\` at the options
+for dual-stack endpoint (connect to the bucket over IPv6). For example:
+
+- \`https://bucket.s3-accelerate.amazonaws.com\`
+- \`https://bucket.s3-accelerate.amazonaws.com/key\`
+
+###### \`key\`<sup>Optional</sup> <a name=\\"key\\" id=\\"construct-library.submod1.GoodbyeBucket.transferAccelerationUrlForObject.parameter.key\\"></a>
+
+- *Type:* string
+
+The S3 key of the object.
+
+If not specified, the URL of the
+bucket is returned.
+
+---
+
+###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.submod1.GoodbyeBucket.transferAccelerationUrlForObject.parameter.options\\"></a>
+
+- *Type:* @aws-cdk/aws-s3.TransferAccelerationUrlOptions
+
+Options for generating URL.
 
 ---
 
