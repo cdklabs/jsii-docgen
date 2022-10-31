@@ -2,7 +2,7 @@ import { ChildProcess, spawn } from 'child_process';
 import { EventEmitter } from 'events';
 import { tmpdir } from 'os';
 import { Readable, Writable } from 'stream';
-import { NoSpaceLeftOnDevice, NpmError } from '../../../src';
+import { NoSpaceLeftOnDevice, NpmError, UnInstallablePackageError } from '../../../src';
 import { Npm } from '../../../src/docgen/view/_npm';
 
 const TMPDIR = tmpdir();
@@ -51,6 +51,33 @@ test('NpmError error (with JSON error code)', async () => {
     expect(err).toBeInstanceOf(NpmError);
     expect((err as NpmError).name).toBe('jsii-docgen.NpmError.E429');
     expect((err as NpmError).npmErrorCode).toBe('E429');
+  }
+});
+
+test('NpmError error (removed package)', async () => {
+  // GIVEN
+  const npm = new Npm(TMPDIR, () => void 0, 'mock-npm');
+
+  // WHEN
+  const mockChildProcess = new MockChildProcess(1, {
+    stdout: [
+      Buffer.from('{\n'),
+      Buffer.from('  "error": {\n'),
+      Buffer.from('    "code": null,\n'),
+      Buffer.from('    "summary": "Cannot convert undefined or null to object",\n'),
+      Buffer.from('    "detail": ""\n'),
+      Buffer.from('  }\n'),
+      Buffer.from('}\n'),
+    ],
+  });
+  mockSpawn.mockReturnValue(mockChildProcess);
+
+  // THEN
+  try {
+    await npm.install('foo');
+    fail('Expected an NpmError!');
+  } catch (err) {
+    expect(err).toBeInstanceOf(UnInstallablePackageError);
   }
 });
 
