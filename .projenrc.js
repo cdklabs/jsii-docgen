@@ -42,6 +42,7 @@ const project = new typescript.TypeScriptProject({
     compilerOptions: {
       target: 'ES2019',
       lib: ['es2019'], // allow Array.prototype.flat etc.
+      skipLibCheck: true,
     },
   },
 });
