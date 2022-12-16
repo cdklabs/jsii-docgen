@@ -6,11 +6,11 @@ import { Documentation } from './index';
 export async function main() {
   const args = yargs
     .usage('Usage: $0')
-    .option('output', { type: 'string', alias: 'o', required: false, desc: 'Output filename (defaults to API.md if format is markdown, and API.json if format is JSON)' })
+    .option('output', { alias: 'o', type: 'string', required: false, desc: 'Output filename (defaults to API.md if format is markdown, and API.json if format is JSON)' })
     .option('format', { alias: 'f', default: 'md', choices: ['md', 'json'], desc: 'Output format, markdown or json' })
     .option('language', { alias: 'l', default: 'typescript', choices: Language.values().map(x => x.toString()), desc: 'Output language' })
-    .option('package', { type: 'string', required: false, desc: 'The name@version of an NPM package to document', defaultDescription: 'The package in the current directory' })
-    .option('submodule', { type: 'string', required: false, desc: 'Generate docs for a specific submodule (or "root")' })
+    .option('package', { alias: 'p', type: 'string', required: false, desc: 'The name@version of an NPM package to document', defaultDescription: 'The package in the current directory' })
+    .option('submodule', { alias: 's', type: 'string', required: false, desc: 'Generate docs for a specific submodule (or "root")' })
     .example('$0', 'Generate documentation for the current module as a single file (auto-resolves node depedencies)')
     .argv;
 
