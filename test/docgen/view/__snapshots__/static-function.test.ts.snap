@@ -30,6 +30,7 @@ Object {
       },
     },
   ],
+  "returnType": "void",
   "usage": "using Amazon.CDK.AWS.ECR;
 
 AuthorizationToken.GrantRead(IGrantable Grantee);",
@@ -85,6 +86,7 @@ Object {
       },
     },
   ],
+  "returnType": "",
   "usage": "import \\"github.com/aws/aws-cdk-go/awscdkawsecr\\"
 
 awscdkawsecr.AuthorizationToken_GrantRead(grantee IGrantable)",
@@ -140,6 +142,7 @@ Object {
       },
     },
   ],
+  "returnType": "void",
   "usage": "import software.amazon.awscdk.services.ecr.AuthorizationToken;
 
 AuthorizationToken.grantRead(IGrantable grantee)",
@@ -195,6 +198,7 @@ Object {
       },
     },
   ],
+  "returnType": "None",
   "usage": "import aws_cdk.aws_ecr
 
 aws_cdk.aws_ecr.AuthorizationToken.grant_read(
@@ -254,6 +258,7 @@ Object {
       },
     },
   ],
+  "returnType": "void",
   "usage": "import { AuthorizationToken } from '@aws-cdk/aws-ecr'
 
 AuthorizationToken.grantRead(grantee: IGrantable)",

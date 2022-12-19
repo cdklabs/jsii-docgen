@@ -130,6 +130,11 @@ export interface CallableSchema extends Usage {
    * Parameters of the callable.
    */
   readonly parameters: ParameterSchema[];
+
+  /**
+   * Return type of the callable.
+   */
+  readonly returnType?: string;
 }
 
 /**

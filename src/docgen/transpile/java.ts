@@ -171,6 +171,7 @@ export class JavaTranspile extends transpile.TranspileBase {
       parameters,
       signatures,
       invocations,
+      returnType,
     };
   }
 

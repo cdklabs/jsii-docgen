@@ -32,6 +32,7 @@ Object {
       },
     },
   ],
+  "returnType": "void",
   "usage": "private void Inspect(TreeInspector Inspector)",
 }
 `;
@@ -87,6 +88,7 @@ Object {
       },
     },
   ],
+  "returnType": "",
   "usage": "func Inspect(inspector TreeInspector)",
 }
 `;
@@ -142,6 +144,7 @@ Object {
       },
     },
   ],
+  "returnType": "void",
   "usage": "public void inspect(TreeInspector inspector)",
 }
 `;
@@ -197,6 +200,7 @@ Object {
       },
     },
   ],
+  "returnType": "None",
   "usage": "def inspect(
   inspector: TreeInspector
 ) -> None",
@@ -256,6 +260,7 @@ Object {
       },
     },
   ],
+  "returnType": "void",
   "usage": "public inspect(inspector: TreeInspector): void",
 }
 `;

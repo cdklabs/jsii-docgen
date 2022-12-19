@@ -24,6 +24,9 @@ export class InstanceMethod {
       parameters: this.parameters.map((p) => p.toJson()),
       docs: extractDocs(this.method.docs),
       usage: this.transpiled.signatures.join('\n'),
+      returnType: this.transpiled.returnType?.toString({
+        typeFormatter: (t) => t.name,
+      }),
     };
   }
 }

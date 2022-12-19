@@ -229,6 +229,7 @@ export class PythonTranspile extends transpile.TranspileBase {
         inputs,
         callable.kind === reflect.MemberKind.Initializer ? undefined : name,
       )],
+      returnType,
     };
   }
 

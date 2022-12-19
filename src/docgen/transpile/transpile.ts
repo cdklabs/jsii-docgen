@@ -325,7 +325,7 @@ export interface TranspiledTypeReferenceToStringOptions {
  */
 export class TranspiledTypeReference {
   /**
-   * Create a type reference that reprensents a primitive.
+   * Create a type reference that represents a primitive.
    */
   public static primitive(
     transpile: Transpile,
@@ -363,7 +363,7 @@ export class TranspiledTypeReference {
     );
   }
   /**
-   * Create a type reference that reprenets a concrete type.
+   * Create a type reference that represents a concrete type.
    */
   public static type(
     transpile: Transpile,
@@ -379,7 +379,7 @@ export class TranspiledTypeReference {
     );
   }
   /**
-   * Create a type reference that reprenets an array of a type reference.
+   * Create a type reference that represents an array of a type reference.
    */
   public static arrayOfType(
     transpile: Transpile,
