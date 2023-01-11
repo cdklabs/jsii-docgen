@@ -103,7 +103,7 @@ export class GoTranspile extends transpile.TranspileBase {
       parameters,
       signatures,
       invocations,
-      returnType,
+      returnType: returnType?.toJson(),
     };
   }
 

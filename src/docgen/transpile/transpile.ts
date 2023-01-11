@@ -26,7 +26,6 @@ export class Language {
   public static readonly CSHARP = new Language({ name: 'csharp', targetName: 'dotnet', validator: validateDotNetConfig });
 
   /**
-   *
    * Go
    */
   public static readonly GO = new Language({ name: 'go', targetName: 'go', validator: validateGoConfig });
@@ -190,7 +189,7 @@ export interface TranspiledCallable {
   /**
    * The (transpiled) return type - this is undefined if void or initializer.
    */
-  readonly returnType?: TranspiledTypeReference;
+  readonly returnType?: TypeSchema;
 }
 
 /**
@@ -296,12 +295,13 @@ export class TranspiledType {
 
   toJson(): JsiiEntity {
     return filterUndefined({
+      id: this.source.fqn,
       fqn: this.fqn,
       displayName: this.name,
-      id: this.source.fqn,
       packageName: this.source.assembly.name,
       packageVersion: this.source.assembly.version,
       submodule: this.submodulePath,
+      location: this.source.locationInRepository,
     });
   }
 }
@@ -470,7 +470,7 @@ export class TranspiledTypeReference {
      * 'Void' type ref.
      */
     private readonly isVoid?: boolean,
-  ) {}
+  ) { }
 
   public toString(options?: TranspiledTypeReferenceToStringOptions): string {
     const tFormatter = options?.typeFormatter ?? ((t) => t.fqn);
@@ -560,6 +560,12 @@ export class TranspiledTypeReference {
       return {
         formattingPattern: this.transpile.unionOf(inner),
         types: this.unionOfTypes.map((t) => t.toJson()),
+      };
+    }
+
+    if (this.isVoid) {
+      return {
+        formattingPattern: this.transpile.void(),
       };
     }
 
@@ -768,7 +774,7 @@ export interface Transpile {
 
 // interface merging so we don't have to implement these methods
 // in the abstract class.
-export interface TranspileBase extends Transpile {}
+export interface TranspileBase extends Transpile { }
 
 /**
  * Common functionality between different transpilers.
@@ -778,7 +784,7 @@ export abstract class TranspileBase implements Transpile {
   private readonly parentModulesCache = new Map<string, reflect.Assembly>();
   private readonly submodulesCache = new Map<string, reflect.Submodule | undefined>();
 
-  constructor(public readonly language: Language) {}
+  constructor(public readonly language: Language) { }
 
   public typeReference(ref: reflect.TypeReference): TranspiledTypeReference {
     if (ref.type) {

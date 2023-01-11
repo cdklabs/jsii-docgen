@@ -8,6 +8,10 @@ Object {
   },
   "fqn": "Amazon.CDK.AWS.ECR.TagMutability",
   "id": "@aws-cdk/aws-ecr.TagMutability",
+  "location": Object {
+    "filename": "lib/repository.ts",
+    "line": 653,
+  },
   "members": Array [
     Object {
       "displayName": "MUTABLE",
@@ -16,6 +20,11 @@ Object {
       },
       "fqn": "Amazon.CDK.AWS.ECR.TagMutability.MUTABLE",
       "id": "@aws-cdk/aws-ecr.TagMutability.MUTABLE",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 653,
+      },
+      "submodule": undefined,
     },
     Object {
       "displayName": "IMMUTABLE",
@@ -24,8 +33,14 @@ Object {
       },
       "fqn": "Amazon.CDK.AWS.ECR.TagMutability.IMMUTABLE",
       "id": "@aws-cdk/aws-ecr.TagMutability.IMMUTABLE",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 653,
+      },
+      "submodule": undefined,
     },
   ],
+  "submodule": undefined,
 }
 `;
 
@@ -67,6 +82,10 @@ Object {
   },
   "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.TagMutability",
   "id": "@aws-cdk/aws-ecr.TagMutability",
+  "location": Object {
+    "filename": "lib/repository.ts",
+    "line": 653,
+  },
   "members": Array [
     Object {
       "displayName": "TagMutability_MUTABLE",
@@ -75,6 +94,11 @@ Object {
       },
       "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.TagMutability_MUTABLE",
       "id": "@aws-cdk/aws-ecr.TagMutability.MUTABLE",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 653,
+      },
+      "submodule": undefined,
     },
     Object {
       "displayName": "TagMutability_IMMUTABLE",
@@ -83,8 +107,14 @@ Object {
       },
       "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.TagMutability_IMMUTABLE",
       "id": "@aws-cdk/aws-ecr.TagMutability.IMMUTABLE",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 653,
+      },
+      "submodule": undefined,
     },
   ],
+  "submodule": undefined,
 }
 `;
 
@@ -126,6 +156,10 @@ Object {
   },
   "fqn": "software.amazon.awscdk.services.ecr.TagMutability",
   "id": "@aws-cdk/aws-ecr.TagMutability",
+  "location": Object {
+    "filename": "lib/repository.ts",
+    "line": 653,
+  },
   "members": Array [
     Object {
       "displayName": "MUTABLE",
@@ -134,6 +168,11 @@ Object {
       },
       "fqn": "software.amazon.awscdk.services.ecr.TagMutability.MUTABLE",
       "id": "@aws-cdk/aws-ecr.TagMutability.MUTABLE",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 653,
+      },
+      "submodule": undefined,
     },
     Object {
       "displayName": "IMMUTABLE",
@@ -142,8 +181,14 @@ Object {
       },
       "fqn": "software.amazon.awscdk.services.ecr.TagMutability.IMMUTABLE",
       "id": "@aws-cdk/aws-ecr.TagMutability.IMMUTABLE",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 653,
+      },
+      "submodule": undefined,
     },
   ],
+  "submodule": undefined,
 }
 `;
 
@@ -185,6 +230,10 @@ Object {
   },
   "fqn": "aws_cdk.aws_ecr.TagMutability",
   "id": "@aws-cdk/aws-ecr.TagMutability",
+  "location": Object {
+    "filename": "lib/repository.ts",
+    "line": 653,
+  },
   "members": Array [
     Object {
       "displayName": "MUTABLE",
@@ -193,6 +242,11 @@ Object {
       },
       "fqn": "aws_cdk.aws_ecr.TagMutability.MUTABLE",
       "id": "@aws-cdk/aws-ecr.TagMutability.MUTABLE",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 653,
+      },
+      "submodule": undefined,
     },
     Object {
       "displayName": "IMMUTABLE",
@@ -201,8 +255,14 @@ Object {
       },
       "fqn": "aws_cdk.aws_ecr.TagMutability.IMMUTABLE",
       "id": "@aws-cdk/aws-ecr.TagMutability.IMMUTABLE",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 653,
+      },
+      "submodule": undefined,
     },
   ],
+  "submodule": undefined,
 }
 `;
 
@@ -244,6 +304,10 @@ Object {
   },
   "fqn": "@aws-cdk/aws-ecr.TagMutability",
   "id": "@aws-cdk/aws-ecr.TagMutability",
+  "location": Object {
+    "filename": "lib/repository.ts",
+    "line": 653,
+  },
   "members": Array [
     Object {
       "displayName": "MUTABLE",
@@ -252,6 +316,11 @@ Object {
       },
       "fqn": "@aws-cdk/aws-ecr.TagMutability.MUTABLE",
       "id": "@aws-cdk/aws-ecr.TagMutability.MUTABLE",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 653,
+      },
+      "submodule": undefined,
     },
     Object {
       "displayName": "IMMUTABLE",
@@ -260,8 +329,14 @@ Object {
       },
       "fqn": "@aws-cdk/aws-ecr.TagMutability.IMMUTABLE",
       "id": "@aws-cdk/aws-ecr.TagMutability.IMMUTABLE",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 653,
+      },
+      "submodule": undefined,
     },
   ],
+  "submodule": undefined,
 }
 `;
 

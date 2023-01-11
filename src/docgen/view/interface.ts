@@ -29,14 +29,16 @@ export class Interface {
 
   public toJson(): InterfaceSchema {
     return {
+      id: this.iface.fqn,
       fqn: this.transpiled.type.fqn,
       displayName: this.transpiled.type.fqn.split('.').pop()!,
-      id: this.iface.fqn,
       implementations: this.implementations.map((impl) => impl.toJson()),
       interfaces: this.bases.map((base) => base.toJson()),
       instanceMethods: this.instanceMethods.toJson(),
       properties: this.properties.toJson(),
       docs: extractDocs(this.iface.docs),
+      location: this.iface.locationInRepository,
+      submodule: this.iface.namespace,
     };
   }
 }

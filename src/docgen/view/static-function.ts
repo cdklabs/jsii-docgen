@@ -24,9 +24,7 @@ export class StaticFunction {
       parameters: this.parameters.map((param) => param.toJson()),
       docs: extractDocs(this.method.docs),
       usage: `${this.transpiled.import}\n\n${this.transpiled.invocations}`,
-      returnType: this.transpiled.returnType?.toString({
-        typeFormatter: (t) => t.name,
-      }),
+      returnType: this.transpiled.returnType,
     };
   }
 }

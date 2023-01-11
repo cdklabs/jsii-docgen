@@ -11,6 +11,10 @@ Object {
   },
   "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps",
   "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+  "location": Object {
+    "filename": "lib/ecr.generated.ts",
+    "line": 17,
+  },
   "properties": Array [
     Object {
       "default": undefined,
@@ -95,6 +99,7 @@ Object {
       "usage": "public CfnTag[] Tags { get; set; }",
     },
   ],
+  "submodule": undefined,
   "usage": "using Amazon.CDK.AWS.ECR;
 
 new CfnPublicRepositoryProps {
@@ -206,6 +211,10 @@ Object {
   },
   "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.CfnPublicRepositoryProps",
   "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+  "location": Object {
+    "filename": "lib/ecr.generated.ts",
+    "line": 17,
+  },
   "properties": Array [
     Object {
       "default": undefined,
@@ -290,6 +299,7 @@ Object {
       "usage": "Tags *[]CfnTag",
     },
   ],
+  "submodule": undefined,
   "usage": "import \\"github.com/aws/aws-cdk-go/awscdkawsecr\\"
 
 &awscdkawsecr.CfnPublicRepositoryProps {
@@ -401,6 +411,10 @@ Object {
   },
   "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps",
   "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+  "location": Object {
+    "filename": "lib/ecr.generated.ts",
+    "line": 17,
+  },
   "properties": Array [
     Object {
       "default": undefined,
@@ -485,6 +499,7 @@ Object {
       "usage": "public java.util.List<CfnTag> getTags();",
     },
   ],
+  "submodule": undefined,
   "usage": "import software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps;
 
 CfnPublicRepositoryProps.builder()
@@ -596,6 +611,10 @@ Object {
   },
   "fqn": "aws_cdk.aws_ecr.CfnPublicRepositoryProps",
   "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+  "location": Object {
+    "filename": "lib/ecr.generated.ts",
+    "line": 17,
+  },
   "properties": Array [
     Object {
       "default": undefined,
@@ -680,6 +699,7 @@ Object {
       "usage": "tags: typing.List[CfnTag]",
     },
   ],
+  "submodule": undefined,
   "usage": "import aws_cdk.aws_ecr
 
 aws_cdk.aws_ecr.CfnPublicRepositoryProps(
@@ -791,6 +811,10 @@ Object {
   },
   "fqn": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
   "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
+  "location": Object {
+    "filename": "lib/ecr.generated.ts",
+    "line": 17,
+  },
   "properties": Array [
     Object {
       "default": undefined,
@@ -875,6 +899,7 @@ Object {
       "usage": "public readonly tags: CfnTag[];",
     },
   ],
+  "submodule": undefined,
   "usage": "import { CfnPublicRepositoryProps } from '@aws-cdk/aws-ecr'
 
 const cfnPublicRepositoryProps: CfnPublicRepositoryProps = { ... }",

@@ -29,7 +29,7 @@ export interface TypeSchema {
  * Describes a single "entity" in the jsii type system. This may be a type,
  * but it could also be a property, method, parameter, enum member, etc.
  */
-export interface JsiiEntity extends AssemblyMetadataSchema {
+export interface JsiiEntity extends JsiiEntityMetadata {
   /**
    * An id that uniquely identifies this type among all entities in the
    * document and is same across languages.
@@ -45,6 +45,16 @@ export interface JsiiEntity extends AssemblyMetadataSchema {
    * The language-specific type FQN.
    */
   readonly fqn: string;
+
+  /**
+   * The submodule of this entity.
+   */
+  readonly submodule?: string;
+
+  /**
+   * The source location of this entity.
+   */
+  readonly location?: reflect.SourceLocation;
 }
 
 /**
@@ -66,6 +76,16 @@ export interface PropertySchema extends Usage, Optional, Documentable {
    * The language-specific fqn.
    */
   readonly fqn: string;
+
+  /**
+   * The submodule of this property.
+   */
+  readonly submodule?: string;
+
+  /**
+   * The source location of this property.
+   */
+  readonly location?: reflect.SourceLocation;
 
   /**
    * The type of the property.
@@ -100,6 +120,16 @@ export interface ParameterSchema extends Optional, Documentable {
   readonly fqn: string;
 
   /**
+   * The submodule of this parameter.
+   */
+  readonly submodule?: string;
+
+  /**
+   * The source location of this parameter.
+   */
+  readonly location?: reflect.SourceLocation;
+
+  /**
    * The type of the parameter.
    */
   readonly type: TypeSchema;
@@ -127,6 +157,16 @@ export interface CallableSchema extends Usage {
   readonly fqn: string;
 
   /**
+   * The submodule of this callable.
+   */
+  readonly submodule?: string;
+
+  /**
+   * The source location of this callable.
+   */
+  readonly location?: reflect.SourceLocation;
+
+  /**
    * Parameters of the callable.
    */
   readonly parameters: ParameterSchema[];
@@ -134,18 +174,18 @@ export interface CallableSchema extends Usage {
   /**
    * Return type of the callable. This is undefined if void or initializer.
    */
-  readonly returnType?: string;
+  readonly returnType?: TypeSchema;
 }
 
 /**
  * Describes a constructor.
  */
-export interface InitializerSchema extends CallableSchema {}
+export interface InitializerSchema extends CallableSchema { }
 
 /**
  * Describes a method.
  */
-export interface MethodSchema extends CallableSchema, Documentable {}
+export interface MethodSchema extends CallableSchema, Documentable { }
 
 /**
  * Describes a class.
@@ -166,6 +206,16 @@ export interface ClassSchema extends Documentable {
    * The language-specific fqn.
    */
   readonly fqn: string;
+
+  /**
+   * The submodule of this class.
+   */
+  readonly submodule?: string;
+
+  /**
+   * The source location of this class.
+   */
+  readonly location?: reflect.SourceLocation;
 
   /**
    * Interfaces this class implements.
@@ -201,7 +251,7 @@ export interface ClassSchema extends Documentable {
 /**
  * Describes a construct.
  */
-export interface ConstructSchema extends ClassSchema {}
+export interface ConstructSchema extends ClassSchema { }
 
 /**
  * Describes a struct.
@@ -222,6 +272,16 @@ export interface StructSchema extends Usage, Documentable {
    * The language-specific fqn.
    */
   readonly fqn: string;
+
+  /**
+   * The submodule of this struct.
+   */
+  readonly submodule?: string;
+
+  /**
+   * The source location of this struct.
+   */
+  readonly location?: reflect.SourceLocation;
 
   /**
    * Properties.
@@ -248,6 +308,16 @@ export interface InterfaceSchema extends Documentable {
    * The language-specific fqn.
    */
   readonly fqn: string;
+
+  /**
+   * The submodule of this interface.
+   */
+  readonly submodule?: string;
+
+  /**
+   * The source location of this interface.
+   */
+  readonly location?: reflect.SourceLocation;
 
   /**
    * Interfaces that this interface extends.
@@ -289,6 +359,16 @@ export interface EnumMemberSchema extends Documentable {
    * The language-specific fqn.
    */
   readonly fqn: string;
+
+  /**
+   * The submodule of this enum member.
+   */
+  readonly submodule?: string;
+
+  /**
+   * The source location of this enum member.
+   */
+  readonly location?: reflect.SourceLocation;
 }
 
 /**
@@ -310,6 +390,16 @@ export interface EnumSchema extends Documentable {
    * The language-specific fqn.
    */
   readonly fqn: string;
+
+  /**
+   * The submodule of this enum.
+   */
+  readonly submodule?: string;
+
+  /**
+   * The source location of this enum.
+   */
+  readonly location?: reflect.SourceLocation;
 
   /**
    * Enum members.
@@ -351,7 +441,7 @@ export interface ApiReferenceSchema {
 /**
  * Metadata about a particular jsii assembly.
  */
-export interface AssemblyMetadataSchema {
+export interface JsiiEntityMetadata {
   /**
    * Name of the jsii assembly/package.
    */
@@ -369,6 +459,24 @@ export interface AssemblyMetadataSchema {
    * @example `aws_sqs`
    */
   readonly submodule?: string;
+}
+
+export interface AssemblyMetadataSchema extends JsiiEntityMetadata {
+  /**
+   * Return a URL for this item into the source repository, if available.
+   */
+  readonly repositoryUrl?: string;
+
+  /**
+   * Submodules in this assembly.
+   */
+  readonly submodules?: SubmoduleSchema[];
+}
+
+export interface SubmoduleSchema {
+  name: string;
+  fqn: string;
+  readme?: string;
 }
 
 /**

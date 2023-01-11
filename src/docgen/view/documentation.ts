@@ -83,7 +83,7 @@ export interface TransliterationOptions {
   readonly validate?: boolean;
 }
 
-export interface MarkdownRenderOptions extends RenderOptions, MarkdownFormattingOptions {}
+export interface MarkdownRenderOptions extends RenderOptions, MarkdownFormattingOptions { }
 
 /**
  * Options for creating a `Documentation` object using the `fromLocalPackage` function.
@@ -187,7 +187,7 @@ export class Documentation {
   private constructor(
     private readonly assemblyName: string,
     private readonly assembliesDir: string,
-  ) {}
+  ) { }
 
   /**
    * Generate markdown.
@@ -206,7 +206,7 @@ export class Documentation {
     this.assemblyFqn = `${tsAssembly.name}@${tsAssembly.version}`;
 
     if (!isSupported) {
-      throw new LanguageNotSupportedError(`Laguage ${language} is not supported for package ${this.assemblyFqn}`);
+      throw new LanguageNotSupportedError(`Language ${language} is not supported for package ${this.assemblyFqn}`);
     }
 
     if (allSubmodules && options?.submodule) {
@@ -246,6 +246,12 @@ export class Documentation {
         packageName: assembly.name,
         packageVersion: assembly.version,
         submodule: submodulePath(submodule),
+        repositoryUrl: assembly.repository.url,
+        submodules: allSubmodules ? assembly.submodules.map((s) => ({
+          name: s.name,
+          fqn: s.fqn,
+          readme: s.readme?.markdown,
+        })) : undefined,
       },
       readme: readme?.render(),
       apiReference: apiReference?.toJson(),
@@ -280,7 +286,7 @@ export class Documentation {
   private async languageSpecific(
     lang: Language,
     options: Required<TransliterationOptions>,
-  ): Promise<{ assembly: reflect.Assembly; transpile: Transpile}> {
+  ): Promise<{ assembly: reflect.Assembly; transpile: Transpile }> {
     const { rosettaTarget, transpile } = LANGUAGE_SPECIFIC[lang.toString()];
     return { assembly: await this.createAssembly(rosettaTarget, options), transpile };
   }

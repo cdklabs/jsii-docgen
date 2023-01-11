@@ -16,12 +16,14 @@ export class Struct {
 
   public toJson(): StructSchema {
     return {
+      id: this.iface.fqn,
       fqn: this.transpiled.type.fqn,
       displayName: this.transpiled.type.fqn.split('.').pop()!,
-      id: this.iface.fqn,
       properties: this.properties.toJson(),
       docs: extractDocs(this.iface.docs),
       usage: `${this.transpiled.import}\n\n${this.transpiled.initialization}`,
+      location: this.iface.locationInRepository,
+      submodule: this.iface.namespace,
     };
   }
 }

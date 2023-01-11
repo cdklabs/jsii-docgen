@@ -16,11 +16,13 @@ export class Enum {
 
   public toJson(): EnumSchema {
     return {
+      id: this.enu.fqn,
       fqn: this.transpiled.fqn,
       displayName: this.transpiled.fqn.split('.').pop()!,
-      id: this.enu.fqn,
       members: this.members.map((em) => em.toJson()),
       docs: extractDocs(this.enu.docs),
+      location: this.enu.locationInRepository,
+      submodule: this.enu.namespace,
     };
   }
 }

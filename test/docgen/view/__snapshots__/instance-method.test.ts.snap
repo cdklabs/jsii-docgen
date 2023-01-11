@@ -32,7 +32,9 @@ Object {
       },
     },
   ],
-  "returnType": "void",
+  "returnType": Object {
+    "formattingPattern": "void",
+  },
   "usage": "private void Inspect(TreeInspector Inspector)",
 }
 `;
@@ -88,7 +90,9 @@ Object {
       },
     },
   ],
-  "returnType": "",
+  "returnType": Object {
+    "formattingPattern": "",
+  },
   "usage": "func Inspect(inspector TreeInspector)",
 }
 `;
@@ -144,7 +148,9 @@ Object {
       },
     },
   ],
-  "returnType": "void",
+  "returnType": Object {
+    "formattingPattern": "void",
+  },
   "usage": "public void inspect(TreeInspector inspector)",
 }
 `;
@@ -200,7 +206,9 @@ Object {
       },
     },
   ],
-  "returnType": "None",
+  "returnType": Object {
+    "formattingPattern": "None",
+  },
   "usage": "def inspect(
   inspector: TreeInspector
 ) -> None",
@@ -260,7 +268,9 @@ Object {
       },
     },
   ],
-  "returnType": "void",
+  "returnType": Object {
+    "formattingPattern": "void",
+  },
   "usage": "public inspect(inspector: TreeInspector): void",
 }
 `;

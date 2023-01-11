@@ -89,7 +89,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
       parameters,
       signatures,
       invocations,
-      returnType,
+      returnType: returnType?.toJson(),
     };
   }
 

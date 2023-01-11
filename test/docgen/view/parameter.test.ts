@@ -11,6 +11,7 @@ const assembly: reflect.Assembly = Assemblies.instance.withoutSubmodules;
 const metadata = {
   packageName: assembly.name,
   packageVersion: assembly.version,
+  fingerprint: assembly.fingerprint,
 };
 
 const findParameter = (): reflect.Parameter => {

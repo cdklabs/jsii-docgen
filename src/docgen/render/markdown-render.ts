@@ -120,6 +120,7 @@ export class MarkdownRenderer {
       packageName: options.packageName,
       packageVersion: options.packageVersion,
       submodule: options.submodule,
+      repositoryUrl: options.repositoryUrl,
     };
   }
 

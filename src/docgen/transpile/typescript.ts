@@ -184,7 +184,7 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
       parameters,
       signatures: [formatSignature(name, inputs, returns)],
       invocations: [invocation],
-      returnType,
+      returnType: returnType?.toJson(),
     };
   }
 

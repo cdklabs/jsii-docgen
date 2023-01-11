@@ -46,6 +46,7 @@ export class Class {
 
   public toJson(): ClassSchema {
     return {
+      id: this.klass.fqn,
       initializer: this.initializer?.toJson(),
       interfaces: this.interfaces.map((iface) => iface.toJson()),
       instanceMethods: this.instanceMethods.toJson(),
@@ -54,8 +55,9 @@ export class Class {
       properties: this.properties.toJson(),
       fqn: this.transpiled.type.fqn,
       displayName: this.transpiled.type.fqn.split('.').pop()!,
-      id: this.klass.fqn,
       docs: extractDocs(this.klass.docs),
+      submodule: this.klass.namespace,
+      location: this.klass.locationInRepository,
     };
   }
 }

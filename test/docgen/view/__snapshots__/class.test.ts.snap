@@ -15,6 +15,10 @@ Object {
   "initializer": undefined,
   "instanceMethods": Array [],
   "interfaces": Array [],
+  "location": Object {
+    "filename": "lib/auth-token.ts",
+    "line": 8,
+  },
   "properties": Array [],
   "staticMethods": Array [
     Object {
@@ -46,12 +50,15 @@ Object {
           },
         },
       ],
-      "returnType": "void",
+      "returnType": Object {
+        "formattingPattern": "void",
+      },
       "usage": "using Amazon.CDK.AWS.ECR;
 
 AuthorizationToken.GrantRead(IGrantable Grantee);",
     },
   ],
+  "submodule": undefined,
 }
 `;
 
@@ -106,6 +113,10 @@ Object {
   "initializer": undefined,
   "instanceMethods": Array [],
   "interfaces": Array [],
+  "location": Object {
+    "filename": "lib/auth-token.ts",
+    "line": 8,
+  },
   "properties": Array [],
   "staticMethods": Array [
     Object {
@@ -137,12 +148,15 @@ Object {
           },
         },
       ],
-      "returnType": "",
+      "returnType": Object {
+        "formattingPattern": "",
+      },
       "usage": "import \\"github.com/aws/aws-cdk-go/awscdkawsecr\\"
 
 awscdkawsecr.AuthorizationToken_GrantRead(grantee IGrantable)",
     },
   ],
+  "submodule": undefined,
 }
 `;
 
@@ -197,6 +211,10 @@ Object {
   "initializer": undefined,
   "instanceMethods": Array [],
   "interfaces": Array [],
+  "location": Object {
+    "filename": "lib/auth-token.ts",
+    "line": 8,
+  },
   "properties": Array [],
   "staticMethods": Array [
     Object {
@@ -228,12 +246,15 @@ Object {
           },
         },
       ],
-      "returnType": "void",
+      "returnType": Object {
+        "formattingPattern": "void",
+      },
       "usage": "import software.amazon.awscdk.services.ecr.AuthorizationToken;
 
 AuthorizationToken.grantRead(IGrantable grantee)",
     },
   ],
+  "submodule": undefined,
 }
 `;
 
@@ -288,6 +309,10 @@ Object {
   "initializer": undefined,
   "instanceMethods": Array [],
   "interfaces": Array [],
+  "location": Object {
+    "filename": "lib/auth-token.ts",
+    "line": 8,
+  },
   "properties": Array [],
   "staticMethods": Array [
     Object {
@@ -319,7 +344,9 @@ Object {
           },
         },
       ],
-      "returnType": "None",
+      "returnType": Object {
+        "formattingPattern": "None",
+      },
       "usage": "import aws_cdk.aws_ecr
 
 aws_cdk.aws_ecr.AuthorizationToken.grant_read(
@@ -327,6 +354,7 @@ aws_cdk.aws_ecr.AuthorizationToken.grant_read(
 )",
     },
   ],
+  "submodule": undefined,
 }
 `;
 
@@ -383,6 +411,10 @@ Object {
   "initializer": undefined,
   "instanceMethods": Array [],
   "interfaces": Array [],
+  "location": Object {
+    "filename": "lib/auth-token.ts",
+    "line": 8,
+  },
   "properties": Array [],
   "staticMethods": Array [
     Object {
@@ -414,12 +446,15 @@ Object {
           },
         },
       ],
-      "returnType": "void",
+      "returnType": Object {
+        "formattingPattern": "void",
+      },
       "usage": "import { AuthorizationToken } from '@aws-cdk/aws-ecr'
 
 AuthorizationToken.grantRead(grantee: IGrantable)",
     },
   ],
+  "submodule": undefined,
 }
 `;
 

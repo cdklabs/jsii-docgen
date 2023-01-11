@@ -13,6 +13,10 @@ Object {
       "displayName": "Repository",
       "fqn": "Amazon.CDK.AWS.ECR.Repository",
       "id": "@aws-cdk/aws-ecr.Repository",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 375,
+      },
       "packageName": "@aws-cdk/aws-ecr",
       "packageVersion": "1.106.0",
     },
@@ -20,6 +24,10 @@ Object {
       "displayName": "RepositoryBase",
       "fqn": "Amazon.CDK.AWS.ECR.RepositoryBase",
       "id": "@aws-cdk/aws-ecr.RepositoryBase",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 114,
+      },
       "packageName": "@aws-cdk/aws-ecr",
       "packageVersion": "1.106.0",
     },
@@ -27,6 +35,10 @@ Object {
       "displayName": "IRepository",
       "fqn": "Amazon.CDK.AWS.ECR.IRepository",
       "id": "@aws-cdk/aws-ecr.IRepository",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 12,
+      },
       "packageName": "@aws-cdk/aws-ecr",
       "packageVersion": "1.106.0",
     },
@@ -61,7 +73,18 @@ Object {
           },
         },
       ],
-      "returnType": "AddToResourcePolicyResult",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "AddToResourcePolicyResult",
+            "fqn": "Amazon.CDK.AWS.IAM.AddToResourcePolicyResult",
+            "id": "@aws-cdk/aws-iam.AddToResourcePolicyResult",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "private AddToResourcePolicyResult AddToResourcePolicy(PolicyStatement Statement)",
     },
     Object {
@@ -104,7 +127,18 @@ Object {
           },
         },
       ],
-      "returnType": "Grant",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Grant",
+            "fqn": "Amazon.CDK.AWS.IAM.Grant",
+            "id": "@aws-cdk/aws-iam.Grant",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "private Grant Grant(IGrantable Grantee, string Actions)",
     },
     Object {
@@ -136,7 +170,18 @@ Object {
           },
         },
       ],
-      "returnType": "Grant",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Grant",
+            "fqn": "Amazon.CDK.AWS.IAM.Grant",
+            "id": "@aws-cdk/aws-iam.Grant",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "private Grant GrantPull(IGrantable Grantee)",
     },
     Object {
@@ -168,7 +213,18 @@ Object {
           },
         },
       ],
-      "returnType": "Grant",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Grant",
+            "fqn": "Amazon.CDK.AWS.IAM.Grant",
+            "id": "@aws-cdk/aws-iam.Grant",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "private Grant GrantPullPush(IGrantable Grantee)",
     },
     Object {
@@ -217,7 +273,18 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "Amazon.CDK.AWS.Events.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "private Rule OnCloudTrailEvent(string Id, OnEventOptions Options = null)",
     },
     Object {
@@ -266,7 +333,18 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "Amazon.CDK.AWS.Events.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "private Rule OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)",
     },
     Object {
@@ -311,7 +389,18 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "Amazon.CDK.AWS.Events.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "private Rule OnEvent(string Id, OnEventOptions Options = null)",
     },
     Object {
@@ -358,7 +447,18 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "Amazon.CDK.AWS.Events.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "private Rule OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)",
     },
     Object {
@@ -384,7 +484,9 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "string",
+      "returnType": Object {
+        "formattingPattern": "string",
+      },
       "usage": "private string RepositoryUriForDigest(string Digest = null)",
     },
     Object {
@@ -410,7 +512,9 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "string",
+      "returnType": Object {
+        "formattingPattern": "string",
+      },
       "usage": "private string RepositoryUriForTag(string Tag = null)",
     },
   ],
@@ -419,10 +523,18 @@ that captures the event. This method will not create the Trail.",
       "displayName": "IResource",
       "fqn": "Amazon.CDK.IResource",
       "id": "@aws-cdk/core.IResource",
+      "location": Object {
+        "filename": "lib/resource.ts",
+        "line": 45,
+      },
       "packageName": "@aws-cdk/core",
       "packageVersion": "1.106.0",
     },
   ],
+  "location": Object {
+    "filename": "lib/repository.ts",
+    "line": 12,
+  },
   "properties": Array [
     Object {
       "default": undefined,
@@ -543,6 +655,7 @@ that might be different than the stack they were imported into.",
       "usage": "public string RepositoryUri { get; }",
     },
   ],
+  "submodule": undefined,
 }
 `;
 
@@ -880,6 +993,10 @@ Object {
       "displayName": "Repository",
       "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.Repository",
       "id": "@aws-cdk/aws-ecr.Repository",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 375,
+      },
       "packageName": "@aws-cdk/aws-ecr",
       "packageVersion": "1.106.0",
     },
@@ -887,6 +1004,10 @@ Object {
       "displayName": "RepositoryBase",
       "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.RepositoryBase",
       "id": "@aws-cdk/aws-ecr.RepositoryBase",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 114,
+      },
       "packageName": "@aws-cdk/aws-ecr",
       "packageVersion": "1.106.0",
     },
@@ -894,6 +1015,10 @@ Object {
       "displayName": "IRepository",
       "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.IRepository",
       "id": "@aws-cdk/aws-ecr.IRepository",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 12,
+      },
       "packageName": "@aws-cdk/aws-ecr",
       "packageVersion": "1.106.0",
     },
@@ -928,7 +1053,18 @@ Object {
           },
         },
       ],
-      "returnType": "AddToResourcePolicyResult",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "AddToResourcePolicyResult",
+            "fqn": "github.com/aws/aws-cdk-go/awscdk/awsiam/awscdkawsiam.AddToResourcePolicyResult",
+            "id": "@aws-cdk/aws-iam.AddToResourcePolicyResult",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "func AddToResourcePolicy(statement PolicyStatement) AddToResourcePolicyResult",
     },
     Object {
@@ -971,7 +1107,18 @@ Object {
           },
         },
       ],
-      "returnType": "Grant",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Grant",
+            "fqn": "github.com/aws/aws-cdk-go/awscdk/awsiam/awscdkawsiam.Grant",
+            "id": "@aws-cdk/aws-iam.Grant",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "func Grant(grantee IGrantable, actions *string) Grant",
     },
     Object {
@@ -1003,7 +1150,18 @@ Object {
           },
         },
       ],
-      "returnType": "Grant",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Grant",
+            "fqn": "github.com/aws/aws-cdk-go/awscdk/awsiam/awscdkawsiam.Grant",
+            "id": "@aws-cdk/aws-iam.Grant",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "func GrantPull(grantee IGrantable) Grant",
     },
     Object {
@@ -1035,7 +1193,18 @@ Object {
           },
         },
       ],
-      "returnType": "Grant",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Grant",
+            "fqn": "github.com/aws/aws-cdk-go/awscdk/awsiam/awscdkawsiam.Grant",
+            "id": "@aws-cdk/aws-iam.Grant",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "func GrantPullPush(grantee IGrantable) Grant",
     },
     Object {
@@ -1084,7 +1253,18 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "github.com/aws/aws-cdk-go/awscdkawsevents/awscdkawsevents.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "func OnCloudTrailEvent(id *string, options OnEventOptions) Rule",
     },
     Object {
@@ -1133,7 +1313,18 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "github.com/aws/aws-cdk-go/awscdkawsevents/awscdkawsevents.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "func OnCloudTrailImagePushed(id *string, options OnCloudTrailImagePushedOptions) Rule",
     },
     Object {
@@ -1178,7 +1369,18 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "github.com/aws/aws-cdk-go/awscdkawsevents/awscdkawsevents.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "func OnEvent(id *string, options OnEventOptions) Rule",
     },
     Object {
@@ -1225,7 +1427,18 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "github.com/aws/aws-cdk-go/awscdkawsevents/awscdkawsevents.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "func OnImageScanCompleted(id *string, options OnImageScanCompletedOptions) Rule",
     },
     Object {
@@ -1251,7 +1464,9 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "*string",
+      "returnType": Object {
+        "formattingPattern": "*string",
+      },
       "usage": "func RepositoryUriForDigest(digest *string) *string",
     },
     Object {
@@ -1277,7 +1492,9 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "*string",
+      "returnType": Object {
+        "formattingPattern": "*string",
+      },
       "usage": "func RepositoryUriForTag(tag *string) *string",
     },
   ],
@@ -1286,10 +1503,18 @@ that captures the event. This method will not create the Trail.",
       "displayName": "IResource",
       "fqn": "github.com/aws/aws-cdk-go/awscdk/awscdkcore.IResource",
       "id": "@aws-cdk/core.IResource",
+      "location": Object {
+        "filename": "lib/resource.ts",
+        "line": 45,
+      },
       "packageName": "@aws-cdk/core",
       "packageVersion": "1.106.0",
     },
   ],
+  "location": Object {
+    "filename": "lib/repository.ts",
+    "line": 12,
+  },
   "properties": Array [
     Object {
       "default": undefined,
@@ -1410,6 +1635,7 @@ that might be different than the stack they were imported into.",
       "usage": "func RepositoryUri() *string",
     },
   ],
+  "submodule": undefined,
 }
 `;
 
@@ -1747,6 +1973,10 @@ Object {
       "displayName": "Repository",
       "fqn": "software.amazon.awscdk.services.ecr.Repository",
       "id": "@aws-cdk/aws-ecr.Repository",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 375,
+      },
       "packageName": "@aws-cdk/aws-ecr",
       "packageVersion": "1.106.0",
     },
@@ -1754,6 +1984,10 @@ Object {
       "displayName": "RepositoryBase",
       "fqn": "software.amazon.awscdk.services.ecr.RepositoryBase",
       "id": "@aws-cdk/aws-ecr.RepositoryBase",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 114,
+      },
       "packageName": "@aws-cdk/aws-ecr",
       "packageVersion": "1.106.0",
     },
@@ -1761,6 +1995,10 @@ Object {
       "displayName": "IRepository",
       "fqn": "software.amazon.awscdk.services.ecr.IRepository",
       "id": "@aws-cdk/aws-ecr.IRepository",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 12,
+      },
       "packageName": "@aws-cdk/aws-ecr",
       "packageVersion": "1.106.0",
     },
@@ -1795,7 +2033,18 @@ Object {
           },
         },
       ],
-      "returnType": "AddToResourcePolicyResult",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "AddToResourcePolicyResult",
+            "fqn": "software.amazon.awscdk.services.iam.AddToResourcePolicyResult",
+            "id": "@aws-cdk/aws-iam.AddToResourcePolicyResult",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "public AddToResourcePolicyResult addToResourcePolicy(PolicyStatement statement)",
     },
     Object {
@@ -1838,7 +2087,18 @@ Object {
           },
         },
       ],
-      "returnType": "Grant",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Grant",
+            "fqn": "software.amazon.awscdk.services.iam.Grant",
+            "id": "@aws-cdk/aws-iam.Grant",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "public Grant grant(IGrantable grantee, java.lang.String actions)",
     },
     Object {
@@ -1870,7 +2130,18 @@ Object {
           },
         },
       ],
-      "returnType": "Grant",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Grant",
+            "fqn": "software.amazon.awscdk.services.iam.Grant",
+            "id": "@aws-cdk/aws-iam.Grant",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "public Grant grantPull(IGrantable grantee)",
     },
     Object {
@@ -1902,7 +2173,18 @@ Object {
           },
         },
       ],
-      "returnType": "Grant",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Grant",
+            "fqn": "software.amazon.awscdk.services.iam.Grant",
+            "id": "@aws-cdk/aws-iam.Grant",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "public Grant grantPullPush(IGrantable grantee)",
     },
     Object {
@@ -1951,7 +2233,18 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "software.amazon.awscdk.services.events.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "public Rule onCloudTrailEvent(java.lang.String id)
 public Rule onCloudTrailEvent(java.lang.String id, OnEventOptions options)",
     },
@@ -2001,7 +2294,18 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "software.amazon.awscdk.services.events.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "public Rule onCloudTrailImagePushed(java.lang.String id)
 public Rule onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushedOptions options)",
     },
@@ -2047,7 +2351,18 @@ public Rule onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushed
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "software.amazon.awscdk.services.events.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "public Rule onEvent(java.lang.String id)
 public Rule onEvent(java.lang.String id, OnEventOptions options)",
     },
@@ -2095,7 +2410,18 @@ public Rule onEvent(java.lang.String id, OnEventOptions options)",
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "software.amazon.awscdk.services.events.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "public Rule onImageScanCompleted(java.lang.String id)
 public Rule onImageScanCompleted(java.lang.String id, OnImageScanCompletedOptions options)",
     },
@@ -2122,7 +2448,9 @@ public Rule onImageScanCompleted(java.lang.String id, OnImageScanCompletedOption
           },
         },
       ],
-      "returnType": "java.lang.String",
+      "returnType": Object {
+        "formattingPattern": "java.lang.String",
+      },
       "usage": "public java.lang.String repositoryUriForDigest()
 public java.lang.String repositoryUriForDigest(java.lang.String digest)",
     },
@@ -2149,7 +2477,9 @@ public java.lang.String repositoryUriForDigest(java.lang.String digest)",
           },
         },
       ],
-      "returnType": "java.lang.String",
+      "returnType": Object {
+        "formattingPattern": "java.lang.String",
+      },
       "usage": "public java.lang.String repositoryUriForTag()
 public java.lang.String repositoryUriForTag(java.lang.String tag)",
     },
@@ -2159,10 +2489,18 @@ public java.lang.String repositoryUriForTag(java.lang.String tag)",
       "displayName": "IResource",
       "fqn": "software.amazon.awscdk.core.IResource",
       "id": "@aws-cdk/core.IResource",
+      "location": Object {
+        "filename": "lib/resource.ts",
+        "line": 45,
+      },
       "packageName": "@aws-cdk/core",
       "packageVersion": "1.106.0",
     },
   ],
+  "location": Object {
+    "filename": "lib/repository.ts",
+    "line": 12,
+  },
   "properties": Array [
     Object {
       "default": undefined,
@@ -2283,6 +2621,7 @@ that might be different than the stack they were imported into.",
       "usage": "public java.lang.String getRepositoryUri();",
     },
   ],
+  "submodule": undefined,
 }
 `;
 
@@ -2626,6 +2965,10 @@ Object {
       "displayName": "Repository",
       "fqn": "aws_cdk.aws_ecr.Repository",
       "id": "@aws-cdk/aws-ecr.Repository",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 375,
+      },
       "packageName": "@aws-cdk/aws-ecr",
       "packageVersion": "1.106.0",
     },
@@ -2633,6 +2976,10 @@ Object {
       "displayName": "RepositoryBase",
       "fqn": "aws_cdk.aws_ecr.RepositoryBase",
       "id": "@aws-cdk/aws-ecr.RepositoryBase",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 114,
+      },
       "packageName": "@aws-cdk/aws-ecr",
       "packageVersion": "1.106.0",
     },
@@ -2640,6 +2987,10 @@ Object {
       "displayName": "IRepository",
       "fqn": "aws_cdk.aws_ecr.IRepository",
       "id": "@aws-cdk/aws-ecr.IRepository",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 12,
+      },
       "packageName": "@aws-cdk/aws-ecr",
       "packageVersion": "1.106.0",
     },
@@ -2674,7 +3025,18 @@ Object {
           },
         },
       ],
-      "returnType": "AddToResourcePolicyResult",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "AddToResourcePolicyResult",
+            "fqn": "aws_cdk.aws_iam.AddToResourcePolicyResult",
+            "id": "@aws-cdk/aws-iam.AddToResourcePolicyResult",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "def add_to_resource_policy(
   statement: PolicyStatement
 ) -> AddToResourcePolicyResult",
@@ -2719,7 +3081,18 @@ Object {
           },
         },
       ],
-      "returnType": "Grant",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Grant",
+            "fqn": "aws_cdk.aws_iam.Grant",
+            "id": "@aws-cdk/aws-iam.Grant",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "def grant(
   grantee: IGrantable,
   actions: str
@@ -2754,7 +3127,18 @@ Object {
           },
         },
       ],
-      "returnType": "Grant",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Grant",
+            "fqn": "aws_cdk.aws_iam.Grant",
+            "id": "@aws-cdk/aws-iam.Grant",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "def grant_pull(
   grantee: IGrantable
 ) -> Grant",
@@ -2788,7 +3172,18 @@ Object {
           },
         },
       ],
-      "returnType": "Grant",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Grant",
+            "fqn": "aws_cdk.aws_iam.Grant",
+            "id": "@aws-cdk/aws-iam.Grant",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "def grant_pull_push(
   grantee: IGrantable
 ) -> Grant",
@@ -2893,7 +3288,18 @@ on top of that filtering.",
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "aws_cdk.aws_events.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "def on_cloud_trail_event(
   id: str,
   description: str = None,
@@ -3015,7 +3421,18 @@ on top of that filtering.",
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "aws_cdk.aws_events.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "def on_cloud_trail_image_pushed(
   id: str,
   description: str = None,
@@ -3123,7 +3540,18 @@ on top of that filtering.",
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "aws_cdk.aws_events.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "def on_event(
   id: str,
   description: str = None,
@@ -3249,7 +3677,18 @@ on top of that filtering.",
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "aws_cdk.aws_events.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "def on_image_scan_completed(
   id: str,
   description: str = None,
@@ -3282,7 +3721,9 @@ on top of that filtering.",
           },
         },
       ],
-      "returnType": "str",
+      "returnType": Object {
+        "formattingPattern": "str",
+      },
       "usage": "def repository_uri_for_digest(
   digest: str = None
 ) -> str",
@@ -3310,7 +3751,9 @@ on top of that filtering.",
           },
         },
       ],
-      "returnType": "str",
+      "returnType": Object {
+        "formattingPattern": "str",
+      },
       "usage": "def repository_uri_for_tag(
   tag: str = None
 ) -> str",
@@ -3321,10 +3764,18 @@ on top of that filtering.",
       "displayName": "IResource",
       "fqn": "aws_cdk.core.IResource",
       "id": "@aws-cdk/core.IResource",
+      "location": Object {
+        "filename": "lib/resource.ts",
+        "line": 45,
+      },
       "packageName": "@aws-cdk/core",
       "packageVersion": "1.106.0",
     },
   ],
+  "location": Object {
+    "filename": "lib/repository.ts",
+    "line": 12,
+  },
   "properties": Array [
     Object {
       "default": undefined,
@@ -3445,6 +3896,7 @@ that might be different than the stack they were imported into.",
       "usage": "repository_uri: str",
     },
   ],
+  "submodule": undefined,
 }
 `;
 
@@ -3979,6 +4431,10 @@ Object {
       "displayName": "Repository",
       "fqn": "@aws-cdk/aws-ecr.Repository",
       "id": "@aws-cdk/aws-ecr.Repository",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 375,
+      },
       "packageName": "@aws-cdk/aws-ecr",
       "packageVersion": "1.106.0",
     },
@@ -3986,6 +4442,10 @@ Object {
       "displayName": "RepositoryBase",
       "fqn": "@aws-cdk/aws-ecr.RepositoryBase",
       "id": "@aws-cdk/aws-ecr.RepositoryBase",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 114,
+      },
       "packageName": "@aws-cdk/aws-ecr",
       "packageVersion": "1.106.0",
     },
@@ -3993,6 +4453,10 @@ Object {
       "displayName": "IRepository",
       "fqn": "@aws-cdk/aws-ecr.IRepository",
       "id": "@aws-cdk/aws-ecr.IRepository",
+      "location": Object {
+        "filename": "lib/repository.ts",
+        "line": 12,
+      },
       "packageName": "@aws-cdk/aws-ecr",
       "packageVersion": "1.106.0",
     },
@@ -4027,7 +4491,18 @@ Object {
           },
         },
       ],
-      "returnType": "AddToResourcePolicyResult",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "AddToResourcePolicyResult",
+            "fqn": "@aws-cdk/aws-iam.AddToResourcePolicyResult",
+            "id": "@aws-cdk/aws-iam.AddToResourcePolicyResult",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "public addToResourcePolicy(statement: PolicyStatement): AddToResourcePolicyResult",
     },
     Object {
@@ -4070,7 +4545,18 @@ Object {
           },
         },
       ],
-      "returnType": "Grant",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Grant",
+            "fqn": "@aws-cdk/aws-iam.Grant",
+            "id": "@aws-cdk/aws-iam.Grant",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "public grant(grantee: IGrantable, actions: string): Grant",
     },
     Object {
@@ -4102,7 +4588,18 @@ Object {
           },
         },
       ],
-      "returnType": "Grant",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Grant",
+            "fqn": "@aws-cdk/aws-iam.Grant",
+            "id": "@aws-cdk/aws-iam.Grant",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "public grantPull(grantee: IGrantable): Grant",
     },
     Object {
@@ -4134,7 +4631,18 @@ Object {
           },
         },
       ],
-      "returnType": "Grant",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Grant",
+            "fqn": "@aws-cdk/aws-iam.Grant",
+            "id": "@aws-cdk/aws-iam.Grant",
+            "packageName": "@aws-cdk/aws-iam",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "public grantPullPush(grantee: IGrantable): Grant",
     },
     Object {
@@ -4183,7 +4691,18 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "@aws-cdk/aws-events.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "public onCloudTrailEvent(id: string, options?: OnEventOptions): Rule",
     },
     Object {
@@ -4232,7 +4751,18 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "@aws-cdk/aws-events.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions): Rule",
     },
     Object {
@@ -4277,7 +4807,18 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "@aws-cdk/aws-events.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "public onEvent(id: string, options?: OnEventOptions): Rule",
     },
     Object {
@@ -4324,7 +4865,18 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "Rule",
+      "returnType": Object {
+        "formattingPattern": "%",
+        "types": Array [
+          Object {
+            "displayName": "Rule",
+            "fqn": "@aws-cdk/aws-events.Rule",
+            "id": "@aws-cdk/aws-events.Rule",
+            "packageName": "@aws-cdk/aws-events",
+            "packageVersion": "99.99.99",
+          },
+        ],
+      },
       "usage": "public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions): Rule",
     },
     Object {
@@ -4350,7 +4902,9 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "string",
+      "returnType": Object {
+        "formattingPattern": "string",
+      },
       "usage": "public repositoryUriForDigest(digest?: string): string",
     },
     Object {
@@ -4376,7 +4930,9 @@ that captures the event. This method will not create the Trail.",
           },
         },
       ],
-      "returnType": "string",
+      "returnType": Object {
+        "formattingPattern": "string",
+      },
       "usage": "public repositoryUriForTag(tag?: string): string",
     },
   ],
@@ -4385,10 +4941,18 @@ that captures the event. This method will not create the Trail.",
       "displayName": "IResource",
       "fqn": "@aws-cdk/core.IResource",
       "id": "@aws-cdk/core.IResource",
+      "location": Object {
+        "filename": "lib/resource.ts",
+        "line": 45,
+      },
       "packageName": "@aws-cdk/core",
       "packageVersion": "1.106.0",
     },
   ],
+  "location": Object {
+    "filename": "lib/repository.ts",
+    "line": 12,
+  },
   "properties": Array [
     Object {
       "default": undefined,
@@ -4509,6 +5073,7 @@ that might be different than the stack they were imported into.",
       "usage": "public readonly repositoryUri: string;",
     },
   ],
+  "submodule": undefined,
 }
 `;
 

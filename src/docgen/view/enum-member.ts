@@ -14,6 +14,8 @@ export class EnumMember {
       displayName: this.transpiled.name,
       fqn: this.transpiled.fqn,
       docs: extractDocs(this.em.docs),
+      location: this.em.enumType.locationInRepository,
+      submodule: this.em.enumType.namespace,
     };
   }
 }
