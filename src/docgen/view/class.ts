@@ -57,7 +57,7 @@ export class Class {
       displayName: this.transpiled.type.fqn.split('.').pop()!,
       docs: extractDocs(this.klass.docs),
       submodule: this.klass.namespace,
-      location: this.klass.locationInRepository,
+      location: this.klass.locationInModule,
     };
   }
 }

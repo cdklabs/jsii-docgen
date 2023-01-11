@@ -301,7 +301,7 @@ export class TranspiledType {
       packageName: this.source.assembly.name,
       packageVersion: this.source.assembly.version,
       submodule: this.submodulePath,
-      location: this.source.locationInRepository,
+      location: this.source.locationInModule,
     });
   }
 }
@@ -590,6 +590,10 @@ export interface TranspiledEnum {
    * The name.
    */
   readonly name: string;
+  /**
+   * The (transpiled) type.
+   */
+  readonly type: TranspiledType;
 }
 
 /**
@@ -604,6 +608,10 @@ export interface TranspiledEnumMember {
    * The name.
    */
   readonly name: string;
+  /**
+   * The (transpiled) type.
+   */
+  readonly type: TranspiledType;
 }
 
 /**

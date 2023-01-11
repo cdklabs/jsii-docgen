@@ -37,8 +37,8 @@ export class Interface {
       instanceMethods: this.instanceMethods.toJson(),
       properties: this.properties.toJson(),
       docs: extractDocs(this.iface.docs),
-      location: this.iface.locationInRepository,
-      submodule: this.iface.namespace,
+      location: this.iface.locationInModule,
+      submodule: this.transpiled.type.submodule,
     };
   }
 }

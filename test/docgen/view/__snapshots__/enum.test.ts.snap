@@ -9,7 +9,7 @@ Object {
   "fqn": "Amazon.CDK.AWS.ECR.TagMutability",
   "id": "@aws-cdk/aws-ecr.TagMutability",
   "location": Object {
-    "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+    "filename": "lib/repository.ts",
     "line": 653,
   },
   "members": Array [
@@ -83,7 +83,7 @@ Object {
   "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.TagMutability",
   "id": "@aws-cdk/aws-ecr.TagMutability",
   "location": Object {
-    "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+    "filename": "lib/repository.ts",
     "line": 653,
   },
   "members": Array [
@@ -157,7 +157,7 @@ Object {
   "fqn": "software.amazon.awscdk.services.ecr.TagMutability",
   "id": "@aws-cdk/aws-ecr.TagMutability",
   "location": Object {
-    "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+    "filename": "lib/repository.ts",
     "line": 653,
   },
   "members": Array [
@@ -231,7 +231,7 @@ Object {
   "fqn": "aws_cdk.aws_ecr.TagMutability",
   "id": "@aws-cdk/aws-ecr.TagMutability",
   "location": Object {
-    "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+    "filename": "lib/repository.ts",
     "line": 653,
   },
   "members": Array [
@@ -305,7 +305,7 @@ Object {
   "fqn": "@aws-cdk/aws-ecr.TagMutability",
   "id": "@aws-cdk/aws-ecr.TagMutability",
   "location": Object {
-    "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+    "filename": "lib/repository.ts",
     "line": 653,
   },
   "members": Array [

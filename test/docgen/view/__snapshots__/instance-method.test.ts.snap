@@ -18,7 +18,7 @@ Object {
       "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepository.Inspect.parameter.Inspector",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": undefined,
@@ -81,7 +81,7 @@ Object {
       "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.CfnPublicRepository.Inspect.parameter.inspector",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": undefined,
@@ -144,7 +144,7 @@ Object {
       "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.inspect.parameter.inspector",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": undefined,
@@ -207,7 +207,7 @@ Object {
       "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.inspect.parameter.inspector",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": undefined,
@@ -274,7 +274,7 @@ Object {
       "fqn": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": undefined,

@@ -12,7 +12,7 @@ Object {
   "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepositoryProps",
   "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
   "location": Object {
-    "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+    "filename": "lib/ecr.generated.ts",
     "line": 17,
   },
   "properties": Array [
@@ -212,7 +212,7 @@ Object {
   "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.CfnPublicRepositoryProps",
   "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
   "location": Object {
-    "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+    "filename": "lib/ecr.generated.ts",
     "line": 17,
   },
   "properties": Array [
@@ -412,7 +412,7 @@ Object {
   "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepositoryProps",
   "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
   "location": Object {
-    "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+    "filename": "lib/ecr.generated.ts",
     "line": 17,
   },
   "properties": Array [
@@ -612,7 +612,7 @@ Object {
   "fqn": "aws_cdk.aws_ecr.CfnPublicRepositoryProps",
   "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
   "location": Object {
-    "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+    "filename": "lib/ecr.generated.ts",
     "line": 17,
   },
   "properties": Array [
@@ -812,7 +812,7 @@ Object {
   "fqn": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
   "id": "@aws-cdk/aws-ecr.CfnPublicRepositoryProps",
   "location": Object {
-    "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+    "filename": "lib/ecr.generated.ts",
     "line": 17,
   },
   "properties": Array [

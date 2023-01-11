@@ -15,7 +15,7 @@ Object {
       "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepository.Initializer.parameter.Scope",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": undefined,
@@ -42,7 +42,7 @@ Object {
       "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepository.Initializer.parameter.Id",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": undefined,
@@ -60,7 +60,7 @@ Object {
       "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepository.Initializer.parameter.Props",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.props",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": true,
@@ -143,7 +143,7 @@ Object {
       "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.CfnPublicRepository.Initializer.parameter.scope",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": undefined,
@@ -170,7 +170,7 @@ Object {
       "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.CfnPublicRepository.Initializer.parameter.id",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": undefined,
@@ -188,7 +188,7 @@ Object {
       "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.CfnPublicRepository.Initializer.parameter.props",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.props",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": true,
@@ -271,7 +271,7 @@ Object {
       "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.Initializer.parameter.scope",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": undefined,
@@ -298,7 +298,7 @@ Object {
       "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.Initializer.parameter.id",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": undefined,
@@ -319,7 +319,7 @@ Object {
       "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.Initializer.parameter.repositoryCatalogData",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryCatalogData",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": true,
@@ -340,7 +340,7 @@ Object {
       "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.Initializer.parameter.repositoryName",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryName",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": true,
@@ -361,7 +361,7 @@ Object {
       "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.Initializer.parameter.repositoryPolicyText",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryPolicyText",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": true,
@@ -382,7 +382,7 @@ Object {
       "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.Initializer.parameter.tags",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.tags",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": true,
@@ -515,7 +515,7 @@ Object {
       "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.Initializer.parameter.scope",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": undefined,
@@ -542,7 +542,7 @@ Object {
       "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.Initializer.parameter.id",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": undefined,
@@ -563,7 +563,7 @@ Object {
       "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.Initializer.parameter.repository_catalog_data",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryCatalogData",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": true,
@@ -584,7 +584,7 @@ Object {
       "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.Initializer.parameter.repository_name",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryName",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": true,
@@ -605,7 +605,7 @@ Object {
       "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.Initializer.parameter.repository_policy_text",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.repositoryPolicyText",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": true,
@@ -626,7 +626,7 @@ Object {
       "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.Initializer.parameter.tags",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.tags",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": true,
@@ -763,7 +763,7 @@ Object {
       "fqn": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.scope",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": undefined,
@@ -790,7 +790,7 @@ Object {
       "fqn": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.id",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": undefined,
@@ -808,7 +808,7 @@ Object {
       "fqn": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.props",
       "id": "@aws-cdk/aws-ecr.CfnPublicRepository.Initializer.parameter.props",
       "location": Object {
-        "filename": "packages/@aws-cdk/aws-ecr/lib/ecr.generated.ts",
+        "filename": "lib/ecr.generated.ts",
         "line": 102,
       },
       "optional": true,

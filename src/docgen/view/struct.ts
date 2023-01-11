@@ -22,8 +22,8 @@ export class Struct {
       properties: this.properties.toJson(),
       docs: extractDocs(this.iface.docs),
       usage: `${this.transpiled.import}\n\n${this.transpiled.initialization}`,
-      location: this.iface.locationInRepository,
-      submodule: this.iface.namespace,
+      location: this.iface.locationInModule,
+      submodule: this.transpiled.type.submodule,
     };
   }
 }

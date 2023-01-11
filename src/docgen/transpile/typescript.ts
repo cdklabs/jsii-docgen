@@ -103,16 +103,20 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
   }
 
   public enum(enu: reflect.EnumType): transpile.TranspiledEnum {
+    const type = this.type(enu);
     return {
-      fqn: this.type(enu).fqn,
+      fqn: type.fqn,
       name: enu.name,
+      type,
     };
   }
 
   public enumMember(em: reflect.EnumMember): transpile.TranspiledEnumMember {
+    const type = this.type(em.enumType);
     return {
       fqn: `${this.enum(em.enumType).fqn}.${em.name}`,
       name: em.name,
+      type,
     };
   }
 

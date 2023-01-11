@@ -245,8 +245,8 @@ export class Documentation {
       metadata: {
         packageName: assembly.name,
         packageVersion: assembly.version,
-        submodule: submodulePath(submodule),
         repositoryUrl: assembly.repository.url,
+        submodule: submodulePath(submodule),
         submodules: allSubmodules ? assembly.submodules.map((s) => ({
           name: s.name,
           fqn: s.fqn,

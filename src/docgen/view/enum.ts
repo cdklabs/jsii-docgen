@@ -21,8 +21,8 @@ export class Enum {
       displayName: this.transpiled.fqn.split('.').pop()!,
       members: this.members.map((em) => em.toJson()),
       docs: extractDocs(this.enu.docs),
-      location: this.enu.locationInRepository,
-      submodule: this.enu.namespace,
+      location: this.enu.locationInModule,
+      submodule: this.transpiled.type.submodule,
     };
   }
 }

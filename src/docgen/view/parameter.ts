@@ -25,7 +25,7 @@ export class Parameter {
       default: this.parameter.spec.docs?.default,
       type: this.transpiledParam.typeReference.toJson(),
       docs: extractDocs(this.parameter.docs),
-      location: this.parameter.parentType.locationInRepository,
+      location: this.parameter.parentType.locationInModule,
       submodule: this.parameter.parentType.namespace,
     };
   }
