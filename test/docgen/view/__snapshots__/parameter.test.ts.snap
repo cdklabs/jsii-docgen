@@ -7,7 +7,12 @@ Object {
   "docs": Object {},
   "fqn": "Amazon.CDK.AWS.ECR.AuthorizationToken.GrantRead.parameter.Grantee",
   "id": "@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee",
+  "location": Object {
+    "filename": "packages/@aws-cdk/aws-ecr/lib/auth-token.ts",
+    "line": 8,
+  },
   "optional": undefined,
+  "submodule": undefined,
   "type": Object {
     "formattingPattern": "%",
     "types": Array [
@@ -39,7 +44,12 @@ Object {
   "docs": Object {},
   "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.AuthorizationToken.GrantRead.parameter.grantee",
   "id": "@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee",
+  "location": Object {
+    "filename": "packages/@aws-cdk/aws-ecr/lib/auth-token.ts",
+    "line": 8,
+  },
   "optional": undefined,
+  "submodule": undefined,
   "type": Object {
     "formattingPattern": "%",
     "types": Array [
@@ -71,7 +81,12 @@ Object {
   "docs": Object {},
   "fqn": "software.amazon.awscdk.services.ecr.AuthorizationToken.grantRead.parameter.grantee",
   "id": "@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee",
+  "location": Object {
+    "filename": "packages/@aws-cdk/aws-ecr/lib/auth-token.ts",
+    "line": 8,
+  },
   "optional": undefined,
+  "submodule": undefined,
   "type": Object {
     "formattingPattern": "%",
     "types": Array [
@@ -113,7 +128,12 @@ Object {
   "docs": Object {},
   "fqn": "aws_cdk.aws_ecr.AuthorizationToken.grant_read.parameter.grantee",
   "id": "@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee",
+  "location": Object {
+    "filename": "packages/@aws-cdk/aws-ecr/lib/auth-token.ts",
+    "line": 8,
+  },
   "optional": undefined,
+  "submodule": undefined,
   "type": Object {
     "formattingPattern": "%",
     "types": Array [
@@ -145,7 +165,12 @@ Object {
   "docs": Object {},
   "fqn": "@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee",
   "id": "@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee",
+  "location": Object {
+    "filename": "packages/@aws-cdk/aws-ecr/lib/auth-token.ts",
+    "line": 8,
+  },
   "optional": undefined,
+  "submodule": undefined,
   "type": Object {
     "formattingPattern": "%",
     "types": Array [

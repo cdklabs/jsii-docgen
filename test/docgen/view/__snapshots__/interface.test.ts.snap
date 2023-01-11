@@ -14,7 +14,7 @@ Object {
       "fqn": "Amazon.CDK.AWS.ECR.Repository",
       "id": "@aws-cdk/aws-ecr.Repository",
       "location": Object {
-        "filename": "lib/repository.ts",
+        "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
         "line": 375,
       },
       "packageName": "@aws-cdk/aws-ecr",
@@ -25,7 +25,7 @@ Object {
       "fqn": "Amazon.CDK.AWS.ECR.RepositoryBase",
       "id": "@aws-cdk/aws-ecr.RepositoryBase",
       "location": Object {
-        "filename": "lib/repository.ts",
+        "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
         "line": 114,
       },
       "packageName": "@aws-cdk/aws-ecr",
@@ -36,7 +36,7 @@ Object {
       "fqn": "Amazon.CDK.AWS.ECR.IRepository",
       "id": "@aws-cdk/aws-ecr.IRepository",
       "location": Object {
-        "filename": "lib/repository.ts",
+        "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
         "line": 12,
       },
       "packageName": "@aws-cdk/aws-ecr",
@@ -58,7 +58,12 @@ Object {
           "docs": Object {},
           "fqn": "Amazon.CDK.AWS.ECR.IRepository.AddToResourcePolicy.parameter.Statement",
           "id": "@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -101,7 +106,12 @@ Object {
           "docs": Object {},
           "fqn": "Amazon.CDK.AWS.ECR.IRepository.Grant.parameter.Grantee",
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -121,7 +131,12 @@ Object {
           "docs": Object {},
           "fqn": "Amazon.CDK.AWS.ECR.IRepository.Grant.parameter.Actions",
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "string",
           },
@@ -155,7 +170,12 @@ Object {
           "docs": Object {},
           "fqn": "Amazon.CDK.AWS.ECR.IRepository.GrantPull.parameter.Grantee",
           "id": "@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -198,7 +218,12 @@ Object {
           "docs": Object {},
           "fqn": "Amazon.CDK.AWS.ECR.IRepository.GrantPullPush.parameter.Grantee",
           "id": "@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -245,7 +270,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "Amazon.CDK.AWS.ECR.IRepository.OnCloudTrailEvent.parameter.Id",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "string",
           },
@@ -258,7 +288,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "Amazon.CDK.AWS.ECR.IRepository.OnCloudTrailEvent.parameter.Options",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.options",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -305,7 +340,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "Amazon.CDK.AWS.ECR.IRepository.OnCloudTrailImagePushed.parameter.Id",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "string",
           },
@@ -318,7 +358,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "Amazon.CDK.AWS.ECR.IRepository.OnCloudTrailImagePushed.parameter.Options",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.options",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -363,7 +408,12 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {},
           "fqn": "Amazon.CDK.AWS.ECR.IRepository.OnEvent.parameter.Id",
           "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "string",
           },
@@ -374,7 +424,12 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {},
           "fqn": "Amazon.CDK.AWS.ECR.IRepository.OnEvent.parameter.Options",
           "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.options",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -419,7 +474,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "Amazon.CDK.AWS.ECR.IRepository.OnImageScanCompleted.parameter.Id",
           "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "string",
           },
@@ -432,7 +492,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "Amazon.CDK.AWS.ECR.IRepository.OnImageScanCompleted.parameter.Options",
           "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.options",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -478,7 +543,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "Amazon.CDK.AWS.ECR.IRepository.RepositoryUriForDigest.parameter.Digest",
           "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "string",
           },
@@ -506,7 +576,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "Amazon.CDK.AWS.ECR.IRepository.RepositoryUriForTag.parameter.Tag",
           "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "string",
           },
@@ -524,7 +599,7 @@ that captures the event. This method will not create the Trail.",
       "fqn": "Amazon.CDK.IResource",
       "id": "@aws-cdk/core.IResource",
       "location": Object {
-        "filename": "lib/resource.ts",
+        "filename": "packages/@aws-cdk/core/lib/resource.ts",
         "line": 45,
       },
       "packageName": "@aws-cdk/core",
@@ -532,7 +607,7 @@ that captures the event. This method will not create the Trail.",
     },
   ],
   "location": Object {
-    "filename": "lib/repository.ts",
+    "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
     "line": 12,
   },
   "properties": Array [
@@ -994,7 +1069,7 @@ Object {
       "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.Repository",
       "id": "@aws-cdk/aws-ecr.Repository",
       "location": Object {
-        "filename": "lib/repository.ts",
+        "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
         "line": 375,
       },
       "packageName": "@aws-cdk/aws-ecr",
@@ -1005,7 +1080,7 @@ Object {
       "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.RepositoryBase",
       "id": "@aws-cdk/aws-ecr.RepositoryBase",
       "location": Object {
-        "filename": "lib/repository.ts",
+        "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
         "line": 114,
       },
       "packageName": "@aws-cdk/aws-ecr",
@@ -1016,7 +1091,7 @@ Object {
       "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.IRepository",
       "id": "@aws-cdk/aws-ecr.IRepository",
       "location": Object {
-        "filename": "lib/repository.ts",
+        "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
         "line": 12,
       },
       "packageName": "@aws-cdk/aws-ecr",
@@ -1038,7 +1113,12 @@ Object {
           "docs": Object {},
           "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.IRepository.AddToResourcePolicy.parameter.statement",
           "id": "@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -1081,7 +1161,12 @@ Object {
           "docs": Object {},
           "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.IRepository.Grant.parameter.grantee",
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -1101,7 +1186,12 @@ Object {
           "docs": Object {},
           "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.IRepository.Grant.parameter.actions",
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "*string",
           },
@@ -1135,7 +1225,12 @@ Object {
           "docs": Object {},
           "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.IRepository.GrantPull.parameter.grantee",
           "id": "@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -1178,7 +1273,12 @@ Object {
           "docs": Object {},
           "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.IRepository.GrantPullPush.parameter.grantee",
           "id": "@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -1225,7 +1325,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.IRepository.OnCloudTrailEvent.parameter.id",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "*string",
           },
@@ -1238,7 +1343,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.IRepository.OnCloudTrailEvent.parameter.options",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.options",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -1285,7 +1395,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.IRepository.OnCloudTrailImagePushed.parameter.id",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "*string",
           },
@@ -1298,7 +1413,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.IRepository.OnCloudTrailImagePushed.parameter.options",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.options",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -1343,7 +1463,12 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {},
           "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.IRepository.OnEvent.parameter.id",
           "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "*string",
           },
@@ -1354,7 +1479,12 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {},
           "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.IRepository.OnEvent.parameter.options",
           "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.options",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -1399,7 +1529,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.IRepository.OnImageScanCompleted.parameter.id",
           "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "*string",
           },
@@ -1412,7 +1547,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.IRepository.OnImageScanCompleted.parameter.options",
           "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.options",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -1458,7 +1598,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.IRepository.RepositoryUriForDigest.parameter.digest",
           "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "*string",
           },
@@ -1486,7 +1631,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.IRepository.RepositoryUriForTag.parameter.tag",
           "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "*string",
           },
@@ -1504,7 +1654,7 @@ that captures the event. This method will not create the Trail.",
       "fqn": "github.com/aws/aws-cdk-go/awscdk/awscdkcore.IResource",
       "id": "@aws-cdk/core.IResource",
       "location": Object {
-        "filename": "lib/resource.ts",
+        "filename": "packages/@aws-cdk/core/lib/resource.ts",
         "line": 45,
       },
       "packageName": "@aws-cdk/core",
@@ -1512,7 +1662,7 @@ that captures the event. This method will not create the Trail.",
     },
   ],
   "location": Object {
-    "filename": "lib/repository.ts",
+    "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
     "line": 12,
   },
   "properties": Array [
@@ -1974,7 +2124,7 @@ Object {
       "fqn": "software.amazon.awscdk.services.ecr.Repository",
       "id": "@aws-cdk/aws-ecr.Repository",
       "location": Object {
-        "filename": "lib/repository.ts",
+        "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
         "line": 375,
       },
       "packageName": "@aws-cdk/aws-ecr",
@@ -1985,7 +2135,7 @@ Object {
       "fqn": "software.amazon.awscdk.services.ecr.RepositoryBase",
       "id": "@aws-cdk/aws-ecr.RepositoryBase",
       "location": Object {
-        "filename": "lib/repository.ts",
+        "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
         "line": 114,
       },
       "packageName": "@aws-cdk/aws-ecr",
@@ -1996,7 +2146,7 @@ Object {
       "fqn": "software.amazon.awscdk.services.ecr.IRepository",
       "id": "@aws-cdk/aws-ecr.IRepository",
       "location": Object {
-        "filename": "lib/repository.ts",
+        "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
         "line": 12,
       },
       "packageName": "@aws-cdk/aws-ecr",
@@ -2018,7 +2168,12 @@ Object {
           "docs": Object {},
           "fqn": "software.amazon.awscdk.services.ecr.IRepository.addToResourcePolicy.parameter.statement",
           "id": "@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -2061,7 +2216,12 @@ Object {
           "docs": Object {},
           "fqn": "software.amazon.awscdk.services.ecr.IRepository.grant.parameter.grantee",
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -2081,7 +2241,12 @@ Object {
           "docs": Object {},
           "fqn": "software.amazon.awscdk.services.ecr.IRepository.grant.parameter.actions",
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "java.lang.String",
           },
@@ -2115,7 +2280,12 @@ Object {
           "docs": Object {},
           "fqn": "software.amazon.awscdk.services.ecr.IRepository.grantPull.parameter.grantee",
           "id": "@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -2158,7 +2328,12 @@ Object {
           "docs": Object {},
           "fqn": "software.amazon.awscdk.services.ecr.IRepository.grantPullPush.parameter.grantee",
           "id": "@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -2205,7 +2380,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "software.amazon.awscdk.services.ecr.IRepository.onCloudTrailEvent.parameter.id",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "java.lang.String",
           },
@@ -2218,7 +2398,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "software.amazon.awscdk.services.ecr.IRepository.onCloudTrailEvent.parameter.options",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.options",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -2266,7 +2451,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "software.amazon.awscdk.services.ecr.IRepository.onCloudTrailImagePushed.parameter.id",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "java.lang.String",
           },
@@ -2279,7 +2469,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "software.amazon.awscdk.services.ecr.IRepository.onCloudTrailImagePushed.parameter.options",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.options",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -2325,7 +2520,12 @@ public Rule onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushed
           "docs": Object {},
           "fqn": "software.amazon.awscdk.services.ecr.IRepository.onEvent.parameter.id",
           "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "java.lang.String",
           },
@@ -2336,7 +2536,12 @@ public Rule onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushed
           "docs": Object {},
           "fqn": "software.amazon.awscdk.services.ecr.IRepository.onEvent.parameter.options",
           "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.options",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -2382,7 +2587,12 @@ public Rule onEvent(java.lang.String id, OnEventOptions options)",
           },
           "fqn": "software.amazon.awscdk.services.ecr.IRepository.onImageScanCompleted.parameter.id",
           "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "java.lang.String",
           },
@@ -2395,7 +2605,12 @@ public Rule onEvent(java.lang.String id, OnEventOptions options)",
           },
           "fqn": "software.amazon.awscdk.services.ecr.IRepository.onImageScanCompleted.parameter.options",
           "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.options",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -2442,7 +2657,12 @@ public Rule onImageScanCompleted(java.lang.String id, OnImageScanCompletedOption
           },
           "fqn": "software.amazon.awscdk.services.ecr.IRepository.repositoryUriForDigest.parameter.digest",
           "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "java.lang.String",
           },
@@ -2471,7 +2691,12 @@ public java.lang.String repositoryUriForDigest(java.lang.String digest)",
           },
           "fqn": "software.amazon.awscdk.services.ecr.IRepository.repositoryUriForTag.parameter.tag",
           "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "java.lang.String",
           },
@@ -2490,7 +2715,7 @@ public java.lang.String repositoryUriForTag(java.lang.String tag)",
       "fqn": "software.amazon.awscdk.core.IResource",
       "id": "@aws-cdk/core.IResource",
       "location": Object {
-        "filename": "lib/resource.ts",
+        "filename": "packages/@aws-cdk/core/lib/resource.ts",
         "line": 45,
       },
       "packageName": "@aws-cdk/core",
@@ -2498,7 +2723,7 @@ public java.lang.String repositoryUriForTag(java.lang.String tag)",
     },
   ],
   "location": Object {
-    "filename": "lib/repository.ts",
+    "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
     "line": 12,
   },
   "properties": Array [
@@ -2966,7 +3191,7 @@ Object {
       "fqn": "aws_cdk.aws_ecr.Repository",
       "id": "@aws-cdk/aws-ecr.Repository",
       "location": Object {
-        "filename": "lib/repository.ts",
+        "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
         "line": 375,
       },
       "packageName": "@aws-cdk/aws-ecr",
@@ -2977,7 +3202,7 @@ Object {
       "fqn": "aws_cdk.aws_ecr.RepositoryBase",
       "id": "@aws-cdk/aws-ecr.RepositoryBase",
       "location": Object {
-        "filename": "lib/repository.ts",
+        "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
         "line": 114,
       },
       "packageName": "@aws-cdk/aws-ecr",
@@ -2988,7 +3213,7 @@ Object {
       "fqn": "aws_cdk.aws_ecr.IRepository",
       "id": "@aws-cdk/aws-ecr.IRepository",
       "location": Object {
-        "filename": "lib/repository.ts",
+        "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
         "line": 12,
       },
       "packageName": "@aws-cdk/aws-ecr",
@@ -3010,7 +3235,12 @@ Object {
           "docs": Object {},
           "fqn": "aws_cdk.aws_ecr.IRepository.add_to_resource_policy.parameter.statement",
           "id": "@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -3055,7 +3285,12 @@ Object {
           "docs": Object {},
           "fqn": "aws_cdk.aws_ecr.IRepository.grant.parameter.grantee",
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -3075,7 +3310,12 @@ Object {
           "docs": Object {},
           "fqn": "aws_cdk.aws_ecr.IRepository.grant.parameter.actions",
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "str",
           },
@@ -3112,7 +3352,12 @@ Object {
           "docs": Object {},
           "fqn": "aws_cdk.aws_ecr.IRepository.grant_pull.parameter.grantee",
           "id": "@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -3157,7 +3402,12 @@ Object {
           "docs": Object {},
           "fqn": "aws_cdk.aws_ecr.IRepository.grant_pull_push.parameter.grantee",
           "id": "@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -3206,7 +3456,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_event.parameter.id",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "str",
           },
@@ -3219,7 +3474,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_event.parameter.description",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.description",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "str",
           },
@@ -3238,7 +3498,12 @@ on top of that filtering.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_event.parameter.event_pattern",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.eventPattern",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -3260,7 +3525,12 @@ on top of that filtering.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_event.parameter.rule_name",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.ruleName",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "str",
           },
@@ -3273,7 +3543,12 @@ on top of that filtering.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_event.parameter.target",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.target",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -3326,7 +3601,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_image_pushed.parameter.id",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "str",
           },
@@ -3339,7 +3619,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_image_pushed.parameter.description",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.description",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "str",
           },
@@ -3358,7 +3643,12 @@ on top of that filtering.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_image_pushed.parameter.event_pattern",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.eventPattern",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -3380,7 +3670,12 @@ on top of that filtering.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_image_pushed.parameter.rule_name",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.ruleName",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "str",
           },
@@ -3393,7 +3688,12 @@ on top of that filtering.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_image_pushed.parameter.target",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.target",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -3415,7 +3715,12 @@ on top of that filtering.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_cloud_trail_image_pushed.parameter.image_tag",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.imageTag",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "str",
           },
@@ -3458,7 +3763,12 @@ on top of that filtering.",
           "docs": Object {},
           "fqn": "aws_cdk.aws_ecr.IRepository.on_event.parameter.id",
           "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "str",
           },
@@ -3471,7 +3781,12 @@ on top of that filtering.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_event.parameter.description",
           "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.description",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "str",
           },
@@ -3490,7 +3805,12 @@ on top of that filtering.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_event.parameter.event_pattern",
           "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.eventPattern",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -3512,7 +3832,12 @@ on top of that filtering.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_event.parameter.rule_name",
           "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.ruleName",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "str",
           },
@@ -3525,7 +3850,12 @@ on top of that filtering.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_event.parameter.target",
           "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.target",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -3576,7 +3906,12 @@ on top of that filtering.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_image_scan_completed.parameter.id",
           "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "str",
           },
@@ -3589,7 +3924,12 @@ on top of that filtering.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_image_scan_completed.parameter.description",
           "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.description",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "str",
           },
@@ -3608,7 +3948,12 @@ on top of that filtering.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_image_scan_completed.parameter.event_pattern",
           "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.eventPattern",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -3630,7 +3975,12 @@ on top of that filtering.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_image_scan_completed.parameter.rule_name",
           "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.ruleName",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "str",
           },
@@ -3643,7 +3993,12 @@ on top of that filtering.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_image_scan_completed.parameter.target",
           "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.target",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -3666,7 +4021,12 @@ on top of that filtering.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.on_image_scan_completed.parameter.image_tags",
           "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.imageTags",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "typing.List[%]",
             "types": Array [
@@ -3715,7 +4075,12 @@ on top of that filtering.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.repository_uri_for_digest.parameter.digest",
           "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "str",
           },
@@ -3745,7 +4110,12 @@ on top of that filtering.",
           },
           "fqn": "aws_cdk.aws_ecr.IRepository.repository_uri_for_tag.parameter.tag",
           "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "str",
           },
@@ -3765,7 +4135,7 @@ on top of that filtering.",
       "fqn": "aws_cdk.core.IResource",
       "id": "@aws-cdk/core.IResource",
       "location": Object {
-        "filename": "lib/resource.ts",
+        "filename": "packages/@aws-cdk/core/lib/resource.ts",
         "line": 45,
       },
       "packageName": "@aws-cdk/core",
@@ -3773,7 +4143,7 @@ on top of that filtering.",
     },
   ],
   "location": Object {
-    "filename": "lib/repository.ts",
+    "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
     "line": 12,
   },
   "properties": Array [
@@ -4432,7 +4802,7 @@ Object {
       "fqn": "@aws-cdk/aws-ecr.Repository",
       "id": "@aws-cdk/aws-ecr.Repository",
       "location": Object {
-        "filename": "lib/repository.ts",
+        "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
         "line": 375,
       },
       "packageName": "@aws-cdk/aws-ecr",
@@ -4443,7 +4813,7 @@ Object {
       "fqn": "@aws-cdk/aws-ecr.RepositoryBase",
       "id": "@aws-cdk/aws-ecr.RepositoryBase",
       "location": Object {
-        "filename": "lib/repository.ts",
+        "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
         "line": 114,
       },
       "packageName": "@aws-cdk/aws-ecr",
@@ -4454,7 +4824,7 @@ Object {
       "fqn": "@aws-cdk/aws-ecr.IRepository",
       "id": "@aws-cdk/aws-ecr.IRepository",
       "location": Object {
-        "filename": "lib/repository.ts",
+        "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
         "line": 12,
       },
       "packageName": "@aws-cdk/aws-ecr",
@@ -4476,7 +4846,12 @@ Object {
           "docs": Object {},
           "fqn": "@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement",
           "id": "@aws-cdk/aws-ecr.IRepository.addToResourcePolicy.parameter.statement",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -4519,7 +4894,12 @@ Object {
           "docs": Object {},
           "fqn": "@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee",
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.grantee",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -4539,7 +4919,12 @@ Object {
           "docs": Object {},
           "fqn": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "string",
           },
@@ -4573,7 +4958,12 @@ Object {
           "docs": Object {},
           "fqn": "@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee",
           "id": "@aws-cdk/aws-ecr.IRepository.grantPull.parameter.grantee",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -4616,7 +5006,12 @@ Object {
           "docs": Object {},
           "fqn": "@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee",
           "id": "@aws-cdk/aws-ecr.IRepository.grantPullPush.parameter.grantee",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -4663,7 +5058,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "string",
           },
@@ -4676,7 +5076,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.options",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailEvent.parameter.options",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -4723,7 +5128,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "string",
           },
@@ -4736,7 +5146,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.options",
           "id": "@aws-cdk/aws-ecr.IRepository.onCloudTrailImagePushed.parameter.options",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -4781,7 +5196,12 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {},
           "fqn": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id",
           "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "string",
           },
@@ -4792,7 +5212,12 @@ that captures the event. This method will not create the Trail.",
           "docs": Object {},
           "fqn": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.options",
           "id": "@aws-cdk/aws-ecr.IRepository.onEvent.parameter.options",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -4837,7 +5262,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id",
           "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.id",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": undefined,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "string",
           },
@@ -4850,7 +5280,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.options",
           "id": "@aws-cdk/aws-ecr.IRepository.onImageScanCompleted.parameter.options",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "%",
             "types": Array [
@@ -4896,7 +5331,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest",
           "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForDigest.parameter.digest",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "string",
           },
@@ -4924,7 +5364,12 @@ that captures the event. This method will not create the Trail.",
           },
           "fqn": "@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag",
           "id": "@aws-cdk/aws-ecr.IRepository.repositoryUriForTag.parameter.tag",
+          "location": Object {
+            "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
+            "line": 12,
+          },
           "optional": true,
+          "submodule": undefined,
           "type": Object {
             "formattingPattern": "string",
           },
@@ -4942,7 +5387,7 @@ that captures the event. This method will not create the Trail.",
       "fqn": "@aws-cdk/core.IResource",
       "id": "@aws-cdk/core.IResource",
       "location": Object {
-        "filename": "lib/resource.ts",
+        "filename": "packages/@aws-cdk/core/lib/resource.ts",
         "line": 45,
       },
       "packageName": "@aws-cdk/core",
@@ -4950,7 +5395,7 @@ that captures the event. This method will not create the Trail.",
     },
   ],
   "location": Object {
-    "filename": "lib/repository.ts",
+    "filename": "packages/@aws-cdk/aws-ecr/lib/repository.ts",
     "line": 12,
   },
   "properties": Array [
