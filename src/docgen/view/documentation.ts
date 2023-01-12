@@ -6,6 +6,9 @@ import * as glob from 'glob-promise';
 import * as reflect from 'jsii-reflect';
 import { TargetLanguage, UnknownSnippetMode } from 'jsii-rosetta';
 import { transliterateAssembly } from 'jsii-rosetta/lib/commands/transliterate';
+import { Npm } from './_npm';
+import { ApiReference } from './api-reference';
+import { Readme } from './readme';
 import { CorruptedAssemblyError, LanguageNotSupportedError } from '../..';
 import { Json } from '../render/json';
 import { MarkdownDocument } from '../render/markdown-doc';
@@ -17,9 +20,6 @@ import { JavaTranspile } from '../transpile/java';
 import { PythonTranspile } from '../transpile/python';
 import { Transpile, Language } from '../transpile/transpile';
 import { TypeScriptTranspile } from '../transpile/typescript';
-import { Npm } from './_npm';
-import { ApiReference } from './api-reference';
-import { Readme } from './readme';
 
 // https://github.com/aws/jsii/blob/main/packages/jsii-reflect/lib/assembly.ts#L175
 const NOT_FOUND_IN_ASSEMBLY_REGEX = /Type '(.*)\..*' not found in assembly (.*)$/;

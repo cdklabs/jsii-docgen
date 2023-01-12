@@ -1,11 +1,11 @@
 import * as reflect from 'jsii-reflect';
-import { ClassSchema, extractDocs } from '../schema';
-import { Transpile, TranspiledClass, TranspiledType } from '../transpile/transpile';
 import { Constants } from './constants';
 import { Initializer } from './initializer';
 import { InstanceMethods } from './instance-methods';
 import { Properties } from './properties';
 import { StaticFunctions } from './static-functions';
+import { ClassSchema, extractDocs } from '../schema';
+import { Transpile, TranspiledClass, TranspiledType } from '../transpile/transpile';
 
 const CONSTRUCT_CLASS = 'constructs.Construct';
 

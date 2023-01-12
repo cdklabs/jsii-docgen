@@ -1,11 +1,11 @@
 import * as reflect from 'jsii-reflect';
-import { ApiReferenceSchema } from '../schema';
-import { Transpile } from '../transpile/transpile';
 import { Classes } from './classes';
 import { Constructs } from './constructs';
 import { Enums } from './enums';
 import { Interfaces } from './interfaces';
 import { Structs } from './structs';
+import { ApiReferenceSchema } from '../schema';
+import { Transpile } from '../transpile/transpile';
 
 /**
  * Render an API reference based on the jsii assembly.
