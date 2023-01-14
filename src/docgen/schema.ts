@@ -471,6 +471,8 @@ export interface AssemblyMetadataSchema extends JsiiEntityMetadata {
    * Submodules in this assembly.
    */
   readonly submodules?: SubmoduleSchema[];
+
+  readonly targets?: string[];
 }
 
 export interface SubmoduleSchema {

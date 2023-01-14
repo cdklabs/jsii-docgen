@@ -20,7 +20,7 @@ See https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html or 'cdk boot
 #### Initializers <a name=\\"Initializers\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.Initializer\\"></a>
 
 \`\`\`csharp
-using Amazon.CDK.AWS.CloudFront;
+using undefined;
 
 new EdgeFunction(Construct Scope, string Id, EdgeFunctionProps Props);
 \`\`\`
@@ -325,7 +325,7 @@ Sum over 5 minutes
 ##### \`IsConstruct\` <a name=\\"IsConstruct\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isConstruct\\"></a>
 
 \`\`\`csharp
-using Amazon.CDK.AWS.CloudFront;
+using undefined;
 
 EdgeFunction.IsConstruct(object X);
 \`\`\`
@@ -341,7 +341,7 @@ Return whether the given object is a Construct.
 ##### \`IsResource\` <a name=\\"IsResource\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isResource\\"></a>
 
 \`\`\`csharp
-using Amazon.CDK.AWS.CloudFront;
+using undefined;
 
 EdgeFunction.IsResource(IConstruct Construct);
 \`\`\`
@@ -584,7 +584,7 @@ Properties for creating a Lambda@Edge function.
 #### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.Initializer\\"></a>
 
 \`\`\`csharp
-using Amazon.CDK.AWS.CloudFront;
+using undefined;
 
 new EdgeFunctionProps {
     Duration MaxEventAge = null,
@@ -1377,9 +1377,9 @@ Provides default values for certain regional information points.
 ##### \`ServicePrincipal\` <a name=\\"ServicePrincipal\\" id=\\"aws-cdk-lib.region_info.Default.servicePrincipal\\"></a>
 
 \`\`\`go
-import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
+import \\"region_info/region_info\\"
 
-regioninfo.Default_ServicePrincipal(service *string, region *string, urlSuffix *string) *string
+region_info.Default_ServicePrincipal(service *string, region *string, urlSuffix *string) *string
 \`\`\`
 
 Computes a \\"standard\\" AWS Service principal for a given service, region and suffix.
@@ -1453,9 +1453,9 @@ A database of regional information.
 ##### \`Find\` <a name=\\"Find\\" id=\\"aws-cdk-lib.region_info.Fact.find\\"></a>
 
 \`\`\`go
-import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
+import \\"region_info/region_info\\"
 
-regioninfo.Fact_Find(region *string, name *string) *string
+region_info.Fact_Find(region *string, name *string) *string
 \`\`\`
 
 Retrieves a fact from this Fact database.
@@ -1479,9 +1479,9 @@ the name of the fact being looked up (see the \`FactName\` class for details).
 ##### \`Register\` <a name=\\"Register\\" id=\\"aws-cdk-lib.region_info.Fact.register\\"></a>
 
 \`\`\`go
-import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
+import \\"region_info/region_info\\"
 
-regioninfo.Fact_Register(fact IFact, allowReplacing *bool)
+region_info.Fact_Register(fact IFact, allowReplacing *bool)
 \`\`\`
 
 Registers a new fact in this Fact database.
@@ -1505,9 +1505,9 @@ whether new facts can replace existing facts or not.
 ##### \`RequireFact\` <a name=\\"RequireFact\\" id=\\"aws-cdk-lib.region_info.Fact.requireFact\\"></a>
 
 \`\`\`go
-import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
+import \\"region_info/region_info\\"
 
-regioninfo.Fact_RequireFact(region *string, name *string) *string
+region_info.Fact_RequireFact(region *string, name *string) *string
 \`\`\`
 
 Retrieve a fact from the Fact database.
@@ -1534,9 +1534,9 @@ the name of the fact being looked up (see the \`FactName\` class for details).
 ##### \`Unregister\` <a name=\\"Unregister\\" id=\\"aws-cdk-lib.region_info.Fact.unregister\\"></a>
 
 \`\`\`go
-import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
+import \\"region_info/region_info\\"
 
-regioninfo.Fact_Unregister(region *string, name *string, value *string)
+region_info.Fact_Unregister(region *string, name *string, value *string)
 \`\`\`
 
 Removes a fact from the database.
@@ -1591,9 +1591,9 @@ All standardized fact names.
 #### Initializers <a name=\\"Initializers\\" id=\\"aws-cdk-lib.region_info.FactName.Initializer\\"></a>
 
 \`\`\`go
-import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
+import \\"region_info/region_info\\"
 
-regioninfo.NewFactName() FactName
+region_info.NewFactName() FactName
 \`\`\`
 
 | **Name** | **Type** | **Description** |
@@ -1613,9 +1613,9 @@ regioninfo.NewFactName() FactName
 ##### \`ServicePrincipal\` <a name=\\"ServicePrincipal\\" id=\\"aws-cdk-lib.region_info.FactName.servicePrincipal\\"></a>
 
 \`\`\`go
-import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
+import \\"region_info/region_info\\"
 
-regioninfo.FactName_ServicePrincipal(service *string) *string
+region_info.FactName_ServicePrincipal(service *string) *string
 \`\`\`
 
 The name of the regional service principal for a given service.
@@ -1796,9 +1796,9 @@ the service name (e.g: s3.amazonaws.com).
 ##### \`Get\` <a name=\\"Get\\" id=\\"aws-cdk-lib.region_info.RegionInfo.get\\"></a>
 
 \`\`\`go
-import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
+import \\"region_info/region_info\\"
 
-regioninfo.RegionInfo_Get(name *string) RegionInfo
+region_info.RegionInfo_Get(name *string) RegionInfo
 \`\`\`
 
 Obtain region info for a given region name.
@@ -1814,9 +1814,9 @@ the name of the region (e.g: us-east-1).
 ##### \`RegionMap\` <a name=\\"RegionMap\\" id=\\"aws-cdk-lib.region_info.RegionInfo.regionMap\\"></a>
 
 \`\`\`go
-import \\"github.com/aws/aws-cdk-go/awscdk/v2/regioninfo\\"
+import \\"region_info/region_info\\"
 
-regioninfo.RegionInfo_RegionMap(factName *string) *map[string]*string
+region_info.RegionInfo_RegionMap(factName *string) *map[string]*string
 \`\`\`
 
 Retrieves a collection of all fact values for all regions that fact is defined in.
@@ -2058,7 +2058,7 @@ See https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html or 'cdk boot
 #### Initializers <a name=\\"Initializers\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.Initializer\\"></a>
 
 \`\`\`java
-import software.amazon.awscdk.services.cloudfront.experimental.EdgeFunction;
+import .experimental.EdgeFunction;
 
 EdgeFunction.Builder.create(Construct scope, java.lang.String id)
 //  .maxEventAge(Duration)
@@ -2870,7 +2870,7 @@ Sum over 5 minutes
 ##### \`isConstruct\` <a name=\\"isConstruct\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isConstruct\\"></a>
 
 \`\`\`java
-import software.amazon.awscdk.services.cloudfront.experimental.EdgeFunction;
+import .experimental.EdgeFunction;
 
 EdgeFunction.isConstruct(java.lang.Object x)
 \`\`\`
@@ -2886,7 +2886,7 @@ Return whether the given object is a Construct.
 ##### \`isResource\` <a name=\\"isResource\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunction.isResource\\"></a>
 
 \`\`\`java
-import software.amazon.awscdk.services.cloudfront.experimental.EdgeFunction;
+import .experimental.EdgeFunction;
 
 EdgeFunction.isResource(IConstruct construct)
 \`\`\`
@@ -3129,7 +3129,7 @@ Properties for creating a Lambda@Edge function.
 #### Initializer <a name=\\"Initializer\\" id=\\"@aws-cdk/aws-cloudfront.experimental.EdgeFunctionProps.Initializer\\"></a>
 
 \`\`\`java
-import software.amazon.awscdk.services.cloudfront.experimental.EdgeFunctionProps;
+import .experimental.EdgeFunctionProps;
 
 EdgeFunctionProps.builder()
 //  .maxEventAge(Duration)

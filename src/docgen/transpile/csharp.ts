@@ -17,14 +17,18 @@ export class CSharpTranspile extends transpile.TranspileBase {
     // parent name and the submodule. we also allow submodules not to have
     // explicit target names, in which case we need to append the pascal-cased
     // submodule name to the parent package name.
-    if (moduleLike instanceof reflect.Submodule) {
-      const parent = this.getParentModule(moduleLike);
-      const parentFqn = parent.targets?.dotnet?.namespace;
+    // if (moduleLike instanceof reflect.Submodule) {
+    //   const parent = this.getParentModule(moduleLike);
+    //   const parentFqn = parent.targets?.dotnet?.namespace;
 
-      // if the submodule does not explicitly define a dotnet package name, we need to deduce it from the parent
-      const submoduleCSharpPackage = csharpPackage ?? `${parentFqn}.${Case.pascal(moduleLike.name)}`;
-      return { name: parentFqn, submodule: submoduleCSharpPackage };
-    }
+    //   // if the submodule does not explicitly define a dotnet package name, we need to deduce it from the parent
+    //   const submoduleCSharpPackage = csharpPackage ?? `${parentFqn}.${Case.pascal(moduleLike.name)}`;
+    //   const moduleParts = submoduleCSharpPackage.split('.');
+    //   return {
+    //     name: moduleParts?.[moduleParts.length - 2],
+    //     submodule: moduleParts?.[moduleParts.length - 1],
+    //   };
+    // }
 
     return { name: csharpPackage };
   }

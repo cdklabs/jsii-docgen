@@ -1,4 +1,5 @@
 import * as reflect from 'jsii-reflect';
+import { AssemblyMetadataSchema } from '../../../src';
 import { MarkdownRenderer } from '../../../src/docgen/render/markdown-render';
 import { Language } from '../../../src/docgen/transpile/transpile';
 import { LANGUAGE_SPECIFIC } from '../../../src/docgen/view/documentation';
@@ -7,10 +8,10 @@ import { Assemblies } from '../assemblies';
 
 const assembly: reflect.Assembly = Assemblies.instance.withoutSubmodules;
 
-const metadata = {
+const metadata: AssemblyMetadataSchema = {
   packageName: assembly.name,
   packageVersion: assembly.version,
-  fingerprint: assembly.fingerprint,
+  targets: Object.keys(assembly.targets ?? {}),
 };
 
 const findInterface = (): reflect.InterfaceType => {

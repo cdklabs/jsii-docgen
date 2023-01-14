@@ -119,6 +119,7 @@ export class MarkdownRenderer {
     this.metadata = {
       packageName: options.packageName,
       packageVersion: options.packageVersion,
+      targets: options.targets,
       submodule: options.submodule,
       repositoryUrl: options.repositoryUrl,
     };

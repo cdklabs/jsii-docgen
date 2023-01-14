@@ -59,23 +59,27 @@ export class JavaTranspile extends transpile.TranspileBase {
     // parent name and the submodule. we also allow submodules not to have
     // explicit target names, in which case we need to append the snake-cased
     // submodule name to the parent package name.
-    if (moduleLike instanceof reflect.Submodule) {
-      const parent = this.getParentModule(moduleLike);
-      const parentFqn = parent.targets?.java?.package;
+    // if (moduleLike instanceof reflect.Submodule) {
+    //   const parent = this.getParentModule(moduleLike);
+    //   const parentFqn = parent.targets?.java?.package;
 
-      // if the submodule does not explicitly define a java package name, we need to deduce it from the parent
-      // based on jsii-pacmak package naming conventions.
-      // see https://github.com/aws/jsii/blob/b329670bf9ec222fad5fc0d614dcddd5daca7af5/packages/jsii-pacmak/lib/targets/java.ts#L3150
-      const submoduleJavaPackage = javaPackage ?? `${parentFqn}.${Case.snake(moduleLike.name)}`;
+    //   // if the submodule does not explicitly define a java package name, we need to deduce it from the parent
+    //   // based on jsii-pacmak package naming conventions.
+    //   // see https://github.com/aws/jsii/blob/b329670bf9ec222fad5fc0d614dcddd5daca7af5/packages/jsii-pacmak/lib/targets/java.ts#L3150
+    //   const submoduleJavaPackage = javaPackage ?? `${parentFqn}.${Case.snake(moduleLike.name)}`;
 
-      // for some modules, the parent module's Java package is a prefix of
-      // the submodule's Java package, e.g.
-      // { name: "software.amazon.awscdk", submodule: "software.amazon.awscdk.services.ecr" }
-      //
-      // but it's possible the names differ, for example in aws-cdk-lib:
-      // { name: "software.amazon.awscdk.core", submodule: "software.amazon.awscdk.services.ecr" }
-      return { name: parentFqn, submodule: submoduleJavaPackage };
-    }
+    //   // for some modules, the parent module's Java package is a prefix of
+    //   // the submodule's Java package, e.g.
+    //   // { name: "software.amazon.awscdk", submodule: "software.amazon.awscdk.services.ecr" }
+    //   //
+    //   // but it's possible the names differ, for example in aws-cdk-lib:
+    //   // { name: "software.amazon.awscdk.core", submodule: "software.amazon.awscdk.services.ecr" }
+    //   const moduleParts = submoduleJavaPackage.split('.');
+    //   return {
+    //     name: moduleParts?.[moduleParts.length - 2],
+    //     submodule: moduleParts?.[moduleParts.length - 1],
+    //   };
+    // }
 
     return { name: javaPackage };
   }

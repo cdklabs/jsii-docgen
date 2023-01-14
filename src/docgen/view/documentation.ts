@@ -246,6 +246,7 @@ export class Documentation {
         packageName: assembly.name,
         packageVersion: assembly.version,
         repositoryUrl: assembly.repository.url,
+        targets: Object.keys(assembly.targets),
         submodule: submodulePath(submodule),
         submodules: allSubmodules ? assembly.submodules.map((s) => ({
           name: s.name,
@@ -332,7 +333,7 @@ export class Documentation {
         // note that the only reason to translate dependant assemblies is to show code examples
         // for expanded python arguments - which we don't to right now anyway.
         // we don't want to make any assumption of the directory structure, so this is the most
-        // robuse way to detect the root assembly.
+        // robust way to detect the root assembly.
         const spec = loadAssemblyFromFile(dotJsii);
         if (language && spec.name === this.assemblyName) {
           const packageDir = path.dirname(dotJsii);

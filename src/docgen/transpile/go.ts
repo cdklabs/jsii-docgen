@@ -10,18 +10,18 @@ export class GoTranspile extends transpile.TranspileBase {
 
   public moduleLike(moduleLike: reflect.ModuleLike): transpile.TranspiledModuleLike {
     if (moduleLike instanceof reflect.Submodule) {
-      const parent = this.moduleLike(this.getParentModule(moduleLike));
-      const parentFqn = parent.submodule
-        ? `${parent.name}/${parent.submodule}`
-        : parent.name;
+      // const parent = this.moduleLike(this.getParentModule(moduleLike));
+      // const parentFqn = parent.submodule
+      //   ? `${parent.name}/${parent.submodule}`
+      //   : parent.name;
 
       // `packageName` can be specified explicitly in configuration or
       // auto-generated from node package name.
       // Example: @aws-cdk/aws-ecr -> awscdkawsecr
       const packageName = moduleLike.targets?.go?.packageName
-        ?? moduleLike.name.toLowerCase().replace(/[^a-z0-9]/g, '');
+        ?? moduleLike.name.toLowerCase();
 
-      return { name: parentFqn, submodule: packageName };
+      return { name: packageName, submodule: packageName };
     } else {
       // This is the root module
       const moduleName = moduleLike.targets?.go?.moduleName;

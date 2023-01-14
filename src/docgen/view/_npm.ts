@@ -1,6 +1,8 @@
 import { spawn, SpawnOptionsWithoutStdio } from 'child_process';
 import * as os from 'os';
+import * as path from 'path';
 import { join } from 'path';
+import * as fs from 'fs-extra';
 import { major } from 'semver';
 import { NoSpaceLeftOnDevice, UnInstallablePackageError, NpmError } from '../../errors';
 
@@ -8,11 +10,34 @@ export class Npm {
   #npmCommand: string | undefined;
 
   public constructor(
-    private readonly workingDirectory: string,
+    private readonly workingDirectory?: string,
     private readonly logger = console.log,
     npmCommand?: string,
   ) {
     this.#npmCommand = npmCommand;
+  }
+
+  private async _workingDirectory(): Promise<string> {
+    return this.workingDirectory ?? (await fs.mkdtemp(path.join(os.tmpdir(), path.sep)));
+  }
+
+  /**
+   * Returns a list of package versions available for the given package name.
+   *
+   * @param packageName the name of the package to get the list of versions for.
+   */
+  public async versions(packageName: string): Promise<string[]> {
+    const result = await this.runCommand(
+      await this.npmCommandPath(),
+      ['view', packageName, 'versions', '--json'],
+      chunksToObject,
+      {
+        cwd: await this._workingDirectory(),
+        shell: true,
+      },
+    );
+    assertSuccess(result);
+    return result.stdout as any;
   }
 
   /**
@@ -41,7 +66,7 @@ export class Npm {
       ],
       chunksToObject,
       {
-        cwd: this.workingDirectory,
+        cwd: await this._workingDirectory(),
         shell: true,
       },
     );
@@ -78,18 +103,18 @@ export class Npm {
     // npm@8 is needed so that we also install peerDependencies - they are needed to construct
     // the full type system.
     this.logger('The npm in $PATH is not >= v7. Installing npm@8 locally...');
-    const result= await this.runCommand(
+    const result = await this.runCommand(
       'npm',
       ['install', 'npm@8', '--no-package-lock', '--no-save', '--json'],
       chunksToObject,
       {
-        cwd: this.workingDirectory,
+        cwd: await this._workingDirectory(),
         shell: true,
       },
     );
     assertSuccess(result);
 
-    this.#npmCommand = join(this.workingDirectory, 'node_modules', '.bin', 'npm');
+    this.#npmCommand = join(await this._workingDirectory(), 'node_modules', '.bin', 'npm');
     this.logger(`Done installing npm@8 at ${this.#npmCommand}`);
     return this.#npmCommand;
   }
@@ -178,7 +203,7 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
     stdout.error && !detail && !summary ? `: ${stdout.error}` : '',
   ].join('');
 
-  if (typeof(summary) === 'string' && summary.includes('must provide string spec')) {
+  if (typeof (summary) === 'string' && summary.includes('must provide string spec')) {
     // happens when package.json dependencies don't have a spec.
     // for example: https://github.com/markusl/cdk-codepipeline-bitbucket-build-result-reporter/blob/v0.0.7/package.json
     throw new UnInstallablePackageError(summary);
@@ -186,7 +211,7 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
 
   // happens when a package has been deleted from npm
   // for example: sns-app-jsii-component
-  if (!code && !detail && typeof(summary) === 'string' && summary.includes('Cannot convert undefined or null to object')) {
+  if (!code && !detail && typeof (summary) === 'string' && summary.includes('Cannot convert undefined or null to object')) {
     throw new UnInstallablePackageError(summary);
   }
 
