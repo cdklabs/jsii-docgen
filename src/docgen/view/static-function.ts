@@ -20,11 +20,15 @@ export class StaticFunction {
     return {
       fqn: `${this.transpiled.parentType.fqn}.${this.transpiled.name}`,
       displayName: this.transpiled.name,
-      id: `${this.method.parentType.fqn}.${this.method.name}`,
+      jsiiId: `${this.method.parentType.fqn}.${this.method.name}`,
       parameters: this.parameters.map((param) => param.toJson()),
       docs: extractDocs(this.method.docs),
       usage: `${this.transpiled.import}\n\n${this.transpiled.invocations}`,
       returnType: this.transpiled.returnType,
+      submoduleJsiiId: this.transpiled.parentType.submoduleJsiiId,
+      submoduleFqn: this.transpiled.parentType.submoduleFqn,
+      sourceFile: this.transpiled.parentType.source.locationInModule?.filename,
+      sourceLine: this.transpiled.parentType.source.locationInModule?.line,
     };
   }
 }

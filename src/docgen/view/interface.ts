@@ -29,7 +29,7 @@ export class Interface {
 
   public toJson(): InterfaceSchema {
     return {
-      id: this.iface.fqn,
+      jsiiId: this.iface.fqn,
       fqn: this.transpiled.type.fqn,
       displayName: this.transpiled.type.fqn.split('.').pop()!,
       implementations: this.implementations.map((impl) => impl.toJson()),
@@ -37,8 +37,10 @@ export class Interface {
       instanceMethods: this.instanceMethods.toJson(),
       properties: this.properties.toJson(),
       docs: extractDocs(this.iface.docs),
-      location: this.iface.locationInModule,
-      submodule: this.transpiled.type.submodule,
+      submoduleJsiiId: this.transpiled.type.submoduleJsiiId,
+      submoduleFqn: this.transpiled.type.submoduleFqn,
+      sourceFile: this.transpiled.type.source.locationInModule?.filename,
+      sourceLine: this.transpiled.type.source.locationInModule?.line,
     };
   }
 }

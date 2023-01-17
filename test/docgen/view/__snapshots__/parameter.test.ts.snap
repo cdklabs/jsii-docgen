@@ -6,20 +6,21 @@ Object {
   "displayName": "Grantee",
   "docs": Object {},
   "fqn": "Amazon.CDK.AWS.ECR.AuthorizationToken.GrantRead.parameter.Grantee",
-  "id": "@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee",
-  "location": Object {
-    "filename": "lib/auth-token.ts",
-    "line": 8,
-  },
+  "jsiiId": "@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee",
   "optional": undefined,
-  "submodule": undefined,
+  "sourceFile": "lib/auth-token.ts",
+  "sourceLine": 8,
+  "submoduleFqn": undefined,
+  "submoduleJsiiId": undefined,
   "type": Object {
     "formattingPattern": "%",
     "types": Array [
       Object {
         "displayName": "IGrantable",
         "fqn": "Amazon.CDK.AWS.IAM.IGrantable",
-        "id": "@aws-cdk/aws-iam.IGrantable",
+        "jsiiId": "@aws-cdk/aws-iam.IGrantable",
+        "jsiiProjectName": "@aws-cdk/aws-iam",
+        "jsiiProjectVersion": "99.99.99",
         "packageName": "@aws-cdk/aws-iam",
         "packageVersion": "99.99.99",
       },
@@ -31,7 +32,7 @@ Object {
 exports[`csharp snapshot 2`] = `
 " \`Grantee\`<sup>Required</sup> <a name=\\"Grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
-- *Type:* Amazon.CDK.AWS.IAM.IGrantable
+- *Type:* undefined
 
 ---
 "
@@ -43,20 +44,21 @@ Object {
   "displayName": "grantee",
   "docs": Object {},
   "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.AuthorizationToken.GrantRead.parameter.grantee",
-  "id": "@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee",
-  "location": Object {
-    "filename": "lib/auth-token.ts",
-    "line": 8,
-  },
+  "jsiiId": "@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee",
   "optional": undefined,
-  "submodule": undefined,
+  "sourceFile": "lib/auth-token.ts",
+  "sourceLine": 8,
+  "submoduleFqn": undefined,
+  "submoduleJsiiId": undefined,
   "type": Object {
     "formattingPattern": "%",
     "types": Array [
       Object {
         "displayName": "IGrantable",
         "fqn": "github.com/aws/aws-cdk-go/awscdk/awsiam/awscdkawsiam.IGrantable",
-        "id": "@aws-cdk/aws-iam.IGrantable",
+        "jsiiId": "@aws-cdk/aws-iam.IGrantable",
+        "jsiiProjectName": "@aws-cdk/aws-iam",
+        "jsiiProjectVersion": "99.99.99",
         "packageName": "@aws-cdk/aws-iam",
         "packageVersion": "99.99.99",
       },
@@ -68,7 +70,7 @@ Object {
 exports[`go snapshot 2`] = `
 " \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
-- *Type:* github.com/aws/aws-cdk-go/awscdk/awsiam/awscdkawsiam.IGrantable
+- *Type:* undefined
 
 ---
 "
@@ -80,20 +82,21 @@ Object {
   "displayName": "grantee",
   "docs": Object {},
   "fqn": "software.amazon.awscdk.services.ecr.AuthorizationToken.grantRead.parameter.grantee",
-  "id": "@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee",
-  "location": Object {
-    "filename": "lib/auth-token.ts",
-    "line": 8,
-  },
+  "jsiiId": "@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee",
   "optional": undefined,
-  "submodule": undefined,
+  "sourceFile": "lib/auth-token.ts",
+  "sourceLine": 8,
+  "submoduleFqn": undefined,
+  "submoduleJsiiId": undefined,
   "type": Object {
     "formattingPattern": "%",
     "types": Array [
       Object {
         "displayName": "IGrantable",
         "fqn": "software.amazon.awscdk.services.iam.IGrantable",
-        "id": "@aws-cdk/aws-iam.IGrantable",
+        "jsiiId": "@aws-cdk/aws-iam.IGrantable",
+        "jsiiProjectName": "@aws-cdk/aws-iam",
+        "jsiiProjectVersion": "99.99.99",
         "packageName": "@aws-cdk/aws-iam",
         "packageVersion": "99.99.99",
       },
@@ -105,7 +108,7 @@ Object {
 exports[`java snapshot 2`] = `
 " \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
-- *Type:* software.amazon.awscdk.services.iam.IGrantable
+- *Type:* undefined
 
 ---
 "
@@ -114,7 +117,7 @@ exports[`java snapshot 2`] = `
 exports[`newlines in "defaults" are removed 1`] = `
 " \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 - *Default:* default option with a newline
 
 ---
@@ -127,20 +130,21 @@ Object {
   "displayName": "grantee",
   "docs": Object {},
   "fqn": "aws_cdk.aws_ecr.AuthorizationToken.grant_read.parameter.grantee",
-  "id": "@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee",
-  "location": Object {
-    "filename": "lib/auth-token.ts",
-    "line": 8,
-  },
+  "jsiiId": "@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee",
   "optional": undefined,
-  "submodule": undefined,
+  "sourceFile": "lib/auth-token.ts",
+  "sourceLine": 8,
+  "submoduleFqn": undefined,
+  "submoduleJsiiId": undefined,
   "type": Object {
     "formattingPattern": "%",
     "types": Array [
       Object {
         "displayName": "IGrantable",
         "fqn": "aws_cdk.aws_iam.IGrantable",
-        "id": "@aws-cdk/aws-iam.IGrantable",
+        "jsiiId": "@aws-cdk/aws-iam.IGrantable",
+        "jsiiProjectName": "@aws-cdk/aws-iam",
+        "jsiiProjectVersion": "99.99.99",
         "packageName": "@aws-cdk/aws-iam",
         "packageVersion": "99.99.99",
       },
@@ -152,7 +156,7 @@ Object {
 exports[`python snapshot 2`] = `
 " \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
-- *Type:* aws_cdk.aws_iam.IGrantable
+- *Type:* undefined
 
 ---
 "
@@ -164,20 +168,21 @@ Object {
   "displayName": "grantee",
   "docs": Object {},
   "fqn": "@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee",
-  "id": "@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee",
-  "location": Object {
-    "filename": "lib/auth-token.ts",
-    "line": 8,
-  },
+  "jsiiId": "@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee",
   "optional": undefined,
-  "submodule": undefined,
+  "sourceFile": "lib/auth-token.ts",
+  "sourceLine": 8,
+  "submoduleFqn": undefined,
+  "submoduleJsiiId": undefined,
   "type": Object {
     "formattingPattern": "%",
     "types": Array [
       Object {
         "displayName": "IGrantable",
         "fqn": "@aws-cdk/aws-iam.IGrantable",
-        "id": "@aws-cdk/aws-iam.IGrantable",
+        "jsiiId": "@aws-cdk/aws-iam.IGrantable",
+        "jsiiProjectName": "@aws-cdk/aws-iam",
+        "jsiiProjectVersion": "99.99.99",
         "packageName": "@aws-cdk/aws-iam",
         "packageVersion": "99.99.99",
       },
@@ -189,7 +194,7 @@ Object {
 exports[`typescript snapshot 2`] = `
 " \`grantee\`<sup>Required</sup> <a name=\\"grantee\\" id=\\"@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 ---
 "

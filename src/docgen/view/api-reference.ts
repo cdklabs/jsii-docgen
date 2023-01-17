@@ -6,11 +6,13 @@ import { Constructs } from './constructs';
 import { Enums } from './enums';
 import { Interfaces } from './interfaces';
 import { Structs } from './structs';
+import { Submodules } from './submodules';
 
 /**
  * Render an API reference based on the jsii assembly.
  */
 export class ApiReference {
+  private readonly submodules: Submodules;
   private readonly constructs: Constructs;
   private readonly structs: Structs;
   private readonly interfaces: Interfaces;
@@ -22,6 +24,7 @@ export class ApiReference {
     submodule?: reflect.Submodule,
     allSubmodules?: boolean,
   ) {
+    const submodules: reflect.Submodule[] = this.sortByName(assembly.submodules);
     let classes: reflect.ClassType[];
     let interfaces: reflect.InterfaceType[];
     let enums: reflect.EnumType[];
@@ -35,6 +38,7 @@ export class ApiReference {
       enums = this.sortByName(submodule ? submodule.enums : assembly.enums);
     }
 
+    this.submodules = new Submodules(transpile, submodules);
     this.constructs = new Constructs(transpile, classes);
     this.classes = new Classes(transpile, classes);
     this.structs = new Structs(transpile, interfaces);
@@ -47,6 +51,7 @@ export class ApiReference {
    */
   public toJson(): ApiReferenceSchema {
     return {
+      submodules: this.submodules.toJson(),
       constructs: this.constructs.toJson(),
       classes: this.classes.toJson(),
       structs: this.structs.toJson(),
@@ -55,7 +60,7 @@ export class ApiReference {
     };
   }
 
-  private sortByName<Type extends reflect.Type>(arr: readonly Type[]): Type[] {
+  private sortByName<T extends { name: string }>(arr: readonly T[]): T[] {
     return [...arr].sort((s1, s2) => s1.name.localeCompare(s2.name));
   }
 }

@@ -118,6 +118,25 @@ export class UnsupportedLanguageError extends Error {
   }
 }
 
+
+/**
+ * Outcome of transpiling a jsii submodule.
+ */
+export interface TranspiledSubmodule {
+  /**
+   * The language specific submodule name the type belongs to.
+   */
+  jsiiId: string;
+  /**
+   * The language specific fqn.
+   */
+  fqn: string;
+  /**
+   * The readme.
+   */
+  readme?: string;
+}
+
 /**
  * Outcome of transpiling a jsii struct.
  */
@@ -237,17 +256,14 @@ export interface TranspiledInterface {
  * Outcome of transpiling a generic jsii type.
  */
 export class TranspiledType {
-
   /**
    * The source type this was transliterated from.
    */
   public readonly source: reflect.Type;
-
   /**
    * The transliteration language.
    */
   public readonly language: Language;
-
   /**
    * The language specific fqn.
    */
@@ -267,11 +283,12 @@ export class TranspiledType {
   /**
    * The language specific submodule name the type belongs to.
    */
-  public readonly submodule?: string;
+  public readonly submoduleJsiiId?: string;
   /**
    * The language-independent name of the submodule the type belongs to.
    */
-  public readonly submodulePath?: string;
+  public readonly submoduleFqn?: string;
+
 
   public constructor(options: {
     source: reflect.Type;
@@ -280,8 +297,8 @@ export class TranspiledType {
     name: string;
     namespace?: string;
     module: string;
-    submodule?: string;
-    submodulePath?: string;
+    submoduleJsiiId?: string;
+    submoduleFqn?: string;
   }) {
     this.source = options.source;
     this.language = options.language;
@@ -289,19 +306,23 @@ export class TranspiledType {
     this.name = options.name;
     this.namespace = options.namespace;
     this.module = options.module;
-    this.submodule = options.submodule;
-    this.submodulePath = options.submodulePath;
+    this.submoduleJsiiId = options.submoduleJsiiId;
+    this.submoduleFqn = options.submoduleFqn;
   }
 
   toJson(): JsiiEntity {
     return filterUndefined({
-      id: this.source.fqn,
+      jsiiProjectName: this.source.assembly.name,
+      jsiiProjectVersion: this.source.assembly.version,
       fqn: this.fqn,
       displayName: this.name,
-      packageName: this.source.assembly.name,
+      jsiiId: this.source.fqn,
+      packageName: this.source.assembly.targets?.[this.language.targetName]?.namespace,
       packageVersion: this.source.assembly.version,
-      submodule: this.submodulePath,
-      location: this.source.locationInModule,
+      submoduleJsiiId: this.submoduleJsiiId,
+      submoduleFqn: this.submoduleFqn,
+      sourceFilePath: this.source.locationInModule?.filename,
+      sourceLineNumber: this.source.locationInModule?.line,
     });
   }
 }
@@ -526,12 +547,15 @@ export class TranspiledTypeReference {
         formattingPattern: '%',
         types: [
           filterUndefined({
-            id: this.ref.fqn,
+            jsiiId: this.ref.fqn,
+            jsiiProjectName: this.type.source.assembly.name,
+            jsiiProjectVersion: packageVersion,
             displayName: this.type.name,
             fqn: this.type.fqn,
             packageName: this.type.source.assembly.name,
             packageVersion,
-            submodule: this.type.submodulePath,
+            submoduleJsiiId: this.type.submoduleFqn,
+            submoduleFqn: this.type.submoduleFqn,
           }),
         ],
       };
@@ -666,6 +690,11 @@ export interface Transpile {
    * @default '#{fqn}'
    */
   readonly linkFormatter?: (type: TranspiledType) => string;
+
+  /**
+   * Transpile a submodule.
+   */
+  submodule(submodule: reflect.Submodule): TranspiledSubmodule;
 
   /**
    * Transpile a module like object (Assembly | Submodule)
@@ -867,7 +896,7 @@ export abstract class TranspileBase implements Transpile {
 
       if (submodules.length > 1) {
         // can never happen, but the array data structure forces this handling.
-        throw new Error(`Found multiple submodulues with fqn ${submoduleFqn}`);
+        throw new Error(`Found multiple submodules with fqn ${submoduleFqn}`);
       }
 
       if (submodules.length === 0) {

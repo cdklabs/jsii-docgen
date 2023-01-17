@@ -10,7 +10,7 @@ import { CorruptedAssemblyError, LanguageNotSupportedError } from '../..';
 import { Json } from '../render/json';
 import { MarkdownDocument } from '../render/markdown-doc';
 import { MarkdownFormattingOptions, MarkdownRenderer } from '../render/markdown-render';
-import { Schema, CURRENT_SCHEMA_VERSION, submodulePath } from '../schema';
+import { Schema, CURRENT_SCHEMA_VERSION, submoduleJsiiId } from '../schema';
 import { CSharpTranspile } from '../transpile/csharp';
 import { GoTranspile } from '../transpile/go';
 import { JavaTranspile } from '../transpile/java';
@@ -193,7 +193,6 @@ export class Documentation {
    * Generate markdown.
    */
   public async toJson(options: RenderOptions): Promise<Json<Schema>> {
-
     const language = options.language ?? Language.TYPESCRIPT;
     const loose = options.loose ?? true;
     const validate = options.validate ?? false;
@@ -213,9 +212,8 @@ export class Documentation {
       throw new Error('Cannot call toJson with allSubmodules and a specific submodule both selected.');
     }
 
-    const { assembly, transpile } = await this.languageSpecific(language, { loose, validate });
+    const { assembly, transpile, packageName, moduleFqn } = await this.languageSpecific(language, { loose, validate });
     const targets = assembly.targets;
-
     if (!targets) {
       throw new Error(`Assembly ${this.assemblyFqn} does not have any targets defined`);
     }
@@ -243,16 +241,16 @@ export class Documentation {
       version: CURRENT_SCHEMA_VERSION,
       language: language.toString(),
       metadata: {
-        packageName: assembly.name,
-        packageVersion: assembly.version,
+        jsiiProjectName: assembly.name,
+        jsiiProjectVersion: assembly.version,
+        jsiiProjectLanguages: Object.keys(assembly.targets),
         repositoryUrl: assembly.repository.url,
-        targets: Object.keys(assembly.targets),
-        submodule: submodulePath(submodule),
-        submodules: allSubmodules ? assembly.submodules.map((s) => ({
-          name: s.name,
-          fqn: s.fqn,
-          readme: s.readme?.markdown,
-        })) : undefined,
+        repositoryDir: assembly.repository.directory,
+        packageName: packageName,
+        packageVersion: assembly.version,
+        moduleFqn: moduleFqn,
+        submoduleJsiiId: submoduleJsiiId(submodule),
+        submoduleFqn: submodule?.fqn,
       },
       readme: readme?.render(),
       apiReference: apiReference?.toJson(),
@@ -287,9 +285,37 @@ export class Documentation {
   private async languageSpecific(
     lang: Language,
     options: Required<TransliterationOptions>,
-  ): Promise<{ assembly: reflect.Assembly; transpile: Transpile }> {
+  ): Promise<{
+      assembly: reflect.Assembly;
+      transpile: Transpile;
+      packageName: string;
+      moduleFqn: string;
+    }> {
     const { rosettaTarget, transpile } = LANGUAGE_SPECIFIC[lang.toString()];
-    return { assembly: await this.createAssembly(rosettaTarget, options), transpile };
+    const assembly = await this.createAssembly(rosettaTarget, options);
+    let moduleFqn = '';
+    let packageName = '';
+    if (lang === Language.CSHARP) {
+      packageName = assembly.targets?.dotnet?.packageId;
+      moduleFqn = assembly.targets?.dotnet?.namespace;
+    }
+    if (lang === Language.GO) {
+      packageName = assembly.targets?.go?.moduleName;
+      moduleFqn = assembly.targets?.go?.packageName;
+    }
+    if (lang === Language.JAVA) {
+      packageName = assembly.targets?.java?.maven?.groupId;
+      moduleFqn = assembly.targets?.java?.maven?.artifactId;
+    }
+    if (lang === Language.PYTHON) {
+      packageName = assembly.targets?.python?.distName;
+      moduleFqn = assembly.targets?.python?.module;
+    }
+    if (lang === Language.TYPESCRIPT) {
+      packageName = assembly.name;
+      moduleFqn = assembly.name;
+    }
+    return { assembly, transpile, packageName, moduleFqn };
   }
 
   /**
@@ -315,7 +341,6 @@ export class Documentation {
     language: TargetLanguage | undefined,
     options: Required<TransliterationOptions>,
   ): Promise<reflect.Assembly> {
-
     const cacheKey = `lang:${language ?? 'ts'}.loose:${options.loose}.validate:${options.validate}`;
     const cached = this.assembliesCache.get(cacheKey);
     if (cached) {
@@ -331,8 +356,8 @@ export class Documentation {
       for (let dotJsii of await glob.promise(`${workdir}/**/${SPEC_FILE_NAME}`)) {
         // we only transliterate the top level assembly and not the entire type-system.
         // note that the only reason to translate dependant assemblies is to show code examples
-        // for expanded python arguments - which we don't to right now anyway.
-        // we don't want to make any assumption of the directory structure, so this is the most
+        // for expanded python arguments - which we don't do right now anyway.
+        // We don't want to make any assumption of the directory structure, so this is the most
         // robust way to detect the root assembly.
         const spec = loadAssemblyFromFile(dotJsii);
         if (language && spec.name === this.assemblyName) {
@@ -352,7 +377,6 @@ export class Documentation {
     this.assembliesCache.set(cacheKey, created);
     return created;
   }
-
 }
 
 export const LANGUAGE_SPECIFIC = {

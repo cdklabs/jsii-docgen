@@ -8,9 +8,12 @@ import { Assemblies } from '../assemblies';
 const assembly: reflect.Assembly = Assemblies.instance.withoutSubmodules;
 
 const metadata: AssemblyMetadataSchema = {
-  packageName: assembly.name,
+  jsiiProjectName: assembly.name,
+  jsiiProjectVersion: assembly.version,
+  jsiiProjectLanguages: Object.keys(assembly.targets ?? []),
+  packageName: assembly.targets?.python?.distName,
   packageVersion: assembly.version,
-  targets: Object.keys(assembly.targets ?? {}),
+  moduleFqn: assembly.targets?.python?.module,
 };
 
 const findStruct = (): reflect.InterfaceType => {

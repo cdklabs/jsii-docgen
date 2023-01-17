@@ -15,12 +15,16 @@ export class Property {
     return {
       fqn: `${this.transpiled.parentType.fqn}.property.${this.transpiled.name}`,
       displayName: this.transpiled.name,
-      id: `${this.property.parentType.fqn}.property.${this.property.name}`,
+      jsiiId: `${this.property.parentType.fqn}.property.${this.property.name}`,
       optional: this.transpiled.optional === true ? true : undefined, // to save space
       default: this.property.spec.docs?.default,
       type: this.transpiled.typeReference.toJson(),
       docs: extractDocs(this.property.docs),
       usage: this.transpiled.declaration,
+      submoduleJsiiId: this.transpiled.parentType.submoduleJsiiId,
+      submoduleFqn: this.transpiled.parentType.submoduleFqn,
+      sourceFile: this.transpiled.parentType.source.locationInModule?.filename,
+      sourceLine: this.transpiled.parentType.source.locationInModule?.line,
     };
   }
 }

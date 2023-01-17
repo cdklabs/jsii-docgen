@@ -7,7 +7,7 @@ Object {
     "summary": "Examines the CloudFormation resource and discloses attributes.",
   },
   "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepository.Inspect",
-  "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect",
+  "jsiiId": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect",
   "parameters": Array [
     Object {
       "default": undefined,
@@ -16,20 +16,21 @@ Object {
         "summary": "- tree inspector to collect and process attributes.",
       },
       "fqn": "Amazon.CDK.AWS.ECR.CfnPublicRepository.Inspect.parameter.Inspector",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
-      "location": Object {
-        "filename": "lib/ecr.generated.ts",
-        "line": 102,
-      },
+      "jsiiId": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
       "optional": undefined,
-      "submodule": undefined,
+      "sourceFile": "lib/ecr.generated.ts",
+      "sourceLine": 102,
+      "submoduleFqn": undefined,
+      "submoduleJsiiId": undefined,
       "type": Object {
         "formattingPattern": "%",
         "types": Array [
           Object {
             "displayName": "TreeInspector",
             "fqn": "Amazon.CDK.TreeInspector",
-            "id": "@aws-cdk/core.TreeInspector",
+            "jsiiId": "@aws-cdk/core.TreeInspector",
+            "jsiiProjectName": "@aws-cdk/core",
+            "jsiiProjectVersion": "99.99.99",
             "packageName": "@aws-cdk/core",
             "packageVersion": "99.99.99",
           },
@@ -40,6 +41,10 @@ Object {
   "returnType": Object {
     "formattingPattern": "void",
   },
+  "sourceFile": "lib/ecr.generated.ts",
+  "sourceLine": 102,
+  "submoduleFqn": undefined,
+  "submoduleJsiiId": undefined,
   "usage": "private void Inspect(TreeInspector Inspector)",
 }
 `;
@@ -55,7 +60,7 @@ Examines the CloudFormation resource and discloses attributes.
 
 # \`Inspector\`<sup>Required</sup> <a name=\\"Inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
-- *Type:* Amazon.CDK.TreeInspector
+- *Type:* undefined
 
 tree inspector to collect and process attributes.
 
@@ -70,7 +75,7 @@ Object {
     "summary": "Examines the CloudFormation resource and discloses attributes.",
   },
   "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.CfnPublicRepository.Inspect",
-  "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect",
+  "jsiiId": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect",
   "parameters": Array [
     Object {
       "default": undefined,
@@ -79,20 +84,21 @@ Object {
         "summary": "- tree inspector to collect and process attributes.",
       },
       "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.CfnPublicRepository.Inspect.parameter.inspector",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
-      "location": Object {
-        "filename": "lib/ecr.generated.ts",
-        "line": 102,
-      },
+      "jsiiId": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
       "optional": undefined,
-      "submodule": undefined,
+      "sourceFile": "lib/ecr.generated.ts",
+      "sourceLine": 102,
+      "submoduleFqn": undefined,
+      "submoduleJsiiId": undefined,
       "type": Object {
         "formattingPattern": "%",
         "types": Array [
           Object {
             "displayName": "TreeInspector",
             "fqn": "github.com/aws/aws-cdk-go/awscdk/awscdkcore.TreeInspector",
-            "id": "@aws-cdk/core.TreeInspector",
+            "jsiiId": "@aws-cdk/core.TreeInspector",
+            "jsiiProjectName": "@aws-cdk/core",
+            "jsiiProjectVersion": "99.99.99",
             "packageName": "@aws-cdk/core",
             "packageVersion": "99.99.99",
           },
@@ -103,6 +109,10 @@ Object {
   "returnType": Object {
     "formattingPattern": "",
   },
+  "sourceFile": "lib/ecr.generated.ts",
+  "sourceLine": 102,
+  "submoduleFqn": undefined,
+  "submoduleJsiiId": undefined,
   "usage": "func Inspect(inspector TreeInspector)",
 }
 `;
@@ -118,7 +128,7 @@ Examines the CloudFormation resource and discloses attributes.
 
 # \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
-- *Type:* github.com/aws/aws-cdk-go/awscdk/awscdkcore.TreeInspector
+- *Type:* undefined
 
 tree inspector to collect and process attributes.
 
@@ -133,7 +143,7 @@ Object {
     "summary": "Examines the CloudFormation resource and discloses attributes.",
   },
   "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.inspect",
-  "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect",
+  "jsiiId": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect",
   "parameters": Array [
     Object {
       "default": undefined,
@@ -142,20 +152,21 @@ Object {
         "summary": "- tree inspector to collect and process attributes.",
       },
       "fqn": "software.amazon.awscdk.services.ecr.CfnPublicRepository.inspect.parameter.inspector",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
-      "location": Object {
-        "filename": "lib/ecr.generated.ts",
-        "line": 102,
-      },
+      "jsiiId": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
       "optional": undefined,
-      "submodule": undefined,
+      "sourceFile": "lib/ecr.generated.ts",
+      "sourceLine": 102,
+      "submoduleFqn": undefined,
+      "submoduleJsiiId": undefined,
       "type": Object {
         "formattingPattern": "%",
         "types": Array [
           Object {
             "displayName": "TreeInspector",
             "fqn": "software.amazon.awscdk.core.TreeInspector",
-            "id": "@aws-cdk/core.TreeInspector",
+            "jsiiId": "@aws-cdk/core.TreeInspector",
+            "jsiiProjectName": "@aws-cdk/core",
+            "jsiiProjectVersion": "99.99.99",
             "packageName": "@aws-cdk/core",
             "packageVersion": "99.99.99",
           },
@@ -166,6 +177,10 @@ Object {
   "returnType": Object {
     "formattingPattern": "void",
   },
+  "sourceFile": "lib/ecr.generated.ts",
+  "sourceLine": 102,
+  "submoduleFqn": undefined,
+  "submoduleJsiiId": undefined,
   "usage": "public void inspect(TreeInspector inspector)",
 }
 `;
@@ -181,7 +196,7 @@ Examines the CloudFormation resource and discloses attributes.
 
 # \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
-- *Type:* software.amazon.awscdk.core.TreeInspector
+- *Type:* undefined
 
 tree inspector to collect and process attributes.
 
@@ -196,7 +211,7 @@ Object {
     "summary": "Examines the CloudFormation resource and discloses attributes.",
   },
   "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.inspect",
-  "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect",
+  "jsiiId": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect",
   "parameters": Array [
     Object {
       "default": undefined,
@@ -205,20 +220,21 @@ Object {
         "summary": "- tree inspector to collect and process attributes.",
       },
       "fqn": "aws_cdk.aws_ecr.CfnPublicRepository.inspect.parameter.inspector",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
-      "location": Object {
-        "filename": "lib/ecr.generated.ts",
-        "line": 102,
-      },
+      "jsiiId": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
       "optional": undefined,
-      "submodule": undefined,
+      "sourceFile": "lib/ecr.generated.ts",
+      "sourceLine": 102,
+      "submoduleFqn": undefined,
+      "submoduleJsiiId": undefined,
       "type": Object {
         "formattingPattern": "%",
         "types": Array [
           Object {
             "displayName": "TreeInspector",
             "fqn": "aws_cdk.core.TreeInspector",
-            "id": "@aws-cdk/core.TreeInspector",
+            "jsiiId": "@aws-cdk/core.TreeInspector",
+            "jsiiProjectName": "@aws-cdk/core",
+            "jsiiProjectVersion": "99.99.99",
             "packageName": "@aws-cdk/core",
             "packageVersion": "99.99.99",
           },
@@ -229,6 +245,10 @@ Object {
   "returnType": Object {
     "formattingPattern": "None",
   },
+  "sourceFile": "lib/ecr.generated.ts",
+  "sourceLine": 102,
+  "submoduleFqn": undefined,
+  "submoduleJsiiId": undefined,
   "usage": "def inspect(
   inspector: TreeInspector
 ) -> None",
@@ -248,7 +268,7 @@ Examines the CloudFormation resource and discloses attributes.
 
 # \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
-- *Type:* aws_cdk.core.TreeInspector
+- *Type:* undefined
 
 tree inspector to collect and process attributes.
 
@@ -263,7 +283,7 @@ Object {
     "summary": "Examines the CloudFormation resource and discloses attributes.",
   },
   "fqn": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect",
-  "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect",
+  "jsiiId": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect",
   "parameters": Array [
     Object {
       "default": undefined,
@@ -272,20 +292,21 @@ Object {
         "summary": "- tree inspector to collect and process attributes.",
       },
       "fqn": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
-      "id": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
-      "location": Object {
-        "filename": "lib/ecr.generated.ts",
-        "line": 102,
-      },
+      "jsiiId": "@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector",
       "optional": undefined,
-      "submodule": undefined,
+      "sourceFile": "lib/ecr.generated.ts",
+      "sourceLine": 102,
+      "submoduleFqn": undefined,
+      "submoduleJsiiId": undefined,
       "type": Object {
         "formattingPattern": "%",
         "types": Array [
           Object {
             "displayName": "TreeInspector",
             "fqn": "@aws-cdk/core.TreeInspector",
-            "id": "@aws-cdk/core.TreeInspector",
+            "jsiiId": "@aws-cdk/core.TreeInspector",
+            "jsiiProjectName": "@aws-cdk/core",
+            "jsiiProjectVersion": "99.99.99",
             "packageName": "@aws-cdk/core",
             "packageVersion": "99.99.99",
           },
@@ -296,6 +317,10 @@ Object {
   "returnType": Object {
     "formattingPattern": "void",
   },
+  "sourceFile": "lib/ecr.generated.ts",
+  "sourceLine": 102,
+  "submoduleFqn": undefined,
+  "submoduleJsiiId": undefined,
   "usage": "public inspect(inspector: TreeInspector): void",
 }
 `;
@@ -311,7 +336,7 @@ Examines the CloudFormation resource and discloses attributes.
 
 # \`inspector\`<sup>Required</sup> <a name=\\"inspector\\" id=\\"@aws-cdk/aws-ecr.CfnPublicRepository.inspect.parameter.inspector\\"></a>
 
-- *Type:* @aws-cdk/core.TreeInspector
+- *Type:* undefined
 
 tree inspector to collect and process attributes.
 

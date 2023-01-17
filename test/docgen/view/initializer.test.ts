@@ -8,9 +8,12 @@ import { Assemblies } from '../assemblies';
 const assembly: reflect.Assembly = Assemblies.instance.withoutSubmodules;
 
 const metadata: AssemblyMetadataSchema = {
+  jsiiProjectName: assembly.name,
+  jsiiProjectVersion: assembly.version,
+  jsiiProjectLanguages: Object.keys(assembly.targets ?? []),
   packageName: assembly.name,
   packageVersion: assembly.version,
-  targets: Object.keys(assembly.targets ?? {}),
+  moduleFqn: assembly.targets?.go?.moduleName,
 };
 
 const findInitializer = (): reflect.Initializer => {

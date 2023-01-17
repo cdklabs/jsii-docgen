@@ -1,6 +1,93 @@
 import * as reflect from 'jsii-reflect';
 
-export const CURRENT_SCHEMA_VERSION = '0.1';
+export const CURRENT_SCHEMA_VERSION = '0.2.0';
+
+
+/**
+ * Metadata about a particular jsii entity.
+ */
+export interface JsiiEntityMetadata {
+  /**
+   * Name of the jsii assembly/package.
+   */
+  readonly jsiiProjectName: string;
+
+  /**
+   * Version of the jsii assembly/package.
+   */
+  readonly jsiiProjectVersion: string;
+
+  /**
+   * Language-independent name of the jsii submodule.
+   * if undefined, it is implicitly the root module.
+   *
+   * @example `aws_sqs`
+   */
+  readonly submoduleJsiiId?: string;
+
+  /**
+  * The language specific module syntax.
+  */
+  readonly submoduleFqn?: string;
+}
+
+/**
+ * Metadata about a particular jsii assembly.
+ */
+export interface AssemblyMetadataSchema {
+  /**
+   * Name of the jsii assembly/package.
+   */
+  readonly jsiiProjectName: string;
+
+  /**
+   * Version of the jsii assembly/package.
+   */
+  readonly jsiiProjectVersion: string;
+
+  /**
+   * A list of programming languages that this JSii project supports.
+   */
+  readonly jsiiProjectLanguages: string[];
+
+  /**
+   * Return a URL for this JSii project, if available. This is derived from the "repository" field in the package.json file.
+   */
+  readonly repositoryUrl?: string;
+
+  /**
+   * The directory path to the repository. This is derived from the "repository" field in the package.json file.
+   */
+  readonly repositoryDir?: string;
+
+  /**
+   * Name of the jsii assembly/package.
+   */
+  readonly packageName: string;
+
+  /**
+   * Version of the jsii assembly/package.
+   */
+  readonly packageVersion: string;
+
+  /**
+  * The language specific module syntax.
+  */
+  readonly moduleFqn: string;
+
+  /**
+   * Name of the jsii submodule.
+   * if undefined, it is implicitly the root module.
+   *
+   * @example `aws_sqs`
+   */
+  readonly submoduleJsiiId?: string;
+
+  /**
+  * The language specific submodule syntax.
+  */
+  readonly submoduleFqn?: string;
+}
 
 /**
  * Describes any kind of type. This could be a primitive, a user-defined type
@@ -34,7 +121,7 @@ export interface JsiiEntity extends JsiiEntityMetadata {
    * An id that uniquely identifies this type among all entities in the
    * document and is same across languages.
    */
-  readonly id: string;
+  readonly jsiiId: string;
 
   /**
    * The friendly language-specific name for the entity.
@@ -47,14 +134,14 @@ export interface JsiiEntity extends JsiiEntityMetadata {
   readonly fqn: string;
 
   /**
-   * The submodule of this entity.
+   * The file path to the source code.
    */
-  readonly submodule?: string;
+  readonly sourceFile?: string;
 
   /**
-   * The source location of this entity.
+   * The line number in the source file where this entity is defined.
    */
-  readonly location?: reflect.SourceLocation;
+  readonly sourceLine?: number;
 }
 
 /**
@@ -65,7 +152,7 @@ export interface PropertySchema extends Usage, Optional, Documentable {
    * An id that uniquely identifies this property among all entities in
    * the document and is same across languages.
    */
-  readonly id: string;
+  readonly jsiiId: string;
 
   /**
    * The friendly language-specific name for the property.
@@ -78,14 +165,24 @@ export interface PropertySchema extends Usage, Optional, Documentable {
   readonly fqn: string;
 
   /**
-   * The submodule of this property.
+   * The common submodule name the type belongs to. This is the same for all languages.
    */
-  readonly submodule?: string;
+  readonly submoduleJsiiId?: string;
 
   /**
-   * The source location of this property.
+   * The language-specific name of the submodule.
    */
-  readonly location?: reflect.SourceLocation;
+  readonly submoduleFqn?: string;
+
+  /**
+   * The file path to the source code.
+   */
+  readonly sourceFile?: string;
+
+  /**
+   * The line number in the source file where this entity is defined.
+   */
+  readonly sourceLine?: number;
 
   /**
    * The type of the property.
@@ -107,7 +204,7 @@ export interface ParameterSchema extends Optional, Documentable {
    * An id that uniquely identifies this parameter among all entities in
    * the document and is same across languages.
    */
-  readonly id: string;
+  readonly jsiiId: string;
 
   /**
    * The friendly language-specific name for the parameter.
@@ -120,14 +217,24 @@ export interface ParameterSchema extends Optional, Documentable {
   readonly fqn: string;
 
   /**
-   * The submodule of this parameter.
+   * The common submodule name the type belongs to. This is the same for all languages.
    */
-  readonly submodule?: string;
+  readonly submoduleJsiiId?: string;
 
   /**
-   * The source location of this parameter.
+   * The language-independent name of the submodule the type belongs to.
    */
-  readonly location?: reflect.SourceLocation;
+  readonly submoduleFqn?: string;
+
+  /**
+   * The file path to the source code.
+   */
+  readonly sourceFile?: string;
+
+  /**
+   * The line number in the source file where this entity is defined.
+   */
+  readonly sourceLine?: number;
 
   /**
    * The type of the parameter.
@@ -144,7 +251,7 @@ export interface CallableSchema extends Usage {
    * An id that uniquely identifies this callable among all entities in
    * the document and is same across languages.
    */
-  readonly id: string;
+  readonly jsiiId: string;
 
   /**
    * The friendly language-specific name for the callable.
@@ -157,14 +264,24 @@ export interface CallableSchema extends Usage {
   readonly fqn: string;
 
   /**
-   * The submodule of this callable.
+   * The common submodule name the type belongs to. This is the same for all languages.
    */
-  readonly submodule?: string;
+  readonly submoduleJsiiId?: string;
 
   /**
-   * The source location of this callable.
+   * The language-independent name of the submodule the type belongs to.
    */
-  readonly location?: reflect.SourceLocation;
+  readonly submoduleFqn?: string;
+
+  /**
+   * The file path to the source code.
+   */
+  readonly sourceFile?: string;
+
+  /**
+   * The line number in the source file where this entity is defined.
+   */
+  readonly sourceLine?: number;
 
   /**
    * Parameters of the callable.
@@ -195,7 +312,7 @@ export interface ClassSchema extends Documentable {
    * An id that uniquely identifies this class among all entities in
    * the document and is same across languages.
    */
-  readonly id: string;
+  readonly jsiiId: string;
 
   /**
    * The friendly language-specific name for the class.
@@ -208,14 +325,24 @@ export interface ClassSchema extends Documentable {
   readonly fqn: string;
 
   /**
-   * The submodule of this class.
+   * The common submodule name the type belongs to. This is the same for all languages.
    */
-  readonly submodule?: string;
+  readonly submoduleJsiiId?: string;
 
   /**
-   * The source location of this class.
+   * The language-independent name of the submodule the type belongs to.
    */
-  readonly location?: reflect.SourceLocation;
+  readonly submoduleFqn?: string;
+
+  /**
+   * The file path to the source code.
+   */
+  readonly sourceFile?: string;
+
+  /**
+   * The line number in the source file where this entity is defined.
+   */
+  readonly sourceLine?: number;
 
   /**
    * Interfaces this class implements.
@@ -261,7 +388,7 @@ export interface StructSchema extends Usage, Documentable {
    * An id that uniquely identifies this struct among all entities in
    * the document and is same across languages.
    */
-  readonly id: string;
+  readonly jsiiId: string;
 
   /**
    * The friendly language-specific name for the struct.
@@ -274,14 +401,24 @@ export interface StructSchema extends Usage, Documentable {
   readonly fqn: string;
 
   /**
-   * The submodule of this struct.
+   * The common submodule name the type belongs to. This is the same for all languages.
    */
-  readonly submodule?: string;
+  readonly submoduleJsiiId?: string;
 
   /**
-   * The source location of this struct.
+   * The language-independent name of the submodule the type belongs to.
    */
-  readonly location?: reflect.SourceLocation;
+  readonly submoduleFqn?: string;
+
+  /**
+   * The file path to the source code.
+   */
+  readonly sourceFile?: string;
+
+  /**
+   * The line number in the source file where this entity is defined.
+   */
+  readonly sourceLine?: number;
 
   /**
    * Properties.
@@ -297,7 +434,7 @@ export interface InterfaceSchema extends Documentable {
    * An id that uniquely identifies this interface among all entities in
    * the document and is same across languages.
    */
-  readonly id: string;
+  readonly jsiiId: string;
 
   /**
    * The friendly language-specific name for the interface.
@@ -310,14 +447,24 @@ export interface InterfaceSchema extends Documentable {
   readonly fqn: string;
 
   /**
-   * The submodule of this interface.
+   * The common submodule name the type belongs to. This is the same for all languages.
    */
-  readonly submodule?: string;
+  readonly submoduleJsiiId?: string;
 
   /**
-   * The source location of this interface.
+   * The language-independent name of the submodule the type belongs to.
    */
-  readonly location?: reflect.SourceLocation;
+  readonly submoduleFqn?: string;
+
+  /**
+   * The file path to the source code.
+   */
+  readonly sourceFile?: string;
+
+  /**
+   * The line number in the source file where this entity is defined.
+   */
+  readonly sourceLine?: number;
 
   /**
    * Interfaces that this interface extends.
@@ -348,7 +495,7 @@ export interface EnumMemberSchema extends Documentable {
    * An id that uniquely identifies this enum member among all entities in
    * the document and is same across languages.
    */
-  readonly id: string;
+  readonly jsiiId: string;
 
   /**
    * The friendly language-specific name for the enum member.
@@ -361,14 +508,24 @@ export interface EnumMemberSchema extends Documentable {
   readonly fqn: string;
 
   /**
-   * The submodule of this enum member.
+   * The common submodule name the type belongs to. This is the same for all languages.
    */
-  readonly submodule?: string;
+  readonly submoduleJsiiId?: string;
 
   /**
-   * The source location of this enum member.
+   * The language-independent name of the submodule the type belongs to.
    */
-  readonly location?: reflect.SourceLocation;
+  readonly submoduleFqn?: string;
+
+  /**
+   * The file path to the source code.
+   */
+  readonly sourceFile?: string;
+
+  /**
+   * The line number in the source file where this entity is defined.
+   */
+  readonly sourceLine?: number;
 }
 
 /**
@@ -379,7 +536,7 @@ export interface EnumSchema extends Documentable {
    * An id that uniquely identifies this enum among all entities in
    * the document and is same across languages.
    */
-  readonly id: string;
+  readonly jsiiId: string;
 
   /**
    * The friendly language-specific name for the enum.
@@ -392,14 +549,24 @@ export interface EnumSchema extends Documentable {
   readonly fqn: string;
 
   /**
-   * The submodule of this enum.
+   * The common submodule name the type belongs to. This is the same for all languages.
    */
-  readonly submodule?: string;
+  readonly submoduleJsiiId?: string;
 
   /**
-   * The source location of this enum.
+   * The language-independent name of the submodule the type belongs to.
    */
-  readonly location?: reflect.SourceLocation;
+  readonly submoduleFqn?: string;
+
+  /**
+   * The file path to the source code.
+   */
+  readonly sourceFile?: string;
+
+  /**
+   * The line number in the source file where this entity is defined.
+   */
+  readonly sourceLine?: number;
 
   /**
    * Enum members.
@@ -411,6 +578,10 @@ export interface EnumSchema extends Documentable {
  * Describes the API Reference.
  */
 export interface ApiReferenceSchema {
+  /**
+   * Submodules.
+   */
+  readonly submodules?: SubmoduleSchema[];
 
   /**
    * Constructs.
@@ -439,45 +610,20 @@ export interface ApiReferenceSchema {
 }
 
 /**
- * Metadata about a particular jsii assembly.
+ * Describes a submodule.
  */
-export interface JsiiEntityMetadata {
-  /**
-   * Name of the jsii assembly/package.
-   */
-  readonly packageName: string;
-
-  /**
-   * Version of the jsii assembly/package.
-   */
-  readonly packageVersion: string;
-
-  /**
-   * Language-independent name of the jsii submodule.
-   * if undefined, it is implicitly the root module.
-   *
-   * @example `aws_sqs`
-   */
-  readonly submodule?: string;
-}
-
-export interface AssemblyMetadataSchema extends JsiiEntityMetadata {
-  /**
-   * Return a URL for this item into the source repository, if available.
-   */
-  readonly repositoryUrl?: string;
-
-  /**
-   * Submodules in this assembly.
-   */
-  readonly submodules?: SubmoduleSchema[];
-
-  readonly targets?: string[];
-}
-
 export interface SubmoduleSchema {
-  name: string;
+  /**
+   * The name of the submodule. This is the same for all languages.
+   */
+  jsiiId: string;
+  /**
+   * The language-specific name for the submodule.
+   */
   fqn: string;
+  /**
+   * The contents of the submodule's README.md file. If there is not a README.md file, this will be undefined.
+   */
   readme?: string;
 }
 
@@ -519,7 +665,6 @@ export interface Schema {
   readonly apiReference?: ApiReferenceSchema;
 }
 
-
 //
 // SHARED INTERFACES
 //
@@ -529,7 +674,7 @@ export interface Schema {
  */
 export interface Documentable {
   /**
-   * Doc string.
+   * Documentation for the API.
    */
   readonly docs: DocsSchema;
 }
@@ -630,7 +775,7 @@ export function extractDocs(docs: reflect.Docs): DocsSchema {
 /**
  * Generates the name of the submodule.
  */
-export function submodulePath(module?: reflect.Submodule): string | undefined {
+export function submoduleJsiiId(module?: reflect.Submodule): string | undefined {
   if (!module) return undefined;
   const path = module.fqn.split('.').splice(1).join('.');
   return path.length > 0 ? path : undefined;

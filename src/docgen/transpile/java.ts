@@ -1,6 +1,6 @@
 import * as Case from 'case';
 import * as reflect from 'jsii-reflect';
-import { submodulePath } from '../schema';
+import { submoduleJsiiId } from '../schema';
 import * as transpile from './transpile';
 
 // Helper methods
@@ -50,6 +50,14 @@ export class JavaTranspile extends transpile.TranspileBase {
     super(transpile.Language.JAVA);
   }
 
+  public submodule(submodule: reflect.Submodule): transpile.TranspiledSubmodule {
+    return {
+      jsiiId: submodule.name,
+      fqn: submodule.targets?.java?.package,
+      readme: submodule.readme?.markdown,
+    };
+  }
+
   public moduleLike(
     moduleLike: reflect.ModuleLike,
   ): transpile.TranspiledModuleLike {
@@ -59,27 +67,28 @@ export class JavaTranspile extends transpile.TranspileBase {
     // parent name and the submodule. we also allow submodules not to have
     // explicit target names, in which case we need to append the snake-cased
     // submodule name to the parent package name.
-    // if (moduleLike instanceof reflect.Submodule) {
-    //   const parent = this.getParentModule(moduleLike);
-    //   const parentFqn = parent.targets?.java?.package;
+    if (moduleLike instanceof reflect.Submodule) {
+      const parent = this.getParentModule(moduleLike);
+      const parentFqn = parent.targets?.java?.package;
 
-    //   // if the submodule does not explicitly define a java package name, we need to deduce it from the parent
-    //   // based on jsii-pacmak package naming conventions.
-    //   // see https://github.com/aws/jsii/blob/b329670bf9ec222fad5fc0d614dcddd5daca7af5/packages/jsii-pacmak/lib/targets/java.ts#L3150
-    //   const submoduleJavaPackage = javaPackage ?? `${parentFqn}.${Case.snake(moduleLike.name)}`;
+      // if the submodule does not explicitly define a java package name, we need to deduce it from the parent
+      // based on jsii-pacmak package naming conventions.
+      // see https://github.com/aws/jsii/blob/b329670bf9ec222fad5fc0d614dcddd5daca7af5/packages/jsii-pacmak/lib/targets/java.ts#L3150
+      const submoduleJavaPackage = javaPackage ?? `${parentFqn}.${Case.snake(moduleLike.name)}`;
 
-    //   // for some modules, the parent module's Java package is a prefix of
-    //   // the submodule's Java package, e.g.
-    //   // { name: "software.amazon.awscdk", submodule: "software.amazon.awscdk.services.ecr" }
-    //   //
-    //   // but it's possible the names differ, for example in aws-cdk-lib:
-    //   // { name: "software.amazon.awscdk.core", submodule: "software.amazon.awscdk.services.ecr" }
-    //   const moduleParts = submoduleJavaPackage.split('.');
-    //   return {
-    //     name: moduleParts?.[moduleParts.length - 2],
-    //     submodule: moduleParts?.[moduleParts.length - 1],
-    //   };
-    // }
+      // for some modules, the parent module's Java package is a prefix of
+      // the submodule's Java package, e.g.
+      // { name: "software.amazon.awscdk", submodule: "software.amazon.awscdk.services.ecr" }
+      //
+      // but it's possible the names differ, for example in aws-cdk-lib:
+      // { name: "software.amazon.awscdk.core", submodule: "software.amazon.awscdk.services.ecr" }
+      // const moduleParts = submoduleJavaPackage.split('.');
+      // return {
+      //   name: moduleParts?.[moduleParts.length - 2],
+      //   submodule: moduleParts?.[moduleParts.length - 1],
+      // };
+      return { name: parentFqn, submodule: submoduleJavaPackage };
+    }
 
     return { name: javaPackage };
   }
@@ -110,8 +119,8 @@ export class JavaTranspile extends transpile.TranspileBase {
       name: type.name,
       namespace: namespace,
       module: moduleLike.name,
-      submodule: moduleLike.submodule,
-      submodulePath: submodulePath(submodule),
+      submoduleFqn: moduleLike.submodule,
+      submoduleJsiiId: submoduleJsiiId(submodule),
       source: type,
       language: this.language,
     });
@@ -243,11 +252,11 @@ export class JavaTranspile extends transpile.TranspileBase {
   }
 
   public enumMember(em: reflect.EnumMember): transpile.TranspiledEnumMember {
-    const type = this.type(em.enumType);
+    const member = this.enum(em.enumType);
     return {
-      fqn: `${this.enum(em.enumType).fqn}.${em.name}`,
+      fqn: `${member.fqn}.${em.name}`,
       name: em.name,
-      type,
+      type: member.type,
     };
   }
 

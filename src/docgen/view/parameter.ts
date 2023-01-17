@@ -20,13 +20,15 @@ export class Parameter {
     return {
       fqn: `${this.transpiledParam.parentType.fqn}.${methodName}.parameter.${this.transpiledParam.name}`,
       displayName: this.transpiledParam.name,
-      id: `${this.parameter.parentType.fqn}.${methodId}.parameter.${this.parameter.name}`,
+      jsiiId: `${this.parameter.parentType.fqn}.${methodId}.parameter.${this.parameter.name}`,
       optional: this.transpiledParam.optional === true ? true : undefined, // to save space
       default: this.parameter.spec.docs?.default,
       type: this.transpiledParam.typeReference.toJson(),
       docs: extractDocs(this.parameter.docs),
-      location: this.parameter.parentType.locationInModule,
-      submodule: this.parameter.parentType.namespace,
+      submoduleJsiiId: this.transpiledParam.parentType.submoduleJsiiId,
+      submoduleFqn: this.transpiledParam.parentType.submoduleFqn,
+      sourceFile: this.transpiledParam.parentType.source.locationInModule?.filename,
+      sourceLine: this.transpiledParam.parentType.source.locationInModule?.line,
     };
   }
 }

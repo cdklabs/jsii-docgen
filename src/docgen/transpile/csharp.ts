@@ -1,11 +1,20 @@
 import * as Case from 'case';
 import * as reflect from 'jsii-reflect';
-import { submodulePath } from '../schema';
+import { submoduleJsiiId } from '../schema';
 import * as transpile from './transpile';
 
 export class CSharpTranspile extends transpile.TranspileBase {
   constructor() {
     super(transpile.Language.CSHARP);
+  }
+
+  public submodule(submodule: reflect.Submodule): transpile.TranspiledSubmodule {
+    const csharpPackage = submodule.targets?.dotnet?.namespace;
+    return {
+      jsiiId: submodule.name,
+      fqn: csharpPackage,
+      readme: submodule.readme?.markdown,
+    };
   }
 
   public moduleLike(
@@ -17,18 +26,14 @@ export class CSharpTranspile extends transpile.TranspileBase {
     // parent name and the submodule. we also allow submodules not to have
     // explicit target names, in which case we need to append the pascal-cased
     // submodule name to the parent package name.
-    // if (moduleLike instanceof reflect.Submodule) {
-    //   const parent = this.getParentModule(moduleLike);
-    //   const parentFqn = parent.targets?.dotnet?.namespace;
+    if (moduleLike instanceof reflect.Submodule) {
+      const parent = this.getParentModule(moduleLike);
+      const parentFqn = parent.targets?.dotnet?.namespace;
 
-    //   // if the submodule does not explicitly define a dotnet package name, we need to deduce it from the parent
-    //   const submoduleCSharpPackage = csharpPackage ?? `${parentFqn}.${Case.pascal(moduleLike.name)}`;
-    //   const moduleParts = submoduleCSharpPackage.split('.');
-    //   return {
-    //     name: moduleParts?.[moduleParts.length - 2],
-    //     submodule: moduleParts?.[moduleParts.length - 1],
-    //   };
-    // }
+      // if the submodule does not explicitly define a dotnet package name, we need to deduce it from the parent
+      const submoduleCSharpPackage = csharpPackage ?? `${parentFqn}.${Case.pascal(moduleLike.name)}`;
+      return { name: parentFqn, submodule: submoduleCSharpPackage };
+    }
 
     return { name: csharpPackage };
   }
@@ -53,8 +58,8 @@ export class CSharpTranspile extends transpile.TranspileBase {
       name: type.name,
       namespace: namespace,
       module: moduleLike.name,
-      submodule: moduleLike.submodule,
-      submodulePath: submodulePath(submodule),
+      submoduleFqn: moduleLike.submodule,
+      submoduleJsiiId: submoduleJsiiId(submodule),
       source: type,
       language: this.language,
     });

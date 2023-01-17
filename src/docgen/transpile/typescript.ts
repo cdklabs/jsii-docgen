@@ -1,5 +1,5 @@
 import * as reflect from 'jsii-reflect';
-import { submodulePath } from '../schema';
+import { submoduleJsiiId } from '../schema';
 import * as transpile from './transpile';
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const Case = require('case');
@@ -14,7 +14,7 @@ const formatArguments = (inputs: string[]) => {
 };
 
 const formatStructInitialization = (type: transpile.TranspiledType) => {
-  const target = type.submodule ? `${type.namespace}.${type.name}` : type.name;
+  const target = type.submoduleFqn ? `${type.namespace}.${type.name}` : type.name;
   return `const ${toCamelCase(type.name)}: ${target} = { ... }`;
 };
 
@@ -22,7 +22,7 @@ const formatClassInitialization = (
   type: transpile.TranspiledType,
   inputs: string[],
 ) => {
-  const target = type.submodule ? `${type.namespace}.${type.name}` : type.name;
+  const target = type.submoduleFqn ? `${type.namespace}.${type.name}` : type.name;
   return `new ${target}(${formatArguments(inputs)})`;
 };
 
@@ -31,7 +31,7 @@ const formatInvocation = (
   inputs: string[],
   method: string,
 ) => {
-  let target = type.submodule ? `${type.namespace}.${type.name}` : type.name;
+  let target = type.submoduleFqn ? `${type.namespace}.${type.name}` : type.name;
   if (method) {
     target = `${target}.${method}`;
   }
@@ -39,8 +39,8 @@ const formatInvocation = (
 };
 
 const formatImport = (type: transpile.TranspiledType) => {
-  if (type.submodule) {
-    return `import { ${type.submodule} } from '${type.module}'`;
+  if (type.submoduleFqn) {
+    return `import { ${type.submoduleFqn} } from '${type.module}'`;
   } else {
     return `import { ${type.name} } from '${type.module}'`;
   }
@@ -102,6 +102,14 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
     return 'object';
   }
 
+  public submodule(submodule: reflect.Submodule): transpile.TranspiledSubmodule {
+    return {
+      jsiiId: submodule.name,
+      fqn: submodule.fqn,
+      readme: submodule.readme?.markdown,
+    };
+  }
+
   public enum(enu: reflect.EnumType): transpile.TranspiledEnum {
     const type = this.type(enu);
     return {
@@ -112,11 +120,11 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
   }
 
   public enumMember(em: reflect.EnumMember): transpile.TranspiledEnumMember {
-    const type = this.type(em.enumType);
+    const member = this.enum(em.enumType);
     return {
-      fqn: `${this.enum(em.enumType).fqn}.${em.name}`,
+      fqn: `${member.fqn}.${em.name}`,
       name: em.name,
-      type,
+      type: member.type,
     };
   }
 
@@ -217,8 +225,8 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
       name: type.name,
       namespace: type.namespace,
       module: moduleLike.name,
-      submodule: moduleLike.submodule,
-      submodulePath: submodulePath(submodule),
+      submoduleJsiiId: submoduleJsiiId(submodule),
+      submoduleFqn: submodule?.fqn,
       source: type,
       language: this.language,
     });

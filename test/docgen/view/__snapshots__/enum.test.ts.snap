@@ -7,11 +7,7 @@ Object {
     "summary": "The tag mutability setting for your repository.",
   },
   "fqn": "Amazon.CDK.AWS.ECR.TagMutability",
-  "id": "@aws-cdk/aws-ecr.TagMutability",
-  "location": Object {
-    "filename": "lib/repository.ts",
-    "line": 653,
-  },
+  "jsiiId": "@aws-cdk/aws-ecr.TagMutability",
   "members": Array [
     Object {
       "displayName": "MUTABLE",
@@ -19,12 +15,11 @@ Object {
         "summary": "allow image tags to be overwritten.",
       },
       "fqn": "Amazon.CDK.AWS.ECR.TagMutability.MUTABLE",
-      "id": "@aws-cdk/aws-ecr.TagMutability.MUTABLE",
-      "location": Object {
-        "filename": "lib/repository.ts",
-        "line": 653,
-      },
-      "submodule": undefined,
+      "jsiiId": "@aws-cdk/aws-ecr.TagMutability.MUTABLE",
+      "sourceFile": "lib/repository.ts",
+      "sourceLine": 653,
+      "submoduleFqn": undefined,
+      "submoduleJsiiId": undefined,
     },
     Object {
       "displayName": "IMMUTABLE",
@@ -32,15 +27,17 @@ Object {
         "summary": "all image tags within the repository will be immutable which will prevent them from being overwritten.",
       },
       "fqn": "Amazon.CDK.AWS.ECR.TagMutability.IMMUTABLE",
-      "id": "@aws-cdk/aws-ecr.TagMutability.IMMUTABLE",
-      "location": Object {
-        "filename": "lib/repository.ts",
-        "line": 653,
-      },
-      "submodule": undefined,
+      "jsiiId": "@aws-cdk/aws-ecr.TagMutability.IMMUTABLE",
+      "sourceFile": "lib/repository.ts",
+      "sourceLine": 653,
+      "submoduleFqn": undefined,
+      "submoduleJsiiId": undefined,
     },
   ],
-  "submodule": undefined,
+  "sourceFile": "lib/repository.ts",
+  "sourceLine": 653,
+  "submoduleFqn": undefined,
+  "submoduleJsiiId": undefined,
 }
 `;
 
@@ -53,8 +50,8 @@ The tag mutability setting for your repository.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-ecr.TagMutability.MUTABLE\\">MUTABLE</a></code> | allow image tags to be overwritten. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.TagMutability.IMMUTABLE\\">IMMUTABLE</a></code> | all image tags within the repository will be immutable which will prevent them from being overwritten. |
+| <code>Amazon.CDK.AWS.ECR.TagMutability.MUTABLE</code> | allow image tags to be overwritten. |
+| <code>Amazon.CDK.AWS.ECR.TagMutability.IMMUTABLE</code> | all image tags within the repository will be immutable which will prevent them from being overwritten. |
 
 ---
 
@@ -81,11 +78,7 @@ Object {
     "summary": "The tag mutability setting for your repository.",
   },
   "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.TagMutability",
-  "id": "@aws-cdk/aws-ecr.TagMutability",
-  "location": Object {
-    "filename": "lib/repository.ts",
-    "line": 653,
-  },
+  "jsiiId": "@aws-cdk/aws-ecr.TagMutability",
   "members": Array [
     Object {
       "displayName": "TagMutability_MUTABLE",
@@ -93,12 +86,11 @@ Object {
         "summary": "allow image tags to be overwritten.",
       },
       "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.TagMutability_MUTABLE",
-      "id": "@aws-cdk/aws-ecr.TagMutability.MUTABLE",
-      "location": Object {
-        "filename": "lib/repository.ts",
-        "line": 653,
-      },
-      "submodule": undefined,
+      "jsiiId": "@aws-cdk/aws-ecr.TagMutability.MUTABLE",
+      "sourceFile": "lib/repository.ts",
+      "sourceLine": 653,
+      "submoduleFqn": undefined,
+      "submoduleJsiiId": undefined,
     },
     Object {
       "displayName": "TagMutability_IMMUTABLE",
@@ -106,15 +98,17 @@ Object {
         "summary": "all image tags within the repository will be immutable which will prevent them from being overwritten.",
       },
       "fqn": "github.com/aws/aws-cdk-go/awscdkawsecr.TagMutability_IMMUTABLE",
-      "id": "@aws-cdk/aws-ecr.TagMutability.IMMUTABLE",
-      "location": Object {
-        "filename": "lib/repository.ts",
-        "line": 653,
-      },
-      "submodule": undefined,
+      "jsiiId": "@aws-cdk/aws-ecr.TagMutability.IMMUTABLE",
+      "sourceFile": "lib/repository.ts",
+      "sourceLine": 653,
+      "submoduleFqn": undefined,
+      "submoduleJsiiId": undefined,
     },
   ],
-  "submodule": undefined,
+  "sourceFile": "lib/repository.ts",
+  "sourceLine": 653,
+  "submoduleFqn": undefined,
+  "submoduleJsiiId": undefined,
 }
 `;
 
@@ -127,8 +121,8 @@ The tag mutability setting for your repository.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-ecr.TagMutability.MUTABLE\\">TagMutability_MUTABLE</a></code> | allow image tags to be overwritten. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.TagMutability.IMMUTABLE\\">TagMutability_IMMUTABLE</a></code> | all image tags within the repository will be immutable which will prevent them from being overwritten. |
+| <code>github.com/aws/aws-cdk-go/awscdkawsecr.TagMutability_MUTABLE</code> | allow image tags to be overwritten. |
+| <code>github.com/aws/aws-cdk-go/awscdkawsecr.TagMutability_IMMUTABLE</code> | all image tags within the repository will be immutable which will prevent them from being overwritten. |
 
 ---
 
@@ -155,11 +149,7 @@ Object {
     "summary": "The tag mutability setting for your repository.",
   },
   "fqn": "software.amazon.awscdk.services.ecr.TagMutability",
-  "id": "@aws-cdk/aws-ecr.TagMutability",
-  "location": Object {
-    "filename": "lib/repository.ts",
-    "line": 653,
-  },
+  "jsiiId": "@aws-cdk/aws-ecr.TagMutability",
   "members": Array [
     Object {
       "displayName": "MUTABLE",
@@ -167,12 +157,11 @@ Object {
         "summary": "allow image tags to be overwritten.",
       },
       "fqn": "software.amazon.awscdk.services.ecr.TagMutability.MUTABLE",
-      "id": "@aws-cdk/aws-ecr.TagMutability.MUTABLE",
-      "location": Object {
-        "filename": "lib/repository.ts",
-        "line": 653,
-      },
-      "submodule": undefined,
+      "jsiiId": "@aws-cdk/aws-ecr.TagMutability.MUTABLE",
+      "sourceFile": "lib/repository.ts",
+      "sourceLine": 653,
+      "submoduleFqn": undefined,
+      "submoduleJsiiId": undefined,
     },
     Object {
       "displayName": "IMMUTABLE",
@@ -180,15 +169,17 @@ Object {
         "summary": "all image tags within the repository will be immutable which will prevent them from being overwritten.",
       },
       "fqn": "software.amazon.awscdk.services.ecr.TagMutability.IMMUTABLE",
-      "id": "@aws-cdk/aws-ecr.TagMutability.IMMUTABLE",
-      "location": Object {
-        "filename": "lib/repository.ts",
-        "line": 653,
-      },
-      "submodule": undefined,
+      "jsiiId": "@aws-cdk/aws-ecr.TagMutability.IMMUTABLE",
+      "sourceFile": "lib/repository.ts",
+      "sourceLine": 653,
+      "submoduleFqn": undefined,
+      "submoduleJsiiId": undefined,
     },
   ],
-  "submodule": undefined,
+  "sourceFile": "lib/repository.ts",
+  "sourceLine": 653,
+  "submoduleFqn": undefined,
+  "submoduleJsiiId": undefined,
 }
 `;
 
@@ -201,8 +192,8 @@ The tag mutability setting for your repository.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-ecr.TagMutability.MUTABLE\\">MUTABLE</a></code> | allow image tags to be overwritten. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.TagMutability.IMMUTABLE\\">IMMUTABLE</a></code> | all image tags within the repository will be immutable which will prevent them from being overwritten. |
+| <code>software.amazon.awscdk.services.ecr.TagMutability.MUTABLE</code> | allow image tags to be overwritten. |
+| <code>software.amazon.awscdk.services.ecr.TagMutability.IMMUTABLE</code> | all image tags within the repository will be immutable which will prevent them from being overwritten. |
 
 ---
 
@@ -229,11 +220,7 @@ Object {
     "summary": "The tag mutability setting for your repository.",
   },
   "fqn": "aws_cdk.aws_ecr.TagMutability",
-  "id": "@aws-cdk/aws-ecr.TagMutability",
-  "location": Object {
-    "filename": "lib/repository.ts",
-    "line": 653,
-  },
+  "jsiiId": "@aws-cdk/aws-ecr.TagMutability",
   "members": Array [
     Object {
       "displayName": "MUTABLE",
@@ -241,12 +228,11 @@ Object {
         "summary": "allow image tags to be overwritten.",
       },
       "fqn": "aws_cdk.aws_ecr.TagMutability.MUTABLE",
-      "id": "@aws-cdk/aws-ecr.TagMutability.MUTABLE",
-      "location": Object {
-        "filename": "lib/repository.ts",
-        "line": 653,
-      },
-      "submodule": undefined,
+      "jsiiId": "@aws-cdk/aws-ecr.TagMutability.MUTABLE",
+      "sourceFile": "lib/repository.ts",
+      "sourceLine": 653,
+      "submoduleFqn": undefined,
+      "submoduleJsiiId": undefined,
     },
     Object {
       "displayName": "IMMUTABLE",
@@ -254,15 +240,17 @@ Object {
         "summary": "all image tags within the repository will be immutable which will prevent them from being overwritten.",
       },
       "fqn": "aws_cdk.aws_ecr.TagMutability.IMMUTABLE",
-      "id": "@aws-cdk/aws-ecr.TagMutability.IMMUTABLE",
-      "location": Object {
-        "filename": "lib/repository.ts",
-        "line": 653,
-      },
-      "submodule": undefined,
+      "jsiiId": "@aws-cdk/aws-ecr.TagMutability.IMMUTABLE",
+      "sourceFile": "lib/repository.ts",
+      "sourceLine": 653,
+      "submoduleFqn": undefined,
+      "submoduleJsiiId": undefined,
     },
   ],
-  "submodule": undefined,
+  "sourceFile": "lib/repository.ts",
+  "sourceLine": 653,
+  "submoduleFqn": undefined,
+  "submoduleJsiiId": undefined,
 }
 `;
 
@@ -275,8 +263,8 @@ The tag mutability setting for your repository.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-ecr.TagMutability.MUTABLE\\">MUTABLE</a></code> | allow image tags to be overwritten. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.TagMutability.IMMUTABLE\\">IMMUTABLE</a></code> | all image tags within the repository will be immutable which will prevent them from being overwritten. |
+| <code>aws_cdk.aws_ecr.TagMutability.MUTABLE</code> | allow image tags to be overwritten. |
+| <code>aws_cdk.aws_ecr.TagMutability.IMMUTABLE</code> | all image tags within the repository will be immutable which will prevent them from being overwritten. |
 
 ---
 
@@ -303,11 +291,7 @@ Object {
     "summary": "The tag mutability setting for your repository.",
   },
   "fqn": "@aws-cdk/aws-ecr.TagMutability",
-  "id": "@aws-cdk/aws-ecr.TagMutability",
-  "location": Object {
-    "filename": "lib/repository.ts",
-    "line": 653,
-  },
+  "jsiiId": "@aws-cdk/aws-ecr.TagMutability",
   "members": Array [
     Object {
       "displayName": "MUTABLE",
@@ -315,12 +299,11 @@ Object {
         "summary": "allow image tags to be overwritten.",
       },
       "fqn": "@aws-cdk/aws-ecr.TagMutability.MUTABLE",
-      "id": "@aws-cdk/aws-ecr.TagMutability.MUTABLE",
-      "location": Object {
-        "filename": "lib/repository.ts",
-        "line": 653,
-      },
-      "submodule": undefined,
+      "jsiiId": "@aws-cdk/aws-ecr.TagMutability.MUTABLE",
+      "sourceFile": "lib/repository.ts",
+      "sourceLine": 653,
+      "submoduleFqn": undefined,
+      "submoduleJsiiId": undefined,
     },
     Object {
       "displayName": "IMMUTABLE",
@@ -328,15 +311,17 @@ Object {
         "summary": "all image tags within the repository will be immutable which will prevent them from being overwritten.",
       },
       "fqn": "@aws-cdk/aws-ecr.TagMutability.IMMUTABLE",
-      "id": "@aws-cdk/aws-ecr.TagMutability.IMMUTABLE",
-      "location": Object {
-        "filename": "lib/repository.ts",
-        "line": 653,
-      },
-      "submodule": undefined,
+      "jsiiId": "@aws-cdk/aws-ecr.TagMutability.IMMUTABLE",
+      "sourceFile": "lib/repository.ts",
+      "sourceLine": 653,
+      "submoduleFqn": undefined,
+      "submoduleJsiiId": undefined,
     },
   ],
-  "submodule": undefined,
+  "sourceFile": "lib/repository.ts",
+  "sourceLine": 653,
+  "submoduleFqn": undefined,
+  "submoduleJsiiId": undefined,
 }
 `;
 
@@ -349,8 +334,8 @@ The tag mutability setting for your repository.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href=\\"#@aws-cdk/aws-ecr.TagMutability.MUTABLE\\">MUTABLE</a></code> | allow image tags to be overwritten. |
-| <code><a href=\\"#@aws-cdk/aws-ecr.TagMutability.IMMUTABLE\\">IMMUTABLE</a></code> | all image tags within the repository will be immutable which will prevent them from being overwritten. |
+| <code>@aws-cdk/aws-ecr.TagMutability.MUTABLE</code> | allow image tags to be overwritten. |
+| <code>@aws-cdk/aws-ecr.TagMutability.IMMUTABLE</code> | all image tags within the repository will be immutable which will prevent them from being overwritten. |
 
 ---
 

@@ -10,12 +10,14 @@ export class EnumMember {
 
   public toJson(): EnumMemberSchema {
     return {
-      id: `${this.em.enumType.fqn}.${this.em.name}`,
+      jsiiId: `${this.em.enumType.fqn}.${this.em.name}`,
       displayName: this.transpiled.name,
       fqn: this.transpiled.fqn,
       docs: extractDocs(this.em.docs),
-      location: this.em.enumType.locationInModule,
-      submodule: this.transpiled.type.submodule,
+      submoduleJsiiId: this.transpiled.type.submoduleJsiiId,
+      submoduleFqn: this.transpiled.type.submoduleFqn,
+      sourceFile: this.transpiled.type.source.locationInModule?.filename,
+      sourceLine: this.transpiled.type.source.locationInModule?.line,
     };
   }
 }

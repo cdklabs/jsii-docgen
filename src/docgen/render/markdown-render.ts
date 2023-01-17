@@ -117,11 +117,16 @@ export class MarkdownRenderer {
     this.typeFormatter = options.typeFormatter ?? defaultTypeFormatter;
     this.language = options.language;
     this.metadata = {
+      jsiiProjectName: options.jsiiProjectName,
+      jsiiProjectVersion: options.jsiiProjectVersion,
+      jsiiProjectLanguages: options.jsiiProjectLanguages,
+      repositoryUrl: options.repositoryUrl,
+      repositoryDir: options.repositoryDir,
       packageName: options.packageName,
       packageVersion: options.packageVersion,
-      targets: options.targets,
-      submodule: options.submodule,
-      repositoryUrl: options.repositoryUrl,
+      submoduleJsiiId: options.submoduleJsiiId,
+      submoduleFqn: options.submoduleFqn,
+      moduleFqn: options.moduleFqn,
     };
   }
 
@@ -218,7 +223,7 @@ export class MarkdownRenderer {
   ): MarkdownDocument {
     const md = new MarkdownDocument({
       id: this.anchorFormatter({
-        id: struct.id,
+        jsiiId: struct.jsiiId,
         displayName: struct.displayName,
         fqn: struct.fqn,
         ...this.metadata,
@@ -232,7 +237,7 @@ export class MarkdownRenderer {
 
     const initializer = new MarkdownDocument({
       id: this.anchorFormatter({
-        id: `${struct.id}.Initializer`,
+        jsiiId: `${struct.jsiiId}.Initializer`,
         displayName: 'Initializer',
         fqn: `${struct.fqn}.Initializer`,
         ...this.metadata,
@@ -254,7 +259,7 @@ export class MarkdownRenderer {
   ): MarkdownDocument {
     const md = new MarkdownDocument({
       id: this.anchorFormatter({
-        id: klass.id,
+        jsiiId: klass.jsiiId,
         displayName: klass.displayName,
         fqn: klass.fqn,
         ...this.metadata,
@@ -291,7 +296,7 @@ export class MarkdownRenderer {
   ): MarkdownDocument {
     const md = new MarkdownDocument({
       id: this.anchorFormatter({
-        id: iface.id,
+        jsiiId: iface.jsiiId,
         displayName: iface.displayName,
         fqn: iface.fqn,
         ...this.metadata,
@@ -331,7 +336,7 @@ export class MarkdownRenderer {
   ): MarkdownDocument {
     const md = new MarkdownDocument({
       id: this.anchorFormatter({
-        id: enu.id,
+        jsiiId: enu.jsiiId,
         displayName: enu.displayName,
         fqn: enu.fqn,
         ...this.metadata,
@@ -390,7 +395,7 @@ export class MarkdownRenderer {
   ): MarkdownDocument {
     const md = new MarkdownDocument({
       id: this.anchorFormatter({
-        id: init.id,
+        jsiiId: init.jsiiId,
         displayName: init.displayName,
         fqn: init.fqn,
         ...this.metadata,
@@ -474,7 +479,7 @@ export class MarkdownRenderer {
   ): MarkdownDocument {
     const md = new MarkdownDocument({
       id: this.anchorFormatter({
-        id: em.id,
+        jsiiId: em.jsiiId,
         displayName: em.displayName,
         fqn: em.fqn,
         ...this.metadata,
@@ -512,7 +517,7 @@ export class MarkdownRenderer {
 
     const md = new MarkdownDocument({
       id: this.anchorFormatter({
-        id: prop.id,
+        jsiiId: prop.jsiiId,
         displayName: prop.displayName,
         fqn: prop.fqn,
         ...this.metadata,
@@ -566,7 +571,7 @@ export class MarkdownRenderer {
 
     const md = new MarkdownDocument({
       id: this.anchorFormatter({
-        id: parameter.id,
+        jsiiId: parameter.jsiiId,
         displayName: parameter.displayName,
         fqn: parameter.fqn,
         ...this.metadata,
@@ -585,7 +590,6 @@ export class MarkdownRenderer {
       );
       md.lines('');
     }
-
 
     const metadata: any = {
       Type: this.typeFormatter(parameter.type, this.metadata, this.linkFormatter),
@@ -615,7 +619,7 @@ export class MarkdownRenderer {
   ): MarkdownDocument {
     const md = new MarkdownDocument({
       id: this.anchorFormatter({
-        id: method.id,
+        jsiiId: method.jsiiId,
         displayName: method.displayName,
         fqn: method.fqn,
         ...this.metadata,
@@ -647,7 +651,7 @@ export class MarkdownRenderer {
   ) {
     const md = new MarkdownDocument({
       id: this.anchorFormatter({
-        id: method.id,
+        jsiiId: method.jsiiId,
         displayName: method.displayName,
         fqn: method.fqn,
         ...this.metadata,
@@ -688,7 +692,7 @@ export class MarkdownRenderer {
       const link = MarkdownDocument.pre(this.linkFormatter({
         fqn: item.fqn,
         displayName: item.displayName,
-        id: item.id,
+        jsiiId: item.jsiiId,
         ...this.metadata,
       }, this.metadata));
       const description = item.docs?.summary && item.docs?.summary.length > 0
@@ -708,7 +712,7 @@ export class MarkdownRenderer {
       const link = MarkdownDocument.pre(this.linkFormatter({
         fqn: item.fqn,
         displayName: item.displayName,
-        id: item.id,
+        jsiiId: item.jsiiId,
         ...this.metadata,
       }, this.metadata));
       const type = MarkdownDocument.pre(this.typeFormatter(item.type, this.metadata, this.linkFormatter));
@@ -725,7 +729,7 @@ export class MarkdownRenderer {
 interface SimpleTableItem {
   readonly fqn: string;
   readonly displayName: string;
-  readonly id: string;
+  readonly jsiiId: string;
   readonly docs?: { summary?: string };
 }
 
@@ -739,12 +743,12 @@ function sanitize(str: string) {
 
 export const defaultAnchorFormatter = (type: JsiiEntity) => {
   // HTML5 allows any character in IDs /except/ whitespace
-  return sanitize(type.id);
+  return sanitize(type.jsiiId);
 };
 
 export const defaultLinkFormatter = (type: JsiiEntity, metadata: AssemblyMetadataSchema) => {
-  if (type.packageName === metadata.packageName && type.submodule === metadata.submodule) {
-    return `<a href="#${sanitize(type.id)}">${type.displayName}</a>`;
+  if (type.jsiiProjectName === metadata.packageName && type.submoduleJsiiId === metadata.submoduleJsiiId) {
+    return `<a href="#${sanitize(type.jsiiId)}">${type.displayName}</a>`;
   } else {
     // do not display a link if the type isn't in this document
     return type.fqn;

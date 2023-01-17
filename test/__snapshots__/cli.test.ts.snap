@@ -10,22 +10,22 @@ exports[`construct-library 1`] = `
 #### Initializers <a name=\\"Initializers\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer\\"></a>
 
 \`\`\`typescript
-import { submod1 } from 'construct-library'
+import { construct-library.submod1 } from 'construct-library'
 
 new submod1.GoodbyeBucket(scope: Construct, id: string, props?: BucketProps)
 \`\`\`
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.scope\\">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.scope\\">scope</a></code> | <code>undefined</code> | *No description.* |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.id\\">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.props\\">props</a></code> | <code>@aws-cdk/aws-s3.BucketProps</code> | *No description.* |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.props\\">props</a></code> | <code>undefined</code> | *No description.* |
 
 ---
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 ---
 
@@ -37,7 +37,7 @@ new submod1.GoodbyeBucket(scope: Construct, id: string, props?: BucketProps)
 
 ##### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.props\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.BucketProps
+- *Type:* undefined
 
 ---
 
@@ -100,7 +100,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 
 ###### \`policy\`<sup>Required</sup> <a name=\\"policy\\" id=\\"construct-library.submod1.GoodbyeBucket.applyRemovalPolicy.parameter.policy\\"></a>
 
-- *Type:* @aws-cdk/core.RemovalPolicy
+- *Type:* undefined
 
 ---
 
@@ -125,7 +125,7 @@ Adds a bucket notification event destination.
 
 ###### \`event\`<sup>Required</sup> <a name=\\"event\\" id=\\"construct-library.submod1.GoodbyeBucket.addEventNotification.parameter.event\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.EventType
+- *Type:* undefined
 
 The event to trigger the notification.
 
@@ -133,7 +133,7 @@ The event to trigger the notification.
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.submod1.GoodbyeBucket.addEventNotification.parameter.dest\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.IBucketNotificationDestination
+- *Type:* undefined
 
 The notification destination (Lambda, SNS Topic or SQS Queue).
 
@@ -141,7 +141,7 @@ The notification destination (Lambda, SNS Topic or SQS Queue).
 
 ###### \`filters\`<sup>Required</sup> <a name=\\"filters\\" id=\\"construct-library.submod1.GoodbyeBucket.addEventNotification.parameter.filters\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* undefined
 
 S3 object key filter rules to determine which objects trigger this event.
 
@@ -164,7 +164,7 @@ This is identical to calling
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification.parameter.dest\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.IBucketNotificationDestination
+- *Type:* undefined
 
 The notification destination (see onEvent).
 
@@ -172,7 +172,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name=\\"filters\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification.parameter.filters\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* undefined
 
 Filters (see onEvent).
 
@@ -191,7 +191,7 @@ This is identical to calling
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification.parameter.dest\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.IBucketNotificationDestination
+- *Type:* undefined
 
 The notification destination (see onEvent).
 
@@ -199,7 +199,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name=\\"filters\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification.parameter.filters\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* undefined
 
 Filters (see onEvent).
 
@@ -221,7 +221,7 @@ So it's safest to do nothing in these cases.
 
 ###### \`permission\`<sup>Required</sup> <a name=\\"permission\\" id=\\"construct-library.submod1.GoodbyeBucket.addToResourcePolicy.parameter.permission\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.PolicyStatement
+- *Type:* undefined
 
 the policy statement to be added to the bucket's policy.
 
@@ -257,7 +257,7 @@ Grants s3:DeleteObject* permission to an IAM principal for objects in this bucke
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantDelete.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 The principal.
 
@@ -329,7 +329,7 @@ of written files will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPut.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 The principal.
 
@@ -357,7 +357,7 @@ in this case, if you need to modify object ACLs, call this method explicitly.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPutAcl.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 ---
 
@@ -380,7 +380,7 @@ of the bucket will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantRead.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 The principal.
 
@@ -415,7 +415,7 @@ use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantReadWrite.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 ---
 
@@ -446,7 +446,7 @@ use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantWrite.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 ---
 
@@ -477,7 +477,7 @@ The id of the rule.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailEvent.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.OnCloudTrailBucketEventOptions
+- *Type:* undefined
 
 Options for adding the rule.
 
@@ -508,7 +508,7 @@ The id of the rule.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailPutObject.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.OnCloudTrailBucketEventOptions
+- *Type:* undefined
 
 Options for adding the rule.
 
@@ -542,7 +542,7 @@ The id of the rule.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailWriteObject.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.OnCloudTrailBucketEventOptions
+- *Type:* undefined
 
 Options for adding the rule.
 
@@ -597,7 +597,7 @@ bucket is returned.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.submod1.GoodbyeBucket.transferAccelerationUrlForObject.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.TransferAccelerationUrlOptions
+- *Type:* undefined
 
 Options for generating URL.
 
@@ -652,7 +652,7 @@ bucket is returned.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.submod1.GoodbyeBucket.virtualHostedUrlForObject.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.VirtualHostedStyleUrlOptions
+- *Type:* undefined
 
 Options for generating URL.
 
@@ -668,7 +668,7 @@ Adds a cross-origin access configuration for objects in an Amazon S3 bucket.
 
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"construct-library.submod1.GoodbyeBucket.addCorsRule.parameter.rule\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.CorsRule
+- *Type:* undefined
 
 The CORS configuration rule to add.
 
@@ -684,7 +684,7 @@ Add an inventory configuration.
 
 ###### \`inventory\`<sup>Required</sup> <a name=\\"inventory\\" id=\\"construct-library.submod1.GoodbyeBucket.addInventory.parameter.inventory\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.Inventory
+- *Type:* undefined
 
 configuration to add.
 
@@ -700,7 +700,7 @@ Add a lifecycle rule to the bucket.
 
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"construct-library.submod1.GoodbyeBucket.addLifecycleRule.parameter.rule\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.LifecycleRule
+- *Type:* undefined
 
 The rule to add.
 
@@ -716,7 +716,7 @@ Adds a metrics configuration for the CloudWatch request metrics from the bucket.
 
 ###### \`metric\`<sup>Required</sup> <a name=\\"metric\\" id=\\"construct-library.submod1.GoodbyeBucket.addMetric.parameter.metric\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.BucketMetrics
+- *Type:* undefined
 
 The metric configuration to add.
 
@@ -744,7 +744,7 @@ public goodbye(): void
 ##### \`isConstruct\` <a name=\\"isConstruct\\" id=\\"construct-library.submod1.GoodbyeBucket.isConstruct\\"></a>
 
 \`\`\`typescript
-import { submod1 } from 'construct-library'
+import { construct-library.submod1 } from 'construct-library'
 
 submod1.GoodbyeBucket.isConstruct(x: any)
 \`\`\`
@@ -760,7 +760,7 @@ Return whether the given object is a Construct.
 ##### \`isResource\` <a name=\\"isResource\\" id=\\"construct-library.submod1.GoodbyeBucket.isResource\\"></a>
 
 \`\`\`typescript
-import { submod1 } from 'construct-library'
+import { construct-library.submod1 } from 'construct-library'
 
 submod1.GoodbyeBucket.isResource(construct: IConstruct)
 \`\`\`
@@ -769,21 +769,21 @@ Check whether the given construct is a Resource.
 
 ###### \`construct\`<sup>Required</sup> <a name=\\"construct\\" id=\\"construct-library.submod1.GoodbyeBucket.isResource.parameter.construct\\"></a>
 
-- *Type:* @aws-cdk/core.IConstruct
+- *Type:* undefined
 
 ---
 
 ##### \`fromBucketArn\` <a name=\\"fromBucketArn\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketArn\\"></a>
 
 \`\`\`typescript
-import { submod1 } from 'construct-library'
+import { construct-library.submod1 } from 'construct-library'
 
 submod1.GoodbyeBucket.fromBucketArn(scope: Construct, id: string, bucketArn: string)
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketArn.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 ---
 
@@ -802,7 +802,7 @@ submod1.GoodbyeBucket.fromBucketArn(scope: Construct, id: string, bucketArn: str
 ##### \`fromBucketAttributes\` <a name=\\"fromBucketAttributes\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketAttributes\\"></a>
 
 \`\`\`typescript
-import { submod1 } from 'construct-library'
+import { construct-library.submod1 } from 'construct-library'
 
 submod1.GoodbyeBucket.fromBucketAttributes(scope: Construct, id: string, attrs: BucketAttributes)
 \`\`\`
@@ -811,7 +811,7 @@ Creates a Bucket construct that represents an external bucket.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketAttributes.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 The parent creating construct (usually \`this\`).
 
@@ -827,7 +827,7 @@ The construct's name.
 
 ###### \`attrs\`<sup>Required</sup> <a name=\\"attrs\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketAttributes.parameter.attrs\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.BucketAttributes
+- *Type:* undefined
 
 A \`BucketAttributes\` object.
 
@@ -839,14 +839,14 @@ Can be obtained from a call to
 ##### \`fromBucketName\` <a name=\\"fromBucketName\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketName\\"></a>
 
 \`\`\`typescript
-import { submod1 } from 'construct-library'
+import { construct-library.submod1 } from 'construct-library'
 
 submod1.GoodbyeBucket.fromBucketName(scope: Construct, id: string, bucketName: string)
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketName.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 ---
 
@@ -865,7 +865,7 @@ submod1.GoodbyeBucket.fromBucketName(scope: Construct, id: string, bucketName: s
 ##### \`validateBucketName\` <a name=\\"validateBucketName\\" id=\\"construct-library.submod1.GoodbyeBucket.validateBucketName\\"></a>
 
 \`\`\`typescript
-import { submod1 } from 'construct-library'
+import { construct-library.submod1 } from 'construct-library'
 
 submod1.GoodbyeBucket.validateBucketName(physicalName: string)
 \`\`\`
@@ -884,9 +884,9 @@ name of the bucket.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.node\\">node</a></code> | <code>@aws-cdk/core.ConstructNode</code> | The construct tree node associated with this construct. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.env\\">env</a></code> | <code>@aws-cdk/core.ResourceEnvironment</code> | The environment this resource belongs to. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.stack\\">stack</a></code> | <code>@aws-cdk/core.Stack</code> | The stack in which this resource is defined. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.node\\">node</a></code> | <code>undefined</code> | The construct tree node associated with this construct. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.env\\">env</a></code> | <code>undefined</code> | The environment this resource belongs to. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.stack\\">stack</a></code> | <code>undefined</code> | The stack in which this resource is defined. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.bucketArn\\">bucketArn</a></code> | <code>string</code> | The ARN of the bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.bucketDomainName\\">bucketDomainName</a></code> | <code>string</code> | The IPv4 DNS name of the specified bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.bucketDualStackDomainName\\">bucketDualStackDomainName</a></code> | <code>string</code> | The IPv6 DNS name of the specified bucket. |
@@ -894,9 +894,9 @@ name of the bucket.
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.bucketRegionalDomainName\\">bucketRegionalDomainName</a></code> | <code>string</code> | The regional domain name of the specified bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.bucketWebsiteDomainName\\">bucketWebsiteDomainName</a></code> | <code>string</code> | The Domain name of the static website. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.bucketWebsiteUrl\\">bucketWebsiteUrl</a></code> | <code>string</code> | The URL of the static website. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.encryptionKey\\">encryptionKey</a></code> | <code>@aws-cdk/aws-kms.IKey</code> | Optional KMS encryption key associated with this bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.encryptionKey\\">encryptionKey</a></code> | <code>undefined</code> | Optional KMS encryption key associated with this bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.isWebsite\\">isWebsite</a></code> | <code>boolean</code> | If this bucket has been configured for static website hosting. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.policy\\">policy</a></code> | <code>@aws-cdk/aws-s3.BucketPolicy</code> | The resource policy associated with this bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.policy\\">policy</a></code> | <code>undefined</code> | The resource policy associated with this bucket. |
 
 ---
 
@@ -906,7 +906,7 @@ name of the bucket.
 public readonly node: ConstructNode;
 \`\`\`
 
-- *Type:* @aws-cdk/core.ConstructNode
+- *Type:* undefined
 
 The construct tree node associated with this construct.
 
@@ -918,7 +918,7 @@ The construct tree node associated with this construct.
 public readonly env: ResourceEnvironment;
 \`\`\`
 
-- *Type:* @aws-cdk/core.ResourceEnvironment
+- *Type:* undefined
 
 The environment this resource belongs to.
 
@@ -937,7 +937,7 @@ that might be different than the stack they were imported into.
 public readonly stack: Stack;
 \`\`\`
 
-- *Type:* @aws-cdk/core.Stack
+- *Type:* undefined
 
 The stack in which this resource is defined.
 
@@ -1033,7 +1033,7 @@ The URL of the static website.
 public readonly encryptionKey: IKey;
 \`\`\`
 
-- *Type:* @aws-cdk/aws-kms.IKey
+- *Type:* undefined
 
 Optional KMS encryption key associated with this bucket.
 
@@ -1057,7 +1057,7 @@ If this bucket has been configured for static website hosting.
 public readonly policy: BucketPolicy;
 \`\`\`
 
-- *Type:* @aws-cdk/aws-s3.BucketPolicy
+- *Type:* undefined
 
 The resource policy associated with this bucket.
 
@@ -1079,15 +1079,15 @@ new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.scope\\">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.scope\\">scope</a></code> | <code>undefined</code> | *No description.* |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.id\\">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.props\\">props</a></code> | <code>@aws-cdk/aws-s3.BucketProps</code> | *No description.* |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.props\\">props</a></code> | <code>undefined</code> | *No description.* |
 
 ---
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 ---
 
@@ -1099,7 +1099,7 @@ new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 
 ##### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.props\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.BucketProps
+- *Type:* undefined
 
 ---
 
@@ -1162,7 +1162,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 
 ###### \`policy\`<sup>Required</sup> <a name=\\"policy\\" id=\\"construct-library.GreeterBucket.applyRemovalPolicy.parameter.policy\\"></a>
 
-- *Type:* @aws-cdk/core.RemovalPolicy
+- *Type:* undefined
 
 ---
 
@@ -1187,7 +1187,7 @@ Adds a bucket notification event destination.
 
 ###### \`event\`<sup>Required</sup> <a name=\\"event\\" id=\\"construct-library.GreeterBucket.addEventNotification.parameter.event\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.EventType
+- *Type:* undefined
 
 The event to trigger the notification.
 
@@ -1195,7 +1195,7 @@ The event to trigger the notification.
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.GreeterBucket.addEventNotification.parameter.dest\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.IBucketNotificationDestination
+- *Type:* undefined
 
 The notification destination (Lambda, SNS Topic or SQS Queue).
 
@@ -1203,7 +1203,7 @@ The notification destination (Lambda, SNS Topic or SQS Queue).
 
 ###### \`filters\`<sup>Required</sup> <a name=\\"filters\\" id=\\"construct-library.GreeterBucket.addEventNotification.parameter.filters\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* undefined
 
 S3 object key filter rules to determine which objects trigger this event.
 
@@ -1226,7 +1226,7 @@ This is identical to calling
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.GreeterBucket.addObjectCreatedNotification.parameter.dest\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.IBucketNotificationDestination
+- *Type:* undefined
 
 The notification destination (see onEvent).
 
@@ -1234,7 +1234,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name=\\"filters\\" id=\\"construct-library.GreeterBucket.addObjectCreatedNotification.parameter.filters\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* undefined
 
 Filters (see onEvent).
 
@@ -1253,7 +1253,7 @@ This is identical to calling
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.GreeterBucket.addObjectRemovedNotification.parameter.dest\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.IBucketNotificationDestination
+- *Type:* undefined
 
 The notification destination (see onEvent).
 
@@ -1261,7 +1261,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name=\\"filters\\" id=\\"construct-library.GreeterBucket.addObjectRemovedNotification.parameter.filters\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* undefined
 
 Filters (see onEvent).
 
@@ -1283,7 +1283,7 @@ So it's safest to do nothing in these cases.
 
 ###### \`permission\`<sup>Required</sup> <a name=\\"permission\\" id=\\"construct-library.GreeterBucket.addToResourcePolicy.parameter.permission\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.PolicyStatement
+- *Type:* undefined
 
 the policy statement to be added to the bucket's policy.
 
@@ -1319,7 +1319,7 @@ Grants s3:DeleteObject* permission to an IAM principal for objects in this bucke
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantDelete.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 The principal.
 
@@ -1391,7 +1391,7 @@ of written files will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantPut.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 The principal.
 
@@ -1419,7 +1419,7 @@ in this case, if you need to modify object ACLs, call this method explicitly.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantPutAcl.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 ---
 
@@ -1442,7 +1442,7 @@ of the bucket will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantRead.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 The principal.
 
@@ -1477,7 +1477,7 @@ use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantReadWrite.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 ---
 
@@ -1508,7 +1508,7 @@ use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantWrite.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 ---
 
@@ -1539,7 +1539,7 @@ The id of the rule.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.GreeterBucket.onCloudTrailEvent.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.OnCloudTrailBucketEventOptions
+- *Type:* undefined
 
 Options for adding the rule.
 
@@ -1570,7 +1570,7 @@ The id of the rule.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.GreeterBucket.onCloudTrailPutObject.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.OnCloudTrailBucketEventOptions
+- *Type:* undefined
 
 Options for adding the rule.
 
@@ -1604,7 +1604,7 @@ The id of the rule.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.GreeterBucket.onCloudTrailWriteObject.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.OnCloudTrailBucketEventOptions
+- *Type:* undefined
 
 Options for adding the rule.
 
@@ -1659,7 +1659,7 @@ bucket is returned.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.GreeterBucket.transferAccelerationUrlForObject.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.TransferAccelerationUrlOptions
+- *Type:* undefined
 
 Options for generating URL.
 
@@ -1714,7 +1714,7 @@ bucket is returned.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.GreeterBucket.virtualHostedUrlForObject.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.VirtualHostedStyleUrlOptions
+- *Type:* undefined
 
 Options for generating URL.
 
@@ -1730,7 +1730,7 @@ Adds a cross-origin access configuration for objects in an Amazon S3 bucket.
 
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"construct-library.GreeterBucket.addCorsRule.parameter.rule\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.CorsRule
+- *Type:* undefined
 
 The CORS configuration rule to add.
 
@@ -1746,7 +1746,7 @@ Add an inventory configuration.
 
 ###### \`inventory\`<sup>Required</sup> <a name=\\"inventory\\" id=\\"construct-library.GreeterBucket.addInventory.parameter.inventory\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.Inventory
+- *Type:* undefined
 
 configuration to add.
 
@@ -1762,7 +1762,7 @@ Add a lifecycle rule to the bucket.
 
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"construct-library.GreeterBucket.addLifecycleRule.parameter.rule\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.LifecycleRule
+- *Type:* undefined
 
 The rule to add.
 
@@ -1778,7 +1778,7 @@ Adds a metrics configuration for the CloudWatch request metrics from the bucket.
 
 ###### \`metric\`<sup>Required</sup> <a name=\\"metric\\" id=\\"construct-library.GreeterBucket.addMetric.parameter.metric\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.BucketMetrics
+- *Type:* undefined
 
 The metric configuration to add.
 
@@ -1831,7 +1831,7 @@ Check whether the given construct is a Resource.
 
 ###### \`construct\`<sup>Required</sup> <a name=\\"construct\\" id=\\"construct-library.GreeterBucket.isResource.parameter.construct\\"></a>
 
-- *Type:* @aws-cdk/core.IConstruct
+- *Type:* undefined
 
 ---
 
@@ -1845,7 +1845,7 @@ GreeterBucket.fromBucketArn(scope: Construct, id: string, bucketArn: string)
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.GreeterBucket.fromBucketArn.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 ---
 
@@ -1873,7 +1873,7 @@ Creates a Bucket construct that represents an external bucket.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.GreeterBucket.fromBucketAttributes.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 The parent creating construct (usually \`this\`).
 
@@ -1889,7 +1889,7 @@ The construct's name.
 
 ###### \`attrs\`<sup>Required</sup> <a name=\\"attrs\\" id=\\"construct-library.GreeterBucket.fromBucketAttributes.parameter.attrs\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.BucketAttributes
+- *Type:* undefined
 
 A \`BucketAttributes\` object.
 
@@ -1908,7 +1908,7 @@ GreeterBucket.fromBucketName(scope: Construct, id: string, bucketName: string)
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.GreeterBucket.fromBucketName.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 ---
 
@@ -1946,9 +1946,9 @@ name of the bucket.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#construct-library.GreeterBucket.property.node\\">node</a></code> | <code>@aws-cdk/core.ConstructNode</code> | The construct tree node associated with this construct. |
-| <code><a href=\\"#construct-library.GreeterBucket.property.env\\">env</a></code> | <code>@aws-cdk/core.ResourceEnvironment</code> | The environment this resource belongs to. |
-| <code><a href=\\"#construct-library.GreeterBucket.property.stack\\">stack</a></code> | <code>@aws-cdk/core.Stack</code> | The stack in which this resource is defined. |
+| <code><a href=\\"#construct-library.GreeterBucket.property.node\\">node</a></code> | <code>undefined</code> | The construct tree node associated with this construct. |
+| <code><a href=\\"#construct-library.GreeterBucket.property.env\\">env</a></code> | <code>undefined</code> | The environment this resource belongs to. |
+| <code><a href=\\"#construct-library.GreeterBucket.property.stack\\">stack</a></code> | <code>undefined</code> | The stack in which this resource is defined. |
 | <code><a href=\\"#construct-library.GreeterBucket.property.bucketArn\\">bucketArn</a></code> | <code>string</code> | The ARN of the bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.property.bucketDomainName\\">bucketDomainName</a></code> | <code>string</code> | The IPv4 DNS name of the specified bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.property.bucketDualStackDomainName\\">bucketDualStackDomainName</a></code> | <code>string</code> | The IPv6 DNS name of the specified bucket. |
@@ -1956,9 +1956,9 @@ name of the bucket.
 | <code><a href=\\"#construct-library.GreeterBucket.property.bucketRegionalDomainName\\">bucketRegionalDomainName</a></code> | <code>string</code> | The regional domain name of the specified bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.property.bucketWebsiteDomainName\\">bucketWebsiteDomainName</a></code> | <code>string</code> | The Domain name of the static website. |
 | <code><a href=\\"#construct-library.GreeterBucket.property.bucketWebsiteUrl\\">bucketWebsiteUrl</a></code> | <code>string</code> | The URL of the static website. |
-| <code><a href=\\"#construct-library.GreeterBucket.property.encryptionKey\\">encryptionKey</a></code> | <code>@aws-cdk/aws-kms.IKey</code> | Optional KMS encryption key associated with this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.property.encryptionKey\\">encryptionKey</a></code> | <code>undefined</code> | Optional KMS encryption key associated with this bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.property.isWebsite\\">isWebsite</a></code> | <code>boolean</code> | If this bucket has been configured for static website hosting. |
-| <code><a href=\\"#construct-library.GreeterBucket.property.policy\\">policy</a></code> | <code>@aws-cdk/aws-s3.BucketPolicy</code> | The resource policy associated with this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.property.policy\\">policy</a></code> | <code>undefined</code> | The resource policy associated with this bucket. |
 
 ---
 
@@ -1968,7 +1968,7 @@ name of the bucket.
 public readonly node: ConstructNode;
 \`\`\`
 
-- *Type:* @aws-cdk/core.ConstructNode
+- *Type:* undefined
 
 The construct tree node associated with this construct.
 
@@ -1980,7 +1980,7 @@ The construct tree node associated with this construct.
 public readonly env: ResourceEnvironment;
 \`\`\`
 
-- *Type:* @aws-cdk/core.ResourceEnvironment
+- *Type:* undefined
 
 The environment this resource belongs to.
 
@@ -1999,7 +1999,7 @@ that might be different than the stack they were imported into.
 public readonly stack: Stack;
 \`\`\`
 
-- *Type:* @aws-cdk/core.Stack
+- *Type:* undefined
 
 The stack in which this resource is defined.
 
@@ -2095,7 +2095,7 @@ The URL of the static website.
 public readonly encryptionKey: IKey;
 \`\`\`
 
-- *Type:* @aws-cdk/aws-kms.IKey
+- *Type:* undefined
 
 Optional KMS encryption key associated with this bucket.
 
@@ -2119,7 +2119,7 @@ If this bucket has been configured for static website hosting.
 public readonly policy: BucketPolicy;
 \`\`\`
 
-- *Type:* @aws-cdk/aws-s3.BucketPolicy
+- *Type:* undefined
 
 The resource policy associated with this bucket.
 
@@ -2181,40 +2181,40 @@ submod1.GoodbyeBucket(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.scope\\">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.scope\\">scope</a></code> | <code>undefined</code> | *No description.* |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.id\\">id</a></code> | <code>str</code> | *No description.* |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.accessControl\\">access_control</a></code> | <code>aws_cdk.aws_s3.BucketAccessControl</code> | Specifies a canned ACL that grants predefined permissions to the bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.accessControl\\">access_control</a></code> | <code>undefined</code> | Specifies a canned ACL that grants predefined permissions to the bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.autoDeleteObjects\\">auto_delete_objects</a></code> | <code>bool</code> | Whether all objects should be automatically deleted when the bucket is removed from the stack or when the stack is deleted. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.blockPublicAccess\\">block_public_access</a></code> | <code>aws_cdk.aws_s3.BlockPublicAccess</code> | The block public access configuration of this bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.blockPublicAccess\\">block_public_access</a></code> | <code>undefined</code> | The block public access configuration of this bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.bucketKeyEnabled\\">bucket_key_enabled</a></code> | <code>bool</code> | Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.bucketName\\">bucket_name</a></code> | <code>str</code> | Physical name of this bucket. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.cors\\">cors</a></code> | <code>typing.List[aws_cdk.aws_s3.CorsRule]</code> | The CORS configuration of this bucket. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.encryption\\">encryption</a></code> | <code>aws_cdk.aws_s3.BucketEncryption</code> | The kind of server-side encryption to apply to this bucket. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.encryptionKey\\">encryption_key</a></code> | <code>aws_cdk.aws_kms.IKey</code> | External KMS key to use for bucket encryption. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.cors\\">cors</a></code> | <code>typing.List[undefined]</code> | The CORS configuration of this bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.encryption\\">encryption</a></code> | <code>undefined</code> | The kind of server-side encryption to apply to this bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.encryptionKey\\">encryption_key</a></code> | <code>undefined</code> | External KMS key to use for bucket encryption. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.enforceSSL\\">enforce_ss_l</a></code> | <code>bool</code> | Enforces SSL for requests. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.eventBridgeEnabled\\">event_bridge_enabled</a></code> | <code>bool</code> | Whether this bucket should send notifications to Amazon EventBridge or not. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.intelligentTieringConfigurations\\">intelligent_tiering_configurations</a></code> | <code>typing.List[aws_cdk.aws_s3.IntelligentTieringConfiguration]</code> | Inteligent Tiering Configurations. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.inventories\\">inventories</a></code> | <code>typing.List[aws_cdk.aws_s3.Inventory]</code> | The inventory configuration of the bucket. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.lifecycleRules\\">lifecycle_rules</a></code> | <code>typing.List[aws_cdk.aws_s3.LifecycleRule]</code> | Rules that define how Amazon S3 manages objects during their lifetime. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.metrics\\">metrics</a></code> | <code>typing.List[aws_cdk.aws_s3.BucketMetrics]</code> | The metrics configuration of this bucket. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.notificationsHandlerRole\\">notifications_handler_role</a></code> | <code>aws_cdk.aws_iam.IRole</code> | The role to be used by the notifications handler. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.objectOwnership\\">object_ownership</a></code> | <code>aws_cdk.aws_s3.ObjectOwnership</code> | The objectOwnership of the bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.intelligentTieringConfigurations\\">intelligent_tiering_configurations</a></code> | <code>typing.List[undefined]</code> | Inteligent Tiering Configurations. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.inventories\\">inventories</a></code> | <code>typing.List[undefined]</code> | The inventory configuration of the bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.lifecycleRules\\">lifecycle_rules</a></code> | <code>typing.List[undefined]</code> | Rules that define how Amazon S3 manages objects during their lifetime. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.metrics\\">metrics</a></code> | <code>typing.List[undefined]</code> | The metrics configuration of this bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.notificationsHandlerRole\\">notifications_handler_role</a></code> | <code>undefined</code> | The role to be used by the notifications handler. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.objectOwnership\\">object_ownership</a></code> | <code>undefined</code> | The objectOwnership of the bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.publicReadAccess\\">public_read_access</a></code> | <code>bool</code> | Grants public read access to all objects in the bucket. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.removalPolicy\\">removal_policy</a></code> | <code>aws_cdk.core.RemovalPolicy</code> | Policy to apply when the bucket is removed from this stack. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.serverAccessLogsBucket\\">server_access_logs_bucket</a></code> | <code>aws_cdk.aws_s3.IBucket</code> | Destination bucket for the server access logs. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.removalPolicy\\">removal_policy</a></code> | <code>undefined</code> | Policy to apply when the bucket is removed from this stack. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.serverAccessLogsBucket\\">server_access_logs_bucket</a></code> | <code>undefined</code> | Destination bucket for the server access logs. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.serverAccessLogsPrefix\\">server_access_logs_prefix</a></code> | <code>str</code> | Optional log file prefix to use for the bucket's access logs. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.transferAcceleration\\">transfer_acceleration</a></code> | <code>bool</code> | Whether this bucket should have transfer acceleration turned on or not. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.versioned\\">versioned</a></code> | <code>bool</code> | Whether this bucket should have versioning turned on or not. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.websiteErrorDocument\\">website_error_document</a></code> | <code>str</code> | The name of the error document (e.g. \\"404.html\\") for the website. \`websiteIndexDocument\` must also be set if this is set. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.websiteIndexDocument\\">website_index_document</a></code> | <code>str</code> | The name of the index document (e.g. \\"index.html\\") for the website. Enables static website hosting for this bucket. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.websiteRedirect\\">website_redirect</a></code> | <code>aws_cdk.aws_s3.RedirectTarget</code> | Specifies the redirect behavior of all requests to a website endpoint of a bucket. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.websiteRoutingRules\\">website_routing_rules</a></code> | <code>typing.List[aws_cdk.aws_s3.RoutingRule]</code> | Rules that define when a redirect is applied and the redirect behavior. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.websiteRedirect\\">website_redirect</a></code> | <code>undefined</code> | Specifies the redirect behavior of all requests to a website endpoint of a bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.websiteRoutingRules\\">website_routing_rules</a></code> | <code>typing.List[undefined]</code> | Rules that define when a redirect is applied and the redirect behavior. |
 
 ---
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 ---
 
@@ -2226,7 +2226,7 @@ submod1.GoodbyeBucket(
 
 ##### \`access_control\`<sup>Optional</sup> <a name=\\"access_control\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.accessControl\\"></a>
 
-- *Type:* aws_cdk.aws_s3.BucketAccessControl
+- *Type:* undefined
 - *Default:* BucketAccessControl.PRIVATE
 
 Specifies a canned ACL that grants predefined permissions to the bucket.
@@ -2251,7 +2251,7 @@ by deploying with CDK version \`1.126.0\` or later **before** switching this val
 
 ##### \`block_public_access\`<sup>Optional</sup> <a name=\\"block_public_access\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.blockPublicAccess\\"></a>
 
-- *Type:* aws_cdk.aws_s3.BlockPublicAccess
+- *Type:* undefined
 - *Default:* CloudFormation defaults will apply. New buckets and objects don't allow public access, but users can modify bucket policies or object permissions to allow public access
 
 The block public access configuration of this bucket.
@@ -2282,7 +2282,7 @@ Physical name of this bucket.
 
 ##### \`cors\`<sup>Optional</sup> <a name=\\"cors\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.cors\\"></a>
 
-- *Type:* typing.List[aws_cdk.aws_s3.CorsRule]
+- *Type:* typing.List[undefined]
 - *Default:* No CORS configuration.
 
 The CORS configuration of this bucket.
@@ -2293,7 +2293,7 @@ The CORS configuration of this bucket.
 
 ##### \`encryption\`<sup>Optional</sup> <a name=\\"encryption\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.encryption\\"></a>
 
-- *Type:* aws_cdk.aws_s3.BucketEncryption
+- *Type:* undefined
 - *Default:* \`Kms\` if \`encryptionKey\` is specified, or \`Unencrypted\` otherwise.
 
 The kind of server-side encryption to apply to this bucket.
@@ -2305,7 +2305,7 @@ encryption key is not specified, a key will automatically be created.
 
 ##### \`encryption_key\`<sup>Optional</sup> <a name=\\"encryption_key\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.encryptionKey\\"></a>
 
-- *Type:* aws_cdk.aws_kms.IKey
+- *Type:* undefined
 - *Default:* If encryption is set to \\"Kms\\" and this property is undefined, a new KMS key will be created and associated with this bucket.
 
 External KMS key to use for bucket encryption.
@@ -2340,7 +2340,7 @@ Whether this bucket should send notifications to Amazon EventBridge or not.
 
 ##### \`intelligent_tiering_configurations\`<sup>Optional</sup> <a name=\\"intelligent_tiering_configurations\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.intelligentTieringConfigurations\\"></a>
 
-- *Type:* typing.List[aws_cdk.aws_s3.IntelligentTieringConfiguration]
+- *Type:* typing.List[undefined]
 - *Default:* No Intelligent Tiiering Configurations.
 
 Inteligent Tiering Configurations.
@@ -2351,7 +2351,7 @@ Inteligent Tiering Configurations.
 
 ##### \`inventories\`<sup>Optional</sup> <a name=\\"inventories\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.inventories\\"></a>
 
-- *Type:* typing.List[aws_cdk.aws_s3.Inventory]
+- *Type:* typing.List[undefined]
 - *Default:* No inventory configuration
 
 The inventory configuration of the bucket.
@@ -2362,7 +2362,7 @@ The inventory configuration of the bucket.
 
 ##### \`lifecycle_rules\`<sup>Optional</sup> <a name=\\"lifecycle_rules\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.lifecycleRules\\"></a>
 
-- *Type:* typing.List[aws_cdk.aws_s3.LifecycleRule]
+- *Type:* typing.List[undefined]
 - *Default:* No lifecycle rules.
 
 Rules that define how Amazon S3 manages objects during their lifetime.
@@ -2371,7 +2371,7 @@ Rules that define how Amazon S3 manages objects during their lifetime.
 
 ##### \`metrics\`<sup>Optional</sup> <a name=\\"metrics\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.metrics\\"></a>
 
-- *Type:* typing.List[aws_cdk.aws_s3.BucketMetrics]
+- *Type:* typing.List[undefined]
 - *Default:* No metrics configuration.
 
 The metrics configuration of this bucket.
@@ -2382,7 +2382,7 @@ The metrics configuration of this bucket.
 
 ##### \`notifications_handler_role\`<sup>Optional</sup> <a name=\\"notifications_handler_role\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.notificationsHandlerRole\\"></a>
 
-- *Type:* aws_cdk.aws_iam.IRole
+- *Type:* undefined
 - *Default:* a new role will be created.
 
 The role to be used by the notifications handler.
@@ -2391,7 +2391,7 @@ The role to be used by the notifications handler.
 
 ##### \`object_ownership\`<sup>Optional</sup> <a name=\\"object_ownership\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.objectOwnership\\"></a>
 
-- *Type:* aws_cdk.aws_s3.ObjectOwnership
+- *Type:* undefined
 - *Default:* No ObjectOwnership configuration, uploading account will own the object.
 
 The objectOwnership of the bucket.
@@ -2413,7 +2413,7 @@ Similar to calling \`bucket.grantPublicAccess()\`
 
 ##### \`removal_policy\`<sup>Optional</sup> <a name=\\"removal_policy\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.removalPolicy\\"></a>
 
-- *Type:* aws_cdk.core.RemovalPolicy
+- *Type:* undefined
 - *Default:* The bucket will be orphaned.
 
 Policy to apply when the bucket is removed from this stack.
@@ -2422,7 +2422,7 @@ Policy to apply when the bucket is removed from this stack.
 
 ##### \`server_access_logs_bucket\`<sup>Optional</sup> <a name=\\"server_access_logs_bucket\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.serverAccessLogsBucket\\"></a>
 
-- *Type:* aws_cdk.aws_s3.IBucket
+- *Type:* undefined
 - *Default:* If \\"serverAccessLogsPrefix\\" undefined - access logs disabled, otherwise - log to current bucket.
 
 Destination bucket for the server access logs.
@@ -2478,7 +2478,7 @@ The name of the index document (e.g. \\"index.html\\") for the website. Enables 
 
 ##### \`website_redirect\`<sup>Optional</sup> <a name=\\"website_redirect\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.websiteRedirect\\"></a>
 
-- *Type:* aws_cdk.aws_s3.RedirectTarget
+- *Type:* undefined
 - *Default:* No redirection.
 
 Specifies the redirect behavior of all requests to a website endpoint of a bucket.
@@ -2489,7 +2489,7 @@ If you specify this property, you can't specify \\"websiteIndexDocument\\", \\"w
 
 ##### \`website_routing_rules\`<sup>Optional</sup> <a name=\\"website_routing_rules\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.websiteRoutingRules\\"></a>
 
-- *Type:* typing.List[aws_cdk.aws_s3.RoutingRule]
+- *Type:* typing.List[undefined]
 - *Default:* No redirection rules.
 
 Rules that define when a redirect is applied and the redirect behavior.
@@ -2557,7 +2557,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 
 ###### \`policy\`<sup>Required</sup> <a name=\\"policy\\" id=\\"construct-library.submod1.GoodbyeBucket.applyRemovalPolicy.parameter.policy\\"></a>
 
-- *Type:* aws_cdk.core.RemovalPolicy
+- *Type:* undefined
 
 ---
 
@@ -2587,7 +2587,7 @@ Adds a bucket notification event destination.
 
 ###### \`event\`<sup>Required</sup> <a name=\\"event\\" id=\\"construct-library.submod1.GoodbyeBucket.addEventNotification.parameter.event\\"></a>
 
-- *Type:* aws_cdk.aws_s3.EventType
+- *Type:* undefined
 
 The event to trigger the notification.
 
@@ -2595,7 +2595,7 @@ The event to trigger the notification.
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.submod1.GoodbyeBucket.addEventNotification.parameter.dest\\"></a>
 
-- *Type:* aws_cdk.aws_s3.IBucketNotificationDestination
+- *Type:* undefined
 
 The notification destination (Lambda, SNS Topic or SQS Queue).
 
@@ -2634,7 +2634,7 @@ This is identical to calling
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification.parameter.dest\\"></a>
 
-- *Type:* aws_cdk.aws_s3.IBucketNotificationDestination
+- *Type:* undefined
 
 The notification destination (see onEvent).
 
@@ -2673,7 +2673,7 @@ This is identical to calling
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification.parameter.dest\\"></a>
 
-- *Type:* aws_cdk.aws_s3.IBucketNotificationDestination
+- *Type:* undefined
 
 The notification destination (see onEvent).
 
@@ -2713,7 +2713,7 @@ So it's safest to do nothing in these cases.
 
 ###### \`permission\`<sup>Required</sup> <a name=\\"permission\\" id=\\"construct-library.submod1.GoodbyeBucket.addToResourcePolicy.parameter.permission\\"></a>
 
-- *Type:* aws_cdk.aws_iam.PolicyStatement
+- *Type:* undefined
 
 the policy statement to be added to the bucket's policy.
 
@@ -2754,7 +2754,7 @@ Grants s3:DeleteObject* permission to an IAM principal for objects in this bucke
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantDelete.parameter.identity\\"></a>
 
-- *Type:* aws_cdk.aws_iam.IGrantable
+- *Type:* undefined
 
 The principal.
 
@@ -2832,7 +2832,7 @@ of written files will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPut.parameter.identity\\"></a>
 
-- *Type:* aws_cdk.aws_iam.IGrantable
+- *Type:* undefined
 
 The principal.
 
@@ -2863,7 +2863,7 @@ in this case, if you need to modify object ACLs, call this method explicitly.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPutAcl.parameter.identity\\"></a>
 
-- *Type:* aws_cdk.aws_iam.IGrantable
+- *Type:* undefined
 
 ---
 
@@ -2889,7 +2889,7 @@ of the bucket will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantRead.parameter.identity\\"></a>
 
-- *Type:* aws_cdk.aws_iam.IGrantable
+- *Type:* undefined
 
 The principal.
 
@@ -2927,7 +2927,7 @@ use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantReadWrite.parameter.identity\\"></a>
 
-- *Type:* aws_cdk.aws_iam.IGrantable
+- *Type:* undefined
 
 ---
 
@@ -2961,7 +2961,7 @@ use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantWrite.parameter.identity\\"></a>
 
-- *Type:* aws_cdk.aws_iam.IGrantable
+- *Type:* undefined
 
 ---
 
@@ -3008,7 +3008,7 @@ A description of the rule's purpose.
 
 ###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailEvent.parameter.eventPattern\\"></a>
 
-- *Type:* aws_cdk.aws_events.EventPattern
+- *Type:* undefined
 - *Default:* No additional filtering based on an event pattern.
 
 Additional restrictions for the event to route to the specified target.
@@ -3032,7 +3032,7 @@ A name for the rule.
 
 ###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailEvent.parameter.target\\"></a>
 
-- *Type:* aws_cdk.aws_events.IRuleTarget
+- *Type:* undefined
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
 
 The target to register for the event.
@@ -3089,7 +3089,7 @@ A description of the rule's purpose.
 
 ###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailPutObject.parameter.eventPattern\\"></a>
 
-- *Type:* aws_cdk.aws_events.EventPattern
+- *Type:* undefined
 - *Default:* No additional filtering based on an event pattern.
 
 Additional restrictions for the event to route to the specified target.
@@ -3113,7 +3113,7 @@ A name for the rule.
 
 ###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailPutObject.parameter.target\\"></a>
 
-- *Type:* aws_cdk.aws_events.IRuleTarget
+- *Type:* undefined
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
 
 The target to register for the event.
@@ -3173,7 +3173,7 @@ A description of the rule's purpose.
 
 ###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailWriteObject.parameter.eventPattern\\"></a>
 
-- *Type:* aws_cdk.aws_events.EventPattern
+- *Type:* undefined
 - *Default:* No additional filtering based on an event pattern.
 
 Additional restrictions for the event to route to the specified target.
@@ -3197,7 +3197,7 @@ A name for the rule.
 
 ###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailWriteObject.parameter.target\\"></a>
 
-- *Type:* aws_cdk.aws_events.IRuleTarget
+- *Type:* undefined
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
 
 The target to register for the event.
@@ -3352,7 +3352,7 @@ Adds a cross-origin access configuration for objects in an Amazon S3 bucket.
 
 ###### \`allowed_methods\`<sup>Required</sup> <a name=\\"allowed_methods\\" id=\\"construct-library.submod1.GoodbyeBucket.addCorsRule.parameter.allowedMethods\\"></a>
 
-- *Type:* typing.List[aws_cdk.aws_s3.HttpMethods]
+- *Type:* typing.List[undefined]
 
 An HTTP method that you allow the origin to execute.
 
@@ -3421,7 +3421,7 @@ Add an inventory configuration.
 
 ###### \`destination\`<sup>Required</sup> <a name=\\"destination\\" id=\\"construct-library.submod1.GoodbyeBucket.addInventory.parameter.destination\\"></a>
 
-- *Type:* aws_cdk.aws_s3.InventoryDestination
+- *Type:* undefined
 
 The destination of the inventory.
 
@@ -3438,7 +3438,7 @@ Whether the inventory is enabled or disabled.
 
 ###### \`format\`<sup>Optional</sup> <a name=\\"format\\" id=\\"construct-library.submod1.GoodbyeBucket.addInventory.parameter.format\\"></a>
 
-- *Type:* aws_cdk.aws_s3.InventoryFormat
+- *Type:* undefined
 - *Default:* InventoryFormat.CSV
 
 The format of the inventory.
@@ -3447,7 +3447,7 @@ The format of the inventory.
 
 ###### \`frequency\`<sup>Optional</sup> <a name=\\"frequency\\" id=\\"construct-library.submod1.GoodbyeBucket.addInventory.parameter.frequency\\"></a>
 
-- *Type:* aws_cdk.aws_s3.InventoryFrequency
+- *Type:* undefined
 - *Default:* InventoryFrequency.WEEKLY
 
 Frequency at which the inventory should be generated.
@@ -3456,7 +3456,7 @@ Frequency at which the inventory should be generated.
 
 ###### \`include_object_versions\`<sup>Optional</sup> <a name=\\"include_object_versions\\" id=\\"construct-library.submod1.GoodbyeBucket.addInventory.parameter.includeObjectVersions\\"></a>
 
-- *Type:* aws_cdk.aws_s3.InventoryObjectVersion
+- *Type:* undefined
 - *Default:* InventoryObjectVersion.ALL
 
 If the inventory should contain all the object versions or only the current one.
@@ -3515,7 +3515,7 @@ Add a lifecycle rule to the bucket.
 
 ###### \`abort_incomplete_multipart_upload_after\`<sup>Optional</sup> <a name=\\"abort_incomplete_multipart_upload_after\\" id=\\"construct-library.submod1.GoodbyeBucket.addLifecycleRule.parameter.abortIncompleteMultipartUploadAfter\\"></a>
 
-- *Type:* aws_cdk.core.Duration
+- *Type:* undefined
 - *Default:* Incomplete uploads are never aborted
 
 Specifies a lifecycle rule that aborts incomplete multipart uploads to an Amazon S3 bucket.
@@ -3538,7 +3538,7 @@ Whether this rule is enabled.
 
 ###### \`expiration\`<sup>Optional</sup> <a name=\\"expiration\\" id=\\"construct-library.submod1.GoodbyeBucket.addLifecycleRule.parameter.expiration\\"></a>
 
-- *Type:* aws_cdk.core.Duration
+- *Type:* undefined
 - *Default:* No expiration timeout
 
 Indicates the number of days after creation when objects are deleted from Amazon S3 and Amazon Glacier.
@@ -3587,7 +3587,7 @@ The value cannot be more than 255 characters.
 
 ###### \`noncurrent_version_expiration\`<sup>Optional</sup> <a name=\\"noncurrent_version_expiration\\" id=\\"construct-library.submod1.GoodbyeBucket.addLifecycleRule.parameter.noncurrentVersionExpiration\\"></a>
 
-- *Type:* aws_cdk.core.Duration
+- *Type:* undefined
 - *Default:* No noncurrent version expiration
 
 Time between when a new version of the object is uploaded to the bucket and when old versions of the object expire.
@@ -3615,7 +3615,7 @@ Amazon S3 permanently deletes them.
 
 ###### \`noncurrent_version_transitions\`<sup>Optional</sup> <a name=\\"noncurrent_version_transitions\\" id=\\"construct-library.submod1.GoodbyeBucket.addLifecycleRule.parameter.noncurrentVersionTransitions\\"></a>
 
-- *Type:* typing.List[aws_cdk.aws_s3.NoncurrentVersionTransition]
+- *Type:* typing.List[undefined]
 
 One or more transition rules that specify when non-current objects transition to a specified storage class.
 
@@ -3664,7 +3664,7 @@ The TagFilter property type specifies tags to use to identify a subset of object
 
 ###### \`transitions\`<sup>Optional</sup> <a name=\\"transitions\\" id=\\"construct-library.submod1.GoodbyeBucket.addLifecycleRule.parameter.transitions\\"></a>
 
-- *Type:* typing.List[aws_cdk.aws_s3.Transition]
+- *Type:* typing.List[undefined]
 - *Default:* No transition rules
 
 One or more transition rules that specify when an object transitions to a specified storage class.
@@ -3764,7 +3764,7 @@ Check whether the given construct is a Resource.
 
 ###### \`construct\`<sup>Required</sup> <a name=\\"construct\\" id=\\"construct-library.submod1.GoodbyeBucket.isResource.parameter.construct\\"></a>
 
-- *Type:* aws_cdk.core.IConstruct
+- *Type:* undefined
 
 ---
 
@@ -3782,7 +3782,7 @@ submod1.GoodbyeBucket.from_bucket_arn(
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketArn.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 ---
 
@@ -3825,7 +3825,7 @@ Creates a Bucket construct that represents an external bucket.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketAttributes.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 The parent creating construct (usually \`this\`).
 
@@ -3920,7 +3920,7 @@ The website URL of the bucket (if static web hosting is enabled).
 
 ###### \`encryption_key\`<sup>Optional</sup> <a name=\\"encryption_key\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketAttributes.parameter.encryptionKey\\"></a>
 
-- *Type:* aws_cdk.aws_kms.IKey
+- *Type:* undefined
 
 ---
 
@@ -3935,7 +3935,7 @@ If this bucket has been configured for static website hosting.
 
 ###### \`notifications_handler_role\`<sup>Optional</sup> <a name=\\"notifications_handler_role\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketAttributes.parameter.notificationsHandlerRole\\"></a>
 
-- *Type:* aws_cdk.aws_iam.IRole
+- *Type:* undefined
 - *Default:* a new role will be created.
 
 The role to be used by the notifications handler.
@@ -3965,7 +3965,7 @@ submod1.GoodbyeBucket.from_bucket_name(
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketName.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 ---
 
@@ -4005,9 +4005,9 @@ name of the bucket.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.node\\">node</a></code> | <code>aws_cdk.core.ConstructNode</code> | The construct tree node associated with this construct. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.env\\">env</a></code> | <code>aws_cdk.core.ResourceEnvironment</code> | The environment this resource belongs to. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.stack\\">stack</a></code> | <code>aws_cdk.core.Stack</code> | The stack in which this resource is defined. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.node\\">node</a></code> | <code>undefined</code> | The construct tree node associated with this construct. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.env\\">env</a></code> | <code>undefined</code> | The environment this resource belongs to. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.stack\\">stack</a></code> | <code>undefined</code> | The stack in which this resource is defined. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.bucketArn\\">bucket_arn</a></code> | <code>str</code> | The ARN of the bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.bucketDomainName\\">bucket_domain_name</a></code> | <code>str</code> | The IPv4 DNS name of the specified bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.bucketDualStackDomainName\\">bucket_dual_stack_domain_name</a></code> | <code>str</code> | The IPv6 DNS name of the specified bucket. |
@@ -4015,9 +4015,9 @@ name of the bucket.
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.bucketRegionalDomainName\\">bucket_regional_domain_name</a></code> | <code>str</code> | The regional domain name of the specified bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.bucketWebsiteDomainName\\">bucket_website_domain_name</a></code> | <code>str</code> | The Domain name of the static website. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.bucketWebsiteUrl\\">bucket_website_url</a></code> | <code>str</code> | The URL of the static website. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.encryptionKey\\">encryption_key</a></code> | <code>aws_cdk.aws_kms.IKey</code> | Optional KMS encryption key associated with this bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.encryptionKey\\">encryption_key</a></code> | <code>undefined</code> | Optional KMS encryption key associated with this bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.isWebsite\\">is_website</a></code> | <code>bool</code> | If this bucket has been configured for static website hosting. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.policy\\">policy</a></code> | <code>aws_cdk.aws_s3.BucketPolicy</code> | The resource policy associated with this bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.policy\\">policy</a></code> | <code>undefined</code> | The resource policy associated with this bucket. |
 
 ---
 
@@ -4027,7 +4027,7 @@ name of the bucket.
 node: ConstructNode
 \`\`\`
 
-- *Type:* aws_cdk.core.ConstructNode
+- *Type:* undefined
 
 The construct tree node associated with this construct.
 
@@ -4039,7 +4039,7 @@ The construct tree node associated with this construct.
 env: ResourceEnvironment
 \`\`\`
 
-- *Type:* aws_cdk.core.ResourceEnvironment
+- *Type:* undefined
 
 The environment this resource belongs to.
 
@@ -4058,7 +4058,7 @@ that might be different than the stack they were imported into.
 stack: Stack
 \`\`\`
 
-- *Type:* aws_cdk.core.Stack
+- *Type:* undefined
 
 The stack in which this resource is defined.
 
@@ -4154,7 +4154,7 @@ The URL of the static website.
 encryption_key: IKey
 \`\`\`
 
-- *Type:* aws_cdk.aws_kms.IKey
+- *Type:* undefined
 
 Optional KMS encryption key associated with this bucket.
 
@@ -4178,7 +4178,7 @@ If this bucket has been configured for static website hosting.
 policy: BucketPolicy
 \`\`\`
 
-- *Type:* aws_cdk.aws_s3.BucketPolicy
+- *Type:* undefined
 
 The resource policy associated with this bucket.
 
@@ -4229,40 +4229,40 @@ construct_library.GreeterBucket(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.scope\\">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.scope\\">scope</a></code> | <code>undefined</code> | *No description.* |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.id\\">id</a></code> | <code>str</code> | *No description.* |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.accessControl\\">access_control</a></code> | <code>aws_cdk.aws_s3.BucketAccessControl</code> | Specifies a canned ACL that grants predefined permissions to the bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.accessControl\\">access_control</a></code> | <code>undefined</code> | Specifies a canned ACL that grants predefined permissions to the bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.autoDeleteObjects\\">auto_delete_objects</a></code> | <code>bool</code> | Whether all objects should be automatically deleted when the bucket is removed from the stack or when the stack is deleted. |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.blockPublicAccess\\">block_public_access</a></code> | <code>aws_cdk.aws_s3.BlockPublicAccess</code> | The block public access configuration of this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.blockPublicAccess\\">block_public_access</a></code> | <code>undefined</code> | The block public access configuration of this bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.bucketKeyEnabled\\">bucket_key_enabled</a></code> | <code>bool</code> | Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.bucketName\\">bucket_name</a></code> | <code>str</code> | Physical name of this bucket. |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.cors\\">cors</a></code> | <code>typing.List[aws_cdk.aws_s3.CorsRule]</code> | The CORS configuration of this bucket. |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.encryption\\">encryption</a></code> | <code>aws_cdk.aws_s3.BucketEncryption</code> | The kind of server-side encryption to apply to this bucket. |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.encryptionKey\\">encryption_key</a></code> | <code>aws_cdk.aws_kms.IKey</code> | External KMS key to use for bucket encryption. |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.cors\\">cors</a></code> | <code>typing.List[undefined]</code> | The CORS configuration of this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.encryption\\">encryption</a></code> | <code>undefined</code> | The kind of server-side encryption to apply to this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.encryptionKey\\">encryption_key</a></code> | <code>undefined</code> | External KMS key to use for bucket encryption. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.enforceSSL\\">enforce_ss_l</a></code> | <code>bool</code> | Enforces SSL for requests. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.eventBridgeEnabled\\">event_bridge_enabled</a></code> | <code>bool</code> | Whether this bucket should send notifications to Amazon EventBridge or not. |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.intelligentTieringConfigurations\\">intelligent_tiering_configurations</a></code> | <code>typing.List[aws_cdk.aws_s3.IntelligentTieringConfiguration]</code> | Inteligent Tiering Configurations. |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.inventories\\">inventories</a></code> | <code>typing.List[aws_cdk.aws_s3.Inventory]</code> | The inventory configuration of the bucket. |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.lifecycleRules\\">lifecycle_rules</a></code> | <code>typing.List[aws_cdk.aws_s3.LifecycleRule]</code> | Rules that define how Amazon S3 manages objects during their lifetime. |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.metrics\\">metrics</a></code> | <code>typing.List[aws_cdk.aws_s3.BucketMetrics]</code> | The metrics configuration of this bucket. |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.notificationsHandlerRole\\">notifications_handler_role</a></code> | <code>aws_cdk.aws_iam.IRole</code> | The role to be used by the notifications handler. |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.objectOwnership\\">object_ownership</a></code> | <code>aws_cdk.aws_s3.ObjectOwnership</code> | The objectOwnership of the bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.intelligentTieringConfigurations\\">intelligent_tiering_configurations</a></code> | <code>typing.List[undefined]</code> | Inteligent Tiering Configurations. |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.inventories\\">inventories</a></code> | <code>typing.List[undefined]</code> | The inventory configuration of the bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.lifecycleRules\\">lifecycle_rules</a></code> | <code>typing.List[undefined]</code> | Rules that define how Amazon S3 manages objects during their lifetime. |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.metrics\\">metrics</a></code> | <code>typing.List[undefined]</code> | The metrics configuration of this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.notificationsHandlerRole\\">notifications_handler_role</a></code> | <code>undefined</code> | The role to be used by the notifications handler. |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.objectOwnership\\">object_ownership</a></code> | <code>undefined</code> | The objectOwnership of the bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.publicReadAccess\\">public_read_access</a></code> | <code>bool</code> | Grants public read access to all objects in the bucket. |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.removalPolicy\\">removal_policy</a></code> | <code>aws_cdk.core.RemovalPolicy</code> | Policy to apply when the bucket is removed from this stack. |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.serverAccessLogsBucket\\">server_access_logs_bucket</a></code> | <code>aws_cdk.aws_s3.IBucket</code> | Destination bucket for the server access logs. |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.removalPolicy\\">removal_policy</a></code> | <code>undefined</code> | Policy to apply when the bucket is removed from this stack. |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.serverAccessLogsBucket\\">server_access_logs_bucket</a></code> | <code>undefined</code> | Destination bucket for the server access logs. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.serverAccessLogsPrefix\\">server_access_logs_prefix</a></code> | <code>str</code> | Optional log file prefix to use for the bucket's access logs. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.transferAcceleration\\">transfer_acceleration</a></code> | <code>bool</code> | Whether this bucket should have transfer acceleration turned on or not. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.versioned\\">versioned</a></code> | <code>bool</code> | Whether this bucket should have versioning turned on or not. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.websiteErrorDocument\\">website_error_document</a></code> | <code>str</code> | The name of the error document (e.g. \\"404.html\\") for the website. \`websiteIndexDocument\` must also be set if this is set. |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.websiteIndexDocument\\">website_index_document</a></code> | <code>str</code> | The name of the index document (e.g. \\"index.html\\") for the website. Enables static website hosting for this bucket. |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.websiteRedirect\\">website_redirect</a></code> | <code>aws_cdk.aws_s3.RedirectTarget</code> | Specifies the redirect behavior of all requests to a website endpoint of a bucket. |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.websiteRoutingRules\\">website_routing_rules</a></code> | <code>typing.List[aws_cdk.aws_s3.RoutingRule]</code> | Rules that define when a redirect is applied and the redirect behavior. |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.websiteRedirect\\">website_redirect</a></code> | <code>undefined</code> | Specifies the redirect behavior of all requests to a website endpoint of a bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.websiteRoutingRules\\">website_routing_rules</a></code> | <code>typing.List[undefined]</code> | Rules that define when a redirect is applied and the redirect behavior. |
 
 ---
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 ---
 
@@ -4274,7 +4274,7 @@ construct_library.GreeterBucket(
 
 ##### \`access_control\`<sup>Optional</sup> <a name=\\"access_control\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.accessControl\\"></a>
 
-- *Type:* aws_cdk.aws_s3.BucketAccessControl
+- *Type:* undefined
 - *Default:* BucketAccessControl.PRIVATE
 
 Specifies a canned ACL that grants predefined permissions to the bucket.
@@ -4299,7 +4299,7 @@ by deploying with CDK version \`1.126.0\` or later **before** switching this val
 
 ##### \`block_public_access\`<sup>Optional</sup> <a name=\\"block_public_access\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.blockPublicAccess\\"></a>
 
-- *Type:* aws_cdk.aws_s3.BlockPublicAccess
+- *Type:* undefined
 - *Default:* CloudFormation defaults will apply. New buckets and objects don't allow public access, but users can modify bucket policies or object permissions to allow public access
 
 The block public access configuration of this bucket.
@@ -4330,7 +4330,7 @@ Physical name of this bucket.
 
 ##### \`cors\`<sup>Optional</sup> <a name=\\"cors\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.cors\\"></a>
 
-- *Type:* typing.List[aws_cdk.aws_s3.CorsRule]
+- *Type:* typing.List[undefined]
 - *Default:* No CORS configuration.
 
 The CORS configuration of this bucket.
@@ -4341,7 +4341,7 @@ The CORS configuration of this bucket.
 
 ##### \`encryption\`<sup>Optional</sup> <a name=\\"encryption\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.encryption\\"></a>
 
-- *Type:* aws_cdk.aws_s3.BucketEncryption
+- *Type:* undefined
 - *Default:* \`Kms\` if \`encryptionKey\` is specified, or \`Unencrypted\` otherwise.
 
 The kind of server-side encryption to apply to this bucket.
@@ -4353,7 +4353,7 @@ encryption key is not specified, a key will automatically be created.
 
 ##### \`encryption_key\`<sup>Optional</sup> <a name=\\"encryption_key\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.encryptionKey\\"></a>
 
-- *Type:* aws_cdk.aws_kms.IKey
+- *Type:* undefined
 - *Default:* If encryption is set to \\"Kms\\" and this property is undefined, a new KMS key will be created and associated with this bucket.
 
 External KMS key to use for bucket encryption.
@@ -4388,7 +4388,7 @@ Whether this bucket should send notifications to Amazon EventBridge or not.
 
 ##### \`intelligent_tiering_configurations\`<sup>Optional</sup> <a name=\\"intelligent_tiering_configurations\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.intelligentTieringConfigurations\\"></a>
 
-- *Type:* typing.List[aws_cdk.aws_s3.IntelligentTieringConfiguration]
+- *Type:* typing.List[undefined]
 - *Default:* No Intelligent Tiiering Configurations.
 
 Inteligent Tiering Configurations.
@@ -4399,7 +4399,7 @@ Inteligent Tiering Configurations.
 
 ##### \`inventories\`<sup>Optional</sup> <a name=\\"inventories\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.inventories\\"></a>
 
-- *Type:* typing.List[aws_cdk.aws_s3.Inventory]
+- *Type:* typing.List[undefined]
 - *Default:* No inventory configuration
 
 The inventory configuration of the bucket.
@@ -4410,7 +4410,7 @@ The inventory configuration of the bucket.
 
 ##### \`lifecycle_rules\`<sup>Optional</sup> <a name=\\"lifecycle_rules\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.lifecycleRules\\"></a>
 
-- *Type:* typing.List[aws_cdk.aws_s3.LifecycleRule]
+- *Type:* typing.List[undefined]
 - *Default:* No lifecycle rules.
 
 Rules that define how Amazon S3 manages objects during their lifetime.
@@ -4419,7 +4419,7 @@ Rules that define how Amazon S3 manages objects during their lifetime.
 
 ##### \`metrics\`<sup>Optional</sup> <a name=\\"metrics\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.metrics\\"></a>
 
-- *Type:* typing.List[aws_cdk.aws_s3.BucketMetrics]
+- *Type:* typing.List[undefined]
 - *Default:* No metrics configuration.
 
 The metrics configuration of this bucket.
@@ -4430,7 +4430,7 @@ The metrics configuration of this bucket.
 
 ##### \`notifications_handler_role\`<sup>Optional</sup> <a name=\\"notifications_handler_role\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.notificationsHandlerRole\\"></a>
 
-- *Type:* aws_cdk.aws_iam.IRole
+- *Type:* undefined
 - *Default:* a new role will be created.
 
 The role to be used by the notifications handler.
@@ -4439,7 +4439,7 @@ The role to be used by the notifications handler.
 
 ##### \`object_ownership\`<sup>Optional</sup> <a name=\\"object_ownership\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.objectOwnership\\"></a>
 
-- *Type:* aws_cdk.aws_s3.ObjectOwnership
+- *Type:* undefined
 - *Default:* No ObjectOwnership configuration, uploading account will own the object.
 
 The objectOwnership of the bucket.
@@ -4461,7 +4461,7 @@ Similar to calling \`bucket.grantPublicAccess()\`
 
 ##### \`removal_policy\`<sup>Optional</sup> <a name=\\"removal_policy\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.removalPolicy\\"></a>
 
-- *Type:* aws_cdk.core.RemovalPolicy
+- *Type:* undefined
 - *Default:* The bucket will be orphaned.
 
 Policy to apply when the bucket is removed from this stack.
@@ -4470,7 +4470,7 @@ Policy to apply when the bucket is removed from this stack.
 
 ##### \`server_access_logs_bucket\`<sup>Optional</sup> <a name=\\"server_access_logs_bucket\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.serverAccessLogsBucket\\"></a>
 
-- *Type:* aws_cdk.aws_s3.IBucket
+- *Type:* undefined
 - *Default:* If \\"serverAccessLogsPrefix\\" undefined - access logs disabled, otherwise - log to current bucket.
 
 Destination bucket for the server access logs.
@@ -4526,7 +4526,7 @@ The name of the index document (e.g. \\"index.html\\") for the website. Enables 
 
 ##### \`website_redirect\`<sup>Optional</sup> <a name=\\"website_redirect\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.websiteRedirect\\"></a>
 
-- *Type:* aws_cdk.aws_s3.RedirectTarget
+- *Type:* undefined
 - *Default:* No redirection.
 
 Specifies the redirect behavior of all requests to a website endpoint of a bucket.
@@ -4537,7 +4537,7 @@ If you specify this property, you can't specify \\"websiteIndexDocument\\", \\"w
 
 ##### \`website_routing_rules\`<sup>Optional</sup> <a name=\\"website_routing_rules\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.websiteRoutingRules\\"></a>
 
-- *Type:* typing.List[aws_cdk.aws_s3.RoutingRule]
+- *Type:* typing.List[undefined]
 - *Default:* No redirection rules.
 
 Rules that define when a redirect is applied and the redirect behavior.
@@ -4605,7 +4605,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 
 ###### \`policy\`<sup>Required</sup> <a name=\\"policy\\" id=\\"construct-library.GreeterBucket.applyRemovalPolicy.parameter.policy\\"></a>
 
-- *Type:* aws_cdk.core.RemovalPolicy
+- *Type:* undefined
 
 ---
 
@@ -4635,7 +4635,7 @@ Adds a bucket notification event destination.
 
 ###### \`event\`<sup>Required</sup> <a name=\\"event\\" id=\\"construct-library.GreeterBucket.addEventNotification.parameter.event\\"></a>
 
-- *Type:* aws_cdk.aws_s3.EventType
+- *Type:* undefined
 
 The event to trigger the notification.
 
@@ -4643,7 +4643,7 @@ The event to trigger the notification.
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.GreeterBucket.addEventNotification.parameter.dest\\"></a>
 
-- *Type:* aws_cdk.aws_s3.IBucketNotificationDestination
+- *Type:* undefined
 
 The notification destination (Lambda, SNS Topic or SQS Queue).
 
@@ -4682,7 +4682,7 @@ This is identical to calling
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.GreeterBucket.addObjectCreatedNotification.parameter.dest\\"></a>
 
-- *Type:* aws_cdk.aws_s3.IBucketNotificationDestination
+- *Type:* undefined
 
 The notification destination (see onEvent).
 
@@ -4721,7 +4721,7 @@ This is identical to calling
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.GreeterBucket.addObjectRemovedNotification.parameter.dest\\"></a>
 
-- *Type:* aws_cdk.aws_s3.IBucketNotificationDestination
+- *Type:* undefined
 
 The notification destination (see onEvent).
 
@@ -4761,7 +4761,7 @@ So it's safest to do nothing in these cases.
 
 ###### \`permission\`<sup>Required</sup> <a name=\\"permission\\" id=\\"construct-library.GreeterBucket.addToResourcePolicy.parameter.permission\\"></a>
 
-- *Type:* aws_cdk.aws_iam.PolicyStatement
+- *Type:* undefined
 
 the policy statement to be added to the bucket's policy.
 
@@ -4802,7 +4802,7 @@ Grants s3:DeleteObject* permission to an IAM principal for objects in this bucke
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantDelete.parameter.identity\\"></a>
 
-- *Type:* aws_cdk.aws_iam.IGrantable
+- *Type:* undefined
 
 The principal.
 
@@ -4880,7 +4880,7 @@ of written files will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantPut.parameter.identity\\"></a>
 
-- *Type:* aws_cdk.aws_iam.IGrantable
+- *Type:* undefined
 
 The principal.
 
@@ -4911,7 +4911,7 @@ in this case, if you need to modify object ACLs, call this method explicitly.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantPutAcl.parameter.identity\\"></a>
 
-- *Type:* aws_cdk.aws_iam.IGrantable
+- *Type:* undefined
 
 ---
 
@@ -4937,7 +4937,7 @@ of the bucket will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantRead.parameter.identity\\"></a>
 
-- *Type:* aws_cdk.aws_iam.IGrantable
+- *Type:* undefined
 
 The principal.
 
@@ -4975,7 +4975,7 @@ use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantReadWrite.parameter.identity\\"></a>
 
-- *Type:* aws_cdk.aws_iam.IGrantable
+- *Type:* undefined
 
 ---
 
@@ -5009,7 +5009,7 @@ use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantWrite.parameter.identity\\"></a>
 
-- *Type:* aws_cdk.aws_iam.IGrantable
+- *Type:* undefined
 
 ---
 
@@ -5056,7 +5056,7 @@ A description of the rule's purpose.
 
 ###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"construct-library.GreeterBucket.onCloudTrailEvent.parameter.eventPattern\\"></a>
 
-- *Type:* aws_cdk.aws_events.EventPattern
+- *Type:* undefined
 - *Default:* No additional filtering based on an event pattern.
 
 Additional restrictions for the event to route to the specified target.
@@ -5080,7 +5080,7 @@ A name for the rule.
 
 ###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"construct-library.GreeterBucket.onCloudTrailEvent.parameter.target\\"></a>
 
-- *Type:* aws_cdk.aws_events.IRuleTarget
+- *Type:* undefined
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
 
 The target to register for the event.
@@ -5137,7 +5137,7 @@ A description of the rule's purpose.
 
 ###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"construct-library.GreeterBucket.onCloudTrailPutObject.parameter.eventPattern\\"></a>
 
-- *Type:* aws_cdk.aws_events.EventPattern
+- *Type:* undefined
 - *Default:* No additional filtering based on an event pattern.
 
 Additional restrictions for the event to route to the specified target.
@@ -5161,7 +5161,7 @@ A name for the rule.
 
 ###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"construct-library.GreeterBucket.onCloudTrailPutObject.parameter.target\\"></a>
 
-- *Type:* aws_cdk.aws_events.IRuleTarget
+- *Type:* undefined
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
 
 The target to register for the event.
@@ -5221,7 +5221,7 @@ A description of the rule's purpose.
 
 ###### \`event_pattern\`<sup>Optional</sup> <a name=\\"event_pattern\\" id=\\"construct-library.GreeterBucket.onCloudTrailWriteObject.parameter.eventPattern\\"></a>
 
-- *Type:* aws_cdk.aws_events.EventPattern
+- *Type:* undefined
 - *Default:* No additional filtering based on an event pattern.
 
 Additional restrictions for the event to route to the specified target.
@@ -5245,7 +5245,7 @@ A name for the rule.
 
 ###### \`target\`<sup>Optional</sup> <a name=\\"target\\" id=\\"construct-library.GreeterBucket.onCloudTrailWriteObject.parameter.target\\"></a>
 
-- *Type:* aws_cdk.aws_events.IRuleTarget
+- *Type:* undefined
 - *Default:* No target is added to the rule. Use \`addTarget()\` to add a target.
 
 The target to register for the event.
@@ -5400,7 +5400,7 @@ Adds a cross-origin access configuration for objects in an Amazon S3 bucket.
 
 ###### \`allowed_methods\`<sup>Required</sup> <a name=\\"allowed_methods\\" id=\\"construct-library.GreeterBucket.addCorsRule.parameter.allowedMethods\\"></a>
 
-- *Type:* typing.List[aws_cdk.aws_s3.HttpMethods]
+- *Type:* typing.List[undefined]
 
 An HTTP method that you allow the origin to execute.
 
@@ -5469,7 +5469,7 @@ Add an inventory configuration.
 
 ###### \`destination\`<sup>Required</sup> <a name=\\"destination\\" id=\\"construct-library.GreeterBucket.addInventory.parameter.destination\\"></a>
 
-- *Type:* aws_cdk.aws_s3.InventoryDestination
+- *Type:* undefined
 
 The destination of the inventory.
 
@@ -5486,7 +5486,7 @@ Whether the inventory is enabled or disabled.
 
 ###### \`format\`<sup>Optional</sup> <a name=\\"format\\" id=\\"construct-library.GreeterBucket.addInventory.parameter.format\\"></a>
 
-- *Type:* aws_cdk.aws_s3.InventoryFormat
+- *Type:* undefined
 - *Default:* InventoryFormat.CSV
 
 The format of the inventory.
@@ -5495,7 +5495,7 @@ The format of the inventory.
 
 ###### \`frequency\`<sup>Optional</sup> <a name=\\"frequency\\" id=\\"construct-library.GreeterBucket.addInventory.parameter.frequency\\"></a>
 
-- *Type:* aws_cdk.aws_s3.InventoryFrequency
+- *Type:* undefined
 - *Default:* InventoryFrequency.WEEKLY
 
 Frequency at which the inventory should be generated.
@@ -5504,7 +5504,7 @@ Frequency at which the inventory should be generated.
 
 ###### \`include_object_versions\`<sup>Optional</sup> <a name=\\"include_object_versions\\" id=\\"construct-library.GreeterBucket.addInventory.parameter.includeObjectVersions\\"></a>
 
-- *Type:* aws_cdk.aws_s3.InventoryObjectVersion
+- *Type:* undefined
 - *Default:* InventoryObjectVersion.ALL
 
 If the inventory should contain all the object versions or only the current one.
@@ -5563,7 +5563,7 @@ Add a lifecycle rule to the bucket.
 
 ###### \`abort_incomplete_multipart_upload_after\`<sup>Optional</sup> <a name=\\"abort_incomplete_multipart_upload_after\\" id=\\"construct-library.GreeterBucket.addLifecycleRule.parameter.abortIncompleteMultipartUploadAfter\\"></a>
 
-- *Type:* aws_cdk.core.Duration
+- *Type:* undefined
 - *Default:* Incomplete uploads are never aborted
 
 Specifies a lifecycle rule that aborts incomplete multipart uploads to an Amazon S3 bucket.
@@ -5586,7 +5586,7 @@ Whether this rule is enabled.
 
 ###### \`expiration\`<sup>Optional</sup> <a name=\\"expiration\\" id=\\"construct-library.GreeterBucket.addLifecycleRule.parameter.expiration\\"></a>
 
-- *Type:* aws_cdk.core.Duration
+- *Type:* undefined
 - *Default:* No expiration timeout
 
 Indicates the number of days after creation when objects are deleted from Amazon S3 and Amazon Glacier.
@@ -5635,7 +5635,7 @@ The value cannot be more than 255 characters.
 
 ###### \`noncurrent_version_expiration\`<sup>Optional</sup> <a name=\\"noncurrent_version_expiration\\" id=\\"construct-library.GreeterBucket.addLifecycleRule.parameter.noncurrentVersionExpiration\\"></a>
 
-- *Type:* aws_cdk.core.Duration
+- *Type:* undefined
 - *Default:* No noncurrent version expiration
 
 Time between when a new version of the object is uploaded to the bucket and when old versions of the object expire.
@@ -5663,7 +5663,7 @@ Amazon S3 permanently deletes them.
 
 ###### \`noncurrent_version_transitions\`<sup>Optional</sup> <a name=\\"noncurrent_version_transitions\\" id=\\"construct-library.GreeterBucket.addLifecycleRule.parameter.noncurrentVersionTransitions\\"></a>
 
-- *Type:* typing.List[aws_cdk.aws_s3.NoncurrentVersionTransition]
+- *Type:* typing.List[undefined]
 
 One or more transition rules that specify when non-current objects transition to a specified storage class.
 
@@ -5712,7 +5712,7 @@ The TagFilter property type specifies tags to use to identify a subset of object
 
 ###### \`transitions\`<sup>Optional</sup> <a name=\\"transitions\\" id=\\"construct-library.GreeterBucket.addLifecycleRule.parameter.transitions\\"></a>
 
-- *Type:* typing.List[aws_cdk.aws_s3.Transition]
+- *Type:* typing.List[undefined]
 - *Default:* No transition rules
 
 One or more transition rules that specify when an object transitions to a specified storage class.
@@ -5812,7 +5812,7 @@ Check whether the given construct is a Resource.
 
 ###### \`construct\`<sup>Required</sup> <a name=\\"construct\\" id=\\"construct-library.GreeterBucket.isResource.parameter.construct\\"></a>
 
-- *Type:* aws_cdk.core.IConstruct
+- *Type:* undefined
 
 ---
 
@@ -5830,7 +5830,7 @@ construct_library.GreeterBucket.from_bucket_arn(
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.GreeterBucket.fromBucketArn.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 ---
 
@@ -5873,7 +5873,7 @@ Creates a Bucket construct that represents an external bucket.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.GreeterBucket.fromBucketAttributes.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 The parent creating construct (usually \`this\`).
 
@@ -5968,7 +5968,7 @@ The website URL of the bucket (if static web hosting is enabled).
 
 ###### \`encryption_key\`<sup>Optional</sup> <a name=\\"encryption_key\\" id=\\"construct-library.GreeterBucket.fromBucketAttributes.parameter.encryptionKey\\"></a>
 
-- *Type:* aws_cdk.aws_kms.IKey
+- *Type:* undefined
 
 ---
 
@@ -5983,7 +5983,7 @@ If this bucket has been configured for static website hosting.
 
 ###### \`notifications_handler_role\`<sup>Optional</sup> <a name=\\"notifications_handler_role\\" id=\\"construct-library.GreeterBucket.fromBucketAttributes.parameter.notificationsHandlerRole\\"></a>
 
-- *Type:* aws_cdk.aws_iam.IRole
+- *Type:* undefined
 - *Default:* a new role will be created.
 
 The role to be used by the notifications handler.
@@ -6013,7 +6013,7 @@ construct_library.GreeterBucket.from_bucket_name(
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.GreeterBucket.fromBucketName.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 ---
 
@@ -6053,9 +6053,9 @@ name of the bucket.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#construct-library.GreeterBucket.property.node\\">node</a></code> | <code>aws_cdk.core.ConstructNode</code> | The construct tree node associated with this construct. |
-| <code><a href=\\"#construct-library.GreeterBucket.property.env\\">env</a></code> | <code>aws_cdk.core.ResourceEnvironment</code> | The environment this resource belongs to. |
-| <code><a href=\\"#construct-library.GreeterBucket.property.stack\\">stack</a></code> | <code>aws_cdk.core.Stack</code> | The stack in which this resource is defined. |
+| <code><a href=\\"#construct-library.GreeterBucket.property.node\\">node</a></code> | <code>undefined</code> | The construct tree node associated with this construct. |
+| <code><a href=\\"#construct-library.GreeterBucket.property.env\\">env</a></code> | <code>undefined</code> | The environment this resource belongs to. |
+| <code><a href=\\"#construct-library.GreeterBucket.property.stack\\">stack</a></code> | <code>undefined</code> | The stack in which this resource is defined. |
 | <code><a href=\\"#construct-library.GreeterBucket.property.bucketArn\\">bucket_arn</a></code> | <code>str</code> | The ARN of the bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.property.bucketDomainName\\">bucket_domain_name</a></code> | <code>str</code> | The IPv4 DNS name of the specified bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.property.bucketDualStackDomainName\\">bucket_dual_stack_domain_name</a></code> | <code>str</code> | The IPv6 DNS name of the specified bucket. |
@@ -6063,9 +6063,9 @@ name of the bucket.
 | <code><a href=\\"#construct-library.GreeterBucket.property.bucketRegionalDomainName\\">bucket_regional_domain_name</a></code> | <code>str</code> | The regional domain name of the specified bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.property.bucketWebsiteDomainName\\">bucket_website_domain_name</a></code> | <code>str</code> | The Domain name of the static website. |
 | <code><a href=\\"#construct-library.GreeterBucket.property.bucketWebsiteUrl\\">bucket_website_url</a></code> | <code>str</code> | The URL of the static website. |
-| <code><a href=\\"#construct-library.GreeterBucket.property.encryptionKey\\">encryption_key</a></code> | <code>aws_cdk.aws_kms.IKey</code> | Optional KMS encryption key associated with this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.property.encryptionKey\\">encryption_key</a></code> | <code>undefined</code> | Optional KMS encryption key associated with this bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.property.isWebsite\\">is_website</a></code> | <code>bool</code> | If this bucket has been configured for static website hosting. |
-| <code><a href=\\"#construct-library.GreeterBucket.property.policy\\">policy</a></code> | <code>aws_cdk.aws_s3.BucketPolicy</code> | The resource policy associated with this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.property.policy\\">policy</a></code> | <code>undefined</code> | The resource policy associated with this bucket. |
 
 ---
 
@@ -6075,7 +6075,7 @@ name of the bucket.
 node: ConstructNode
 \`\`\`
 
-- *Type:* aws_cdk.core.ConstructNode
+- *Type:* undefined
 
 The construct tree node associated with this construct.
 
@@ -6087,7 +6087,7 @@ The construct tree node associated with this construct.
 env: ResourceEnvironment
 \`\`\`
 
-- *Type:* aws_cdk.core.ResourceEnvironment
+- *Type:* undefined
 
 The environment this resource belongs to.
 
@@ -6106,7 +6106,7 @@ that might be different than the stack they were imported into.
 stack: Stack
 \`\`\`
 
-- *Type:* aws_cdk.core.Stack
+- *Type:* undefined
 
 The stack in which this resource is defined.
 
@@ -6202,7 +6202,7 @@ The URL of the static website.
 encryption_key: IKey
 \`\`\`
 
-- *Type:* aws_cdk.aws_kms.IKey
+- *Type:* undefined
 
 Optional KMS encryption key associated with this bucket.
 
@@ -6226,7 +6226,7 @@ If this bucket has been configured for static website hosting.
 policy: BucketPolicy
 \`\`\`
 
-- *Type:* aws_cdk.aws_s3.BucketPolicy
+- *Type:* undefined
 
 The resource policy associated with this bucket.
 
@@ -6259,15 +6259,15 @@ new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.scope\\">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.scope\\">scope</a></code> | <code>undefined</code> | *No description.* |
 | <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.id\\">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.props\\">props</a></code> | <code>@aws-cdk/aws-s3.BucketProps</code> | *No description.* |
+| <code><a href=\\"#construct-library.GreeterBucket.Initializer.parameter.props\\">props</a></code> | <code>undefined</code> | *No description.* |
 
 ---
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 ---
 
@@ -6279,7 +6279,7 @@ new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 
 ##### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"construct-library.GreeterBucket.Initializer.parameter.props\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.BucketProps
+- *Type:* undefined
 
 ---
 
@@ -6342,7 +6342,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 
 ###### \`policy\`<sup>Required</sup> <a name=\\"policy\\" id=\\"construct-library.GreeterBucket.applyRemovalPolicy.parameter.policy\\"></a>
 
-- *Type:* @aws-cdk/core.RemovalPolicy
+- *Type:* undefined
 
 ---
 
@@ -6367,7 +6367,7 @@ Adds a bucket notification event destination.
 
 ###### \`event\`<sup>Required</sup> <a name=\\"event\\" id=\\"construct-library.GreeterBucket.addEventNotification.parameter.event\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.EventType
+- *Type:* undefined
 
 The event to trigger the notification.
 
@@ -6375,7 +6375,7 @@ The event to trigger the notification.
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.GreeterBucket.addEventNotification.parameter.dest\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.IBucketNotificationDestination
+- *Type:* undefined
 
 The notification destination (Lambda, SNS Topic or SQS Queue).
 
@@ -6383,7 +6383,7 @@ The notification destination (Lambda, SNS Topic or SQS Queue).
 
 ###### \`filters\`<sup>Required</sup> <a name=\\"filters\\" id=\\"construct-library.GreeterBucket.addEventNotification.parameter.filters\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* undefined
 
 S3 object key filter rules to determine which objects trigger this event.
 
@@ -6406,7 +6406,7 @@ This is identical to calling
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.GreeterBucket.addObjectCreatedNotification.parameter.dest\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.IBucketNotificationDestination
+- *Type:* undefined
 
 The notification destination (see onEvent).
 
@@ -6414,7 +6414,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name=\\"filters\\" id=\\"construct-library.GreeterBucket.addObjectCreatedNotification.parameter.filters\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* undefined
 
 Filters (see onEvent).
 
@@ -6433,7 +6433,7 @@ This is identical to calling
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.GreeterBucket.addObjectRemovedNotification.parameter.dest\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.IBucketNotificationDestination
+- *Type:* undefined
 
 The notification destination (see onEvent).
 
@@ -6441,7 +6441,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name=\\"filters\\" id=\\"construct-library.GreeterBucket.addObjectRemovedNotification.parameter.filters\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* undefined
 
 Filters (see onEvent).
 
@@ -6463,7 +6463,7 @@ So it's safest to do nothing in these cases.
 
 ###### \`permission\`<sup>Required</sup> <a name=\\"permission\\" id=\\"construct-library.GreeterBucket.addToResourcePolicy.parameter.permission\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.PolicyStatement
+- *Type:* undefined
 
 the policy statement to be added to the bucket's policy.
 
@@ -6499,7 +6499,7 @@ Grants s3:DeleteObject* permission to an IAM principal for objects in this bucke
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantDelete.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 The principal.
 
@@ -6571,7 +6571,7 @@ of written files will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantPut.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 The principal.
 
@@ -6599,7 +6599,7 @@ in this case, if you need to modify object ACLs, call this method explicitly.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantPutAcl.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 ---
 
@@ -6622,7 +6622,7 @@ of the bucket will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantRead.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 The principal.
 
@@ -6657,7 +6657,7 @@ use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantReadWrite.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 ---
 
@@ -6688,7 +6688,7 @@ use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.GreeterBucket.grantWrite.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 ---
 
@@ -6719,7 +6719,7 @@ The id of the rule.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.GreeterBucket.onCloudTrailEvent.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.OnCloudTrailBucketEventOptions
+- *Type:* undefined
 
 Options for adding the rule.
 
@@ -6750,7 +6750,7 @@ The id of the rule.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.GreeterBucket.onCloudTrailPutObject.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.OnCloudTrailBucketEventOptions
+- *Type:* undefined
 
 Options for adding the rule.
 
@@ -6784,7 +6784,7 @@ The id of the rule.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.GreeterBucket.onCloudTrailWriteObject.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.OnCloudTrailBucketEventOptions
+- *Type:* undefined
 
 Options for adding the rule.
 
@@ -6839,7 +6839,7 @@ bucket is returned.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.GreeterBucket.transferAccelerationUrlForObject.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.TransferAccelerationUrlOptions
+- *Type:* undefined
 
 Options for generating URL.
 
@@ -6894,7 +6894,7 @@ bucket is returned.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.GreeterBucket.virtualHostedUrlForObject.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.VirtualHostedStyleUrlOptions
+- *Type:* undefined
 
 Options for generating URL.
 
@@ -6910,7 +6910,7 @@ Adds a cross-origin access configuration for objects in an Amazon S3 bucket.
 
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"construct-library.GreeterBucket.addCorsRule.parameter.rule\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.CorsRule
+- *Type:* undefined
 
 The CORS configuration rule to add.
 
@@ -6926,7 +6926,7 @@ Add an inventory configuration.
 
 ###### \`inventory\`<sup>Required</sup> <a name=\\"inventory\\" id=\\"construct-library.GreeterBucket.addInventory.parameter.inventory\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.Inventory
+- *Type:* undefined
 
 configuration to add.
 
@@ -6942,7 +6942,7 @@ Add a lifecycle rule to the bucket.
 
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"construct-library.GreeterBucket.addLifecycleRule.parameter.rule\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.LifecycleRule
+- *Type:* undefined
 
 The rule to add.
 
@@ -6958,7 +6958,7 @@ Adds a metrics configuration for the CloudWatch request metrics from the bucket.
 
 ###### \`metric\`<sup>Required</sup> <a name=\\"metric\\" id=\\"construct-library.GreeterBucket.addMetric.parameter.metric\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.BucketMetrics
+- *Type:* undefined
 
 The metric configuration to add.
 
@@ -7011,7 +7011,7 @@ Check whether the given construct is a Resource.
 
 ###### \`construct\`<sup>Required</sup> <a name=\\"construct\\" id=\\"construct-library.GreeterBucket.isResource.parameter.construct\\"></a>
 
-- *Type:* @aws-cdk/core.IConstruct
+- *Type:* undefined
 
 ---
 
@@ -7025,7 +7025,7 @@ GreeterBucket.fromBucketArn(scope: Construct, id: string, bucketArn: string)
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.GreeterBucket.fromBucketArn.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 ---
 
@@ -7053,7 +7053,7 @@ Creates a Bucket construct that represents an external bucket.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.GreeterBucket.fromBucketAttributes.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 The parent creating construct (usually \`this\`).
 
@@ -7069,7 +7069,7 @@ The construct's name.
 
 ###### \`attrs\`<sup>Required</sup> <a name=\\"attrs\\" id=\\"construct-library.GreeterBucket.fromBucketAttributes.parameter.attrs\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.BucketAttributes
+- *Type:* undefined
 
 A \`BucketAttributes\` object.
 
@@ -7088,7 +7088,7 @@ GreeterBucket.fromBucketName(scope: Construct, id: string, bucketName: string)
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.GreeterBucket.fromBucketName.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 ---
 
@@ -7126,9 +7126,9 @@ name of the bucket.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#construct-library.GreeterBucket.property.node\\">node</a></code> | <code>@aws-cdk/core.ConstructNode</code> | The construct tree node associated with this construct. |
-| <code><a href=\\"#construct-library.GreeterBucket.property.env\\">env</a></code> | <code>@aws-cdk/core.ResourceEnvironment</code> | The environment this resource belongs to. |
-| <code><a href=\\"#construct-library.GreeterBucket.property.stack\\">stack</a></code> | <code>@aws-cdk/core.Stack</code> | The stack in which this resource is defined. |
+| <code><a href=\\"#construct-library.GreeterBucket.property.node\\">node</a></code> | <code>undefined</code> | The construct tree node associated with this construct. |
+| <code><a href=\\"#construct-library.GreeterBucket.property.env\\">env</a></code> | <code>undefined</code> | The environment this resource belongs to. |
+| <code><a href=\\"#construct-library.GreeterBucket.property.stack\\">stack</a></code> | <code>undefined</code> | The stack in which this resource is defined. |
 | <code><a href=\\"#construct-library.GreeterBucket.property.bucketArn\\">bucketArn</a></code> | <code>string</code> | The ARN of the bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.property.bucketDomainName\\">bucketDomainName</a></code> | <code>string</code> | The IPv4 DNS name of the specified bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.property.bucketDualStackDomainName\\">bucketDualStackDomainName</a></code> | <code>string</code> | The IPv6 DNS name of the specified bucket. |
@@ -7136,9 +7136,9 @@ name of the bucket.
 | <code><a href=\\"#construct-library.GreeterBucket.property.bucketRegionalDomainName\\">bucketRegionalDomainName</a></code> | <code>string</code> | The regional domain name of the specified bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.property.bucketWebsiteDomainName\\">bucketWebsiteDomainName</a></code> | <code>string</code> | The Domain name of the static website. |
 | <code><a href=\\"#construct-library.GreeterBucket.property.bucketWebsiteUrl\\">bucketWebsiteUrl</a></code> | <code>string</code> | The URL of the static website. |
-| <code><a href=\\"#construct-library.GreeterBucket.property.encryptionKey\\">encryptionKey</a></code> | <code>@aws-cdk/aws-kms.IKey</code> | Optional KMS encryption key associated with this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.property.encryptionKey\\">encryptionKey</a></code> | <code>undefined</code> | Optional KMS encryption key associated with this bucket. |
 | <code><a href=\\"#construct-library.GreeterBucket.property.isWebsite\\">isWebsite</a></code> | <code>boolean</code> | If this bucket has been configured for static website hosting. |
-| <code><a href=\\"#construct-library.GreeterBucket.property.policy\\">policy</a></code> | <code>@aws-cdk/aws-s3.BucketPolicy</code> | The resource policy associated with this bucket. |
+| <code><a href=\\"#construct-library.GreeterBucket.property.policy\\">policy</a></code> | <code>undefined</code> | The resource policy associated with this bucket. |
 
 ---
 
@@ -7148,7 +7148,7 @@ name of the bucket.
 public readonly node: ConstructNode;
 \`\`\`
 
-- *Type:* @aws-cdk/core.ConstructNode
+- *Type:* undefined
 
 The construct tree node associated with this construct.
 
@@ -7160,7 +7160,7 @@ The construct tree node associated with this construct.
 public readonly env: ResourceEnvironment;
 \`\`\`
 
-- *Type:* @aws-cdk/core.ResourceEnvironment
+- *Type:* undefined
 
 The environment this resource belongs to.
 
@@ -7179,7 +7179,7 @@ that might be different than the stack they were imported into.
 public readonly stack: Stack;
 \`\`\`
 
-- *Type:* @aws-cdk/core.Stack
+- *Type:* undefined
 
 The stack in which this resource is defined.
 
@@ -7275,7 +7275,7 @@ The URL of the static website.
 public readonly encryptionKey: IKey;
 \`\`\`
 
-- *Type:* @aws-cdk/aws-kms.IKey
+- *Type:* undefined
 
 Optional KMS encryption key associated with this bucket.
 
@@ -7299,7 +7299,7 @@ If this bucket has been configured for static website hosting.
 public readonly policy: BucketPolicy;
 \`\`\`
 
-- *Type:* @aws-cdk/aws-s3.BucketPolicy
+- *Type:* undefined
 
 The resource policy associated with this bucket.
 
@@ -7325,22 +7325,22 @@ exports[`specify submodule 1`] = `
 #### Initializers <a name=\\"Initializers\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer\\"></a>
 
 \`\`\`typescript
-import { submod1 } from 'construct-library'
+import { construct-library.submod1 } from 'construct-library'
 
 new submod1.GoodbyeBucket(scope: Construct, id: string, props?: BucketProps)
 \`\`\`
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.scope\\">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.scope\\">scope</a></code> | <code>undefined</code> | *No description.* |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.id\\">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.props\\">props</a></code> | <code>@aws-cdk/aws-s3.BucketProps</code> | *No description.* |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.Initializer.parameter.props\\">props</a></code> | <code>undefined</code> | *No description.* |
 
 ---
 
 ##### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 ---
 
@@ -7352,7 +7352,7 @@ new submod1.GoodbyeBucket(scope: Construct, id: string, props?: BucketProps)
 
 ##### \`props\`<sup>Optional</sup> <a name=\\"props\\" id=\\"construct-library.submod1.GoodbyeBucket.Initializer.parameter.props\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.BucketProps
+- *Type:* undefined
 
 ---
 
@@ -7415,7 +7415,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 
 ###### \`policy\`<sup>Required</sup> <a name=\\"policy\\" id=\\"construct-library.submod1.GoodbyeBucket.applyRemovalPolicy.parameter.policy\\"></a>
 
-- *Type:* @aws-cdk/core.RemovalPolicy
+- *Type:* undefined
 
 ---
 
@@ -7440,7 +7440,7 @@ Adds a bucket notification event destination.
 
 ###### \`event\`<sup>Required</sup> <a name=\\"event\\" id=\\"construct-library.submod1.GoodbyeBucket.addEventNotification.parameter.event\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.EventType
+- *Type:* undefined
 
 The event to trigger the notification.
 
@@ -7448,7 +7448,7 @@ The event to trigger the notification.
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.submod1.GoodbyeBucket.addEventNotification.parameter.dest\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.IBucketNotificationDestination
+- *Type:* undefined
 
 The notification destination (Lambda, SNS Topic or SQS Queue).
 
@@ -7456,7 +7456,7 @@ The notification destination (Lambda, SNS Topic or SQS Queue).
 
 ###### \`filters\`<sup>Required</sup> <a name=\\"filters\\" id=\\"construct-library.submod1.GoodbyeBucket.addEventNotification.parameter.filters\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* undefined
 
 S3 object key filter rules to determine which objects trigger this event.
 
@@ -7479,7 +7479,7 @@ This is identical to calling
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification.parameter.dest\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.IBucketNotificationDestination
+- *Type:* undefined
 
 The notification destination (see onEvent).
 
@@ -7487,7 +7487,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name=\\"filters\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification.parameter.filters\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* undefined
 
 Filters (see onEvent).
 
@@ -7506,7 +7506,7 @@ This is identical to calling
 
 ###### \`dest\`<sup>Required</sup> <a name=\\"dest\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification.parameter.dest\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.IBucketNotificationDestination
+- *Type:* undefined
 
 The notification destination (see onEvent).
 
@@ -7514,7 +7514,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name=\\"filters\\" id=\\"construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification.parameter.filters\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* undefined
 
 Filters (see onEvent).
 
@@ -7536,7 +7536,7 @@ So it's safest to do nothing in these cases.
 
 ###### \`permission\`<sup>Required</sup> <a name=\\"permission\\" id=\\"construct-library.submod1.GoodbyeBucket.addToResourcePolicy.parameter.permission\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.PolicyStatement
+- *Type:* undefined
 
 the policy statement to be added to the bucket's policy.
 
@@ -7572,7 +7572,7 @@ Grants s3:DeleteObject* permission to an IAM principal for objects in this bucke
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantDelete.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 The principal.
 
@@ -7644,7 +7644,7 @@ of written files will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPut.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 The principal.
 
@@ -7672,7 +7672,7 @@ in this case, if you need to modify object ACLs, call this method explicitly.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantPutAcl.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 ---
 
@@ -7695,7 +7695,7 @@ of the bucket will also be granted to the same principal.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantRead.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 The principal.
 
@@ -7730,7 +7730,7 @@ use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantReadWrite.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 ---
 
@@ -7761,7 +7761,7 @@ use the {@link grantPutAcl} method.
 
 ###### \`identity\`<sup>Required</sup> <a name=\\"identity\\" id=\\"construct-library.submod1.GoodbyeBucket.grantWrite.parameter.identity\\"></a>
 
-- *Type:* @aws-cdk/aws-iam.IGrantable
+- *Type:* undefined
 
 ---
 
@@ -7792,7 +7792,7 @@ The id of the rule.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailEvent.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.OnCloudTrailBucketEventOptions
+- *Type:* undefined
 
 Options for adding the rule.
 
@@ -7823,7 +7823,7 @@ The id of the rule.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailPutObject.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.OnCloudTrailBucketEventOptions
+- *Type:* undefined
 
 Options for adding the rule.
 
@@ -7857,7 +7857,7 @@ The id of the rule.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.submod1.GoodbyeBucket.onCloudTrailWriteObject.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.OnCloudTrailBucketEventOptions
+- *Type:* undefined
 
 Options for adding the rule.
 
@@ -7912,7 +7912,7 @@ bucket is returned.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.submod1.GoodbyeBucket.transferAccelerationUrlForObject.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.TransferAccelerationUrlOptions
+- *Type:* undefined
 
 Options for generating URL.
 
@@ -7967,7 +7967,7 @@ bucket is returned.
 
 ###### \`options\`<sup>Optional</sup> <a name=\\"options\\" id=\\"construct-library.submod1.GoodbyeBucket.virtualHostedUrlForObject.parameter.options\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.VirtualHostedStyleUrlOptions
+- *Type:* undefined
 
 Options for generating URL.
 
@@ -7983,7 +7983,7 @@ Adds a cross-origin access configuration for objects in an Amazon S3 bucket.
 
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"construct-library.submod1.GoodbyeBucket.addCorsRule.parameter.rule\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.CorsRule
+- *Type:* undefined
 
 The CORS configuration rule to add.
 
@@ -7999,7 +7999,7 @@ Add an inventory configuration.
 
 ###### \`inventory\`<sup>Required</sup> <a name=\\"inventory\\" id=\\"construct-library.submod1.GoodbyeBucket.addInventory.parameter.inventory\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.Inventory
+- *Type:* undefined
 
 configuration to add.
 
@@ -8015,7 +8015,7 @@ Add a lifecycle rule to the bucket.
 
 ###### \`rule\`<sup>Required</sup> <a name=\\"rule\\" id=\\"construct-library.submod1.GoodbyeBucket.addLifecycleRule.parameter.rule\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.LifecycleRule
+- *Type:* undefined
 
 The rule to add.
 
@@ -8031,7 +8031,7 @@ Adds a metrics configuration for the CloudWatch request metrics from the bucket.
 
 ###### \`metric\`<sup>Required</sup> <a name=\\"metric\\" id=\\"construct-library.submod1.GoodbyeBucket.addMetric.parameter.metric\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.BucketMetrics
+- *Type:* undefined
 
 The metric configuration to add.
 
@@ -8059,7 +8059,7 @@ public goodbye(): void
 ##### \`isConstruct\` <a name=\\"isConstruct\\" id=\\"construct-library.submod1.GoodbyeBucket.isConstruct\\"></a>
 
 \`\`\`typescript
-import { submod1 } from 'construct-library'
+import { construct-library.submod1 } from 'construct-library'
 
 submod1.GoodbyeBucket.isConstruct(x: any)
 \`\`\`
@@ -8075,7 +8075,7 @@ Return whether the given object is a Construct.
 ##### \`isResource\` <a name=\\"isResource\\" id=\\"construct-library.submod1.GoodbyeBucket.isResource\\"></a>
 
 \`\`\`typescript
-import { submod1 } from 'construct-library'
+import { construct-library.submod1 } from 'construct-library'
 
 submod1.GoodbyeBucket.isResource(construct: IConstruct)
 \`\`\`
@@ -8084,21 +8084,21 @@ Check whether the given construct is a Resource.
 
 ###### \`construct\`<sup>Required</sup> <a name=\\"construct\\" id=\\"construct-library.submod1.GoodbyeBucket.isResource.parameter.construct\\"></a>
 
-- *Type:* @aws-cdk/core.IConstruct
+- *Type:* undefined
 
 ---
 
 ##### \`fromBucketArn\` <a name=\\"fromBucketArn\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketArn\\"></a>
 
 \`\`\`typescript
-import { submod1 } from 'construct-library'
+import { construct-library.submod1 } from 'construct-library'
 
 submod1.GoodbyeBucket.fromBucketArn(scope: Construct, id: string, bucketArn: string)
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketArn.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 ---
 
@@ -8117,7 +8117,7 @@ submod1.GoodbyeBucket.fromBucketArn(scope: Construct, id: string, bucketArn: str
 ##### \`fromBucketAttributes\` <a name=\\"fromBucketAttributes\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketAttributes\\"></a>
 
 \`\`\`typescript
-import { submod1 } from 'construct-library'
+import { construct-library.submod1 } from 'construct-library'
 
 submod1.GoodbyeBucket.fromBucketAttributes(scope: Construct, id: string, attrs: BucketAttributes)
 \`\`\`
@@ -8126,7 +8126,7 @@ Creates a Bucket construct that represents an external bucket.
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketAttributes.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 The parent creating construct (usually \`this\`).
 
@@ -8142,7 +8142,7 @@ The construct's name.
 
 ###### \`attrs\`<sup>Required</sup> <a name=\\"attrs\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketAttributes.parameter.attrs\\"></a>
 
-- *Type:* @aws-cdk/aws-s3.BucketAttributes
+- *Type:* undefined
 
 A \`BucketAttributes\` object.
 
@@ -8154,14 +8154,14 @@ Can be obtained from a call to
 ##### \`fromBucketName\` <a name=\\"fromBucketName\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketName\\"></a>
 
 \`\`\`typescript
-import { submod1 } from 'construct-library'
+import { construct-library.submod1 } from 'construct-library'
 
 submod1.GoodbyeBucket.fromBucketName(scope: Construct, id: string, bucketName: string)
 \`\`\`
 
 ###### \`scope\`<sup>Required</sup> <a name=\\"scope\\" id=\\"construct-library.submod1.GoodbyeBucket.fromBucketName.parameter.scope\\"></a>
 
-- *Type:* constructs.Construct
+- *Type:* undefined
 
 ---
 
@@ -8180,7 +8180,7 @@ submod1.GoodbyeBucket.fromBucketName(scope: Construct, id: string, bucketName: s
 ##### \`validateBucketName\` <a name=\\"validateBucketName\\" id=\\"construct-library.submod1.GoodbyeBucket.validateBucketName\\"></a>
 
 \`\`\`typescript
-import { submod1 } from 'construct-library'
+import { construct-library.submod1 } from 'construct-library'
 
 submod1.GoodbyeBucket.validateBucketName(physicalName: string)
 \`\`\`
@@ -8199,9 +8199,9 @@ name of the bucket.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.node\\">node</a></code> | <code>@aws-cdk/core.ConstructNode</code> | The construct tree node associated with this construct. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.env\\">env</a></code> | <code>@aws-cdk/core.ResourceEnvironment</code> | The environment this resource belongs to. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.stack\\">stack</a></code> | <code>@aws-cdk/core.Stack</code> | The stack in which this resource is defined. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.node\\">node</a></code> | <code>undefined</code> | The construct tree node associated with this construct. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.env\\">env</a></code> | <code>undefined</code> | The environment this resource belongs to. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.stack\\">stack</a></code> | <code>undefined</code> | The stack in which this resource is defined. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.bucketArn\\">bucketArn</a></code> | <code>string</code> | The ARN of the bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.bucketDomainName\\">bucketDomainName</a></code> | <code>string</code> | The IPv4 DNS name of the specified bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.bucketDualStackDomainName\\">bucketDualStackDomainName</a></code> | <code>string</code> | The IPv6 DNS name of the specified bucket. |
@@ -8209,9 +8209,9 @@ name of the bucket.
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.bucketRegionalDomainName\\">bucketRegionalDomainName</a></code> | <code>string</code> | The regional domain name of the specified bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.bucketWebsiteDomainName\\">bucketWebsiteDomainName</a></code> | <code>string</code> | The Domain name of the static website. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.bucketWebsiteUrl\\">bucketWebsiteUrl</a></code> | <code>string</code> | The URL of the static website. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.encryptionKey\\">encryptionKey</a></code> | <code>@aws-cdk/aws-kms.IKey</code> | Optional KMS encryption key associated with this bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.encryptionKey\\">encryptionKey</a></code> | <code>undefined</code> | Optional KMS encryption key associated with this bucket. |
 | <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.isWebsite\\">isWebsite</a></code> | <code>boolean</code> | If this bucket has been configured for static website hosting. |
-| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.policy\\">policy</a></code> | <code>@aws-cdk/aws-s3.BucketPolicy</code> | The resource policy associated with this bucket. |
+| <code><a href=\\"#construct-library.submod1.GoodbyeBucket.property.policy\\">policy</a></code> | <code>undefined</code> | The resource policy associated with this bucket. |
 
 ---
 
@@ -8221,7 +8221,7 @@ name of the bucket.
 public readonly node: ConstructNode;
 \`\`\`
 
-- *Type:* @aws-cdk/core.ConstructNode
+- *Type:* undefined
 
 The construct tree node associated with this construct.
 
@@ -8233,7 +8233,7 @@ The construct tree node associated with this construct.
 public readonly env: ResourceEnvironment;
 \`\`\`
 
-- *Type:* @aws-cdk/core.ResourceEnvironment
+- *Type:* undefined
 
 The environment this resource belongs to.
 
@@ -8252,7 +8252,7 @@ that might be different than the stack they were imported into.
 public readonly stack: Stack;
 \`\`\`
 
-- *Type:* @aws-cdk/core.Stack
+- *Type:* undefined
 
 The stack in which this resource is defined.
 
@@ -8348,7 +8348,7 @@ The URL of the static website.
 public readonly encryptionKey: IKey;
 \`\`\`
 
-- *Type:* @aws-cdk/aws-kms.IKey
+- *Type:* undefined
 
 Optional KMS encryption key associated with this bucket.
 
@@ -8372,7 +8372,7 @@ If this bucket has been configured for static website hosting.
 public readonly policy: BucketPolicy;
 \`\`\`
 
-- *Type:* @aws-cdk/aws-s3.BucketPolicy
+- *Type:* undefined
 
 The resource policy associated with this bucket.
 

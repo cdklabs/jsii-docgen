@@ -20,9 +20,13 @@ export class Initializer {
     return {
       fqn: `${this.transpiled.parentType.fqn}.Initializer`,
       displayName: 'Initializer',
-      id: `${this.initializer.parentType.fqn}.Initializer`,
+      jsiiId: `${this.initializer.parentType.fqn}.Initializer`,
       parameters: this.parameters.map((param) => param.toJson()),
       usage: `${this.transpiled.import}\n\n${this.transpiled.invocations}`,
+      submoduleJsiiId: this.transpiled.parentType.submoduleJsiiId,
+      submoduleFqn: this.transpiled.parentType.submoduleFqn,
+      sourceFile: this.transpiled.parentType.source.locationInModule?.filename,
+      sourceLine: this.transpiled.parentType.source.locationInModule?.line,
     };
   }
 }

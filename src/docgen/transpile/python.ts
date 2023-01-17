@@ -1,6 +1,6 @@
 import * as Case from 'case';
 import * as reflect from 'jsii-reflect';
-import { submodulePath } from '../schema';
+import { submoduleJsiiId } from '../schema';
 import * as transpile from './transpile';
 
 // Helpers
@@ -9,8 +9,8 @@ const toSnakeCase = (text?: string) => {
 };
 
 const formatImport = (type: transpile.TranspiledType) => {
-  if (type.submodule) {
-    return `from ${type.module} import ${type.submodule}`;
+  if (type.submoduleFqn) {
+    return `from ${type.module} import ${type.submoduleFqn}`;
   }
   return `import ${type.module}`;
 };
@@ -29,10 +29,10 @@ const formatInvocation = (
   method?: string,
 ) => {
   let target;
-  if (type.submodule) {
+  if (type.submoduleFqn) {
     if (!type.namespace) {
       throw new Error(
-        `Invalid type: ${type.fqn}: Types defined in a submodule (${type.submodule}) must have a namespace. `,
+        `Invalid type: ${type.fqn}: Types defined in a submodule (${type.submoduleFqn}) must have a namespace. `,
       );
     }
     // we don't include the submodule name here since it is
@@ -124,6 +124,18 @@ export class PythonTranspile extends transpile.TranspileBase {
     return 'datetime.datetime';
   }
 
+  public json(): string {
+    return 'any';
+  }
+
+  public submodule(submodule: reflect.Submodule): transpile.TranspiledSubmodule {
+    return {
+      jsiiId: submodule.name,
+      fqn: submodule.targets?.python?.module,
+      readme: submodule.readme?.markdown,
+    };
+  }
+
   public enum(enu: reflect.EnumType): transpile.TranspiledEnum {
     const type = this.type(enu);
     return {
@@ -134,15 +146,12 @@ export class PythonTranspile extends transpile.TranspileBase {
   }
 
   public enumMember(em: reflect.EnumMember): transpile.TranspiledEnumMember {
-    const type = this.type(em.enumType);
+    const member = this.enum(em.enumType);
     return {
-      fqn: `${this.enum(em.enumType).fqn}.${em.name}`,
+      fqn: `${member.fqn}.${em.name}`,
       name: em.name,
-      type,
+      type: member.type,
     };
-  }
-  public json(): string {
-    return 'any';
   }
 
   public property(property: reflect.Property): transpile.TranspiledProperty {
@@ -253,8 +262,8 @@ export class PythonTranspile extends transpile.TranspileBase {
       name: type.name,
       namespace: type.namespace,
       module: moduleLike.name,
-      submodule: moduleLike.submodule,
-      submodulePath: submodulePath(submodule),
+      submoduleJsiiId: submoduleJsiiId(submodule),
+      submoduleFqn: moduleLike.submodule,
       source: type,
       language: this.language,
     });

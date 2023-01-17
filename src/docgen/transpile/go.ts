@@ -1,6 +1,6 @@
 import * as Case from 'case';
 import * as reflect from 'jsii-reflect';
-import { submodulePath } from '../schema';
+import { submoduleJsiiId } from '../schema';
 import * as transpile from './transpile';
 
 export class GoTranspile extends transpile.TranspileBase {
@@ -8,20 +8,28 @@ export class GoTranspile extends transpile.TranspileBase {
     super(transpile.Language.GO);
   }
 
+  public submodule(submodule: reflect.Submodule): transpile.TranspiledSubmodule {
+    return {
+      jsiiId: submodule.name,
+      fqn: submodule.fqn,
+      readme: submodule.readme?.markdown,
+    };
+  }
+
   public moduleLike(moduleLike: reflect.ModuleLike): transpile.TranspiledModuleLike {
     if (moduleLike instanceof reflect.Submodule) {
-      // const parent = this.moduleLike(this.getParentModule(moduleLike));
-      // const parentFqn = parent.submodule
-      //   ? `${parent.name}/${parent.submodule}`
-      //   : parent.name;
+      const parent = this.moduleLike(this.getParentModule(moduleLike));
+      const parentFqn = parent.submodule
+        ? `${parent.name}/${parent.submodule}`
+        : parent.name;
 
       // `packageName` can be specified explicitly in configuration or
       // auto-generated from node package name.
       // Example: @aws-cdk/aws-ecr -> awscdkawsecr
       const packageName = moduleLike.targets?.go?.packageName
-        ?? moduleLike.name.toLowerCase();
+        ?? moduleLike.name.toLowerCase().replace(/[^a-z0-9]/g, '');
 
-      return { name: packageName, submodule: packageName };
+      return { name: parentFqn, submodule: packageName };
     } else {
       // This is the root module
       const moduleName = moduleLike.targets?.go?.moduleName;
@@ -60,8 +68,8 @@ export class GoTranspile extends transpile.TranspileBase {
       name: type.name,
       namespace: type.namespace,
       module: moduleLike.name,
-      submodule: moduleLike.submodule,
-      submodulePath: submodulePath(submodule),
+      submoduleFqn: moduleLike.submodule,
+      submoduleJsiiId: submoduleJsiiId(submodule),
       source: type,
       language: this.language,
     });
@@ -169,11 +177,11 @@ export class GoTranspile extends transpile.TranspileBase {
   }
 
   public enumMember(em: reflect.EnumMember): transpile.TranspiledEnumMember {
-    const type = this.type(em.enumType);
+    const member = this.enum(em.enumType);
     return {
-      fqn: `${this.enum(em.enumType).fqn}_${em.name}`,
+      fqn: `${member.fqn}_${em.name}`,
       name: `${em.enumType.name}_${em.name}`,
-      type,
+      type: member.type,
     };
   }
 
@@ -228,7 +236,7 @@ export class GoTranspile extends transpile.TranspileBase {
   }
 
   private formatImport(type: transpile.TranspiledType): string {
-    return `import "${type.module}${type.submodule ? `/${type.submodule}` : ''}"`;
+    return `import "${type.module}${type.submoduleFqn ? `/${type.submoduleFqn}` : ''}"`;
   }
 
   private formatParameter(name: string, typeReference: transpile.TranspiledTypeReference) {
@@ -260,7 +268,7 @@ export class GoTranspile extends transpile.TranspileBase {
   }
 
   private packageName(type: transpile.TranspiledType): string {
-    return type.submodule ??
+    return type.submoduleFqn ??
       type.module.split('/').slice(/\/v\d+$/.test(type.module) ? -2 : -1)[0];
   }
 }
