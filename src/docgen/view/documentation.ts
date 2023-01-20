@@ -190,6 +190,24 @@ export class Documentation {
   ) {}
 
   /**
+   * List all submodules in the assembly.
+   */
+  public async listSubmodules() {
+    const tsAssembly = await this.createAssembly(undefined, { loose: true, validate: false });
+    return tsAssembly.submodules;
+  }
+
+  public async toIndexMarkdown(fileSuffix:string, options: RenderOptions) {
+    const assembly = await this.createAssembly(undefined, { loose: true, validate: false });
+
+    return MarkdownRenderer.fromSubmodules(await this.listSubmodules(), fileSuffix, {
+      ...options,
+      packageName: assembly.name,
+      packageVersion: assembly.version,
+    });
+  }
+
+  /**
    * Generate markdown.
    */
   public async toJson(options: RenderOptions): Promise<Json<Schema>> {
@@ -260,6 +278,7 @@ export class Documentation {
       anchorFormatter: options.anchorFormatter,
       linkFormatter: options.linkFormatter,
       typeFormatter: options.typeFormatter,
+      header: options.header,
     });
   }
 
