@@ -38,7 +38,7 @@ async function generateForLanguage(docs: Documentation, format: 'md' | 'json', o
       fs.writeFileSync(`${submodule.name}.${submoduleSuffix}`, content.render());
     }
 
-    fs.writeFileSync(`${output ?? 'API'}.${fileSuffix}`, await (await docs.toIndexMarkdown(fileSuffix, options)).render());
+    fs.writeFileSync(`${output ?? 'API'}.${fileSuffix}`, await (await docs.toIndexMarkdown(submoduleSuffix, options)).render());
   } else {
     const content = await (format === 'md' ? docs.toMarkdown(options) : docs.toJson(options));
     fs.writeFileSync(`${output ?? 'API'}.${fileSuffix}`, content.render());
