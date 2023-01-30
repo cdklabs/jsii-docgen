@@ -1,8 +1,8 @@
 import * as Case from 'case';
 import * as reflect from 'jsii-reflect';
+import * as transpile from './transpile';
 import { LanguageNotSupportedError } from '../../errors';
 import { submodulePath } from '../schema';
-import * as transpile from './transpile';
 
 // Helpers
 const toSnakeCase = (text?: string) => {
