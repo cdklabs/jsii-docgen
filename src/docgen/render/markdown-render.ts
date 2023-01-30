@@ -1,6 +1,6 @@
+import { MarkdownDocument } from './markdown-doc';
 import { ApiReferenceSchema, AssemblyMetadataSchema, ClassSchema, ConstructSchema, EnumMemberSchema, EnumSchema, InitializerSchema, InterfaceSchema, JsiiEntity, MethodSchema, ParameterSchema, PropertySchema, Schema, CURRENT_SCHEMA_VERSION, StructSchema, TypeSchema } from '../schema';
 import { Language } from '../transpile/transpile';
-import { MarkdownDocument } from './markdown-doc';
 
 export interface MarkdownFormattingOptions {
   /**

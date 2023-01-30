@@ -184,6 +184,12 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
     throw new UnInstallablePackageError(summary);
   }
 
+  // happens when a package has been deleted from npm
+  // for example: sns-app-jsii-component
+  if (!code && !detail && typeof(summary) === 'string' && summary.includes('Cannot convert undefined or null to object')) {
+    throw new UnInstallablePackageError(summary);
+  }
+
   switch (code) {
     case 'ERESOLVE': // dependency resolution problem requires a manual intervention (most likely...)
     case 'EOVERRIDE': // Package contains some version overrides that conflict.
