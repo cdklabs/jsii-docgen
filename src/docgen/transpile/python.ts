@@ -1,6 +1,7 @@
 import * as Case from 'case';
 import * as reflect from 'jsii-reflect';
 import * as transpile from './transpile';
+import { LanguageNotSupportedError } from '../../errors';
 import { submodulePath } from '../schema';
 
 // Helpers
@@ -274,7 +275,7 @@ export class PythonTranspile extends transpile.TranspileBase {
     }
 
     if (!pythonModule) {
-      throw new Error(
+      throw new LanguageNotSupportedError(
         `Python is not a supported target for module: ${moduleLike.fqn}`,
       );
     }
