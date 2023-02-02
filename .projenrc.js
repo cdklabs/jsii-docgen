@@ -1,4 +1,4 @@
-const { typescript } = require('projen');
+const { typescript, JsonPatch } = require('projen');
 
 const project = new typescript.TypeScriptProject({
   name: 'jsii-docgen',
@@ -46,6 +46,9 @@ const project = new typescript.TypeScriptProject({
     },
   },
 });
+
+project.github.tryFindWorkflow('release').file.patch(JsonPatch.add('/jobs/release/env/NODE_OPTIONS', '--max_old_space_size=4096'));
+project.github.tryFindWorkflow('build').file.patch(JsonPatch.add('/jobs/build/env/NODE_OPTIONS', '--max_old_space_size=4096'));
 
 const libraryFixtures = ['construct-library'];
 

@@ -15,6 +15,7 @@ jobs:
       latest_commit: ${{ steps.git_remote.outputs.latest_commit }}
     env:
       CI: "true"
+      NODE_OPTIONS: --max_old_space_size=4096
     steps:
       - name: Checkout
         uses: actions/checkout@v3
