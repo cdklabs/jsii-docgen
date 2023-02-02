@@ -49,7 +49,7 @@ async function generateForLanguage(docs: Documentation, format: 'md' | 'json', o
 export async function main() {
   const args = yargs
     .usage('Usage: $0')
-    .option('output', { alias: 'o', type: 'string', required: false, desc: 'Output filename, the file type is automatically added. (defaults to API.md if format is markdown, and API.json if format is JSON and one language is passed, API.language.md and API.language.json if multilpe are passed)' })
+    .option('output', { alias: 'o', type: 'string', required: false, desc: 'Output filename, the file type is automatically added. Defaults to API.md if format is markdown (-f md) or API.json if format is JSON (-f json). If more than one language is passed, then the language will be included in the filename e.g. API.typescript.md' })
     .option('format', { alias: 'f', default: 'md', choices: ['md', 'json'], desc: 'Output format, markdown or json' })
     .option('language', { array: true, alias: 'l', default: ['typescript'], choices: Language.values().map(x => x.toString()), desc: 'Output language' })
     .option('package', { alias: 'p', type: 'string', required: false, desc: 'The name@version of an NPM package to document', defaultDescription: 'The package in the current directory' })
