@@ -9,9 +9,12 @@ type GenerateOptions = {
   submodule?: string;
   allSubmodules?: boolean;
   splitBySubmodules?: boolean;
+  format?: 'md' | 'json';
+  output?: string;
 }
 
-async function generateForLanguage(docs: Documentation, format: 'md' | 'json', options: GenerateOptions, output = 'API') {
+async function generateForLanguage(docs: Documentation, options: GenerateOptions,) {
+  const { format, output = 'API' } = options;
   const fileSuffix = format === 'md' ? 'md' : 'json';
   let submoduleSuffix = fileSuffix;
 
@@ -66,20 +69,22 @@ export async function main() {
     ? Documentation.forPackage(args.package)
     : Documentation.forProject(process.cwd()));
 
-  const options = (lang: string): GenerateOptions => ({
+  const options = (lang: string, output?: string): GenerateOptions => ({
     readme: false,
     language: Language.fromString(lang),
     submodule,
     allSubmodules,
     splitBySubmodules,
+    format: args.format as 'md' | 'json',
+    output,
   });
 
   if (args.language.length <= 1) {
-    await generateForLanguage(docs, args.format as 'md' | 'json', options(args.language[0]), args.output);
+    await generateForLanguage(docs, options(args.language[0], args.output));
   } else {
     for (const lang of args.language) {
       const output = `${args.output ?? 'API'}.${lang}`;
-      await generateForLanguage(docs, args.format as 'md' | 'json', options(lang), output);
+      await generateForLanguage(docs, options(lang, output));
     }
   }
 }
