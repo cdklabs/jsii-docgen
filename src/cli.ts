@@ -13,7 +13,7 @@ type GenerateOptions = {
   output?: string;
 }
 
-async function generateForLanguage(docs: Documentation, options: GenerateOptions,) {
+async function generateForLanguage(docs: Documentation, options: GenerateOptions) {
   const { format, output = 'API' } = options;
   const fileSuffix = format === 'md' ? 'md' : 'json';
   let submoduleSuffix = fileSuffix;
