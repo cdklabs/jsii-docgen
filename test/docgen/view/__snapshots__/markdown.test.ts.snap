@@ -1716,7 +1716,7 @@ grants an IAM user access to call this API.
 using Amazon.CDK.AWS.IAM;
 using Amazon.CDK.AWS.ECR;
 
-User user = new User(this, \\"User\\", new UserProps { ... });
+var user = new User(this, \\"User\\", new UserProps { ... });
 AuthorizationToken.GrantRead(user);
 \`\`\`
 
@@ -1732,7 +1732,7 @@ The following code snippet grants an IAM user access to retrieve an authorizatio
 using Amazon.CDK.AWS.IAM;
 using Amazon.CDK.AWS.ECR;
 
-User user = new User(this, \\"User\\", new UserProps { ... });
+var user = new User(this, \\"User\\", new UserProps { ... });
 PublicGalleryAuthorizationToken.GrantRead(user);
 \`\`\`
 
@@ -23510,7 +23510,7 @@ grants an IAM user access to call this API.
 using Amazon.CDK.AWS.IAM;
 using Amazon.CDK.AWS.ECR;
 
-User user = new User(this, \\"User\\", new UserProps { ... });
+var user = new User(this, \\"User\\", new UserProps { ... });
 AuthorizationToken.GrantRead(user);
 \`\`\`
 
@@ -23526,7 +23526,7 @@ The following code snippet grants an IAM user access to retrieve an authorizatio
 using Amazon.CDK.AWS.IAM;
 using Amazon.CDK.AWS.ECR;
 
-User user = new User(this, \\"User\\", new UserProps { ... });
+var user = new User(this, \\"User\\", new UserProps { ... });
 PublicGalleryAuthorizationToken.GrantRead(user);
 \`\`\`
 
