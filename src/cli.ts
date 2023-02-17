@@ -1,4 +1,4 @@
-import * as fs from 'fs';
+import * as fs from 'fs/promises';
 import * as yargs from 'yargs';
 import { Language } from './docgen/transpile/transpile';
 import { Documentation } from './index';
@@ -38,13 +38,13 @@ async function generateForLanguage(docs: Documentation, options: GenerateOptions
         header: { title: `\`${submodule.name}\` Submodule`, id: submodule.fqn },
       });
 
-      fs.writeFileSync(`${submodule.name}.${submoduleSuffix}`, content.render());
+      await fs.writeFile(`${submodule.name}.${submoduleSuffix}`, content.render());
     }
 
-    fs.writeFileSync(`${output ?? 'API'}.${fileSuffix}`, await (await docs.toIndexMarkdown(submoduleSuffix, options)).render());
+    await fs.writeFile(`${output ?? 'API'}.${fileSuffix}`, await (await docs.toIndexMarkdown(submoduleSuffix, options)).render());
   } else {
     const content = await (format === 'md' ? docs.toMarkdown(options) : docs.toJson(options));
-    fs.writeFileSync(`${output ?? 'API'}.${fileSuffix}`, content.render());
+    await fs.writeFile(`${output ?? 'API'}.${fileSuffix}`, content.render());
   }
 }
 
