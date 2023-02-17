@@ -1,3 +1,4 @@
+import * as reflect from 'jsii-reflect';
 import { MarkdownDocument } from './markdown-doc';
 import { ApiReferenceSchema, AssemblyMetadataSchema, ClassSchema, ConstructSchema, EnumMemberSchema, EnumSchema, InitializerSchema, InterfaceSchema, JsiiEntity, MethodSchema, ParameterSchema, PropertySchema, Schema, CURRENT_SCHEMA_VERSION, StructSchema, TypeSchema } from '../schema';
 import { Language } from '../transpile/transpile';
@@ -51,6 +52,9 @@ export interface MarkdownFormattingOptions {
     metadata: AssemblyMetadataSchema,
     linkFormatter: (type: JsiiEntity, metadata: AssemblyMetadataSchema) => string
   ) => string;
+
+
+  readonly header?: {title: string; id: string};
 }
 
 export interface MarkdownRendererOptions extends MarkdownFormattingOptions, AssemblyMetadataSchema {
@@ -99,8 +103,27 @@ export class MarkdownRenderer {
         language: Language.fromString(schema.language),
         ...schema.metadata,
       });
-      documentation.section(renderer.visitApiReference(schema.apiReference));
+
+      documentation.section(renderer.visitApiReference(schema.apiReference, options.header));
     }
+
+    return documentation;
+  }
+
+  public static fromSubmodules(submodules: readonly reflect.Submodule[], fileSuffix: string, options: MarkdownRendererOptions): MarkdownDocument {
+    const documentation = new MarkdownDocument();
+
+    const renderer = new MarkdownRenderer({
+      anchorFormatter: options.anchorFormatter,
+      linkFormatter: options.linkFormatter,
+      typeFormatter: options.typeFormatter,
+      language: options.language,
+      packageName: options.packageName,
+      packageVersion: options.packageVersion,
+    });
+
+    const apiRef = renderer.visitSubmodules(submodules, fileSuffix);
+    documentation.section(apiRef);
 
     return documentation;
   }
@@ -123,10 +146,20 @@ export class MarkdownRenderer {
     };
   }
 
+  public visitSubmodules(submodules: readonly reflect.Submodule[], fileSuffix: string): MarkdownDocument {
+    const md = new MarkdownDocument({ header: { title: 'Submodules' }, id: 'submodules' });
+    md.lines('The following submodules are available:');
+    for (const submodule of submodules) {
+      md.lines(`- [${submodule.name}](./${submodule.name}.${fileSuffix})`);
+    }
+    return md;
+  }
+
   public visitApiReference(
     apiRef: ApiReferenceSchema,
+    header: {title: string; id: string} = { title: 'API Reference', id: 'api-reference' },
   ): MarkdownDocument {
-    const md = new MarkdownDocument({ header: { title: 'API Reference' }, id: 'api-reference' });
+    const md = new MarkdownDocument({ header: { title: header.title }, id: header.id });
     md.section(this.visitConstructs(apiRef.constructs));
     md.section(this.visitStructs(apiRef.structs));
     md.section(this.visitClasses(apiRef.classes));
