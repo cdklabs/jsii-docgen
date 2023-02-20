@@ -18,7 +18,9 @@ async function generateForLanguage(docs: Documentation, options: GenerateOptions
   const fileSuffix = format === 'md' ? 'md' : 'json';
   let submoduleSuffix = fileSuffix;
 
-  const outputFileName = output.replace(/\.md|\.json/g, '');
+  const outputFileName = output.endsWith(`.${fileSuffix}`)
+    ? output.slice(0, -(fileSuffix.length + 1))
+    : output;
   // e.g. API.typescript as name
   if (outputFileName.includes('.')) {
     const languageSeperator = outputFileName.split('.')[1];
