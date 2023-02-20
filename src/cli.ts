@@ -18,9 +18,10 @@ async function generateForLanguage(docs: Documentation, options: GenerateOptions
   const fileSuffix = format === 'md' ? 'md' : 'json';
   let submoduleSuffix = fileSuffix;
 
+  const outputFileName = output.replace(/\.md|\.json/g, '');
   // e.g. API.typescript as name
-  if (output.includes('.')) {
-    const languageSeperator = output.split('.')[1];
+  if (outputFileName.includes('.')) {
+    const languageSeperator = outputFileName.split('.')[1];
     submoduleSuffix = `${languageSeperator}.${fileSuffix}`;
   }
 
@@ -41,10 +42,10 @@ async function generateForLanguage(docs: Documentation, options: GenerateOptions
       await fs.writeFile(`${submodule.name}.${submoduleSuffix}`, content.render());
     }
 
-    await fs.writeFile(`${output ?? 'API'}.${fileSuffix}`, await (await docs.toIndexMarkdown(submoduleSuffix, options)).render());
+    await fs.writeFile(`${outputFileName}.${fileSuffix}`, await (await docs.toIndexMarkdown(submoduleSuffix, options)).render());
   } else {
     const content = await (format === 'md' ? docs.toMarkdown(options) : docs.toJson(options));
-    await fs.writeFile(`${output ?? 'API'}.${fileSuffix}`, content.render());
+    await fs.writeFile(`${outputFileName}.${fileSuffix}`, content.render());
   }
 }
 
