@@ -53,13 +53,13 @@
     "typescript": "~4.9.5"
   },
   "dependencies": {
-    "@jsii/spec": "^1.77.0",
+    "@jsii/spec": "^1.78.1",
     "case": "^1.6.3",
     "fs-extra": "^10.1.0",
     "glob": "^7.2.3",
     "glob-promise": "^3.4.0",
-    "jsii-reflect": "^1.77.0",
-    "jsii-rosetta": "^1.77.0",
+    "jsii-reflect": "^1.78.1",
+    "jsii-rosetta": "^1.78.1",
     "semver": "^7.3.8",
     "yargs": "^16.2.0"
   },
