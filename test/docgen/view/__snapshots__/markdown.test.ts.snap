@@ -32,11 +32,10 @@ import software.amazon.awsconstructs.services.lambdasqs.LambdaToSqs;
 import software.amazon.awsconstructs.services.lambdasqs.LambdaToSqsProps;
 
 LambdaToSqs.Builder.create(this, \\"LambdaToSqsPattern\\")
-        .lambdaFunctionProps(FunctionProps.builder()
-                .runtime(lambda.getRuntime().getNODEJS_12_X())
-                .handler(\\"index.handler\\")
-                .code(lambda.Code.fromAsset(String.format(\\"%s/lambda\\", __dirname)))
-                .build())
+        .lambdaFunctionProps(Map.of(
+                \\"runtime\\", lambda.getRuntime().getNODEJS_12_X(),
+                \\"handler\\", \\"index.handler\\",
+                \\"code\\", lambda.Code.fromAsset(String.format(\\"%s/lambda\\", __dirname))))
         .build();
 \`\`\`
 
@@ -627,15 +626,14 @@ Here is a minimal deployable pattern definition in Typescript:
 
 \`\`\`python
 # Example automatically generated from non-compiling source. May contain errors.
-from aws_cdk.aws_lambda import FunctionProps
 from aws_solutions_constructs.aws_lambda_sqs import LambdaToSqs, LambdaToSqsProps
 
 LambdaToSqs(self, \\"LambdaToSqsPattern\\",
-    lambda_function_props=FunctionProps(
-        runtime=lambda_.Runtime.NODEJS_12_X,
-        handler=\\"index.handler\\",
-        code=lambda_.Code.from_asset(f\\"{__dirname}/lambda\\")
-    )
+    lambda_function_props={
+        \\"runtime\\": lambda_.Runtime.NODEJS_12_X,
+        \\"handler\\": \\"index.handler\\",
+        \\"code\\": lambda_.Code.from_asset(f\\"{__dirname}/lambda\\")
+    }
 )
 \`\`\`
 
