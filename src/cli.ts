@@ -59,6 +59,7 @@ export async function main() {
     .option('format', { alias: 'f', default: 'md', choices: ['md', 'json'], desc: 'Output format, markdown or json' })
     .option('language', { array: true, alias: 'l', default: ['typescript'], choices: Language.values().map(x => x.toString()), desc: 'Output language' })
     .option('package', { alias: 'p', type: 'string', required: false, desc: 'The name@version of an NPM package to document', defaultDescription: 'The package in the current directory' })
+    .option('readme', { alias: 'r', type: 'boolean', required: false, desc: 'Include the user defined README.md in the documentation.' })
     .option('submodule', { alias: 's', type: 'string', required: false, desc: 'Generate docs for a specific submodule (or "root")' })
     .option('split-by-submodule', { type: 'boolean', required: false, desc: 'Generate a separate file for each submodule' })
     .example('$0', 'Generate documentation for the current module as a single file (auto-resolves node depedencies)')
@@ -67,13 +68,14 @@ export async function main() {
 
   const submodule = args.submodule === 'root' ? undefined : args.submodule;
   const allSubmodules = !args.submodule;
+  const readme = args.readme;
   const splitBySubmodules = args['split-by-submodule'];
   const docs = await (args.package
     ? Documentation.forPackage(args.package)
     : Documentation.forProject(process.cwd()));
 
   const options = (lang: string, output?: string): GenerateOptions => ({
-    readme: false,
+    readme,
     language: Language.fromString(lang),
     submodule,
     allSubmodules,
