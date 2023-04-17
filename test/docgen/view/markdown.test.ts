@@ -1,8 +1,6 @@
 import { Documentation, Language } from '../../../src';
 import { JsiiEntity } from '../../../src/docgen/schema';
 
-jest.setTimeout(60 * 1000);
-
 describe('simple link formatter', () => {
   test.each(Language.values())('%s snapshot', async (language) => {
     const docs = await Documentation.forPackage(language === Language.GO ? 'constructs@10.0.78' : '@aws-cdk/aws-ecr@1.106.0');
