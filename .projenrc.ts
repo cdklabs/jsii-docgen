@@ -1,6 +1,7 @@
-const { typescript, JsonPatch } = require('projen');
+import { typescript, JsonPatch } from 'projen';
 
 const project = new typescript.TypeScriptProject({
+  projenrcTs: true,
   name: 'jsii-docgen',
   description: 'generates api docs for jsii modules',
   repository: 'https://github.com/cdklabs/jsii-docgen',
@@ -27,9 +28,7 @@ const project = new typescript.TypeScriptProject({
     'semver',
     'yargs',
   ],
-  compileBeforeTest: true, // we need this for the CLI test
   releaseToNpm: true,
-  projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
   autoApproveOptions: {
     allowedUsernames: ['cdklabs-automation'],
     secret: 'GITHUB_TOKEN',
@@ -51,8 +50,8 @@ const project = new typescript.TypeScriptProject({
   },
 });
 
-project.github.tryFindWorkflow('release').file.patch(JsonPatch.add('/jobs/release/env/NODE_OPTIONS', '--max_old_space_size=4096'));
-project.github.tryFindWorkflow('build').file.patch(JsonPatch.add('/jobs/build/env/NODE_OPTIONS', '--max_old_space_size=4096'));
+project.github?.tryFindWorkflow('release')?.file?.patch(JsonPatch.add('/jobs/release/env/NODE_OPTIONS', '--max_old_space_size=4096'));
+project.github?.tryFindWorkflow('build')?.file?.patch(JsonPatch.add('/jobs/build/env/NODE_OPTIONS', '--max_old_space_size=4096'));
 
 const libraryFixtures = ['construct-library'];
 
