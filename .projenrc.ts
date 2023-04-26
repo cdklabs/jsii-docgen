@@ -36,6 +36,7 @@ const project = new typescript.TypeScriptProject({
   autoApproveUpgrades: true,
 
   minNodeVersion: '14.17.0',
+  workflowNodeVersion: '16.x',
   jestOptions: {
     jestConfig: {
       setupFilesAfterEnv: ['<rootDir>/test/setup-jest.ts'],
