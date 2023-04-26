@@ -340,7 +340,7 @@ export class Documentation {
       await fs.copy(this.assembliesDir, workdir);
 
       const ts = new reflect.TypeSystem();
-      for (let dotJsii of await glob.promise(`${workdir}/**/${SPEC_FILE_NAME}`)) {
+      for (let dotJsii of await glob.promise(`${this.assembliesDir}/**/${SPEC_FILE_NAME}`)) {
         // we only transliterate the top level assembly and not the entire type-system.
         // note that the only reason to translate dependant assemblies is to show code examples
         // for expanded python arguments - which we don't to right now anyway.
@@ -350,11 +350,12 @@ export class Documentation {
         if (language && spec.name === this.assemblyName) {
           const packageDir = path.dirname(dotJsii);
           try {
-            await transliterateAssembly([packageDir], [language], { loose: options.loose, unknownSnippets: UnknownSnippetMode.FAIL });
+            await transliterateAssembly([packageDir], [language],
+              { loose: options.loose, unknownSnippets: UnknownSnippetMode.FAIL, outdir: workdir });
           } catch (e: any) {
             throw new LanguageNotSupportedError(`Laguage ${language} is not supported for package ${this.assemblyFqn} (cause: ${e.message})`);
           }
-          dotJsii = path.join(packageDir, `${SPEC_FILE_NAME}.${language}`);
+          dotJsii = path.join(workdir, `${SPEC_FILE_NAME}.${language}`);
         }
         await ts.load(dotJsii, { validate: options.validate });
       }

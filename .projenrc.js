@@ -37,7 +37,11 @@ const project = new typescript.TypeScriptProject({
   autoApproveUpgrades: true,
 
   minNodeVersion: '14.17.0',
-
+  jestOptions: {
+    jestConfig: {
+      setupFilesAfterEnv: ['<rootDir>/test/setup-jest.ts'],
+    },
+  },
   tsconfig: {
     compilerOptions: {
       target: 'ES2019',

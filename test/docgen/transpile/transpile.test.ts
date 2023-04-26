@@ -2,8 +2,6 @@ import { Documentation } from '../../../src';
 import { Language } from '../../../src/docgen/transpile/transpile';
 import { Assemblies } from '../assemblies';
 
-jest.setTimeout(60000);
-
 describe('language', () => {
 
   test('typescript is supported', () => {
