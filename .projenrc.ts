@@ -35,7 +35,7 @@ const project = new typescript.TypeScriptProject({
   },
   autoApproveUpgrades: true,
 
-  minNodeVersion: '14.17.0',
+  minNodeVersion: '16.0.0',
   workflowNodeVersion: '16.x',
   jestOptions: {
     jestConfig: {
