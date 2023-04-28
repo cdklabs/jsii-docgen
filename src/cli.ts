@@ -53,7 +53,7 @@ async function generateForLanguage(docs: Documentation, options: GenerateOptions
 
 
 export async function main() {
-  const args = yargs
+  const args = await yargs
     .usage('Usage: $0')
     .option('output', { alias: 'o', type: 'string', required: false, desc: 'Output filename, the file type is automatically added. Defaults to API.md if format is markdown (-f md) or API.json if format is JSON (-f json). If more than one language is passed, then the language will be included in the filename e.g. API.typescript.md' })
     .option('format', { alias: 'f', default: 'md', choices: ['md', 'json'], desc: 'Output format, markdown or json' })
