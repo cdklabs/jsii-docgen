@@ -345,7 +345,7 @@ export class Documentation {
         // note that the only reason to translate dependant assemblies is to show code examples
         // for expanded python arguments - which we don't to right now anyway.
         // we don't want to make any assumption of the directory structure, so this is the most
-        // robuse way to detect the root assembly.
+        // robust way to detect the root assembly.
         const spec = loadAssemblyFromFile(dotJsii);
         if (language && spec.name === this.assemblyName) {
           const packageDir = path.dirname(dotJsii);
@@ -357,7 +357,7 @@ export class Documentation {
           }
           dotJsii = path.join(workdir, `${SPEC_FILE_NAME}.${language}`);
         }
-        await ts.load(dotJsii, { validate: options.validate });
+        await loadAssembly(dotJsii, ts, options);
       }
       return ts.findAssembly(this.assemblyName);
     });
@@ -365,7 +365,6 @@ export class Documentation {
     this.assembliesCache.set(cacheKey, created);
     return created;
   }
-
 }
 
 export const LANGUAGE_SPECIFIC = {
@@ -390,6 +389,39 @@ export const LANGUAGE_SPECIFIC = {
     rosettaTarget: TargetLanguage.GO,
   },
 };
+
+/**
+ * Loads the specified assembly document into the provided type system, and
+ * recursively attempt to load the assembly's dependencies.
+ *
+ * @param dotJsii the assembly to be loaded.
+ * @param ts the type system in which the assembly is to be loaded.
+ * @param validate whether assemblies should be validated.
+ */
+async function loadAssembly(
+  dotJsii: string,
+  ts: reflect.TypeSystem,
+  { validate }: { readonly validate?: boolean } = {},
+): Promise<reflect.Assembly> {
+  const loaded = await ts.load(dotJsii, { validate });
+  debugger;
+  for (const dep of Object.keys(loaded.spec.dependencies ?? {})) {
+    if (ts.tryFindAssembly(dep) != null) {
+      // dependency already loaded... move on...
+      continue;
+    }
+    try {
+      // Resolve the dependencies relative to the dependent's package root.
+      const depPath = require.resolve(`${dep}/.jsii`, { paths: [path.dirname(dotJsii)] });
+      await loadAssembly(depPath, ts, { validate });
+    } catch {
+      // Silently ignore any resolution errors... We'll fail later if the dependency is
+      // ACTUALLY required, but it's okay to omit it if none of its types are actually exposed
+      // by the translated assembly's own API.
+    }
+  }
+  return loaded;
+}
 
 async function withTempDir<T>(work: (workdir: string) => Promise<T>): Promise<T> {
   const workdir = await fs.mkdtemp(path.join(os.tmpdir(), path.sep));

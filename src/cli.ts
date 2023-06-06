@@ -65,7 +65,6 @@ export async function main() {
     .example('$0', 'Generate documentation for the current module as a single file (auto-resolves node depedencies)')
     .argv;
 
-
   const submodule = args.submodule === 'root' ? undefined : args.submodule;
   const allSubmodules = !args.submodule;
   const readme = args.readme;
