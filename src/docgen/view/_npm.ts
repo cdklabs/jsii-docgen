@@ -19,13 +19,20 @@ export class Npm {
    * Installs the designated package into this repository's working directory.
    *
    * @param target the name or path to the package that needs to be installed.
+   * @param withOptionalPeerDeps should optional peer dependencies be installed as well.
    */
-  public async install(target: string): Promise<void> {
+  public async install(target: string, withOptionalPeerDeps = true): Promise<void> {
+    const packages = [target];
+
+    if (withOptionalPeerDeps) {
+      packages.push(...(await this.listOptionalPeerDeps(target)));
+    }
+
     const result = await this.runCommand(
       await this.npmCommandPath(),
       [
         'install',
-        target,
+        ...packages,
         // this is critical from a security perspective to prevent
         // code execution as part of the install command using npm hooks. (e.g postInstall)
         '--ignore-scripts',
@@ -46,6 +53,48 @@ export class Npm {
       },
     );
     return assertSuccess(result);
+  }
+
+  /**
+   * Returns info for a package
+   *
+   * @param target the name or path to the package
+   */
+  private async info(target: string): Promise<any> {
+    const result = await this.runCommand(
+      await this.npmCommandPath(),
+      [
+        'info',
+        target,
+        // always produce JSON output
+        '--json',
+      ],
+      chunksToObject,
+      {
+        cwd: this.workingDirectory,
+        shell: true,
+      },
+    );
+    assertSuccess(result);
+    return result.stdout;
+  }
+
+  /**
+   * Lists optional peer deps
+   *
+   * @param target the name or path to the package
+   */
+  private async listOptionalPeerDeps(target: string): Promise<string[]> {
+    const targets = new Array<string>();
+    const packageJson = await this.info(target);
+
+    for (const [peerDep, meta] of Object.entries(packageJson.peerDependenciesMeta ?? {}) as any) {
+      if (meta?.optional && packageJson.peerDependencies[peerDep]) {
+        targets.push(`${peerDep}@"${packageJson.peerDependencies[peerDep]}"`);
+      }
+    }
+
+    return targets;
   }
 
   /**
