@@ -1,6 +1,8 @@
 import { CdklabsTypeScriptProject } from 'cdklabs-projen-project-types';
 import { JsonPatch } from 'projen';
 
+const rosettaTestedRange = 'jsii-rosetta@>=5.1.2 <5.2';
+
 const project = new CdklabsTypeScriptProject({
   stability: 'stable',
   private: false,
@@ -19,6 +21,7 @@ const project = new CdklabsTypeScriptProject({
   devDeps: [
     '@types/fs-extra',
     '@types/semver',
+    rosettaTestedRange,
   ],
   deps: [
     '@jsii/spec',
@@ -27,10 +30,15 @@ const project = new CdklabsTypeScriptProject({
     'glob-promise',
     'glob',
     'jsii-reflect',
-    'jsii-rosetta',
     'semver',
     'yargs',
   ],
+  peerDeps: [
+    rosettaTestedRange,
+  ],
+  peerDependencyOptions: {
+    pinnedDevDependency: false,
+  },
   releaseToNpm: true,
   autoApproveOptions: {
     allowedUsernames: ['cdklabs-automation'],
