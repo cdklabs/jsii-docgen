@@ -25,11 +25,13 @@
     "test:watch": "npx projen test:watch",
     "unbump": "npx projen unbump",
     "upgrade": "npx projen upgrade",
+    "upgrade-cdklabs-projen-project-types": "npx projen upgrade-cdklabs-projen-project-types",
     "watch": "npx projen watch",
     "projen": "npx projen"
   },
   "author": {
     "name": "Amazon Web Services",
+    "email": "aws-cdk-dev@amazon.com",
     "url": "https://aws.amazon.com",
     "organization": true
   },
@@ -40,6 +42,7 @@
     "@types/semver": "^7.5.0",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
+    "cdklabs-projen-project-types": "^0.1.142",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.7",
     "eslint-import-resolver-typescript": "^2.7.1",
@@ -63,9 +66,6 @@
     "jsii-rosetta": "^1.84.0",
     "semver": "^7.5.2",
     "yargs": "^16.2.0"
-  },
-  "engines": {
-    "node": ">= 16.0.0"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",

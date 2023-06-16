@@ -1,6 +1,10 @@
-import { typescript, JsonPatch } from 'projen';
+import { CdklabsTypeScriptProject } from 'cdklabs-projen-project-types';
+import { JsonPatch } from 'projen';
 
-const project = new typescript.TypeScriptProject({
+const project = new CdklabsTypeScriptProject({
+  setNodeEngineVersion: false,
+  stability: 'stable',
+  private: false,
   projenrcTs: true,
   name: 'jsii-docgen',
   description: 'generates api docs for jsii modules',
