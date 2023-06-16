@@ -2,7 +2,6 @@ import { CdklabsTypeScriptProject } from 'cdklabs-projen-project-types';
 import { JsonPatch } from 'projen';
 
 const project = new CdklabsTypeScriptProject({
-  setNodeEngineVersion: false,
   stability: 'stable',
   private: false,
   projenrcTs: true,
