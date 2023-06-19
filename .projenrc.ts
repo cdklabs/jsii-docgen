@@ -54,6 +54,9 @@ const project = new CdklabsTypeScriptProject({
   },
 });
 
+// Suppress upgrade prompts, in particular from test runs.
+project.tasks.addEnvironment('JSII_SUPPRESS_UPGRADE_PROMPT', 'true');
+
 project.github?.tryFindWorkflow('release')?.file?.patch(JsonPatch.add('/jobs/release/env/NODE_OPTIONS', '--max_old_space_size=4096'));
 project.github?.tryFindWorkflow('build')?.file?.patch(JsonPatch.add('/jobs/build/env/NODE_OPTIONS', '--max_old_space_size=4096'));
 

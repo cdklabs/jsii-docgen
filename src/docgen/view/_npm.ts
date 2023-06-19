@@ -1,7 +1,7 @@
 import { spawn, SpawnOptionsWithoutStdio } from 'child_process';
 import * as os from 'os';
 import { join } from 'path';
-import { major } from 'semver';
+import { major, validRange } from 'semver';
 import { NoSpaceLeftOnDevice, UnInstallablePackageError, NpmError } from '../../errors';
 
 export class Npm {
@@ -21,12 +21,11 @@ export class Npm {
    * @param target the name or path to the package that needs to be installed.
    * @param withOptionalPeerDeps should optional peer dependencies be installed as well.
    */
-  public async install(target: string, withOptionalPeerDeps = true): Promise<void> {
-    const packages = [target];
-
-    if (withOptionalPeerDeps) {
-      packages.push(...(await this.listOptionalPeerDeps(target)));
-    }
+  public async install(target: string, withOptionalPeerDeps = OptionalPeerDepsFilter.VersionRange): Promise<void> {
+    const packages = [
+      target,
+      ...(await this.listOptionalPeerDeps(target, withOptionalPeerDeps)),
+    ];
 
     const result = await this.runCommand(
       await this.npmCommandPath(),
@@ -36,6 +35,8 @@ export class Npm {
         // this is critical from a security perspective to prevent
         // code execution as part of the install command using npm hooks. (e.g postInstall)
         '--ignore-scripts',
+        // save time by not running audit
+        '--no-autit',
         // ensures npm does not insert anything in $PATH
         '--no-bin-links',
         '--no-save',
@@ -83,14 +84,28 @@ export class Npm {
    * Lists optional peer deps
    *
    * @param target the name or path to the package
+   * @param filter the filter to apply when selecting optional peer deps
    */
-  private async listOptionalPeerDeps(target: string): Promise<string[]> {
+  private async listOptionalPeerDeps(target: string, filter: OptionalPeerDepsFilter): Promise<string[]> {
     const targets = new Array<string>();
+    if (filter === OptionalPeerDepsFilter.None) {
+      return targets;
+    }
+
     const packageJson = await this.info(target);
 
-    for (const [peerDep, meta] of Object.entries(packageJson.peerDependenciesMeta ?? {}) as any) {
-      if (meta?.optional && packageJson.peerDependencies[peerDep]) {
-        targets.push(`${peerDep}@"${packageJson.peerDependencies[peerDep]}"`);
+    for (const [peerDep, meta] of Object.entries(
+      packageJson.peerDependenciesMeta ?? {},
+    ) as [string, { readonly optional?: boolean }][]) {
+      if (meta.optional && packageJson.peerDependencies[peerDep]) {
+        const version = packageJson.peerDependencies[peerDep];
+        if (filter === OptionalPeerDepsFilter.VersionRange) {
+          // If validRange returns null, this isn't a version range, so we ignore it.
+          if (validRange(version) == null) {
+            continue;
+          }
+        }
+        targets.push(`${peerDep}@"${version}"`);
       }
     }
 
@@ -127,7 +142,7 @@ export class Npm {
     // npm@8 is needed so that we also install peerDependencies - they are needed to construct
     // the full type system.
     this.logger('The npm in $PATH is not >= v7. Installing npm@8 locally...');
-    const result= await this.runCommand(
+    const result = await this.runCommand(
       'npm',
       ['install', 'npm@8', '--no-package-lock', '--no-save', '--json'],
       chunksToObject,
@@ -190,6 +205,29 @@ export class Npm {
   }
 }
 
+/**
+ * A filter to apply when selecting optional peer dependencies, based on how
+ * their version target is specified.
+ */
+export enum OptionalPeerDepsFilter {
+  /**
+   * Ignore all optional peer dependencies when installing.
+   */
+  None,
+
+  /**
+   * Install only optional peer dependencies specified as a version range, and
+   * ignore those specified as a URL or local path.
+   */
+  VersionRange,
+
+  /**
+   * Install all optional peer dependencies regardless of how they are
+   * specified. This requires URL and local-path dependencies to be reachable.
+   */
+  All,
+}
+
 interface CommandResult<T> {
   readonly command: string;
   readonly exitCode: number | null;
@@ -227,7 +265,7 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
     stdout.error && !detail && !summary ? `: ${stdout.error}` : '',
   ].join('');
 
-  if (typeof(summary) === 'string' && summary.includes('must provide string spec')) {
+  if (typeof summary === 'string' && summary.includes('must provide string spec')) {
     // happens when package.json dependencies don't have a spec.
     // for example: https://github.com/markusl/cdk-codepipeline-bitbucket-build-result-reporter/blob/v0.0.7/package.json
     throw new UnInstallablePackageError(summary);
@@ -235,7 +273,7 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
 
   // happens when a package has been deleted from npm
   // for example: sns-app-jsii-component
-  if (!code && !detail && typeof(summary) === 'string' && summary.includes('Cannot convert undefined or null to object')) {
+  if (!code && !detail && typeof summary === 'string' && summary.includes('Cannot convert undefined or null to object')) {
     throw new UnInstallablePackageError(summary);
   }
 
@@ -247,7 +285,6 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
     default:
       throw new NpmError(message, stdout, code);
   }
-
 }
 
 /**
