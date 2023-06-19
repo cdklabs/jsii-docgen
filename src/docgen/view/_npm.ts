@@ -1,7 +1,9 @@
 import { spawn, SpawnOptionsWithoutStdio } from 'child_process';
+import { promises as fs } from 'fs';
 import * as os from 'os';
 import { join } from 'path';
 import { major } from 'semver';
+import { extractPackageName } from './documentation';
 import { NoSpaceLeftOnDevice, UnInstallablePackageError, NpmError } from '../../errors';
 
 export class Npm {
@@ -19,9 +21,11 @@ export class Npm {
    * Installs the designated package into this repository's working directory.
    *
    * @param target the name or path to the package that needs to be installed.
+   *
+   * @returns the name of the package that was installed.
    */
-  public async install(target: string): Promise<void> {
-    const result = await this.runCommand(
+  public async install(target: string): Promise<string> {
+    assertSuccess(await this.runCommand(
       await this.npmCommandPath(),
       [
         'install',
@@ -29,11 +33,16 @@ export class Npm {
         // this is critical from a security perspective to prevent
         // code execution as part of the install command using npm hooks. (e.g postInstall)
         '--ignore-scripts',
+        // save time by not running audit
+        '--no-audit',
         // ensures npm does not insert anything in $PATH
         '--no-bin-links',
-        '--no-save',
+        // Make sure we get a `package.json` so we can figure out the actual package name.
+        '--save',
         // ensures we are installing devDependencies, too.
         '--include=dev',
+        '--include=peer',
+        '--include=optional',
         // don't write or update a package-lock.json file
         '--no-package-lock',
         // always produce JSON output
@@ -44,8 +53,62 @@ export class Npm {
         cwd: this.workingDirectory,
         shell: true,
       },
-    );
-    return assertSuccess(result);
+    ));
+
+    const { dependencies } = JSON.parse(await fs.readFile(join(this.workingDirectory, 'package.json'), 'utf-8'));
+    const names = Object.keys(dependencies ?? {});
+    const name = names.length === 1
+      ? names[0]
+      : extractPackageName(target);
+
+    const optionalPeerDeps = await this.listOptionalPeerDeps(name);
+    if (optionalPeerDeps.length > 0) {
+      assertSuccess(await this.runCommand(
+        await this.npmCommandPath(),
+        [
+          'install',
+          ...optionalPeerDeps,
+          // this is critical from a security perspective to prevent
+          // code execution as part of the install command using npm hooks. (e.g postInstall)
+          '--ignore-scripts',
+          // save time by not running audit
+          '--no-audit',
+          // ensures npm does not insert anything in $PATH
+          '--no-bin-links',
+          // Save as optional in the root package.json (courtesy)
+          '--save-optional',
+          // don't write or update a package-lock.json file
+          '--no-package-lock',
+          // always produce JSON output
+          '--json',
+        ],
+        chunksToObject,
+        {
+          cwd: this.workingDirectory,
+          shell: true,
+        },
+      ));
+    }
+
+    return name;
+  }
+
+  private async listOptionalPeerDeps(target: string): Promise<readonly string[]> {
+    const result = new Array<string>();
+
+    const packageJson = JSON.parse(await fs.readFile(join(this.workingDirectory, 'node_modules', target, 'package.json'), 'utf-8'));
+    for (const [name, { optional }] of Object.entries(packageJson.peerDependenciesMeta ?? {}) as [string, { optional: boolean }][]) {
+      if (!optional) {
+        continue;
+      }
+      const version = packageJson.peerDependencies[name];
+      if (version == null) {
+        continue;
+      }
+      result.push(`${name}@${version}`);
+    }
+
+    return result;
   }
 
   /**
@@ -78,7 +141,7 @@ export class Npm {
     // npm@8 is needed so that we also install peerDependencies - they are needed to construct
     // the full type system.
     this.logger('The npm in $PATH is not >= v7. Installing npm@8 locally...');
-    const result= await this.runCommand(
+    const result = await this.runCommand(
       'npm',
       ['install', 'npm@8', '--no-package-lock', '--no-save', '--json'],
       chunksToObject,
@@ -141,6 +204,29 @@ export class Npm {
   }
 }
 
+/**
+ * A filter to apply when selecting optional peer dependencies, based on how
+ * their version target is specified.
+ */
+export enum OptionalPeerDepsFilter {
+  /**
+   * Ignore all optional peer dependencies when installing.
+   */
+  None,
+
+  /**
+   * Install only optional peer dependencies specified as a version range, and
+   * ignore those specified as a URL or local path.
+   */
+  VersionRange,
+
+  /**
+   * Install all optional peer dependencies regardless of how they are
+   * specified. This requires URL and local-path dependencies to be reachable.
+   */
+  All,
+}
+
 interface CommandResult<T> {
   readonly command: string;
   readonly exitCode: number | null;
@@ -178,7 +264,7 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
     stdout.error && !detail && !summary ? `: ${stdout.error}` : '',
   ].join('');
 
-  if (typeof(summary) === 'string' && summary.includes('must provide string spec')) {
+  if (typeof summary === 'string' && summary.includes('must provide string spec')) {
     // happens when package.json dependencies don't have a spec.
     // for example: https://github.com/markusl/cdk-codepipeline-bitbucket-build-result-reporter/blob/v0.0.7/package.json
     throw new UnInstallablePackageError(summary);
@@ -186,7 +272,7 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
 
   // happens when a package has been deleted from npm
   // for example: sns-app-jsii-component
-  if (!code && !detail && typeof(summary) === 'string' && summary.includes('Cannot convert undefined or null to object')) {
+  if (!code && !detail && typeof summary === 'string' && summary.includes('Cannot convert undefined or null to object')) {
     throw new UnInstallablePackageError(summary);
   }
 
@@ -198,7 +284,6 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
     default:
       throw new NpmError(message, stdout, code);
   }
-
 }
 
 /**
@@ -214,7 +299,13 @@ function chunksToObject(chunks: readonly Buffer[], encoding: BufferEncoding = 'u
     // observed these log lines always start with 'npm', so we filter those out.
     // for example: "npm notice New patch version of npm available! 8.1.0 -> 8.1.3"
     // for example: "npm ERR! must provide string spec"
-    const onlyJson = raw.split(os.EOL).filter(l => !l.startsWith('npm')).join(os.EOL);
+    const onlyJson = raw.split(os.EOL)
+      .filter(l => !l.startsWith('npm'))
+      // Suppress debugger messages, if present...
+      .filter(l => l !== 'Debugger attached.')
+      .filter(l => l !== 'Waiting for the debugger to disconnect...')
+      // Re-join...
+      .join(os.EOL);
     return JSON.parse(onlyJson);
   } catch (error) {
     return { error, raw };

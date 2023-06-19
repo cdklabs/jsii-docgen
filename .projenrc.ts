@@ -57,6 +57,9 @@ const project = new CdklabsTypeScriptProject({
   },
 });
 
+// Suppress upgrade prompts, in particular from test runs.
+project.tasks.addEnvironment('JSII_SUPPRESS_UPGRADE_PROMPT', 'true');
+
 new RosettaPeerDependency(project, {
   supportedVersions: {
     [RosettaVersionLines.V5_0]: false,
