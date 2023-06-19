@@ -59,7 +59,7 @@
     },
     {
       "name": "jsii-rosetta",
-      "version": ">=5.1.2 <5.2",
+      "version": "~5.1.2",
       "type": "build"
     },
     {
@@ -69,6 +69,10 @@
     },
     {
       "name": "projen",
+      "type": "build"
+    },
+    {
+      "name": "semver",
       "type": "build"
     },
     {
@@ -90,7 +94,7 @@
     },
     {
       "name": "jsii-rosetta",
-      "version": ">=5.1.2 <5.2",
+      "version": "~5.1.2",
       "type": "peer"
     },
     {

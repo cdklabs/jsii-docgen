@@ -1,7 +1,6 @@
 import { CdklabsTypeScriptProject } from 'cdklabs-projen-project-types';
 import { JsonPatch } from 'projen';
-
-const rosettaTestedRange = 'jsii-rosetta@>=5.1.2 <5.2';
+import { RosettaPeerDependency, RosettaVersionLines } from './projenrc/rosetta';
 
 const project = new CdklabsTypeScriptProject({
   stability: 'stable',
@@ -21,7 +20,6 @@ const project = new CdklabsTypeScriptProject({
   devDeps: [
     '@types/fs-extra',
     '@types/semver',
-    rosettaTestedRange,
   ],
   deps: [
     '@jsii/spec',
@@ -32,9 +30,6 @@ const project = new CdklabsTypeScriptProject({
     'jsii-reflect',
     'semver',
     'yargs',
-  ],
-  peerDeps: [
-    rosettaTestedRange,
   ],
   peerDependencyOptions: {
     pinnedDevDependency: false,
@@ -59,6 +54,13 @@ const project = new CdklabsTypeScriptProject({
       lib: ['es2019'], // allow Array.prototype.flat etc.
       skipLibCheck: true,
     },
+  },
+});
+
+new RosettaPeerDependency(project, {
+  supportedVersions: {
+    [RosettaVersionLines.V5_0]: false,
+    [RosettaVersionLines.V5_1]: '~5.1.2',
   },
 });
 
