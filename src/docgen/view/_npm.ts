@@ -34,7 +34,7 @@ export class Npm {
         // code execution as part of the install command using npm hooks. (e.g postInstall)
         '--ignore-scripts',
         // save time by not running audit
-        '--no-autit',
+        '--no-audit',
         // ensures npm does not insert anything in $PATH
         '--no-bin-links',
         // Make sure we get a `package.json` so we can figure out the actual package name.
@@ -72,7 +72,7 @@ export class Npm {
           // code execution as part of the install command using npm hooks. (e.g postInstall)
           '--ignore-scripts',
           // save time by not running audit
-          '--no-autit',
+          '--no-audit',
           // ensures npm does not insert anything in $PATH
           '--no-bin-links',
           // Save as optional in the root package.json (courtesy)
