@@ -58,6 +58,11 @@
       "type": "build"
     },
     {
+      "name": "jsii-rosetta",
+      "version": "~5.1.2",
+      "type": "build"
+    },
+    {
       "name": "npm-check-updates",
       "version": "^16",
       "type": "build"
@@ -84,6 +89,11 @@
       "type": "build"
     },
     {
+      "name": "jsii-rosetta",
+      "version": "~5.1.2",
+      "type": "peer"
+    },
+    {
       "name": "@jsii/spec",
       "type": "runtime"
     },
@@ -105,10 +115,6 @@
     },
     {
       "name": "jsii-reflect",
-      "type": "runtime"
-    },
-    {
-      "name": "jsii-rosetta",
       "type": "runtime"
     },
     {

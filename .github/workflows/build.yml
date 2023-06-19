@@ -76,3 +76,33 @@ jobs:
           git add .
           git commit -s -m "chore: self mutation"
           git push origin HEAD:$PULL_REQUEST_REF
+  rosetta-compat:
+    runs-on: ubuntu-latest
+    permissions: {}
+    env:
+      CI: "true"
+      NODE_OPTIONS: --max_old_space_size=4096
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - name: Install dependencies
+        run: yarn install --check-files
+      - name: Install Rosetta version
+        run: yarn add --dev jsii-rosetta@${{ matrix.rosetta }}
+      - name: compile+test
+        run: |-
+          npx projen compile
+          npx projen test
+      - name: Check Rosetta version
+        run: test $(npx jsii-rosetta --version) = "${{ matrix.rosetta }}"
+    strategy:
+      matrix:
+        rosetta:
+          - 5.1.2

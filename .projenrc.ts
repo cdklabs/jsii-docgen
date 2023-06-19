@@ -1,5 +1,6 @@
 import { CdklabsTypeScriptProject } from 'cdklabs-projen-project-types';
 import { JsonPatch } from 'projen';
+import { RosettaPeerDependency, RosettaVersionLines } from './projenrc/rosetta';
 
 const project = new CdklabsTypeScriptProject({
   stability: 'stable',
@@ -27,10 +28,12 @@ const project = new CdklabsTypeScriptProject({
     'glob-promise',
     'glob',
     'jsii-reflect',
-    'jsii-rosetta',
     'semver',
     'yargs',
   ],
+  peerDependencyOptions: {
+    pinnedDevDependency: false,
+  },
   releaseToNpm: true,
   autoApproveOptions: {
     allowedUsernames: ['cdklabs-automation'],
@@ -51,6 +54,13 @@ const project = new CdklabsTypeScriptProject({
       lib: ['es2019'], // allow Array.prototype.flat etc.
       skipLibCheck: true,
     },
+  },
+});
+
+new RosettaPeerDependency(project, {
+  supportedVersions: {
+    [RosettaVersionLines.V5_0]: false,
+    [RosettaVersionLines.V5_1]: '~5.1.2',
   },
 });
 
