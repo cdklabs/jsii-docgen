@@ -98,8 +98,10 @@ jobs:
         run: yarn add --dev jsii-rosetta@${{ matrix.rosetta }}
       - name: Check Rosetta version
         run: test $(npx jsii-rosetta --version) = "${{ matrix.rosetta }}"
-      - name: build
-        run: npx projen test
+      - name: compile+test
+        run: |-
+          npx projen compile
+          npx projen test
     strategy:
       matrix:
         rosetta:

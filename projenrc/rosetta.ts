@@ -70,8 +70,8 @@ export class RosettaPeerDependency extends Component {
         run: `test $(npx ${JSII_ROSETTA} --version) = "\${{ matrix.rosetta }}"`,
       },
       {
-        name: 'build',
-        run: 'npx projen test',
+        name: 'compile+test',
+        run: ['npx projen compile', 'npx projen test'].join('\n'),
       }],
     });
   }
