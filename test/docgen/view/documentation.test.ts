@@ -28,8 +28,7 @@ describe('extractPackageName', () => {
 
 });
 
-test('package installation does not run lifecycle hooks', async () => {
-
+test('package installation does not run lifecycle hooks, includes optional dependencies', async () => {
   const workdir = await fs.mkdtemp(path.join(os.tmpdir(), path.sep));
   const libraryName = 'construct-library';
   const libraryDir = path.join(LIBRARIES, libraryName);
@@ -39,26 +38,47 @@ test('package installation does not run lifecycle hooks', async () => {
   const manifestPath = path.join(workdir, 'package.json');
   const manifest = JSON.parse(await fs.readFile(manifestPath, 'utf-8'));
 
-  // inject a postinstall hook
-  manifest.scripts.postinstall = 'exit 1';
-  await fs.writeFile(manifestPath, JSON.stringify(manifest));
-
-  // create the package
-  child.execSync('yarn package', { cwd: workdir });
-
-  // this should succeed because the failure script should be ignored
-  const docs = await Documentation.forPackage(path.join(workdir, 'dist', 'js', `${libraryName}@0.0.0.jsii.tgz`), { name: libraryName });
+  const beacon = path.join(workdir, 'hook-ran-unexpected');
   try {
-    const markdown = await docs.toMarkdown({ language: Language.TYPESCRIPT });
-    expect(markdown.render()).toMatchSnapshot();
+
+    // inject a postinstall hook
+    manifest.scripts.postinstall = `touch ${beacon}`;
+    // inject an optional peer dependency
+    manifest.peerDependencies.cdk8s = '^1.10.76';
+    manifest.peerDependenciesMeta = { cdk8s: { optional: true } };
+    // write out the new manifest file...
+    await fs.writeFile(manifestPath, JSON.stringify(manifest));
+
+    // ensure the optional peer dep is installed before attempting yarn package...
+    child.execSync('npm install --no-save cdk8s', { cwd: workdir });
+
+    // create the package
+    child.execSync('yarn package', { cwd: workdir });
+
+    // this should succeed because the failure script should be ignored
+    const docs = await Documentation.forPackage(
+      path.join(workdir, 'dist', 'js', `${libraryName}@0.0.0.jsii.tgz`),
+      {
+        verbose: false,
+        _postInstall: (dir) => expect(fs.pathExists(path.join(dir, 'node_modules', 'cdk8s'))).resolves.toBeTruthy(),
+      });
+    try {
+      const markdown = await docs.toMarkdown({ language: Language.TYPESCRIPT });
+      expect(markdown.render()).toMatchSnapshot();
+
+      // The postinstall hook shouldn't have run, so touchfile shouldn't have been created.
+      await expect(fs.pathExists(beacon)).resolves.toBeFalsy();
+    } finally {
+      await docs.cleanup();
+    }
   } finally {
-    await docs.cleanup();
+    await fs.remove(workdir);
   }
 });
 
 describe('python', () => {
   test('for package', async () => {
-    const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0');
+    const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0', { verbose: false });
     try {
       const json = await docs.toJson({ language: Language.PYTHON });
       const markdown = await docs.toMarkdown({ language: Language.PYTHON });
@@ -89,7 +109,7 @@ describe('python', () => {
 
 describe('typescript', () => {
   test('for package', async () => {
-    const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0');
+    const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0', { verbose: false });
     try {
       const markdown = await docs.toMarkdown({ language: Language.TYPESCRIPT });
       expect(markdown.render()).toMatchSnapshot();
@@ -113,7 +133,7 @@ describe('typescript', () => {
 
 describe('java', () => {
   test('for package', async () => {
-    const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0');
+    const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0', { verbose: false });
     try {
       const markdown = await docs.toMarkdown({ language: Language.JAVA });
       expect(markdown.render()).toMatchSnapshot();
@@ -143,7 +163,7 @@ describe('java', () => {
 
 describe('csharp', () => {
   test('for package', async () => {
-    const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0');
+    const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0', { verbose: false });
     try {
       const markdown = await docs.toMarkdown({ language: Language.CSHARP });
       expect(markdown.render()).toMatchSnapshot();
@@ -173,7 +193,7 @@ describe('csharp', () => {
 
 describe('go', () => {
   test('for package', async () => {
-    const docs = await Documentation.forPackage('constructs@10.0.78');
+    const docs = await Documentation.forPackage('constructs@10.0.78', { verbose: false });
     try {
       const markdown = await docs.toMarkdown({ language: Language.GO });
       expect(markdown.render()).toMatchSnapshot();
@@ -203,23 +223,23 @@ describe('go', () => {
 
 test('throws uninstallable error on dependency conflict', async () => {
   // this package decalres a fixed peerDependency on constructs, which conflicts with its other dependencies
-  return expect(Documentation.forPackage('cdk8s-mongo-sts@0.0.5')).rejects.toThrowError(UnInstallablePackageError);
+  return expect(Documentation.forPackage('cdk8s-mongo-sts@0.0.5', { verbose: false })).rejects.toThrowError(UnInstallablePackageError);
 });
 
 test('throws uninstallable error on missing spec in dependencies', async () => {
   // this package has a corrupt package.json that doesn't contain a spec for some dependencies
-  return expect(Documentation.forPackage('cdk-codepipeline-bitbucket-build-result-reporter@0.0.7')).rejects.toThrowError(UnInstallablePackageError);
+  return expect(Documentation.forPackage('cdk-codepipeline-bitbucket-build-result-reporter@0.0.7', { verbose: false })).rejects.toThrowError(UnInstallablePackageError);
 });
 
 test('throws corrupt assembly', async () => {
-  const docs = await Documentation.forPackage('@epilot/cdk-constructs@1.0.7');
+  const docs = await Documentation.forPackage('@epilot/cdk-constructs@1.0.7', { verbose: false });
   // this package accepts an unexported HttpApiProps in a constructor
   await expect(docs.toMarkdown({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
   await expect(docs.toJson({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
 });
 
 test('throws corrupt assembly 2', async () => {
-  const docs = await Documentation.forPackage('@pahud/cdktf-aws-ecs@v0.1.35');
+  const docs = await Documentation.forPackage('@pahud/cdktf-aws-ecs@v0.1.35', { verbose: false });
   // this package had a peerDependency which underwent a breaking change in a minor version (cdktf.ComplexObject interface was removed)
   await expect(docs.toMarkdown({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
   await expect(docs.toJson({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
@@ -227,19 +247,19 @@ test('throws corrupt assembly 2', async () => {
 
 test('throws unsupported language with invalid config', async () => {
   // package doesn't support Go and should throw with corresponding error
-  const docs = await Documentation.forPackage('@aws-cdk/pipelines@v1.144.0');
+  const docs = await Documentation.forPackage('@aws-cdk/pipelines@v1.144.0', { verbose: false });
   await expect(docs.toMarkdown({ language: Language.GO })).rejects.toThrowError(LanguageNotSupportedError);
   await expect(docs.toJson({ language: Language.GO })).rejects.toThrowError(LanguageNotSupportedError);
 });
 
 test('throws unsupported language when tablet was generated before rosetta supported go', async () => {
-  const docs = await Documentation.forPackage('aws-cdk-lib@2.16.0');
+  const docs = await Documentation.forPackage('aws-cdk-lib@2.16.0', { verbose: false });
   await expect(docs.toMarkdown({ language: Language.GO })).rejects.toThrowError(LanguageNotSupportedError);
   await expect(docs.toJson({ language: Language.GO })).rejects.toThrowError(LanguageNotSupportedError);
 });
 
 test('performance on large modules', async () => {
-  const docs = await Documentation.forPackage('@cdktf/provider-aws@4.0.1');
+  const docs = await Documentation.forPackage('@cdktf/provider-aws@4.0.1', { verbose: false });
   // the assertion here is simply finishing the rendering in time.
   await docs.toMarkdown({ language: Language.PYTHON, submodule: 'wafv2' });
 });
@@ -247,7 +267,7 @@ test('performance on large modules', async () => {
 test('does not reach headerSize limit for modules with method param examples', async () => {
   // this module includes @example information for a method parameter
   // at @aws-cdk/aws-apigateway.ProxyResource.addMethod.parameter.requestModels
-  const docs = await Documentation.forPackage('@aws-cdk/aws-apigateway@1.47.0');
+  const docs = await Documentation.forPackage('@aws-cdk/aws-apigateway@1.47.0', { verbose: false });
   // the assertion here is simply that the rendering succeeds
   await docs.toMarkdown({ language: Language.PYTHON });
 });

@@ -100,14 +100,21 @@ export interface ForLocalPackageDocumentationOptions {
 }
 
 export interface ForPackageDocumentationOptions {
+  /**
+   * Whether verbose logging is to be performed.
+   *
+   * @default true
+   */
+  readonly verbose?: boolean;
 
   /**
-   * The name of the package to be installed.
+   * A function to run after running `npm install` for the target package. This
+   * exists only for testing purposes and should not be used by consumers of
+   * this module.
    *
-   * If the target you supply points to a local file, this is required.
-   * Otherwise, it will be derived from the target.
+   * @internal
    */
-  readonly name?: string;
+  readonly _postInstall?: (dir: string) => Promise<void>;
 }
 
 /**
@@ -130,16 +137,17 @@ export class Documentation {
   public static async forPackage(target: string, options: ForPackageDocumentationOptions = {}): Promise<Documentation> {
     const workdir = await fs.mkdtemp(path.join(os.tmpdir(), path.sep));
 
-    if (await fs.pathExists(target) && !options.name) {
-      throw new Error("'options.name' must be provided when installing local packages.");
-    }
-
-    const name = options?.name ?? extractPackageName(target);
-
     const npm = new Npm(workdir);
 
-    console.log(`Installing package ${target}`);
-    await npm.install(target);
+    if (options.verbose ?? true) {
+      console.log(`Installing package ${target}`);
+    }
+
+    const name = await npm.install(target);
+
+    if (options._postInstall != null) {
+      await options._postInstall(workdir);
+    }
 
     const docs = await Documentation.forProject(path.join(workdir, 'node_modules', name), { ...options, assembliesDir: workdir });
 

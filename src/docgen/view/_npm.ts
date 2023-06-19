@@ -1,7 +1,9 @@
 import { spawn, SpawnOptionsWithoutStdio } from 'child_process';
+import { promises as fs } from 'fs';
 import * as os from 'os';
 import { join } from 'path';
-import { major, validRange } from 'semver';
+import { major } from 'semver';
+import { extractPackageName } from './documentation';
 import { NoSpaceLeftOnDevice, UnInstallablePackageError, NpmError } from '../../errors';
 
 export class Npm {
@@ -19,19 +21,15 @@ export class Npm {
    * Installs the designated package into this repository's working directory.
    *
    * @param target the name or path to the package that needs to be installed.
-   * @param withOptionalPeerDeps should optional peer dependencies be installed as well.
+   *
+   * @returns the name of the package that was installed.
    */
-  public async install(target: string, withOptionalPeerDeps = OptionalPeerDepsFilter.VersionRange): Promise<void> {
-    const packages = [
-      target,
-      ...(await this.listOptionalPeerDeps(target, withOptionalPeerDeps)),
-    ];
-
-    const result = await this.runCommand(
+  public async install(target: string): Promise<string> {
+    assertSuccess(await this.runCommand(
       await this.npmCommandPath(),
       [
         'install',
-        ...packages,
+        target,
         // this is critical from a security perspective to prevent
         // code execution as part of the install command using npm hooks. (e.g postInstall)
         '--ignore-scripts',
@@ -39,9 +37,12 @@ export class Npm {
         '--no-autit',
         // ensures npm does not insert anything in $PATH
         '--no-bin-links',
-        '--no-save',
+        // Make sure we get a `package.json` so we can figure out the actual package name.
+        '--save',
         // ensures we are installing devDependencies, too.
         '--include=dev',
+        '--include=peer',
+        '--include=optional',
         // don't write or update a package-lock.json file
         '--no-package-lock',
         // always produce JSON output
@@ -52,64 +53,62 @@ export class Npm {
         cwd: this.workingDirectory,
         shell: true,
       },
-    );
-    return assertSuccess(result);
-  }
+    ));
 
-  /**
-   * Returns info for a package
-   *
-   * @param target the name or path to the package
-   */
-  private async info(target: string): Promise<any> {
-    const result = await this.runCommand(
-      await this.npmCommandPath(),
-      [
-        'info',
-        target,
-        // always produce JSON output
-        '--json',
-      ],
-      chunksToObject,
-      {
-        cwd: this.workingDirectory,
-        shell: true,
-      },
-    );
-    assertSuccess(result);
-    return result.stdout;
-  }
+    const { dependencies } = JSON.parse(await fs.readFile(join(this.workingDirectory, 'package.json'), 'utf-8'));
+    const names = Object.keys(dependencies ?? {});
+    const name = names.length === 1
+      ? names[0]
+      : extractPackageName(target);
 
-  /**
-   * Lists optional peer deps
-   *
-   * @param target the name or path to the package
-   * @param filter the filter to apply when selecting optional peer deps
-   */
-  private async listOptionalPeerDeps(target: string, filter: OptionalPeerDepsFilter): Promise<string[]> {
-    const targets = new Array<string>();
-    if (filter === OptionalPeerDepsFilter.None) {
-      return targets;
+    const optionalPeerDeps = await this.listOptionalPeerDeps(name);
+    if (optionalPeerDeps.length > 0) {
+      assertSuccess(await this.runCommand(
+        await this.npmCommandPath(),
+        [
+          'install',
+          ...optionalPeerDeps,
+          // this is critical from a security perspective to prevent
+          // code execution as part of the install command using npm hooks. (e.g postInstall)
+          '--ignore-scripts',
+          // save time by not running audit
+          '--no-autit',
+          // ensures npm does not insert anything in $PATH
+          '--no-bin-links',
+          // Save as optional in the root package.json (courtesy)
+          '--save-optional',
+          // don't write or update a package-lock.json file
+          '--no-package-lock',
+          // always produce JSON output
+          '--json',
+        ],
+        chunksToObject,
+        {
+          cwd: this.workingDirectory,
+          shell: true,
+        },
+      ));
     }
 
-    const packageJson = await this.info(target);
+    return name;
+  }
 
-    for (const [peerDep, meta] of Object.entries(
-      packageJson.peerDependenciesMeta ?? {},
-    ) as [string, { readonly optional?: boolean }][]) {
-      if (meta.optional && packageJson.peerDependencies[peerDep]) {
-        const version = packageJson.peerDependencies[peerDep];
-        if (filter === OptionalPeerDepsFilter.VersionRange) {
-          // If validRange returns null, this isn't a version range, so we ignore it.
-          if (validRange(version) == null) {
-            continue;
-          }
-        }
-        targets.push(`${peerDep}@"${version}"`);
+  private async listOptionalPeerDeps(target: string): Promise<readonly string[]> {
+    const result = new Array<string>();
+
+    const packageJson = JSON.parse(await fs.readFile(join(this.workingDirectory, 'node_modules', target, 'package.json'), 'utf-8'));
+    for (const [name, { optional }] of Object.entries(packageJson.peerDependenciesMeta ?? {}) as [string, { optional: boolean }][]) {
+      if (!optional) {
+        continue;
       }
+      const version = packageJson.peerDependencies[name];
+      if (version == null) {
+        continue;
+      }
+      result.push(`${name}@${version}`);
     }
 
-    return targets;
+    return result;
   }
 
   /**
@@ -300,7 +299,13 @@ function chunksToObject(chunks: readonly Buffer[], encoding: BufferEncoding = 'u
     // observed these log lines always start with 'npm', so we filter those out.
     // for example: "npm notice New patch version of npm available! 8.1.0 -> 8.1.3"
     // for example: "npm ERR! must provide string spec"
-    const onlyJson = raw.split(os.EOL).filter(l => !l.startsWith('npm')).join(os.EOL);
+    const onlyJson = raw.split(os.EOL)
+      .filter(l => !l.startsWith('npm'))
+      // Suppress debugger messages, if present...
+      .filter(l => l !== 'Debugger attached.')
+      .filter(l => l !== 'Waiting for the debugger to disconnect...')
+      // Re-join...
+      .join(os.EOL);
     return JSON.parse(onlyJson);
   } catch (error) {
     return { error, raw };
