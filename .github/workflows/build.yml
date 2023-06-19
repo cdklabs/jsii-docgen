@@ -96,12 +96,12 @@ jobs:
         run: yarn install --check-files
       - name: Install Rosetta version
         run: yarn add --dev jsii-rosetta@${{ matrix.rosetta }}
-      - name: Check Rosetta version
-        run: test $(npx jsii-rosetta --version) = "${{ matrix.rosetta }}"
       - name: compile+test
         run: |-
           npx projen compile
           npx projen test
+      - name: Check Rosetta version
+        run: test $(npx jsii-rosetta --version) = "${{ matrix.rosetta }}"
     strategy:
       matrix:
         rosetta:

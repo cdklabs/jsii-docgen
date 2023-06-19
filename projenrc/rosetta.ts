@@ -63,12 +63,12 @@ export class RosettaPeerDependency extends Component {
         run: `yarn add --dev ${JSII_ROSETTA}@\${{ matrix.rosetta }}`,
       },
       {
-        name: 'Check Rosetta version',
-        run: `test $(npx ${JSII_ROSETTA} --version) = "\${{ matrix.rosetta }}"`,
-      },
-      {
         name: 'compile+test',
         run: ['npx projen compile', 'npx projen test'].join('\n'),
+      },
+      {
+        name: 'Check Rosetta version',
+        run: `test $(npx ${JSII_ROSETTA} --version) = "\${{ matrix.rosetta }}"`,
       }],
     });
   }
