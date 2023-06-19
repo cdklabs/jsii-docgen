@@ -1,5 +1,6 @@
 import { CdklabsTypeScriptProject } from 'cdklabs-projen-project-types';
 import { JsonPatch } from 'projen';
+import { RosettaPeerDependency, RosettaVersionLines } from './projenrc/rosetta';
 
 const project = new CdklabsTypeScriptProject({
   stability: 'stable',
@@ -27,10 +28,12 @@ const project = new CdklabsTypeScriptProject({
     'glob-promise',
     'glob',
     'jsii-reflect',
-    'jsii-rosetta',
     'semver',
     'yargs',
   ],
+  peerDependencyOptions: {
+    pinnedDevDependency: false,
+  },
   releaseToNpm: true,
   autoApproveOptions: {
     allowedUsernames: ['cdklabs-automation'],
@@ -56,6 +59,13 @@ const project = new CdklabsTypeScriptProject({
 
 // Suppress upgrade prompts, in particular from test runs.
 project.tasks.addEnvironment('JSII_SUPPRESS_UPGRADE_PROMPT', 'true');
+
+new RosettaPeerDependency(project, {
+  supportedVersions: {
+    [RosettaVersionLines.V5_0]: false,
+    [RosettaVersionLines.V5_1]: '~5.1.2',
+  },
+});
 
 project.github?.tryFindWorkflow('release')?.file?.patch(JsonPatch.add('/jobs/release/env/NODE_OPTIONS', '--max_old_space_size=4096'));
 project.github?.tryFindWorkflow('build')?.file?.patch(JsonPatch.add('/jobs/build/env/NODE_OPTIONS', '--max_old_space_size=4096'));
