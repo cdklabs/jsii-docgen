@@ -52,7 +52,6 @@
     "jsii-rosetta": "~5.1.2",
     "npm-check-updates": "^16",
     "projen": "^0.71.100",
-    "semver": "^7.5.1",
     "standard-version": "^9",
     "ts-jest": "^29",
     "ts-node": "^10.9.1",
@@ -67,8 +66,8 @@
     "fs-extra": "^10.1.0",
     "glob": "^8.1.0",
     "glob-promise": "^6.0.3",
-    "jsii-reflect": "^1.83.0",
-    "semver": "^7.5.1",
+    "jsii-reflect": "^1.84.0",
+    "semver": "^7.5.2",
     "yargs": "^16.2.0"
   },
   "engines": {

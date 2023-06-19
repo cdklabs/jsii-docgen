@@ -20,9 +20,6 @@ export class RosettaPeerDependency extends Component {
   public constructor(project: typescript.TypeScriptProject, options: RosettaPeerDependencyOptions) {
     super(project);
 
-    // Need semver to calculate lowest version per range
-    project.addDevDeps('semver');
-
     const constraint = this.calculateVersionConstraint(options.supportedVersions);
     project.addDevDeps(constraint);
     project.addPeerDeps(constraint);

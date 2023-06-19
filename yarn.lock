@@ -3822,7 +3822,7 @@ jsesc@^2.5.1:
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-2.5.2.tgz#80564d2e483dacf6e8ef209650a67df3f0c283a4"
   integrity sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==
 
-jsii-reflect@^1.83.0:
+jsii-reflect@^1.84.0:
   version "1.84.0"
   resolved "https://registry.yarnpkg.com/jsii-reflect/-/jsii-reflect-1.84.0.tgz#95b71dabcf3c5fc275e623a29a1d7091fc893e38"
   integrity sha512-Iuh0GAxsQscK1re9sWEQHG0wKswnr7ha4EZ8j47Sigo8yBIZNp01P+V0kbZ55bDjiT66Sqqu3jaDJdYzR/5o4w==
