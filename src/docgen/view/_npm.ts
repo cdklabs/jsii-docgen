@@ -25,28 +25,35 @@ export class Npm {
    * @returns the name of the package that was installed.
    */
   public async install(target: string): Promise<string> {
+    const commonFlags = [
+      // force install, ignoring recommended protections such as platform checks. This is okay
+      // because we are not actually executing the code being installed in this context.
+      '--force',
+      // this is critical from a security perspective to prevent
+      // code execution as part of the install command using npm hooks. (e.g postInstall)
+      '--ignore-scripts',
+      // save time by not running audit
+      '--no-autit',
+      // ensures npm does not insert anything in $PATH
+      '--no-bin-links',
+      // don't write or update a package-lock.json file
+      '--no-package-lock',
+      // always produce JSON output
+      '--json',
+    ];
+
     assertSuccess(await this.runCommand(
       await this.npmCommandPath(),
       [
         'install',
         target,
-        // this is critical from a security perspective to prevent
-        // code execution as part of the install command using npm hooks. (e.g postInstall)
-        '--ignore-scripts',
-        // save time by not running audit
-        '--no-audit',
-        // ensures npm does not insert anything in $PATH
-        '--no-bin-links',
-        // Make sure we get a `package.json` so we can figure out the actual package name.
-        '--save',
+        ...commonFlags,
         // ensures we are installing devDependencies, too.
         '--include=dev',
         '--include=peer',
         '--include=optional',
-        // don't write or update a package-lock.json file
-        '--no-package-lock',
-        // always produce JSON output
-        '--json',
+        // Make sure we get a `package.json` so we can figure out the actual package name.
+        '--save',
       ],
       chunksToObject,
       {
@@ -68,19 +75,9 @@ export class Npm {
         [
           'install',
           ...optionalPeerDeps,
-          // this is critical from a security perspective to prevent
-          // code execution as part of the install command using npm hooks. (e.g postInstall)
-          '--ignore-scripts',
-          // save time by not running audit
-          '--no-audit',
-          // ensures npm does not insert anything in $PATH
-          '--no-bin-links',
+          ...commonFlags,
           // Save as optional in the root package.json (courtesy)
           '--save-optional',
-          // don't write or update a package-lock.json file
-          '--no-package-lock',
-          // always produce JSON output
-          '--json',
         ],
         chunksToObject,
         {
@@ -277,9 +274,9 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
   }
 
   switch (code) {
-    case 'ERESOLVE': // dependency resolution problem requires a manual intervention (most likely...)
-    case 'EOVERRIDE': // Package contains some version overrides that conflict.
     case 'E404': // package (or dependency) can't be found on NPM. This can happen if the package depends on a deprecated package (for example).
+    case 'EOVERRIDE': // Package contains some version overrides that conflict.
+    case 'ERESOLVE': // dependency resolution problem requires a manual intervention (most likely...)
       throw new UnInstallablePackageError(message);
     default:
       throw new NpmError(message, stdout, code);
