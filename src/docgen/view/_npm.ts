@@ -21,14 +21,19 @@ export class Npm {
    * Installs the designated package into this repository's working directory.
    *
    * @param target the name or path to the package that needs to be installed.
+   * @param force whether to pass `--force` to `npm install`.
    *
    * @returns the name of the package that was installed.
    */
-  public async install(target: string): Promise<string> {
+  public async install(target: string, force = false): Promise<string> {
     const commonFlags = [
-      // force install, ignoring recommended protections such as platform checks. This is okay
-      // because we are not actually executing the code being installed in this context.
-      '--force',
+      ...force
+        ? [
+          // force install, ignoring recommended protections such as platform checks. This is okay
+          // because we are not actually executing the code being installed in this context.
+          '--force',
+        ]
+        : [],
       // this is critical from a security perspective to prevent
       // code execution as part of the install command using npm hooks. (e.g postInstall)
       '--ignore-scripts',
@@ -42,42 +47,19 @@ export class Npm {
       '--json',
     ];
 
-    assertSuccess(await this.runCommand(
-      await this.npmCommandPath(),
-      [
-        'install',
-        target,
-        ...commonFlags,
-        // ensures we are installing devDependencies, too.
-        '--include=dev',
-        '--include=peer',
-        '--include=optional',
-        // Make sure we get a `package.json` so we can figure out the actual package name.
-        '--save',
-      ],
-      chunksToObject,
-      {
-        cwd: this.workingDirectory,
-        shell: true,
-      },
-    ));
-
-    const { dependencies } = JSON.parse(await fs.readFile(join(this.workingDirectory, 'package.json'), 'utf-8'));
-    const names = Object.keys(dependencies ?? {});
-    const name = names.length === 1
-      ? names[0]
-      : extractPackageName(target);
-
-    const optionalPeerDeps = await this.listOptionalPeerDeps(name);
-    if (optionalPeerDeps.length > 0) {
+    try {
       assertSuccess(await this.runCommand(
         await this.npmCommandPath(),
         [
           'install',
-          ...optionalPeerDeps,
+          target,
           ...commonFlags,
-          // Save as optional in the root package.json (courtesy)
-          '--save-optional',
+          // ensures we are installing devDependencies, too.
+          '--include=dev',
+          '--include=peer',
+          '--include=optional',
+          // Make sure we get a `package.json` so we can figure out the actual package name.
+          '--save',
         ],
         chunksToObject,
         {
@@ -85,9 +67,40 @@ export class Npm {
           shell: true,
         },
       ));
-    }
 
-    return name;
+      const { dependencies } = JSON.parse(await fs.readFile(join(this.workingDirectory, 'package.json'), 'utf-8'));
+      const names = Object.keys(dependencies ?? {});
+      const name = names.length === 1
+        ? names[0]
+        : extractPackageName(target);
+
+      const optionalPeerDeps = await this.listOptionalPeerDeps(name);
+      if (optionalPeerDeps.length > 0) {
+        assertSuccess(await this.runCommand(
+          await this.npmCommandPath(),
+          [
+            'install',
+            ...optionalPeerDeps,
+            ...commonFlags,
+            // Save as optional in the root package.json (courtesy)
+            '--save-optional',
+          ],
+          chunksToObject,
+          {
+            cwd: this.workingDirectory,
+            shell: true,
+          },
+        ));
+      }
+
+      return name;
+    } catch (e) {
+      if (!force && (e instanceof NpmError) && e.npmErrorCode === 'EBADPLATFORM') {
+        console.warn('npm install failed with EBADPLATFORM, retrying with --force');
+        return this.install(target, true);
+      }
+      return Promise.reject(e);
+    }
   }
 
   private async listOptionalPeerDeps(target: string): Promise<readonly string[]> {

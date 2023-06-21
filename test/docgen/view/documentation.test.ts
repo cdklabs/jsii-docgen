@@ -76,6 +76,17 @@ test('package installation does not run lifecycle hooks, includes optional depen
   }
 });
 
+// This test is only revent when running on non-macOS platforms.
+(process.platform === 'darwin' ? test.skip : test)('package installation uses --force when EBADPLATFORM is encountered', async () => {
+  // The package has a hard dependency on fsevents, which only supports macOS platforms.
+  const docs = await Documentation.forPackage(
+    '@richkang/cdk-construct-network-firewall-textfile-rules@0.1.2',
+    { verbose: false },
+  );
+  const markdown = await docs.toMarkdown({ language: Language.TYPESCRIPT });
+  expect(markdown.render()).toMatchSnapshot();
+});
+
 describe('python', () => {
   test('for package', async () => {
     const docs = await Documentation.forPackage('@aws-cdk/aws-ecr@1.106.0', { verbose: false });
