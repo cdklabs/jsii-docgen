@@ -21,66 +21,45 @@ export class Npm {
    * Installs the designated package into this repository's working directory.
    *
    * @param target the name or path to the package that needs to be installed.
+   * @param force whether to pass `--force` to `npm install`.
    *
    * @returns the name of the package that was installed.
    */
-  public async install(target: string): Promise<string> {
-    assertSuccess(await this.runCommand(
-      await this.npmCommandPath(),
-      [
-        'install',
-        target,
-        // this is critical from a security perspective to prevent
-        // code execution as part of the install command using npm hooks. (e.g postInstall)
-        '--ignore-scripts',
-        // save time by not running audit
-        '--no-audit',
-        // ensures npm does not insert anything in $PATH
-        '--no-bin-links',
-        // Make sure we get a `package.json` so we can figure out the actual package name.
-        '--save',
-        // ensures we are installing devDependencies, too.
-        '--include=dev',
-        '--include=peer',
-        '--include=optional',
-        // don't write or update a package-lock.json file
-        '--no-package-lock',
-        // always produce JSON output
-        '--json',
-      ],
-      chunksToObject,
-      {
-        cwd: this.workingDirectory,
-        shell: true,
-      },
-    ));
+  public async install(target: string, force = false): Promise<string> {
+    const commonFlags = [
+      ...force
+        ? [
+          // force install, ignoring recommended protections such as platform checks. This is okay
+          // because we are not actually executing the code being installed in this context.
+          '--force',
+        ]
+        : [],
+      // this is critical from a security perspective to prevent
+      // code execution as part of the install command using npm hooks. (e.g postInstall)
+      '--ignore-scripts',
+      // save time by not running audit
+      '--no-autit',
+      // ensures npm does not insert anything in $PATH
+      '--no-bin-links',
+      // don't write or update a package-lock.json file
+      '--no-package-lock',
+      // always produce JSON output
+      '--json',
+    ];
 
-    const { dependencies } = JSON.parse(await fs.readFile(join(this.workingDirectory, 'package.json'), 'utf-8'));
-    const names = Object.keys(dependencies ?? {});
-    const name = names.length === 1
-      ? names[0]
-      : extractPackageName(target);
-
-    const optionalPeerDeps = await this.listOptionalPeerDeps(name);
-    if (optionalPeerDeps.length > 0) {
+    try {
       assertSuccess(await this.runCommand(
         await this.npmCommandPath(),
         [
           'install',
-          ...optionalPeerDeps,
-          // this is critical from a security perspective to prevent
-          // code execution as part of the install command using npm hooks. (e.g postInstall)
-          '--ignore-scripts',
-          // save time by not running audit
-          '--no-audit',
-          // ensures npm does not insert anything in $PATH
-          '--no-bin-links',
-          // Save as optional in the root package.json (courtesy)
-          '--save-optional',
-          // don't write or update a package-lock.json file
-          '--no-package-lock',
-          // always produce JSON output
-          '--json',
+          target,
+          ...commonFlags,
+          // ensures we are installing devDependencies, too.
+          '--include=dev',
+          '--include=peer',
+          '--include=optional',
+          // Make sure we get a `package.json` so we can figure out the actual package name.
+          '--save',
         ],
         chunksToObject,
         {
@@ -88,9 +67,40 @@ export class Npm {
           shell: true,
         },
       ));
-    }
 
-    return name;
+      const { dependencies } = JSON.parse(await fs.readFile(join(this.workingDirectory, 'package.json'), 'utf-8'));
+      const names = Object.keys(dependencies ?? {});
+      const name = names.length === 1
+        ? names[0]
+        : extractPackageName(target);
+
+      const optionalPeerDeps = await this.listOptionalPeerDeps(name);
+      if (optionalPeerDeps.length > 0) {
+        assertSuccess(await this.runCommand(
+          await this.npmCommandPath(),
+          [
+            'install',
+            ...optionalPeerDeps,
+            ...commonFlags,
+            // Save as optional in the root package.json (courtesy)
+            '--save-optional',
+          ],
+          chunksToObject,
+          {
+            cwd: this.workingDirectory,
+            shell: true,
+          },
+        ));
+      }
+
+      return name;
+    } catch (e) {
+      if (!force && (e instanceof NpmError) && e.npmErrorCode === 'EBADPLATFORM') {
+        console.warn('npm install failed with EBADPLATFORM, retrying with --force');
+        return this.install(target, true);
+      }
+      return Promise.reject(e);
+    }
   }
 
   private async listOptionalPeerDeps(target: string): Promise<readonly string[]> {
@@ -277,9 +287,9 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
   }
 
   switch (code) {
-    case 'ERESOLVE': // dependency resolution problem requires a manual intervention (most likely...)
-    case 'EOVERRIDE': // Package contains some version overrides that conflict.
     case 'E404': // package (or dependency) can't be found on NPM. This can happen if the package depends on a deprecated package (for example).
+    case 'EOVERRIDE': // Package contains some version overrides that conflict.
+    case 'ERESOLVE': // dependency resolution problem requires a manual intervention (most likely...)
       throw new UnInstallablePackageError(message);
     default:
       throw new NpmError(message, stdout, code);
