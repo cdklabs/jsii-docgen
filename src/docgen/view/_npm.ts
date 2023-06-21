@@ -52,7 +52,7 @@ export class Npm {
         await this.npmCommandPath(),
         [
           'install',
-          target,
+          JSON.stringify(target),
           ...commonFlags,
           // ensures we are installing devDependencies, too.
           '--include=dev',
@@ -115,7 +115,7 @@ export class Npm {
       if (version == null) {
         continue;
       }
-      result.push(`${name}@${version}`);
+      result.push(JSON.stringify(`${name}@${version}`));
     }
 
     return result;
