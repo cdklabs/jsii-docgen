@@ -42,7 +42,7 @@
     "@types/semver": "^7.5.0",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
-    "cdklabs-projen-project-types": "^0.1.149",
+    "cdklabs-projen-project-types": "^0.1.150",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.7",
     "eslint-import-resolver-typescript": "^2.7.1",
@@ -51,7 +51,7 @@
     "jest-junit": "^15",
     "jsii-rosetta": "~5.1.2",
     "npm-check-updates": "^16",
-    "projen": "^0.71.105",
+    "projen": "^0.71.106",
     "standard-version": "^9",
     "ts-jest": "^29",
     "ts-node": "^10.9.1",
@@ -67,7 +67,7 @@
     "glob": "^8.1.0",
     "glob-promise": "^6.0.3",
     "jsii-reflect": "^1.84.0",
-    "semver": "^7.5.2",
+    "semver": "^7.5.3",
     "yargs": "^16.2.0"
   },
   "engines": {
