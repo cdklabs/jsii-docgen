@@ -49,7 +49,7 @@
     "eslint-plugin-import": "^2.27.5",
     "jest": "^29",
     "jest-junit": "^15",
-    "jsii-rosetta": "~5.1.2",
+    "jsii-rosetta": "~5.0.14 || ~5.1.2",
     "npm-check-updates": "^16",
     "projen": "^0.71.122",
     "standard-version": "^9",
@@ -58,7 +58,7 @@
     "typescript": "~5.1.6"
   },
   "peerDependencies": {
-    "jsii-rosetta": "~5.1.2"
+    "jsii-rosetta": "~5.0.14 || ~5.1.2"
   },
   "dependencies": {
     "@jsii/spec": "^1.84.0",
