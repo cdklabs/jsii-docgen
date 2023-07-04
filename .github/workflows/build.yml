@@ -105,4 +105,5 @@ jobs:
     strategy:
       matrix:
         rosetta:
+          - 5.0.14
           - 5.1.2

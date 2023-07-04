@@ -4,6 +4,7 @@ import { minVersion } from 'semver';
 const JSII_ROSETTA = 'jsii-rosetta';
 
 export enum RosettaVersionLines {
+  V1_X,
   V5_0,
   V5_1,
 }

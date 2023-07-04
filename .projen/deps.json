@@ -59,7 +59,7 @@
     },
     {
       "name": "jsii-rosetta",
-      "version": "~5.1.2",
+      "version": "~5.0.14 || ~5.1.2",
       "type": "build"
     },
     {
@@ -90,7 +90,7 @@
     },
     {
       "name": "jsii-rosetta",
-      "version": "~5.1.2",
+      "version": "~5.0.14 || ~5.1.2",
       "type": "peer"
     },
     {
