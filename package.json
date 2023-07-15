@@ -51,7 +51,7 @@
     "jest-junit": "^15",
     "jsii-rosetta": "~5.0.14 || ~5.1.2",
     "npm-check-updates": "^16",
-    "projen": "^0.71.135",
+    "projen": "^0.71.136",
     "standard-version": "^9",
     "ts-jest": "^29",
     "ts-node": "^10.9.1",
