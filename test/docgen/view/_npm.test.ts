@@ -54,7 +54,7 @@ test('NpmError error (with JSON error code)', async () => {
   }
 });
 
-test('NpmError error (removed package)', async () => {
+test('NpmError error (removed package no code)', async () => {
   // GIVEN
   const npm = new Npm(TMPDIR, () => void 0, 'mock-npm');
 
@@ -65,6 +65,33 @@ test('NpmError error (removed package)', async () => {
       Buffer.from('  "error": {\n'),
       Buffer.from('    "code": null,\n'),
       Buffer.from('    "summary": "Cannot convert undefined or null to object",\n'),
+      Buffer.from('    "detail": ""\n'),
+      Buffer.from('  }\n'),
+      Buffer.from('}\n'),
+    ],
+  });
+  mockSpawn.mockReturnValue(mockChildProcess);
+
+  // THEN
+  try {
+    await npm.install('foo');
+    fail('Expected an NpmError!');
+  } catch (err) {
+    expect(err).toBeInstanceOf(UnInstallablePackageError);
+  }
+});
+
+test('NpmError error (removed package ENOVERSIONS)', async () => {
+  // GIVEN
+  const npm = new Npm(TMPDIR, () => void 0, 'mock-npm');
+
+  // WHEN
+  const mockChildProcess = new MockChildProcess(1, {
+    stdout: [
+      Buffer.from('{\n'),
+      Buffer.from('  "error": {\n'),
+      Buffer.from('    "code": "ENOVERSIONS",\n'),
+      Buffer.from('    "summary": "No versions available for foo",\n'),
       Buffer.from('    "detail": ""\n'),
       Buffer.from('  }\n'),
       Buffer.from('}\n'),
