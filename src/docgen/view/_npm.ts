@@ -290,6 +290,7 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
     case 'E404': // package (or dependency) can't be found on NPM. This can happen if the package depends on a deprecated package (for example).
     case 'EOVERRIDE': // Package contains some version overrides that conflict.
     case 'ERESOLVE': // dependency resolution problem requires a manual intervention (most likely...)
+    case 'ENOVERSIONS': // package has been removed from npm
       throw new UnInstallablePackageError(message);
     default:
       throw new NpmError(message, stdout, code);
