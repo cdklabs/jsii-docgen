@@ -237,25 +237,13 @@
           "exec": "yarn upgrade npm-check-updates"
         },
         {
-          "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='jsii-rosetta'"
-        },
-        {
-          "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='jsii-rosetta'"
-        },
-        {
-          "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='jsii-rosetta'"
-        },
-        {
-          "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='jsii-rosetta'"
-        },
-        {
-          "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='jsii-rosetta'"
+          "exec": "npm-check-updates --upgrade --target=minor --filter=@types/fs-extra,@types/jest,@types/node,@types/semver,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,cdklabs-projen-project-types,eslint-import-resolver-node,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest,jest-junit,npm-check-updates,projen,standard-version,ts-jest,ts-node,typescript,@jsii/spec,case,fs-extra,glob,glob-promise,jsii-reflect,semver,yargs"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/fs-extra @types/jest @types/node @types/semver @typescript-eslint/eslint-plugin @typescript-eslint/parser cdklabs-projen-project-types eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-rosetta npm-check-updates projen standard-version ts-jest ts-node typescript jsii-rosetta @jsii/spec case fs-extra glob glob-promise jsii-reflect semver yargs"
+          "exec": "yarn upgrade @types/fs-extra @types/jest @types/node @types/semver @typescript-eslint/eslint-plugin @typescript-eslint/parser cdklabs-projen-project-types eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit npm-check-updates projen standard-version ts-jest ts-node typescript @jsii/spec case fs-extra glob glob-promise jsii-reflect semver yargs"
         },
         {
           "exec": "npx projen"
@@ -273,7 +261,7 @@
       },
       "steps": [
         {
-          "exec": "yarn upgrade "
+          "exec": "yarn upgrade npm-check-updates"
         },
         {
           "exec": "npm-check-updates --filter=cdklabs-projen-project-types,projen --upgrade"
@@ -282,7 +270,7 @@
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade "
+          "exec": "yarn upgrade cdklabs-projen-project-types projen"
         },
         {
           "exec": "npx projen"
