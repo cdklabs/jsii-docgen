@@ -248,7 +248,7 @@ export class Documentation {
     const submodule = options?.submodule ? this.findSubmodule(assembly, options.submodule) : undefined;
 
     let readme: MarkdownDocument | undefined;
-    if (options?.readme ?? true) {
+    if (options?.readme ?? false) {
       readme = new Readme(transpile, assembly, submodule).render();
     }
 

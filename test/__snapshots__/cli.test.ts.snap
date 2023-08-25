@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`construct-library 1`] = `
-"# construct-library
-
-This is a test project to make sure the \`jsii-docgen\` cli property renders API documentation
-for construct libraries.
-# API Reference <a name="API Reference" id="api-reference"></a>
+"# API Reference <a name="API Reference" id="api-reference"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
@@ -2140,11 +2136,7 @@ first call to addToResourcePolicy(s).
 `;
 
 exports[`specify language 1`] = `
-"# construct-library
-
-This is a test project to make sure the \`jsii-docgen\` cli property renders API documentation
-for construct libraries.
-# API Reference <a name="API Reference" id="api-reference"></a>
+"# API Reference <a name="API Reference" id="api-reference"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
@@ -6251,11 +6243,7 @@ first call to addToResourcePolicy(s).
 `;
 
 exports[`specify root submodule 1`] = `
-"# construct-library
-
-This is a test project to make sure the \`jsii-docgen\` cli property renders API documentation
-for construct libraries.
-# API Reference <a name="API Reference" id="api-reference"></a>
+"# API Reference <a name="API Reference" id="api-reference"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
