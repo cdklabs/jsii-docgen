@@ -51,11 +51,11 @@
     "jest-junit": "^15",
     "jsii-rosetta": "~5.0.14 || ~5.1.2",
     "npm-check-updates": "^16",
-    "projen": "^0.72.22",
+    "projen": "^0.72.23",
     "standard-version": "^9",
     "ts-jest": "^29",
     "ts-node": "^10.9.1",
-    "typescript": "~5.1.6"
+    "typescript": "~5.2.2"
   },
   "peerDependencies": {
     "jsii-rosetta": "~5.0.14 || ~5.1.2"
