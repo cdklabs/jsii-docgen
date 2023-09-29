@@ -269,6 +269,15 @@ test('throws unsupported language when tablet was generated before rosetta suppo
   await expect(docs.toJson({ language: Language.GO })).rejects.toThrowError(LanguageNotSupportedError);
 });
 
+test('does not throw if unrelated assembly is corrupted', async () => {
+  const docs = await Documentation.forAssembly(
+    '@aws-cdk/region-info',
+    path.join(__dirname, '..', '..', '__fixtures__', 'assemblies', 'corrupted-unrelated-assembly'),
+  );
+  const json = await docs.toJson({ language: Language.PYTHON });
+  expect(json).toMatchSnapshot();
+});
+
 test('performance on large modules', async () => {
   const docs = await Documentation.forPackage('@cdktf/provider-aws@4.0.1', { verbose: false });
   // the assertion here is simply finishing the rendering in time.
