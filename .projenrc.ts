@@ -62,7 +62,7 @@ project.tasks.addEnvironment('JSII_SUPPRESS_UPGRADE_PROMPT', 'true');
 
 new RosettaPeerDependency(project, {
   supportedVersions: {
-    [RosettaVersionLines.V1_X]: false,
+    [RosettaVersionLines.V1_X]: '~v1.85.0',
     [RosettaVersionLines.V5_0]: '~5.0.14',
     [RosettaVersionLines.V5_1]: '~5.1.2',
   },
