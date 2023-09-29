@@ -643,6 +643,14 @@
     chalk "^4.1.2"
     semver "^7.5.1"
 
+"@jsii/check-node@1.88.0":
+  version "1.88.0"
+  resolved "https://registry.yarnpkg.com/@jsii/check-node/-/check-node-1.88.0.tgz#fa20e012230c692ad36976cde29301be1ed28c67"
+  integrity sha512-AveFyqkJIb8qZvGk5nZal/8mEJB6lWhwqvAQLodHmqE3WzpmZD5+h+aspBVt0El5cEFRJ1k1mrQqhAnJCVpvxg==
+  dependencies:
+    chalk "^4.1.2"
+    semver "^7.5.4"
+
 "@jsii/check-node@1.89.0":
   version "1.89.0"
   resolved "https://registry.yarnpkg.com/@jsii/check-node/-/check-node-1.89.0.tgz#0cfe0fec566ca1b35004ad9c9497d4d81f28811b"
@@ -658,7 +666,7 @@
   dependencies:
     ajv "^8.12.0"
 
-"@jsii/spec@^1.89.0":
+"@jsii/spec@^1.88.0", "@jsii/spec@^1.89.0":
   version "1.89.0"
   resolved "https://registry.yarnpkg.com/@jsii/spec/-/spec-1.89.0.tgz#d337c97234bec2fdffe25ad449ebacf22972c55c"
   integrity sha512-byzIC5M5FrEaW+GaPGQfPsobfwmEfzHvS7dh5d5fgY4VvvsHBkkhhF/H5xUG+1wQBcdBnqdKyp5CEFm8UEVfqg==
@@ -3875,13 +3883,13 @@ jsii-reflect@^1.89.0:
     oo-ascii-tree "^1.89.0"
     yargs "^16.2.0"
 
-"jsii-rosetta@~5.0.14 || ~5.1.2":
-  version "5.1.9"
-  resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-5.1.9.tgz#7307a562f0b51aa6922b137bb51ab9e6da172bbd"
-  integrity sha512-GgSLaxn9N0xnYBXkK8DIXrp1CWNSz2f7Q04kQW4n2htsLd3diPI3HNbbmJL5V+wwUIZhOpBe++5r1a7T7vFlqg==
+"jsii-rosetta@~v1.85.0 || ~5.0.14 || ~5.1.2":
+  version "5.1.13"
+  resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-5.1.13.tgz#5f5ccf112000c573747d039725d3cf48378ef781"
+  integrity sha512-EmtQU/Q5ex/e2XmysU1ZdEW3vK4feEPDXaivRj5Cf284fuEcWINcD38oPYog0XofPdqeBbf0n+EciBitoEhKGA==
   dependencies:
-    "@jsii/check-node" "1.85.0"
-    "@jsii/spec" "^1.85.0"
+    "@jsii/check-node" "1.88.0"
+    "@jsii/spec" "^1.88.0"
     "@xmldom/xmldom" "^0.8.10"
     chalk "^4"
     commonmark "^0.30.0"
@@ -3891,7 +3899,7 @@ jsii-reflect@^1.89.0:
     semver-intersect "^1.4.0"
     stream-json "^1.8.0"
     typescript "~5.1.6"
-    workerpool "^6.4.0"
+    workerpool "^6.4.2"
     yargs "^17.7.2"
 
 jsii@~5.1.5:
@@ -6134,10 +6142,10 @@ wordwrap@^1.0.0:
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
   integrity sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q==
 
-workerpool@^6.4.0:
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/workerpool/-/workerpool-6.4.0.tgz#f8d5cfb45fde32fa3b7af72ad617c3369567a462"
-  integrity sha512-i3KR1mQMNwY2wx20ozq2EjISGtQWDIfV56We+yGJ5yDs8jTwQiLLaqHlkBHITlCuJnYlVRmXegxFxZg7gqI++A==
+workerpool@^6.4.2:
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/workerpool/-/workerpool-6.5.0.tgz#f8474762c5e2f81646994aa113685f6c424a2416"
+  integrity sha512-r64Ea3glXY2RVzMeNxB+4J+0YHAVzUdV4cM5nHi4BBC2LvnO1pWFAIYKYuGcPElbg1/7eEiaPtZ/jzCjIUuGBg==
 
 "wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
   version "7.0.0"
