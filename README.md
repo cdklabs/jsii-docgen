@@ -34,14 +34,15 @@ Curreently jsii-docgen supports generating documentation in the following langua
 
 ## CLI Options
 
-| Option              | Required | Description                                                                                                                                  |
-|:--------------------| :------- |:---------------------------------------------------------------------------------------------------------------------------------------------|
-| `--output`, `-o`    | optional | Output filename (defaults to API.md if format is markdown, and API.json if format is JSON). <br /><br />`jsii-docgen -o ./docs/API.md`       |
-| `--format`, `-f`    | optional | Output format. Can be `markdown` or `json`. <br /><br />`jsii-docgen -f json`                                                                |
-| `--language`, `-l`  | optional | Language to generate documentation for. Can be `typescript`, `python`, `java`, `csharp` or `go`. <br /><br />`jsii-docgen -l typescript` |
-| `--package`, `-p`   | optional | The name@version of an NPM package to document. <br /><br />`jsii-docgen -p my-package`                                                      |
-| `--submodule`, `-s` | optional | Generate docs for a specific submodule or "root". <br /><br />`jsii-docgen -s my-submodule`                                                  |
-| `--readme`, `-r`    | optional | Generate docs for user specified README.md. <br /><br />`jsii-docgen -r`                                                                     |
+| Option                 | Required | Description                                                                                                                              |
+| :--------------------- | :------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| `--output`, `-o`       | optional | Output filename (defaults to API.md if format is markdown, and API.json if format is JSON). <br /><br/>`jsii-docgen -o ./docs/API.md`    |
+| `--format`, `-f`       | optional | Output format. Can be `markdown` or `json`. <br /><br />`jsii-docgen -f json`                                                            |
+| `--language`, `-l`     | optional | Language to generate documentation for. Can be `typescript`, `python`, `java`, `csharp` or `go`. <br /><br />`jsii-docgen -l typescript` |
+| `--package`, `-p`      | optional | The name@version of an NPM package to document. <br /><br />`jsii-docgen -p my-package`                                                  |
+| `--readme`, `-r`       | optional | Generate docs for user specified README.md. <br /><br />`jsii-docgen -r`                                                                 |
+| `--submodule`, `-s`    | optional | Generate docs for a specific submodule or "root". <br /><br />`jsii-docgen -s my-submodule`                                              |
+| `--split-by-submodule` | optional | Generate a separate file for each submodule. <br /><br />`jsii-docgen --split-by-submodule`                                              |
 
 ## Contributions
 
