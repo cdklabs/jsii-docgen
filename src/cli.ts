@@ -1,4 +1,5 @@
 import * as fs from 'fs/promises';
+import * as path from 'node:path';
 import * as yargs from 'yargs';
 import { Language } from './docgen/transpile/transpile';
 import { Documentation } from './index';
@@ -23,9 +24,13 @@ async function generateForLanguage(docs: Documentation, options: GenerateOptions
     : output;
   // e.g. API.typescript as name
   if (outputFileName.includes('.')) {
-    const languageSeperator = outputFileName.split('.')[1];
-    submoduleSuffix = `${languageSeperator}.${fileSuffix}`;
+    const languageSeparator = outputFileName.split('.')[1];
+    submoduleSuffix = `${languageSeparator}.${fileSuffix}`;
   }
+
+  // Ensure the output path exists
+  const outputPath = path.dirname(outputFileName);
+  await fs.mkdir(outputPath, { recursive: true });
 
   if (options.splitBySubmodules) {
     if (format !== 'md') {
@@ -41,7 +46,7 @@ async function generateForLanguage(docs: Documentation, options: GenerateOptions
         header: { title: `\`${submodule.name}\` Submodule`, id: submodule.fqn },
       });
 
-      await fs.writeFile(`${submodule.name}.${submoduleSuffix}`, content.render());
+      await fs.writeFile(path.join(outputPath, `${submodule.name}.${submoduleSuffix}`), content.render());
     }
 
     await fs.writeFile(`${outputFileName}.${fileSuffix}`, await (await docs.toIndexMarkdown(submoduleSuffix, options)).render());
