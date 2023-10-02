@@ -272,7 +272,7 @@ test('throws unsupported language when tablet was generated before rosetta suppo
 test('does not throw if unrelated assembly is corrupted', async () => {
   const docs = await Documentation.forAssembly(
     '@aws-cdk/region-info',
-    path.join(__dirname, '..', '..', '__fixtures__', 'assemblies', 'corrupted-unrelated-assembly'),
+    path.join(__dirname, '..', '..', '__fixtures__', 'corrupted', 'corrupted-unrelated-assembly'),
   );
   const json = await docs.toJson({ language: Language.PYTHON });
   expect(json).toMatchSnapshot();
