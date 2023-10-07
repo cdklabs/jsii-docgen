@@ -51,7 +51,7 @@
     "jest-junit": "^15",
     "jsii-rosetta": "~v1.85.0 || ~5.0.14 || ~5.1.2",
     "npm-check-updates": "^16",
-    "projen": "^0.73.44",
+    "projen": "^0.73.45",
     "standard-version": "^9",
     "ts-jest": "^29",
     "ts-node": "^10.9.1",
@@ -61,12 +61,12 @@
     "jsii-rosetta": "~v1.85.0 || ~5.0.14 || ~5.1.2"
   },
   "dependencies": {
-    "@jsii/spec": "^1.89.0",
+    "@jsii/spec": "^1.90.0",
     "case": "^1.6.3",
     "fs-extra": "^10.1.0",
     "glob": "^8.1.0",
     "glob-promise": "^6.0.5",
-    "jsii-reflect": "^1.89.0",
+    "jsii-reflect": "^1.90.0",
     "semver": "^7.5.4",
     "yargs": "^16.2.0"
   },
