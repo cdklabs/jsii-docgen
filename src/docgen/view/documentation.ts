@@ -360,7 +360,7 @@ export class Documentation {
         // for expanded python arguments - which we don't to right now anyway.
         // we don't want to make any assumption of the directory structure, so this is the most
         // robust way to detect the root assembly.
-        const spec = loadAssemblyFromFile(dotJsii);
+        const spec = loadAssemblyFromFile(dotJsii, false); // don't validate we only need this for the spec name
         if (language && spec.name === this.assemblyName) {
           const packageDir = path.dirname(dotJsii);
           try {

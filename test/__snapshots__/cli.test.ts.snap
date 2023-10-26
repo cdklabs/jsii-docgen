@@ -8387,3 +8387,1083 @@ first call to addToResourcePolicy(s).
 
 "
 `;
+
+exports[`split-by-submodule creates submodule files next to output 1`] = `
+"# Submodules <a name="Submodules" id="submodules"></a>
+
+The following submodules are available:
+- [submod1](./submod1.md)"
+`;
+
+exports[`split-by-submodule creates submodule files next to output 2`] = `
+"# \`submod1\` Submodule <a name="\`submod1\` Submodule" id="construct-library.submod1"></a>
+
+## Constructs <a name="Constructs" id="Constructs"></a>
+
+### GoodbyeBucket <a name="GoodbyeBucket" id="construct-library.submod1.GoodbyeBucket"></a>
+
+#### Initializers <a name="Initializers" id="construct-library.submod1.GoodbyeBucket.Initializer"></a>
+
+\`\`\`typescript
+import { submod1 } from 'construct-library'
+
+new submod1.GoodbyeBucket(scope: Construct, id: string, props?: BucketProps)
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.Initializer.parameter.props">props</a></code> | <code>@aws-cdk/aws-s3.BucketProps</code> | *No description.* |
+
+---
+
+##### \`scope\`<sup>Required</sup> <a name="scope" id="construct-library.submod1.GoodbyeBucket.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### \`id\`<sup>Required</sup> <a name="id" id="construct-library.submod1.GoodbyeBucket.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### \`props\`<sup>Optional</sup> <a name="props" id="construct-library.submod1.GoodbyeBucket.Initializer.parameter.props"></a>
+
+- *Type:* @aws-cdk/aws-s3.BucketProps
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.addEventNotification">addEventNotification</a></code> | Adds a bucket notification event destination. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification">addObjectCreatedNotification</a></code> | Subscribes a destination to receive notifications when an object is created in the bucket. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification">addObjectRemovedNotification</a></code> | Subscribes a destination to receive notifications when an object is removed from the bucket. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.addToResourcePolicy">addToResourcePolicy</a></code> | Adds a statement to the resource policy for a principal (i.e. account/role/service) to perform actions on this bucket and/or its contents. Use \`bucketArn\` and \`arnForObjects(keys)\` to obtain ARNs for this bucket or objects. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.arnForObjects">arnForObjects</a></code> | Returns an ARN that represents all objects within the bucket that match the key pattern specified. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.grantDelete">grantDelete</a></code> | Grants s3:DeleteObject* permission to an IAM principal for objects in this bucket. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.grantPublicAccess">grantPublicAccess</a></code> | Allows unrestricted access to objects from this bucket. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.grantPut">grantPut</a></code> | Grants s3:PutObject* and s3:Abort* permissions for this bucket to an IAM principal. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.grantPutAcl">grantPutAcl</a></code> | Grant the given IAM identity permissions to modify the ACLs of objects in the given Bucket. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.grantRead">grantRead</a></code> | Grant read permissions for this bucket and it's contents to an IAM principal (Role/Group/User). |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.grantReadWrite">grantReadWrite</a></code> | Grants read/write permissions for this bucket and it's contents to an IAM principal (Role/Group/User). |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.grantWrite">grantWrite</a></code> | Grant write permissions to this bucket to an IAM principal. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.onCloudTrailEvent">onCloudTrailEvent</a></code> | Define a CloudWatch event that triggers when something happens to this repository. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.onCloudTrailPutObject">onCloudTrailPutObject</a></code> | Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.onCloudTrailWriteObject">onCloudTrailWriteObject</a></code> | Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.s3UrlForObject">s3UrlForObject</a></code> | The S3 URL of an S3 object. For example:. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.transferAccelerationUrlForObject">transferAccelerationUrlForObject</a></code> | The https Transfer Acceleration URL of an S3 object. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.urlForObject">urlForObject</a></code> | The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.virtualHostedUrlForObject">virtualHostedUrlForObject</a></code> | The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.addCorsRule">addCorsRule</a></code> | Adds a cross-origin access configuration for objects in an Amazon S3 bucket. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.addInventory">addInventory</a></code> | Add an inventory configuration. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.addLifecycleRule">addLifecycleRule</a></code> | Add a lifecycle rule to the bucket. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.addMetric">addMetric</a></code> | Adds a metrics configuration for the CloudWatch request metrics from the bucket. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.goodbye">goodbye</a></code> | *No description.* |
+
+---
+
+##### \`toString\` <a name="toString" id="construct-library.submod1.GoodbyeBucket.toString"></a>
+
+\`\`\`typescript
+public toString(): string
+\`\`\`
+
+Returns a string representation of this construct.
+
+##### \`applyRemovalPolicy\` <a name="applyRemovalPolicy" id="construct-library.submod1.GoodbyeBucket.applyRemovalPolicy"></a>
+
+\`\`\`typescript
+public applyRemovalPolicy(policy: RemovalPolicy): void
+\`\`\`
+
+Apply the given removal policy to this resource.
+
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (\`RemovalPolicy.DESTROY\`), or left in your AWS
+account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
+
+###### \`policy\`<sup>Required</sup> <a name="policy" id="construct-library.submod1.GoodbyeBucket.applyRemovalPolicy.parameter.policy"></a>
+
+- *Type:* @aws-cdk/core.RemovalPolicy
+
+---
+
+##### \`addEventNotification\` <a name="addEventNotification" id="construct-library.submod1.GoodbyeBucket.addEventNotification"></a>
+
+\`\`\`typescript
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+\`\`\`
+
+Adds a bucket notification event destination.
+
+> [https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html)
+
+*Example*
+
+\`\`\`typescript
+   declare const myLambda: lambda.Function;
+   const bucket = new s3.Bucket(this, 'MyBucket');
+   bucket.addEventNotification(s3.EventType.OBJECT_CREATED, new s3n.LambdaDestination(myLambda), {prefix: 'home/myusername/*'});
+\`\`\`
+
+
+###### \`event\`<sup>Required</sup> <a name="event" id="construct-library.submod1.GoodbyeBucket.addEventNotification.parameter.event"></a>
+
+- *Type:* @aws-cdk/aws-s3.EventType
+
+The event to trigger the notification.
+
+---
+
+###### \`dest\`<sup>Required</sup> <a name="dest" id="construct-library.submod1.GoodbyeBucket.addEventNotification.parameter.dest"></a>
+
+- *Type:* @aws-cdk/aws-s3.IBucketNotificationDestination
+
+The notification destination (Lambda, SNS Topic or SQS Queue).
+
+---
+
+###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.submod1.GoodbyeBucket.addEventNotification.parameter.filters"></a>
+
+- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+
+S3 object key filter rules to determine which objects trigger this event.
+
+Each filter must include a \`prefix\` and/or \`suffix\`
+that will be matched against the s3 object key. Refer to the S3 Developer Guide
+for details about allowed filter rules.
+
+---
+
+##### \`addObjectCreatedNotification\` <a name="addObjectCreatedNotification" id="construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification"></a>
+
+\`\`\`typescript
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+\`\`\`
+
+Subscribes a destination to receive notifications when an object is created in the bucket.
+
+This is identical to calling
+\`onEvent(EventType.OBJECT_CREATED)\`.
+
+###### \`dest\`<sup>Required</sup> <a name="dest" id="construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification.parameter.dest"></a>
+
+- *Type:* @aws-cdk/aws-s3.IBucketNotificationDestination
+
+The notification destination (see onEvent).
+
+---
+
+###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification.parameter.filters"></a>
+
+- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+
+Filters (see onEvent).
+
+---
+
+##### \`addObjectRemovedNotification\` <a name="addObjectRemovedNotification" id="construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification"></a>
+
+\`\`\`typescript
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+\`\`\`
+
+Subscribes a destination to receive notifications when an object is removed from the bucket.
+
+This is identical to calling
+\`onEvent(EventType.OBJECT_REMOVED)\`.
+
+###### \`dest\`<sup>Required</sup> <a name="dest" id="construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification.parameter.dest"></a>
+
+- *Type:* @aws-cdk/aws-s3.IBucketNotificationDestination
+
+The notification destination (see onEvent).
+
+---
+
+###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification.parameter.filters"></a>
+
+- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+
+Filters (see onEvent).
+
+---
+
+##### \`addToResourcePolicy\` <a name="addToResourcePolicy" id="construct-library.submod1.GoodbyeBucket.addToResourcePolicy"></a>
+
+\`\`\`typescript
+public addToResourcePolicy(permission: PolicyStatement): AddToResourcePolicyResult
+\`\`\`
+
+Adds a statement to the resource policy for a principal (i.e. account/role/service) to perform actions on this bucket and/or its contents. Use \`bucketArn\` and \`arnForObjects(keys)\` to obtain ARNs for this bucket or objects.
+
+Note that the policy statement may or may not be added to the policy.
+For example, when an \`IBucket\` is created from an existing bucket,
+it's not possible to tell whether the bucket already has a policy
+attached, let alone to re-use that policy to add more statements to it.
+So it's safest to do nothing in these cases.
+
+###### \`permission\`<sup>Required</sup> <a name="permission" id="construct-library.submod1.GoodbyeBucket.addToResourcePolicy.parameter.permission"></a>
+
+- *Type:* @aws-cdk/aws-iam.PolicyStatement
+
+the policy statement to be added to the bucket's policy.
+
+---
+
+##### \`arnForObjects\` <a name="arnForObjects" id="construct-library.submod1.GoodbyeBucket.arnForObjects"></a>
+
+\`\`\`typescript
+public arnForObjects(keyPattern: string): string
+\`\`\`
+
+Returns an ARN that represents all objects within the bucket that match the key pattern specified.
+
+To represent all keys, specify \`\`"*"\`\`.
+
+If you need to specify a keyPattern with multiple components, concatenate them into a single string, e.g.:
+
+   arnForObjects(\`home/\${team}/\${user}/*\`)
+
+###### \`keyPattern\`<sup>Required</sup> <a name="keyPattern" id="construct-library.submod1.GoodbyeBucket.arnForObjects.parameter.keyPattern"></a>
+
+- *Type:* string
+
+---
+
+##### \`grantDelete\` <a name="grantDelete" id="construct-library.submod1.GoodbyeBucket.grantDelete"></a>
+
+\`\`\`typescript
+public grantDelete(identity: IGrantable, objectsKeyPattern?: any): Grant
+\`\`\`
+
+Grants s3:DeleteObject* permission to an IAM principal for objects in this bucket.
+
+###### \`identity\`<sup>Required</sup> <a name="identity" id="construct-library.submod1.GoodbyeBucket.grantDelete.parameter.identity"></a>
+
+- *Type:* @aws-cdk/aws-iam.IGrantable
+
+The principal.
+
+---
+
+###### \`objectsKeyPattern\`<sup>Optional</sup> <a name="objectsKeyPattern" id="construct-library.submod1.GoodbyeBucket.grantDelete.parameter.objectsKeyPattern"></a>
+
+- *Type:* any
+
+Restrict the permission to a certain key pattern (default '*').
+
+---
+
+##### \`grantPublicAccess\` <a name="grantPublicAccess" id="construct-library.submod1.GoodbyeBucket.grantPublicAccess"></a>
+
+\`\`\`typescript
+public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
+\`\`\`
+
+Allows unrestricted access to objects from this bucket.
+
+IMPORTANT: This permission allows anyone to perform actions on S3 objects
+in this bucket, which is useful for when you configure your bucket as a
+website and want everyone to be able to read objects in the bucket without
+needing to authenticate.
+
+Without arguments, this method will grant read ("s3:GetObject") access to
+all objects ("*") in the bucket.
+
+The method returns the \`iam.Grant\` object, which can then be modified
+as needed. For example, you can add a condition that will restrict access only
+to an IPv4 range like this:
+
+     const grant = bucket.grantPublicAccess();
+     grant.resourceStatement!.addCondition(‘IpAddress’, { “aws:SourceIp”: “54.240.143.0/24” });
+
+Note that if this \`IBucket\` refers to an existing bucket, possibly not
+managed by CloudFormation, this method will have no effect, since it's
+impossible to modify the policy of an existing bucket.
+
+###### \`allowedActions\`<sup>Required</sup> <a name="allowedActions" id="construct-library.submod1.GoodbyeBucket.grantPublicAccess.parameter.allowedActions"></a>
+
+- *Type:* string
+
+the set of S3 actions to allow.
+
+Default is "s3:GetObject".
+
+---
+
+###### \`keyPrefix\`<sup>Optional</sup> <a name="keyPrefix" id="construct-library.submod1.GoodbyeBucket.grantPublicAccess.parameter.keyPrefix"></a>
+
+- *Type:* string
+
+the prefix of S3 object keys (e.g. \`home/*\`). Default is "*".
+
+---
+
+##### \`grantPut\` <a name="grantPut" id="construct-library.submod1.GoodbyeBucket.grantPut"></a>
+
+\`\`\`typescript
+public grantPut(identity: IGrantable, objectsKeyPattern?: any): Grant
+\`\`\`
+
+Grants s3:PutObject* and s3:Abort* permissions for this bucket to an IAM principal.
+
+If encryption is used, permission to use the key to encrypt the contents
+of written files will also be granted to the same principal.
+
+###### \`identity\`<sup>Required</sup> <a name="identity" id="construct-library.submod1.GoodbyeBucket.grantPut.parameter.identity"></a>
+
+- *Type:* @aws-cdk/aws-iam.IGrantable
+
+The principal.
+
+---
+
+###### \`objectsKeyPattern\`<sup>Optional</sup> <a name="objectsKeyPattern" id="construct-library.submod1.GoodbyeBucket.grantPut.parameter.objectsKeyPattern"></a>
+
+- *Type:* any
+
+Restrict the permission to a certain key pattern (default '*').
+
+---
+
+##### \`grantPutAcl\` <a name="grantPutAcl" id="construct-library.submod1.GoodbyeBucket.grantPutAcl"></a>
+
+\`\`\`typescript
+public grantPutAcl(identity: IGrantable, objectsKeyPattern?: string): Grant
+\`\`\`
+
+Grant the given IAM identity permissions to modify the ACLs of objects in the given Bucket.
+
+If your application has the '@aws-cdk/aws-s3:grantWriteWithoutAcl' feature flag set,
+calling {@link grantWrite} or {@link grantReadWrite} no longer grants permissions to modify the ACLs of the objects;
+in this case, if you need to modify object ACLs, call this method explicitly.
+
+###### \`identity\`<sup>Required</sup> <a name="identity" id="construct-library.submod1.GoodbyeBucket.grantPutAcl.parameter.identity"></a>
+
+- *Type:* @aws-cdk/aws-iam.IGrantable
+
+---
+
+###### \`objectsKeyPattern\`<sup>Optional</sup> <a name="objectsKeyPattern" id="construct-library.submod1.GoodbyeBucket.grantPutAcl.parameter.objectsKeyPattern"></a>
+
+- *Type:* string
+
+---
+
+##### \`grantRead\` <a name="grantRead" id="construct-library.submod1.GoodbyeBucket.grantRead"></a>
+
+\`\`\`typescript
+public grantRead(identity: IGrantable, objectsKeyPattern?: any): Grant
+\`\`\`
+
+Grant read permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
+
+If encryption is used, permission to use the key to decrypt the contents
+of the bucket will also be granted to the same principal.
+
+###### \`identity\`<sup>Required</sup> <a name="identity" id="construct-library.submod1.GoodbyeBucket.grantRead.parameter.identity"></a>
+
+- *Type:* @aws-cdk/aws-iam.IGrantable
+
+The principal.
+
+---
+
+###### \`objectsKeyPattern\`<sup>Optional</sup> <a name="objectsKeyPattern" id="construct-library.submod1.GoodbyeBucket.grantRead.parameter.objectsKeyPattern"></a>
+
+- *Type:* any
+
+Restrict the permission to a certain key pattern (default '*').
+
+---
+
+##### \`grantReadWrite\` <a name="grantReadWrite" id="construct-library.submod1.GoodbyeBucket.grantReadWrite"></a>
+
+\`\`\`typescript
+public grantReadWrite(identity: IGrantable, objectsKeyPattern?: any): Grant
+\`\`\`
+
+Grants read/write permissions for this bucket and it's contents to an IAM principal (Role/Group/User).
+
+If an encryption key is used, permission to use the key for
+encrypt/decrypt will also be granted.
+
+Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`,
+which could be used to grant read/write object access to IAM principals in other accounts.
+If you want to get rid of that behavior, update your CDK version to 1.85.0 or later,
+and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\`
+in the \`context\` key of your cdk.json file.
+If you've already updated, but still need the principal to have permissions to modify the ACLs,
+use the {@link grantPutAcl} method.
+
+###### \`identity\`<sup>Required</sup> <a name="identity" id="construct-library.submod1.GoodbyeBucket.grantReadWrite.parameter.identity"></a>
+
+- *Type:* @aws-cdk/aws-iam.IGrantable
+
+---
+
+###### \`objectsKeyPattern\`<sup>Optional</sup> <a name="objectsKeyPattern" id="construct-library.submod1.GoodbyeBucket.grantReadWrite.parameter.objectsKeyPattern"></a>
+
+- *Type:* any
+
+---
+
+##### \`grantWrite\` <a name="grantWrite" id="construct-library.submod1.GoodbyeBucket.grantWrite"></a>
+
+\`\`\`typescript
+public grantWrite(identity: IGrantable, objectsKeyPattern?: any): Grant
+\`\`\`
+
+Grant write permissions to this bucket to an IAM principal.
+
+If encryption is used, permission to use the key to encrypt the contents
+of written files will also be granted to the same principal.
+
+Before CDK version 1.85.0, this method granted the \`s3:PutObject*\` permission that included \`s3:PutObjectAcl\`,
+which could be used to grant read/write object access to IAM principals in other accounts.
+If you want to get rid of that behavior, update your CDK version to 1.85.0 or later,
+and make sure the \`@aws-cdk/aws-s3:grantWriteWithoutAcl\` feature flag is set to \`true\`
+in the \`context\` key of your cdk.json file.
+If you've already updated, but still need the principal to have permissions to modify the ACLs,
+use the {@link grantPutAcl} method.
+
+###### \`identity\`<sup>Required</sup> <a name="identity" id="construct-library.submod1.GoodbyeBucket.grantWrite.parameter.identity"></a>
+
+- *Type:* @aws-cdk/aws-iam.IGrantable
+
+---
+
+###### \`objectsKeyPattern\`<sup>Optional</sup> <a name="objectsKeyPattern" id="construct-library.submod1.GoodbyeBucket.grantWrite.parameter.objectsKeyPattern"></a>
+
+- *Type:* any
+
+---
+
+##### \`onCloudTrailEvent\` <a name="onCloudTrailEvent" id="construct-library.submod1.GoodbyeBucket.onCloudTrailEvent"></a>
+
+\`\`\`typescript
+public onCloudTrailEvent(id: string, options?: OnCloudTrailBucketEventOptions): Rule
+\`\`\`
+
+Define a CloudWatch event that triggers when something happens to this repository.
+
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
+
+###### \`id\`<sup>Required</sup> <a name="id" id="construct-library.submod1.GoodbyeBucket.onCloudTrailEvent.parameter.id"></a>
+
+- *Type:* string
+
+The id of the rule.
+
+---
+
+###### \`options\`<sup>Optional</sup> <a name="options" id="construct-library.submod1.GoodbyeBucket.onCloudTrailEvent.parameter.options"></a>
+
+- *Type:* @aws-cdk/aws-s3.OnCloudTrailBucketEventOptions
+
+Options for adding the rule.
+
+---
+
+##### \`onCloudTrailPutObject\` <a name="onCloudTrailPutObject" id="construct-library.submod1.GoodbyeBucket.onCloudTrailPutObject"></a>
+
+\`\`\`typescript
+public onCloudTrailPutObject(id: string, options?: OnCloudTrailBucketEventOptions): Rule
+\`\`\`
+
+Defines an AWS CloudWatch event that triggers when an object is uploaded to the specified paths (keys) in this bucket using the PutObject API call.
+
+Note that some tools like \`aws s3 cp\` will automatically use either
+PutObject or the multipart upload API depending on the file size,
+so using \`onCloudTrailWriteObject\` may be preferable.
+
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
+
+###### \`id\`<sup>Required</sup> <a name="id" id="construct-library.submod1.GoodbyeBucket.onCloudTrailPutObject.parameter.id"></a>
+
+- *Type:* string
+
+The id of the rule.
+
+---
+
+###### \`options\`<sup>Optional</sup> <a name="options" id="construct-library.submod1.GoodbyeBucket.onCloudTrailPutObject.parameter.options"></a>
+
+- *Type:* @aws-cdk/aws-s3.OnCloudTrailBucketEventOptions
+
+Options for adding the rule.
+
+---
+
+##### \`onCloudTrailWriteObject\` <a name="onCloudTrailWriteObject" id="construct-library.submod1.GoodbyeBucket.onCloudTrailWriteObject"></a>
+
+\`\`\`typescript
+public onCloudTrailWriteObject(id: string, options?: OnCloudTrailBucketEventOptions): Rule
+\`\`\`
+
+Defines an AWS CloudWatch event that triggers when an object at the specified paths (keys) in this bucket are written to.
+
+This includes
+the events PutObject, CopyObject, and CompleteMultipartUpload.
+
+Note that some tools like \`aws s3 cp\` will automatically use either
+PutObject or the multipart upload API depending on the file size,
+so using this method may be preferable to \`onCloudTrailPutObject\`.
+
+Requires that there exists at least one CloudTrail Trail in your account
+that captures the event. This method will not create the Trail.
+
+###### \`id\`<sup>Required</sup> <a name="id" id="construct-library.submod1.GoodbyeBucket.onCloudTrailWriteObject.parameter.id"></a>
+
+- *Type:* string
+
+The id of the rule.
+
+---
+
+###### \`options\`<sup>Optional</sup> <a name="options" id="construct-library.submod1.GoodbyeBucket.onCloudTrailWriteObject.parameter.options"></a>
+
+- *Type:* @aws-cdk/aws-s3.OnCloudTrailBucketEventOptions
+
+Options for adding the rule.
+
+---
+
+##### \`s3UrlForObject\` <a name="s3UrlForObject" id="construct-library.submod1.GoodbyeBucket.s3UrlForObject"></a>
+
+\`\`\`typescript
+public s3UrlForObject(key?: string): string
+\`\`\`
+
+The S3 URL of an S3 object. For example:.
+
+\`s3://onlybucket\`
+- \`s3://bucket/key\`
+
+###### \`key\`<sup>Optional</sup> <a name="key" id="construct-library.submod1.GoodbyeBucket.s3UrlForObject.parameter.key"></a>
+
+- *Type:* string
+
+The S3 key of the object.
+
+If not specified, the S3 URL of the
+bucket is returned.
+
+---
+
+##### \`transferAccelerationUrlForObject\` <a name="transferAccelerationUrlForObject" id="construct-library.submod1.GoodbyeBucket.transferAccelerationUrlForObject"></a>
+
+\`\`\`typescript
+public transferAccelerationUrlForObject(key?: string, options?: TransferAccelerationUrlOptions): string
+\`\`\`
+
+The https Transfer Acceleration URL of an S3 object.
+
+Specify \`dualStack: true\` at the options
+for dual-stack endpoint (connect to the bucket over IPv6). For example:
+
+- \`https://bucket.s3-accelerate.amazonaws.com\`
+- \`https://bucket.s3-accelerate.amazonaws.com/key\`
+
+###### \`key\`<sup>Optional</sup> <a name="key" id="construct-library.submod1.GoodbyeBucket.transferAccelerationUrlForObject.parameter.key"></a>
+
+- *Type:* string
+
+The S3 key of the object.
+
+If not specified, the URL of the
+bucket is returned.
+
+---
+
+###### \`options\`<sup>Optional</sup> <a name="options" id="construct-library.submod1.GoodbyeBucket.transferAccelerationUrlForObject.parameter.options"></a>
+
+- *Type:* @aws-cdk/aws-s3.TransferAccelerationUrlOptions
+
+Options for generating URL.
+
+---
+
+##### \`urlForObject\` <a name="urlForObject" id="construct-library.submod1.GoodbyeBucket.urlForObject"></a>
+
+\`\`\`typescript
+public urlForObject(key?: string): string
+\`\`\`
+
+The https URL of an S3 object. Specify \`regional: false\` at the options for non-regional URLs. For example:.
+
+\`https://s3.us-west-1.amazonaws.com/onlybucket\`
+- \`https://s3.us-west-1.amazonaws.com/bucket/key\`
+- \`https://s3.cn-north-1.amazonaws.com.cn/china-bucket/mykey\`
+
+###### \`key\`<sup>Optional</sup> <a name="key" id="construct-library.submod1.GoodbyeBucket.urlForObject.parameter.key"></a>
+
+- *Type:* string
+
+The S3 key of the object.
+
+If not specified, the URL of the
+bucket is returned.
+
+---
+
+##### \`virtualHostedUrlForObject\` <a name="virtualHostedUrlForObject" id="construct-library.submod1.GoodbyeBucket.virtualHostedUrlForObject"></a>
+
+\`\`\`typescript
+public virtualHostedUrlForObject(key?: string, options?: VirtualHostedStyleUrlOptions): string
+\`\`\`
+
+The virtual hosted-style URL of an S3 object. Specify \`regional: false\` at the options for non-regional URL. For example:.
+
+\`https://only-bucket.s3.us-west-1.amazonaws.com\`
+- \`https://bucket.s3.us-west-1.amazonaws.com/key\`
+- \`https://bucket.s3.amazonaws.com/key\`
+- \`https://china-bucket.s3.cn-north-1.amazonaws.com.cn/mykey\`
+
+###### \`key\`<sup>Optional</sup> <a name="key" id="construct-library.submod1.GoodbyeBucket.virtualHostedUrlForObject.parameter.key"></a>
+
+- *Type:* string
+
+The S3 key of the object.
+
+If not specified, the URL of the
+bucket is returned.
+
+---
+
+###### \`options\`<sup>Optional</sup> <a name="options" id="construct-library.submod1.GoodbyeBucket.virtualHostedUrlForObject.parameter.options"></a>
+
+- *Type:* @aws-cdk/aws-s3.VirtualHostedStyleUrlOptions
+
+Options for generating URL.
+
+---
+
+##### \`addCorsRule\` <a name="addCorsRule" id="construct-library.submod1.GoodbyeBucket.addCorsRule"></a>
+
+\`\`\`typescript
+public addCorsRule(rule: CorsRule): void
+\`\`\`
+
+Adds a cross-origin access configuration for objects in an Amazon S3 bucket.
+
+###### \`rule\`<sup>Required</sup> <a name="rule" id="construct-library.submod1.GoodbyeBucket.addCorsRule.parameter.rule"></a>
+
+- *Type:* @aws-cdk/aws-s3.CorsRule
+
+The CORS configuration rule to add.
+
+---
+
+##### \`addInventory\` <a name="addInventory" id="construct-library.submod1.GoodbyeBucket.addInventory"></a>
+
+\`\`\`typescript
+public addInventory(inventory: Inventory): void
+\`\`\`
+
+Add an inventory configuration.
+
+###### \`inventory\`<sup>Required</sup> <a name="inventory" id="construct-library.submod1.GoodbyeBucket.addInventory.parameter.inventory"></a>
+
+- *Type:* @aws-cdk/aws-s3.Inventory
+
+configuration to add.
+
+---
+
+##### \`addLifecycleRule\` <a name="addLifecycleRule" id="construct-library.submod1.GoodbyeBucket.addLifecycleRule"></a>
+
+\`\`\`typescript
+public addLifecycleRule(rule: LifecycleRule): void
+\`\`\`
+
+Add a lifecycle rule to the bucket.
+
+###### \`rule\`<sup>Required</sup> <a name="rule" id="construct-library.submod1.GoodbyeBucket.addLifecycleRule.parameter.rule"></a>
+
+- *Type:* @aws-cdk/aws-s3.LifecycleRule
+
+The rule to add.
+
+---
+
+##### \`addMetric\` <a name="addMetric" id="construct-library.submod1.GoodbyeBucket.addMetric"></a>
+
+\`\`\`typescript
+public addMetric(metric: BucketMetrics): void
+\`\`\`
+
+Adds a metrics configuration for the CloudWatch request metrics from the bucket.
+
+###### \`metric\`<sup>Required</sup> <a name="metric" id="construct-library.submod1.GoodbyeBucket.addMetric.parameter.metric"></a>
+
+- *Type:* @aws-cdk/aws-s3.BucketMetrics
+
+The metric configuration to add.
+
+---
+
+##### \`goodbye\` <a name="goodbye" id="construct-library.submod1.GoodbyeBucket.goodbye"></a>
+
+\`\`\`typescript
+public goodbye(): void
+\`\`\`
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.isConstruct">isConstruct</a></code> | Return whether the given object is a Construct. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.fromBucketArn">fromBucketArn</a></code> | *No description.* |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.fromBucketAttributes">fromBucketAttributes</a></code> | Creates a Bucket construct that represents an external bucket. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.fromBucketName">fromBucketName</a></code> | *No description.* |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.validateBucketName">validateBucketName</a></code> | Thrown an exception if the given bucket name is not valid. |
+
+---
+
+##### \`isConstruct\` <a name="isConstruct" id="construct-library.submod1.GoodbyeBucket.isConstruct"></a>
+
+\`\`\`typescript
+import { submod1 } from 'construct-library'
+
+submod1.GoodbyeBucket.isConstruct(x: any)
+\`\`\`
+
+Return whether the given object is a Construct.
+
+###### \`x\`<sup>Required</sup> <a name="x" id="construct-library.submod1.GoodbyeBucket.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### \`isResource\` <a name="isResource" id="construct-library.submod1.GoodbyeBucket.isResource"></a>
+
+\`\`\`typescript
+import { submod1 } from 'construct-library'
+
+submod1.GoodbyeBucket.isResource(construct: IConstruct)
+\`\`\`
+
+Check whether the given construct is a Resource.
+
+###### \`construct\`<sup>Required</sup> <a name="construct" id="construct-library.submod1.GoodbyeBucket.isResource.parameter.construct"></a>
+
+- *Type:* @aws-cdk/core.IConstruct
+
+---
+
+##### \`fromBucketArn\` <a name="fromBucketArn" id="construct-library.submod1.GoodbyeBucket.fromBucketArn"></a>
+
+\`\`\`typescript
+import { submod1 } from 'construct-library'
+
+submod1.GoodbyeBucket.fromBucketArn(scope: Construct, id: string, bucketArn: string)
+\`\`\`
+
+###### \`scope\`<sup>Required</sup> <a name="scope" id="construct-library.submod1.GoodbyeBucket.fromBucketArn.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+###### \`id\`<sup>Required</sup> <a name="id" id="construct-library.submod1.GoodbyeBucket.fromBucketArn.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### \`bucketArn\`<sup>Required</sup> <a name="bucketArn" id="construct-library.submod1.GoodbyeBucket.fromBucketArn.parameter.bucketArn"></a>
+
+- *Type:* string
+
+---
+
+##### \`fromBucketAttributes\` <a name="fromBucketAttributes" id="construct-library.submod1.GoodbyeBucket.fromBucketAttributes"></a>
+
+\`\`\`typescript
+import { submod1 } from 'construct-library'
+
+submod1.GoodbyeBucket.fromBucketAttributes(scope: Construct, id: string, attrs: BucketAttributes)
+\`\`\`
+
+Creates a Bucket construct that represents an external bucket.
+
+###### \`scope\`<sup>Required</sup> <a name="scope" id="construct-library.submod1.GoodbyeBucket.fromBucketAttributes.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+The parent creating construct (usually \`this\`).
+
+---
+
+###### \`id\`<sup>Required</sup> <a name="id" id="construct-library.submod1.GoodbyeBucket.fromBucketAttributes.parameter.id"></a>
+
+- *Type:* string
+
+The construct's name.
+
+---
+
+###### \`attrs\`<sup>Required</sup> <a name="attrs" id="construct-library.submod1.GoodbyeBucket.fromBucketAttributes.parameter.attrs"></a>
+
+- *Type:* @aws-cdk/aws-s3.BucketAttributes
+
+A \`BucketAttributes\` object.
+
+Can be obtained from a call to
+\`bucket.export()\` or manually created.
+
+---
+
+##### \`fromBucketName\` <a name="fromBucketName" id="construct-library.submod1.GoodbyeBucket.fromBucketName"></a>
+
+\`\`\`typescript
+import { submod1 } from 'construct-library'
+
+submod1.GoodbyeBucket.fromBucketName(scope: Construct, id: string, bucketName: string)
+\`\`\`
+
+###### \`scope\`<sup>Required</sup> <a name="scope" id="construct-library.submod1.GoodbyeBucket.fromBucketName.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+###### \`id\`<sup>Required</sup> <a name="id" id="construct-library.submod1.GoodbyeBucket.fromBucketName.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### \`bucketName\`<sup>Required</sup> <a name="bucketName" id="construct-library.submod1.GoodbyeBucket.fromBucketName.parameter.bucketName"></a>
+
+- *Type:* string
+
+---
+
+##### \`validateBucketName\` <a name="validateBucketName" id="construct-library.submod1.GoodbyeBucket.validateBucketName"></a>
+
+\`\`\`typescript
+import { submod1 } from 'construct-library'
+
+submod1.GoodbyeBucket.validateBucketName(physicalName: string)
+\`\`\`
+
+Thrown an exception if the given bucket name is not valid.
+
+###### \`physicalName\`<sup>Required</sup> <a name="physicalName" id="construct-library.submod1.GoodbyeBucket.validateBucketName.parameter.physicalName"></a>
+
+- *Type:* string
+
+name of the bucket.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.property.node">node</a></code> | <code>@aws-cdk/core.ConstructNode</code> | The construct tree node associated with this construct. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.property.env">env</a></code> | <code>@aws-cdk/core.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.property.stack">stack</a></code> | <code>@aws-cdk/core.Stack</code> | The stack in which this resource is defined. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.property.bucketArn">bucketArn</a></code> | <code>string</code> | The ARN of the bucket. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.property.bucketDomainName">bucketDomainName</a></code> | <code>string</code> | The IPv4 DNS name of the specified bucket. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.property.bucketDualStackDomainName">bucketDualStackDomainName</a></code> | <code>string</code> | The IPv6 DNS name of the specified bucket. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.property.bucketName">bucketName</a></code> | <code>string</code> | The name of the bucket. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.property.bucketRegionalDomainName">bucketRegionalDomainName</a></code> | <code>string</code> | The regional domain name of the specified bucket. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.property.bucketWebsiteDomainName">bucketWebsiteDomainName</a></code> | <code>string</code> | The Domain name of the static website. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.property.bucketWebsiteUrl">bucketWebsiteUrl</a></code> | <code>string</code> | The URL of the static website. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.property.encryptionKey">encryptionKey</a></code> | <code>@aws-cdk/aws-kms.IKey</code> | Optional KMS encryption key associated with this bucket. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.property.isWebsite">isWebsite</a></code> | <code>boolean</code> | If this bucket has been configured for static website hosting. |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.property.policy">policy</a></code> | <code>@aws-cdk/aws-s3.BucketPolicy</code> | The resource policy associated with this bucket. |
+
+---
+
+##### \`node\`<sup>Required</sup> <a name="node" id="construct-library.submod1.GoodbyeBucket.property.node"></a>
+
+\`\`\`typescript
+public readonly node: ConstructNode;
+\`\`\`
+
+- *Type:* @aws-cdk/core.ConstructNode
+
+The construct tree node associated with this construct.
+
+---
+
+##### \`env\`<sup>Required</sup> <a name="env" id="construct-library.submod1.GoodbyeBucket.property.env"></a>
+
+\`\`\`typescript
+public readonly env: ResourceEnvironment;
+\`\`\`
+
+- *Type:* @aws-cdk/core.ResourceEnvironment
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
+
+---
+
+##### \`stack\`<sup>Required</sup> <a name="stack" id="construct-library.submod1.GoodbyeBucket.property.stack"></a>
+
+\`\`\`typescript
+public readonly stack: Stack;
+\`\`\`
+
+- *Type:* @aws-cdk/core.Stack
+
+The stack in which this resource is defined.
+
+---
+
+##### \`bucketArn\`<sup>Required</sup> <a name="bucketArn" id="construct-library.submod1.GoodbyeBucket.property.bucketArn"></a>
+
+\`\`\`typescript
+public readonly bucketArn: string;
+\`\`\`
+
+- *Type:* string
+
+The ARN of the bucket.
+
+---
+
+##### \`bucketDomainName\`<sup>Required</sup> <a name="bucketDomainName" id="construct-library.submod1.GoodbyeBucket.property.bucketDomainName"></a>
+
+\`\`\`typescript
+public readonly bucketDomainName: string;
+\`\`\`
+
+- *Type:* string
+
+The IPv4 DNS name of the specified bucket.
+
+---
+
+##### \`bucketDualStackDomainName\`<sup>Required</sup> <a name="bucketDualStackDomainName" id="construct-library.submod1.GoodbyeBucket.property.bucketDualStackDomainName"></a>
+
+\`\`\`typescript
+public readonly bucketDualStackDomainName: string;
+\`\`\`
+
+- *Type:* string
+
+The IPv6 DNS name of the specified bucket.
+
+---
+
+##### \`bucketName\`<sup>Required</sup> <a name="bucketName" id="construct-library.submod1.GoodbyeBucket.property.bucketName"></a>
+
+\`\`\`typescript
+public readonly bucketName: string;
+\`\`\`
+
+- *Type:* string
+
+The name of the bucket.
+
+---
+
+##### \`bucketRegionalDomainName\`<sup>Required</sup> <a name="bucketRegionalDomainName" id="construct-library.submod1.GoodbyeBucket.property.bucketRegionalDomainName"></a>
+
+\`\`\`typescript
+public readonly bucketRegionalDomainName: string;
+\`\`\`
+
+- *Type:* string
+
+The regional domain name of the specified bucket.
+
+---
+
+##### \`bucketWebsiteDomainName\`<sup>Required</sup> <a name="bucketWebsiteDomainName" id="construct-library.submod1.GoodbyeBucket.property.bucketWebsiteDomainName"></a>
+
+\`\`\`typescript
+public readonly bucketWebsiteDomainName: string;
+\`\`\`
+
+- *Type:* string
+
+The Domain name of the static website.
+
+---
+
+##### \`bucketWebsiteUrl\`<sup>Required</sup> <a name="bucketWebsiteUrl" id="construct-library.submod1.GoodbyeBucket.property.bucketWebsiteUrl"></a>
+
+\`\`\`typescript
+public readonly bucketWebsiteUrl: string;
+\`\`\`
+
+- *Type:* string
+
+The URL of the static website.
+
+---
+
+##### \`encryptionKey\`<sup>Optional</sup> <a name="encryptionKey" id="construct-library.submod1.GoodbyeBucket.property.encryptionKey"></a>
+
+\`\`\`typescript
+public readonly encryptionKey: IKey;
+\`\`\`
+
+- *Type:* @aws-cdk/aws-kms.IKey
+
+Optional KMS encryption key associated with this bucket.
+
+---
+
+##### \`isWebsite\`<sup>Optional</sup> <a name="isWebsite" id="construct-library.submod1.GoodbyeBucket.property.isWebsite"></a>
+
+\`\`\`typescript
+public readonly isWebsite: boolean;
+\`\`\`
+
+- *Type:* boolean
+
+If this bucket has been configured for static website hosting.
+
+---
+
+##### \`policy\`<sup>Optional</sup> <a name="policy" id="construct-library.submod1.GoodbyeBucket.property.policy"></a>
+
+\`\`\`typescript
+public readonly policy: BucketPolicy;
+\`\`\`
+
+- *Type:* @aws-cdk/aws-s3.BucketPolicy
+
+The resource policy associated with this bucket.
+
+If \`autoCreatePolicy\` is true, a \`BucketPolicy\` will be created upon the
+first call to addToResourcePolicy(s).
+
+---
+
+
+
+
+
+"
+`;
