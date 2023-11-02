@@ -312,7 +312,8 @@ export class Documentation {
   }
 
   /**
-   * Lookup a submodule by a submodule name.
+   * Lookup a submodule by a submodule name. To look up a nested submodule, encode it as a
+   * dot-separated path, e.g., 'top-level-module.nested-module.another-nested-one'.
    */
   private findSubmodule(assembly: reflect.Assembly, submodule: string): reflect.Submodule {
     type ReflectSubmodules = typeof assembly.submodules;
