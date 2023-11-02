@@ -315,19 +315,25 @@ export class Documentation {
    * Lookup a submodule by a submodule name.
    */
   private findSubmodule(assembly: reflect.Assembly, submodule: string): reflect.Submodule {
-    const submodules = assembly.submodules.filter(
-      (s) => s.name === submodule,
-    );
+    type ReflectSubmodules = typeof assembly.submodules;
+    return recurse(submodule.split('.'), assembly.submodules);
 
-    if (submodules.length === 0) {
-      throw new Error(`Submodule ${submodule} not found in assembly ${assembly.name}@${assembly.version}`);
+    function recurse(names: string[], submodules: ReflectSubmodules): reflect.Submodule {
+      const [head, ...tail] = names;
+      const found = submodules.filter(
+        (s) => s.name === head,
+      );
+
+      if (found.length === 0) {
+        throw new Error(`Submodule ${submodule} not found in assembly ${assembly.name}@${assembly.version}`);
+      }
+
+      if (found.length > 1) {
+        throw new Error(`Found multiple submodules with name: ${submodule} in assembly ${assembly.name}@${assembly.version}`);
+      }
+
+      return tail.length === 0 ? found[0] : recurse(tail, found[0].submodules);
     }
-
-    if (submodules.length > 1) {
-      throw new Error(`Found multiple submodules with name: ${submodule} in assembly ${assembly.name}@${assembly.version}`);
-    }
-
-    return submodules[0];
   }
 
   private async createAssembly(
