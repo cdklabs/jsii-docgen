@@ -140,6 +140,12 @@ describe('typescript', () => {
     const markdown = await docs.toMarkdown({ language: Language.TYPESCRIPT, submodule: 'aws_eks' });
     expect(markdown.render()).toMatchSnapshot();
   });
+
+  test('snapshot - nested submodules', async () => {
+    const docs = await Documentation.forAssembly('cdk-nag', Assemblies.AWSCDK_1_106_0);
+    const markdown = await docs.toMarkdown({ language: Language.TYPESCRIPT, submodule: 'rules.apigw' });
+    expect(markdown.render()).toMatchSnapshot();
+  });
 });
 
 describe('java', () => {
