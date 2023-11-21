@@ -201,7 +201,7 @@ export class Documentation {
    */
   public async listSubmodules() {
     const tsAssembly = await this.createAssembly(undefined, { loose: true, validate: false });
-    return tsAssembly.submodules;
+    return tsAssembly.allSubmodules;
   }
 
   public async toIndexMarkdown(fileSuffix:string, options: RenderOptions) {
@@ -234,7 +234,9 @@ export class Documentation {
       throw new LanguageNotSupportedError(`Laguage ${language} is not supported for package ${this.assemblyFqn}`);
     }
 
-    if (allSubmodules && options?.submodule) {
+    let submoduleStr = options.submodule;
+
+    if (allSubmodules && submoduleStr) {
       throw new Error('Cannot call toJson with allSubmodules and a specific submodule both selected.');
     }
 
@@ -245,7 +247,7 @@ export class Documentation {
       throw new Error(`Assembly ${this.assemblyFqn} does not have any targets defined`);
     }
 
-    const submodule = options?.submodule ? this.findSubmodule(assembly, options.submodule) : undefined;
+    const submodule = submoduleStr ? this.findSubmodule(assembly, submoduleStr) : undefined;
 
     let readme: MarkdownDocument | undefined;
     if (options?.readme ?? false) {
@@ -313,21 +315,44 @@ export class Documentation {
 
   /**
    * Lookup a submodule by a submodule name.
+   *
+   * The contract of this function is historically quite confused: the submodule
+   * name can be either an FQN (`asm.sub1.sub2`) or just a submodule name
+   * (`sub1` or `sub1.sub2`).
+   *
+   * This is sligthly complicated by ambiguity: `asm.asm.package` and
+   * `asm.package` can both exist, and which one do you mean when you say
+   * `asm.package`?
+   *
+   * We prefer an FQN match if possible (`asm.sub1.sub2`), but will accept a
+   * root-relative submodule name as well (`sub1.sub2`).
    */
   private findSubmodule(assembly: reflect.Assembly, submodule: string): reflect.Submodule {
-    const submodules = assembly.submodules.filter(
-      (s) => s.name === submodule,
+    const fqnSubs = assembly.allSubmodules.filter(
+      (s) => s.fqn === submodule,
     );
-
-    if (submodules.length === 0) {
-      throw new Error(`Submodule ${submodule} not found in assembly ${assembly.name}@${assembly.version}`);
+    if (fqnSubs.length === 1) {
+      return fqnSubs[0];
     }
 
-    if (submodules.length > 1) {
-      throw new Error(`Found multiple submodules with name: ${submodule} in assembly ${assembly.name}@${assembly.version}`);
+    // Fallback: assembly-relative name
+    const relSubs = assembly.allSubmodules.filter(
+      (s) => s.fqn === `${assembly.name}.${submodule}`,
+    );
+    if (relSubs.length === 1) {
+      console.error(`[WARNING] findSubmodule() is being called with a relative submodule name: '${submodule}'. Prefer the absolute name: '${assembly.name}.${submodule}'`);
+      return relSubs[0];
     }
 
-    return submodules[0];
+    if (fqnSubs.length + relSubs.length === 0) {
+      throw new Error(`Submodule ${submodule} not found in assembly ${assembly.name}@${assembly.version} (neither as '${submodule}' nor as '${assembly.name}.${submodule})`);
+    }
+
+    // Almost impossible that this would be true
+    if (fqnSubs.length > 1) {
+      throw new Error(`Found multiple submodules with FQN: ${submodule} in assembly ${assembly.name}@${assembly.version}`);
+    }
+    throw new Error(`Found multiple submodules with relative name: ${submodule} in assembly ${assembly.name}@${assembly.version}`);
   }
 
   private async createAssembly(

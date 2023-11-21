@@ -26,9 +26,9 @@ export class ApiReference {
     let interfaces: reflect.InterfaceType[];
     let enums: reflect.EnumType[];
     if (allSubmodules ?? false) {
-      classes = this.sortByName([...assembly.classes, ...flatMap(assembly.submodules, submod => [...submod.classes])]);
-      interfaces = this.sortByName([...assembly.interfaces, ...flatMap(assembly.submodules, submod => [...submod.interfaces])]);
-      enums = this.sortByName([...assembly.enums, ...flatMap(assembly.submodules, submod => [...submod.enums])]);
+      classes = this.sortByName([...assembly.classes, ...flatMap(assembly.allSubmodules, submod => [...submod.classes])]);
+      interfaces = this.sortByName([...assembly.interfaces, ...flatMap(assembly.allSubmodules, submod => [...submod.interfaces])]);
+      enums = this.sortByName([...assembly.enums, ...flatMap(assembly.allSubmodules, submod => [...submod.enums])]);
     } else {
       classes = this.sortByName(submodule ? submodule.classes : assembly.classes);
       interfaces = this.sortByName(submodule ? submodule.interfaces : assembly.interfaces);

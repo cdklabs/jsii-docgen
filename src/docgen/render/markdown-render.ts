@@ -1,7 +1,7 @@
 import * as reflect from 'jsii-reflect';
 import { MarkdownDocument } from './markdown-doc';
 import { ApiReferenceSchema, AssemblyMetadataSchema, ClassSchema, ConstructSchema, EnumMemberSchema, EnumSchema, InitializerSchema, InterfaceSchema, JsiiEntity, MethodSchema, ParameterSchema, PropertySchema, Schema, CURRENT_SCHEMA_VERSION, StructSchema, TypeSchema } from '../schema';
-import { Language } from '../transpile/transpile';
+import { Language, submoduleRelName } from '../transpile/transpile';
 
 export interface MarkdownFormattingOptions {
   /**
@@ -150,7 +150,7 @@ export class MarkdownRenderer {
     const md = new MarkdownDocument({ header: { title: 'Submodules' }, id: 'submodules' });
     md.lines('The following submodules are available:');
     for (const submodule of submodules) {
-      md.lines(`- [${submodule.name}](./${submodule.name}.${fileSuffix})`);
+      md.lines(`- [${submoduleRelName(submodule)}](./${submoduleRelName(submodule)}.${fileSuffix})`);
     }
     return md;
   }
