@@ -50,8 +50,16 @@ export interface RenderOptions extends TransliterationOptions {
    * Generate documentation only for a specific submodule.
    *
    * @default - Documentation is generated for the root module only.
+   * @deprecated Prefer `submoduleFqn`.
    */
   readonly submodule?: string;
+
+  /**
+   * Generate documentation only for a specific submodule, identified by its FQN
+   *
+   * @default - Documentation is generated for the root module only.
+   */
+  readonly submoduleFqn?: string;
 
   /**
    * Generate a single document with APIs from all assembly submodules
@@ -201,7 +209,7 @@ export class Documentation {
    */
   public async listSubmodules() {
     const tsAssembly = await this.createAssembly(undefined, { loose: true, validate: false });
-    return tsAssembly.submodules;
+    return tsAssembly.allSubmodules;
   }
 
   public async toIndexMarkdown(fileSuffix:string, options: RenderOptions) {
@@ -234,7 +242,12 @@ export class Documentation {
       throw new LanguageNotSupportedError(`Laguage ${language} is not supported for package ${this.assemblyFqn}`);
     }
 
-    if (allSubmodules && options?.submodule) {
+    if (options?.submoduleFqn && options.submoduleFqn) {
+      throw new Error('Supply at most one of \'submodule\' and \'submoduleFqn\'');
+    }
+    let submoduleStr = options.submoduleFqn ?? options.submodule;
+
+    if (allSubmodules && submoduleStr) {
       throw new Error('Cannot call toJson with allSubmodules and a specific submodule both selected.');
     }
 
@@ -245,7 +258,7 @@ export class Documentation {
       throw new Error(`Assembly ${this.assemblyFqn} does not have any targets defined`);
     }
 
-    const submodule = options?.submodule ? this.findSubmodule(assembly, options.submodule) : undefined;
+    const submodule = submoduleStr ? this.findSubmodule(assembly, submoduleStr) : undefined;
 
     let readme: MarkdownDocument | undefined;
     if (options?.readme ?? false) {
@@ -312,29 +325,45 @@ export class Documentation {
   }
 
   /**
-   * Lookup a submodule by a submodule name. To look up a nested submodule, encode it as a
-   * dot-separated path, e.g., 'top-level-module.nested-module.another-nested-one'.
+   * Lookup a submodule by a submodule name.
+   *
+   * The contract of this function is historically quite confused: the submodule
+   * name can be either an FQN (`asm.sub1.sub2`) or just a submodule name
+   * (`sub1` or `sub1.sub2`).
+   *
+   * This is sligthly complicated by ambiguity: `asm.asm.package` and
+   * `asm.package` can both exist, and which one do you mean when you say
+   * `asm.package`?
+   *
+   * We prefer an FQN match if possible (`asm.sub1.sub2`), but will accept a
+   * root-relative submodule name as well (`sub1.sub2`).
    */
   private findSubmodule(assembly: reflect.Assembly, submodule: string): reflect.Submodule {
-    type ReflectSubmodules = typeof assembly.submodules;
-    return recurse(submodule.split('.'), assembly.submodules);
-
-    function recurse(names: string[], submodules: ReflectSubmodules): reflect.Submodule {
-      const [head, ...tail] = names;
-      const found = submodules.filter(
-        (s) => s.name === head,
-      );
-
-      if (found.length === 0) {
-        throw new Error(`Submodule ${submodule} not found in assembly ${assembly.name}@${assembly.version}`);
-      }
-
-      if (found.length > 1) {
-        throw new Error(`Found multiple submodules with name: ${submodule} in assembly ${assembly.name}@${assembly.version}`);
-      }
-
-      return tail.length === 0 ? found[0] : recurse(tail, found[0].submodules);
+    const fqnSubs = assembly.allSubmodules.filter(
+      (s) => s.fqn === submodule,
+    );
+    if (fqnSubs.length === 1) {
+      return fqnSubs[0];
     }
+
+    // Fallback: assembly-relative name
+    const relSubs = assembly.allSubmodules.filter(
+      (s) => s.fqn === `${assembly.name}.${submodule}`,
+    );
+    if (relSubs.length === 1) {
+      console.error(`[WARNING] findSubmodule() is being called with a relative submodule name: '${submodule}'. Prefer the absolute name: '${assembly.name}.${submodule}'`);
+      return relSubs[0];
+    }
+
+    if (fqnSubs.length + relSubs.length === 0) {
+      throw new Error(`Submodule ${submodule} not found in assembly ${assembly.name}@${assembly.version} (neither as '${submodule}' nor as '${assembly.name}.${submodule})`);
+    }
+
+    // Almost impossible that this would be true
+    if (fqnSubs.length > 1) {
+      throw new Error(`Found multiple submodules with FQN: ${submodule} in assembly ${assembly.name}@${assembly.version}`);
+    }
+    throw new Error(`Found multiple submodules with relative name: ${submodule} in assembly ${assembly.name}@${assembly.version}`);
   }
 
   private async createAssembly(

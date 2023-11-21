@@ -847,7 +847,7 @@ export abstract class TranspileBase implements Transpile {
       // if the type is in a submodule, the submodule name is the first
       // part of the namespace. we construct the full submodule fqn and search for it.
       const submoduleFqn = `${type.assembly.name}.${type.namespace.split('.')[0]}`;
-      const submodules = type.assembly.submodules.filter(
+      const submodules = type.assembly.allSubmodules.filter(
         (s) => s.fqn === submoduleFqn,
       );
 
@@ -893,4 +893,13 @@ export abstract class TranspileBase implements Transpile {
     }
     return 0;
   }
+}
+
+/**
+ * Return the root-relative name for a submodule
+ *
+ * Ex: for a submodule `asm.sub1.sub2`, return `sub1.sub2`.
+ */
+export function submoduleRelName(submodule: reflect.Submodule) {
+  return submodule.fqn.split('.').slice(1).join('.');
 }

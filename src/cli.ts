@@ -1,7 +1,7 @@
 import * as fs from 'fs/promises';
 import * as path from 'node:path';
 import * as yargs from 'yargs';
-import { Language } from './docgen/transpile/transpile';
+import { Language, submoduleRelName } from './docgen/transpile/transpile';
 import { Documentation } from './index';
 
 type GenerateOptions = {
@@ -41,12 +41,12 @@ async function generateForLanguage(docs: Documentation, options: GenerateOptions
     for (const submodule of submodules) {
       const content = await docs.toMarkdown({
         ...options,
-        submodule: submodule.name,
+        submoduleFqn: submodule.fqn,
         allSubmodules: false,
-        header: { title: `\`${submodule.name}\` Submodule`, id: submodule.fqn },
+        header: { title: `\`${submoduleRelName(submodule)}\` Submodule`, id: submodule.fqn },
       });
 
-      await fs.writeFile(path.join(outputPath, `${submodule.name}.${submoduleSuffix}`), content.render());
+      await fs.writeFile(path.join(outputPath, `${submoduleRelName(submodule)}.${submoduleSuffix}`), content.render());
     }
 
     await fs.writeFile(`${outputFileName}.${fileSuffix}`, await (await docs.toIndexMarkdown(submoduleSuffix, options)).render());
@@ -102,3 +102,4 @@ main().catch(e => {
   console.error(e);
   process.exit(1);
 });
+
