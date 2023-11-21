@@ -50,16 +50,8 @@ export interface RenderOptions extends TransliterationOptions {
    * Generate documentation only for a specific submodule.
    *
    * @default - Documentation is generated for the root module only.
-   * @deprecated Prefer `submoduleFqn`.
    */
   readonly submodule?: string;
-
-  /**
-   * Generate documentation only for a specific submodule, identified by its FQN
-   *
-   * @default - Documentation is generated for the root module only.
-   */
-  readonly submoduleFqn?: string;
 
   /**
    * Generate a single document with APIs from all assembly submodules
@@ -242,10 +234,7 @@ export class Documentation {
       throw new LanguageNotSupportedError(`Laguage ${language} is not supported for package ${this.assemblyFqn}`);
     }
 
-    if (options?.submoduleFqn && options.submoduleFqn) {
-      throw new Error('Supply at most one of \'submodule\' and \'submoduleFqn\'');
-    }
-    let submoduleStr = options.submoduleFqn ?? options.submodule;
+    let submoduleStr = options.submodule;
 
     if (allSubmodules && submoduleStr) {
       throw new Error('Cannot call toJson with allSubmodules and a specific submodule both selected.');
@@ -339,6 +328,10 @@ export class Documentation {
    * root-relative submodule name as well (`sub1.sub2`).
    */
   private findSubmodule(assembly: reflect.Assembly, submodule: string): reflect.Submodule {
+    // If 'submodule' does not have a '.' in it, we know exactly what is intended.
+
+
+
     const fqnSubs = assembly.allSubmodules.filter(
       (s) => s.fqn === submodule,
     );

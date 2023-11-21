@@ -58,26 +58,26 @@ describe('submodules without an explicit name', () => {
 
   test('java', async () => {
     const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.AWSCDK_1_126_0);
-    const markdown = await docs.toMarkdown({ language: Language.JAVA, submodule: 'experimental' });
+    const markdown = await docs.toMarkdown({ language: Language.JAVA, submodule: '@aws-cdk/aws-cloudfront.experimental' });
     expect(markdown.render()).toMatchSnapshot();
   });
 
   test('python', async () => {
     const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.AWSCDK_1_126_0);
-    const markdown = await docs.toMarkdown({ language: Language.PYTHON, submodule: 'experimental' });
+    const markdown = await docs.toMarkdown({ language: Language.PYTHON, submodule: '@aws-cdk/aws-cloudfront.experimental' });
     expect(markdown.render()).toMatchSnapshot();
   });
 
   test('csharp', async () => {
     const docs = await Documentation.forAssembly('@aws-cdk/aws-cloudfront', Assemblies.AWSCDK_1_126_0);
-    const markdown = await docs.toMarkdown({ language: Language.CSHARP, submodule: 'experimental' });
+    const markdown = await docs.toMarkdown({ language: Language.CSHARP, submodule: '@aws-cdk/aws-cloudfront.experimental' });
     expect(markdown.render()).toMatchSnapshot();
   });
 
   test('go', async () => {
     // NOTE: @aws-cdk/aws-cloudfront 1.126.0 does not support Go, so we use region_info from aws-cdk-lib instead, which does.
     const docs = await Documentation.forAssembly('aws-cdk-lib', Assemblies.AWSCDK_1_106_0);
-    const markdown = await docs.toMarkdown({ language: Language.GO, submodule: 'region_info' });
+    const markdown = await docs.toMarkdown({ language: Language.GO, submodule: 'aws-cdk-lib.region_info' });
     expect(markdown.render()).toMatchSnapshot();
   });
 });

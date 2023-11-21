@@ -41,7 +41,7 @@ async function generateForLanguage(docs: Documentation, options: GenerateOptions
     for (const submodule of submodules) {
       const content = await docs.toMarkdown({
         ...options,
-        submoduleFqn: submodule.fqn,
+        submodule: submodule.fqn,
         allSubmodules: false,
         header: { title: `\`${submoduleRelName(submodule)}\` Submodule`, id: submodule.fqn },
       });
