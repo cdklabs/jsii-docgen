@@ -328,10 +328,6 @@ export class Documentation {
    * root-relative submodule name as well (`sub1.sub2`).
    */
   private findSubmodule(assembly: reflect.Assembly, submodule: string): reflect.Submodule {
-    // If 'submodule' does not have a '.' in it, we know exactly what is intended.
-
-
-
     const fqnSubs = assembly.allSubmodules.filter(
       (s) => s.fqn === submodule,
     );
