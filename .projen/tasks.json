@@ -234,9 +234,6 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@latest --upgrade --target=minor --peer --dep=prod,peer --filter=@jsii/spec,case,fs-extra,glob,glob-promise,jsii-reflect,semver,yargs"
-        },
-        {
           "exec": "yarn install --check-files"
         },
         {
@@ -257,9 +254,6 @@
         "CI": "0"
       },
       "steps": [
-        {
-          "exec": "npx npm-check-updates@latest --upgrade --target=latest --peer --dep=dev,peer,prod,optional --filter=cdklabs-projen-project-types,projen"
-        },
         {
           "exec": "yarn install --check-files"
         },
@@ -282,13 +276,10 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@latest --upgrade --target=minor --peer --dep=dev --filter=@types/fs-extra,@types/jest,@types/node,@types/semver,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,cdklabs-projen-project-types,constructs,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest,jest-junit,npm-check-updates,projen,standard-version,ts-jest,ts-node,typescript"
-        },
-        {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/fs-extra @types/jest @types/node @types/semver @typescript-eslint/eslint-plugin @typescript-eslint/parser cdklabs-projen-project-types constructs eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit npm-check-updates projen standard-version ts-jest ts-node typescript"
+          "exec": "yarn upgrade @types/fs-extra @types/jest @types/node @types/semver @typescript-eslint/eslint-plugin @typescript-eslint/parser cdklabs-projen-project-types constructs eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit projen standard-version ts-jest ts-node typescript"
         },
         {
           "exec": "npx projen"
