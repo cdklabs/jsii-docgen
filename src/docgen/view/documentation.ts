@@ -42,7 +42,7 @@ export interface RenderOptions extends TransliterationOptions {
   /**
    * Include the user defined README.md in the documentation.
    *
-   * @default true
+   * @default false
    */
   readonly readme?: boolean;
 
