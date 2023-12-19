@@ -23,7 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
       - name: Install dependencies
         run: yarn install --check-files
       - name: build
@@ -91,7 +91,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
       - name: Install dependencies
         run: yarn install --check-files
       - name: Install Rosetta version
@@ -109,3 +109,4 @@ jobs:
           - 5.0.14
           - 5.1.2
           - 5.2.0
+          - 5.3.0

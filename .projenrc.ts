@@ -41,8 +41,9 @@ const project = new CdklabsTypeScriptProject({
   },
   autoApproveUpgrades: true,
 
-  minNodeVersion: '16.0.0',
-  workflowNodeVersion: '16.x',
+  minNodeVersion: '18.12.0',
+  setNodeEngineVersion: false,
+  workflowNodeVersion: '18.x',
   jestOptions: {
     jestConfig: {
       setupFilesAfterEnv: ['<rootDir>/test/setup-jest.ts'],
@@ -66,6 +67,7 @@ new RosettaPeerDependency(project, {
     [RosettaVersionLines.V5_0]: '~5.0.14',
     [RosettaVersionLines.V5_1]: '~5.1.2',
     [RosettaVersionLines.V5_2]: '~5.2.0',
+    [RosettaVersionLines.V5_3]: '~5.3.0',
   },
 });
 
