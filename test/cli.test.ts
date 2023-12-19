@@ -68,6 +68,11 @@ test('split-by-submodule creates submodule files next to output', () => {
   const rootMd = readFileSync(join(fixture, 'docs/API.md'), 'utf-8');
   const submoduleMd = readFileSync(join(fixture, 'docs/submod1.md'), 'utf-8');
   expect(rootMd).toMatchSnapshot();
+  expect(rootMd).toContain('# API Reference');
+  expect(rootMd).toContain('## Submodules');
+  expect(rootMd).toContain('- [submod1](./submod1.md)');
+  expect(rootMd).toContain('## Constructs');
+  expect(rootMd).toContain('GreeterBucket');
   expect(submoduleMd).toMatchSnapshot();
 
 });
