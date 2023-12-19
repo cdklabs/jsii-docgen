@@ -206,12 +206,40 @@ export class Documentation {
 
   public async toIndexMarkdown(fileSuffix:string, options: RenderOptions) {
     const assembly = await this.createAssembly(undefined, { loose: true, validate: false });
-
-    return MarkdownRenderer.fromSubmodules(await this.listSubmodules(), fileSuffix, {
+    const submodules = await this.listSubmodules();
+    const schema = (await this.toJson({
       ...options,
+      submodule: undefined,
+      allSubmodules: false,
+    })).content;
+
+    const ref = new MarkdownDocument({ header: { title: 'API Reference' }, id: 'api-reference' });
+
+    if (schema.version !== CURRENT_SCHEMA_VERSION) {
+      throw new Error(`Unexpected schema version: ${schema.version}`);
+    }
+
+    const renderer = new MarkdownRenderer({
+      language: options.language,
       packageName: assembly.name,
       packageVersion: assembly.version,
     });
+
+    if (submodules.length) {
+      ref.section(renderer.visitSubmodules(submodules, fileSuffix));
+    }
+
+    if (schema.apiReference) {
+      ref.section(renderer.visitConstructs(schema.apiReference.constructs));
+      ref.section(renderer.visitStructs(schema.apiReference.structs));
+      ref.section(renderer.visitClasses(schema.apiReference.classes));
+      ref.section(renderer.visitInterfaces(schema.apiReference.interfaces));
+      ref.section(renderer.visitEnums(schema.apiReference.enums));
+    }
+
+    const documentation = new MarkdownDocument();
+    documentation.section(ref);
+    return documentation;
   }
 
   /**

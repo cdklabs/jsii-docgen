@@ -149,9 +149,11 @@ export class MarkdownRenderer {
   public visitSubmodules(submodules: readonly reflect.Submodule[], fileSuffix: string): MarkdownDocument {
     const md = new MarkdownDocument({ header: { title: 'Submodules' }, id: 'submodules' });
     md.lines('The following submodules are available:');
+    md.lines('');
     for (const submodule of submodules) {
       md.lines(`- [${submoduleRelName(submodule)}](./${submoduleRelName(submodule)}.${fileSuffix})`);
     }
+    md.lines('');
     return md;
   }
 
