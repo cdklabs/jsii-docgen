@@ -1,7 +1,7 @@
 import { ChildProcess, spawn } from 'child_process';
 import { EventEmitter } from 'events';
 import { tmpdir } from 'os';
-import { Readable, Writable } from 'stream';
+import { Pipe, Readable, Writable } from 'stream';
 import { NoSpaceLeftOnDevice, NpmError, UnInstallablePackageError } from '../../../src';
 import { Npm } from '../../../src/docgen/view/_npm';
 
@@ -146,6 +146,8 @@ class MockChildProcess extends EventEmitter implements ChildProcess {
     null as any,
   ] as ChildProcess['stdio'];
 
+  public readonly channel?: Pipe | null | undefined;
+
   public constructor(
     public readonly exitCode: number | null,
     {
@@ -160,6 +162,10 @@ class MockChildProcess extends EventEmitter implements ChildProcess {
       }
       this.emit('close', this.exitCode);
     });
+  }
+
+  [Symbol.dispose](): void {
+    throw new Error('Method not implemented.');
   }
 
   public addListener(): never {
