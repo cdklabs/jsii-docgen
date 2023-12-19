@@ -41,8 +41,9 @@ const project = new CdklabsTypeScriptProject({
   },
   autoApproveUpgrades: true,
 
-  minNodeVersion: '16.0.0',
-  workflowNodeVersion: '16.x',
+  minNodeVersion: '18.12.0',
+  setNodeEngineVersion: false,
+  workflowNodeVersion: '18.x',
   jestOptions: {
     jestConfig: {
       setupFilesAfterEnv: ['<rootDir>/test/setup-jest.ts'],
