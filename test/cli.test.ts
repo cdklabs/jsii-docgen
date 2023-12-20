@@ -89,6 +89,7 @@ test('specify languages and split-by-submodule creates submodule files next to o
   const rootTs = readFileSync(join(fixture, 'docs/API.typescript.md'), 'utf-8');
   const submoduleTs = readFileSync(join(fixture, 'docs/submod1.typescript.md'), 'utf-8');
   expect(rootTs).toMatchSnapshot('API.typescript.md');
+  expect(rootTs).toContain('./submod1.typescript.md');
   expect(rootTs).toContain('greetWithSalutation');
   expect(submoduleTs).toMatchSnapshot('submod1.typescript.md');
   expect(submoduleTs).toContain('goodbyeWithPhrase');
@@ -97,6 +98,7 @@ test('specify languages and split-by-submodule creates submodule files next to o
   const rootPy = readFileSync(join(fixture, 'docs/API.python.md'), 'utf-8');
   const submodulePy = readFileSync(join(fixture, 'docs/submod1.python.md'), 'utf-8');
   expect(rootPy).toMatchSnapshot('API.python.md');
+  expect(rootPy).toContain('./submod1.python.md');
   expect(rootPy).toContain('greet_with_salutation');
   expect(submodulePy).toMatchSnapshot('submod1.python.md');
   expect(submodulePy).toContain('goodbye_with_phrase');
