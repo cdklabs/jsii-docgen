@@ -71,6 +71,7 @@ new submod1.GoodbyeBucket(scope: Construct, id: string, props?: BucketProps)
 | <code><a href="#construct-library.submod1.GoodbyeBucket.addLifecycleRule">addLifecycleRule</a></code> | Add a lifecycle rule to the bucket. |
 | <code><a href="#construct-library.submod1.GoodbyeBucket.addMetric">addMetric</a></code> | Adds a metrics configuration for the CloudWatch request metrics from the bucket. |
 | <code><a href="#construct-library.submod1.GoodbyeBucket.goodbye">goodbye</a></code> | *No description.* |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.goodbyeWithPhrase">goodbyeWithPhrase</a></code> | *No description.* |
 
 ---
 
@@ -728,6 +729,18 @@ The metric configuration to add.
 public goodbye(): void
 \`\`\`
 
+##### \`goodbyeWithPhrase\` <a name="goodbyeWithPhrase" id="construct-library.submod1.GoodbyeBucket.goodbyeWithPhrase"></a>
+
+\`\`\`typescript
+public goodbyeWithPhrase(phrase: string): void
+\`\`\`
+
+###### \`phrase\`<sup>Required</sup> <a name="phrase" id="construct-library.submod1.GoodbyeBucket.goodbyeWithPhrase.parameter.phrase"></a>
+
+- *Type:* string
+
+---
+
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
 | **Name** | **Description** |
@@ -1133,6 +1146,7 @@ new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 | <code><a href="#construct-library.GreeterBucket.addLifecycleRule">addLifecycleRule</a></code> | Add a lifecycle rule to the bucket. |
 | <code><a href="#construct-library.GreeterBucket.addMetric">addMetric</a></code> | Adds a metrics configuration for the CloudWatch request metrics from the bucket. |
 | <code><a href="#construct-library.GreeterBucket.greet">greet</a></code> | *No description.* |
+| <code><a href="#construct-library.GreeterBucket.greetWithSalutation">greetWithSalutation</a></code> | *No description.* |
 
 ---
 
@@ -1789,6 +1803,18 @@ The metric configuration to add.
 \`\`\`typescript
 public greet(): void
 \`\`\`
+
+##### \`greetWithSalutation\` <a name="greetWithSalutation" id="construct-library.GreeterBucket.greetWithSalutation"></a>
+
+\`\`\`typescript
+public greetWithSalutation(salution: string): void
+\`\`\`
+
+###### \`salution\`<sup>Required</sup> <a name="salution" id="construct-library.GreeterBucket.greetWithSalutation.parameter.salution"></a>
+
+- *Type:* string
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -2526,6 +2552,7 @@ Rules that define when a redirect is applied and the redirect behavior.
 | <code><a href="#construct-library.submod1.GoodbyeBucket.addLifecycleRule">add_lifecycle_rule</a></code> | Add a lifecycle rule to the bucket. |
 | <code><a href="#construct-library.submod1.GoodbyeBucket.addMetric">add_metric</a></code> | Adds a metrics configuration for the CloudWatch request metrics from the bucket. |
 | <code><a href="#construct-library.submod1.GoodbyeBucket.goodbye">goodbye</a></code> | *No description.* |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.goodbyeWithPhrase">goodbye_with_phrase</a></code> | *No description.* |
 
 ---
 
@@ -3719,6 +3746,20 @@ The metrics configuration includes only objects that meet the filter's criteria.
 def goodbye() -> None
 \`\`\`
 
+##### \`goodbye_with_phrase\` <a name="goodbye_with_phrase" id="construct-library.submod1.GoodbyeBucket.goodbyeWithPhrase"></a>
+
+\`\`\`python
+def goodbye_with_phrase(
+  phrase: str
+) -> None
+\`\`\`
+
+###### \`phrase\`<sup>Required</sup> <a name="phrase" id="construct-library.submod1.GoodbyeBucket.goodbyeWithPhrase.parameter.phrase"></a>
+
+- *Type:* str
+
+---
+
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
 | **Name** | **Description** |
@@ -4574,6 +4615,7 @@ Rules that define when a redirect is applied and the redirect behavior.
 | <code><a href="#construct-library.GreeterBucket.addLifecycleRule">add_lifecycle_rule</a></code> | Add a lifecycle rule to the bucket. |
 | <code><a href="#construct-library.GreeterBucket.addMetric">add_metric</a></code> | Adds a metrics configuration for the CloudWatch request metrics from the bucket. |
 | <code><a href="#construct-library.GreeterBucket.greet">greet</a></code> | *No description.* |
+| <code><a href="#construct-library.GreeterBucket.greetWithSalutation">greet_with_salutation</a></code> | *No description.* |
 
 ---
 
@@ -5766,6 +5808,20 @@ The metrics configuration includes only objects that meet the filter's criteria.
 \`\`\`python
 def greet() -> None
 \`\`\`
+
+##### \`greet_with_salutation\` <a name="greet_with_salutation" id="construct-library.GreeterBucket.greetWithSalutation"></a>
+
+\`\`\`python
+def greet_with_salutation(
+  salution: str
+) -> None
+\`\`\`
+
+###### \`salution\`<sup>Required</sup> <a name="salution" id="construct-library.GreeterBucket.greetWithSalutation.parameter.salution"></a>
+
+- *Type:* str
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -12645,6 +12701,7 @@ new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 | <code><a href="#construct-library.GreeterBucket.addLifecycleRule">addLifecycleRule</a></code> | Add a lifecycle rule to the bucket. |
 | <code><a href="#construct-library.GreeterBucket.addMetric">addMetric</a></code> | Adds a metrics configuration for the CloudWatch request metrics from the bucket. |
 | <code><a href="#construct-library.GreeterBucket.greet">greet</a></code> | *No description.* |
+| <code><a href="#construct-library.GreeterBucket.greetWithSalutation">greetWithSalutation</a></code> | *No description.* |
 
 ---
 
@@ -13302,6 +13359,18 @@ The metric configuration to add.
 public greet(): void
 \`\`\`
 
+##### \`greetWithSalutation\` <a name="greetWithSalutation" id="construct-library.GreeterBucket.greetWithSalutation"></a>
+
+\`\`\`typescript
+public greetWithSalutation(salution: string): void
+\`\`\`
+
+###### \`salution\`<sup>Required</sup> <a name="salution" id="construct-library.GreeterBucket.greetWithSalutation.parameter.salution"></a>
+
+- *Type:* string
+
+---
+
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
 | **Name** | **Description** |
@@ -13718,6 +13787,7 @@ new submod1.GoodbyeBucket(scope: Construct, id: string, props?: BucketProps)
 | <code><a href="#construct-library.submod1.GoodbyeBucket.addLifecycleRule">addLifecycleRule</a></code> | Add a lifecycle rule to the bucket. |
 | <code><a href="#construct-library.submod1.GoodbyeBucket.addMetric">addMetric</a></code> | Adds a metrics configuration for the CloudWatch request metrics from the bucket. |
 | <code><a href="#construct-library.submod1.GoodbyeBucket.goodbye">goodbye</a></code> | *No description.* |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.goodbyeWithPhrase">goodbyeWithPhrase</a></code> | *No description.* |
 
 ---
 
@@ -14374,6 +14444,18 @@ The metric configuration to add.
 \`\`\`typescript
 public goodbye(): void
 \`\`\`
+
+##### \`goodbyeWithPhrase\` <a name="goodbyeWithPhrase" id="construct-library.submod1.GoodbyeBucket.goodbyeWithPhrase"></a>
+
+\`\`\`typescript
+public goodbyeWithPhrase(phrase: string): void
+\`\`\`
+
+###### \`phrase\`<sup>Required</sup> <a name="phrase" id="construct-library.submod1.GoodbyeBucket.goodbyeWithPhrase.parameter.phrase"></a>
+
+- *Type:* string
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -14797,6 +14879,7 @@ new GreeterBucket(scope: Construct, id: string, props?: BucketProps)
 | <code><a href="#construct-library.GreeterBucket.addLifecycleRule">addLifecycleRule</a></code> | Add a lifecycle rule to the bucket. |
 | <code><a href="#construct-library.GreeterBucket.addMetric">addMetric</a></code> | Adds a metrics configuration for the CloudWatch request metrics from the bucket. |
 | <code><a href="#construct-library.GreeterBucket.greet">greet</a></code> | *No description.* |
+| <code><a href="#construct-library.GreeterBucket.greetWithSalutation">greetWithSalutation</a></code> | *No description.* |
 
 ---
 
@@ -15454,6 +15537,18 @@ The metric configuration to add.
 public greet(): void
 \`\`\`
 
+##### \`greetWithSalutation\` <a name="greetWithSalutation" id="construct-library.GreeterBucket.greetWithSalutation"></a>
+
+\`\`\`typescript
+public greetWithSalutation(salution: string): void
+\`\`\`
+
+###### \`salution\`<sup>Required</sup> <a name="salution" id="construct-library.GreeterBucket.greetWithSalutation.parameter.salution"></a>
+
+- *Type:* string
+
+---
+
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
 | **Name** | **Description** |
@@ -15870,6 +15965,7 @@ new submod1.GoodbyeBucket(scope: Construct, id: string, props?: BucketProps)
 | <code><a href="#construct-library.submod1.GoodbyeBucket.addLifecycleRule">addLifecycleRule</a></code> | Add a lifecycle rule to the bucket. |
 | <code><a href="#construct-library.submod1.GoodbyeBucket.addMetric">addMetric</a></code> | Adds a metrics configuration for the CloudWatch request metrics from the bucket. |
 | <code><a href="#construct-library.submod1.GoodbyeBucket.goodbye">goodbye</a></code> | *No description.* |
+| <code><a href="#construct-library.submod1.GoodbyeBucket.goodbyeWithPhrase">goodbyeWithPhrase</a></code> | *No description.* |
 
 ---
 
@@ -16526,6 +16622,18 @@ The metric configuration to add.
 \`\`\`typescript
 public goodbye(): void
 \`\`\`
+
+##### \`goodbyeWithPhrase\` <a name="goodbyeWithPhrase" id="construct-library.submod1.GoodbyeBucket.goodbyeWithPhrase"></a>
+
+\`\`\`typescript
+public goodbyeWithPhrase(phrase: string): void
+\`\`\`
+
+###### \`phrase\`<sup>Required</sup> <a name="phrase" id="construct-library.submod1.GoodbyeBucket.goodbyeWithPhrase.parameter.phrase"></a>
+
+- *Type:* string
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
