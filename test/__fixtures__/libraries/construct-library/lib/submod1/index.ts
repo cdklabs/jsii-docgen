@@ -5,4 +5,8 @@ export class GoodbyeBucket extends s3.Bucket {
   public goodbye() {
     console.log(this.bucketName);
   }
+
+  public goodbyeWithPhrase(phrase: string) {
+    console.log(phrase + ' ' + this.bucketName);
+  }
 }

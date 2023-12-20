@@ -10,26 +10,18 @@ type GenerateOptions = {
   submodule?: string;
   allSubmodules?: boolean;
   splitBySubmodules?: boolean;
-  format?: 'md' | 'json';
-  output?: string;
+  format: 'md' | 'json';
+  output: string;
 }
 
 async function generateForLanguage(docs: Documentation, options: GenerateOptions) {
-  const { format, output = 'API' } = options;
-  const fileSuffix = format === 'md' ? 'md' : 'json';
-  let submoduleSuffix = fileSuffix;
-
-  const outputFileName = output.endsWith(`.${fileSuffix}`)
-    ? output.slice(0, -(fileSuffix.length + 1))
-    : output;
+  const { format, output } = options;
   // e.g. API.typescript as name
-  if (outputFileName.includes('.')) {
-    const languageSeparator = outputFileName.split('.')[1];
-    submoduleSuffix = `${languageSeparator}.${fileSuffix}`;
-  }
+  const splitByLanguage = output.endsWith(`.${options.language.name}`);
+  const submoduleSuffix = splitByLanguage ? `${options.language.name}.${format}` : format;
 
   // Ensure the output path exists
-  const outputPath = path.dirname(outputFileName);
+  const outputPath = path.dirname(output);
   await fs.mkdir(outputPath, { recursive: true });
 
   if (options.splitBySubmodules) {
@@ -49,10 +41,10 @@ async function generateForLanguage(docs: Documentation, options: GenerateOptions
       await fs.writeFile(path.join(outputPath, `${submoduleRelName(submodule)}.${submoduleSuffix}`), content.render());
     }
 
-    await fs.writeFile(`${outputFileName}.${fileSuffix}`, await (await docs.toIndexMarkdown(submoduleSuffix, options)).render());
+    await fs.writeFile(`${output}.${format}`, await (await docs.toIndexMarkdown(submoduleSuffix, options)).render());
   } else {
     const content = await (format === 'md' ? docs.toMarkdown(options) : docs.toJson(options));
-    await fs.writeFile(`${outputFileName}.${fileSuffix}`, content.render());
+    await fs.writeFile(`${output}.${format}`, content.render());
   }
 }
 
@@ -78,22 +70,35 @@ export async function main() {
     ? Documentation.forPackage(args.package)
     : Documentation.forProject(process.cwd()));
 
-  const options = (lang: string, output?: string): GenerateOptions => ({
-    readme,
-    language: Language.fromString(lang),
-    submodule,
-    allSubmodules,
-    splitBySubmodules,
-    format: args.format as 'md' | 'json',
-    output,
-  });
+  const options = (lang: string, output: string = 'API', includeLanguageInOutputName = false): GenerateOptions => {
+    const format = args.format === 'md' ? 'md' : 'json';
+
+    // Clean the user provided output of a possible file ending
+    let outputFileName = output.endsWith(`.${format}`)
+      ? output.slice(0, -(format.length + 1))
+      : output;
+
+    // for multi language docs, include the language in the filename
+    if (includeLanguageInOutputName) {
+      outputFileName = `${outputFileName}.${lang}`;
+    }
+
+    return ({
+      readme,
+      language: Language.fromString(lang),
+      submodule,
+      allSubmodules,
+      splitBySubmodules,
+      format,
+      output: outputFileName,
+    });
+  };
 
   if (args.language.length <= 1) {
     await generateForLanguage(docs, options(args.language[0], args.output));
   } else {
     for (const lang of args.language) {
-      const output = `${args.output ?? 'API'}.${lang}`;
-      await generateForLanguage(docs, options(lang, output));
+      await generateForLanguage(docs, options(lang, args.output, true));
     }
   }
 }
