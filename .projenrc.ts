@@ -61,10 +61,11 @@ const project = new CdklabsTypeScriptProject({
 // Suppress upgrade prompts, in particular from test runs.
 project.tasks.addEnvironment('JSII_SUPPRESS_UPGRADE_PROMPT', 'true');
 
-// Add the new version line here, and remove any that have reached EOS.
+// Add the new version line here
 new RosettaPeerDependency(project, {
   supportedVersions: {
     [RosettaVersionLines.V1_X]: '^1.85.0',
+    [RosettaVersionLines.V5_0]: '~5.0.14',
     [RosettaVersionLines.V5_1]: '~5.1.2',
     [RosettaVersionLines.V5_2]: '~5.2.0',
     [RosettaVersionLines.V5_3]: '~5.3.0',

@@ -5,6 +5,7 @@ const JSII_ROSETTA = 'jsii-rosetta';
 
 export enum RosettaVersionLines {
   V1_X,
+  V5_0,
   V5_1,
   V5_2,
   V5_3,
