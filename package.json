@@ -78,6 +78,7 @@
       "<rootDir>/test/setup-jest.ts"
     ],
     "testMatch": [
+      "<rootDir>/test/**/*.test.ts",
       "<rootDir>/src/**/__tests__/**/*.ts?(x)",
       "<rootDir>/(test|src)/**/*(*.)@(spec|test).ts?(x)"
     ],

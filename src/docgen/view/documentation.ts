@@ -407,7 +407,8 @@ export class Documentation {
       });
 
       const ts = new reflect.TypeSystem();
-      for (let dotJsii of await glob.promise(`${this.assembliesDir}/**/${SPEC_FILE_NAME}`)) {
+      const searchPattern = normalizePathForGlob(this.assembliesDir) + `/**/${SPEC_FILE_NAME}`;
+      for (let dotJsii of await glob.promise(searchPattern)) {
         // we only transliterate the top level assembly and not the entire type-system.
         // note that the only reason to translate dependant assemblies is to show code examples
         // for expanded python arguments - which we don't to right now anyway.
@@ -555,4 +556,12 @@ function maybeCorruptedAssemblyError(error: Error): CorruptedAssemblyError | und
     return new CorruptedAssemblyError(error.message);
   }
   return;
+}
+
+/**
+ * glob needs the pattern to only use forward slashes.
+ * So we split the path based on the current platforms separator and re-join using /.
+ */
+function normalizePathForGlob(pattern: string): string {
+  return path.normalize(pattern).split(path.sep).join(path.posix.sep);
 }

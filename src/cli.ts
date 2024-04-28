@@ -59,7 +59,7 @@ export async function main() {
     .option('readme', { alias: 'r', type: 'boolean', required: false, desc: 'Include the user defined README.md in the documentation.' })
     .option('submodule', { alias: 's', type: 'string', required: false, desc: 'Generate docs for a specific submodule (or "root")' })
     .option('split-by-submodule', { type: 'boolean', required: false, desc: 'Generate a separate file for each submodule' })
-    .example('$0', 'Generate documentation for the current module as a single file (auto-resolves node depedencies)')
+    .example('$0', 'Generate documentation for the current module as a single file (auto-resolves node dependencies)')
     .argv;
 
   const submodule = args.submodule === 'root' ? undefined : args.submodule;

@@ -79,7 +79,7 @@ jobs:
           git commit -s -m "chore: self mutation"
           git push origin HEAD:$PULL_REQUEST_REF
   rosetta-compat:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     permissions: {}
     env:
       CI: "true"
@@ -106,6 +106,9 @@ jobs:
         run: test $(npx jsii-rosetta --version) = "${{ matrix.rosetta }}"
     strategy:
       matrix:
+        include:
+          - rosetta: 5.4.0
+            os: windows-latest
         rosetta:
           - 1.85.0
           - 5.0.14
@@ -113,3 +116,5 @@ jobs:
           - 5.2.0
           - 5.3.0
           - 5.4.0
+        os:
+          - ubuntu-latest
