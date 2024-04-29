@@ -76,7 +76,7 @@ export class RosettaPeerDependency extends Component {
       },
       {
         name: 'compile+test',
-        run: ['npx projen compile', 'npx projen test'].join('\n'),
+        run: ['npx projen compile', 'npx projen test --runInBand'].join('\n'),
       },
       {
         name: 'Check Rosetta version',

@@ -101,7 +101,7 @@ jobs:
       - name: compile+test
         run: |-
           npx projen compile
-          npx projen test
+          npx projen test --runInBand
       - name: Check Rosetta version
         run: test $(npx jsii-rosetta --version) = "${{ matrix.rosetta }}"
     strategy:
