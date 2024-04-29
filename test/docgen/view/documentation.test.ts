@@ -76,7 +76,7 @@ test('package installation does not run lifecycle hooks, includes optional depen
   }
 });
 
-// This test is only revent when running on non-macOS platforms.
+// This test is only relevant when running on non-macOS platforms.
 (process.platform === 'darwin' ? test.skip : test)('package installation uses --force when EBADPLATFORM is encountered', async () => {
   // The package has a hard dependency on fsevents, which only supports macOS platforms.
   const docs = await Documentation.forPackage(
