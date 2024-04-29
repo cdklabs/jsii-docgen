@@ -25,11 +25,14 @@ export class RosettaPeerDependency extends Component {
     super(project);
 
     const constraint = this.calculateVersionConstraint(options.supportedVersions);
+    const minVersions = this.calculateMinimalVersions(options.supportedVersions);
+    const latestVersion = this.calculateLatestVersion(options.supportedVersions);
+
     project.addDevDeps(constraint);
     project.addPeerDeps(constraint);
 
     project.github?.tryFindWorkflow('build')?.addJob('rosetta-compat', {
-      runsOn: ['ubuntu-latest'],
+      runsOn: ['${{ matrix.os }}'],
       permissions: {},
       env: {
         CI: 'true',
@@ -38,8 +41,13 @@ export class RosettaPeerDependency extends Component {
       strategy: {
         matrix: {
           domain: {
-            rosetta: this.calculateMinimalVersions(options.supportedVersions),
+            rosetta: minVersions,
+            os: ['ubuntu-latest'],
           },
+          include: [{
+            rosetta: latestVersion,
+            os: 'windows-latest',
+          }],
         },
       },
       steps: [{
@@ -68,7 +76,7 @@ export class RosettaPeerDependency extends Component {
       },
       {
         name: 'compile+test',
-        run: ['npx projen compile', 'npx projen test'].join('\n'),
+        run: ['npx projen compile', 'npx projen test --runInBand'].join('\n'),
       },
       {
         name: 'Check Rosetta version',
@@ -94,5 +102,10 @@ export class RosettaPeerDependency extends Component {
     }
 
     return discoveredVersions;
+  }
+
+  private calculateLatestVersion(versions: RosettaPeerDependencyOptions['supportedVersions']): string {
+    const discoveredVersions = this.calculateMinimalVersions(versions);
+    return discoveredVersions.sort().pop() ?? 'latest';
   }
 }

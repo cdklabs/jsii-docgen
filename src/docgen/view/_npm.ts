@@ -38,7 +38,7 @@ export class Npm {
       // code execution as part of the install command using npm hooks. (e.g postInstall)
       '--ignore-scripts',
       // save time by not running audit
-      '--no-autit',
+      '--no-audit',
       // ensures npm does not insert anything in $PATH
       '--no-bin-links',
       // don't write or update a package-lock.json file
@@ -132,17 +132,20 @@ export class Npm {
       return this.#npmCommand;
     }
 
+    // Get the platform specific npm command
+    const npm = npmPlatformAwareCommand();
+
     try {
       // If the npm in $PATH is >= v7, we can use that directly. The
       // `npm version --json` command returns a JSON object containing the
       // versions of several components (npm, node, v8, etc...). We are only
       // interested in the `npm` key here.
       const { exitCode, stdout } = await this.runCommand(
-        'npm', ['version', '--json'],
+        npm, ['version', '--json'],
         chunksToObject,
       );
       if (exitCode === 0 && major((stdout as any).npm) >= 7) {
-        return this.#npmCommand = 'npm';
+        return this.#npmCommand = npm;
       }
     } catch (e) {
       this.logger('Could not determine version of npm in $PATH:', e);
@@ -152,7 +155,7 @@ export class Npm {
     // the full type system.
     this.logger('The npm in $PATH is not >= v7. Installing npm@8 locally...');
     const result = await this.runCommand(
-      'npm',
+      npm,
       ['install', 'npm@8', '--no-package-lock', '--no-save', '--json'],
       chunksToObject,
       {
@@ -162,7 +165,7 @@ export class Npm {
     );
     assertSuccess(result);
 
-    this.#npmCommand = join(this.workingDirectory, 'node_modules', '.bin', 'npm');
+    this.#npmCommand = join(this.workingDirectory, 'node_modules', '.bin', npm);
     this.logger(`Done installing npm@8 at ${this.#npmCommand}`);
     return this.#npmCommand;
   }
@@ -188,7 +191,10 @@ export class Npm {
     options?: SpawnOptionsWithoutStdio,
   ): Promise<CommandResult<T>> {
     return new Promise<CommandResult<T>>((ok, ko) => {
-      const child = spawn(command, args, { ...options, stdio: ['inherit', 'pipe', 'pipe'] });
+      // On Windows, spawning a program ending in .cmd or .bat needs to run in a shell
+      // https://nodejs.org/en/blog/vulnerability/april-2024-security-releases-2
+      const shell = onWindows() && (command.endsWith('.cmd') || command.endsWith('.bat'));
+      const child = spawn(command, args, { shell, ...options, stdio: ['inherit', 'pipe', 'pipe'] });
       const stdout = new Array<Buffer>();
       child.stdout.on('data', (chunk) => {
         stdout.push(Buffer.from(chunk));
@@ -310,7 +316,7 @@ function chunksToObject(chunks: readonly Buffer[], encoding: BufferEncoding = 'u
     // observed these log lines always start with 'npm', so we filter those out.
     // for example: "npm notice New patch version of npm available! 8.1.0 -> 8.1.3"
     // for example: "npm ERR! must provide string spec"
-    const onlyJson = raw.split(os.EOL)
+    const onlyJson = raw.split(/[\r\n]+/) // split on any newlines, because npm returns inconsistent newline characters on Windows
       .filter(l => !l.startsWith('npm'))
       // Suppress debugger messages, if present...
       .filter(l => l !== 'Debugger attached.')
@@ -330,3 +336,22 @@ type ResponseObject =
   | { readonly error: { readonly code: string; readonly summary: string; readonly detail: string } }
   // The successful objects are treated as opaque blobs here
   | { readonly error: undefined; readonly [key: string]: unknown };
+
+/**
+ * Helper to detect if we are running on Windows.
+ */
+function onWindows() {
+  return process.platform === 'win32';
+}
+
+/**
+ * Get the npm binary path depending on the platform.
+ * @returns "npm.cmd" on Windows, otherwise "npm"
+ */
+function npmPlatformAwareCommand() {
+  if (onWindows()) {
+    return 'npm.cmd';
+  }
+
+  return 'npm';
+}

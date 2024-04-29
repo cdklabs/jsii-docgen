@@ -47,6 +47,11 @@ const project = new CdklabsTypeScriptProject({
   jestOptions: {
     jestConfig: {
       setupFilesAfterEnv: ['<rootDir>/test/setup-jest.ts'],
+      testMatch: [
+        // On Windows the standard tests paths are not matched
+        // Use this simplified version instead that works good enough in this repo
+        '<rootDir>/test/**/*.test.ts',
+      ],
     },
   },
   tsconfig: {

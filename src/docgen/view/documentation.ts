@@ -407,7 +407,14 @@ export class Documentation {
       });
 
       const ts = new reflect.TypeSystem();
-      for (let dotJsii of await glob.promise(`${this.assembliesDir}/**/${SPEC_FILE_NAME}`)) {
+
+      // assembliesDir might include backslashes on Windows.
+      // The glob pattern must only used forward slashes, so we pass the assembliesDir as CWD which does not have this restriction
+      const assemblies = await glob.promise(`**/${SPEC_FILE_NAME}`, {
+        cwd: path.normalize(this.assembliesDir),
+        absolute: true,
+      });
+      for (let dotJsii of assemblies) {
         // we only transliterate the top level assembly and not the entire type-system.
         // note that the only reason to translate dependant assemblies is to show code examples
         // for expanded python arguments - which we don't to right now anyway.
