@@ -191,7 +191,10 @@ export class Npm {
     options?: SpawnOptionsWithoutStdio,
   ): Promise<CommandResult<T>> {
     return new Promise<CommandResult<T>>((ok, ko) => {
-      const child = spawn(command, args, { ...options, stdio: ['inherit', 'pipe', 'pipe'] });
+      // On Windows, spawning a program ending in .cmd or .bat needs to run in a shell
+      // https://nodejs.org/en/blog/vulnerability/april-2024-security-releases-2
+      const shell = onWindows() && (command.endsWith('.cmd') || command.endsWith('.bat'));
+      const child = spawn(command, args, { shell, ...options, stdio: ['inherit', 'pipe', 'pipe'] });
       const stdout = new Array<Buffer>();
       child.stdout.on('data', (chunk) => {
         stdout.push(Buffer.from(chunk));
@@ -335,11 +338,18 @@ type ResponseObject =
   | { readonly error: undefined; readonly [key: string]: unknown };
 
 /**
+ * Helper to detect if we are running on Windows.
+ */
+function onWindows() {
+  return process.platform === 'win32';
+}
+
+/**
  * Get the npm binary path depending on the platform.
- * @returns "npm.exe" on Windows, otherwise "npm"
+ * @returns "npm.cmd" on Windows, otherwise "npm"
  */
 function npmPlatformAwareCommand() {
-  if (process.platform === 'win32') {
+  if (onWindows()) {
     return 'npm.cmd';
   }
 
