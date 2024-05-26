@@ -4740,9 +4740,9 @@ typedarray@^0.0.6:
   integrity sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==
 
 typescript@next:
-  version "5.5.0-dev.20240524"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.5.0-dev.20240524.tgz#991effac3818437c1eccfb951b7e16f676b9da42"
-  integrity sha512-x37/rBPLFB451GxMIKP4oVm18+iMs34VzcbyoqDLHX8+TfGZdiTEIfZOi2p6nWJTV6jmd8qyIc6KnAR9tHWxsw==
+  version "5.5.0-dev.20240525"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.5.0-dev.20240525.tgz#f26c905b73d3fbfc8e2df0c059c08d89b8254a98"
+  integrity sha512-2Sf4a221Bf8unaxwurXf2QJKl4aXSnMHGl1h80eytV4Snelo84Pl14FE8WPvZCmWPWy8ZbT8m5jO/8rriR3f9Q==
 
 typescript@~5.4, typescript@~5.4.5:
   version "5.4.5"
