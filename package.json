@@ -65,7 +65,7 @@
     "case": "^1.6.3",
     "fs-extra": "^10.1.0",
     "glob": "^8.1.0",
-    "glob-promise": "^6.0.5",
+    "glob-promise": "^6.0.7",
     "jsii-reflect": "^1.99.0",
     "semver": "^7.6.2",
     "yargs": "^16.2.0"
