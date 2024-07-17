@@ -67,7 +67,7 @@
     "glob": "^8.1.0",
     "glob-promise": "^6.0.7",
     "jsii-reflect": "^1.101.0",
-    "semver": "^7.6.2",
+    "semver": "^7.6.3",
     "yargs": "^16.2.0"
   },
   "main": "lib/index.js",
