@@ -75,6 +75,7 @@ new RosettaPeerDependency(project, {
     [RosettaVersionLines.V5_2]: '~5.2.0',
     [RosettaVersionLines.V5_3]: '~5.3.0',
     [RosettaVersionLines.V5_4]: '~5.4.0',
+    [RosettaVersionLines.V5_5]: '~5.5.0',
   },
 });
 
