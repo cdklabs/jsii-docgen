@@ -78,7 +78,7 @@ jobs:
           git add .
           git commit -s -m "chore: self mutation"
           git push origin HEAD:$PULL_REQUEST_REF
-  rosetta-compat:
+  rosetta-matrix:
     runs-on: ${{ matrix.os }}
     permissions: {}
     env:
@@ -119,3 +119,17 @@ jobs:
           - 5.5.0
         os:
           - ubuntu-latest
+  rosetta-compat:
+    name: Rosetta Compat Tests
+    needs: rosetta-matrix
+    runs-on: ubuntu-latest
+    permissions: {}
+    env:
+      CI: "true"
+    if: always()
+    steps:
+      - name: Tests result
+        run: echo ${{needs.rosetta-matrix.result}}
+      - name: Set status based on matrix build
+        if: ${{ needs.rosetta-matrix.result != 'success' }}
+        run: exit 1

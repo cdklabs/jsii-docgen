@@ -32,7 +32,7 @@ export class RosettaPeerDependency extends Component {
     project.addDevDeps(constraint);
     project.addPeerDeps(constraint);
 
-    project.github?.tryFindWorkflow('build')?.addJob('rosetta-compat', {
+    project.github?.tryFindWorkflow('build')?.addJob('rosetta-matrix', {
       runsOn: ['${{ matrix.os }}'],
       permissions: {},
       env: {
@@ -83,6 +83,26 @@ export class RosettaPeerDependency extends Component {
         name: 'Check Rosetta version',
         run: `test $(npx ${JSII_ROSETTA} --version) = "\${{ matrix.rosetta }}"`,
       }],
+    });
+    project.github?.tryFindWorkflow('build')?.addJob('rosetta-compat', {
+      // This is a simple "join target" to simplify branch protection rules.
+      env: { CI: 'true' },
+      name: 'Rosetta Compat Tests',
+      needs: ['rosetta-matrix'],
+      permissions: {},
+      runsOn: ['ubuntu-latest'],
+      if: 'always()',
+      steps: [
+        {
+          name: 'Tests result',
+          run: 'echo ${{needs.rosetta-matrix.result}}',
+        },
+        {
+          if: "${{ needs.rosetta-matrix.result != 'success' }}",
+          name: 'Set status based on matrix build',
+          run: 'exit 1',
+        },
+      ],
     });
   }
 
