@@ -8,7 +8,7 @@ import { TargetLanguage, transliterateAssembly, UnknownSnippetMode } from 'jsii-
 import { Npm } from './_npm';
 import { ApiReference } from './api-reference';
 import { Readme } from './readme';
-import { CorruptedAssemblyError, LanguageNotSupportedError } from '../..';
+import { CorruptedAssemblyError, LanguageNotSupportedError, TransliterationError } from '../..';
 import { Json } from '../render/json';
 import { MarkdownDocument } from '../render/markdown-doc';
 import { MarkdownFormattingOptions, MarkdownRenderer } from '../render/markdown-render';
@@ -427,7 +427,7 @@ export class Documentation {
             await transliterateAssembly([packageDir], [language],
               { loose: options.loose, unknownSnippets: UnknownSnippetMode.FAIL, outdir: workdir });
           } catch (e: any) {
-            throw new LanguageNotSupportedError(`Laguage ${language} is not supported for package ${this.assemblyFqn} (cause: ${e.message})`);
+            throw new TransliterationError(`Could not transliterate snippets in '${this.assemblyFqn}' to ${language}: ${e.message}`);
           }
           dotJsii = path.join(workdir, `${SPEC_FILE_NAME}.${language}`);
         }

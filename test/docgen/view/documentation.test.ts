@@ -2,7 +2,7 @@ import * as child from 'child_process';
 import * as os from 'os';
 import * as path from 'path';
 import * as fs from 'fs-extra';
-import { Language, Documentation, UnInstallablePackageError, CorruptedAssemblyError, LanguageNotSupportedError } from '../../../src';
+import { Language, Documentation, UnInstallablePackageError, CorruptedAssemblyError, LanguageNotSupportedError, TransliterationError } from '../../../src';
 import { extractPackageName } from '../../../src/docgen/view/documentation';
 import { Assemblies } from '../assemblies';
 
@@ -269,10 +269,10 @@ test('throws unsupported language with invalid config', async () => {
   await expect(docs.toJson({ language: Language.GO })).rejects.toThrowError(LanguageNotSupportedError);
 });
 
-test('throws unsupported language when tablet was generated before rosetta supported go', async () => {
+test('throws transliteration error when tablet was generated before rosetta supported go', async () => {
   const docs = await Documentation.forPackage('aws-cdk-lib@2.16.0', { verbose: false });
-  await expect(docs.toMarkdown({ language: Language.GO })).rejects.toThrowError(LanguageNotSupportedError);
-  await expect(docs.toJson({ language: Language.GO })).rejects.toThrowError(LanguageNotSupportedError);
+  await expect(docs.toMarkdown({ language: Language.GO })).rejects.toThrowError(TransliterationError);
+  await expect(docs.toJson({ language: Language.GO })).rejects.toThrowError(TransliterationError);
 });
 
 test('does not throw if unrelated assembly is corrupted', async () => {
