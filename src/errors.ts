@@ -64,6 +64,11 @@ export class CorruptedAssemblyError extends DocGenError {}
 export class LanguageNotSupportedError extends DocGenError {};
 
 /**
+ * Raised when snippet transliteration into a target language failed.
+ */
+export class TransliterationError extends DocGenError {};
+
+/**
  * The error raised when `npm` commands fail with an "opaque" exit code,
  * attempting to obtain more information from the commands output.
  */
