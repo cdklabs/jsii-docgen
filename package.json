@@ -61,12 +61,12 @@
     "jsii-rosetta": "^1.85.0 || ~5.0.14 || ~5.1.2 || ~5.2.0 || ~5.3.0 || ~5.4.0 || ~5.5.0"
   },
   "dependencies": {
-    "@jsii/spec": "^1.102.0",
+    "@jsii/spec": "^1.103.0",
     "case": "^1.6.3",
     "fs-extra": "^10.1.0",
     "glob": "^8.1.0",
     "glob-promise": "^6.0.7",
-    "jsii-reflect": "^1.102.0",
+    "jsii-reflect": "^1.103.0",
     "semver": "^7.6.3",
     "yargs": "^16.2.0"
   },
