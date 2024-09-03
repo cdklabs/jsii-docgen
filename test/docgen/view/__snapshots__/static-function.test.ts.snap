@@ -28,6 +28,7 @@ exports[`csharp snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
   ],
   "usage": "using Amazon.CDK.AWS.ECR;
@@ -83,6 +84,7 @@ exports[`go snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
   ],
   "usage": "import "github.com/aws/aws-cdk-go/awscdkawsecr"
@@ -138,6 +140,7 @@ exports[`java snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
   ],
   "usage": "import software.amazon.awscdk.services.ecr.AuthorizationToken;
@@ -193,6 +196,7 @@ exports[`python snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
   ],
   "usage": "import aws_cdk.aws_ecr
@@ -252,6 +256,7 @@ exports[`typescript snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
   ],
   "usage": "import { AuthorizationToken } from '@aws-cdk/aws-ecr'

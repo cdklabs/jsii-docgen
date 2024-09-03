@@ -27,6 +27,7 @@ exports[`csharp snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -40,6 +41,7 @@ exports[`csharp snapshot 1`] = `
       "type": {
         "formattingPattern": "string",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -62,6 +64,7 @@ exports[`csharp snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
   ],
   "usage": "using Amazon.CDK.AWS.ECR;
@@ -113,6 +116,36 @@ resource properties.
 "
 `;
 
+exports[`csharp snapshot 3`] = `
+" Initializers <a name="Initializers" id="my-construct-library.MyVariadicClass.Initializer"></a>
+
+\`\`\`csharp
+using undefined;
+
+new MyVariadicClass(double Id, double VariadicProps);
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#my-construct-library.MyVariadicClass.Initializer.parameter.id">Id</a></code> | <code>double</code> | *No description.* |
+| <code><a href="#my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps">VariadicProps</a></code> | <code>double</code> | *No description.* |
+
+---
+
+# \`Id\`<sup>Required</sup> <a name="Id" id="my-construct-library.MyVariadicClass.Initializer.parameter.id"></a>
+
+- *Type:* double
+
+---
+
+# \`VariadicProps\`<sup>Required</sup> <a name="VariadicProps" id="my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps"></a>
+
+- *Type:* variadic double
+
+---
+"
+`;
+
 exports[`go snapshot 1`] = `
 {
   "displayName": "Initializer",
@@ -140,6 +173,7 @@ exports[`go snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -153,6 +187,7 @@ exports[`go snapshot 1`] = `
       "type": {
         "formattingPattern": "*string",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -175,6 +210,7 @@ exports[`go snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
   ],
   "usage": "import "github.com/aws/aws-cdk-go/awscdkawsecr"
@@ -226,6 +262,36 @@ resource properties.
 "
 `;
 
+exports[`go snapshot 3`] = `
+" Initializers <a name="Initializers" id="my-construct-library.MyVariadicClass.Initializer"></a>
+
+\`\`\`go
+import "github.com/acme/project-name/myconstructlibrary"
+
+myconstructlibrary.NewMyVariadicClass(id *f64, variadicProps *f64) MyVariadicClass
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#my-construct-library.MyVariadicClass.Initializer.parameter.id">id</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps">variadicProps</a></code> | <code>*f64</code> | *No description.* |
+
+---
+
+# \`id\`<sup>Required</sup> <a name="id" id="my-construct-library.MyVariadicClass.Initializer.parameter.id"></a>
+
+- *Type:* *f64
+
+---
+
+# \`variadicProps\`<sup>Required</sup> <a name="variadicProps" id="my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps"></a>
+
+- *Type:* variadic *f64
+
+---
+"
+`;
+
 exports[`java snapshot 1`] = `
 {
   "displayName": "Initializer",
@@ -253,6 +319,7 @@ exports[`java snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -266,6 +333,7 @@ exports[`java snapshot 1`] = `
       "type": {
         "formattingPattern": "java.lang.String",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -282,6 +350,7 @@ exports[`java snapshot 1`] = `
       "type": {
         "formattingPattern": "java.lang.Object",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -298,6 +367,7 @@ exports[`java snapshot 1`] = `
       "type": {
         "formattingPattern": "java.lang.String",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -314,6 +384,7 @@ exports[`java snapshot 1`] = `
       "type": {
         "formattingPattern": "java.lang.Object",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -344,6 +415,7 @@ exports[`java snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
   ],
   "usage": "import software.amazon.awscdk.services.ecr.CfnPublicRepository;
@@ -440,6 +512,36 @@ scoped id of the resource.
 "
 `;
 
+exports[`java snapshot 3`] = `
+" Initializers <a name="Initializers" id="my-construct-library.MyVariadicClass.Initializer"></a>
+
+\`\`\`java
+import .MyVariadicClass;
+
+new MyVariadicClass(java.lang.Number id, java.lang.Number variadicProps);
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#my-construct-library.MyVariadicClass.Initializer.parameter.id">id</a></code> | <code>java.lang.Number</code> | *No description.* |
+| <code><a href="#my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps">variadicProps</a></code> | <code>java.lang.Number</code> | *No description.* |
+
+---
+
+# \`id\`<sup>Required</sup> <a name="id" id="my-construct-library.MyVariadicClass.Initializer.parameter.id"></a>
+
+- *Type:* java.lang.Number
+
+---
+
+# \`variadicProps\`<sup>Required</sup> <a name="variadicProps" id="my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps"></a>
+
+- *Type:* variadic java.lang.Number
+
+---
+"
+`;
+
 exports[`python snapshot 1`] = `
 {
   "displayName": "Initializer",
@@ -467,6 +569,7 @@ exports[`python snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -480,6 +583,7 @@ exports[`python snapshot 1`] = `
       "type": {
         "formattingPattern": "str",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -496,6 +600,7 @@ exports[`python snapshot 1`] = `
       "type": {
         "formattingPattern": "typing.Any",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -512,6 +617,7 @@ exports[`python snapshot 1`] = `
       "type": {
         "formattingPattern": "str",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -528,6 +634,7 @@ exports[`python snapshot 1`] = `
       "type": {
         "formattingPattern": "typing.Any",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -558,6 +665,7 @@ exports[`python snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
   ],
   "usage": "import aws_cdk.aws_ecr
@@ -658,6 +766,39 @@ scoped id of the resource.
 "
 `;
 
+exports[`python snapshot 3`] = `
+" Initializers <a name="Initializers" id="my-construct-library.MyVariadicClass.Initializer"></a>
+
+\`\`\`python
+import sumu_constructs.core
+
+sumu_constructs.core.MyVariadicClass(
+  id: typing.Union[int, float],
+  variadic_props: typing.Union[int, float]
+)
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#my-construct-library.MyVariadicClass.Initializer.parameter.id">id</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
+| <code><a href="#my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps">variadic_props</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
+
+---
+
+# \`id\`<sup>Required</sup> <a name="id" id="my-construct-library.MyVariadicClass.Initializer.parameter.id"></a>
+
+- *Type:* typing.Union[int, float]
+
+---
+
+# \`variadic_props\`<sup>Required</sup> <a name="variadic_props" id="my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps"></a>
+
+- *Type:* variadic typing.Union[int, float]
+
+---
+"
+`;
+
 exports[`typescript snapshot 1`] = `
 {
   "displayName": "Initializer",
@@ -685,6 +826,7 @@ exports[`typescript snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -698,6 +840,7 @@ exports[`typescript snapshot 1`] = `
       "type": {
         "formattingPattern": "string",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -720,6 +863,7 @@ exports[`typescript snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
   ],
   "usage": "import { CfnPublicRepository } from '@aws-cdk/aws-ecr'
@@ -766,6 +910,36 @@ scoped id of the resource.
 - *Type:* <a href="#@aws-cdk/aws-ecr.CfnPublicRepositoryProps">CfnPublicRepositoryProps</a>
 
 resource properties.
+
+---
+"
+`;
+
+exports[`typescript snapshot 3`] = `
+" Initializers <a name="Initializers" id="my-construct-library.MyVariadicClass.Initializer"></a>
+
+\`\`\`typescript
+import { MyVariadicClass } from 'my-construct-library'
+
+new MyVariadicClass(id: number, variadicProps: number)
+\`\`\`
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#my-construct-library.MyVariadicClass.Initializer.parameter.id">id</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps">variadicProps</a></code> | <code>number</code> | *No description.* |
+
+---
+
+# \`id\`<sup>Required</sup> <a name="id" id="my-construct-library.MyVariadicClass.Initializer.parameter.id"></a>
+
+- *Type:* number
+
+---
+
+# \`variadicProps\`<sup>Required</sup> <a name="variadicProps" id="my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps"></a>
+
+- *Type:* variadic number
 
 ---
 "
