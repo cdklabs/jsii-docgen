@@ -28,3 +28,42 @@ test.each(Language.values())('%s snapshot', (language) => {
   expect(init).toMatchSnapshot();
   expect(markdown.visitInitializer(init).render()).toMatchSnapshot();
 });
+
+const variadicTestAssembly: reflect.Assembly = Assemblies.instance.variadicExampleTest;
+const findVariadicInitializer = (): reflect.Initializer => {
+  for (const klass of variadicTestAssembly.classes) {
+    if (klass.initializer) {
+      return klass.initializer;
+    }
+  }
+  throw new Error('Assembly does not contain an initializer');
+};
+
+const findVariadicParameter = (): reflect.Parameter => {
+  for (const klass of variadicTestAssembly.classes) {
+    if (klass.initializer) {
+      for (const param of klass.initializer.parameters) {
+        if (param.variadic) {
+          return param;
+        }
+      }
+    }
+  }
+  throw new Error('Assembly does not contain a parameter');
+};
+
+test('variadic parameter in initializer is correct', () => {
+  const variadicParameter = findVariadicParameter();
+  expect(variadicParameter.name).toEqual('variadicProps');
+  expect(variadicParameter.variadic).toEqual(true);
+});
+
+test.each(Language.values())('%s snapshot', (language) => {
+  const { transpile } = LANGUAGE_SPECIFIC[language.toString()];
+  const renderer = new MarkdownRenderer({ language, ...metadata });
+  const init = new Initializer(transpile, findVariadicInitializer()).toJson();
+  const markdown = renderer.visitInitializer(init).render();
+  // This asserts that the type parameter is marked as variadic:
+  expect(markdown).toContain('*Type:* variadic');
+  expect(markdown).toMatchSnapshot();
+});

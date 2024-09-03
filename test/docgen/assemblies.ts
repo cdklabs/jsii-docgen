@@ -29,6 +29,11 @@ export class Assemblies {
     this.addAssemblies(Assemblies.AWSCDK_1_106_0);
   }
 
+  // To test a simple assembly with variadic arguments
+  public get variadicExampleTest(): reflect.Assembly {
+    return this.ts.findAssembly('my-construct-library');
+  }
+
   public get withoutSubmodules(): reflect.Assembly {
     return this.ts.findAssembly('@aws-cdk/aws-ecr');
   }
