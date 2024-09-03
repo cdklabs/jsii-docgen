@@ -630,7 +630,9 @@ export class MarkdownRenderer {
     }
 
     for (const [key, value] of Object.entries(metadata)) {
-      md.bullet(`${MarkdownDocument.italic(`${key}:`)} ${value}`);
+      // To denote if a parameter is variadic
+      const variadicMarker = parameter.variadic ? 'variadic ' : '';
+      md.bullet(`${MarkdownDocument.italic(`${key}:`)} ${variadicMarker}${value}`);
     }
     md.lines('');
 

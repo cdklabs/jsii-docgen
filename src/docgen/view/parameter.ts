@@ -24,6 +24,7 @@ export class Parameter {
       optional: this.transpiledParam.optional === true ? true : undefined, // to save space
       default: this.parameter.spec.docs?.default,
       type: this.transpiledParam.typeReference.toJson(),
+      variadic: this.parameter.spec.variadic ?? false,
       docs: extractDocs(this.parameter.docs),
     };
   }
