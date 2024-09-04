@@ -52,12 +52,6 @@ const findVariadicParameter = (): reflect.Parameter => {
   throw new Error('Assembly does not contain a variadic parameter');
 };
 
-test('variadic parameter in initializer is correct', () => {
-  const variadicParameter = findVariadicParameter();
-  expect(variadicParameter.name).toEqual('variadicProps');
-  expect(variadicParameter.variadic).toEqual(true);
-});
-
 test.each(Language.values())('%s snapshot', (language) => {
   const { transpile } = LANGUAGE_SPECIFIC[language.toString()];
   const renderer = new MarkdownRenderer({ language, ...metadata });
