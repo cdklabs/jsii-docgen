@@ -136,6 +136,32 @@
             }
           ],
           "variadic": true
+        },
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "locationInModule": {
+            "filename": "src/index.ts",
+            "line": 27
+          },
+          "name": "myStaticFunction",
+          "parameters": [
+            {
+              "name": "staticSingleInput",
+              "type": {
+                "primitive": "number"
+              }
+            },
+            {
+              "name": "staticVariadicInput",
+              "type": {
+                "primitive": "number"
+              },
+              "variadic": true
+            }
+          ],
+          "variadic": true
         }
       ],
       "name": "MyVariadicClass",
