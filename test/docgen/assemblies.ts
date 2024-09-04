@@ -30,7 +30,7 @@ export class Assemblies {
   }
 
   // To test a simple assembly with variadic arguments
-  public get variadicExampleTest(): reflect.Assembly {
+  public get withVariadicParameter(): reflect.Assembly {
     return this.ts.findAssembly('my-construct-library');
   }
 
