@@ -643,27 +643,6 @@ export class MarkdownRenderer {
     return md;
   }
 
-  // Formats a parameter type accounting for variadic
-  // private formatParameterType(isVariadic: boolean, key: string, value: string): string {
-  //   if (!isVariadic) {
-  //     return `${MarkdownDocument.italic(`${key}:`)} ${value}`;
-  //   }
-
-  //   switch (this.language) {
-  //     case Language.TYPESCRIPT:
-  //       return `${MarkdownDocument.italic(`${key}:`)} ...${value}[]`;
-  //     case Language.PYTHON:
-  //       return `${MarkdownDocument.italic(`${key}:`)} *${value}`;
-  //     case Language.JAVA:
-  //       return `${MarkdownDocument.italic(`${key}:`)} ${value}...`;
-  //     case Language.CSHARP:
-  //       return `${MarkdownDocument.italic(`${key}:`)} params ${value}[]`;
-  //     case Language.GO:
-  //       return `${MarkdownDocument.italic(`${key}:`)} ...${value}`;
-  //   }
-  //   return '';
-  // }
-
   public visitInstanceMethod(
     method: MethodSchema,
   ): MarkdownDocument {
