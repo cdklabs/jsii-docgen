@@ -123,6 +123,7 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
       parentType: this.type(property.parentType),
       typeReference: typeRef,
       optional: property.optional,
+      variadic: false,
       declaration: this.formatProperty(property.name, typeRef),
     };
   }
@@ -143,6 +144,7 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
       parentType: this.type(parameter.parentType),
       typeReference: typeRef,
       optional: parameter.optional,
+      variadic: parameter.variadic,
       declaration: this.formatProperty(parameter.name, typeRef),
     };
   }
@@ -236,6 +238,11 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
     const tf = transpiled.typeReference.toString({
       typeFormatter: (t) => t.name,
     });
+
+    if (transpiled.variadic) {
+      return `${transpiled.name}${transpiled.optional ? '?' : ''}: ...${tf}[]`;
+    }
+
     return `${transpiled.name}${transpiled.optional ? '?' : ''}: ${tf}`;
   }
 

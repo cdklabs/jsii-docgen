@@ -214,6 +214,10 @@ export interface TranspiledParameter {
    */
   readonly optional: boolean;
   /**
+   * Whether or not the parameter is variadic.
+   */
+  readonly variadic: boolean;
+  /**
    * The signature of the property, or its getter if the language
    * supports that.
    */

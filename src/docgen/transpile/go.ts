@@ -142,7 +142,8 @@ export class GoTranspile extends transpile.TranspileBase {
       parentType: this.type(parameter.parentType),
       typeReference: typeRef,
       optional: parameter.optional,
-      declaration: this.formatParameter(name, typeRef),
+      variadic: parameter.variadic,
+      declaration: this.formatParameter(name, typeRef, parameter.variadic),
     };
   }
 
@@ -154,6 +155,8 @@ export class GoTranspile extends transpile.TranspileBase {
       parentType: this.type(property.parentType),
       typeReference: typeRef,
       optional: property.optional,
+      // Only parameters can be variadic, not properties.
+      variadic: false,
       declaration: this.formatProperty(name, typeRef, property),
     };
   }
@@ -219,17 +222,21 @@ export class GoTranspile extends transpile.TranspileBase {
   private formatFnParam(
     transpiled: transpile.TranspiledParameter | transpile.TranspiledProperty,
   ): string {
-    return this.formatParameter(transpiled.name, transpiled.typeReference);
+    return this.formatParameter(transpiled.name, transpiled.typeReference, transpiled.variadic);
   }
 
   private formatImport(type: transpile.TranspiledType): string {
     return `import "${type.module}${type.submodule ? `/${type.submodule}` : ''}"`;
   }
 
-  private formatParameter(name: string, typeReference: transpile.TranspiledTypeReference) {
+  private formatParameter(name: string, typeReference: transpile.TranspiledTypeReference, variadic: boolean) {
     const tf = typeReference.toString({
       typeFormatter: (t) => t.name,
     });
+
+    if (variadic) {
+      return `${name} ...${tf}`;
+    }
 
     return `${name} ${tf}`;
   }

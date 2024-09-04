@@ -132,6 +132,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
       parentType: this.type(parameter.parentType),
       typeReference: typeRef,
       optional: parameter.optional,
+      variadic: parameter.variadic,
       declaration: this.formatParameter(name, typeRef),
     };
   }
@@ -144,6 +145,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
       parentType: this.type(property.parentType),
       typeReference: typeRef,
       optional: property.optional,
+      variadic: false,
       declaration: this.formatProperty(name, typeRef, property),
     };
   }
@@ -217,6 +219,10 @@ export class CSharpTranspile extends transpile.TranspileBase {
       typeFormatter: (t) => t.name,
     });
     const suffix = transpiled.optional ? ' = null' : '';
+
+    if (transpiled.variadic) {
+      return `params ${tf}[] ${transpiled.name}${suffix}`;
+    }
     return `${tf} ${transpiled.name}${suffix}`;
   }
 
