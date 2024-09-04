@@ -3829,7 +3829,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`Actions\`<sup>Required</sup> <a name="Actions" id="Repository.grant.parameter.actions"></a>
 
-- *Type:* variadic string
+- *Type:* string
 
 ---
 
@@ -4384,7 +4384,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`Actions\`<sup>Required</sup> <a name="Actions" id="RepositoryBase.grant.parameter.actions"></a>
 
-- *Type:* variadic string
+- *Type:* string
 
 ---
 
@@ -5771,7 +5771,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`Actions\`<sup>Required</sup> <a name="Actions" id="IRepository.grant.parameter.actions"></a>
 
-- *Type:* variadic string
+- *Type:* string
 
 ---
 
@@ -6484,7 +6484,7 @@ constructs.NewDependencyGroup(deps IDependable) DependencyGroup
 
 ##### \`deps\`<sup>Required</sup> <a name="deps" id="DependencyGroup.Initializer.parameter.deps"></a>
 
-- *Type:* variadic <a href="/packages/constructs/v/99.99.99/api/IDependable?lang=python">IDependable</a>
+- *Type:* <a href="/packages/constructs/v/99.99.99/api/IDependable?lang=python">IDependable</a>
 
 ---
 
@@ -6506,7 +6506,7 @@ Add a construct to the dependency roots.
 
 ###### \`scopes\`<sup>Required</sup> <a name="scopes" id="DependencyGroup.add.parameter.scopes"></a>
 
-- *Type:* variadic <a href="/packages/constructs/v/99.99.99/api/IDependable?lang=python">IDependable</a>
+- *Type:* <a href="/packages/constructs/v/99.99.99/api/IDependable?lang=python">IDependable</a>
 
 ---
 
@@ -6581,7 +6581,7 @@ An \`IDependable\`
 
 ###### \`deps\`<sup>Required</sup> <a name="deps" id="Node.addDependency.parameter.deps"></a>
 
-- *Type:* variadic <a href="/packages/constructs/v/99.99.99/api/IDependable?lang=python">IDependable</a>
+- *Type:* <a href="/packages/constructs/v/99.99.99/api/IDependable?lang=python">IDependable</a>
 
 ---
 
@@ -9793,7 +9793,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`actions\`<sup>Required</sup> <a name="actions" id="Repository.grant.parameter.actions"></a>
 
-- *Type:* variadic java.lang.String
+- *Type:* java.lang.String
 
 ---
 
@@ -10403,7 +10403,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`actions\`<sup>Required</sup> <a name="actions" id="RepositoryBase.grant.parameter.actions"></a>
 
-- *Type:* variadic java.lang.String
+- *Type:* java.lang.String
 
 ---
 
@@ -11802,7 +11802,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`actions\`<sup>Required</sup> <a name="actions" id="IRepository.grant.parameter.actions"></a>
 
-- *Type:* variadic java.lang.String
+- *Type:* java.lang.String
 
 ---
 
@@ -15003,7 +15003,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`actions\`<sup>Required</sup> <a name="actions" id="Repository.grant.parameter.actions"></a>
 
-- *Type:* variadic str
+- *Type:* str
 
 ---
 
@@ -15905,7 +15905,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`actions\`<sup>Required</sup> <a name="actions" id="RepositoryBase.grant.parameter.actions"></a>
 
-- *Type:* variadic str
+- *Type:* str
 
 ---
 
@@ -17497,7 +17497,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`actions\`<sup>Required</sup> <a name="actions" id="IRepository.grant.parameter.actions"></a>
 
-- *Type:* variadic str
+- *Type:* str
 
 ---
 
@@ -20499,7 +20499,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`actions\`<sup>Required</sup> <a name="actions" id="Repository.grant.parameter.actions"></a>
 
-- *Type:* variadic string
+- *Type:* string
 
 ---
 
@@ -21054,7 +21054,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`actions\`<sup>Required</sup> <a name="actions" id="RepositoryBase.grant.parameter.actions"></a>
 
-- *Type:* variadic string
+- *Type:* string
 
 ---
 
@@ -22385,7 +22385,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`actions\`<sup>Required</sup> <a name="actions" id="IRepository.grant.parameter.actions"></a>
 
-- *Type:* variadic string
+- *Type:* string
 
 ---
 
@@ -25195,7 +25195,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`Actions\`<sup>Required</sup> <a name="Actions" id="@aws-cdk/aws-ecr.Repository.grant.parameter.actions"></a>
 
-- *Type:* variadic string
+- *Type:* string
 
 ---
 
@@ -25750,7 +25750,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`Actions\`<sup>Required</sup> <a name="Actions" id="@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.actions"></a>
 
-- *Type:* variadic string
+- *Type:* string
 
 ---
 
@@ -27137,7 +27137,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`Actions\`<sup>Required</sup> <a name="Actions" id="@aws-cdk/aws-ecr.IRepository.grant.parameter.actions"></a>
 
-- *Type:* variadic string
+- *Type:* string
 
 ---
 
@@ -27850,7 +27850,7 @@ constructs.NewDependencyGroup(deps IDependable) DependencyGroup
 
 ##### \`deps\`<sup>Required</sup> <a name="deps" id="constructs.DependencyGroup.Initializer.parameter.deps"></a>
 
-- *Type:* variadic <a href="#custom-constructs.IDependable">IDependable</a>
+- *Type:* <a href="#custom-constructs.IDependable">IDependable</a>
 
 ---
 
@@ -27872,7 +27872,7 @@ Add a construct to the dependency roots.
 
 ###### \`scopes\`<sup>Required</sup> <a name="scopes" id="constructs.DependencyGroup.add.parameter.scopes"></a>
 
-- *Type:* variadic <a href="#custom-constructs.IDependable">IDependable</a>
+- *Type:* <a href="#custom-constructs.IDependable">IDependable</a>
 
 ---
 
@@ -27947,7 +27947,7 @@ An \`IDependable\`
 
 ###### \`deps\`<sup>Required</sup> <a name="deps" id="constructs.Node.addDependency.parameter.deps"></a>
 
-- *Type:* variadic <a href="#custom-constructs.IDependable">IDependable</a>
+- *Type:* <a href="#custom-constructs.IDependable">IDependable</a>
 
 ---
 
@@ -31159,7 +31159,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.Repository.grant.parameter.actions"></a>
 
-- *Type:* variadic java.lang.String
+- *Type:* java.lang.String
 
 ---
 
@@ -31769,7 +31769,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.actions"></a>
 
-- *Type:* variadic java.lang.String
+- *Type:* java.lang.String
 
 ---
 
@@ -33168,7 +33168,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.IRepository.grant.parameter.actions"></a>
 
-- *Type:* variadic java.lang.String
+- *Type:* java.lang.String
 
 ---
 
@@ -36369,7 +36369,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.Repository.grant.parameter.actions"></a>
 
-- *Type:* variadic str
+- *Type:* str
 
 ---
 
@@ -37271,7 +37271,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.actions"></a>
 
-- *Type:* variadic str
+- *Type:* str
 
 ---
 
@@ -38863,7 +38863,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.IRepository.grant.parameter.actions"></a>
 
-- *Type:* variadic str
+- *Type:* str
 
 ---
 
@@ -41865,7 +41865,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.Repository.grant.parameter.actions"></a>
 
-- *Type:* variadic string
+- *Type:* string
 
 ---
 
@@ -42420,7 +42420,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.RepositoryBase.grant.parameter.actions"></a>
 
-- *Type:* variadic string
+- *Type:* string
 
 ---
 
@@ -43751,7 +43751,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ###### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.IRepository.grant.parameter.actions"></a>
 
-- *Type:* variadic string
+- *Type:* string
 
 ---
 

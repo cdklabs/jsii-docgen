@@ -607,7 +607,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ### \`Actions\`<sup>Required</sup> <a name="Actions" id="@aws-cdk/aws-ecr.IRepository.grant.parameter.actions"></a>
 
-- *Type:* variadic string
+- *Type:* string
 
 ---
 
@@ -1479,7 +1479,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.IRepository.grant.parameter.actions"></a>
 
-- *Type:* variadic *string
+- *Type:* *string
 
 ---
 
@@ -2357,7 +2357,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.IRepository.grant.parameter.actions"></a>
 
-- *Type:* variadic java.lang.String
+- *Type:* java.lang.String
 
 ---
 
@@ -3543,7 +3543,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.IRepository.grant.parameter.actions"></a>
 
-- *Type:* variadic str
+- *Type:* str
 
 ---
 
@@ -4607,7 +4607,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.IRepository.grant.parameter.actions"></a>
 
-- *Type:* variadic string
+- *Type:* string
 
 ---
 
