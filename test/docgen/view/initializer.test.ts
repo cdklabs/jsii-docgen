@@ -32,11 +32,11 @@ test.each(Language.values())('%s snapshot', (language) => {
 const variadicTestAssembly: reflect.Assembly = Assemblies.instance.withVariadicParameter;
 const findVariadicInitializer = (): reflect.Initializer => {
   for (const klass of variadicTestAssembly.classes) {
-    if (klass.initializer) {
+    if (klass.initializer && klass.initializer.parameters.some(param => param.variadic)) {
       return klass.initializer;
     }
   }
-  throw new Error('Assembly does not contain an initializer');
+  throw new Error('Assembly does not contain an initializer with a variadic parameter');
 };
 
 const findVariadicParameter = (): reflect.Parameter => {
