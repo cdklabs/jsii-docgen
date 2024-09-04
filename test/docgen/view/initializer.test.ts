@@ -49,7 +49,7 @@ const findVariadicParameter = (): reflect.Parameter => {
       }
     }
   }
-  throw new Error('Assembly does not contain a parameter');
+  throw new Error('Assembly does not contain a variadic parameter');
 };
 
 test('variadic parameter in initializer is correct', () => {
