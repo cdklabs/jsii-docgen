@@ -29,7 +29,7 @@ test.each(Language.values())('%s snapshot', (language) => {
   expect(markdown.visitInitializer(init).render()).toMatchSnapshot();
 });
 
-const variadicTestAssembly: reflect.Assembly = Assemblies.instance.variadicExampleTest;
+const variadicTestAssembly: reflect.Assembly = Assemblies.instance.withVariadicParameter;
 const findVariadicInitializer = (): reflect.Initializer => {
   for (const klass of variadicTestAssembly.classes) {
     if (klass.initializer) {

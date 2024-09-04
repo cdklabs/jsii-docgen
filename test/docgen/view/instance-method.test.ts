@@ -6,7 +6,7 @@ import { InstanceMethod } from '../../../src/docgen/view/instance-method';
 import { Assemblies } from '../assemblies';
 
 const assembly: reflect.Assembly = Assemblies.instance.withoutSubmodules;
-const variadicExampleAssembly: reflect.Assembly = Assemblies.instance.variadicExampleTest;
+const variadicExampleAssembly: reflect.Assembly = Assemblies.instance.withVariadicParameter;
 
 const metadata = {
   packageName: assembly.name,
