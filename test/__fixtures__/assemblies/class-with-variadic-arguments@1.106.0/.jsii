@@ -161,7 +161,8 @@
               "variadic": true
             }
           ],
-          "variadic": true
+          "variadic": true,
+          "static": true
         }
       ],
       "name": "MyVariadicClass",

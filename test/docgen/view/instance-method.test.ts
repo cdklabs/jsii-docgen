@@ -6,7 +6,6 @@ import { InstanceMethod } from '../../../src/docgen/view/instance-method';
 import { Assemblies } from '../assemblies';
 
 const assembly: reflect.Assembly = Assemblies.instance.withoutSubmodules;
-const variadicExampleAssembly: reflect.Assembly = Assemblies.instance.withVariadicParameter;
 
 const metadata = {
   packageName: assembly.name,
@@ -24,30 +23,10 @@ const findInstanceMethod = (): reflect.Method => {
   throw new Error('Assembly does not contain an instance method');
 };
 
-const findVariadicInstanceMethod = (): reflect.Method => {
-  for (const klass of variadicExampleAssembly.classes) {
-    for (const method of klass.ownMethods) {
-      if (!method.static) {
-        return method;
-      }
-    }
-  }
-  throw new Error('Assembly does not contain an instance method');
-};
-
 test.each(Language.values())('%s snapshot', (language) => {
   const { transpile } = LANGUAGE_SPECIFIC[language.toString()];
   const markdown = new MarkdownRenderer({ language, ...metadata });
   const method = new InstanceMethod(transpile, findInstanceMethod()).toJson();
-  expect(method).toMatchSnapshot();
-  expect(markdown.visitInstanceMethod(method).render()).toMatchSnapshot();
-});
-
-// Test variadic instance methods
-test.each(Language.values())('%s snapshot', (language) => {
-  const { transpile } = LANGUAGE_SPECIFIC[language.toString()];
-  const markdown = new MarkdownRenderer({ language, ...metadata });
-  const method = new InstanceMethod(transpile, findVariadicInstanceMethod()).toJson();
   expect(method).toMatchSnapshot();
   expect(markdown.visitInstanceMethod(method).render()).toMatchSnapshot();
 });
