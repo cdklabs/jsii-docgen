@@ -56,6 +56,63 @@ tree inspector to collect and process attributes.
 "
 `;
 
+exports[`csharp snapshot 3`] = `
+{
+  "displayName": "MyFunction",
+  "docs": {},
+  "fqn": ".MyVariadicClass.MyFunction",
+  "id": "my-construct-library.MyVariadicClass.myFunction",
+  "parameters": [
+    {
+      "default": undefined,
+      "displayName": "SingleInput",
+      "docs": {},
+      "fqn": ".MyVariadicClass.MyFunction.parameter.SingleInput",
+      "id": "my-construct-library.MyVariadicClass.myFunction.parameter.singleInput",
+      "optional": undefined,
+      "type": {
+        "formattingPattern": "double",
+      },
+      "variadic": false,
+    },
+    {
+      "default": undefined,
+      "displayName": "VariadicInput",
+      "docs": {},
+      "fqn": ".MyVariadicClass.MyFunction.parameter.VariadicInput",
+      "id": "my-construct-library.MyVariadicClass.myFunction.parameter.variadicInput",
+      "optional": undefined,
+      "type": {
+        "formattingPattern": "double",
+      },
+      "variadic": true,
+    },
+  ],
+  "usage": "private void MyFunction(double SingleInput, double VariadicInput)",
+}
+`;
+
+exports[`csharp snapshot 4`] = `
+" \`MyFunction\` <a name="MyFunction" id="my-construct-library.MyVariadicClass.myFunction"></a>
+
+\`\`\`csharp
+private void MyFunction(double SingleInput, double VariadicInput)
+\`\`\`
+
+# \`SingleInput\`<sup>Required</sup> <a name="SingleInput" id="my-construct-library.MyVariadicClass.myFunction.parameter.singleInput"></a>
+
+- *Type:* double
+
+---
+
+# \`VariadicInput\`<sup>Required</sup> <a name="VariadicInput" id="my-construct-library.MyVariadicClass.myFunction.parameter.variadicInput"></a>
+
+- *Type:* variadic double
+
+---
+"
+`;
+
 exports[`go snapshot 1`] = `
 {
   "displayName": "Inspect",
@@ -112,6 +169,63 @@ tree inspector to collect and process attributes.
 "
 `;
 
+exports[`go snapshot 3`] = `
+{
+  "displayName": "MyFunction",
+  "docs": {},
+  "fqn": "github.com/acme/project-name/myconstructlibrary.MyVariadicClass.MyFunction",
+  "id": "my-construct-library.MyVariadicClass.myFunction",
+  "parameters": [
+    {
+      "default": undefined,
+      "displayName": "singleInput",
+      "docs": {},
+      "fqn": "github.com/acme/project-name/myconstructlibrary.MyVariadicClass.MyFunction.parameter.singleInput",
+      "id": "my-construct-library.MyVariadicClass.myFunction.parameter.singleInput",
+      "optional": undefined,
+      "type": {
+        "formattingPattern": "*f64",
+      },
+      "variadic": false,
+    },
+    {
+      "default": undefined,
+      "displayName": "variadicInput",
+      "docs": {},
+      "fqn": "github.com/acme/project-name/myconstructlibrary.MyVariadicClass.MyFunction.parameter.variadicInput",
+      "id": "my-construct-library.MyVariadicClass.myFunction.parameter.variadicInput",
+      "optional": undefined,
+      "type": {
+        "formattingPattern": "*f64",
+      },
+      "variadic": true,
+    },
+  ],
+  "usage": "func MyFunction(singleInput *f64, variadicInput *f64)",
+}
+`;
+
+exports[`go snapshot 4`] = `
+" \`MyFunction\` <a name="MyFunction" id="my-construct-library.MyVariadicClass.myFunction"></a>
+
+\`\`\`go
+func MyFunction(singleInput *f64, variadicInput *f64)
+\`\`\`
+
+# \`singleInput\`<sup>Required</sup> <a name="singleInput" id="my-construct-library.MyVariadicClass.myFunction.parameter.singleInput"></a>
+
+- *Type:* *f64
+
+---
+
+# \`variadicInput\`<sup>Required</sup> <a name="variadicInput" id="my-construct-library.MyVariadicClass.myFunction.parameter.variadicInput"></a>
+
+- *Type:* variadic *f64
+
+---
+"
+`;
+
 exports[`java snapshot 1`] = `
 {
   "displayName": "inspect",
@@ -163,6 +277,63 @@ Examines the CloudFormation resource and discloses attributes.
 - *Type:* software.amazon.awscdk.core.TreeInspector
 
 tree inspector to collect and process attributes.
+
+---
+"
+`;
+
+exports[`java snapshot 3`] = `
+{
+  "displayName": "myFunction",
+  "docs": {},
+  "fqn": ".MyVariadicClass.myFunction",
+  "id": "my-construct-library.MyVariadicClass.myFunction",
+  "parameters": [
+    {
+      "default": undefined,
+      "displayName": "singleInput",
+      "docs": {},
+      "fqn": ".MyVariadicClass.myFunction.parameter.singleInput",
+      "id": "my-construct-library.MyVariadicClass.myFunction.parameter.singleInput",
+      "optional": undefined,
+      "type": {
+        "formattingPattern": "java.lang.Number",
+      },
+      "variadic": false,
+    },
+    {
+      "default": undefined,
+      "displayName": "variadicInput",
+      "docs": {},
+      "fqn": ".MyVariadicClass.myFunction.parameter.variadicInput",
+      "id": "my-construct-library.MyVariadicClass.myFunction.parameter.variadicInput",
+      "optional": undefined,
+      "type": {
+        "formattingPattern": "java.lang.Number",
+      },
+      "variadic": true,
+    },
+  ],
+  "usage": "public void myFunction(java.lang.Number singleInput, java.lang.Number variadicInput)",
+}
+`;
+
+exports[`java snapshot 4`] = `
+" \`myFunction\` <a name="myFunction" id="my-construct-library.MyVariadicClass.myFunction"></a>
+
+\`\`\`java
+public void myFunction(java.lang.Number singleInput, java.lang.Number variadicInput)
+\`\`\`
+
+# \`singleInput\`<sup>Required</sup> <a name="singleInput" id="my-construct-library.MyVariadicClass.myFunction.parameter.singleInput"></a>
+
+- *Type:* java.lang.Number
+
+---
+
+# \`variadicInput\`<sup>Required</sup> <a name="variadicInput" id="my-construct-library.MyVariadicClass.myFunction.parameter.variadicInput"></a>
+
+- *Type:* variadic java.lang.Number
 
 ---
 "
@@ -228,6 +399,69 @@ tree inspector to collect and process attributes.
 "
 `;
 
+exports[`python snapshot 3`] = `
+{
+  "displayName": "my_function",
+  "docs": {},
+  "fqn": "sumu_constructs.core.MyVariadicClass.my_function",
+  "id": "my-construct-library.MyVariadicClass.myFunction",
+  "parameters": [
+    {
+      "default": undefined,
+      "displayName": "single_input",
+      "docs": {},
+      "fqn": "sumu_constructs.core.MyVariadicClass.my_function.parameter.single_input",
+      "id": "my-construct-library.MyVariadicClass.myFunction.parameter.singleInput",
+      "optional": undefined,
+      "type": {
+        "formattingPattern": "typing.Union[int, float]",
+      },
+      "variadic": false,
+    },
+    {
+      "default": undefined,
+      "displayName": "variadic_input",
+      "docs": {},
+      "fqn": "sumu_constructs.core.MyVariadicClass.my_function.parameter.variadic_input",
+      "id": "my-construct-library.MyVariadicClass.myFunction.parameter.variadicInput",
+      "optional": undefined,
+      "type": {
+        "formattingPattern": "typing.Union[int, float]",
+      },
+      "variadic": true,
+    },
+  ],
+  "usage": "def my_function(
+  single_input: typing.Union[int, float],
+  variadic_input: typing.Union[int, float]
+) -> None",
+}
+`;
+
+exports[`python snapshot 4`] = `
+" \`my_function\` <a name="my_function" id="my-construct-library.MyVariadicClass.myFunction"></a>
+
+\`\`\`python
+def my_function(
+  single_input: typing.Union[int, float],
+  variadic_input: typing.Union[int, float]
+) -> None
+\`\`\`
+
+# \`single_input\`<sup>Required</sup> <a name="single_input" id="my-construct-library.MyVariadicClass.myFunction.parameter.singleInput"></a>
+
+- *Type:* typing.Union[int, float]
+
+---
+
+# \`variadic_input\`<sup>Required</sup> <a name="variadic_input" id="my-construct-library.MyVariadicClass.myFunction.parameter.variadicInput"></a>
+
+- *Type:* variadic typing.Union[int, float]
+
+---
+"
+`;
+
 exports[`typescript snapshot 1`] = `
 {
   "displayName": "inspect",
@@ -279,6 +513,63 @@ Examines the CloudFormation resource and discloses attributes.
 - *Type:* @aws-cdk/core.TreeInspector
 
 tree inspector to collect and process attributes.
+
+---
+"
+`;
+
+exports[`typescript snapshot 3`] = `
+{
+  "displayName": "myFunction",
+  "docs": {},
+  "fqn": "my-construct-library.MyVariadicClass.myFunction",
+  "id": "my-construct-library.MyVariadicClass.myFunction",
+  "parameters": [
+    {
+      "default": undefined,
+      "displayName": "singleInput",
+      "docs": {},
+      "fqn": "my-construct-library.MyVariadicClass.myFunction.parameter.singleInput",
+      "id": "my-construct-library.MyVariadicClass.myFunction.parameter.singleInput",
+      "optional": undefined,
+      "type": {
+        "formattingPattern": "number",
+      },
+      "variadic": false,
+    },
+    {
+      "default": undefined,
+      "displayName": "variadicInput",
+      "docs": {},
+      "fqn": "my-construct-library.MyVariadicClass.myFunction.parameter.variadicInput",
+      "id": "my-construct-library.MyVariadicClass.myFunction.parameter.variadicInput",
+      "optional": undefined,
+      "type": {
+        "formattingPattern": "number",
+      },
+      "variadic": true,
+    },
+  ],
+  "usage": "public myFunction(singleInput: number, variadicInput: number): void",
+}
+`;
+
+exports[`typescript snapshot 4`] = `
+" \`myFunction\` <a name="myFunction" id="my-construct-library.MyVariadicClass.myFunction"></a>
+
+\`\`\`typescript
+public myFunction(singleInput: number, variadicInput: number): void
+\`\`\`
+
+# \`singleInput\`<sup>Required</sup> <a name="singleInput" id="my-construct-library.MyVariadicClass.myFunction.parameter.singleInput"></a>
+
+- *Type:* number
+
+---
+
+# \`variadicInput\`<sup>Required</sup> <a name="variadicInput" id="my-construct-library.MyVariadicClass.myFunction.parameter.variadicInput"></a>
+
+- *Type:* variadic number
 
 ---
 "
