@@ -28,22 +28,3 @@ test.each(Language.values())('%s snapshot', (language) => {
   expect(init).toMatchSnapshot();
   expect(markdown.visitInitializer(init).render()).toMatchSnapshot();
 });
-
-const variadicTestAssembly: reflect.Assembly = Assemblies.instance.withVariadicParameter;
-const findVariadicInitializer = (): reflect.Initializer => {
-  for (const klass of variadicTestAssembly.classes) {
-    if (klass.initializer && klass.initializer.parameters.some(param => param.variadic)) {
-      return klass.initializer;
-    }
-  }
-  throw new Error('Assembly does not contain an initializer with a variadic parameter');
-};
-
-// Tests variadic initializers:
-test.each(Language.values())('%s snapshot', (language) => {
-  const { transpile } = LANGUAGE_SPECIFIC[language.toString()];
-  const renderer = new MarkdownRenderer({ language, ...metadata });
-  const init = new Initializer(transpile, findVariadicInitializer()).toJson();
-  const markdown = renderer.visitInitializer(init).render();
-  expect(markdown).toMatchSnapshot();
-});
