@@ -3816,7 +3816,7 @@ Add a policy statement to the repository's resource policy.
 ##### \`Grant\` <a name="Grant" id="Repository.grant"></a>
 
 \`\`\`csharp
-private Grant Grant(IGrantable Grantee, string Actions)
+private Grant Grant(IGrantable Grantee, params string[] Actions)
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -4371,7 +4371,7 @@ Add a policy statement to the repository's resource policy.
 ##### \`Grant\` <a name="Grant" id="RepositoryBase.grant"></a>
 
 \`\`\`csharp
-private Grant Grant(IGrantable Grantee, string Actions)
+private Grant Grant(IGrantable Grantee, params string[] Actions)
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -5758,7 +5758,7 @@ Add a policy statement to the repository's resource policy.
 ##### \`Grant\` <a name="Grant" id="IRepository.grant"></a>
 
 \`\`\`csharp
-private Grant Grant(IGrantable Grantee, string Actions)
+private Grant Grant(IGrantable Grantee, params string[] Actions)
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -6473,7 +6473,7 @@ construct tree needs to be combined to be used as a single dependable.
 \`\`\`go
 import "github.com/aws/constructs-go/constructs/v10"
 
-constructs.NewDependencyGroup(deps IDependable) DependencyGroup
+constructs.NewDependencyGroup(deps ...IDependable) DependencyGroup
 \`\`\`
 
 | **Name** | **Type** | **Description** |
@@ -6499,7 +6499,7 @@ constructs.NewDependencyGroup(deps IDependable) DependencyGroup
 ##### \`Add\` <a name="Add" id="DependencyGroup.add"></a>
 
 \`\`\`go
-func Add(scopes IDependable)
+func Add(scopes ...IDependable)
 \`\`\`
 
 Add a construct to the dependency roots.
@@ -6572,7 +6572,7 @@ constructs.NewNode(host Construct, scope IConstruct, id *string) Node
 ##### \`AddDependency\` <a name="AddDependency" id="Node.addDependency"></a>
 
 \`\`\`go
-func AddDependency(deps IDependable)
+func AddDependency(deps ...IDependable)
 \`\`\`
 
 Add an ordering dependency on another construct.
@@ -9780,7 +9780,7 @@ Add a policy statement to the repository's resource policy.
 ##### \`grant\` <a name="grant" id="Repository.grant"></a>
 
 \`\`\`java
-public Grant grant(IGrantable grantee, java.lang.String actions)
+public Grant grant(IGrantable grantee, java.lang.String actions...)
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -10390,7 +10390,7 @@ Add a policy statement to the repository's resource policy.
 ##### \`grant\` <a name="grant" id="RepositoryBase.grant"></a>
 
 \`\`\`java
-public Grant grant(IGrantable grantee, java.lang.String actions)
+public Grant grant(IGrantable grantee, java.lang.String actions...)
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -11789,7 +11789,7 @@ Add a policy statement to the repository's resource policy.
 ##### \`grant\` <a name="grant" id="IRepository.grant"></a>
 
 \`\`\`java
-public Grant grant(IGrantable grantee, java.lang.String actions)
+public Grant grant(IGrantable grantee, java.lang.String actions...)
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -14989,7 +14989,7 @@ Add a policy statement to the repository's resource policy.
 \`\`\`python
 def grant(
   grantee: IGrantable,
-  actions: str
+  actions: *str
 ) -> Grant
 \`\`\`
 
@@ -15891,7 +15891,7 @@ Add a policy statement to the repository's resource policy.
 \`\`\`python
 def grant(
   grantee: IGrantable,
-  actions: str
+  actions: *str
 ) -> Grant
 \`\`\`
 
@@ -17483,7 +17483,7 @@ Add a policy statement to the repository's resource policy.
 \`\`\`python
 def grant(
   grantee: IGrantable,
-  actions: str
+  actions: *str
 ) -> Grant
 \`\`\`
 
@@ -20486,7 +20486,7 @@ Add a policy statement to the repository's resource policy.
 ##### \`grant\` <a name="grant" id="Repository.grant"></a>
 
 \`\`\`typescript
-public grant(grantee: IGrantable, actions: string): Grant
+public grant(grantee: IGrantable, actions: ...string[]): Grant
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -21041,7 +21041,7 @@ Add a policy statement to the repository's resource policy.
 ##### \`grant\` <a name="grant" id="RepositoryBase.grant"></a>
 
 \`\`\`typescript
-public grant(grantee: IGrantable, actions: string): Grant
+public grant(grantee: IGrantable, actions: ...string[]): Grant
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -22372,7 +22372,7 @@ Add a policy statement to the repository's resource policy.
 ##### \`grant\` <a name="grant" id="IRepository.grant"></a>
 
 \`\`\`typescript
-public grant(grantee: IGrantable, actions: string): Grant
+public grant(grantee: IGrantable, actions: ...string[]): Grant
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -25182,7 +25182,7 @@ Add a policy statement to the repository's resource policy.
 ##### \`Grant\` <a name="Grant" id="@aws-cdk/aws-ecr.Repository.grant"></a>
 
 \`\`\`csharp
-private Grant Grant(IGrantable Grantee, string Actions)
+private Grant Grant(IGrantable Grantee, params string[] Actions)
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -25737,7 +25737,7 @@ Add a policy statement to the repository's resource policy.
 ##### \`Grant\` <a name="Grant" id="@aws-cdk/aws-ecr.RepositoryBase.grant"></a>
 
 \`\`\`csharp
-private Grant Grant(IGrantable Grantee, string Actions)
+private Grant Grant(IGrantable Grantee, params string[] Actions)
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -27124,7 +27124,7 @@ Add a policy statement to the repository's resource policy.
 ##### \`Grant\` <a name="Grant" id="@aws-cdk/aws-ecr.IRepository.grant"></a>
 
 \`\`\`csharp
-private Grant Grant(IGrantable Grantee, string Actions)
+private Grant Grant(IGrantable Grantee, params string[] Actions)
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -27839,7 +27839,7 @@ construct tree needs to be combined to be used as a single dependable.
 \`\`\`go
 import "github.com/aws/constructs-go/constructs/v10"
 
-constructs.NewDependencyGroup(deps IDependable) DependencyGroup
+constructs.NewDependencyGroup(deps ...IDependable) DependencyGroup
 \`\`\`
 
 | **Name** | **Type** | **Description** |
@@ -27865,7 +27865,7 @@ constructs.NewDependencyGroup(deps IDependable) DependencyGroup
 ##### \`Add\` <a name="Add" id="constructs.DependencyGroup.add"></a>
 
 \`\`\`go
-func Add(scopes IDependable)
+func Add(scopes ...IDependable)
 \`\`\`
 
 Add a construct to the dependency roots.
@@ -27938,7 +27938,7 @@ constructs.NewNode(host Construct, scope IConstruct, id *string) Node
 ##### \`AddDependency\` <a name="AddDependency" id="constructs.Node.addDependency"></a>
 
 \`\`\`go
-func AddDependency(deps IDependable)
+func AddDependency(deps ...IDependable)
 \`\`\`
 
 Add an ordering dependency on another construct.
@@ -31146,7 +31146,7 @@ Add a policy statement to the repository's resource policy.
 ##### \`grant\` <a name="grant" id="@aws-cdk/aws-ecr.Repository.grant"></a>
 
 \`\`\`java
-public Grant grant(IGrantable grantee, java.lang.String actions)
+public Grant grant(IGrantable grantee, java.lang.String actions...)
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -31756,7 +31756,7 @@ Add a policy statement to the repository's resource policy.
 ##### \`grant\` <a name="grant" id="@aws-cdk/aws-ecr.RepositoryBase.grant"></a>
 
 \`\`\`java
-public Grant grant(IGrantable grantee, java.lang.String actions)
+public Grant grant(IGrantable grantee, java.lang.String actions...)
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -33155,7 +33155,7 @@ Add a policy statement to the repository's resource policy.
 ##### \`grant\` <a name="grant" id="@aws-cdk/aws-ecr.IRepository.grant"></a>
 
 \`\`\`java
-public Grant grant(IGrantable grantee, java.lang.String actions)
+public Grant grant(IGrantable grantee, java.lang.String actions...)
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -36355,7 +36355,7 @@ Add a policy statement to the repository's resource policy.
 \`\`\`python
 def grant(
   grantee: IGrantable,
-  actions: str
+  actions: *str
 ) -> Grant
 \`\`\`
 
@@ -37257,7 +37257,7 @@ Add a policy statement to the repository's resource policy.
 \`\`\`python
 def grant(
   grantee: IGrantable,
-  actions: str
+  actions: *str
 ) -> Grant
 \`\`\`
 
@@ -38849,7 +38849,7 @@ Add a policy statement to the repository's resource policy.
 \`\`\`python
 def grant(
   grantee: IGrantable,
-  actions: str
+  actions: *str
 ) -> Grant
 \`\`\`
 
@@ -41852,7 +41852,7 @@ Add a policy statement to the repository's resource policy.
 ##### \`grant\` <a name="grant" id="@aws-cdk/aws-ecr.Repository.grant"></a>
 
 \`\`\`typescript
-public grant(grantee: IGrantable, actions: string): Grant
+public grant(grantee: IGrantable, actions: ...string[]): Grant
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -42407,7 +42407,7 @@ Add a policy statement to the repository's resource policy.
 ##### \`grant\` <a name="grant" id="@aws-cdk/aws-ecr.RepositoryBase.grant"></a>
 
 \`\`\`typescript
-public grant(grantee: IGrantable, actions: string): Grant
+public grant(grantee: IGrantable, actions: ...string[]): Grant
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -43738,7 +43738,7 @@ Add a policy statement to the repository's resource policy.
 ##### \`grant\` <a name="grant" id="@aws-cdk/aws-ecr.IRepository.grant"></a>
 
 \`\`\`typescript
-public grant(grantee: IGrantable, actions: string): Grant
+public grant(grantee: IGrantable, actions: ...string[]): Grant
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.

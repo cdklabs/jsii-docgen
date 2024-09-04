@@ -108,7 +108,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 ##### \`addEventNotification\` <a name="addEventNotification" id="construct-library.submod1.GoodbyeBucket.addEventNotification"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -155,7 +155,7 @@ for details about allowed filter rules.
 ##### \`addObjectCreatedNotification\` <a name="addObjectCreatedNotification" id="construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -182,7 +182,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name="addObjectRemovedNotification" id="construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -275,7 +275,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name="grantPublicAccess" id="construct-library.submod1.GoodbyeBucket.grantPublicAccess"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
+public grantPublicAccess(allowedActions: ...string[], keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -1183,7 +1183,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 ##### \`addEventNotification\` <a name="addEventNotification" id="construct-library.GreeterBucket.addEventNotification"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -1230,7 +1230,7 @@ for details about allowed filter rules.
 ##### \`addObjectCreatedNotification\` <a name="addObjectCreatedNotification" id="construct-library.GreeterBucket.addObjectCreatedNotification"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -1257,7 +1257,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name="addObjectRemovedNotification" id="construct-library.GreeterBucket.addObjectRemovedNotification"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -1350,7 +1350,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name="grantPublicAccess" id="construct-library.GreeterBucket.grantPublicAccess"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
+public grantPublicAccess(allowedActions: ...string[], keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -2799,7 +2799,7 @@ Restrict the permission to a certain key pattern (default '*').
 
 \`\`\`python
 def grant_public_access(
-  allowed_actions: str,
+  allowed_actions: *str,
   key_prefix: str = None
 ) -> Grant
 \`\`\`
@@ -4862,7 +4862,7 @@ Restrict the permission to a certain key pattern (default '*').
 
 \`\`\`python
 def grant_public_access(
-  allowed_actions: str,
+  allowed_actions: *str,
   key_prefix: str = None
 ) -> Grant
 \`\`\`
@@ -6942,7 +6942,7 @@ Restrict the permission to a certain key pattern (default '*').
 
 \`\`\`python
 def grant_public_access(
-  allowed_actions: str,
+  allowed_actions: *str,
   key_prefix: str = None
 ) -> Grant
 \`\`\`
@@ -8492,7 +8492,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 ##### \`addEventNotification\` <a name="addEventNotification" id="construct-library.GreeterBucket.addEventNotification"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -8539,7 +8539,7 @@ for details about allowed filter rules.
 ##### \`addObjectCreatedNotification\` <a name="addObjectCreatedNotification" id="construct-library.GreeterBucket.addObjectCreatedNotification"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -8566,7 +8566,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name="addObjectRemovedNotification" id="construct-library.GreeterBucket.addObjectRemovedNotification"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -8659,7 +8659,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name="grantPublicAccess" id="construct-library.GreeterBucket.grantPublicAccess"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
+public grantPublicAccess(allowedActions: ...string[], keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -10108,7 +10108,7 @@ Restrict the permission to a certain key pattern (default '*').
 
 \`\`\`python
 def grant_public_access(
-  allowed_actions: str,
+  allowed_actions: *str,
   key_prefix: str = None
 ) -> Grant
 \`\`\`
@@ -11652,7 +11652,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 ##### \`addEventNotification\` <a name="addEventNotification" id="construct-library.submod1.GoodbyeBucket.addEventNotification"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -11699,7 +11699,7 @@ for details about allowed filter rules.
 ##### \`addObjectCreatedNotification\` <a name="addObjectCreatedNotification" id="construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -11726,7 +11726,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name="addObjectRemovedNotification" id="construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -11819,7 +11819,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name="grantPublicAccess" id="construct-library.submod1.GoodbyeBucket.grantPublicAccess"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
+public grantPublicAccess(allowedActions: ...string[], keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -12738,7 +12738,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 ##### \`addEventNotification\` <a name="addEventNotification" id="construct-library.GreeterBucket.addEventNotification"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -12785,7 +12785,7 @@ for details about allowed filter rules.
 ##### \`addObjectCreatedNotification\` <a name="addObjectCreatedNotification" id="construct-library.GreeterBucket.addObjectCreatedNotification"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -12812,7 +12812,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name="addObjectRemovedNotification" id="construct-library.GreeterBucket.addObjectRemovedNotification"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -12905,7 +12905,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name="grantPublicAccess" id="construct-library.GreeterBucket.grantPublicAccess"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
+public grantPublicAccess(allowedActions: ...string[], keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -13824,7 +13824,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 ##### \`addEventNotification\` <a name="addEventNotification" id="construct-library.submod1.GoodbyeBucket.addEventNotification"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -13871,7 +13871,7 @@ for details about allowed filter rules.
 ##### \`addObjectCreatedNotification\` <a name="addObjectCreatedNotification" id="construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -13898,7 +13898,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name="addObjectRemovedNotification" id="construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -13991,7 +13991,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name="grantPublicAccess" id="construct-library.submod1.GoodbyeBucket.grantPublicAccess"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
+public grantPublicAccess(allowedActions: ...string[], keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -14916,7 +14916,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 ##### \`addEventNotification\` <a name="addEventNotification" id="construct-library.GreeterBucket.addEventNotification"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -14963,7 +14963,7 @@ for details about allowed filter rules.
 ##### \`addObjectCreatedNotification\` <a name="addObjectCreatedNotification" id="construct-library.GreeterBucket.addObjectCreatedNotification"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -14990,7 +14990,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name="addObjectRemovedNotification" id="construct-library.GreeterBucket.addObjectRemovedNotification"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -15083,7 +15083,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name="grantPublicAccess" id="construct-library.GreeterBucket.grantPublicAccess"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
+public grantPublicAccess(allowedActions: ...string[], keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -16002,7 +16002,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 ##### \`addEventNotification\` <a name="addEventNotification" id="construct-library.submod1.GoodbyeBucket.addEventNotification"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -16049,7 +16049,7 @@ for details about allowed filter rules.
 ##### \`addObjectCreatedNotification\` <a name="addObjectCreatedNotification" id="construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -16076,7 +16076,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name="addObjectRemovedNotification" id="construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -16169,7 +16169,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name="grantPublicAccess" id="construct-library.submod1.GoodbyeBucket.grantPublicAccess"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
+public grantPublicAccess(allowedActions: ...string[], keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.

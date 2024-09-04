@@ -106,7 +106,7 @@ exports[`csharp snapshot 1`] = `
           "variadic": true,
         },
       ],
-      "usage": "private Grant Grant(IGrantable Grantee, string Actions)",
+      "usage": "private Grant Grant(IGrantable Grantee, params string[] Actions)",
     },
     {
       "displayName": "GrantPull",
@@ -594,7 +594,7 @@ Add a policy statement to the repository's resource policy.
 ## \`Grant\` <a name="Grant" id="@aws-cdk/aws-ecr.IRepository.grant"></a>
 
 \`\`\`csharp
-private Grant Grant(IGrantable Grantee, string Actions)
+private Grant Grant(IGrantable Grantee, params string[] Actions)
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -978,7 +978,7 @@ exports[`go snapshot 1`] = `
           "variadic": true,
         },
       ],
-      "usage": "func Grant(grantee IGrantable, actions *string) Grant",
+      "usage": "func Grant(grantee IGrantable, actions ...*string) Grant",
     },
     {
       "displayName": "GrantPull",
@@ -1466,7 +1466,7 @@ Add a policy statement to the repository's resource policy.
 ## \`Grant\` <a name="Grant" id="@aws-cdk/aws-ecr.IRepository.grant"></a>
 
 \`\`\`go
-func Grant(grantee IGrantable, actions *string) Grant
+func Grant(grantee IGrantable, actions ...*string) Grant
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -1850,7 +1850,7 @@ exports[`java snapshot 1`] = `
           "variadic": true,
         },
       ],
-      "usage": "public Grant grant(IGrantable grantee, java.lang.String actions)",
+      "usage": "public Grant grant(IGrantable grantee, java.lang.String actions...)",
     },
     {
       "displayName": "grantPull",
@@ -2344,7 +2344,7 @@ Add a policy statement to the repository's resource policy.
 ## \`grant\` <a name="grant" id="@aws-cdk/aws-ecr.IRepository.grant"></a>
 
 \`\`\`java
-public Grant grant(IGrantable grantee, java.lang.String actions)
+public Grant grant(IGrantable grantee, java.lang.String actions...)
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -2738,7 +2738,7 @@ exports[`python snapshot 1`] = `
       ],
       "usage": "def grant(
   grantee: IGrantable,
-  actions: str
+  actions: *str
 ) -> Grant",
     },
     {
@@ -3529,7 +3529,7 @@ Add a policy statement to the repository's resource policy.
 \`\`\`python
 def grant(
   grantee: IGrantable,
-  actions: str
+  actions: *str
 ) -> Grant
 \`\`\`
 
@@ -4106,7 +4106,7 @@ exports[`typescript snapshot 1`] = `
           "variadic": true,
         },
       ],
-      "usage": "public grant(grantee: IGrantable, actions: string): Grant",
+      "usage": "public grant(grantee: IGrantable, actions: ...string[]): Grant",
     },
     {
       "displayName": "grantPull",
@@ -4594,7 +4594,7 @@ Add a policy statement to the repository's resource policy.
 ## \`grant\` <a name="grant" id="@aws-cdk/aws-ecr.IRepository.grant"></a>
 
 \`\`\`typescript
-public grant(grantee: IGrantable, actions: string): Grant
+public grant(grantee: IGrantable, actions: ...string[]): Grant
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
