@@ -52,7 +52,7 @@
     },
     "tscRootDir": "src"
   },
-  "name": "my-construct-library",
+  "name": "variadic-jsii-example",
   "readme": {
     "markdown": ""
   },
@@ -63,7 +63,7 @@
   "schema": "jsii/0.10.0",
   "targets": {
     "js": {
-      "npm": "my-construct-library"
+      "npm": "variadic-jsii-example"
     },
     "python": {
       "distName": "sumu_constructs.core",
@@ -74,12 +74,12 @@
     }
   },
   "types": {
-    "my-construct-library.MyVariadicClass": {
-      "assembly": "my-construct-library",
+    "variadic-jsii-example.MyVariadicClass": {
+      "assembly": "variadic-jsii-example",
       "docs": {
         "stability": "stable"
       },
-      "fqn": "my-construct-library.MyVariadicClass",
+      "fqn": "variadic-jsii-example.MyVariadicClass",
       "initializer": {
         "docs": {
           "stability": "stable"
