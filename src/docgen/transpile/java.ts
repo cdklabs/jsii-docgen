@@ -252,6 +252,10 @@ export class JavaTranspile extends transpile.TranspileBase {
     return `java.util.List<${type}>`;
   }
 
+  public variadicOf(type: string): string {
+    return `${type}...`;
+  }
+
   public mapOf(type: string): string {
     return `java.util.Map<java.lang.String, ${type}>`;
   }
@@ -300,7 +304,7 @@ export class JavaTranspile extends transpile.TranspileBase {
     });
 
     if (transpiled.variadic) {
-      return `${tf} ${transpiled.name}...`;
+      return `${this.variadicOf(tf)} ${transpiled.name}`;
     }
 
     return `${tf} ${transpiled.name}`;

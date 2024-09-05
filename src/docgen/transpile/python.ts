@@ -97,6 +97,10 @@ export class PythonTranspile extends transpile.TranspileBase {
     return `${this.typing('List')}[${type}]`;
   }
 
+  public variadicOf(type: string): string {
+    return `*${type}`;
+  }
+
   public mapOf(type: string): string {
     return `${this.typing('Mapping')}[${type}]`;
   }
@@ -310,7 +314,7 @@ export class PythonTranspile extends transpile.TranspileBase {
     });
 
     if (transpiled.variadic) {
-      return `${transpiled.name}: *${tf}${transpiled.optional ? ' = None' : ''}`;
+      return `${transpiled.name}: ${this.variadicOf(tf)}`;
     }
 
     return `${transpiled.name}: ${tf}${transpiled.optional ? ' = None' : ''}`;

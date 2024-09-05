@@ -6,7 +6,7 @@ export class Parameter {
   private readonly transpiledParam: TranspiledParameter;
   private readonly transpiledCallable: TranspiledCallable;
   constructor(
-    transpile: Transpile,
+    private readonly transpile: Transpile,
     private readonly parameter: reflect.Parameter,
   ) {
     this.transpiledParam = transpile.parameter(parameter);
@@ -14,6 +14,13 @@ export class Parameter {
   }
 
   public toJson(): ParameterSchema {
+    let typeschema = this.transpiledParam.typeReference.toJson();
+    if (this.parameter.spec.variadic) {
+      typeschema = {
+        formattingPattern: this.transpile.variadicOf(this.transpiledParam.typeReference.toString()),
+        types: typeschema.types,
+      };
+    }
     const isInitializer = this.parameter.method.kind === reflect.MemberKind.Initializer;
     const methodName = isInitializer ? 'Initializer' : this.transpiledCallable.name;
     const methodId = isInitializer ? 'Initializer' : this.parameter.method.name;
@@ -23,7 +30,7 @@ export class Parameter {
       id: `${this.parameter.parentType.fqn}.${methodId}.parameter.${this.parameter.name}`,
       optional: this.transpiledParam.optional === true ? true : undefined, // to save space
       default: this.parameter.spec.docs?.default,
-      type: this.transpiledParam.typeReference.toJson(),
+      type: typeschema,
       variadic: this.parameter.spec.variadic ?? false,
       docs: extractDocs(this.parameter.docs),
     };

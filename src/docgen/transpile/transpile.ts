@@ -720,6 +720,11 @@ export interface Transpile {
   unionOf(types: string[]): string;
 
   /**
+  * How a variadic parameter looks in the target language.
+  */
+  variadicOf(type: string): string;
+
+  /**
    * How a list looks like in the target language.
    */
   listOf(type: string): string;

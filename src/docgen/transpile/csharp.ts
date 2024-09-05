@@ -172,6 +172,10 @@ export class CSharpTranspile extends transpile.TranspileBase {
     return `${type}[]`;
   }
 
+  public variadicOf(type: string): string {
+    return `params ${type}[]`;
+  }
+
   public mapOf(type: string): string {
     return `System.Collections.Generic.IDictionary<string, ${type}>`;
   }
@@ -221,7 +225,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
     const suffix = transpiled.optional ? ' = null' : '';
 
     if (transpiled.variadic) {
-      return `params ${tf}[] ${transpiled.name}${suffix}`;
+      return `${this.variadicOf(tf)} ${transpiled.name}`;
     }
     return `${tf} ${transpiled.name}${suffix}`;
   }

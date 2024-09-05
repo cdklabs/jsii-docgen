@@ -183,6 +183,10 @@ export class GoTranspile extends transpile.TranspileBase {
     return `*[]${type}`;
   }
 
+  public variadicOf(type: string): string {
+    return `...${type}`;
+  }
+
   public mapOf(type: string): string {
     return `*map[string]${type}`;
   }
@@ -235,7 +239,7 @@ export class GoTranspile extends transpile.TranspileBase {
     });
 
     if (variadic) {
-      return `${name} ...${tf}`;
+      return `${name} ${this.variadicOf(tf)}`;
     }
 
     return `${name} ${tf}`;

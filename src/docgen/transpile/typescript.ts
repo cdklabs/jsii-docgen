@@ -70,6 +70,10 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
     return `${type}[]`;
   }
 
+  public variadicOf(type: string): string {
+    return `...${type}[]`;
+  }
+
   public mapOf(type: string): string {
     return `{[ key: string ]: ${type}}`;
   }
@@ -240,7 +244,7 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
     });
 
     if (transpiled.variadic) {
-      return `${transpiled.name}${transpiled.optional ? '?' : ''}: ...${tf}[]`;
+      return `${transpiled.name}: ${this.variadicOf(tf)}`;
     }
 
     return `${transpiled.name}${transpiled.optional ? '?' : ''}: ${tf}`;
