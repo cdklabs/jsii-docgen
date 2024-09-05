@@ -31,7 +31,7 @@ export class Parameter {
       optional: this.transpiledParam.optional === true ? true : undefined, // to save space
       default: this.parameter.spec.docs?.default,
       type: typeschema,
-      variadic: this.parameter.spec.variadic ?? false,
+      variadic: this.transpiledParam.variadic,
       docs: extractDocs(this.parameter.docs),
     };
   }
