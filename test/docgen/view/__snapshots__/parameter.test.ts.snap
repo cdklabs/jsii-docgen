@@ -34,15 +34,6 @@ exports[`csharp snapshot 2`] = `
 `;
 
 exports[`csharp snapshot 3`] = `
-" \`VariadicProps\`<sup>Required</sup> <a name="VariadicProps" id="my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps"></a>
-
-- *Type:* params double[]
-
----
-"
-`;
-
-exports[`csharp snapshot 4`] = `
 " \`VariadicInput\`<sup>Required</sup> <a name="VariadicInput" id="my-construct-library.MyVariadicClass.myFunction.parameter.variadicInput"></a>
 
 - *Type:* params double[]
@@ -51,8 +42,17 @@ exports[`csharp snapshot 4`] = `
 "
 `;
 
-exports[`csharp snapshot 5`] = `
+exports[`csharp snapshot 4`] = `
 " \`StaticVariadicInput\`<sup>Required</sup> <a name="StaticVariadicInput" id="my-construct-library.MyVariadicClass.myStaticFunction.parameter.staticVariadicInput"></a>
+
+- *Type:* params double[]
+
+---
+"
+`;
+
+exports[`csharp snapshot variadic 1`] = `
+" \`VariadicProps\`<sup>Required</sup> <a name="VariadicProps" id="my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps"></a>
 
 - *Type:* params double[]
 
@@ -94,15 +94,6 @@ exports[`go snapshot 2`] = `
 `;
 
 exports[`go snapshot 3`] = `
-" \`variadicProps\`<sup>Required</sup> <a name="variadicProps" id="my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps"></a>
-
-- *Type:* ...*f64
-
----
-"
-`;
-
-exports[`go snapshot 4`] = `
 " \`variadicInput\`<sup>Required</sup> <a name="variadicInput" id="my-construct-library.MyVariadicClass.myFunction.parameter.variadicInput"></a>
 
 - *Type:* ...*f64
@@ -111,8 +102,17 @@ exports[`go snapshot 4`] = `
 "
 `;
 
-exports[`go snapshot 5`] = `
+exports[`go snapshot 4`] = `
 " \`staticVariadicInput\`<sup>Required</sup> <a name="staticVariadicInput" id="my-construct-library.MyVariadicClass.myStaticFunction.parameter.staticVariadicInput"></a>
+
+- *Type:* ...*f64
+
+---
+"
+`;
+
+exports[`go snapshot variadic 1`] = `
+" \`variadicProps\`<sup>Required</sup> <a name="variadicProps" id="my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps"></a>
 
 - *Type:* ...*f64
 
@@ -154,15 +154,6 @@ exports[`java snapshot 2`] = `
 `;
 
 exports[`java snapshot 3`] = `
-" \`variadicProps\`<sup>Required</sup> <a name="variadicProps" id="my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps"></a>
-
-- *Type:* java.lang.Number...
-
----
-"
-`;
-
-exports[`java snapshot 4`] = `
 " \`variadicInput\`<sup>Required</sup> <a name="variadicInput" id="my-construct-library.MyVariadicClass.myFunction.parameter.variadicInput"></a>
 
 - *Type:* java.lang.Number...
@@ -171,8 +162,17 @@ exports[`java snapshot 4`] = `
 "
 `;
 
-exports[`java snapshot 5`] = `
+exports[`java snapshot 4`] = `
 " \`staticVariadicInput\`<sup>Required</sup> <a name="staticVariadicInput" id="my-construct-library.MyVariadicClass.myStaticFunction.parameter.staticVariadicInput"></a>
+
+- *Type:* java.lang.Number...
+
+---
+"
+`;
+
+exports[`java snapshot variadic 1`] = `
+" \`variadicProps\`<sup>Required</sup> <a name="variadicProps" id="my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps"></a>
 
 - *Type:* java.lang.Number...
 
@@ -224,15 +224,6 @@ exports[`python snapshot 2`] = `
 `;
 
 exports[`python snapshot 3`] = `
-" \`variadic_props\`<sup>Required</sup> <a name="variadic_props" id="my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps"></a>
-
-- *Type:* *typing.Union[int, float]
-
----
-"
-`;
-
-exports[`python snapshot 4`] = `
 " \`variadic_input\`<sup>Required</sup> <a name="variadic_input" id="my-construct-library.MyVariadicClass.myFunction.parameter.variadicInput"></a>
 
 - *Type:* *typing.Union[int, float]
@@ -241,8 +232,17 @@ exports[`python snapshot 4`] = `
 "
 `;
 
-exports[`python snapshot 5`] = `
+exports[`python snapshot 4`] = `
 " \`static_variadic_input\`<sup>Required</sup> <a name="static_variadic_input" id="my-construct-library.MyVariadicClass.myStaticFunction.parameter.staticVariadicInput"></a>
+
+- *Type:* *typing.Union[int, float]
+
+---
+"
+`;
+
+exports[`python snapshot variadic 1`] = `
+" \`variadic_props\`<sup>Required</sup> <a name="variadic_props" id="my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps"></a>
 
 - *Type:* *typing.Union[int, float]
 
@@ -284,15 +284,6 @@ exports[`typescript snapshot 2`] = `
 `;
 
 exports[`typescript snapshot 3`] = `
-" \`variadicProps\`<sup>Required</sup> <a name="variadicProps" id="my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps"></a>
-
-- *Type:* ...number[]
-
----
-"
-`;
-
-exports[`typescript snapshot 4`] = `
 " \`variadicInput\`<sup>Required</sup> <a name="variadicInput" id="my-construct-library.MyVariadicClass.myFunction.parameter.variadicInput"></a>
 
 - *Type:* ...number[]
@@ -301,8 +292,17 @@ exports[`typescript snapshot 4`] = `
 "
 `;
 
-exports[`typescript snapshot 5`] = `
+exports[`typescript snapshot 4`] = `
 " \`staticVariadicInput\`<sup>Required</sup> <a name="staticVariadicInput" id="my-construct-library.MyVariadicClass.myStaticFunction.parameter.staticVariadicInput"></a>
+
+- *Type:* ...number[]
+
+---
+"
+`;
+
+exports[`typescript snapshot variadic 1`] = `
+" \`variadicProps\`<sup>Required</sup> <a name="variadicProps" id="my-construct-library.MyVariadicClass.Initializer.parameter.variadicProps"></a>
 
 - *Type:* ...number[]
 
