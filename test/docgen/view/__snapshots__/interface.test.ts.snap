@@ -101,7 +101,8 @@ exports[`csharp snapshot 1`] = `
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
           "optional": undefined,
           "type": {
-            "formattingPattern": "string",
+            "formattingPattern": "params string[]",
+            "types": undefined,
           },
           "variadic": true,
         },
@@ -607,7 +608,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ### \`Actions\`<sup>Required</sup> <a name="Actions" id="@aws-cdk/aws-ecr.IRepository.grant.parameter.actions"></a>
 
-- *Type:* string
+- *Type:* params string[]
 
 ---
 
@@ -973,7 +974,8 @@ exports[`go snapshot 1`] = `
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
           "optional": undefined,
           "type": {
-            "formattingPattern": "*string",
+            "formattingPattern": "...*string",
+            "types": undefined,
           },
           "variadic": true,
         },
@@ -1479,7 +1481,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.IRepository.grant.parameter.actions"></a>
 
-- *Type:* *string
+- *Type:* ...*string
 
 ---
 
@@ -1845,12 +1847,13 @@ exports[`java snapshot 1`] = `
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
           "optional": undefined,
           "type": {
-            "formattingPattern": "java.lang.String",
+            "formattingPattern": "java.lang.String...",
+            "types": undefined,
           },
           "variadic": true,
         },
       ],
-      "usage": "public Grant grant(IGrantable grantee, java.lang.String actions...)",
+      "usage": "public Grant grant(IGrantable grantee, java.lang.String... actions)",
     },
     {
       "displayName": "grantPull",
@@ -2344,7 +2347,7 @@ Add a policy statement to the repository's resource policy.
 ## \`grant\` <a name="grant" id="@aws-cdk/aws-ecr.IRepository.grant"></a>
 
 \`\`\`java
-public Grant grant(IGrantable grantee, java.lang.String actions...)
+public Grant grant(IGrantable grantee, java.lang.String... actions)
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -2357,7 +2360,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.IRepository.grant.parameter.actions"></a>
 
-- *Type:* java.lang.String
+- *Type:* java.lang.String...
 
 ---
 
@@ -2731,7 +2734,8 @@ exports[`python snapshot 1`] = `
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
           "optional": undefined,
           "type": {
-            "formattingPattern": "str",
+            "formattingPattern": "*str",
+            "types": undefined,
           },
           "variadic": true,
         },
@@ -3543,7 +3547,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.IRepository.grant.parameter.actions"></a>
 
-- *Type:* str
+- *Type:* *str
 
 ---
 
@@ -4101,7 +4105,8 @@ exports[`typescript snapshot 1`] = `
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
           "optional": undefined,
           "type": {
-            "formattingPattern": "string",
+            "formattingPattern": "...string[]",
+            "types": undefined,
           },
           "variadic": true,
         },
@@ -4607,7 +4612,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.IRepository.grant.parameter.actions"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 ---
 
