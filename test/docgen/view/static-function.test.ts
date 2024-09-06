@@ -13,7 +13,7 @@ const metadata = {
 };
 
 const findStaticFunction = (): reflect.Method => {
-  for (const klass of assembly.system.classes) {
+  for (const klass of assembly.classes) {
     for (const method of klass.ownMethods) {
       if (method.static) {
         return method;

@@ -15,7 +15,7 @@ const metadata = {
 };
 
 const findParameter = (): reflect.Parameter => {
-  for (const klass of assembly.system.classes) {
+  for (const klass of assembly.classes) {
     for (const method of klass.ownMethods) {
       if (method.parameters.length > 0) {
         return method.parameters[0];
