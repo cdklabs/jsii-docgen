@@ -225,7 +225,6 @@ export class JavaTranspile extends transpile.TranspileBase {
       parentType: this.type(property.parentType),
       typeReference: typeRef,
       optional: property.optional,
-      variadic: false,
       declaration: this.formatProperty(property.name, typeRef),
     };
   }
@@ -297,7 +296,7 @@ export class JavaTranspile extends transpile.TranspileBase {
   };
 
   private formatParameter(
-    transpiled: transpile.TranspiledParameter | transpile.TranspiledProperty,
+    transpiled: transpile.TranspiledParameter,
   ): string {
     const tf = transpiled.typeReference.toString({
       typeFormatter: (t) => t.name,
@@ -353,7 +352,7 @@ export class JavaTranspile extends transpile.TranspileBase {
   };
 
   private formatBuilderMethod(
-    transpiled: transpile.TranspiledParameter,
+    transpiled: transpile.TranspiledProperty,
     indent: string,
   ): string[] {
     if (transpiled.optional) indent = '//' + indent.slice(2);

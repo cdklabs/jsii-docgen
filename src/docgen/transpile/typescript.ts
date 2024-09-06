@@ -127,7 +127,6 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
       parentType: this.type(property.parentType),
       typeReference: typeRef,
       optional: property.optional,
-      variadic: false,
       declaration: this.formatProperty(property.name, typeRef),
     };
   }
@@ -237,7 +236,7 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
   }
 
   private formatParameters(
-    transpiled: transpile.TranspiledParameter | transpile.TranspiledProperty,
+    transpiled: transpile.TranspiledParameter,
   ): string {
     const tf = transpiled.typeReference.toString({
       typeFormatter: (t) => t.name,

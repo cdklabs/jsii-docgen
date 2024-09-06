@@ -103,7 +103,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
     const type = this.type(struct);
     const indent = ' '.repeat(4);
     const inputs = struct.allProperties.map((p) => {
-      return `${indent}${this.formatFnParam(this.property(p))}`;
+      return `${indent}${this.formatFnParam(this.parameter(p))}`;
     }).flat();
     return {
       type: type,
@@ -123,7 +123,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
   }
 
   public parameter(
-    parameter: reflect.Parameter,
+    parameter: reflect.Parameter | reflect.Property,
   ): transpile.TranspiledParameter {
     const typeRef = this.typeReference(parameter.type);
     const name = Case.pascal(parameter.name);
@@ -132,7 +132,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
       parentType: this.type(parameter.parentType),
       typeReference: typeRef,
       optional: parameter.optional,
-      variadic: parameter.variadic,
+      variadic: 'variadic' in parameter ? parameter.variadic : false,
       declaration: this.formatParameter(name, typeRef),
     };
   }
@@ -145,7 +145,6 @@ export class CSharpTranspile extends transpile.TranspileBase {
       parentType: this.type(property.parentType),
       typeReference: typeRef,
       optional: property.optional,
-      variadic: false,
       declaration: this.formatProperty(name, typeRef, property),
     };
   }
@@ -217,14 +216,14 @@ export class CSharpTranspile extends transpile.TranspileBase {
   }
 
   private formatFnParam(
-    transpiled: transpile.TranspiledParameter | transpile.TranspiledProperty,
+    transpiled: transpile.TranspiledProperty | transpile.TranspiledParameter,
   ): string {
     const tf = transpiled.typeReference.toString({
       typeFormatter: (t) => t.name,
     });
     const suffix = transpiled.optional ? ' = null' : '';
 
-    if (transpiled.variadic) {
+    if ('variadic' in transpiled && transpiled.variadic) {
       return `${this.variadicOf(tf)} ${transpiled.name}`;
     }
     return `${tf} ${transpiled.name}${suffix}`;

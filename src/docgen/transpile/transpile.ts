@@ -196,32 +196,11 @@ export interface TranspiledCallable {
 /**
  * Outcome of transpiling a jsii parameter.
  */
-export interface TranspiledParameter {
-  /**
-   * The name.
-   */
-  readonly name: string;
-  /**
-   * The (transpiled) parent type.
-   */
-  readonly parentType: TranspiledType;
-  /**
-   * The (transpiled) type reference.
-   */
-  readonly typeReference: TranspiledTypeReference;
-  /**
-   * Whether or not the parameter is optional.
-   */
-  readonly optional: boolean;
+export interface TranspiledParameter extends TranspiledProperty {
   /**
    * Whether or not the parameter is variadic.
    */
   readonly variadic: boolean;
-  /**
-   * The signature of the property, or its getter if the language
-   * supports that.
-   */
-  readonly declaration: string;
 }
 
 /**
@@ -574,7 +553,29 @@ export class TranspiledTypeReference {
 /**
  * Outcome of transpiling a jsii property.
  */
-export type TranspiledProperty = TranspiledParameter;
+export interface TranspiledProperty {
+  /**
+   * The name.
+   */
+  readonly name: string;
+  /**
+   * The (transpiled) parent type.
+   */
+  readonly parentType: TranspiledType;
+  /**
+   * The (transpiled) type reference.
+   */
+  readonly typeReference: TranspiledTypeReference;
+  /**
+   * Whether or not the parameter is optional.
+   */
+  readonly optional: boolean;
+  /**
+   * The signature of the property, or its getter if the language
+   * supports that.
+   */
+  readonly declaration: string;
+}
 
 /**
  * Outcome of transpiling a jsii enum.

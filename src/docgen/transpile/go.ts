@@ -155,8 +155,6 @@ export class GoTranspile extends transpile.TranspileBase {
       parentType: this.type(property.parentType),
       typeReference: typeRef,
       optional: property.optional,
-      // Only parameters can be variadic, not properties.
-      variadic: false,
       declaration: this.formatProperty(name, typeRef, property),
     };
   }
@@ -224,7 +222,7 @@ export class GoTranspile extends transpile.TranspileBase {
   }
 
   private formatFnParam(
-    transpiled: transpile.TranspiledParameter | transpile.TranspiledProperty,
+    transpiled: transpile.TranspiledParameter,
   ): string {
     return this.formatParameter(transpiled.name, transpiled.typeReference, transpiled.variadic);
   }
