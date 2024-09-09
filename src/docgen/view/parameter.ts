@@ -15,7 +15,7 @@ export class Parameter {
 
   public toJson(): ParameterSchema {
     let typeschema = this.transpiledParam.typeReference.toJson();
-    if (this.parameter.spec.variadic) {
+    if (this.transpiledParam.variadic) {
       typeschema = {
         formattingPattern: this.transpile.variadicOf(this.transpiledParam.typeReference.toString()),
         types: typeschema.types,
