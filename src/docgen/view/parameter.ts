@@ -25,7 +25,7 @@ export class Parameter {
     // the '*' character to indicate the parameter is variadic.
     if (this.transpiledParam.variadic) {
       typeschema = {
-        formattingPattern: this.transpile.variadicOf(this.transpiledParam.typeReference.toString()),
+        formattingPattern: this.transpile.variadicOf(typeschema.formattingPattern),
         types: typeschema.types,
       };
     }
