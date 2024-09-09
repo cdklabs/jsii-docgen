@@ -91,7 +91,7 @@ const findInstanceMethodVariadicParameter = (): reflect.Parameter => {
   }
   throw new Error('Assembly does not contain an instance method with a variadic parameter');
 };
-test.each(Language.values())('%s snapshot', (language) => {
+test.each(Language.values())('%s snapshot variadic in instance method', (language) => {
   const { transpile } = LANGUAGE_SPECIFIC[language.toString()];
   const renderer = new MarkdownRenderer({ language, ...metadata });
   const param = new Parameter(transpile, findInstanceMethodVariadicParameter()).toJson();
