@@ -103,7 +103,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
     const type = this.type(struct);
     const indent = ' '.repeat(4);
     const inputs = struct.allProperties.map((p) => {
-      return `${indent}${this.formatFnParam(this.parameter(p))}`;
+      return `${indent}${this.formatFnParam(this.property(p))}`;
     }).flat();
     return {
       type: type,
