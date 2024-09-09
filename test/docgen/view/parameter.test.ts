@@ -114,7 +114,7 @@ const findStaticMethodVariadicParameter = (): reflect.Parameter => {
   }
   throw new Error('Assembly does not contain a static method with a variadic parameter');
 };
-test.each(Language.values())('%s snapshot', (language) => {
+test.each(Language.values())('%s snapshot variadic in static function', (language) => {
   const { transpile } = LANGUAGE_SPECIFIC[language.toString()];
   const renderer = new MarkdownRenderer({ language, ...metadata });
   const param = new Parameter(transpile, findStaticMethodVariadicParameter()).toJson();
