@@ -71,7 +71,7 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
   }
 
   public variadicOf(type: string): string {
-    return `...${type}[]`;
+    return `...${this.listOf(type)}`;
   }
 
   public mapOf(type: string): string {
