@@ -15,6 +15,14 @@ export class Parameter {
 
   public toJson(): ParameterSchema {
     let typeschema = this.transpiledParam.typeReference.toJson();
+    // If the parameter is variadic, then we have to change the formatting pattern of the type schema.
+    // For example, if the formatting pattern for a string type is 'string', we'd make it variadic by
+    // changing it to '...string[]' in Typescript - each language has its own variadic syntax which is defined
+    // in the `variadicOf()` function.
+    //
+    // Another example: let's say we have a Python function that takes a single number parameter like so: 'number: int'
+    // To make this variadic, we'd change it to '*number: int' -- here, the formatting pattern needs to be updated to prepend
+    // the '*' character to indicate the parameter is variadic.
     if (this.transpiledParam.variadic) {
       typeschema = {
         formattingPattern: this.transpile.variadicOf(this.transpiledParam.typeReference.toString()),
