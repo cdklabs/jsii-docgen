@@ -33,7 +33,7 @@ exports[`csharp snapshot 2`] = `
 "
 `;
 
-exports[`csharp snapshot variadic 1`] = `
+exports[`csharp snapshot variadic in initializer 1`] = `
 " \`VariadicProps\`<sup>Required</sup> <a name="VariadicProps" id="variadic-jsii-example.MyVariadicClass.Initializer.parameter.variadicProps"></a>
 
 - *Type:* params double[]
@@ -93,7 +93,7 @@ exports[`go snapshot 2`] = `
 "
 `;
 
-exports[`go snapshot variadic 1`] = `
+exports[`go snapshot variadic in initializer 1`] = `
 " \`variadicProps\`<sup>Required</sup> <a name="variadicProps" id="variadic-jsii-example.MyVariadicClass.Initializer.parameter.variadicProps"></a>
 
 - *Type:* ...*f64
@@ -153,7 +153,7 @@ exports[`java snapshot 2`] = `
 "
 `;
 
-exports[`java snapshot variadic 1`] = `
+exports[`java snapshot variadic in initializer 1`] = `
 " \`variadicProps\`<sup>Required</sup> <a name="variadicProps" id="variadic-jsii-example.MyVariadicClass.Initializer.parameter.variadicProps"></a>
 
 - *Type:* java.lang.Number...
@@ -223,7 +223,7 @@ exports[`python snapshot 2`] = `
 "
 `;
 
-exports[`python snapshot variadic 1`] = `
+exports[`python snapshot variadic in initializer 1`] = `
 " \`variadic_props\`<sup>Required</sup> <a name="variadic_props" id="variadic-jsii-example.MyVariadicClass.Initializer.parameter.variadicProps"></a>
 
 - *Type:* *typing.Union[int, float]
@@ -283,7 +283,7 @@ exports[`typescript snapshot 2`] = `
 "
 `;
 
-exports[`typescript snapshot variadic 1`] = `
+exports[`typescript snapshot variadic in initializer 1`] = `
 " \`variadicProps\`<sup>Required</sup> <a name="variadicProps" id="variadic-jsii-example.MyVariadicClass.Initializer.parameter.variadicProps"></a>
 
 - *Type:* ...number[]
