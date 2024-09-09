@@ -172,7 +172,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
   }
 
   public variadicOf(type: string): string {
-    return `params ${type}[]`;
+    return `params ${this.listOf(type)}`;
   }
 
   public mapOf(type: string): string {
