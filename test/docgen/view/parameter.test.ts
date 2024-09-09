@@ -68,7 +68,7 @@ const findInitializerVariadicParameter = (): reflect.Parameter => {
   throw new Error('Assembly does not contain a variadic parameter');
 };
 
-test.each(Language.values())('%s snapshot variadic', (language) => {
+test.each(Language.values())('%s snapshot variadic in initializer', (language) => {
   const { transpile } = LANGUAGE_SPECIFIC[language.toString()];
   const renderer = new MarkdownRenderer({ language, ...metadata });
   const param = new Parameter(transpile, findInitializerVariadicParameter()).toJson();
