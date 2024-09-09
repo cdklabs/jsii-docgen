@@ -6478,13 +6478,13 @@ constructs.NewDependencyGroup(deps ...IDependable) DependencyGroup
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="/packages/constructs/v/10.0.78/api/DependencyGroup.Initializer.parameter.deps?lang=python">deps</a></code> | <code>...github.com/aws/constructs-go/constructs/v10.IDependable</code> | *No description.* |
+| <code><a href="/packages/constructs/v/10.0.78/api/DependencyGroup.Initializer.parameter.deps?lang=python">deps</a></code> | <code>...<a href="/packages/constructs/v/99.99.99/api/IDependable?lang=python">IDependable</a></code> | *No description.* |
 
 ---
 
 ##### \`deps\`<sup>Required</sup> <a name="deps" id="DependencyGroup.Initializer.parameter.deps"></a>
 
-- *Type:* ...github.com/aws/constructs-go/constructs/v10.IDependable
+- *Type:* ...<a href="/packages/constructs/v/99.99.99/api/IDependable?lang=python">IDependable</a>
 
 ---
 
@@ -6506,7 +6506,7 @@ Add a construct to the dependency roots.
 
 ###### \`scopes\`<sup>Required</sup> <a name="scopes" id="DependencyGroup.add.parameter.scopes"></a>
 
-- *Type:* ...github.com/aws/constructs-go/constructs/v10.IDependable
+- *Type:* ...<a href="/packages/constructs/v/99.99.99/api/IDependable?lang=python">IDependable</a>
 
 ---
 
@@ -6581,7 +6581,7 @@ An \`IDependable\`
 
 ###### \`deps\`<sup>Required</sup> <a name="deps" id="Node.addDependency.parameter.deps"></a>
 
-- *Type:* ...github.com/aws/constructs-go/constructs/v10.IDependable
+- *Type:* ...<a href="/packages/constructs/v/99.99.99/api/IDependable?lang=python">IDependable</a>
 
 ---
 
@@ -27844,13 +27844,13 @@ constructs.NewDependencyGroup(deps ...IDependable) DependencyGroup
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#custom-constructs.DependencyGroup.Initializer.parameter.deps">deps</a></code> | <code>...github.com/aws/constructs-go/constructs/v10.IDependable</code> | *No description.* |
+| <code><a href="#custom-constructs.DependencyGroup.Initializer.parameter.deps">deps</a></code> | <code>...<a href="#custom-constructs.IDependable">IDependable</a></code> | *No description.* |
 
 ---
 
 ##### \`deps\`<sup>Required</sup> <a name="deps" id="constructs.DependencyGroup.Initializer.parameter.deps"></a>
 
-- *Type:* ...github.com/aws/constructs-go/constructs/v10.IDependable
+- *Type:* ...<a href="#custom-constructs.IDependable">IDependable</a>
 
 ---
 
@@ -27872,7 +27872,7 @@ Add a construct to the dependency roots.
 
 ###### \`scopes\`<sup>Required</sup> <a name="scopes" id="constructs.DependencyGroup.add.parameter.scopes"></a>
 
-- *Type:* ...github.com/aws/constructs-go/constructs/v10.IDependable
+- *Type:* ...<a href="#custom-constructs.IDependable">IDependable</a>
 
 ---
 
@@ -27947,7 +27947,7 @@ An \`IDependable\`
 
 ###### \`deps\`<sup>Required</sup> <a name="deps" id="constructs.Node.addDependency.parameter.deps"></a>
 
-- *Type:* ...github.com/aws/constructs-go/constructs/v10.IDependable
+- *Type:* ...<a href="#custom-constructs.IDependable">IDependable</a>
 
 ---
 
