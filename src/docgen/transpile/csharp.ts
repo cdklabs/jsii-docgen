@@ -132,7 +132,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
       parentType: this.type(parameter.parentType),
       typeReference: typeRef,
       optional: parameter.optional,
-      variadic: 'variadic' in parameter ? parameter.variadic : false,
+      variadic: parameter.variadic,
       declaration: this.formatParameter(name, typeRef),
     };
   }
