@@ -70,6 +70,10 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
     return `${type}[]`;
   }
 
+  public variadicOf(type: string): string {
+    return `...${this.listOf(type)}`;
+  }
+
   public mapOf(type: string): string {
     return `{[ key: string ]: ${type}}`;
   }
@@ -143,6 +147,7 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
       parentType: this.type(parameter.parentType),
       typeReference: typeRef,
       optional: parameter.optional,
+      variadic: parameter.variadic,
       declaration: this.formatProperty(parameter.name, typeRef),
     };
   }
@@ -231,11 +236,16 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
   }
 
   private formatParameters(
-    transpiled: transpile.TranspiledParameter | transpile.TranspiledProperty,
+    transpiled: transpile.TranspiledParameter,
   ): string {
     const tf = transpiled.typeReference.toString({
       typeFormatter: (t) => t.name,
     });
+
+    if (transpiled.variadic) {
+      return `${transpiled.name}: ${this.variadicOf(tf)}`;
+    }
+
     return `${transpiled.name}${transpiled.optional ? '?' : ''}: ${tf}`;
   }
 

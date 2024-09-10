@@ -27,6 +27,7 @@ exports[`csharp snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -40,6 +41,7 @@ exports[`csharp snapshot 1`] = `
       "type": {
         "formattingPattern": "string",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -62,6 +64,7 @@ exports[`csharp snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
   ],
   "usage": "using Amazon.CDK.AWS.ECR;
@@ -140,6 +143,7 @@ exports[`go snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -153,6 +157,7 @@ exports[`go snapshot 1`] = `
       "type": {
         "formattingPattern": "*string",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -175,6 +180,7 @@ exports[`go snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
   ],
   "usage": "import "github.com/aws/aws-cdk-go/awscdkawsecr"
@@ -253,6 +259,7 @@ exports[`java snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -266,6 +273,7 @@ exports[`java snapshot 1`] = `
       "type": {
         "formattingPattern": "java.lang.String",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -282,6 +290,7 @@ exports[`java snapshot 1`] = `
       "type": {
         "formattingPattern": "java.lang.Object",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -298,6 +307,7 @@ exports[`java snapshot 1`] = `
       "type": {
         "formattingPattern": "java.lang.String",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -314,6 +324,7 @@ exports[`java snapshot 1`] = `
       "type": {
         "formattingPattern": "java.lang.Object",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -344,6 +355,7 @@ exports[`java snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
   ],
   "usage": "import software.amazon.awscdk.services.ecr.CfnPublicRepository;
@@ -467,6 +479,7 @@ exports[`python snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -480,6 +493,7 @@ exports[`python snapshot 1`] = `
       "type": {
         "formattingPattern": "str",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -496,6 +510,7 @@ exports[`python snapshot 1`] = `
       "type": {
         "formattingPattern": "typing.Any",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -512,6 +527,7 @@ exports[`python snapshot 1`] = `
       "type": {
         "formattingPattern": "str",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -528,6 +544,7 @@ exports[`python snapshot 1`] = `
       "type": {
         "formattingPattern": "typing.Any",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -558,6 +575,7 @@ exports[`python snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
   ],
   "usage": "import aws_cdk.aws_ecr
@@ -685,6 +703,7 @@ exports[`typescript snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -698,6 +717,7 @@ exports[`typescript snapshot 1`] = `
       "type": {
         "formattingPattern": "string",
       },
+      "variadic": false,
     },
     {
       "default": undefined,
@@ -720,6 +740,7 @@ exports[`typescript snapshot 1`] = `
           },
         ],
       },
+      "variadic": false,
     },
   ],
   "usage": "import { CfnPublicRepository } from '@aws-cdk/aws-ecr'

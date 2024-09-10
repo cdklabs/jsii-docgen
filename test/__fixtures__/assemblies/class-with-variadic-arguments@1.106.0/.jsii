@@ -1,0 +1,207 @@
+{
+  "author": {
+    "email": "john.doe@acme.com",
+    "name": "John Doe",
+    "roles": [
+      "author"
+    ]
+  },
+  "dependencies": {
+    "constructs": "^10.3.0"
+  },
+  "dependencyClosure": {
+    "constructs": {
+      "targets": {
+        "dotnet": {
+          "namespace": "Constructs",
+          "packageId": "Constructs"
+        },
+        "go": {
+          "moduleName": "github.com/aws/constructs-go"
+        },
+        "java": {
+          "maven": {
+            "artifactId": "constructs",
+            "groupId": "software.constructs"
+          },
+          "package": "software.constructs"
+        },
+        "js": {
+          "npm": "constructs"
+        },
+        "python": {
+          "distName": "constructs",
+          "module": "constructs"
+        }
+      }
+    }
+  },
+  "description": "",
+  "docs": {
+    "stability": "stable"
+  },
+  "homepage": "https://github.com/acme/project-name.git",
+  "jsiiVersion": "5.5.1",
+  "keywords": [],
+  "license": "ISC",
+  "metadata": {
+    "jsii": {
+      "pacmak": {
+        "hasDefaultInterfaces": true
+      }
+    },
+    "tscRootDir": "src"
+  },
+  "name": "variadic-jsii-example",
+  "readme": {
+    "markdown": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acme/project-name.git"
+  },
+  "schema": "jsii/0.10.0",
+  "targets": {
+    "js": {
+      "npm": "variadic-jsii-example"
+    },
+    "python": {
+      "distName": "sumu_constructs.core",
+      "module": "sumu_constructs.core"
+    },
+    "go": {
+      "moduleName": "github.com/acme/project-name"
+    }
+  },
+  "types": {
+    "variadic-jsii-example.MyVariadicClass": {
+      "assembly": "variadic-jsii-example",
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "variadic-jsii-example.MyVariadicClass",
+      "initializer": {
+        "docs": {
+          "stability": "stable"
+        },
+        "locationInModule": {
+          "filename": "src/index.ts",
+          "line": 22
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "type": {
+              "primitive": "number"
+            }
+          },
+          {
+            "name": "variadicProps",
+            "type": {
+              "primitive": "number"
+            },
+            "variadic": true
+          }
+        ],
+        "variadic": true
+      },
+      "kind": "class",
+      "locationInModule": {
+        "filename": "src/index.ts",
+        "line": 19
+      },
+      "methods": [
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "locationInModule": {
+            "filename": "src/index.ts",
+            "line": 27
+          },
+          "name": "myFunction",
+          "parameters": [
+            {
+              "name": "singleInput",
+              "type": {
+                "primitive": "number"
+              }
+            },
+            {
+              "name": "variadicInput",
+              "type": {
+                "primitive": "number"
+              },
+              "variadic": true
+            }
+          ],
+          "variadic": true
+        },
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "locationInModule": {
+            "filename": "src/index.ts",
+            "line": 27
+          },
+          "name": "myStaticFunction",
+          "parameters": [
+            {
+              "name": "staticSingleInput",
+              "type": {
+                "primitive": "number"
+              }
+            },
+            {
+              "name": "staticVariadicInput",
+              "type": {
+                "primitive": "number"
+              },
+              "variadic": true
+            }
+          ],
+          "variadic": true,
+          "static": true
+        }
+      ],
+      "name": "MyVariadicClass",
+      "properties": [
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "locationInModule": {
+            "filename": "src/index.ts",
+            "line": 20
+          },
+          "name": "id",
+          "type": {
+            "primitive": "number"
+          }
+        },
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "locationInModule": {
+            "filename": "src/index.ts",
+            "line": 21
+          },
+          "name": "props",
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "number"
+              },
+              "kind": "array"
+            }
+          }
+        }
+      ],
+      "symbolId": "src/index:MyVariadicClass"
+    }
+  },
+  "version": "1.0.0",
+  "fingerprint": "MVY8gZ0InYVnyxT4u6+25G013Gn2Cz+1MCYVqOonyPs="
+}

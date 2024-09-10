@@ -20,6 +20,7 @@ exports[`csharp snapshot 1`] = `
       },
     ],
   },
+  "variadic": false,
 }
 `;
 
@@ -27,6 +28,33 @@ exports[`csharp snapshot 2`] = `
 " \`Grantee\`<sup>Required</sup> <a name="Grantee" id="@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee"></a>
 
 - *Type:* Amazon.CDK.AWS.IAM.IGrantable
+
+---
+"
+`;
+
+exports[`csharp snapshot variadic in initializer 1`] = `
+" \`VariadicProps\`<sup>Required</sup> <a name="VariadicProps" id="variadic-jsii-example.MyVariadicClass.Initializer.parameter.variadicProps"></a>
+
+- *Type:* params double[]
+
+---
+"
+`;
+
+exports[`csharp snapshot variadic in instance method 1`] = `
+" \`VariadicInput\`<sup>Required</sup> <a name="VariadicInput" id="variadic-jsii-example.MyVariadicClass.myFunction.parameter.variadicInput"></a>
+
+- *Type:* params double[]
+
+---
+"
+`;
+
+exports[`csharp snapshot variadic in static function 1`] = `
+" \`StaticVariadicInput\`<sup>Required</sup> <a name="StaticVariadicInput" id="variadic-jsii-example.MyVariadicClass.myStaticFunction.parameter.staticVariadicInput"></a>
+
+- *Type:* params double[]
 
 ---
 "
@@ -52,6 +80,7 @@ exports[`go snapshot 1`] = `
       },
     ],
   },
+  "variadic": false,
 }
 `;
 
@@ -59,6 +88,33 @@ exports[`go snapshot 2`] = `
 " \`grantee\`<sup>Required</sup> <a name="grantee" id="@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee"></a>
 
 - *Type:* github.com/aws/aws-cdk-go/awscdk/awsiam/awscdkawsiam.IGrantable
+
+---
+"
+`;
+
+exports[`go snapshot variadic in initializer 1`] = `
+" \`variadicProps\`<sup>Required</sup> <a name="variadicProps" id="variadic-jsii-example.MyVariadicClass.Initializer.parameter.variadicProps"></a>
+
+- *Type:* ...*f64
+
+---
+"
+`;
+
+exports[`go snapshot variadic in instance method 1`] = `
+" \`variadicInput\`<sup>Required</sup> <a name="variadicInput" id="variadic-jsii-example.MyVariadicClass.myFunction.parameter.variadicInput"></a>
+
+- *Type:* ...*f64
+
+---
+"
+`;
+
+exports[`go snapshot variadic in static function 1`] = `
+" \`staticVariadicInput\`<sup>Required</sup> <a name="staticVariadicInput" id="variadic-jsii-example.MyVariadicClass.myStaticFunction.parameter.staticVariadicInput"></a>
+
+- *Type:* ...*f64
 
 ---
 "
@@ -84,6 +140,7 @@ exports[`java snapshot 1`] = `
       },
     ],
   },
+  "variadic": false,
 }
 `;
 
@@ -91,6 +148,33 @@ exports[`java snapshot 2`] = `
 " \`grantee\`<sup>Required</sup> <a name="grantee" id="@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee"></a>
 
 - *Type:* software.amazon.awscdk.services.iam.IGrantable
+
+---
+"
+`;
+
+exports[`java snapshot variadic in initializer 1`] = `
+" \`variadicProps\`<sup>Required</sup> <a name="variadicProps" id="variadic-jsii-example.MyVariadicClass.Initializer.parameter.variadicProps"></a>
+
+- *Type:* java.lang.Number...
+
+---
+"
+`;
+
+exports[`java snapshot variadic in instance method 1`] = `
+" \`variadicInput\`<sup>Required</sup> <a name="variadicInput" id="variadic-jsii-example.MyVariadicClass.myFunction.parameter.variadicInput"></a>
+
+- *Type:* java.lang.Number...
+
+---
+"
+`;
+
+exports[`java snapshot variadic in static function 1`] = `
+" \`staticVariadicInput\`<sup>Required</sup> <a name="staticVariadicInput" id="variadic-jsii-example.MyVariadicClass.myStaticFunction.parameter.staticVariadicInput"></a>
+
+- *Type:* java.lang.Number...
 
 ---
 "
@@ -126,6 +210,7 @@ exports[`python snapshot 1`] = `
       },
     ],
   },
+  "variadic": false,
 }
 `;
 
@@ -133,6 +218,33 @@ exports[`python snapshot 2`] = `
 " \`grantee\`<sup>Required</sup> <a name="grantee" id="@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee"></a>
 
 - *Type:* aws_cdk.aws_iam.IGrantable
+
+---
+"
+`;
+
+exports[`python snapshot variadic in initializer 1`] = `
+" \`variadic_props\`<sup>Required</sup> <a name="variadic_props" id="variadic-jsii-example.MyVariadicClass.Initializer.parameter.variadicProps"></a>
+
+- *Type:* *typing.Union[int, float]
+
+---
+"
+`;
+
+exports[`python snapshot variadic in instance method 1`] = `
+" \`variadic_input\`<sup>Required</sup> <a name="variadic_input" id="variadic-jsii-example.MyVariadicClass.myFunction.parameter.variadicInput"></a>
+
+- *Type:* *typing.Union[int, float]
+
+---
+"
+`;
+
+exports[`python snapshot variadic in static function 1`] = `
+" \`static_variadic_input\`<sup>Required</sup> <a name="static_variadic_input" id="variadic-jsii-example.MyVariadicClass.myStaticFunction.parameter.staticVariadicInput"></a>
+
+- *Type:* *typing.Union[int, float]
 
 ---
 "
@@ -158,6 +270,7 @@ exports[`typescript snapshot 1`] = `
       },
     ],
   },
+  "variadic": false,
 }
 `;
 
@@ -165,6 +278,33 @@ exports[`typescript snapshot 2`] = `
 " \`grantee\`<sup>Required</sup> <a name="grantee" id="@aws-cdk/aws-ecr.AuthorizationToken.grantRead.parameter.grantee"></a>
 
 - *Type:* @aws-cdk/aws-iam.IGrantable
+
+---
+"
+`;
+
+exports[`typescript snapshot variadic in initializer 1`] = `
+" \`variadicProps\`<sup>Required</sup> <a name="variadicProps" id="variadic-jsii-example.MyVariadicClass.Initializer.parameter.variadicProps"></a>
+
+- *Type:* ...number[]
+
+---
+"
+`;
+
+exports[`typescript snapshot variadic in instance method 1`] = `
+" \`variadicInput\`<sup>Required</sup> <a name="variadicInput" id="variadic-jsii-example.MyVariadicClass.myFunction.parameter.variadicInput"></a>
+
+- *Type:* ...number[]
+
+---
+"
+`;
+
+exports[`typescript snapshot variadic in static function 1`] = `
+" \`staticVariadicInput\`<sup>Required</sup> <a name="staticVariadicInput" id="variadic-jsii-example.MyVariadicClass.myStaticFunction.parameter.staticVariadicInput"></a>
+
+- *Type:* ...number[]
 
 ---
 "

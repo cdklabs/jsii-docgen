@@ -7,6 +7,7 @@ import { Parameter } from '../../../src/docgen/view/parameter';
 import { Assemblies } from '../assemblies';
 
 const assembly: reflect.Assembly = Assemblies.instance.withoutSubmodules;
+const variadicTestAssembly: reflect.Assembly = Assemblies.instance.withVariadicParameter;
 
 const metadata = {
   packageName: assembly.name,
@@ -51,4 +52,72 @@ test('newlines in any other than "defaults" are not removed', () => {
   const renderer = new MarkdownRenderer({ language: Language.TYPESCRIPT, ...metadata });
   const markdown = renderer.visitParameter(docgenParameter).render();
   expect(markdown).toContain('remarks\nwith a newline');
+});
+
+// Tests variadic parameter in initializer
+const findInitializerVariadicParameter = (): reflect.Parameter => {
+  for (const klass of variadicTestAssembly.classes) {
+    if (klass.initializer) {
+      for (const param of klass.initializer.parameters) {
+        if (param.variadic) {
+          return param;
+        }
+      }
+    }
+  }
+  throw new Error('Assembly does not contain a variadic parameter');
+};
+
+test.each(Language.values())('%s snapshot variadic in initializer', (language) => {
+  const { transpile } = LANGUAGE_SPECIFIC[language.toString()];
+  const renderer = new MarkdownRenderer({ language, ...metadata });
+  const param = new Parameter(transpile, findInitializerVariadicParameter()).toJson();
+  const markdown = renderer.visitParameter(param).render();
+  expect(markdown).toMatchSnapshot();
+});
+
+// Test variadic param in Instance Method
+const findInstanceMethodVariadicParameter = (): reflect.Parameter => {
+  for (const klass of variadicTestAssembly.classes) {
+    for (const method of klass.ownMethods) {
+      if (!method.static) {
+        for (const param of method.parameters) {
+          if (param.variadic) {
+            return param;
+          }
+        }
+      }
+    }
+  }
+  throw new Error('Assembly does not contain an instance method with a variadic parameter');
+};
+test.each(Language.values())('%s snapshot variadic in instance method', (language) => {
+  const { transpile } = LANGUAGE_SPECIFIC[language.toString()];
+  const renderer = new MarkdownRenderer({ language, ...metadata });
+  const param = new Parameter(transpile, findInstanceMethodVariadicParameter()).toJson();
+  const markdown = renderer.visitParameter(param).render();
+  expect(markdown).toMatchSnapshot();
+});
+
+// Test variadic param in Static Method
+const findStaticMethodVariadicParameter = (): reflect.Parameter => {
+  for (const klass of variadicTestAssembly.classes) {
+    for (const method of klass.ownMethods) {
+      if (method.static) {
+        for (const param of method.parameters) {
+          if (param.variadic) {
+            return param;
+          }
+        }
+      }
+    }
+  }
+  throw new Error('Assembly does not contain a static method with a variadic parameter');
+};
+test.each(Language.values())('%s snapshot variadic in static function', (language) => {
+  const { transpile } = LANGUAGE_SPECIFIC[language.toString()];
+  const renderer = new MarkdownRenderer({ language, ...metadata });
+  const param = new Parameter(transpile, findStaticMethodVariadicParameter()).toJson();
+  const markdown = renderer.visitParameter(param).render();
+  expect(markdown).toMatchSnapshot();
 });

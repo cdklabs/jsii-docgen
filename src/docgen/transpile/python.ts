@@ -97,6 +97,10 @@ export class PythonTranspile extends transpile.TranspileBase {
     return `${this.typing('List')}[${type}]`;
   }
 
+  public variadicOf(type: string): string {
+    return `*${type}`;
+  }
+
   public mapOf(type: string): string {
     return `${this.typing('Mapping')}[${type}]`;
   }
@@ -162,8 +166,9 @@ export class PythonTranspile extends transpile.TranspileBase {
   }
 
   public parameter(
-    parameter: reflect.Parameter,
+    parameter: reflect.Parameter | reflect.Property,
   ): transpile.TranspiledParameter {
+
     const name = toSnakeCase(parameter.name);
     const typeRef = this.typeReference(parameter.type);
     return {
@@ -171,6 +176,7 @@ export class PythonTranspile extends transpile.TranspileBase {
       parentType: this.type(parameter.parentType),
       typeReference: typeRef,
       optional: parameter.optional,
+      variadic: 'variadic' in parameter ? parameter.variadic : false,
       declaration: this.formatProperty(name, typeRef),
     };
   }
@@ -178,7 +184,7 @@ export class PythonTranspile extends transpile.TranspileBase {
   public struct(struct: reflect.InterfaceType): transpile.TranspiledStruct {
     const type = this.type(struct);
     const inputs = struct.allProperties.map((p) =>
-      this.formatParameters(this.property(p)),
+      this.formatParameters(this.parameter(p)),
     );
     return {
       type: type,
@@ -301,11 +307,16 @@ export class PythonTranspile extends transpile.TranspileBase {
   }
 
   private formatParameters(
-    transpiled: transpile.TranspiledParameter | transpile.TranspiledProperty,
+    transpiled: transpile.TranspiledParameter,
   ): string {
     const tf = transpiled.typeReference.toString({
       typeFormatter: (t) => t.name,
     });
+
+    if (transpiled.variadic) {
+      return `${transpiled.name}: ${this.variadicOf(tf)}`;
+    }
+
     return `${transpiled.name}: ${tf}${transpiled.optional ? ' = None' : ''}`;
   }
 

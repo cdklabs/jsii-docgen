@@ -104,6 +104,10 @@ export interface ParameterSchema extends Optional, Documentable {
    */
   readonly type: TypeSchema;
 
+  /**
+   * Whether the parameter is variadic.
+   */
+  readonly variadic: boolean;
 }
 
 /**

@@ -132,6 +132,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
       parentType: this.type(parameter.parentType),
       typeReference: typeRef,
       optional: parameter.optional,
+      variadic: parameter.variadic,
       declaration: this.formatParameter(name, typeRef),
     };
   }
@@ -168,6 +169,10 @@ export class CSharpTranspile extends transpile.TranspileBase {
 
   public listOf(type: string): string {
     return `${type}[]`;
+  }
+
+  public variadicOf(type: string): string {
+    return `params ${this.listOf(type)}`;
   }
 
   public mapOf(type: string): string {
@@ -211,12 +216,16 @@ export class CSharpTranspile extends transpile.TranspileBase {
   }
 
   private formatFnParam(
-    transpiled: transpile.TranspiledParameter | transpile.TranspiledProperty,
+    transpiled: transpile.TranspiledProperty | transpile.TranspiledParameter,
   ): string {
     const tf = transpiled.typeReference.toString({
       typeFormatter: (t) => t.name,
     });
     const suffix = transpiled.optional ? ' = null' : '';
+
+    if ('variadic' in transpiled && transpiled.variadic) {
+      return `${this.variadicOf(tf)} ${transpiled.name}`;
+    }
     return `${tf} ${transpiled.name}${suffix}`;
   }
 

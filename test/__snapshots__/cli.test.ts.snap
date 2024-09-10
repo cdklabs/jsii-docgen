@@ -108,7 +108,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 ##### \`addEventNotification\` <a name="addEventNotification" id="construct-library.submod1.GoodbyeBucket.addEventNotification"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -142,7 +142,7 @@ The notification destination (Lambda, SNS Topic or SQS Queue).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.submod1.GoodbyeBucket.addEventNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 S3 object key filter rules to determine which objects trigger this event.
 
@@ -155,7 +155,7 @@ for details about allowed filter rules.
 ##### \`addObjectCreatedNotification\` <a name="addObjectCreatedNotification" id="construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -173,7 +173,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 Filters (see onEvent).
 
@@ -182,7 +182,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name="addObjectRemovedNotification" id="construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -200,7 +200,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 Filters (see onEvent).
 
@@ -275,7 +275,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name="grantPublicAccess" id="construct-library.submod1.GoodbyeBucket.grantPublicAccess"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
+public grantPublicAccess(allowedActions: ...string[], keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -301,7 +301,7 @@ impossible to modify the policy of an existing bucket.
 
 ###### \`allowedActions\`<sup>Required</sup> <a name="allowedActions" id="construct-library.submod1.GoodbyeBucket.grantPublicAccess.parameter.allowedActions"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 the set of S3 actions to allow.
 
@@ -1183,7 +1183,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 ##### \`addEventNotification\` <a name="addEventNotification" id="construct-library.GreeterBucket.addEventNotification"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -1217,7 +1217,7 @@ The notification destination (Lambda, SNS Topic or SQS Queue).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.GreeterBucket.addEventNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 S3 object key filter rules to determine which objects trigger this event.
 
@@ -1230,7 +1230,7 @@ for details about allowed filter rules.
 ##### \`addObjectCreatedNotification\` <a name="addObjectCreatedNotification" id="construct-library.GreeterBucket.addObjectCreatedNotification"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -1248,7 +1248,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.GreeterBucket.addObjectCreatedNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 Filters (see onEvent).
 
@@ -1257,7 +1257,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name="addObjectRemovedNotification" id="construct-library.GreeterBucket.addObjectRemovedNotification"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -1275,7 +1275,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.GreeterBucket.addObjectRemovedNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 Filters (see onEvent).
 
@@ -1350,7 +1350,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name="grantPublicAccess" id="construct-library.GreeterBucket.grantPublicAccess"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
+public grantPublicAccess(allowedActions: ...string[], keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -1376,7 +1376,7 @@ impossible to modify the policy of an existing bucket.
 
 ###### \`allowedActions\`<sup>Required</sup> <a name="allowedActions" id="construct-library.GreeterBucket.grantPublicAccess.parameter.allowedActions"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 the set of S3 actions to allow.
 
@@ -2799,7 +2799,7 @@ Restrict the permission to a certain key pattern (default '*').
 
 \`\`\`python
 def grant_public_access(
-  allowed_actions: str,
+  allowed_actions: *str,
   key_prefix: str = None
 ) -> Grant
 \`\`\`
@@ -2827,7 +2827,7 @@ impossible to modify the policy of an existing bucket.
 
 ###### \`allowed_actions\`<sup>Required</sup> <a name="allowed_actions" id="construct-library.submod1.GoodbyeBucket.grantPublicAccess.parameter.allowedActions"></a>
 
-- *Type:* str
+- *Type:* *str
 
 the set of S3 actions to allow.
 
@@ -4862,7 +4862,7 @@ Restrict the permission to a certain key pattern (default '*').
 
 \`\`\`python
 def grant_public_access(
-  allowed_actions: str,
+  allowed_actions: *str,
   key_prefix: str = None
 ) -> Grant
 \`\`\`
@@ -4890,7 +4890,7 @@ impossible to modify the policy of an existing bucket.
 
 ###### \`allowed_actions\`<sup>Required</sup> <a name="allowed_actions" id="construct-library.GreeterBucket.grantPublicAccess.parameter.allowedActions"></a>
 
-- *Type:* str
+- *Type:* *str
 
 the set of S3 actions to allow.
 
@@ -6942,7 +6942,7 @@ Restrict the permission to a certain key pattern (default '*').
 
 \`\`\`python
 def grant_public_access(
-  allowed_actions: str,
+  allowed_actions: *str,
   key_prefix: str = None
 ) -> Grant
 \`\`\`
@@ -6970,7 +6970,7 @@ impossible to modify the policy of an existing bucket.
 
 ###### \`allowed_actions\`<sup>Required</sup> <a name="allowed_actions" id="construct-library.GreeterBucket.grantPublicAccess.parameter.allowedActions"></a>
 
-- *Type:* str
+- *Type:* *str
 
 the set of S3 actions to allow.
 
@@ -8492,7 +8492,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 ##### \`addEventNotification\` <a name="addEventNotification" id="construct-library.GreeterBucket.addEventNotification"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -8526,7 +8526,7 @@ The notification destination (Lambda, SNS Topic or SQS Queue).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.GreeterBucket.addEventNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 S3 object key filter rules to determine which objects trigger this event.
 
@@ -8539,7 +8539,7 @@ for details about allowed filter rules.
 ##### \`addObjectCreatedNotification\` <a name="addObjectCreatedNotification" id="construct-library.GreeterBucket.addObjectCreatedNotification"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -8557,7 +8557,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.GreeterBucket.addObjectCreatedNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 Filters (see onEvent).
 
@@ -8566,7 +8566,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name="addObjectRemovedNotification" id="construct-library.GreeterBucket.addObjectRemovedNotification"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -8584,7 +8584,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.GreeterBucket.addObjectRemovedNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 Filters (see onEvent).
 
@@ -8659,7 +8659,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name="grantPublicAccess" id="construct-library.GreeterBucket.grantPublicAccess"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
+public grantPublicAccess(allowedActions: ...string[], keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -8685,7 +8685,7 @@ impossible to modify the policy of an existing bucket.
 
 ###### \`allowedActions\`<sup>Required</sup> <a name="allowedActions" id="construct-library.GreeterBucket.grantPublicAccess.parameter.allowedActions"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 the set of S3 actions to allow.
 
@@ -10108,7 +10108,7 @@ Restrict the permission to a certain key pattern (default '*').
 
 \`\`\`python
 def grant_public_access(
-  allowed_actions: str,
+  allowed_actions: *str,
   key_prefix: str = None
 ) -> Grant
 \`\`\`
@@ -10136,7 +10136,7 @@ impossible to modify the policy of an existing bucket.
 
 ###### \`allowed_actions\`<sup>Required</sup> <a name="allowed_actions" id="construct-library.submod1.GoodbyeBucket.grantPublicAccess.parameter.allowedActions"></a>
 
-- *Type:* str
+- *Type:* *str
 
 the set of S3 actions to allow.
 
@@ -11652,7 +11652,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 ##### \`addEventNotification\` <a name="addEventNotification" id="construct-library.submod1.GoodbyeBucket.addEventNotification"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -11686,7 +11686,7 @@ The notification destination (Lambda, SNS Topic or SQS Queue).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.submod1.GoodbyeBucket.addEventNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 S3 object key filter rules to determine which objects trigger this event.
 
@@ -11699,7 +11699,7 @@ for details about allowed filter rules.
 ##### \`addObjectCreatedNotification\` <a name="addObjectCreatedNotification" id="construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -11717,7 +11717,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 Filters (see onEvent).
 
@@ -11726,7 +11726,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name="addObjectRemovedNotification" id="construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -11744,7 +11744,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 Filters (see onEvent).
 
@@ -11819,7 +11819,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name="grantPublicAccess" id="construct-library.submod1.GoodbyeBucket.grantPublicAccess"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
+public grantPublicAccess(allowedActions: ...string[], keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -11845,7 +11845,7 @@ impossible to modify the policy of an existing bucket.
 
 ###### \`allowedActions\`<sup>Required</sup> <a name="allowedActions" id="construct-library.submod1.GoodbyeBucket.grantPublicAccess.parameter.allowedActions"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 the set of S3 actions to allow.
 
@@ -12738,7 +12738,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 ##### \`addEventNotification\` <a name="addEventNotification" id="construct-library.GreeterBucket.addEventNotification"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -12772,7 +12772,7 @@ The notification destination (Lambda, SNS Topic or SQS Queue).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.GreeterBucket.addEventNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 S3 object key filter rules to determine which objects trigger this event.
 
@@ -12785,7 +12785,7 @@ for details about allowed filter rules.
 ##### \`addObjectCreatedNotification\` <a name="addObjectCreatedNotification" id="construct-library.GreeterBucket.addObjectCreatedNotification"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -12803,7 +12803,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.GreeterBucket.addObjectCreatedNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 Filters (see onEvent).
 
@@ -12812,7 +12812,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name="addObjectRemovedNotification" id="construct-library.GreeterBucket.addObjectRemovedNotification"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -12830,7 +12830,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.GreeterBucket.addObjectRemovedNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 Filters (see onEvent).
 
@@ -12905,7 +12905,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name="grantPublicAccess" id="construct-library.GreeterBucket.grantPublicAccess"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
+public grantPublicAccess(allowedActions: ...string[], keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -12931,7 +12931,7 @@ impossible to modify the policy of an existing bucket.
 
 ###### \`allowedActions\`<sup>Required</sup> <a name="allowedActions" id="construct-library.GreeterBucket.grantPublicAccess.parameter.allowedActions"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 the set of S3 actions to allow.
 
@@ -13824,7 +13824,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 ##### \`addEventNotification\` <a name="addEventNotification" id="construct-library.submod1.GoodbyeBucket.addEventNotification"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -13858,7 +13858,7 @@ The notification destination (Lambda, SNS Topic or SQS Queue).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.submod1.GoodbyeBucket.addEventNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 S3 object key filter rules to determine which objects trigger this event.
 
@@ -13871,7 +13871,7 @@ for details about allowed filter rules.
 ##### \`addObjectCreatedNotification\` <a name="addObjectCreatedNotification" id="construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -13889,7 +13889,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 Filters (see onEvent).
 
@@ -13898,7 +13898,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name="addObjectRemovedNotification" id="construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -13916,7 +13916,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 Filters (see onEvent).
 
@@ -13991,7 +13991,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name="grantPublicAccess" id="construct-library.submod1.GoodbyeBucket.grantPublicAccess"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
+public grantPublicAccess(allowedActions: ...string[], keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -14017,7 +14017,7 @@ impossible to modify the policy of an existing bucket.
 
 ###### \`allowedActions\`<sup>Required</sup> <a name="allowedActions" id="construct-library.submod1.GoodbyeBucket.grantPublicAccess.parameter.allowedActions"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 the set of S3 actions to allow.
 
@@ -14916,7 +14916,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 ##### \`addEventNotification\` <a name="addEventNotification" id="construct-library.GreeterBucket.addEventNotification"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -14950,7 +14950,7 @@ The notification destination (Lambda, SNS Topic or SQS Queue).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.GreeterBucket.addEventNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 S3 object key filter rules to determine which objects trigger this event.
 
@@ -14963,7 +14963,7 @@ for details about allowed filter rules.
 ##### \`addObjectCreatedNotification\` <a name="addObjectCreatedNotification" id="construct-library.GreeterBucket.addObjectCreatedNotification"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -14981,7 +14981,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.GreeterBucket.addObjectCreatedNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 Filters (see onEvent).
 
@@ -14990,7 +14990,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name="addObjectRemovedNotification" id="construct-library.GreeterBucket.addObjectRemovedNotification"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -15008,7 +15008,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.GreeterBucket.addObjectRemovedNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 Filters (see onEvent).
 
@@ -15083,7 +15083,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name="grantPublicAccess" id="construct-library.GreeterBucket.grantPublicAccess"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
+public grantPublicAccess(allowedActions: ...string[], keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -15109,7 +15109,7 @@ impossible to modify the policy of an existing bucket.
 
 ###### \`allowedActions\`<sup>Required</sup> <a name="allowedActions" id="construct-library.GreeterBucket.grantPublicAccess.parameter.allowedActions"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 the set of S3 actions to allow.
 
@@ -16002,7 +16002,7 @@ account for data recovery and cleanup later (\`RemovalPolicy.RETAIN\`).
 ##### \`addEventNotification\` <a name="addEventNotification" id="construct-library.submod1.GoodbyeBucket.addEventNotification"></a>
 
 \`\`\`typescript
-public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addEventNotification(event: EventType, dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Adds a bucket notification event destination.
@@ -16036,7 +16036,7 @@ The notification destination (Lambda, SNS Topic or SQS Queue).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.submod1.GoodbyeBucket.addEventNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 S3 object key filter rules to determine which objects trigger this event.
 
@@ -16049,7 +16049,7 @@ for details about allowed filter rules.
 ##### \`addObjectCreatedNotification\` <a name="addObjectCreatedNotification" id="construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification"></a>
 
 \`\`\`typescript
-public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectCreatedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is created in the bucket.
@@ -16067,7 +16067,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.submod1.GoodbyeBucket.addObjectCreatedNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 Filters (see onEvent).
 
@@ -16076,7 +16076,7 @@ Filters (see onEvent).
 ##### \`addObjectRemovedNotification\` <a name="addObjectRemovedNotification" id="construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification"></a>
 
 \`\`\`typescript
-public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: NotificationKeyFilter): void
+public addObjectRemovedNotification(dest: IBucketNotificationDestination, filters: ...NotificationKeyFilter[]): void
 \`\`\`
 
 Subscribes a destination to receive notifications when an object is removed from the bucket.
@@ -16094,7 +16094,7 @@ The notification destination (see onEvent).
 
 ###### \`filters\`<sup>Required</sup> <a name="filters" id="construct-library.submod1.GoodbyeBucket.addObjectRemovedNotification.parameter.filters"></a>
 
-- *Type:* @aws-cdk/aws-s3.NotificationKeyFilter
+- *Type:* ...@aws-cdk/aws-s3.NotificationKeyFilter[]
 
 Filters (see onEvent).
 
@@ -16169,7 +16169,7 @@ Restrict the permission to a certain key pattern (default '*').
 ##### \`grantPublicAccess\` <a name="grantPublicAccess" id="construct-library.submod1.GoodbyeBucket.grantPublicAccess"></a>
 
 \`\`\`typescript
-public grantPublicAccess(allowedActions: string, keyPrefix?: string): Grant
+public grantPublicAccess(allowedActions: ...string[], keyPrefix?: string): Grant
 \`\`\`
 
 Allows unrestricted access to objects from this bucket.
@@ -16195,7 +16195,7 @@ impossible to modify the policy of an existing bucket.
 
 ###### \`allowedActions\`<sup>Required</sup> <a name="allowedActions" id="construct-library.submod1.GoodbyeBucket.grantPublicAccess.parameter.allowedActions"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 the set of S3 actions to allow.
 

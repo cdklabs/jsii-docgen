@@ -196,28 +196,11 @@ export interface TranspiledCallable {
 /**
  * Outcome of transpiling a jsii parameter.
  */
-export interface TranspiledParameter {
+export interface TranspiledParameter extends TranspiledProperty {
   /**
-   * The name.
+   * Whether or not the parameter is variadic.
    */
-  readonly name: string;
-  /**
-   * The (transpiled) parent type.
-   */
-  readonly parentType: TranspiledType;
-  /**
-   * The (transpiled) type reference.
-   */
-  readonly typeReference: TranspiledTypeReference;
-  /**
-   * Whether or not the parameter is optional.
-   */
-  readonly optional: boolean;
-  /**
-   * The signature of the property, or its getter if the language
-   * supports that.
-   */
-  readonly declaration: string;
+  readonly variadic: boolean;
 }
 
 /**
@@ -570,7 +553,29 @@ export class TranspiledTypeReference {
 /**
  * Outcome of transpiling a jsii property.
  */
-export type TranspiledProperty = TranspiledParameter;
+export interface TranspiledProperty {
+  /**
+   * The name.
+   */
+  readonly name: string;
+  /**
+   * The (transpiled) parent type.
+   */
+  readonly parentType: TranspiledType;
+  /**
+   * The (transpiled) type reference.
+   */
+  readonly typeReference: TranspiledTypeReference;
+  /**
+   * Whether or not the parameter is optional.
+   */
+  readonly optional: boolean;
+  /**
+   * The signature of the property, or its getter if the language
+   * supports that.
+   */
+  readonly declaration: string;
+}
 
 /**
  * Outcome of transpiling a jsii enum.
@@ -714,6 +719,11 @@ export interface Transpile {
    * How a union looks like in the target language.
    */
   unionOf(types: string[]): string;
+
+  /**
+  * How a variadic parameter looks in the target language.
+  */
+  variadicOf(type: string): string;
 
   /**
    * How a list looks like in the target language.

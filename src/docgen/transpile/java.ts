@@ -213,6 +213,7 @@ export class JavaTranspile extends transpile.TranspileBase {
       parentType: this.type(parameter.parentType),
       typeReference: typeRef,
       optional: parameter.optional,
+      variadic: parameter.variadic,
       declaration: this.formatProperty(parameter.name, typeRef),
     };
   }
@@ -248,6 +249,10 @@ export class JavaTranspile extends transpile.TranspileBase {
 
   public listOf(type: string): string {
     return `java.util.List<${type}>`;
+  }
+
+  public variadicOf(type: string): string {
+    return `${type}...`;
   }
 
   public mapOf(type: string): string {
@@ -291,11 +296,16 @@ export class JavaTranspile extends transpile.TranspileBase {
   };
 
   private formatParameter(
-    transpiled: transpile.TranspiledParameter | transpile.TranspiledProperty,
+    transpiled: transpile.TranspiledParameter,
   ): string {
     const tf = transpiled.typeReference.toString({
       typeFormatter: (t) => t.name,
     });
+
+    if (transpiled.variadic) {
+      return `${this.variadicOf(tf)} ${transpiled.name}`;
+    }
+
     return `${tf} ${transpiled.name}`;
   }
 
@@ -342,7 +352,7 @@ export class JavaTranspile extends transpile.TranspileBase {
   };
 
   private formatBuilderMethod(
-    transpiled: transpile.TranspiledParameter,
+    transpiled: transpile.TranspiledProperty,
     indent: string,
   ): string[] {
     if (transpiled.optional) indent = '//' + indent.slice(2);

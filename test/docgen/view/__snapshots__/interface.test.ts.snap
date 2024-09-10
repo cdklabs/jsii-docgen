@@ -59,6 +59,7 @@ exports[`csharp snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "private AddToResourcePolicyResult AddToResourcePolicy(PolicyStatement Statement)",
@@ -90,6 +91,7 @@ exports[`csharp snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -99,11 +101,13 @@ exports[`csharp snapshot 1`] = `
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
           "optional": undefined,
           "type": {
-            "formattingPattern": "string",
+            "formattingPattern": "params string[]",
+            "types": undefined,
           },
+          "variadic": true,
         },
       ],
-      "usage": "private Grant Grant(IGrantable Grantee, string Actions)",
+      "usage": "private Grant Grant(IGrantable Grantee, params string[] Actions)",
     },
     {
       "displayName": "GrantPull",
@@ -132,6 +136,7 @@ exports[`csharp snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "private Grant GrantPull(IGrantable Grantee)",
@@ -163,6 +168,7 @@ exports[`csharp snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "private Grant GrantPullPush(IGrantable Grantee)",
@@ -189,6 +195,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "string",
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -211,6 +218,7 @@ that captures the event. This method will not create the Trail.",
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "private Rule OnCloudTrailEvent(string Id, OnEventOptions Options = null)",
@@ -237,6 +245,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "string",
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -259,6 +268,7 @@ that captures the event. This method will not create the Trail.",
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "private Rule OnCloudTrailImagePushed(string Id, OnCloudTrailImagePushedOptions Options = null)",
@@ -283,6 +293,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "string",
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -303,6 +314,7 @@ that captures the event. This method will not create the Trail.",
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "private Rule OnEvent(string Id, OnEventOptions Options = null)",
@@ -327,6 +339,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "string",
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -349,6 +362,7 @@ that captures the event. This method will not create the Trail.",
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "private Rule OnImageScanCompleted(string Id, OnImageScanCompletedOptions Options = null)",
@@ -374,6 +388,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "string",
           },
+          "variadic": false,
         },
       ],
       "usage": "private string RepositoryUriForDigest(string Digest = null)",
@@ -399,6 +414,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "string",
           },
+          "variadic": false,
         },
       ],
       "usage": "private string RepositoryUriForTag(string Tag = null)",
@@ -579,7 +595,7 @@ Add a policy statement to the repository's resource policy.
 ## \`Grant\` <a name="Grant" id="@aws-cdk/aws-ecr.IRepository.grant"></a>
 
 \`\`\`csharp
-private Grant Grant(IGrantable Grantee, string Actions)
+private Grant Grant(IGrantable Grantee, params string[] Actions)
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -592,7 +608,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ### \`Actions\`<sup>Required</sup> <a name="Actions" id="@aws-cdk/aws-ecr.IRepository.grant.parameter.actions"></a>
 
-- *Type:* string
+- *Type:* params string[]
 
 ---
 
@@ -916,6 +932,7 @@ exports[`go snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "func AddToResourcePolicy(statement PolicyStatement) AddToResourcePolicyResult",
@@ -947,6 +964,7 @@ exports[`go snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -956,11 +974,13 @@ exports[`go snapshot 1`] = `
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
           "optional": undefined,
           "type": {
-            "formattingPattern": "*string",
+            "formattingPattern": "...*string",
+            "types": undefined,
           },
+          "variadic": true,
         },
       ],
-      "usage": "func Grant(grantee IGrantable, actions *string) Grant",
+      "usage": "func Grant(grantee IGrantable, actions ...*string) Grant",
     },
     {
       "displayName": "GrantPull",
@@ -989,6 +1009,7 @@ exports[`go snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "func GrantPull(grantee IGrantable) Grant",
@@ -1020,6 +1041,7 @@ exports[`go snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "func GrantPullPush(grantee IGrantable) Grant",
@@ -1046,6 +1068,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "*string",
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -1068,6 +1091,7 @@ that captures the event. This method will not create the Trail.",
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "func OnCloudTrailEvent(id *string, options OnEventOptions) Rule",
@@ -1094,6 +1118,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "*string",
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -1116,6 +1141,7 @@ that captures the event. This method will not create the Trail.",
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "func OnCloudTrailImagePushed(id *string, options OnCloudTrailImagePushedOptions) Rule",
@@ -1140,6 +1166,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "*string",
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -1160,6 +1187,7 @@ that captures the event. This method will not create the Trail.",
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "func OnEvent(id *string, options OnEventOptions) Rule",
@@ -1184,6 +1212,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "*string",
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -1206,6 +1235,7 @@ that captures the event. This method will not create the Trail.",
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "func OnImageScanCompleted(id *string, options OnImageScanCompletedOptions) Rule",
@@ -1231,6 +1261,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "*string",
           },
+          "variadic": false,
         },
       ],
       "usage": "func RepositoryUriForDigest(digest *string) *string",
@@ -1256,6 +1287,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "*string",
           },
+          "variadic": false,
         },
       ],
       "usage": "func RepositoryUriForTag(tag *string) *string",
@@ -1436,7 +1468,7 @@ Add a policy statement to the repository's resource policy.
 ## \`Grant\` <a name="Grant" id="@aws-cdk/aws-ecr.IRepository.grant"></a>
 
 \`\`\`go
-func Grant(grantee IGrantable, actions *string) Grant
+func Grant(grantee IGrantable, actions ...*string) Grant
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -1449,7 +1481,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.IRepository.grant.parameter.actions"></a>
 
-- *Type:* *string
+- *Type:* ...*string
 
 ---
 
@@ -1773,6 +1805,7 @@ exports[`java snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "public AddToResourcePolicyResult addToResourcePolicy(PolicyStatement statement)",
@@ -1804,6 +1837,7 @@ exports[`java snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -1813,11 +1847,13 @@ exports[`java snapshot 1`] = `
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
           "optional": undefined,
           "type": {
-            "formattingPattern": "java.lang.String",
+            "formattingPattern": "java.lang.String...",
+            "types": undefined,
           },
+          "variadic": true,
         },
       ],
-      "usage": "public Grant grant(IGrantable grantee, java.lang.String actions)",
+      "usage": "public Grant grant(IGrantable grantee, java.lang.String... actions)",
     },
     {
       "displayName": "grantPull",
@@ -1846,6 +1882,7 @@ exports[`java snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "public Grant grantPull(IGrantable grantee)",
@@ -1877,6 +1914,7 @@ exports[`java snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "public Grant grantPullPush(IGrantable grantee)",
@@ -1903,6 +1941,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "java.lang.String",
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -1925,6 +1964,7 @@ that captures the event. This method will not create the Trail.",
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "public Rule onCloudTrailEvent(java.lang.String id)
@@ -1952,6 +1992,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "java.lang.String",
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -1974,6 +2015,7 @@ that captures the event. This method will not create the Trail.",
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "public Rule onCloudTrailImagePushed(java.lang.String id)
@@ -1999,6 +2041,7 @@ public Rule onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushed
           "type": {
             "formattingPattern": "java.lang.String",
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -2019,6 +2062,7 @@ public Rule onCloudTrailImagePushed(java.lang.String id, OnCloudTrailImagePushed
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "public Rule onEvent(java.lang.String id)
@@ -2044,6 +2088,7 @@ public Rule onEvent(java.lang.String id, OnEventOptions options)",
           "type": {
             "formattingPattern": "java.lang.String",
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -2066,6 +2111,7 @@ public Rule onEvent(java.lang.String id, OnEventOptions options)",
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "public Rule onImageScanCompleted(java.lang.String id)
@@ -2092,6 +2138,7 @@ public Rule onImageScanCompleted(java.lang.String id, OnImageScanCompletedOption
           "type": {
             "formattingPattern": "java.lang.String",
           },
+          "variadic": false,
         },
       ],
       "usage": "public java.lang.String repositoryUriForDigest()
@@ -2118,6 +2165,7 @@ public java.lang.String repositoryUriForDigest(java.lang.String digest)",
           "type": {
             "formattingPattern": "java.lang.String",
           },
+          "variadic": false,
         },
       ],
       "usage": "public java.lang.String repositoryUriForTag()
@@ -2299,7 +2347,7 @@ Add a policy statement to the repository's resource policy.
 ## \`grant\` <a name="grant" id="@aws-cdk/aws-ecr.IRepository.grant"></a>
 
 \`\`\`java
-public Grant grant(IGrantable grantee, java.lang.String actions)
+public Grant grant(IGrantable grantee, java.lang.String... actions)
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -2312,7 +2360,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.IRepository.grant.parameter.actions"></a>
 
-- *Type:* java.lang.String
+- *Type:* java.lang.String...
 
 ---
 
@@ -2642,6 +2690,7 @@ exports[`python snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "def add_to_resource_policy(
@@ -2675,6 +2724,7 @@ exports[`python snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -2684,13 +2734,15 @@ exports[`python snapshot 1`] = `
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
           "optional": undefined,
           "type": {
-            "formattingPattern": "str",
+            "formattingPattern": "*str",
+            "types": undefined,
           },
+          "variadic": true,
         },
       ],
       "usage": "def grant(
   grantee: IGrantable,
-  actions: str
+  actions: *str
 ) -> Grant",
     },
     {
@@ -2720,6 +2772,7 @@ exports[`python snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "def grant_pull(
@@ -2753,6 +2806,7 @@ exports[`python snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "def grant_pull_push(
@@ -2781,6 +2835,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "str",
           },
+          "variadic": false,
         },
         {
           "default": "- No description",
@@ -2794,6 +2849,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "str",
           },
+          "variadic": false,
         },
         {
           "default": "- No additional filtering based on an event pattern.",
@@ -2822,6 +2878,7 @@ on top of that filtering.",
               },
             ],
           },
+          "variadic": false,
         },
         {
           "default": "AWS CloudFormation generates a unique physical ID.",
@@ -2835,6 +2892,7 @@ on top of that filtering.",
           "type": {
             "formattingPattern": "str",
           },
+          "variadic": false,
         },
         {
           "default": "- No target is added to the rule. Use \`addTarget()\` to add a target.",
@@ -2857,6 +2915,7 @@ on top of that filtering.",
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "def on_cloud_trail_event(
@@ -2889,6 +2948,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "str",
           },
+          "variadic": false,
         },
         {
           "default": "- No description",
@@ -2902,6 +2962,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "str",
           },
+          "variadic": false,
         },
         {
           "default": "- No additional filtering based on an event pattern.",
@@ -2930,6 +2991,7 @@ on top of that filtering.",
               },
             ],
           },
+          "variadic": false,
         },
         {
           "default": "AWS CloudFormation generates a unique physical ID.",
@@ -2943,6 +3005,7 @@ on top of that filtering.",
           "type": {
             "formattingPattern": "str",
           },
+          "variadic": false,
         },
         {
           "default": "- No target is added to the rule. Use \`addTarget()\` to add a target.",
@@ -2965,6 +3028,7 @@ on top of that filtering.",
               },
             ],
           },
+          "variadic": false,
         },
         {
           "default": "- Watch changes to all tags",
@@ -2978,6 +3042,7 @@ on top of that filtering.",
           "type": {
             "formattingPattern": "str",
           },
+          "variadic": false,
         },
       ],
       "usage": "def on_cloud_trail_image_pushed(
@@ -3009,6 +3074,7 @@ on top of that filtering.",
           "type": {
             "formattingPattern": "str",
           },
+          "variadic": false,
         },
         {
           "default": "- No description",
@@ -3022,6 +3088,7 @@ on top of that filtering.",
           "type": {
             "formattingPattern": "str",
           },
+          "variadic": false,
         },
         {
           "default": "- No additional filtering based on an event pattern.",
@@ -3050,6 +3117,7 @@ on top of that filtering.",
               },
             ],
           },
+          "variadic": false,
         },
         {
           "default": "AWS CloudFormation generates a unique physical ID.",
@@ -3063,6 +3131,7 @@ on top of that filtering.",
           "type": {
             "formattingPattern": "str",
           },
+          "variadic": false,
         },
         {
           "default": "- No target is added to the rule. Use \`addTarget()\` to add a target.",
@@ -3085,6 +3154,7 @@ on top of that filtering.",
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "def on_event(
@@ -3115,6 +3185,7 @@ on top of that filtering.",
           "type": {
             "formattingPattern": "str",
           },
+          "variadic": false,
         },
         {
           "default": "- No description",
@@ -3128,6 +3199,7 @@ on top of that filtering.",
           "type": {
             "formattingPattern": "str",
           },
+          "variadic": false,
         },
         {
           "default": "- No additional filtering based on an event pattern.",
@@ -3156,6 +3228,7 @@ on top of that filtering.",
               },
             ],
           },
+          "variadic": false,
         },
         {
           "default": "AWS CloudFormation generates a unique physical ID.",
@@ -3169,6 +3242,7 @@ on top of that filtering.",
           "type": {
             "formattingPattern": "str",
           },
+          "variadic": false,
         },
         {
           "default": "- No target is added to the rule. Use \`addTarget()\` to add a target.",
@@ -3191,6 +3265,7 @@ on top of that filtering.",
               },
             ],
           },
+          "variadic": false,
         },
         {
           "default": "- Watch the changes to the repository with all image tags",
@@ -3210,6 +3285,7 @@ on top of that filtering.",
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "def on_image_scan_completed(
@@ -3242,6 +3318,7 @@ on top of that filtering.",
           "type": {
             "formattingPattern": "str",
           },
+          "variadic": false,
         },
       ],
       "usage": "def repository_uri_for_digest(
@@ -3269,6 +3346,7 @@ on top of that filtering.",
           "type": {
             "formattingPattern": "str",
           },
+          "variadic": false,
         },
       ],
       "usage": "def repository_uri_for_tag(
@@ -3455,7 +3533,7 @@ Add a policy statement to the repository's resource policy.
 \`\`\`python
 def grant(
   grantee: IGrantable,
-  actions: str
+  actions: *str
 ) -> Grant
 \`\`\`
 
@@ -3469,7 +3547,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.IRepository.grant.parameter.actions"></a>
 
-- *Type:* str
+- *Type:* *str
 
 ---
 
@@ -3985,6 +4063,7 @@ exports[`typescript snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "public addToResourcePolicy(statement: PolicyStatement): AddToResourcePolicyResult",
@@ -4016,6 +4095,7 @@ exports[`typescript snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -4025,11 +4105,13 @@ exports[`typescript snapshot 1`] = `
           "id": "@aws-cdk/aws-ecr.IRepository.grant.parameter.actions",
           "optional": undefined,
           "type": {
-            "formattingPattern": "string",
+            "formattingPattern": "...string[]",
+            "types": undefined,
           },
+          "variadic": true,
         },
       ],
-      "usage": "public grant(grantee: IGrantable, actions: string): Grant",
+      "usage": "public grant(grantee: IGrantable, actions: ...string[]): Grant",
     },
     {
       "displayName": "grantPull",
@@ -4058,6 +4140,7 @@ exports[`typescript snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "public grantPull(grantee: IGrantable): Grant",
@@ -4089,6 +4172,7 @@ exports[`typescript snapshot 1`] = `
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "public grantPullPush(grantee: IGrantable): Grant",
@@ -4115,6 +4199,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "string",
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -4137,6 +4222,7 @@ that captures the event. This method will not create the Trail.",
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "public onCloudTrailEvent(id: string, options?: OnEventOptions): Rule",
@@ -4163,6 +4249,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "string",
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -4185,6 +4272,7 @@ that captures the event. This method will not create the Trail.",
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "public onCloudTrailImagePushed(id: string, options?: OnCloudTrailImagePushedOptions): Rule",
@@ -4209,6 +4297,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "string",
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -4229,6 +4318,7 @@ that captures the event. This method will not create the Trail.",
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "public onEvent(id: string, options?: OnEventOptions): Rule",
@@ -4253,6 +4343,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "string",
           },
+          "variadic": false,
         },
         {
           "default": undefined,
@@ -4275,6 +4366,7 @@ that captures the event. This method will not create the Trail.",
               },
             ],
           },
+          "variadic": false,
         },
       ],
       "usage": "public onImageScanCompleted(id: string, options?: OnImageScanCompletedOptions): Rule",
@@ -4300,6 +4392,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "string",
           },
+          "variadic": false,
         },
       ],
       "usage": "public repositoryUriForDigest(digest?: string): string",
@@ -4325,6 +4418,7 @@ that captures the event. This method will not create the Trail.",
           "type": {
             "formattingPattern": "string",
           },
+          "variadic": false,
         },
       ],
       "usage": "public repositoryUriForTag(tag?: string): string",
@@ -4505,7 +4599,7 @@ Add a policy statement to the repository's resource policy.
 ## \`grant\` <a name="grant" id="@aws-cdk/aws-ecr.IRepository.grant"></a>
 
 \`\`\`typescript
-public grant(grantee: IGrantable, actions: string): Grant
+public grant(grantee: IGrantable, actions: ...string[]): Grant
 \`\`\`
 
 Grant the given principal identity permissions to perform the actions on this repository.
@@ -4518,7 +4612,7 @@ Grant the given principal identity permissions to perform the actions on this re
 
 ### \`actions\`<sup>Required</sup> <a name="actions" id="@aws-cdk/aws-ecr.IRepository.grant.parameter.actions"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 ---
 
