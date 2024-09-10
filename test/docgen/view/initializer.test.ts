@@ -13,7 +13,7 @@ const metadata = {
 };
 
 const findInitializer = (): reflect.Initializer => {
-  for (const klass of assembly.system.classes) {
+  for (const klass of assembly.classes) {
     if (klass.initializer) {
       return klass.initializer;
     }

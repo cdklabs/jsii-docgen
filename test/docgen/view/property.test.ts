@@ -13,7 +13,7 @@ const metadata = {
 };
 
 const findProperty = (): reflect.Property => {
-  for (const iface of assembly.system.interfaces) {
+  for (const iface of assembly.interfaces) {
     if (iface.allProperties.length > 0) {
       return iface.allProperties[0];
     }
