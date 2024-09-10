@@ -123,7 +123,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
   }
 
   public parameter(
-    parameter: reflect.Parameter | reflect.Property,
+    parameter: reflect.Parameter,
   ): transpile.TranspiledParameter {
     const typeRef = this.typeReference(parameter.type);
     const name = Case.pascal(parameter.name);
