@@ -285,13 +285,13 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev --filter=@types/fs-extra,@types/jest,@types/semver,cdklabs-projen-project-types,eslint-import-resolver-typescript,eslint-plugin-import,jest,projen,ts-jest,ts-node,typescript"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev --filter=@types/fs-extra,@types/jest,@types/semver,eslint-import-resolver-typescript,eslint-plugin-import,jest,ts-jest,ts-node,typescript"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/fs-extra @types/jest @types/node @types/semver @typescript-eslint/eslint-plugin @typescript-eslint/parser cdklabs-projen-project-types commit-and-tag-version constructs eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-rosetta projen ts-jest ts-node typescript"
+          "exec": "yarn upgrade @types/fs-extra @types/jest @types/node @types/semver @typescript-eslint/eslint-plugin @typescript-eslint/parser commit-and-tag-version constructs eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-rosetta ts-jest ts-node typescript"
         },
         {
           "exec": "npx projen"
