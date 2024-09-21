@@ -43,7 +43,7 @@
     "@types/semver": "^7.5.8",
     "@typescript-eslint/eslint-plugin": "^7",
     "@typescript-eslint/parser": "^7",
-    "cdklabs-projen-project-types": "^0.1.202",
+    "cdklabs-projen-project-types": "^0.1.204",
     "commit-and-tag-version": "^12",
     "constructs": "^10.0.0",
     "eslint": "^8",
