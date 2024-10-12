@@ -1303,9 +1303,9 @@ camelcase@^6.2.0:
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
 caniuse-lite@^1.0.30001663:
-  version "1.0.30001667"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001667.tgz#99fc5ea0d9c6e96897a104a8352604378377f949"
-  integrity sha512-7LTwJjcRkzKFmtqGsibMeuXmvFDfZq/nzIjnmgCGzKKRVzjD72selLDK1oPF/Oxzmt4fNcPvTDvGqSDG4tCALw==
+  version "1.0.30001668"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001668.tgz#98e214455329f54bf7a4d70b49c9794f0fbedbed"
+  integrity sha512-nWLrdxqCdblixUO+27JtGJJE/txpJlyUy5YN1u53wLZkP0emYCo5zgS6QYft7VUYR42LGgi/S5hdLZTrnyIddw==
 
 case@^1.6.3:
   version "1.6.3"
@@ -1476,9 +1476,9 @@ concat-stream@^2.0.0:
     typedarray "^0.0.6"
 
 constructs@^10.0.0:
-  version "10.3.1"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.3.1.tgz#c694d46de6ab3f20423c9e79648ac76bd9d4d6c0"
-  integrity sha512-gTyTNR3iHOVnOk4cKPK6QHRrSZWT1nsnEMFnwLa094/w1L+CKToQel4v4oxnYHi4L07PBNm1p3Bt0WVZI4kgkg==
+  version "10.4.1"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.4.1.tgz#0567a981b723ec56f26986678dfc49410d29092a"
+  integrity sha512-eIZhGVl6SFI0T6eKtjDRlgInJn3X3uh6l4MMpRF+cQrCfm1SPkDUAMwwYEJ6bpj0Muv2quKE2E8HrijKGyNGaw==
 
 conventional-changelog-angular@^6.0.0:
   version "6.0.0"
@@ -4888,9 +4888,9 @@ typedarray@^0.0.6:
   integrity sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==
 
 typescript@next:
-  version "5.7.0-dev.20241010"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.7.0-dev.20241010.tgz#5f949ccc5a3b48e8b85b93bb0076444d6f155ea6"
-  integrity sha512-gwxQ3UbMRwrAs1FedvBB+FkkrTVy0cjyxN7MBtpyUsmx2wHl+izVmFLpb6YPJyc/NC8sv9cdN61216rYJJyJcg==
+  version "5.7.0-dev.20241011"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.7.0-dev.20241011.tgz#6a0134dbb2ab5b81a336ee2c33134b2efa108515"
+  integrity sha512-Me/2UCToH+LYWCR0E/wd1ugAU+PQ/kP+rVt40RyZfOCXL5Lyd0ZfJwndQRM140RGdKhOVhv80BpvN5mpVdA7Cg==
 
 typescript@~5.5:
   version "5.5.4"
