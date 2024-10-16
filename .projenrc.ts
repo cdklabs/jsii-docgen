@@ -61,6 +61,7 @@ const project = new CdklabsTypeScriptProject({
       skipLibCheck: true,
     },
   },
+  enablePRAutoMerge: true,
 });
 
 // Suppress upgrade prompts, in particular from test runs.
