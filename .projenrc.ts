@@ -61,6 +61,9 @@ const project = new CdklabsTypeScriptProject({
       skipLibCheck: true,
     },
   },
+
+  // Because githubOptions: { mergify: false } has no effect on this project type
+  enablePRAutoMerge: true,
 });
 
 // Suppress upgrade prompts, in particular from test runs.
