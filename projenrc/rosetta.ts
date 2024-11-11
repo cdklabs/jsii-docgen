@@ -53,7 +53,7 @@ export class RosettaPeerDependency extends Component {
       },
       steps: [{
         name: 'Checkout',
-        uses: 'actions/checkout@v3',
+        uses: 'actions/checkout@v4',
         with: {
           ref: '${{ github.event.pull_request.head.ref }}',
           repository: '${{ github.event.pull_request.head.repo.full_name }}',
@@ -61,19 +61,19 @@ export class RosettaPeerDependency extends Component {
       },
       {
         name: 'Setup Node.js',
-        uses: 'actions/setup-node@v3',
+        uses: 'actions/setup-node@v4',
         with: {
           // @ts-ignore
           'node-version': project.nodeVersion,
         },
       },
       {
-        name: 'Install dependencies',
-        run: 'yarn install --check-files',
-      },
-      {
         name: 'Install Rosetta version',
         run: `yarn add --dev ${JSII_ROSETTA}@\${{ matrix.rosetta }}`,
+      },
+      {
+        name: 'Install dependencies',
+        run: 'yarn install --check-files',
       },
       {
         name: 'compile+test',
