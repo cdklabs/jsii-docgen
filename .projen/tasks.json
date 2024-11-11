@@ -116,6 +116,9 @@
     "eslint": {
       "name": "eslint",
       "description": "Runs eslint against the codebase",
+      "env": {
+        "ESLINT_USE_FLAT_CONFIG": "false"
+      },
       "steps": [
         {
           "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern $@ src test build-tools projenrc .projenrc.ts",
@@ -237,7 +240,7 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=prod --filter=@jsii/spec,case,fs-extra,glob,glob-promise,jsii-reflect,semver,yargs"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=prod --filter=@jsii/spec,case,fs-extra,glob,glob-promise,jsii-reflect,semver,yargs"
         },
         {
           "exec": "yarn install --check-files"
@@ -261,7 +264,7 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=latest --peer --dep=dev,peer,prod,optional --filter=cdklabs-projen-project-types,projen"
+          "exec": "npx npm-check-updates@16 --upgrade --target=latest --peer --no-deprecated --dep=dev,peer,prod,optional --filter=cdklabs-projen-project-types,projen"
         },
         {
           "exec": "yarn install --check-files"
@@ -285,13 +288,13 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev --filter=@types/fs-extra,@types/jest,@types/semver,eslint-import-resolver-typescript,eslint-plugin-import,jest,ts-jest,ts-node,typescript"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev --filter=@types/fs-extra,@types/jest,@types/semver,eslint-import-resolver-typescript,eslint-plugin-import,jest,ts-jest,ts-node,typescript"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/fs-extra @types/jest @types/node @types/semver @typescript-eslint/eslint-plugin @typescript-eslint/parser commit-and-tag-version constructs eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-rosetta ts-jest ts-node typescript"
+          "exec": "yarn upgrade @stylistic/eslint-plugin @types/fs-extra @types/jest @types/node @types/semver @typescript-eslint/eslint-plugin @typescript-eslint/parser commit-and-tag-version constructs eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-rosetta ts-jest ts-node typescript"
         },
         {
           "exec": "npx projen"
