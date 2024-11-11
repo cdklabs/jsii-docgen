@@ -95,10 +95,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-      - name: Install dependencies
-        run: yarn install --check-files
       - name: Install Rosetta version
-        run: yarn add --dev jsii-rosetta@${{ matrix.rosetta }}
+        run: yarn add jsii-rosetta@${{ matrix.rosetta }}
+      - name: Install other dependencies
+        run: yarn install --check-files
       - name: compile+test
         run: |-
           npx projen compile
