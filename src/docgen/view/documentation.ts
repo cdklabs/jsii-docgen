@@ -259,7 +259,7 @@ export class Documentation {
     this.assemblyFqn = `${tsAssembly.name}@${tsAssembly.version}`;
 
     if (!isSupported) {
-      throw new LanguageNotSupportedError(`Laguage ${language} is not supported for package ${this.assemblyFqn}`);
+      throw new LanguageNotSupportedError(`Language ${language} is not supported for package ${this.assemblyFqn}`);
     }
 
     let submoduleStr = options.submodule;
