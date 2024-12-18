@@ -3513,12 +3513,12 @@ jsii-reflect@^1.106.0:
     yargs "^17.7.2"
 
 jsii@~5.7.0:
-  version "5.7.2"
-  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.7.2.tgz#19d2d5c48b4b09a5fed1c0b5c4cde25bfe6ea57b"
-  integrity sha512-kt0ePwNLcDRx7iu0DkKM3Xr+DCjds9XIS5jtvyr/beUG0Ke2EUsGJH7ERpTwBs5EKLMmHyCt3n72vRtZeacaSg==
+  version "5.7.3"
+  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.7.3.tgz#5f35be6529cf316cd903692112ad8321aa710ab4"
+  integrity sha512-YhXN1vNHDHbGMkER9CpCFyleeOA4SuFS+J8U0LCyKOAqtmw8DkbBiHP/6kYyJBd/Wl0Z7CdapMoL7UDAQBWUuA==
   dependencies:
-    "@jsii/check-node" "1.105.0"
-    "@jsii/spec" "^1.105.0"
+    "@jsii/check-node" "1.106.0"
+    "@jsii/spec" "^1.106.0"
     case "^1.6.3"
     chalk "^4"
     fast-deep-equal "^3.1.3"
