@@ -13,6 +13,7 @@ export enum RosettaVersionLines {
   V5_5,
   V5_6,
   V5_7,
+  V5_8,
 }
 
 export interface RosettaPeerDependencyOptions {
