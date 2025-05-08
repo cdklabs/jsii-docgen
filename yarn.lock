@@ -409,9 +409,9 @@
   integrity sha512-JBxkERygn7Bv/GbN5Rv8Ul6LVknS+5Bp6RgDC/O8gEBU/yeH5Ui5C/OlWrTb6qct7LjjfT6Re2NxB0ln0yYybA==
 
 "@humanwhocodes/retry@^0.4.2":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@humanwhocodes/retry/-/retry-0.4.2.tgz#1860473de7dfa1546767448f333db80cb0ff2161"
-  integrity sha512-xeO57FpIu4p1Ri3Jq/EXq4ClRm86dVF2z/+kvFnyqVYRavTZmaFaUBbWCOuuTh0o/g7DSsk6kc2vrS4Vl5oPOQ==
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@humanwhocodes/retry/-/retry-0.4.3.tgz#c2b9d2e374ee62c586d3adbea87199b1d7a7a6ba"
+  integrity sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==
 
 "@hutson/parse-repository-url@^3.0.0":
   version "3.0.2"
@@ -687,14 +687,7 @@
     chalk "^4.1.2"
     semver "^7.7.1"
 
-"@jsii/spec@^1.111.0":
-  version "1.111.0"
-  resolved "https://registry.yarnpkg.com/@jsii/spec/-/spec-1.111.0.tgz#b8fa48433565c5015b9c69595781cf3f3c6ba264"
-  integrity sha512-T2t5xg4Epv0+AhKjod6UR+WXGdnUSKysviUotHVdX0MgrLc6cTQKQwz9aL/dj4GUSfKsR7M58AKHVhM+cLpdWw==
-  dependencies:
-    ajv "^8.17.1"
-
-"@jsii/spec@^1.112.0":
+"@jsii/spec@^1.111.0", "@jsii/spec@^1.112.0":
   version "1.112.0"
   resolved "https://registry.yarnpkg.com/@jsii/spec/-/spec-1.112.0.tgz#9a70db6bbe3c78ede1095686a7cacda8b2d91f26"
   integrity sha512-O6peIhjjGkIQpbKUMHTNJHMuyqd6EXqWlxnBKpoBoUwDz18HXxt/SwUvnovYCELjgxOUMCdO5Y4/YjeABvatUw==
@@ -917,16 +910,16 @@
   integrity sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==
 
 "@types/node@*":
-  version "22.15.14"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.15.14.tgz#889fd356a04d003a6d5650ccc003ef4d712430d7"
-  integrity sha512-BL1eyu/XWsFGTtDWOYULQEs4KR0qdtYfCxYAUYRoB7JP7h9ETYLgQTww6kH8Sj2C0pFGgrpM0XKv6/kbIzYJ1g==
+  version "22.15.15"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.15.15.tgz#8877c05c18e552e738438e477d7ba22c5d73a57c"
+  integrity sha512-R5muMcZob3/Jjchn5LcO8jdKwSCbzqmPB6ruBxMcf9kbxtniZHP327s6C37iOfuw8mbKK3cAQa7sEl7afLrQ8A==
   dependencies:
     undici-types "~6.21.0"
 
 "@types/node@^18":
-  version "18.19.97"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.97.tgz#38443553a3f6288c8cac3d1b465a3b33121bbf72"
-  integrity sha512-4r3Y9EuCJjWduiam85Fo4GBQtneaEuoaBSdiKo+o6qwQUh0JFVBe7cRUK6I6yVzA0S1gBJJfoQx4VtBH4e5ikg==
+  version "18.19.98"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.98.tgz#2a8a9b24fb7ee9f55e4c19ae719060810831b927"
+  integrity sha512-+bP9tunb6pQbV5cV4z9EwCD/811rXGwXXI/cNK+8MIcm7Ufe9GWGoz91ERuC4MAn5Yp/SEWNYulaQdRHFG67iw==
   dependencies:
     undici-types "~5.26.4"
 
