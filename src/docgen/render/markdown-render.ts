@@ -54,7 +54,7 @@ export interface MarkdownFormattingOptions {
   ) => string;
 
 
-  readonly header?: {title: string; id: string};
+  readonly header?: { title: string; id: string };
 }
 
 export interface MarkdownRendererOptions extends MarkdownFormattingOptions, AssemblyMetadataSchema {
@@ -159,7 +159,7 @@ export class MarkdownRenderer {
 
   public visitApiReference(
     apiRef: ApiReferenceSchema,
-    header: {title: string; id: string} = { title: 'API Reference', id: 'api-reference' },
+    header: { title: string; id: string } = { title: 'API Reference', id: 'api-reference' },
   ): MarkdownDocument {
     const md = new MarkdownDocument({ header: { title: header.title }, id: header.id });
     md.section(this.visitConstructs(apiRef.constructs));

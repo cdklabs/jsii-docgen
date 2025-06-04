@@ -12,7 +12,7 @@ type GenerateOptions = {
   splitBySubmodules?: boolean;
   format: 'md' | 'json';
   output: string;
-}
+};
 
 async function generateForLanguage(docs: Documentation, options: GenerateOptions) {
   const { format, output } = options;

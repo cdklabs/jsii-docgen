@@ -336,7 +336,7 @@ export class Documentation {
   private async languageSpecific(
     lang: Language,
     options: Required<TransliterationOptions>,
-  ): Promise<{ assembly: reflect.Assembly; transpile: Transpile}> {
+  ): Promise<{ assembly: reflect.Assembly; transpile: Transpile }> {
     const { rosettaTarget, transpile } = LANGUAGE_SPECIFIC[lang.toString()];
     return { assembly: await this.createAssembly(rosettaTarget, options), transpile };
   }
