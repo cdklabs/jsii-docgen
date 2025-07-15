@@ -3,7 +3,7 @@ import { EventEmitter } from 'events';
 import { tmpdir } from 'os';
 import { Pipe, Readable, Writable } from 'stream';
 import { NoSpaceLeftOnDevice, NpmError, UnInstallablePackageError } from '../../../src';
-import { Npm } from '../../../src/docgen/view/_npm';
+import { Npm, UNISTALLABLE_PACKAGE_ERROR_CODES } from '../../../src/docgen/view/_npm';
 
 const TMPDIR = tmpdir();
 
@@ -103,6 +103,33 @@ test('NpmError error (removed package ENOVERSIONS)', async () => {
   try {
     await npm.install('foo');
     fail('Expected an NpmError!');
+  } catch (err) {
+    expect(err).toBeInstanceOf(UnInstallablePackageError);
+  }
+});
+
+test.each(UNISTALLABLE_PACKAGE_ERROR_CODES)('%s error is converted to an UnInstallablePackageError', async (code) => {
+  // GIVEN
+  const npm = new Npm(TMPDIR, () => void 0, 'mock-npm');
+
+  // WHEN
+  const mockChildProcess = new MockChildProcess(1, {
+    stdout: [
+      Buffer.from('{\n'),
+      Buffer.from('  "error": {\n'),
+      Buffer.from(`    "code": "${code}",\n`),
+      Buffer.from('    "summary": "Doesnt matter",\n'),
+      Buffer.from('    "detail": ""\n'),
+      Buffer.from('  }\n'),
+      Buffer.from('}\n'),
+    ],
+  });
+  mockSpawn.mockReturnValue(mockChildProcess);
+
+  // THEN
+  try {
+    await npm.install('foo');
+    fail('Expected an UnInstallablePackageError!');
   } catch (err) {
     expect(err).toBeInstanceOf(UnInstallablePackageError);
   }
