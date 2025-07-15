@@ -3,7 +3,7 @@ import { EventEmitter } from 'events';
 import { tmpdir } from 'os';
 import { Pipe, Readable, Writable } from 'stream';
 import { NoSpaceLeftOnDevice, NpmError, UnInstallablePackageError } from '../../../src';
-import { Npm } from '../../../src/docgen/view/_npm';
+import { Npm, UNISTALLABLE_PACKAGE_ERROR_CODES } from '../../../src/docgen/view/_npm';
 
 const TMPDIR = tmpdir();
 
@@ -81,7 +81,7 @@ test('NpmError error (removed package no code)', async () => {
   }
 });
 
-test('NpmError error (removed package ENOVERSIONS)', async () => {
+test.each(UNISTALLABLE_PACKAGE_ERROR_CODES)('%s error is converted to an UnInstallablePackageError', async (code) => {
   // GIVEN
   const npm = new Npm(TMPDIR, () => void 0, 'mock-npm');
 
@@ -90,8 +90,8 @@ test('NpmError error (removed package ENOVERSIONS)', async () => {
     stdout: [
       Buffer.from('{\n'),
       Buffer.from('  "error": {\n'),
-      Buffer.from('    "code": "ENOVERSIONS",\n'),
-      Buffer.from('    "summary": "No versions available for foo",\n'),
+      Buffer.from(`    "code": "${code}",\n`),
+      Buffer.from('    "summary": "Cannot convert undefined or null to object",\n'),
       Buffer.from('    "detail": ""\n'),
       Buffer.from('  }\n'),
       Buffer.from('}\n'),
@@ -102,7 +102,7 @@ test('NpmError error (removed package ENOVERSIONS)', async () => {
   // THEN
   try {
     await npm.install('foo');
-    fail('Expected an NpmError!');
+    fail('Expected an UnInstallablePackageError!');
   } catch (err) {
     expect(err).toBeInstanceOf(UnInstallablePackageError);
   }

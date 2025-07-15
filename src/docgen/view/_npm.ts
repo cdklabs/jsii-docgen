@@ -6,6 +6,14 @@ import { major } from 'semver';
 import { extractPackageName } from './documentation';
 import { NoSpaceLeftOnDevice, UnInstallablePackageError, NpmError } from '../../errors';
 
+export const UNISTALLABLE_PACKAGE_ERROR_CODES = [
+  'E404', // package (or dependency) can't be found on NPM. This can happen if the package depends on a deprecated package (for example).
+  'EOVERRIDE', // Package contains some version overrides that conflict.
+  'ERESOLVE', // dependency resolution problem requires a manual intervention (most likely version conflict)
+  'ETARGET', // dependency resolution problem requires a manual intervention (most likely missing package)
+  'ENOVERSIONS', // package has been removed from npm
+];
+
 export class Npm {
   #npmCommand: string | undefined;
 
@@ -292,15 +300,11 @@ function assertSuccess(result: CommandResult<ResponseObject>): asserts result is
     throw new UnInstallablePackageError(summary);
   }
 
-  switch (code) {
-    case 'E404': // package (or dependency) can't be found on NPM. This can happen if the package depends on a deprecated package (for example).
-    case 'EOVERRIDE': // Package contains some version overrides that conflict.
-    case 'ERESOLVE': // dependency resolution problem requires a manual intervention (most likely...)
-    case 'ENOVERSIONS': // package has been removed from npm
-      throw new UnInstallablePackageError(message);
-    default:
-      throw new NpmError(message, stdout, code);
+  if (UNISTALLABLE_PACKAGE_ERROR_CODES.includes(code)) {
+    throw new UnInstallablePackageError(message);
   }
+
+  throw new NpmError(message, stdout, code);
 }
 
 /**
