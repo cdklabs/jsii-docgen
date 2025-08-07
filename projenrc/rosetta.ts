@@ -72,6 +72,14 @@ export class RosettaPeerDependency extends Component {
         },
       },
       {
+        if: "runner.os == 'Windows'",
+        name: 'Windows performance improvements',
+        run: [
+          'yarn config set cache-folder D:\\a\\_temp\\yarn',
+          'echo "TEMP=D:\\a\\_temp" >> $env:GITHUB_ENV',
+        ].join('\n'),
+      },
+      {
         name: 'Install Rosetta version',
         run: `yarn add --dev ${JSII_ROSETTA}@\${{ matrix.rosetta }}`,
       },

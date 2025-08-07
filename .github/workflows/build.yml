@@ -95,6 +95,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18.x
+      - name: Windows performance improvements
+        if: runner.os == 'Windows'
+        run: |-
+          yarn config set cache-folder D:\a\_temp\yarn
+          echo "TEMP=D:\a\_temp" >> $env:GITHUB_ENV
       - name: Install Rosetta version
         run: yarn add --dev jsii-rosetta@${{ matrix.rosetta }}
       - name: Install dependencies
