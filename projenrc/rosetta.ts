@@ -14,6 +14,7 @@ export enum RosettaVersionLines {
   V5_6,
   V5_7,
   V5_8,
+  V5_9,
 }
 
 export interface RosettaPeerDependencyOptions {
@@ -69,6 +70,14 @@ export class RosettaPeerDependency extends Component {
           // @ts-ignore
           'node-version': project.nodeVersion,
         },
+      },
+      {
+        if: "runner.os == 'Windows'",
+        name: 'Windows performance improvements',
+        run: [
+          'yarn config set cache-folder D:\\a\\_temp\\yarn',
+          'echo "TEMP=D:\\a\\_temp" >> $env:GITHUB_ENV',
+        ].join('\n'),
       },
       {
         name: 'Install Rosetta version',
