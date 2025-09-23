@@ -9,7 +9,7 @@ import { Npm } from './_npm';
 import { ApiReference } from './api-reference';
 import { Readme } from './readme';
 import { CorruptedAssemblyError, LanguageNotSupportedError, TransliterationError } from '../..';
-import { Json } from '../render/json';
+import { Json, JsonFormattingOptions } from '../render/json';
 import { MarkdownDocument } from '../render/markdown-doc';
 import { MarkdownFormattingOptions, MarkdownRenderer } from '../render/markdown-render';
 import { Schema, CURRENT_SCHEMA_VERSION, submodulePath } from '../schema';
@@ -83,6 +83,8 @@ export interface TransliterationOptions {
 }
 
 export interface MarkdownRenderOptions extends RenderOptions, MarkdownFormattingOptions {}
+
+export interface JsonRenderOptions extends RenderOptions, JsonFormattingOptions {}
 
 /**
  * Options for creating a `Documentation` object using the `fromLocalPackage` function.
@@ -245,7 +247,7 @@ export class Documentation {
   /**
    * Generate markdown.
    */
-  public async toJson(options: RenderOptions): Promise<Json<Schema>> {
+  public async toJson(options: JsonRenderOptions): Promise<Json<Schema>> {
 
     const language = options.language ?? Language.TYPESCRIPT;
     const loose = options.loose ?? true;
@@ -306,7 +308,9 @@ export class Documentation {
       apiReference: apiReference?.toJson(),
     };
 
-    return new Json(contents);
+    return new Json(contents, {
+      spaces: options.spaces,
+    });
   }
 
   public async toMarkdown(options: MarkdownRenderOptions): Promise<MarkdownDocument> {

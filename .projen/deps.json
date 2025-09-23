@@ -119,6 +119,10 @@
       "type": "runtime"
     },
     {
+      "name": "json-stream-stringify",
+      "type": "runtime"
+    },
+    {
       "name": "semver",
       "type": "runtime"
     },

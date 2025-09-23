@@ -54,6 +54,11 @@ export interface MarkdownFormattingOptions {
   ) => string;
 
 
+  /**
+   * How to render the header of the generated documentation.
+   *
+   * @default - default section headers
+   */
   readonly header?: { title: string; id: string };
 }
 

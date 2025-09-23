@@ -240,13 +240,13 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=prod --filter=@jsii/spec,case,fs-extra,glob,glob-promise,jsii-reflect,semver,yargs"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=prod --filter=@jsii/spec,case,fs-extra,glob,glob-promise,jsii-reflect,json-stream-stringify,semver,yargs"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @jsii/spec case fs-extra glob glob-promise jsii-reflect semver yargs"
+          "exec": "yarn upgrade @jsii/spec case fs-extra glob glob-promise jsii-reflect json-stream-stringify semver yargs"
         },
         {
           "exec": "npx projen"
