@@ -1,5 +1,7 @@
-import * as fs from 'fs/promises';
+import { createWriteStream } from 'node:fs';
+import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
+import { pipeline } from 'node:stream/promises';
 import * as yargs from 'yargs';
 import { Language, submoduleRelName } from './docgen/transpile/transpile';
 import { Documentation } from './index';
@@ -44,7 +46,10 @@ async function generateForLanguage(docs: Documentation, options: GenerateOptions
     await fs.writeFile(`${output}.${format}`, await (await docs.toIndexMarkdown(submoduleSuffix, options)).render());
   } else {
     const content = await (format === 'md' ? docs.toMarkdown(options) : docs.toJson(options));
-    await fs.writeFile(`${output}.${format}`, content.render());
+    await pipeline(
+      content.stream(),
+      createWriteStream(`${output}.${format}`),
+    );
   }
 }
 

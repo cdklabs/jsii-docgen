@@ -28,6 +28,7 @@ const project = new CdklabsTypeScriptProject({
     'glob-promise',
     'glob',
     'jsii-reflect',
+    'json-stream-stringify',
     'semver',
     'yargs',
   ],

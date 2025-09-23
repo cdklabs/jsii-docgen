@@ -68,6 +68,7 @@
     "glob": "^8.1.0",
     "glob-promise": "^6.0.7",
     "jsii-reflect": "^1.114.1",
+    "json-stream-stringify": "^3.1.6",
     "semver": "^7.7.2",
     "yargs": "^16.2.0"
   },

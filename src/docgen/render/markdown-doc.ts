@@ -1,3 +1,4 @@
+import { Readable } from 'node:stream';
 import { Language } from '../..';
 import { DocsSchema } from '../schema';
 
@@ -25,7 +26,7 @@ export interface MarkdownHeaderOptions {
   readonly pre?: boolean;
 
   /**
-   * Strikethough the title.
+   * Strike-through the title.
    *
    * @default false
    */
@@ -177,6 +178,14 @@ export class MarkdownDocument {
   }
 
   public render(headerSize: number = 0): string {
+    return this._render(headerSize);
+  }
+
+  public stream(): Readable {
+    return Readable.from([this.render()]);
+  }
+
+  private _render(headerSize: number = 0): string {
     const content: string[] = [];
 
     if (this.header) {
@@ -206,7 +215,7 @@ export class MarkdownDocument {
     }
 
     for (const section of this._sections) {
-      content.push(section.render(headerSize + 1));
+      content.push(section._render(headerSize + 1));
     }
     return content.join('\n');
   }
