@@ -128,7 +128,7 @@ export class JavaTranspile extends transpile.TranspileBase {
       return [...requiredParams, ...optionals].map((p) => this.formatParameter(this.parameter(p)));
     });
 
-    let returnType: transpile.TranspiledTypeReference | undefined;
+    let returnType: transpile.ITranspiledTypeReference | undefined;
     if (reflect.Initializer.isInitializer(callable)) {
       returnType = this.typeReference(callable.parentType.reference);
     } else if (reflect.Method.isMethod(callable)) {
@@ -245,6 +245,10 @@ export class JavaTranspile extends transpile.TranspileBase {
 
   public unionOf(types: string[]): string {
     return types.join(' OR ');
+  }
+
+  public intersectionOf(types: string[]): string {
+    return `${types[0]} /* and ${types.slice(1).join(' + ')} */`;
   }
 
   public listOf(type: string): string {
@@ -422,7 +426,7 @@ export class JavaTranspile extends transpile.TranspileBase {
 
   private formatProperty(
     name: string,
-    typeReference: transpile.TranspiledTypeReference,
+    typeReference: transpile.ITranspiledTypeReference,
   ): string {
     const tf = typeReference.toString({
       typeFormatter: (t) => t.name,

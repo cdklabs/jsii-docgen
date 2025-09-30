@@ -190,7 +190,7 @@ export interface TranspiledCallable {
   /**
    * The (transpiled) return type - this is undefined if void or initializer.
    */
-  readonly returnType?: TranspiledTypeReference;
+  readonly returnType?: ITranspiledTypeReference;
 }
 
 /**
@@ -304,6 +304,23 @@ export interface TranspiledTypeReferenceToStringOptions {
 }
 
 /**
+ * The minimal functional interface exposed by `TranspiledTypeReference`.
+ */
+export interface ITranspiledTypeReference {
+  /**
+   * Convert the given type reference to a string
+   */
+  toString(options?: TranspiledTypeReferenceToStringOptions): string;
+
+  /**
+   * Convert the given type reference to JSON
+   *
+   * The JSON is specialized for a given language.
+   */
+  toJson(): TypeSchema;
+}
+
+/**
  * Outcome of transpiling a jsii type reference.
  */
 export class TranspiledTypeReference {
@@ -314,7 +331,7 @@ export class TranspiledTypeReference {
     transpile: Transpile,
     ref: reflect.TypeReference,
     primitive: string,
-  ): TranspiledTypeReference {
+  ): ITranspiledTypeReference {
     return new TranspiledTypeReference(transpile, ref, primitive);
   }
   /**
@@ -323,7 +340,7 @@ export class TranspiledTypeReference {
   public static any(
     transpile: Transpile,
     ref: reflect.TypeReference,
-  ): TranspiledTypeReference {
+  ): ITranspiledTypeReference {
     return new TranspiledTypeReference(transpile, ref, undefined, true);
   }
   /**
@@ -332,7 +349,7 @@ export class TranspiledTypeReference {
   public static void(
     transpile: Transpile,
     ref: reflect.TypeReference,
-  ): TranspiledTypeReference {
+  ): ITranspiledTypeReference {
     return new TranspiledTypeReference(
       transpile,
       ref,
@@ -352,7 +369,7 @@ export class TranspiledTypeReference {
     transpile: Transpile,
     ref: reflect.TypeReference,
     type: TranspiledType,
-  ): TranspiledTypeReference {
+  ): ITranspiledTypeReference {
     return new TranspiledTypeReference(
       transpile,
       ref,
@@ -367,8 +384,8 @@ export class TranspiledTypeReference {
   public static arrayOfType(
     transpile: Transpile,
     ref: reflect.TypeReference,
-    tf: TranspiledTypeReference,
-  ): TranspiledTypeReference {
+    tf: ITranspiledTypeReference,
+  ): ITranspiledTypeReference {
     return new TranspiledTypeReference(
       transpile,
       ref,
@@ -384,8 +401,8 @@ export class TranspiledTypeReference {
   public static mapOfType(
     transpile: Transpile,
     ref: reflect.TypeReference,
-    tf: TranspiledTypeReference,
-  ): TranspiledTypeReference {
+    tf: ITranspiledTypeReference,
+  ): ITranspiledTypeReference {
     return new TranspiledTypeReference(
       transpile,
       ref,
@@ -402,8 +419,8 @@ export class TranspiledTypeReference {
   public static unionOfTypes(
     transpile: Transpile,
     ref: reflect.TypeReference,
-    tfs: TranspiledTypeReference[],
-  ): TranspiledTypeReference {
+    tfs: ITranspiledTypeReference[],
+  ): ITranspiledTypeReference {
     return new TranspiledTypeReference(
       transpile,
       ref,
@@ -414,6 +431,29 @@ export class TranspiledTypeReference {
       undefined,
       tfs,
     );
+  }
+
+  /**
+   * Create a type reference that represents an intersection a type references.
+   */
+  public static intersectionOfTypes(
+    transpile: Transpile,
+    _ref: reflect.TypeReference,
+    tfs: ITranspiledTypeReference[],
+  ): ITranspiledTypeReference {
+    return {
+      toString: (options?: TranspiledTypeReferenceToStringOptions) => {
+        const refs = tfs.map((t) => t.toString(options));
+        return transpile.intersectionOf(refs);
+      },
+      toJson: () => {
+        const types = tfs.map((t) => t.toJson());
+        return {
+          formattingPattern: transpile.intersectionOf(types.map((t) => t.formattingPattern)),
+          types,
+        };
+      },
+    };
   }
 
   private constructor(
@@ -440,15 +480,15 @@ export class TranspiledTypeReference {
     /**
      * Array of ref.
      */
-    private readonly arrayOfType?: TranspiledTypeReference,
+    private readonly arrayOfType?: ITranspiledTypeReference,
     /**
      * Map of ref.
      */
-    private readonly mapOfType?: TranspiledTypeReference,
+    private readonly mapOfType?: ITranspiledTypeReference,
     /**
      * Union of ref.
      */
-    private readonly unionOfTypes?: TranspiledTypeReference[],
+    private readonly unionOfTypes?: ITranspiledTypeReference[],
     /**
      * 'Void' type ref.
      */
@@ -565,7 +605,7 @@ export interface TranspiledProperty {
   /**
    * The (transpiled) type reference.
    */
-  readonly typeReference: TranspiledTypeReference;
+  readonly typeReference: ITranspiledTypeReference;
   /**
    * Whether or not the parameter is optional.
    */
@@ -713,12 +753,17 @@ export interface Transpile {
   /**
    * Transpile (recursively) a type reference.
    */
-  typeReference(typeReference: reflect.TypeReference): TranspiledTypeReference;
+  typeReference(typeReference: reflect.TypeReference): ITranspiledTypeReference;
 
   /**
    * How a union looks like in the target language.
    */
   unionOf(types: string[]): string;
+
+  /**
+   * How an intersection looks in the target language.
+   */
+  intersectionOf(types: string[]): string;
 
   /**
   * How a variadic parameter looks in the target language.
@@ -790,7 +835,7 @@ export abstract class TranspileBase implements Transpile {
 
   constructor(public readonly language: Language) {}
 
-  public typeReference(ref: reflect.TypeReference): TranspiledTypeReference {
+  public typeReference(ref: reflect.TypeReference): ITranspiledTypeReference {
     if (ref.type) {
       const transpiled = this.type(ref.type);
       return TranspiledTypeReference.type(this, ref, transpiled);
@@ -799,6 +844,11 @@ export abstract class TranspileBase implements Transpile {
     if (ref.unionOfTypes) {
       const transpiled = ref.unionOfTypes.map((t) => this.typeReference(t));
       return TranspiledTypeReference.unionOfTypes(this, ref, transpiled);
+    }
+
+    if (ref.intersectionOfTypes) {
+      const transpiled = ref.intersectionOfTypes.map((t) => this.typeReference(t));
+      return TranspiledTypeReference.intersectionOfTypes(this, ref, transpiled);
     }
 
     if (ref.arrayOfType) {

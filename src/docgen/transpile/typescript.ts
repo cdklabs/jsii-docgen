@@ -66,6 +66,10 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
     return `${types.join(' | ')}`;
   }
 
+  public intersectionOf(types: string[]): string {
+    return types.join(' & ');
+  }
+
   public listOf(type: string): string {
     return `${type}[]`;
   }
@@ -172,7 +176,7 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
       ? formatClassInitialization(type, inputs)
       : formatInvocation(type, inputs, name);
 
-    let returnType: transpile.TranspiledTypeReference | undefined;
+    let returnType: transpile.ITranspiledTypeReference | undefined;
     if (reflect.Initializer.isInitializer(callable)) {
       returnType = this.typeReference(callable.parentType.reference);
     } else if (reflect.Method.isMethod(callable)) {
@@ -251,7 +255,7 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
 
   private formatProperty(
     name: string,
-    typeReference: transpile.TranspiledTypeReference,
+    typeReference: transpile.ITranspiledTypeReference,
   ): string {
     const tf = typeReference.toString({
       typeFormatter: (t) => t.name,

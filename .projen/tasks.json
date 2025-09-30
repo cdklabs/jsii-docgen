@@ -89,6 +89,14 @@
         {
           "exec": "npm run compile",
           "cwd": "./test/__fixtures__/libraries/construct-library"
+        },
+        {
+          "exec": "npm ci",
+          "cwd": "./test/__fixtures__/libraries/lib-with-intersections"
+        },
+        {
+          "exec": "npm run compile",
+          "cwd": "./test/__fixtures__/libraries/lib-with-intersections"
         }
       ]
     },
