@@ -2610,7 +2610,7 @@ func Foo() *string
 import software.test.intersections.lib.Props;
 
 Props.builder()
-    .input(IFoo AND IBar)
+    .input(IFoo /* and IBar */)
     .build();
 \`\`\`
 
@@ -2618,17 +2618,17 @@ Props.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#lib-with-intersections.Props.property.input">input</a></code> | <code><a href="#lib-with-intersections.IFoo">IFoo</a> AND <a href="#lib-with-intersections.IBar">IBar</a></code> | *No description.* |
+| <code><a href="#lib-with-intersections.Props.property.input">input</a></code> | <code><a href="#lib-with-intersections.IFoo">IFoo</a> /* and <a href="#lib-with-intersections.IBar">IBar</a> */</code> | *No description.* |
 
 ---
 
 ##### \`input\`<sup>Required</sup> <a name="input" id="lib-with-intersections.Props.property.input"></a>
 
 \`\`\`java
-public IFoo AND IBar getInput();
+public IFoo /* and IBar */ getInput();
 \`\`\`
 
-- *Type:* <a href="#lib-with-intersections.IFoo">IFoo</a> AND <a href="#lib-with-intersections.IBar">IBar</a>
+- *Type:* <a href="#lib-with-intersections.IFoo">IFoo</a> /* and <a href="#lib-with-intersections.IBar">IBar</a> */
 
 ---
 
@@ -2718,12 +2718,12 @@ new Hello();
 ##### \`use\` <a name="use" id="lib-with-intersections.Hello.use"></a>
 
 \`\`\`java
-public java.lang.String use(IFoo AND IBar param)
+public java.lang.String use(IFoo /* and IBar */ param)
 \`\`\`
 
 ###### \`param\`<sup>Required</sup> <a name="param" id="lib-with-intersections.Hello.use.parameter.param"></a>
 
-- *Type:* <a href="#lib-with-intersections.IFoo">IFoo</a> AND <a href="#lib-with-intersections.IBar">IBar</a>
+- *Type:* <a href="#lib-with-intersections.IFoo">IFoo</a> /* and <a href="#lib-with-intersections.IBar">IBar</a> */
 
 ---
 
@@ -2752,12 +2752,12 @@ public java.lang.String useProps(Props props)
 \`\`\`java
 import software.test.intersections.lib.Hello;
 
-Hello.useStatic(IFoo AND IBar param)
+Hello.useStatic(IFoo /* and IBar */ param)
 \`\`\`
 
 ###### \`param\`<sup>Required</sup> <a name="param" id="lib-with-intersections.Hello.useStatic.parameter.param"></a>
 
-- *Type:* <a href="#lib-with-intersections.IFoo">IFoo</a> AND <a href="#lib-with-intersections.IBar">IBar</a>
+- *Type:* <a href="#lib-with-intersections.IFoo">IFoo</a> /* and <a href="#lib-with-intersections.IBar">IBar</a> */
 
 ---
 
