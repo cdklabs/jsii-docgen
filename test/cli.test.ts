@@ -109,7 +109,7 @@ test('specify languages and split-by-submodule creates submodule files next to o
 });
 
 test.each([
-  ['lib-with-intersections', '>=5.9.6'],
+  ['lib-with-intersections', '>=5.9.5'],
 ])('docs for library: %s', async (libraryName, minimumRosettaRange) => {
   if (!semver.satisfies(ROSETTA_VERSION, minimumRosettaRange)) {
     console.log(`Skipping test for ${libraryName} because jsii-rosetta version ${ROSETTA_VERSION} does not satisfy ${minimumRosettaRange}`);
