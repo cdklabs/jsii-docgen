@@ -67,7 +67,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
     const paramsFormatted = parameters.map(p => this.formatFnParam(this.parameter(p))).join(', ');
     const prefix = isInitializer || callable.protected ? 'protected' : 'private';
 
-    let returnType: transpile.TranspiledTypeReference | undefined;
+    let returnType: transpile.ITranspiledTypeReference | undefined;
     if (reflect.Initializer.isInitializer(callable)) {
       returnType = this.typeReference(callable.parentType.reference);
     } else if (reflect.Method.isMethod(callable)) {
@@ -163,12 +163,16 @@ export class CSharpTranspile extends transpile.TranspileBase {
     };
   }
 
-  public unionOf(): string {
-    return 'object';
+  public unionOf(types: string[]): string {
+    return types.join('|');
+  }
+
+  public intersectionOf(types: string[]): string {
+    return types.join('+');
   }
 
   public listOf(type: string): string {
-    return `${type}[]`;
+    return `${parenthesize(type)}[]`;
   }
 
   public variadicOf(type: string): string {
@@ -238,7 +242,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
     ].join('\n');
   };
 
-  private formatParameter(name: string, typeReference: transpile.TranspiledTypeReference) {
+  private formatParameter(name: string, typeReference: transpile.ITranspiledTypeReference) {
     const tf = typeReference.toString({
       typeFormatter: (t) => t.name,
     });
@@ -248,7 +252,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
 
   private formatProperty(
     name: string,
-    typeReference: transpile.TranspiledTypeReference,
+    typeReference: transpile.ITranspiledTypeReference,
     property: reflect.Property,
   ): string {
     const tf = typeReference.toString({
@@ -261,4 +265,14 @@ export class CSharpTranspile extends transpile.TranspileBase {
     const suffix = hasSetter ? '{ get; set; }' : '{ get; }';
     return `${prefix} ${tf} ${name} ${suffix}`;
   }
+}
+
+/**
+ * Parenthesize a subexpression if necessary and not already done
+ */
+function parenthesize(x: string) {
+  const necessary = x.includes('|') || x.includes('+');
+  const alreadyDone = x.startsWith('(') && x.endsWith(')');
+
+  return necessary && !alreadyDone ? `(${x})` : x;
 }

@@ -1,8 +1,13 @@
 import { execSync } from 'child_process';
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import * as semver from 'semver';
 
 const cli = require.resolve('../lib/cli');
+
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const ROSETTA_VERSION = require('jsii-rosetta/package.json').version;
+
 
 test('construct-library', () => {
 
@@ -78,7 +83,6 @@ test('split-by-submodule creates submodule files next to output', () => {
 });
 
 test('specify languages and split-by-submodule creates submodule files next to output', () => {
-
   const libraryName = 'construct-library';
   const fixture = join(`${__dirname}/__fixtures__/libraries/${libraryName}`);
 
@@ -102,5 +106,30 @@ test('specify languages and split-by-submodule creates submodule files next to o
   expect(rootPy).toContain('greet_with_salutation');
   expect(submodulePy).toMatchSnapshot('submod1.python.md');
   expect(submodulePy).toContain('goodbye_with_phrase');
+});
 
+test.each([
+  ['lib-with-intersections', '>=5.9.5'],
+])('docs for library: %s', async (libraryName, minimumRosettaRange) => {
+  if (!semver.satisfies(ROSETTA_VERSION, minimumRosettaRange)) {
+    console.log(`Skipping test for ${libraryName} because jsii-rosetta version ${ROSETTA_VERSION} does not satisfy ${minimumRosettaRange}`);
+    return;
+  }
+
+  const fixture = join(`${__dirname}/__fixtures__/libraries/${libraryName}`);
+
+  // generate the documentation
+  execSync(`"${process.execPath}" ${cli} --output=docs/API.md --split-by-submodule -l typescript -l java -l python -l csharp -l go`, { cwd: fixture });
+
+  // TypeScript
+  const files = [
+    'docs/API.typescript.md',
+    'docs/API.java.md',
+    'docs/API.python.md',
+    'docs/API.csharp.md',
+    'docs/API.go.md',
+  ];
+
+  const docs = Object.fromEntries(files.map((file) => [file, readFileSync(join(fixture, file), 'utf-8')]));
+  expect(docs).toMatchSnapshot();
 });

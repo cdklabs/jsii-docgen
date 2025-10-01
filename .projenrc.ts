@@ -90,7 +90,7 @@ new RosettaPeerDependency(project, {
 project.github?.tryFindWorkflow('release')?.file?.patch(JsonPatch.add('/jobs/release/env/NODE_OPTIONS', '--max_old_space_size=4096'));
 project.github?.tryFindWorkflow('build')?.file?.patch(JsonPatch.add('/jobs/build/env/NODE_OPTIONS', '--max_old_space_size=4096'));
 
-const libraryFixtures = ['construct-library'];
+const libraryFixtures = ['construct-library', 'lib-with-intersections'];
 
 // compile the test fixtures with jsii
 for (const library of libraryFixtures) {

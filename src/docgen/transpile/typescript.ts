@@ -66,8 +66,12 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
     return `${types.join(' | ')}`;
   }
 
+  public intersectionOf(types: string[]): string {
+    return types.join(' & ');
+  }
+
   public listOf(type: string): string {
-    return `${type}[]`;
+    return `${parenthesize(type)}[]`;
   }
 
   public variadicOf(type: string): string {
@@ -172,7 +176,7 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
       ? formatClassInitialization(type, inputs)
       : formatInvocation(type, inputs, name);
 
-    let returnType: transpile.TranspiledTypeReference | undefined;
+    let returnType: transpile.ITranspiledTypeReference | undefined;
     if (reflect.Initializer.isInitializer(callable)) {
       returnType = this.typeReference(callable.parentType.reference);
     } else if (reflect.Method.isMethod(callable)) {
@@ -251,11 +255,21 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
 
   private formatProperty(
     name: string,
-    typeReference: transpile.TranspiledTypeReference,
+    typeReference: transpile.ITranspiledTypeReference,
   ): string {
     const tf = typeReference.toString({
       typeFormatter: (t) => t.name,
     });
     return `public readonly ${name}: ${tf};`;
   }
+}
+
+/**
+ * Parenthesize a subexpression if necessary and not already done
+ */
+function parenthesize(x: string) {
+  const necessary = x.includes('|') || x.includes('&');
+  const alreadyDone = x.startsWith('(') && x.endsWith(')');
+
+  return necessary && !alreadyDone ? `(${x})` : x;
 }

@@ -2917,7 +2917,7 @@ Check whether the given construct is a CfnResource.
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.property.cfnOptions?lang=python">CfnOptions</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/ICfnResourceOptions?lang=python">ICfnResourceOptions</a></code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.property.cfnResourceType?lang=python">CfnResourceType</a></code> | <code>string</code> | AWS resource type. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.property.attrRegistryId?lang=python">AttrRegistryId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.property.replicationConfiguration?lang=python">ReplicationConfiguration</a></code> | <code>object</code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.property.replicationConfiguration?lang=python">ReplicationConfiguration</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>\\|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
 
 ---
 
@@ -3026,10 +3026,10 @@ public string AttrRegistryId { get; }
 ##### \`ReplicationConfiguration\`<sup>Required</sup> <a name="ReplicationConfiguration" id="CfnReplicationConfiguration.property.replicationConfiguration"></a>
 
 \`\`\`csharp
-public object ReplicationConfiguration { get; }
+public IResolvable|ReplicationConfigurationProperty ReplicationConfiguration { get; }
 \`\`\`
 
-- *Type:* object
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a>
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
@@ -3476,7 +3476,7 @@ Check whether the given construct is a CfnResource.
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.imageScanningConfiguration?lang=python">ImageScanningConfiguration</a></code> | <code>object</code> | \`AWS::ECR::Repository.ImageScanningConfiguration\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.repositoryPolicyText?lang=python">RepositoryPolicyText</a></code> | <code>object</code> | \`AWS::ECR::Repository.RepositoryPolicyText\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.imageTagMutability?lang=python">ImageTagMutability</a></code> | <code>string</code> | \`AWS::ECR::Repository.ImageTagMutability\`. |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.lifecyclePolicy?lang=python">LifecyclePolicy</a></code> | <code>object</code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.lifecyclePolicy?lang=python">LifecyclePolicy</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>\\|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.repositoryName?lang=python">RepositoryName</a></code> | <code>string</code> | \`AWS::ECR::Repository.RepositoryName\`. |
 
 ---
@@ -3666,10 +3666,10 @@ public string ImageTagMutability { get; }
 ##### \`LifecyclePolicy\`<sup>Optional</sup> <a name="LifecyclePolicy" id="CfnRepository.property.lifecyclePolicy"></a>
 
 \`\`\`csharp
-public object LifecyclePolicy { get; }
+public IResolvable|LifecyclePolicyProperty LifecyclePolicy { get; }
 \`\`\`
 
-- *Type:* object
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a>
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
@@ -4827,7 +4827,7 @@ Properties for defining a \`AWS::ECR::ReplicationConfiguration\`.
 using Amazon.CDK.AWS.ECR;
 
 new CfnReplicationConfigurationProps {
-    object ReplicationConfiguration
+    IResolvable|ReplicationConfigurationProperty ReplicationConfiguration
 };
 \`\`\`
 
@@ -4835,17 +4835,17 @@ new CfnReplicationConfigurationProps {
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfigurationProps.property.replicationConfiguration?lang=python">ReplicationConfiguration</a></code> | <code>object</code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfigurationProps.property.replicationConfiguration?lang=python">ReplicationConfiguration</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>\\|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
 
 ---
 
 ##### \`ReplicationConfiguration\`<sup>Required</sup> <a name="ReplicationConfiguration" id="CfnReplicationConfigurationProps.property.replicationConfiguration"></a>
 
 \`\`\`csharp
-public object ReplicationConfiguration { get; set; }
+public IResolvable|ReplicationConfigurationProperty ReplicationConfiguration { get; set; }
 \`\`\`
 
-- *Type:* object
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a>
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
@@ -4868,7 +4868,7 @@ new CfnRepositoryProps {
     object EncryptionConfiguration = null,
     object ImageScanningConfiguration = null,
     string ImageTagMutability = null,
-    object LifecyclePolicy = null,
+    IResolvable|LifecyclePolicyProperty LifecyclePolicy = null,
     string RepositoryName = null,
     object RepositoryPolicyText = null,
     CfnTag[] Tags = null
@@ -4882,7 +4882,7 @@ new CfnRepositoryProps {
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.encryptionConfiguration?lang=python">EncryptionConfiguration</a></code> | <code>object</code> | \`AWS::ECR::Repository.EncryptionConfiguration\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.imageScanningConfiguration?lang=python">ImageScanningConfiguration</a></code> | <code>object</code> | \`AWS::ECR::Repository.ImageScanningConfiguration\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.imageTagMutability?lang=python">ImageTagMutability</a></code> | <code>string</code> | \`AWS::ECR::Repository.ImageTagMutability\`. |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.lifecyclePolicy?lang=python">LifecyclePolicy</a></code> | <code>object</code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.lifecyclePolicy?lang=python">LifecyclePolicy</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>\\|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.repositoryName?lang=python">RepositoryName</a></code> | <code>string</code> | \`AWS::ECR::Repository.RepositoryName\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.repositoryPolicyText?lang=python">RepositoryPolicyText</a></code> | <code>object</code> | \`AWS::ECR::Repository.RepositoryPolicyText\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.tags?lang=python">Tags</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/CfnTag?lang=python">CfnTag</a>[]</code> | \`AWS::ECR::Repository.Tags\`. |
@@ -4934,10 +4934,10 @@ public string ImageTagMutability { get; set; }
 ##### \`LifecyclePolicy\`<sup>Optional</sup> <a name="LifecyclePolicy" id="CfnRepositoryProps.property.lifecyclePolicy"></a>
 
 \`\`\`csharp
-public object LifecyclePolicy { get; set; }
+public IResolvable|LifecyclePolicyProperty LifecyclePolicy { get; set; }
 \`\`\`
 
-- *Type:* object
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a>
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
@@ -5378,7 +5378,7 @@ Leave it undefined to watch the full repository.
 using Amazon.CDK.AWS.ECR;
 
 new ReplicationConfigurationProperty {
-    object Rules
+    IResolvable|(IResolvable|ReplicationRuleProperty)[] Rules
 };
 \`\`\`
 
@@ -5386,17 +5386,17 @@ new ReplicationConfigurationProperty {
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules?lang=python">Rules</a></code> | <code>object</code> | \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules?lang=python">Rules</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>\\|<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>\\|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationRuleProperty?lang=python">ReplicationRuleProperty</a>[]</code> | \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`. |
 
 ---
 
 ##### \`Rules\`<sup>Required</sup> <a name="Rules" id="CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules"></a>
 
 \`\`\`csharp
-public object Rules { get; set; }
+public IResolvable|(IResolvable|ReplicationRuleProperty)[] Rules { get; set; }
 \`\`\`
 
-- *Type:* object
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>|<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationRuleProperty?lang=python">ReplicationRuleProperty</a>[]
 
 \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`.
 
@@ -5466,7 +5466,7 @@ public string RegistryId { get; set; }
 using Amazon.CDK.AWS.ECR;
 
 new ReplicationRuleProperty {
-    object Destinations
+    IResolvable|(IResolvable|ReplicationDestinationProperty)[] Destinations
 };
 \`\`\`
 
@@ -5474,17 +5474,17 @@ new ReplicationRuleProperty {
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations?lang=python">Destinations</a></code> | <code>object</code> | \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations?lang=python">Destinations</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>\\|<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>\\|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationDestinationProperty?lang=python">ReplicationDestinationProperty</a>[]</code> | \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`. |
 
 ---
 
 ##### \`Destinations\`<sup>Required</sup> <a name="Destinations" id="CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations"></a>
 
 \`\`\`csharp
-public object Destinations { get; set; }
+public IResolvable|(IResolvable|ReplicationDestinationProperty)[] Destinations { get; set; }
 \`\`\`
 
-- *Type:* object
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>|<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationDestinationProperty?lang=python">ReplicationDestinationProperty</a>[]
 
 \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`.
 
@@ -8332,8 +8332,7 @@ A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 import software.amazon.awscdk.services.ecr.CfnReplicationConfiguration;
 
 CfnReplicationConfiguration.Builder.create(Construct scope, java.lang.String id)
-    .replicationConfiguration(IResolvable)
-    .replicationConfiguration(ReplicationConfigurationProperty)
+    .replicationConfiguration(IResolvable|ReplicationConfigurationProperty)
     .build();
 \`\`\`
 
@@ -8341,7 +8340,7 @@ CfnReplicationConfiguration.Builder.create(Construct scope, java.lang.String id)
 | --- | --- | --- |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.Initializer.parameter.scope?lang=python">scope</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/Construct?lang=python">Construct</a></code> | - scope in which this resource is defined. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.Initializer.parameter.id?lang=python">id</a></code> | <code>java.lang.String</code> | - scoped id of the resource. |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.Initializer.parameter.replicationConfiguration?lang=python">replicationConfiguration</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.Initializer.parameter.replicationConfiguration?lang=python">replicationConfiguration</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>\\|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
 
 ---
 
@@ -8363,7 +8362,7 @@ scoped id of the resource.
 
 ##### \`replicationConfiguration\`<sup>Required</sup> <a name="replicationConfiguration" id="CfnReplicationConfiguration.Initializer.parameter.replicationConfiguration"></a>
 
-- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a>
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a>
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
@@ -8738,7 +8737,7 @@ Check whether the given construct is a CfnResource.
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.property.cfnOptions?lang=python">cfnOptions</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/ICfnResourceOptions?lang=python">ICfnResourceOptions</a></code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.property.cfnResourceType?lang=python">cfnResourceType</a></code> | <code>java.lang.String</code> | AWS resource type. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.property.attrRegistryId?lang=python">attrRegistryId</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.property.replicationConfiguration?lang=python">replicationConfiguration</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.property.replicationConfiguration?lang=python">replicationConfiguration</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>\\|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
 
 ---
 
@@ -8847,10 +8846,10 @@ public java.lang.String getAttrRegistryId();
 ##### \`replicationConfiguration\`<sup>Required</sup> <a name="replicationConfiguration" id="CfnReplicationConfiguration.property.replicationConfiguration"></a>
 
 \`\`\`java
-public java.lang.Object getReplicationConfiguration();
+public IResolvable|ReplicationConfigurationProperty getReplicationConfiguration();
 \`\`\`
 
-- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a>
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a>
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
@@ -8895,8 +8894,7 @@ CfnRepository.Builder.create(Construct scope, java.lang.String id)
 //  .encryptionConfiguration(java.lang.Object)
 //  .imageScanningConfiguration(java.lang.Object)
 //  .imageTagMutability(java.lang.String)
-//  .lifecyclePolicy(IResolvable)
-//  .lifecyclePolicy(LifecyclePolicyProperty)
+//  .lifecyclePolicy(IResolvable|LifecyclePolicyProperty)
 //  .repositoryName(java.lang.String)
 //  .repositoryPolicyText(java.lang.Object)
 //  .tags(java.util.List<CfnTag>)
@@ -8910,7 +8908,7 @@ CfnRepository.Builder.create(Construct scope, java.lang.String id)
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.encryptionConfiguration?lang=python">encryptionConfiguration</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::Repository.EncryptionConfiguration\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.imageScanningConfiguration?lang=python">imageScanningConfiguration</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::Repository.ImageScanningConfiguration\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.imageTagMutability?lang=python">imageTagMutability</a></code> | <code>java.lang.String</code> | \`AWS::ECR::Repository.ImageTagMutability\`. |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.lifecyclePolicy?lang=python">lifecyclePolicy</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.lifecyclePolicy?lang=python">lifecyclePolicy</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>\\|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.repositoryName?lang=python">repositoryName</a></code> | <code>java.lang.String</code> | \`AWS::ECR::Repository.RepositoryName\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.repositoryPolicyText?lang=python">repositoryPolicyText</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::Repository.RepositoryPolicyText\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.tags?lang=python">tags</a></code> | <code>java.util.List<<a href="/packages/@aws-cdk/core/v/99.99.99/api/CfnTag?lang=python">CfnTag</a>></code> | \`AWS::ECR::Repository.Tags\`. |
@@ -8965,7 +8963,7 @@ scoped id of the resource.
 
 ##### \`lifecyclePolicy\`<sup>Optional</sup> <a name="lifecyclePolicy" id="CfnRepository.Initializer.parameter.lifecyclePolicy"></a>
 
-- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a>
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a>
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
@@ -9376,7 +9374,7 @@ Check whether the given construct is a CfnResource.
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.imageScanningConfiguration?lang=python">imageScanningConfiguration</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::Repository.ImageScanningConfiguration\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.repositoryPolicyText?lang=python">repositoryPolicyText</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::Repository.RepositoryPolicyText\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.imageTagMutability?lang=python">imageTagMutability</a></code> | <code>java.lang.String</code> | \`AWS::ECR::Repository.ImageTagMutability\`. |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.lifecyclePolicy?lang=python">lifecyclePolicy</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.lifecyclePolicy?lang=python">lifecyclePolicy</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>\\|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.repositoryName?lang=python">repositoryName</a></code> | <code>java.lang.String</code> | \`AWS::ECR::Repository.RepositoryName\`. |
 
 ---
@@ -9566,10 +9564,10 @@ public java.lang.String getImageTagMutability();
 ##### \`lifecyclePolicy\`<sup>Optional</sup> <a name="lifecyclePolicy" id="CfnRepository.property.lifecyclePolicy"></a>
 
 \`\`\`java
-public java.lang.Object getLifecyclePolicy();
+public IResolvable|LifecyclePolicyProperty getLifecyclePolicy();
 \`\`\`
 
-- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a>
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a>
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
@@ -10852,8 +10850,7 @@ Properties for defining a \`AWS::ECR::ReplicationConfiguration\`.
 import software.amazon.awscdk.services.ecr.CfnReplicationConfigurationProps;
 
 CfnReplicationConfigurationProps.builder()
-    .replicationConfiguration(IResolvable)
-    .replicationConfiguration(ReplicationConfigurationProperty)
+    .replicationConfiguration(IResolvable|ReplicationConfigurationProperty)
     .build();
 \`\`\`
 
@@ -10861,17 +10858,17 @@ CfnReplicationConfigurationProps.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfigurationProps.property.replicationConfiguration?lang=python">replicationConfiguration</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfigurationProps.property.replicationConfiguration?lang=python">replicationConfiguration</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>\\|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
 
 ---
 
 ##### \`replicationConfiguration\`<sup>Required</sup> <a name="replicationConfiguration" id="CfnReplicationConfigurationProps.property.replicationConfiguration"></a>
 
 \`\`\`java
-public java.lang.Object getReplicationConfiguration();
+public IResolvable|ReplicationConfigurationProperty getReplicationConfiguration();
 \`\`\`
 
-- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a>
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a>
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
@@ -10894,8 +10891,7 @@ CfnRepositoryProps.builder()
 //  .encryptionConfiguration(java.lang.Object)
 //  .imageScanningConfiguration(java.lang.Object)
 //  .imageTagMutability(java.lang.String)
-//  .lifecyclePolicy(IResolvable)
-//  .lifecyclePolicy(LifecyclePolicyProperty)
+//  .lifecyclePolicy(IResolvable|LifecyclePolicyProperty)
 //  .repositoryName(java.lang.String)
 //  .repositoryPolicyText(java.lang.Object)
 //  .tags(java.util.List<CfnTag>)
@@ -10909,7 +10905,7 @@ CfnRepositoryProps.builder()
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.encryptionConfiguration?lang=python">encryptionConfiguration</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::Repository.EncryptionConfiguration\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.imageScanningConfiguration?lang=python">imageScanningConfiguration</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::Repository.ImageScanningConfiguration\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.imageTagMutability?lang=python">imageTagMutability</a></code> | <code>java.lang.String</code> | \`AWS::ECR::Repository.ImageTagMutability\`. |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.lifecyclePolicy?lang=python">lifecyclePolicy</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.lifecyclePolicy?lang=python">lifecyclePolicy</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>\\|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.repositoryName?lang=python">repositoryName</a></code> | <code>java.lang.String</code> | \`AWS::ECR::Repository.RepositoryName\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.repositoryPolicyText?lang=python">repositoryPolicyText</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::Repository.RepositoryPolicyText\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.tags?lang=python">tags</a></code> | <code>java.util.List<<a href="/packages/@aws-cdk/core/v/99.99.99/api/CfnTag?lang=python">CfnTag</a>></code> | \`AWS::ECR::Repository.Tags\`. |
@@ -10961,10 +10957,10 @@ public java.lang.String getImageTagMutability();
 ##### \`lifecyclePolicy\`<sup>Optional</sup> <a name="lifecyclePolicy" id="CfnRepositoryProps.property.lifecyclePolicy"></a>
 
 \`\`\`java
-public java.lang.Object getLifecyclePolicy();
+public IResolvable|LifecyclePolicyProperty getLifecyclePolicy();
 \`\`\`
 
-- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a>
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a>
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
@@ -11405,9 +11401,7 @@ Leave it undefined to watch the full repository.
 import software.amazon.awscdk.services.ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty;
 
 ReplicationConfigurationProperty.builder()
-    .rules(IResolvable)
-    .rules(java.util.List<IResolvable)
-    .rules(ReplicationRuleProperty>)
+    .rules(IResolvable|java.util.List<IResolvable|ReplicationRuleProperty>)
     .build();
 \`\`\`
 
@@ -11415,17 +11409,17 @@ ReplicationConfigurationProperty.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules?lang=python">rules</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR java.util.List<<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationRuleProperty?lang=python">ReplicationRuleProperty</a>></code> | \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules?lang=python">rules</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>\\|java.util.List<<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>\\|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationRuleProperty?lang=python">ReplicationRuleProperty</a>></code> | \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`. |
 
 ---
 
 ##### \`rules\`<sup>Required</sup> <a name="rules" id="CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules"></a>
 
 \`\`\`java
-public java.lang.Object getRules();
+public IResolvable|java.util.List<IResolvable|ReplicationRuleProperty> getRules();
 \`\`\`
 
-- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR java.util.List<<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationRuleProperty?lang=python">ReplicationRuleProperty</a>>
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>|java.util.List<<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationRuleProperty?lang=python">ReplicationRuleProperty</a>>
 
 \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`.
 
@@ -11495,9 +11489,7 @@ public java.lang.String getRegistryId();
 import software.amazon.awscdk.services.ecr.CfnReplicationConfiguration.ReplicationRuleProperty;
 
 ReplicationRuleProperty.builder()
-    .destinations(IResolvable)
-    .destinations(java.util.List<IResolvable)
-    .destinations(ReplicationDestinationProperty>)
+    .destinations(IResolvable|java.util.List<IResolvable|ReplicationDestinationProperty>)
     .build();
 \`\`\`
 
@@ -11505,17 +11497,17 @@ ReplicationRuleProperty.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations?lang=python">destinations</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR java.util.List<<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationDestinationProperty?lang=python">ReplicationDestinationProperty</a>></code> | \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations?lang=python">destinations</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>\\|java.util.List<<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>\\|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationDestinationProperty?lang=python">ReplicationDestinationProperty</a>></code> | \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`. |
 
 ---
 
 ##### \`destinations\`<sup>Required</sup> <a name="destinations" id="CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations"></a>
 
 \`\`\`java
-public java.lang.Object getDestinations();
+public IResolvable|java.util.List<IResolvable|ReplicationDestinationProperty> getDestinations();
 \`\`\`
 
-- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR java.util.List<<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> OR <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationDestinationProperty?lang=python">ReplicationDestinationProperty</a>>
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>|java.util.List<<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>|<a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationDestinationProperty?lang=python">ReplicationDestinationProperty</a>>
 
 \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`.
 
@@ -13447,7 +13439,7 @@ import aws_cdk.aws_ecr
 aws_cdk.aws_ecr.CfnReplicationConfiguration(
   scope: Construct,
   id: str,
-  replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
+  replication_configuration: IResolvable | ReplicationConfigurationProperty
 )
 \`\`\`
 
@@ -13455,7 +13447,7 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration(
 | --- | --- | --- |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.Initializer.parameter.scope?lang=python">scope</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/Construct?lang=python">Construct</a></code> | - scope in which this resource is defined. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.Initializer.parameter.id?lang=python">id</a></code> | <code>str</code> | - scoped id of the resource. |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.Initializer.parameter.replicationConfiguration?lang=python">replication_configuration</a></code> | <code>typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a>]</code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.Initializer.parameter.replicationConfiguration?lang=python">replication_configuration</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> \\| <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
 
 ---
 
@@ -13477,7 +13469,7 @@ scoped id of the resource.
 
 ##### \`replication_configuration\`<sup>Required</sup> <a name="replication_configuration" id="CfnReplicationConfiguration.Initializer.parameter.replicationConfiguration"></a>
 
-- *Type:* typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a>]
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> | <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a>
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
@@ -13895,7 +13887,7 @@ Check whether the given construct is a CfnResource.
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.property.cfnOptions?lang=python">cfn_options</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/ICfnResourceOptions?lang=python">ICfnResourceOptions</a></code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.property.cfnResourceType?lang=python">cfn_resource_type</a></code> | <code>str</code> | AWS resource type. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.property.attrRegistryId?lang=python">attr_registry_id</a></code> | <code>str</code> | *No description.* |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.property.replicationConfiguration?lang=python">replication_configuration</a></code> | <code>typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a>]</code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.property.replicationConfiguration?lang=python">replication_configuration</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> \\| <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
 
 ---
 
@@ -14004,10 +13996,10 @@ attr_registry_id: str
 ##### \`replication_configuration\`<sup>Required</sup> <a name="replication_configuration" id="CfnReplicationConfiguration.property.replicationConfiguration"></a>
 
 \`\`\`python
-replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
+replication_configuration: IResolvable | ReplicationConfigurationProperty
 \`\`\`
 
-- *Type:* typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a>]
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> | <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a>
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
@@ -14054,7 +14046,7 @@ aws_cdk.aws_ecr.CfnRepository(
   encryption_configuration: typing.Any = None,
   image_scanning_configuration: typing.Any = None,
   image_tag_mutability: str = None,
-  lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty] = None,
+  lifecycle_policy: IResolvable | LifecyclePolicyProperty = None,
   repository_name: str = None,
   repository_policy_text: typing.Any = None,
   tags: typing.List[CfnTag] = None
@@ -14068,7 +14060,7 @@ aws_cdk.aws_ecr.CfnRepository(
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.encryptionConfiguration?lang=python">encryption_configuration</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.EncryptionConfiguration\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.imageScanningConfiguration?lang=python">image_scanning_configuration</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.ImageScanningConfiguration\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.imageTagMutability?lang=python">image_tag_mutability</a></code> | <code>str</code> | \`AWS::ECR::Repository.ImageTagMutability\`. |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.lifecyclePolicy?lang=python">lifecycle_policy</a></code> | <code>typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a>]</code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.lifecyclePolicy?lang=python">lifecycle_policy</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> \\| <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.repositoryName?lang=python">repository_name</a></code> | <code>str</code> | \`AWS::ECR::Repository.RepositoryName\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.repositoryPolicyText?lang=python">repository_policy_text</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.RepositoryPolicyText\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.Initializer.parameter.tags?lang=python">tags</a></code> | <code>typing.List[<a href="/packages/@aws-cdk/core/v/99.99.99/api/CfnTag?lang=python">CfnTag</a>]</code> | \`AWS::ECR::Repository.Tags\`. |
@@ -14123,7 +14115,7 @@ scoped id of the resource.
 
 ##### \`lifecycle_policy\`<sup>Optional</sup> <a name="lifecycle_policy" id="CfnRepository.Initializer.parameter.lifecyclePolicy"></a>
 
-- *Type:* typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a>]
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> | <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a>
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
@@ -14577,7 +14569,7 @@ Check whether the given construct is a CfnResource.
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.imageScanningConfiguration?lang=python">image_scanning_configuration</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.ImageScanningConfiguration\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.repositoryPolicyText?lang=python">repository_policy_text</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.RepositoryPolicyText\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.imageTagMutability?lang=python">image_tag_mutability</a></code> | <code>str</code> | \`AWS::ECR::Repository.ImageTagMutability\`. |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.lifecyclePolicy?lang=python">lifecycle_policy</a></code> | <code>typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a>]</code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.lifecyclePolicy?lang=python">lifecycle_policy</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> \\| <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepository.property.repositoryName?lang=python">repository_name</a></code> | <code>str</code> | \`AWS::ECR::Repository.RepositoryName\`. |
 
 ---
@@ -14767,10 +14759,10 @@ image_tag_mutability: str
 ##### \`lifecycle_policy\`<sup>Optional</sup> <a name="lifecycle_policy" id="CfnRepository.property.lifecyclePolicy"></a>
 
 \`\`\`python
-lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty]
+lifecycle_policy: IResolvable | LifecyclePolicyProperty
 \`\`\`
 
-- *Type:* typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a>]
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> | <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a>
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
@@ -16544,7 +16536,7 @@ Properties for defining a \`AWS::ECR::ReplicationConfiguration\`.
 import aws_cdk.aws_ecr
 
 aws_cdk.aws_ecr.CfnReplicationConfigurationProps(
-  replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
+  replication_configuration: IResolvable | ReplicationConfigurationProperty
 )
 \`\`\`
 
@@ -16552,17 +16544,17 @@ aws_cdk.aws_ecr.CfnReplicationConfigurationProps(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfigurationProps.property.replicationConfiguration?lang=python">replication_configuration</a></code> | <code>typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a>]</code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfigurationProps.property.replicationConfiguration?lang=python">replication_configuration</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> \\| <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
 
 ---
 
 ##### \`replication_configuration\`<sup>Required</sup> <a name="replication_configuration" id="CfnReplicationConfigurationProps.property.replicationConfiguration"></a>
 
 \`\`\`python
-replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
+replication_configuration: IResolvable | ReplicationConfigurationProperty
 \`\`\`
 
-- *Type:* typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a>]
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> | <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationConfigurationProperty?lang=python">ReplicationConfigurationProperty</a>
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
@@ -16585,7 +16577,7 @@ aws_cdk.aws_ecr.CfnRepositoryProps(
   encryption_configuration: typing.Any = None,
   image_scanning_configuration: typing.Any = None,
   image_tag_mutability: str = None,
-  lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty] = None,
+  lifecycle_policy: IResolvable | LifecyclePolicyProperty = None,
   repository_name: str = None,
   repository_policy_text: typing.Any = None,
   tags: typing.List[CfnTag] = None
@@ -16599,7 +16591,7 @@ aws_cdk.aws_ecr.CfnRepositoryProps(
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.encryptionConfiguration?lang=python">encryption_configuration</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.EncryptionConfiguration\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.imageScanningConfiguration?lang=python">image_scanning_configuration</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.ImageScanningConfiguration\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.imageTagMutability?lang=python">image_tag_mutability</a></code> | <code>str</code> | \`AWS::ECR::Repository.ImageTagMutability\`. |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.lifecyclePolicy?lang=python">lifecycle_policy</a></code> | <code>typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a>]</code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.lifecyclePolicy?lang=python">lifecycle_policy</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> \\| <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.repositoryName?lang=python">repository_name</a></code> | <code>str</code> | \`AWS::ECR::Repository.RepositoryName\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.repositoryPolicyText?lang=python">repository_policy_text</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.RepositoryPolicyText\`. |
 | <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnRepositoryProps.property.tags?lang=python">tags</a></code> | <code>typing.List[<a href="/packages/@aws-cdk/core/v/99.99.99/api/CfnTag?lang=python">CfnTag</a>]</code> | \`AWS::ECR::Repository.Tags\`. |
@@ -16651,10 +16643,10 @@ image_tag_mutability: str
 ##### \`lifecycle_policy\`<sup>Optional</sup> <a name="lifecycle_policy" id="CfnRepositoryProps.property.lifecyclePolicy"></a>
 
 \`\`\`python
-lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty]
+lifecycle_policy: IResolvable | LifecyclePolicyProperty
 \`\`\`
 
-- *Type:* typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a>]
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> | <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnRepository.LifecyclePolicyProperty?lang=python">LifecyclePolicyProperty</a>
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
@@ -17095,7 +17087,7 @@ Leave it undefined to watch the full repository.
 import aws_cdk.aws_ecr
 
 aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty(
-  rules: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationRuleProperty]]]
+  rules: IResolvable | typing.List[IResolvable | ReplicationRuleProperty]
 )
 \`\`\`
 
@@ -17103,17 +17095,17 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules?lang=python">rules</a></code> | <code>typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, typing.List[typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationRuleProperty?lang=python">ReplicationRuleProperty</a>]]]</code> | \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules?lang=python">rules</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> \\| typing.List[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> \\| <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationRuleProperty?lang=python">ReplicationRuleProperty</a>]</code> | \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`. |
 
 ---
 
 ##### \`rules\`<sup>Required</sup> <a name="rules" id="CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules"></a>
 
 \`\`\`python
-rules: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationRuleProperty]]]
+rules: IResolvable | typing.List[IResolvable | ReplicationRuleProperty]
 \`\`\`
 
-- *Type:* typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, typing.List[typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationRuleProperty?lang=python">ReplicationRuleProperty</a>]]]
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> | typing.List[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> | <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationRuleProperty?lang=python">ReplicationRuleProperty</a>]
 
 \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`.
 
@@ -17183,7 +17175,7 @@ registry_id: str
 import aws_cdk.aws_ecr
 
 aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty(
-  destinations: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationDestinationProperty]]]
+  destinations: IResolvable | typing.List[IResolvable | ReplicationDestinationProperty]
 )
 \`\`\`
 
@@ -17191,17 +17183,17 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations?lang=python">destinations</a></code> | <code>typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, typing.List[typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationDestinationProperty?lang=python">ReplicationDestinationProperty</a>]]]</code> | \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`. |
+| <code><a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations?lang=python">destinations</a></code> | <code><a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> \\| typing.List[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> \\| <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationDestinationProperty?lang=python">ReplicationDestinationProperty</a>]</code> | \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`. |
 
 ---
 
 ##### \`destinations\`<sup>Required</sup> <a name="destinations" id="CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations"></a>
 
 \`\`\`python
-destinations: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationDestinationProperty]]]
+destinations: IResolvable | typing.List[IResolvable | ReplicationDestinationProperty]
 \`\`\`
 
-- *Type:* typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, typing.List[typing.Union[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a>, <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationDestinationProperty?lang=python">ReplicationDestinationProperty</a>]]]
+- *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> | typing.List[<a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> | <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationDestinationProperty?lang=python">ReplicationDestinationProperty</a>]
 
 \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`.
 
@@ -22022,7 +22014,7 @@ const replicationConfigurationProperty: ReplicationConfigurationProperty = { ...
 ##### \`rules\`<sup>Required</sup> <a name="rules" id="CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules"></a>
 
 \`\`\`typescript
-public readonly rules: IResolvable | IResolvable | ReplicationRuleProperty[];
+public readonly rules: IResolvable | (IResolvable | ReplicationRuleProperty)[];
 \`\`\`
 
 - *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> | <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> | <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationRuleProperty?lang=python">ReplicationRuleProperty</a>[]
@@ -22105,7 +22097,7 @@ const replicationRuleProperty: ReplicationRuleProperty = { ... }
 ##### \`destinations\`<sup>Required</sup> <a name="destinations" id="CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations"></a>
 
 \`\`\`typescript
-public readonly destinations: IResolvable | IResolvable | ReplicationDestinationProperty[];
+public readonly destinations: IResolvable | (IResolvable | ReplicationDestinationProperty)[];
 \`\`\`
 
 - *Type:* <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> | <a href="/packages/@aws-cdk/core/v/99.99.99/api/IResolvable?lang=python">IResolvable</a> | <a href="/packages/@aws-cdk/aws-ecr/v/99.99.99/api/CfnReplicationConfiguration.ReplicationDestinationProperty?lang=python">ReplicationDestinationProperty</a>[]
@@ -24283,7 +24275,7 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.cfnOptions">CfnOptions</a></code> | <code><a href="#custom-@aws-cdk/core.ICfnResourceOptions">ICfnResourceOptions</a></code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.cfnResourceType">CfnResourceType</a></code> | <code>string</code> | AWS resource type. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.attrRegistryId">AttrRegistryId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.replicationConfiguration">ReplicationConfiguration</a></code> | <code>object</code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.replicationConfiguration">ReplicationConfiguration</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>\\|<a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
 
 ---
 
@@ -24392,10 +24384,10 @@ public string AttrRegistryId { get; }
 ##### \`ReplicationConfiguration\`<sup>Required</sup> <a name="ReplicationConfiguration" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.replicationConfiguration"></a>
 
 \`\`\`csharp
-public object ReplicationConfiguration { get; }
+public IResolvable|ReplicationConfigurationProperty ReplicationConfiguration { get; }
 \`\`\`
 
-- *Type:* object
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>|<a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a>
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
@@ -24842,7 +24834,7 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.property.imageScanningConfiguration">ImageScanningConfiguration</a></code> | <code>object</code> | \`AWS::ECR::Repository.ImageScanningConfiguration\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.property.repositoryPolicyText">RepositoryPolicyText</a></code> | <code>object</code> | \`AWS::ECR::Repository.RepositoryPolicyText\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.property.imageTagMutability">ImageTagMutability</a></code> | <code>string</code> | \`AWS::ECR::Repository.ImageTagMutability\`. |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.property.lifecyclePolicy">LifecyclePolicy</a></code> | <code>object</code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.property.lifecyclePolicy">LifecyclePolicy</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>\\|<a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.property.repositoryName">RepositoryName</a></code> | <code>string</code> | \`AWS::ECR::Repository.RepositoryName\`. |
 
 ---
@@ -25032,10 +25024,10 @@ public string ImageTagMutability { get; }
 ##### \`LifecyclePolicy\`<sup>Optional</sup> <a name="LifecyclePolicy" id="@aws-cdk/aws-ecr.CfnRepository.property.lifecyclePolicy"></a>
 
 \`\`\`csharp
-public object LifecyclePolicy { get; }
+public IResolvable|LifecyclePolicyProperty LifecyclePolicy { get; }
 \`\`\`
 
-- *Type:* object
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>|<a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a>
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
@@ -26193,7 +26185,7 @@ Properties for defining a \`AWS::ECR::ReplicationConfiguration\`.
 using Amazon.CDK.AWS.ECR;
 
 new CfnReplicationConfigurationProps {
-    object ReplicationConfiguration
+    IResolvable|ReplicationConfigurationProperty ReplicationConfiguration
 };
 \`\`\`
 
@@ -26201,17 +26193,17 @@ new CfnReplicationConfigurationProps {
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfigurationProps.property.replicationConfiguration">ReplicationConfiguration</a></code> | <code>object</code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfigurationProps.property.replicationConfiguration">ReplicationConfiguration</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>\\|<a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
 
 ---
 
 ##### \`ReplicationConfiguration\`<sup>Required</sup> <a name="ReplicationConfiguration" id="@aws-cdk/aws-ecr.CfnReplicationConfigurationProps.property.replicationConfiguration"></a>
 
 \`\`\`csharp
-public object ReplicationConfiguration { get; set; }
+public IResolvable|ReplicationConfigurationProperty ReplicationConfiguration { get; set; }
 \`\`\`
 
-- *Type:* object
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>|<a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a>
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
@@ -26234,7 +26226,7 @@ new CfnRepositoryProps {
     object EncryptionConfiguration = null,
     object ImageScanningConfiguration = null,
     string ImageTagMutability = null,
-    object LifecyclePolicy = null,
+    IResolvable|LifecyclePolicyProperty LifecyclePolicy = null,
     string RepositoryName = null,
     object RepositoryPolicyText = null,
     CfnTag[] Tags = null
@@ -26248,7 +26240,7 @@ new CfnRepositoryProps {
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.encryptionConfiguration">EncryptionConfiguration</a></code> | <code>object</code> | \`AWS::ECR::Repository.EncryptionConfiguration\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.imageScanningConfiguration">ImageScanningConfiguration</a></code> | <code>object</code> | \`AWS::ECR::Repository.ImageScanningConfiguration\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.imageTagMutability">ImageTagMutability</a></code> | <code>string</code> | \`AWS::ECR::Repository.ImageTagMutability\`. |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.lifecyclePolicy">LifecyclePolicy</a></code> | <code>object</code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.lifecyclePolicy">LifecyclePolicy</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>\\|<a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.repositoryName">RepositoryName</a></code> | <code>string</code> | \`AWS::ECR::Repository.RepositoryName\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.repositoryPolicyText">RepositoryPolicyText</a></code> | <code>object</code> | \`AWS::ECR::Repository.RepositoryPolicyText\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.tags">Tags</a></code> | <code><a href="#custom-@aws-cdk/core.CfnTag">CfnTag</a>[]</code> | \`AWS::ECR::Repository.Tags\`. |
@@ -26300,10 +26292,10 @@ public string ImageTagMutability { get; set; }
 ##### \`LifecyclePolicy\`<sup>Optional</sup> <a name="LifecyclePolicy" id="@aws-cdk/aws-ecr.CfnRepositoryProps.property.lifecyclePolicy"></a>
 
 \`\`\`csharp
-public object LifecyclePolicy { get; set; }
+public IResolvable|LifecyclePolicyProperty LifecyclePolicy { get; set; }
 \`\`\`
 
-- *Type:* object
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>|<a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a>
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
@@ -26744,7 +26736,7 @@ Leave it undefined to watch the full repository.
 using Amazon.CDK.AWS.ECR;
 
 new ReplicationConfigurationProperty {
-    object Rules
+    IResolvable|(IResolvable|ReplicationRuleProperty)[] Rules
 };
 \`\`\`
 
@@ -26752,17 +26744,17 @@ new ReplicationConfigurationProperty {
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules">Rules</a></code> | <code>object</code> | \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules">Rules</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>\\|<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>\\|<a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty">ReplicationRuleProperty</a>[]</code> | \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`. |
 
 ---
 
 ##### \`Rules\`<sup>Required</sup> <a name="Rules" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules"></a>
 
 \`\`\`csharp
-public object Rules { get; set; }
+public IResolvable|(IResolvable|ReplicationRuleProperty)[] Rules { get; set; }
 \`\`\`
 
-- *Type:* object
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>|<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>|<a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty">ReplicationRuleProperty</a>[]
 
 \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`.
 
@@ -26832,7 +26824,7 @@ public string RegistryId { get; set; }
 using Amazon.CDK.AWS.ECR;
 
 new ReplicationRuleProperty {
-    object Destinations
+    IResolvable|(IResolvable|ReplicationDestinationProperty)[] Destinations
 };
 \`\`\`
 
@@ -26840,17 +26832,17 @@ new ReplicationRuleProperty {
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations">Destinations</a></code> | <code>object</code> | \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations">Destinations</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>\\|<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>\\|<a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty">ReplicationDestinationProperty</a>[]</code> | \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`. |
 
 ---
 
 ##### \`Destinations\`<sup>Required</sup> <a name="Destinations" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations"></a>
 
 \`\`\`csharp
-public object Destinations { get; set; }
+public IResolvable|(IResolvable|ReplicationDestinationProperty)[] Destinations { get; set; }
 \`\`\`
 
-- *Type:* object
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>|<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>|<a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty">ReplicationDestinationProperty</a>[]
 
 \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`.
 
@@ -29698,8 +29690,7 @@ A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 import software.amazon.awscdk.services.ecr.CfnReplicationConfiguration;
 
 CfnReplicationConfiguration.Builder.create(Construct scope, java.lang.String id)
-    .replicationConfiguration(IResolvable)
-    .replicationConfiguration(ReplicationConfigurationProperty)
+    .replicationConfiguration(IResolvable|ReplicationConfigurationProperty)
     .build();
 \`\`\`
 
@@ -29707,7 +29698,7 @@ CfnReplicationConfiguration.Builder.create(Construct scope, java.lang.String id)
 | --- | --- | --- |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.Initializer.parameter.scope">scope</a></code> | <code><a href="#custom-@aws-cdk/core.Construct">Construct</a></code> | - scope in which this resource is defined. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | - scoped id of the resource. |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.Initializer.parameter.replicationConfiguration">replicationConfiguration</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.Initializer.parameter.replicationConfiguration">replicationConfiguration</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>\\|<a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
 
 ---
 
@@ -29729,7 +29720,7 @@ scoped id of the resource.
 
 ##### \`replicationConfiguration\`<sup>Required</sup> <a name="replicationConfiguration" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration.Initializer.parameter.replicationConfiguration"></a>
 
-- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a>
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>|<a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a>
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
@@ -30104,7 +30095,7 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.cfnOptions">cfnOptions</a></code> | <code><a href="#custom-@aws-cdk/core.ICfnResourceOptions">ICfnResourceOptions</a></code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.cfnResourceType">cfnResourceType</a></code> | <code>java.lang.String</code> | AWS resource type. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.attrRegistryId">attrRegistryId</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.replicationConfiguration">replicationConfiguration</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.replicationConfiguration">replicationConfiguration</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>\\|<a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
 
 ---
 
@@ -30213,10 +30204,10 @@ public java.lang.String getAttrRegistryId();
 ##### \`replicationConfiguration\`<sup>Required</sup> <a name="replicationConfiguration" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.replicationConfiguration"></a>
 
 \`\`\`java
-public java.lang.Object getReplicationConfiguration();
+public IResolvable|ReplicationConfigurationProperty getReplicationConfiguration();
 \`\`\`
 
-- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a>
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>|<a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a>
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
@@ -30261,8 +30252,7 @@ CfnRepository.Builder.create(Construct scope, java.lang.String id)
 //  .encryptionConfiguration(java.lang.Object)
 //  .imageScanningConfiguration(java.lang.Object)
 //  .imageTagMutability(java.lang.String)
-//  .lifecyclePolicy(IResolvable)
-//  .lifecyclePolicy(LifecyclePolicyProperty)
+//  .lifecyclePolicy(IResolvable|LifecyclePolicyProperty)
 //  .repositoryName(java.lang.String)
 //  .repositoryPolicyText(java.lang.Object)
 //  .tags(java.util.List<CfnTag>)
@@ -30276,7 +30266,7 @@ CfnRepository.Builder.create(Construct scope, java.lang.String id)
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.Initializer.parameter.encryptionConfiguration">encryptionConfiguration</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::Repository.EncryptionConfiguration\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.Initializer.parameter.imageScanningConfiguration">imageScanningConfiguration</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::Repository.ImageScanningConfiguration\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.Initializer.parameter.imageTagMutability">imageTagMutability</a></code> | <code>java.lang.String</code> | \`AWS::ECR::Repository.ImageTagMutability\`. |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.Initializer.parameter.lifecyclePolicy">lifecyclePolicy</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR <a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.Initializer.parameter.lifecyclePolicy">lifecyclePolicy</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>\\|<a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.Initializer.parameter.repositoryName">repositoryName</a></code> | <code>java.lang.String</code> | \`AWS::ECR::Repository.RepositoryName\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.Initializer.parameter.repositoryPolicyText">repositoryPolicyText</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::Repository.RepositoryPolicyText\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.Initializer.parameter.tags">tags</a></code> | <code>java.util.List<<a href="#custom-@aws-cdk/core.CfnTag">CfnTag</a>></code> | \`AWS::ECR::Repository.Tags\`. |
@@ -30331,7 +30321,7 @@ scoped id of the resource.
 
 ##### \`lifecyclePolicy\`<sup>Optional</sup> <a name="lifecyclePolicy" id="@aws-cdk/aws-ecr.CfnRepository.Initializer.parameter.lifecyclePolicy"></a>
 
-- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR <a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a>
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>|<a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a>
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
@@ -30742,7 +30732,7 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.property.imageScanningConfiguration">imageScanningConfiguration</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::Repository.ImageScanningConfiguration\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.property.repositoryPolicyText">repositoryPolicyText</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::Repository.RepositoryPolicyText\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.property.imageTagMutability">imageTagMutability</a></code> | <code>java.lang.String</code> | \`AWS::ECR::Repository.ImageTagMutability\`. |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.property.lifecyclePolicy">lifecyclePolicy</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR <a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.property.lifecyclePolicy">lifecyclePolicy</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>\\|<a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.property.repositoryName">repositoryName</a></code> | <code>java.lang.String</code> | \`AWS::ECR::Repository.RepositoryName\`. |
 
 ---
@@ -30932,10 +30922,10 @@ public java.lang.String getImageTagMutability();
 ##### \`lifecyclePolicy\`<sup>Optional</sup> <a name="lifecyclePolicy" id="@aws-cdk/aws-ecr.CfnRepository.property.lifecyclePolicy"></a>
 
 \`\`\`java
-public java.lang.Object getLifecyclePolicy();
+public IResolvable|LifecyclePolicyProperty getLifecyclePolicy();
 \`\`\`
 
-- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR <a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a>
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>|<a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a>
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
@@ -32218,8 +32208,7 @@ Properties for defining a \`AWS::ECR::ReplicationConfiguration\`.
 import software.amazon.awscdk.services.ecr.CfnReplicationConfigurationProps;
 
 CfnReplicationConfigurationProps.builder()
-    .replicationConfiguration(IResolvable)
-    .replicationConfiguration(ReplicationConfigurationProperty)
+    .replicationConfiguration(IResolvable|ReplicationConfigurationProperty)
     .build();
 \`\`\`
 
@@ -32227,17 +32216,17 @@ CfnReplicationConfigurationProps.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfigurationProps.property.replicationConfiguration">replicationConfiguration</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfigurationProps.property.replicationConfiguration">replicationConfiguration</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>\\|<a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
 
 ---
 
 ##### \`replicationConfiguration\`<sup>Required</sup> <a name="replicationConfiguration" id="@aws-cdk/aws-ecr.CfnReplicationConfigurationProps.property.replicationConfiguration"></a>
 
 \`\`\`java
-public java.lang.Object getReplicationConfiguration();
+public IResolvable|ReplicationConfigurationProperty getReplicationConfiguration();
 \`\`\`
 
-- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a>
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>|<a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a>
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
@@ -32260,8 +32249,7 @@ CfnRepositoryProps.builder()
 //  .encryptionConfiguration(java.lang.Object)
 //  .imageScanningConfiguration(java.lang.Object)
 //  .imageTagMutability(java.lang.String)
-//  .lifecyclePolicy(IResolvable)
-//  .lifecyclePolicy(LifecyclePolicyProperty)
+//  .lifecyclePolicy(IResolvable|LifecyclePolicyProperty)
 //  .repositoryName(java.lang.String)
 //  .repositoryPolicyText(java.lang.Object)
 //  .tags(java.util.List<CfnTag>)
@@ -32275,7 +32263,7 @@ CfnRepositoryProps.builder()
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.encryptionConfiguration">encryptionConfiguration</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::Repository.EncryptionConfiguration\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.imageScanningConfiguration">imageScanningConfiguration</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::Repository.ImageScanningConfiguration\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.imageTagMutability">imageTagMutability</a></code> | <code>java.lang.String</code> | \`AWS::ECR::Repository.ImageTagMutability\`. |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.lifecyclePolicy">lifecyclePolicy</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR <a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.lifecyclePolicy">lifecyclePolicy</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>\\|<a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.repositoryName">repositoryName</a></code> | <code>java.lang.String</code> | \`AWS::ECR::Repository.RepositoryName\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.repositoryPolicyText">repositoryPolicyText</a></code> | <code>java.lang.Object</code> | \`AWS::ECR::Repository.RepositoryPolicyText\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.tags">tags</a></code> | <code>java.util.List<<a href="#custom-@aws-cdk/core.CfnTag">CfnTag</a>></code> | \`AWS::ECR::Repository.Tags\`. |
@@ -32327,10 +32315,10 @@ public java.lang.String getImageTagMutability();
 ##### \`lifecyclePolicy\`<sup>Optional</sup> <a name="lifecyclePolicy" id="@aws-cdk/aws-ecr.CfnRepositoryProps.property.lifecyclePolicy"></a>
 
 \`\`\`java
-public java.lang.Object getLifecyclePolicy();
+public IResolvable|LifecyclePolicyProperty getLifecyclePolicy();
 \`\`\`
 
-- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR <a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a>
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>|<a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a>
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
@@ -32771,9 +32759,7 @@ Leave it undefined to watch the full repository.
 import software.amazon.awscdk.services.ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty;
 
 ReplicationConfigurationProperty.builder()
-    .rules(IResolvable)
-    .rules(java.util.List<IResolvable)
-    .rules(ReplicationRuleProperty>)
+    .rules(IResolvable|java.util.List<IResolvable|ReplicationRuleProperty>)
     .build();
 \`\`\`
 
@@ -32781,17 +32767,17 @@ ReplicationConfigurationProperty.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules">rules</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR java.util.List<<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty">ReplicationRuleProperty</a>></code> | \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules">rules</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>\\|java.util.List<<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>\\|<a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty">ReplicationRuleProperty</a>></code> | \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`. |
 
 ---
 
 ##### \`rules\`<sup>Required</sup> <a name="rules" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules"></a>
 
 \`\`\`java
-public java.lang.Object getRules();
+public IResolvable|java.util.List<IResolvable|ReplicationRuleProperty> getRules();
 \`\`\`
 
-- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR java.util.List<<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty">ReplicationRuleProperty</a>>
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>|java.util.List<<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>|<a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty">ReplicationRuleProperty</a>>
 
 \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`.
 
@@ -32861,9 +32847,7 @@ public java.lang.String getRegistryId();
 import software.amazon.awscdk.services.ecr.CfnReplicationConfiguration.ReplicationRuleProperty;
 
 ReplicationRuleProperty.builder()
-    .destinations(IResolvable)
-    .destinations(java.util.List<IResolvable)
-    .destinations(ReplicationDestinationProperty>)
+    .destinations(IResolvable|java.util.List<IResolvable|ReplicationDestinationProperty>)
     .build();
 \`\`\`
 
@@ -32871,17 +32855,17 @@ ReplicationRuleProperty.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations">destinations</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR java.util.List<<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty">ReplicationDestinationProperty</a>></code> | \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations">destinations</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>\\|java.util.List<<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>\\|<a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty">ReplicationDestinationProperty</a>></code> | \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`. |
 
 ---
 
 ##### \`destinations\`<sup>Required</sup> <a name="destinations" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations"></a>
 
 \`\`\`java
-public java.lang.Object getDestinations();
+public IResolvable|java.util.List<IResolvable|ReplicationDestinationProperty> getDestinations();
 \`\`\`
 
-- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR java.util.List<<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> OR <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty">ReplicationDestinationProperty</a>>
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>|java.util.List<<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>|<a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty">ReplicationDestinationProperty</a>>
 
 \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`.
 
@@ -34813,7 +34797,7 @@ import aws_cdk.aws_ecr
 aws_cdk.aws_ecr.CfnReplicationConfiguration(
   scope: Construct,
   id: str,
-  replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
+  replication_configuration: IResolvable | ReplicationConfigurationProperty
 )
 \`\`\`
 
@@ -34821,7 +34805,7 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration(
 | --- | --- | --- |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.Initializer.parameter.scope">scope</a></code> | <code><a href="#custom-@aws-cdk/core.Construct">Construct</a></code> | - scope in which this resource is defined. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.Initializer.parameter.id">id</a></code> | <code>str</code> | - scoped id of the resource. |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.Initializer.parameter.replicationConfiguration">replication_configuration</a></code> | <code>typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a>]</code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.Initializer.parameter.replicationConfiguration">replication_configuration</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> \\| <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
 
 ---
 
@@ -34843,7 +34827,7 @@ scoped id of the resource.
 
 ##### \`replication_configuration\`<sup>Required</sup> <a name="replication_configuration" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration.Initializer.parameter.replicationConfiguration"></a>
 
-- *Type:* typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a>]
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> | <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a>
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
@@ -35261,7 +35245,7 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.cfnOptions">cfn_options</a></code> | <code><a href="#custom-@aws-cdk/core.ICfnResourceOptions">ICfnResourceOptions</a></code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.cfnResourceType">cfn_resource_type</a></code> | <code>str</code> | AWS resource type. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.attrRegistryId">attr_registry_id</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.replicationConfiguration">replication_configuration</a></code> | <code>typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a>]</code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.replicationConfiguration">replication_configuration</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> \\| <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
 
 ---
 
@@ -35370,10 +35354,10 @@ attr_registry_id: str
 ##### \`replication_configuration\`<sup>Required</sup> <a name="replication_configuration" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration.property.replicationConfiguration"></a>
 
 \`\`\`python
-replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
+replication_configuration: IResolvable | ReplicationConfigurationProperty
 \`\`\`
 
-- *Type:* typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a>]
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> | <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a>
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
@@ -35420,7 +35404,7 @@ aws_cdk.aws_ecr.CfnRepository(
   encryption_configuration: typing.Any = None,
   image_scanning_configuration: typing.Any = None,
   image_tag_mutability: str = None,
-  lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty] = None,
+  lifecycle_policy: IResolvable | LifecyclePolicyProperty = None,
   repository_name: str = None,
   repository_policy_text: typing.Any = None,
   tags: typing.List[CfnTag] = None
@@ -35434,7 +35418,7 @@ aws_cdk.aws_ecr.CfnRepository(
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.Initializer.parameter.encryptionConfiguration">encryption_configuration</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.EncryptionConfiguration\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.Initializer.parameter.imageScanningConfiguration">image_scanning_configuration</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.ImageScanningConfiguration\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.Initializer.parameter.imageTagMutability">image_tag_mutability</a></code> | <code>str</code> | \`AWS::ECR::Repository.ImageTagMutability\`. |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.Initializer.parameter.lifecyclePolicy">lifecycle_policy</a></code> | <code>typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, <a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a>]</code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.Initializer.parameter.lifecyclePolicy">lifecycle_policy</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> \\| <a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.Initializer.parameter.repositoryName">repository_name</a></code> | <code>str</code> | \`AWS::ECR::Repository.RepositoryName\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.Initializer.parameter.repositoryPolicyText">repository_policy_text</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.RepositoryPolicyText\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.Initializer.parameter.tags">tags</a></code> | <code>typing.List[<a href="#custom-@aws-cdk/core.CfnTag">CfnTag</a>]</code> | \`AWS::ECR::Repository.Tags\`. |
@@ -35489,7 +35473,7 @@ scoped id of the resource.
 
 ##### \`lifecycle_policy\`<sup>Optional</sup> <a name="lifecycle_policy" id="@aws-cdk/aws-ecr.CfnRepository.Initializer.parameter.lifecyclePolicy"></a>
 
-- *Type:* typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, <a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a>]
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> | <a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a>
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
@@ -35943,7 +35927,7 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.property.imageScanningConfiguration">image_scanning_configuration</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.ImageScanningConfiguration\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.property.repositoryPolicyText">repository_policy_text</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.RepositoryPolicyText\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.property.imageTagMutability">image_tag_mutability</a></code> | <code>str</code> | \`AWS::ECR::Repository.ImageTagMutability\`. |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.property.lifecyclePolicy">lifecycle_policy</a></code> | <code>typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, <a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a>]</code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.property.lifecyclePolicy">lifecycle_policy</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> \\| <a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepository.property.repositoryName">repository_name</a></code> | <code>str</code> | \`AWS::ECR::Repository.RepositoryName\`. |
 
 ---
@@ -36133,10 +36117,10 @@ image_tag_mutability: str
 ##### \`lifecycle_policy\`<sup>Optional</sup> <a name="lifecycle_policy" id="@aws-cdk/aws-ecr.CfnRepository.property.lifecyclePolicy"></a>
 
 \`\`\`python
-lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty]
+lifecycle_policy: IResolvable | LifecyclePolicyProperty
 \`\`\`
 
-- *Type:* typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, <a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a>]
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> | <a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a>
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
@@ -37910,7 +37894,7 @@ Properties for defining a \`AWS::ECR::ReplicationConfiguration\`.
 import aws_cdk.aws_ecr
 
 aws_cdk.aws_ecr.CfnReplicationConfigurationProps(
-  replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
+  replication_configuration: IResolvable | ReplicationConfigurationProperty
 )
 \`\`\`
 
@@ -37918,17 +37902,17 @@ aws_cdk.aws_ecr.CfnReplicationConfigurationProps(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfigurationProps.property.replicationConfiguration">replication_configuration</a></code> | <code>typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a>]</code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfigurationProps.property.replicationConfiguration">replication_configuration</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> \\| <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a></code> | \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`. |
 
 ---
 
 ##### \`replication_configuration\`<sup>Required</sup> <a name="replication_configuration" id="@aws-cdk/aws-ecr.CfnReplicationConfigurationProps.property.replicationConfiguration"></a>
 
 \`\`\`python
-replication_configuration: typing.Union[IResolvable, ReplicationConfigurationProperty]
+replication_configuration: IResolvable | ReplicationConfigurationProperty
 \`\`\`
 
-- *Type:* typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a>]
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> | <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty">ReplicationConfigurationProperty</a>
 
 \`AWS::ECR::ReplicationConfiguration.ReplicationConfiguration\`.
 
@@ -37951,7 +37935,7 @@ aws_cdk.aws_ecr.CfnRepositoryProps(
   encryption_configuration: typing.Any = None,
   image_scanning_configuration: typing.Any = None,
   image_tag_mutability: str = None,
-  lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty] = None,
+  lifecycle_policy: IResolvable | LifecyclePolicyProperty = None,
   repository_name: str = None,
   repository_policy_text: typing.Any = None,
   tags: typing.List[CfnTag] = None
@@ -37965,7 +37949,7 @@ aws_cdk.aws_ecr.CfnRepositoryProps(
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.encryptionConfiguration">encryption_configuration</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.EncryptionConfiguration\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.imageScanningConfiguration">image_scanning_configuration</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.ImageScanningConfiguration\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.imageTagMutability">image_tag_mutability</a></code> | <code>str</code> | \`AWS::ECR::Repository.ImageTagMutability\`. |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.lifecyclePolicy">lifecycle_policy</a></code> | <code>typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, <a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a>]</code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.lifecyclePolicy">lifecycle_policy</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> \\| <a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a></code> | \`AWS::ECR::Repository.LifecyclePolicy\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.repositoryName">repository_name</a></code> | <code>str</code> | \`AWS::ECR::Repository.RepositoryName\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.repositoryPolicyText">repository_policy_text</a></code> | <code>typing.Any</code> | \`AWS::ECR::Repository.RepositoryPolicyText\`. |
 | <code><a href="#custom-@aws-cdk/aws-ecr.CfnRepositoryProps.property.tags">tags</a></code> | <code>typing.List[<a href="#custom-@aws-cdk/core.CfnTag">CfnTag</a>]</code> | \`AWS::ECR::Repository.Tags\`. |
@@ -38017,10 +38001,10 @@ image_tag_mutability: str
 ##### \`lifecycle_policy\`<sup>Optional</sup> <a name="lifecycle_policy" id="@aws-cdk/aws-ecr.CfnRepositoryProps.property.lifecyclePolicy"></a>
 
 \`\`\`python
-lifecycle_policy: typing.Union[IResolvable, LifecyclePolicyProperty]
+lifecycle_policy: IResolvable | LifecyclePolicyProperty
 \`\`\`
 
-- *Type:* typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, <a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a>]
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> | <a href="#custom-@aws-cdk/aws-ecr.CfnRepository.LifecyclePolicyProperty">LifecyclePolicyProperty</a>
 
 \`AWS::ECR::Repository.LifecyclePolicy\`.
 
@@ -38461,7 +38445,7 @@ Leave it undefined to watch the full repository.
 import aws_cdk.aws_ecr
 
 aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty(
-  rules: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationRuleProperty]]]
+  rules: IResolvable | typing.List[IResolvable | ReplicationRuleProperty]
 )
 \`\`\`
 
@@ -38469,17 +38453,17 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules">rules</a></code> | <code>typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, typing.List[typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty">ReplicationRuleProperty</a>]]]</code> | \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules">rules</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> \\| typing.List[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> \\| <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty">ReplicationRuleProperty</a>]</code> | \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`. |
 
 ---
 
 ##### \`rules\`<sup>Required</sup> <a name="rules" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules"></a>
 
 \`\`\`python
-rules: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationRuleProperty]]]
+rules: IResolvable | typing.List[IResolvable | ReplicationRuleProperty]
 \`\`\`
 
-- *Type:* typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, typing.List[typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty">ReplicationRuleProperty</a>]]]
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> | typing.List[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> | <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty">ReplicationRuleProperty</a>]
 
 \`CfnReplicationConfiguration.ReplicationConfigurationProperty.Rules\`.
 
@@ -38549,7 +38533,7 @@ registry_id: str
 import aws_cdk.aws_ecr
 
 aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty(
-  destinations: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationDestinationProperty]]]
+  destinations: IResolvable | typing.List[IResolvable | ReplicationDestinationProperty]
 )
 \`\`\`
 
@@ -38557,17 +38541,17 @@ aws_cdk.aws_ecr.CfnReplicationConfiguration.ReplicationRuleProperty(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations">destinations</a></code> | <code>typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, typing.List[typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty">ReplicationDestinationProperty</a>]]]</code> | \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`. |
+| <code><a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations">destinations</a></code> | <code><a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> \\| typing.List[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> \\| <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty">ReplicationDestinationProperty</a>]</code> | \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`. |
 
 ---
 
 ##### \`destinations\`<sup>Required</sup> <a name="destinations" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations"></a>
 
 \`\`\`python
-destinations: typing.Union[IResolvable, typing.List[typing.Union[IResolvable, ReplicationDestinationProperty]]]
+destinations: IResolvable | typing.List[IResolvable | ReplicationDestinationProperty]
 \`\`\`
 
-- *Type:* typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, typing.List[typing.Union[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a>, <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty">ReplicationDestinationProperty</a>]]]
+- *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> | typing.List[<a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> | <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty">ReplicationDestinationProperty</a>]
 
 \`CfnReplicationConfiguration.ReplicationRuleProperty.Destinations\`.
 
@@ -43388,7 +43372,7 @@ const replicationConfigurationProperty: ReplicationConfigurationProperty = { ...
 ##### \`rules\`<sup>Required</sup> <a name="rules" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationConfigurationProperty.property.rules"></a>
 
 \`\`\`typescript
-public readonly rules: IResolvable | IResolvable | ReplicationRuleProperty[];
+public readonly rules: IResolvable | (IResolvable | ReplicationRuleProperty)[];
 \`\`\`
 
 - *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> | <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> | <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty">ReplicationRuleProperty</a>[]
@@ -43471,7 +43455,7 @@ const replicationRuleProperty: ReplicationRuleProperty = { ... }
 ##### \`destinations\`<sup>Required</sup> <a name="destinations" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationRuleProperty.property.destinations"></a>
 
 \`\`\`typescript
-public readonly destinations: IResolvable | IResolvable | ReplicationDestinationProperty[];
+public readonly destinations: IResolvable | (IResolvable | ReplicationDestinationProperty)[];
 \`\`\`
 
 - *Type:* <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> | <a href="#custom-@aws-cdk/core.IResolvable">IResolvable</a> | <a href="#custom-@aws-cdk/aws-ecr.CfnReplicationConfiguration.ReplicationDestinationProperty">ReplicationDestinationProperty</a>[]

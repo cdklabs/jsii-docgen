@@ -77,7 +77,7 @@ export class GoTranspile extends transpile.TranspileBase {
     const parameters = callable.parameters.sort(this.optionalityCompare);
     const paramsFormatted = parameters.map(p => this.formatFnParam(this.parameter(p))).join(', ');
 
-    let returnType: transpile.TranspiledTypeReference | undefined;
+    let returnType: transpile.ITranspiledTypeReference | undefined;
     if (isInitializer) {
       returnType = this.typeReference(callable.parentType.reference);
     } else if (reflect.Method.isMethod(callable)) {
@@ -177,6 +177,10 @@ export class GoTranspile extends transpile.TranspileBase {
     return this.any();
   }
 
+  public intersectionOf(types: string[]): string {
+    return `interface { ${types.join('; ')} }`;
+  }
+
   public listOf(type: string): string {
     return `*[]${type}`;
   }
@@ -231,7 +235,7 @@ export class GoTranspile extends transpile.TranspileBase {
     return `import "${type.module}${type.submodule ? `/${type.submodule}` : ''}"`;
   }
 
-  private formatParameter(name: string, typeReference: transpile.TranspiledTypeReference, variadic: boolean) {
+  private formatParameter(name: string, typeReference: transpile.ITranspiledTypeReference, variadic: boolean) {
     const tf = typeReference.toString({
       typeFormatter: (t) => t.name,
     });
@@ -253,7 +257,7 @@ export class GoTranspile extends transpile.TranspileBase {
 
   private formatProperty(
     name: string,
-    typeReference: transpile.TranspiledTypeReference,
+    typeReference: transpile.ITranspiledTypeReference,
     property: reflect.Property,
   ): string {
     const tf = typeReference.toString({

@@ -1,6 +1,6 @@
 import * as os from 'os';
 import * as path from 'path';
-import { loadAssemblyFromFile, SPEC_FILE_NAME } from '@jsii/spec';
+import { JsiiFeature, loadAssemblyFromFile, SPEC_FILE_NAME } from '@jsii/spec';
 import * as fs from 'fs-extra';
 import * as glob from 'glob-promise';
 import * as reflect from 'jsii-reflect';
@@ -22,6 +22,8 @@ import { TypeScriptTranspile } from '../transpile/typescript';
 
 // https://github.com/aws/jsii/blob/main/packages/jsii-reflect/lib/assembly.ts#L175
 const NOT_FOUND_IN_ASSEMBLY_REGEX = /Type '(.*)\..*' not found in assembly (.*)$/;
+
+export const SUPPORTED_ASSEMBLY_FEATURES: JsiiFeature[] = ['intersection-types'];
 
 /**
  * Options for rendering a `Documentation` object.
@@ -424,7 +426,7 @@ export class Documentation {
         // for expanded python arguments - which we don't to right now anyway.
         // we don't want to make any assumption of the directory structure, so this is the most
         // robust way to detect the root assembly.
-        const spec = loadAssemblyFromFile(dotJsii, false); // don't validate we only need this for the spec name
+        const spec = loadAssemblyFromFile(dotJsii, false, SUPPORTED_ASSEMBLY_FEATURES); // don't validate we only need this for the spec name
         if (language && spec.name === this.assemblyName) {
           const packageDir = path.dirname(dotJsii);
           try {
@@ -481,7 +483,7 @@ async function loadAssembly(
   ts: reflect.TypeSystem,
   { validate }: { readonly validate?: boolean } = {},
 ): Promise<reflect.Assembly> {
-  const loaded = await ts.load(dotJsii, { validate });
+  const loaded = await ts.load(dotJsii, { validate, supportedFeatures: SUPPORTED_ASSEMBLY_FEATURES });
 
   for (const dep of Object.keys(loaded.spec.dependencies ?? {})) {
     if (ts.tryFindAssembly(dep) != null) {

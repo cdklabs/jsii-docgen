@@ -90,7 +90,12 @@ export class PythonTranspile extends transpile.TranspileBase {
   }
 
   public unionOf(types: string[]): string {
-    return `${this.typing('Union')}[${types.join(', ')}]`;
+    return types.join(' | ');
+  }
+
+  public intersectionOf(types: string[]): string {
+    // Not valid syntax but it gets the point across
+    return types.join(' & ');
   }
 
   public listOf(type: string): string {
@@ -215,7 +220,7 @@ export class PythonTranspile extends transpile.TranspileBase {
     const name = toSnakeCase(callable.name);
     const inputs = parameters.map((p) => this.formatParameters(this.parameter(p)));
 
-    let returnType: transpile.TranspiledTypeReference | undefined;
+    let returnType: transpile.ITranspiledTypeReference | undefined;
     if (reflect.Initializer.isInitializer(callable)) {
       returnType = this.typeReference(callable.parentType.reference);
     } else if (reflect.Method.isMethod(callable)) {
@@ -322,7 +327,7 @@ export class PythonTranspile extends transpile.TranspileBase {
 
   private formatProperty(
     name: string,
-    typeReference: transpile.TranspiledTypeReference,
+    typeReference: transpile.ITranspiledTypeReference,
   ): string {
     const tf = typeReference.toString({
       typeFormatter: (t) => t.name,
