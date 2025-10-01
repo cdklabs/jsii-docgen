@@ -2176,7 +2176,7 @@ exports[`docs for library: lib-with-intersections 1`] = `
 using Intersections.Lib;
 
 new Props {
-    IFoo /* and IBar */ Input
+    IFoo+IBar Input
 };
 \`\`\`
 
@@ -2184,17 +2184,17 @@ new Props {
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#lib-with-intersections.Props.property.input">Input</a></code> | <code><a href="#lib-with-intersections.IFoo">IFoo</a> /* and <a href="#lib-with-intersections.IBar">IBar</a> */</code> | *No description.* |
+| <code><a href="#lib-with-intersections.Props.property.input">Input</a></code> | <code><a href="#lib-with-intersections.IFoo">IFoo</a>+<a href="#lib-with-intersections.IBar">IBar</a></code> | *No description.* |
 
 ---
 
 ##### \`Input\`<sup>Required</sup> <a name="Input" id="lib-with-intersections.Props.property.input"></a>
 
 \`\`\`csharp
-public IFoo /* and IBar */ Input { get; set; }
+public IFoo+IBar Input { get; set; }
 \`\`\`
 
-- *Type:* <a href="#lib-with-intersections.IFoo">IFoo</a> /* and <a href="#lib-with-intersections.IBar">IBar</a> */
+- *Type:* <a href="#lib-with-intersections.IFoo">IFoo</a>+<a href="#lib-with-intersections.IBar">IBar</a>
 
 ---
 
@@ -2284,12 +2284,12 @@ new Hello();
 ##### \`Use\` <a name="Use" id="lib-with-intersections.Hello.use"></a>
 
 \`\`\`csharp
-private string Use(IFoo /* and IBar */ Param)
+private string Use(IFoo+IBar Param)
 \`\`\`
 
 ###### \`Param\`<sup>Required</sup> <a name="Param" id="lib-with-intersections.Hello.use.parameter.param"></a>
 
-- *Type:* <a href="#lib-with-intersections.IFoo">IFoo</a> /* and <a href="#lib-with-intersections.IBar">IBar</a> */
+- *Type:* <a href="#lib-with-intersections.IFoo">IFoo</a>+<a href="#lib-with-intersections.IBar">IBar</a>
 
 ---
 
@@ -2318,12 +2318,12 @@ private string UseProps(Props Props)
 \`\`\`csharp
 using Intersections.Lib;
 
-Hello.UseStatic(IFoo /* and IBar */ Param);
+Hello.UseStatic(IFoo+IBar Param);
 \`\`\`
 
 ###### \`Param\`<sup>Required</sup> <a name="Param" id="lib-with-intersections.Hello.useStatic.parameter.param"></a>
 
-- *Type:* <a href="#lib-with-intersections.IFoo">IFoo</a> /* and <a href="#lib-with-intersections.IBar">IBar</a> */
+- *Type:* <a href="#lib-with-intersections.IFoo">IFoo</a>+<a href="#lib-with-intersections.IBar">IBar</a>
 
 ---
 
@@ -2610,7 +2610,7 @@ func Foo() *string
 import software.test.intersections.lib.Props;
 
 Props.builder()
-    .input(IFoo AND IBar)
+    .input(IFoo+IBar)
     .build();
 \`\`\`
 
@@ -2618,17 +2618,17 @@ Props.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#lib-with-intersections.Props.property.input">input</a></code> | <code><a href="#lib-with-intersections.IFoo">IFoo</a> AND <a href="#lib-with-intersections.IBar">IBar</a></code> | *No description.* |
+| <code><a href="#lib-with-intersections.Props.property.input">input</a></code> | <code><a href="#lib-with-intersections.IFoo">IFoo</a>+<a href="#lib-with-intersections.IBar">IBar</a></code> | *No description.* |
 
 ---
 
 ##### \`input\`<sup>Required</sup> <a name="input" id="lib-with-intersections.Props.property.input"></a>
 
 \`\`\`java
-public IFoo AND IBar getInput();
+public IFoo+IBar getInput();
 \`\`\`
 
-- *Type:* <a href="#lib-with-intersections.IFoo">IFoo</a> AND <a href="#lib-with-intersections.IBar">IBar</a>
+- *Type:* <a href="#lib-with-intersections.IFoo">IFoo</a>+<a href="#lib-with-intersections.IBar">IBar</a>
 
 ---
 
@@ -2718,12 +2718,12 @@ new Hello();
 ##### \`use\` <a name="use" id="lib-with-intersections.Hello.use"></a>
 
 \`\`\`java
-public java.lang.String use(IFoo AND IBar param)
+public java.lang.String use(IFoo+IBar param)
 \`\`\`
 
 ###### \`param\`<sup>Required</sup> <a name="param" id="lib-with-intersections.Hello.use.parameter.param"></a>
 
-- *Type:* <a href="#lib-with-intersections.IFoo">IFoo</a> AND <a href="#lib-with-intersections.IBar">IBar</a>
+- *Type:* <a href="#lib-with-intersections.IFoo">IFoo</a>+<a href="#lib-with-intersections.IBar">IBar</a>
 
 ---
 
@@ -2752,12 +2752,12 @@ public java.lang.String useProps(Props props)
 \`\`\`java
 import software.test.intersections.lib.Hello;
 
-Hello.useStatic(IFoo AND IBar param)
+Hello.useStatic(IFoo+IBar param)
 \`\`\`
 
 ###### \`param\`<sup>Required</sup> <a name="param" id="lib-with-intersections.Hello.useStatic.parameter.param"></a>
 
-- *Type:* <a href="#lib-with-intersections.IFoo">IFoo</a> AND <a href="#lib-with-intersections.IBar">IBar</a>
+- *Type:* <a href="#lib-with-intersections.IFoo">IFoo</a>+<a href="#lib-with-intersections.IBar">IBar</a>
 
 ---
 
