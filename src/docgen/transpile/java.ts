@@ -244,11 +244,11 @@ export class JavaTranspile extends transpile.TranspileBase {
   }
 
   public unionOf(types: string[]): string {
-    return types.join(' OR ');
+    return types.join('|');
   }
 
   public intersectionOf(types: string[]): string {
-    return `${types[0]} /* and ${types.slice(1).join(' + ')} */`;
+    return types.join('+');
   }
 
   public listOf(type: string): string {
