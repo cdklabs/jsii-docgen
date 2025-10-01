@@ -71,7 +71,7 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
   }
 
   public listOf(type: string): string {
-    return `${type}[]`;
+    return `${parenthesize(type)}[]`;
   }
 
   public variadicOf(type: string): string {
@@ -262,4 +262,14 @@ export class TypeScriptTranspile extends transpile.TranspileBase {
     });
     return `public readonly ${name}: ${tf};`;
   }
+}
+
+/**
+ * Parenthesize a subexpression if necessary and not already done
+ */
+function parenthesize(x: string) {
+  const necessary = x.includes('|') || x.includes('&');
+  const alreadyDone = x.startsWith('(') && x.endsWith(')');
+
+  return necessary && !alreadyDone ? `(${x})` : x;
 }

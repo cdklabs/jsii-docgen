@@ -90,7 +90,7 @@ export class PythonTranspile extends transpile.TranspileBase {
   }
 
   public unionOf(types: string[]): string {
-    return `${this.typing('Union')}[${types.join(', ')}]`;
+    return types.join(' | ');
   }
 
   public intersectionOf(types: string[]): string {

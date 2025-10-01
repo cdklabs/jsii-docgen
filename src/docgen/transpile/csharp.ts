@@ -172,7 +172,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
   }
 
   public listOf(type: string): string {
-    return `${type}[]`;
+    return `${parenthesize(type)}[]`;
   }
 
   public variadicOf(type: string): string {
@@ -265,4 +265,14 @@ export class CSharpTranspile extends transpile.TranspileBase {
     const suffix = hasSetter ? '{ get; set; }' : '{ get; }';
     return `${prefix} ${tf} ${name} ${suffix}`;
   }
+}
+
+/**
+ * Parenthesize a subexpression if necessary and not already done
+ */
+function parenthesize(x: string) {
+  const necessary = x.includes('|') || x.includes('+');
+  const alreadyDone = x.startsWith('(') && x.endsWith(')');
+
+  return necessary && !alreadyDone ? `(${x})` : x;
 }

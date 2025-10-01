@@ -1,8 +1,13 @@
 import { execSync } from 'child_process';
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import * as semver from 'semver';
 
 const cli = require.resolve('../lib/cli');
+
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const ROSETTA_VERSION = require('jsii-rosetta/package.json').version;
+
 
 test('construct-library', () => {
 
@@ -103,7 +108,14 @@ test('specify languages and split-by-submodule creates submodule files next to o
   expect(submodulePy).toContain('goodbye_with_phrase');
 });
 
-test.each(['lib-with-intersections'])('docs for library: %s', async (libraryName) => {
+test.each([
+  ['lib-with-intersections', '>=5.9.6'],
+])('docs for library: %s', async (libraryName, minimumRosettaRange) => {
+  if (!semver.satisfies(ROSETTA_VERSION, minimumRosettaRange)) {
+    console.log(`Skipping test for ${libraryName} because jsii-rosetta version ${ROSETTA_VERSION} does not satisfy ${minimumRosettaRange}`);
+    return;
+  }
+
   const fixture = join(`${__dirname}/__fixtures__/libraries/${libraryName}`);
 
   // generate the documentation
