@@ -23,7 +23,7 @@ import { TypeScriptTranspile } from '../transpile/typescript';
 // https://github.com/aws/jsii/blob/main/packages/jsii-reflect/lib/assembly.ts#L175
 const NOT_FOUND_IN_ASSEMBLY_REGEX = /Type '(.*)\..*' not found in assembly (.*)$/;
 
-export const SUPPORTED_ASSEMBLY_FEATURES: JsiiFeature[] = ['intersection-types'];
+export const SUPPORTED_ASSEMBLY_FEATURES: JsiiFeature[] = ['intersection-types', 'class-covariant-overrides'];
 
 /**
  * Options for rendering a `Documentation` object.
