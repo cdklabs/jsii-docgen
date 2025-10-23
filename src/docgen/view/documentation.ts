@@ -12,7 +12,7 @@ import { Json, JsonFormattingOptions } from '../render/json';
 import { MarkdownDocument } from '../render/markdown-doc';
 import { MarkdownFormattingOptions, MarkdownRenderer } from '../render/markdown-render';
 import { Schema, CURRENT_SCHEMA_VERSION, submodulePath } from '../schema';
-import { discoverAssemblies } from './assembly';
+import { AssemblyLookup, bestAssemblyMatch, discoverAssemblies } from './assembly';
 import { CSharpTranspile } from '../transpile/csharp';
 import { GoTranspile } from '../transpile/go';
 import { JavaTranspile } from '../transpile/java';
@@ -415,7 +415,7 @@ export class Documentation {
       const ts = new reflect.TypeSystem();
 
       const assemblies = discoverAssemblies(this.assembliesDir);
-      for (let [discoveredName, dotJsii] of Object.entries(assemblies)) {
+      for (let { name: discoveredName, path: dotJsii } of Object.values(assemblies)) {
         // we only transliterate the top level assembly and not the entire type-system.
         // note that the only reason to translate dependant assemblies is to show code examples
         // for expanded python arguments - which we don't to right now anyway.
@@ -431,10 +431,11 @@ export class Documentation {
             } catch (e: any) {
               throw new TransliterationError(`Could not transliterate snippets in '${this.assemblyFqn}' to ${language}: ${e.message}`);
             }
-            dotJsii = path.join(workdir, `${SPEC_FILE_NAME}.${language}`);
+            const langDotJsii = path.join(workdir, `${SPEC_FILE_NAME}.${language}`);
+            await loadAssembly(langDotJsii, ts, assemblies, options);
+          } else {
+            await loadAssembly(dotJsii, ts, assemblies, options);
           }
-          // but always load the assembly and deps
-          await loadAssembly(dotJsii, ts, options);
         }
       }
       return ts.findAssembly(this.assemblyName);
@@ -480,20 +481,22 @@ export const LANGUAGE_SPECIFIC = {
 async function loadAssembly(
   dotJsii: string,
   ts: reflect.TypeSystem,
+  availableAssemblies: AssemblyLookup,
   { validate }: { readonly validate?: boolean } = {},
 ): Promise<reflect.Assembly> {
   const loaded = await ts.load(dotJsii, { validate, supportedFeatures: SUPPORTED_ASSEMBLY_FEATURES });
 
-  for (const dep of Object.keys(loaded.spec.dependencies ?? {})) {
+  for (const [dep, version] of Object.entries(loaded.spec.dependencies ?? {})) {
     if (ts.tryFindAssembly(dep) != null) {
       // dependency already loaded... move on...
       continue;
     }
     try {
-      // Resolve the dependencies relative to the dependent's package root.
-      const depPath = require.resolve(`${dep}/.jsii`, { paths: [path.dirname(dotJsii)] });
-      await loadAssembly(depPath, ts, { validate });
-    } catch {
+      // Use path from look up or try to resolve the dependencies relative to the dependent's package root.
+      const depPath = bestAssemblyMatch(availableAssemblies, `${dep}@${version}`)?.path
+                        ?? require.resolve(`${dep}/.jsii`, { paths: [path.dirname(dotJsii)] });
+      await loadAssembly(depPath, ts, availableAssemblies, { validate });
+    } catch (error) {
       // Silently ignore any resolution errors... We'll fail later if the dependency is
       // ACTUALLY required, but it's okay to omit it if none of its types are actually exposed
       // by the translated assembly's own API.
