@@ -103,15 +103,11 @@
       "type": "runtime"
     },
     {
+      "name": "fast-glob",
+      "type": "runtime"
+    },
+    {
       "name": "fs-extra",
-      "type": "runtime"
-    },
-    {
-      "name": "glob",
-      "type": "runtime"
-    },
-    {
-      "name": "glob-promise",
       "type": "runtime"
     },
     {

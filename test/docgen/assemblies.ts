@@ -4,7 +4,7 @@ import { SPEC_FILE_NAME, loadAssemblyFromFile } from '@jsii/spec';
 import * as reflect from 'jsii-reflect';
 
 /**
- * Singelton class to expose various assemblies for test purposes.
+ * Singleton class to expose various assemblies for test purposes.
  *
  * Use `Assemblies.instance` to obtain it.
  */
