@@ -1,8 +1,7 @@
 import * as os from 'os';
 import * as path from 'path';
-import { JsiiFeature, loadAssemblyFromFile, SPEC_FILE_NAME } from '@jsii/spec';
+import { JsiiFeature, SPEC_FILE_NAME } from '@jsii/spec';
 import * as fs from 'fs-extra';
-import * as glob from 'glob-promise';
 import * as reflect from 'jsii-reflect';
 import { TargetLanguage, transliterateAssembly, UnknownSnippetMode } from 'jsii-rosetta';
 import { Npm } from './_npm';
@@ -13,6 +12,7 @@ import { Json, JsonFormattingOptions } from '../render/json';
 import { MarkdownDocument } from '../render/markdown-doc';
 import { MarkdownFormattingOptions, MarkdownRenderer } from '../render/markdown-render';
 import { Schema, CURRENT_SCHEMA_VERSION, submodulePath } from '../schema';
+import { discoverAssemblies } from './assembly';
 import { CSharpTranspile } from '../transpile/csharp';
 import { GoTranspile } from '../transpile/go';
 import { JavaTranspile } from '../transpile/java';
@@ -414,30 +414,28 @@ export class Documentation {
 
       const ts = new reflect.TypeSystem();
 
-      // assembliesDir might include backslashes on Windows.
-      // The glob pattern must only used forward slashes, so we pass the assembliesDir as CWD which does not have this restriction
-      const assemblies = await glob.promise(`**/${SPEC_FILE_NAME}`, {
-        cwd: path.normalize(this.assembliesDir),
-        absolute: true,
-      });
-      for (let dotJsii of assemblies) {
+      const assemblies = discoverAssemblies(this.assembliesDir);
+      for (let [discoveredName, dotJsii] of Object.entries(assemblies)) {
         // we only transliterate the top level assembly and not the entire type-system.
         // note that the only reason to translate dependant assemblies is to show code examples
         // for expanded python arguments - which we don't to right now anyway.
         // we don't want to make any assumption of the directory structure, so this is the most
         // robust way to detect the root assembly.
-        const spec = loadAssemblyFromFile(dotJsii, false, SUPPORTED_ASSEMBLY_FEATURES); // don't validate we only need this for the spec name
-        if (language && spec.name === this.assemblyName) {
-          const packageDir = path.dirname(dotJsii);
-          try {
-            await transliterateAssembly([packageDir], [language],
-              { loose: options.loose, unknownSnippets: UnknownSnippetMode.FAIL, outdir: workdir });
-          } catch (e: any) {
-            throw new TransliterationError(`Could not transliterate snippets in '${this.assemblyFqn}' to ${language}: ${e.message}`);
+        if (discoveredName === this.assemblyName) {
+          // only transliterate if we have received a target lang request
+          if (language) {
+            const packageDir = path.dirname(dotJsii);
+            try {
+              await transliterateAssembly([packageDir], [language],
+                { loose: options.loose, unknownSnippets: UnknownSnippetMode.FAIL, outdir: workdir });
+            } catch (e: any) {
+              throw new TransliterationError(`Could not transliterate snippets in '${this.assemblyFqn}' to ${language}: ${e.message}`);
+            }
+            dotJsii = path.join(workdir, `${SPEC_FILE_NAME}.${language}`);
           }
-          dotJsii = path.join(workdir, `${SPEC_FILE_NAME}.${language}`);
+          // but always load the assembly and deps
+          await loadAssembly(dotJsii, ts, options);
         }
-        await loadAssembly(dotJsii, ts, options);
       }
       return ts.findAssembly(this.assemblyName);
     });
@@ -446,6 +444,7 @@ export class Documentation {
     return created;
   }
 }
+
 
 export const LANGUAGE_SPECIFIC = {
   [Language.PYTHON.toString()]: {
