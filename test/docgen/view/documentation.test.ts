@@ -239,7 +239,7 @@ describe('go', () => {
 });
 
 test('throws uninstallable error on dependency conflict', async () => {
-  // this package decalres a fixed peerDependency on constructs, which conflicts with its other dependencies
+  // this package declares a fixed peerDependency on constructs, which conflicts with its other dependencies
   return expect(Documentation.forPackage('cdk8s-mongo-sts@0.0.5', { verbose: false })).rejects.toThrowError(UnInstallablePackageError);
 });
 
