@@ -18,7 +18,7 @@ export class CSharpTranspile extends transpile.TranspileBase {
     // explicit target names, in which case we need to append the pascal-cased
     // submodule name to the parent package name.
     if (moduleLike instanceof reflect.Submodule) {
-      const parent = this.getParentModule(moduleLike);
+      const parent = moduleLike.parent;
       const parentFqn = parent.targets?.dotnet?.namespace;
 
       // if the submodule does not explicitly define a dotnet package name, we need to deduce it from the parent

@@ -10,7 +10,7 @@ export class GoTranspile extends transpile.TranspileBase {
 
   public moduleLike(moduleLike: reflect.ModuleLike): transpile.TranspiledModuleLike {
     if (moduleLike instanceof reflect.Submodule) {
-      const parent = this.moduleLike(this.getParentModule(moduleLike));
+      const parent = this.moduleLike(moduleLike.parent);
       const parentFqn = parent.submodule
         ? `${parent.name}/${parent.submodule}`
         : parent.name;
