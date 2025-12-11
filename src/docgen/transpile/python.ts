@@ -273,7 +273,7 @@ export class PythonTranspile extends transpile.TranspileBase {
     const pythonModule = moduleLike.targets?.python?.module;
 
     if (moduleLike instanceof reflect.Submodule) {
-      const assembly = this.getParentModule(moduleLike);
+      const assembly = moduleLike.parent;
       const parentPythonModule = assembly.targets?.python?.module;
 
       // if the submodule does not explicitly defines the python module name, then

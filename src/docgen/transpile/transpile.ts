@@ -830,7 +830,6 @@ export interface TranspileBase extends Transpile {}
  */
 export abstract class TranspileBase implements Transpile {
 
-  private readonly parentModulesCache = new Map<string, reflect.Assembly>();
   private readonly submodulesCache = new Map<string, reflect.Submodule | undefined>();
 
   constructor(public readonly language: Language) {}
@@ -926,19 +925,6 @@ export abstract class TranspileBase implements Transpile {
 
     this.submodulesCache.set(type.fqn, submodule);
     return submodule;
-  }
-
-  protected getParentModule(moduleLike: reflect.ModuleLike): reflect.Assembly {
-    const cached = this.parentModulesCache.get(moduleLike.fqn);
-    if (cached) return cached;
-
-    const types = moduleLike.types;
-    if (types.length === 0) {
-      throw new Error(`unable to determine assembly since module does not have any types: ${moduleLike.fqn}`);
-    }
-    const parent = types[0].assembly;
-    this.parentModulesCache.set(moduleLike.fqn, parent);
-    return parent;
   }
 
   protected optionalityCompare(
