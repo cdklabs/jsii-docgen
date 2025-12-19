@@ -262,6 +262,16 @@ test('throws corrupt assembly 2', async () => {
   await expect(docs.toJson({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
 });
 
+test('throws corrupted assembly when a peer dependency assembly is missing a type', async () => {
+
+  // this package version was built when `IKeyRef` was part of `aws-cdk-lib.aws_kms`. it has since moved into a different modules, making this assembly no longer viable.
+  // see https://github.com/aws/aws-cdk/pull/35971
+  const docs = await Documentation.forPackage('@aws-cdk/aws-apprunner-alpha@v2.219.0-alpha.0', { verbose: false });
+  await expect(docs.toMarkdown({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
+  await expect(docs.toJson({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
+
+});
+
 test('throws unsupported language with invalid config', async () => {
   // package doesn't support Go and should throw with corresponding error
   const docs = await Documentation.forPackage('@aws-cdk/pipelines@v1.144.0', { verbose: false });
