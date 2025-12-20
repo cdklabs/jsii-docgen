@@ -84,9 +84,9 @@ export interface TransliterationOptions {
   readonly validate?: boolean;
 }
 
-export interface MarkdownRenderOptions extends RenderOptions, MarkdownFormattingOptions {}
+export interface MarkdownRenderOptions extends RenderOptions, MarkdownFormattingOptions { }
 
-export interface JsonRenderOptions extends RenderOptions, JsonFormattingOptions {}
+export interface JsonRenderOptions extends RenderOptions, JsonFormattingOptions { }
 
 /**
  * Options for creating a `Documentation` object using the `fromLocalPackage` function.
@@ -198,7 +198,7 @@ export class Documentation {
   private constructor(
     private readonly assemblyName: string,
     private readonly assembliesDir: string,
-  ) {}
+  ) { }
 
   /**
    * List all submodules in the assembly.
@@ -208,7 +208,7 @@ export class Documentation {
     return tsAssembly.allSubmodules;
   }
 
-  public async toIndexMarkdown(fileSuffix:string, options: RenderOptions) {
+  public async toIndexMarkdown(fileSuffix: string, options: RenderOptions) {
     const assembly = await this.createAssembly(undefined, { loose: true, validate: false });
     const submodules = await this.listSubmodules();
     const schema = (await this.toJson({
@@ -494,7 +494,7 @@ async function loadAssembly(
     try {
       // Use path from look up or try to resolve the dependencies relative to the dependent's package root.
       const depPath = bestAssemblyMatch(availableAssemblies, `${dep}@${version}`)?.path
-                        ?? require.resolve(`${dep}/.jsii`, { paths: [path.dirname(dotJsii)] });
+        ?? require.resolve(`${dep}/.jsii`, { paths: [path.dirname(dotJsii)] });
       await loadAssembly(depPath, ts, availableAssemblies, { validate });
     } catch (error) {
       // Silently ignore any resolution errors... We'll fail later if the dependency is
@@ -566,7 +566,9 @@ function maybeCorruptedAssemblyError(error: Error): CorruptedAssemblyError | und
   const searchedAssembly = match[2];
   const typeAssembly = match[1];
 
-  if (searchedAssembly === typeAssembly) {
+  if (searchedAssembly === typeAssembly
+    // take into account submodules (e.g aws-cdk-lib.aws_kms.IKeyRef)
+    || typeAssembly.startsWith(searchedAssembly + '.')) {
     return new CorruptedAssemblyError(error.message);
   }
   return;
