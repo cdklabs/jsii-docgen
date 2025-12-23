@@ -561,7 +561,7 @@ export function extractPackageName(spec: string) {
  *    then the assembly is considered corrupt.
  */
 function maybeCorruptedAssemblyError(error: Error): CorruptedAssemblyError | undefined {
-  if (isAssmeblyNotFound(error) || isNotFoundInAssmebly(error)) {
+  if (isAssemblyNotFound(error) || isNotFoundInAssmebly(error)) {
     return new CorruptedAssemblyError(error.message);
   }
   return;
@@ -585,7 +585,7 @@ function isNotFoundInAssmebly(error: Error) {
 
 }
 
-function isAssmeblyNotFound(error: Error) {
+function isAssemblyNotFound(error: Error) {
 
   const match = error.message.match(ASSEMBLY_NOT_FOUND_REGEX);
   if (!match) {
