@@ -272,6 +272,15 @@ test('throws corrupted assembly when a peer dependency assembly is missing a typ
 
 });
 
+test('throws corrupted assembly when a dependency assembly is missing', async () => {
+
+  // see https://github.com/aws/modern-data-architecture-accelerator/issues/18
+  const docs = await Documentation.forPackage('@aws-mdaa/sm-studio-domain-l3-construct@1.2.0', { verbose: false });
+  await expect(docs.toMarkdown({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
+  await expect(docs.toJson({ language: Language.TYPESCRIPT })).rejects.toThrowError(CorruptedAssemblyError);
+
+});
+
 test('throws unsupported language with invalid config', async () => {
   // package doesn't support Go and should throw with corresponding error
   const docs = await Documentation.forPackage('@aws-cdk/pipelines@v1.144.0', { verbose: false });
