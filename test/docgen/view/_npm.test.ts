@@ -1,7 +1,7 @@
 import { ChildProcess, spawn } from 'child_process';
 import { EventEmitter } from 'events';
 import { tmpdir } from 'os';
-import { Pipe, Readable, Writable } from 'stream';
+import { Readable, Writable } from 'stream';
 import { NoSpaceLeftOnDevice, NpmError, UnInstallablePackageError } from '../../../src';
 import { Npm, UNISTALLABLE_PACKAGE_ERROR_CODES } from '../../../src/docgen/view/_npm';
 
@@ -173,7 +173,7 @@ class MockChildProcess extends EventEmitter implements ChildProcess {
     null as any,
   ] as ChildProcess['stdio'];
 
-  public readonly channel?: Pipe | null | undefined;
+  public readonly channel?: ChildProcess['channel'];
 
   public constructor(
     public readonly exitCode: number | null,
