@@ -174,6 +174,7 @@ Properties to override default properties if deployVpc is true.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.toString?lang=python">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.with?lang=python">with</a></code> | Applies one or more mixins to this construct. |
 
 ---
 
@@ -184,6 +185,27 @@ public java.lang.String toString()
 \`\`\`
 
 Returns a string representation of this construct.
+
+##### \`with\` <a name="with" id="LambdaToSqs.with"></a>
+
+\`\`\`java
+public IConstruct with(IMixin... mixins)
+\`\`\`
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple \`with()\` calls if subsequent mixins should apply to added
+constructs.
+
+###### \`mixins\`<sup>Required</sup> <a name="mixins" id="LambdaToSqs.with.parameter.mixins"></a>
+
+- *Type:* <a href="/packages/constructs/v/99.99.99/api/IMixin?lang=python">IMixin</a>...
+
+The mixins to apply.
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -669,6 +691,7 @@ Properties to override default properties if deployVpc is true.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.toString?lang=python">to_string</a></code> | Returns a string representation of this construct. |
+| <code><a href="/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.with?lang=python">with</a></code> | Applies one or more mixins to this construct. |
 
 ---
 
@@ -679,6 +702,29 @@ def to_string() -> str
 \`\`\`
 
 Returns a string representation of this construct.
+
+##### \`with\` <a name="with" id="LambdaToSqs.with"></a>
+
+\`\`\`python
+def with(
+  mixins: *IMixin
+) -> IConstruct
+\`\`\`
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple \`with()\` calls if subsequent mixins should apply to added
+constructs.
+
+###### \`mixins\`<sup>Required</sup> <a name="mixins" id="LambdaToSqs.with.parameter.mixins"></a>
+
+- *Type:* *<a href="/packages/constructs/v/99.99.99/api/IMixin?lang=python">IMixin</a>
+
+The mixins to apply.
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -1042,6 +1088,7 @@ user provided props for the construct.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.toString?lang=python">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="/packages/@aws-solutions-constructs/aws-lambda-sqs/v/2.0.0/api/LambdaToSqs.with?lang=python">with</a></code> | Applies one or more mixins to this construct. |
 
 ---
 
@@ -1052,6 +1099,27 @@ public toString(): string
 \`\`\`
 
 Returns a string representation of this construct.
+
+##### \`with\` <a name="with" id="LambdaToSqs.with"></a>
+
+\`\`\`typescript
+public with(mixins: ...IMixin[]): IConstruct
+\`\`\`
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple \`with()\` calls if subsequent mixins should apply to added
+constructs.
+
+###### \`mixins\`<sup>Required</sup> <a name="mixins" id="LambdaToSqs.with.parameter.mixins"></a>
+
+- *Type:* ...<a href="/packages/constructs/v/99.99.99/api/IMixin?lang=python">IMixin</a>[]
+
+The mixins to apply.
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
