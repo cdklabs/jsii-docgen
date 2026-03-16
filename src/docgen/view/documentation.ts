@@ -405,16 +405,6 @@ export class Documentation {
 
     const created = await withTempDir(async (workdir: string) => {
 
-      // always better not to pollute an externally provided directory
-      await fs.copy(this.assembliesDir, workdir, {
-        // Ensure we don't try to copy socket files, as they can be found under .git when
-        // core.fsmonitor is enabled.
-        filter: async (src) => {
-          const stat = await fs.stat(src);
-          return stat.isFile() || stat.isDirectory();
-        },
-      });
-
       const ts = new reflect.TypeSystem();
 
       const assemblies = discoverAssemblies(this.assembliesDir);
