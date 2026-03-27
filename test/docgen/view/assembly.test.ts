@@ -1,4 +1,5 @@
 import { bestAssemblyMatch, AssemblyLookup } from '../../../src/docgen/view/assembly';
+import { CorruptedAssemblyError } from '../../../src/errors';
 
 describe('bestAssemblyMatch', () => {
   const assemblies: AssemblyLookup = {
@@ -9,8 +10,8 @@ describe('bestAssemblyMatch', () => {
     'other-lib@1.0.0': { name: 'other-lib', version: '1.0.0', path: '/path/other' },
   };
 
-  test('returns undefined for non-existent assembly', () => {
-    expect(bestAssemblyMatch(assemblies, 'missing@1.0.0')).toBeUndefined();
+  test('throws CorruptedAssemblyError for non-existent assembly', () => {
+    expect(() => bestAssemblyMatch(assemblies, 'missing@1.0.0')).toThrow(CorruptedAssemblyError);
   });
 
   test('returns exact version match', () => {

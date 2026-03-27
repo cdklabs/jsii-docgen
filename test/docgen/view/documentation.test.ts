@@ -116,6 +116,17 @@ describe('python', () => {
       await docs.cleanup();
     }
   });
+
+  test('snapshot - with dependencies', async () => {
+    const docs = await Documentation.forPackage('cdk8s-jenkins@0.0.556');
+    try {
+      const markdown = await docs.toMarkdown({ language: Language.PYTHON });
+      expect(markdown.render()).toMatchSnapshot();
+    } finally {
+      await docs.cleanup();
+    }
+  });
+
 });
 
 describe('typescript', () => {
