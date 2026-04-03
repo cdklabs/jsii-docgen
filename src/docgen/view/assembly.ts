@@ -5,6 +5,7 @@ import { AssemblyRedirect, isAssemblyRedirect, SPEC_FILE_NAME, validateAssemblyR
 import * as fg from 'fast-glob';
 import { Assembly } from 'jsii-reflect';
 import * as semver from 'semver';
+import { CorruptedAssemblyError } from '../../errors';
 
 export interface AssemblyInfo {
   readonly name: string;
@@ -28,14 +29,16 @@ export type AssemblyLookup = Record<string, AssemblyInfo>;
  *
  * @returns the best matching assembly info or undefined if no match was found
  */
-export function bestAssemblyMatch(assemblies: AssemblyLookup, constraint: string): AssemblyInfo | undefined {
+export function bestAssemblyMatch(assemblies: AssemblyLookup, constraint: string): AssemblyInfo {
   const lastAtIndex = constraint.lastIndexOf('@');
   const name = lastAtIndex === -1 ? constraint : constraint.substring(0, lastAtIndex);
   const versionConstraint = lastAtIndex === -1 ? undefined : constraint.substring(lastAtIndex + 1);
   const candidates = Object.values(assemblies).filter(a => a.name === name);
 
   if (candidates.length === 0) {
-    return undefined;
+    // `assemblies` is a view on top of the installation directory,
+    // it should contain the assembly.
+    throw new CorruptedAssemblyError(`Unable to locate assembly for dependency: ${constraint}`);
   }
 
   candidates.sort((a, b) => semver.rcompare(a.version, b.version) || 0);

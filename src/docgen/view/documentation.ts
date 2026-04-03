@@ -405,16 +405,6 @@ export class Documentation {
 
     const created = await withTempDir(async (workdir: string) => {
 
-      // always better not to pollute an externally provided directory
-      await fs.copy(this.assembliesDir, workdir, {
-        // Ensure we don't try to copy socket files, as they can be found under .git when
-        // core.fsmonitor is enabled.
-        filter: async (src) => {
-          const stat = await fs.stat(src);
-          return stat.isFile() || stat.isDirectory();
-        },
-      });
-
       const ts = new reflect.TypeSystem();
 
       const assemblies = discoverAssemblies(this.assembliesDir);
@@ -494,10 +484,10 @@ async function loadAssembly(
       // dependency already loaded... move on...
       continue;
     }
+
+    const depPath = bestAssemblyMatch(availableAssemblies, `${dep}@${version}`).path;
+
     try {
-      // Use path from look up or try to resolve the dependencies relative to the dependent's package root.
-      const depPath = bestAssemblyMatch(availableAssemblies, `${dep}@${version}`)?.path
-        ?? require.resolve(`${dep}/.jsii`, { paths: [path.dirname(dotJsii)] });
       await loadAssembly(depPath, ts, availableAssemblies, { validate });
     } catch (error) {
       // Silently ignore any resolution errors... We'll fail later if the dependency is
