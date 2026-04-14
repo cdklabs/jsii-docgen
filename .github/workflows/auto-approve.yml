@@ -7,7 +7,12 @@ on:
       - synchronize
       - reopened
       - ready_for_review
+
   workflow_dispatch:
+    inputs:
+      pr_number:
+        description: "Pull Request Number"
+        required: true
 
 jobs:
   approve:
@@ -16,6 +21,17 @@ jobs:
       pull-requests: write
 
     steps:
-      - uses: hmarr/auto-approve-action@v3
+      # 👉 For manual run
+      - name: Auto approve (manual)
+        if: github.event_name == 'workflow_dispatch'
+        uses: hmarr/auto-approve-action@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          pull-request-number: ${{ github.event.inputs.pr_number }}
+
+      # 👉 For PR event
+      - name: Auto approve (PR event)
+        if: github.event_name == 'pull_request'
+        uses: hmarr/auto-approve-action@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
