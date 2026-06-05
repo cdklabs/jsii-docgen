@@ -135,6 +135,30 @@ test.each(UNISTALLABLE_PACKAGE_ERROR_CODES)('%s error is converted to an UnInsta
   }
 });
 
+test('NPM commands are shell escaped', async () => {
+  // GIVEN
+  const npm = new Npm(TMPDIR, () => void 0, 'mock-npm');
+
+  // WHEN
+  const mockChildProcess = new MockChildProcess(42, {
+    stdout: [],
+  });
+  mockSpawn.mockReturnValue(mockChildProcess);
+
+  // THEN
+  await expect(npm.install('x$(rm -rf /)')).rejects.toThrow(/exited with code 42/);
+
+  const expected = process.platform === 'win32'
+    ? '"x$(rm -rf /)"'
+    : '\'x$(rm -rf /)\'';
+
+  expect(mockSpawn).toHaveBeenCalledWith(
+    'mock-npm',
+    expect.arrayContaining([expected]),
+    expect.anything(),
+  );
+});
+
 test('NpmError error (invalid JSON output)', async () => {
   // GIVEN
   const npm = new Npm(TMPDIR, () => void 0, 'mock-npm');
