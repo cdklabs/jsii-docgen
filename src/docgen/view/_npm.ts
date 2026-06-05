@@ -246,7 +246,7 @@ function escapeForShell(arg: string): string {
     return `"${arg.replace(/"/g, '""')}"`;
   } else {
     // On Unix-like systems, we can wrap the argument in single quotes and escape any existing single quotes by closing the quote, adding an escaped single quote, and reopening the quote.
-    return `'${arg.replace(/'/g, `'\\''`)}'`;
+    return `'${arg.replace(/'/g, '\'\\\'\'')}'`;
   }
 }
 
