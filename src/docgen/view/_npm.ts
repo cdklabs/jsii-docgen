@@ -60,7 +60,7 @@ export class Npm {
         await this.npmCommandPath(),
         [
           'install',
-          JSON.stringify(target),
+          target,
           ...commonFlags,
           // ensures we are installing devDependencies, too.
           '--include=dev',
@@ -187,6 +187,8 @@ export class Npm {
    * the command was successful or not. Use the `assertSuccess` function to
    * throw/reject in case the execution was not successful.
    *
+   * The arguments are escaped, and will not be interpreted by the shell.
+   *
    * @param command         the command to invoke.
    * @param args            arguments to provide to the command.
    * @param outputTransform the function that will parse STDOUT data.
@@ -199,10 +201,15 @@ export class Npm {
     options?: SpawnOptionsWithoutStdio,
   ): Promise<CommandResult<T>> {
     return new Promise<CommandResult<T>>((ok, ko) => {
-      // On Windows, spawning a program ending in .cmd or .bat needs to run in a shell
+      // On Windows, spawning a program ending in .cmd or .bat needs to run in a shell.
+      // (Even if the program is a .cmd/.bat file that gets resolved implicitly, it still needs that shell,
+      // but then it's the caller's responsibility to pass { shell: true }).
       // https://nodejs.org/en/blog/vulnerability/april-2024-security-releases-2
-      const shell = onWindows() && (command.endsWith('.cmd') || command.endsWith('.bat'));
-      const child = spawn(command, args, { shell, ...options, stdio: ['inherit', 'pipe', 'pipe'] });
+      //
+      // If we are going through the shell, escape the arguments.
+      const shell = options?.shell || (onWindows() && (command.endsWith('.cmd') || command.endsWith('.bat')));
+      const safeArgs = shell ? args.map(escapeForShell) : args;
+      const child = spawn(command, safeArgs, { ...options, shell, stdio: ['inherit', 'pipe', 'pipe'] });
       const stdout = new Array<Buffer>();
       child.stdout.on('data', (chunk) => {
         stdout.push(Buffer.from(chunk));
@@ -215,7 +222,7 @@ export class Npm {
       child.once('close', (exitCode, signal) => {
         try {
           ok({
-            command: `${command} ${args.join(' ')}`,
+            command: `${command} ${safeArgs.join(' ')}`,
             exitCode,
             signal,
             stdout: outputTransform(stdout),
@@ -225,6 +232,21 @@ export class Npm {
         }
       });
     });
+  }
+}
+
+function escapeForShell(arg: string): string {
+  if (arg.match(/^[a-z0-9_\/.=-]+$/i)) {
+    // If the argument contains only safe characters, we can return it as is, to keep the command line readable.
+    return arg;
+  }
+
+  if (onWindows()) {
+    // On Windows, we need to wrap the argument in double quotes and escape any existing double quotes by doubling them.
+    return `"${arg.replace(/"/g, '""')}"`;
+  } else {
+    // On Unix-like systems, we can wrap the argument in single quotes and escape any existing single quotes by closing the quote, adding an escaped single quote, and reopening the quote.
+    return `'${arg.replace(/'/g, `'\\''`)}'`;
   }
 }
 
