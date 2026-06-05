@@ -123,7 +123,7 @@ export class Npm {
       if (version == null) {
         continue;
       }
-      result.push(JSON.stringify(`${name}@${version}`));
+      result.push(`${name}@${version}`);
     }
 
     return result;
