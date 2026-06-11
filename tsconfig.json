@@ -26,6 +26,12 @@
     "strictPropertyInitialization": true,
     "stripInternal": true,
     "target": "ES2019",
+    "types": [
+      "fs-extra",
+      "jest",
+      "node",
+      "semver"
+    ],
     "skipLibCheck": true
   },
   "include": [
