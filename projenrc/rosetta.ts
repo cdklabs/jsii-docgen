@@ -57,7 +57,7 @@ export class RosettaPeerDependency extends Component {
       },
       steps: [{
         name: 'Checkout',
-        uses: 'actions/checkout@v4',
+        uses: 'actions/checkout@v6',
         with: {
           ref: '${{ github.event.pull_request.head.ref }}',
           repository: '${{ github.event.pull_request.head.repo.full_name }}',
@@ -65,10 +65,11 @@ export class RosettaPeerDependency extends Component {
       },
       {
         name: 'Setup Node.js',
-        uses: 'actions/setup-node@v4',
+        uses: 'actions/setup-node@v6',
         with: {
           // @ts-ignore
           'node-version': project.nodeVersion,
+          'package-manager-cache': false,
         },
       },
       {
