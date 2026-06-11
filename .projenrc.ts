@@ -1,5 +1,5 @@
 import { CdklabsTypeScriptProject } from 'cdklabs-projen-project-types';
-import { JsonPatch } from 'projen';
+import { javascript, JsonPatch } from 'projen';
 import { RosettaPeerDependency, RosettaVersionLines } from './projenrc/rosetta';
 
 const project = new CdklabsTypeScriptProject({
@@ -13,6 +13,7 @@ const project = new CdklabsTypeScriptProject({
   authorUrl: 'https://aws.amazon.com',
   authorOrganization: true,
   defaultReleaseBranch: 'main',
+  packageManager: javascript.NodePackageManager.YARN_BERRY,
 
   bin: {
     'jsii-docgen': 'bin/jsii-docgen',
