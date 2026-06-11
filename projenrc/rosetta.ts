@@ -1,4 +1,4 @@
-import { Component, typescript } from 'projen';
+import { Component, github, typescript } from 'projen';
 import { minVersion } from 'semver';
 
 const JSII_ROSETTA = 'jsii-rosetta';
@@ -55,47 +55,60 @@ export class RosettaPeerDependency extends Component {
           }],
         },
       },
-      steps: [{
-        name: 'Checkout',
-        uses: 'actions/checkout@v6',
-        with: {
-          ref: '${{ github.event.pull_request.head.ref }}',
-          repository: '${{ github.event.pull_request.head.repo.full_name }}',
+      steps: [
+        github.WorkflowSteps.checkout({
+          with: {
+            ref: '${{ github.event.pull_request.head.ref }}',
+            repository: '${{ github.event.pull_request.head.repo.full_name }}',
+          },
+        }),
+        {
+          name: 'Enable Corepack',
+          shell: 'bash',
+          run: [
+            '# The pre-installed Yarn Classic shims on Windows GHA runners shadow',
+            "# Corepack's yarn proxy. Re-installing corepack globally replaces them.",
+            '# See: https://github.com/actions/setup-node/issues/531',
+            'if [[ "$RUNNER_OS" == "Windows" ]]; then',
+            '  npm install -g corepack@0.34.6 --force',
+            'fi',
+            'corepack enable',
+          ].join('\n'),
         },
-      },
-      {
-        name: 'Setup Node.js',
-        uses: 'actions/setup-node@v6',
-        with: {
-          // @ts-ignore
-          'node-version': project.nodeVersion,
-          'package-manager-cache': false,
+        {
+          name: 'Setup Node.js',
+          uses: 'actions/setup-node@v6',
+          with: {
+            // @ts-ignore - nodeVersion is protected but accessible in projenrc
+            'node-version': project.nodeVersion,
+            'package-manager-cache': false,
+          },
         },
-      },
-      {
-        if: "runner.os == 'Windows'",
-        name: 'Windows performance improvements',
-        run: [
-          'yarn config set cache-folder D:\\a\\_temp\\yarn',
-          'echo "TEMP=D:\\a\\_temp" >> $env:GITHUB_ENV',
-        ].join('\n'),
-      },
-      {
-        name: 'Install Rosetta version',
-        run: `yarn add --dev ${JSII_ROSETTA}@\${{ matrix.rosetta }}`,
-      },
-      {
-        name: 'Install dependencies',
-        run: 'yarn install --check-files',
-      },
-      {
-        name: 'compile+test',
-        run: ['npx projen compile', 'npx projen test --runInBand'].join('\n'),
-      },
-      {
-        name: 'Check Rosetta version',
-        run: `test $(npx ${JSII_ROSETTA} --version) = "\${{ matrix.rosetta }}"`,
-      }],
+        {
+          if: "runner.os == 'Windows'",
+          name: 'Windows performance improvements',
+          run: [
+            'yarn config set cacheFolder D:\\a\\_temp\\yarn',
+            'echo "TEMP=D:\\a\\_temp" >> $env:GITHUB_ENV',
+          ].join('\n'),
+        },
+        {
+          name: 'Install dependencies',
+          run: 'yarn install --no-immutable',
+        },
+        {
+          name: 'Install Rosetta version',
+          run: `yarn add --dev ${JSII_ROSETTA}@\${{ matrix.rosetta }}`,
+        },
+        {
+          name: 'compile+test',
+          run: ['yarn projen compile', 'yarn projen test --runInBand'].join('\n'),
+        },
+        {
+          name: 'Check Rosetta version',
+          run: `test $(yarn exec ${JSII_ROSETTA} --version) = "\${{ matrix.rosetta }}"`,
+        },
+      ],
     });
     project.github?.tryFindWorkflow('build')?.addJob('rosetta-compat', {
       // This is a simple "join target" to simplify branch protection rules.

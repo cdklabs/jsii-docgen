@@ -95,6 +95,16 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
+      - name: Enable Corepack
+        run: |-
+          # The pre-installed Yarn Classic shims on Windows GHA runners shadow
+          # Corepack's yarn proxy. Re-installing corepack globally replaces them.
+          # See: https://github.com/actions/setup-node/issues/531
+          if [[ "$RUNNER_OS" == "Windows" ]]; then
+            npm install -g corepack@0.34.6 --force
+          fi
+          corepack enable
+        shell: bash
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
@@ -103,18 +113,18 @@ jobs:
       - name: Windows performance improvements
         if: runner.os == 'Windows'
         run: |-
-          yarn config set cache-folder D:\a\_temp\yarn
+          yarn config set cacheFolder D:\a\_temp\yarn
           echo "TEMP=D:\a\_temp" >> $env:GITHUB_ENV
+      - name: Install dependencies
+        run: yarn install --no-immutable
       - name: Install Rosetta version
         run: yarn add --dev jsii-rosetta@${{ matrix.rosetta }}
-      - name: Install dependencies
-        run: yarn install --check-files
       - name: compile+test
         run: |-
-          npx projen compile
-          npx projen test --runInBand
+          yarn projen compile
+          yarn projen test --runInBand
       - name: Check Rosetta version
-        run: test $(npx jsii-rosetta --version) = "${{ matrix.rosetta }}"
+        run: test $(yarn exec jsii-rosetta --version) = "${{ matrix.rosetta }}"
     strategy:
       matrix:
         include:
