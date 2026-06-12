@@ -846,17 +846,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jsii/check-node@npm:1.132.0":
-  version: 1.132.0
-  resolution: "@jsii/check-node@npm:1.132.0"
-  dependencies:
-    chalk: "npm:^4.1.2"
-    semver: "npm:^7.8.0"
-  checksum: 10c0/cd02c62a4cdf7054e4811f908e108466f417e32c63332a7c8906d021f28e6890c2b0b21f05f397188479cb0d0f60e3558654cc0d91847f98ce7a9c094314d7e3
-  languageName: node
-  linkType: hard
-
-"@jsii/check-node@npm:1.134.0, @jsii/check-node@npm:^1.132.0":
+"@jsii/check-node@npm:1.134.0":
   version: 1.134.0
   resolution: "@jsii/check-node@npm:1.134.0"
   dependencies:
@@ -866,17 +856,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jsii/spec@npm:1.132.0":
-  version: 1.132.0
-  resolution: "@jsii/spec@npm:1.132.0"
-  checksum: 10c0/c0f62aa25665130e75f73f11493b5452bfb6705319c99f95fdacccca410f403b6b5380d792d0f7e0de4a1c09d47d0642ca9527b0bf03f9bcda261b8c5f2788bf
+"@jsii/check-node@npm:^1.133.0":
+  version: 1.135.0
+  resolution: "@jsii/check-node@npm:1.135.0"
+  dependencies:
+    chalk: "npm:^4.1.2"
+    semver: "npm:^7.8.2"
+  checksum: 10c0/13507f78c9537d8ecf2101e74321a40d41aaab78397f1b5d58688e13c54f6c2d0d8bbce580a6203bbcd458ccacefd88a051ed21f4ffd97c93e8ced53c806acd8
   languageName: node
   linkType: hard
 
-"@jsii/spec@npm:1.134.0, @jsii/spec@npm:^1.132.0, @jsii/spec@npm:^1.134.0":
+"@jsii/spec@npm:1.134.0, @jsii/spec@npm:^1.134.0":
   version: 1.134.0
   resolution: "@jsii/spec@npm:1.134.0"
   checksum: 10c0/925f6d956d34ce15929ac3d42e5ae229179abb1939898afc14b33218956e76f848f218dc17c55fde7f25c666da085af7a525f2edf82466440a2b7ea9ddb9ec91
+  languageName: node
+  linkType: hard
+
+"@jsii/spec@npm:^1.133.0":
+  version: 1.135.0
+  resolution: "@jsii/spec@npm:1.135.0"
+  checksum: 10c0/154d59e728e1731475da68079f19ea3c17219a7746541416c4d0b34cf96c52d0aad156cc0438cc15e10bc88eeedf9ea86bc7723c8c642b2d70e7d13e216c2d9e
   languageName: node
   linkType: hard
 
@@ -4575,16 +4575,16 @@ __metadata:
     jest: "npm:^29"
     jest-junit: "npm:^17"
     jsii-reflect: "npm:^1.134.0"
-    jsii-rosetta: "npm:^1.85.0 || ~5.0.14 || ~5.1.2 || ~5.2.0 || ~5.3.0 || ~5.4.0 || ~5.5.0 || ~5.6.0 || ~5.7.0 || ~5.8.0 || ~5.9.1"
+    jsii-rosetta: "npm:^1.85.0 || ~5.0.14 || ~5.1.2 || ~5.2.0 || ~5.3.0 || ~5.4.0 || ~5.5.0 || ~5.6.0 || ~5.7.0 || ~5.8.0 || ~5.9.1 || ~6.0.0"
     json-stream-stringify: "npm:^3.1.6"
     projen: "npm:^0.99.73"
     semver: "npm:^7.8.3"
     ts-jest: "npm:^29"
     ts-node: "npm:^10.9.2"
-    typescript: "npm:~5.9.3"
+    typescript: "npm:~6.0"
     yargs: "npm:^16.2.0"
   peerDependencies:
-    jsii-rosetta: ^1.85.0 || ~5.0.14 || ~5.1.2 || ~5.2.0 || ~5.3.0 || ~5.4.0 || ~5.5.0 || ~5.6.0 || ~5.7.0 || ~5.8.0 || ~5.9.1
+    jsii-rosetta: ^1.85.0 || ~5.0.14 || ~5.1.2 || ~5.2.0 || ~5.3.0 || ~5.4.0 || ~5.5.0 || ~5.6.0 || ~5.7.0 || ~5.8.0 || ~5.9.1 || ~6.0.0
   bin:
     jsii-docgen: bin/jsii-docgen
   languageName: unknown
@@ -4607,48 +4607,48 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsii-rosetta@npm:^1.85.0 || ~5.0.14 || ~5.1.2 || ~5.2.0 || ~5.3.0 || ~5.4.0 || ~5.5.0 || ~5.6.0 || ~5.7.0 || ~5.8.0 || ~5.9.1":
-  version: 5.9.49
-  resolution: "jsii-rosetta@npm:5.9.49"
+"jsii-rosetta@npm:^1.85.0 || ~5.0.14 || ~5.1.2 || ~5.2.0 || ~5.3.0 || ~5.4.0 || ~5.5.0 || ~5.6.0 || ~5.7.0 || ~5.8.0 || ~5.9.1 || ~6.0.0":
+  version: 6.0.0
+  resolution: "jsii-rosetta@npm:6.0.0"
   dependencies:
-    "@jsii/check-node": "npm:^1.132.0"
-    "@jsii/spec": "npm:^1.132.0"
+    "@jsii/check-node": "npm:^1.133.0"
+    "@jsii/spec": "npm:^1.133.0"
     "@xmldom/xmldom": "npm:^0.9.10"
     chalk: "npm:^4"
     commonmark: "npm:^0.31.2"
     fast-glob: "npm:^3.3.3"
-    jsii: "npm:~5.9.1"
+    jsii: "npm:~6.0.0"
     semver: "npm:^7.8.1"
     semver-intersect: "npm:^1.5.0"
     stream-json: "npm:^1.9.1"
-    typescript: "npm:~5.9"
+    typescript: "npm:~6.0"
     workerpool: "npm:^6.5.1"
     yargs: "npm:^17.7.2"
   bin:
     jsii-rosetta: bin/jsii-rosetta
-  checksum: 10c0/28d57b0358bc580f58d61d56425191e9d307e90cbcfd57b40b9d00eeb5bedc3bf1ae46cad81b3c3925964f85bc2e2493d2d83483ba219c13aa857db31d5a89e0
+  checksum: 10c0/11708a5347a87d95d81cb0dcef9bf68ac7d41f71364bea196270a726a20c0d824acdfb8723283bc057bae107282a923a844e9e769dfc2a392c646e548d0b7ecb
   languageName: node
   linkType: hard
 
-"jsii@npm:~5.9.1":
-  version: 5.9.44
-  resolution: "jsii@npm:5.9.44"
+"jsii@npm:~6.0.0":
+  version: 6.0.2
+  resolution: "jsii@npm:6.0.2"
   dependencies:
-    "@jsii/check-node": "npm:1.132.0"
-    "@jsii/spec": "npm:1.132.0"
+    "@jsii/check-node": "npm:1.134.0"
+    "@jsii/spec": "npm:1.134.0"
     case: "npm:^1.6.3"
     chalk: "npm:^4"
     fast-deep-equal: "npm:^3.1.3"
     log4js: "npm:^6.9.1"
-    semver: "npm:^7.8.1"
+    semver: "npm:^7.8.2"
     semver-intersect: "npm:^1.5.0"
     sort-json: "npm:^2.0.1"
     spdx-license-list: "npm:^6.11.0"
-    typescript: "npm:~5.9"
+    typescript: "npm:~6.0"
     yargs: "npm:^17.7.2"
   bin:
     jsii: bin/jsii
-  checksum: 10c0/35295348d9a65645cd33dad3b1c0e80d9c349cbfe61770b6cd4a1f9d8047ef410ca7d721bbbbb5f8ae77fec7ced6c4f8e26c1c56bbf9f912b633c708e27976e3
+  checksum: 10c0/ffb59f58b836361f4679f3a1b604121d4bf5c51706a0de67c603a0666758def3ed09464d8bffd02e199b4e73e74502a937c3afa34b719892cda53a7605f10ebf
   languageName: node
   linkType: hard
 
@@ -6046,7 +6046,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.3.5":
+"semver@npm:^7.3.5, semver@npm:^7.8.2":
   version: 7.8.4
   resolution: "semver@npm:7.8.4"
   bin:
@@ -6824,23 +6824,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:~5.9, typescript@npm:~5.9.3":
-  version: 5.9.3
-  resolution: "typescript@npm:5.9.3"
+"typescript@npm:~6.0":
+  version: 6.0.3
+  resolution: "typescript@npm:6.0.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/6bd7552ce39f97e711db5aa048f6f9995b53f1c52f7d8667c1abdc1700c68a76a308f579cd309ce6b53646deb4e9a1be7c813a93baaf0a28ccd536a30270e1c5
+  checksum: 10c0/4a25ff5045b984370f48f196b3a0120779b1b343d40b9a68d114ea5e5fff099809b2bb777576991a63a5cd59cf7bffd96ff6fe10afcefbcb8bd6fb96ad4b6606
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A~5.9#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A~5.9.3#optional!builtin<compat/typescript>":
-  version: 5.9.3
-  resolution: "typescript@patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"
+"typescript@patch:typescript@npm%3A~6.0#optional!builtin<compat/typescript>":
+  version: 6.0.3
+  resolution: "typescript@patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=5786d5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/ad09fdf7a756814dce65bc60c1657b40d44451346858eea230e10f2e95a289d9183b6e32e5c11e95acc0ccc214b4f36289dcad4bf1886b0adb84d711d336a430
+  checksum: 10c0/2f25c74e65663c248fa1ade2b8459d9ce5372ff9dad07067310f132966ebec1d93f6c42f0baf77a6b6a7a91460463f708e6887013aaade22111037457c6b25df
   languageName: node
   linkType: hard
 

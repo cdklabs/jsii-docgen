@@ -128,7 +128,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - rosetta: 5.9.1
+          - rosetta: 6.0.0
             os: windows-latest
         rosetta:
           - 1.85.0
@@ -142,6 +142,7 @@ jobs:
           - 5.7.0
           - 5.8.0
           - 5.9.1
+          - 6.0.0
         os:
           - ubuntu-latest
   rosetta-compat:
