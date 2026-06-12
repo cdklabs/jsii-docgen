@@ -302,7 +302,7 @@
       },
       "steps": [
         {
-          "exec": "yarn dlx npm-check-updates@20 --upgrade --target=minor --cooldown=3 --peer --no-deprecated --dep=dev --filter=@types/fs-extra,@types/jest,@types/semver,eslint-import-resolver-typescript,eslint-plugin-import,jest,ts-jest,ts-node,typescript"
+          "exec": "yarn dlx npm-check-updates@20 --upgrade --target=minor --cooldown=3 --peer --no-deprecated --dep=dev --filter=@types/fs-extra,@types/jest,@types/semver,eslint-import-resolver-typescript,eslint-plugin-import,jest,ts-jest,ts-node"
         },
         {
           "exec": "yarn install --no-immutable"
