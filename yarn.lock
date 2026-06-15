@@ -856,7 +856,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jsii/check-node@npm:^1.133.0":
+"@jsii/check-node@npm:1.135.0, @jsii/check-node@npm:^1.133.0":
   version: 1.135.0
   resolution: "@jsii/check-node@npm:1.135.0"
   dependencies:
@@ -866,14 +866,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jsii/spec@npm:1.134.0, @jsii/spec@npm:^1.134.0":
+"@jsii/spec@npm:1.134.0":
   version: 1.134.0
   resolution: "@jsii/spec@npm:1.134.0"
   checksum: 10c0/925f6d956d34ce15929ac3d42e5ae229179abb1939898afc14b33218956e76f848f218dc17c55fde7f25c666da085af7a525f2edf82466440a2b7ea9ddb9ec91
   languageName: node
   linkType: hard
 
-"@jsii/spec@npm:^1.133.0":
+"@jsii/spec@npm:1.135.0, @jsii/spec@npm:^1.133.0, @jsii/spec@npm:^1.135.0":
   version: 1.135.0
   resolution: "@jsii/spec@npm:1.135.0"
   checksum: 10c0/154d59e728e1731475da68079f19ea3c17219a7746541416c4d0b34cf96c52d0aad156cc0438cc15e10bc88eeedf9ea86bc7723c8c642b2d70e7d13e216c2d9e
@@ -4555,7 +4555,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "jsii-docgen@workspace:."
   dependencies:
-    "@jsii/spec": "npm:^1.134.0"
+    "@jsii/spec": "npm:^1.135.0"
     "@stylistic/eslint-plugin": "npm:^2"
     "@types/fs-extra": "npm:^9.0.13"
     "@types/jest": "npm:^29"
@@ -4574,11 +4574,11 @@ __metadata:
     fs-extra: "npm:^10.1.0"
     jest: "npm:^29"
     jest-junit: "npm:^17"
-    jsii-reflect: "npm:^1.134.0"
+    jsii-reflect: "npm:^1.135.0"
     jsii-rosetta: "npm:^1.85.0 || ~5.0.14 || ~5.1.2 || ~5.2.0 || ~5.3.0 || ~5.4.0 || ~5.5.0 || ~5.6.0 || ~5.7.0 || ~5.8.0 || ~5.9.1 || ~6.0.0"
     json-stream-stringify: "npm:^3.1.6"
     projen: "npm:^0.99.73"
-    semver: "npm:^7.8.3"
+    semver: "npm:^7.8.4"
     ts-jest: "npm:^29"
     ts-node: "npm:^10.9.2"
     typescript: "npm:~6.0"
@@ -4590,20 +4590,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"jsii-reflect@npm:^1.134.0":
-  version: 1.134.0
-  resolution: "jsii-reflect@npm:1.134.0"
+"jsii-reflect@npm:^1.135.0":
+  version: 1.135.0
+  resolution: "jsii-reflect@npm:1.135.0"
   dependencies:
-    "@jsii/check-node": "npm:1.134.0"
-    "@jsii/spec": "npm:1.134.0"
+    "@jsii/check-node": "npm:1.135.0"
+    "@jsii/spec": "npm:1.135.0"
     chalk: "npm:^4"
     fs-extra: "npm:^10.1.0"
-    oo-ascii-tree: "npm:^1.134.0"
+    oo-ascii-tree: "npm:^1.135.0"
     yargs: "npm:^17.7.2"
   bin:
     jsii-query: bin/jsii-query
     jsii-tree: bin/jsii-tree
-  checksum: 10c0/7fc05831ceb34407445371c7ac21041d04d6f456ba89e04869da592378a93d2bac4cefaf27c03dd621c887e3dd5a2a31e69ae89e48881b93c10c88166cc32e3e
+  checksum: 10c0/0adedede7f4e94aeb720d68c045bef00f81eeae9a8a184ea8676eb6b8a01d37adbb3acc357f74280af154ee874f3c3efbe84f44db880e866e113083d8ba7e74b
   languageName: node
   linkType: hard
 
@@ -5328,10 +5328,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"oo-ascii-tree@npm:^1.134.0":
-  version: 1.134.0
-  resolution: "oo-ascii-tree@npm:1.134.0"
-  checksum: 10c0/1ba3d027cfe4e8f08cc84232a5feb3e9aedf283865e19331f5f66b3737ebc6c243c70e7f6a34638c8cabec8ab1d93a041668e357c917fd87586ea954611bcf70
+"oo-ascii-tree@npm:^1.135.0":
+  version: 1.135.0
+  resolution: "oo-ascii-tree@npm:1.135.0"
+  checksum: 10c0/092d2b9ae88bd068ba1b03378ff91e102d25b1d23f526674eac40421df6e79dc60a9e3b2f1b5fe26abe1eb8e803cfb994ecef6d5608ac389eb45ebe9b3f10f09
   languageName: node
   linkType: hard
 
@@ -6037,16 +6037,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.0.0, semver@npm:^7.3.4, semver@npm:^7.5.3, semver@npm:^7.5.4, semver@npm:^7.7.2, semver@npm:^7.7.3, semver@npm:^7.8.0, semver@npm:^7.8.1, semver@npm:^7.8.3":
-  version: 7.8.3
-  resolution: "semver@npm:7.8.3"
-  bin:
-    semver: bin/semver.js
-  checksum: 10c0/06d96d5b5c03acd8b0dceeae458e5d4b4ea2b6c16a2b0dfa88a0f19b91d19be1a4a192c7abfa825218c4c36c087d831b928c27d5b79a622e370bd12e95578a99
-  languageName: node
-  linkType: hard
-
-"semver@npm:^7.3.5, semver@npm:^7.8.2":
+"semver@npm:^7.0.0, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.5.3, semver@npm:^7.5.4, semver@npm:^7.7.2, semver@npm:^7.7.3, semver@npm:^7.8.0, semver@npm:^7.8.1, semver@npm:^7.8.2, semver@npm:^7.8.3, semver@npm:^7.8.4":
   version: 7.8.4
   resolution: "semver@npm:7.8.4"
   bin:
