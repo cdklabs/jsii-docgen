@@ -526,7 +526,7 @@ export class MarkdownRenderer {
 
     if (em.docs.deprecated) {
       md.bullet(
-        `${MarkdownDocument.italic('Deprecated:')} ${em.docs.deprecationReason}`,
+        `${MarkdownDocument.italic('Deprecated:')} ${MarkdownDocument.formatLinks(em.docs.deprecationReason ?? '')}`,
       );
       md.lines('');
     }
@@ -565,7 +565,7 @@ export class MarkdownRenderer {
 
     if (prop.docs.deprecated) {
       md.bullet(
-        `${MarkdownDocument.italic('Deprecated:')} ${prop.docs.deprecationReason}`,
+        `${MarkdownDocument.italic('Deprecated:')} ${MarkdownDocument.formatLinks(prop.docs.deprecationReason ?? '')}`,
       );
       md.lines('');
     }
@@ -619,7 +619,7 @@ export class MarkdownRenderer {
 
     if (parameter.docs.deprecated) {
       md.bullet(
-        `${MarkdownDocument.italic('Deprecated:')} ${parameter.docs.deprecationReason}`,
+        `${MarkdownDocument.italic('Deprecated:')} ${MarkdownDocument.formatLinks(parameter.docs.deprecationReason ?? '')}`,
       );
       md.lines('');
     }
@@ -730,7 +730,7 @@ export class MarkdownRenderer {
         ...this.metadata,
       }, this.metadata));
       const description = item.docs?.summary && item.docs?.summary.length > 0
-        ? item.docs?.summary
+        ? MarkdownDocument.formatLinks(item.docs?.summary)
         : MarkdownDocument.italic('No description.');
       tableRows.push([link, description]);
     }
@@ -751,7 +751,7 @@ export class MarkdownRenderer {
       }, this.metadata));
       const type = MarkdownDocument.pre(this.typeFormatter(item.type, this.metadata, this.linkFormatter));
       const description = item.docs?.summary && item.docs?.summary.length > 0
-        ? item.docs?.summary
+        ? MarkdownDocument.formatLinks(item.docs?.summary)
         : MarkdownDocument.italic('No description.');
       tableRows.push([link, type, description]);
     }

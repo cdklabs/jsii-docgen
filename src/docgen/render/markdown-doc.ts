@@ -94,6 +94,75 @@ export class MarkdownDocument {
     return `*${text}*`;
   }
 
+  /**
+   * Convert JSDoc `{@link}` inline tags into markdown.
+   *
+   * Supports every syntax variant described in
+   * https://jsdoc.app/tags-inline-link, including the `{@linkcode}` and
+   * `{@linkplain}` synonyms:
+   *
+   * - `{@link https://example.com}`
+   * - `{@link https://example.com|link text}`
+   * - `{@link https://example.com link text}`
+   * - `[link text]{@link https://example.com}`
+   * - `{@link SomeType}` (namepath reference)
+   *
+   * URLs are rendered as clickable markdown links. Namepath references (that
+   * don't resolve to a URL) are rendered as inline code, since there is no
+   * reliable way to resolve an arbitrary namepath to an anchor at render time.
+   * `{@linkcode}` always renders its text as inline code, while `{@linkplain}`
+   * always renders its text as plain text.
+   */
+  public static formatLinks(text: string): string {
+    // An optional `[prefix text]` may immediately precede the inline tag.
+    const linkRegExp = /(?:\[([^\]]*)\])?\{@(link|linkcode|linkplain)\s+([^}]*)\}/g;
+
+    return text.replace(linkRegExp, (match, prefixText: string | undefined, tag: string, body: string) => {
+      const content = (body ?? '').trim();
+      if (content.length === 0) {
+        // malformed tag (no target), leave it untouched
+        return match;
+      }
+
+      // Split the tag body into a target and optional link text. A pipe takes
+      // precedence as the separator, otherwise the first run of whitespace is
+      // used (e.g. `{@link target|text}` or `{@link target text}`).
+      let target = content;
+      let inlineText: string | undefined;
+      const pipeIdx = content.indexOf('|');
+      if (pipeIdx >= 0) {
+        target = content.substring(0, pipeIdx).trim();
+        inlineText = content.substring(pipeIdx + 1).trim();
+      } else {
+        const wsMatch = /\s/.exec(content);
+        if (wsMatch) {
+          target = content.substring(0, wsMatch.index).trim();
+          inlineText = content.substring(wsMatch.index).trim();
+        }
+      }
+
+      // The `[prefix]{@link ...}` form takes precedence over text given inside
+      // the braces.
+      const prefix = prefixText?.trim();
+      const displayText = prefix && prefix.length > 0
+        ? prefix
+        : (inlineText && inlineText.length > 0 ? inlineText : target);
+
+      const code = tag === 'linkcode';
+      const plain = tag === 'linkplain';
+
+      const isUrl = /^(?:https?|ftp|mailto):/i.test(target) || /^www\./i.test(target);
+      if (isUrl) {
+        const url = /^www\./i.test(target) ? `https://${target}` : target;
+        const label = code ? `\`${displayText}\`` : displayText;
+        return `[${label}](${url})`;
+      }
+
+      // Namepath reference without a resolvable target.
+      return plain ? displayText : `\`${displayText}\``;
+    });
+  }
+
   private readonly _lines = new Array<string>();
   private readonly _sections = new Array<MarkdownDocument>();
 
@@ -110,11 +179,11 @@ export class MarkdownDocument {
    */
   public docs(docs: DocsSchema, language?: Language) {
     if (docs.summary) {
-      this.lines(MarkdownDocument.sanitize(docs.summary));
+      this.lines(MarkdownDocument.formatLinks(MarkdownDocument.sanitize(docs.summary)));
       this.lines('');
     }
     if (docs.remarks) {
-      this.lines(MarkdownDocument.sanitize(docs.remarks));
+      this.lines(MarkdownDocument.formatLinks(MarkdownDocument.sanitize(docs.remarks)));
       this.lines('');
     }
 
