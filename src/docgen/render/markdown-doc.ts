@@ -94,6 +94,60 @@ export class MarkdownDocument {
     return `*${text}*`;
   }
 
+  /**
+   * Convert TSDoc `{@link}` inline tags into markdown.
+   *
+   * Supports the syntax described in https://tsdoc.org/pages/tags/link/:
+   *
+   * - `{@link https://example.com}`
+   * - `{@link https://example.com | link text}`
+   * - `{@link Button}` (declaration reference)
+   * - `{@link Button | the Button class}`
+   *
+   * A target and an optional custom link text are separated by a `|`. URLs are
+   * rendered as clickable markdown links. Declaration references are not turned
+   * into links, since there is no reliable way to resolve a declaration
+   * reference to an anchor at render time; instead a bare reference is rendered
+   * as inline code and a reference with custom text is rendered as that text.
+   */
+  public static formatLinks(text: string): string {
+    const linkRegExp = /\{@link\s+([^}]*)\}/g;
+
+    return text.replace(linkRegExp, (match, body: string) => {
+      const content = (body ?? '').trim();
+      if (content.length === 0) {
+        // malformed tag (no target), leave it untouched
+        return match;
+      }
+
+      // Split the tag body into a target and optional custom link text on the
+      // first `|`, e.g. `{@link target | text}`.
+      let target = content;
+      let customText: string | undefined;
+      const pipeIdx = content.indexOf('|');
+      if (pipeIdx >= 0) {
+        target = content.substring(0, pipeIdx).trim();
+        customText = content.substring(pipeIdx + 1).trim();
+      }
+
+      if (target.length === 0) {
+        // malformed tag (e.g. `{@link | text}`), leave it untouched
+        return match;
+      }
+
+      const hasCustomText = customText !== undefined && customText.length > 0;
+
+      const isUrl = /^(?:https?|ftp|mailto):/i.test(target);
+      if (isUrl) {
+        return `[${hasCustomText ? customText : target}](${target})`;
+      }
+
+      // Declaration reference without a resolvable target: render the custom
+      // text as-is, or the bare reference as inline code.
+      return hasCustomText ? customText! : `\`${target}\``;
+    });
+  }
+
   private readonly _lines = new Array<string>();
   private readonly _sections = new Array<MarkdownDocument>();
 
@@ -110,11 +164,11 @@ export class MarkdownDocument {
    */
   public docs(docs: DocsSchema, language?: Language) {
     if (docs.summary) {
-      this.lines(MarkdownDocument.sanitize(docs.summary));
+      this.lines(MarkdownDocument.formatLinks(MarkdownDocument.sanitize(docs.summary)));
       this.lines('');
     }
     if (docs.remarks) {
-      this.lines(MarkdownDocument.sanitize(docs.remarks));
+      this.lines(MarkdownDocument.formatLinks(MarkdownDocument.sanitize(docs.remarks)));
       this.lines('');
     }
 
