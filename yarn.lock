@@ -856,7 +856,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jsii/check-node@npm:1.136.0, @jsii/check-node@npm:^1.134.0":
+"@jsii/check-node@npm:1.137.0":
+  version: 1.137.0
+  resolution: "@jsii/check-node@npm:1.137.0"
+  dependencies:
+    chalk: "npm:^4.1.2"
+    semver: "npm:^7.8.4"
+  checksum: 10c0/672f1517864c61104ec94c000058e4103027397dd81d1001bb0e4c792133fd8230a038817c9b9042f986d68e6f1cc3765f2fc7a3b9a4b318b82139f41daa4e24
+  languageName: node
+  linkType: hard
+
+"@jsii/check-node@npm:^1.134.0":
   version: 1.136.0
   resolution: "@jsii/check-node@npm:1.136.0"
   dependencies:
@@ -873,10 +883,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jsii/spec@npm:1.136.0, @jsii/spec@npm:^1.134.0, @jsii/spec@npm:^1.136.0":
-  version: 1.136.0
-  resolution: "@jsii/spec@npm:1.136.0"
-  checksum: 10c0/d1fcdb5fa138d8ad24452d00994687cdb7235a29c7bd1243f63366011a4e8cf419c718c702c9c8ef6479d3be13a8c06c8ba20054ed2eada051602cec0d2ef7fd
+"@jsii/spec@npm:1.137.0, @jsii/spec@npm:^1.134.0, @jsii/spec@npm:^1.137.0":
+  version: 1.137.0
+  resolution: "@jsii/spec@npm:1.137.0"
+  checksum: 10c0/69298bdafb06de6b2e7a1af77715c45a7e0d4ea97508df8259f84e5b59ce7dd7d90161773d52c81e11ce532a28c91756e73cb843c645976c5627da96c7f7c710
   languageName: node
   linkType: hard
 
@@ -4638,7 +4648,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "jsii-docgen@workspace:."
   dependencies:
-    "@jsii/spec": "npm:^1.136.0"
+    "@jsii/spec": "npm:^1.137.0"
     "@stylistic/eslint-plugin": "npm:^2"
     "@types/fs-extra": "npm:^9.0.13"
     "@types/jest": "npm:^29"
@@ -4657,9 +4667,9 @@ __metadata:
     fs-extra: "npm:^10.1.0"
     jest: "npm:^29"
     jest-junit: "npm:^17"
-    jsii-reflect: "npm:^1.136.0"
+    jsii-reflect: "npm:^1.137.0"
     jsii-rosetta: "npm:^1.85.0 || ~5.0.14 || ~5.1.2 || ~5.2.0 || ~5.3.0 || ~5.4.0 || ~5.5.0 || ~5.6.0 || ~5.7.0 || ~5.8.0 || ~5.9.1 || ~6.0.0"
-    json-stream-stringify: "npm:^3.1.6"
+    json-stream-stringify: "npm:^3.1.7"
     projen: "npm:^0.99.73"
     semver: "npm:^7.8.5"
     ts-jest: "npm:^29"
@@ -4673,20 +4683,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"jsii-reflect@npm:^1.136.0":
-  version: 1.136.0
-  resolution: "jsii-reflect@npm:1.136.0"
+"jsii-reflect@npm:^1.137.0":
+  version: 1.137.0
+  resolution: "jsii-reflect@npm:1.137.0"
   dependencies:
-    "@jsii/check-node": "npm:1.136.0"
-    "@jsii/spec": "npm:1.136.0"
+    "@jsii/check-node": "npm:1.137.0"
+    "@jsii/spec": "npm:1.137.0"
     chalk: "npm:^4"
     fs-extra: "npm:^10.1.0"
-    oo-ascii-tree: "npm:^1.136.0"
+    oo-ascii-tree: "npm:^1.137.0"
     yargs: "npm:^17.7.2"
   bin:
     jsii-query: bin/jsii-query
     jsii-tree: bin/jsii-tree
-  checksum: 10c0/476f66d5305f9aa2041aee86bec450fcf533ea5f152a4219824cb9a420894fa7eb525729e04b11bbe11c98d482dc6e227709d31dc5201476ae15954c523a81ca
+  checksum: 10c0/aee0d649c8925bcac8e672b58d642326464c637b96748a58735a994e27a4bb2f177b380f99064e44ab9d3753ca5e460957b2e8fc751fb6af32ef817eb4949277
   languageName: node
   linkType: hard
 
@@ -4777,10 +4787,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json-stream-stringify@npm:^3.1.6":
-  version: 3.1.6
-  resolution: "json-stream-stringify@npm:3.1.6"
-  checksum: 10c0/cb45e65143f4634ebb2dc0732410a942eaf86f88a7938b2f6397f4c6b96a7ba936e74d4d17db48c9221f669153996362b2ff50fe8c7fed8a7548646f98ae1f58
+"json-stream-stringify@npm:^3.1.7":
+  version: 3.1.7
+  resolution: "json-stream-stringify@npm:3.1.7"
+  checksum: 10c0/53d01e897e06b62e799b13eb6b2dc52e14fd77a99d2d079d2ae012acc3c9893062b563e5aa1782f3bbaf9bb0f1ef60b9de20e64b905170a1c47e81513bff1ac9
   languageName: node
   linkType: hard
 
@@ -5411,10 +5421,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"oo-ascii-tree@npm:^1.136.0":
-  version: 1.136.0
-  resolution: "oo-ascii-tree@npm:1.136.0"
-  checksum: 10c0/6bec26ee2f9672837cc257784fc0df1ea09d3c5ba9777f60dab19fc05a9244bee77b8d42d674a8adb17883f650fac197152cec5684b632dcb6c7ff8c6bad0a22
+"oo-ascii-tree@npm:^1.137.0":
+  version: 1.137.0
+  resolution: "oo-ascii-tree@npm:1.137.0"
+  checksum: 10c0/f10138d5fafc82a76424e3ae2a0b14ef505907685ddb898fd695f9f4b10f0e53b649ba060f67f0ad8f078675857946345b0dbd3f31aef56efc909c0088217174
   languageName: node
   linkType: hard
 
