@@ -37,6 +37,17 @@ export class RosettaPeerDependency extends Component {
     project.addDevDeps(constraint);
     project.addPeerDeps(constraint);
 
+    // jsii <= 5.5 depends on `downlevel-dts`, which in turn declares an unpinned
+    // `typescript@next` dependency. Today that dist-tag points at TypeScript 7,
+    // whose npm package is only a launcher for platform native binaries and has
+    // no `lib/_tsc.js`. Yarn Berry runs every `typescript` resolution through its
+    // builtin `compat/typescript` patch, which expects the classic layout, so the
+    // install of any older Rosetta version line fails during the fetch step with
+    // `ENOENT: ... lstat '/node_modules/typescript/lib/_tsc.js'`.
+    // We never invoke downlevel-dts, so pin it to the TypeScript version this
+    // project already uses to keep the resolution deduped and stable.
+    project.package.addPackageResolutions('downlevel-dts/typescript@~6.0');
+
     project.github?.tryFindWorkflow('build')?.addJob('rosetta-matrix', {
       runsOn: ['${{ matrix.os }}'],
       permissions: {},

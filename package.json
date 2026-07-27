@@ -69,6 +69,9 @@
     "semver": "^7.8.5",
     "yargs": "^16.2.2"
   },
+  "resolutions": {
+    "downlevel-dts/typescript": "~6.0"
+  },
   "devEngines": {
     "packageManager": {
       "name": "yarn",
