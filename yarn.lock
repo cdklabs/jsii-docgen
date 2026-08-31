@@ -856,10 +856,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jsii/spec@npm:1.139.0, @jsii/spec@npm:^1.139.0":
+"@jsii/check-node@npm:1.140.0":
+  version: 1.140.0
+  resolution: "@jsii/check-node@npm:1.140.0"
+  dependencies:
+    chalk: "npm:^4.1.2"
+    semver: "npm:^7.8.5"
+  checksum: 10c0/f08e039d79f5f775b8303c546c1a96bb06e16c97f1f1bac8be5f08fe288bcd9d4a7546b02571b06825cbecf5fe5443d5b09de7f6e6ee0d7853cbaa24676755df
+  languageName: node
+  linkType: hard
+
+"@jsii/spec@npm:1.139.0":
   version: 1.139.0
   resolution: "@jsii/spec@npm:1.139.0"
   checksum: 10c0/6b8ac762a3f0220381bfab51f170baa6e611393f18d4482da09538ee589b11d2b145da107ea3b265a7cc66bd265b156fb2510acd0e74601e6ef431b68786d4a1
+  languageName: node
+  linkType: hard
+
+"@jsii/spec@npm:1.140.0, @jsii/spec@npm:^1.139.0, @jsii/spec@npm:^1.140.0":
+  version: 1.140.0
+  resolution: "@jsii/spec@npm:1.140.0"
+  checksum: 10c0/096180c3fd86a35bdd48fb8fb26dbd123439f25a4287652a14244903689b83df90ef8f1aa55ecbcaf7ce5025f5ee4249c5f0b7bd2ecaaa52924163c24c8db508
   languageName: node
   linkType: hard
 
@@ -4622,7 +4639,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "jsii-docgen@workspace:."
   dependencies:
-    "@jsii/spec": "npm:^1.139.0"
+    "@jsii/spec": "npm:^1.140.0"
     "@stylistic/eslint-plugin": "npm:^2"
     "@types/fs-extra": "npm:^9.0.13"
     "@types/jest": "npm:^29"
@@ -4641,7 +4658,7 @@ __metadata:
     fs-extra: "npm:^10.1.0"
     jest: "npm:^29"
     jest-junit: "npm:^17"
-    jsii-reflect: "npm:^1.139.0"
+    jsii-reflect: "npm:^1.140.0"
     jsii-rosetta: "npm:^1.85.0 || ~5.0.14 || ~5.1.2 || ~5.2.0 || ~5.3.0 || ~5.4.0 || ~5.5.0 || ~5.6.0 || ~5.7.0 || ~5.8.0 || ~5.9.1 || ~6.0.0"
     json-stream-stringify: "npm:^3.1.7"
     projen: "npm:^0.101.20"
@@ -4657,20 +4674,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"jsii-reflect@npm:^1.139.0":
-  version: 1.139.0
-  resolution: "jsii-reflect@npm:1.139.0"
+"jsii-reflect@npm:^1.140.0":
+  version: 1.140.0
+  resolution: "jsii-reflect@npm:1.140.0"
   dependencies:
-    "@jsii/check-node": "npm:1.139.0"
-    "@jsii/spec": "npm:1.139.0"
+    "@jsii/check-node": "npm:1.140.0"
+    "@jsii/spec": "npm:1.140.0"
     chalk: "npm:^4"
     fs-extra: "npm:^10.1.0"
-    oo-ascii-tree: "npm:^1.139.0"
+    oo-ascii-tree: "npm:^1.140.0"
     yargs: "npm:^17.7.3"
   bin:
     jsii-query: bin/jsii-query
     jsii-tree: bin/jsii-tree
-  checksum: 10c0/cd82ab4bb73b191153fc504843ea8db452c064c6371b21141049ad0231ed5c4fc20d6fba4e3e59459ef21ffdf4a718d7156a0293a873ed3a8f2f96faa62405ac
+  checksum: 10c0/390c47e45ed75e0ce040837c2299f6b93020b380ba625dfe11bffbb30a1dd9e55e831f11fafa3101c8688b143edee1914daabbfcfb177870e9139aebb46a2388
   languageName: node
   linkType: hard
 
@@ -5379,10 +5396,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"oo-ascii-tree@npm:^1.139.0":
-  version: 1.139.0
-  resolution: "oo-ascii-tree@npm:1.139.0"
-  checksum: 10c0/b395ee7bb2ccd329fed0fa1fe9a13392fe0b72dc26eb5724b09b03688946b80cb1ca53ae9019134276afaae7c0173d47cc04bc648322cded861e59af19105ebb
+"oo-ascii-tree@npm:^1.140.0":
+  version: 1.140.0
+  resolution: "oo-ascii-tree@npm:1.140.0"
+  checksum: 10c0/e534117c15b0c0c4c610d6fd318de3fb702ab72a849b5e992d2190c7fa460fe831fae52321c9cc918fde2296f4f2b2332e2bc9d355143087d37169c3e0883601
   languageName: node
   linkType: hard
 
