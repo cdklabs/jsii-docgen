@@ -249,7 +249,7 @@
       "description": "Run tests",
       "steps": [
         {
-          "exec": "jest --passWithNoTests --updateSnapshot",
+          "exec": "NODE_OPTIONS=\"$NODE_OPTIONS --experimental-vm-modules\" jest --passWithNoTests --updateSnapshot",
           "receiveArgs": true
         },
         {

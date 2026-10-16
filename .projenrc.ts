@@ -71,6 +71,16 @@ const project = new CdklabsTypeScriptProject({
 // Suppress upgrade prompts, in particular from test runs.
 project.tasks.addEnvironment('JSII_SUPPRESS_UPGRADE_PROMPT', 'true');
 
+// jsii-rosetta 5.9.67+ and 6.0.16+ load the ESM-only `stream-json` v3 with a dynamic
+// `import()`, which jest only supports with --experimental-vm-modules. Without it,
+// reading a tablet fails and rosetta recompiles every snippet instead.
+const testTask = project.tasks.tryFind('test')!;
+const jestStep = testTask.steps[0];
+testTask.updateStep(0, {
+  ...jestStep,
+  exec: `NODE_OPTIONS="$NODE_OPTIONS --experimental-vm-modules" ${jestStep.exec}`,
+});
+
 // Add the new version line here
 new RosettaPeerDependency(project, {
   supportedVersions: {
