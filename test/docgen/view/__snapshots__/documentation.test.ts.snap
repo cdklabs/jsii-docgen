@@ -7,7 +7,7 @@ exports[`csharp for package 1`] = `
 
 ### CfnPublicRepository <a name="CfnPublicRepository" id="@aws-cdk/aws-ecr.CfnPublicRepository"></a>
 
-- *Implements:* Amazon.CDK.IInspectable
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IInspectable
 
 A CloudFormation \`AWS::ECR::PublicRepository\`.
 
@@ -605,7 +605,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRegistryPolicy <a name="CfnRegistryPolicy" id="@aws-cdk/aws-ecr.CfnRegistryPolicy"></a>
 
-- *Implements:* Amazon.CDK.IInspectable
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IInspectable
 
 A CloudFormation \`AWS::ECR::RegistryPolicy\`.
 
@@ -1158,7 +1158,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnReplicationConfiguration <a name="CfnReplicationConfiguration" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration"></a>
 
-- *Implements:* Amazon.CDK.IInspectable
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IInspectable
 
 A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 
@@ -1711,7 +1711,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRepository <a name="CfnRepository" id="@aws-cdk/aws-ecr.CfnRepository"></a>
 
-- *Implements:* Amazon.CDK.IInspectable
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IInspectable
 
 A CloudFormation \`AWS::ECR::Repository\`.
 
@@ -2365,6 +2365,8 @@ The CloudFormation resource type name for this resource class.
 
 ### Repository <a name="Repository" id="@aws-cdk/aws-ecr.Repository"></a>
 
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IResource, <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
+
 Define an ECR repository.
 
 #### Initializers <a name="Initializers" id="@aws-cdk/aws-ecr.Repository.Initializer"></a>
@@ -2917,7 +2919,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### RepositoryBase <a name="RepositoryBase" id="@aws-cdk/aws-ecr.RepositoryBase"></a>
 
-- *Implements:* <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IResource, <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
 
 Base class for ECR repository.
 
@@ -4759,7 +4761,7 @@ exports[`csharp snapshot - root module 1`] = `
 
 ### CfnPublicRepository <a name="CfnPublicRepository" id="@aws-cdk/aws-ecr.CfnPublicRepository"></a>
 
-- *Implements:* Amazon.CDK.IInspectable
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IInspectable
 
 A CloudFormation \`AWS::ECR::PublicRepository\`.
 
@@ -5357,7 +5359,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRegistryPolicy <a name="CfnRegistryPolicy" id="@aws-cdk/aws-ecr.CfnRegistryPolicy"></a>
 
-- *Implements:* Amazon.CDK.IInspectable
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IInspectable
 
 A CloudFormation \`AWS::ECR::RegistryPolicy\`.
 
@@ -5910,7 +5912,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnReplicationConfiguration <a name="CfnReplicationConfiguration" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration"></a>
 
-- *Implements:* Amazon.CDK.IInspectable
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IInspectable
 
 A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 
@@ -6463,7 +6465,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRepository <a name="CfnRepository" id="@aws-cdk/aws-ecr.CfnRepository"></a>
 
-- *Implements:* Amazon.CDK.IInspectable
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IInspectable
 
 A CloudFormation \`AWS::ECR::Repository\`.
 
@@ -7117,6 +7119,8 @@ The CloudFormation resource type name for this resource class.
 
 ### Repository <a name="Repository" id="@aws-cdk/aws-ecr.Repository"></a>
 
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IResource, <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
+
 Define an ECR repository.
 
 #### Initializers <a name="Initializers" id="@aws-cdk/aws-ecr.Repository.Initializer"></a>
@@ -7669,7 +7673,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### RepositoryBase <a name="RepositoryBase" id="@aws-cdk/aws-ecr.RepositoryBase"></a>
 
-- *Implements:* <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IResource, <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
 
 Base class for ECR repository.
 
@@ -9511,6 +9515,8 @@ exports[`csharp snapshot - submodules 1`] = `
 
 ### AwsAuth <a name="AwsAuth" id="aws-cdk-lib.aws_eks.AwsAuth"></a>
 
+- *Implements:* Constructs.IConstruct, Constructs.IDependable
+
 Manages mapping between IAM users and roles to Kubernetes RBAC configuration.
 
 > [https://docs.aws.amazon.com/en_us/eks/latest/userguide/add-user-role.html](https://docs.aws.amazon.com/en_us/eks/latest/userguide/add-user-role.html)
@@ -9706,7 +9712,7 @@ The tree node.
 
 ### CfnAddon <a name="CfnAddon" id="aws-cdk-lib.aws_eks.CfnAddon"></a>
 
-- *Implements:* Amazon.CDK.IInspectable
+- *Implements:* Constructs.IConstruct, Constructs.IDependable, Amazon.CDK.IInspectable
 
 A CloudFormation \`AWS::EKS::Addon\`.
 
@@ -10340,7 +10346,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnCluster <a name="CfnCluster" id="aws-cdk-lib.aws_eks.CfnCluster"></a>
 
-- *Implements:* Amazon.CDK.IInspectable
+- *Implements:* Constructs.IConstruct, Constructs.IDependable, Amazon.CDK.IInspectable
 
 A CloudFormation \`AWS::EKS::Cluster\`.
 
@@ -11029,7 +11035,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnFargateProfile <a name="CfnFargateProfile" id="aws-cdk-lib.aws_eks.CfnFargateProfile"></a>
 
-- *Implements:* Amazon.CDK.IInspectable
+- *Implements:* Constructs.IConstruct, Constructs.IDependable, Amazon.CDK.IInspectable
 
 A CloudFormation \`AWS::EKS::FargateProfile\`.
 
@@ -11663,7 +11669,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnNodegroup <a name="CfnNodegroup" id="aws-cdk-lib.aws_eks.CfnNodegroup"></a>
 
-- *Implements:* Amazon.CDK.IInspectable
+- *Implements:* Constructs.IConstruct, Constructs.IDependable, Amazon.CDK.IInspectable
 
 A CloudFormation \`AWS::EKS::Nodegroup\`.
 
@@ -12484,7 +12490,7 @@ The CloudFormation resource type name for this resource class.
 
 ### Cluster <a name="Cluster" id="aws-cdk-lib.aws_eks.Cluster"></a>
 
-- *Implements:* <a href="#aws-cdk-lib.aws_eks.ICluster">ICluster</a>
+- *Implements:* Constructs.IConstruct, Constructs.IDependable, Amazon.CDK.IResource, <a href="#aws-cdk-lib.aws_eks.ICluster">ICluster</a>, Amazon.CDK.aws_ec2.IConnectable
 
 A Cluster represents a managed Kubernetes Service (EKS).
 
@@ -13311,6 +13317,8 @@ A security group to use for \`kubectl\` execution.
 
 ### FargateCluster <a name="FargateCluster" id="aws-cdk-lib.aws_eks.FargateCluster"></a>
 
+- *Implements:* Constructs.IConstruct, Constructs.IDependable, Amazon.CDK.IResource, <a href="#aws-cdk-lib.aws_eks.ICluster">ICluster</a>, Amazon.CDK.aws_ec2.IConnectable
+
 Defines an EKS cluster that runs entirely on AWS Fargate.
 
 The cluster is created with a default Fargate Profile that matches the
@@ -14131,7 +14139,7 @@ A security group to use for \`kubectl\` execution.
 
 ### FargateProfile <a name="FargateProfile" id="aws-cdk-lib.aws_eks.FargateProfile"></a>
 
-- *Implements:* Amazon.CDK.ITaggable
+- *Implements:* Constructs.IConstruct, Constructs.IDependable, Amazon.CDK.ITaggable
 
 Fargate profiles allows an administrator to declare which pods run on Fargate.
 
@@ -14307,6 +14315,8 @@ Resource tags.
 
 ### HelmChart <a name="HelmChart" id="aws-cdk-lib.aws_eks.HelmChart"></a>
 
+- *Implements:* Constructs.IConstruct, Constructs.IDependable
+
 Represents a helm chart within the Kubernetes system.
 
 Applies/deletes the resources using \`kubectl\` in sync with the resource.
@@ -14428,6 +14438,8 @@ The CloudFormation resource type.
 ---
 
 ### KubernetesManifest <a name="KubernetesManifest" id="aws-cdk-lib.aws_eks.KubernetesManifest"></a>
+
+- *Implements:* Constructs.IConstruct, Constructs.IDependable
 
 Represents a manifest within the Kubernetes system.
 
@@ -14553,6 +14565,8 @@ The CloudFormation reosurce type.
 ---
 
 ### KubernetesObjectValue <a name="KubernetesObjectValue" id="aws-cdk-lib.aws_eks.KubernetesObjectValue"></a>
+
+- *Implements:* Constructs.IConstruct, Constructs.IDependable
 
 Represents a value of a specific object deployed in the cluster.
 
@@ -14689,6 +14703,8 @@ The CloudFormation reosurce type.
 
 ### KubernetesPatch <a name="KubernetesPatch" id="aws-cdk-lib.aws_eks.KubernetesPatch"></a>
 
+- *Implements:* Constructs.IConstruct, Constructs.IDependable
+
 A CloudFormation resource which applies/restores a JSON patch into a Kubernetes resource.
 
 > [https://kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/](https://kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/)
@@ -14792,7 +14808,7 @@ The tree node.
 
 ### Nodegroup <a name="Nodegroup" id="aws-cdk-lib.aws_eks.Nodegroup"></a>
 
-- *Implements:* <a href="#aws-cdk-lib.aws_eks.INodegroup">INodegroup</a>
+- *Implements:* Constructs.IConstruct, Constructs.IDependable, Amazon.CDK.IResource, <a href="#aws-cdk-lib.aws_eks.INodegroup">INodegroup</a>
 
 The Nodegroup resource class.
 
@@ -15049,6 +15065,8 @@ IAM role of the instance profile for the nodegroup.
 
 ### OpenIdConnectProvider <a name="OpenIdConnectProvider" id="aws-cdk-lib.aws_eks.OpenIdConnectProvider"></a>
 
+- *Implements:* Constructs.IConstruct, Constructs.IDependable, Amazon.CDK.IResource, Amazon.CDK.aws_iam.IOpenIdConnectProvider
+
 IAM OIDC identity providers are entities in IAM that describe an external identity provider (IdP) service that supports the OpenID Connect (OIDC) standard, such as Google or Salesforce.
 
 You use an IAM OIDC identity provider
@@ -15299,7 +15317,7 @@ The issuer for OIDC Provider.
 
 ### ServiceAccount <a name="ServiceAccount" id="aws-cdk-lib.aws_eks.ServiceAccount"></a>
 
-- *Implements:* Amazon.CDK.aws_iam.IPrincipal
+- *Implements:* Constructs.IConstruct, Constructs.IDependable, Amazon.CDK.aws_iam.IPrincipal, Amazon.CDK.aws_iam.IGrantable
 
 Service Account.
 
@@ -22070,6 +22088,8 @@ exports[`csharp snapshot - submodules 2 1`] = `
 
 ### AwsAuth <a name="AwsAuth" id="monocdk.aws_eks.AwsAuth"></a>
 
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable
+
 Manages mapping between IAM users and roles to Kubernetes RBAC configuration.
 
 > [https://docs.aws.amazon.com/en_us/eks/latest/userguide/add-user-role.html](https://docs.aws.amazon.com/en_us/eks/latest/userguide/add-user-role.html)
@@ -22263,7 +22283,7 @@ The construct tree node associated with this construct.
 
 ### CfnAddon <a name="CfnAddon" id="monocdk.aws_eks.CfnAddon"></a>
 
-- *Implements:* Amazon.CDK.IInspectable
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IInspectable
 
 A CloudFormation \`AWS::EKS::Addon\`.
 
@@ -22895,7 +22915,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnCluster <a name="CfnCluster" id="monocdk.aws_eks.CfnCluster"></a>
 
-- *Implements:* Amazon.CDK.IInspectable
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IInspectable
 
 A CloudFormation \`AWS::EKS::Cluster\`.
 
@@ -23582,7 +23602,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnFargateProfile <a name="CfnFargateProfile" id="monocdk.aws_eks.CfnFargateProfile"></a>
 
-- *Implements:* Amazon.CDK.IInspectable
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IInspectable
 
 A CloudFormation \`AWS::EKS::FargateProfile\`.
 
@@ -24214,7 +24234,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnNodegroup <a name="CfnNodegroup" id="monocdk.aws_eks.CfnNodegroup"></a>
 
-- *Implements:* Amazon.CDK.IInspectable
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IInspectable
 
 A CloudFormation \`AWS::EKS::Nodegroup\`.
 
@@ -25033,7 +25053,7 @@ The CloudFormation resource type name for this resource class.
 
 ### Cluster <a name="Cluster" id="monocdk.aws_eks.Cluster"></a>
 
-- *Implements:* <a href="#monocdk.aws_eks.ICluster">ICluster</a>
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IResource, <a href="#monocdk.aws_eks.ICluster">ICluster</a>, Amazon.CDK.aws_ec2.IConnectable
 
 A Cluster represents a managed Kubernetes Service (EKS).
 
@@ -25858,6 +25878,8 @@ A security group to use for \`kubectl\` execution.
 
 ### FargateCluster <a name="FargateCluster" id="monocdk.aws_eks.FargateCluster"></a>
 
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IResource, <a href="#monocdk.aws_eks.ICluster">ICluster</a>, Amazon.CDK.aws_ec2.IConnectable
+
 Defines an EKS cluster that runs entirely on AWS Fargate.
 
 The cluster is created with a default Fargate Profile that matches the
@@ -26676,7 +26698,7 @@ A security group to use for \`kubectl\` execution.
 
 ### FargateProfile <a name="FargateProfile" id="monocdk.aws_eks.FargateProfile"></a>
 
-- *Implements:* Amazon.CDK.ITaggable
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.ITaggable
 
 Fargate profiles allows an administrator to declare which pods run on Fargate.
 
@@ -26850,6 +26872,8 @@ Resource tags.
 
 ### HelmChart <a name="HelmChart" id="monocdk.aws_eks.HelmChart"></a>
 
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable
+
 Represents a helm chart within the Kubernetes system.
 
 Applies/deletes the resources using \`kubectl\` in sync with the resource.
@@ -26969,6 +26993,8 @@ The CloudFormation resource type.
 ---
 
 ### KubernetesManifest <a name="KubernetesManifest" id="monocdk.aws_eks.KubernetesManifest"></a>
+
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable
 
 Represents a manifest within the Kubernetes system.
 
@@ -27092,6 +27118,8 @@ The CloudFormation reosurce type.
 ---
 
 ### KubernetesObjectValue <a name="KubernetesObjectValue" id="monocdk.aws_eks.KubernetesObjectValue"></a>
+
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable
 
 Represents a value of a specific object deployed in the cluster.
 
@@ -27226,6 +27254,8 @@ The CloudFormation reosurce type.
 
 ### KubernetesPatch <a name="KubernetesPatch" id="monocdk.aws_eks.KubernetesPatch"></a>
 
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable
+
 A CloudFormation resource which applies/restores a JSON patch into a Kubernetes resource.
 
 > [https://kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/](https://kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/)
@@ -27327,7 +27357,7 @@ The construct tree node associated with this construct.
 
 ### Nodegroup <a name="Nodegroup" id="monocdk.aws_eks.Nodegroup"></a>
 
-- *Implements:* <a href="#monocdk.aws_eks.INodegroup">INodegroup</a>
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IResource, <a href="#monocdk.aws_eks.INodegroup">INodegroup</a>
 
 The Nodegroup resource class.
 
@@ -27582,6 +27612,8 @@ IAM role of the instance profile for the nodegroup.
 
 ### OpenIdConnectProvider <a name="OpenIdConnectProvider" id="monocdk.aws_eks.OpenIdConnectProvider"></a>
 
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IResource, Amazon.CDK.aws_iam.IOpenIdConnectProvider
+
 IAM OIDC identity providers are entities in IAM that describe an external identity provider (IdP) service that supports the OpenID Connect (OIDC) standard, such as Google or Salesforce.
 
 You use an IAM OIDC identity provider
@@ -27830,7 +27862,7 @@ The issuer for OIDC Provider.
 
 ### ServiceAccount <a name="ServiceAccount" id="monocdk.aws_eks.ServiceAccount"></a>
 
-- *Implements:* Amazon.CDK.aws_iam.IPrincipal
+- *Implements:* Constructs.IConstruct, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.aws_iam.IPrincipal, Amazon.CDK.aws_iam.IGrantable
 
 Service Account.
 
@@ -35648,7 +35680,7 @@ exports[`go for package 1`] = `
 
 ### Construct <a name="Construct" id="constructs.Construct"></a>
 
-- *Implements:* <a href="#constructs.IConstruct">IConstruct</a>
+- *Implements:* <a href="#constructs.IConstruct">IConstruct</a>, <a href="#constructs.IDependable">IDependable</a>
 
 Represents the building block of the construct graph.
 
@@ -36662,7 +36694,7 @@ exports[`go snapshot - root module 1`] = `
 
 ### Construct <a name="Construct" id="constructs.Construct"></a>
 
-- *Implements:* <a href="#constructs.IConstruct">IConstruct</a>
+- *Implements:* <a href="#constructs.IConstruct">IConstruct</a>, <a href="#constructs.IDependable">IDependable</a>
 
 Represents the building block of the construct graph.
 
@@ -37676,6 +37708,8 @@ exports[`go snapshot - submodules 1`] = `
 
 ### AwsAuth <a name="AwsAuth" id="aws-cdk-lib.aws_eks.AwsAuth"></a>
 
+- *Implements:* github.com/aws/constructs-go/constructs/v10.IConstruct, github.com/aws/constructs-go/constructs/v10.IDependable
+
 Manages mapping between IAM users and roles to Kubernetes RBAC configuration.
 
 > [https://docs.aws.amazon.com/en_us/eks/latest/userguide/add-user-role.html](https://docs.aws.amazon.com/en_us/eks/latest/userguide/add-user-role.html)
@@ -37871,7 +37905,7 @@ The tree node.
 
 ### CfnAddon <a name="CfnAddon" id="aws-cdk-lib.aws_eks.CfnAddon"></a>
 
-- *Implements:* github.com/aws/aws-cdk-go/awscdk/v2.IInspectable
+- *Implements:* github.com/aws/constructs-go/constructs/v10.IConstruct, github.com/aws/constructs-go/constructs/v10.IDependable, github.com/aws/aws-cdk-go/awscdk/v2.IInspectable
 
 A CloudFormation \`AWS::EKS::Addon\`.
 
@@ -38507,7 +38541,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnCluster <a name="CfnCluster" id="aws-cdk-lib.aws_eks.CfnCluster"></a>
 
-- *Implements:* github.com/aws/aws-cdk-go/awscdk/v2.IInspectable
+- *Implements:* github.com/aws/constructs-go/constructs/v10.IConstruct, github.com/aws/constructs-go/constructs/v10.IDependable, github.com/aws/aws-cdk-go/awscdk/v2.IInspectable
 
 A CloudFormation \`AWS::EKS::Cluster\`.
 
@@ -39198,7 +39232,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnFargateProfile <a name="CfnFargateProfile" id="aws-cdk-lib.aws_eks.CfnFargateProfile"></a>
 
-- *Implements:* github.com/aws/aws-cdk-go/awscdk/v2.IInspectable
+- *Implements:* github.com/aws/constructs-go/constructs/v10.IConstruct, github.com/aws/constructs-go/constructs/v10.IDependable, github.com/aws/aws-cdk-go/awscdk/v2.IInspectable
 
 A CloudFormation \`AWS::EKS::FargateProfile\`.
 
@@ -39834,7 +39868,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnNodegroup <a name="CfnNodegroup" id="aws-cdk-lib.aws_eks.CfnNodegroup"></a>
 
-- *Implements:* github.com/aws/aws-cdk-go/awscdk/v2.IInspectable
+- *Implements:* github.com/aws/constructs-go/constructs/v10.IConstruct, github.com/aws/constructs-go/constructs/v10.IDependable, github.com/aws/aws-cdk-go/awscdk/v2.IInspectable
 
 A CloudFormation \`AWS::EKS::Nodegroup\`.
 
@@ -40657,7 +40691,7 @@ The CloudFormation resource type name for this resource class.
 
 ### Cluster <a name="Cluster" id="aws-cdk-lib.aws_eks.Cluster"></a>
 
-- *Implements:* <a href="#aws-cdk-lib.aws_eks.ICluster">ICluster</a>
+- *Implements:* github.com/aws/constructs-go/constructs/v10.IConstruct, github.com/aws/constructs-go/constructs/v10.IDependable, github.com/aws/aws-cdk-go/awscdk/v2.IResource, <a href="#aws-cdk-lib.aws_eks.ICluster">ICluster</a>, github.com/aws/aws-cdk-go/awscdk/v2.aws_ec2.IConnectable
 
 A Cluster represents a managed Kubernetes Service (EKS).
 
@@ -41484,6 +41518,8 @@ A security group to use for \`kubectl\` execution.
 
 ### FargateCluster <a name="FargateCluster" id="aws-cdk-lib.aws_eks.FargateCluster"></a>
 
+- *Implements:* github.com/aws/constructs-go/constructs/v10.IConstruct, github.com/aws/constructs-go/constructs/v10.IDependable, github.com/aws/aws-cdk-go/awscdk/v2.IResource, <a href="#aws-cdk-lib.aws_eks.ICluster">ICluster</a>, github.com/aws/aws-cdk-go/awscdk/v2.aws_ec2.IConnectable
+
 Defines an EKS cluster that runs entirely on AWS Fargate.
 
 The cluster is created with a default Fargate Profile that matches the
@@ -42304,7 +42340,7 @@ A security group to use for \`kubectl\` execution.
 
 ### FargateProfile <a name="FargateProfile" id="aws-cdk-lib.aws_eks.FargateProfile"></a>
 
-- *Implements:* github.com/aws/aws-cdk-go/awscdk/v2.ITaggable
+- *Implements:* github.com/aws/constructs-go/constructs/v10.IConstruct, github.com/aws/constructs-go/constructs/v10.IDependable, github.com/aws/aws-cdk-go/awscdk/v2.ITaggable
 
 Fargate profiles allows an administrator to declare which pods run on Fargate.
 
@@ -42480,6 +42516,8 @@ Resource tags.
 
 ### HelmChart <a name="HelmChart" id="aws-cdk-lib.aws_eks.HelmChart"></a>
 
+- *Implements:* github.com/aws/constructs-go/constructs/v10.IConstruct, github.com/aws/constructs-go/constructs/v10.IDependable
+
 Represents a helm chart within the Kubernetes system.
 
 Applies/deletes the resources using \`kubectl\` in sync with the resource.
@@ -42601,6 +42639,8 @@ The CloudFormation resource type.
 ---
 
 ### KubernetesManifest <a name="KubernetesManifest" id="aws-cdk-lib.aws_eks.KubernetesManifest"></a>
+
+- *Implements:* github.com/aws/constructs-go/constructs/v10.IConstruct, github.com/aws/constructs-go/constructs/v10.IDependable
 
 Represents a manifest within the Kubernetes system.
 
@@ -42726,6 +42766,8 @@ The CloudFormation reosurce type.
 ---
 
 ### KubernetesObjectValue <a name="KubernetesObjectValue" id="aws-cdk-lib.aws_eks.KubernetesObjectValue"></a>
+
+- *Implements:* github.com/aws/constructs-go/constructs/v10.IConstruct, github.com/aws/constructs-go/constructs/v10.IDependable
 
 Represents a value of a specific object deployed in the cluster.
 
@@ -42862,6 +42904,8 @@ The CloudFormation reosurce type.
 
 ### KubernetesPatch <a name="KubernetesPatch" id="aws-cdk-lib.aws_eks.KubernetesPatch"></a>
 
+- *Implements:* github.com/aws/constructs-go/constructs/v10.IConstruct, github.com/aws/constructs-go/constructs/v10.IDependable
+
 A CloudFormation resource which applies/restores a JSON patch into a Kubernetes resource.
 
 > [https://kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/](https://kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/)
@@ -42965,7 +43009,7 @@ The tree node.
 
 ### Nodegroup <a name="Nodegroup" id="aws-cdk-lib.aws_eks.Nodegroup"></a>
 
-- *Implements:* <a href="#aws-cdk-lib.aws_eks.INodegroup">INodegroup</a>
+- *Implements:* github.com/aws/constructs-go/constructs/v10.IConstruct, github.com/aws/constructs-go/constructs/v10.IDependable, github.com/aws/aws-cdk-go/awscdk/v2.IResource, <a href="#aws-cdk-lib.aws_eks.INodegroup">INodegroup</a>
 
 The Nodegroup resource class.
 
@@ -43222,6 +43266,8 @@ IAM role of the instance profile for the nodegroup.
 
 ### OpenIdConnectProvider <a name="OpenIdConnectProvider" id="aws-cdk-lib.aws_eks.OpenIdConnectProvider"></a>
 
+- *Implements:* github.com/aws/constructs-go/constructs/v10.IConstruct, github.com/aws/constructs-go/constructs/v10.IDependable, github.com/aws/aws-cdk-go/awscdk/v2.IResource, github.com/aws/aws-cdk-go/awscdk/v2.aws_iam.IOpenIdConnectProvider
+
 IAM OIDC identity providers are entities in IAM that describe an external identity provider (IdP) service that supports the OpenID Connect (OIDC) standard, such as Google or Salesforce.
 
 You use an IAM OIDC identity provider
@@ -43472,7 +43518,7 @@ The issuer for OIDC Provider.
 
 ### ServiceAccount <a name="ServiceAccount" id="aws-cdk-lib.aws_eks.ServiceAccount"></a>
 
-- *Implements:* github.com/aws/aws-cdk-go/awscdk/v2.aws_iam.IPrincipal
+- *Implements:* github.com/aws/constructs-go/constructs/v10.IConstruct, github.com/aws/constructs-go/constructs/v10.IDependable, github.com/aws/aws-cdk-go/awscdk/v2.aws_iam.IPrincipal, github.com/aws/aws-cdk-go/awscdk/v2.aws_iam.IGrantable
 
 Service Account.
 
@@ -50257,6 +50303,8 @@ exports[`go snapshot - submodules 2 1`] = `
 
 ### AwsAuth <a name="AwsAuth" id="monocdk.aws_eks.AwsAuth"></a>
 
+- *Implements:* github.com/aws/constructs-go/constructs/v3.IConstruct, github.com/aws/aws-cdk-go/awscdk.IConstruct, github.com/aws/aws-cdk-go/awscdk.IDependable
+
 Manages mapping between IAM users and roles to Kubernetes RBAC configuration.
 
 > [https://docs.aws.amazon.com/en_us/eks/latest/userguide/add-user-role.html](https://docs.aws.amazon.com/en_us/eks/latest/userguide/add-user-role.html)
@@ -50450,7 +50498,7 @@ The construct tree node associated with this construct.
 
 ### CfnAddon <a name="CfnAddon" id="monocdk.aws_eks.CfnAddon"></a>
 
-- *Implements:* github.com/aws/aws-cdk-go/awscdk.IInspectable
+- *Implements:* github.com/aws/constructs-go/constructs/v3.IConstruct, github.com/aws/aws-cdk-go/awscdk.IConstruct, github.com/aws/aws-cdk-go/awscdk.IDependable, github.com/aws/aws-cdk-go/awscdk.IInspectable
 
 A CloudFormation \`AWS::EKS::Addon\`.
 
@@ -51084,7 +51132,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnCluster <a name="CfnCluster" id="monocdk.aws_eks.CfnCluster"></a>
 
-- *Implements:* github.com/aws/aws-cdk-go/awscdk.IInspectable
+- *Implements:* github.com/aws/constructs-go/constructs/v3.IConstruct, github.com/aws/aws-cdk-go/awscdk.IConstruct, github.com/aws/aws-cdk-go/awscdk.IDependable, github.com/aws/aws-cdk-go/awscdk.IInspectable
 
 A CloudFormation \`AWS::EKS::Cluster\`.
 
@@ -51773,7 +51821,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnFargateProfile <a name="CfnFargateProfile" id="monocdk.aws_eks.CfnFargateProfile"></a>
 
-- *Implements:* github.com/aws/aws-cdk-go/awscdk.IInspectable
+- *Implements:* github.com/aws/constructs-go/constructs/v3.IConstruct, github.com/aws/aws-cdk-go/awscdk.IConstruct, github.com/aws/aws-cdk-go/awscdk.IDependable, github.com/aws/aws-cdk-go/awscdk.IInspectable
 
 A CloudFormation \`AWS::EKS::FargateProfile\`.
 
@@ -52407,7 +52455,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnNodegroup <a name="CfnNodegroup" id="monocdk.aws_eks.CfnNodegroup"></a>
 
-- *Implements:* github.com/aws/aws-cdk-go/awscdk.IInspectable
+- *Implements:* github.com/aws/constructs-go/constructs/v3.IConstruct, github.com/aws/aws-cdk-go/awscdk.IConstruct, github.com/aws/aws-cdk-go/awscdk.IDependable, github.com/aws/aws-cdk-go/awscdk.IInspectable
 
 A CloudFormation \`AWS::EKS::Nodegroup\`.
 
@@ -53228,7 +53276,7 @@ The CloudFormation resource type name for this resource class.
 
 ### Cluster <a name="Cluster" id="monocdk.aws_eks.Cluster"></a>
 
-- *Implements:* <a href="#monocdk.aws_eks.ICluster">ICluster</a>
+- *Implements:* github.com/aws/constructs-go/constructs/v3.IConstruct, github.com/aws/aws-cdk-go/awscdk.IConstruct, github.com/aws/aws-cdk-go/awscdk.IDependable, github.com/aws/aws-cdk-go/awscdk.IResource, <a href="#monocdk.aws_eks.ICluster">ICluster</a>, github.com/aws/aws-cdk-go/awscdk.aws_ec2.IConnectable
 
 A Cluster represents a managed Kubernetes Service (EKS).
 
@@ -54053,6 +54101,8 @@ A security group to use for \`kubectl\` execution.
 
 ### FargateCluster <a name="FargateCluster" id="monocdk.aws_eks.FargateCluster"></a>
 
+- *Implements:* github.com/aws/constructs-go/constructs/v3.IConstruct, github.com/aws/aws-cdk-go/awscdk.IConstruct, github.com/aws/aws-cdk-go/awscdk.IDependable, github.com/aws/aws-cdk-go/awscdk.IResource, <a href="#monocdk.aws_eks.ICluster">ICluster</a>, github.com/aws/aws-cdk-go/awscdk.aws_ec2.IConnectable
+
 Defines an EKS cluster that runs entirely on AWS Fargate.
 
 The cluster is created with a default Fargate Profile that matches the
@@ -54871,7 +54921,7 @@ A security group to use for \`kubectl\` execution.
 
 ### FargateProfile <a name="FargateProfile" id="monocdk.aws_eks.FargateProfile"></a>
 
-- *Implements:* github.com/aws/aws-cdk-go/awscdk.ITaggable
+- *Implements:* github.com/aws/constructs-go/constructs/v3.IConstruct, github.com/aws/aws-cdk-go/awscdk.IConstruct, github.com/aws/aws-cdk-go/awscdk.IDependable, github.com/aws/aws-cdk-go/awscdk.ITaggable
 
 Fargate profiles allows an administrator to declare which pods run on Fargate.
 
@@ -55045,6 +55095,8 @@ Resource tags.
 
 ### HelmChart <a name="HelmChart" id="monocdk.aws_eks.HelmChart"></a>
 
+- *Implements:* github.com/aws/constructs-go/constructs/v3.IConstruct, github.com/aws/aws-cdk-go/awscdk.IConstruct, github.com/aws/aws-cdk-go/awscdk.IDependable
+
 Represents a helm chart within the Kubernetes system.
 
 Applies/deletes the resources using \`kubectl\` in sync with the resource.
@@ -55164,6 +55216,8 @@ The CloudFormation resource type.
 ---
 
 ### KubernetesManifest <a name="KubernetesManifest" id="monocdk.aws_eks.KubernetesManifest"></a>
+
+- *Implements:* github.com/aws/constructs-go/constructs/v3.IConstruct, github.com/aws/aws-cdk-go/awscdk.IConstruct, github.com/aws/aws-cdk-go/awscdk.IDependable
 
 Represents a manifest within the Kubernetes system.
 
@@ -55287,6 +55341,8 @@ The CloudFormation reosurce type.
 ---
 
 ### KubernetesObjectValue <a name="KubernetesObjectValue" id="monocdk.aws_eks.KubernetesObjectValue"></a>
+
+- *Implements:* github.com/aws/constructs-go/constructs/v3.IConstruct, github.com/aws/aws-cdk-go/awscdk.IConstruct, github.com/aws/aws-cdk-go/awscdk.IDependable
 
 Represents a value of a specific object deployed in the cluster.
 
@@ -55421,6 +55477,8 @@ The CloudFormation reosurce type.
 
 ### KubernetesPatch <a name="KubernetesPatch" id="monocdk.aws_eks.KubernetesPatch"></a>
 
+- *Implements:* github.com/aws/constructs-go/constructs/v3.IConstruct, github.com/aws/aws-cdk-go/awscdk.IConstruct, github.com/aws/aws-cdk-go/awscdk.IDependable
+
 A CloudFormation resource which applies/restores a JSON patch into a Kubernetes resource.
 
 > [https://kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/](https://kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/)
@@ -55522,7 +55580,7 @@ The construct tree node associated with this construct.
 
 ### Nodegroup <a name="Nodegroup" id="monocdk.aws_eks.Nodegroup"></a>
 
-- *Implements:* <a href="#monocdk.aws_eks.INodegroup">INodegroup</a>
+- *Implements:* github.com/aws/constructs-go/constructs/v3.IConstruct, github.com/aws/aws-cdk-go/awscdk.IConstruct, github.com/aws/aws-cdk-go/awscdk.IDependable, github.com/aws/aws-cdk-go/awscdk.IResource, <a href="#monocdk.aws_eks.INodegroup">INodegroup</a>
 
 The Nodegroup resource class.
 
@@ -55777,6 +55835,8 @@ IAM role of the instance profile for the nodegroup.
 
 ### OpenIdConnectProvider <a name="OpenIdConnectProvider" id="monocdk.aws_eks.OpenIdConnectProvider"></a>
 
+- *Implements:* github.com/aws/constructs-go/constructs/v3.IConstruct, github.com/aws/aws-cdk-go/awscdk.IConstruct, github.com/aws/aws-cdk-go/awscdk.IDependable, github.com/aws/aws-cdk-go/awscdk.IResource, github.com/aws/aws-cdk-go/awscdk.aws_iam.IOpenIdConnectProvider
+
 IAM OIDC identity providers are entities in IAM that describe an external identity provider (IdP) service that supports the OpenID Connect (OIDC) standard, such as Google or Salesforce.
 
 You use an IAM OIDC identity provider
@@ -56025,7 +56085,7 @@ The issuer for OIDC Provider.
 
 ### ServiceAccount <a name="ServiceAccount" id="monocdk.aws_eks.ServiceAccount"></a>
 
-- *Implements:* github.com/aws/aws-cdk-go/awscdk.aws_iam.IPrincipal
+- *Implements:* github.com/aws/constructs-go/constructs/v3.IConstruct, github.com/aws/aws-cdk-go/awscdk.IConstruct, github.com/aws/aws-cdk-go/awscdk.IDependable, github.com/aws/aws-cdk-go/awscdk.aws_iam.IPrincipal, github.com/aws/aws-cdk-go/awscdk.aws_iam.IGrantable
 
 Service Account.
 
@@ -62980,7 +63040,7 @@ exports[`java for package 1`] = `
 
 ### CfnPublicRepository <a name="CfnPublicRepository" id="@aws-cdk/aws-ecr.CfnPublicRepository"></a>
 
-- *Implements:* software.amazon.awscdk.core.IInspectable
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IInspectable
 
 A CloudFormation \`AWS::ECR::PublicRepository\`.
 
@@ -63620,7 +63680,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRegistryPolicy <a name="CfnRegistryPolicy" id="@aws-cdk/aws-ecr.CfnRegistryPolicy"></a>
 
-- *Implements:* software.amazon.awscdk.core.IInspectable
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IInspectable
 
 A CloudFormation \`AWS::ECR::RegistryPolicy\`.
 
@@ -64179,7 +64239,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnReplicationConfiguration <a name="CfnReplicationConfiguration" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration"></a>
 
-- *Implements:* software.amazon.awscdk.core.IInspectable
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IInspectable
 
 A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 
@@ -64738,7 +64798,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRepository <a name="CfnRepository" id="@aws-cdk/aws-ecr.CfnRepository"></a>
 
-- *Implements:* software.amazon.awscdk.core.IInspectable
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IInspectable
 
 A CloudFormation \`AWS::ECR::Repository\`.
 
@@ -65470,6 +65530,8 @@ The CloudFormation resource type name for this resource class.
 
 ### Repository <a name="Repository" id="@aws-cdk/aws-ecr.Repository"></a>
 
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IResource, <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
+
 Define an ECR repository.
 
 #### Initializers <a name="Initializers" id="@aws-cdk/aws-ecr.Repository.Initializer"></a>
@@ -66092,7 +66154,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### RepositoryBase <a name="RepositoryBase" id="@aws-cdk/aws-ecr.RepositoryBase"></a>
 
-- *Implements:* <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IResource, <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
 
 Base class for ECR repository.
 
@@ -67995,7 +68057,7 @@ exports[`java snapshot - root module 1`] = `
 
 ### CfnPublicRepository <a name="CfnPublicRepository" id="@aws-cdk/aws-ecr.CfnPublicRepository"></a>
 
-- *Implements:* software.amazon.awscdk.core.IInspectable
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IInspectable
 
 A CloudFormation \`AWS::ECR::PublicRepository\`.
 
@@ -68635,7 +68697,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRegistryPolicy <a name="CfnRegistryPolicy" id="@aws-cdk/aws-ecr.CfnRegistryPolicy"></a>
 
-- *Implements:* software.amazon.awscdk.core.IInspectable
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IInspectable
 
 A CloudFormation \`AWS::ECR::RegistryPolicy\`.
 
@@ -69194,7 +69256,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnReplicationConfiguration <a name="CfnReplicationConfiguration" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration"></a>
 
-- *Implements:* software.amazon.awscdk.core.IInspectable
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IInspectable
 
 A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 
@@ -69753,7 +69815,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRepository <a name="CfnRepository" id="@aws-cdk/aws-ecr.CfnRepository"></a>
 
-- *Implements:* software.amazon.awscdk.core.IInspectable
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IInspectable
 
 A CloudFormation \`AWS::ECR::Repository\`.
 
@@ -70485,6 +70547,8 @@ The CloudFormation resource type name for this resource class.
 
 ### Repository <a name="Repository" id="@aws-cdk/aws-ecr.Repository"></a>
 
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IResource, <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
+
 Define an ECR repository.
 
 #### Initializers <a name="Initializers" id="@aws-cdk/aws-ecr.Repository.Initializer"></a>
@@ -71107,7 +71171,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### RepositoryBase <a name="RepositoryBase" id="@aws-cdk/aws-ecr.RepositoryBase"></a>
 
-- *Implements:* <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IResource, <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
 
 Base class for ECR repository.
 
@@ -73010,6 +73074,8 @@ exports[`java snapshot - submodules 1`] = `
 
 ### AwsAuth <a name="AwsAuth" id="aws-cdk-lib.aws_eks.AwsAuth"></a>
 
+- *Implements:* software.constructs.IConstruct, software.constructs.IDependable
+
 Manages mapping between IAM users and roles to Kubernetes RBAC configuration.
 
 > [https://docs.aws.amazon.com/en_us/eks/latest/userguide/add-user-role.html](https://docs.aws.amazon.com/en_us/eks/latest/userguide/add-user-role.html)
@@ -73212,7 +73278,7 @@ The tree node.
 
 ### CfnAddon <a name="CfnAddon" id="aws-cdk-lib.aws_eks.CfnAddon"></a>
 
-- *Implements:* software.amazon.awscdk.IInspectable
+- *Implements:* software.constructs.IConstruct, software.constructs.IDependable, software.amazon.awscdk.IInspectable
 
 A CloudFormation \`AWS::EKS::Addon\`.
 
@@ -73912,7 +73978,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnCluster <a name="CfnCluster" id="aws-cdk-lib.aws_eks.CfnCluster"></a>
 
-- *Implements:* software.amazon.awscdk.IInspectable
+- *Implements:* software.constructs.IConstruct, software.constructs.IDependable, software.amazon.awscdk.IInspectable
 
 A CloudFormation \`AWS::EKS::Cluster\`.
 
@@ -74667,7 +74733,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnFargateProfile <a name="CfnFargateProfile" id="aws-cdk-lib.aws_eks.CfnFargateProfile"></a>
 
-- *Implements:* software.amazon.awscdk.IInspectable
+- *Implements:* software.constructs.IConstruct, software.constructs.IDependable, software.amazon.awscdk.IInspectable
 
 A CloudFormation \`AWS::EKS::FargateProfile\`.
 
@@ -75367,7 +75433,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnNodegroup <a name="CfnNodegroup" id="aws-cdk-lib.aws_eks.CfnNodegroup"></a>
 
-- *Implements:* software.amazon.awscdk.IInspectable
+- *Implements:* software.constructs.IConstruct, software.constructs.IDependable, software.amazon.awscdk.IInspectable
 
 A CloudFormation \`AWS::EKS::Nodegroup\`.
 
@@ -76386,7 +76452,7 @@ The CloudFormation resource type name for this resource class.
 
 ### Cluster <a name="Cluster" id="aws-cdk-lib.aws_eks.Cluster"></a>
 
-- *Implements:* <a href="#aws-cdk-lib.aws_eks.ICluster">ICluster</a>
+- *Implements:* software.constructs.IConstruct, software.constructs.IDependable, software.amazon.awscdk.IResource, <a href="#aws-cdk-lib.aws_eks.ICluster">ICluster</a>, software.amazon.awscdk.services.ec2.IConnectable
 
 A Cluster represents a managed Kubernetes Service (EKS).
 
@@ -77500,6 +77566,8 @@ A security group to use for \`kubectl\` execution.
 
 ### FargateCluster <a name="FargateCluster" id="aws-cdk-lib.aws_eks.FargateCluster"></a>
 
+- *Implements:* software.constructs.IConstruct, software.constructs.IDependable, software.amazon.awscdk.IResource, <a href="#aws-cdk-lib.aws_eks.ICluster">ICluster</a>, software.amazon.awscdk.services.ec2.IConnectable
+
 Defines an EKS cluster that runs entirely on AWS Fargate.
 
 The cluster is created with a default Fargate Profile that matches the
@@ -78578,7 +78646,7 @@ A security group to use for \`kubectl\` execution.
 
 ### FargateProfile <a name="FargateProfile" id="aws-cdk-lib.aws_eks.FargateProfile"></a>
 
-- *Implements:* software.amazon.awscdk.ITaggable
+- *Implements:* software.constructs.IConstruct, software.constructs.IDependable, software.amazon.awscdk.ITaggable
 
 Fargate profiles allows an administrator to declare which pods run on Fargate.
 
@@ -78833,6 +78901,8 @@ Resource tags.
 
 ### HelmChart <a name="HelmChart" id="aws-cdk-lib.aws_eks.HelmChart"></a>
 
+- *Implements:* software.constructs.IConstruct, software.constructs.IDependable
+
 Represents a helm chart within the Kubernetes system.
 
 Applies/deletes the resources using \`kubectl\` in sync with the resource.
@@ -79063,6 +79133,8 @@ The CloudFormation resource type.
 
 ### KubernetesManifest <a name="KubernetesManifest" id="aws-cdk-lib.aws_eks.KubernetesManifest"></a>
 
+- *Implements:* software.constructs.IConstruct, software.constructs.IDependable
+
 Represents a manifest within the Kubernetes system.
 
 Alternatively, you can use \`cluster.addManifest(resource[, resource, ...])\`
@@ -79275,6 +79347,8 @@ The CloudFormation reosurce type.
 
 ### KubernetesObjectValue <a name="KubernetesObjectValue" id="aws-cdk-lib.aws_eks.KubernetesObjectValue"></a>
 
+- *Implements:* software.constructs.IConstruct, software.constructs.IDependable
+
 Represents a value of a specific object deployed in the cluster.
 
 Use this to fetch any information available by the \`kubectl get\` command.
@@ -79472,6 +79546,8 @@ The CloudFormation reosurce type.
 
 ### KubernetesPatch <a name="KubernetesPatch" id="aws-cdk-lib.aws_eks.KubernetesPatch"></a>
 
+- *Implements:* software.constructs.IConstruct, software.constructs.IDependable
+
 A CloudFormation resource which applies/restores a JSON patch into a Kubernetes resource.
 
 > [https://kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/](https://kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/)
@@ -79635,7 +79711,7 @@ The tree node.
 
 ### Nodegroup <a name="Nodegroup" id="aws-cdk-lib.aws_eks.Nodegroup"></a>
 
-- *Implements:* <a href="#aws-cdk-lib.aws_eks.INodegroup">INodegroup</a>
+- *Implements:* software.constructs.IConstruct, software.constructs.IDependable, software.amazon.awscdk.IResource, <a href="#aws-cdk-lib.aws_eks.INodegroup">INodegroup</a>
 
 The Nodegroup resource class.
 
@@ -80105,6 +80181,8 @@ IAM role of the instance profile for the nodegroup.
 
 ### OpenIdConnectProvider <a name="OpenIdConnectProvider" id="aws-cdk-lib.aws_eks.OpenIdConnectProvider"></a>
 
+- *Implements:* software.constructs.IConstruct, software.constructs.IDependable, software.amazon.awscdk.IResource, software.amazon.awscdk.services.iam.IOpenIdConnectProvider
+
 IAM OIDC identity providers are entities in IAM that describe an external identity provider (IdP) service that supports the OpenID Connect (OIDC) standard, such as Google or Salesforce.
 
 You use an IAM OIDC identity provider
@@ -80366,7 +80444,7 @@ The issuer for OIDC Provider.
 
 ### ServiceAccount <a name="ServiceAccount" id="aws-cdk-lib.aws_eks.ServiceAccount"></a>
 
-- *Implements:* software.amazon.awscdk.services.iam.IPrincipal
+- *Implements:* software.constructs.IConstruct, software.constructs.IDependable, software.amazon.awscdk.services.iam.IPrincipal, software.amazon.awscdk.services.iam.IGrantable
 
 Service Account.
 
@@ -87189,6 +87267,8 @@ exports[`java snapshot - submodules 2 1`] = `
 
 ### AwsAuth <a name="AwsAuth" id="monocdk.aws_eks.AwsAuth"></a>
 
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable
+
 Manages mapping between IAM users and roles to Kubernetes RBAC configuration.
 
 > [https://docs.aws.amazon.com/en_us/eks/latest/userguide/add-user-role.html](https://docs.aws.amazon.com/en_us/eks/latest/userguide/add-user-role.html)
@@ -87389,7 +87469,7 @@ The construct tree node associated with this construct.
 
 ### CfnAddon <a name="CfnAddon" id="monocdk.aws_eks.CfnAddon"></a>
 
-- *Implements:* software.amazon.awscdk.core.IInspectable
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IInspectable
 
 A CloudFormation \`AWS::EKS::Addon\`.
 
@@ -88087,7 +88167,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnCluster <a name="CfnCluster" id="monocdk.aws_eks.CfnCluster"></a>
 
-- *Implements:* software.amazon.awscdk.core.IInspectable
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IInspectable
 
 A CloudFormation \`AWS::EKS::Cluster\`.
 
@@ -88840,7 +88920,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnFargateProfile <a name="CfnFargateProfile" id="monocdk.aws_eks.CfnFargateProfile"></a>
 
-- *Implements:* software.amazon.awscdk.core.IInspectable
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IInspectable
 
 A CloudFormation \`AWS::EKS::FargateProfile\`.
 
@@ -89538,7 +89618,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnNodegroup <a name="CfnNodegroup" id="monocdk.aws_eks.CfnNodegroup"></a>
 
-- *Implements:* software.amazon.awscdk.core.IInspectable
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IInspectable
 
 A CloudFormation \`AWS::EKS::Nodegroup\`.
 
@@ -90555,7 +90635,7 @@ The CloudFormation resource type name for this resource class.
 
 ### Cluster <a name="Cluster" id="monocdk.aws_eks.Cluster"></a>
 
-- *Implements:* <a href="#monocdk.aws_eks.ICluster">ICluster</a>
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IResource, <a href="#monocdk.aws_eks.ICluster">ICluster</a>, software.amazon.awscdk.services.ec2.IConnectable
 
 A Cluster represents a managed Kubernetes Service (EKS).
 
@@ -91667,6 +91747,8 @@ A security group to use for \`kubectl\` execution.
 
 ### FargateCluster <a name="FargateCluster" id="monocdk.aws_eks.FargateCluster"></a>
 
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IResource, <a href="#monocdk.aws_eks.ICluster">ICluster</a>, software.amazon.awscdk.services.ec2.IConnectable
+
 Defines an EKS cluster that runs entirely on AWS Fargate.
 
 The cluster is created with a default Fargate Profile that matches the
@@ -92743,7 +92825,7 @@ A security group to use for \`kubectl\` execution.
 
 ### FargateProfile <a name="FargateProfile" id="monocdk.aws_eks.FargateProfile"></a>
 
-- *Implements:* software.amazon.awscdk.core.ITaggable
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.ITaggable
 
 Fargate profiles allows an administrator to declare which pods run on Fargate.
 
@@ -92996,6 +93078,8 @@ Resource tags.
 
 ### HelmChart <a name="HelmChart" id="monocdk.aws_eks.HelmChart"></a>
 
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable
+
 Represents a helm chart within the Kubernetes system.
 
 Applies/deletes the resources using \`kubectl\` in sync with the resource.
@@ -93224,6 +93308,8 @@ The CloudFormation resource type.
 
 ### KubernetesManifest <a name="KubernetesManifest" id="monocdk.aws_eks.KubernetesManifest"></a>
 
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable
+
 Represents a manifest within the Kubernetes system.
 
 Alternatively, you can use \`cluster.addManifest(resource[, resource, ...])\`
@@ -93434,6 +93520,8 @@ The CloudFormation reosurce type.
 
 ### KubernetesObjectValue <a name="KubernetesObjectValue" id="monocdk.aws_eks.KubernetesObjectValue"></a>
 
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable
+
 Represents a value of a specific object deployed in the cluster.
 
 Use this to fetch any information available by the \`kubectl get\` command.
@@ -93629,6 +93717,8 @@ The CloudFormation reosurce type.
 
 ### KubernetesPatch <a name="KubernetesPatch" id="monocdk.aws_eks.KubernetesPatch"></a>
 
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable
+
 A CloudFormation resource which applies/restores a JSON patch into a Kubernetes resource.
 
 > [https://kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/](https://kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/)
@@ -93790,7 +93880,7 @@ The construct tree node associated with this construct.
 
 ### Nodegroup <a name="Nodegroup" id="monocdk.aws_eks.Nodegroup"></a>
 
-- *Implements:* <a href="#monocdk.aws_eks.INodegroup">INodegroup</a>
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IResource, <a href="#monocdk.aws_eks.INodegroup">INodegroup</a>
 
 The Nodegroup resource class.
 
@@ -94275,6 +94365,8 @@ IAM role of the instance profile for the nodegroup.
 
 ### OpenIdConnectProvider <a name="OpenIdConnectProvider" id="monocdk.aws_eks.OpenIdConnectProvider"></a>
 
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IResource, software.amazon.awscdk.services.iam.IOpenIdConnectProvider
+
 IAM OIDC identity providers are entities in IAM that describe an external identity provider (IdP) service that supports the OpenID Connect (OIDC) standard, such as Google or Salesforce.
 
 You use an IAM OIDC identity provider
@@ -94534,7 +94626,7 @@ The issuer for OIDC Provider.
 
 ### ServiceAccount <a name="ServiceAccount" id="monocdk.aws_eks.ServiceAccount"></a>
 
-- *Implements:* software.amazon.awscdk.services.iam.IPrincipal
+- *Implements:* software.constructs.IConstruct, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.services.iam.IPrincipal, software.amazon.awscdk.services.iam.IGrantable
 
 Service Account.
 
@@ -101527,6 +101619,8 @@ exports[`package installation does not run lifecycle hooks, includes optional de
 
 ### GreeterBucket <a name="GreeterBucket" id="construct-library.GreeterBucket"></a>
 
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IResource, @aws-cdk/aws-s3.IBucket
+
 #### Initializers <a name="Initializers" id="construct-library.GreeterBucket.Initializer"></a>
 
 \`\`\`typescript
@@ -102613,6 +102707,8 @@ exports[`package installation uses --force when EBADPLATFORM is encountered 1`] 
 
 ### NetworkFirewallDistributedConstruct <a name="NetworkFirewallDistributedConstruct" id="@richkang/cdk-construct-network-firewall-textfile-rules.NetworkFirewallDistributedConstruct"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable
+
 #### Initializers <a name="Initializers" id="@richkang/cdk-construct-network-firewall-textfile-rules.NetworkFirewallDistributedConstruct.Initializer"></a>
 
 \`\`\`typescript
@@ -103575,6 +103671,27 @@ node metadata ends up in the Cloud Assembly.",
         ],
         "interfaces": [
           {
+            "displayName": "IConstruct",
+            "fqn": "constructs.IConstruct",
+            "id": "constructs.IConstruct",
+            "packageName": "constructs",
+            "packageVersion": "3.4.344",
+          },
+          {
+            "displayName": "IConstruct",
+            "fqn": "aws_cdk.core.IConstruct",
+            "id": "@aws-cdk/core.IConstruct",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+          },
+          {
+            "displayName": "IDependable",
+            "fqn": "aws_cdk.core.IDependable",
+            "id": "@aws-cdk/core.IDependable",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+          },
+          {
             "displayName": "IInspectable",
             "fqn": "aws_cdk.core.IInspectable",
             "id": "@aws-cdk/core.IInspectable",
@@ -104468,6 +104585,27 @@ node metadata ends up in the Cloud Assembly.",
         ],
         "interfaces": [
           {
+            "displayName": "IConstruct",
+            "fqn": "constructs.IConstruct",
+            "id": "constructs.IConstruct",
+            "packageName": "constructs",
+            "packageVersion": "3.4.344",
+          },
+          {
+            "displayName": "IConstruct",
+            "fqn": "aws_cdk.core.IConstruct",
+            "id": "@aws-cdk/core.IConstruct",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+          },
+          {
+            "displayName": "IDependable",
+            "fqn": "aws_cdk.core.IDependable",
+            "id": "@aws-cdk/core.IDependable",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+          },
+          {
             "displayName": "IInspectable",
             "fqn": "aws_cdk.core.IInspectable",
             "id": "@aws-cdk/core.IInspectable",
@@ -105326,6 +105464,27 @@ node metadata ends up in the Cloud Assembly.",
           },
         ],
         "interfaces": [
+          {
+            "displayName": "IConstruct",
+            "fqn": "constructs.IConstruct",
+            "id": "constructs.IConstruct",
+            "packageName": "constructs",
+            "packageVersion": "3.4.344",
+          },
+          {
+            "displayName": "IConstruct",
+            "fqn": "aws_cdk.core.IConstruct",
+            "id": "@aws-cdk/core.IConstruct",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+          },
+          {
+            "displayName": "IDependable",
+            "fqn": "aws_cdk.core.IDependable",
+            "id": "@aws-cdk/core.IDependable",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+          },
           {
             "displayName": "IInspectable",
             "fqn": "aws_cdk.core.IInspectable",
@@ -106333,6 +106492,27 @@ node metadata ends up in the Cloud Assembly.",
           },
         ],
         "interfaces": [
+          {
+            "displayName": "IConstruct",
+            "fqn": "constructs.IConstruct",
+            "id": "constructs.IConstruct",
+            "packageName": "constructs",
+            "packageVersion": "3.4.344",
+          },
+          {
+            "displayName": "IConstruct",
+            "fqn": "aws_cdk.core.IConstruct",
+            "id": "@aws-cdk/core.IConstruct",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+          },
+          {
+            "displayName": "IDependable",
+            "fqn": "aws_cdk.core.IDependable",
+            "id": "@aws-cdk/core.IDependable",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+          },
           {
             "displayName": "IInspectable",
             "fqn": "aws_cdk.core.IInspectable",
@@ -107814,7 +107994,43 @@ have the highest rulePriority.",
 ) -> None",
           },
         ],
-        "interfaces": [],
+        "interfaces": [
+          {
+            "displayName": "IConstruct",
+            "fqn": "constructs.IConstruct",
+            "id": "constructs.IConstruct",
+            "packageName": "constructs",
+            "packageVersion": "3.4.344",
+          },
+          {
+            "displayName": "IConstruct",
+            "fqn": "aws_cdk.core.IConstruct",
+            "id": "@aws-cdk/core.IConstruct",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+          },
+          {
+            "displayName": "IDependable",
+            "fqn": "aws_cdk.core.IDependable",
+            "id": "@aws-cdk/core.IDependable",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+          },
+          {
+            "displayName": "IResource",
+            "fqn": "aws_cdk.core.IResource",
+            "id": "@aws-cdk/core.IResource",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+          },
+          {
+            "displayName": "IRepository",
+            "fqn": "aws_cdk.aws_ecr.IRepository",
+            "id": "@aws-cdk/aws-ecr.IRepository",
+            "packageName": "@aws-cdk/aws-ecr",
+            "packageVersion": "1.106.0",
+          },
+        ],
         "properties": [
           {
             "default": undefined,
@@ -109126,6 +109342,34 @@ on top of that filtering.",
           },
         ],
         "interfaces": [
+          {
+            "displayName": "IConstruct",
+            "fqn": "constructs.IConstruct",
+            "id": "constructs.IConstruct",
+            "packageName": "constructs",
+            "packageVersion": "3.4.344",
+          },
+          {
+            "displayName": "IConstruct",
+            "fqn": "aws_cdk.core.IConstruct",
+            "id": "@aws-cdk/core.IConstruct",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+          },
+          {
+            "displayName": "IDependable",
+            "fqn": "aws_cdk.core.IDependable",
+            "id": "@aws-cdk/core.IDependable",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+          },
+          {
+            "displayName": "IResource",
+            "fqn": "aws_cdk.core.IResource",
+            "id": "@aws-cdk/core.IResource",
+            "packageName": "@aws-cdk/core",
+            "packageVersion": "1.106.0",
+          },
           {
             "displayName": "IRepository",
             "fqn": "aws_cdk.aws_ecr.IRepository",
@@ -111456,7 +111700,7 @@ exports[`python for package 2`] = `
 
 ### CfnPublicRepository <a name="CfnPublicRepository" id="@aws-cdk/aws-ecr.CfnPublicRepository"></a>
 
-- *Implements:* aws_cdk.core.IInspectable
+- *Implements:* constructs.IConstruct, aws_cdk.core.IConstruct, aws_cdk.core.IDependable, aws_cdk.core.IInspectable
 
 A CloudFormation \`AWS::ECR::PublicRepository\`.
 
@@ -112141,7 +112385,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRegistryPolicy <a name="CfnRegistryPolicy" id="@aws-cdk/aws-ecr.CfnRegistryPolicy"></a>
 
-- *Implements:* aws_cdk.core.IInspectable
+- *Implements:* constructs.IConstruct, aws_cdk.core.IConstruct, aws_cdk.core.IDependable, aws_cdk.core.IInspectable
 
 A CloudFormation \`AWS::ECR::RegistryPolicy\`.
 
@@ -112745,7 +112989,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnReplicationConfiguration <a name="CfnReplicationConfiguration" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration"></a>
 
-- *Implements:* aws_cdk.core.IInspectable
+- *Implements:* constructs.IConstruct, aws_cdk.core.IConstruct, aws_cdk.core.IDependable, aws_cdk.core.IInspectable
 
 A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 
@@ -113349,7 +113593,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRepository <a name="CfnRepository" id="@aws-cdk/aws-ecr.CfnRepository"></a>
 
-- *Implements:* aws_cdk.core.IInspectable
+- *Implements:* constructs.IConstruct, aws_cdk.core.IConstruct, aws_cdk.core.IDependable, aws_cdk.core.IInspectable
 
 A CloudFormation \`AWS::ECR::Repository\`.
 
@@ -114125,6 +114369,8 @@ The CloudFormation resource type name for this resource class.
 ---
 
 ### Repository <a name="Repository" id="@aws-cdk/aws-ecr.Repository"></a>
+
+- *Implements:* constructs.IConstruct, aws_cdk.core.IConstruct, aws_cdk.core.IDependable, aws_cdk.core.IResource, <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
 
 Define an ECR repository.
 
@@ -115040,7 +115286,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### RepositoryBase <a name="RepositoryBase" id="@aws-cdk/aws-ecr.RepositoryBase"></a>
 
-- *Implements:* <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
+- *Implements:* constructs.IConstruct, aws_cdk.core.IConstruct, aws_cdk.core.IDependable, aws_cdk.core.IResource, <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
 
 Base class for ECR repository.
 
@@ -117337,7 +117583,7 @@ exports[`python snapshot - root module 1`] = `
 
 ### CfnPublicRepository <a name="CfnPublicRepository" id="@aws-cdk/aws-ecr.CfnPublicRepository"></a>
 
-- *Implements:* aws_cdk.core.IInspectable
+- *Implements:* constructs.IConstruct, aws_cdk.core.IConstruct, aws_cdk.core.IDependable, aws_cdk.core.IInspectable
 
 A CloudFormation \`AWS::ECR::PublicRepository\`.
 
@@ -118022,7 +118268,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRegistryPolicy <a name="CfnRegistryPolicy" id="@aws-cdk/aws-ecr.CfnRegistryPolicy"></a>
 
-- *Implements:* aws_cdk.core.IInspectable
+- *Implements:* constructs.IConstruct, aws_cdk.core.IConstruct, aws_cdk.core.IDependable, aws_cdk.core.IInspectable
 
 A CloudFormation \`AWS::ECR::RegistryPolicy\`.
 
@@ -118626,7 +118872,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnReplicationConfiguration <a name="CfnReplicationConfiguration" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration"></a>
 
-- *Implements:* aws_cdk.core.IInspectable
+- *Implements:* constructs.IConstruct, aws_cdk.core.IConstruct, aws_cdk.core.IDependable, aws_cdk.core.IInspectable
 
 A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 
@@ -119230,7 +119476,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRepository <a name="CfnRepository" id="@aws-cdk/aws-ecr.CfnRepository"></a>
 
-- *Implements:* aws_cdk.core.IInspectable
+- *Implements:* constructs.IConstruct, aws_cdk.core.IConstruct, aws_cdk.core.IDependable, aws_cdk.core.IInspectable
 
 A CloudFormation \`AWS::ECR::Repository\`.
 
@@ -120006,6 +120252,8 @@ The CloudFormation resource type name for this resource class.
 ---
 
 ### Repository <a name="Repository" id="@aws-cdk/aws-ecr.Repository"></a>
+
+- *Implements:* constructs.IConstruct, aws_cdk.core.IConstruct, aws_cdk.core.IDependable, aws_cdk.core.IResource, <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
 
 Define an ECR repository.
 
@@ -120921,7 +121169,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### RepositoryBase <a name="RepositoryBase" id="@aws-cdk/aws-ecr.RepositoryBase"></a>
 
-- *Implements:* <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
+- *Implements:* constructs.IConstruct, aws_cdk.core.IConstruct, aws_cdk.core.IDependable, aws_cdk.core.IResource, <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
 
 Base class for ECR repository.
 
@@ -123218,6 +123466,8 @@ exports[`python snapshot - submodules 1`] = `
 
 ### AwsAuth <a name="AwsAuth" id="aws-cdk-lib.aws_eks.AwsAuth"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable
+
 Manages mapping between IAM users and roles to Kubernetes RBAC configuration.
 
 > [https://docs.aws.amazon.com/en_us/eks/latest/userguide/add-user-role.html](https://docs.aws.amazon.com/en_us/eks/latest/userguide/add-user-role.html)
@@ -123458,7 +123708,7 @@ The tree node.
 
 ### CfnAddon <a name="CfnAddon" id="aws-cdk-lib.aws_eks.CfnAddon"></a>
 
-- *Implements:* aws_cdk.IInspectable
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws_cdk.IInspectable
 
 A CloudFormation \`AWS::EKS::Addon\`.
 
@@ -124203,7 +124453,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnCluster <a name="CfnCluster" id="aws-cdk-lib.aws_eks.CfnCluster"></a>
 
-- *Implements:* aws_cdk.IInspectable
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws_cdk.IInspectable
 
 A CloudFormation \`AWS::EKS::Cluster\`.
 
@@ -125003,7 +125253,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnFargateProfile <a name="CfnFargateProfile" id="aws-cdk-lib.aws_eks.CfnFargateProfile"></a>
 
-- *Implements:* aws_cdk.IInspectable
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws_cdk.IInspectable
 
 A CloudFormation \`AWS::EKS::FargateProfile\`.
 
@@ -125748,7 +125998,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnNodegroup <a name="CfnNodegroup" id="aws-cdk-lib.aws_eks.CfnNodegroup"></a>
 
-- *Implements:* aws_cdk.IInspectable
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws_cdk.IInspectable
 
 A CloudFormation \`AWS::EKS::Nodegroup\`.
 
@@ -126812,7 +127062,7 @@ The CloudFormation resource type name for this resource class.
 
 ### Cluster <a name="Cluster" id="aws-cdk-lib.aws_eks.Cluster"></a>
 
-- *Implements:* <a href="#aws-cdk-lib.aws_eks.ICluster">ICluster</a>
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws_cdk.IResource, <a href="#aws-cdk-lib.aws_eks.ICluster">ICluster</a>, aws_cdk.aws_ec2.IConnectable
 
 A Cluster represents a managed Kubernetes Service (EKS).
 
@@ -128857,6 +129107,8 @@ A security group to use for \`kubectl\` execution.
 
 ### FargateCluster <a name="FargateCluster" id="aws-cdk-lib.aws_eks.FargateCluster"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws_cdk.IResource, <a href="#aws-cdk-lib.aws_eks.ICluster">ICluster</a>, aws_cdk.aws_ec2.IConnectable
+
 Defines an EKS cluster that runs entirely on AWS Fargate.
 
 The cluster is created with a default Fargate Profile that matches the
@@ -130866,7 +131118,7 @@ A security group to use for \`kubectl\` execution.
 
 ### FargateProfile <a name="FargateProfile" id="aws-cdk-lib.aws_eks.FargateProfile"></a>
 
-- *Implements:* aws_cdk.ITaggable
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws_cdk.ITaggable
 
 Fargate profiles allows an administrator to declare which pods run on Fargate.
 
@@ -131125,6 +131377,8 @@ Resource tags.
 
 ### HelmChart <a name="HelmChart" id="aws-cdk-lib.aws_eks.HelmChart"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable
+
 Represents a helm chart within the Kubernetes system.
 
 Applies/deletes the resources using \`kubectl\` in sync with the resource.
@@ -131359,6 +131613,8 @@ The CloudFormation resource type.
 
 ### KubernetesManifest <a name="KubernetesManifest" id="aws-cdk-lib.aws_eks.KubernetesManifest"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable
+
 Represents a manifest within the Kubernetes system.
 
 Alternatively, you can use \`cluster.addManifest(resource[, resource, ...])\`
@@ -131577,6 +131833,8 @@ The CloudFormation reosurce type.
 
 ### KubernetesObjectValue <a name="KubernetesObjectValue" id="aws-cdk-lib.aws_eks.KubernetesObjectValue"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable
+
 Represents a value of a specific object deployed in the cluster.
 
 Use this to fetch any information available by the \`kubectl get\` command.
@@ -131778,6 +132036,8 @@ The CloudFormation reosurce type.
 
 ### KubernetesPatch <a name="KubernetesPatch" id="aws-cdk-lib.aws_eks.KubernetesPatch"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable
+
 A CloudFormation resource which applies/restores a JSON patch into a Kubernetes resource.
 
 > [https://kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/](https://kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/)
@@ -131945,7 +132205,7 @@ The tree node.
 
 ### Nodegroup <a name="Nodegroup" id="aws-cdk-lib.aws_eks.Nodegroup"></a>
 
-- *Implements:* <a href="#aws-cdk-lib.aws_eks.INodegroup">INodegroup</a>
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws_cdk.IResource, <a href="#aws-cdk-lib.aws_eks.INodegroup">INodegroup</a>
 
 The Nodegroup resource class.
 
@@ -132427,6 +132687,8 @@ IAM role of the instance profile for the nodegroup.
 
 ### OpenIdConnectProvider <a name="OpenIdConnectProvider" id="aws-cdk-lib.aws_eks.OpenIdConnectProvider"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws_cdk.IResource, aws_cdk.aws_iam.IOpenIdConnectProvider
+
 IAM OIDC identity providers are entities in IAM that describe an external identity provider (IdP) service that supports the OpenID Connect (OIDC) standard, such as Google or Salesforce.
 
 You use an IAM OIDC identity provider
@@ -132700,7 +132962,7 @@ The issuer for OIDC Provider.
 
 ### ServiceAccount <a name="ServiceAccount" id="aws-cdk-lib.aws_eks.ServiceAccount"></a>
 
-- *Implements:* aws_cdk.aws_iam.IPrincipal
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws_cdk.aws_iam.IPrincipal, aws_cdk.aws_iam.IGrantable
 
 Service Account.
 
@@ -139643,6 +139905,8 @@ exports[`python snapshot - with dependencies 1`] = `
 
 ### Jenkins <a name="Jenkins" id="cdk8s-jenkins.Jenkins"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable
+
 A jenkins instance.
 
 #### Initializers <a name="Initializers" id="cdk8s-jenkins.Jenkins.Initializer"></a>
@@ -140244,7 +140508,7 @@ exports[`typescript for package 1`] = `
 
 ### CfnPublicRepository <a name="CfnPublicRepository" id="@aws-cdk/aws-ecr.CfnPublicRepository"></a>
 
-- *Implements:* @aws-cdk/core.IInspectable
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IInspectable
 
 A CloudFormation \`AWS::ECR::PublicRepository\`.
 
@@ -140842,7 +141106,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRegistryPolicy <a name="CfnRegistryPolicy" id="@aws-cdk/aws-ecr.CfnRegistryPolicy"></a>
 
-- *Implements:* @aws-cdk/core.IInspectable
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IInspectable
 
 A CloudFormation \`AWS::ECR::RegistryPolicy\`.
 
@@ -141395,7 +141659,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnReplicationConfiguration <a name="CfnReplicationConfiguration" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration"></a>
 
-- *Implements:* @aws-cdk/core.IInspectable
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IInspectable
 
 A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 
@@ -141948,7 +142212,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRepository <a name="CfnRepository" id="@aws-cdk/aws-ecr.CfnRepository"></a>
 
-- *Implements:* @aws-cdk/core.IInspectable
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IInspectable
 
 A CloudFormation \`AWS::ECR::Repository\`.
 
@@ -142602,6 +142866,8 @@ The CloudFormation resource type name for this resource class.
 
 ### Repository <a name="Repository" id="@aws-cdk/aws-ecr.Repository"></a>
 
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IResource, <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
+
 Define an ECR repository.
 
 #### Initializers <a name="Initializers" id="@aws-cdk/aws-ecr.Repository.Initializer"></a>
@@ -143154,7 +143420,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### RepositoryBase <a name="RepositoryBase" id="@aws-cdk/aws-ecr.RepositoryBase"></a>
 
-- *Implements:* <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IResource, <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
 
 Base class for ECR repository.
 
@@ -144950,7 +145216,7 @@ exports[`typescript snapshot - single module 1`] = `
 
 ### CfnPublicRepository <a name="CfnPublicRepository" id="@aws-cdk/aws-ecr.CfnPublicRepository"></a>
 
-- *Implements:* @aws-cdk/core.IInspectable
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IInspectable
 
 A CloudFormation \`AWS::ECR::PublicRepository\`.
 
@@ -145548,7 +145814,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRegistryPolicy <a name="CfnRegistryPolicy" id="@aws-cdk/aws-ecr.CfnRegistryPolicy"></a>
 
-- *Implements:* @aws-cdk/core.IInspectable
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IInspectable
 
 A CloudFormation \`AWS::ECR::RegistryPolicy\`.
 
@@ -146101,7 +146367,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnReplicationConfiguration <a name="CfnReplicationConfiguration" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration"></a>
 
-- *Implements:* @aws-cdk/core.IInspectable
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IInspectable
 
 A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 
@@ -146654,7 +146920,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRepository <a name="CfnRepository" id="@aws-cdk/aws-ecr.CfnRepository"></a>
 
-- *Implements:* @aws-cdk/core.IInspectable
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IInspectable
 
 A CloudFormation \`AWS::ECR::Repository\`.
 
@@ -147308,6 +147574,8 @@ The CloudFormation resource type name for this resource class.
 
 ### Repository <a name="Repository" id="@aws-cdk/aws-ecr.Repository"></a>
 
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IResource, <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
+
 Define an ECR repository.
 
 #### Initializers <a name="Initializers" id="@aws-cdk/aws-ecr.Repository.Initializer"></a>
@@ -147860,7 +148128,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### RepositoryBase <a name="RepositoryBase" id="@aws-cdk/aws-ecr.RepositoryBase"></a>
 
-- *Implements:* <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IResource, <a href="#@aws-cdk/aws-ecr.IRepository">IRepository</a>
 
 Base class for ECR repository.
 
@@ -149646,6 +149914,8 @@ exports[`typescript snapshot - submodules 1`] = `
 
 ### AwsAuth <a name="AwsAuth" id="aws-cdk-lib.aws_eks.AwsAuth"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable
+
 Manages mapping between IAM users and roles to Kubernetes RBAC configuration.
 
 > [https://docs.aws.amazon.com/en_us/eks/latest/userguide/add-user-role.html](https://docs.aws.amazon.com/en_us/eks/latest/userguide/add-user-role.html)
@@ -149841,7 +150111,7 @@ The tree node.
 
 ### CfnAddon <a name="CfnAddon" id="aws-cdk-lib.aws_eks.CfnAddon"></a>
 
-- *Implements:* aws-cdk-lib.IInspectable
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IInspectable
 
 A CloudFormation \`AWS::EKS::Addon\`.
 
@@ -150471,7 +150741,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnCluster <a name="CfnCluster" id="aws-cdk-lib.aws_eks.CfnCluster"></a>
 
-- *Implements:* aws-cdk-lib.IInspectable
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IInspectable
 
 A CloudFormation \`AWS::EKS::Cluster\`.
 
@@ -151156,7 +151426,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnFargateProfile <a name="CfnFargateProfile" id="aws-cdk-lib.aws_eks.CfnFargateProfile"></a>
 
-- *Implements:* aws-cdk-lib.IInspectable
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IInspectable
 
 A CloudFormation \`AWS::EKS::FargateProfile\`.
 
@@ -151786,7 +152056,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnNodegroup <a name="CfnNodegroup" id="aws-cdk-lib.aws_eks.CfnNodegroup"></a>
 
-- *Implements:* aws-cdk-lib.IInspectable
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IInspectable
 
 A CloudFormation \`AWS::EKS::Nodegroup\`.
 
@@ -152603,7 +152873,7 @@ The CloudFormation resource type name for this resource class.
 
 ### Cluster <a name="Cluster" id="aws-cdk-lib.aws_eks.Cluster"></a>
 
-- *Implements:* <a href="#aws-cdk-lib.aws_eks.ICluster">ICluster</a>
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IResource, <a href="#aws-cdk-lib.aws_eks.ICluster">ICluster</a>, aws-cdk-lib.aws_ec2.IConnectable
 
 A Cluster represents a managed Kubernetes Service (EKS).
 
@@ -153428,6 +153698,8 @@ A security group to use for \`kubectl\` execution.
 
 ### FargateCluster <a name="FargateCluster" id="aws-cdk-lib.aws_eks.FargateCluster"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IResource, <a href="#aws-cdk-lib.aws_eks.ICluster">ICluster</a>, aws-cdk-lib.aws_ec2.IConnectable
+
 Defines an EKS cluster that runs entirely on AWS Fargate.
 
 The cluster is created with a default Fargate Profile that matches the
@@ -154246,7 +154518,7 @@ A security group to use for \`kubectl\` execution.
 
 ### FargateProfile <a name="FargateProfile" id="aws-cdk-lib.aws_eks.FargateProfile"></a>
 
-- *Implements:* aws-cdk-lib.ITaggable
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.ITaggable
 
 Fargate profiles allows an administrator to declare which pods run on Fargate.
 
@@ -154422,6 +154694,8 @@ Resource tags.
 
 ### HelmChart <a name="HelmChart" id="aws-cdk-lib.aws_eks.HelmChart"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable
+
 Represents a helm chart within the Kubernetes system.
 
 Applies/deletes the resources using \`kubectl\` in sync with the resource.
@@ -154543,6 +154817,8 @@ The CloudFormation resource type.
 ---
 
 ### KubernetesManifest <a name="KubernetesManifest" id="aws-cdk-lib.aws_eks.KubernetesManifest"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable
 
 Represents a manifest within the Kubernetes system.
 
@@ -154668,6 +154944,8 @@ The CloudFormation reosurce type.
 ---
 
 ### KubernetesObjectValue <a name="KubernetesObjectValue" id="aws-cdk-lib.aws_eks.KubernetesObjectValue"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable
 
 Represents a value of a specific object deployed in the cluster.
 
@@ -154804,6 +155082,8 @@ The CloudFormation reosurce type.
 
 ### KubernetesPatch <a name="KubernetesPatch" id="aws-cdk-lib.aws_eks.KubernetesPatch"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable
+
 A CloudFormation resource which applies/restores a JSON patch into a Kubernetes resource.
 
 > [https://kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/](https://kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/)
@@ -154907,7 +155187,7 @@ The tree node.
 
 ### Nodegroup <a name="Nodegroup" id="aws-cdk-lib.aws_eks.Nodegroup"></a>
 
-- *Implements:* <a href="#aws-cdk-lib.aws_eks.INodegroup">INodegroup</a>
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IResource, <a href="#aws-cdk-lib.aws_eks.INodegroup">INodegroup</a>
 
 The Nodegroup resource class.
 
@@ -155164,6 +155444,8 @@ IAM role of the instance profile for the nodegroup.
 
 ### OpenIdConnectProvider <a name="OpenIdConnectProvider" id="aws-cdk-lib.aws_eks.OpenIdConnectProvider"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IResource, aws-cdk-lib.aws_iam.IOpenIdConnectProvider
+
 IAM OIDC identity providers are entities in IAM that describe an external identity provider (IdP) service that supports the OpenID Connect (OIDC) standard, such as Google or Salesforce.
 
 You use an IAM OIDC identity provider
@@ -155414,7 +155696,7 @@ The issuer for OIDC Provider.
 
 ### ServiceAccount <a name="ServiceAccount" id="aws-cdk-lib.aws_eks.ServiceAccount"></a>
 
-- *Implements:* aws-cdk-lib.aws_iam.IPrincipal
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.aws_iam.IPrincipal, aws-cdk-lib.aws_iam.IGrantable
 
 Service Account.
 
