@@ -40,7 +40,7 @@ export class Class {
     this.staticFunctions = new StaticFunctions(transpile, klass.allMethods);
     this.constants = new Constants(transpile, klass.allProperties);
     this.properties = new Properties(transpile, klass.allProperties);
-    this.interfaces = klass.interfaces.map((iface) => this.transpile.type(iface));
+    this.interfaces = uniqueTypes(klass.getInterfaces(true)).map((iface) => this.transpile.type(iface));
     this.transpiled = transpile.class(klass);
   }
 
@@ -58,4 +58,17 @@ export class Class {
       docs: extractDocs(this.klass.docs),
     };
   }
+}
+
+function uniqueTypes<T extends reflect.Type>(types: readonly T[]): T[] {
+  const seen = new Set<string>();
+  const unique: T[] = [];
+  for (const type of types) {
+    if (seen.has(type.fqn)) {
+      continue;
+    }
+    seen.add(type.fqn);
+    unique.push(type);
+  }
+  return unique;
 }

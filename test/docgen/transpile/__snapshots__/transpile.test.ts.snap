@@ -7,7 +7,7 @@ exports[`submodules without an explicit name csharp 1`] = `
 
 ### EdgeFunction <a name="EdgeFunction" id="@aws-cdk/aws-cloudfront.experimental.EdgeFunction"></a>
 
-- *Implements:* Amazon.CDK.AWS.Lambda.IVersion
+- *Implements:* Constructs.IConstruct, Constructs.IDependable, Amazon.CDK.IConstruct, Amazon.CDK.IDependable, Amazon.CDK.IResource, Amazon.CDK.AWS.Lambda.IVersion, Amazon.CDK.AWS.EC2.IConnectable, Amazon.CDK.AWS.IAM.IGrantable, Amazon.CDK.AWS.Lambda.IFunction
 
 A Lambda@Edge function.
 
@@ -1952,7 +1952,7 @@ exports[`submodules without an explicit name java 1`] = `
 
 ### EdgeFunction <a name="EdgeFunction" id="@aws-cdk/aws-cloudfront.experimental.EdgeFunction"></a>
 
-- *Implements:* software.amazon.awscdk.services.lambda.IVersion
+- *Implements:* software.constructs.IConstruct, software.constructs.IDependable, software.amazon.awscdk.core.IConstruct, software.amazon.awscdk.core.IDependable, software.amazon.awscdk.core.IResource, software.amazon.awscdk.services.lambda.IVersion, software.amazon.awscdk.services.ec2.IConnectable, software.amazon.awscdk.services.iam.IGrantable, software.amazon.awscdk.services.lambda.IFunction
 
 A Lambda@Edge function.
 
@@ -3720,7 +3720,7 @@ exports[`submodules without an explicit name python 1`] = `
 
 ### EdgeFunction <a name="EdgeFunction" id="@aws-cdk/aws-cloudfront.experimental.EdgeFunction"></a>
 
-- *Implements:* aws_cdk.aws_lambda.IVersion
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws_cdk.core.IConstruct, aws_cdk.core.IDependable, aws_cdk.core.IResource, aws_cdk.aws_lambda.IVersion, aws_cdk.aws_ec2.IConnectable, aws_cdk.aws_iam.IGrantable, aws_cdk.aws_lambda.IFunction
 
 A Lambda@Edge function.
 

@@ -7,6 +7,8 @@ exports[`construct-library 1`] = `
 
 ### GoodbyeBucket <a name="GoodbyeBucket" id="construct-library.submod1.GoodbyeBucket"></a>
 
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IResource, @aws-cdk/aws-s3.IBucket
+
 #### Initializers <a name="Initializers" id="construct-library.submod1.GoodbyeBucket.Initializer"></a>
 
 \`\`\`typescript
@@ -1081,6 +1083,8 @@ first call to addToResourcePolicy(s).
 
 
 ### GreeterBucket <a name="GreeterBucket" id="construct-library.GreeterBucket"></a>
+
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IResource, @aws-cdk/aws-s3.IBucket
 
 #### Initializers <a name="Initializers" id="construct-library.GreeterBucket.Initializer"></a>
 
@@ -3266,6 +3270,8 @@ exports[`specify language 1`] = `
 
 ### GoodbyeBucket <a name="GoodbyeBucket" id="construct-library.submod1.GoodbyeBucket"></a>
 
+- *Implements:* constructs.IConstruct, aws_cdk.core.IConstruct, aws_cdk.core.IDependable, aws_cdk.core.IResource, aws_cdk.aws_s3.IBucket
+
 #### Initializers <a name="Initializers" id="construct-library.submod1.GoodbyeBucket.Initializer"></a>
 
 \`\`\`python
@@ -5328,6 +5334,8 @@ first call to addToResourcePolicy(s).
 
 
 ### GreeterBucket <a name="GreeterBucket" id="construct-library.GreeterBucket"></a>
+
+- *Implements:* constructs.IConstruct, aws_cdk.core.IConstruct, aws_cdk.core.IDependable, aws_cdk.core.IResource, aws_cdk.aws_s3.IBucket
 
 #### Initializers <a name="Initializers" id="construct-library.GreeterBucket.Initializer"></a>
 
@@ -7409,6 +7417,8 @@ The following submodules are available:
 
 ### GreeterBucket <a name="GreeterBucket" id="construct-library.GreeterBucket"></a>
 
+- *Implements:* constructs.IConstruct, aws_cdk.core.IConstruct, aws_cdk.core.IDependable, aws_cdk.core.IResource, aws_cdk.aws_s3.IBucket
+
 #### Initializers <a name="Initializers" id="construct-library.GreeterBucket.Initializer"></a>
 
 \`\`\`python
@@ -9489,6 +9499,8 @@ The following submodules are available:
 
 ### GreeterBucket <a name="GreeterBucket" id="construct-library.GreeterBucket"></a>
 
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IResource, @aws-cdk/aws-s3.IBucket
+
 #### Initializers <a name="Initializers" id="construct-library.GreeterBucket.Initializer"></a>
 
 \`\`\`typescript
@@ -10574,6 +10586,8 @@ exports[`specify languages and split-by-submodule creates submodule files next t
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
 ### GoodbyeBucket <a name="GoodbyeBucket" id="construct-library.submod1.GoodbyeBucket"></a>
+
+- *Implements:* constructs.IConstruct, aws_cdk.core.IConstruct, aws_cdk.core.IDependable, aws_cdk.core.IResource, aws_cdk.aws_s3.IBucket
 
 #### Initializers <a name="Initializers" id="construct-library.submod1.GoodbyeBucket.Initializer"></a>
 
@@ -12649,6 +12663,8 @@ exports[`specify languages and split-by-submodule creates submodule files next t
 
 ### GoodbyeBucket <a name="GoodbyeBucket" id="construct-library.submod1.GoodbyeBucket"></a>
 
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IResource, @aws-cdk/aws-s3.IBucket
+
 #### Initializers <a name="Initializers" id="construct-library.submod1.GoodbyeBucket.Initializer"></a>
 
 \`\`\`typescript
@@ -13735,6 +13751,8 @@ exports[`specify root submodule 1`] = `
 
 ### GreeterBucket <a name="GreeterBucket" id="construct-library.GreeterBucket"></a>
 
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IResource, @aws-cdk/aws-s3.IBucket
+
 #### Initializers <a name="Initializers" id="construct-library.GreeterBucket.Initializer"></a>
 
 \`\`\`typescript
@@ -14820,6 +14838,8 @@ exports[`specify submodule 1`] = `
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
 ### GoodbyeBucket <a name="GoodbyeBucket" id="construct-library.submod1.GoodbyeBucket"></a>
+
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IResource, @aws-cdk/aws-s3.IBucket
 
 #### Initializers <a name="Initializers" id="construct-library.submod1.GoodbyeBucket.Initializer"></a>
 
@@ -15913,6 +15933,8 @@ The following submodules are available:
 
 ### GreeterBucket <a name="GreeterBucket" id="construct-library.GreeterBucket"></a>
 
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IResource, @aws-cdk/aws-s3.IBucket
+
 #### Initializers <a name="Initializers" id="construct-library.GreeterBucket.Initializer"></a>
 
 \`\`\`typescript
@@ -16998,6 +17020,8 @@ exports[`split-by-submodule creates submodule files next to output 2`] = `
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
 ### GoodbyeBucket <a name="GoodbyeBucket" id="construct-library.submod1.GoodbyeBucket"></a>
+
+- *Implements:* constructs.IConstruct, @aws-cdk/core.IConstruct, @aws-cdk/core.IDependable, @aws-cdk/core.IResource, @aws-cdk/aws-s3.IBucket
 
 #### Initializers <a name="Initializers" id="construct-library.submod1.GoodbyeBucket.Initializer"></a>
 

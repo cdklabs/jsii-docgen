@@ -7,6 +7,8 @@ exports[`complex link formatter - aws-solutions-constructs java snapshot 1`] = `
 
 ### LambdaToSqs <a name="LambdaToSqs" id="LambdaToSqs"></a>
 
+- *Implements:* <a href="/packages/constructs/v/10.8.1/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/constructs/v/10.8.1/api/IDependable?lang=python">IDependable</a>
+
 #### Initializers <a name="Initializers" id="LambdaToSqs.Initializer"></a>
 
 \`\`\`java
@@ -521,6 +523,8 @@ exports[`complex link formatter - aws-solutions-constructs python snapshot 1`] =
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
 ### LambdaToSqs <a name="LambdaToSqs" id="LambdaToSqs"></a>
+
+- *Implements:* <a href="/packages/constructs/v/10.8.1/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/constructs/v/10.8.1/api/IDependable?lang=python">IDependable</a>
 
 #### Initializers <a name="Initializers" id="LambdaToSqs.Initializer"></a>
 
@@ -1043,6 +1047,8 @@ exports[`complex link formatter - aws-solutions-constructs typescript snapshot 1
 
 ### LambdaToSqs <a name="LambdaToSqs" id="LambdaToSqs"></a>
 
+- *Implements:* <a href="/packages/constructs/v/10.8.1/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/constructs/v/10.8.1/api/IDependable?lang=python">IDependable</a>
+
 #### Initializers <a name="Initializers" id="LambdaToSqs.Initializer"></a>
 
 \`\`\`typescript
@@ -1423,7 +1429,7 @@ exports[`complex link formatter csharp snapshot 1`] = `
 
 ### CfnPublicRepository <a name="CfnPublicRepository" id="CfnPublicRepository"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::PublicRepository\`.
 
@@ -2021,7 +2027,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRegistryPolicy <a name="CfnRegistryPolicy" id="CfnRegistryPolicy"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::RegistryPolicy\`.
 
@@ -2574,7 +2580,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnReplicationConfiguration <a name="CfnReplicationConfiguration" id="CfnReplicationConfiguration"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 
@@ -3127,7 +3133,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRepository <a name="CfnRepository" id="CfnRepository"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::Repository\`.
 
@@ -3781,6 +3787,8 @@ The CloudFormation resource type name for this resource class.
 
 ### Repository <a name="Repository" id="Repository"></a>
 
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IResource?lang=python">IResource</a>, <a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository?lang=python">IRepository</a>
+
 Define an ECR repository.
 
 #### Initializers <a name="Initializers" id="Repository.Initializer"></a>
@@ -4333,7 +4341,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### RepositoryBase <a name="RepositoryBase" id="RepositoryBase"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository?lang=python">IRepository</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IResource?lang=python">IResource</a>, <a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository?lang=python">IRepository</a>
 
 Base class for ECR repository.
 
@@ -6175,7 +6183,7 @@ exports[`complex link formatter go snapshot 1`] = `
 
 ### Construct <a name="Construct" id="Construct"></a>
 
-- *Implements:* <a href="/packages/constructs/v/10.0.78/api/IConstruct?lang=python">IConstruct</a>
+- *Implements:* <a href="/packages/constructs/v/10.0.78/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/constructs/v/10.0.78/api/IDependable?lang=python">IDependable</a>
 
 Represents the building block of the construct graph.
 
@@ -7189,7 +7197,7 @@ exports[`complex link formatter java snapshot 1`] = `
 
 ### CfnPublicRepository <a name="CfnPublicRepository" id="CfnPublicRepository"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::PublicRepository\`.
 
@@ -7829,7 +7837,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRegistryPolicy <a name="CfnRegistryPolicy" id="CfnRegistryPolicy"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::RegistryPolicy\`.
 
@@ -8388,7 +8396,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnReplicationConfiguration <a name="CfnReplicationConfiguration" id="CfnReplicationConfiguration"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 
@@ -8947,7 +8955,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRepository <a name="CfnRepository" id="CfnRepository"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::Repository\`.
 
@@ -9679,6 +9687,8 @@ The CloudFormation resource type name for this resource class.
 
 ### Repository <a name="Repository" id="Repository"></a>
 
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IResource?lang=python">IResource</a>, <a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository?lang=python">IRepository</a>
+
 Define an ECR repository.
 
 #### Initializers <a name="Initializers" id="Repository.Initializer"></a>
@@ -10301,7 +10311,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### RepositoryBase <a name="RepositoryBase" id="RepositoryBase"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository?lang=python">IRepository</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IResource?lang=python">IResource</a>, <a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository?lang=python">IRepository</a>
 
 Base class for ECR repository.
 
@@ -12204,7 +12214,7 @@ exports[`complex link formatter python snapshot 1`] = `
 
 ### CfnPublicRepository <a name="CfnPublicRepository" id="CfnPublicRepository"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::PublicRepository\`.
 
@@ -12889,7 +12899,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRegistryPolicy <a name="CfnRegistryPolicy" id="CfnRegistryPolicy"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::RegistryPolicy\`.
 
@@ -13493,7 +13503,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnReplicationConfiguration <a name="CfnReplicationConfiguration" id="CfnReplicationConfiguration"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 
@@ -14097,7 +14107,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRepository <a name="CfnRepository" id="CfnRepository"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::Repository\`.
 
@@ -14873,6 +14883,8 @@ The CloudFormation resource type name for this resource class.
 ---
 
 ### Repository <a name="Repository" id="Repository"></a>
+
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IResource?lang=python">IResource</a>, <a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository?lang=python">IRepository</a>
 
 Define an ECR repository.
 
@@ -15788,7 +15800,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### RepositoryBase <a name="RepositoryBase" id="RepositoryBase"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository?lang=python">IRepository</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IResource?lang=python">IResource</a>, <a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository?lang=python">IRepository</a>
 
 Base class for ECR repository.
 
@@ -18085,7 +18097,7 @@ exports[`complex link formatter typescript snapshot 1`] = `
 
 ### CfnPublicRepository <a name="CfnPublicRepository" id="CfnPublicRepository"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::PublicRepository\`.
 
@@ -18683,7 +18695,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRegistryPolicy <a name="CfnRegistryPolicy" id="CfnRegistryPolicy"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::RegistryPolicy\`.
 
@@ -19236,7 +19248,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnReplicationConfiguration <a name="CfnReplicationConfiguration" id="CfnReplicationConfiguration"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 
@@ -19789,7 +19801,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRepository <a name="CfnRepository" id="CfnRepository"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IInspectable?lang=python">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::Repository\`.
 
@@ -20443,6 +20455,8 @@ The CloudFormation resource type name for this resource class.
 
 ### Repository <a name="Repository" id="Repository"></a>
 
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IResource?lang=python">IResource</a>, <a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository?lang=python">IRepository</a>
+
 Define an ECR repository.
 
 #### Initializers <a name="Initializers" id="Repository.Initializer"></a>
@@ -20995,7 +21009,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### RepositoryBase <a name="RepositoryBase" id="RepositoryBase"></a>
 
-- *Implements:* <a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository?lang=python">IRepository</a>
+- *Implements:* <a href="/packages/constructs/v/3.4.344/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IConstruct?lang=python">IConstruct</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IDependable?lang=python">IDependable</a>, <a href="/packages/@aws-cdk/core/v/1.106.0/api/IResource?lang=python">IResource</a>, <a href="/packages/@aws-cdk/aws-ecr/v/1.106.0/api/IRepository?lang=python">IRepository</a>
 
 Base class for ECR repository.
 
@@ -22781,7 +22795,7 @@ exports[`simple link formatter csharp snapshot 1`] = `
 
 ### CfnPublicRepository <a name="CfnPublicRepository" id="@aws-cdk/aws-ecr.CfnPublicRepository"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::PublicRepository\`.
 
@@ -23379,7 +23393,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRegistryPolicy <a name="CfnRegistryPolicy" id="@aws-cdk/aws-ecr.CfnRegistryPolicy"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::RegistryPolicy\`.
 
@@ -23932,7 +23946,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnReplicationConfiguration <a name="CfnReplicationConfiguration" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 
@@ -24485,7 +24499,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRepository <a name="CfnRepository" id="@aws-cdk/aws-ecr.CfnRepository"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::Repository\`.
 
@@ -25139,6 +25153,8 @@ The CloudFormation resource type name for this resource class.
 
 ### Repository <a name="Repository" id="@aws-cdk/aws-ecr.Repository"></a>
 
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IResource">IResource</a>, <a href="#custom-@aws-cdk/aws-ecr.IRepository">IRepository</a>
+
 Define an ECR repository.
 
 #### Initializers <a name="Initializers" id="@aws-cdk/aws-ecr.Repository.Initializer"></a>
@@ -25691,7 +25707,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### RepositoryBase <a name="RepositoryBase" id="@aws-cdk/aws-ecr.RepositoryBase"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/aws-ecr.IRepository">IRepository</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IResource">IResource</a>, <a href="#custom-@aws-cdk/aws-ecr.IRepository">IRepository</a>
 
 Base class for ECR repository.
 
@@ -27533,7 +27549,7 @@ exports[`simple link formatter go snapshot 1`] = `
 
 ### Construct <a name="Construct" id="constructs.Construct"></a>
 
-- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-constructs.IDependable">IDependable</a>
 
 Represents the building block of the construct graph.
 
@@ -28547,7 +28563,7 @@ exports[`simple link formatter java snapshot 1`] = `
 
 ### CfnPublicRepository <a name="CfnPublicRepository" id="@aws-cdk/aws-ecr.CfnPublicRepository"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::PublicRepository\`.
 
@@ -29187,7 +29203,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRegistryPolicy <a name="CfnRegistryPolicy" id="@aws-cdk/aws-ecr.CfnRegistryPolicy"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::RegistryPolicy\`.
 
@@ -29746,7 +29762,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnReplicationConfiguration <a name="CfnReplicationConfiguration" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 
@@ -30305,7 +30321,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRepository <a name="CfnRepository" id="@aws-cdk/aws-ecr.CfnRepository"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::Repository\`.
 
@@ -31037,6 +31053,8 @@ The CloudFormation resource type name for this resource class.
 
 ### Repository <a name="Repository" id="@aws-cdk/aws-ecr.Repository"></a>
 
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IResource">IResource</a>, <a href="#custom-@aws-cdk/aws-ecr.IRepository">IRepository</a>
+
 Define an ECR repository.
 
 #### Initializers <a name="Initializers" id="@aws-cdk/aws-ecr.Repository.Initializer"></a>
@@ -31659,7 +31677,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### RepositoryBase <a name="RepositoryBase" id="@aws-cdk/aws-ecr.RepositoryBase"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/aws-ecr.IRepository">IRepository</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IResource">IResource</a>, <a href="#custom-@aws-cdk/aws-ecr.IRepository">IRepository</a>
 
 Base class for ECR repository.
 
@@ -33562,7 +33580,7 @@ exports[`simple link formatter python snapshot 1`] = `
 
 ### CfnPublicRepository <a name="CfnPublicRepository" id="@aws-cdk/aws-ecr.CfnPublicRepository"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::PublicRepository\`.
 
@@ -34247,7 +34265,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRegistryPolicy <a name="CfnRegistryPolicy" id="@aws-cdk/aws-ecr.CfnRegistryPolicy"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::RegistryPolicy\`.
 
@@ -34851,7 +34869,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnReplicationConfiguration <a name="CfnReplicationConfiguration" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 
@@ -35455,7 +35473,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRepository <a name="CfnRepository" id="@aws-cdk/aws-ecr.CfnRepository"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::Repository\`.
 
@@ -36231,6 +36249,8 @@ The CloudFormation resource type name for this resource class.
 ---
 
 ### Repository <a name="Repository" id="@aws-cdk/aws-ecr.Repository"></a>
+
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IResource">IResource</a>, <a href="#custom-@aws-cdk/aws-ecr.IRepository">IRepository</a>
 
 Define an ECR repository.
 
@@ -37146,7 +37166,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### RepositoryBase <a name="RepositoryBase" id="@aws-cdk/aws-ecr.RepositoryBase"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/aws-ecr.IRepository">IRepository</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IResource">IResource</a>, <a href="#custom-@aws-cdk/aws-ecr.IRepository">IRepository</a>
 
 Base class for ECR repository.
 
@@ -39443,7 +39463,7 @@ exports[`simple link formatter typescript snapshot 1`] = `
 
 ### CfnPublicRepository <a name="CfnPublicRepository" id="@aws-cdk/aws-ecr.CfnPublicRepository"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::PublicRepository\`.
 
@@ -40041,7 +40061,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRegistryPolicy <a name="CfnRegistryPolicy" id="@aws-cdk/aws-ecr.CfnRegistryPolicy"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::RegistryPolicy\`.
 
@@ -40594,7 +40614,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnReplicationConfiguration <a name="CfnReplicationConfiguration" id="@aws-cdk/aws-ecr.CfnReplicationConfiguration"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::ReplicationConfiguration\`.
 
@@ -41147,7 +41167,7 @@ The CloudFormation resource type name for this resource class.
 
 ### CfnRepository <a name="CfnRepository" id="@aws-cdk/aws-ecr.CfnRepository"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IInspectable">IInspectable</a>
 
 A CloudFormation \`AWS::ECR::Repository\`.
 
@@ -41801,6 +41821,8 @@ The CloudFormation resource type name for this resource class.
 
 ### Repository <a name="Repository" id="@aws-cdk/aws-ecr.Repository"></a>
 
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IResource">IResource</a>, <a href="#custom-@aws-cdk/aws-ecr.IRepository">IRepository</a>
+
 Define an ECR repository.
 
 #### Initializers <a name="Initializers" id="@aws-cdk/aws-ecr.Repository.Initializer"></a>
@@ -42353,7 +42375,7 @@ ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPOSITORY
 
 ### RepositoryBase <a name="RepositoryBase" id="@aws-cdk/aws-ecr.RepositoryBase"></a>
 
-- *Implements:* <a href="#custom-@aws-cdk/aws-ecr.IRepository">IRepository</a>
+- *Implements:* <a href="#custom-constructs.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IConstruct">IConstruct</a>, <a href="#custom-@aws-cdk/core.IDependable">IDependable</a>, <a href="#custom-@aws-cdk/core.IResource">IResource</a>, <a href="#custom-@aws-cdk/aws-ecr.IRepository">IRepository</a>
 
 Base class for ECR repository.
 
