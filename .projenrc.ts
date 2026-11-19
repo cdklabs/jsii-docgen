@@ -105,7 +105,7 @@ project.github?.tryFindWorkflow('build')?.file?.patch(JsonPatch.add('/jobs/build
 // trusted publishing requires npm 11, which comes built-in with node 24.
 project.github?.tryFindWorkflow('release')?.file?.patch(JsonPatch.add('/jobs/release_npm/steps/0/with/node-version', '24.x'));
 
-const libraryFixtures = ['construct-library', 'lib-with-intersections'];
+const libraryFixtures = ['construct-library', 'lib-with-intersections', 'lib-with-doc-overrides'];
 
 // compile the test fixtures with jsii
 for (const library of libraryFixtures) {

@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`markdown of a struct with a re-declared property 1`] = `
+"### ChildOptions <a name="ChildOptions" id="lib-with-doc-overrides.ChildOptions"></a>
+
+#### Initializer <a name="Initializer" id="lib-with-doc-overrides.ChildOptions.Initializer"></a>
+
+\`\`\`typescript
+import { ChildOptions } from 'lib-with-doc-overrides'
+
+const childOptions: ChildOptions = { ... }
+\`\`\`
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#lib-with-doc-overrides.ChildOptions.property.name">name</a></code> | <code>string</code> | The name of the child. |
+| <code><a href="#lib-with-doc-overrides.ChildOptions.property.size">size</a></code> | <code>number</code> | The size. |
+
+---
+
+##### \`name\`<sup>Optional</sup> <a name="name" id="lib-with-doc-overrides.ChildOptions.property.name"></a>
+
+\`\`\`typescript
+public readonly name: string;
+\`\`\`
+
+- *Type:* string
+- *Default:* "child"
+
+The name of the child.
+
+---
+
+##### \`size\`<sup>Optional</sup> <a name="size" id="lib-with-doc-overrides.ChildOptions.property.size"></a>
+
+\`\`\`typescript
+public readonly size: number;
+\`\`\`
+
+- *Type:* number
+- *Default:* 1
+
+The size.
+
+---
+
+"
+`;

@@ -1,0 +1,46 @@
+{
+  "name": "lib-with-doc-overrides",
+  "private": true,
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "compile": "jsii --silence-warnings=reserved-word --no-fix-peer-dependencies"
+  },
+  "jsii": {
+    "outdir": "dist",
+    "targets": {
+      "python": {
+        "distName": "lib-with-doc-overrides",
+        "module": "lib_with_doc_overrides"
+      },
+      "java": {
+        "package": "software.test.docoverrides.lib",
+        "maven": {
+          "groupId": "software.test.docoverrides",
+          "artifactId": "lib"
+        }
+      },
+      "dotnet": {
+        "namespace": "DocOverrides.Lib",
+        "packageId": "DocOverrides.Lib"
+      },
+      "go": {
+        "moduleName": "github.com/cdklabs/doc_overrides_lib"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://dummy.com"
+  },
+  "author": {
+    "name": "dummy",
+    "email": "dummy@example.com",
+    "organization": false
+  },
+  "devDependencies": {
+    "jsii": "^6.0.24"
+  },
+  "license": "Apache-2.0",
+  "version": "0.0.0"
+}
