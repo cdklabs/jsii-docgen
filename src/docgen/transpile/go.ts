@@ -1,6 +1,7 @@
 import * as Case from 'case';
 import * as reflect from 'jsii-reflect';
 import * as transpile from './transpile';
+import { LanguageNotSupportedError } from '../../errors';
 import { submodulePath } from '../schema';
 
 export class GoTranspile extends transpile.TranspileBase {
@@ -26,10 +27,12 @@ export class GoTranspile extends transpile.TranspileBase {
       // This is the root module
       const moduleName = moduleLike.targets?.go?.moduleName;
 
-      // moduleName is required configuration for Go enabled packages
-      // Validation in `Documentation` class prevents this
+      // The documented package is validated in `Documentation`, but referenced
+      // dependency assemblies are not and may lack a Go target.
       if (!moduleName) {
-        throw new Error('"jsii.targets.go.moduleName" is a required field for Go enabled JSII modules');
+        throw new LanguageNotSupportedError(
+          `Go is not a supported target for module: ${moduleLike.fqn} ("jsii.targets.go.moduleName" is not configured)`,
+        );
       }
 
       const packageName = moduleLike.targets?.go?.packageName
