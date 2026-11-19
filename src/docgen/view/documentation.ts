@@ -26,7 +26,11 @@ const NOT_FOUND_IN_ASSEMBLY_REGEX = /Type '(.*)\..*' not found in assembly (.*)$
 // https://github.com/aws/jsii/blob/v1.122.0/packages/jsii-reflect/lib/type-system.ts#L252
 const ASSEMBLY_NOT_FOUND_REGEX = /Assembly "(.*)" not found/;
 
-export const SUPPORTED_ASSEMBLY_FEATURES: JsiiFeature[] = ['intersection-types', 'class-covariant-overrides'];
+export const SUPPORTED_ASSEMBLY_FEATURES: JsiiFeature[] = [
+  'intersection-types',
+  'class-covariant-overrides',
+  'interface-member-doc-overrides',
+];
 
 /**
  * Options for rendering a `Documentation` object.

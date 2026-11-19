@@ -1,0 +1,8 @@
+*.js
+*.d.ts
+*.jsii
+API.md
+docs/**
+node_modules/
+tsconfig.json
+tsconfig.tsbuildinfo
