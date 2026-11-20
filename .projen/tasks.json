@@ -281,6 +281,9 @@
     "test": {
       "name": "test",
       "description": "Run tests",
+      "env": {
+        "NODE_OPTIONS": "$(echo \"$NODE_OPTIONS --experimental-vm-modules\")"
+      },
       "steps": [
         {
           "execArgs": [
@@ -288,8 +291,7 @@
             "--passWithNoTests",
             "--updateSnapshot"
           ],
-          "receiveArgs": true,
-          "exec": "NODE_OPTIONS=\"$NODE_OPTIONS --experimental-vm-modules\" undefined"
+          "receiveArgs": true
         },
         {
           "spawn": "eslint"
