@@ -45,7 +45,7 @@ const project = new CdklabsTypeScriptProject({
   typescriptVersion: '~6.0',
   minNodeVersion: '20.16.0',
   setNodeEngineVersion: false,
-  workflowNodeVersion: '20.x',
+  workflowNodeVersion: '22.13.0',
   jestOptions: {
     jestConfig: {
       setupFilesAfterEnv: ['<rootDir>/test/setup-jest.ts'],
@@ -71,15 +71,16 @@ const project = new CdklabsTypeScriptProject({
 // Suppress upgrade prompts, in particular from test runs.
 project.tasks.addEnvironment('JSII_SUPPRESS_UPGRADE_PROMPT', 'true');
 
-// jsii-rosetta 5.9.67+ and 6.0.16+ load the ESM-only `stream-json` v3 with a dynamic
-// `import()`, which jest only supports with --experimental-vm-modules. Without it,
-// reading a tablet fails and rosetta recompiles every snippet instead.
-const testTask = project.tasks.tryFind('test')!;
-const jestStep = testTask.steps[0];
-testTask.updateStep(0, {
-  ...jestStep,
-  exec: `NODE_OPTIONS="$NODE_OPTIONS --experimental-vm-modules" ${jestStep.exec}`,
-});
+// NODE_OPTIONS shared by the build/release workflow job env and the test task:
+// - `--max_old_space_size=4096`: the default heap is too small for this repo's build/test.
+// - `--experimental-vm-modules`: jsii-rosetta 5.9.67+ and 6.0.16+ load the ESM-only
+//   `stream-json` v3 with a dynamic `import()`, which jest only supports with this flag.
+//   Without it, reading a tablet fails and rosetta recompiles every snippet instead.
+const NODE_OPTIONS = '--max_old_space_size=4096 --experimental-vm-modules';
+
+// Set via `env()` (not by rewriting the jest step's `exec`/`execArgs`) so this
+// survives projen regenerating the test task's steps.
+project.tasks.tryFind('test')!.env('NODE_OPTIONS', NODE_OPTIONS);
 
 // Add the new version line here
 new RosettaPeerDependency(project, {
@@ -99,8 +100,8 @@ new RosettaPeerDependency(project, {
   },
 });
 
-project.github?.tryFindWorkflow('release')?.file?.patch(JsonPatch.add('/jobs/release/env/NODE_OPTIONS', '--max_old_space_size=4096'));
-project.github?.tryFindWorkflow('build')?.file?.patch(JsonPatch.add('/jobs/build/env/NODE_OPTIONS', '--max_old_space_size=4096'));
+project.github?.tryFindWorkflow('release')?.file?.patch(JsonPatch.add('/jobs/release/env/NODE_OPTIONS', NODE_OPTIONS));
+project.github?.tryFindWorkflow('build')?.file?.patch(JsonPatch.add('/jobs/build/env/NODE_OPTIONS', NODE_OPTIONS));
 
 // trusted publishing requires npm 11, which comes built-in with node 24.
 project.github?.tryFindWorkflow('release')?.file?.patch(JsonPatch.add('/jobs/release_npm/steps/0/with/node-version', '24.x'));

@@ -14,19 +14,19 @@ jobs:
       self_mutation_happened: ${{ steps.self_mutation.outputs.self_mutation_happened }}
     env:
       CI: "true"
-      NODE_OPTIONS: --max_old_space_size=4096
+      NODE_OPTIONS: --max_old_space_size=4096 --experimental-vm-modules
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Enable corepack
         run: corepack enable
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7.1.0
         with:
-          node-version: 20.x
+          node-version: 22.13.0
           package-manager-cache: false
       - name: Install dependencies
         run: yarn install --no-immutable
@@ -41,7 +41,7 @@ jobs:
         working-directory: ./
       - name: Upload patch
         if: steps.self_mutation.outputs.self_mutation_happened
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: repo.patch
           path: repo.patch
@@ -52,37 +52,6 @@ jobs:
           echo "::error::Files were changed during build (see build log). If this was triggered from a fork, you will need to update your branch."
           cat repo.patch
           exit 1
-  self-mutation:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    if: always() && needs.build.outputs.self_mutation_happened && !(github.event.pull_request.head.repo.full_name != github.repository)
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-        with:
-          token: ${{ secrets.PROJEN_GITHUB_TOKEN }}
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-      - name: Download patch
-        uses: actions/download-artifact@v8
-        with:
-          name: repo.patch
-          path: ${{ runner.temp }}
-      - name: Apply patch
-        run: '[ -s ${{ runner.temp }}/repo.patch ] && git apply ${{ runner.temp }}/repo.patch || echo "Empty patch. Skipping."'
-      - name: Set git identity
-        run: |-
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      - name: Push changes
-        env:
-          PULL_REQUEST_REF: ${{ github.event.pull_request.head.ref }}
-        run: |-
-          git add .
-          git commit -s -m "chore: self mutation"
-          git push origin "HEAD:$PULL_REQUEST_REF"
   rosetta-matrix:
     runs-on: ${{ matrix.os }}
     permissions: {}
@@ -91,11 +60,13 @@ jobs:
       NODE_OPTIONS: --max_old_space_size=4096
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        id: checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Enable Corepack
+        id: enable_corepack
         run: |-
           # The pre-installed Yarn Classic shims on Windows GHA runners shadow
           # Corepack's yarn proxy. Re-installing corepack globally replaces them.
@@ -106,24 +77,30 @@ jobs:
           corepack enable
         shell: bash
       - name: Setup Node.js
+        id: setup_node_js
         uses: actions/setup-node@v6
         with:
-          node-version: 20.x
+          node-version: 22.13.0
           package-manager-cache: false
       - name: Windows performance improvements
+        id: windows_performance_improvements
         if: runner.os == 'Windows'
         run: |-
           yarn config set cacheFolder D:\a\_temp\yarn
           echo "TEMP=D:\a\_temp" >> $env:GITHUB_ENV
       - name: Install dependencies
+        id: install_dependencies
         run: yarn install --no-immutable
       - name: Install Rosetta version
+        id: install_rosetta_version
         run: yarn add --dev jsii-rosetta@${{ matrix.rosetta }}
       - name: compile+test
+        id: compile_test
         run: |-
           yarn projen compile
           yarn projen test --runInBand
       - name: Check Rosetta version
+        id: check_rosetta_version
         run: test $(yarn exec jsii-rosetta --version) = "${{ matrix.rosetta }}"
     strategy:
       matrix:
@@ -155,7 +132,9 @@ jobs:
     if: always()
     steps:
       - name: Tests result
+        id: tests_result
         run: echo ${{needs.rosetta-matrix.result}}
       - name: Set status based on matrix build
+        id: set_status_based_on_matrix_build
         if: ${{ needs.rosetta-matrix.result != 'success' }}
         run: exit 1
