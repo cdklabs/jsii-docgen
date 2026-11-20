@@ -6172,9 +6172,9 @@ __metadata:
   linkType: hard
 
 "undici@npm:^8.4.1":
-  version: 8.9.0
-  resolution: "undici@npm:8.9.0"
-  checksum: 10c0/e3d9fa35a9aa8360d9f56e66bd372f451ee053e25066a97fd9fab3816267035660f67870c6d709a58a5411551657af78c4475be5b31c113b04f70251309900d0
+  version: 8.13.0
+  resolution: "undici@npm:8.13.0"
+  checksum: 10c0/a932546a05c996d1fc11c880ed5253ee06ec858e6a003231c70d6f8e60ba049fa6b0d86483f8e54c2e0bed6c6c51c5bca8780390fe4b4ec5b4504af60078ebde
   languageName: node
   linkType: hard
 
