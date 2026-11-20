@@ -26,7 +26,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v7.1.0
         with:
-          node-version: 20.x
+          node-version: 22.13.0
           package-manager-cache: false
       - name: Install dependencies
         run: yarn install --no-immutable
@@ -80,7 +80,7 @@ jobs:
         id: setup_node_js
         uses: actions/setup-node@v6
         with:
-          node-version: 20.x
+          node-version: 22.13.0
           package-manager-cache: false
       - name: Windows performance improvements
         id: windows_performance_improvements

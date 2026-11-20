@@ -45,7 +45,7 @@ jobs:
         id: setup_node_js
         uses: actions/setup-node@v7.1.0
         with:
-          node-version: 20.x
+          node-version: 22.13.0
           package-manager-cache: false
       - name: Install dependencies
         id: install_dependencies
@@ -93,7 +93,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v7.1.0
         with:
-          node-version: 20.x
+          node-version: 22.13.0
           package-manager-cache: false
       - name: Download build artifacts
         id: download_build_artifacts
