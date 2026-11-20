@@ -183,8 +183,9 @@ export class MarkdownRenderer {
     }
 
     const md = new MarkdownDocument({ header: { title: 'Constructs' } });
+    const headings = this.headingsForTypes(constructs);
     for (const construct of constructs) {
-      md.section(this.visitConstruct(construct));
+      md.section(this.visitConstruct(construct, headings.get(construct.id)));
     }
     return md;
   }
@@ -197,8 +198,9 @@ export class MarkdownRenderer {
     }
 
     const md = new MarkdownDocument({ header: { title: 'Structs' } });
+    const headings = this.headingsForTypes(structs);
     for (const struct of structs) {
-      md.section(this.visitStruct(struct));
+      md.section(this.visitStruct(struct, headings.get(struct.id)));
     }
     return md;
   }
@@ -211,8 +213,9 @@ export class MarkdownRenderer {
     }
 
     const md = new MarkdownDocument({ header: { title: 'Classes' } });
+    const headings = this.headingsForTypes(classes);
     for (const klass of classes) {
-      md.section(this.visitClass(klass));
+      md.section(this.visitClass(klass, headings.get(klass.id)));
     }
     return md;
   }
@@ -225,8 +228,9 @@ export class MarkdownRenderer {
     }
 
     const md = new MarkdownDocument({ header: { title: 'Protocols' } });
+    const headings = this.headingsForTypes(ifaces);
     for (const iface of ifaces) {
-      md.section(this.visitInterface(iface));
+      md.section(this.visitInterface(iface, headings.get(iface.id)));
     }
     return md;
   }
@@ -239,20 +243,23 @@ export class MarkdownRenderer {
     }
 
     const md = new MarkdownDocument({ header: { title: 'Enums' } });
+    const headings = this.headingsForTypes(enums);
     for (const enu of enums) {
-      md.section(this.visitEnum(enu));
+      md.section(this.visitEnum(enu, headings.get(enu.id)));
     }
     return md;
   }
 
   public visitConstruct(
     construct: ConstructSchema,
+    heading?: TypeHeading,
   ): MarkdownDocument {
-    return this.visitClass(construct);
+    return this.visitClass(construct, heading);
   }
 
   public visitStruct(
     struct: StructSchema,
+    heading?: TypeHeading,
   ): MarkdownDocument {
     const md = new MarkdownDocument({
       id: this.anchorFormatter({
@@ -261,7 +268,8 @@ export class MarkdownRenderer {
         fqn: struct.fqn,
         ...this.metadata,
       }),
-      header: { title: struct.displayName },
+      name: heading?.name,
+      header: { title: heading?.title ?? struct.displayName },
     });
 
     if (struct.docs) {
@@ -289,6 +297,7 @@ export class MarkdownRenderer {
 
   public visitClass(
     klass: ClassSchema,
+    heading?: TypeHeading,
   ): MarkdownDocument {
     const md = new MarkdownDocument({
       id: this.anchorFormatter({
@@ -297,7 +306,8 @@ export class MarkdownRenderer {
         fqn: klass.fqn,
         ...this.metadata,
       }),
-      header: { title: klass.displayName },
+      name: heading?.name,
+      header: { title: heading?.title ?? klass.displayName },
     });
 
     if (klass.interfaces.length > 0) {
@@ -326,6 +336,7 @@ export class MarkdownRenderer {
 
   public visitInterface(
     iface: InterfaceSchema,
+    heading?: TypeHeading,
   ): MarkdownDocument {
     const md = new MarkdownDocument({
       id: this.anchorFormatter({
@@ -334,7 +345,8 @@ export class MarkdownRenderer {
         fqn: iface.fqn,
         ...this.metadata,
       }),
-      header: { title: iface.displayName },
+      name: heading?.name,
+      header: { title: heading?.title ?? iface.displayName },
     });
 
     if (iface.interfaces.length > 0) {
@@ -366,6 +378,7 @@ export class MarkdownRenderer {
 
   public visitEnum(
     enu: EnumSchema,
+    heading?: TypeHeading,
   ): MarkdownDocument {
     const md = new MarkdownDocument({
       id: this.anchorFormatter({
@@ -374,7 +387,8 @@ export class MarkdownRenderer {
         fqn: enu.fqn,
         ...this.metadata,
       }),
-      header: { title: enu.displayName },
+      name: heading?.name,
+      header: { title: heading?.title ?? enu.displayName },
     });
 
     if (enu.docs) {
@@ -758,6 +772,57 @@ export class MarkdownRenderer {
 
     return tableRows;
   }
+
+  /**
+   * Qualify heading labels when multiple types on the same page share a display
+   * name. Unique types keep their original title/`name` so existing anchors stay
+   * intact; colliding types get a unique `name` plus submodule context in the title.
+   */
+  private headingsForTypes(types: NamedType[]): Map<string, TypeHeading> {
+    const counts = new Map<string, number>();
+    for (const type of types) {
+      counts.set(type.displayName, (counts.get(type.displayName) ?? 0) + 1);
+    }
+
+    const headings = new Map<string, TypeHeading>();
+    for (const type of types) {
+      if ((counts.get(type.displayName) ?? 0) <= 1) {
+        continue;
+      }
+      const submodule = this.submoduleFromTypeId(type.id);
+      if (!submodule) {
+        continue;
+      }
+      headings.set(type.id, {
+        title: `${type.displayName} (${submodule})`,
+        name: `${submodule}.${type.displayName}`,
+      });
+    }
+    return headings;
+  }
+
+  private submoduleFromTypeId(id: string): string | undefined {
+    const prefix = `${this.metadata.packageName}.`;
+    if (!id.startsWith(prefix)) {
+      return undefined;
+    }
+    const rest = id.slice(prefix.length);
+    const lastDot = rest.lastIndexOf('.');
+    if (lastDot <= 0) {
+      return undefined;
+    }
+    return rest.slice(0, lastDot);
+  }
+}
+
+interface NamedType {
+  readonly id: string;
+  readonly displayName: string;
+}
+
+interface TypeHeading {
+  readonly title: string;
+  readonly name: string;
 }
 
 interface SimpleTableItem {
