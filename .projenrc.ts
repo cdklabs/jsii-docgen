@@ -75,10 +75,8 @@ project.tasks.addEnvironment('JSII_SUPPRESS_UPGRADE_PROMPT', 'true');
 // `import()`, which jest only supports with --experimental-vm-modules. Without it,
 // reading a tablet fails and rosetta recompiles every snippet instead.
 // Set via `env()` (not by rewriting the jest step's `exec`/`execArgs`) so this
-// survives projen regenerating the test task's steps. The `$()` form evaluates
-// in a subshell at run time, so it appends to whatever NODE_OPTIONS the
-// workflow job env already set instead of clobbering it.
-project.tasks.tryFind('test')!.env('NODE_OPTIONS', '$(echo "$NODE_OPTIONS --experimental-vm-modules")');
+// survives projen regenerating the test task's steps.
+project.tasks.tryFind('test')!.env('NODE_OPTIONS', '--experimental-vm-modules');
 
 // Add the new version line here
 new RosettaPeerDependency(project, {

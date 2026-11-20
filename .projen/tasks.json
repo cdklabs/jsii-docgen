@@ -282,7 +282,7 @@
       "name": "test",
       "description": "Run tests",
       "env": {
-        "NODE_OPTIONS": "$(echo \"$NODE_OPTIONS --experimental-vm-modules\")"
+        "NODE_OPTIONS": "--experimental-vm-modules"
       },
       "steps": [
         {
