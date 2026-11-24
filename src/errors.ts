@@ -14,13 +14,8 @@ export class NoSpaceLeftOnDevice extends Error {
   public readonly name = `${name}.${this.constructor.name}`;
 
   /** @internal */
-  public constructor(message: string, stack?: string) {
+  public constructor(message: string) {
     super(message);
-    if (stack) {
-      this.stack = stack;
-    } else {
-      Error.captureStackTrace(this, this.constructor);
-    }
   }
 }
 
@@ -32,13 +27,8 @@ export class DocGenError extends Error {
   public readonly name = `${name}.${this.constructor.name}`;
 
   /** @internal */
-  public constructor(message: string, stack?: string) {
+  public constructor(message: string) {
     super(message);
-    if (stack) {
-      this.stack = stack;
-    } else {
-      Error.captureStackTrace(this, this.constructor);
-    }
   }
 
 }
