@@ -1,0 +1,104 @@
+{
+  "author": {
+    "name": "Test",
+    "roles": [
+      "author"
+    ]
+  },
+  "description": "Fixture with same-named classes in different submodules",
+  "docs": {
+    "stability": "stable"
+  },
+  "homepage": "https://github.com/cdklabs/jsii-docgen",
+  "jsiiVersion": "5.5.1",
+  "license": "Apache-2.0",
+  "name": "duplicate-class-headings",
+  "readme": {
+    "markdown": ""
+  },
+  "schema": "jsii/0.10.0",
+  "submodules": {
+    "duplicate-class-headings.namespace1": {
+      "locationInModule": {
+        "filename": "lib/namespace1/index.ts",
+        "line": 1
+      }
+    },
+    "duplicate-class-headings.namespace2": {
+      "locationInModule": {
+        "filename": "lib/namespace2/index.ts",
+        "line": 1
+      }
+    }
+  },
+  "targets": {
+    "js": {
+      "npm": "duplicate-class-headings"
+    }
+  },
+  "types": {
+    "duplicate-class-headings.UniqueClass": {
+      "assembly": "duplicate-class-headings",
+      "docs": {
+        "stability": "stable",
+        "summary": "A uniquely named class that should keep an unqualified heading."
+      },
+      "fqn": "duplicate-class-headings.UniqueClass",
+      "initializer": {
+        "docs": {
+          "stability": "stable"
+        }
+      },
+      "kind": "class",
+      "locationInModule": {
+        "filename": "lib/index.ts",
+        "line": 1
+      },
+      "name": "UniqueClass",
+      "symbolId": "lib/index:UniqueClass"
+    },
+    "duplicate-class-headings.namespace1.SomeClass": {
+      "assembly": "duplicate-class-headings",
+      "docs": {
+        "stability": "stable",
+        "summary": "SomeClass in namespace1."
+      },
+      "fqn": "duplicate-class-headings.namespace1.SomeClass",
+      "initializer": {
+        "docs": {
+          "stability": "stable"
+        }
+      },
+      "kind": "class",
+      "locationInModule": {
+        "filename": "lib/namespace1/index.ts",
+        "line": 1
+      },
+      "name": "SomeClass",
+      "namespace": "namespace1",
+      "symbolId": "lib/namespace1/index:SomeClass"
+    },
+    "duplicate-class-headings.namespace2.SomeClass": {
+      "assembly": "duplicate-class-headings",
+      "docs": {
+        "stability": "stable",
+        "summary": "SomeClass in namespace2."
+      },
+      "fqn": "duplicate-class-headings.namespace2.SomeClass",
+      "initializer": {
+        "docs": {
+          "stability": "stable"
+        }
+      },
+      "kind": "class",
+      "locationInModule": {
+        "filename": "lib/namespace2/index.ts",
+        "line": 1
+      },
+      "name": "SomeClass",
+      "namespace": "namespace2",
+      "symbolId": "lib/namespace2/index:SomeClass"
+    }
+  },
+  "version": "1.0.0"
+}

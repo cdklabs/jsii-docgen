@@ -50,6 +50,15 @@ export interface MarkdownOptions {
    * @default - The title will be used.
    */
   readonly id?: string;
+
+  /**
+   * Unique name used for the HTML `name` attribute on the heading anchor.
+   * Distinct from `id`, which is produced by the anchor formatter and must
+   * remain stable for existing links.
+   *
+   * @default - The header title will be used.
+   */
+  readonly name?: string;
 }
 
 /**
@@ -205,7 +214,8 @@ export class MarkdownDocument {
           `${heading} <span data-heading-title="${this.options.header?.title}" data-heading-id="${this.id}"></span>`,
         );
       } else {
-        content.push(`${heading} <a name="${this.options.header?.title}" id="${this.id}"></a>`);
+        const uniqueName = this.options.name ?? this.options.header?.title;
+        content.push(`${heading} <a name="${uniqueName}" id="${this.id}"></a>`);
       }
       content.push('');
     }
