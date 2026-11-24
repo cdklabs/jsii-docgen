@@ -16,7 +16,7 @@ export class NoSpaceLeftOnDevice extends Error {
   /** @internal */
   public constructor(message: string, stack?: string) {
     super(message);
-    if (this.stack) {
+    if (stack) {
       this.stack = stack;
     } else {
       Error.captureStackTrace(this, this.constructor);
@@ -34,7 +34,7 @@ export class DocGenError extends Error {
   /** @internal */
   public constructor(message: string, stack?: string) {
     super(message);
-    if (this.stack) {
+    if (stack) {
       this.stack = stack;
     } else {
       Error.captureStackTrace(this, this.constructor);
